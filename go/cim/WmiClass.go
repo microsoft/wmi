@@ -63,3 +63,7 @@ func (c WmiClass) InvokeMethod(methodName string, methodParams []string, inputOp
 	panic("not implemented")
 
 }
+
+func (c WmiClass) Dispose() {
+	panic("not implemented")
+}

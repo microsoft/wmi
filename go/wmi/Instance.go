@@ -1,19 +1,21 @@
 package wmi
 
+// Instance represents an interface for the wmi instance
 type Instance interface {
-	GetInstance() string
-	GetProperty() string
-	ResetProperty() string
+	GetInstance() (string, error)
+	GetProperty(name string) (string, error)
+	SetProperty(name, value string) (string, error)
+	ResetProperty(name string) (string, error)
 	Class() *Class
-	EmbeddedInstance() string
+	EmbeddedInstance() (string, error)
 	InstanceManager() *InstanceManager
 	Equals(*Instance) bool
-	Refresh()
-	Commit()
-	Modify()
-	Delete()
-	InstancePath() string
-	InvokeMethod(methodName string, propertyValues map[string]string) (string, error)
+	Refresh() error
+	Commit() error
+	Modify() error
+	Delete() error
+	InstancePath() (string, error)
+	InvokeMethod(namespaceName string, methodName string, methodParameters *[]MethodParameter) (MethodResult, error)
 	GetRelated(resultClassName string) *[]Instance
 	GetRelatedEx(resultClassName, associatedClassName, resultRole, sourceRole string) *[]Instance
 	GetAssociated(resultClassName, associatedClassName, resultRole, sourceRole string) *[]Instance
