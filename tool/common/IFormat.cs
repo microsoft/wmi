@@ -8,7 +8,7 @@ using System.IO;
 using System.Management;
 using System.Text;
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
     public abstract class IFormat
     {
@@ -160,7 +160,7 @@ namespace Microsoft.WmiCodeGen
             }
         }
 
-        public void GenerateAllWmiClasses()
+        public void GenerateSources()
         {
             foreach (var item in m_Namespaces)
             {

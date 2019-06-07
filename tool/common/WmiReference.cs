@@ -1,7 +1,7 @@
 ﻿// Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
     public abstract class WmiReference : IWmiBase
     {

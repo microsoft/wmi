@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
     public class WmiModule : IWmiBase
     {

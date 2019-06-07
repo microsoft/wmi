@@ -4,6 +4,7 @@
 using System;
 using System.Globalization;
 using System.Management;
+using Microsoft.WmiCodeGen.Common;
 
 namespace Microsoft.WmiCodeGen.CSharp
 {

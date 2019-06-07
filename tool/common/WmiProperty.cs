@@ -5,7 +5,7 @@ using System;
 using System.Globalization;
 using System.Management;
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
     public abstract class WmiProperty : IWmiBase
     {

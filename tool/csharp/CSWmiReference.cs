@@ -2,6 +2,7 @@
 // Licensed under the MIT license.
 
 using System.Globalization;
+using Microsoft.WmiCodeGen.Common;
 
 namespace Microsoft.WmiCodeGen.CSharp
 {

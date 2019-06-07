@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Management;
 using System.Text;
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
 
     public abstract class WmiMethod : IWmiBase
@@ -179,7 +179,7 @@ namespace Microsoft.WmiCodeGen
                 } 
 #endif
 
-                if (CSharpFormat.HasJobOutputParams(mData))
+                if (IFormat.HasJobOutputParams(mData))
                 {
                     wMethodParams.Add(GetWmiMethodParam("/*Custom IN*/", ParamType.Custom, "UserAction", "Action", true));
                     wMethodParams.Add(GetWmiMethodParam("/*Custon IN*/", ParamType.Custom, "uint", "PercentComplete", true));

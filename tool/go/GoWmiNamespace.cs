@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Management;
 using System.Text;
+using Microsoft.WmiCodeGen.Common;
 
 namespace Microsoft.WmiCodeGen.GO
 {
@@ -55,7 +56,7 @@ ASSEMBLY_IDENTITY_PUBLIC_KEY_NAME=WindowsTestTrusted",
                Name, DateTime.Now.ToShortDateString()
                );
 
-            sb.AppendFormat(CultureInfo.InvariantCulture, "\nTARGETNAME      = Microsoft.Test.Wmi.{0}\n", GONamespaceName);
+            sb.AppendFormat(CultureInfo.InvariantCulture, "\nTARGETNAME      = Microsoft.Test.Wmi.{0}\n", CSNamespaceName);
             sb.AppendLine("SOURCES=\\");
 
             foreach (KeyValuePair<string, WmiModule> kvpM in Modules)

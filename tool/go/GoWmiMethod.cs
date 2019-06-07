@@ -5,6 +5,7 @@ using System;
 using System.Globalization;
 using System.Management;
 using System.Text;
+using Microsoft.WmiCodeGen.Common;
 
 namespace Microsoft.WmiCodeGen.GO
 {
@@ -70,7 +71,7 @@ namespace Microsoft.WmiCodeGen.GO
                             "\n/// <param name=\"{0}\" type=\"{1} {3}\">{2}</param>",
                             pData.Name,
                             Parent.Parent.GetType(pData, out tmpType),
-                            GOharpFormat.GetDescription(pData.Qualifiers).Replace("\n", "\n///"),
+                            IFormat.GetDescription(pData.Qualifiers).Replace("\n", "\n///"),
                             pData.IsArray ? "[]" : "");
                 }
             }
@@ -112,9 +113,9 @@ namespace Microsoft.WmiCodeGen.GO
             }
 
             //string returnType = GetMethodReturnType(mData);
-            if (GOharpFormat.HasOutParams(mData))
+            if (IFormat.HasOutParams(mData))
             {
-                if (GOharpFormat.HasJobOutputParams(mData))
+                if (IFormat.HasJobOutputParams(mData))
                 {
                     sb.AppendFormat(CultureInfo.InvariantCulture,
                         "\nusing(WmiMethodResult methodResult = InvokeMethod(\"{0}\", {1}, null, Action, PercentComplete, Timeout))\n",
@@ -153,7 +154,7 @@ namespace Microsoft.WmiCodeGen.GO
                         // Sometimes, the resulting object might be null. Try to 
                         // Get it via Job, in case of a Wmi Class 
                         // Assumption is that the out param type is a Wmi class 
-                        if (GOharpFormat.HasJobOutputParams(mData) && tmpType.IsClass
+                        if (IFormat.HasJobOutputParams(mData) && tmpType.IsClass
                             && pData.Name != "Job" && pData.Name.Contains("Resulting"))
                         {
                             sb.AppendLine("\tif ((Action != UserAction.Async || Action != UserAction.Cancel) && PercentComplete == 100)");

@@ -2,9 +2,11 @@
 // Licensed under the MIT license.
 
 using System;
-using Microsoft.WmiCodeGen;
+using Microsoft.WmiCodeGen.Common;
+using Microsoft.WmiCodeGen.CSharp;
+using Microsoft.WmiCodeGen.GO;
 
-namespace Microsoft.Test.Wmi.ClassGenerator
+namespace Microsoft.WmiCodeGen.Tool
 {
     class WmiClassGenenerator
     {
@@ -176,15 +178,14 @@ namespace Microsoft.Test.Wmi.ClassGenerator
                         case Format.CS:
                             Logger.Debug("Generating C# Source");
                             CSharpFormat csfmt = new CSharpFormat(m_namespace, m_outputDir, recurse);
-                            csfmt.GenerateAllWmiClasses();
-                            //csfmt.GenerateSourceFile();
+                            csfmt.GenerateSources();
                             break;
                         case Format.PS:
                             break;
                         case Format.GO:
                             Logger.Debug("Generating C# Source");
                             GoFormat fmt = new GoFormat(m_namespace, m_outputDir, recurse);
-                            fmt.GenerateAllWmiClasses();
+                            fmt.GenerateSources();
                             break;
                         default:
                             throw new NotImplementedException();

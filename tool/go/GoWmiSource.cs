@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Management;
 using System.Text;
+using Microsoft.WmiCodeGen.Common;
 
 namespace Microsoft.WmiCodeGen.GO
 {
@@ -32,7 +33,7 @@ namespace Microsoft.WmiCodeGen.GO
                                                 Name,
                                                 "This class doesn't exist. This is just a placeholder",
                                                 DateTime.Now.ToShortDateString(),
-                                                Parent.Parent.GONamespaceName
+                                                Parent.Parent.CSNamespaceName
                                                 );
 
             AddReference("System");
@@ -61,9 +62,9 @@ namespace Microsoft.WmiCodeGen.GO
  *      Source {3}
  * *********************************************/",
                                                 Name,
-                                                GOharpFormat.GetDescriptionText(wmiClass.Qualifiers),
+                                                IFormat.GetDescriptionText(wmiClass.Qualifiers),
                                                 DateTime.Now.ToShortDateString(),
-                                                Parent.Parent.GONamespaceName
+                                                Parent.Parent.CSNamespaceName
                                                 );
 
             AddReference("System");
@@ -117,7 +118,7 @@ namespace Microsoft.WmiCodeGen.GO
         public static string GetHeaderCommentText(QualifierDataCollection qCollection)
         {
 
-            object description = GOharpFormat.GetQualifierValue(qCollection, "description");
+            object description = IFormat.GetQualifierValue(qCollection, "description");
             return String.Format(CultureInfo.InvariantCulture,
 @"
 /// <summary>

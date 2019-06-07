@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Management;
 using System.Text;
+using Microsoft.WmiCodeGen.Common;
 
 namespace Microsoft.WmiCodeGen.CSharp
 {

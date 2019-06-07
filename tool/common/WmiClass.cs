@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Management;
 using System.Text;
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
     public abstract class WmiClass : IWmiBase
     {
@@ -52,7 +52,7 @@ namespace Microsoft.WmiCodeGen
             Parent = wSource;
             string className = FixClassName(wmiClass.ClassPath.ClassName);
             Name = className;
-            Abstract = CSharpFormat.IsAbstract(wmiClass.Qualifiers);
+            Abstract = IFormat.IsAbstract(wmiClass.Qualifiers);
 
             //sb.Append(GetDescriptionText(wmiClass.Qualifiers));
 

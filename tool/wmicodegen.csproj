@@ -58,9 +58,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logger.cs" />
-    <Compile Include="IFormat.cs" />
-    <Compile Include="CSharpFormat.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="csharp\CSharpFormat.cs" />
     <Compile Include="csharp\CSWmiClass.cs" />
     <Compile Include="csharp\CSWmiConstructor.cs" />
     <Compile Include="csharp\CSWmiEnum.cs" />
@@ -71,21 +70,32 @@
     <Compile Include="csharp\CSWmiReference.cs" />
     <Compile Include="csharp\CSWmiRelated.cs" />
     <Compile Include="csharp\CSWmiSource.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="go\GoFormat.cs" />
+  	<Compile Include="go\GOWmiClass.cs" />
+    <Compile Include="go\GOWmiConstructor.cs" />
+    <Compile Include="go\GOWmiEnum.cs" />
+    <Compile Include="go\GOWmiMethod.cs" />
+    <Compile Include="go\GOWmiMethodParam.cs" />
+    <Compile Include="go\GOWmiNamespace.cs" />
+    <Compile Include="go\GOWmiProperty.cs" />
+    <Compile Include="go\GOWmiReference.cs" />
+    <Compile Include="go\GOWmiRelated.cs" />
+    <Compile Include="go\GOWmiSource.cs" />    
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GoFormat.cs" />
-    <Compile Include="WmiClass.cs" />
-    <Compile Include="WmiConstructor.cs" />
-    <Compile Include="IWmiBase.cs" />
-    <Compile Include="WmiEnum.cs" />
-    <Compile Include="WmiMethod.cs" />
-    <Compile Include="WmiMethodParam.cs" />
-    <Compile Include="WmiModule.cs" />
-    <Compile Include="WmiNamespace.cs" />
-    <Compile Include="WmiProperty.cs" />
-    <Compile Include="WmiReference.cs" />
-    <Compile Include="WmiRelated.cs" />
-    <Compile Include="WmiSource.cs" />
+    <Compile Include="Common\Logger.cs" />
+    <Compile Include="Common\IFormat.cs" />
+    <Compile Include="Common\WmiClass.cs" />
+    <Compile Include="Common\WmiConstructor.cs" />
+    <Compile Include="Common\IWmiBase.cs" />
+    <Compile Include="Common\WmiEnum.cs" />
+    <Compile Include="Common\WmiMethod.cs" />
+    <Compile Include="Common\WmiMethodParam.cs" />
+    <Compile Include="Common\WmiModule.cs" />
+    <Compile Include="Common\WmiNamespace.cs" />
+    <Compile Include="Common\WmiProperty.cs" />
+    <Compile Include="Common\WmiReference.cs" />
+    <Compile Include="Common\WmiRelated.cs" />
+    <Compile Include="Common\WmiSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

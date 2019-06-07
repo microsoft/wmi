@@ -8,6 +8,8 @@ using System.Linq;
 using System.Management;
 using System.Text;
 
+using Microsoft.WmiCodeGen.Common;
+
 namespace Microsoft.WmiCodeGen.CSharp
 {
     public class CSWmiClass : WmiClass

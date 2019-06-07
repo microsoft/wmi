@@ -8,7 +8,7 @@ using System.IO;
 using System.Management;
 using System.Text;
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
     public abstract class WmiSource : IWmiBase
     {
@@ -267,7 +267,7 @@ namespace Microsoft.WmiCodeGen
             if (pData.Type == CimType.Object || pData.Type == CimType.Reference)
             {
                 object typeValue;
-                if (CSharpFormat.TryGetQualifierValue(pData.Qualifiers, "CimType", out typeValue))
+                if (IFormat.TryGetQualifierValue(pData.Qualifiers, "CimType", out typeValue))
                 {
                     string typeValueString = typeValue.ToString();
                     if (typeValueString.Contains(":"))
@@ -308,7 +308,7 @@ namespace Microsoft.WmiCodeGen
                     }
                 }
             }
-            else if (pData.Type != CimType.Boolean && CSharpFormat.HasQualifier(pData.Qualifiers, "values"))
+            else if (pData.Type != CimType.Boolean && IFormat.HasQualifier(pData.Qualifiers, "values"))
             {
                 WmiEnum wEnum = GetEnum(pData);
                 if (wEnum != null)
@@ -325,8 +325,8 @@ namespace Microsoft.WmiCodeGen
         public WmiEnum GetEnum(PropertyData pData)
         {
             WmiEnum wEnum = null;
-            Object[] values = CSharpFormat.GetQualifierValue(pData.Qualifiers, "values") as Object[];
-            Object[] valueMaps = CSharpFormat.GetQualifierValue(pData.Qualifiers, "valueMap") as Object[];
+            Object[] values = IFormat.GetQualifierValue(pData.Qualifiers, "values") as Object[];
+            Object[] valueMaps = IFormat.GetQualifierValue(pData.Qualifiers, "valueMap") as Object[];
             if (values != null && values.Length > 0)
             {
                 string enumName = WmiEnum.GetEnumName(pData, this);

@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Microsoft.WmiCodeGen
+namespace Microsoft.WmiCodeGen.Common
 {
     public class Logger
     {
