@@ -1,7 +1,7 @@
 ﻿// Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-using Microsoft.WmiCodeGen.CSharp;
+using Microsoft.WmiCodeGen.GO;
 
 namespace Microsoft.WmiCodeGen
 {
@@ -15,7 +15,7 @@ namespace Microsoft.WmiCodeGen
 
         protected override WmiNamespace GetWmiNamespace(string wmins)
         {
-            return new CSWmiNamespace(wmins);
+            return new GOWmiNamespace(wmins);
         }
     }
 }
