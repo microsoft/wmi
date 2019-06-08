@@ -14,6 +14,8 @@ type WmiInstance struct {
 	instance *ole.IDispatch
 }
 
+type WmiInstanceCollection []WmiInstance
+
 // GetInstance
 func (c WmiInstance) GetInstance() string {
 	panic("not implemented")
@@ -122,13 +124,32 @@ func (c WmiInstance) InstancePath() (string, error) {
 }
 
 // InvokeMethod
-func (c WmiInstance) InvokeMethod(namespaceName, methodName string, methodParameters *[]wmi.MethodParameter) (*wmi.MethodResult, error) {
+func (c WmiInstance) InvokeMethod(methodName string, methodParameters *[]wmi.MethodParameter) (*wmi.MethodResult, error) {
 	rawResult, err := oleutil.CallMethod(c.instance, "ExecMethod")
 	if err != nil {
 		return nil, err
 	}
 	defer rawResult.Clear()
 	return nil, err
+}
+
+// InvokeMethodWithReturn invokes a method with return
+func (c WmiInstance) InvokeMethodWithReturn(methodName string, methodParameters *[]wmi.MethodParameter, returnValue interface{}) (uint32, error) {
+
+	result, err := c.InvokeMethod(methodName, methodParameters)
+	if err != nil {
+		return 0, err
+	}
+	returnValue = result.ReturnValue.Value
+
+	switch reflect.Value(returnValue).Kind {
+	case reflect.Bool:
+		return uint32(returnValue), nil
+	case reflect.Uint, reflect.Int:
+		return uint(returnValue), nil
+	}
+
+	return 0, nil
 }
 
 // GetRelated

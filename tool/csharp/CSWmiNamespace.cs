@@ -101,7 +101,7 @@ ASSEMBLY_IDENTITY_PUBLIC_KEY_NAME=WindowsTestTrusted",
 
         protected override WmiSource GetWmiSource(ManagementClass wmiClass, WmiModule wModule)
         {
-            throw new NotImplementedException();
+            return new CSWmiSource(wmiClass, wModule);
         }
 
         public override string GetSourceCode()

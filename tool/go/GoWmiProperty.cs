@@ -20,22 +20,14 @@ namespace Microsoft.WmiCodeGen.GO
             //Name = FixPropertyName(pData.Name);
             //FixPropertyName(pData.Name, wmiClass);
         }
-        public string Setter { get; set; }
-        public string Getter { get; set; }
 
         public override string GetSourceCode()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine();
-            sb.AppendLine("#region Property " + Name);
             sb.AppendLine(HeaderComment);
             sb.AppendFormat(CultureInfo.InvariantCulture,
-                "public virtual {0} {2} {1}", Type, FixPropertyName(GOWmiMethod.FixName(Name)), IsArray ? "[]" : "");
-            sb.AppendLine("{");
-            sb.AppendLine(Setter.Replace("\n", "\n\t"));
-            sb.AppendLine(Getter.Replace("\n", "\n\t"));
-            sb.AppendLine("}");
-            sb.AppendLine("#endregion Property " + Name);
+                "{1} {2}{0}", Type, FixPropertyName(GOWmiMethod.FixName(Name)), IsArray ? "[]" : "");
             return sb.ToString();
         }
 
@@ -46,14 +38,21 @@ namespace Microsoft.WmiCodeGen.GO
         private string GetPropertySetter(PropertyData pData)
         {
             return String.Format(CultureInfo.InvariantCulture,
-                "\nset {{ SetProperty<{0}{2}>(\"{1}\", value); }}\n", Type, pData.Name, IsArray ? "[]" : "");
-              // "\nset {{ this[\"{0}\"] = value; }}", pData.Name);
+@"
+// Set{1} sets the value of {1} for the instance
+func (instance {3}) Set{1}(value {2}{0}) error {{ 
+    return SetProperty(""{1}"", value)
+}}", Type, pData.Name, IsArray ? "[]" : "", Parent.Name);
         }
 
         private string GetPropertyGetter(PropertyData pData)
         {
             return String.Format(CultureInfo.InvariantCulture,
-                "\nget {{ return ({0}{2})GetProperty<{0}>(\"{1}\"); }}\n", Type, pData.Name, IsArray ? "[]" : "");
+@"
+// Get{1} gets the value of {1} for the instance
+func (instance {3}) Get{1}(value {2}{0}) error {{ 
+    return GetProperty(""{1}"", value)
+}}", Type, pData.Name, IsArray ? "[]" : "", Parent.Name);
         }
 
     }

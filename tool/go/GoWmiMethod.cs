@@ -30,14 +30,12 @@ namespace Microsoft.WmiCodeGen.GO
         public override string GetSourceCode()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("\n#region Method " + Name);
             foreach (var item in HeaderComments)
             {
                 sb.AppendLine(item);
             }
             //sb.AppendLine(Declaration);
-            sb.AppendFormat(CultureInfo.InvariantCulture, "public {0} {1}", ReturnType, FixName(Name));
-            sb.AppendLine("(");
+            sb.AppendFormat(CultureInfo.InvariantCulture, "func (instance {1}) {0}(", FixName(Name), Parent.Name);
             if (Params.Count > 0)
             {
                 foreach (var item in Params)
@@ -46,11 +44,11 @@ namespace Microsoft.WmiCodeGen.GO
                 }
                 sb.Remove(sb.Length - 2, 1);
             }
-            sb.AppendLine(")");
-            sb.AppendLine("{");
+            sb.AppendFormat(") ({0}, error) {", ReturnType);
             sb.AppendLine(BodyText.Replace("\n", "\n\t"));
             sb.AppendLine("}");
-            sb.AppendLine("#endregion Method " + Name);
+
+
             return sb.ToString();
         }
 
@@ -68,7 +66,7 @@ namespace Microsoft.WmiCodeGen.GO
                 foreach (var pData in collection)
                 {
                     sbComment.AppendFormat(CultureInfo.InvariantCulture,
-                            "\n/// <param name=\"{0}\" type=\"{1} {3}\">{2}</param>",
+                            "\n// <param name=\"{0}\" type=\"{1} {3}\">{2}</param>",
                             pData.Name,
                             Parent.Parent.GetType(pData, out tmpType),
                             IFormat.GetDescription(pData.Qualifiers).Replace("\n", "\n///"),
@@ -98,15 +96,15 @@ namespace Microsoft.WmiCodeGen.GO
             if (mData.InParameters != null)
             {
                 StringBuilder sbInParams = new StringBuilder();
-                sbInParams.AppendLine("\nWmiMethodParameterCollection arguments = new WmiMethodParameterCollection();");
-                //foreach (var pData in mData.InParameters.Properties)
+                sbInParams.AppendFormat("\n arguments  := []MethodParameter{}");
 
                 foreach (var item in Params.FindAll(p => p.ParamterType == ParamType.Input))
                 {
                     if (item.Optional)
                         sbInParams.AppendFormat(CultureInfo.InvariantCulture, "if ({0} != null) ", WmiMethod.FixName(item.Name));
 
-                    sbInParams.AppendFormat(CultureInfo.InvariantCulture, "arguments.Add(\"{0}\", {0});\n", WmiMethod.FixName(item.Name));
+                    sbInParams.AppendFormat(CultureInfo.InvariantCulture, "wParam := MethodParameter{ Name: \"{0}\", Value : {0} }", WmiMethod.FixName(item.Name));
+                    sbInParams.AppendFormat(CultureInfo.InvariantCulture, "arguments = append(arguments, .wParam);\n");
                 }
 
                 sb.Append(sbInParams.ToString());
@@ -118,16 +116,15 @@ namespace Microsoft.WmiCodeGen.GO
                 if (IFormat.HasJobOutputParams(mData))
                 {
                     sb.AppendFormat(CultureInfo.InvariantCulture,
-                        "\nusing(WmiMethodResult methodResult = InvokeMethod(\"{0}\", {1}, null, Action, PercentComplete, Timeout))\n",
+                        "\nmethodResult, err := InvokeMethod(\"{0}\", {1}, null, Action, PercentComplete, Timeout)\n",
                         mData.Name, mData.InParameters != null ? "arguments" : "null");
                 }
                 else
                 {
                     sb.AppendFormat(CultureInfo.InvariantCulture,
-                        "\nusing(WmiMethodResult methodResult = InvokeMethod(\"{0}\", {1}))\n",
+                        "\nmethodResult, err := InvokeMethod(\"{0}\", {1})\n",
                         mData.Name, mData.InParameters != null ? "arguments" : "null");
                 }
-                sb.AppendLine("{");
 
                 Type tmpType;
 
@@ -139,15 +136,8 @@ namespace Microsoft.WmiCodeGen.GO
                         string outParamGetValueMethod = pData.IsArray ? "GetValueArray" : "GetValue";
 
                         sb.AppendFormat(CultureInfo.InvariantCulture,
-                            "\tif (methodResult.OutParameters.Contains(\"{0}\"))\n", pData.Name);
-                        sb.AppendLine("\t{");
-                        sb.AppendFormat(CultureInfo.InvariantCulture,
-                            "\t\t{0} = methodResult.OutParameters.{2}<{1}>(\"{0}\");\n",
+                            "\t{0} = methodResult.OutParameters.{2}(\"{0}\");\n",
                             pData.Name, typeString, outParamGetValueMethod);
-                        sb.AppendLine("\t}");
-
-                        sb.AppendFormat(CultureInfo.InvariantCulture,
-                            "\telse {0} = default({1}{2});\n", pData.Name, typeString, pData.IsArray ? "[]" : "");
                         sb.AppendLine();
                         // Assuming Job param comes first, then the resulting object param
 
@@ -157,23 +147,24 @@ namespace Microsoft.WmiCodeGen.GO
                         if (IFormat.HasJobOutputParams(mData) && tmpType.IsClass
                             && pData.Name != "Job" && pData.Name.Contains("Resulting"))
                         {
-                            sb.AppendLine("\tif ((Action != UserAction.Async || Action != UserAction.Cancel) && PercentComplete == 100)");
+                            sb.AppendLine("\tif (Action != UserAction.Async || Action != UserAction.Cancel) && PercentComplete == 100 {");
                             sb.AppendFormat(CultureInfo.InvariantCulture,
-                                "\tif ({0} == null)\n", pData.Name);
-                            sb.AppendLine("\t{");
-                            sb.AppendLine("\t\tif (Job != null)");
+                                "\t\tif {0} == nil {\n", pData.Name);
+                            sb.AppendLine("\t\t\tif Job != null {");
                             if (pData.IsArray)
                             {
                                 sb.AppendFormat(CultureInfo.InvariantCulture,
-                                    "\t\t\t{0} = Job.GetAllRelated<{1}>(\"{1}\").GetInstanceArray<{1}>();\n",
+                                    "\t\t\t{0}, err := Job.GetAllRelated(\"{1}\").GetInstanceArray();\n",
                                     pData.Name, typeString);
                             }
                             else
                             {
                                 sb.AppendFormat(CultureInfo.InvariantCulture,
-                                    "\t\t{0} = Job.GetRelated<{1}>(\"{1}\");\n",
+                                    "\t\t{0}, err := Job.GetRelated(\"{1}\");\n",
                                     pData.Name, typeString);
                             }
+                            sb.AppendLine("\t\t\t}");
+                            sb.AppendLine("\t\t}");
                             sb.AppendLine("\t}");
                         }
                     }
@@ -182,34 +173,23 @@ namespace Microsoft.WmiCodeGen.GO
                 if (!ReturnType.Equals("void", StringComparison.OrdinalIgnoreCase))
                 {
                     sb.AppendFormat(CultureInfo.InvariantCulture,
-                             "\treturn ({0}) methodResult.ReturnValue.Value;\n", ReturnType);
+                             "\treturn methodResult.ReturnValue.Value, err;\n", ReturnType);
                 }
-                sb.AppendLine("}");
             }
             else
             {
-                sb.AppendLine("Object returnValue = null;");
                 sb.AppendFormat(CultureInfo.InvariantCulture,
-                             "InvokeMethod(\"{0}\", {1}, null, out returnValue);\n",
+                             "result, err := InvokeMethodWithReturn(\"{0}\", {1}, null, returnValue interface{});\n",
                              mData.Name, mData.InParameters != null ? "arguments" : "null");
 
                 if (ReturnType.Equals("void", StringComparison.OrdinalIgnoreCase))
                 {
                     // Do nothing.
                 }
-                else if (IsSystemConvertible(ReturnSystemType))
-                {
-                    sb.AppendFormat(CultureInfo.InvariantCulture,
-                                 "return Convert.To{0} (returnValue, CultureInfo.InvariantCulture);\n", ReturnType);
-                }
                 else
                 {
-                    if (ReturnType.Equals("object", StringComparison.OrdinalIgnoreCase))
-                        sb.AppendFormat(CultureInfo.InvariantCulture,
-                                 "return returnValue;\n");
-                    else
-                        sb.AppendFormat(CultureInfo.InvariantCulture,
-                                     "return new {0} ((IWmiInstance)returnValue);\n", ReturnType);
+                    sb.AppendFormat(CultureInfo.InvariantCulture,
+                             "return result, err;\n");
                 }
             }
 

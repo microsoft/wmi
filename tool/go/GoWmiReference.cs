@@ -14,10 +14,8 @@ namespace Microsoft.WmiCodeGen.GO
 
         public override string GetSourceCode()
         {
-            return string.Format(CultureInfo.InvariantCulture, "using {0};", Reference);
+            return string.Format(CultureInfo.InvariantCulture, "\"{0}\"", Reference);
         }
-
-        
 
     }
 }

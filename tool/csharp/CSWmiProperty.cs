@@ -20,9 +20,6 @@ namespace Microsoft.WmiCodeGen.CSharp
             //Name = FixPropertyName(pData.Name);
             //FixPropertyName(pData.Name, wmiClass);
         }
-        public string Setter { get; set; }
-        public string Getter { get; set; }
-
         public override string GetSourceCode()
         {
             StringBuilder sb = new StringBuilder();

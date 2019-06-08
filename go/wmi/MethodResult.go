@@ -3,5 +3,5 @@ package wmi
 // MethodResult
 type MethodResult struct {
 	ReturnValue   *MethodParameter
-	OutParameters *[]MethodParameter
+	OutParameters *MethodParameterCollection
 }

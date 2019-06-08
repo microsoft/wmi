@@ -37,20 +37,25 @@ namespace Microsoft.WmiCodeGen.GO
         public override string GetSourceCode()
         {
             StringBuilder sb = new StringBuilder();
+            // Create the struct
             sb.AppendFormat(CultureInfo.InvariantCulture,
-                "\npublic {0} class {1} : {2}\n", Abstract ? "/* abstract */" : "", Name, Derivation);
-            sb.AppendLine("{");
-
-            foreach (var item in Constructors)
-            {
-                sb.AppendLine(item.GetSourceCode().Replace("\n", "\n\t"));
-            }
-
+                "\ntype {0} struct { \n", Name);
+            sb.AppendFormat("\t{0}\n", Derivation);
             foreach (var item in Properties)
             {
                 sb.AppendLine(item.GetSourceCode().Replace("\n", "\n\t"));
             }
 
+            sb.AppendLine("}");
+
+            // Create the setter and getter methods  for properties
+            foreach (var item in Properties)
+            {
+                sb.AppendLine(item.Setter.Replace("\n", "\n\t"));
+                sb.AppendLine(item.Getter.Replace("\n", "\n\t"));
+            }
+
+            // Create the methods for the instance
             foreach (var item in Methods)
             {
                 sb.AppendLine(item.GetSourceCode().Replace("\n", "\n\t"));
@@ -65,14 +70,6 @@ namespace Microsoft.WmiCodeGen.GO
                 sb.AppendLine((item.ElementAt(0) as GOWmiRelated).GetSourceCode(multiple).Replace("\n", "\n\t"));
             }
 
-#if false
-            if (Name.Equals("CIM_ConcreteJob"))
-            {
-                sb.Append(CIM_ConcreteJobText).Replace("\n", "\n\t");
-            } 
-#endif
-
-            sb.AppendLine("}");
             return sb.ToString();
         }
 

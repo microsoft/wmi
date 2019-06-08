@@ -16,18 +16,14 @@ namespace Microsoft.WmiCodeGen.GO
         {
             HeaderComment = string.Format(CultureInfo.InvariantCulture,
 @"/*++
- * Copyright (c) Microsoft Corporation
- * 
- * Module Name:
- *  {0}.GO
- *  This is a public class. 
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
  * 
  * Abstract:
  *  {1}
  *  
  * Author:
- *      Auto Generated on {2} by MadhanM@Microsoft.com using WmiClassGen
- *      http://toolbox/WmiClassGen
+ *      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
  *      Source {3}
  * *********************************************/",
                                                 Name,
@@ -47,18 +43,14 @@ namespace Microsoft.WmiCodeGen.GO
         {
             HeaderComment = string.Format(CultureInfo.InvariantCulture,
 @"/*++
- * Copyright (c) Microsoft Corporation
- * 
- * Module Name:
- *  {0}.GO
- *  This is a public class. 
+ // Copyright 2019 (c) Microsoft Corporation.
+ // Licensed under the MIT license.
  * 
  * Abstract:
  *  {1}
  *  
  * Author:
- *      Auto Generated on {2} by MadhanM@Microsoft.com using WmiClassGen
- *      http://toolbox/WmiClassGen
+ *      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
  *      Source {3}
  * *********************************************/",
                                                 Name,
@@ -85,15 +77,19 @@ namespace Microsoft.WmiCodeGen.GO
 
             sb.AppendLine(CopyrightText);
             sb.AppendLine(HeaderComment);
+            sb.AppendFormat(CultureInfo.InvariantCulture,
+                "package {0}\n", Namespace);
+
+            // Package imports
+            sb.AppendLine("import (");
             foreach (var item in References)
             {
                 sb.AppendLine(item.GetSourceCode());
             }
-            sb.AppendFormat(CultureInfo.InvariantCulture,
-                "namespace Microsoft.Test.Wmi.{0}\n", Namespace);
-            sb.AppendLine("{");
+            sb.AppendLine(")");
+
+            // Types
             sb.AppendLine(Class.GetSourceCode().Replace("\n", "\n\t"));
-            sb.AppendLine("}");
 
             return sb.ToString();
         }
@@ -121,9 +117,7 @@ namespace Microsoft.WmiCodeGen.GO
             object description = IFormat.GetQualifierValue(qCollection, "description");
             return String.Format(CultureInfo.InvariantCulture,
 @"
-/// <summary>
-/// {0}
-/// </summary>",
+// {0}",
                description != null ? description.ToString().Replace("\n", "\n///") : string.Empty);
         }
 

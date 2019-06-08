@@ -25,6 +25,8 @@ namespace Microsoft.WmiCodeGen.Common
         public Type SType { get; set; }
         public bool IsArray { get; set; }
 
+        public string Setter { get; set; }
+        public string Getter { get; set; }
         public override string ToString()
         {
             return string.Format(CultureInfo.InvariantCulture, "WmiProperty [Name:{0}] [Type:{1}]", Name, Type);

@@ -11,11 +11,10 @@ namespace Microsoft.WmiCodeGen.Common
         public WmiModule(string name, WmiNamespace wNamespace)
         {
             Parent = wNamespace;
-            m_name = name;
+            Name = name;
             Logger.Debug("WmiModule {0} Namespace {1}", name, wNamespace.Name);
         }
 
-        string m_name;
         Dictionary<string, WmiSource> m_source = new Dictionary<string, WmiSource>();
         Dictionary<string, WmiEnum> m_enum = new Dictionary<string, WmiEnum>();
 

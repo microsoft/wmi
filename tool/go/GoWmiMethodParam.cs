@@ -28,14 +28,11 @@ namespace Microsoft.WmiCodeGen.GO
                 );
             SourceCode = string.Format(CultureInfo.InvariantCulture,
                 //"{/*Comment*/} {4} {1} {2} {4} {3}", 
-                "{0} {1} {2} {3} {4} {5} {6} ", 
+                "{0} {1} {2}{3}", 
                 Comment, 
-                optional ? "[Optional]" : "",
-                ParamterType == ParamType.Output ? "out" : (ParamterType == ParamType.Reference ? "ref" : ""), 
-                Type, 
-                optional ? (SType.IsClass ? "" : "?") : "",
+                WmiMethod.FixName(Name),
                 IsArray ? "[]" : "",
-                WmiMethod.FixName(Name)
+                Type
             );
         }
 

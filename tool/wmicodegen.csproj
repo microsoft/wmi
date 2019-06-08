@@ -71,7 +71,7 @@
     <Compile Include="csharp\CSWmiRelated.cs" />
     <Compile Include="csharp\CSWmiSource.cs" />
     <Compile Include="go\GoFormat.cs" />
-  	<Compile Include="go\GOWmiClass.cs" />
+    <Compile Include="go\GOWmiClass.cs" />
     <Compile Include="go\GOWmiConstructor.cs" />
     <Compile Include="go\GOWmiEnum.cs" />
     <Compile Include="go\GOWmiMethod.cs" />
@@ -80,7 +80,7 @@
     <Compile Include="go\GOWmiProperty.cs" />
     <Compile Include="go\GOWmiReference.cs" />
     <Compile Include="go\GOWmiRelated.cs" />
-    <Compile Include="go\GOWmiSource.cs" />    
+    <Compile Include="go\GOWmiSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\Logger.cs" />
     <Compile Include="Common\IFormat.cs" />
@@ -100,9 +100,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="go\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
