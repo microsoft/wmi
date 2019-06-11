@@ -181,7 +181,7 @@ namespace Microsoft.WmiCodeGen.Tool
                             csfmt.GenerateSources();
                             break;
                         case Format.PS:
-                            break;
+                            throw new NotImplementedException();
                         case Format.GO:
                             Logger.Debug("Generating C# Source");
                             GoFormat fmt = new GoFormat(m_namespace, m_outputDir, recurse);

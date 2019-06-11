@@ -101,7 +101,7 @@ namespace Microsoft.WmiCodeGen.CSharp
             return new CSWmiReference(reference);
         }
 
-        public void GenerateSources(string outdir)
+        public override void GenerateSource(string outdir)
         {
             string path = Path.Combine(outdir, Name + ".cs");
 

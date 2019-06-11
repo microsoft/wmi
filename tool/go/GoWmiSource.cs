@@ -15,22 +15,19 @@ namespace Microsoft.WmiCodeGen.GO
         public GOWmiSource(string sourceName, WmiModule wModule) : base(sourceName, wModule)
         {
             HeaderComment = string.Format(CultureInfo.InvariantCulture,
-@"/*++
+@"
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
- * 
- * Abstract:
- *  {1}
- *  
- * Author:
- *      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
- *      Source {3}
- * *********************************************/",
-                                                Name,
-                                                "This class doesn't exist. This is just a placeholder",
-                                                DateTime.Now.ToShortDateString(),
-                                                Parent.Parent.CSNamespaceName
-                                                );
+//
+// Author:
+//      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
+//      Source {3}
+//////////////////////////////////////////////",
+                    Name,
+                    "This class doesn't exist. This is just a placeholder",
+                    DateTime.Now.ToShortDateString(),
+                    Parent.Parent.CSNamespaceName
+                    );
 
             AddReference("System");
             AddReference("System.Text");
@@ -42,22 +39,19 @@ namespace Microsoft.WmiCodeGen.GO
         public GOWmiSource(ManagementClass wmiClass, WmiModule wModule) : base (wmiClass, wModule)
         {
             HeaderComment = string.Format(CultureInfo.InvariantCulture,
-@"/*++
+@"
  // Copyright 2019 (c) Microsoft Corporation.
  // Licensed under the MIT license.
- * 
- * Abstract:
- *  {1}
- *  
- * Author:
- *      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
- *      Source {3}
- * *********************************************/",
-                                                Name,
-                                                IFormat.GetDescriptionText(wmiClass.Qualifiers),
-                                                DateTime.Now.ToShortDateString(),
-                                                Parent.Parent.CSNamespaceName
-                                                );
+ //  
+ // Author:
+ //      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
+ //      Source {3}
+ //////////////////////////////////////////////",
+                    Name,
+                    IFormat.GetDescriptionText(wmiClass.Qualifiers),
+                    DateTime.Now.ToShortDateString(),
+                    Parent.Parent.CSNamespaceName
+                    );
 
             AddReference("System");
             AddReference("System.Text");
@@ -98,9 +92,9 @@ namespace Microsoft.WmiCodeGen.GO
             return new GOWmiReference(reference);
         }
 
-        public void GenerateSources(string outdir)
+        public override void GenerateSource(string outdir)
         {
-            string path = Path.Combine(outdir, Name + ".GO");
+            string path = Path.Combine(outdir, Name + ".go");
 
             File.WriteAllText(path, GetSourceCode());
             Logger.Info("Source {0}", path);

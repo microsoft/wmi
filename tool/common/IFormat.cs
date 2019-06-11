@@ -166,30 +166,6 @@ namespace Microsoft.WmiCodeGen.Common
             {
                 TraverseChildNamespaces(item);
             }
-            GenerateDirFile(m_outputDir);
-        }
-        public void GenerateDirFile(string outDirectory)
-        {
-            foreach (KeyValuePair<string, WmiNamespace> kvp in m_nsList)
-            {
-                string sPath = Path.Combine(Environment.CurrentDirectory, outDirectory, kvp.Value.Name);
-                while (sPath != null)
-                {
-                    string dirPath = Path.Combine(sPath, "dirs");
-                    if (Directory.Exists(sPath) && !File.Exists(dirPath))
-                    {
-                        StringBuilder sb = new StringBuilder();
-                        sb.AppendLine(@"DIRS= \");
-                        foreach (var item in Directory.GetDirectories(sPath))
-                        {
-                            sb.AppendFormat(CultureInfo.InvariantCulture, "\t{0} \\\n", Path.GetFileName(item));
-                        }
-                        File.WriteAllText(dirPath, sb.ToString());
-                        Logger.Info("Generated Dirs file at {0}", dirPath);
-                    }
-                    sPath = Path.GetDirectoryName(sPath);
-                }
-            }
         }
     }
 }

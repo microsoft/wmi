@@ -125,7 +125,6 @@ namespace Microsoft.WmiCodeGen.Common
         {
             string path = Path.Combine(Environment.CurrentDirectory, outputDir, Name, CSNamespaceName);
             if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
-            GenerateSourceFile(Path.Combine(path, "sources"));
 
             foreach (var item in Modules)
             {
@@ -135,14 +134,6 @@ namespace Microsoft.WmiCodeGen.Common
             }
 
         }
-        /// <summary>
-        /// Generates Sources files
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="valueList"></param>
-        /// <param name="outDirectory"></param>
-        protected abstract void GenerateSourceFile(string sourceFile);
-        
         private Dictionary<string, WmiSource> GenerateWmiSources()
         {
             Dictionary<string, WmiSource> wSource = new Dictionary<string, WmiSource>();

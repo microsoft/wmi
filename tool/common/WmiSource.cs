@@ -40,13 +40,7 @@ namespace Microsoft.WmiCodeGen.Common
         public List<WmiReference> References { get { return m_references; } }
         public WmiClass Class { get; set; }
 
-        public void GenerateSource(string outdir)
-        {
-            string path = Path.Combine(outdir, Name + ".cs");
-
-            File.WriteAllText(path, GetSourceCode());
-            Logger.Info("Source {0}", path);
-        }
+        public abstract void GenerateSource(string outdir);
 
         public static Dictionary<string, List<string>> ClassList = new Dictionary<string, List<string>>();
         /// <summary>

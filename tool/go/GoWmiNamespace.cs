@@ -22,16 +22,6 @@ namespace Microsoft.WmiCodeGen.GO
             return new GOWmiReference(reference);
         }
 
-        /// <summary>
-        /// Generates Sources files
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="valueList"></param>
-        /// <param name="outDirectory"></param>
-        protected override void GenerateSourceFile(string sourceFile)
-        {
-        }
-
         protected override WmiSource GetWmiSource(ManagementClass wmiClass, WmiModule wModule)
         {
             return new GOWmiSource(wmiClass, wModule);

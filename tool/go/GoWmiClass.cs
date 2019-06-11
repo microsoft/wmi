@@ -39,7 +39,7 @@ namespace Microsoft.WmiCodeGen.GO
             StringBuilder sb = new StringBuilder();
             // Create the struct
             sb.AppendFormat(CultureInfo.InvariantCulture,
-                "\ntype {0} struct { \n", Name);
+                "\ntype {0} struct {{ \n", Name);
             sb.AppendFormat("\t{0}\n", Derivation);
             foreach (var item in Properties)
             {

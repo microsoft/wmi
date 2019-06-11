@@ -44,7 +44,7 @@ namespace Microsoft.WmiCodeGen.GO
                 }
                 sb.Remove(sb.Length - 2, 1);
             }
-            sb.AppendFormat(") ({0}, error) {", ReturnType);
+            sb.AppendFormat(") ({0}, error) {{", ReturnType);
             sb.AppendLine(BodyText.Replace("\n", "\n\t"));
             sb.AppendLine("}");
 
@@ -96,14 +96,14 @@ namespace Microsoft.WmiCodeGen.GO
             if (mData.InParameters != null)
             {
                 StringBuilder sbInParams = new StringBuilder();
-                sbInParams.AppendFormat("\n arguments  := []MethodParameter{}");
+                sbInParams.AppendFormat("\n arguments  := []MethodParameter");
 
                 foreach (var item in Params.FindAll(p => p.ParamterType == ParamType.Input))
                 {
                     if (item.Optional)
                         sbInParams.AppendFormat(CultureInfo.InvariantCulture, "if ({0} != null) ", WmiMethod.FixName(item.Name));
 
-                    sbInParams.AppendFormat(CultureInfo.InvariantCulture, "wParam := MethodParameter{ Name: \"{0}\", Value : {0} }", WmiMethod.FixName(item.Name));
+                    sbInParams.AppendFormat(CultureInfo.InvariantCulture, "wParam := MethodParameter{{ Name: \"{0}\", Value : {0} }}", WmiMethod.FixName(item.Name));
                     sbInParams.AppendFormat(CultureInfo.InvariantCulture, "arguments = append(arguments, .wParam);\n");
                 }
 
@@ -149,7 +149,7 @@ namespace Microsoft.WmiCodeGen.GO
                         {
                             sb.AppendLine("\tif (Action != UserAction.Async || Action != UserAction.Cancel) && PercentComplete == 100 {");
                             sb.AppendFormat(CultureInfo.InvariantCulture,
-                                "\t\tif {0} == nil {\n", pData.Name);
+                                "\t\tif {0} == nil {{\n", pData.Name);
                             sb.AppendLine("\t\t\tif Job != null {");
                             if (pData.IsArray)
                             {
