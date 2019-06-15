@@ -35,7 +35,7 @@ namespace Microsoft.WmiCodeGen.GO
                 sb.AppendLine(item);
             }
             //sb.AppendLine(Declaration);
-            sb.AppendFormat(CultureInfo.InvariantCulture, "func (instance {1}) {0}(", FixName(Name), Parent.Name);
+            sb.AppendFormat(CultureInfo.InvariantCulture, "func (instance *{1}) {0}(", FixName(Name), Parent.Name);
             if (Params.Count > 0)
             {
                 foreach (var item in Params)
@@ -179,7 +179,7 @@ namespace Microsoft.WmiCodeGen.GO
             else
             {
                 sb.AppendFormat(CultureInfo.InvariantCulture,
-                             "result, err := InvokeMethodWithReturn(\"{0}\", {1}, null, returnValue interface{});\n",
+                             "result, err := InvokeMethodWithReturn(\"{0}\", {1}, null, returnValue interface{{}});\n",
                              mData.Name, mData.InParameters != null ? "arguments" : "null");
 
                 if (ReturnType.Equals("void", StringComparison.OrdinalIgnoreCase))

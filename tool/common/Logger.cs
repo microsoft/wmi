@@ -22,7 +22,9 @@ namespace Microsoft.WmiCodeGen.Common
         public static void Exception(Exception e, string message, params object[] arguments)
         {
             Log(e.Message);
+            Log(e.StackTrace);
             Log(message, arguments);
+            throw e;
         }
         public static void Info(string message, params object[] arguments)
         {

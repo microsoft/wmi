@@ -27,8 +27,8 @@ namespace Microsoft.WmiCodeGen.Common
             GetMethodReturnType(mData, out tmpType);
             ReturnSystemType = tmpType;
             Params.AddRange(GetWmiMethodParams(mData));
-            BodyText = GetMethodBodyText(mData);
             ReturnType = (ReturnTypeIsArray ? "[]" : "");
+            BodyText = GetMethodBodyText(mData);
         }
         public string ReturnType { get; set; }
 

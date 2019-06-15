@@ -31,5 +31,24 @@ namespace Microsoft.WmiCodeGen.CSharp
         {
             throw new NotImplementedException();
         }
+
+        public override string GetModuleName(string source)
+        {
+            return CSWmiSource.GetModuleName(source);
+        }
+
+        public override void GenerateSources(string outputDir)
+        {
+            string path = Path.Combine(Environment.CurrentDirectory, outputDir, Name, CSNamespaceName);
+            if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
+
+            foreach (var item in Modules)
+            {
+                string mpath = Path.Combine(path, item.Value.Name);
+                if (!Directory.Exists(mpath)) Directory.CreateDirectory(mpath);
+                item.Value.GenerateSources(mpath);
+            }
+
+        }
     }
 }

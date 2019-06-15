@@ -26,7 +26,7 @@ func CreateSessionEx(cimwmi *ole.IDispatch, serverName, wmiNamespace string, cre
 
 // CreateSession creates a new session with the server and namespace
 func CreateSession(cimwmi *ole.IDispatch, serverName, wmiNamespace, userName, password, domain string) (*WmiSession, error) {
-	session := WmiSession{
+	return &WmiSession{
 		CimwmiService: cimwmi,
 		ServerName:    serverName,
 		Namespace:     wmiNamespace,
@@ -34,8 +34,7 @@ func CreateSession(cimwmi *ole.IDispatch, serverName, wmiNamespace, userName, pa
 		Password:      password,
 		Domain:        domain,
 		Status:        wmi.Created,
-	}
-	return &session, nil
+	}, nil
 }
 
 // Connect the wmi session
@@ -108,24 +107,4 @@ func (c WmiSession) QueryInstances(namespaceName, queryDialect, queryExpression 
 	count := int64(value.Val)
 
 	return nil, nil
-}
-
-// Dispose
-func (c WmiSession) EnumerateReferencingInstances(namespaceName string, sourceInstance wmi.Instance, associationClassName, sourceRole string) (*[]wmi.Instance, error) {
-	panic("not implemented")
-}
-
-// Dispose
-func (c WmiSession) ModifyInstance(namespaceName string, instance wmi.Instance) {
-	panic("not implemented")
-}
-
-// Dispose
-func (c WmiSession) DeleteInstance(namespaceName string, instance wmi.Instance) {
-	panic("not implemented")
-}
-
-// InvokeMethod
-func (c WmiSession) InvokeMethod(namespaceName string, instance *wmi.Instance, methodName string, methodParameters *[]wmi.MethodParameter) (wmi.MethodResult, error) {
-
 }

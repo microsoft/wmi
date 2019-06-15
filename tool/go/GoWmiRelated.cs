@@ -21,7 +21,7 @@ namespace Microsoft.WmiCodeGen.GO
             
             string methodName = multipleElement ? "GetAllRelated" : "GetRelated";
             string propertyName = Name.Contains('_') ? Name.Split('_')[1] : Name;
-            sb.AppendFormat(CultureInfo.InvariantCulture, "func  GetRelated{0}(value {2}{1}) (error) {\n", 
+            sb.AppendFormat(CultureInfo.InvariantCulture, "func  GetRelated{0}(value {2}{1}) (error) {{\n", 
                 propertyName, Name, multipleElement ? "[]" : "");
             sb.AppendFormat(CultureInfo.InvariantCulture, "\t return {1}(\"{0}\", value); \n", Name, methodName);
             sb.AppendLine("}");

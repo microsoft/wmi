@@ -12,10 +12,11 @@ namespace Microsoft.WmiCodeGen.Common
     {
         public WmiSource Parent { get; private set; }
 
-        public WmiClass(WmiSource wSource)
+        public WmiClass(WmiSource wSource, string baseLibDerivation = "WmiInstance")
         {
             Name = wSource.Name;
-            Derivation = "WmiInstance";
+            BaseLibDerivation = baseLibDerivation;
+            Derivation = BaseLibDerivation;
             Parent = wSource;
             Methods = new List<WmiMethod>();
             Properties = new List<WmiProperty>();
@@ -24,30 +25,7 @@ namespace Microsoft.WmiCodeGen.Common
             Logger.Debug("WmiClass {0} Namespace {1}", Name, wSource.Parent.Parent.Name);
         }
 
-        protected abstract WmiSource GetWmiSource(string sourceName, WmiModule wModule);
-        private void AddReference(string className)
-        {
-            if (!Parent.Parent.Parent.HasSource(className) &&
-                    !Parent.CheckClass(className, Parent.Parent.Parent.Name))
-            {
-                Logger.Debug("AddReference: Class not found in the current Namespace. Start searching from root namespace");
-                string reference = Parent.GetReference(className, "root");
-                if (!string.IsNullOrEmpty(reference))
-                {
-                    Logger.Debug("WmiClass AddReference {0}", reference);
-                    Parent.AddReference(reference);
-                    Parent.Parent.Parent.AddReference(reference);
-                }
-                else
-                {
-                    Logger.Debug("No reference found anywhere. Create a Dummy Source - {0}", className);
-                    Parent.Parent.Parent.AddSource(GetWmiSource(className,
-                        Parent.Parent.Parent.AddModule(WmiModule.GetModuleName(className))));
-                }
-            }
-        }
-
-        public WmiClass(ManagementClass wmiClass, WmiSource wSource)
+        public WmiClass(ManagementClass wmiClass, WmiSource wSource, string baseLibDerivation = "WmiInstance")
         {
             Parent = wSource;
             string className = FixClassName(wmiClass.ClassPath.ClassName);
@@ -55,8 +33,8 @@ namespace Microsoft.WmiCodeGen.Common
             Abstract = IFormat.IsAbstract(wmiClass.Qualifiers);
 
             //sb.Append(GetDescriptionText(wmiClass.Qualifiers));
-
-            string baseClass = "WmiInstance";
+            BaseLibDerivation = baseLibDerivation;
+            string baseClass = BaseLibDerivation;
 
             if (wmiClass.Derivation.Count > 0)
             {
@@ -78,7 +56,12 @@ namespace Microsoft.WmiCodeGen.Common
             } 
 #endif
         }
+
+        protected abstract WmiSource GetWmiSource(string sourceName, WmiModule wModule);
+        protected abstract void AddReference(string className);
+        
         public string Derivation { get; set; }
+        public string BaseLibDerivation { get; set; }
 
         public bool Abstract { get; set; }
 
@@ -234,7 +217,7 @@ namespace Microsoft.WmiCodeGen.Common
             {
                 WmiRelated wrelated = Related.Find(r => r.Name.Equals(related));
                 if (wrelated != null) return true;
-                if (Derivation != "WmiInstance")
+                if (Derivation != BaseLibDerivation)
                 {
                     return Parent.Parent.Parent.HasRelated(Derivation, related);
                 }

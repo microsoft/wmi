@@ -8,18 +8,19 @@ import (
 	"github.com/microsoft/wmicodegen/go/wmi"
 )
 
+// WmiInstance is a representation of a WMI instance
 type WmiInstance struct {
 	class    *WmiClass
 	session  *WmiSession
 	instance *ole.IDispatch
 }
 
+// WmiInstanceCollection is a slice of WmiInstance
 type WmiInstanceCollection []WmiInstance
 
-// GetInstance
-func (c WmiInstance) GetInstance() string {
+// GetInstance returns the latest Instance
+func (c WmiInstance) GetInstance() (*wmi.Instance, error) {
 	panic("not implemented")
-
 }
 
 // GetProperty gets the property of the instance specified by name and returns in value
@@ -41,7 +42,7 @@ func (c WmiInstance) GetProperty(name string, value interface{}) error {
 
 }
 
-// SetProperty
+// SetProperty sets a value of property representation by name with value
 func (c WmiInstance) SetProperty(name string, value interface{}) error {
 	rawResult, err := oleutil.PutProperty(c.instance, name)
 	if err != nil {
@@ -53,7 +54,7 @@ func (c WmiInstance) SetProperty(name string, value interface{}) error {
 
 }
 
-// ResetProperty
+// ResetProperty resets a property
 func (c WmiInstance) ResetProperty(name string) error {
 	return c.SetProperty(name, nil)
 }
@@ -140,9 +141,9 @@ func (c WmiInstance) InvokeMethodWithReturn(methodName string, methodParameters 
 	if err != nil {
 		return 0, err
 	}
-	returnValue = result.ReturnValue.Value
+	tmpValue := result.ReturnValue.Value
 
-	switch reflect.Value(returnValue).Kind {
+	switch reflect.Value(tmpValue).Kind {
 	case reflect.Bool:
 		return uint32(returnValue), nil
 	case reflect.Uint, reflect.Int:
@@ -153,19 +154,19 @@ func (c WmiInstance) InvokeMethodWithReturn(methodName string, methodParameters 
 }
 
 // GetRelated
-func (c WmiInstance) GetRelated(resultClassName string) *[]wmi.Instance {
+func (c WmiInstance) GetRelated(resultClassName string) (*[]wmi.Instance, error) {
 	panic("not implemented")
 
 }
 
 // Rel
-func (c WmiInstance) GetRelatedEx(resultClassName, associatedClassName, resultRole, sourceRole string) *[]wmi.Instance {
+func (c WmiInstance) GetRelatedEx(resultClassName, associatedClassName, resultRole, sourceRole string) (*[]wmi.Instance, error) {
 	panic("not implemented")
 
 }
 
 // GetAssociated
-func (c WmiInstance) GetAssociated(resultClassName, associatedClassName, resultRole, sourceRole string) *[]wmi.Instance {
+func (c WmiInstance) GetAssociated(resultClassName, associatedClassName, resultRole, sourceRole string) (*[]wmi.Instance, error) {
 
 	rawResult, err := oleutil.CallMethod(c.instance, "Associators")
 	if err != nil {
@@ -176,7 +177,7 @@ func (c WmiInstance) GetAssociated(resultClassName, associatedClassName, resultR
 }
 
 // EnumerateReferencingInstances
-func (c WmiInstance) EnumerateReferencingInstances(associatedClassName, sourceRole string) *[]wmi.Instance {
+func (c WmiInstance) EnumerateReferencingInstances(associatedClassName, sourceRole string) (*[]wmi.Instance, error) {
 	rawResult, err := oleutil.CallMethod(c.instance, "References")
 	if err != nil {
 		return nil, err

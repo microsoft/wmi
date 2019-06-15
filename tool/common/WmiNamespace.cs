@@ -36,16 +36,42 @@ namespace Microsoft.WmiCodeGen.Common
             return namespaceList[moduleName];
         }
 
-        WmiModule GetModule(string moduleName)
+        protected WmiModule GetModule(string moduleName)
         {
             WmiModule module = null;
             namespaceList.TryGetValue(moduleName, out module);
             return module;
         }
+        protected abstract WmiSource GetWmiSource(ManagementClass wmiClass, WmiModule wModule);
+
+        public abstract string GetModuleName(string source);
+        public WmiSource GetSource(string className)
+        {
+            if (className.Equals("wmi.Instance") || className.Equals("WmiInstance")) // Golang base class.
+                return null;
+
+            string moduleName = GetModuleName(className);
+            WmiModule module = GetModule(moduleName);
+            if (module != null)
+            {
+                if (module.Sources.ContainsKey(className))
+                {
+                    return module.Sources[className];
+                }
+            }
+
+            using (ManagementClass mClass = new ManagementClass(Name, className, null))
+            {
+                WmiSource wSource = GetWmiSource(mClass, AddModule(moduleName));
+                AddSource(wSource);
+                return wSource;
+            }
+
+        }
 
         public void AddSource(WmiSource wSource)
         {
-            string moduleName = WmiModule.GetModuleName(wSource.Name);
+            string moduleName = GetModuleName(wSource.Name);
             WmiModule module = GetModule(moduleName);
             if (module == null)
             {
@@ -69,9 +95,14 @@ namespace Microsoft.WmiCodeGen.Common
                 sourceReferences.Add(GetReference(reference));
         }
 
+        protected virtual string GetCommonModuleName()
+        {
+            return "Common";
+        }
+
         public void AddEnum(WmiEnum wEnum)
         {
-            string moduleName = "Common";
+            string moduleName = GetCommonModuleName();
             WmiModule module = GetModule(moduleName);
             if (module == null)
             {
@@ -82,7 +113,7 @@ namespace Microsoft.WmiCodeGen.Common
 
         public WmiEnum GetEnum(string enumName)
         {
-            string moduleName = "Common";
+            string moduleName = GetCommonModuleName();
             WmiModule module = GetModule(moduleName);
             if (module != null)
             {
@@ -120,20 +151,9 @@ namespace Microsoft.WmiCodeGen.Common
         } 
 #endif
         public string CSNamespaceName { get; private set; }
+        public abstract void GenerateSources(string outputDir);
 
-        public void GenerateSources(string outputDir)
-        {
-            string path = Path.Combine(Environment.CurrentDirectory, outputDir, Name, CSNamespaceName);
-            if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
-
-            foreach (var item in Modules)
-            {
-                string mpath = Path.Combine(path, item.Value.Name);
-                if (!Directory.Exists(mpath)) Directory.CreateDirectory(mpath);
-                item.Value.GenerateSources(mpath);
-            }
-
-        }
+        
         private Dictionary<string, WmiSource> GenerateWmiSources()
         {
             Dictionary<string, WmiSource> wSource = new Dictionary<string, WmiSource>();
@@ -165,9 +185,9 @@ namespace Microsoft.WmiCodeGen.Common
 
         public bool HasSource(string sourceName)
         {
-            if (sourceName.Equals("WmiInstance")) return false;
+            if (sourceName.Equals("WmiInstance") || sourceName.Equals("wmi.Instance")) return false;
 
-            string moduleName = WmiModule.GetModuleName(sourceName);
+            string moduleName = GetModuleName(sourceName);
             WmiModule module = GetModule(moduleName);
             if (module != null)
             {
@@ -178,30 +198,5 @@ namespace Microsoft.WmiCodeGen.Common
             }
             return false;
         }
-
-        protected abstract WmiSource GetWmiSource(ManagementClass wmiClass, WmiModule wModule);
-        public WmiSource GetSource(string className)
-        {
-            if (className.Equals("WmiInstance")) return null;
-
-            string moduleName = WmiModule.GetModuleName(className);
-            WmiModule module = GetModule(moduleName);
-            if (module != null)
-            {
-                if (module.Sources.ContainsKey(className))
-                {
-                    return module.Sources[className];
-                }
-            }
-
-            using (ManagementClass mClass = new ManagementClass(Name, className, null))
-            {
-                WmiSource wSource = GetWmiSource(mClass, AddModule(moduleName));
-                AddSource(wSource);
-                return wSource;
-            }
-
-        }
-
     }
 }

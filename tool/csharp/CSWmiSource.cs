@@ -131,10 +131,89 @@ namespace Microsoft.WmiCodeGen.CSharp
             return new CSWmiEnum(enumName, wSource as CSWmiSource);
         }
 
-        protected override WmiSource GetWmiSource(string sourceName, WmiModule wModule)
+        protected WmiSource GetWmiSource(string sourceName, WmiModule wModule)
         {
             return new CSWmiSource(sourceName, wModule);
         }
 
+
+        public override string GetType(PropertyData pData, out Type type)
+        {
+            type = ConvertCimTypeToSystemType(pData.Type);
+            string typeName = type.Name;
+            if (pData.Type == CimType.Object || pData.Type == CimType.Reference)
+            {
+                object typeValue;
+                if (IFormat.TryGetQualifierValue(pData.Qualifiers, "CimType", out typeValue))
+                {
+                    string typeValueString = typeValue.ToString();
+                    if (typeValueString.Contains(":"))
+                    {
+                        string[] typeValues = typeValueString.Split(new char[] { ':' });
+                        if (typeValues.Length > 1)
+                        {
+                            // Add reference to this type
+                            typeName = WmiClass.FixClassName(typeValues[1]);
+
+                            if (!typeName.Equals("unint32", StringComparison.OrdinalIgnoreCase))
+                            {
+                                if (!Parent.Parent.HasSource(typeName) &&
+                                    !CheckClass(typeName, Parent.Parent.Name))
+                                {
+                                    // Class not found in the current Namespace. Start searching from root namespace
+                                    Logger.Debug("Class not found in the current Namespace." +
+                                    " Start searching from root namespace - {0}",
+                                        Namespace);
+                                    string reference = GetReference(typeName, "root");
+                                    if (!string.IsNullOrEmpty(reference))
+                                    {
+                                        AddReference(reference);
+                                        Parent.Parent.AddReference(reference);
+                                    }
+                                    else
+                                    {
+                                        // No reference found anywhere. Create a Dummy Source
+                                        Parent.Parent.AddSource(GetWmiSource(typeName, Parent.Parent.AddModule(CSWmiSource.GetModuleName(typeName))));
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                type = typeof(UInt32);
+                            }
+                        }
+                    }
+                }
+            }
+            else if (pData.Type != CimType.Boolean && IFormat.HasQualifier(pData.Qualifiers, "values"))
+            {
+                WmiEnum wEnum = GetEnum(pData);
+                if (wEnum != null)
+                {
+                    typeName = wEnum.Name;
+                }
+                else typeName = type.Name;
+            }
+            return FixTypeName(typeName);
+            //return pData.IsArray ? typeName + "[]" : typeName;
+        }
+
+        private string FixTypeName(string name)
+        {
+            if (name.Equals("unint32", StringComparison.OrdinalIgnoreCase)) return typeof(UInt32).Name;
+            return name;
+        }
+
+        public static string GetModuleName(string className)
+        {
+            if (className.StartsWith("__")) return "System";
+            string[] classPrefixes = className.Split(new char[] { '_' });
+
+            if (classPrefixes.Length > 1)
+            {
+                return classPrefixes[0];
+            }
+            return "Common";
+        }
     }
 }

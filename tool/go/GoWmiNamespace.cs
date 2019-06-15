@@ -2,11 +2,9 @@
 // Licensed under the MIT license.
 
 using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Management;
-using System.Text;
 using Microsoft.WmiCodeGen.Common;
 
 namespace Microsoft.WmiCodeGen.GO
@@ -30,6 +28,29 @@ namespace Microsoft.WmiCodeGen.GO
         public override string GetSourceCode()
         {
             throw new NotImplementedException();
+        }
+
+        public override string GetModuleName(string source)
+        {
+            return Name.Split(new char[] { '/' }).Last();
+        }
+
+        protected override string GetCommonModuleName()
+        {
+            return GetModuleName("Common");
+        }
+
+        public override void GenerateSources(string outputDir)
+        {
+            string path = Path.Combine(Environment.CurrentDirectory, outputDir, Name);
+            if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
+
+            foreach (var item in Modules)
+            {
+                if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+                item.Value.GenerateSources(path);
+            }
+
         }
     }
 }

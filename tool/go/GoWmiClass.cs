@@ -14,12 +14,12 @@ namespace Microsoft.WmiCodeGen.GO
     public class GOWmiClass : WmiClass
     {
         public GOWmiClass(GOWmiSource wSource)
-            : base(wSource)
+            : base(wSource, "wmi.Instance")
         {
         }
 
         public GOWmiClass(ManagementClass wmiClass, GOWmiSource wSource)
-            : base(wmiClass, wSource)
+            : base(wmiClass, wSource, "wmi.Instance")
         {
 
         }
@@ -39,6 +39,8 @@ namespace Microsoft.WmiCodeGen.GO
             StringBuilder sb = new StringBuilder();
             // Create the struct
             sb.AppendFormat(CultureInfo.InvariantCulture,
+                "\n// {0} struct", Name);
+            sb.AppendFormat(CultureInfo.InvariantCulture,
                 "\ntype {0} struct {{ \n", Name);
             sb.AppendFormat("\t{0}\n", Derivation);
             foreach (var item in Properties)
@@ -51,14 +53,14 @@ namespace Microsoft.WmiCodeGen.GO
             // Create the setter and getter methods  for properties
             foreach (var item in Properties)
             {
-                sb.AppendLine(item.Setter.Replace("\n", "\n\t"));
-                sb.AppendLine(item.Getter.Replace("\n", "\n\t"));
+                sb.AppendLine(item.Setter);
+                sb.AppendLine(item.Getter);
             }
 
             // Create the methods for the instance
             foreach (var item in Methods)
             {
-                sb.AppendLine(item.GetSourceCode().Replace("\n", "\n\t"));
+                sb.AppendLine(item.GetSourceCode());
             }
 
             foreach (var item in Related.GroupBy(r => r.Name))
@@ -100,6 +102,11 @@ namespace Microsoft.WmiCodeGen.GO
         protected override WmiRelated GetWmiRelated(string name, WmiClass parent)
         {
             return new GOWmiRelated(name, parent as GOWmiClass);
+        }
+
+        protected override void AddReference(string className)
+        {
+           // Do nothing
         }
 
         protected override List<WmiConstructor> GetWmiConstructors()

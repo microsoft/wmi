@@ -24,24 +24,25 @@ namespace Microsoft.WmiCodeGen.GO
         public override string GetSourceCode()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine();
             sb.AppendLine(HeaderComment);
             sb.AppendFormat(CultureInfo.InvariantCulture,
-                "{1} {2}{0}", Type, FixPropertyName(GOWmiMethod.FixName(Name)), IsArray ? "[]" : "");
+                "{1} {2}{0}", Type, 
+                FixPropertyName(GOWmiMethod.FixName(Name)), IsArray ? "[]" : "");
             return sb.ToString();
         }
 
         public override string ToString()
         {
-            return string.Format(CultureInfo.InvariantCulture, "WmiProperty [Name:{0}] [Type:{1}]", Name, Type);
+            return string.Format(CultureInfo.InvariantCulture, 
+                "WmiProperty [Name:{0}] [Type:{1}]", Name, Type);
         }
         private string GetPropertySetter(PropertyData pData)
         {
             return String.Format(CultureInfo.InvariantCulture,
 @"
 // Set{1} sets the value of {1} for the instance
-func (instance {3}) Set{1}(value {2}{0}) error {{ 
-    return SetProperty(""{1}"", value)
+func (instance *{3}) Set{1}(value {2}{0}) error {{ 
+    return instance.SetProperty(""{1}"", value)
 }}", Type, pData.Name, IsArray ? "[]" : "", Parent.Name);
         }
 
@@ -50,8 +51,8 @@ func (instance {3}) Set{1}(value {2}{0}) error {{
             return String.Format(CultureInfo.InvariantCulture,
 @"
 // Get{1} gets the value of {1} for the instance
-func (instance {3}) Get{1}(value {2}{0}) error {{ 
-    return GetProperty(""{1}"", value)
+func (instance *{3}) Get{1}(value {2}{0}) error {{ 
+    return instance.GetProperty(""{1}"", value)
 }}", Type, pData.Name, IsArray ? "[]" : "", Parent.Name);
         }
 

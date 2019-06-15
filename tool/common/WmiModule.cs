@@ -2,6 +2,7 @@
 // Licensed under the MIT license.
 
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Microsoft.WmiCodeGen.Common
 {
@@ -51,6 +52,7 @@ namespace Microsoft.WmiCodeGen.Common
             }
         }
 
+#if false
         public static string GetModuleName(string className)
         {
             if (className.StartsWith("__")) return "System";
@@ -61,7 +63,8 @@ namespace Microsoft.WmiCodeGen.Common
                 return classPrefixes[0];
             }
             return "Common";
-        }
+        } 
+#endif
 
         public override string GetSourceCode()
         {

@@ -106,6 +106,27 @@ namespace Microsoft.WmiCodeGen.CSharp
             return new CSWmiRelated(name, parent as CSWmiClass);
         }
 
+        protected override void AddReference(string className)
+        {
+            if (!Parent.Parent.Parent.HasSource(className) &&
+                    !Parent.CheckClass(className, Parent.Parent.Parent.Name))
+            {
+                Logger.Debug("AddReference: Class not found in the current Namespace. Start searching from root namespace");
+                string reference = Parent.GetReference(className, "root");
+                if (!string.IsNullOrEmpty(reference))
+                {
+                    Logger.Debug("WmiClass AddReference {0}", reference);
+                    Parent.AddReference(reference);
+                    Parent.Parent.Parent.AddReference(reference);
+                }
+                else
+                {
+                    Logger.Debug("No reference found anywhere. Create a Dummy Source - {0}", className);
+                    Parent.Parent.Parent.AddSource(GetWmiSource(className,
+                        Parent.Parent.Parent.AddModule(CSWmiSource.GetModuleName(className))));
+                }
+            }
+        }
         protected override List<WmiConstructor> GetWmiConstructors()
         {
             List<WmiConstructor> wConstructors = new List<WmiConstructor>();

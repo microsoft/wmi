@@ -23,7 +23,4 @@ type Session interface {
 	EnumerateInstances(namespaceName, className string) (*[]Instance, error)
 	QueryInstances(namespaceName, queryDislect, queryExpression string) (*[]Instance, error)
 	EnumerateReferencingInstances(namespaceName string, sourceInstance Instance, associationClassName, sourceRole string) (*[]Instance, error)
-	ModifyInstance(namespaceName string, instance Instance)
-	DeleteInstance(namespaceName string, instance Instance)
-	InvokeMethod(namespaceName string, instance *Instance, methodName string, methodParameters *[]MethodParameter) (MethodResult, error)
 }

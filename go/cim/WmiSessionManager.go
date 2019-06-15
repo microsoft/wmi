@@ -19,7 +19,7 @@ type WmiSessionManager struct {
 	sessions map[string]*WmiSession
 }
 
-func (c WmiSessionManager) Init() error {
+func (c *WmiSessionManager) Init() error {
 	err := ole.CoInitializeEx(0, ole.COINIT_MULTITHREADED)
 	if err != nil {
 		oleCode := err.(*ole.OleError).Code()
@@ -48,7 +48,7 @@ func (c WmiSessionManager) Init() error {
 }
 
 // Dispose clears the WmiSessionManager
-func (c WmiSessionManager) Dispose() {
+func (c *WmiSessionManager) Dispose() {
 	// clear the Sessions
 
 	if c.wmi != nil {
@@ -64,7 +64,6 @@ func (c WmiSessionManager) Dispose() {
 }
 
 // GetSession
-func (c WmiSessionManager) GetSession(serverName, wmiNamespace, userName, password, domain string) (wmi.Session, error) {
-
+func (c *WmiSessionManager) GetSession(serverName, wmiNamespace, userName, password, domain string) (*wmi.Session, error) {
 	return CreateSession(c.wmi, serverName, wmiNamespace, userName, password, domain)
 }
