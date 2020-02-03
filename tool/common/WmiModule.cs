@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.WmiCodeGen.Common
+namespace Microsoft.wmi.Common
 {
     public class WmiModule : IWmiBase
     {

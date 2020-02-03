@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Management;
 
-namespace Microsoft.WmiCodeGen.Common
+namespace Microsoft.wmi.Common
 {
     public abstract  class WmiNamespace : IWmiBase
     {

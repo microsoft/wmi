@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Management;
 using System.Text;
 
-namespace Microsoft.WmiCodeGen.Common
+namespace Microsoft.wmi.Common
 {
     public abstract class WmiClass : IWmiBase
     {

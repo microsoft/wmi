@@ -8,7 +8,7 @@ using System.IO;
 using System.Management;
 using System.Text;
 
-namespace Microsoft.WmiCodeGen.Common
+namespace Microsoft.wmi.Common
 {
     public abstract class WmiSource : IWmiBase
     {

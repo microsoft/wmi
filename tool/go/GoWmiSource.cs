@@ -6,9 +6,9 @@ using System.Globalization;
 using System.IO;
 using System.Management;
 using System.Text;
-using Microsoft.WmiCodeGen.Common;
+using Microsoft.wmi.Common;
 
-namespace Microsoft.WmiCodeGen.GO
+namespace Microsoft.wmi.GO
 {
     public class GOWmiSource : WmiSource
     {
@@ -20,7 +20,7 @@ namespace Microsoft.WmiCodeGen.GO
 // Licensed under the MIT license.
 //
 // Author:
-//      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
+//      Auto Generated on {2} using github.com/microsoft/wmi/tool
 //      Source {3}
 //////////////////////////////////////////////",
                     Name,
@@ -28,8 +28,8 @@ namespace Microsoft.WmiCodeGen.GO
                     DateTime.Now.ToShortDateString(),
                     Parent.Parent.CSNamespaceName
                     );
-            AddReference("github.com/microsoft/wmicodegen/go/cim");
-            AddReference("github.com/microsoft/wmicodegen/go/wmi");
+            AddReference("github.com/microsoft/wmi/go/cim");
+            AddReference("github.com/microsoft/wmi/go/wmi");
             Class = new GOWmiClass(this);
         }
 
@@ -44,7 +44,7 @@ namespace Microsoft.WmiCodeGen.GO
             HeaderComment = string.Format(CultureInfo.InvariantCulture,
 @"// 
 // Author:
-//      Auto Generated on {2} using github.com/microsoft/wmicodegen/tool
+//      Auto Generated on {2} using github.com/microsoft/wmi/tool
 //      Source {3}
 //////////////////////////////////////////////",
                     Name,
@@ -53,8 +53,8 @@ namespace Microsoft.WmiCodeGen.GO
                     Parent.Parent.CSNamespaceName
                     );
 
-            AddReference("github.com/microsoft/wmicodegen/go/cim");
-            AddReference("github.com/microsoft/wmicodegen/go/wmi");
+            AddReference("github.com/microsoft/wmi/go/cim");
+            AddReference("github.com/microsoft/wmi/go/wmi");
             Class = new GOWmiClass(wmiClass, this);
         }
         

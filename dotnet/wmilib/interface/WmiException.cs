@@ -4,7 +4,7 @@
 using System;
 using System.Globalization;
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface
+namespace Microsoft.wmi.DotNet.Interface
 {
     /// <summary>
     /// Hyper-V exception

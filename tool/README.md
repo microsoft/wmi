@@ -2,17 +2,17 @@
 Tool to automatically generate wmi wrapper code for DotNet and GoLang based on a wmi library
 
 ## DotNet
-Library : github.com/microsoft/wmicodegen/dotnet/wmilib
-Pre-Generated wrappers : github.com/microsoft/wmicodegen/dotnet/generated
+Library : github.com/microsoft/wmi/dotnet/wmilib
+Pre-Generated wrappers : github.com/microsoft/wmi/dotnet/generated
 
 ## GoLang
 
-Library used for GoLang : github.com/microsoft/wmicodegen/go/cim
-Pre-Generated wrappers : github.com/microsoft/wmicodegen/go/generated
+Library used for GoLang : github.com/microsoft/wmi/go/cim
+Pre-Generated wrappers : github.com/microsoft/wmi/go/generated
 
 
 ## Usage
-    wmicodegen.exe
+    wmi.exe
          -generatesource
                 Description : Generate Source
                 Example     : /generatesource

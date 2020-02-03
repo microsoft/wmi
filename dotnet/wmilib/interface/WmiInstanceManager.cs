@@ -1,7 +1,7 @@
 ﻿// Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface
+namespace Microsoft.wmi.DotNet.Interface
 {
     using System;
     using System.Collections.Generic;

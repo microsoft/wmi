@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Management;
 
-namespace Microsoft.WmiCodeGen.Common
+namespace Microsoft.wmi.Common
 {
     public abstract class WmiEnum : IWmiBase
     {

@@ -4,7 +4,7 @@
 using System;
 using System.Collections.ObjectModel;
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface
+namespace Microsoft.wmi.DotNet.Interface
 {
     /// <summary>
     /// 

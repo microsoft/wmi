@@ -6,9 +6,9 @@ using System.Globalization;
 using System.IO;
 using System.Management;
 using System.Text;
-using Microsoft.WmiCodeGen.Common;
+using Microsoft.wmi.Common;
 
-namespace Microsoft.WmiCodeGen.CSharp
+namespace Microsoft.wmi.CSharp
 {
     public class CSWmiSource : WmiSource
     {
@@ -26,7 +26,7 @@ namespace Microsoft.WmiCodeGen.CSharp
  *  {1}
  *  
  * Author:
- *      Auto Generated on {2} by github.com/microsoft/wmicodegen
+ *      Auto Generated on {2} by github.com/microsoft/wmi
  *      Source {3}
  * *********************************************/",
                                                 Name,
@@ -57,7 +57,7 @@ namespace Microsoft.WmiCodeGen.CSharp
  *  {1}
  *  
  * Author:
- *      Auto Generated on {2} by github.com/microsoft/wmicodegen
+ *      Auto Generated on {2} by github.com/microsoft/wmi
  *      Source {3}
  * *********************************************/",
                                                 Name,

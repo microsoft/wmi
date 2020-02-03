@@ -10,7 +10,7 @@ import (
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 
-	"github.com/microsoft/wmicodegen/go/wmi"
+	"github.com/microsoft/wmi/go/wmi"
 )
 
 type WmiProperty struct {

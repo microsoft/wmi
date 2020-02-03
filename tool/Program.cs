@@ -2,11 +2,11 @@
 // Licensed under the MIT license.
 
 using System;
-using Microsoft.WmiCodeGen.Common;
-using Microsoft.WmiCodeGen.CSharp;
-using Microsoft.WmiCodeGen.GO;
+using Microsoft.wmi.Common;
+using Microsoft.wmi.CSharp;
+using Microsoft.wmi.GO;
 
-namespace Microsoft.WmiCodeGen.Tool
+namespace Microsoft.wmi.Tool
 {
     class WmiClassGenenerator
     {

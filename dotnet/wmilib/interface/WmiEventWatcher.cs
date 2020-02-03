@@ -3,7 +3,7 @@
 
 using System;
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface
+namespace Microsoft.wmi.DotNet.Interface
 {
     public interface IWmiEventWatcher : IDisposable
     {
