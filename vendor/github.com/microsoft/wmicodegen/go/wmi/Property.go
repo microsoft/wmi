@@ -1,5 +1,11 @@
 package wmi
 
+type WmiType string
+
+const (
+	Int WmiType = "int"
+)
+
 type PropertyFlags int
 
 const (
@@ -59,27 +65,6 @@ const (
 	Borrow PropertyFlags = 1073741824
 	// Adopt
 	//Adopt PropertyFlags  = 2147483648;
-)
-
-type WmiType int
-
-const (
-	WbemCimtypeSint8     WmiType = 16
-	WbemCimtypeUint8     WmiType = 17
-	WbemCimtypeSint16    WmiType = 2
-	WbemCimtypeUint16    WmiType = 18
-	WbemCimtypeSint32    WmiType = 3
-	WbemCimtypeUint32    WmiType = 19
-	WbemCimtypeSint64    WmiType = 20
-	WbemCimtypeUint64    WmiType = 21
-	WbemCimtypeReal32    WmiType = 4
-	WbemCimtypeReal64    WmiType = 5
-	WbemCimtypeBoolean   WmiType = 11
-	WbemCimtypeString    WmiType = 8
-	WbemCimtypeDatetime  WmiType = 101
-	WbemCimtypeReference WmiType = 102
-	WbemCimtypeChar16    WmiType = 103
-	WbemCimtypeObject    WmiType = 13
 )
 
 // Property
