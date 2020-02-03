@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28902.138
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wmicodegen", "wmicodegen.csproj", "{8A5375C9-42A7-486B-BB9D-32CBA6E748C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wmi", "wmi.csproj", "{8A5375C9-42A7-486B-BB9D-32CBA6E748C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using System.Linq;
 using System.IO;
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface
+namespace Microsoft.wmi.DotNet.Interface
 {
     /// <summary>
     /// Hyper-V Error codes

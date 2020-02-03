@@ -7,9 +7,9 @@ using System.Globalization;
 using System.Linq;
 using System.Management;
 using System.Text;
-using Microsoft.WmiCodeGen.Common;
+using Microsoft.wmi.Common;
 
-namespace Microsoft.WmiCodeGen.GO
+namespace Microsoft.wmi.GO
 {
     public class GOWmiClass : WmiClass
     {

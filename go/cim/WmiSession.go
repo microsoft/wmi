@@ -9,7 +9,7 @@ import (
 
 	ole "github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
-	"github.com/microsoft/wmicodegen/go/wmi"
+	"github.com/microsoft/wmi/go/wmi"
 )
 
 // WmiSession struct to hold the current session information

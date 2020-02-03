@@ -4,9 +4,9 @@
 using System.Globalization;
 using System.IO;
 using System.Text;
-using Microsoft.WmiCodeGen.Common;
+using Microsoft.wmi.Common;
 
-namespace Microsoft.WmiCodeGen.GO
+namespace Microsoft.wmi.GO
 {
     public class GOWmiEnum : WmiEnum
     {
@@ -18,7 +18,7 @@ namespace Microsoft.WmiCodeGen.GO
 
 //
 // Author:
-//      Auto Generated on {1} using github.com/microsoft/wmicodegen/tool
+//      Auto Generated on {1} using github.com/microsoft/wmi/tool
 //      Source {0}
 //////////////////////////////////////////////",
                     Name,

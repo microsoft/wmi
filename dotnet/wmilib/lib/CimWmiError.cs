@@ -1,13 +1,13 @@
 ﻿// Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
-using Microsoft.WmiCodeGen.DotNet.Interface;
+using Microsoft.wmi.DotNet.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Microsoft.WmiCodeGen.DotNet.Lib
+namespace Microsoft.wmi.DotNet.Lib
 {
     /// <summary>
     /// Implementation for Cim_Error

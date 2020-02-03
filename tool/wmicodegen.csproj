@@ -7,8 +7,8 @@
     <ProjectGuid>{8A5375C9-42A7-486B-BB9D-32CBA6E748C2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.WmiCodeGen</RootNamespace>
-    <AssemblyName>wmicodegen</AssemblyName>
+    <RootNamespace>Microsoft.wmi</RootNamespace>
+    <AssemblyName>wmi</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>

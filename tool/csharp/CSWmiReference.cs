@@ -2,9 +2,9 @@
 // Licensed under the MIT license.
 
 using System.Globalization;
-using Microsoft.WmiCodeGen.Common;
+using Microsoft.wmi.Common;
 
-namespace Microsoft.WmiCodeGen.CSharp
+namespace Microsoft.wmi.CSharp
 {
     public class CSWmiReference : WmiReference
     {

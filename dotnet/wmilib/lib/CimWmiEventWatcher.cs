@@ -8,9 +8,9 @@ using System.Text;
 using Microsoft.Management.Infrastructure;
 using Microsoft.Management.Infrastructure.Generic;
 using Microsoft.Management.Infrastructure.Options;
-using Microsoft.WmiCodeGen.DotNet.Interface;
+using Microsoft.wmi.DotNet.Interface;
 
-namespace Microsoft.WmiCodeGen.DotNet.Lib
+namespace Microsoft.wmi.DotNet.Lib
 {
     public delegate void WmiObserverHandler(CimSubscriptionResult r);
     /// <summary>

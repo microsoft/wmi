@@ -11,9 +11,9 @@ using Microsoft.Management.Infrastructure.Options;
 using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Collections.Concurrent;
-using Microsoft.WmiCodeGen.DotNet.Interface;
+using Microsoft.wmi.DotNet.Interface;
 
-namespace Microsoft.WmiCodeGen.DotNet.Lib
+namespace Microsoft.wmi.DotNet.Lib
 {
     /// <summary>
     /// 

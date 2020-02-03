@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.Management.Infrastructure;
 using System.Collections.ObjectModel;
 using Microsoft.Management.Infrastructure.Options;
-using Microsoft.WmiCodeGen.DotNet.Interface;
+using Microsoft.wmi.DotNet.Interface;
 
-namespace Microsoft.WmiCodeGen.DotNet.Lib
+namespace Microsoft.wmi.DotNet.Lib
 {
     public class WmiClass : IWmiClass
     {

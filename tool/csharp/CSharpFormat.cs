@@ -1,9 +1,9 @@
 ﻿// Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-using Microsoft.WmiCodeGen.Common;
+using Microsoft.wmi.Common;
 
-namespace Microsoft.WmiCodeGen.CSharp
+namespace Microsoft.wmi.CSharp
 {
     public class CSharpFormat : IFormat
     {

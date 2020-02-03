@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface
+namespace Microsoft.wmi.DotNet.Interface
 {
     public enum WhereOperation
     {

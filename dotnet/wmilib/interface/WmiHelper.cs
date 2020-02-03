@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Globalization;
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface.Helper
+namespace Microsoft.wmi.DotNet.Interface.Helper
 {
     /// <summary>
     /// Wrapper for WMI Helper

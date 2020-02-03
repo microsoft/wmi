@@ -1,7 +1,7 @@
 ﻿// Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-namespace Microsoft.WmiCodeGen.DotNet.Interface
+namespace Microsoft.wmi.DotNet.Interface
 {
     using System;
     using System.Collections.Generic;
@@ -14,15 +14,15 @@ namespace Microsoft.WmiCodeGen.DotNet.Interface
 
     public class WmiInstanceFactory
     {
-        private static string LegacyWmiAssemblyName = "Microsoft.WmiCodeGen.DotNet.Interface.Legacy";
+        private static string LegacyWmiAssemblyName = "Microsoft.wmi.DotNet.Interface.Legacy";
 
-        //private static string WmiInstanceManagerName = "Microsoft.WmiCodeGen.DotNet.Interface.WmiInstanceManager";
+        //private static string WmiInstanceManagerName = "Microsoft.wmi.DotNet.Interface.WmiInstanceManager";
 
-        private static string CimWmiAssemblyName = "Microsoft.WmiCodeGen.DotNet.Interface.Cim";
+        private static string CimWmiAssemblyName = "Microsoft.wmi.DotNet.Interface.Cim";
 
-        private static string WmiInstanceManagerName = "Microsoft.WmiCodeGen.DotNet.Interface.WmiInstanceManager";
+        private static string WmiInstanceManagerName = "Microsoft.wmi.DotNet.Interface.WmiInstanceManager";
 
-        private static string CssCimWmiAssemblyName = "Microsoft.WmiCodeGen.DotNet.Interface.Cim.CSS";
+        private static string CssCimWmiAssemblyName = "Microsoft.wmi.DotNet.Interface.Cim.CSS";
 
         private static Dictionary<string, IWmiInstanceManager> WmiInstanceManagerCollection = new Dictionary<string, IWmiInstanceManager>();
 
