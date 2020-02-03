@@ -1,0 +1,5 @@
+# github.com/go-ole/go-ole v1.2.4
+github.com/go-ole/go-ole
+github.com/go-ole/go-ole/oleutil
+# github.com/microsoft/wmicodegen v0.0.0-20190615015912-01c5cbc6013d
+github.com/microsoft/wmicodegen/go/wmi

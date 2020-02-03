@@ -1,7 +1,13 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT license.
+
 package cim
 
 import (
-	"github.com/go-ole/go-ole"
+	"fmt"
+	"strings"
+
+	ole "github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 	"github.com/microsoft/wmicodegen/go/wmi"
 )
@@ -20,14 +26,14 @@ type WmiSession struct {
 }
 
 // CreateSessionEx creates a session based on credentials
-func CreateSessionEx(cimwmi *ole.IDispatch, serverName, wmiNamespace string, credentials wmi.Credentials) (*WmiSession, error) {
-	return CreateSession(cimwmi, serverName, wmiNamespace, credentials.UserName, credentials.Password, credentials.Domain)
+func CreateSessionEx(CimwmiService *ole.IDispatch, serverName, wmiNamespace string, credentials wmi.Credentials) (*WmiSession, error) {
+	return CreateSession(CimwmiService, wmiNamespace, serverName, credentials.Domain, credentials.UserName, credentials.Password)
 }
 
 // CreateSession creates a new session with the server and namespace
-func CreateSession(cimwmi *ole.IDispatch, serverName, wmiNamespace, userName, password, domain string) (*WmiSession, error) {
+func CreateSession(CimwmiService *ole.IDispatch, wmiNamespace, serverName, domain, userName, password string) (*WmiSession, error) {
 	return &WmiSession{
-		CimwmiService: cimwmi,
+		CimwmiService: CimwmiService,
 		ServerName:    serverName,
 		Namespace:     wmiNamespace,
 		Username:      userName,
@@ -38,25 +44,35 @@ func CreateSession(cimwmi *ole.IDispatch, serverName, wmiNamespace, userName, pa
 }
 
 // Connect the wmi session
-func (c WmiSession) Connect() (bool, error) {
+func (c *WmiSession) Connect() (bool, error) {
 	var err error
-	c.RawSession, err = oleutil.CallMethod(c.CimwmiService, "ConnectServer", nil)
+	// Node that we are connected through SWbemLocator, which uses the scripting language syntax for ConnectServer
+	// This means the first parameter of the call is the name of the server, and the second parameter is the name of the namespace
+	// (as opposed to C++ where these two are exposed as one parameter)
+	// See here for an example illustrating the scripting syntax: https://docs.microsoft.com/en-us/windows/win32/wmisdk/connecting-to-wmi-with-vbscript
+	c.RawSession, err = oleutil.CallMethod(
+		c.CimwmiService, "ConnectServer", strings.Join([]string{c.ServerName, c.Domain}, "."), c.Namespace, c.Username, c.Password, "")
 	if err != nil {
 		return false, err
 	}
 	c.Session = c.RawSession.ToIDispatch()
 	c.Status = wmi.Connected
+
+	if c.Session == nil {
+		panic("Returned session is null")
+	}
+
 	return true, nil
 }
 
 // Close the wmi session
-func (c WmiSession) Close() {
+func (c *WmiSession) Close() {
 	c.RawSession.Clear()
 	c.Status = wmi.Disconnected
 }
 
 // Dispose the wmi session
-func (c WmiSession) Dispose() {
+func (c *WmiSession) Dispose() {
 	if c.Status != wmi.Disposed {
 		c.Close()
 		c.Status = wmi.Disposed
@@ -64,32 +80,110 @@ func (c WmiSession) Dispose() {
 }
 
 // TestConnection
-func (c WmiSession) TestConnection() bool {
+func (c *WmiSession) TestConnection() bool {
 	panic("not implemented")
 }
 
-// GetClass
-func (c WmiSession) GetClass(namespaceName, className string) (*wmi.Class, error) {
+// Tells WMI to create a new class for us
+func (c *WmiSession) CreateNewClass() (*WmiClass, error) {
+	rawResult, err := c.Session.CallMethod("Get")
+	if err != nil {
+		return nil, err
+	}
+
+	return CreateWmiClass(rawResult, c)
+}
+
+func (c *WmiSession) GetClass(classDefinition string) (*WmiClass, error) {
+	rawResult, err := c.Session.CallMethod("Get", classDefinition)
+	if err != nil {
+		return nil, err
+	}
+
+	return CreateWmiClass(rawResult, c)
+}
+
+// EnumerateClasses
+func (c *WmiSession) EnumerateClasses(className string) ([]*WmiClass, error) {
+	return c.QueryClasses("SELECT * FROM meta_class")
+}
+
+// QueryClasses
+func (c *WmiSession) QueryClasses(queryString string) ([]*WmiClass, error) {
+	enum, err := c.PerformRawQuery(queryString)
+	if err != nil {
+		return nil, err
+	}
+	defer enum.Release()
+
+	wmiClasses := []*WmiClass{}
+	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
+		if err != nil {
+			return nil, err
+		}
+
+		wmiClass, err := CreateWmiClass(&tmp, c)
+		if err != nil {
+			return nil, err
+		}
+
+		wmiClasses = append(wmiClasses, wmiClass)
+	}
+
+	return wmiClasses, nil
+}
+
+// GetInstance
+func (c *WmiSession) GetInstance(path string) (*WmiInstance, error) {
+	rawResult, err := c.Session.CallMethod("Get", path)
+	if err != nil {
+		return nil, err
+	}
+
+	return CreateWmiInstance(rawResult, c)
+}
+
+// EnumerateInstances
+func (c *WmiSession) EnumerateInstances(className string) ([]*WmiInstance, error) {
+	return c.QueryInstances("SELECT * FROM " + className)
+}
+
+// QueryInstances
+func (c *WmiSession) QueryInstances(queryExpression string) ([]*WmiInstance, error) {
+	enum, err := c.PerformRawQuery(queryExpression)
+	if err != nil {
+		return nil, err
+	}
+	defer enum.Release()
+
+	wmiInstances := []*WmiInstance{}
+	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
+		if err != nil {
+			return nil, err
+		}
+
+		wmiInstance, err := CreateWmiInstance(&tmp, c)
+		if err != nil {
+			return nil, err
+		}
+
+		wmiInstances = append(wmiInstances, wmiInstance)
+	}
+
+	return wmiInstances, nil
+}
+
+// QueryInstancesEx
+func (c *WmiSession) QueryInstancesEx(query wmi.Query) (*[]wmi.Instance, error) {
 	panic("not implemented")
 }
 
-//GetInstance
-func (c WmiSession) GetInstance(namespaceName string, instance *wmi.Instance) (*wmi.Instance, error) {
+// EnumerateReferencingInstances
+func (c *WmiSession) EnumerateReferencingInstances(namespaceName string, sourceInstance WmiInstance, associationClassName, sourceRole string) (*[]WmiInstance, error) {
 	panic("not implemented")
 }
 
-// Dispose
-func (c WmiSession) EnumerateClasses(namespaceName, className string) (*[]wmi.Class, error) {
-	panic("not implemented")
-}
-
-// Dispose
-func (c WmiSession) EnumerateInstances(namespaceName, className string) (*[]wmi.Instance, error) {
-	panic("not implemented")
-}
-
-// Dispose
-func (c WmiSession) QueryInstances(namespaceName, queryDialect, queryExpression string) (*[]wmi.Instance, error) {
+func (c *WmiSession) PerformRawQuery(queryExpression string) (*ole.IEnumVARIANT, error) {
 	rawResult, err := c.Session.CallMethod("ExecQuery", queryExpression)
 	if err != nil {
 		return nil, err
@@ -98,13 +192,32 @@ func (c WmiSession) QueryInstances(namespaceName, queryDialect, queryExpression 
 	result := rawResult.ToIDispatch()
 	defer rawResult.Clear()
 
-	value, err := oleutil.GetProperty(result, "Count")
+	// Doc: https://docs.microsoft.com/en-us/previous-versions/windows/desktop/automat/dispid-constants
+	enum_property, err := result.GetProperty("_NewEnum")
 	if err != nil {
 		return nil, err
 	}
+	defer enum_property.Clear()
 
-	defer value.Clear()
-	count := int64(value.Val)
+	// https://docs.microsoft.com/en-us/windows/win32/api/oaidl/nn-oaidl-ienumvariant
+	enum, err := enum_property.ToIUnknown().IEnumVARIANT(ole.IID_IEnumVariant)
+	if err != nil {
+		return nil, err
+	}
+	if enum == nil {
+		return nil, fmt.Errorf("Enum is nil")
+	}
 
-	return nil, nil
+	return enum, err
+}
+
+// Credentials
+func (c *WmiSession) Credentials() *wmi.Credentials {
+	credentials := wmi.Credentials{
+		UserName: c.Username,
+		Password: c.Password,
+		Domain:   c.Domain,
+	}
+
+	return &credentials
 }

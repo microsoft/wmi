@@ -1,0 +1,27 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT license.
+GOCMD=go
+GOBUILD=$(GOCMD) build -v -mod=vendor 
+GOHOSTOS=$(strip $(shell $(GOCMD) env get GOHOSTOS))
+
+TAG ?= $(shell git describe --tags)
+COMMIT ?= $(shell git describe --always)
+BUILD_DATE ?= $(shell date -u +%m/%d/%Y)
+
+PKG := 
+
+all: format library
+ 
+.PHONY: vendor
+vendor:
+	GO111MODULE=on go mod vendor -v
+	GO111MODULE=on go mod tidy
+
+library:
+	GO111MODULE=on GOARCH=amd64 GOOS=windows $(GOBUILD) ./...
+
+format:
+	gofmt -s -w go/cim/ go/wmi/
+
+test:
+	GOOS=windows GO111MODULE=on  GOARCH=amd64 go test -v ./go/...
