@@ -12,6 +12,7 @@ import (
 
 func Test_WmiInstance(t *testing.T) {
 	sessionManager := NewWmiSessionManager()
+	defer sessionManager.Dispose()
 
 	session, err := sessionManager.GetLocalSession("ROOT\\CimV2")
 
@@ -19,8 +20,6 @@ func Test_WmiInstance(t *testing.T) {
 		t.Errorf("sessionManager.GetSession failed with error %v", err)
 		return
 	}
-
-	defer sessionManager.Dispose()
 
 	connected, err := session.Connect()
 
@@ -318,6 +317,10 @@ func Test_NewObjects(t *testing.T) {
 		return
 	}
 
+	// If commit fails here, make sure you allow the current user to write into the ROOT\default WMI namespace
+	// i.e. right click on the start menu -> choose "Computer management" -> select "Services and applications" -> "WMI Control" ->
+	// right click on "WMI control" -> select "Properties" -> select "Security" tab -> browse to "ROOT\Default" and select the node and
+	// left click on the "Security" button -> add your user alias and make sure you have full write permissions.
 	err = class.Commit()
 	if err != nil {
 		t.Errorf("Error: class.Commit() failed with error: %v", err)
