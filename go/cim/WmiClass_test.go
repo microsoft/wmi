@@ -11,6 +11,7 @@ import (
 
 func Test_WmiClass(t *testing.T) {
 	sessionManager := NewWmiSessionManager()
+	defer sessionManager.Dispose()
 
 	session, err := sessionManager.GetLocalSession("ROOT\\CimV2")
 
@@ -18,8 +19,6 @@ func Test_WmiClass(t *testing.T) {
 		t.Errorf("sessionManager.GetSession failed with error %v", err)
 		return
 	}
-
-	defer sessionManager.Dispose()
 
 	connected, err := session.Connect()
 

@@ -43,6 +43,17 @@ func (c *WmiSessionManager) init() error {
 		}
 	}
 
+	// Initialize COM security for the whole process
+	err = CoInitializeSecurity(RPC_C_AUTHN_LEVEL_PKT_PRIVACY, RPC_C_IMP_LEVEL_IMPERSONATE)
+	if err != nil {
+		oleCode := err.(*ole.OleError).Code()
+
+		// Note: RPC_E_TOO_LATE means we have already initialized security.
+		if oleCode != ole.S_OK && oleCode != S_FALSE && oleCode != uintptr(RPC_E_TOO_LATE) {
+			panic("Couldn't initialize COM/DCOM security")
+		}
+	}
+
 	c.unknown, err = oleutil.CreateObject("WbemScripting.SWbemLocator")
 	if err != nil {
 		c.Dispose()

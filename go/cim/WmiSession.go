@@ -1,10 +1,14 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
 
+// This class implements the SWbemServices object
+// Documentation: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemservices
+
 package cim
 
 import (
 	"fmt"
+	"runtime/debug"
 	"strings"
 
 	ole "github.com/go-ole/go-ole"
@@ -43,6 +47,27 @@ func CreateSession(CimwmiService *ole.IDispatch, wmiNamespace, serverName, domai
 	}, nil
 }
 
+type WbemAuthenticationLevelEnum uint32
+
+const (
+	wbemAuthenticationLevelDefault      WbemAuthenticationLevelEnum = 0
+	wbemAuthenticationLevelNone         WbemAuthenticationLevelEnum = 1
+	wbemAuthenticationLevelConnect      WbemAuthenticationLevelEnum = 2
+	wbemAuthenticationLevelCall         WbemAuthenticationLevelEnum = 3
+	wbemAuthenticationLevelPkt          WbemAuthenticationLevelEnum = 4
+	wbemAuthenticationLevelPktIntegrity WbemAuthenticationLevelEnum = 5
+	wbemAuthenticationLevelPktPrivacy   WbemAuthenticationLevelEnum = 6
+)
+
+type WbemImpersonationLevel uint32
+
+const (
+	wbemImpersonationLevelAnonymous   WbemImpersonationLevel = 1
+	wbemImpersonationLevelIdentify    WbemImpersonationLevel = 2
+	wbemImpersonationLevelImpersonate WbemImpersonationLevel = 3
+	wbemImpersonationLevelDelegate    WbemImpersonationLevel = 4
+)
+
 // Connect the wmi session
 func (c *WmiSession) Connect() (bool, error) {
 	var err error
@@ -61,6 +86,36 @@ func (c *WmiSession) Connect() (bool, error) {
 	if c.Session == nil {
 		panic("Returned session is null")
 	}
+
+	// Set the authentication level to packet privacy and impersonation to impersonate
+	// Relevant documentations:
+	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/setting-security-on-an-asynchronous-call
+	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/setting-the-default-process-security-level-using-vbscript
+	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemsecurity
+	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/maintaining-wmi-security
+	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/securing-scripting-clients
+	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/providing-events-securely
+	rawSecurityObject, err := oleutil.GetProperty(c.Session, "Security_")
+	if err != nil {
+		debug.PrintStack()
+		return false, err
+	}
+	securityObject := rawSecurityObject.ToIDispatch()
+	defer rawSecurityObject.Clear()
+
+	rawImpersonationLevel, err := oleutil.PutProperty(securityObject, "ImpersonationLevel", uint32(wbemImpersonationLevelImpersonate))
+	if err != nil {
+		debug.PrintStack()
+		return false, err
+	}
+	defer rawImpersonationLevel.Clear()
+
+	rawAuthenticationLevel, err := oleutil.PutProperty(securityObject, "AuthenticationLevel", uint32(wbemAuthenticationLevelPktPrivacy))
+	if err != nil {
+		debug.PrintStack()
+		return false, err
+	}
+	defer rawAuthenticationLevel.Clear()
 
 	return true, nil
 }
@@ -220,4 +275,28 @@ func (c *WmiSession) Credentials() *wmi.Credentials {
 	}
 
 	return &credentials
+}
+
+// Asynchronous approach to handling events
+// Documentation: https://docs.microsoft.com/en-us/windows/win32/wmisdk/receiving-synchronous-and-semisynchronous-event-notifications
+// Security considerations with Asynchronous calls: https://docs.microsoft.com/en-us/windows/win32/wmisdk/making-an-asynchronous-call-with-vbscript
+func (c *WmiSession) ExecNotificationQueryAsync(eventSink *WmiEventSink, query string) (interface{}, error) {
+	rawResult, err := oleutil.CallMethod(c.Session, "ExecNotificationQueryAsync", eventSink.instance, query)
+	if err != nil {
+		return nil, err
+	}
+	defer rawResult.Clear()
+
+	return GetVariantValue(rawResult)
+}
+
+// Synchronous approach to handling events
+// Documentation: https://docs.microsoft.com/en-us/windows/win32/wmisdk/receiving-synchronous-and-semisynchronous-event-notifications
+func (c *WmiSession) ExecNotificationQuery(query string) (*WmiSynchronousEventsList, error) {
+	rawResult, err := oleutil.CallMethod(c.Session, "ExecNotificationQuery", query)
+	if err != nil {
+		return nil, err
+	}
+
+	return CreateWmiSynchronousEventsList(rawResult, c), nil
 }
