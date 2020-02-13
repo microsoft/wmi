@@ -4,6 +4,7 @@
 package cim
 
 import (
+	"reflect"
 	"unsafe"
 
 	"github.com/go-ole/go-ole"
@@ -97,6 +98,70 @@ func GetVariantValues(rawValue *ole.VARIANT) ([]interface{}, error) {
 		values = append(values, rawValue.Value())
 	} else {
 		values = array.ToValueArray()
+	}
+
+	return values, nil
+}
+
+type DispParams struct {
+	rgvarg            []ole.VARIANT
+	rgdispidNamedArgs []int32
+}
+
+func GetDispParamsFromRaw(dispparams *DISPPARAMS) *DispParams {
+
+	// convert the DISPPARAMS to a slice header
+	params := DispParams{}
+
+	var slice1 []ole.VARIANT
+	sliceHeader := (*reflect.SliceHeader)(unsafe.Pointer(&slice1))
+	sliceHeader.Data = dispparams.rgvarg
+	sliceHeader.Len = int(dispparams.cArgs)
+	sliceHeader.Cap = int(dispparams.cArgs)
+	params.rgvarg = make([]ole.VARIANT, dispparams.cArgs)
+	copy(params.rgvarg, slice1)
+
+	var slice2 []int32
+	sliceHeader = (*reflect.SliceHeader)(unsafe.Pointer(&slice2))
+	sliceHeader.Data = dispparams.rgdispidNamedArgs
+	sliceHeader.Len = int(dispparams.cNamedArgs)
+	sliceHeader.Cap = int(dispparams.cNamedArgs)
+	params.rgdispidNamedArgs = make([]int32, dispparams.cNamedArgs)
+	copy(params.rgdispidNamedArgs, slice2)
+
+	return &params
+}
+
+func GetVariantArrayAsWmiInstances(rawValues []ole.VARIANT, session *WmiSession) ([]*WmiInstance, error) {
+	var wmiInstances []*WmiInstance
+	for _, rawValue := range rawValues {
+		// skip wrong types and empty objects
+		if rawValue.VT != ole.VT_DISPATCH || rawValue.Val == 0 {
+			continue
+		}
+
+		instance, err := CreateWmiInstance(&rawValue, session)
+		if err != nil {
+			return nil, err
+		}
+		wmiInstances = append(wmiInstances, instance)
+	}
+
+	return wmiInstances, nil
+}
+
+func GetVariantArrayValues(rawValues []ole.VARIANT) ([]interface{}, error) {
+	var values []interface{}
+
+	for _, rawValue := range rawValues {
+		array := rawValue.ToArray()
+
+		if array == nil {
+			// Not an array
+			values = append(values, rawValue.Value())
+		} else {
+			values = append(values, array.ToValueArray())
+		}
 	}
 
 	return values, nil
