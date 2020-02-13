@@ -13,7 +13,6 @@
 package cim
 
 import (
-	"log"
 	"reflect"
 	"syscall"
 	"unsafe"
@@ -34,10 +33,11 @@ type WmiEventSink struct {
 	lpVtbl          *WmiEventSinkVtbl
 	ref             int32
 	instance        *ole.IDispatch
-	onObjectReady   func(interface{})
-	onCompleted     func(interface{})
-	onProgress      func(interface{})
-	onObjectPut     func(interface{})
+	session         *WmiSession
+	onObjectReady   func(interface{}, []*WmiInstance)
+	onCompleted     func(interface{}, []*WmiInstance)
+	onProgress      func(interface{}, []*WmiInstance)
+	onObjectPut     func(interface{}, []*WmiInstance)
 	callbackContext interface{}
 }
 
@@ -59,7 +59,7 @@ type DISPPARAMS struct {
 	cNamedArgs        uint32
 }
 
-func CreateWmiEventSink(callbackContext interface{}, onObjectReady func(interface{}), onCompleted func(interface{}), onProgress func(interface{}), onObjectPut func(interface{})) (*WmiEventSink, error) {
+func CreateWmiEventSink(session *WmiSession, callbackContext interface{}, onObjectReady func(interface{}, []*WmiInstance), onCompleted func(interface{}, []*WmiInstance), onProgress func(interface{}, []*WmiInstance), onObjectPut func(interface{}, []*WmiInstance)) (*WmiEventSink, error) {
 	eventSinkObject, err := oleutil.CreateObject(eventSinkObjectName)
 	if err != nil {
 		return nil, err
@@ -85,6 +85,7 @@ func CreateWmiEventSink(callbackContext interface{}, onObjectReady func(interfac
 	wmiEventSink.onObjectPut = onObjectPut
 	wmiEventSink.callbackContext = callbackContext
 	wmiEventSink.instance = eventSinkInstance
+	wmiEventSink.session = session
 
 	return wmiEventSink, nil
 }
@@ -199,23 +200,28 @@ func getTypeInfo(ptypeif *uintptr) uintptr {
 	return uintptr(ole.E_NOTIMPL)
 }
 
-func invoke(this *ole.IDispatch, dispid int, riid *ole.GUID, lcid int, flags int16, dispparams *DISPPARAMS, result *ole.VARIANT, pexcepinfo *ole.EXCEPINFO, nerr *uint) uintptr {
+func invoke(this *ole.IDispatch, dispid int, riid *ole.GUID, lcid int, flags int16, rawdispparams *DISPPARAMS, result *ole.VARIANT, pexcepinfo *ole.EXCEPINFO, nerr *uint) uintptr {
 	pthis := (*WmiEventSink)(unsafe.Pointer(this))
+	dispparams := GetDispParamsFromRaw(rawdispparams)
+	msClusterEventInstances, err := GetVariantArrayAsWmiInstances(dispparams.rgvarg, pthis.session)
+	if err != nil {
+		return ole.S_OK
+	}
+
 	switch dispid {
 	case 1:
-		pthis.onObjectReady(pthis.callbackContext)
+		pthis.onObjectReady(pthis.callbackContext, msClusterEventInstances)
 		return ole.S_OK
 	case 2:
-		pthis.onCompleted(pthis.callbackContext)
+		pthis.onCompleted(pthis.callbackContext, msClusterEventInstances)
 		return ole.S_OK
 	case 3:
-		pthis.onProgress(pthis.callbackContext)
+		pthis.onProgress(pthis.callbackContext, msClusterEventInstances)
 		return ole.S_OK
 	case 4:
-		pthis.onObjectPut(pthis.callbackContext)
+		pthis.onObjectPut(pthis.callbackContext, msClusterEventInstances)
 		return ole.S_OK
 	default:
-		log.Println(dispid)
 	}
 	return ole.E_NOTIMPL
 }

@@ -1,8 +1,11 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
 
-// This class wraps a typicaly SWbemSink object. Its implementation is based on the
-// Documentation: https://docs.microsoft.com/en-us/windows/win32/wmisdk/receiving-synchronous-and-semisynchronous-event-notifications
+// This class wraps a typicaly SWbemEventSource object as returned by SWbemServices.ExecNotificationQuery. Its implementation is based on the
+// Documentations:
+//   https://docs.microsoft.com/en-us/windows/win32/wmisdk/receiving-synchronous-and-semisynchronous-event-notifications
+//   https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemservices-execnotificationquery
+//   https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemeventsource
 
 package cim
 

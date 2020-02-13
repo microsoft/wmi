@@ -14,22 +14,22 @@ type testCallbackContext struct {
 	completed chan bool
 }
 
-func onObjectReady(context interface{}) {
+func onObjectReady(context interface{}, wmiInstances []*WmiInstance) {
 	t := context.(*testCallbackContext)
 	t.completed <- true
 }
 
-func onCompleted(context interface{}) {
+func onCompleted(context interface{}, wmiInstances []*WmiInstance) {
 	t := context.(*testCallbackContext)
 	t.completed <- true
 }
 
-func onProgress(context interface{}) {
+func onProgress(context interface{}, wmiInstances []*WmiInstance) {
 	t := context.(*testCallbackContext)
 	t.completed <- true
 }
 
-func onObjectPut(context interface{}) {
+func onObjectPut(context interface{}, wmiInstances []*WmiInstance) {
 	t := context.(*testCallbackContext)
 	t.completed <- true
 }
@@ -57,7 +57,7 @@ func Test_WmiAsyncEvents(t *testing.T) {
 		test:      t,
 		completed: make(chan bool),
 	}
-	eventSink, err := CreateWmiEventSink(&context, onObjectReady, onCompleted, onProgress, onObjectPut)
+	eventSink, err := CreateWmiEventSink(session, &context, onObjectReady, onCompleted, onProgress, onObjectPut)
 	if err != nil {
 		t.Errorf("CreateWmiEventSink failed with error '%v'", err)
 		return
