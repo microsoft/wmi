@@ -137,6 +137,10 @@ func (c *WmiEventSink) PeekAndDispatchMessages() bool {
 	return msgAvailable
 }
 
+func (c* WmiEventSink) Close() {
+	c.instance.Release()
+}
+
 /////////////////////////////// Private methods and callbacks /////////////////////////////////////////////////////
 
 func queryInterface(this *ole.IUnknown, iid *ole.GUID, punk **ole.IUnknown) uintptr {

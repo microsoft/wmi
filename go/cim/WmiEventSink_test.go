@@ -62,6 +62,7 @@ func Test_WmiAsyncEvents(t *testing.T) {
 		t.Errorf("CreateWmiEventSink failed with error '%v'", err)
 		return
 	}
+	defer eventSink.Close()
 
 	_, err = eventSink.Connect()
 	if err != nil {
