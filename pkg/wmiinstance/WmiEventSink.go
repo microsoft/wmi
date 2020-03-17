@@ -137,7 +137,7 @@ func (c *WmiEventSink) PeekAndDispatchMessages() bool {
 	return msgAvailable
 }
 
-func (c* WmiEventSink) Close() {
+func (c *WmiEventSink) Close() {
 	c.instance.Release()
 }
 
