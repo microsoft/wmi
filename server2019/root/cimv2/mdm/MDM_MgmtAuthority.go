@@ -1,0 +1,138 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2.mdm
+//////////////////////////////////////////////
+package mdm
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// MDM_MgmtAuthority struct
+type MDM_MgmtAuthority struct {
+	cim.WmiInstance
+
+	//
+	AuthorityName string
+
+	//
+	ClientSearchCriteria string
+
+	//
+	ProvisionedCertThumbprint string
+
+	//
+	RootThumbprint string
+
+	//
+	ServerList string
+}
+
+// SetAuthorityName sets the value of AuthorityName for the instance
+func (instance *MDM_MgmtAuthority) SetPropertyAuthorityName(value string) (err error) {
+	return instance.SetProperty("AuthorityName", value)
+}
+
+// GetAuthorityName gets the value of AuthorityName for the instance
+func (instance *MDM_MgmtAuthority) GetPropertyAuthorityName() (value string, err error) {
+	retValue, err := instance.GetProperty("AuthorityName")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetClientSearchCriteria sets the value of ClientSearchCriteria for the instance
+func (instance *MDM_MgmtAuthority) SetPropertyClientSearchCriteria(value string) (err error) {
+	return instance.SetProperty("ClientSearchCriteria", value)
+}
+
+// GetClientSearchCriteria gets the value of ClientSearchCriteria for the instance
+func (instance *MDM_MgmtAuthority) GetPropertyClientSearchCriteria() (value string, err error) {
+	retValue, err := instance.GetProperty("ClientSearchCriteria")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetProvisionedCertThumbprint sets the value of ProvisionedCertThumbprint for the instance
+func (instance *MDM_MgmtAuthority) SetPropertyProvisionedCertThumbprint(value string) (err error) {
+	return instance.SetProperty("ProvisionedCertThumbprint", value)
+}
+
+// GetProvisionedCertThumbprint gets the value of ProvisionedCertThumbprint for the instance
+func (instance *MDM_MgmtAuthority) GetPropertyProvisionedCertThumbprint() (value string, err error) {
+	retValue, err := instance.GetProperty("ProvisionedCertThumbprint")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetRootThumbprint sets the value of RootThumbprint for the instance
+func (instance *MDM_MgmtAuthority) SetPropertyRootThumbprint(value string) (err error) {
+	return instance.SetProperty("RootThumbprint", value)
+}
+
+// GetRootThumbprint gets the value of RootThumbprint for the instance
+func (instance *MDM_MgmtAuthority) GetPropertyRootThumbprint() (value string, err error) {
+	retValue, err := instance.GetProperty("RootThumbprint")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetServerList sets the value of ServerList for the instance
+func (instance *MDM_MgmtAuthority) SetPropertyServerList(value string) (err error) {
+	return instance.SetProperty("ServerList", value)
+}
+
+// GetServerList gets the value of ServerList for the instance
+func (instance *MDM_MgmtAuthority) GetPropertyServerList() (value string, err error) {
+	retValue, err := instance.GetProperty("ServerList")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+//
+
+// <param name="AuthorityName" type="string "></param>
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *MDM_MgmtAuthority) CreateNewAuthority( /* IN */ AuthorityName string) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("CreateNewAuthority", AuthorityName)
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}

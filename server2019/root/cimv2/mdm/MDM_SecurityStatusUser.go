@@ -1,0 +1,144 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2.mdm
+//////////////////////////////////////////////
+package mdm
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// MDM_SecurityStatusUser struct
+type MDM_SecurityStatusUser struct {
+	cim.WmiInstance
+
+	//
+	ConnectedAccountPolicy uint32
+
+	//
+	DeviceEncryptionPolicy uint32
+
+	//
+	EncryptionStatus uint32
+
+	//
+	HasConnectedAccount bool
+
+	//
+	key uint32
+
+	//
+	PasswordStatus uint32
+}
+
+// SetConnectedAccountPolicy sets the value of ConnectedAccountPolicy for the instance
+func (instance *MDM_SecurityStatusUser) SetPropertyConnectedAccountPolicy(value uint32) (err error) {
+	return instance.SetProperty("ConnectedAccountPolicy", value)
+}
+
+// GetConnectedAccountPolicy gets the value of ConnectedAccountPolicy for the instance
+func (instance *MDM_SecurityStatusUser) GetPropertyConnectedAccountPolicy() (value uint32, err error) {
+	retValue, err := instance.GetProperty("ConnectedAccountPolicy")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetDeviceEncryptionPolicy sets the value of DeviceEncryptionPolicy for the instance
+func (instance *MDM_SecurityStatusUser) SetPropertyDeviceEncryptionPolicy(value uint32) (err error) {
+	return instance.SetProperty("DeviceEncryptionPolicy", value)
+}
+
+// GetDeviceEncryptionPolicy gets the value of DeviceEncryptionPolicy for the instance
+func (instance *MDM_SecurityStatusUser) GetPropertyDeviceEncryptionPolicy() (value uint32, err error) {
+	retValue, err := instance.GetProperty("DeviceEncryptionPolicy")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetEncryptionStatus sets the value of EncryptionStatus for the instance
+func (instance *MDM_SecurityStatusUser) SetPropertyEncryptionStatus(value uint32) (err error) {
+	return instance.SetProperty("EncryptionStatus", value)
+}
+
+// GetEncryptionStatus gets the value of EncryptionStatus for the instance
+func (instance *MDM_SecurityStatusUser) GetPropertyEncryptionStatus() (value uint32, err error) {
+	retValue, err := instance.GetProperty("EncryptionStatus")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetHasConnectedAccount sets the value of HasConnectedAccount for the instance
+func (instance *MDM_SecurityStatusUser) SetPropertyHasConnectedAccount(value bool) (err error) {
+	return instance.SetProperty("HasConnectedAccount", value)
+}
+
+// GetHasConnectedAccount gets the value of HasConnectedAccount for the instance
+func (instance *MDM_SecurityStatusUser) GetPropertyHasConnectedAccount() (value bool, err error) {
+	retValue, err := instance.GetProperty("HasConnectedAccount")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// Setkey sets the value of key for the instance
+func (instance *MDM_SecurityStatusUser) SetPropertykey(value uint32) (err error) {
+	return instance.SetProperty("key", value)
+}
+
+// Getkey gets the value of key for the instance
+func (instance *MDM_SecurityStatusUser) GetPropertykey() (value uint32, err error) {
+	retValue, err := instance.GetProperty("key")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPasswordStatus sets the value of PasswordStatus for the instance
+func (instance *MDM_SecurityStatusUser) SetPropertyPasswordStatus(value uint32) (err error) {
+	return instance.SetProperty("PasswordStatus", value)
+}
+
+// GetPasswordStatus gets the value of PasswordStatus for the instance
+func (instance *MDM_SecurityStatusUser) GetPropertyPasswordStatus() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PasswordStatus")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

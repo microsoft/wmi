@@ -1,0 +1,203 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
+package cimv2
+
+// Win32_PhysicalMemory struct
+type Win32_PhysicalMemory struct {
+	CIM_PhysicalMemory
+
+	//
+	Attributes uint32
+
+	//
+	ConfiguredClockSpeed uint32
+
+	//
+	ConfiguredVoltage uint32
+
+	//
+	DeviceLocator string
+
+	//
+	InterleaveDataDepth uint16
+
+	//
+	MaxVoltage uint32
+
+	//
+	MinVoltage uint32
+
+	//
+	SMBIOSMemoryType uint32
+
+	//
+	TypeDetail uint16
+}
+
+// SetAttributes sets the value of Attributes for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyAttributes(value uint32) (err error) {
+	return instance.SetProperty("Attributes", value)
+}
+
+// GetAttributes gets the value of Attributes for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyAttributes() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Attributes")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetConfiguredClockSpeed sets the value of ConfiguredClockSpeed for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyConfiguredClockSpeed(value uint32) (err error) {
+	return instance.SetProperty("ConfiguredClockSpeed", value)
+}
+
+// GetConfiguredClockSpeed gets the value of ConfiguredClockSpeed for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyConfiguredClockSpeed() (value uint32, err error) {
+	retValue, err := instance.GetProperty("ConfiguredClockSpeed")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetConfiguredVoltage sets the value of ConfiguredVoltage for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyConfiguredVoltage(value uint32) (err error) {
+	return instance.SetProperty("ConfiguredVoltage", value)
+}
+
+// GetConfiguredVoltage gets the value of ConfiguredVoltage for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyConfiguredVoltage() (value uint32, err error) {
+	retValue, err := instance.GetProperty("ConfiguredVoltage")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetDeviceLocator sets the value of DeviceLocator for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyDeviceLocator(value string) (err error) {
+	return instance.SetProperty("DeviceLocator", value)
+}
+
+// GetDeviceLocator gets the value of DeviceLocator for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyDeviceLocator() (value string, err error) {
+	retValue, err := instance.GetProperty("DeviceLocator")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetInterleaveDataDepth sets the value of InterleaveDataDepth for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyInterleaveDataDepth(value uint16) (err error) {
+	return instance.SetProperty("InterleaveDataDepth", value)
+}
+
+// GetInterleaveDataDepth gets the value of InterleaveDataDepth for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyInterleaveDataDepth() (value uint16, err error) {
+	retValue, err := instance.GetProperty("InterleaveDataDepth")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMaxVoltage sets the value of MaxVoltage for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyMaxVoltage(value uint32) (err error) {
+	return instance.SetProperty("MaxVoltage", value)
+}
+
+// GetMaxVoltage gets the value of MaxVoltage for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyMaxVoltage() (value uint32, err error) {
+	retValue, err := instance.GetProperty("MaxVoltage")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMinVoltage sets the value of MinVoltage for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyMinVoltage(value uint32) (err error) {
+	return instance.SetProperty("MinVoltage", value)
+}
+
+// GetMinVoltage gets the value of MinVoltage for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyMinVoltage() (value uint32, err error) {
+	retValue, err := instance.GetProperty("MinVoltage")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSMBIOSMemoryType sets the value of SMBIOSMemoryType for the instance
+func (instance *Win32_PhysicalMemory) SetPropertySMBIOSMemoryType(value uint32) (err error) {
+	return instance.SetProperty("SMBIOSMemoryType", value)
+}
+
+// GetSMBIOSMemoryType gets the value of SMBIOSMemoryType for the instance
+func (instance *Win32_PhysicalMemory) GetPropertySMBIOSMemoryType() (value uint32, err error) {
+	retValue, err := instance.GetProperty("SMBIOSMemoryType")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetTypeDetail sets the value of TypeDetail for the instance
+func (instance *Win32_PhysicalMemory) SetPropertyTypeDetail(value uint16) (err error) {
+	return instance.SetProperty("TypeDetail", value)
+}
+
+// GetTypeDetail gets the value of TypeDetail for the instance
+func (instance *Win32_PhysicalMemory) GetPropertyTypeDetail() (value uint16, err error) {
+	retValue, err := instance.GetProperty("TypeDetail")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

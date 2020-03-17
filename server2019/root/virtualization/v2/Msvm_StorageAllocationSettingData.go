@@ -1,0 +1,210 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
+package v2
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// Msvm_StorageAllocationSettingData struct
+type Msvm_StorageAllocationSettingData struct {
+	CIM_StorageAllocationSettingData
+
+	//
+	CachingMode uint16
+
+	//
+	IgnoreFlushes bool
+
+	//
+	IOPSAllocationUnits string
+
+	//
+	IOPSLimit uint64
+
+	//
+	IOPSReservation uint64
+
+	//
+	PersistentReservationsSupported bool
+
+	//
+	SnapshotId string
+
+	//
+	StorageQoSPolicyID string
+
+	//
+	WriteHardeningMethod uint16
+}
+
+// SetCachingMode sets the value of CachingMode for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyCachingMode(value uint16) (err error) {
+	return instance.SetProperty("CachingMode", value)
+}
+
+// GetCachingMode gets the value of CachingMode for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyCachingMode() (value uint16, err error) {
+	retValue, err := instance.GetProperty("CachingMode")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetIgnoreFlushes sets the value of IgnoreFlushes for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyIgnoreFlushes(value bool) (err error) {
+	return instance.SetProperty("IgnoreFlushes", value)
+}
+
+// GetIgnoreFlushes gets the value of IgnoreFlushes for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyIgnoreFlushes() (value bool, err error) {
+	retValue, err := instance.GetProperty("IgnoreFlushes")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetIOPSAllocationUnits sets the value of IOPSAllocationUnits for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyIOPSAllocationUnits(value string) (err error) {
+	return instance.SetProperty("IOPSAllocationUnits", value)
+}
+
+// GetIOPSAllocationUnits gets the value of IOPSAllocationUnits for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyIOPSAllocationUnits() (value string, err error) {
+	retValue, err := instance.GetProperty("IOPSAllocationUnits")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetIOPSLimit sets the value of IOPSLimit for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyIOPSLimit(value uint64) (err error) {
+	return instance.SetProperty("IOPSLimit", value)
+}
+
+// GetIOPSLimit gets the value of IOPSLimit for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyIOPSLimit() (value uint64, err error) {
+	retValue, err := instance.GetProperty("IOPSLimit")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint64)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetIOPSReservation sets the value of IOPSReservation for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyIOPSReservation(value uint64) (err error) {
+	return instance.SetProperty("IOPSReservation", value)
+}
+
+// GetIOPSReservation gets the value of IOPSReservation for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyIOPSReservation() (value uint64, err error) {
+	retValue, err := instance.GetProperty("IOPSReservation")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint64)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPersistentReservationsSupported sets the value of PersistentReservationsSupported for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyPersistentReservationsSupported(value bool) (err error) {
+	return instance.SetProperty("PersistentReservationsSupported", value)
+}
+
+// GetPersistentReservationsSupported gets the value of PersistentReservationsSupported for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyPersistentReservationsSupported() (value bool, err error) {
+	retValue, err := instance.GetProperty("PersistentReservationsSupported")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSnapshotId sets the value of SnapshotId for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertySnapshotId(value string) (err error) {
+	return instance.SetProperty("SnapshotId", value)
+}
+
+// GetSnapshotId gets the value of SnapshotId for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertySnapshotId() (value string, err error) {
+	retValue, err := instance.GetProperty("SnapshotId")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetStorageQoSPolicyID sets the value of StorageQoSPolicyID for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyStorageQoSPolicyID(value string) (err error) {
+	return instance.SetProperty("StorageQoSPolicyID", value)
+}
+
+// GetStorageQoSPolicyID gets the value of StorageQoSPolicyID for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyStorageQoSPolicyID() (value string, err error) {
+	retValue, err := instance.GetProperty("StorageQoSPolicyID")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetWriteHardeningMethod sets the value of WriteHardeningMethod for the instance
+func (instance *Msvm_StorageAllocationSettingData) SetPropertyWriteHardeningMethod(value uint16) (err error) {
+	return instance.SetProperty("WriteHardeningMethod", value)
+}
+
+// GetWriteHardeningMethod gets the value of WriteHardeningMethod for the instance
+func (instance *Msvm_StorageAllocationSettingData) GetPropertyWriteHardeningMethod() (value uint16, err error) {
+	retValue, err := instance.GetProperty("WriteHardeningMethod")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+func (instance *Msvm_StorageAllocationSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_AllocationCapabilities")
+}

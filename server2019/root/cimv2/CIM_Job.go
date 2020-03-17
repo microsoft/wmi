@@ -1,0 +1,182 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
+package cimv2
+
+// CIM_Job struct
+type CIM_Job struct {
+	CIM_LogicalElement
+
+	//
+	ElapsedTime string
+
+	//
+	JobStatus string
+
+	//
+	Notify string
+
+	//
+	Owner string
+
+	//
+	Priority uint32
+
+	//
+	StartTime string
+
+	//
+	TimeSubmitted string
+
+	//
+	UntilTime string
+}
+
+// SetElapsedTime sets the value of ElapsedTime for the instance
+func (instance *CIM_Job) SetPropertyElapsedTime(value string) (err error) {
+	return instance.SetProperty("ElapsedTime", value)
+}
+
+// GetElapsedTime gets the value of ElapsedTime for the instance
+func (instance *CIM_Job) GetPropertyElapsedTime() (value string, err error) {
+	retValue, err := instance.GetProperty("ElapsedTime")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetJobStatus sets the value of JobStatus for the instance
+func (instance *CIM_Job) SetPropertyJobStatus(value string) (err error) {
+	return instance.SetProperty("JobStatus", value)
+}
+
+// GetJobStatus gets the value of JobStatus for the instance
+func (instance *CIM_Job) GetPropertyJobStatus() (value string, err error) {
+	retValue, err := instance.GetProperty("JobStatus")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNotify sets the value of Notify for the instance
+func (instance *CIM_Job) SetPropertyNotify(value string) (err error) {
+	return instance.SetProperty("Notify", value)
+}
+
+// GetNotify gets the value of Notify for the instance
+func (instance *CIM_Job) GetPropertyNotify() (value string, err error) {
+	retValue, err := instance.GetProperty("Notify")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetOwner sets the value of Owner for the instance
+func (instance *CIM_Job) SetPropertyOwner(value string) (err error) {
+	return instance.SetProperty("Owner", value)
+}
+
+// GetOwner gets the value of Owner for the instance
+func (instance *CIM_Job) GetPropertyOwner() (value string, err error) {
+	retValue, err := instance.GetProperty("Owner")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPriority sets the value of Priority for the instance
+func (instance *CIM_Job) SetPropertyPriority(value uint32) (err error) {
+	return instance.SetProperty("Priority", value)
+}
+
+// GetPriority gets the value of Priority for the instance
+func (instance *CIM_Job) GetPropertyPriority() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Priority")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetStartTime sets the value of StartTime for the instance
+func (instance *CIM_Job) SetPropertyStartTime(value string) (err error) {
+	return instance.SetProperty("StartTime", value)
+}
+
+// GetStartTime gets the value of StartTime for the instance
+func (instance *CIM_Job) GetPropertyStartTime() (value string, err error) {
+	retValue, err := instance.GetProperty("StartTime")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetTimeSubmitted sets the value of TimeSubmitted for the instance
+func (instance *CIM_Job) SetPropertyTimeSubmitted(value string) (err error) {
+	return instance.SetProperty("TimeSubmitted", value)
+}
+
+// GetTimeSubmitted gets the value of TimeSubmitted for the instance
+func (instance *CIM_Job) GetPropertyTimeSubmitted() (value string, err error) {
+	retValue, err := instance.GetProperty("TimeSubmitted")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUntilTime sets the value of UntilTime for the instance
+func (instance *CIM_Job) SetPropertyUntilTime(value string) (err error) {
+	return instance.SetProperty("UntilTime", value)
+}
+
+// GetUntilTime gets the value of UntilTime for the instance
+func (instance *CIM_Job) GetPropertyUntilTime() (value string, err error) {
+	retValue, err := instance.GetProperty("UntilTime")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

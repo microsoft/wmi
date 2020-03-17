@@ -1,0 +1,98 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
+package cimv2
+
+// MSFT_WmiFilterEvent struct
+type MSFT_WmiFilterEvent struct {
+	MSFT_WmiEssEvent
+
+	//
+	Name string
+
+	//
+	Namespace string
+
+	//
+	Query string
+
+	//
+	QueryLanguage string
+}
+
+// SetName sets the value of Name for the instance
+func (instance *MSFT_WmiFilterEvent) SetPropertyName(value string) (err error) {
+	return instance.SetProperty("Name", value)
+}
+
+// GetName gets the value of Name for the instance
+func (instance *MSFT_WmiFilterEvent) GetPropertyName() (value string, err error) {
+	retValue, err := instance.GetProperty("Name")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNamespace sets the value of Namespace for the instance
+func (instance *MSFT_WmiFilterEvent) SetPropertyNamespace(value string) (err error) {
+	return instance.SetProperty("Namespace", value)
+}
+
+// GetNamespace gets the value of Namespace for the instance
+func (instance *MSFT_WmiFilterEvent) GetPropertyNamespace() (value string, err error) {
+	retValue, err := instance.GetProperty("Namespace")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetQuery sets the value of Query for the instance
+func (instance *MSFT_WmiFilterEvent) SetPropertyQuery(value string) (err error) {
+	return instance.SetProperty("Query", value)
+}
+
+// GetQuery gets the value of Query for the instance
+func (instance *MSFT_WmiFilterEvent) GetPropertyQuery() (value string, err error) {
+	retValue, err := instance.GetProperty("Query")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetQueryLanguage sets the value of QueryLanguage for the instance
+func (instance *MSFT_WmiFilterEvent) SetPropertyQueryLanguage(value string) (err error) {
+	return instance.SetProperty("QueryLanguage", value)
+}
+
+// GetQueryLanguage gets the value of QueryLanguage for the instance
+func (instance *MSFT_WmiFilterEvent) GetPropertyQueryLanguage() (value string, err error) {
+	retValue, err := instance.GetProperty("QueryLanguage")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

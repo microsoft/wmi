@@ -21,7 +21,7 @@ library:
 	GO111MODULE=on GOARCH=amd64 GOOS=windows $(GOBUILD) ./...
 
 format:
-	gofmt -s -w go/cim/ go/wmi/
+	gofmt -s -w pkg
 
 test:
 	GOOS=windows GO111MODULE=on  GOARCH=amd64 go test -v ./go/...

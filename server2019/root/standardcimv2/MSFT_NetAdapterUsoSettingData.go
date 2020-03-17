@@ -1,0 +1,117 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
+package standardcimv2
+
+// MSFT_NetAdapterUsoSettingData struct
+type MSFT_NetAdapterUsoSettingData struct {
+	MSFT_NetAdapterSettingData
+
+	//
+	IPv4Enabled bool
+
+	//
+	IPv6Enabled bool
+
+	//
+	UdpSegmentationOffloadHardwareCapabilities MSFT_NetAdapterUdpSegmentationOffloadCapabilities
+}
+
+// SetIPv4Enabled sets the value of IPv4Enabled for the instance
+func (instance *MSFT_NetAdapterUsoSettingData) SetPropertyIPv4Enabled(value bool) (err error) {
+	return instance.SetProperty("IPv4Enabled", value)
+}
+
+// GetIPv4Enabled gets the value of IPv4Enabled for the instance
+func (instance *MSFT_NetAdapterUsoSettingData) GetPropertyIPv4Enabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("IPv4Enabled")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetIPv6Enabled sets the value of IPv6Enabled for the instance
+func (instance *MSFT_NetAdapterUsoSettingData) SetPropertyIPv6Enabled(value bool) (err error) {
+	return instance.SetProperty("IPv6Enabled", value)
+}
+
+// GetIPv6Enabled gets the value of IPv6Enabled for the instance
+func (instance *MSFT_NetAdapterUsoSettingData) GetPropertyIPv6Enabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("IPv6Enabled")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUdpSegmentationOffloadHardwareCapabilities sets the value of UdpSegmentationOffloadHardwareCapabilities for the instance
+func (instance *MSFT_NetAdapterUsoSettingData) SetPropertyUdpSegmentationOffloadHardwareCapabilities(value MSFT_NetAdapterUdpSegmentationOffloadCapabilities) (err error) {
+	return instance.SetProperty("UdpSegmentationOffloadHardwareCapabilities", value)
+}
+
+// GetUdpSegmentationOffloadHardwareCapabilities gets the value of UdpSegmentationOffloadHardwareCapabilities for the instance
+func (instance *MSFT_NetAdapterUsoSettingData) GetPropertyUdpSegmentationOffloadHardwareCapabilities() (value MSFT_NetAdapterUdpSegmentationOffloadCapabilities, err error) {
+	retValue, err := instance.GetProperty("UdpSegmentationOffloadHardwareCapabilities")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(MSFT_NetAdapterUdpSegmentationOffloadCapabilities)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+//
+
+// <param name="IPv4" type="bool "></param>
+// <param name="IPv6" type="bool "></param>
+
+// <param name="cmdletOutput" type="MSFT_NetAdapterUsoSettingData "></param>
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *MSFT_NetAdapterUsoSettingData) Enable( /* IN */ IPv4 bool,
+	/* IN */ IPv6 bool,
+	/* OUT */ cmdletOutput MSFT_NetAdapterUsoSettingData) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Enable", IPv4, IPv6)
+	if err != nil {
+		return
+	}
+	retValue := retVal[0].(int32)
+	result = uint32(retValue)
+	return
+
+}
+
+//
+
+// <param name="IPv4" type="bool "></param>
+// <param name="IPv6" type="bool "></param>
+
+// <param name="cmdletOutput" type="MSFT_NetAdapterUsoSettingData "></param>
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *MSFT_NetAdapterUsoSettingData) Disable( /* IN */ IPv4 bool,
+	/* IN */ IPv6 bool,
+	/* OUT */ cmdletOutput MSFT_NetAdapterUsoSettingData) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("Disable", IPv4, IPv6)
+	if err != nil {
+		return
+	}
+	retValue := retVal[0].(int32)
+	result = uint32(retValue)
+	return
+
+}

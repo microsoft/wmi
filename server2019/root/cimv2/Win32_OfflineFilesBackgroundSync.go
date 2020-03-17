@@ -1,0 +1,144 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
+package cimv2
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// Win32_OfflineFilesBackgroundSync struct
+type Win32_OfflineFilesBackgroundSync struct {
+	cim.WmiInstance
+
+	//
+	BackgroundSyncWorkOfflineSharesEnabled bool
+
+	//
+	BlockOutDurationMin uint16
+
+	//
+	BlockOutStartTimeHoursMinutes uint16
+
+	//
+	MaxTimeBetweenSyncs uint16
+
+	//
+	SyncInterval uint16
+
+	//
+	SyncVariance uint16
+}
+
+// SetBackgroundSyncWorkOfflineSharesEnabled sets the value of BackgroundSyncWorkOfflineSharesEnabled for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) SetPropertyBackgroundSyncWorkOfflineSharesEnabled(value bool) (err error) {
+	return instance.SetProperty("BackgroundSyncWorkOfflineSharesEnabled", value)
+}
+
+// GetBackgroundSyncWorkOfflineSharesEnabled gets the value of BackgroundSyncWorkOfflineSharesEnabled for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) GetPropertyBackgroundSyncWorkOfflineSharesEnabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("BackgroundSyncWorkOfflineSharesEnabled")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetBlockOutDurationMin sets the value of BlockOutDurationMin for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) SetPropertyBlockOutDurationMin(value uint16) (err error) {
+	return instance.SetProperty("BlockOutDurationMin", value)
+}
+
+// GetBlockOutDurationMin gets the value of BlockOutDurationMin for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) GetPropertyBlockOutDurationMin() (value uint16, err error) {
+	retValue, err := instance.GetProperty("BlockOutDurationMin")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetBlockOutStartTimeHoursMinutes sets the value of BlockOutStartTimeHoursMinutes for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) SetPropertyBlockOutStartTimeHoursMinutes(value uint16) (err error) {
+	return instance.SetProperty("BlockOutStartTimeHoursMinutes", value)
+}
+
+// GetBlockOutStartTimeHoursMinutes gets the value of BlockOutStartTimeHoursMinutes for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) GetPropertyBlockOutStartTimeHoursMinutes() (value uint16, err error) {
+	retValue, err := instance.GetProperty("BlockOutStartTimeHoursMinutes")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMaxTimeBetweenSyncs sets the value of MaxTimeBetweenSyncs for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) SetPropertyMaxTimeBetweenSyncs(value uint16) (err error) {
+	return instance.SetProperty("MaxTimeBetweenSyncs", value)
+}
+
+// GetMaxTimeBetweenSyncs gets the value of MaxTimeBetweenSyncs for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) GetPropertyMaxTimeBetweenSyncs() (value uint16, err error) {
+	retValue, err := instance.GetProperty("MaxTimeBetweenSyncs")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSyncInterval sets the value of SyncInterval for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) SetPropertySyncInterval(value uint16) (err error) {
+	return instance.SetProperty("SyncInterval", value)
+}
+
+// GetSyncInterval gets the value of SyncInterval for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) GetPropertySyncInterval() (value uint16, err error) {
+	retValue, err := instance.GetProperty("SyncInterval")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSyncVariance sets the value of SyncVariance for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) SetPropertySyncVariance(value uint16) (err error) {
+	return instance.SetProperty("SyncVariance", value)
+}
+
+// GetSyncVariance gets the value of SyncVariance for the instance
+func (instance *Win32_OfflineFilesBackgroundSync) GetPropertySyncVariance() (value uint16, err error) {
+	retValue, err := instance.GetProperty("SyncVariance")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

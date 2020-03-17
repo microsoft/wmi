@@ -1,0 +1,210 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
+package v2
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// Msvm_EthernetSwitchPortVlanSettingData struct
+type Msvm_EthernetSwitchPortVlanSettingData struct {
+	Msvm_EthernetSwitchPortFeatureSettingData
+
+	//
+	AccessVlanId uint16
+
+	//
+	NativeVlanId uint16
+
+	//
+	OperationMode uint32
+
+	//
+	PrimaryVlanId uint16
+
+	//
+	PruneVlanIdArray []uint16
+
+	//
+	PvlanMode uint32
+
+	//
+	SecondaryVlanId uint16
+
+	//
+	SecondaryVlanIdArray []uint16
+
+	//
+	TrunkVlanIdArray []uint16
+}
+
+// SetAccessVlanId sets the value of AccessVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertyAccessVlanId(value uint16) (err error) {
+	return instance.SetProperty("AccessVlanId", value)
+}
+
+// GetAccessVlanId gets the value of AccessVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertyAccessVlanId() (value uint16, err error) {
+	retValue, err := instance.GetProperty("AccessVlanId")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNativeVlanId sets the value of NativeVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertyNativeVlanId(value uint16) (err error) {
+	return instance.SetProperty("NativeVlanId", value)
+}
+
+// GetNativeVlanId gets the value of NativeVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertyNativeVlanId() (value uint16, err error) {
+	retValue, err := instance.GetProperty("NativeVlanId")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetOperationMode sets the value of OperationMode for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertyOperationMode(value uint32) (err error) {
+	return instance.SetProperty("OperationMode", value)
+}
+
+// GetOperationMode gets the value of OperationMode for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertyOperationMode() (value uint32, err error) {
+	retValue, err := instance.GetProperty("OperationMode")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPrimaryVlanId sets the value of PrimaryVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertyPrimaryVlanId(value uint16) (err error) {
+	return instance.SetProperty("PrimaryVlanId", value)
+}
+
+// GetPrimaryVlanId gets the value of PrimaryVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertyPrimaryVlanId() (value uint16, err error) {
+	retValue, err := instance.GetProperty("PrimaryVlanId")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPruneVlanIdArray sets the value of PruneVlanIdArray for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertyPruneVlanIdArray(value []uint16) (err error) {
+	return instance.SetProperty("PruneVlanIdArray", value)
+}
+
+// GetPruneVlanIdArray gets the value of PruneVlanIdArray for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertyPruneVlanIdArray() (value []uint16, err error) {
+	retValue, err := instance.GetProperty("PruneVlanIdArray")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.([]uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPvlanMode sets the value of PvlanMode for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertyPvlanMode(value uint32) (err error) {
+	return instance.SetProperty("PvlanMode", value)
+}
+
+// GetPvlanMode gets the value of PvlanMode for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertyPvlanMode() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PvlanMode")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSecondaryVlanId sets the value of SecondaryVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertySecondaryVlanId(value uint16) (err error) {
+	return instance.SetProperty("SecondaryVlanId", value)
+}
+
+// GetSecondaryVlanId gets the value of SecondaryVlanId for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertySecondaryVlanId() (value uint16, err error) {
+	retValue, err := instance.GetProperty("SecondaryVlanId")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSecondaryVlanIdArray sets the value of SecondaryVlanIdArray for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertySecondaryVlanIdArray(value []uint16) (err error) {
+	return instance.SetProperty("SecondaryVlanIdArray", value)
+}
+
+// GetSecondaryVlanIdArray gets the value of SecondaryVlanIdArray for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertySecondaryVlanIdArray() (value []uint16, err error) {
+	retValue, err := instance.GetProperty("SecondaryVlanIdArray")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.([]uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetTrunkVlanIdArray sets the value of TrunkVlanIdArray for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) SetPropertyTrunkVlanIdArray(value []uint16) (err error) {
+	return instance.SetProperty("TrunkVlanIdArray", value)
+}
+
+// GetTrunkVlanIdArray gets the value of TrunkVlanIdArray for the instance
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetPropertyTrunkVlanIdArray() (value []uint16, err error) {
+	retValue, err := instance.GetProperty("TrunkVlanIdArray")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.([]uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+func (instance *Msvm_EthernetSwitchPortVlanSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchFeatureCapabilities")
+}

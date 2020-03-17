@@ -1,0 +1,60 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.Microsoft.Windows.Storage
+//////////////////////////////////////////////
+package storage
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// MSFT_StorageEnclosureToPhysicalDisk struct
+type MSFT_StorageEnclosureToPhysicalDisk struct {
+	cim.WmiInstance
+
+	//
+	PhysicalDisk MSFT_PhysicalDisk
+
+	//
+	StorageEnclosure MSFT_StorageEnclosure
+}
+
+// SetPhysicalDisk sets the value of PhysicalDisk for the instance
+func (instance *MSFT_StorageEnclosureToPhysicalDisk) SetPropertyPhysicalDisk(value MSFT_PhysicalDisk) (err error) {
+	return instance.SetProperty("PhysicalDisk", value)
+}
+
+// GetPhysicalDisk gets the value of PhysicalDisk for the instance
+func (instance *MSFT_StorageEnclosureToPhysicalDisk) GetPropertyPhysicalDisk() (value MSFT_PhysicalDisk, err error) {
+	retValue, err := instance.GetProperty("PhysicalDisk")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(MSFT_PhysicalDisk)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetStorageEnclosure sets the value of StorageEnclosure for the instance
+func (instance *MSFT_StorageEnclosureToPhysicalDisk) SetPropertyStorageEnclosure(value MSFT_StorageEnclosure) (err error) {
+	return instance.SetProperty("StorageEnclosure", value)
+}
+
+// GetStorageEnclosure gets the value of StorageEnclosure for the instance
+func (instance *MSFT_StorageEnclosureToPhysicalDisk) GetPropertyStorageEnclosure() (value MSFT_StorageEnclosure, err error) {
+	retValue, err := instance.GetProperty("StorageEnclosure")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(MSFT_StorageEnclosure)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

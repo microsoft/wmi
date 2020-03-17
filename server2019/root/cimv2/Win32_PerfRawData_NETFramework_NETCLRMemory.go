@@ -1,0 +1,518 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
+package cimv2
+
+// Win32_PerfRawData_NETFramework_NETCLRMemory struct
+type Win32_PerfRawData_NETFramework_NETCLRMemory struct {
+	Win32_PerfRawData
+
+	//
+	AllocatedBytesPersec uint32
+
+	//
+	FinalizationSurvivors uint32
+
+	//
+	Gen0heapsize uint32
+
+	//
+	Gen0PromotedBytesPerSec uint32
+
+	//
+	Gen1heapsize uint32
+
+	//
+	Gen1PromotedBytesPerSec uint32
+
+	//
+	Gen2heapsize uint32
+
+	//
+	LargeObjectHeapsize uint32
+
+	//
+	NumberBytesinallHeaps uint32
+
+	//
+	NumberGCHandles uint32
+
+	//
+	NumberGen0Collections uint32
+
+	//
+	NumberGen1Collections uint32
+
+	//
+	NumberGen2Collections uint32
+
+	//
+	NumberInducedGC uint32
+
+	//
+	NumberofPinnedObjects uint32
+
+	//
+	NumberofSinkBlocksinuse uint32
+
+	//
+	NumberTotalcommittedBytes uint32
+
+	//
+	NumberTotalreservedBytes uint32
+
+	//
+	PercentTimeinGC uint32
+
+	//
+	PercentTimeinGC_Base uint32
+
+	//
+	ProcessID uint32
+
+	//
+	PromotedFinalizationMemoryfromGen0 uint32
+
+	//
+	PromotedMemoryfromGen0 uint32
+
+	//
+	PromotedMemoryfromGen1 uint32
+}
+
+// SetAllocatedBytesPersec sets the value of AllocatedBytesPersec for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyAllocatedBytesPersec(value uint32) (err error) {
+	return instance.SetProperty("AllocatedBytesPersec", value)
+}
+
+// GetAllocatedBytesPersec gets the value of AllocatedBytesPersec for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyAllocatedBytesPersec() (value uint32, err error) {
+	retValue, err := instance.GetProperty("AllocatedBytesPersec")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetFinalizationSurvivors sets the value of FinalizationSurvivors for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyFinalizationSurvivors(value uint32) (err error) {
+	return instance.SetProperty("FinalizationSurvivors", value)
+}
+
+// GetFinalizationSurvivors gets the value of FinalizationSurvivors for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyFinalizationSurvivors() (value uint32, err error) {
+	retValue, err := instance.GetProperty("FinalizationSurvivors")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGen0heapsize sets the value of Gen0heapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyGen0heapsize(value uint32) (err error) {
+	return instance.SetProperty("Gen0heapsize", value)
+}
+
+// GetGen0heapsize gets the value of Gen0heapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyGen0heapsize() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Gen0heapsize")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGen0PromotedBytesPerSec sets the value of Gen0PromotedBytesPerSec for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyGen0PromotedBytesPerSec(value uint32) (err error) {
+	return instance.SetProperty("Gen0PromotedBytesPerSec", value)
+}
+
+// GetGen0PromotedBytesPerSec gets the value of Gen0PromotedBytesPerSec for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyGen0PromotedBytesPerSec() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Gen0PromotedBytesPerSec")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGen1heapsize sets the value of Gen1heapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyGen1heapsize(value uint32) (err error) {
+	return instance.SetProperty("Gen1heapsize", value)
+}
+
+// GetGen1heapsize gets the value of Gen1heapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyGen1heapsize() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Gen1heapsize")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGen1PromotedBytesPerSec sets the value of Gen1PromotedBytesPerSec for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyGen1PromotedBytesPerSec(value uint32) (err error) {
+	return instance.SetProperty("Gen1PromotedBytesPerSec", value)
+}
+
+// GetGen1PromotedBytesPerSec gets the value of Gen1PromotedBytesPerSec for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyGen1PromotedBytesPerSec() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Gen1PromotedBytesPerSec")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGen2heapsize sets the value of Gen2heapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyGen2heapsize(value uint32) (err error) {
+	return instance.SetProperty("Gen2heapsize", value)
+}
+
+// GetGen2heapsize gets the value of Gen2heapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyGen2heapsize() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Gen2heapsize")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetLargeObjectHeapsize sets the value of LargeObjectHeapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyLargeObjectHeapsize(value uint32) (err error) {
+	return instance.SetProperty("LargeObjectHeapsize", value)
+}
+
+// GetLargeObjectHeapsize gets the value of LargeObjectHeapsize for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyLargeObjectHeapsize() (value uint32, err error) {
+	retValue, err := instance.GetProperty("LargeObjectHeapsize")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberBytesinallHeaps sets the value of NumberBytesinallHeaps for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberBytesinallHeaps(value uint32) (err error) {
+	return instance.SetProperty("NumberBytesinallHeaps", value)
+}
+
+// GetNumberBytesinallHeaps gets the value of NumberBytesinallHeaps for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberBytesinallHeaps() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberBytesinallHeaps")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberGCHandles sets the value of NumberGCHandles for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberGCHandles(value uint32) (err error) {
+	return instance.SetProperty("NumberGCHandles", value)
+}
+
+// GetNumberGCHandles gets the value of NumberGCHandles for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberGCHandles() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberGCHandles")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberGen0Collections sets the value of NumberGen0Collections for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberGen0Collections(value uint32) (err error) {
+	return instance.SetProperty("NumberGen0Collections", value)
+}
+
+// GetNumberGen0Collections gets the value of NumberGen0Collections for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberGen0Collections() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberGen0Collections")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberGen1Collections sets the value of NumberGen1Collections for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberGen1Collections(value uint32) (err error) {
+	return instance.SetProperty("NumberGen1Collections", value)
+}
+
+// GetNumberGen1Collections gets the value of NumberGen1Collections for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberGen1Collections() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberGen1Collections")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberGen2Collections sets the value of NumberGen2Collections for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberGen2Collections(value uint32) (err error) {
+	return instance.SetProperty("NumberGen2Collections", value)
+}
+
+// GetNumberGen2Collections gets the value of NumberGen2Collections for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberGen2Collections() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberGen2Collections")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberInducedGC sets the value of NumberInducedGC for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberInducedGC(value uint32) (err error) {
+	return instance.SetProperty("NumberInducedGC", value)
+}
+
+// GetNumberInducedGC gets the value of NumberInducedGC for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberInducedGC() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberInducedGC")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberofPinnedObjects sets the value of NumberofPinnedObjects for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberofPinnedObjects(value uint32) (err error) {
+	return instance.SetProperty("NumberofPinnedObjects", value)
+}
+
+// GetNumberofPinnedObjects gets the value of NumberofPinnedObjects for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberofPinnedObjects() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberofPinnedObjects")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberofSinkBlocksinuse sets the value of NumberofSinkBlocksinuse for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberofSinkBlocksinuse(value uint32) (err error) {
+	return instance.SetProperty("NumberofSinkBlocksinuse", value)
+}
+
+// GetNumberofSinkBlocksinuse gets the value of NumberofSinkBlocksinuse for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberofSinkBlocksinuse() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberofSinkBlocksinuse")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberTotalcommittedBytes sets the value of NumberTotalcommittedBytes for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberTotalcommittedBytes(value uint32) (err error) {
+	return instance.SetProperty("NumberTotalcommittedBytes", value)
+}
+
+// GetNumberTotalcommittedBytes gets the value of NumberTotalcommittedBytes for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberTotalcommittedBytes() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberTotalcommittedBytes")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetNumberTotalreservedBytes sets the value of NumberTotalreservedBytes for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyNumberTotalreservedBytes(value uint32) (err error) {
+	return instance.SetProperty("NumberTotalreservedBytes", value)
+}
+
+// GetNumberTotalreservedBytes gets the value of NumberTotalreservedBytes for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyNumberTotalreservedBytes() (value uint32, err error) {
+	retValue, err := instance.GetProperty("NumberTotalreservedBytes")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPercentTimeinGC sets the value of PercentTimeinGC for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyPercentTimeinGC(value uint32) (err error) {
+	return instance.SetProperty("PercentTimeinGC", value)
+}
+
+// GetPercentTimeinGC gets the value of PercentTimeinGC for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyPercentTimeinGC() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PercentTimeinGC")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPercentTimeinGC_Base sets the value of PercentTimeinGC_Base for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyPercentTimeinGC_Base(value uint32) (err error) {
+	return instance.SetProperty("PercentTimeinGC_Base", value)
+}
+
+// GetPercentTimeinGC_Base gets the value of PercentTimeinGC_Base for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyPercentTimeinGC_Base() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PercentTimeinGC_Base")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetProcessID sets the value of ProcessID for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyProcessID(value uint32) (err error) {
+	return instance.SetProperty("ProcessID", value)
+}
+
+// GetProcessID gets the value of ProcessID for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyProcessID() (value uint32, err error) {
+	retValue, err := instance.GetProperty("ProcessID")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPromotedFinalizationMemoryfromGen0 sets the value of PromotedFinalizationMemoryfromGen0 for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyPromotedFinalizationMemoryfromGen0(value uint32) (err error) {
+	return instance.SetProperty("PromotedFinalizationMemoryfromGen0", value)
+}
+
+// GetPromotedFinalizationMemoryfromGen0 gets the value of PromotedFinalizationMemoryfromGen0 for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyPromotedFinalizationMemoryfromGen0() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PromotedFinalizationMemoryfromGen0")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPromotedMemoryfromGen0 sets the value of PromotedMemoryfromGen0 for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyPromotedMemoryfromGen0(value uint32) (err error) {
+	return instance.SetProperty("PromotedMemoryfromGen0", value)
+}
+
+// GetPromotedMemoryfromGen0 gets the value of PromotedMemoryfromGen0 for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyPromotedMemoryfromGen0() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PromotedMemoryfromGen0")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPromotedMemoryfromGen1 sets the value of PromotedMemoryfromGen1 for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) SetPropertyPromotedMemoryfromGen1(value uint32) (err error) {
+	return instance.SetProperty("PromotedMemoryfromGen1", value)
+}
+
+// GetPromotedMemoryfromGen1 gets the value of PromotedMemoryfromGen1 for the instance
+func (instance *Win32_PerfRawData_NETFramework_NETCLRMemory) GetPropertyPromotedMemoryfromGen1() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PromotedMemoryfromGen1")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

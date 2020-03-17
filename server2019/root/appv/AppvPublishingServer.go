@@ -1,0 +1,249 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.Appv
+//////////////////////////////////////////////
+package appv
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// AppvPublishingServer struct
+type AppvPublishingServer struct {
+	cim.WmiInstance
+
+	//
+	GlobalRefreshEnabled bool
+
+	//
+	GlobalRefreshInterval uint32
+
+	//
+	GlobalRefreshIntervalUnit string
+
+	//
+	GlobalRefreshOnLogon bool
+
+	//
+	ID uint32
+
+	//
+	SetByGroupPolicy bool
+
+	//
+	Url string
+
+	//
+	UserRefreshEnabled bool
+
+	//
+	UserRefreshInterval uint32
+
+	//
+	UserRefreshIntervalUnit string
+
+	//
+	UserRefreshOnLogon bool
+}
+
+// SetGlobalRefreshEnabled sets the value of GlobalRefreshEnabled for the instance
+func (instance *AppvPublishingServer) SetPropertyGlobalRefreshEnabled(value bool) (err error) {
+	return instance.SetProperty("GlobalRefreshEnabled", value)
+}
+
+// GetGlobalRefreshEnabled gets the value of GlobalRefreshEnabled for the instance
+func (instance *AppvPublishingServer) GetPropertyGlobalRefreshEnabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("GlobalRefreshEnabled")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGlobalRefreshInterval sets the value of GlobalRefreshInterval for the instance
+func (instance *AppvPublishingServer) SetPropertyGlobalRefreshInterval(value uint32) (err error) {
+	return instance.SetProperty("GlobalRefreshInterval", value)
+}
+
+// GetGlobalRefreshInterval gets the value of GlobalRefreshInterval for the instance
+func (instance *AppvPublishingServer) GetPropertyGlobalRefreshInterval() (value uint32, err error) {
+	retValue, err := instance.GetProperty("GlobalRefreshInterval")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGlobalRefreshIntervalUnit sets the value of GlobalRefreshIntervalUnit for the instance
+func (instance *AppvPublishingServer) SetPropertyGlobalRefreshIntervalUnit(value string) (err error) {
+	return instance.SetProperty("GlobalRefreshIntervalUnit", value)
+}
+
+// GetGlobalRefreshIntervalUnit gets the value of GlobalRefreshIntervalUnit for the instance
+func (instance *AppvPublishingServer) GetPropertyGlobalRefreshIntervalUnit() (value string, err error) {
+	retValue, err := instance.GetProperty("GlobalRefreshIntervalUnit")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetGlobalRefreshOnLogon sets the value of GlobalRefreshOnLogon for the instance
+func (instance *AppvPublishingServer) SetPropertyGlobalRefreshOnLogon(value bool) (err error) {
+	return instance.SetProperty("GlobalRefreshOnLogon", value)
+}
+
+// GetGlobalRefreshOnLogon gets the value of GlobalRefreshOnLogon for the instance
+func (instance *AppvPublishingServer) GetPropertyGlobalRefreshOnLogon() (value bool, err error) {
+	retValue, err := instance.GetProperty("GlobalRefreshOnLogon")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetID sets the value of ID for the instance
+func (instance *AppvPublishingServer) SetPropertyID(value uint32) (err error) {
+	return instance.SetProperty("ID", value)
+}
+
+// GetID gets the value of ID for the instance
+func (instance *AppvPublishingServer) GetPropertyID() (value uint32, err error) {
+	retValue, err := instance.GetProperty("ID")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSetByGroupPolicy sets the value of SetByGroupPolicy for the instance
+func (instance *AppvPublishingServer) SetPropertySetByGroupPolicy(value bool) (err error) {
+	return instance.SetProperty("SetByGroupPolicy", value)
+}
+
+// GetSetByGroupPolicy gets the value of SetByGroupPolicy for the instance
+func (instance *AppvPublishingServer) GetPropertySetByGroupPolicy() (value bool, err error) {
+	retValue, err := instance.GetProperty("SetByGroupPolicy")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUrl sets the value of Url for the instance
+func (instance *AppvPublishingServer) SetPropertyUrl(value string) (err error) {
+	return instance.SetProperty("Url", value)
+}
+
+// GetUrl gets the value of Url for the instance
+func (instance *AppvPublishingServer) GetPropertyUrl() (value string, err error) {
+	retValue, err := instance.GetProperty("Url")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUserRefreshEnabled sets the value of UserRefreshEnabled for the instance
+func (instance *AppvPublishingServer) SetPropertyUserRefreshEnabled(value bool) (err error) {
+	return instance.SetProperty("UserRefreshEnabled", value)
+}
+
+// GetUserRefreshEnabled gets the value of UserRefreshEnabled for the instance
+func (instance *AppvPublishingServer) GetPropertyUserRefreshEnabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("UserRefreshEnabled")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUserRefreshInterval sets the value of UserRefreshInterval for the instance
+func (instance *AppvPublishingServer) SetPropertyUserRefreshInterval(value uint32) (err error) {
+	return instance.SetProperty("UserRefreshInterval", value)
+}
+
+// GetUserRefreshInterval gets the value of UserRefreshInterval for the instance
+func (instance *AppvPublishingServer) GetPropertyUserRefreshInterval() (value uint32, err error) {
+	retValue, err := instance.GetProperty("UserRefreshInterval")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUserRefreshIntervalUnit sets the value of UserRefreshIntervalUnit for the instance
+func (instance *AppvPublishingServer) SetPropertyUserRefreshIntervalUnit(value string) (err error) {
+	return instance.SetProperty("UserRefreshIntervalUnit", value)
+}
+
+// GetUserRefreshIntervalUnit gets the value of UserRefreshIntervalUnit for the instance
+func (instance *AppvPublishingServer) GetPropertyUserRefreshIntervalUnit() (value string, err error) {
+	retValue, err := instance.GetProperty("UserRefreshIntervalUnit")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUserRefreshOnLogon sets the value of UserRefreshOnLogon for the instance
+func (instance *AppvPublishingServer) SetPropertyUserRefreshOnLogon(value bool) (err error) {
+	return instance.SetProperty("UserRefreshOnLogon", value)
+}
+
+// GetUserRefreshOnLogon gets the value of UserRefreshOnLogon for the instance
+func (instance *AppvPublishingServer) GetPropertyUserRefreshOnLogon() (value bool, err error) {
+	retValue, err := instance.GetProperty("UserRefreshOnLogon")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
