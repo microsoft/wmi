@@ -1,0 +1,75 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2.mdm
+//////////////////////////////////////////////
+package mdm
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// MDM_WNSConfiguration struct
+type MDM_WNSConfiguration struct {
+	cim.WmiInstance
+
+	//
+	AppId string
+
+	//
+	ConfigurationStatus uint32
+}
+
+// SetAppId sets the value of AppId for the instance
+func (instance *MDM_WNSConfiguration) SetPropertyAppId(value string) (err error) {
+	return instance.SetProperty("AppId", value)
+}
+
+// GetAppId gets the value of AppId for the instance
+func (instance *MDM_WNSConfiguration) GetPropertyAppId() (value string, err error) {
+	retValue, err := instance.GetProperty("AppId")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetConfigurationStatus sets the value of ConfigurationStatus for the instance
+func (instance *MDM_WNSConfiguration) SetPropertyConfigurationStatus(value uint32) (err error) {
+	return instance.SetProperty("ConfigurationStatus", value)
+}
+
+// GetConfigurationStatus gets the value of ConfigurationStatus for the instance
+func (instance *MDM_WNSConfiguration) GetPropertyConfigurationStatus() (value uint32, err error) {
+	retValue, err := instance.GetProperty("ConfigurationStatus")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+//
+
+// <param name="ConfigString" type="string "></param>
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *MDM_WNSConfiguration) UpdateConfiguration( /* IN */ ConfigString string) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("UpdateConfiguration", ConfigString)
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}

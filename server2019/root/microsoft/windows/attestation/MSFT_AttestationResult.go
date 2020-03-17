@@ -1,0 +1,123 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.Microsoft.Windows.Attestation
+//////////////////////////////////////////////
+package attestation
+
+import (
+	"github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
+// MSFT_AttestationResult struct
+type MSFT_AttestationResult struct {
+	cim.WmiInstance
+
+	//
+	AttestationStatus uint16
+
+	//
+	AttestationSubstatus uint64
+
+	//
+	Data []uint8
+
+	//
+	Type uint16
+
+	//
+	Url string
+}
+
+// SetAttestationStatus sets the value of AttestationStatus for the instance
+func (instance *MSFT_AttestationResult) SetPropertyAttestationStatus(value uint16) (err error) {
+	return instance.SetProperty("AttestationStatus", value)
+}
+
+// GetAttestationStatus gets the value of AttestationStatus for the instance
+func (instance *MSFT_AttestationResult) GetPropertyAttestationStatus() (value uint16, err error) {
+	retValue, err := instance.GetProperty("AttestationStatus")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetAttestationSubstatus sets the value of AttestationSubstatus for the instance
+func (instance *MSFT_AttestationResult) SetPropertyAttestationSubstatus(value uint64) (err error) {
+	return instance.SetProperty("AttestationSubstatus", value)
+}
+
+// GetAttestationSubstatus gets the value of AttestationSubstatus for the instance
+func (instance *MSFT_AttestationResult) GetPropertyAttestationSubstatus() (value uint64, err error) {
+	retValue, err := instance.GetProperty("AttestationSubstatus")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint64)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetData sets the value of Data for the instance
+func (instance *MSFT_AttestationResult) SetPropertyData(value []uint8) (err error) {
+	return instance.SetProperty("Data", value)
+}
+
+// GetData gets the value of Data for the instance
+func (instance *MSFT_AttestationResult) GetPropertyData() (value []uint8, err error) {
+	retValue, err := instance.GetProperty("Data")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.([]uint8)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetType sets the value of Type for the instance
+func (instance *MSFT_AttestationResult) SetPropertyType(value uint16) (err error) {
+	return instance.SetProperty("Type", value)
+}
+
+// GetType gets the value of Type for the instance
+func (instance *MSFT_AttestationResult) GetPropertyType() (value uint16, err error) {
+	retValue, err := instance.GetProperty("Type")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetUrl sets the value of Url for the instance
+func (instance *MSFT_AttestationResult) SetPropertyUrl(value string) (err error) {
+	return instance.SetProperty("Url", value)
+}
+
+// GetUrl gets the value of Url for the instance
+func (instance *MSFT_AttestationResult) GetPropertyUrl() (value string, err error) {
+	retValue, err := instance.GetProperty("Url")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

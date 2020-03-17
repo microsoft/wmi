@@ -1,0 +1,117 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.virtualization.v2
+//////////////////////////////////////////////
+package v2
+
+// Msvm_Ps2Mouse struct
+type Msvm_Ps2Mouse struct {
+	CIM_PointingDevice
+
+	//
+	AbsoluteCoordinates bool
+}
+
+// SetAbsoluteCoordinates sets the value of AbsoluteCoordinates for the instance
+func (instance *Msvm_Ps2Mouse) SetPropertyAbsoluteCoordinates(value bool) (err error) {
+	return instance.SetProperty("AbsoluteCoordinates", value)
+}
+
+// GetAbsoluteCoordinates gets the value of AbsoluteCoordinates for the instance
+func (instance *Msvm_Ps2Mouse) GetPropertyAbsoluteCoordinates() (value bool, err error) {
+	retValue, err := instance.GetProperty("AbsoluteCoordinates")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+//
+
+// <param name="ButtonIndex" type="uint32 "></param>
+
+// <param name="ButtonState" type="bool "></param>
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *Msvm_Ps2Mouse) GetButtonState( /* IN */ ButtonIndex uint32,
+	/* OUT */ ButtonState bool) (result uint32, err error) {
+	retVal, err := instance.InvokeMethod("GetButtonState", ButtonIndex)
+	if err != nil {
+		return
+	}
+	retValue := retVal[0].(int32)
+	result = uint32(retValue)
+	return
+
+}
+
+//
+
+// <param name="ButtonIndex" type="uint32 "></param>
+// <param name="ButtonState" type="bool "></param>
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *Msvm_Ps2Mouse) SetButtonState( /* IN */ ButtonIndex uint32,
+	/* IN */ ButtonState bool) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetButtonState", ButtonIndex, ButtonState)
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}
+
+//
+
+// <param name="ButtonIndex" type="uint32 "></param>
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *Msvm_Ps2Mouse) ClickButton( /* IN */ ButtonIndex uint32) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("ClickButton", ButtonIndex)
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}
+
+//
+
+// <param name="HorizontalDelta" type="int8 "></param>
+// <param name="VerticalDelta" type="int8 "></param>
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *Msvm_Ps2Mouse) SetRelativePosition( /* IN */ HorizontalDelta int8,
+	/* IN */ VerticalDelta int8) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetRelativePosition", HorizontalDelta, VerticalDelta)
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}
+
+//
+
+// <param name="ScrollPositionDelta" type="int8 "></param>
+
+// <param name="ReturnValue" type="uint32 "></param>
+func (instance *Msvm_Ps2Mouse) SetScrollPosition( /* IN */ ScrollPositionDelta int8) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetScrollPosition", ScrollPositionDelta)
+	if err != nil {
+		return
+	}
+	result = uint32(retVal)
+	return
+
+}

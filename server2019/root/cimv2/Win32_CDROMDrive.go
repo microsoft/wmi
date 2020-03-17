@@ -1,0 +1,434 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.CIMV2
+//////////////////////////////////////////////
+package cimv2
+
+// Win32_CDROMDrive struct
+type Win32_CDROMDrive struct {
+	CIM_CDROMDrive
+
+	//
+	Drive string
+
+	//
+	DriveIntegrity bool
+
+	//
+	FileSystemFlags uint16
+
+	//
+	FileSystemFlagsEx uint32
+
+	//
+	Id string
+
+	//
+	Manufacturer string
+
+	//
+	MaximumComponentLength uint32
+
+	//
+	MediaLoaded bool
+
+	//
+	MediaType string
+
+	//
+	MfrAssignedRevisionLevel string
+
+	//
+	RevisionLevel string
+
+	//
+	SCSIBus uint32
+
+	//
+	SCSILogicalUnit uint16
+
+	//
+	SCSIPort uint16
+
+	//
+	SCSITargetId uint16
+
+	//
+	SerialNumber string
+
+	//
+	Size uint64
+
+	//
+	TransferRate float64
+
+	//
+	VolumeName string
+
+	//
+	VolumeSerialNumber string
+}
+
+// SetDrive sets the value of Drive for the instance
+func (instance *Win32_CDROMDrive) SetPropertyDrive(value string) (err error) {
+	return instance.SetProperty("Drive", value)
+}
+
+// GetDrive gets the value of Drive for the instance
+func (instance *Win32_CDROMDrive) GetPropertyDrive() (value string, err error) {
+	retValue, err := instance.GetProperty("Drive")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetDriveIntegrity sets the value of DriveIntegrity for the instance
+func (instance *Win32_CDROMDrive) SetPropertyDriveIntegrity(value bool) (err error) {
+	return instance.SetProperty("DriveIntegrity", value)
+}
+
+// GetDriveIntegrity gets the value of DriveIntegrity for the instance
+func (instance *Win32_CDROMDrive) GetPropertyDriveIntegrity() (value bool, err error) {
+	retValue, err := instance.GetProperty("DriveIntegrity")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetFileSystemFlags sets the value of FileSystemFlags for the instance
+func (instance *Win32_CDROMDrive) SetPropertyFileSystemFlags(value uint16) (err error) {
+	return instance.SetProperty("FileSystemFlags", value)
+}
+
+// GetFileSystemFlags gets the value of FileSystemFlags for the instance
+func (instance *Win32_CDROMDrive) GetPropertyFileSystemFlags() (value uint16, err error) {
+	retValue, err := instance.GetProperty("FileSystemFlags")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetFileSystemFlagsEx sets the value of FileSystemFlagsEx for the instance
+func (instance *Win32_CDROMDrive) SetPropertyFileSystemFlagsEx(value uint32) (err error) {
+	return instance.SetProperty("FileSystemFlagsEx", value)
+}
+
+// GetFileSystemFlagsEx gets the value of FileSystemFlagsEx for the instance
+func (instance *Win32_CDROMDrive) GetPropertyFileSystemFlagsEx() (value uint32, err error) {
+	retValue, err := instance.GetProperty("FileSystemFlagsEx")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetId sets the value of Id for the instance
+func (instance *Win32_CDROMDrive) SetPropertyId(value string) (err error) {
+	return instance.SetProperty("Id", value)
+}
+
+// GetId gets the value of Id for the instance
+func (instance *Win32_CDROMDrive) GetPropertyId() (value string, err error) {
+	retValue, err := instance.GetProperty("Id")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetManufacturer sets the value of Manufacturer for the instance
+func (instance *Win32_CDROMDrive) SetPropertyManufacturer(value string) (err error) {
+	return instance.SetProperty("Manufacturer", value)
+}
+
+// GetManufacturer gets the value of Manufacturer for the instance
+func (instance *Win32_CDROMDrive) GetPropertyManufacturer() (value string, err error) {
+	retValue, err := instance.GetProperty("Manufacturer")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMaximumComponentLength sets the value of MaximumComponentLength for the instance
+func (instance *Win32_CDROMDrive) SetPropertyMaximumComponentLength(value uint32) (err error) {
+	return instance.SetProperty("MaximumComponentLength", value)
+}
+
+// GetMaximumComponentLength gets the value of MaximumComponentLength for the instance
+func (instance *Win32_CDROMDrive) GetPropertyMaximumComponentLength() (value uint32, err error) {
+	retValue, err := instance.GetProperty("MaximumComponentLength")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMediaLoaded sets the value of MediaLoaded for the instance
+func (instance *Win32_CDROMDrive) SetPropertyMediaLoaded(value bool) (err error) {
+	return instance.SetProperty("MediaLoaded", value)
+}
+
+// GetMediaLoaded gets the value of MediaLoaded for the instance
+func (instance *Win32_CDROMDrive) GetPropertyMediaLoaded() (value bool, err error) {
+	retValue, err := instance.GetProperty("MediaLoaded")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMediaType sets the value of MediaType for the instance
+func (instance *Win32_CDROMDrive) SetPropertyMediaType(value string) (err error) {
+	return instance.SetProperty("MediaType", value)
+}
+
+// GetMediaType gets the value of MediaType for the instance
+func (instance *Win32_CDROMDrive) GetPropertyMediaType() (value string, err error) {
+	retValue, err := instance.GetProperty("MediaType")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetMfrAssignedRevisionLevel sets the value of MfrAssignedRevisionLevel for the instance
+func (instance *Win32_CDROMDrive) SetPropertyMfrAssignedRevisionLevel(value string) (err error) {
+	return instance.SetProperty("MfrAssignedRevisionLevel", value)
+}
+
+// GetMfrAssignedRevisionLevel gets the value of MfrAssignedRevisionLevel for the instance
+func (instance *Win32_CDROMDrive) GetPropertyMfrAssignedRevisionLevel() (value string, err error) {
+	retValue, err := instance.GetProperty("MfrAssignedRevisionLevel")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetRevisionLevel sets the value of RevisionLevel for the instance
+func (instance *Win32_CDROMDrive) SetPropertyRevisionLevel(value string) (err error) {
+	return instance.SetProperty("RevisionLevel", value)
+}
+
+// GetRevisionLevel gets the value of RevisionLevel for the instance
+func (instance *Win32_CDROMDrive) GetPropertyRevisionLevel() (value string, err error) {
+	retValue, err := instance.GetProperty("RevisionLevel")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSCSIBus sets the value of SCSIBus for the instance
+func (instance *Win32_CDROMDrive) SetPropertySCSIBus(value uint32) (err error) {
+	return instance.SetProperty("SCSIBus", value)
+}
+
+// GetSCSIBus gets the value of SCSIBus for the instance
+func (instance *Win32_CDROMDrive) GetPropertySCSIBus() (value uint32, err error) {
+	retValue, err := instance.GetProperty("SCSIBus")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSCSILogicalUnit sets the value of SCSILogicalUnit for the instance
+func (instance *Win32_CDROMDrive) SetPropertySCSILogicalUnit(value uint16) (err error) {
+	return instance.SetProperty("SCSILogicalUnit", value)
+}
+
+// GetSCSILogicalUnit gets the value of SCSILogicalUnit for the instance
+func (instance *Win32_CDROMDrive) GetPropertySCSILogicalUnit() (value uint16, err error) {
+	retValue, err := instance.GetProperty("SCSILogicalUnit")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSCSIPort sets the value of SCSIPort for the instance
+func (instance *Win32_CDROMDrive) SetPropertySCSIPort(value uint16) (err error) {
+	return instance.SetProperty("SCSIPort", value)
+}
+
+// GetSCSIPort gets the value of SCSIPort for the instance
+func (instance *Win32_CDROMDrive) GetPropertySCSIPort() (value uint16, err error) {
+	retValue, err := instance.GetProperty("SCSIPort")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSCSITargetId sets the value of SCSITargetId for the instance
+func (instance *Win32_CDROMDrive) SetPropertySCSITargetId(value uint16) (err error) {
+	return instance.SetProperty("SCSITargetId", value)
+}
+
+// GetSCSITargetId gets the value of SCSITargetId for the instance
+func (instance *Win32_CDROMDrive) GetPropertySCSITargetId() (value uint16, err error) {
+	retValue, err := instance.GetProperty("SCSITargetId")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint16)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSerialNumber sets the value of SerialNumber for the instance
+func (instance *Win32_CDROMDrive) SetPropertySerialNumber(value string) (err error) {
+	return instance.SetProperty("SerialNumber", value)
+}
+
+// GetSerialNumber gets the value of SerialNumber for the instance
+func (instance *Win32_CDROMDrive) GetPropertySerialNumber() (value string, err error) {
+	retValue, err := instance.GetProperty("SerialNumber")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSize sets the value of Size for the instance
+func (instance *Win32_CDROMDrive) SetPropertySize(value uint64) (err error) {
+	return instance.SetProperty("Size", value)
+}
+
+// GetSize gets the value of Size for the instance
+func (instance *Win32_CDROMDrive) GetPropertySize() (value uint64, err error) {
+	retValue, err := instance.GetProperty("Size")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint64)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetTransferRate sets the value of TransferRate for the instance
+func (instance *Win32_CDROMDrive) SetPropertyTransferRate(value float64) (err error) {
+	return instance.SetProperty("TransferRate", value)
+}
+
+// GetTransferRate gets the value of TransferRate for the instance
+func (instance *Win32_CDROMDrive) GetPropertyTransferRate() (value float64, err error) {
+	retValue, err := instance.GetProperty("TransferRate")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(float64)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetVolumeName sets the value of VolumeName for the instance
+func (instance *Win32_CDROMDrive) SetPropertyVolumeName(value string) (err error) {
+	return instance.SetProperty("VolumeName", value)
+}
+
+// GetVolumeName gets the value of VolumeName for the instance
+func (instance *Win32_CDROMDrive) GetPropertyVolumeName() (value string, err error) {
+	retValue, err := instance.GetProperty("VolumeName")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetVolumeSerialNumber sets the value of VolumeSerialNumber for the instance
+func (instance *Win32_CDROMDrive) SetPropertyVolumeSerialNumber(value string) (err error) {
+	return instance.SetProperty("VolumeSerialNumber", value)
+}
+
+// GetVolumeSerialNumber gets the value of VolumeSerialNumber for the instance
+func (instance *Win32_CDROMDrive) GetPropertyVolumeSerialNumber() (value string, err error) {
+	retValue, err := instance.GetProperty("VolumeSerialNumber")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}

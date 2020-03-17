@@ -1,0 +1,203 @@
+// Copyright 2019 (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+//
+// Author:
+//      Auto Generated on 3/16/2020 using wmigen
+//      Source root.StandardCimv2
+//////////////////////////////////////////////
+package standardcimv2
+
+// MSFT_TcpIpPrinterPort struct
+type MSFT_TcpIpPrinterPort struct {
+	MSFT_PrinterPort
+
+	//
+	LprByteCounting bool
+
+	//
+	LprQueueName string
+
+	//
+	PortNumber uint32
+
+	//
+	PrinterHostAddress string
+
+	//
+	PrinterHostIP string
+
+	//
+	Protocol uint32
+
+	//
+	SNMPCommunity string
+
+	//
+	SNMPEnabled bool
+
+	//
+	SNMPIndex uint32
+}
+
+// SetLprByteCounting sets the value of LprByteCounting for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertyLprByteCounting(value bool) (err error) {
+	return instance.SetProperty("LprByteCounting", value)
+}
+
+// GetLprByteCounting gets the value of LprByteCounting for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertyLprByteCounting() (value bool, err error) {
+	retValue, err := instance.GetProperty("LprByteCounting")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetLprQueueName sets the value of LprQueueName for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertyLprQueueName(value string) (err error) {
+	return instance.SetProperty("LprQueueName", value)
+}
+
+// GetLprQueueName gets the value of LprQueueName for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertyLprQueueName() (value string, err error) {
+	retValue, err := instance.GetProperty("LprQueueName")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPortNumber sets the value of PortNumber for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertyPortNumber(value uint32) (err error) {
+	return instance.SetProperty("PortNumber", value)
+}
+
+// GetPortNumber gets the value of PortNumber for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertyPortNumber() (value uint32, err error) {
+	retValue, err := instance.GetProperty("PortNumber")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPrinterHostAddress sets the value of PrinterHostAddress for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertyPrinterHostAddress(value string) (err error) {
+	return instance.SetProperty("PrinterHostAddress", value)
+}
+
+// GetPrinterHostAddress gets the value of PrinterHostAddress for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertyPrinterHostAddress() (value string, err error) {
+	retValue, err := instance.GetProperty("PrinterHostAddress")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetPrinterHostIP sets the value of PrinterHostIP for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertyPrinterHostIP(value string) (err error) {
+	return instance.SetProperty("PrinterHostIP", value)
+}
+
+// GetPrinterHostIP gets the value of PrinterHostIP for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertyPrinterHostIP() (value string, err error) {
+	retValue, err := instance.GetProperty("PrinterHostIP")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetProtocol sets the value of Protocol for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertyProtocol(value uint32) (err error) {
+	return instance.SetProperty("Protocol", value)
+}
+
+// GetProtocol gets the value of Protocol for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertyProtocol() (value uint32, err error) {
+	retValue, err := instance.GetProperty("Protocol")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSNMPCommunity sets the value of SNMPCommunity for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertySNMPCommunity(value string) (err error) {
+	return instance.SetProperty("SNMPCommunity", value)
+}
+
+// GetSNMPCommunity gets the value of SNMPCommunity for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertySNMPCommunity() (value string, err error) {
+	retValue, err := instance.GetProperty("SNMPCommunity")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(string)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSNMPEnabled sets the value of SNMPEnabled for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertySNMPEnabled(value bool) (err error) {
+	return instance.SetProperty("SNMPEnabled", value)
+}
+
+// GetSNMPEnabled gets the value of SNMPEnabled for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertySNMPEnabled() (value bool, err error) {
+	retValue, err := instance.GetProperty("SNMPEnabled")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(bool)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
+
+// SetSNMPIndex sets the value of SNMPIndex for the instance
+func (instance *MSFT_TcpIpPrinterPort) SetPropertySNMPIndex(value uint32) (err error) {
+	return instance.SetProperty("SNMPIndex", value)
+}
+
+// GetSNMPIndex gets the value of SNMPIndex for the instance
+func (instance *MSFT_TcpIpPrinterPort) GetPropertySNMPIndex() (value uint32, err error) {
+	retValue, err := instance.GetProperty("SNMPIndex")
+	if err != nil {
+		return
+	}
+	value, ok := retValue.(uint32)
+	if !ok {
+		// TODO: Set an error
+	}
+	return
+}
