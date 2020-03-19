@@ -66,9 +66,9 @@ func (q *WmiQuery) String() (queryString string) {
 	queryString = fmt.Sprintf("%s WHERE ", queryString)
 
 	for _, val := range q.Filters[:len(q.Filters)-1] {
-		queryString = fmt.Sprintf(" %s AND", val.String())
+		queryString = queryString + fmt.Sprintf(" %s AND", val.String())
 	}
 
-	queryString = fmt.Sprintf(" %s ", q.Filters[len(q.Filters)-1].String())
+	queryString = queryString + fmt.Sprintf(" %s ", q.Filters[len(q.Filters)-1].String())
 	return
 }

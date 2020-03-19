@@ -5,7 +5,7 @@
 package session
 
 import (
-	"fmt"
+	"github.com/pkg/errors"
 	"os"
 	"strings"
 
@@ -41,21 +41,21 @@ func StopWMI() {
 }
 
 // GetHostSession
-func GetHostSession(sessionName string, whost *host.WmiHost) (*wmi.WmiSession, error) {
+func GetHostSession(namespaceName string, whost *host.WmiHost) (*wmi.WmiSession, error) {
 	cred := whost.GetCredential()
-	return GetSession(sessionName, whost.HostName, cred.Domain, cred.UserName, cred.Password)
+	return GetSession(namespaceName, whost.HostName, cred.Domain, cred.UserName, cred.Password)
 }
 
-func GetHostSessionWithCredentials(sessionName string, whost *host.WmiHost, cred *credential.WmiCredential) (*wmi.WmiSession, error) {
-	return GetSession(sessionName, whost.HostName, cred.Domain, cred.UserName, cred.Password)
+func GetHostSessionWithCredentials(namespaceName string, whost *host.WmiHost, cred *credential.WmiCredential) (*wmi.WmiSession, error) {
+	return GetSession(namespaceName, whost.HostName, cred.Domain, cred.UserName, cred.Password)
 }
 
 // GetSession
-func GetSession(sessionName string, serverName string, domain string, userName string, password string) (*wmi.WmiSession, error) {
-	sessionsMapId := strings.Join([]string{sessionName, serverName, domain}, "_")
+func GetSession(namespaceName string, serverName string, domain string, userName string, password string) (*wmi.WmiSession, error) {
+	sessionsMapId := strings.Join([]string{namespaceName, serverName, domain}, "_")
 	if sessionsMap[sessionsMapId] == nil {
 		var err error
-		sessionsMap[sessionsMapId], err = createSession(sessionName, serverName, domain, userName, password)
+		sessionsMap[sessionsMapId], err = createSession(namespaceName, serverName, domain, userName, password)
 		if err != nil {
 			return nil, err
 		}
@@ -68,12 +68,12 @@ var (
 	localHostName string
 )
 
+func init() {
+	localHostName, _ = os.Hostname()
+}
+
 ////////////// Private functions ////////////////////////////
 func createSession(sessionName string, serverName string, domain string, username string, password string) (*wmi.WmiSession, error) {
-	if len(localHostName) == 0 {
-		localHostName, _ = os.Hostname()
-	}
-
 	// TODO: ideally, we should also compare the domain here.
 	// that said, this is low priority as cross-domain WMI calls are rare
 	if strings.EqualFold(localHostName, serverName) {
@@ -87,13 +87,13 @@ func createSession(sessionName string, serverName string, domain string, usernam
 
 	session, err := sessionManager.GetSession(sessionName, serverName, domain, username, password)
 	if err != nil {
-		return nil, fmt.Errorf("Failed getting the WMI session for " + sessionName)
+		return nil, errors.Wrapf(err, "Failed getting the WMI session for "+sessionName)
 	}
 
 	connected, err := session.Connect()
 
 	if !connected || err != nil {
-		return nil, fmt.Errorf("Failed connecting to the WMI session for " + sessionName)
+		return nil, errors.Wrapf(err, "Failed connecting to the WMI session for "+sessionName)
 	}
 
 	return session, nil

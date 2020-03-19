@@ -36,7 +36,7 @@ func newWmiInstanceManager(hostname, namespaceName, userName, password, domainNa
 		Namespace: namespaceName,
 	}
 
-	wsession, err := wmisession.GetHostSession("temp", im.Host)
+	wsession, err := wmisession.GetHostSession(namespaceName, im.Host)
 	if err != nil {
 		return nil, err
 	}
