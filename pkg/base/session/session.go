@@ -28,7 +28,9 @@ func StartWMI() {
 // StopWMI
 func StopWMI() {
 	for key := range sessionsMap {
-		sessionsMap[key].Dispose()
+		if sessionsMap[key] != nil {
+			sessionsMap[key].Dispose()
+		}
 		sessionsMap[key] = nil
 	}
 
