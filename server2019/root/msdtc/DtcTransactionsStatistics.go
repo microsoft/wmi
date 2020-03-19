@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // DtcTransactionsStatistics struct
 type DtcTransactionsStatistics struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Aborted uint32
@@ -54,6 +56,35 @@ type DtcTransactionsStatistics struct {
 
 	//
 	SinglePhaseInDoubt uint32
+}
+
+func NewDtcTransactionsStatisticsEx1(instance *cim.WmiInstance) (newInstance *DtcTransactionsStatistics, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcTransactionsStatistics{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewDtcTransactionsStatisticsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *DtcTransactionsStatistics, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcTransactionsStatistics{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAborted sets the value of Aborted for the instance

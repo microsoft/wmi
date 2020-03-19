@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchPortProfileSettingData struct
 type Msvm_EthernetSwitchPortProfileSettingData struct {
-	Msvm_EthernetSwitchPortFeatureSettingData
+	*Msvm_EthernetSwitchPortFeatureSettingData
 
 	//
 	CdnLabelId uint32
@@ -51,6 +52,35 @@ type Msvm_EthernetSwitchPortProfileSettingData struct {
 
 	//
 	VendorName string
+}
+
+func NewMsvm_EthernetSwitchPortProfileSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchPortProfileSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortProfileSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchPortProfileSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchPortProfileSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortProfileSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
 }
 
 // SetCdnLabelId sets the value of CdnLabelId for the instance

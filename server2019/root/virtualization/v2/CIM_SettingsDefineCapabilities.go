@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_SettingsDefineCapabilities struct
 type CIM_SettingsDefineCapabilities struct {
-	CIM_Component
+	*CIM_Component
 
 	// PropertyPolicy defines whether or not the non-null, non-key properties of the associated SettingData instance are treated independently or as a correlated set. For instance, an independent set of maximum properties might be defined, when there is no relationship between each property. On the other hand, several correlated sets of maximum properties might need to be defined when the maximum values of each are dependent on some of the others.
 	PropertyPolicy SettingsDefineCapabilities_PropertyPolicy
@@ -28,6 +33,35 @@ type CIM_SettingsDefineCapabilities struct {
 	///Across instances of settingdata, for particular properties having the same semantic purpose, at most one such settingdata instance shall be specified as a default.
 	///"Optimal" indicates that the SettingData instance represents optimal setting values for elements associated with the associated capabilities instance. Multiple component SettingData instances may be declared as optimal."Mean" indicates that the non-null, non-key, non-enumerated, non-boolean, numeric properties of the associated SettingData instance represents an average point along some dimension. For different combinations of SettingData properties, multiple component SettingData instances may be declared as "Mean". "Supported" indicates that the non-null, non-key properties of the Component SettingData instance represents a set of supported property values that are not otherwise qualified.
 	ValueRole SettingsDefineCapabilities_ValueRole
+}
+
+func NewCIM_SettingsDefineCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_SettingsDefineCapabilities, err error) {
+	tmp, err := NewCIM_ComponentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SettingsDefineCapabilities{
+		CIM_Component: tmp,
+	}
+	return
+}
+
+func NewCIM_SettingsDefineCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_SettingsDefineCapabilities, err error) {
+	tmp, err := NewCIM_ComponentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SettingsDefineCapabilities{
+		CIM_Component: tmp,
+	}
+	return
 }
 
 // SetPropertyPolicy sets the value of PropertyPolicy for the instance

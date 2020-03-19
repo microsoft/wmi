@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VirtualSystemManagementCapabilities struct
 type CIM_VirtualSystemManagementCapabilities struct {
-	CIM_EnabledLogicalElementCapabilities
+	*CIM_EnabledLogicalElementCapabilities
 
 	// Enumeration of method identifiers each identifying a method of class CIM_VirtualSystemManagementService that is supported asynchronously by the implementation.
 	AsynchronousMethodsSupported []VirtualSystemManagementCapabilities_AsynchronousMethodsSupported
@@ -27,6 +32,35 @@ type CIM_VirtualSystemManagementCapabilities struct {
 	// Enumeration of strings each designating a type of virtual system that the implementation supports.
 	///The value of each non-NULL array element shall conform to the format defined for the CIM_VirtualSystemSettingData.VirtualSystemType property.
 	VirtualSystemTypesSupported []string
+}
+
+func NewCIM_VirtualSystemManagementCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemManagementCapabilities, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementCapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemManagementCapabilities{
+		CIM_EnabledLogicalElementCapabilities: tmp,
+	}
+	return
+}
+
+func NewCIM_VirtualSystemManagementCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VirtualSystemManagementCapabilities, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementCapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemManagementCapabilities{
+		CIM_EnabledLogicalElementCapabilities: tmp,
+	}
+	return
 }
 
 // SetAsynchronousMethodsSupported sets the value of AsynchronousMethodsSupported for the instance

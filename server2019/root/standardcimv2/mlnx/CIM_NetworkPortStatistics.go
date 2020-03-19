@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_NetworkPortStatistics struct
 type CIM_NetworkPortStatistics struct {
-	CIM_StatisticalData
+	*CIM_StatisticalData
 
 	//
 	BytesReceived uint64
@@ -23,6 +28,35 @@ type CIM_NetworkPortStatistics struct {
 
 	//
 	PacketsTransmitted uint64
+}
+
+func NewCIM_NetworkPortStatisticsEx1(instance *cim.WmiInstance) (newInstance *CIM_NetworkPortStatistics, err error) {
+	tmp, err := NewCIM_StatisticalDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NetworkPortStatistics{
+		CIM_StatisticalData: tmp,
+	}
+	return
+}
+
+func NewCIM_NetworkPortStatisticsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_NetworkPortStatistics, err error) {
+	tmp, err := NewCIM_StatisticalDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NetworkPortStatistics{
+		CIM_StatisticalData: tmp,
+	}
+	return
 }
 
 // SetBytesReceived sets the value of BytesReceived for the instance

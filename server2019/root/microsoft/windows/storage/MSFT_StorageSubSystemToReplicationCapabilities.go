@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageSubSystemToReplicationCapabilities struct
 type MSFT_StorageSubSystemToReplicationCapabilities struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ReplicationCapabilities MSFT_ReplicationCapabilities
 
 	//
 	StorageSubSystem MSFT_StorageSubSystem
+}
+
+func NewMSFT_StorageSubSystemToReplicationCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageSubSystemToReplicationCapabilities, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToReplicationCapabilities{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageSubSystemToReplicationCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageSubSystemToReplicationCapabilities, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToReplicationCapabilities{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetReplicationCapabilities sets the value of ReplicationCapabilities for the instance

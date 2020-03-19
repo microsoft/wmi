@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_OfflineFilesFileSysInfo struct
 type Win32_OfflineFilesFileSysInfo struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	LocalAttributes uint32
@@ -69,6 +71,35 @@ type Win32_OfflineFilesFileSysInfo struct {
 
 	//
 	RemoteSize int64
+}
+
+func NewWin32_OfflineFilesFileSysInfoEx1(instance *cim.WmiInstance) (newInstance *Win32_OfflineFilesFileSysInfo, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OfflineFilesFileSysInfo{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_OfflineFilesFileSysInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_OfflineFilesFileSysInfo, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OfflineFilesFileSysInfo{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetLocalAttributes sets the value of LocalAttributes for the instance

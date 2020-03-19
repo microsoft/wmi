@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Memory struct
 type CIM_Memory struct {
-	CIM_StorageExtent
+	*CIM_StorageExtent
 
 	// An array of octets holding additional error information. An example is ECC Syndrome or the return of the check bits if a CRC-based ErrorMethodology is used. In the latter case, if a single bit error is recognized and the CRC algorithm is known, it is possible to determine the exact bit that failed. This type of data (ECC Syndrome, Check Bit or Parity Bit data, or other vendor supplied information) is included in this field. If the ErrorInfo property is equal to 3, "OK", then AdditionalErrorData has no meaning.
 	AdditionalErrorData []uint8
@@ -56,6 +61,35 @@ type CIM_Memory struct {
 
 	// Volatile is a property that indicates whether this memory is volatile or not.
 	Volatile bool
+}
+
+func NewCIM_MemoryEx1(instance *cim.WmiInstance) (newInstance *CIM_Memory, err error) {
+	tmp, err := NewCIM_StorageExtentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Memory{
+		CIM_StorageExtent: tmp,
+	}
+	return
+}
+
+func NewCIM_MemoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Memory, err error) {
+	tmp, err := NewCIM_StorageExtentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Memory{
+		CIM_StorageExtent: tmp,
+	}
+	return
 }
 
 // SetAdditionalErrorData sets the value of AdditionalErrorData for the instance

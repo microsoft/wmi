@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfRawData_ServiceModel4000_ServiceModelService4000 struct
 type Win32_PerfRawData_ServiceModel4000_ServiceModelService4000 struct {
-	Win32_PerfRawData
+	*Win32_PerfRawData
 
 	//
 	Calls uint32
@@ -128,6 +133,35 @@ type Win32_PerfRawData_ServiceModel4000_ServiceModelService4000 struct {
 
 	//
 	TransactionsFlowedPerSecond uint32
+}
+
+func NewWin32_PerfRawData_ServiceModel4000_ServiceModelService4000Ex1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_ServiceModel4000_ServiceModelService4000, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_ServiceModel4000_ServiceModelService4000{
+		Win32_PerfRawData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfRawData_ServiceModel4000_ServiceModelService4000Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_ServiceModel4000_ServiceModelService4000, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_ServiceModel4000_ServiceModelService4000{
+		Win32_PerfRawData: tmp,
+	}
+	return
 }
 
 // SetCalls sets the value of Calls for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msft_WmiProvider_Counters struct
 type Msft_WmiProvider_Counters struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ProviderOperation_AccessCheck uint64
@@ -87,6 +89,35 @@ type Msft_WmiProvider_Counters struct {
 
 	//
 	ProviderOperation_ValidateSubscription uint64
+}
+
+func NewMsft_WmiProvider_CountersEx1(instance *cim.WmiInstance) (newInstance *Msft_WmiProvider_Counters, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_Counters{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsft_WmiProvider_CountersEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_WmiProvider_Counters, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_Counters{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetProviderOperation_AccessCheck sets the value of ProviderOperation_AccessCheck for the instance

@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __InstanceOperationEvent struct
 type __InstanceOperationEvent struct {
-	__Event
+	*__Event
 
 	//
 	TargetInstance interface{}
+}
+
+func New__InstanceOperationEventEx1(instance *cim.WmiInstance) (newInstance *__InstanceOperationEvent, err error) {
+	tmp, err := New__EventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__InstanceOperationEvent{
+		__Event: tmp,
+	}
+	return
+}
+
+func New__InstanceOperationEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__InstanceOperationEvent, err error) {
+	tmp, err := New__EventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__InstanceOperationEvent{
+		__Event: tmp,
+	}
+	return
 }
 
 // SetTargetInstance sets the value of TargetInstance for the instance

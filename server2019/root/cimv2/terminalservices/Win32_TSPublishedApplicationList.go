@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSPublishedApplicationList struct
 type Win32_TSPublishedApplicationList struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// Whether the Terminal Server restricts remote applications to those on the list.
 	Disabled bool
 
 	// Indicates whether the property Disabled is configured by Server (0),Group Policy (1), Default (2)
 	PolicySourceDisabled uint32
+}
+
+func NewWin32_TSPublishedApplicationListEx1(instance *cim.WmiInstance) (newInstance *Win32_TSPublishedApplicationList, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSPublishedApplicationList{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_TSPublishedApplicationListEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSPublishedApplicationList, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSPublishedApplicationList{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetDisabled sets the value of Disabled for the instance

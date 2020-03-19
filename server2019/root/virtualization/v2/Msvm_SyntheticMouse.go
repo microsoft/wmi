@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_SyntheticMouse struct
 type Msvm_SyntheticMouse struct {
-	CIM_PointingDevice
+	*CIM_PointingDevice
 
 	//
 	AbsoluteCoordinates bool
@@ -23,6 +28,35 @@ type Msvm_SyntheticMouse struct {
 
 	//
 	VerticalPosition int32
+}
+
+func NewMsvm_SyntheticMouseEx1(instance *cim.WmiInstance) (newInstance *Msvm_SyntheticMouse, err error) {
+	tmp, err := NewCIM_PointingDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SyntheticMouse{
+		CIM_PointingDevice: tmp,
+	}
+	return
+}
+
+func NewMsvm_SyntheticMouseEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_SyntheticMouse, err error) {
+	tmp, err := NewCIM_PointingDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SyntheticMouse{
+		CIM_PointingDevice: tmp,
+	}
+	return
 }
 
 // SetAbsoluteCoordinates sets the value of AbsoluteCoordinates for the instance
@@ -177,4 +211,16 @@ func (instance *Msvm_SyntheticMouse) SetScrollPosition( /* IN */ ScrollPositionD
 	result = uint32(retVal)
 	return
 
+}
+
+func (instance *Msvm_SyntheticMouse) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_SyntheticMouse) GetRelatedResourceAllocationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourceAllocationSettingData")
+}
+
+func (instance *Msvm_SyntheticMouse) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePool")
 }

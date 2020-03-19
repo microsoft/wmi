@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Log struct
 type CIM_Log struct {
-	CIM_EnabledLogicalElement
+	*CIM_EnabledLogicalElement
 
 	//
 	CurrentNumberOfRecords uint64
 
 	//
 	MaxNumberOfRecords uint64
+}
+
+func NewCIM_LogEx1(instance *cim.WmiInstance) (newInstance *CIM_Log, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Log{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_LogEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Log, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Log{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
 }
 
 // SetCurrentNumberOfRecords sets the value of CurrentNumberOfRecords for the instance

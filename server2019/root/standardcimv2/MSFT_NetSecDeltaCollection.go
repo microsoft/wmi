@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetSecDeltaCollection struct
 type MSFT_NetSecDeltaCollection struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	Action uint16
@@ -35,6 +40,35 @@ type MSFT_NetSecDeltaCollection struct {
 
 	//
 	PolicyStore string
+}
+
+func NewMSFT_NetSecDeltaCollectionEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetSecDeltaCollection, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSecDeltaCollection{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetSecDeltaCollectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetSecDeltaCollection, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSecDeltaCollection{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetAction sets the value of Action for the instance

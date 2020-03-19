@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster
 //////////////////////////////////////////////
 package cluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __Win32Provider struct
 type __Win32Provider struct {
-	__Provider
+	*__Provider
 
 	//
 	ClientLoadableCLSID string
@@ -80,6 +85,35 @@ type __Win32Provider struct {
 
 	//
 	Version uint32
+}
+
+func New__Win32ProviderEx1(instance *cim.WmiInstance) (newInstance *__Win32Provider, err error) {
+	tmp, err := New__ProviderEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Win32Provider{
+		__Provider: tmp,
+	}
+	return
+}
+
+func New__Win32ProviderEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__Win32Provider, err error) {
+	tmp, err := New__ProviderEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Win32Provider{
+		__Provider: tmp,
+	}
+	return
 }
 
 // SetClientLoadableCLSID sets the value of ClientLoadableCLSID for the instance

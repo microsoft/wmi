@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_ExtensionEventSource struct
 type RSOP_ExtensionEventSource struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	eventLogName string
@@ -24,6 +26,35 @@ type RSOP_ExtensionEventSource struct {
 
 	//
 	id string
+}
+
+func NewRSOP_ExtensionEventSourceEx1(instance *cim.WmiInstance) (newInstance *RSOP_ExtensionEventSource, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ExtensionEventSource{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_ExtensionEventSourceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_ExtensionEventSource, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ExtensionEventSource{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SeteventLogName sets the value of eventLogName for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Uev
 //////////////////////////////////////////////
 package uev
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __PropertyProviderRegistration struct
 type __PropertyProviderRegistration struct {
-	__ProviderRegistration
+	*__ProviderRegistration
 
 	//
 	SupportsGet bool
 
 	//
 	SupportsPut bool
+}
+
+func New__PropertyProviderRegistrationEx1(instance *cim.WmiInstance) (newInstance *__PropertyProviderRegistration, err error) {
+	tmp, err := New__ProviderRegistrationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__PropertyProviderRegistration{
+		__ProviderRegistration: tmp,
+	}
+	return
+}
+
+func New__PropertyProviderRegistrationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__PropertyProviderRegistration, err error) {
+	tmp, err := New__ProviderRegistrationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__PropertyProviderRegistration{
+		__ProviderRegistration: tmp,
+	}
+	return
 }
 
 // SetSupportsGet sets the value of SupportsGet for the instance

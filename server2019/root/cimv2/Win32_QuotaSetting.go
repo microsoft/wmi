@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_QuotaSetting struct
 type Win32_QuotaSetting struct {
-	CIM_Setting
+	*CIM_Setting
 
 	//
 	DefaultLimit int64
@@ -29,6 +34,35 @@ type Win32_QuotaSetting struct {
 
 	//
 	WarningExceededNotification bool
+}
+
+func NewWin32_QuotaSettingEx1(instance *cim.WmiInstance) (newInstance *Win32_QuotaSetting, err error) {
+	tmp, err := NewCIM_SettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_QuotaSetting{
+		CIM_Setting: tmp,
+	}
+	return
+}
+
+func NewWin32_QuotaSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_QuotaSetting, err error) {
+	tmp, err := NewCIM_SettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_QuotaSetting{
+		CIM_Setting: tmp,
+	}
+	return
 }
 
 // SetDefaultLimit sets the value of DefaultLimit for the instance

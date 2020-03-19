@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.PS_MMAgent
 //////////////////////////////////////////////
 package ps_mmagent
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MMAgentComponents struct
 type MMAgentComponents struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ApplicationLaunchPrefetching bool
@@ -33,6 +35,35 @@ type MMAgentComponents struct {
 
 	//
 	PageCombining bool
+}
+
+func NewMMAgentComponentsEx1(instance *cim.WmiInstance) (newInstance *MMAgentComponents, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MMAgentComponents{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMMAgentComponentsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MMAgentComponents, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MMAgentComponents{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetApplicationLaunchPrefetching sets the value of ApplicationLaunchPrefetching for the instance

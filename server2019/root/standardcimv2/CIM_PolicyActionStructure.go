@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PolicyActionStructure struct
 type CIM_PolicyActionStructure struct {
-	CIM_PolicyComponent
+	*CIM_PolicyComponent
 
 	//
 	ActionOrder uint16
+}
+
+func NewCIM_PolicyActionStructureEx1(instance *cim.WmiInstance) (newInstance *CIM_PolicyActionStructure, err error) {
+	tmp, err := NewCIM_PolicyComponentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PolicyActionStructure{
+		CIM_PolicyComponent: tmp,
+	}
+	return
+}
+
+func NewCIM_PolicyActionStructureEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PolicyActionStructure, err error) {
+	tmp, err := NewCIM_PolicyComponentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PolicyActionStructure{
+		CIM_PolicyComponent: tmp,
+	}
+	return
 }
 
 // SetActionOrder sets the value of ActionOrder for the instance

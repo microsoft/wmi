@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_BinarySensor struct
 type CIM_BinarySensor struct {
-	CIM_Sensor
+	*CIM_Sensor
 
 	//
 	CurrentReading bool
@@ -23,6 +28,35 @@ type CIM_BinarySensor struct {
 
 	//
 	InterpretationOfTrue string
+}
+
+func NewCIM_BinarySensorEx1(instance *cim.WmiInstance) (newInstance *CIM_BinarySensor, err error) {
+	tmp, err := NewCIM_SensorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BinarySensor{
+		CIM_Sensor: tmp,
+	}
+	return
+}
+
+func NewCIM_BinarySensorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_BinarySensor, err error) {
+	tmp, err := NewCIM_SensorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BinarySensor{
+		CIM_Sensor: tmp,
+	}
+	return
 }
 
 // SetCurrentReading sets the value of CurrentReading for the instance

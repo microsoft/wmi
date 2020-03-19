@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DeliveryOptimization
 //////////////////////////////////////////////
 package deliveryoptimization
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ACE struct
 type __ACE struct {
-	__SecurityRelatedClass
+	*__SecurityRelatedClass
 
 	//
 	AccessMask uint32
@@ -32,6 +37,35 @@ type __ACE struct {
 
 	//
 	Trustee __Trustee
+}
+
+func New__ACEEx1(instance *cim.WmiInstance) (newInstance *__ACE, err error) {
+	tmp, err := New__SecurityRelatedClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ACE{
+		__SecurityRelatedClass: tmp,
+	}
+	return
+}
+
+func New__ACEEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ACE, err error) {
+	tmp, err := New__SecurityRelatedClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ACE{
+		__SecurityRelatedClass: tmp,
+	}
+	return
 }
 
 // SetAccessMask sets the value of AccessMask for the instance

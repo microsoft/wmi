@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchData struct
 type Msvm_EthernetSwitchData struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	CreationClassName string
@@ -27,6 +28,35 @@ type Msvm_EthernetSwitchData struct {
 
 	//
 	SystemName string
+}
+
+func NewMsvm_EthernetSwitchDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchData, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchData{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchData, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchData{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance

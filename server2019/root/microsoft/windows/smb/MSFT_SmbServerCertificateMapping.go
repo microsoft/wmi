@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbServerCertificateMapping struct
 type MSFT_SmbServerCertificateMapping struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DisplayName string
@@ -30,6 +32,35 @@ type MSFT_SmbServerCertificateMapping struct {
 
 	//
 	Type SmbServerCertificateMapping_Type
+}
+
+func NewMSFT_SmbServerCertificateMappingEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbServerCertificateMapping, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbServerCertificateMapping{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbServerCertificateMappingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbServerCertificateMapping, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbServerCertificateMapping{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDisplayName sets the value of DisplayName for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization
 //////////////////////////////////////////////
 package virtualization
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __TimerInstruction struct
 type __TimerInstruction struct {
-	__EventGenerator
+	*__EventGenerator
 
 	//
 	SkipIfPassed bool
 
 	//
 	TimerId string
+}
+
+func New__TimerInstructionEx1(instance *cim.WmiInstance) (newInstance *__TimerInstruction, err error) {
+	tmp, err := New__EventGeneratorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__TimerInstruction{
+		__EventGenerator: tmp,
+	}
+	return
+}
+
+func New__TimerInstructionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__TimerInstruction, err error) {
+	tmp, err := New__EventGeneratorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__TimerInstruction{
+		__EventGenerator: tmp,
+	}
+	return
 }
 
 // SetSkipIfPassed sets the value of SkipIfPassed for the instance

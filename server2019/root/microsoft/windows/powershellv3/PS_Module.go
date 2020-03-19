@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Powershellv3
 //////////////////////////////////////////////
 package powershellv3
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // PS_Module struct
 type PS_Module struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	moduleManifestFileData []uint8
@@ -20,6 +25,35 @@ type PS_Module struct {
 
 	//
 	moduleType uint16
+}
+
+func NewPS_ModuleEx1(instance *cim.WmiInstance) (newInstance *PS_Module, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_Module{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewPS_ModuleEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *PS_Module, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_Module{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetmoduleManifestFileData sets the value of moduleManifestFileData for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_DfsTarget struct
 type Win32_DfsTarget struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	LinkName string
@@ -23,6 +28,35 @@ type Win32_DfsTarget struct {
 
 	//
 	State uint32
+}
+
+func NewWin32_DfsTargetEx1(instance *cim.WmiInstance) (newInstance *Win32_DfsTarget, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DfsTarget{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_DfsTargetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_DfsTarget, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DfsTarget{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetLinkName sets the value of LinkName for the instance

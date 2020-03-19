@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfRawData_Counters_IPsecAuthIPIPv6 struct
 type Win32_PerfRawData_Counters_IPsecAuthIPIPv6 struct {
-	Win32_PerfRawData
+	*Win32_PerfRawData
 
 	//
 	ActiveExtendedModeSAs uint32
@@ -98,6 +103,35 @@ type Win32_PerfRawData_Counters_IPsecAuthIPIPv6 struct {
 
 	//
 	SuccessfulQuickModeNegotiationsPersec uint32
+}
+
+func NewWin32_PerfRawData_Counters_IPsecAuthIPIPv6Ex1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_Counters_IPsecAuthIPIPv6, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_Counters_IPsecAuthIPIPv6{
+		Win32_PerfRawData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfRawData_Counters_IPsecAuthIPIPv6Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_Counters_IPsecAuthIPIPv6, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_Counters_IPsecAuthIPIPv6{
+		Win32_PerfRawData: tmp,
+	}
+	return
 }
 
 // SetActiveExtendedModeSAs sets the value of ActiveExtendedModeSAs for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // ServerComponent_HyperV struct
 type ServerComponent_HyperV struct {
-	MSFT_ServerManagerServerComponentDescriptor
+	*MSFT_ServerManagerServerComponentDescriptor
 
 	//
 	DefaultVirtualHardDiskPath string
@@ -26,6 +31,35 @@ type ServerComponent_HyperV struct {
 
 	//
 	VirtualSwitchNetworkAdapters []string
+}
+
+func NewServerComponent_HyperVEx1(instance *cim.WmiInstance) (newInstance *ServerComponent_HyperV, err error) {
+	tmp, err := NewMSFT_ServerManagerServerComponentDescriptorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ServerComponent_HyperV{
+		MSFT_ServerManagerServerComponentDescriptor: tmp,
+	}
+	return
+}
+
+func NewServerComponent_HyperVEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *ServerComponent_HyperV, err error) {
+	tmp, err := NewMSFT_ServerManagerServerComponentDescriptorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ServerComponent_HyperV{
+		MSFT_ServerManagerServerComponentDescriptor: tmp,
+	}
+	return
 }
 
 // SetDefaultVirtualHardDiskPath sets the value of DefaultVirtualHardDiskPath for the instance

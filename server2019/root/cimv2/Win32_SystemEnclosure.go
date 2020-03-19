@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_SystemEnclosure struct
 type Win32_SystemEnclosure struct {
-	CIM_Chassis
+	*CIM_Chassis
 
 	//
 	SecurityStatus uint16
 
 	//
 	SMBIOSAssetTag string
+}
+
+func NewWin32_SystemEnclosureEx1(instance *cim.WmiInstance) (newInstance *Win32_SystemEnclosure, err error) {
+	tmp, err := NewCIM_ChassisEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SystemEnclosure{
+		CIM_Chassis: tmp,
+	}
+	return
+}
+
+func NewWin32_SystemEnclosureEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_SystemEnclosure, err error) {
+	tmp, err := NewCIM_ChassisEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SystemEnclosure{
+		CIM_Chassis: tmp,
+	}
+	return
 }
 
 // SetSecurityStatus sets the value of SecurityStatus for the instance

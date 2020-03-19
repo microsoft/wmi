@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_BaseService struct
 type Win32_BaseService struct {
-	CIM_Service
+	*CIM_Service
 
 	//
 	AcceptPause bool
@@ -47,6 +52,35 @@ type Win32_BaseService struct {
 
 	//
 	TagId uint32
+}
+
+func NewWin32_BaseServiceEx1(instance *cim.WmiInstance) (newInstance *Win32_BaseService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_BaseService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewWin32_BaseServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_BaseService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_BaseService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 // SetAcceptPause sets the value of AcceptPause for the instance

@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_iSCSITargetToiSCSIConnection struct
 type MSFT_iSCSITargetToiSCSIConnection struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	iSCSIConnection MSFT_iSCSIConnection
 
 	//
 	iSCSITarget MSFT_iSCSITarget
+}
+
+func NewMSFT_iSCSITargetToiSCSIConnectionEx1(instance *cim.WmiInstance) (newInstance *MSFT_iSCSITargetToiSCSIConnection, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSITargetToiSCSIConnection{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_iSCSITargetToiSCSIConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_iSCSITargetToiSCSIConnection, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSITargetToiSCSIConnection{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetiSCSIConnection sets the value of iSCSIConnection for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Controller struct
 type CIM_Controller struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// Maximum number of directly addressable entities that are supported by this Controller. A value of 0 should be used if the number is unknown or unlimited.
 	MaxNumberControlled uint32
@@ -23,6 +28,35 @@ type CIM_Controller struct {
 
 	// Time of last reset of the Controller.
 	TimeOfLastReset string
+}
+
+func NewCIM_ControllerEx1(instance *cim.WmiInstance) (newInstance *CIM_Controller, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Controller{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_ControllerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Controller, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Controller{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetMaxNumberControlled sets the value of MaxNumberControlled for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_InitiatorId struct
 type MSFT_InitiatorId struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	//
 	HostType []uint16
@@ -23,6 +28,35 @@ type MSFT_InitiatorId struct {
 
 	//
 	Type uint16
+}
+
+func NewMSFT_InitiatorIdEx1(instance *cim.WmiInstance) (newInstance *MSFT_InitiatorId, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_InitiatorId{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_InitiatorIdEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_InitiatorId, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_InitiatorId{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetHostType sets the value of HostType for the instance

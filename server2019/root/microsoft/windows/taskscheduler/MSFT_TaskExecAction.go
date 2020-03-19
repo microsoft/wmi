@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TaskExecAction struct
 type MSFT_TaskExecAction struct {
-	MSFT_TaskAction
+	*MSFT_TaskAction
 
 	//
 	Arguments string
@@ -20,6 +25,35 @@ type MSFT_TaskExecAction struct {
 
 	//
 	WorkingDirectory string
+}
+
+func NewMSFT_TaskExecActionEx1(instance *cim.WmiInstance) (newInstance *MSFT_TaskExecAction, err error) {
+	tmp, err := NewMSFT_TaskActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskExecAction{
+		MSFT_TaskAction: tmp,
+	}
+	return
+}
+
+func NewMSFT_TaskExecActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TaskExecAction, err error) {
+	tmp, err := NewMSFT_TaskActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskExecAction{
+		MSFT_TaskAction: tmp,
+	}
+	return
 }
 
 // SetArguments sets the value of Arguments for the instance

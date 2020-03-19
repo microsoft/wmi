@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_DirectorySpecificationFile struct
 type CIM_DirectorySpecificationFile struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DirectorySpecification CIM_DirectorySpecification
 
 	//
 	FileSpecification CIM_FileSpecification
+}
+
+func NewCIM_DirectorySpecificationFileEx1(instance *cim.WmiInstance) (newInstance *CIM_DirectorySpecificationFile, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DirectorySpecificationFile{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_DirectorySpecificationFileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DirectorySpecificationFile, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DirectorySpecificationFile{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDirectorySpecification sets the value of DirectorySpecification for the instance

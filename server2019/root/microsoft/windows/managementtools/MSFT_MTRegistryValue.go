@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTRegistryValue struct
 type MSFT_MTRegistryValue struct {
-	MSFT_MTRegistryObject
+	*MSFT_MTRegistryObject
 
 	//
 	Status uint16
 
 	//
 	Type uint32
+}
+
+func NewMSFT_MTRegistryValueEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTRegistryValue, err error) {
+	tmp, err := NewMSFT_MTRegistryObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTRegistryValue{
+		MSFT_MTRegistryObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTRegistryValueEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTRegistryValue, err error) {
+	tmp, err := NewMSFT_MTRegistryObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTRegistryValue{
+		MSFT_MTRegistryObject: tmp,
+	}
+	return
 }
 
 // SetStatus sets the value of Status for the instance

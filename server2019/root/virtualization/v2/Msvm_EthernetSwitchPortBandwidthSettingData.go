@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchPortBandwidthSettingData struct
 type Msvm_EthernetSwitchPortBandwidthSettingData struct {
-	Msvm_EthernetSwitchPortFeatureSettingData
+	*Msvm_EthernetSwitchPortFeatureSettingData
 
 	//
 	BurstLimit uint64
@@ -30,6 +31,35 @@ type Msvm_EthernetSwitchPortBandwidthSettingData struct {
 
 	//
 	Weight uint64
+}
+
+func NewMsvm_EthernetSwitchPortBandwidthSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchPortBandwidthSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortBandwidthSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchPortBandwidthSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchPortBandwidthSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortBandwidthSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
 }
 
 // SetBurstLimit sets the value of BurstLimit for the instance

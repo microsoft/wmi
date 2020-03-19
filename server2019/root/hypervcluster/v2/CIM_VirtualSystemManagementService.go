@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_VirtualSystemManagementService struct
 type CIM_VirtualSystemManagementService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewCIM_VirtualSystemManagementServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemManagementService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemManagementService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewCIM_VirtualSystemManagementServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VirtualSystemManagementService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemManagementService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 // Adds resources to a virtual system configuration

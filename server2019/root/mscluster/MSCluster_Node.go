@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_Node struct
 type MSCluster_Node struct {
-	CIM_UnitaryComputerSystem
+	*CIM_UnitaryComputerSystem
 
 	//
 	BuildNumber uint32
@@ -74,6 +79,35 @@ type MSCluster_Node struct {
 
 	//
 	StatusInformation uint32
+}
+
+func NewMSCluster_NodeEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Node, err error) {
+	tmp, err := NewCIM_UnitaryComputerSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Node{
+		CIM_UnitaryComputerSystem: tmp,
+	}
+	return
+}
+
+func NewMSCluster_NodeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_Node, err error) {
+	tmp, err := NewCIM_UnitaryComputerSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Node{
+		CIM_UnitaryComputerSystem: tmp,
+	}
+	return
 }
 
 // SetBuildNumber sets the value of BuildNumber for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __NTLMUser9X struct
 type __NTLMUser9X struct {
-	__SecurityRelatedClass
+	*__SecurityRelatedClass
 
 	//
 	Authority string
@@ -26,6 +31,35 @@ type __NTLMUser9X struct {
 
 	//
 	Type int32
+}
+
+func New__NTLMUser9XEx1(instance *cim.WmiInstance) (newInstance *__NTLMUser9X, err error) {
+	tmp, err := New__SecurityRelatedClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NTLMUser9X{
+		__SecurityRelatedClass: tmp,
+	}
+	return
+}
+
+func New__NTLMUser9XEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__NTLMUser9X, err error) {
+	tmp, err := New__SecurityRelatedClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NTLMUser9X{
+		__SecurityRelatedClass: tmp,
+	}
+	return
 }
 
 // SetAuthority sets the value of Authority for the instance

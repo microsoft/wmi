@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PCIDevice struct
 type CIM_PCIDevice struct {
-	CIM_PCIController
+	*CIM_PCIController
 
 	//
 	BaseAddress []uint32
@@ -44,6 +49,35 @@ type CIM_PCIDevice struct {
 
 	//
 	VendorID uint16
+}
+
+func NewCIM_PCIDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_PCIDevice, err error) {
+	tmp, err := NewCIM_PCIControllerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PCIDevice{
+		CIM_PCIController: tmp,
+	}
+	return
+}
+
+func NewCIM_PCIDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PCIDevice, err error) {
+	tmp, err := NewCIM_PCIControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PCIDevice{
+		CIM_PCIController: tmp,
+	}
+	return
 }
 
 // SetBaseAddress sets the value of BaseAddress for the instance

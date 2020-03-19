@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_AffectedJobElement struct
 type CIM_AffectedJobElement struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The ManagedElement affected by the execution of the Job.
 	AffectedElement CIM_ManagedElement
@@ -27,6 +29,35 @@ type CIM_AffectedJobElement struct {
 
 	// Provides details for the 'effect' at the corresponding array position in ElementEffects. This information is required whenever ElementEffects contains the value 1 ("Other").
 	OtherElementEffectsDescriptions []string
+}
+
+func NewCIM_AffectedJobElementEx1(instance *cim.WmiInstance) (newInstance *CIM_AffectedJobElement, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AffectedJobElement{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_AffectedJobElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_AffectedJobElement, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AffectedJobElement{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAffectedElement sets the value of AffectedElement for the instance

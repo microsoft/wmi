@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx struct
 type MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx struct {
-	MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities
+	*MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities
 
 	//
 	IsVxlanUDPPortConfigurable bool
 
 	//
 	VxlanUDPPortNumber uint16
+}
+
+func NewMSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesExEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx, err error) {
+	tmp, err := NewMSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx{
+		MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesExEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx, err error) {
+	tmp, err := NewMSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx{
+		MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities: tmp,
+	}
+	return
 }
 
 // SetIsVxlanUDPPortConfigurable sets the value of IsVxlanUDPPortConfigurable for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.subscription
 //////////////////////////////////////////////
 package subscription
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // SMTPEventConsumer struct
 type SMTPEventConsumer struct {
-	__EventConsumer
+	*__EventConsumer
 
 	//
 	BccLine string
@@ -41,6 +46,35 @@ type SMTPEventConsumer struct {
 
 	//
 	ToLine string
+}
+
+func NewSMTPEventConsumerEx1(instance *cim.WmiInstance) (newInstance *SMTPEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SMTPEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
+}
+
+func NewSMTPEventConsumerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SMTPEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SMTPEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
 }
 
 // SetBccLine sets the value of BccLine for the instance

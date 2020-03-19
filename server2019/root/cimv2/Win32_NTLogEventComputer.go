@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_NTLogEventComputer struct
 type Win32_NTLogEventComputer struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Computer Win32_ComputerSystem
 
 	//
 	Record Win32_NTLogEvent
+}
+
+func NewWin32_NTLogEventComputerEx1(instance *cim.WmiInstance) (newInstance *Win32_NTLogEventComputer, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NTLogEventComputer{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_NTLogEventComputerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_NTLogEventComputer, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NTLogEventComputer{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetComputer sets the value of Computer for the instance

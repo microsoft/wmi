@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetIKEQMCryptoSet struct
 type MSFT_NetIKEQMCryptoSet struct {
-	MSFT_NetIKECryptoSet
+	*MSFT_NetIKECryptoSet
 
 	//
 	PfsGroupID uint16
+}
+
+func NewMSFT_NetIKEQMCryptoSetEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetIKEQMCryptoSet, err error) {
+	tmp, err := NewMSFT_NetIKECryptoSetEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEQMCryptoSet{
+		MSFT_NetIKECryptoSet: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetIKEQMCryptoSetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetIKEQMCryptoSet, err error) {
+	tmp, err := NewMSFT_NetIKECryptoSetEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEQMCryptoSet{
+		MSFT_NetIKECryptoSet: tmp,
+	}
+	return
 }
 
 // SetPfsGroupID sets the value of PfsGroupID for the instance

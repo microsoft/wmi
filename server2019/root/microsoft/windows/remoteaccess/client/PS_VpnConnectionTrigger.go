@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // PS_VpnConnectionTrigger struct
 type PS_VpnConnectionTrigger struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewPS_VpnConnectionTriggerEx1(instance *cim.WmiInstance) (newInstance *PS_VpnConnectionTrigger, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_VpnConnectionTrigger{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewPS_VpnConnectionTriggerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *PS_VpnConnectionTrigger, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_VpnConnectionTrigger{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

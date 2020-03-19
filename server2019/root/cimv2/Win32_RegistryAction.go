@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_RegistryAction struct
 type Win32_RegistryAction struct {
-	CIM_Action
+	*CIM_Action
 
 	//
 	EntryName string
@@ -26,6 +31,35 @@ type Win32_RegistryAction struct {
 
 	//
 	Root int16
+}
+
+func NewWin32_RegistryActionEx1(instance *cim.WmiInstance) (newInstance *Win32_RegistryAction, err error) {
+	tmp, err := NewCIM_ActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RegistryAction{
+		CIM_Action: tmp,
+	}
+	return
+}
+
+func NewWin32_RegistryActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_RegistryAction, err error) {
+	tmp, err := NewCIM_ActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RegistryAction{
+		CIM_Action: tmp,
+	}
+	return
 }
 
 // SetEntryName sets the value of EntryName for the instance

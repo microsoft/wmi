@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_DMAChannel struct
 type Win32_DMAChannel struct {
-	CIM_DMA
+	*CIM_DMA
 
 	//
 	Port uint32
+}
+
+func NewWin32_DMAChannelEx1(instance *cim.WmiInstance) (newInstance *Win32_DMAChannel, err error) {
+	tmp, err := NewCIM_DMAEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DMAChannel{
+		CIM_DMA: tmp,
+	}
+	return
+}
+
+func NewWin32_DMAChannelEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_DMAChannel, err error) {
+	tmp, err := NewCIM_DMAEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DMAChannel{
+		CIM_DMA: tmp,
+	}
+	return
 }
 
 // SetPort sets the value of Port for the instance

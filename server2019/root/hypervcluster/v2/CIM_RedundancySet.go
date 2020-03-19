@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_RedundancySet struct
 type CIM_RedundancySet struct {
-	CIM_SystemSpecificCollection
+	*CIM_SystemSpecificCollection
 
 	// The current load balance algorithm.
 	///Least Blocks, Least IO, and Address Region are used in storage device path redundancy drivers to optimize load balancing by routing requests to a path with the least queued blocks or IO requests, or based on locality of reference.
@@ -39,6 +44,35 @@ type CIM_RedundancySet struct {
 
 	// VendorIdentifyingInfo captures the vendor identifying data for the RedundancySet. One example is the product name for a cluster.
 	VendorIdentifyingInfo string
+}
+
+func NewCIM_RedundancySetEx1(instance *cim.WmiInstance) (newInstance *CIM_RedundancySet, err error) {
+	tmp, err := NewCIM_SystemSpecificCollectionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RedundancySet{
+		CIM_SystemSpecificCollection: tmp,
+	}
+	return
+}
+
+func NewCIM_RedundancySetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_RedundancySet, err error) {
+	tmp, err := NewCIM_SystemSpecificCollectionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RedundancySet{
+		CIM_SystemSpecificCollection: tmp,
+	}
+	return
 }
 
 // SetLoadBalanceAlgorithm sets the value of LoadBalanceAlgorithm for the instance

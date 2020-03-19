@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_NetAdapterEcnSettingData struct
 type MLNX_NetAdapterEcnSettingData struct {
-	MLNX_NetAdapterSettingData
+	*MLNX_NetAdapterSettingData
 
 	//
 	EcnAlphaToRateCoeff uint32
@@ -146,6 +151,35 @@ type MLNX_NetAdapterEcnSettingData struct {
 
 	//
 	EcnUseIBStandardCnp uint32
+}
+
+func NewMLNX_NetAdapterEcnSettingDataEx1(instance *cim.WmiInstance) (newInstance *MLNX_NetAdapterEcnSettingData, err error) {
+	tmp, err := NewMLNX_NetAdapterSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_NetAdapterEcnSettingData{
+		MLNX_NetAdapterSettingData: tmp,
+	}
+	return
+}
+
+func NewMLNX_NetAdapterEcnSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_NetAdapterEcnSettingData, err error) {
+	tmp, err := NewMLNX_NetAdapterSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_NetAdapterEcnSettingData{
+		MLNX_NetAdapterSettingData: tmp,
+	}
+	return
 }
 
 // SetEcnAlphaToRateCoeff sets the value of EcnAlphaToRateCoeff for the instance

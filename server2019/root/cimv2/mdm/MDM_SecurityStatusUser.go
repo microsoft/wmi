@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_SecurityStatusUser struct
 type MDM_SecurityStatusUser struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ConnectedAccountPolicy uint32
@@ -33,6 +35,35 @@ type MDM_SecurityStatusUser struct {
 
 	//
 	PasswordStatus uint32
+}
+
+func NewMDM_SecurityStatusUserEx1(instance *cim.WmiInstance) (newInstance *MDM_SecurityStatusUser, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_SecurityStatusUser{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_SecurityStatusUserEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_SecurityStatusUser, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_SecurityStatusUser{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnectedAccountPolicy sets the value of ConnectedAccountPolicy for the instance

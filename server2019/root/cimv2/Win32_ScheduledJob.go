@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ScheduledJob struct
 type Win32_ScheduledJob struct {
-	CIM_Job
+	*CIM_Job
 
 	//
 	Command string
@@ -29,6 +34,35 @@ type Win32_ScheduledJob struct {
 
 	//
 	RunRepeatedly bool
+}
+
+func NewWin32_ScheduledJobEx1(instance *cim.WmiInstance) (newInstance *Win32_ScheduledJob, err error) {
+	tmp, err := NewCIM_JobEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ScheduledJob{
+		CIM_Job: tmp,
+	}
+	return
+}
+
+func NewWin32_ScheduledJobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ScheduledJob, err error) {
+	tmp, err := NewCIM_JobEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ScheduledJob{
+		CIM_Job: tmp,
+	}
+	return
 }
 
 // SetCommand sets the value of Command for the instance

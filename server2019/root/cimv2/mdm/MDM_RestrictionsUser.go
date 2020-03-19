@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_RestrictionsUser struct
 type MDM_RestrictionsUser struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	key uint32
@@ -27,6 +29,35 @@ type MDM_RestrictionsUser struct {
 
 	//
 	PCSettingsSyncEnabled bool
+}
+
+func NewMDM_RestrictionsUserEx1(instance *cim.WmiInstance) (newInstance *MDM_RestrictionsUser, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_RestrictionsUser{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_RestrictionsUserEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_RestrictionsUser, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_RestrictionsUser{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // Setkey sets the value of key for the instance

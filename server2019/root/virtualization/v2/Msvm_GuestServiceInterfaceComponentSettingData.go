@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_GuestServiceInterfaceComponentSettingData struct
 type Msvm_GuestServiceInterfaceComponentSettingData struct {
-	CIM_ResourceAllocationSettingData
+	*CIM_ResourceAllocationSettingData
 
 	//
 	DefaultEnabledStatePolicy GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy
 
 	//
 	EnabledState GuestServiceInterfaceComponentSettingData_EnabledState
+}
+
+func NewMsvm_GuestServiceInterfaceComponentSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_GuestServiceInterfaceComponentSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestServiceInterfaceComponentSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_GuestServiceInterfaceComponentSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_GuestServiceInterfaceComponentSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestServiceInterfaceComponentSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
 }
 
 // SetDefaultEnabledStatePolicy sets the value of DefaultEnabledStatePolicy for the instance
@@ -53,4 +87,11 @@ func (instance *Msvm_GuestServiceInterfaceComponentSettingData) GetPropertyEnabl
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_GuestServiceInterfaceComponentSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemSettingData")
+}
+
+func (instance *Msvm_GuestServiceInterfaceComponentSettingData) GetRelatedGuestServiceInterfaceComponent() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_GuestServiceInterfaceComponent")
 }

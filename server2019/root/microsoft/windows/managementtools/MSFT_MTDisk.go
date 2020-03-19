@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTDisk struct
 type MSFT_MTDisk struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	ActiveTime []float32
@@ -41,6 +46,35 @@ type MSFT_MTDisk struct {
 
 	//
 	WriteTransferRate []float32
+}
+
+func NewMSFT_MTDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTDisk, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTDisk{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTDisk, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTDisk{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetActiveTime sets the value of ActiveTime for the instance

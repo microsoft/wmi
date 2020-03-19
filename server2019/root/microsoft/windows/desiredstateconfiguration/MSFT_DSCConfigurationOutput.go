@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_DSCConfigurationOutput struct
 type MSFT_DSCConfigurationOutput struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Bookmark []uint8
 
 	//
 	JobId string
+}
+
+func NewMSFT_DSCConfigurationOutputEx1(instance *cim.WmiInstance) (newInstance *MSFT_DSCConfigurationOutput, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DSCConfigurationOutput{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_DSCConfigurationOutputEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DSCConfigurationOutput, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DSCConfigurationOutput{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetBookmark sets the value of Bookmark for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_Service struct
 type MSCluster_Service struct {
-	CIM_ClusteringService
+	*CIM_ClusteringService
 
 	//
 	NodeHighestVersion uint32
@@ -20,6 +25,35 @@ type MSCluster_Service struct {
 
 	//
 	State string
+}
+
+func NewMSCluster_ServiceEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Service, err error) {
+	tmp, err := NewCIM_ClusteringServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Service{
+		CIM_ClusteringService: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_Service, err error) {
+	tmp, err := NewCIM_ClusteringServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Service{
+		CIM_ClusteringService: tmp,
+	}
+	return
 }
 
 // SetNodeHighestVersion sets the value of NodeHighestVersion for the instance

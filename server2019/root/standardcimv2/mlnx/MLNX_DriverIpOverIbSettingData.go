@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_DriverIpOverIbSettingData struct
 type MLNX_DriverIpOverIbSettingData struct {
-	MLNX_DriverSettingData
+	*MLNX_DriverSettingData
 
 	//
 	ModeFlags uint32
@@ -20,6 +25,35 @@ type MLNX_DriverIpOverIbSettingData struct {
 
 	//
 	NdkDebugLevel uint32
+}
+
+func NewMLNX_DriverIpOverIbSettingDataEx1(instance *cim.WmiInstance) (newInstance *MLNX_DriverIpOverIbSettingData, err error) {
+	tmp, err := NewMLNX_DriverSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverIpOverIbSettingData{
+		MLNX_DriverSettingData: tmp,
+	}
+	return
+}
+
+func NewMLNX_DriverIpOverIbSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_DriverIpOverIbSettingData, err error) {
+	tmp, err := NewMLNX_DriverSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverIpOverIbSettingData{
+		MLNX_DriverSettingData: tmp,
+	}
+	return
 }
 
 // SetModeFlags sets the value of ModeFlags for the instance

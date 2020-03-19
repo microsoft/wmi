@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_ProcessorPool struct
 type Msvm_ProcessorPool struct {
-	CIM_ResourcePool
+	*CIM_ResourcePool
+}
+
+func NewMsvm_ProcessorPoolEx1(instance *cim.WmiInstance) (newInstance *Msvm_ProcessorPool, err error) {
+	tmp, err := NewCIM_ResourcePoolEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ProcessorPool{
+		CIM_ResourcePool: tmp,
+	}
+	return
+}
+
+func NewMsvm_ProcessorPoolEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ProcessorPool, err error) {
+	tmp, err := NewCIM_ResourcePoolEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ProcessorPool{
+		CIM_ResourcePool: tmp,
+	}
+	return
 }
 
 //
@@ -36,6 +66,14 @@ func (instance *Msvm_ProcessorPool) GetRelatedComputerSystem() (value *cim.WmiIn
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
+func (instance *Msvm_ProcessorPool) GetRelatedProcessorSettingData() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ProcessorSettingData")
+}
+
+func (instance *Msvm_ProcessorPool) GetRelatedProcessor() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_Processor")
+}
+
 func (instance *Msvm_ProcessorPool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePoolSettingData")
 }
@@ -48,6 +86,6 @@ func (instance *Msvm_ProcessorPool) GetRelatedAllocationCapabilities() (value *c
 	return instance.GetRelated("Msvm_AllocationCapabilities")
 }
 
-func (instance *Msvm_ProcessorPool) GetRelatedProcessor() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_Processor")
+func (instance *Msvm_ProcessorPool) GetRelatedAggregationMetricDefinition() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_AggregationMetricDefinition")
 }

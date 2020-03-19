@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_HealthAttestation struct
 type MDM_HealthAttestation struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Certificate string
@@ -51,6 +53,35 @@ type MDM_HealthAttestation struct {
 
 	//
 	TpmReadyStatus int32
+}
+
+func NewMDM_HealthAttestationEx1(instance *cim.WmiInstance) (newInstance *MDM_HealthAttestation, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_HealthAttestation{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_HealthAttestationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_HealthAttestation, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_HealthAttestation{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCertificate sets the value of Certificate for the instance

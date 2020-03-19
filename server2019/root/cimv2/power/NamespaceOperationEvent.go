@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __NamespaceOperationEvent struct
 type __NamespaceOperationEvent struct {
-	__Event
+	*__Event
 
 	//
 	TargetNamespace __Namespace
+}
+
+func New__NamespaceOperationEventEx1(instance *cim.WmiInstance) (newInstance *__NamespaceOperationEvent, err error) {
+	tmp, err := New__EventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NamespaceOperationEvent{
+		__Event: tmp,
+	}
+	return
+}
+
+func New__NamespaceOperationEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__NamespaceOperationEvent, err error) {
+	tmp, err := New__EventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NamespaceOperationEvent{
+		__Event: tmp,
+	}
+	return
 }
 
 // SetTargetNamespace sets the value of TargetNamespace for the instance

@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTRegistryBinary struct
 type MSFT_MTRegistryBinary struct {
-	MSFT_MTRegistryValue
+	*MSFT_MTRegistryValue
 
 	//
 	Data []uint8
+}
+
+func NewMSFT_MTRegistryBinaryEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTRegistryBinary, err error) {
+	tmp, err := NewMSFT_MTRegistryValueEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTRegistryBinary{
+		MSFT_MTRegistryValue: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTRegistryBinaryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTRegistryBinary, err error) {
+	tmp, err := NewMSFT_MTRegistryValueEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTRegistryBinary{
+		MSFT_MTRegistryValue: tmp,
+	}
+	return
 }
 
 // SetData sets the value of Data for the instance

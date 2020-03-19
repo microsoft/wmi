@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DASiteTableEntry struct
 type MSFT_DASiteTableEntry struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	ADSite string
@@ -38,6 +43,35 @@ type MSFT_DASiteTableEntry struct {
 
 	//
 	TeredoServerIP string
+}
+
+func NewMSFT_DASiteTableEntryEx1(instance *cim.WmiInstance) (newInstance *MSFT_DASiteTableEntry, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DASiteTableEntry{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_DASiteTableEntryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DASiteTableEntry, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DASiteTableEntry{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetADSite sets the value of ADSite for the instance

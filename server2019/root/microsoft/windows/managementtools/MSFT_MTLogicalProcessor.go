@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTLogicalProcessor struct
 type MSFT_MTLogicalProcessor struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	CpuId uint16
@@ -32,6 +37,35 @@ type MSFT_MTLogicalProcessor struct {
 
 	//
 	Utilization []float32
+}
+
+func NewMSFT_MTLogicalProcessorEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTLogicalProcessor, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTLogicalProcessor{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTLogicalProcessorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTLogicalProcessor, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTLogicalProcessor{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetCpuId sets the value of CpuId for the instance

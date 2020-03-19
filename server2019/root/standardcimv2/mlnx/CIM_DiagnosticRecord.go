@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DiagnosticRecord struct
 type CIM_DiagnosticRecord struct {
-	CIM_RecordForLog
+	*CIM_RecordForLog
 
 	//
 	CreationTimeStamp string
@@ -29,6 +34,35 @@ type CIM_DiagnosticRecord struct {
 
 	//
 	ServiceName string
+}
+
+func NewCIM_DiagnosticRecordEx1(instance *cim.WmiInstance) (newInstance *CIM_DiagnosticRecord, err error) {
+	tmp, err := NewCIM_RecordForLogEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticRecord{
+		CIM_RecordForLog: tmp,
+	}
+	return
+}
+
+func NewCIM_DiagnosticRecordEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DiagnosticRecord, err error) {
+	tmp, err := NewCIM_RecordForLogEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticRecord{
+		CIM_RecordForLog: tmp,
+	}
+	return
 }
 
 // SetCreationTimeStamp sets the value of CreationTimeStamp for the instance

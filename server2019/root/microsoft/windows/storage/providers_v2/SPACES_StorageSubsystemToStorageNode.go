@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // SPACES_StorageSubsystemToStorageNode struct
 type SPACES_StorageSubsystemToStorageNode struct {
-	MSFT_StorageSubSystemToStorageNode
+	*MSFT_StorageSubSystemToStorageNode
+}
+
+func NewSPACES_StorageSubsystemToStorageNodeEx1(instance *cim.WmiInstance) (newInstance *SPACES_StorageSubsystemToStorageNode, err error) {
+	tmp, err := NewMSFT_StorageSubSystemToStorageNodeEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SPACES_StorageSubsystemToStorageNode{
+		MSFT_StorageSubSystemToStorageNode: tmp,
+	}
+	return
+}
+
+func NewSPACES_StorageSubsystemToStorageNodeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SPACES_StorageSubsystemToStorageNode, err error) {
+	tmp, err := NewMSFT_StorageSubSystemToStorageNodeEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SPACES_StorageSubsystemToStorageNode{
+		MSFT_StorageSubSystemToStorageNode: tmp,
+	}
+	return
 }

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DiscreteSensor struct
 type CIM_DiscreteSensor struct {
-	CIM_Sensor
+	*CIM_Sensor
 
 	//
 	AcceptableValues []string
@@ -20,6 +25,35 @@ type CIM_DiscreteSensor struct {
 
 	//
 	PossibleValues []string
+}
+
+func NewCIM_DiscreteSensorEx1(instance *cim.WmiInstance) (newInstance *CIM_DiscreteSensor, err error) {
+	tmp, err := NewCIM_SensorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiscreteSensor{
+		CIM_Sensor: tmp,
+	}
+	return
+}
+
+func NewCIM_DiscreteSensorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DiscreteSensor, err error) {
+	tmp, err := NewCIM_SensorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiscreteSensor{
+		CIM_Sensor: tmp,
+	}
+	return
 }
 
 // SetAcceptableValues sets the value of AcceptableValues for the instance

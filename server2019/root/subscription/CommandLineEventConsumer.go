@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.subscription
 //////////////////////////////////////////////
 package subscription
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CommandLineEventConsumer struct
 type CommandLineEventConsumer struct {
-	__EventConsumer
+	*__EventConsumer
 
 	//
 	CommandLineTemplate string
@@ -83,6 +88,35 @@ type CommandLineEventConsumer struct {
 
 	//
 	YSize uint32
+}
+
+func NewCommandLineEventConsumerEx1(instance *cim.WmiInstance) (newInstance *CommandLineEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CommandLineEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
+}
+
+func NewCommandLineEventConsumerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CommandLineEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CommandLineEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
 }
 
 // SetCommandLineTemplate sets the value of CommandLineTemplate for the instance

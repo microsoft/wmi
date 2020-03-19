@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile struct
 type Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile struct {
-	Win32_PerfRawData
+	*Win32_PerfRawData
 
 	//
 	Reads0K4K uint64
@@ -191,6 +196,35 @@ type Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile s
 
 	//
 	WritesTotal uint64
+}
+
+func NewWin32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfileEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile{
+		Win32_PerfRawData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_ClusBfltPerfProvider_ClusterStorageHybridDisksIOProfile{
+		Win32_PerfRawData: tmp,
+	}
+	return
 }
 
 // SetReads0K4K sets the value of Reads0K4K for the instance

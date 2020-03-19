@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetQuickModeSA struct
 type MSFT_NetQuickModeSA struct {
-	CIM_IPsecSAEndpoint
+	*CIM_IPsecSAEndpoint
 
 	//
 	EmTargetName string
@@ -107,6 +112,35 @@ type MSFT_NetQuickModeSA struct {
 
 	//
 	VirtualIfTunnelId uint64
+}
+
+func NewMSFT_NetQuickModeSAEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetQuickModeSA, err error) {
+	tmp, err := NewCIM_IPsecSAEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetQuickModeSA{
+		CIM_IPsecSAEndpoint: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetQuickModeSAEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetQuickModeSA, err error) {
+	tmp, err := NewCIM_IPsecSAEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetQuickModeSA{
+		CIM_IPsecSAEndpoint: tmp,
+	}
+	return
 }
 
 // SetEmTargetName sets the value of EmTargetName for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_SystemSlot struct
 type Win32_SystemSlot struct {
-	CIM_Slot
+	*CIM_Slot
 
 	//
 	BusNumber uint32
@@ -35,6 +40,35 @@ type Win32_SystemSlot struct {
 
 	//
 	SlotDesignation string
+}
+
+func NewWin32_SystemSlotEx1(instance *cim.WmiInstance) (newInstance *Win32_SystemSlot, err error) {
+	tmp, err := NewCIM_SlotEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SystemSlot{
+		CIM_Slot: tmp,
+	}
+	return
+}
+
+func NewWin32_SystemSlotEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_SystemSlot, err error) {
+	tmp, err := NewCIM_SlotEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SystemSlot{
+		CIM_Slot: tmp,
+	}
+	return
 }
 
 // SetBusNumber sets the value of BusNumber for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __SecurityDescriptor struct
 type __SecurityDescriptor struct {
-	__SecurityRelatedClass
+	*__SecurityRelatedClass
 
 	//
 	ControlFlags uint32
@@ -29,6 +34,35 @@ type __SecurityDescriptor struct {
 
 	//
 	TIME_CREATED uint64
+}
+
+func New__SecurityDescriptorEx1(instance *cim.WmiInstance) (newInstance *__SecurityDescriptor, err error) {
+	tmp, err := New__SecurityRelatedClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__SecurityDescriptor{
+		__SecurityRelatedClass: tmp,
+	}
+	return
+}
+
+func New__SecurityDescriptorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__SecurityDescriptor, err error) {
+	tmp, err := New__SecurityRelatedClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__SecurityDescriptor{
+		__SecurityRelatedClass: tmp,
+	}
+	return
 }
 
 // SetControlFlags sets the value of ControlFlags for the instance

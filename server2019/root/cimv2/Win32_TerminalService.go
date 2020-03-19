@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TerminalService struct
 type Win32_TerminalService struct {
-	Win32_Service
+	*Win32_Service
 
 	//
 	DisconnectedSessions uint32
 
 	//
 	TotalSessions uint32
+}
+
+func NewWin32_TerminalServiceEx1(instance *cim.WmiInstance) (newInstance *Win32_TerminalService, err error) {
+	tmp, err := NewWin32_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TerminalService{
+		Win32_Service: tmp,
+	}
+	return
+}
+
+func NewWin32_TerminalServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TerminalService, err error) {
+	tmp, err := NewWin32_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TerminalService{
+		Win32_Service: tmp,
+	}
+	return
 }
 
 // SetDisconnectedSessions sets the value of DisconnectedSessions for the instance

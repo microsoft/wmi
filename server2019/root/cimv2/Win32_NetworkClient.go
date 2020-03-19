@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_NetworkClient struct
 type Win32_NetworkClient struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	Manufacturer string
+}
+
+func NewWin32_NetworkClientEx1(instance *cim.WmiInstance) (newInstance *Win32_NetworkClient, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NetworkClient{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_NetworkClientEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_NetworkClient, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NetworkClient{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance

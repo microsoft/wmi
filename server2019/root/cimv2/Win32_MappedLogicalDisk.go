@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_MappedLogicalDisk struct
 type Win32_MappedLogicalDisk struct {
-	CIM_LogicalDisk
+	*CIM_LogicalDisk
 
 	//
 	Compressed bool
@@ -47,6 +52,35 @@ type Win32_MappedLogicalDisk struct {
 
 	//
 	VolumeSerialNumber string
+}
+
+func NewWin32_MappedLogicalDiskEx1(instance *cim.WmiInstance) (newInstance *Win32_MappedLogicalDisk, err error) {
+	tmp, err := NewCIM_LogicalDiskEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_MappedLogicalDisk{
+		CIM_LogicalDisk: tmp,
+	}
+	return
+}
+
+func NewWin32_MappedLogicalDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_MappedLogicalDisk, err error) {
+	tmp, err := NewCIM_LogicalDiskEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_MappedLogicalDisk{
+		CIM_LogicalDisk: tmp,
+	}
+	return
 }
 
 // SetCompressed sets the value of Compressed for the instance

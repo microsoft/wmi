@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ServerManagerRequestState struct
 type MSFT_ServerManagerRequestState struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Error MSFT_ServerManagerDeploymentError
@@ -33,6 +35,35 @@ type MSFT_ServerManagerRequestState struct {
 
 	//
 	Warnings []string
+}
+
+func NewMSFT_ServerManagerRequestStateEx1(instance *cim.WmiInstance) (newInstance *MSFT_ServerManagerRequestState, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerManagerRequestState{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ServerManagerRequestStateEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ServerManagerRequestState, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerManagerRequestState{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetError sets the value of Error for the instance

@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_MemorySettingData struct
 type Msvm_MemorySettingData struct {
-	CIM_ResourceAllocationSettingData
+	*CIM_ResourceAllocationSettingData
 
 	//
 	DynamicMemoryEnabled bool
@@ -45,6 +46,35 @@ type Msvm_MemorySettingData struct {
 
 	//
 	TargetMemoryBuffer uint32
+}
+
+func NewMsvm_MemorySettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_MemorySettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_MemorySettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_MemorySettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_MemorySettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_MemorySettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
 }
 
 // SetDynamicMemoryEnabled sets the value of DynamicMemoryEnabled for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.SDDC
 //////////////////////////////////////////////
 package sddc
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ObjectProviderRegistration struct
 type __ObjectProviderRegistration struct {
-	__ProviderRegistration
+	*__ProviderRegistration
 
 	//
 	InteractionType ObjectProviderRegistration_InteractionType
@@ -35,6 +40,35 @@ type __ObjectProviderRegistration struct {
 
 	//
 	SupportsTransactions bool
+}
+
+func New__ObjectProviderRegistrationEx1(instance *cim.WmiInstance) (newInstance *__ObjectProviderRegistration, err error) {
+	tmp, err := New__ProviderRegistrationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ObjectProviderRegistration{
+		__ProviderRegistration: tmp,
+	}
+	return
+}
+
+func New__ObjectProviderRegistrationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ObjectProviderRegistration, err error) {
+	tmp, err := New__ProviderRegistrationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ObjectProviderRegistration{
+		__ProviderRegistration: tmp,
+	}
+	return
 }
 
 // SetInteractionType sets the value of InteractionType for the instance

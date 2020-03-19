@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PageFileSetting struct
 type Win32_PageFileSetting struct {
-	CIM_Setting
+	*CIM_Setting
 
 	//
 	InitialSize uint32
@@ -20,6 +25,35 @@ type Win32_PageFileSetting struct {
 
 	//
 	Name string
+}
+
+func NewWin32_PageFileSettingEx1(instance *cim.WmiInstance) (newInstance *Win32_PageFileSetting, err error) {
+	tmp, err := NewCIM_SettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PageFileSetting{
+		CIM_Setting: tmp,
+	}
+	return
+}
+
+func NewWin32_PageFileSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PageFileSetting, err error) {
+	tmp, err := NewCIM_SettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PageFileSetting{
+		CIM_Setting: tmp,
+	}
+	return
 }
 
 // SetInitialSize sets the value of InitialSize for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetServiceStartTypeChanged struct
 type MSFT_NetServiceStartTypeChanged struct {
-	MSFT_SCMEventLogEvent
+	*MSFT_SCMEventLogEvent
 
 	//
 	NewStartType string
@@ -23,6 +28,35 @@ type MSFT_NetServiceStartTypeChanged struct {
 
 	//
 	sid string
+}
+
+func NewMSFT_NetServiceStartTypeChangedEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetServiceStartTypeChanged, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceStartTypeChanged{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetServiceStartTypeChangedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetServiceStartTypeChanged, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceStartTypeChanged{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
 }
 
 // SetNewStartType sets the value of NewStartType for the instance

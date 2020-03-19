@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DNSClientServerAddress struct
 type MSFT_DNSClientServerAddress struct {
-	CIM_RemoteServiceAccessPoint
+	*CIM_RemoteServiceAccessPoint
 
 	// 747
 	AddressFamily uint16
@@ -23,6 +28,35 @@ type MSFT_DNSClientServerAddress struct {
 
 	// 746
 	ServerAddresses []string
+}
+
+func NewMSFT_DNSClientServerAddressEx1(instance *cim.WmiInstance) (newInstance *MSFT_DNSClientServerAddress, err error) {
+	tmp, err := NewCIM_RemoteServiceAccessPointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClientServerAddress{
+		CIM_RemoteServiceAccessPoint: tmp,
+	}
+	return
+}
+
+func NewMSFT_DNSClientServerAddressEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DNSClientServerAddress, err error) {
+	tmp, err := NewCIM_RemoteServiceAccessPointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClientServerAddress{
+		CIM_RemoteServiceAccessPoint: tmp,
+	}
+	return
 }
 
 // SetAddressFamily sets the value of AddressFamily for the instance

@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MintPipelineDefinition struct
 type MSFT_MintPipelineDefinition struct {
-	MSFT_PipelineDefinition
+	*MSFT_PipelineDefinition
 
 	//
 	expression MSFT_Expression
+}
+
+func NewMSFT_MintPipelineDefinitionEx1(instance *cim.WmiInstance) (newInstance *MSFT_MintPipelineDefinition, err error) {
+	tmp, err := NewMSFT_PipelineDefinitionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MintPipelineDefinition{
+		MSFT_PipelineDefinition: tmp,
+	}
+	return
+}
+
+func NewMSFT_MintPipelineDefinitionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MintPipelineDefinition, err error) {
+	tmp, err := NewMSFT_PipelineDefinitionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MintPipelineDefinition{
+		MSFT_PipelineDefinition: tmp,
+	}
+	return
 }
 
 // Setexpression sets the value of expression for the instance

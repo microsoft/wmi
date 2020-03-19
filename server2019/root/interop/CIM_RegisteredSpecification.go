@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Interop
 //////////////////////////////////////////////
 package interop
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_RegisteredSpecification struct
 type CIM_RegisteredSpecification struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	AdvertiseTypeDescriptions []string
@@ -35,6 +40,35 @@ type CIM_RegisteredSpecification struct {
 
 	//
 	SpecificationType uint16
+}
+
+func NewCIM_RegisteredSpecificationEx1(instance *cim.WmiInstance) (newInstance *CIM_RegisteredSpecification, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RegisteredSpecification{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewCIM_RegisteredSpecificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_RegisteredSpecification, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RegisteredSpecification{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetAdvertiseTypeDescriptions sets the value of AdvertiseTypeDescriptions for the instance

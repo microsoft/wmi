@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_ExpressionCall struct
 type MSFT_ExpressionCall struct {
-	MSFT_Expression
+	*MSFT_Expression
 
 	//
 	arguments []MSFT_Expression
@@ -20,6 +25,35 @@ type MSFT_ExpressionCall struct {
 
 	//
 	pipeline MSFT_Expression
+}
+
+func NewMSFT_ExpressionCallEx1(instance *cim.WmiInstance) (newInstance *MSFT_ExpressionCall, err error) {
+	tmp, err := NewMSFT_ExpressionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionCall{
+		MSFT_Expression: tmp,
+	}
+	return
+}
+
+func NewMSFT_ExpressionCallEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ExpressionCall, err error) {
+	tmp, err := NewMSFT_ExpressionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionCall{
+		MSFT_Expression: tmp,
+	}
+	return
 }
 
 // Setarguments sets the value of arguments for the instance

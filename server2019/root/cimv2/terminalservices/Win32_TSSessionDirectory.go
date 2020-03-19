@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSSessionDirectory struct
 type Win32_TSSessionDirectory struct {
-	CIM_Setting
+	*CIM_Setting
 
 	//
 	GetLoadBalancingState uint32
@@ -50,6 +55,35 @@ type Win32_TSSessionDirectory struct {
 
 	//
 	SessionDirectoryLocation string
+}
+
+func NewWin32_TSSessionDirectoryEx1(instance *cim.WmiInstance) (newInstance *Win32_TSSessionDirectory, err error) {
+	tmp, err := NewCIM_SettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSSessionDirectory{
+		CIM_Setting: tmp,
+	}
+	return
+}
+
+func NewWin32_TSSessionDirectoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSSessionDirectory, err error) {
+	tmp, err := NewCIM_SettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSSessionDirectory{
+		CIM_Setting: tmp,
+	}
+	return
 }
 
 // SetGetLoadBalancingState sets the value of GetLoadBalancingState for the instance

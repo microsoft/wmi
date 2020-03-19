@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_PhysicalGPUInfo struct
 type Msvm_PhysicalGPUInfo struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	AvailableVideoMemory uint64
@@ -23,6 +28,35 @@ type Msvm_PhysicalGPUInfo struct {
 
 	//
 	TotalVideoMemory uint64
+}
+
+func NewMsvm_PhysicalGPUInfoEx1(instance *cim.WmiInstance) (newInstance *Msvm_PhysicalGPUInfo, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_PhysicalGPUInfo{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMsvm_PhysicalGPUInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_PhysicalGPUInfo, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_PhysicalGPUInfo{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetAvailableVideoMemory sets the value of AvailableVideoMemory for the instance

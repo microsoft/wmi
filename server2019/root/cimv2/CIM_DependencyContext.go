@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_DependencyContext struct
 type CIM_DependencyContext struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Context CIM_Configuration
 
 	//
 	Dependency CIM_Dependency
+}
+
+func NewCIM_DependencyContextEx1(instance *cim.WmiInstance) (newInstance *CIM_DependencyContext, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DependencyContext{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_DependencyContextEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DependencyContext, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DependencyContext{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetContext sets the value of Context for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_StorageAllocationSettingData struct
 type CIM_StorageAllocationSettingData struct {
-	CIM_ResourceAllocationSettingData
+	*CIM_ResourceAllocationSettingData
 
 	// Access describes whether the allocated storage extent is 1 (readable), 2 (writeable), or 3 (both).
 	///NOTE: This property is a copy of the CIM_StorageExtent.Access property, except deprecated values. See the description of the CIM_StorageExtent.Access property for details.
@@ -65,6 +70,35 @@ type CIM_StorageAllocationSettingData struct {
 	///NOTE: The use of 1 (and not 0) to indicate that the blocksize is unknown still allows the use of the VirtualQuantity property to convey the size in blocks of size 1).
 	///NOTE: This property is a copy of the CIM_StorageExtent.BlockSize property. See the description of the CIM_StorageExtent.BlockSize property for details.
 	VirtualResourceBlockSize uint64
+}
+
+func NewCIM_StorageAllocationSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_StorageAllocationSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_StorageAllocationSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
+}
+
+func NewCIM_StorageAllocationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_StorageAllocationSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_StorageAllocationSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
 }
 
 // SetAccess sets the value of Access for the instance

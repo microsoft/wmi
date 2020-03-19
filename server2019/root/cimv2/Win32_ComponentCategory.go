@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ComponentCategory struct
 type Win32_ComponentCategory struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	CategoryId string
+}
+
+func NewWin32_ComponentCategoryEx1(instance *cim.WmiInstance) (newInstance *Win32_ComponentCategory, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ComponentCategory{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_ComponentCategoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ComponentCategory, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ComponentCategory{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCategoryId sets the value of CategoryId for the instance

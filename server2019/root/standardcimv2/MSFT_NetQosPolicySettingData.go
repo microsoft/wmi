@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetQosPolicySettingData struct
 type MSFT_NetQosPolicySettingData struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	AppPathNameMatchCondition string
@@ -83,6 +88,35 @@ type MSFT_NetQosPolicySettingData struct {
 
 	//
 	Version string
+}
+
+func NewMSFT_NetQosPolicySettingDataEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetQosPolicySettingData, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetQosPolicySettingData{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetQosPolicySettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetQosPolicySettingData, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetQosPolicySettingData{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetAppPathNameMatchCondition sets the value of AppPathNameMatchCondition for the instance

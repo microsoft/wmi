@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_IRQ struct
 type CIM_IRQ struct {
-	CIM_SystemResource
+	*CIM_SystemResource
 
 	//
 	Availability uint16
@@ -35,6 +40,35 @@ type CIM_IRQ struct {
 
 	//
 	TriggerType uint16
+}
+
+func NewCIM_IRQEx1(instance *cim.WmiInstance) (newInstance *CIM_IRQ, err error) {
+	tmp, err := NewCIM_SystemResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IRQ{
+		CIM_SystemResource: tmp,
+	}
+	return
+}
+
+func NewCIM_IRQEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_IRQ, err error) {
+	tmp, err := NewCIM_SystemResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IRQ{
+		CIM_SystemResource: tmp,
+	}
+	return
 }
 
 // SetAvailability sets the value of Availability for the instance

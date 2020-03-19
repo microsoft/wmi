@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_PassportForWork_User_Policies02 struct
 type MDM_PassportForWork_User_Policies02 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	EnablePinRecovery bool
@@ -30,6 +32,35 @@ type MDM_PassportForWork_User_Policies02 struct {
 
 	//
 	UsePassportForWork bool
+}
+
+func NewMDM_PassportForWork_User_Policies02Ex1(instance *cim.WmiInstance) (newInstance *MDM_PassportForWork_User_Policies02, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_PassportForWork_User_Policies02{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_PassportForWork_User_Policies02Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_PassportForWork_User_Policies02, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_PassportForWork_User_Policies02{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEnablePinRecovery sets the value of EnablePinRecovery for the instance

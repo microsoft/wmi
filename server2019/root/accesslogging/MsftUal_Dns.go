@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MsftUal_Dns struct
 type MsftUal_Dns struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The host name of the client. This is associated with IPAddress.
 	HostName string
@@ -33,6 +35,35 @@ type MsftUal_Dns struct {
 
 	// The name of the role, component, or sub-product that is providing User Access Logging data. This is also associated with a ProductName, and a RoleGuid.
 	RoleName string
+}
+
+func NewMsftUal_DnsEx1(instance *cim.WmiInstance) (newInstance *MsftUal_Dns, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_Dns{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsftUal_DnsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftUal_Dns, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_Dns{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetHostName sets the value of HostName for the instance

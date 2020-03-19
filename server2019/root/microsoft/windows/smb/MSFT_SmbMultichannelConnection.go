@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbMultichannelConnection struct
 type MSFT_SmbMultichannelConnection struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ClientInterfaceFriendlyName string
@@ -69,6 +71,35 @@ type MSFT_SmbMultichannelConnection struct {
 
 	//
 	SmbInstance SmbMultichannelConnection_SmbInstance
+}
+
+func NewMSFT_SmbMultichannelConnectionEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbMultichannelConnection, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbMultichannelConnection{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbMultichannelConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbMultichannelConnection, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbMultichannelConnection{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetClientInterfaceFriendlyName sets the value of ClientInterfaceFriendlyName for the instance

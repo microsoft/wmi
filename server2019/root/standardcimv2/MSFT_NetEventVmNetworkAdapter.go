@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetEventVmNetworkAdapter struct
 type MSFT_NetEventVmNetworkAdapter struct {
-	MSFT_NetEventPacketCaptureTarget
+	*MSFT_NetEventPacketCaptureTarget
 
 	//
 	MacAddress string
@@ -26,6 +31,35 @@ type MSFT_NetEventVmNetworkAdapter struct {
 
 	//
 	VMName string
+}
+
+func NewMSFT_NetEventVmNetworkAdapterEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetEventVmNetworkAdapter, err error) {
+	tmp, err := NewMSFT_NetEventPacketCaptureTargetEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventVmNetworkAdapter{
+		MSFT_NetEventPacketCaptureTarget: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetEventVmNetworkAdapterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetEventVmNetworkAdapter, err error) {
+	tmp, err := NewMSFT_NetEventPacketCaptureTargetEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventVmNetworkAdapter{
+		MSFT_NetEventPacketCaptureTarget: tmp,
+	}
+	return
 }
 
 // SetMacAddress sets the value of MacAddress for the instance

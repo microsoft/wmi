@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Powershellv3
 //////////////////////////////////////////////
 package powershellv3
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __EventQueueOverflowEvent struct
 type __EventQueueOverflowEvent struct {
-	__EventDroppedEvent
+	*__EventDroppedEvent
 
 	//
 	CurrentQueueSize uint32
+}
+
+func New__EventQueueOverflowEventEx1(instance *cim.WmiInstance) (newInstance *__EventQueueOverflowEvent, err error) {
+	tmp, err := New__EventDroppedEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__EventQueueOverflowEvent{
+		__EventDroppedEvent: tmp,
+	}
+	return
+}
+
+func New__EventQueueOverflowEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__EventQueueOverflowEvent, err error) {
+	tmp, err := New__EventDroppedEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__EventQueueOverflowEvent{
+		__EventDroppedEvent: tmp,
+	}
+	return
 }
 
 // SetCurrentQueueSize sets the value of CurrentQueueSize for the instance

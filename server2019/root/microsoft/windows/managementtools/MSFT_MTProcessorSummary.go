@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTProcessorSummary struct
 type MSFT_MTProcessorSummary struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	AverageSpeed float32
@@ -68,6 +73,35 @@ type MSFT_MTProcessorSummary struct {
 
 	//
 	Virtualization uint16
+}
+
+func NewMSFT_MTProcessorSummaryEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTProcessorSummary, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTProcessorSummary{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTProcessorSummaryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTProcessorSummary, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTProcessorSummary{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetAverageSpeed sets the value of AverageSpeed for the instance

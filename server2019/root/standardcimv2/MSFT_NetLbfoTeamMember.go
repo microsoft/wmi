@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetLbfoTeamMember struct
 type MSFT_NetLbfoTeamMember struct {
-	MSFT_NetImPlatAdapter
+	*MSFT_NetImPlatAdapter
 
 	// 396
 	AdministrativeMode uint32
 
 	// 397
 	OperationalMode uint32
+}
+
+func NewMSFT_NetLbfoTeamMemberEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetLbfoTeamMember, err error) {
+	tmp, err := NewMSFT_NetImPlatAdapterEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetLbfoTeamMember{
+		MSFT_NetImPlatAdapter: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetLbfoTeamMemberEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetLbfoTeamMember, err error) {
+	tmp, err := NewMSFT_NetImPlatAdapterEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetLbfoTeamMember{
+		MSFT_NetImPlatAdapter: tmp,
+	}
+	return
 }
 
 // SetAdministrativeMode sets the value of AdministrativeMode for the instance

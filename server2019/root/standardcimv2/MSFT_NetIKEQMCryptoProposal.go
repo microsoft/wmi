@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetIKEQMCryptoProposal struct
 type MSFT_NetIKEQMCryptoProposal struct {
-	MSFT_NetIKECryptoProposal
+	*MSFT_NetIKECryptoProposal
 
 	//
 	Encapsulation uint16
@@ -23,6 +28,35 @@ type MSFT_NetIKEQMCryptoProposal struct {
 
 	//
 	MaxLifetimeMinutes uint32
+}
+
+func NewMSFT_NetIKEQMCryptoProposalEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetIKEQMCryptoProposal, err error) {
+	tmp, err := NewMSFT_NetIKECryptoProposalEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEQMCryptoProposal{
+		MSFT_NetIKECryptoProposal: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetIKEQMCryptoProposalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetIKEQMCryptoProposal, err error) {
+	tmp, err := NewMSFT_NetIKECryptoProposalEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEQMCryptoProposal{
+		MSFT_NetIKECryptoProposal: tmp,
+	}
+	return
 }
 
 // SetEncapsulation sets the value of Encapsulation for the instance

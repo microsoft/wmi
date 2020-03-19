@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_IRQResource struct
 type Win32_IRQResource struct {
-	CIM_IRQ
+	*CIM_IRQ
 
 	//
 	Hardware bool
 
 	//
 	Vector uint32
+}
+
+func NewWin32_IRQResourceEx1(instance *cim.WmiInstance) (newInstance *Win32_IRQResource, err error) {
+	tmp, err := NewCIM_IRQEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_IRQResource{
+		CIM_IRQ: tmp,
+	}
+	return
+}
+
+func NewWin32_IRQResourceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_IRQResource, err error) {
+	tmp, err := NewCIM_IRQEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_IRQResource{
+		CIM_IRQ: tmp,
+	}
+	return
 }
 
 // SetHardware sets the value of Hardware for the instance

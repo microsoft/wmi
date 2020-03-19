@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ExtendedStatus struct
 type __ExtendedStatus struct {
-	__NotifyStatus
+	*__NotifyStatus
 
 	//
 	Description string
@@ -23,6 +28,35 @@ type __ExtendedStatus struct {
 
 	//
 	ProviderName string
+}
+
+func New__ExtendedStatusEx1(instance *cim.WmiInstance) (newInstance *__ExtendedStatus, err error) {
+	tmp, err := New__NotifyStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ExtendedStatus{
+		__NotifyStatus: tmp,
+	}
+	return
+}
+
+func New__ExtendedStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ExtendedStatus, err error) {
+	tmp, err := New__NotifyStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ExtendedStatus{
+		__NotifyStatus: tmp,
+	}
+	return
 }
 
 // SetDescription sets the value of Description for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_SecuritySettingData struct
 type Msvm_SecuritySettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	AppContainerLaunchOptOut bool
@@ -35,6 +40,35 @@ type Msvm_SecuritySettingData struct {
 
 	//
 	VirtualizationBasedSecurityOptOut bool
+}
+
+func NewMsvm_SecuritySettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_SecuritySettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SecuritySettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_SecuritySettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_SecuritySettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SecuritySettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetAppContainerLaunchOptOut sets the value of AppContainerLaunchOptOut for the instance
@@ -179,4 +213,11 @@ func (instance *Msvm_SecuritySettingData) GetPropertyVirtualizationBasedSecurity
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_SecuritySettingData) GetRelatedSecurityElement() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SecurityElement")
+}
+
+func (instance *Msvm_SecuritySettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemSettingData")
 }

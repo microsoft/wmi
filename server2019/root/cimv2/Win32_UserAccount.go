@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_UserAccount struct
 type Win32_UserAccount struct {
-	Win32_Account
+	*Win32_Account
 
 	//
 	AccountType uint32
@@ -32,6 +37,35 @@ type Win32_UserAccount struct {
 
 	//
 	PasswordRequired bool
+}
+
+func NewWin32_UserAccountEx1(instance *cim.WmiInstance) (newInstance *Win32_UserAccount, err error) {
+	tmp, err := NewWin32_AccountEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_UserAccount{
+		Win32_Account: tmp,
+	}
+	return
+}
+
+func NewWin32_UserAccountEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_UserAccount, err error) {
+	tmp, err := NewWin32_AccountEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_UserAccount{
+		Win32_Account: tmp,
+	}
+	return
 }
 
 // SetAccountType sets the value of AccountType for the instance

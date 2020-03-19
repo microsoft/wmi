@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // HNet_ResponseRange struct
 type HNet_ResponseRange struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	EndPort uint16
@@ -24,6 +26,35 @@ type HNet_ResponseRange struct {
 
 	//
 	StartPort uint16
+}
+
+func NewHNet_ResponseRangeEx1(instance *cim.WmiInstance) (newInstance *HNet_ResponseRange, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_ResponseRange{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewHNet_ResponseRangeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *HNet_ResponseRange, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_ResponseRange{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEndPort sets the value of EndPort for the instance

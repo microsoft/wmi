@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTEventChannel struct
 type MSFT_MTEventChannel struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	ClassicLog bool
@@ -38,6 +43,35 @@ type MSFT_MTEventChannel struct {
 
 	//
 	Type uint32
+}
+
+func NewMSFT_MTEventChannelEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTEventChannel, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTEventChannel{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTEventChannelEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTEventChannel, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTEventChannel{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetClassicLog sets the value of ClassicLog for the instance

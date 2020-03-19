@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbClientConfiguration struct
 type MSFT_SmbClientConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ConnectionCountPerRssNetworkInterface uint32
@@ -90,6 +92,35 @@ type MSFT_SmbClientConfiguration struct {
 
 	//
 	WindowSizeThreshold uint32
+}
+
+func NewMSFT_SmbClientConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbClientConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbClientConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbClientConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbClientConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbClientConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnectionCountPerRssNetworkInterface sets the value of ConnectionCountPerRssNetworkInterface for the instance

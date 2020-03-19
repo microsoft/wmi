@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetBranchCacheCache struct
 type MSFT_NetBranchCacheCache struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	CacheFileDirectoryPath string
@@ -23,6 +28,35 @@ type MSFT_NetBranchCacheCache struct {
 
 	//
 	MaxCacheSizeAsPercentageOfDiskVolume uint32
+}
+
+func NewMSFT_NetBranchCacheCacheEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetBranchCacheCache, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetBranchCacheCache{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetBranchCacheCacheEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetBranchCacheCache, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetBranchCacheCache{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCacheFileDirectoryPath sets the value of CacheFileDirectoryPath for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_WiFiEndpoint struct
 type CIM_WiFiEndpoint struct {
-	CIM_LANEndpoint
+	*CIM_LANEndpoint
 
 	// AccessPointAddress shall contain the MAC address of the access point with which the WiFiEndpoint is currently associated. If the WiFiEndpoint is not currently associated, then AccessPointAddress shall be NULL.The MAC address shall be formatted as twelve hexadecimal digits (for example, "010203040506"), with each pair representing one of the six octets of the MAC address in "canonical" bit order. (Therefore, the Group address bit is found in the low order bit of the first character of the string.)
 	AccessPointAddress string
@@ -62,6 +67,35 @@ type CIM_WiFiEndpoint struct {
 
 	// OtherEncryptionMethod shall specify the 802.11 encryption method if and only if EncryptionMethod contains "Other". The format of this string shall be vendor-specific.
 	OtherEncryptionMethod string
+}
+
+func NewCIM_WiFiEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_WiFiEndpoint, err error) {
+	tmp, err := NewCIM_LANEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_WiFiEndpoint{
+		CIM_LANEndpoint: tmp,
+	}
+	return
+}
+
+func NewCIM_WiFiEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_WiFiEndpoint, err error) {
+	tmp, err := NewCIM_LANEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_WiFiEndpoint{
+		CIM_LANEndpoint: tmp,
+	}
+	return
 }
 
 // SetAccessPointAddress sets the value of AccessPointAddress for the instance

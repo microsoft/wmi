@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageEvent struct
 type MSFT_StorageEvent struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// This field allows the Storage Management Provider (SMP) to provide a brief description explaining the indication.
 	Description string
@@ -50,6 +52,35 @@ type MSFT_StorageEvent struct {
 
 	//
 	StorageSubsystemObjectId string
+}
+
+func NewMSFT_StorageEventEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageEvent, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageEvent{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageEvent, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageEvent{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDescription sets the value of Description for the instance

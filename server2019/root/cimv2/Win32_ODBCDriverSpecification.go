@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ODBCDriverSpecification struct
 type Win32_ODBCDriverSpecification struct {
-	CIM_Check
+	*CIM_Check
 
 	//
 	Driver string
@@ -20,6 +25,35 @@ type Win32_ODBCDriverSpecification struct {
 
 	//
 	SetupFile string
+}
+
+func NewWin32_ODBCDriverSpecificationEx1(instance *cim.WmiInstance) (newInstance *Win32_ODBCDriverSpecification, err error) {
+	tmp, err := NewCIM_CheckEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ODBCDriverSpecification{
+		CIM_Check: tmp,
+	}
+	return
+}
+
+func NewWin32_ODBCDriverSpecificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ODBCDriverSpecification, err error) {
+	tmp, err := NewCIM_CheckEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ODBCDriverSpecification{
+		CIM_Check: tmp,
+	}
+	return
 }
 
 // SetDriver sets the value of Driver for the instance

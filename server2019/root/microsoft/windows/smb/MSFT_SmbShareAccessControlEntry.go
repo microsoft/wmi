@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbShareAccessControlEntry struct
 type MSFT_SmbShareAccessControlEntry struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AccessControlType SmbShareAccessControlEntry_AccessControlType
@@ -30,6 +32,35 @@ type MSFT_SmbShareAccessControlEntry struct {
 
 	//
 	ScopeName string
+}
+
+func NewMSFT_SmbShareAccessControlEntryEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbShareAccessControlEntry, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbShareAccessControlEntry{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbShareAccessControlEntryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbShareAccessControlEntry, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbShareAccessControlEntry{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAccessControlType sets the value of AccessControlType for the instance

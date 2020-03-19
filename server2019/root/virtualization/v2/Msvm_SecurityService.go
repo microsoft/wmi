@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_SecurityService struct
 type Msvm_SecurityService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewMsvm_SecurityServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_SecurityService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SecurityService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewMsvm_SecurityServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_SecurityService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SecurityService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 //
@@ -123,6 +153,6 @@ func (instance *Msvm_SecurityService) RestoreLastKnownGoodKeyProtector( /* IN */
 
 }
 
-func (instance *Msvm_SecurityService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ComputerSystem")
+func (instance *Msvm_SecurityService) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ComputerSystem")
 }

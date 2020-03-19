@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.protectionManagement
 //////////////////////////////////////////////
 package protectionmanagement
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_MpPreference struct
 type MSFT_MpPreference struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AttackSurfaceReductionOnlyExclusions []string
@@ -219,6 +221,35 @@ type MSFT_MpPreference struct {
 
 	//
 	UnknownThreatDefaultAction uint8
+}
+
+func NewMSFT_MpPreferenceEx1(instance *cim.WmiInstance) (newInstance *MSFT_MpPreference, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpPreference{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_MpPreferenceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MpPreference, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpPreference{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAttackSurfaceReductionOnlyExclusions sets the value of AttackSurfaceReductionOnlyExclusions for the instance

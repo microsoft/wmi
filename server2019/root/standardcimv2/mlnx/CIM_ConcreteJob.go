@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ConcreteJob struct
 type CIM_ConcreteJob struct {
-	CIM_Job
+	*CIM_Job
 
 	//
 	JobState ConcreteJob_JobState
@@ -20,6 +25,35 @@ type CIM_ConcreteJob struct {
 
 	//
 	TimeOfLastStateChange string
+}
+
+func NewCIM_ConcreteJobEx1(instance *cim.WmiInstance) (newInstance *CIM_ConcreteJob, err error) {
+	tmp, err := NewCIM_JobEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ConcreteJob{
+		CIM_Job: tmp,
+	}
+	return
+}
+
+func NewCIM_ConcreteJobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ConcreteJob, err error) {
+	tmp, err := NewCIM_JobEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ConcreteJob{
+		CIM_Job: tmp,
+	}
+	return
 }
 
 // SetJobState sets the value of JobState for the instance

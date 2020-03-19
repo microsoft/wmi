@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_SoftwareFeatureAction struct
 type Win32_SoftwareFeatureAction struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Action CIM_Action
 
 	//
 	Element Win32_SoftwareFeature
+}
+
+func NewWin32_SoftwareFeatureActionEx1(instance *cim.WmiInstance) (newInstance *Win32_SoftwareFeatureAction, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SoftwareFeatureAction{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_SoftwareFeatureActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_SoftwareFeatureAction, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SoftwareFeatureAction{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAction sets the value of Action for the instance

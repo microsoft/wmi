@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_CAURun_Report_Chunk struct
 type MSFT_CAURun_Report_Chunk struct {
-	MSFT_CAURun_Report_ID
+	*MSFT_CAURun_Report_ID
 
 	//
 	Data string
 
 	//
 	SequenceNumber uint32
+}
+
+func NewMSFT_CAURun_Report_ChunkEx1(instance *cim.WmiInstance) (newInstance *MSFT_CAURun_Report_Chunk, err error) {
+	tmp, err := NewMSFT_CAURun_Report_IDEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAURun_Report_Chunk{
+		MSFT_CAURun_Report_ID: tmp,
+	}
+	return
+}
+
+func NewMSFT_CAURun_Report_ChunkEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CAURun_Report_Chunk, err error) {
+	tmp, err := NewMSFT_CAURun_Report_IDEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAURun_Report_Chunk{
+		MSFT_CAURun_Report_ID: tmp,
+	}
+	return
 }
 
 // SetData sets the value of Data for the instance

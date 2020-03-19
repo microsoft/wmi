@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_Binary struct
 type Win32_Binary struct {
-	Win32_MSIResource
+	*Win32_MSIResource
 
 	//
 	Data string
@@ -20,6 +25,35 @@ type Win32_Binary struct {
 
 	//
 	ProductCode string
+}
+
+func NewWin32_BinaryEx1(instance *cim.WmiInstance) (newInstance *Win32_Binary, err error) {
+	tmp, err := NewWin32_MSIResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Binary{
+		Win32_MSIResource: tmp,
+	}
+	return
+}
+
+func NewWin32_BinaryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_Binary, err error) {
+	tmp, err := NewWin32_MSIResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Binary{
+		Win32_MSIResource: tmp,
+	}
+	return
 }
 
 // SetData sets the value of Data for the instance

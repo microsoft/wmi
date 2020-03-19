@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_FolderRedirectionHealth struct
 type Win32_FolderRedirectionHealth struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The health status of this folder, based on the values that were set in the Win32_FolderRedirectionHealthConfiguration properties.
 	HealthStatus FolderRedirectionHealth_HealthStatus
@@ -36,6 +38,35 @@ type Win32_FolderRedirectionHealth struct {
 
 	// If true, indicate if this folder is being redirected.
 	Redirected bool
+}
+
+func NewWin32_FolderRedirectionHealthEx1(instance *cim.WmiInstance) (newInstance *Win32_FolderRedirectionHealth, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirectionHealth{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_FolderRedirectionHealthEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_FolderRedirectionHealth, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirectionHealth{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance

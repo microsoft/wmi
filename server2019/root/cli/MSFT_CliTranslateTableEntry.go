@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CliTranslateTableEntry struct
 type MSFT_CliTranslateTableEntry struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	FromValue string
 
 	//
 	ToValue string
+}
+
+func NewMSFT_CliTranslateTableEntryEx1(instance *cim.WmiInstance) (newInstance *MSFT_CliTranslateTableEntry, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliTranslateTableEntry{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CliTranslateTableEntryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CliTranslateTableEntry, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliTranslateTableEntry{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetFromValue sets the value of FromValue for the instance

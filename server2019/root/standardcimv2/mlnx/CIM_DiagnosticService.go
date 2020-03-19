@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_DiagnosticService struct
 type CIM_DiagnosticService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewCIM_DiagnosticServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_DiagnosticService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewCIM_DiagnosticServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DiagnosticService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 //

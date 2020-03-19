@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IEConnectionDialUpSettings struct
 type RSOP_IEConnectionDialUpSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	alternateOffset uint32
@@ -159,6 +161,35 @@ type RSOP_IEConnectionDialUpSettings struct {
 
 	//
 	x25UserData string
+}
+
+func NewRSOP_IEConnectionDialUpSettingsEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEConnectionDialUpSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionDialUpSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEConnectionDialUpSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEConnectionDialUpSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionDialUpSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetalternateOffset sets the value of alternateOffset for the instance

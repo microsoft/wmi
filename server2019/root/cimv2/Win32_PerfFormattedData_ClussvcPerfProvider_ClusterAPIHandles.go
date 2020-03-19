@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandles struct
 type Win32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandles struct {
-	Win32_PerfFormattedData
+	*Win32_PerfFormattedData
 
 	//
 	BatchHandles uint64
@@ -65,6 +70,35 @@ type Win32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandles struct {
 
 	//
 	ResourceHandlesPersec uint64
+}
+
+func NewWin32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandlesEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandles, err error) {
+	tmp, err := NewWin32_PerfFormattedDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandles{
+		Win32_PerfFormattedData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandlesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandles, err error) {
+	tmp, err := NewWin32_PerfFormattedDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfFormattedData_ClussvcPerfProvider_ClusterAPIHandles{
+		Win32_PerfFormattedData: tmp,
+	}
+	return
 }
 
 // SetBatchHandles sets the value of BatchHandles for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_SharedDiskSetReplicationRelationship struct
 type Msvm_SharedDiskSetReplicationRelationship struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Caption string
@@ -48,6 +50,35 @@ type Msvm_SharedDiskSetReplicationRelationship struct {
 
 	//
 	ReplicationState uint16
+}
+
+func NewMsvm_SharedDiskSetReplicationRelationshipEx1(instance *cim.WmiInstance) (newInstance *Msvm_SharedDiskSetReplicationRelationship, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SharedDiskSetReplicationRelationship{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsvm_SharedDiskSetReplicationRelationshipEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_SharedDiskSetReplicationRelationship, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SharedDiskSetReplicationRelationship{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCaption sets the value of Caption for the instance

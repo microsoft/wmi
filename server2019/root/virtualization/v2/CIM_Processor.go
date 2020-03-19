@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Processor struct
 type CIM_Processor struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// Processor address width in bits.
 	AddressWidth uint16
@@ -50,6 +55,35 @@ type CIM_Processor struct {
 
 	// CPU socket information that includes data on how this Processor can be upgraded (if upgrades are supported). This property is an integer enumeration.
 	UpgradeMethod Processor_UpgradeMethod
+}
+
+func NewCIM_ProcessorEx1(instance *cim.WmiInstance) (newInstance *CIM_Processor, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Processor{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_ProcessorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Processor, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Processor{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetAddressWidth sets the value of AddressWidth for the instance

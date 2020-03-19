@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_BIOSElement struct
 type Msvm_BIOSElement struct {
-	CIM_BIOSElement
+	*CIM_BIOSElement
 
 	//
 	BaseBoardSerialNumber string
@@ -41,6 +46,35 @@ type Msvm_BIOSElement struct {
 
 	//
 	EnableHibernation bool
+}
+
+func NewMsvm_BIOSElementEx1(instance *cim.WmiInstance) (newInstance *Msvm_BIOSElement, err error) {
+	tmp, err := NewCIM_BIOSElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_BIOSElement{
+		CIM_BIOSElement: tmp,
+	}
+	return
+}
+
+func NewMsvm_BIOSElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_BIOSElement, err error) {
+	tmp, err := NewCIM_BIOSElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_BIOSElement{
+		CIM_BIOSElement: tmp,
+	}
+	return
 }
 
 // SetBaseBoardSerialNumber sets the value of BaseBoardSerialNumber for the instance
@@ -221,4 +255,7 @@ func (instance *Msvm_BIOSElement) GetPropertyEnableHibernation() (value bool, er
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_BIOSElement) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
 }

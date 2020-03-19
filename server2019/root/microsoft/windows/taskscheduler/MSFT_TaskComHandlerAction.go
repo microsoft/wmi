@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TaskComHandlerAction struct
 type MSFT_TaskComHandlerAction struct {
-	MSFT_TaskAction
+	*MSFT_TaskAction
 
 	//
 	ClassId string
 
 	//
 	Data string
+}
+
+func NewMSFT_TaskComHandlerActionEx1(instance *cim.WmiInstance) (newInstance *MSFT_TaskComHandlerAction, err error) {
+	tmp, err := NewMSFT_TaskActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskComHandlerAction{
+		MSFT_TaskAction: tmp,
+	}
+	return
+}
+
+func NewMSFT_TaskComHandlerActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TaskComHandlerAction, err error) {
+	tmp, err := NewMSFT_TaskActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskComHandlerAction{
+		MSFT_TaskAction: tmp,
+	}
+	return
 }
 
 // SetClassId sets the value of ClassId for the instance

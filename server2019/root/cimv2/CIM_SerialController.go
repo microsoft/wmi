@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_SerialController struct
 type CIM_SerialController struct {
-	CIM_Controller
+	*CIM_Controller
 
 	//
 	Capabilities []uint16
@@ -20,6 +25,35 @@ type CIM_SerialController struct {
 
 	//
 	MaxBaudRate uint32
+}
+
+func NewCIM_SerialControllerEx1(instance *cim.WmiInstance) (newInstance *CIM_SerialController, err error) {
+	tmp, err := NewCIM_ControllerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SerialController{
+		CIM_Controller: tmp,
+	}
+	return
+}
+
+func NewCIM_SerialControllerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_SerialController, err error) {
+	tmp, err := NewCIM_ControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SerialController{
+		CIM_Controller: tmp,
+	}
+	return
 }
 
 // SetCapabilities sets the value of Capabilities for the instance

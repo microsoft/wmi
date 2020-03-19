@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_BootConfiguration struct
 type Win32_BootConfiguration struct {
-	CIM_Setting
+	*CIM_Setting
 
 	//
 	BootDirectory string
@@ -29,6 +34,35 @@ type Win32_BootConfiguration struct {
 
 	//
 	TempDirectory string
+}
+
+func NewWin32_BootConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_BootConfiguration, err error) {
+	tmp, err := NewCIM_SettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_BootConfiguration{
+		CIM_Setting: tmp,
+	}
+	return
+}
+
+func NewWin32_BootConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_BootConfiguration, err error) {
+	tmp, err := NewCIM_SettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_BootConfiguration{
+		CIM_Setting: tmp,
+	}
+	return
 }
 
 // SetBootDirectory sets the value of BootDirectory for the instance

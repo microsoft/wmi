@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetLbfoTeam struct
 type MSFT_NetLbfoTeam struct {
-	MSFT_NetImPlatTeam
+	*MSFT_NetImPlatTeam
 
 	// 416
 	LacpTimer uint32
@@ -23,6 +28,35 @@ type MSFT_NetLbfoTeam struct {
 
 	// 11
 	TeamingMode uint32
+}
+
+func NewMSFT_NetLbfoTeamEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetLbfoTeam, err error) {
+	tmp, err := NewMSFT_NetImPlatTeamEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetLbfoTeam{
+		MSFT_NetImPlatTeam: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetLbfoTeamEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetLbfoTeam, err error) {
+	tmp, err := NewMSFT_NetImPlatTeamEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetLbfoTeam{
+		MSFT_NetImPlatTeam: tmp,
+	}
+	return
 }
 
 // SetLacpTimer sets the value of LacpTimer for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IEPrivacySettings struct
 type RSOP_IEPrivacySettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	firstPartyPrivacyType uint32
@@ -36,6 +38,35 @@ type RSOP_IEPrivacySettings struct {
 
 	//
 	useAdvancedSettings bool
+}
+
+func NewRSOP_IEPrivacySettingsEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEPrivacySettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEPrivacySettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEPrivacySettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEPrivacySettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEPrivacySettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetfirstPartyPrivacyType sets the value of firstPartyPrivacyType for the instance

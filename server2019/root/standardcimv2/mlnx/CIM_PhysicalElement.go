@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PhysicalElement struct
 type CIM_PhysicalElement struct {
-	CIM_ManagedSystemElement
+	*CIM_ManagedSystemElement
 
 	//
 	CanBeFRUed bool
@@ -53,6 +58,35 @@ type CIM_PhysicalElement struct {
 
 	//
 	Version string
+}
+
+func NewCIM_PhysicalElementEx1(instance *cim.WmiInstance) (newInstance *CIM_PhysicalElement, err error) {
+	tmp, err := NewCIM_ManagedSystemElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalElement{
+		CIM_ManagedSystemElement: tmp,
+	}
+	return
+}
+
+func NewCIM_PhysicalElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PhysicalElement, err error) {
+	tmp, err := NewCIM_ManagedSystemElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalElement{
+		CIM_ManagedSystemElement: tmp,
+	}
+	return
 }
 
 // SetCanBeFRUed sets the value of CanBeFRUed for the instance

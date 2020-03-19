@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // DnsClientPolicyConfiguration struct
 type DnsClientPolicyConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DirectAccessDnsServers []string
@@ -63,6 +65,35 @@ type DnsClientPolicyConfiguration struct {
 
 	//
 	SecureNameQueryFallback string
+}
+
+func NewDnsClientPolicyConfigurationEx1(instance *cim.WmiInstance) (newInstance *DnsClientPolicyConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &DnsClientPolicyConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewDnsClientPolicyConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *DnsClientPolicyConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &DnsClientPolicyConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDirectAccessDnsServers sets the value of DirectAccessDnsServers for the instance

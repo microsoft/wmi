@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetPrefixPolicy struct
 type MSFT_NetPrefixPolicy struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	Label uint32
@@ -23,6 +28,35 @@ type MSFT_NetPrefixPolicy struct {
 
 	//
 	Store uint8
+}
+
+func NewMSFT_NetPrefixPolicyEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetPrefixPolicy, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetPrefixPolicy{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetPrefixPolicyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetPrefixPolicy, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetPrefixPolicy{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetLabel sets the value of Label for the instance

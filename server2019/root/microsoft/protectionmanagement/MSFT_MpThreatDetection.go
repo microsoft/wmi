@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.protectionManagement
 //////////////////////////////////////////////
 package protectionmanagement
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MpThreatDetection struct
 type MSFT_MpThreatDetection struct {
-	BaseStatus
+	*BaseStatus
 
 	//
 	ActionSuccess bool
@@ -59,6 +64,35 @@ type MSFT_MpThreatDetection struct {
 
 	//
 	ThreatStatusID uint8
+}
+
+func NewMSFT_MpThreatDetectionEx1(instance *cim.WmiInstance) (newInstance *MSFT_MpThreatDetection, err error) {
+	tmp, err := NewBaseStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpThreatDetection{
+		BaseStatus: tmp,
+	}
+	return
+}
+
+func NewMSFT_MpThreatDetectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MpThreatDetection, err error) {
+	tmp, err := NewBaseStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpThreatDetection{
+		BaseStatus: tmp,
+	}
+	return
 }
 
 // SetActionSuccess sets the value of ActionSuccess for the instance

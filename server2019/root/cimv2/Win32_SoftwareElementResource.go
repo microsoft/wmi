@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_SoftwareElementResource struct
 type Win32_SoftwareElementResource struct {
-	Win32_ManagedSystemElementResource
+	*Win32_ManagedSystemElementResource
 
 	//
 	Element Win32_SoftwareElement
 
 	//
 	Setting Win32_MSIResource
+}
+
+func NewWin32_SoftwareElementResourceEx1(instance *cim.WmiInstance) (newInstance *Win32_SoftwareElementResource, err error) {
+	tmp, err := NewWin32_ManagedSystemElementResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SoftwareElementResource{
+		Win32_ManagedSystemElementResource: tmp,
+	}
+	return
+}
+
+func NewWin32_SoftwareElementResourceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_SoftwareElementResource, err error) {
+	tmp, err := NewWin32_ManagedSystemElementResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SoftwareElementResource{
+		Win32_ManagedSystemElementResource: tmp,
+	}
+	return
 }
 
 // SetElement sets the value of Element for the instance

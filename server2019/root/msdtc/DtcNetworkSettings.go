@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // DtcNetworkSettings struct
 type DtcNetworkSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AuthenticationLevel string
@@ -36,6 +38,35 @@ type DtcNetworkSettings struct {
 
 	//
 	XATransactionsEnabled bool
+}
+
+func NewDtcNetworkSettingsEx1(instance *cim.WmiInstance) (newInstance *DtcNetworkSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcNetworkSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewDtcNetworkSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *DtcNetworkSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcNetworkSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAuthenticationLevel sets the value of AuthenticationLevel for the instance

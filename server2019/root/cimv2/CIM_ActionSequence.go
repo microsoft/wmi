@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ActionSequence struct
 type CIM_ActionSequence struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Next CIM_Action
 
 	//
 	Prior CIM_Action
+}
+
+func NewCIM_ActionSequenceEx1(instance *cim.WmiInstance) (newInstance *CIM_ActionSequence, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ActionSequence{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ActionSequenceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ActionSequence, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ActionSequence{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetNext sets the value of Next for the instance

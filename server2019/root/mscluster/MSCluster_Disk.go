@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_Disk struct
 type MSCluster_Disk struct {
-	MSCluster_ClusterDisk
+	*MSCluster_ClusterDisk
 
 	//
 	UniqueId string
 
 	//
 	UniqueIdFormat uint16
+}
+
+func NewMSCluster_DiskEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Disk, err error) {
+	tmp, err := NewMSCluster_ClusterDiskEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Disk{
+		MSCluster_ClusterDisk: tmp,
+	}
+	return
+}
+
+func NewMSCluster_DiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_Disk, err error) {
+	tmp, err := NewMSCluster_ClusterDiskEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Disk{
+		MSCluster_ClusterDisk: tmp,
+	}
+	return
 }
 
 // SetUniqueId sets the value of UniqueId for the instance

@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_InstalledOS struct
 type CIM_InstalledOS struct {
-	CIM_SystemComponent
+	*CIM_SystemComponent
 
 	//
 	PrimaryOS bool
+}
+
+func NewCIM_InstalledOSEx1(instance *cim.WmiInstance) (newInstance *CIM_InstalledOS, err error) {
+	tmp, err := NewCIM_SystemComponentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstalledOS{
+		CIM_SystemComponent: tmp,
+	}
+	return
+}
+
+func NewCIM_InstalledOSEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_InstalledOS, err error) {
+	tmp, err := NewCIM_SystemComponentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstalledOS{
+		CIM_SystemComponent: tmp,
+	}
+	return
 }
 
 // SetPrimaryOS sets the value of PrimaryOS for the instance

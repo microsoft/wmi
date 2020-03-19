@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_SoftwareElementActions struct
 type CIM_SoftwareElementActions struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Action CIM_Action
 
 	//
 	Element CIM_SoftwareElement
+}
+
+func NewCIM_SoftwareElementActionsEx1(instance *cim.WmiInstance) (newInstance *CIM_SoftwareElementActions, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SoftwareElementActions{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_SoftwareElementActionsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_SoftwareElementActions, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SoftwareElementActions{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAction sets the value of Action for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.subscription
 //////////////////////////////////////////////
 package subscription
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // NTEventLogEventConsumer struct
 type NTEventLogEventConsumer struct {
-	__EventConsumer
+	*__EventConsumer
 
 	//
 	Category uint16
@@ -41,6 +46,35 @@ type NTEventLogEventConsumer struct {
 
 	//
 	UNCServerName string
+}
+
+func NewNTEventLogEventConsumerEx1(instance *cim.WmiInstance) (newInstance *NTEventLogEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &NTEventLogEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
+}
+
+func NewNTEventLogEventConsumerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *NTEventLogEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &NTEventLogEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
 }
 
 // SetCategory sets the value of Category for the instance

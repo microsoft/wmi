@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_VssComponentSettingData struct
 type Msvm_VssComponentSettingData struct {
-	CIM_ResourceAllocationSettingData
+	*CIM_ResourceAllocationSettingData
 
 	//
 	EnabledState uint16
+}
+
+func NewMsvm_VssComponentSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_VssComponentSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VssComponentSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_VssComponentSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VssComponentSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VssComponentSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
 }
 
 // SetEnabledState sets the value of EnabledState for the instance
@@ -32,4 +66,11 @@ func (instance *Msvm_VssComponentSettingData) GetPropertyEnabledState() (value u
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_VssComponentSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemSettingData")
+}
+
+func (instance *Msvm_VssComponentSettingData) GetRelatedVssComponent() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VssComponent")
 }

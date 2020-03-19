@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.PT.Alt
 //////////////////////////////////////////////
 package alt
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_WmiError struct
 type MSFT_WmiError struct {
-	CIM_Error
+	*CIM_Error
 
 	// Error Category.
 	error_Category uint16
@@ -23,6 +28,35 @@ type MSFT_WmiError struct {
 
 	// Windows error message.
 	error_WindowsErrorMessage string
+}
+
+func NewMSFT_WmiErrorEx1(instance *cim.WmiInstance) (newInstance *MSFT_WmiError, err error) {
+	tmp, err := NewCIM_ErrorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WmiError{
+		CIM_Error: tmp,
+	}
+	return
+}
+
+func NewMSFT_WmiErrorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_WmiError, err error) {
+	tmp, err := NewCIM_ErrorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WmiError{
+		CIM_Error: tmp,
+	}
+	return
 }
 
 // Seterror_Category sets the value of error_Category for the instance

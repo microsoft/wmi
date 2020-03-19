@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.EventTracingManagement
 //////////////////////////////////////////////
 package eventtracingmanagement
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_AutologgerConfig struct
 type MSFT_AutologgerConfig struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	BufferSize uint32
@@ -53,6 +58,35 @@ type MSFT_AutologgerConfig struct {
 
 	//
 	Start uint32
+}
+
+func NewMSFT_AutologgerConfigEx1(instance *cim.WmiInstance) (newInstance *MSFT_AutologgerConfig, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_AutologgerConfig{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_AutologgerConfigEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_AutologgerConfig, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_AutologgerConfig{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetBufferSize sets the value of BufferSize for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __Event struct
 type __Event struct {
-	__IndicationRelated
+	*__IndicationRelated
 
 	//
 	SECURITY_DESCRIPTOR []uint8
 
 	//
 	TIME_CREATED uint64
+}
+
+func New__EventEx1(instance *cim.WmiInstance) (newInstance *__Event, err error) {
+	tmp, err := New__IndicationRelatedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Event{
+		__IndicationRelated: tmp,
+	}
+	return
+}
+
+func New__EventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__Event, err error) {
+	tmp, err := New__IndicationRelatedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Event{
+		__IndicationRelated: tmp,
+	}
+	return
 }
 
 // SetSECURITY_DESCRIPTOR sets the value of SECURITY_DESCRIPTOR for the instance

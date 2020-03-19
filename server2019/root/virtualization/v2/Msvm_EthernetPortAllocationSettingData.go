@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetPortAllocationSettingData struct
 type Msvm_EthernetPortAllocationSettingData struct {
-	CIM_EthernetPortAllocationSettingData
+	*CIM_EthernetPortAllocationSettingData
 
 	//
 	CompartmentGuid string
@@ -36,6 +37,35 @@ type Msvm_EthernetPortAllocationSettingData struct {
 
 	//
 	TestReplicaSwitchName string
+}
+
+func NewMsvm_EthernetPortAllocationSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetPortAllocationSettingData, err error) {
+	tmp, err := NewCIM_EthernetPortAllocationSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetPortAllocationSettingData{
+		CIM_EthernetPortAllocationSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetPortAllocationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetPortAllocationSettingData, err error) {
+	tmp, err := NewCIM_EthernetPortAllocationSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetPortAllocationSettingData{
+		CIM_EthernetPortAllocationSettingData: tmp,
+	}
+	return
 }
 
 // SetCompartmentGuid sets the value of CompartmentGuid for the instance

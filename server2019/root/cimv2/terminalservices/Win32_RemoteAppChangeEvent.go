@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_RemoteAppChangeEvent struct
 type Win32_RemoteAppChangeEvent struct {
-	__ExtrinsicEvent
+	*__ExtrinsicEvent
 
 	// Type of operation corresponding to the event
 	OperationType RemoteAppChangeEvent_OperationType
 
 	// Object changed by the operation corresponding to the event
 	TargetInstance interface{}
+}
+
+func NewWin32_RemoteAppChangeEventEx1(instance *cim.WmiInstance) (newInstance *Win32_RemoteAppChangeEvent, err error) {
+	tmp, err := New__ExtrinsicEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RemoteAppChangeEvent{
+		__ExtrinsicEvent: tmp,
+	}
+	return
+}
+
+func NewWin32_RemoteAppChangeEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_RemoteAppChangeEvent, err error) {
+	tmp, err := New__ExtrinsicEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RemoteAppChangeEvent{
+		__ExtrinsicEvent: tmp,
+	}
+	return
 }
 
 // SetOperationType sets the value of OperationType for the instance

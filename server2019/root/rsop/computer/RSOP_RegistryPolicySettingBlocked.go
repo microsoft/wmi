@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_RegistryPolicySettingBlocked struct
 type RSOP_RegistryPolicySettingBlocked struct {
-	RSOP_PolicySettingBlocked
+	*RSOP_PolicySettingBlocked
 
 	//
 	command string
@@ -29,6 +34,35 @@ type RSOP_RegistryPolicySettingBlocked struct {
 
 	//
 	valueType uint32
+}
+
+func NewRSOP_RegistryPolicySettingBlockedEx1(instance *cim.WmiInstance) (newInstance *RSOP_RegistryPolicySettingBlocked, err error) {
+	tmp, err := NewRSOP_PolicySettingBlockedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RegistryPolicySettingBlocked{
+		RSOP_PolicySettingBlocked: tmp,
+	}
+	return
+}
+
+func NewRSOP_RegistryPolicySettingBlockedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_RegistryPolicySettingBlocked, err error) {
+	tmp, err := NewRSOP_PolicySettingBlockedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RegistryPolicySettingBlocked{
+		RSOP_PolicySettingBlocked: tmp,
+	}
+	return
 }
 
 // Setcommand sets the value of command for the instance

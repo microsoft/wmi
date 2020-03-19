@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PCIController struct
 type CIM_PCIController struct {
-	CIM_Controller
+	*CIM_Controller
 
 	//
 	CacheLineSize uint8
@@ -41,6 +46,35 @@ type CIM_PCIController struct {
 
 	//
 	SelfTestEnabled bool
+}
+
+func NewCIM_PCIControllerEx1(instance *cim.WmiInstance) (newInstance *CIM_PCIController, err error) {
+	tmp, err := NewCIM_ControllerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PCIController{
+		CIM_Controller: tmp,
+	}
+	return
+}
+
+func NewCIM_PCIControllerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PCIController, err error) {
+	tmp, err := NewCIM_ControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PCIController{
+		CIM_Controller: tmp,
+	}
+	return
 }
 
 // SetCacheLineSize sets the value of CacheLineSize for the instance

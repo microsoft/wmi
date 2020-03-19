@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_BrowserSettings struct
 type MDM_BrowserSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AlwaysSendDoNotTrackHeader bool
@@ -57,6 +59,35 @@ type MDM_BrowserSettings struct {
 
 	//
 	TrustedSitesZoneSecurityLevel uint32
+}
+
+func NewMDM_BrowserSettingsEx1(instance *cim.WmiInstance) (newInstance *MDM_BrowserSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_BrowserSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_BrowserSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_BrowserSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_BrowserSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAlwaysSendDoNotTrackHeader sets the value of AlwaysSendDoNotTrackHeader for the instance

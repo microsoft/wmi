@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_FailoverNetworkAdapterSettingData struct
 type Msvm_FailoverNetworkAdapterSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	DefaultGateways []string
@@ -29,6 +34,35 @@ type Msvm_FailoverNetworkAdapterSettingData struct {
 
 	//
 	Subnets []string
+}
+
+func NewMsvm_FailoverNetworkAdapterSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_FailoverNetworkAdapterSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_FailoverNetworkAdapterSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_FailoverNetworkAdapterSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_FailoverNetworkAdapterSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_FailoverNetworkAdapterSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetDefaultGateways sets the value of DefaultGateways for the instance

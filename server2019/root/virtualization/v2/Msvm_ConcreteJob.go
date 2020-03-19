@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_ConcreteJob struct
 type Msvm_ConcreteJob struct {
-	CIM_ConcreteJob
+	*CIM_ConcreteJob
 
 	//
 	Cancellable bool
@@ -20,6 +25,35 @@ type Msvm_ConcreteJob struct {
 
 	//
 	JobType ConcreteJob_JobType
+}
+
+func NewMsvm_ConcreteJobEx1(instance *cim.WmiInstance) (newInstance *Msvm_ConcreteJob, err error) {
+	tmp, err := NewCIM_ConcreteJobEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ConcreteJob{
+		CIM_ConcreteJob: tmp,
+	}
+	return
+}
+
+func NewMsvm_ConcreteJobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ConcreteJob, err error) {
+	tmp, err := NewCIM_ConcreteJobEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ConcreteJob{
+		CIM_ConcreteJob: tmp,
+	}
+	return
 }
 
 // SetCancellable sets the value of Cancellable for the instance

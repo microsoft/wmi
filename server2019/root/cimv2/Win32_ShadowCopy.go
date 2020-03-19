@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ShadowCopy struct
 type Win32_ShadowCopy struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	ClientAccessible bool
@@ -80,6 +85,35 @@ type Win32_ShadowCopy struct {
 
 	//
 	VolumeName string
+}
+
+func NewWin32_ShadowCopyEx1(instance *cim.WmiInstance) (newInstance *Win32_ShadowCopy, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ShadowCopy{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_ShadowCopyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ShadowCopy, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ShadowCopy{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetClientAccessible sets the value of ClientAccessible for the instance

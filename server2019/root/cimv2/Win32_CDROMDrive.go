@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_CDROMDrive struct
 type Win32_CDROMDrive struct {
-	CIM_CDROMDrive
+	*CIM_CDROMDrive
 
 	//
 	Drive string
@@ -71,6 +76,35 @@ type Win32_CDROMDrive struct {
 
 	//
 	VolumeSerialNumber string
+}
+
+func NewWin32_CDROMDriveEx1(instance *cim.WmiInstance) (newInstance *Win32_CDROMDrive, err error) {
+	tmp, err := NewCIM_CDROMDriveEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_CDROMDrive{
+		CIM_CDROMDrive: tmp,
+	}
+	return
+}
+
+func NewWin32_CDROMDriveEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_CDROMDrive, err error) {
+	tmp, err := NewCIM_CDROMDriveEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_CDROMDrive{
+		CIM_CDROMDrive: tmp,
+	}
+	return
 }
 
 // SetDrive sets the value of Drive for the instance

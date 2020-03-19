@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_DCOMApplication struct
 type Win32_DCOMApplication struct {
-	Win32_COMApplication
+	*Win32_COMApplication
 
 	//
 	AppID string
+}
+
+func NewWin32_DCOMApplicationEx1(instance *cim.WmiInstance) (newInstance *Win32_DCOMApplication, err error) {
+	tmp, err := NewWin32_COMApplicationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DCOMApplication{
+		Win32_COMApplication: tmp,
+	}
+	return
+}
+
+func NewWin32_DCOMApplicationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_DCOMApplication, err error) {
+	tmp, err := NewWin32_COMApplicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DCOMApplication{
+		Win32_COMApplication: tmp,
+	}
+	return
 }
 
 // SetAppID sets the value of AppID for the instance

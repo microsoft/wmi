@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetTCPSetting struct
 type MSFT_NetTCPSetting struct {
-	CIM_PolicyAction
+	*CIM_PolicyAction
 
 	//
 	AutomaticUseCustom uint8
@@ -80,6 +85,35 @@ type MSFT_NetTCPSetting struct {
 
 	//
 	Timestamps uint8
+}
+
+func NewMSFT_NetTCPSettingEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetTCPSetting, err error) {
+	tmp, err := NewCIM_PolicyActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTCPSetting{
+		CIM_PolicyAction: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetTCPSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetTCPSetting, err error) {
+	tmp, err := NewCIM_PolicyActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTCPSetting{
+		CIM_PolicyAction: tmp,
+	}
+	return
 }
 
 // SetAutomaticUseCustom sets the value of AutomaticUseCustom for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetIKECertAuthProposal struct
 type MSFT_NetIKECertAuthProposal struct {
-	MSFT_NetIKEAuthProposal
+	*MSFT_NetIKEAuthProposal
 
 	//
 	CertName string
@@ -47,6 +52,35 @@ type MSFT_NetIKECertAuthProposal struct {
 
 	//
 	ValidationCriteria bool
+}
+
+func NewMSFT_NetIKECertAuthProposalEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetIKECertAuthProposal, err error) {
+	tmp, err := NewMSFT_NetIKEAuthProposalEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKECertAuthProposal{
+		MSFT_NetIKEAuthProposal: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetIKECertAuthProposalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetIKECertAuthProposal, err error) {
+	tmp, err := NewMSFT_NetIKEAuthProposalEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKECertAuthProposal{
+		MSFT_NetIKEAuthProposal: tmp,
+	}
+	return
 }
 
 // SetCertName sets the value of CertName for the instance

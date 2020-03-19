@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_GuestFileService struct
 type Msvm_GuestFileService struct {
-	Msvm_GuestService
+	*Msvm_GuestService
+}
+
+func NewMsvm_GuestFileServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_GuestFileService, err error) {
+	tmp, err := NewMsvm_GuestServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestFileService{
+		Msvm_GuestService: tmp,
+	}
+	return
+}
+
+func NewMsvm_GuestFileServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_GuestFileService, err error) {
+	tmp, err := NewMsvm_GuestServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestFileService{
+		Msvm_GuestService: tmp,
+	}
+	return
 }
 
 //
@@ -36,4 +66,8 @@ func (instance *Msvm_GuestFileService) CopyFilesToGuest( /* IN */ CopyFileToGues
 	result = uint32(retValue)
 	return
 
+}
+
+func (instance *Msvm_GuestFileService) GetRelatedGuestServiceInterfaceComponent() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_GuestServiceInterfaceComponent")
 }

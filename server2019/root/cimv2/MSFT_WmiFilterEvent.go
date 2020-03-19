@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_WmiFilterEvent struct
 type MSFT_WmiFilterEvent struct {
-	MSFT_WmiEssEvent
+	*MSFT_WmiEssEvent
 
 	//
 	Name string
@@ -23,6 +28,35 @@ type MSFT_WmiFilterEvent struct {
 
 	//
 	QueryLanguage string
+}
+
+func NewMSFT_WmiFilterEventEx1(instance *cim.WmiInstance) (newInstance *MSFT_WmiFilterEvent, err error) {
+	tmp, err := NewMSFT_WmiEssEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WmiFilterEvent{
+		MSFT_WmiEssEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_WmiFilterEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_WmiFilterEvent, err error) {
+	tmp, err := NewMSFT_WmiEssEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WmiFilterEvent{
+		MSFT_WmiEssEvent: tmp,
+	}
+	return
 }
 
 // SetName sets the value of Name for the instance

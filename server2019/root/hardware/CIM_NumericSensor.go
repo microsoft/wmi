@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_NumericSensor struct
 type CIM_NumericSensor struct {
-	CIM_Sensor
+	*CIM_Sensor
 
 	//
 	Accuracy int32
@@ -80,6 +85,35 @@ type CIM_NumericSensor struct {
 
 	//
 	UpperThresholdNonCritical int32
+}
+
+func NewCIM_NumericSensorEx1(instance *cim.WmiInstance) (newInstance *CIM_NumericSensor, err error) {
+	tmp, err := NewCIM_SensorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NumericSensor{
+		CIM_Sensor: tmp,
+	}
+	return
+}
+
+func NewCIM_NumericSensorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_NumericSensor, err error) {
+	tmp, err := NewCIM_SensorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NumericSensor{
+		CIM_Sensor: tmp,
+	}
+	return
 }
 
 // SetAccuracy sets the value of Accuracy for the instance

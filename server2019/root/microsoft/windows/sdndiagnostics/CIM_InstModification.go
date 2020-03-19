@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SDNDiagnostics
 //////////////////////////////////////////////
 package sdndiagnostics
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_InstModification struct
 type CIM_InstModification struct {
-	CIM_InstIndication
+	*CIM_InstIndication
 
 	// A copy of the 'previous' instance whose change generated the Indication. PreviousInstance contains 'older' values of an instance's properties (as compared to SourceInstance), selected by the IndicationFilter's Query.
 	PreviousInstance interface{}
+}
+
+func NewCIM_InstModificationEx1(instance *cim.WmiInstance) (newInstance *CIM_InstModification, err error) {
+	tmp, err := NewCIM_InstIndicationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstModification{
+		CIM_InstIndication: tmp,
+	}
+	return
+}
+
+func NewCIM_InstModificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_InstModification, err error) {
+	tmp, err := NewCIM_InstIndicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstModification{
+		CIM_InstIndication: tmp,
+	}
+	return
 }
 
 // SetPreviousInstance sets the value of PreviousInstance for the instance

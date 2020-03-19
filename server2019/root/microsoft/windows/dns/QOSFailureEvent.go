@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __QOSFailureEvent struct
 type __QOSFailureEvent struct {
-	__EventDroppedEvent
+	*__EventDroppedEvent
 
 	//
 	ErrorCode uint32
 
 	//
 	ErrorDescription string
+}
+
+func New__QOSFailureEventEx1(instance *cim.WmiInstance) (newInstance *__QOSFailureEvent, err error) {
+	tmp, err := New__EventDroppedEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__QOSFailureEvent{
+		__EventDroppedEvent: tmp,
+	}
+	return
+}
+
+func New__QOSFailureEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__QOSFailureEvent, err error) {
+	tmp, err := New__EventDroppedEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__QOSFailureEvent{
+		__EventDroppedEvent: tmp,
+	}
+	return
 }
 
 // SetErrorCode sets the value of ErrorCode for the instance

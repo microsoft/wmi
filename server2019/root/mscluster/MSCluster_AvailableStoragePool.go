@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_AvailableStoragePool struct
 type MSCluster_AvailableStoragePool struct {
-	MSCluster_LogicalElement
+	*MSCluster_LogicalElement
 
 	//
 	Attributes uint64
@@ -32,6 +37,35 @@ type MSCluster_AvailableStoragePool struct {
 
 	//
 	Usage uint64
+}
+
+func NewMSCluster_AvailableStoragePoolEx1(instance *cim.WmiInstance) (newInstance *MSCluster_AvailableStoragePool, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_AvailableStoragePool{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSCluster_AvailableStoragePoolEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_AvailableStoragePool, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_AvailableStoragePool{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAttributes sets the value of Attributes for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_RemoteServiceAccessPoint struct
 type CIM_RemoteServiceAccessPoint struct {
-	CIM_ServiceAccessPoint
+	*CIM_ServiceAccessPoint
 
 	// 733
 	AccessContext RemoteServiceAccessPoint_AccessContext
@@ -26,6 +31,35 @@ type CIM_RemoteServiceAccessPoint struct {
 
 	// 732
 	OtherInfoFormatDescription string
+}
+
+func NewCIM_RemoteServiceAccessPointEx1(instance *cim.WmiInstance) (newInstance *CIM_RemoteServiceAccessPoint, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RemoteServiceAccessPoint{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
+}
+
+func NewCIM_RemoteServiceAccessPointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_RemoteServiceAccessPoint, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RemoteServiceAccessPoint{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
 }
 
 // SetAccessContext sets the value of AccessContext for the instance

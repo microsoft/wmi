@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTNetworkAdapter struct
 type MSFT_MTNetworkAdapter struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	BytesReceived uint64
@@ -137,6 +142,35 @@ type MSFT_MTNetworkAdapter struct {
 
 	//
 	Utilization float32
+}
+
+func NewMSFT_MTNetworkAdapterEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTNetworkAdapter, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTNetworkAdapter{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTNetworkAdapterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTNetworkAdapter, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTNetworkAdapter{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetBytesReceived sets the value of BytesReceived for the instance

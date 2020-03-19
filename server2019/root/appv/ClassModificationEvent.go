@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ClassModificationEvent struct
 type __ClassModificationEvent struct {
-	__ClassOperationEvent
+	*__ClassOperationEvent
 
 	//
 	PreviousClass interface{}
+}
+
+func New__ClassModificationEventEx1(instance *cim.WmiInstance) (newInstance *__ClassModificationEvent, err error) {
+	tmp, err := New__ClassOperationEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ClassModificationEvent{
+		__ClassOperationEvent: tmp,
+	}
+	return
+}
+
+func New__ClassModificationEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ClassModificationEvent, err error) {
+	tmp, err := New__ClassOperationEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ClassModificationEvent{
+		__ClassOperationEvent: tmp,
+	}
+	return
 }
 
 // SetPreviousClass sets the value of PreviousClass for the instance

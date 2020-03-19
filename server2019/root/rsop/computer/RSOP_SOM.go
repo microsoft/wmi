@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_SOM struct
 type RSOP_SOM struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	blocked bool
@@ -33,6 +35,35 @@ type RSOP_SOM struct {
 
 	//
 	_type uint32
+}
+
+func NewRSOP_SOMEx1(instance *cim.WmiInstance) (newInstance *RSOP_SOM, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SOM{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_SOMEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_SOM, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SOM{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // Setblocked sets the value of blocked for the instance

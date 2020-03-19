@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // VpnServerAddress struct
 type VpnServerAddress struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	FriendlyName string
 
 	//
 	ServerAddress string
+}
+
+func NewVpnServerAddressEx1(instance *cim.WmiInstance) (newInstance *VpnServerAddress, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &VpnServerAddress{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewVpnServerAddressEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *VpnServerAddress, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &VpnServerAddress{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __EventConsumer struct
 type __EventConsumer struct {
-	__IndicationRelated
+	*__IndicationRelated
 
 	//
 	CreatorSID []uint8
@@ -20,6 +25,35 @@ type __EventConsumer struct {
 
 	//
 	MaximumQueueSize uint32
+}
+
+func New__EventConsumerEx1(instance *cim.WmiInstance) (newInstance *__EventConsumer, err error) {
+	tmp, err := New__IndicationRelatedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__EventConsumer{
+		__IndicationRelated: tmp,
+	}
+	return
+}
+
+func New__EventConsumerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__EventConsumer, err error) {
+	tmp, err := New__IndicationRelatedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__EventConsumer{
+		__IndicationRelated: tmp,
+	}
+	return
 }
 
 // SetCreatorSID sets the value of CreatorSID for the instance

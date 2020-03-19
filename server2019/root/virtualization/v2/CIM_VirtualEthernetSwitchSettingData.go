@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VirtualEthernetSwitchSettingData struct
 type CIM_VirtualEthernetSwitchSettingData struct {
-	CIM_VirtualSystemSettingData
+	*CIM_VirtualSystemSettingData
 
 	// A list of host resource pools to be associated or that are currently associated with the Ethernet Switch for the purpose of the allocation of Ethernet connections between a virtual machine and an Ethernet switch. Each non-Null value of the AssociatedResourcePool property shall conform to the production WBEM_URI_UntypedInstancePath as defined in DSP0207.
 	AssociatedResourcePool []string
@@ -20,6 +25,35 @@ type CIM_VirtualEthernetSwitchSettingData struct {
 
 	// A list of VLAN Ids that this switch can access.
 	VLANConnection []string
+}
+
+func NewCIM_VirtualEthernetSwitchSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualEthernetSwitchSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualEthernetSwitchSettingData{
+		CIM_VirtualSystemSettingData: tmp,
+	}
+	return
+}
+
+func NewCIM_VirtualEthernetSwitchSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VirtualEthernetSwitchSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualEthernetSwitchSettingData{
+		CIM_VirtualSystemSettingData: tmp,
+	}
+	return
 }
 
 // SetAssociatedResourcePool sets the value of AssociatedResourcePool for the instance

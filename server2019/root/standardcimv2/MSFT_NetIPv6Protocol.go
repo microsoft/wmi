@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetIPv6Protocol struct
 type MSFT_NetIPv6Protocol struct {
-	MSFT_NetBaseIPProtocol
+	*MSFT_NetBaseIPProtocol
 
 	//
 	MaxDadAttempts uint32
@@ -29,6 +34,35 @@ type MSFT_NetIPv6Protocol struct {
 
 	//
 	UseTemporaryAddresses uint32
+}
+
+func NewMSFT_NetIPv6ProtocolEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetIPv6Protocol, err error) {
+	tmp, err := NewMSFT_NetBaseIPProtocolEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIPv6Protocol{
+		MSFT_NetBaseIPProtocol: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetIPv6ProtocolEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetIPv6Protocol, err error) {
+	tmp, err := NewMSFT_NetBaseIPProtocolEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIPv6Protocol{
+		MSFT_NetBaseIPProtocol: tmp,
+	}
+	return
 }
 
 // SetMaxDadAttempts sets the value of MaxDadAttempts for the instance

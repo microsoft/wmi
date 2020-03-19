@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_OnBoardDevice struct
 type Win32_OnBoardDevice struct {
-	CIM_PhysicalComponent
+	*CIM_PhysicalComponent
 
 	//
 	DeviceType uint16
 
 	//
 	Enabled bool
+}
+
+func NewWin32_OnBoardDeviceEx1(instance *cim.WmiInstance) (newInstance *Win32_OnBoardDevice, err error) {
+	tmp, err := NewCIM_PhysicalComponentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OnBoardDevice{
+		CIM_PhysicalComponent: tmp,
+	}
+	return
+}
+
+func NewWin32_OnBoardDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_OnBoardDevice, err error) {
+	tmp, err := NewCIM_PhysicalComponentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OnBoardDevice{
+		CIM_PhysicalComponent: tmp,
+	}
+	return
 }
 
 // SetDeviceType sets the value of DeviceType for the instance

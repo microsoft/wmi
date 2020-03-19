@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DNSClientGlobalSetting struct
 type MSFT_DNSClientGlobalSetting struct {
-	CIM_DNSGeneralSettingData
+	*CIM_DNSGeneralSettingData
 
 	// 705
 	DevolutionLevel uint32
@@ -23,6 +28,35 @@ type MSFT_DNSClientGlobalSetting struct {
 
 	// 702
 	UseSuffixSearchList bool
+}
+
+func NewMSFT_DNSClientGlobalSettingEx1(instance *cim.WmiInstance) (newInstance *MSFT_DNSClientGlobalSetting, err error) {
+	tmp, err := NewCIM_DNSGeneralSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClientGlobalSetting{
+		CIM_DNSGeneralSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_DNSClientGlobalSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DNSClientGlobalSetting, err error) {
+	tmp, err := NewCIM_DNSGeneralSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClientGlobalSetting{
+		CIM_DNSGeneralSettingData: tmp,
+	}
+	return
 }
 
 // SetDevolutionLevel sets the value of DevolutionLevel for the instance

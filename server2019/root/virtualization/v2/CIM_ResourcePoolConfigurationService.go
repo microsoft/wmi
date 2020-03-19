@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ResourcePoolConfigurationService struct
 type CIM_ResourcePoolConfigurationService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewCIM_ResourcePoolConfigurationServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_ResourcePoolConfigurationService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourcePoolConfigurationService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewCIM_ResourcePoolConfigurationServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ResourcePoolConfigurationService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourcePoolConfigurationService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 // Starts a job to create a root ResourcePool. The ResourcePool will be scoped to the same System as this Service. If 0 is returned, then the task completed successfully and the use of ConcreteJob was not required. If the task will take some time to complete, a ConcreteJob will be created and its reference returned in the output parameter Job. The resulting pool will be a root pool with no parent pool.

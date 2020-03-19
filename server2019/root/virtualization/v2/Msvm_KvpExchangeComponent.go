@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_KvpExchangeComponent struct
 type Msvm_KvpExchangeComponent struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	//
 	GuestExchangeItems []string
 
 	//
 	GuestIntrinsicExchangeItems []string
+}
+
+func NewMsvm_KvpExchangeComponentEx1(instance *cim.WmiInstance) (newInstance *Msvm_KvpExchangeComponent, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_KvpExchangeComponent{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewMsvm_KvpExchangeComponentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_KvpExchangeComponent, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_KvpExchangeComponent{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetGuestExchangeItems sets the value of GuestExchangeItems for the instance
@@ -53,4 +87,11 @@ func (instance *Msvm_KvpExchangeComponent) GetPropertyGuestIntrinsicExchangeItem
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_KvpExchangeComponent) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_KvpExchangeComponent) GetRelatedKvpExchangeComponentSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_KvpExchangeComponentSettingData")
 }

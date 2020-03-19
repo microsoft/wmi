@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_RegistryKeyBlocked struct
 type RSOP_RegistryKeyBlocked struct {
-	RSOP_SecuritySettingsBlocked
+	*RSOP_SecuritySettingsBlocked
 
 	//
 	Mode RegistryKeyBlocked_Mode
@@ -20,6 +25,35 @@ type RSOP_RegistryKeyBlocked struct {
 
 	//
 	SDDLString string
+}
+
+func NewRSOP_RegistryKeyBlockedEx1(instance *cim.WmiInstance) (newInstance *RSOP_RegistryKeyBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RegistryKeyBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
+}
+
+func NewRSOP_RegistryKeyBlockedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_RegistryKeyBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RegistryKeyBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
 }
 
 // SetMode sets the value of Mode for the instance

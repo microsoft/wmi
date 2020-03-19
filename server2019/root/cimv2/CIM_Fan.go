@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Fan struct
 type CIM_Fan struct {
-	CIM_CoolingDevice
+	*CIM_CoolingDevice
 
 	//
 	DesiredSpeed uint64
 
 	//
 	VariableSpeed bool
+}
+
+func NewCIM_FanEx1(instance *cim.WmiInstance) (newInstance *CIM_Fan, err error) {
+	tmp, err := NewCIM_CoolingDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Fan{
+		CIM_CoolingDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_FanEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Fan, err error) {
+	tmp, err := NewCIM_CoolingDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Fan{
+		CIM_CoolingDevice: tmp,
+	}
+	return
 }
 
 // SetDesiredSpeed sets the value of DesiredSpeed for the instance

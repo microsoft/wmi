@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DNSClientCache struct
 type MSFT_DNSClientCache struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	// 680
 	Data string
@@ -35,6 +40,35 @@ type MSFT_DNSClientCache struct {
 
 	// 665
 	Type DNSClientCache_Type
+}
+
+func NewMSFT_DNSClientCacheEx1(instance *cim.WmiInstance) (newInstance *MSFT_DNSClientCache, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClientCache{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_DNSClientCacheEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DNSClientCache, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClientCache{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetData sets the value of Data for the instance

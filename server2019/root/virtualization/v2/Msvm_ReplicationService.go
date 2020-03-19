@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_ReplicationService struct
 type Msvm_ReplicationService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewMsvm_ReplicationServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_ReplicationService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReplicationService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewMsvm_ReplicationServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ReplicationService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReplicationService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 //
@@ -611,8 +641,8 @@ func (instance *Msvm_ReplicationService) InitiateFailback( /* IN */ ComputerSyst
 
 }
 
-func (instance *Msvm_ReplicationService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ComputerSystem")
+func (instance *Msvm_ReplicationService) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ComputerSystem")
 }
 
 func (instance *Msvm_ReplicationService) GetRelatedReplicationServiceSettingData() (value *cim.WmiInstance, err error) {

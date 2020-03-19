@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_MaskingSetToVirtualDisk struct
 type MSFT_MaskingSetToVirtualDisk struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	MaskingSet MSFT_MaskingSet
 
 	//
 	VirtualDisk MSFT_VirtualDisk
+}
+
+func NewMSFT_MaskingSetToVirtualDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_MaskingSetToVirtualDisk, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MaskingSetToVirtualDisk{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_MaskingSetToVirtualDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MaskingSetToVirtualDisk, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MaskingSetToVirtualDisk{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetMaskingSet sets the value of MaskingSet for the instance

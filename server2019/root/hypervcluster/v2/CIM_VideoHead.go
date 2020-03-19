@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VideoHead struct
 type CIM_VideoHead struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// The number of bits used to display each pixel.
 	CurrentBitsPerPixel uint32
@@ -44,6 +49,35 @@ type CIM_VideoHead struct {
 
 	// A string describing the current scan mode when the instance's CurrentScanMode property is 1 ("Other").
 	OtherCurrentScanMode string
+}
+
+func NewCIM_VideoHeadEx1(instance *cim.WmiInstance) (newInstance *CIM_VideoHead, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VideoHead{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_VideoHeadEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VideoHead, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VideoHead{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetCurrentBitsPerPixel sets the value of CurrentBitsPerPixel for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ClassInfoAction struct
 type Win32_ClassInfoAction struct {
-	CIM_Action
+	*CIM_Action
 
 	//
 	AppID string
@@ -41,6 +46,35 @@ type Win32_ClassInfoAction struct {
 
 	//
 	VIProgID string
+}
+
+func NewWin32_ClassInfoActionEx1(instance *cim.WmiInstance) (newInstance *Win32_ClassInfoAction, err error) {
+	tmp, err := NewCIM_ActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ClassInfoAction{
+		CIM_Action: tmp,
+	}
+	return
+}
+
+func NewWin32_ClassInfoActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ClassInfoAction, err error) {
+	tmp, err := NewCIM_ActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ClassInfoAction{
+		CIM_Action: tmp,
+	}
+	return
 }
 
 // SetAppID sets the value of AppID for the instance

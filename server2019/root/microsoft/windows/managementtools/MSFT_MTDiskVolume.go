@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTDiskVolume struct
 type MSFT_MTDiskVolume struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	FormattedSize uint64
@@ -23,6 +28,35 @@ type MSFT_MTDiskVolume struct {
 
 	//
 	VolumePath string
+}
+
+func NewMSFT_MTDiskVolumeEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTDiskVolume, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTDiskVolume{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTDiskVolumeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTDiskVolume, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTDiskVolume{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetFormattedSize sets the value of FormattedSize for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_FileSystem struct
 type CIM_FileSystem struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	AvailableSpace uint64
@@ -53,6 +58,35 @@ type CIM_FileSystem struct {
 
 	//
 	Root string
+}
+
+func NewCIM_FileSystemEx1(instance *cim.WmiInstance) (newInstance *CIM_FileSystem, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FileSystem{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_FileSystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_FileSystem, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FileSystem{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAvailableSpace sets the value of AvailableSpace for the instance

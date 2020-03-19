@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ClassDeletion struct
 type CIM_ClassDeletion struct {
-	CIM_ClassIndication
+	*CIM_ClassIndication
+}
+
+func NewCIM_ClassDeletionEx1(instance *cim.WmiInstance) (newInstance *CIM_ClassDeletion, err error) {
+	tmp, err := NewCIM_ClassIndicationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ClassDeletion{
+		CIM_ClassIndication: tmp,
+	}
+	return
+}
+
+func NewCIM_ClassDeletionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ClassDeletion, err error) {
+	tmp, err := NewCIM_ClassIndicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ClassDeletion{
+		CIM_ClassIndication: tmp,
+	}
+	return
 }

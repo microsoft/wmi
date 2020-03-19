@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IESecurityZoneSettings struct
 type RSOP_IESecurityZoneSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	actionValues []string
@@ -54,6 +56,35 @@ type RSOP_IESecurityZoneSettings struct {
 
 	//
 	zoneMappings []string
+}
+
+func NewRSOP_IESecurityZoneSettingsEx1(instance *cim.WmiInstance) (newInstance *RSOP_IESecurityZoneSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IESecurityZoneSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IESecurityZoneSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IESecurityZoneSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IESecurityZoneSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetactionValues sets the value of actionValues for the instance

@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ServerManagerTasks struct
 type MSFT_ServerManagerTasks struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewMSFT_ServerManagerTasksEx1(instance *cim.WmiInstance) (newInstance *MSFT_ServerManagerTasks, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerManagerTasks{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ServerManagerTasksEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ServerManagerTasks, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerManagerTasks{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

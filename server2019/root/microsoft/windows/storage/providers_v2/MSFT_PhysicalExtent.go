@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_PhysicalExtent struct
 type MSFT_PhysicalExtent struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The column number associated with this extent.
 	ColumnNumber uint16
@@ -51,6 +53,35 @@ type MSFT_PhysicalExtent struct {
 
 	// The unique id of the virtual disk associated with this extent.
 	VirtualDiskUniqueId string
+}
+
+func NewMSFT_PhysicalExtentEx1(instance *cim.WmiInstance) (newInstance *MSFT_PhysicalExtent, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PhysicalExtent{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_PhysicalExtentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PhysicalExtent, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PhysicalExtent{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetColumnNumber sets the value of ColumnNumber for the instance

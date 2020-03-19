@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VirtualHardDiskState struct
 type Msvm_VirtualHardDiskState struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Alignment uint32
@@ -36,6 +38,35 @@ type Msvm_VirtualHardDiskState struct {
 
 	//
 	Timestamp string
+}
+
+func NewMsvm_VirtualHardDiskStateEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualHardDiskState, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualHardDiskState{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualHardDiskStateEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualHardDiskState, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualHardDiskState{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAlignment sets the value of Alignment for the instance

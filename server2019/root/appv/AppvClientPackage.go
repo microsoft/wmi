@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // AppvClientPackage struct
 type AppvClientPackage struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Assets []string
@@ -66,6 +68,35 @@ type AppvClientPackage struct {
 
 	//
 	VersionId string
+}
+
+func NewAppvClientPackageEx1(instance *cim.WmiInstance) (newInstance *AppvClientPackage, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &AppvClientPackage{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewAppvClientPackageEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *AppvClientPackage, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &AppvClientPackage{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAssets sets the value of Assets for the instance

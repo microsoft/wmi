@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DAClientExperienceConfiguration struct
 type MSFT_DAClientExperienceConfiguration struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	CorporateResources []string
@@ -47,6 +52,35 @@ type MSFT_DAClientExperienceConfiguration struct {
 
 	//
 	UserInterface bool
+}
+
+func NewMSFT_DAClientExperienceConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_DAClientExperienceConfiguration, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DAClientExperienceConfiguration{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_DAClientExperienceConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DAClientExperienceConfiguration, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DAClientExperienceConfiguration{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetCorporateResources sets the value of CorporateResources for the instance

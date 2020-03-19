@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_TPM struct
 type CIM_TPM struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// AvailableRequestedTPMStates indicates the possible values for the RequestedTPMState parameter of the method RequestTPMStateChange, used to initiate a state change. The values listed shall be a subset of the values contained in the RequestedTPMStatesSupported property of the associated instance of CIM_TPMCapabilities where the values selected are a function of the current TPM state of the TPM.
 	AvailableRequestedTPMStates []TPM_AvailableRequestedTPMStates
@@ -44,6 +45,35 @@ type CIM_TPM struct {
 	///A value of 11 "No Change" shall indicate that no transition is in progress.A value of 12 "Not Applicable" shall indicate the implementation does not support representing ongoing transitions.
 	///A value other than 11 or 10 shall identify the state to which the element is in the process of transitioning.
 	TransitioningToTPMState TPM_TransitioningToTPMState
+}
+
+func NewCIM_TPMEx1(instance *cim.WmiInstance) (newInstance *CIM_TPM, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_TPM{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_TPMEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_TPM, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_TPM{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetAvailableRequestedTPMStates sets the value of AvailableRequestedTPMStates for the instance

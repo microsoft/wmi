@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Slot struct
 type CIM_Slot struct {
-	CIM_PhysicalConnector
+	*CIM_PhysicalConnector
 
 	//
 	HeightAllowed float32
@@ -41,6 +46,35 @@ type CIM_Slot struct {
 
 	//
 	VppMixedVoltageSupport []uint16
+}
+
+func NewCIM_SlotEx1(instance *cim.WmiInstance) (newInstance *CIM_Slot, err error) {
+	tmp, err := NewCIM_PhysicalConnectorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Slot{
+		CIM_PhysicalConnector: tmp,
+	}
+	return
+}
+
+func NewCIM_SlotEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Slot, err error) {
+	tmp, err := NewCIM_PhysicalConnectorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Slot{
+		CIM_PhysicalConnector: tmp,
+	}
+	return
 }
 
 // SetHeightAllowed sets the value of HeightAllowed for the instance

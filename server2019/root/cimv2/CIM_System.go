@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_System struct
 type CIM_System struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	CreationClassName string
@@ -26,6 +31,35 @@ type CIM_System struct {
 
 	//
 	Roles []string
+}
+
+func NewCIM_SystemEx1(instance *cim.WmiInstance) (newInstance *CIM_System, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_System{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_SystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_System, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_System{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance

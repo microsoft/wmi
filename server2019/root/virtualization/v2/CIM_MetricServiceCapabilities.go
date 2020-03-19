@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_MetricServiceCapabilities struct
 type CIM_MetricServiceCapabilities struct {
-	CIM_EnabledLogicalElementCapabilities
+	*CIM_EnabledLogicalElementCapabilities
 
 	// ControllableManagedElements identifies the instances of CIM_ManagedElement that can be controlled by the associated CIM_MetricService instance. Each value shall be formatted as a WBEM URI defined according to DSP0207 identifying an instance of CIM_ManagedElement If a value corresponding to an instance of CIM_ManagedElement is included in the ControllableManagedElements property, the associated instance of CIM_MetricService shall support enabling and/or disabling at least one metric defined for the CIM_ManagedElement instance.
 	ControllableManagedElements []string
@@ -26,6 +31,35 @@ type CIM_MetricServiceCapabilities struct {
 
 	// Each enumeration corresponds to support for the like-named method of the MetricService.
 	SupportedMethods []MetricServiceCapabilities_SupportedMethods
+}
+
+func NewCIM_MetricServiceCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_MetricServiceCapabilities, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementCapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MetricServiceCapabilities{
+		CIM_EnabledLogicalElementCapabilities: tmp,
+	}
+	return
+}
+
+func NewCIM_MetricServiceCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_MetricServiceCapabilities, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementCapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MetricServiceCapabilities{
+		CIM_EnabledLogicalElementCapabilities: tmp,
+	}
+	return
 }
 
 // SetControllableManagedElements sets the value of ControllableManagedElements for the instance

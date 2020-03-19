@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_InitiatorPort struct
 type MSFT_InitiatorPort struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AlternateNodeAddress []string
@@ -45,6 +47,35 @@ type MSFT_InitiatorPort struct {
 
 	//
 	PortType uint16
+}
+
+func NewMSFT_InitiatorPortEx1(instance *cim.WmiInstance) (newInstance *MSFT_InitiatorPort, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_InitiatorPort{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_InitiatorPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_InitiatorPort, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_InitiatorPort{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAlternateNodeAddress sets the value of AlternateNodeAddress for the instance

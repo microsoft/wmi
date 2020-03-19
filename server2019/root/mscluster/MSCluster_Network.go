@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_Network struct
 type MSCluster_Network struct {
-	MSCluster_LogicalElement
+	*MSCluster_LogicalElement
 
 	//
 	Address string
@@ -47,6 +52,35 @@ type MSCluster_Network struct {
 
 	//
 	State uint32
+}
+
+func NewMSCluster_NetworkEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Network, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Network{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSCluster_NetworkEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_Network, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Network{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAddress sets the value of Address for the instance

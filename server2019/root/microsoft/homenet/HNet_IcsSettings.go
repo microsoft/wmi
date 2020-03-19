@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // HNet_IcsSettings struct
 type HNet_IcsSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DhcpEnabled bool
@@ -24,6 +26,35 @@ type HNet_IcsSettings struct {
 
 	//
 	Id string
+}
+
+func NewHNet_IcsSettingsEx1(instance *cim.WmiInstance) (newInstance *HNet_IcsSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_IcsSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewHNet_IcsSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *HNet_IcsSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_IcsSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDhcpEnabled sets the value of DhcpEnabled for the instance

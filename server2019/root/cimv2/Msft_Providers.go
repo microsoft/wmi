@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msft_Providers struct
 type Msft_Providers struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	HostingGroup string
@@ -111,6 +113,35 @@ type Msft_Providers struct {
 
 	//
 	User string
+}
+
+func NewMsft_ProvidersEx1(instance *cim.WmiInstance) (newInstance *Msft_Providers, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_Providers{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsft_ProvidersEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_Providers, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_Providers{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetHostingGroup sets the value of HostingGroup for the instance

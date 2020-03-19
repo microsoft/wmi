@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CliConnection struct
 type MSFT_CliConnection struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Authority string
@@ -33,6 +35,35 @@ type MSFT_CliConnection struct {
 
 	//
 	User string
+}
+
+func NewMSFT_CliConnectionEx1(instance *cim.WmiInstance) (newInstance *MSFT_CliConnection, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliConnection{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CliConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CliConnection, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliConnection{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAuthority sets the value of Authority for the instance

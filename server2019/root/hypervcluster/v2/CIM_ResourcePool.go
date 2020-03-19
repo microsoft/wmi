@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ResourcePool struct
 type CIM_ResourcePool struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// This property specifies the units of allocation used by the Reservation and Limit properties. For example, when ResourceType=Processor, AllocationUnits may be set to hertz*10^6 or percent. When ResourceType=Memory, AllocationUnits may be set to bytes*10^3. The value of this property shall be a legal value of the Programmatic Units qualifier as defined in Appendix C.1 of DSP0004 V2.4 or later.
 	AllocationUnits string
@@ -46,6 +51,35 @@ type CIM_ResourcePool struct {
 
 	// The type of resource this ResourcePool may allocate.
 	ResourceType ResourcePool_ResourceType
+}
+
+func NewCIM_ResourcePoolEx1(instance *cim.WmiInstance) (newInstance *CIM_ResourcePool, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourcePool{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_ResourcePoolEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ResourcePool, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourcePool{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAllocationUnits sets the value of AllocationUnits for the instance

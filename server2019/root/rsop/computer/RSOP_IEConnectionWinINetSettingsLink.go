@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IEConnectionWinINetSettingsLink struct
 type RSOP_IEConnectionWinINetSettingsLink struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	policySetting RSOP_IEAKPolicySetting
 
 	//
 	winINetSettings RSOP_IEConnectionWinINetSettings
+}
+
+func NewRSOP_IEConnectionWinINetSettingsLinkEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEConnectionWinINetSettingsLink, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionWinINetSettingsLink{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEConnectionWinINetSettingsLinkEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEConnectionWinINetSettingsLink, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionWinINetSettingsLink{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetpolicySetting sets the value of policySetting for the instance

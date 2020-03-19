@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTRegistryKey struct
 type MSFT_MTRegistryKey struct {
-	MSFT_MTRegistryObject
+	*MSFT_MTRegistryObject
 
 	//
 	Modified string
@@ -20,6 +25,35 @@ type MSFT_MTRegistryKey struct {
 
 	//
 	ValueCount uint32
+}
+
+func NewMSFT_MTRegistryKeyEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTRegistryKey, err error) {
+	tmp, err := NewMSFT_MTRegistryObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTRegistryKey{
+		MSFT_MTRegistryObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTRegistryKeyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTRegistryKey, err error) {
+	tmp, err := NewMSFT_MTRegistryObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTRegistryKey{
+		MSFT_MTRegistryObject: tmp,
+	}
+	return
 }
 
 // SetModified sets the value of Modified for the instance

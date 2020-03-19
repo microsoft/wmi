@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CliParam struct
 type MSFT_CliParam struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Default string
@@ -33,6 +35,35 @@ type MSFT_CliParam struct {
 
 	//
 	Type string
+}
+
+func NewMSFT_CliParamEx1(instance *cim.WmiInstance) (newInstance *MSFT_CliParam, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliParam{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CliParamEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CliParam, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliParam{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDefault sets the value of Default for the instance

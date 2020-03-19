@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageSubSystemToVolume struct
 type MSFT_StorageSubSystemToVolume struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	StorageSubSystem MSFT_StorageSubSystem
 
 	//
 	Volume MSFT_Volume
+}
+
+func NewMSFT_StorageSubSystemToVolumeEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageSubSystemToVolume, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToVolume{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageSubSystemToVolumeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageSubSystemToVolume, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToVolume{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetStorageSubSystem sets the value of StorageSubSystem for the instance

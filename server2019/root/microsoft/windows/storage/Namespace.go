@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __Namespace struct
 type __Namespace struct {
-	__SystemClass
+	*__SystemClass
 
 	//
 	Name string
+}
+
+func New__NamespaceEx1(instance *cim.WmiInstance) (newInstance *__Namespace, err error) {
+	tmp, err := New__SystemClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Namespace{
+		__SystemClass: tmp,
+	}
+	return
+}
+
+func New__NamespaceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__Namespace, err error) {
+	tmp, err := New__SystemClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Namespace{
+		__SystemClass: tmp,
+	}
+	return
 }
 
 // SetName sets the value of Name for the instance

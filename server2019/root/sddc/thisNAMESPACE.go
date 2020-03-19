@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.SDDC
 //////////////////////////////////////////////
 package sddc
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __thisNAMESPACE struct
 type __thisNAMESPACE struct {
-	__SystemClass
+	*__SystemClass
 
 	//
 	SECURITY_DESCRIPTOR []uint8
+}
+
+func New__thisNAMESPACEEx1(instance *cim.WmiInstance) (newInstance *__thisNAMESPACE, err error) {
+	tmp, err := New__SystemClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__thisNAMESPACE{
+		__SystemClass: tmp,
+	}
+	return
+}
+
+func New__thisNAMESPACEEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__thisNAMESPACE, err error) {
+	tmp, err := New__SystemClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__thisNAMESPACE{
+		__SystemClass: tmp,
+	}
+	return
 }
 
 // SetSECURITY_DESCRIPTOR sets the value of SECURITY_DESCRIPTOR for the instance

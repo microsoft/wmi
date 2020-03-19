@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DynamicForwardingEntry struct
 type CIM_DynamicForwardingEntry struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// CreationClassName indicates the name of the class or the subclass used in the creation of an instance. When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified.
 	CreationClassName string
@@ -32,6 +37,35 @@ type CIM_DynamicForwardingEntry struct {
 
 	// The scoping System's Name.
 	SystemName string
+}
+
+func NewCIM_DynamicForwardingEntryEx1(instance *cim.WmiInstance) (newInstance *CIM_DynamicForwardingEntry, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DynamicForwardingEntry{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_DynamicForwardingEntryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DynamicForwardingEntry, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DynamicForwardingEntry{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance

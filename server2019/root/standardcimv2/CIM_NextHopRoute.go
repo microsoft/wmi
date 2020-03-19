@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_NextHopRoute struct
 type CIM_NextHopRoute struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	AdminDistance uint16
@@ -26,6 +31,35 @@ type CIM_NextHopRoute struct {
 
 	//
 	TypeOfRoute uint16
+}
+
+func NewCIM_NextHopRouteEx1(instance *cim.WmiInstance) (newInstance *CIM_NextHopRoute, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NextHopRoute{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewCIM_NextHopRouteEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_NextHopRoute, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NextHopRoute{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetAdminDistance sets the value of AdminDistance for the instance

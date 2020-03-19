@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DeliveryOptimization
 //////////////////////////////////////////////
 package deliveryoptimization
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DeliveryOptimizationConfig struct
 type MSFT_DeliveryOptimizationConfig struct {
-	MSFT_DOBaseStatus
+	*MSFT_DOBaseStatus
 
 	//
 	DownBackLimitBps uint32
@@ -53,6 +58,35 @@ type MSFT_DeliveryOptimizationConfig struct {
 
 	//
 	UpLimitMonthlyGBProvider DeliveryOptimizationConfig_UpLimitMonthlyGBProvider
+}
+
+func NewMSFT_DeliveryOptimizationConfigEx1(instance *cim.WmiInstance) (newInstance *MSFT_DeliveryOptimizationConfig, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DeliveryOptimizationConfig{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
+}
+
+func NewMSFT_DeliveryOptimizationConfigEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DeliveryOptimizationConfig, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DeliveryOptimizationConfig{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
 }
 
 // SetDownBackLimitBps sets the value of DownBackLimitBps for the instance

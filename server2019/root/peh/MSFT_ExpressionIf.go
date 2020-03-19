@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_ExpressionIf struct
 type MSFT_ExpressionIf struct {
-	MSFT_Expression
+	*MSFT_Expression
 
 	//
 	condition MSFT_Expression
@@ -20,6 +25,35 @@ type MSFT_ExpressionIf struct {
 
 	//
 	truecase MSFT_Expression
+}
+
+func NewMSFT_ExpressionIfEx1(instance *cim.WmiInstance) (newInstance *MSFT_ExpressionIf, err error) {
+	tmp, err := NewMSFT_ExpressionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionIf{
+		MSFT_Expression: tmp,
+	}
+	return
+}
+
+func NewMSFT_ExpressionIfEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ExpressionIf, err error) {
+	tmp, err := NewMSFT_ExpressionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionIf{
+		MSFT_Expression: tmp,
+	}
+	return
 }
 
 // Setcondition sets the value of condition for the instance

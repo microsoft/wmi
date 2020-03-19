@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SDNDiagnostics.Server
 //////////////////////////////////////////////
 package server
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // SDNDiagnostics struct
 type SDNDiagnostics struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewSDNDiagnosticsEx1(instance *cim.WmiInstance) (newInstance *SDNDiagnostics, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDNDiagnostics{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewSDNDiagnosticsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SDNDiagnostics, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDNDiagnostics{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

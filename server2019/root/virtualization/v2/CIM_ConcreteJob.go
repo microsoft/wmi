@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ConcreteJob struct
 type CIM_ConcreteJob struct {
-	CIM_Job
+	*CIM_Job
 
 	// JobState is an integer enumeration that indicates the operational state of a Job. It can also indicate transitions between these states, for example, 'Shutting Down' and 'Starting'. Following is a brief description of the states:
 	///New (2) indicates that the job has never been started.
@@ -32,6 +37,35 @@ type CIM_ConcreteJob struct {
 
 	// The date or time when the state of the Job last changed. If the state of the Job has not changed and this property is populated, then it must be set to a 0 interval value. If a state change was requested, but rejected or not yet processed, the property must not be updated.
 	TimeOfLastStateChange string
+}
+
+func NewCIM_ConcreteJobEx1(instance *cim.WmiInstance) (newInstance *CIM_ConcreteJob, err error) {
+	tmp, err := NewCIM_JobEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ConcreteJob{
+		CIM_Job: tmp,
+	}
+	return
+}
+
+func NewCIM_ConcreteJobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ConcreteJob, err error) {
+	tmp, err := NewCIM_JobEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ConcreteJob{
+		CIM_Job: tmp,
+	}
+	return
 }
 
 // SetJobState sets the value of JobState for the instance

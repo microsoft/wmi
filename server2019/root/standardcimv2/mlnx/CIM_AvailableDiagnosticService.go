@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_AvailableDiagnosticService struct
 type CIM_AvailableDiagnosticService struct {
-	CIM_ServiceAvailableToElement
+	*CIM_ServiceAvailableToElement
 
 	//
 	EstimatedDurationOfService AvailableDiagnosticService_EstimatedDurationOfService
 
 	//
 	EstimatedDurationQualifier uint32
+}
+
+func NewCIM_AvailableDiagnosticServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_AvailableDiagnosticService, err error) {
+	tmp, err := NewCIM_ServiceAvailableToElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AvailableDiagnosticService{
+		CIM_ServiceAvailableToElement: tmp,
+	}
+	return
+}
+
+func NewCIM_AvailableDiagnosticServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_AvailableDiagnosticService, err error) {
+	tmp, err := NewCIM_ServiceAvailableToElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AvailableDiagnosticService{
+		CIM_ServiceAvailableToElement: tmp,
+	}
+	return
 }
 
 // SetEstimatedDurationOfService sets the value of EstimatedDurationOfService for the instance

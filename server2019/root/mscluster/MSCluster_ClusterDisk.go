@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_ClusterDisk struct
 type MSCluster_ClusterDisk struct {
-	MSCluster_LogicalElement
+	*MSCluster_LogicalElement
 
 	//
 	GptGuid string
@@ -44,6 +49,35 @@ type MSCluster_ClusterDisk struct {
 
 	//
 	VirtualDiskId string
+}
+
+func NewMSCluster_ClusterDiskEx1(instance *cim.WmiInstance) (newInstance *MSCluster_ClusterDisk, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterDisk{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ClusterDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_ClusterDisk, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterDisk{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetGptGuid sets the value of GptGuid for the instance

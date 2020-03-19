@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_VirtualSystemReferencePointExportSettingData struct
 type Msvm_VirtualSystemReferencePointExportSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	BaseReferencePoint string
 
 	//
 	DisksToExport []string
+}
+
+func NewMsvm_VirtualSystemReferencePointExportSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemReferencePointExportSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemReferencePointExportSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualSystemReferencePointExportSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualSystemReferencePointExportSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemReferencePointExportSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetBaseReferencePoint sets the value of BaseReferencePoint for the instance

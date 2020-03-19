@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_FileSpecification struct
 type CIM_FileSpecification struct {
-	CIM_Check
+	*CIM_Check
 
 	//
 	CheckSum uint32
@@ -29,6 +34,35 @@ type CIM_FileSpecification struct {
 
 	//
 	MD5Checksum string
+}
+
+func NewCIM_FileSpecificationEx1(instance *cim.WmiInstance) (newInstance *CIM_FileSpecification, err error) {
+	tmp, err := NewCIM_CheckEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FileSpecification{
+		CIM_Check: tmp,
+	}
+	return
+}
+
+func NewCIM_FileSpecificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_FileSpecification, err error) {
+	tmp, err := NewCIM_CheckEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FileSpecification{
+		CIM_Check: tmp,
+	}
+	return
 }
 
 // SetCheckSum sets the value of CheckSum for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetEventVmSwitchProvider struct
 type MSFT_NetEventVmSwitchProvider struct {
-	MSFT_NetEventProviderBase
+	*MSFT_NetEventProviderBase
 
 	//
 	PortIds []uint32
 
 	//
 	SwitchName string
+}
+
+func NewMSFT_NetEventVmSwitchProviderEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetEventVmSwitchProvider, err error) {
+	tmp, err := NewMSFT_NetEventProviderBaseEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventVmSwitchProvider{
+		MSFT_NetEventProviderBase: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetEventVmSwitchProviderEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetEventVmSwitchProvider, err error) {
+	tmp, err := NewMSFT_NetEventProviderBaseEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventVmSwitchProvider{
+		MSFT_NetEventProviderBase: tmp,
+	}
+	return
 }
 
 // SetPortIds sets the value of PortIds for the instance

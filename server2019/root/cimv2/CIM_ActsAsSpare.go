@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ActsAsSpare struct
 type CIM_ActsAsSpare struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Group CIM_SpareGroup
@@ -24,6 +26,35 @@ type CIM_ActsAsSpare struct {
 
 	//
 	Spare CIM_ManagedSystemElement
+}
+
+func NewCIM_ActsAsSpareEx1(instance *cim.WmiInstance) (newInstance *CIM_ActsAsSpare, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ActsAsSpare{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ActsAsSpareEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ActsAsSpare, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ActsAsSpare{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetGroup sets the value of Group for the instance

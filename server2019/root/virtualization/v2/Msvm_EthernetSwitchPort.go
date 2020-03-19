@@ -3,24 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchPort struct
 type Msvm_EthernetSwitchPort struct {
-	CIM_EthernetPort
+	*CIM_EthernetPort
 
 	//
 	IOVOffloadUsage uint32
 
 	//
 	VMQOffloadUsage uint32
+}
+
+func NewMsvm_EthernetSwitchPortEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchPort, err error) {
+	tmp, err := NewCIM_EthernetPortEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPort{
+		CIM_EthernetPort: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchPort, err error) {
+	tmp, err := NewCIM_EthernetPortEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPort{
+		CIM_EthernetPort: tmp,
+	}
+	return
 }
 
 // SetIOVOffloadUsage sets the value of IOVOffloadUsage for the instance
@@ -74,10 +104,10 @@ func (instance *Msvm_EthernetSwitchPort) GetRelatedLANEndpoint() (value *cim.Wmi
 	return instance.GetRelated("Msvm_LANEndpoint")
 }
 
-func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetPortAllocationSettingData")
-}
-
 func (instance *Msvm_EthernetSwitchPort) GetRelatedDynamicForwardingEntry() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_DynamicForwardingEntry")
+}
+
+func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetPortAllocationSettingData")
 }

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_PCIDeviceCapabilities struct
 type MLNX_PCIDeviceCapabilities struct {
-	CIM_Capabilities
+	*CIM_Capabilities
 
 	//
 	DualPort bool
@@ -50,6 +55,35 @@ type MLNX_PCIDeviceCapabilities struct {
 
 	//
 	SystemName string
+}
+
+func NewMLNX_PCIDeviceCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MLNX_PCIDeviceCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDeviceCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
+}
+
+func NewMLNX_PCIDeviceCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_PCIDeviceCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDeviceCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
 }
 
 // SetDualPort sets the value of DualPort for the instance

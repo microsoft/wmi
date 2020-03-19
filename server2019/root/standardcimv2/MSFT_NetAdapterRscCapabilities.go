@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_NetAdapterRscCapabilities struct
 type MSFT_NetAdapterRscCapabilities struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	IPv4Supported bool
 
 	//
 	IPv6Supported bool
+}
+
+func NewMSFT_NetAdapterRscCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterRscCapabilities, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterRscCapabilities{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterRscCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterRscCapabilities, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterRscCapabilities{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetIPv4Supported sets the value of IPv4Supported for the instance

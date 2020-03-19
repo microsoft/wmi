@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VirtualSystemMigrationService struct
 type Msvm_VirtualSystemMigrationService struct {
-	CIM_VirtualSystemMigrationService
+	*CIM_VirtualSystemMigrationService
 
 	//
 	ActiveStorageMigrationCount uint32
@@ -24,6 +25,35 @@ type Msvm_VirtualSystemMigrationService struct {
 
 	//
 	MigrationServiceListenerIPAddressList []string
+}
+
+func NewMsvm_VirtualSystemMigrationServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemMigrationService, err error) {
+	tmp, err := NewCIM_VirtualSystemMigrationServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemMigrationService{
+		CIM_VirtualSystemMigrationService: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualSystemMigrationServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualSystemMigrationService, err error) {
+	tmp, err := NewCIM_VirtualSystemMigrationServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemMigrationService{
+		CIM_VirtualSystemMigrationService: tmp,
+	}
+	return
 }
 
 // SetActiveStorageMigrationCount sets the value of ActiveStorageMigrationCount for the instance
@@ -247,8 +277,8 @@ func (instance *Msvm_VirtualSystemMigrationService) GetSystemCompatibilityVector
 
 }
 
-func (instance *Msvm_VirtualSystemMigrationService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ComputerSystem")
+func (instance *Msvm_VirtualSystemMigrationService) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ComputerSystem")
 }
 
 func (instance *Msvm_VirtualSystemMigrationService) GetRelatedVirtualSystemMigrationServiceSettingData() (value *cim.WmiInstance, err error) {

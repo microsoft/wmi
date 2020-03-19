@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ServerManagerDeploymentError struct
 type MSFT_ServerManagerDeploymentError struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ErrorCategory uint8
@@ -24,6 +26,35 @@ type MSFT_ServerManagerDeploymentError struct {
 
 	//
 	ErrorMessage string
+}
+
+func NewMSFT_ServerManagerDeploymentErrorEx1(instance *cim.WmiInstance) (newInstance *MSFT_ServerManagerDeploymentError, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerManagerDeploymentError{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ServerManagerDeploymentErrorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ServerManagerDeploymentError, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerManagerDeploymentError{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetErrorCategory sets the value of ErrorCategory for the instance

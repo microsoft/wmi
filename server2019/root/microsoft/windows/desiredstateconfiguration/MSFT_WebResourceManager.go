@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_WebResourceManager struct
 type MSFT_WebResourceManager struct {
-	OMI_ResourceModuleManager
+	*OMI_ResourceModuleManager
 
 	//
 	AllowUnsecureConnection bool
@@ -29,6 +34,35 @@ type MSFT_WebResourceManager struct {
 
 	//
 	ServerURL string
+}
+
+func NewMSFT_WebResourceManagerEx1(instance *cim.WmiInstance) (newInstance *MSFT_WebResourceManager, err error) {
+	tmp, err := NewOMI_ResourceModuleManagerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WebResourceManager{
+		OMI_ResourceModuleManager: tmp,
+	}
+	return
+}
+
+func NewMSFT_WebResourceManagerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_WebResourceManager, err error) {
+	tmp, err := NewOMI_ResourceModuleManagerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WebResourceManager{
+		OMI_ResourceModuleManager: tmp,
+	}
+	return
 }
 
 // SetAllowUnsecureConnection sets the value of AllowUnsecureConnection for the instance

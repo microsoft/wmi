@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // VpnCommonConfig struct
 type VpnCommonConfig struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ConnectionStatus string
@@ -60,6 +62,35 @@ type VpnCommonConfig struct {
 
 	//
 	VpnTrigger VpnConnectionTrigger
+}
+
+func NewVpnCommonConfigEx1(instance *cim.WmiInstance) (newInstance *VpnCommonConfig, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &VpnCommonConfig{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewVpnCommonConfigEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *VpnCommonConfig, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &VpnCommonConfig{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnectionStatus sets the value of ConnectionStatus for the instance

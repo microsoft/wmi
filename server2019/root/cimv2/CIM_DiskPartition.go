@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DiskPartition struct
 type CIM_DiskPartition struct {
-	CIM_StorageExtent
+	*CIM_StorageExtent
 
 	//
 	Bootable bool
 
 	//
 	PrimaryPartition bool
+}
+
+func NewCIM_DiskPartitionEx1(instance *cim.WmiInstance) (newInstance *CIM_DiskPartition, err error) {
+	tmp, err := NewCIM_StorageExtentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiskPartition{
+		CIM_StorageExtent: tmp,
+	}
+	return
+}
+
+func NewCIM_DiskPartitionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DiskPartition, err error) {
+	tmp, err := NewCIM_StorageExtentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiskPartition{
+		CIM_StorageExtent: tmp,
+	}
+	return
 }
 
 // SetBootable sets the value of Bootable for the instance

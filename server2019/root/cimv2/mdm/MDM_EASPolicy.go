@@ -3,21 +3,52 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_EASPolicy struct
 type MDM_EASPolicy struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	key uint32
+}
+
+func NewMDM_EASPolicyEx1(instance *cim.WmiInstance) (newInstance *MDM_EASPolicy, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_EASPolicy{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_EASPolicyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_EASPolicy, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_EASPolicy{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // Setkey sets the value of key for the instance

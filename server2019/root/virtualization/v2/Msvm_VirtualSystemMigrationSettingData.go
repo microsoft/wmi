@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VirtualSystemMigrationSettingData struct
 type Msvm_VirtualSystemMigrationSettingData struct {
-	CIM_VirtualSystemMigrationSettingData
+	*CIM_VirtualSystemMigrationSettingData
 
 	//
 	AllowOverwriteExistingFile bool
@@ -48,6 +49,35 @@ type Msvm_VirtualSystemMigrationSettingData struct {
 
 	//
 	UnmanagedVhds []string
+}
+
+func NewMsvm_VirtualSystemMigrationSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemMigrationSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemMigrationSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemMigrationSettingData{
+		CIM_VirtualSystemMigrationSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualSystemMigrationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualSystemMigrationSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemMigrationSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemMigrationSettingData{
+		CIM_VirtualSystemMigrationSettingData: tmp,
+	}
+	return
 }
 
 // SetAllowOverwriteExistingFile sets the value of AllowOverwriteExistingFile for the instance

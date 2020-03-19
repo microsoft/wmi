@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DNSClient struct
 type MSFT_DNSClient struct {
-	CIM_DNSProtocolEndpoint
+	*CIM_DNSProtocolEndpoint
 
 	// 657
 	ConnectionSpecificSuffix string
@@ -29,6 +34,35 @@ type MSFT_DNSClient struct {
 
 	// 660
 	UseSuffixWhenRegistering bool
+}
+
+func NewMSFT_DNSClientEx1(instance *cim.WmiInstance) (newInstance *MSFT_DNSClient, err error) {
+	tmp, err := NewCIM_DNSProtocolEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClient{
+		CIM_DNSProtocolEndpoint: tmp,
+	}
+	return
+}
+
+func NewMSFT_DNSClientEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DNSClient, err error) {
+	tmp, err := NewCIM_DNSProtocolEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DNSClient{
+		CIM_DNSProtocolEndpoint: tmp,
+	}
+	return
 }
 
 // SetConnectionSpecificSuffix sets the value of ConnectionSpecificSuffix for the instance

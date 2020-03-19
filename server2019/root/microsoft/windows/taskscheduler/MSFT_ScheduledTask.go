@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ScheduledTask struct
 type MSFT_ScheduledTask struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Actions []MSFT_TaskAction
@@ -60,6 +62,35 @@ type MSFT_ScheduledTask struct {
 
 	//
 	Version string
+}
+
+func NewMSFT_ScheduledTaskEx1(instance *cim.WmiInstance) (newInstance *MSFT_ScheduledTask, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ScheduledTask{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ScheduledTaskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ScheduledTask, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ScheduledTask{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetActions sets the value of Actions for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_SystemServiceBlocked struct
 type RSOP_SystemServiceBlocked struct {
-	RSOP_SecuritySettingsBlocked
+	*RSOP_SecuritySettingsBlocked
 
 	//
 	SDDLString string
@@ -20,6 +25,35 @@ type RSOP_SystemServiceBlocked struct {
 
 	//
 	StartupMode SystemServiceBlocked_StartupMode
+}
+
+func NewRSOP_SystemServiceBlockedEx1(instance *cim.WmiInstance) (newInstance *RSOP_SystemServiceBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SystemServiceBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
+}
+
+func NewRSOP_SystemServiceBlockedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_SystemServiceBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SystemServiceBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
 }
 
 // SetSDDLString sets the value of SDDLString for the instance

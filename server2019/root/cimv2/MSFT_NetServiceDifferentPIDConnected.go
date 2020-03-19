@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetServiceDifferentPIDConnected struct
 type MSFT_NetServiceDifferentPIDConnected struct {
-	MSFT_SCMEventLogEvent
+	*MSFT_SCMEventLogEvent
 
 	//
 	ActualPID uint32
@@ -20,6 +25,35 @@ type MSFT_NetServiceDifferentPIDConnected struct {
 
 	//
 	Service string
+}
+
+func NewMSFT_NetServiceDifferentPIDConnectedEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetServiceDifferentPIDConnected, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceDifferentPIDConnected{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetServiceDifferentPIDConnectedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetServiceDifferentPIDConnected, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceDifferentPIDConnected{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
 }
 
 // SetActualPID sets the value of ActualPID for the instance

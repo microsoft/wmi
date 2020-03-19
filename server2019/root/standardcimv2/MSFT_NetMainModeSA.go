@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetMainModeSA struct
 type MSFT_NetMainModeSA struct {
-	CIM_IKESAEndpoint
+	*CIM_IKESAEndpoint
 
 	//
 	ExtendedFilterId uint64
@@ -53,6 +58,35 @@ type MSFT_NetMainModeSA struct {
 
 	//
 	VirtualIfTunnelId uint64
+}
+
+func NewMSFT_NetMainModeSAEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetMainModeSA, err error) {
+	tmp, err := NewCIM_IKESAEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetMainModeSA{
+		CIM_IKESAEndpoint: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetMainModeSAEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetMainModeSA, err error) {
+	tmp, err := NewCIM_IKESAEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetMainModeSA{
+		CIM_IKESAEndpoint: tmp,
+	}
+	return
 }
 
 // SetExtendedFilterId sets the value of ExtendedFilterId for the instance

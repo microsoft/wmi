@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DSCResource struct
 type MSFT_DSCResource struct {
-	OMI_BaseResource
+	*OMI_BaseResource
 
 	//
 	DurationInSeconds float64
@@ -41,6 +46,35 @@ type MSFT_DSCResource struct {
 
 	//
 	StateChanged bool
+}
+
+func NewMSFT_DSCResourceEx1(instance *cim.WmiInstance) (newInstance *MSFT_DSCResource, err error) {
+	tmp, err := NewOMI_BaseResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DSCResource{
+		OMI_BaseResource: tmp,
+	}
+	return
+}
+
+func NewMSFT_DSCResourceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DSCResource, err error) {
+	tmp, err := NewOMI_BaseResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DSCResource{
+		OMI_BaseResource: tmp,
+	}
+	return
 }
 
 // SetDurationInSeconds sets the value of DurationInSeconds for the instance

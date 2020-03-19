@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetProtocolPortFilter struct
 type MSFT_NetProtocolPortFilter struct {
-	CIM_FilterEntryBase
+	*CIM_FilterEntryBase
 
 	//
 	DynamicTransport uint32
@@ -26,6 +31,35 @@ type MSFT_NetProtocolPortFilter struct {
 
 	//
 	RemotePort []string
+}
+
+func NewMSFT_NetProtocolPortFilterEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetProtocolPortFilter, err error) {
+	tmp, err := NewCIM_FilterEntryBaseEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetProtocolPortFilter{
+		CIM_FilterEntryBase: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetProtocolPortFilterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetProtocolPortFilter, err error) {
+	tmp, err := NewCIM_FilterEntryBaseEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetProtocolPortFilter{
+		CIM_FilterEntryBase: tmp,
+	}
+	return
 }
 
 // SetDynamicTransport sets the value of DynamicTransport for the instance

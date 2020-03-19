@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PointingDevice struct
 type CIM_PointingDevice struct {
-	CIM_UserDevice
+	*CIM_UserDevice
 
 	// Integer indicating whether the PointingDevice is configured for right (value=2) or left handed operation (value=3). Also, the values, "Unknown" (0) and "Not Applicable" (1), can be defined.
 	Handedness PointingDevice_Handedness
@@ -23,6 +28,35 @@ type CIM_PointingDevice struct {
 
 	// Tracking resolution of the PointingDevice in Counts per Inch.
 	Resolution uint32
+}
+
+func NewCIM_PointingDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_PointingDevice, err error) {
+	tmp, err := NewCIM_UserDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PointingDevice{
+		CIM_UserDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_PointingDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PointingDevice, err error) {
+	tmp, err := NewCIM_UserDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PointingDevice{
+		CIM_UserDevice: tmp,
+	}
+	return
 }
 
 // SetHandedness sets the value of Handedness for the instance

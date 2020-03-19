@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetImPlatAdapter struct
 type MSFT_NetImPlatAdapter struct {
-	CIM_EnabledLogicalElement
+	*CIM_EnabledLogicalElement
 
 	//
 	FailureReason uint32
@@ -29,6 +34,35 @@ type MSFT_NetImPlatAdapter struct {
 
 	//
 	TransmitLinkSpeed uint64
+}
+
+func NewMSFT_NetImPlatAdapterEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetImPlatAdapter, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetImPlatAdapter{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetImPlatAdapterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetImPlatAdapter, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetImPlatAdapter{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
 }
 
 // SetFailureReason sets the value of FailureReason for the instance

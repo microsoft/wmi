@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_MediaAccessDevice struct
 type CIM_MediaAccessDevice struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	//
 	Capabilities []uint16
@@ -41,6 +46,35 @@ type CIM_MediaAccessDevice struct {
 
 	//
 	NumberOfMediaSupported uint32
+}
+
+func NewCIM_MediaAccessDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_MediaAccessDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MediaAccessDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_MediaAccessDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_MediaAccessDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MediaAccessDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetCapabilities sets the value of Capabilities for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ProviderHostQuotaConfiguration struct
 type __ProviderHostQuotaConfiguration struct {
-	__SystemClass
+	*__SystemClass
 
 	//
 	HandlesPerHost uint32
@@ -26,6 +31,35 @@ type __ProviderHostQuotaConfiguration struct {
 
 	//
 	ThreadsPerHost uint32
+}
+
+func New__ProviderHostQuotaConfigurationEx1(instance *cim.WmiInstance) (newInstance *__ProviderHostQuotaConfiguration, err error) {
+	tmp, err := New__SystemClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ProviderHostQuotaConfiguration{
+		__SystemClass: tmp,
+	}
+	return
+}
+
+func New__ProviderHostQuotaConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ProviderHostQuotaConfiguration, err error) {
+	tmp, err := New__SystemClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ProviderHostQuotaConfiguration{
+		__SystemClass: tmp,
+	}
+	return
 }
 
 // SetHandlesPerHost sets the value of HandlesPerHost for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DeliveryOptimization
 //////////////////////////////////////////////
 package deliveryoptimization
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DOUploadUsage struct
 type MSFT_DOUploadUsage struct {
-	MSFT_DOUsage
+	*MSFT_DOUsage
 
 	//
 	MonthlyUploadRestriction DOUploadUsage_MonthlyUploadRestriction
@@ -20,6 +25,35 @@ type MSFT_DOUploadUsage struct {
 
 	//
 	Uploads uint32
+}
+
+func NewMSFT_DOUploadUsageEx1(instance *cim.WmiInstance) (newInstance *MSFT_DOUploadUsage, err error) {
+	tmp, err := NewMSFT_DOUsageEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DOUploadUsage{
+		MSFT_DOUsage: tmp,
+	}
+	return
+}
+
+func NewMSFT_DOUploadUsageEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DOUploadUsage, err error) {
+	tmp, err := NewMSFT_DOUsageEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DOUploadUsage{
+		MSFT_DOUsage: tmp,
+	}
+	return
 }
 
 // SetMonthlyUploadRestriction sets the value of MonthlyUploadRestriction for the instance

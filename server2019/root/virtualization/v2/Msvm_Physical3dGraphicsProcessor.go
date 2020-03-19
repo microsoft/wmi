@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_Physical3dGraphicsProcessor struct
 type Msvm_Physical3dGraphicsProcessor struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	//
 	AdapterIndexID uint64
@@ -62,6 +67,35 @@ type Msvm_Physical3dGraphicsProcessor struct {
 
 	//
 	TotalVideoMemory uint64
+}
+
+func NewMsvm_Physical3dGraphicsProcessorEx1(instance *cim.WmiInstance) (newInstance *Msvm_Physical3dGraphicsProcessor, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_Physical3dGraphicsProcessor{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewMsvm_Physical3dGraphicsProcessorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_Physical3dGraphicsProcessor, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_Physical3dGraphicsProcessor{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetAdapterIndexID sets the value of AdapterIndexID for the instance

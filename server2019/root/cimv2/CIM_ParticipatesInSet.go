@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ParticipatesInSet struct
 type CIM_ParticipatesInSet struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Element CIM_PhysicalElement
 
 	//
 	Set CIM_ReplacementSet
+}
+
+func NewCIM_ParticipatesInSetEx1(instance *cim.WmiInstance) (newInstance *CIM_ParticipatesInSet, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ParticipatesInSet{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ParticipatesInSetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ParticipatesInSet, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ParticipatesInSet{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetElement sets the value of Element for the instance

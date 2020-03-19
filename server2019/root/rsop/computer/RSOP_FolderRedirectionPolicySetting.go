@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_FolderRedirectionPolicySetting struct
 type RSOP_FolderRedirectionPolicySetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	//
 	configurationControl uint32
@@ -47,6 +52,35 @@ type RSOP_FolderRedirectionPolicySetting struct {
 
 	//
 	securityGroups []string
+}
+
+func NewRSOP_FolderRedirectionPolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_FolderRedirectionPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_FolderRedirectionPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_FolderRedirectionPolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_FolderRedirectionPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_FolderRedirectionPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // SetconfigurationControl sets the value of configurationControl for the instance

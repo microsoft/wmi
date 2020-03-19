@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_GpuPartition struct
 type Msvm_GpuPartition struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	//
 	DeviceInstancePath string
@@ -20,6 +25,35 @@ type Msvm_GpuPartition struct {
 
 	//
 	PartitionVfLuid string
+}
+
+func NewMsvm_GpuPartitionEx1(instance *cim.WmiInstance) (newInstance *Msvm_GpuPartition, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GpuPartition{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewMsvm_GpuPartitionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_GpuPartition, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GpuPartition{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetDeviceInstancePath sets the value of DeviceInstancePath for the instance

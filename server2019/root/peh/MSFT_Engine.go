@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_Engine struct
 type MSFT_Engine struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	InstanceId string
 
 	//
 	Name string
+}
+
+func NewMSFT_EngineEx1(instance *cim.WmiInstance) (newInstance *MSFT_Engine, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Engine{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_EngineEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_Engine, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Engine{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetInstanceId sets the value of InstanceId for the instance

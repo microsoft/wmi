@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_OfflineFilesItem struct
 type Win32_OfflineFilesItem struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ChangeInfo Win32_OfflineFilesChangeInfo
@@ -51,6 +53,35 @@ type Win32_OfflineFilesItem struct {
 
 	//
 	SuspendInfo Win32_OfflineFilesSuspendInfo
+}
+
+func NewWin32_OfflineFilesItemEx1(instance *cim.WmiInstance) (newInstance *Win32_OfflineFilesItem, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OfflineFilesItem{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_OfflineFilesItemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_OfflineFilesItem, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OfflineFilesItem{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetChangeInfo sets the value of ChangeInfo for the instance

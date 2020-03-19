@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_ExpressionLet struct
 type MSFT_ExpressionLet struct {
-	MSFT_Expression
+	*MSFT_Expression
 
 	//
 	body MSFT_Expression
 
 	//
 	initializers []MSFT_ExpressionAssignment
+}
+
+func NewMSFT_ExpressionLetEx1(instance *cim.WmiInstance) (newInstance *MSFT_ExpressionLet, err error) {
+	tmp, err := NewMSFT_ExpressionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionLet{
+		MSFT_Expression: tmp,
+	}
+	return
+}
+
+func NewMSFT_ExpressionLetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ExpressionLet, err error) {
+	tmp, err := NewMSFT_ExpressionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionLet{
+		MSFT_Expression: tmp,
+	}
+	return
 }
 
 // Setbody sets the value of body for the instance

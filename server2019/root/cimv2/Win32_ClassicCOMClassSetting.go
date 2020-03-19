@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ClassicCOMClassSetting struct
 type Win32_ClassicCOMClassSetting struct {
-	Win32_COMSetting
+	*Win32_COMSetting
 
 	//
 	AppID string
@@ -80,6 +85,35 @@ type Win32_ClassicCOMClassSetting struct {
 
 	//
 	VersionIndependentProgId string
+}
+
+func NewWin32_ClassicCOMClassSettingEx1(instance *cim.WmiInstance) (newInstance *Win32_ClassicCOMClassSetting, err error) {
+	tmp, err := NewWin32_COMSettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ClassicCOMClassSetting{
+		Win32_COMSetting: tmp,
+	}
+	return
+}
+
+func NewWin32_ClassicCOMClassSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ClassicCOMClassSetting, err error) {
+	tmp, err := NewWin32_COMSettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ClassicCOMClassSetting{
+		Win32_COMSetting: tmp,
+	}
+	return
 }
 
 // SetAppID sets the value of AppID for the instance

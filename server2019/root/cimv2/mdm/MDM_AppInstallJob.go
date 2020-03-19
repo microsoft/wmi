@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_AppInstallJob struct
 type MDM_AppInstallJob struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ActionType uint32
@@ -54,6 +56,35 @@ type MDM_AppInstallJob struct {
 
 	//
 	Status uint32
+}
+
+func NewMDM_AppInstallJobEx1(instance *cim.WmiInstance) (newInstance *MDM_AppInstallJob, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_AppInstallJob{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_AppInstallJobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_AppInstallJob, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_AppInstallJob{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetActionType sets the value of ActionType for the instance

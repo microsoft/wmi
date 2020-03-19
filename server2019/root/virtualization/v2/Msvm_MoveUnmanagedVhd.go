@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_MoveUnmanagedVhd struct
 type Msvm_MoveUnmanagedVhd struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	VhdDestinationPath string
 
 	//
 	VhdSourcePath string
+}
+
+func NewMsvm_MoveUnmanagedVhdEx1(instance *cim.WmiInstance) (newInstance *Msvm_MoveUnmanagedVhd, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_MoveUnmanagedVhd{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMsvm_MoveUnmanagedVhdEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_MoveUnmanagedVhd, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_MoveUnmanagedVhd{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetVhdDestinationPath sets the value of VhdDestinationPath for the instance

@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_LogManagesRecord struct
 type CIM_LogManagesRecord struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Log CIM_Log
 
 	//
 	Record CIM_RecordForLog
+}
+
+func NewCIM_LogManagesRecordEx1(instance *cim.WmiInstance) (newInstance *CIM_LogManagesRecord, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogManagesRecord{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_LogManagesRecordEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_LogManagesRecord, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogManagesRecord{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetLog sets the value of Log for the instance

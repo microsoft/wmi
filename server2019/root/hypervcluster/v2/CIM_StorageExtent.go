@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_StorageExtent struct
 type CIM_StorageExtent struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// Access describes whether the media is readable (value=1), writeable (value=2), or both (value=3). "Unknown" (0) and "Write Once" (4) can also be defined.
 	Access StorageExtent_Access
@@ -106,6 +111,35 @@ type CIM_StorageExtent struct {
 
 	// Boolean set to TRUE if the Storage is sequentially accessed by a MediaAccessDevice. A TapePartition is an example of a sequentially accessed StorageExtent. StorageVolumes, Disk Partitions and LogicalDisks represent randomly accessed Extents.
 	SequentialAccess bool
+}
+
+func NewCIM_StorageExtentEx1(instance *cim.WmiInstance) (newInstance *CIM_StorageExtent, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_StorageExtent{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_StorageExtentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_StorageExtent, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_StorageExtent{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetAccess sets the value of Access for the instance

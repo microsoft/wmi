@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapter struct
 type MSFT_NetAdapter struct {
-	CIM_NetworkPort
+	*CIM_NetworkPort
 
 	//
 	AdminLocked bool
@@ -158,6 +163,35 @@ type MSFT_NetAdapter struct {
 
 	//
 	WdmInterface bool
+}
+
+func NewMSFT_NetAdapterEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapter, err error) {
+	tmp, err := NewCIM_NetworkPortEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapter{
+		CIM_NetworkPort: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapter, err error) {
+	tmp, err := NewCIM_NetworkPortEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapter{
+		CIM_NetworkPort: tmp,
+	}
+	return
 }
 
 // SetAdminLocked sets the value of AdminLocked for the instance

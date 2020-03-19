@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_RecordLog struct
 type CIM_RecordLog struct {
-	CIM_Log
+	*CIM_Log
 
 	//
 	InstanceID string
+}
+
+func NewCIM_RecordLogEx1(instance *cim.WmiInstance) (newInstance *CIM_RecordLog, err error) {
+	tmp, err := NewCIM_LogEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RecordLog{
+		CIM_Log: tmp,
+	}
+	return
+}
+
+func NewCIM_RecordLogEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_RecordLog, err error) {
+	tmp, err := NewCIM_LogEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RecordLog{
+		CIM_Log: tmp,
+	}
+	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance

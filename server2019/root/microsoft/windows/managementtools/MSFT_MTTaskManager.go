@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MTTaskManager struct
 type MSFT_MTTaskManager struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	CurrentIndex uint16
@@ -20,6 +25,35 @@ type MSFT_MTTaskManager struct {
 
 	//
 	Name string
+}
+
+func NewMSFT_MTTaskManagerEx1(instance *cim.WmiInstance) (newInstance *MSFT_MTTaskManager, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTTaskManager{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_MTTaskManagerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MTTaskManager, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MTTaskManager{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetCurrentIndex sets the value of CurrentIndex for the instance

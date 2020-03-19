@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NCProvNewQuery struct
 type MSFT_NCProvNewQuery struct {
-	MSFT_NCProvEvent
+	*MSFT_NCProvEvent
 
 	//
 	ID uint32
@@ -20,6 +25,35 @@ type MSFT_NCProvNewQuery struct {
 
 	//
 	QueryLanguage string
+}
+
+func NewMSFT_NCProvNewQueryEx1(instance *cim.WmiInstance) (newInstance *MSFT_NCProvNewQuery, err error) {
+	tmp, err := NewMSFT_NCProvEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NCProvNewQuery{
+		MSFT_NCProvEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NCProvNewQueryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NCProvNewQuery, err error) {
+	tmp, err := NewMSFT_NCProvEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NCProvNewQuery{
+		MSFT_NCProvEvent: tmp,
+	}
+	return
 }
 
 // SetID sets the value of ID for the instance

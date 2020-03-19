@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_eUICCs_Profiles02_01 struct
 type MDM_eUICCs_Profiles02_01 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ErrorDetail int32
@@ -42,6 +44,35 @@ type MDM_eUICCs_Profiles02_01 struct {
 
 	//
 	State int32
+}
+
+func NewMDM_eUICCs_Profiles02_01Ex1(instance *cim.WmiInstance) (newInstance *MDM_eUICCs_Profiles02_01, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_eUICCs_Profiles02_01{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_eUICCs_Profiles02_01Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_eUICCs_Profiles02_01, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_eUICCs_Profiles02_01{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetErrorDetail sets the value of ErrorDetail for the instance

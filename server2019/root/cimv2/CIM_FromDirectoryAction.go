@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_FromDirectoryAction struct
 type CIM_FromDirectoryAction struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	FileName CIM_FileAction
 
 	//
 	SourceDirectory CIM_DirectoryAction
+}
+
+func NewCIM_FromDirectoryActionEx1(instance *cim.WmiInstance) (newInstance *CIM_FromDirectoryAction, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FromDirectoryAction{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_FromDirectoryActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_FromDirectoryAction, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FromDirectoryAction{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetFileName sets the value of FileName for the instance

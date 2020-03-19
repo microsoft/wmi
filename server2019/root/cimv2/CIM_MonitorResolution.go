@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_MonitorResolution struct
 type CIM_MonitorResolution struct {
-	CIM_Setting
+	*CIM_Setting
 
 	//
 	HorizontalResolution uint32
@@ -29,6 +34,35 @@ type CIM_MonitorResolution struct {
 
 	//
 	VerticalResolution uint32
+}
+
+func NewCIM_MonitorResolutionEx1(instance *cim.WmiInstance) (newInstance *CIM_MonitorResolution, err error) {
+	tmp, err := NewCIM_SettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MonitorResolution{
+		CIM_Setting: tmp,
+	}
+	return
+}
+
+func NewCIM_MonitorResolutionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_MonitorResolution, err error) {
+	tmp, err := NewCIM_SettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MonitorResolution{
+		CIM_Setting: tmp,
+	}
+	return
 }
 
 // SetHorizontalResolution sets the value of HorizontalResolution for the instance

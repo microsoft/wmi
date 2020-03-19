@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_LogicalPort struct
 type CIM_LogicalPort struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// The maximum bandwidth of the Port in Bits per Second.
 	MaxSpeed uint64
@@ -29,6 +34,35 @@ type CIM_LogicalPort struct {
 
 	// In some circumstances, a LogicalPort might be identifiable as a front end or back end port. An example of this situation would be a storage array that might have back end ports to communicate with disk drives and front end ports to communicate with hosts. If there is no restriction on the use of the port, then the value should be set to 'not restricted'.
 	UsageRestriction LogicalPort_UsageRestriction
+}
+
+func NewCIM_LogicalPortEx1(instance *cim.WmiInstance) (newInstance *CIM_LogicalPort, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogicalPort{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_LogicalPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_LogicalPort, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogicalPort{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetMaxSpeed sets the value of MaxSpeed for the instance

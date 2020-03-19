@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSCluster_AffinityRule struct
 type MSCluster_AffinityRule struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Enabled uint32
@@ -27,6 +29,35 @@ type MSCluster_AffinityRule struct {
 
 	//
 	RuleType uint32
+}
+
+func NewMSCluster_AffinityRuleEx1(instance *cim.WmiInstance) (newInstance *MSCluster_AffinityRule, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_AffinityRule{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSCluster_AffinityRuleEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_AffinityRule, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_AffinityRule{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEnabled sets the value of Enabled for the instance

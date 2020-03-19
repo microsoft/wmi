@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ThreadTrace struct
 type Win32_ThreadTrace struct {
-	Win32_SystemTrace
+	*Win32_SystemTrace
 
 	//
 	ProcessID uint32
 
 	//
 	ThreadID uint32
+}
+
+func NewWin32_ThreadTraceEx1(instance *cim.WmiInstance) (newInstance *Win32_ThreadTrace, err error) {
+	tmp, err := NewWin32_SystemTraceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ThreadTrace{
+		Win32_SystemTrace: tmp,
+	}
+	return
+}
+
+func NewWin32_ThreadTraceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ThreadTrace, err error) {
+	tmp, err := NewWin32_SystemTraceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ThreadTrace{
+		Win32_SystemTrace: tmp,
+	}
+	return
 }
 
 // SetProcessID sets the value of ProcessID for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TargetPort struct
 type MSFT_TargetPort struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	//
 	ConnectionType uint16
@@ -65,6 +70,35 @@ type MSFT_TargetPort struct {
 
 	//
 	UsageRestriction uint16
+}
+
+func NewMSFT_TargetPortEx1(instance *cim.WmiInstance) (newInstance *MSFT_TargetPort, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TargetPort{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_TargetPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TargetPort, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TargetPort{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetConnectionType sets the value of ConnectionType for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_PartitionToReplicaPeer struct
 type MSFT_PartitionToReplicaPeer struct {
-	MSFT_Synchronized
+	*MSFT_Synchronized
 
 	//
 	Partition MSFT_Partition
 
 	//
 	ReplicaPeer MSFT_ReplicaPeer
+}
+
+func NewMSFT_PartitionToReplicaPeerEx1(instance *cim.WmiInstance) (newInstance *MSFT_PartitionToReplicaPeer, err error) {
+	tmp, err := NewMSFT_SynchronizedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PartitionToReplicaPeer{
+		MSFT_Synchronized: tmp,
+	}
+	return
+}
+
+func NewMSFT_PartitionToReplicaPeerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PartitionToReplicaPeer, err error) {
+	tmp, err := NewMSFT_SynchronizedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PartitionToReplicaPeer{
+		MSFT_Synchronized: tmp,
+	}
+	return
 }
 
 // SetPartition sets the value of Partition for the instance

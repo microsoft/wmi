@@ -3,12 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_HeartbeatComponent struct
 type Msvm_HeartbeatComponent struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
+}
+
+func NewMsvm_HeartbeatComponentEx1(instance *cim.WmiInstance) (newInstance *Msvm_HeartbeatComponent, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_HeartbeatComponent{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewMsvm_HeartbeatComponentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_HeartbeatComponent, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_HeartbeatComponent{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func (instance *Msvm_HeartbeatComponent) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_HeartbeatComponent) GetRelatedHeartbeatComponentSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_HeartbeatComponentSettingData")
 }

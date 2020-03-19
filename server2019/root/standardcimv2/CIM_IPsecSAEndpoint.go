@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_IPsecSAEndpoint struct
 type CIM_IPsecSAEndpoint struct {
-	CIM_SecurityAssociationEndpoint
+	*CIM_SecurityAssociationEndpoint
 
 	//
 	DFHandling uint16
@@ -26,6 +31,35 @@ type CIM_IPsecSAEndpoint struct {
 
 	//
 	SPI uint32
+}
+
+func NewCIM_IPsecSAEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_IPsecSAEndpoint, err error) {
+	tmp, err := NewCIM_SecurityAssociationEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IPsecSAEndpoint{
+		CIM_SecurityAssociationEndpoint: tmp,
+	}
+	return
+}
+
+func NewCIM_IPsecSAEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_IPsecSAEndpoint, err error) {
+	tmp, err := NewCIM_SecurityAssociationEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IPsecSAEndpoint{
+		CIM_SecurityAssociationEndpoint: tmp,
+	}
+	return
 }
 
 // SetDFHandling sets the value of DFHandling for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_BIOSElement struct
 type CIM_BIOSElement struct {
-	CIM_SoftwareElement
+	*CIM_SoftwareElement
 
 	// The currently selected language for the BIOS. This information can be obtained from SMBIOS, using the Current Language attribute of the Type 13 structure, to index into the string list following the structure. The property is formatted using the ISO 639 Language Name, and may be followed by the ISO 3166 Territory Name and the encoding method.
 	CurrentLanguage string
@@ -35,6 +40,35 @@ type CIM_BIOSElement struct {
 
 	// Date that this BIOS was released.
 	ReleaseDate string
+}
+
+func NewCIM_BIOSElementEx1(instance *cim.WmiInstance) (newInstance *CIM_BIOSElement, err error) {
+	tmp, err := NewCIM_SoftwareElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BIOSElement{
+		CIM_SoftwareElement: tmp,
+	}
+	return
+}
+
+func NewCIM_BIOSElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_BIOSElement, err error) {
+	tmp, err := NewCIM_SoftwareElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BIOSElement{
+		CIM_SoftwareElement: tmp,
+	}
+	return
 }
 
 // SetCurrentLanguage sets the value of CurrentLanguage for the instance

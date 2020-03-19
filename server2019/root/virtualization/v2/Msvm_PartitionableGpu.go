@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_PartitionableGpu struct
 type Msvm_PartitionableGpu struct {
-	CIM_ComputerSystem
+	*CIM_ComputerSystem
 
 	//
 	AvailableCompute uint64
@@ -77,6 +82,35 @@ type Msvm_PartitionableGpu struct {
 
 	//
 	ValidPartitionCounts []uint16
+}
+
+func NewMsvm_PartitionableGpuEx1(instance *cim.WmiInstance) (newInstance *Msvm_PartitionableGpu, err error) {
+	tmp, err := NewCIM_ComputerSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_PartitionableGpu{
+		CIM_ComputerSystem: tmp,
+	}
+	return
+}
+
+func NewMsvm_PartitionableGpuEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_PartitionableGpu, err error) {
+	tmp, err := NewCIM_ComputerSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_PartitionableGpu{
+		CIM_ComputerSystem: tmp,
+	}
+	return
 }
 
 // SetAvailableCompute sets the value of AvailableCompute for the instance

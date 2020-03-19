@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TaskEventTrigger struct
 type MSFT_TaskEventTrigger struct {
-	MSFT_TaskTrigger
+	*MSFT_TaskTrigger
 
 	//
 	Delay string
@@ -20,6 +25,35 @@ type MSFT_TaskEventTrigger struct {
 
 	//
 	ValueQueries []MSFT_TaskNamedValue
+}
+
+func NewMSFT_TaskEventTriggerEx1(instance *cim.WmiInstance) (newInstance *MSFT_TaskEventTrigger, err error) {
+	tmp, err := NewMSFT_TaskTriggerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskEventTrigger{
+		MSFT_TaskTrigger: tmp,
+	}
+	return
+}
+
+func NewMSFT_TaskEventTriggerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TaskEventTrigger, err error) {
+	tmp, err := NewMSFT_TaskTriggerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskEventTrigger{
+		MSFT_TaskTrigger: tmp,
+	}
+	return
 }
 
 // SetDelay sets the value of Delay for the instance

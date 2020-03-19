@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_Indication struct
 type CIM_Indication struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	CorrelatedIndications []string
@@ -39,6 +41,35 @@ type CIM_Indication struct {
 
 	//
 	SequenceNumber int64
+}
+
+func NewCIM_IndicationEx1(instance *cim.WmiInstance) (newInstance *CIM_Indication, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Indication{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_IndicationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Indication, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Indication{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCorrelatedIndications sets the value of CorrelatedIndications for the instance

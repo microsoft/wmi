@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetTransportFilter struct
 type MSFT_NetTransportFilter struct {
-	CIM_FilterEntryBase
+	*CIM_FilterEntryBase
 
 	//
 	DestinationPrefix string
@@ -32,6 +37,35 @@ type MSFT_NetTransportFilter struct {
 
 	//
 	SettingName string
+}
+
+func NewMSFT_NetTransportFilterEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetTransportFilter, err error) {
+	tmp, err := NewCIM_FilterEntryBaseEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTransportFilter{
+		CIM_FilterEntryBase: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetTransportFilterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetTransportFilter, err error) {
+	tmp, err := NewCIM_FilterEntryBaseEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTransportFilter{
+		CIM_FilterEntryBase: tmp,
+	}
+	return
 }
 
 // SetDestinationPrefix sets the value of DestinationPrefix for the instance

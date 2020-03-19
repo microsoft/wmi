@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ReplicationGroupToVirtualDisk struct
 type MSFT_ReplicationGroupToVirtualDisk struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ReplicationGroup MSFT_ReplicationGroup
 
 	//
 	VirtualDisk MSFT_VirtualDisk
+}
+
+func NewMSFT_ReplicationGroupToVirtualDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_ReplicationGroupToVirtualDisk, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ReplicationGroupToVirtualDisk{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ReplicationGroupToVirtualDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ReplicationGroupToVirtualDisk, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ReplicationGroupToVirtualDisk{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetReplicationGroup sets the value of ReplicationGroup for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.SecurityClient
 //////////////////////////////////////////////
 package securityclient
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // ProtectionTechnologyStatus struct
 type ProtectionTechnologyStatus struct {
-	SerializableToXml
+	*SerializableToXml
 
 	// Is protection technology enabled
 	Enabled bool
@@ -20,6 +25,35 @@ type ProtectionTechnologyStatus struct {
 
 	// Protection technology version (major, minor, build, revision)
 	Version string
+}
+
+func NewProtectionTechnologyStatusEx1(instance *cim.WmiInstance) (newInstance *ProtectionTechnologyStatus, err error) {
+	tmp, err := NewSerializableToXmlEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ProtectionTechnologyStatus{
+		SerializableToXml: tmp,
+	}
+	return
+}
+
+func NewProtectionTechnologyStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *ProtectionTechnologyStatus, err error) {
+	tmp, err := NewSerializableToXmlEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ProtectionTechnologyStatus{
+		SerializableToXml: tmp,
+	}
+	return
 }
 
 // SetEnabled sets the value of Enabled for the instance

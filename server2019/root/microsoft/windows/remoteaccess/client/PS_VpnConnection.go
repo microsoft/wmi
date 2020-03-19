@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // PS_VpnConnection struct
 type PS_VpnConnection struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AllUserConnection bool
@@ -111,6 +113,35 @@ type PS_VpnConnection struct {
 
 	//
 	VpnConfigurationXml string
+}
+
+func NewPS_VpnConnectionEx1(instance *cim.WmiInstance) (newInstance *PS_VpnConnection, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_VpnConnection{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewPS_VpnConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *PS_VpnConnection, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_VpnConnection{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAllUserConnection sets the value of AllUserConnection for the instance

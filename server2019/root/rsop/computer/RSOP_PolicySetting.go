@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_PolicySetting struct
 type RSOP_PolicySetting struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	creationTime string
@@ -33,6 +35,35 @@ type RSOP_PolicySetting struct {
 
 	//
 	SOMID string
+}
+
+func NewRSOP_PolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_PolicySetting, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PolicySetting{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_PolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_PolicySetting, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PolicySetting{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetcreationTime sets the value of creationTime for the instance

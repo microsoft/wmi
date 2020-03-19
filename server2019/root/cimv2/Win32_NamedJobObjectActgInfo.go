@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_NamedJobObjectActgInfo struct
 type Win32_NamedJobObjectActgInfo struct {
-	CIM_StatisticalInformation
+	*CIM_StatisticalInformation
 
 	//
 	ActiveProcesses uint32
@@ -59,6 +64,35 @@ type Win32_NamedJobObjectActgInfo struct {
 
 	//
 	WriteTransferCount uint64
+}
+
+func NewWin32_NamedJobObjectActgInfoEx1(instance *cim.WmiInstance) (newInstance *Win32_NamedJobObjectActgInfo, err error) {
+	tmp, err := NewCIM_StatisticalInformationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NamedJobObjectActgInfo{
+		CIM_StatisticalInformation: tmp,
+	}
+	return
+}
+
+func NewWin32_NamedJobObjectActgInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_NamedJobObjectActgInfo, err error) {
+	tmp, err := NewCIM_StatisticalInformationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NamedJobObjectActgInfo{
+		CIM_StatisticalInformation: tmp,
+	}
+	return
 }
 
 // SetActiveProcesses sets the value of ActiveProcesses for the instance

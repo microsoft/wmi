@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CliAlias struct
 type MSFT_CliAlias struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Connection MSFT_CliConnection
@@ -39,6 +41,35 @@ type MSFT_CliAlias struct {
 
 	//
 	Verbs []MSFT_CliVerb
+}
+
+func NewMSFT_CliAliasEx1(instance *cim.WmiInstance) (newInstance *MSFT_CliAlias, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliAlias{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CliAliasEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CliAlias, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliAlias{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnection sets the value of Connection for the instance

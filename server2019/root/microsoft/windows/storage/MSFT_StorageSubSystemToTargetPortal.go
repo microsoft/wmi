@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageSubSystemToTargetPortal struct
 type MSFT_StorageSubSystemToTargetPortal struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	StorageSubSystem MSFT_StorageSubSystem
 
 	//
 	TargetPortal MSFT_TargetPortal
+}
+
+func NewMSFT_StorageSubSystemToTargetPortalEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageSubSystemToTargetPortal, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToTargetPortal{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageSubSystemToTargetPortalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageSubSystemToTargetPortal, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToTargetPortal{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetStorageSubSystem sets the value of StorageSubSystem for the instance

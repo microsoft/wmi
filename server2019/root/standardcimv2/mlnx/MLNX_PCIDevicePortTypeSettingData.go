@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_PCIDevicePortTypeSettingData struct
 type MLNX_PCIDevicePortTypeSettingData struct {
-	MLNX_PCIDeviceSettingData
+	*MLNX_PCIDeviceSettingData
 
 	//
 	Configuration []string
@@ -20,6 +25,35 @@ type MLNX_PCIDevicePortTypeSettingData struct {
 
 	//
 	DefaultSetting []string
+}
+
+func NewMLNX_PCIDevicePortTypeSettingDataEx1(instance *cim.WmiInstance) (newInstance *MLNX_PCIDevicePortTypeSettingData, err error) {
+	tmp, err := NewMLNX_PCIDeviceSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDevicePortTypeSettingData{
+		MLNX_PCIDeviceSettingData: tmp,
+	}
+	return
+}
+
+func NewMLNX_PCIDevicePortTypeSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_PCIDevicePortTypeSettingData, err error) {
+	tmp, err := NewMLNX_PCIDeviceSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDevicePortTypeSettingData{
+		MLNX_PCIDeviceSettingData: tmp,
+	}
+	return
 }
 
 // SetConfiguration sets the value of Configuration for the instance

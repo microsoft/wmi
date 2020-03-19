@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Policy
 //////////////////////////////////////////////
 package policy
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SomFilter struct
 type MSFT_SomFilter struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Author string
@@ -42,6 +44,35 @@ type MSFT_SomFilter struct {
 
 	//
 	SourceOrganization string
+}
+
+func NewMSFT_SomFilterEx1(instance *cim.WmiInstance) (newInstance *MSFT_SomFilter, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SomFilter{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SomFilterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SomFilter, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SomFilter{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAuthor sets the value of Author for the instance

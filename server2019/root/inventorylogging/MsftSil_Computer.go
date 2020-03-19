@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MsftSil_Computer struct
 type MsftSil_Computer struct {
-	MsftSil_Data
+	*MsftSil_Data
 
 	//
 	ChassisSerialNumber string
@@ -59,6 +64,35 @@ type MsftSil_Computer struct {
 
 	//
 	SystemManufacturer string
+}
+
+func NewMsftSil_ComputerEx1(instance *cim.WmiInstance) (newInstance *MsftSil_Computer, err error) {
+	tmp, err := NewMsftSil_DataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_Computer{
+		MsftSil_Data: tmp,
+	}
+	return
+}
+
+func NewMsftSil_ComputerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftSil_Computer, err error) {
+	tmp, err := NewMsftSil_DataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_Computer{
+		MsftSil_Data: tmp,
+	}
+	return
 }
 
 // SetChassisSerialNumber sets the value of ChassisSerialNumber for the instance

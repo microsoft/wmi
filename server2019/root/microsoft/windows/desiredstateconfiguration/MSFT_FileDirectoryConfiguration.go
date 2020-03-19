@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_FileDirectoryConfiguration struct
 type MSFT_FileDirectoryConfiguration struct {
-	OMI_BaseResource
+	*OMI_BaseResource
 
 	//
 	Attributes []string
@@ -56,6 +61,35 @@ type MSFT_FileDirectoryConfiguration struct {
 
 	//
 	Type string
+}
+
+func NewMSFT_FileDirectoryConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_FileDirectoryConfiguration, err error) {
+	tmp, err := NewOMI_BaseResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_FileDirectoryConfiguration{
+		OMI_BaseResource: tmp,
+	}
+	return
+}
+
+func NewMSFT_FileDirectoryConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_FileDirectoryConfiguration, err error) {
+	tmp, err := NewOMI_BaseResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_FileDirectoryConfiguration{
+		OMI_BaseResource: tmp,
+	}
+	return
 }
 
 // SetAttributes sets the value of Attributes for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter struct
 type Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter struct {
-	Win32_PerfRawData
+	*Win32_PerfRawData
 
 	//
 	BroadcastPacketsReceivedPersec uint64
@@ -152,6 +157,35 @@ type Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter struct {
 
 	//
 	RSCPacketsProcessed uint64
+}
+
+func NewWin32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapterEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter{
+		Win32_PerfRawData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_NvspNicStats_HyperVVirtualNetworkAdapter{
+		Win32_PerfRawData: tmp,
+	}
+	return
 }
 
 // SetBroadcastPacketsReceivedPersec sets the value of BroadcastPacketsReceivedPersec for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_AggregationMetricDefinition struct
 type CIM_AggregationMetricDefinition struct {
-	CIM_BaseMetricDefinition
+	*CIM_BaseMetricDefinition
 
 	// The SimpleFunction property identifies the basic computation performed on an underlying metric to arrive at the value of this derived metric. This property shall be NULL when the ChangeType property has a value other than 5 "Simple Function".
 	///2="Minimum" indicates that the metric reports the lowest value detected for the associated monitored entity. This is also known as a low watermark.
@@ -19,6 +24,35 @@ type CIM_AggregationMetricDefinition struct {
 	///5="Median" indicates the metric reports the median value of the underlying metric values.
 	///6="Mode" indicates the metric reports the modal value of the underlying metric values.
 	SimpleFunction AggregationMetricDefinition_SimpleFunction
+}
+
+func NewCIM_AggregationMetricDefinitionEx1(instance *cim.WmiInstance) (newInstance *CIM_AggregationMetricDefinition, err error) {
+	tmp, err := NewCIM_BaseMetricDefinitionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AggregationMetricDefinition{
+		CIM_BaseMetricDefinition: tmp,
+	}
+	return
+}
+
+func NewCIM_AggregationMetricDefinitionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_AggregationMetricDefinition, err error) {
+	tmp, err := NewCIM_BaseMetricDefinitionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AggregationMetricDefinition{
+		CIM_BaseMetricDefinition: tmp,
+	}
+	return
 }
 
 // SetSimpleFunction sets the value of SimpleFunction for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VLANEndpoint struct
 type CIM_VLANEndpoint struct {
-	CIM_ProtocolEndpoint
+	*CIM_ProtocolEndpoint
 
 	// The desired VLAN mode that is requested for use. (Note that the current mode is given by the OperationalEndpointMode property.) The following values are defined:
 	///- Access: Puts the endpoint/switch port into permanent nontrunking mode and negotiates to convert the link into a nontrunk link. The endpoint becomes a nontrunk interface.
@@ -41,6 +46,35 @@ type CIM_VLANEndpoint struct {
 
 	// A string describing the type of VLAN encapsulation that is supported by this VLANEndpoint, when the value of the encapsulation property is set to 1 (i.e., "Other"). This property should be set to NULL when the desired encapsulation property is any value other than 1.
 	OtherTrunkEncapsulation string
+}
+
+func NewCIM_VLANEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_VLANEndpoint, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VLANEndpoint{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
+}
+
+func NewCIM_VLANEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VLANEndpoint, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VLANEndpoint{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
 }
 
 // SetDesiredEndpointMode sets the value of DesiredEndpointMode for the instance

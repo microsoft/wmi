@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_UninterruptiblePowerSupply struct
 type CIM_UninterruptiblePowerSupply struct {
-	CIM_PowerSupply
+	*CIM_PowerSupply
 
 	//
 	EstimatedChargeRemaining uint16
@@ -23,6 +28,35 @@ type CIM_UninterruptiblePowerSupply struct {
 
 	//
 	TimeOnBackup uint32
+}
+
+func NewCIM_UninterruptiblePowerSupplyEx1(instance *cim.WmiInstance) (newInstance *CIM_UninterruptiblePowerSupply, err error) {
+	tmp, err := NewCIM_PowerSupplyEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_UninterruptiblePowerSupply{
+		CIM_PowerSupply: tmp,
+	}
+	return
+}
+
+func NewCIM_UninterruptiblePowerSupplyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_UninterruptiblePowerSupply, err error) {
+	tmp, err := NewCIM_PowerSupplyEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_UninterruptiblePowerSupply{
+		CIM_PowerSupply: tmp,
+	}
+	return
 }
 
 // SetEstimatedChargeRemaining sets the value of EstimatedChargeRemaining for the instance

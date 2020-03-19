@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MsftUal_HyperV struct
 type MsftUal_HyperV struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The unit identification for the local server.
 	ChassisSerialNumber string
@@ -36,6 +38,35 @@ type MsftUal_HyperV struct {
 
 	// The hypervisor assigned GUID for identifying a virtual machine.
 	UUID string
+}
+
+func NewMsftUal_HyperVEx1(instance *cim.WmiInstance) (newInstance *MsftUal_HyperV, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_HyperV{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsftUal_HyperVEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftUal_HyperV, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_HyperV{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetChassisSerialNumber sets the value of ChassisSerialNumber for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // SDDC_Job struct
 type SDDC_Job struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	BytesProcessed uint64
@@ -45,6 +47,35 @@ type SDDC_Job struct {
 
 	//
 	State uint16
+}
+
+func NewSDDC_JobEx1(instance *cim.WmiInstance) (newInstance *SDDC_Job, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDDC_Job{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewSDDC_JobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SDDC_Job, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDDC_Job{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetBytesProcessed sets the value of BytesProcessed for the instance

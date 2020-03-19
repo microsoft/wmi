@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetUDPSetting struct
 type MSFT_NetUDPSetting struct {
-	CIM_PolicyAction
+	*CIM_PolicyAction
 
 	//
 	DynamicPortRangeNumberOfPorts uint16
 
 	//
 	DynamicPortRangeStartPort uint16
+}
+
+func NewMSFT_NetUDPSettingEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetUDPSetting, err error) {
+	tmp, err := NewCIM_PolicyActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetUDPSetting{
+		CIM_PolicyAction: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetUDPSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetUDPSetting, err error) {
+	tmp, err := NewCIM_PolicyActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetUDPSetting{
+		CIM_PolicyAction: tmp,
+	}
+	return
 }
 
 // SetDynamicPortRangeNumberOfPorts sets the value of DynamicPortRangeNumberOfPorts for the instance

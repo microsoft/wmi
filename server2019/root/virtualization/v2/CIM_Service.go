@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Service struct
 type CIM_Service struct {
-	CIM_EnabledLogicalElement
+	*CIM_EnabledLogicalElement
 
 	// CreationClassName indicates the name of the class or the subclass that is used in the creation of an instance. When used with the other key properties of this class, this property allows all instances of this class and its subclasses to be uniquely identified.
 	CreationClassName string
@@ -33,6 +38,35 @@ type CIM_Service struct {
 
 	// The Name of the scoping System.
 	SystemName string
+}
+
+func NewCIM_ServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_Service, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Service{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_ServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Service, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Service{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance

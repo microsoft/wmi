@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_RoamingProfileMachineConfiguration struct
 type Win32_RoamingProfileMachineConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// If true, add the Administrator group to roaming user profiles.
 	AddAdminGroupToRUPEnabled bool
@@ -69,6 +71,35 @@ type Win32_RoamingProfileMachineConfiguration struct {
 
 	// If true, wait for a remote user profile.
 	WaitForRemoteProfile bool
+}
+
+func NewWin32_RoamingProfileMachineConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_RoamingProfileMachineConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingProfileMachineConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_RoamingProfileMachineConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_RoamingProfileMachineConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingProfileMachineConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAddAdminGroupToRUPEnabled sets the value of AddAdminGroupToRUPEnabled for the instance

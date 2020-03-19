@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_Error struct
 type CIM_Error struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	CIMStatusCode uint32
@@ -60,6 +62,35 @@ type CIM_Error struct {
 
 	//
 	RecommendedActions []string
+}
+
+func NewCIM_ErrorEx1(instance *cim.WmiInstance) (newInstance *CIM_Error, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Error{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ErrorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Error, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Error{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCIMStatusCode sets the value of CIMStatusCode for the instance

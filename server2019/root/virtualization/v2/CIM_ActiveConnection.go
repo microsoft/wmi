@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ActiveConnection struct
 type CIM_ActiveConnection struct {
-	CIM_SAPSAPDependency
+	*CIM_SAPSAPDependency
 
 	// TRUE means that this connection is unidirectional; FALSE means that this connection is bidirectional. When the connection is unidirectional, the "speaker" should be defined as the Antecedent reference. In a bidirectional connection, the selection of which AccessPoint is the Antecedent or Dependent is immaterial.
 	IsUnidirectional bool
@@ -22,6 +27,35 @@ type CIM_ActiveConnection struct {
 	// Note: The use of this element is deprecated because it is incorrectly placed on the association. Unicast, broadcast, or other traffic types are not a function of the connection between the referenced endpoints, but rather are a function of the addressing, protocol and basic functionality of the endpoints.
 	///Deprecated description: The type of traffic that is carried over this connection.
 	TrafficType ActiveConnection_TrafficType
+}
+
+func NewCIM_ActiveConnectionEx1(instance *cim.WmiInstance) (newInstance *CIM_ActiveConnection, err error) {
+	tmp, err := NewCIM_SAPSAPDependencyEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ActiveConnection{
+		CIM_SAPSAPDependency: tmp,
+	}
+	return
+}
+
+func NewCIM_ActiveConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ActiveConnection, err error) {
+	tmp, err := NewCIM_SAPSAPDependencyEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ActiveConnection{
+		CIM_SAPSAPDependency: tmp,
+	}
+	return
 }
 
 // SetIsUnidirectional sets the value of IsUnidirectional for the instance

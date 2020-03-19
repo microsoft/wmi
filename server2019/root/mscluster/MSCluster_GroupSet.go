@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSCluster_GroupSet struct
 type MSCluster_GroupSet struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ClusterNodeObjectReturnedFrom string
@@ -57,6 +59,35 @@ type MSCluster_GroupSet struct {
 
 	//
 	UpdateDomains uint32
+}
+
+func NewMSCluster_GroupSetEx1(instance *cim.WmiInstance) (newInstance *MSCluster_GroupSet, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_GroupSet{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSCluster_GroupSetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_GroupSet, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_GroupSet{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetClusterNodeObjectReturnedFrom sets the value of ClusterNodeObjectReturnedFrom for the instance

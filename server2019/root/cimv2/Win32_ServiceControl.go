@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ServiceControl struct
 type Win32_ServiceControl struct {
-	Win32_MSIResource
+	*Win32_MSIResource
 
 	//
 	Arguments string
@@ -29,6 +34,35 @@ type Win32_ServiceControl struct {
 
 	//
 	Wait uint16
+}
+
+func NewWin32_ServiceControlEx1(instance *cim.WmiInstance) (newInstance *Win32_ServiceControl, err error) {
+	tmp, err := NewWin32_MSIResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServiceControl{
+		Win32_MSIResource: tmp,
+	}
+	return
+}
+
+func NewWin32_ServiceControlEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ServiceControl, err error) {
+	tmp, err := NewWin32_MSIResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServiceControl{
+		Win32_MSIResource: tmp,
+	}
+	return
 }
 
 // SetArguments sets the value of Arguments for the instance

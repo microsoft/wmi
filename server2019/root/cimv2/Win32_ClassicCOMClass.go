@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ClassicCOMClass struct
 type Win32_ClassicCOMClass struct {
-	Win32_COMClass
+	*Win32_COMClass
 
 	//
 	ComponentId string
+}
+
+func NewWin32_ClassicCOMClassEx1(instance *cim.WmiInstance) (newInstance *Win32_ClassicCOMClass, err error) {
+	tmp, err := NewWin32_COMClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ClassicCOMClass{
+		Win32_COMClass: tmp,
+	}
+	return
+}
+
+func NewWin32_ClassicCOMClassEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ClassicCOMClass, err error) {
+	tmp, err := NewWin32_COMClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ClassicCOMClass{
+		Win32_COMClass: tmp,
+	}
+	return
 }
 
 // SetComponentId sets the value of ComponentId for the instance

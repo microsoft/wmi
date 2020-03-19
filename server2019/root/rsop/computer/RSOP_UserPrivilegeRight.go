@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_UserPrivilegeRight struct
 type RSOP_UserPrivilegeRight struct {
-	RSOP_SecuritySettings
+	*RSOP_SecuritySettings
 
 	//
 	AccountList []string
 
 	//
 	UserRight string
+}
+
+func NewRSOP_UserPrivilegeRightEx1(instance *cim.WmiInstance) (newInstance *RSOP_UserPrivilegeRight, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_UserPrivilegeRight{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
+}
+
+func NewRSOP_UserPrivilegeRightEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_UserPrivilegeRight, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_UserPrivilegeRight{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
 }
 
 // SetAccountList sets the value of AccountList for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_WebDownloadManager struct
 type MSFT_WebDownloadManager struct {
-	OMI_ConfigurationDownloadManager
+	*OMI_ConfigurationDownloadManager
 
 	//
 	AllowUnsecureConnection bool
@@ -32,6 +37,35 @@ type MSFT_WebDownloadManager struct {
 
 	//
 	ServerURL string
+}
+
+func NewMSFT_WebDownloadManagerEx1(instance *cim.WmiInstance) (newInstance *MSFT_WebDownloadManager, err error) {
+	tmp, err := NewOMI_ConfigurationDownloadManagerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WebDownloadManager{
+		OMI_ConfigurationDownloadManager: tmp,
+	}
+	return
+}
+
+func NewMSFT_WebDownloadManagerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_WebDownloadManager, err error) {
+	tmp, err := NewOMI_ConfigurationDownloadManagerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WebDownloadManager{
+		OMI_ConfigurationDownloadManager: tmp,
+	}
+	return
 }
 
 // SetAllowUnsecureConnection sets the value of AllowUnsecureConnection for the instance

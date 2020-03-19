@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // ServerComponent_WDS_Transport struct
 type ServerComponent_WDS_Transport struct {
-	MSFT_ServerManagerServerComponentDescriptor
+	*MSFT_ServerManagerServerComponentDescriptor
+}
+
+func NewServerComponent_WDS_TransportEx1(instance *cim.WmiInstance) (newInstance *ServerComponent_WDS_Transport, err error) {
+	tmp, err := NewMSFT_ServerManagerServerComponentDescriptorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ServerComponent_WDS_Transport{
+		MSFT_ServerManagerServerComponentDescriptor: tmp,
+	}
+	return
+}
+
+func NewServerComponent_WDS_TransportEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *ServerComponent_WDS_Transport, err error) {
+	tmp, err := NewMSFT_ServerManagerServerComponentDescriptorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ServerComponent_WDS_Transport{
+		MSFT_ServerManagerServerComponentDescriptor: tmp,
+	}
+	return
 }

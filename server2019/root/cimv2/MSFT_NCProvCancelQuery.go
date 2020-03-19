@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NCProvCancelQuery struct
 type MSFT_NCProvCancelQuery struct {
-	MSFT_NCProvEvent
+	*MSFT_NCProvEvent
 
 	//
 	ID uint32
+}
+
+func NewMSFT_NCProvCancelQueryEx1(instance *cim.WmiInstance) (newInstance *MSFT_NCProvCancelQuery, err error) {
+	tmp, err := NewMSFT_NCProvEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NCProvCancelQuery{
+		MSFT_NCProvEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NCProvCancelQueryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NCProvCancelQuery, err error) {
+	tmp, err := NewMSFT_NCProvEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NCProvCancelQuery{
+		MSFT_NCProvEvent: tmp,
+	}
+	return
 }
 
 // SetID sets the value of ID for the instance

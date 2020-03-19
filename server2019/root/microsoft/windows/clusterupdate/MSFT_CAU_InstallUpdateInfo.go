@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_CAU_InstallUpdateInfo struct
 type MSFT_CAU_InstallUpdateInfo struct {
-	MSFT_CAU_DownloadUpdateInfo
+	*MSFT_CAU_DownloadUpdateInfo
 
 	//
 	LongRebootHint bool
 
 	//
 	RebootRequired bool
+}
+
+func NewMSFT_CAU_InstallUpdateInfoEx1(instance *cim.WmiInstance) (newInstance *MSFT_CAU_InstallUpdateInfo, err error) {
+	tmp, err := NewMSFT_CAU_DownloadUpdateInfoEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAU_InstallUpdateInfo{
+		MSFT_CAU_DownloadUpdateInfo: tmp,
+	}
+	return
+}
+
+func NewMSFT_CAU_InstallUpdateInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CAU_InstallUpdateInfo, err error) {
+	tmp, err := NewMSFT_CAU_DownloadUpdateInfoEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAU_InstallUpdateInfo{
+		MSFT_CAU_DownloadUpdateInfo: tmp,
+	}
+	return
 }
 
 // SetLongRebootHint sets the value of LongRebootHint for the instance

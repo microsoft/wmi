@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_NetAdapterFlowControlSettingData struct
 type MLNX_NetAdapterFlowControlSettingData struct {
-	MLNX_NetAdapterSettingData
+	*MLNX_NetAdapterSettingData
 
 	//
 	PFCRx string
@@ -47,6 +52,35 @@ type MLNX_NetAdapterFlowControlSettingData struct {
 
 	//
 	TxUntagPriorityTag uint8
+}
+
+func NewMLNX_NetAdapterFlowControlSettingDataEx1(instance *cim.WmiInstance) (newInstance *MLNX_NetAdapterFlowControlSettingData, err error) {
+	tmp, err := NewMLNX_NetAdapterSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_NetAdapterFlowControlSettingData{
+		MLNX_NetAdapterSettingData: tmp,
+	}
+	return
+}
+
+func NewMLNX_NetAdapterFlowControlSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_NetAdapterFlowControlSettingData, err error) {
+	tmp, err := NewMLNX_NetAdapterSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_NetAdapterFlowControlSettingData{
+		MLNX_NetAdapterSettingData: tmp,
+	}
+	return
 }
 
 // SetPFCRx sets the value of PFCRx for the instance

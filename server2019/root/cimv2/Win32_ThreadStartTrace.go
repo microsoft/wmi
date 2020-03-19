@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ThreadStartTrace struct
 type Win32_ThreadStartTrace struct {
-	Win32_ThreadTrace
+	*Win32_ThreadTrace
 
 	//
 	StackBase uint64
@@ -32,6 +37,35 @@ type Win32_ThreadStartTrace struct {
 
 	//
 	Win32StartAddr uint64
+}
+
+func NewWin32_ThreadStartTraceEx1(instance *cim.WmiInstance) (newInstance *Win32_ThreadStartTrace, err error) {
+	tmp, err := NewWin32_ThreadTraceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ThreadStartTrace{
+		Win32_ThreadTrace: tmp,
+	}
+	return
+}
+
+func NewWin32_ThreadStartTraceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ThreadStartTrace, err error) {
+	tmp, err := NewWin32_ThreadTraceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ThreadStartTrace{
+		Win32_ThreadTrace: tmp,
+	}
+	return
 }
 
 // SetStackBase sets the value of StackBase for the instance

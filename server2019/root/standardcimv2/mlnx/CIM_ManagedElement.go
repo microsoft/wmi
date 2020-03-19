@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ManagedElement struct
 type CIM_ManagedElement struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Caption string
@@ -27,6 +29,35 @@ type CIM_ManagedElement struct {
 
 	//
 	InstanceID string
+}
+
+func NewCIM_ManagedElementEx1(instance *cim.WmiInstance) (newInstance *CIM_ManagedElement, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ManagedElement{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ManagedElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ManagedElement, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ManagedElement{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCaption sets the value of Caption for the instance

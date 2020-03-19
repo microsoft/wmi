@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_IEESCSecurityZoneSettings struct
 type RSOP_IEESCSecurityZoneSettings struct {
-	RSOP_IESecurityZoneSettings
+	*RSOP_IESecurityZoneSettings
 
 	//
 	EscEnabled bool
+}
+
+func NewRSOP_IEESCSecurityZoneSettingsEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEESCSecurityZoneSettings, err error) {
+	tmp, err := NewRSOP_IESecurityZoneSettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEESCSecurityZoneSettings{
+		RSOP_IESecurityZoneSettings: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEESCSecurityZoneSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEESCSecurityZoneSettings, err error) {
+	tmp, err := NewRSOP_IESecurityZoneSettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEESCSecurityZoneSettings{
+		RSOP_IESecurityZoneSettings: tmp,
+	}
+	return
 }
 
 // SetEscEnabled sets the value of EscEnabled for the instance

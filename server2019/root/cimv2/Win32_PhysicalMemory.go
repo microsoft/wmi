@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PhysicalMemory struct
 type Win32_PhysicalMemory struct {
-	CIM_PhysicalMemory
+	*CIM_PhysicalMemory
 
 	//
 	Attributes uint32
@@ -38,6 +43,35 @@ type Win32_PhysicalMemory struct {
 
 	//
 	TypeDetail uint16
+}
+
+func NewWin32_PhysicalMemoryEx1(instance *cim.WmiInstance) (newInstance *Win32_PhysicalMemory, err error) {
+	tmp, err := NewCIM_PhysicalMemoryEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PhysicalMemory{
+		CIM_PhysicalMemory: tmp,
+	}
+	return
+}
+
+func NewWin32_PhysicalMemoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PhysicalMemory, err error) {
+	tmp, err := NewCIM_PhysicalMemoryEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PhysicalMemory{
+		CIM_PhysicalMemory: tmp,
+	}
+	return
 }
 
 // SetAttributes sets the value of Attributes for the instance

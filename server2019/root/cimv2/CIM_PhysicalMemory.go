@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PhysicalMemory struct
 type CIM_PhysicalMemory struct {
-	CIM_Chip
+	*CIM_Chip
 
 	//
 	BankLabel string
@@ -35,6 +40,35 @@ type CIM_PhysicalMemory struct {
 
 	//
 	TotalWidth uint16
+}
+
+func NewCIM_PhysicalMemoryEx1(instance *cim.WmiInstance) (newInstance *CIM_PhysicalMemory, err error) {
+	tmp, err := NewCIM_ChipEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalMemory{
+		CIM_Chip: tmp,
+	}
+	return
+}
+
+func NewCIM_PhysicalMemoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PhysicalMemory, err error) {
+	tmp, err := NewCIM_ChipEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalMemory{
+		CIM_Chip: tmp,
+	}
+	return
 }
 
 // SetBankLabel sets the value of BankLabel for the instance

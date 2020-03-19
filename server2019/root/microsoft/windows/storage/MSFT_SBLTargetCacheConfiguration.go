@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SBLTargetCacheConfiguration struct
 type MSFT_SBLTargetCacheConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	CacheBehavior uint64
@@ -63,6 +65,35 @@ type MSFT_SBLTargetCacheConfiguration struct {
 
 	//
 	SpacesDirectEnabled bool
+}
+
+func NewMSFT_SBLTargetCacheConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_SBLTargetCacheConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SBLTargetCacheConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SBLTargetCacheConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SBLTargetCacheConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SBLTargetCacheConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCacheBehavior sets the value of CacheBehavior for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VirtualSystemMigrationCapabilities struct
 type CIM_VirtualSystemMigrationCapabilities struct {
-	CIM_Capabilities
+	*CIM_Capabilities
 
 	// Enumeration of method identifiers whose implementation may be asynchronous; that is, the operation may not complete immediately and instead the method may return a job.
 	AsynchronousMethodsSupported []VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported
@@ -24,6 +29,35 @@ type CIM_VirtualSystemMigrationCapabilities struct {
 
 	// Enumeration of method identifiers whose implementation may be synchronous; that is, the operation may complete immediately and therefore the method may not return a job.
 	SynchronousMethodsSupported []VirtualSystemMigrationCapabilities_SynchronousMethodsSupported
+}
+
+func NewCIM_VirtualSystemMigrationCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemMigrationCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
+}
+
+func NewCIM_VirtualSystemMigrationCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VirtualSystemMigrationCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemMigrationCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
 }
 
 // SetAsynchronousMethodsSupported sets the value of AsynchronousMethodsSupported for the instance

@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_DtcLogTask struct
 type MSFT_DtcLogTask struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewMSFT_DtcLogTaskEx1(instance *cim.WmiInstance) (newInstance *MSFT_DtcLogTask, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DtcLogTask{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_DtcLogTaskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DtcLogTask, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DtcLogTask{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

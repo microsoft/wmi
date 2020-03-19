@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_LogicalDevice struct
 type CIM_LogicalDevice struct {
-	CIM_EnabledLogicalElement
+	*CIM_EnabledLogicalElement
 
 	// Additional availability and status of the Device, beyond that specified in the Availability property. The Availability property denotes the primary status and availability of the Device. In some cases, this will not be sufficient to denote the complete status of the Device. In those cases, the AdditionalAvailability property can be used to provide further information. For example, a Device's primary Availability may be "Off line" (value=8), but it may also be in a low power state (AdditonalAvailability value=14), or the Device could be running Diagnostics (AdditionalAvailability value=5, "In Test").
 	AdditionalAvailability []LogicalDevice_AdditionalAvailability
@@ -64,6 +69,35 @@ type CIM_LogicalDevice struct {
 
 	// The total number of hours that this Device has been powered.
 	TotalPowerOnHours uint64
+}
+
+func NewCIM_LogicalDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_LogicalDevice, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogicalDevice{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_LogicalDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_LogicalDevice, err error) {
+	tmp, err := NewCIM_EnabledLogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogicalDevice{
+		CIM_EnabledLogicalElement: tmp,
+	}
+	return
 }
 
 // SetAdditionalAvailability sets the value of AdditionalAvailability for the instance

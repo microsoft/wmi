@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_RestrictedGroup struct
 type RSOP_RestrictedGroup struct {
-	RSOP_SecuritySettings
+	*RSOP_SecuritySettings
 
 	//
 	GroupName string
 
 	//
 	Members []string
+}
+
+func NewRSOP_RestrictedGroupEx1(instance *cim.WmiInstance) (newInstance *RSOP_RestrictedGroup, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RestrictedGroup{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
+}
+
+func NewRSOP_RestrictedGroupEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_RestrictedGroup, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RestrictedGroup{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
 }
 
 // SetGroupName sets the value of GroupName for the instance

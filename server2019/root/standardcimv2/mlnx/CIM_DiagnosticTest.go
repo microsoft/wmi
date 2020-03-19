@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DiagnosticTest struct
 type CIM_DiagnosticTest struct {
-	CIM_DiagnosticService
+	*CIM_DiagnosticService
 
 	//
 	Characteristics []DiagnosticTest_Characteristics
@@ -32,6 +37,35 @@ type CIM_DiagnosticTest struct {
 
 	//
 	TestTypes []DiagnosticTest_TestTypes
+}
+
+func NewCIM_DiagnosticTestEx1(instance *cim.WmiInstance) (newInstance *CIM_DiagnosticTest, err error) {
+	tmp, err := NewCIM_DiagnosticServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticTest{
+		CIM_DiagnosticService: tmp,
+	}
+	return
+}
+
+func NewCIM_DiagnosticTestEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DiagnosticTest, err error) {
+	tmp, err := NewCIM_DiagnosticServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticTest{
+		CIM_DiagnosticService: tmp,
+	}
+	return
 }
 
 // SetCharacteristics sets the value of Characteristics for the instance

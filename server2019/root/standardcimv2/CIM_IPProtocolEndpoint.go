@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_IPProtocolEndpoint struct
 type CIM_IPProtocolEndpoint struct {
-	CIM_ProtocolEndpoint
+	*CIM_ProtocolEndpoint
 
 	//
 	Address string
@@ -35,6 +40,35 @@ type CIM_IPProtocolEndpoint struct {
 
 	//
 	SubnetMask string
+}
+
+func NewCIM_IPProtocolEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_IPProtocolEndpoint, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IPProtocolEndpoint{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
+}
+
+func NewCIM_IPProtocolEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_IPProtocolEndpoint, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IPProtocolEndpoint{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
 }
 
 // SetAddress sets the value of Address for the instance

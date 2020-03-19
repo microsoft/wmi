@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_DriverSettingData struct
 type MLNX_DriverSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	Name string
@@ -20,6 +25,35 @@ type MLNX_DriverSettingData struct {
 
 	//
 	SystemName string
+}
+
+func NewMLNX_DriverSettingDataEx1(instance *cim.WmiInstance) (newInstance *MLNX_DriverSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMLNX_DriverSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_DriverSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetName sets the value of Name for the instance

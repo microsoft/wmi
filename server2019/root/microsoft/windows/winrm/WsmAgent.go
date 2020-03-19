@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.winrm
 //////////////////////////////////////////////
 package winrm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // WsmAgent struct
 type WsmAgent struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewWsmAgentEx1(instance *cim.WmiInstance) (newInstance *WsmAgent, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &WsmAgent{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWsmAgentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *WsmAgent, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &WsmAgent{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

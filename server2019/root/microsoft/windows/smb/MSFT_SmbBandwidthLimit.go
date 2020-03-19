@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbBandwidthLimit struct
 type MSFT_SmbBandwidthLimit struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	BytesPerSecond uint64
 
 	//
 	Category SmbBandwidthLimit_Category
+}
+
+func NewMSFT_SmbBandwidthLimitEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbBandwidthLimit, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbBandwidthLimit{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbBandwidthLimitEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbBandwidthLimit, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbBandwidthLimit{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetBytesPerSecond sets the value of BytesPerSecond for the instance

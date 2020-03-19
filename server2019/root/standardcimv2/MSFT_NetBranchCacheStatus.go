@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetBranchCacheStatus struct
 type MSFT_NetBranchCacheStatus struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	BranchCacheIsEnabled bool
@@ -38,6 +43,35 @@ type MSFT_NetBranchCacheStatus struct {
 
 	//
 	NetworkConfiguration MSFT_NetBranchCacheNetworkSettingData
+}
+
+func NewMSFT_NetBranchCacheStatusEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetBranchCacheStatus, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetBranchCacheStatus{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetBranchCacheStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetBranchCacheStatus, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetBranchCacheStatus{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetBranchCacheIsEnabled sets the value of BranchCacheIsEnabled for the instance

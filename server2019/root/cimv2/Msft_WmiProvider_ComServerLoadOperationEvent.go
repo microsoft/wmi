@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msft_WmiProvider_ComServerLoadOperationEvent struct
 type Msft_WmiProvider_ComServerLoadOperationEvent struct {
-	Msft_WmiProvider_OperationEvent
+	*Msft_WmiProvider_OperationEvent
 
 	//
 	Clsid string
@@ -29,6 +34,35 @@ type Msft_WmiProvider_ComServerLoadOperationEvent struct {
 
 	//
 	ServerName string
+}
+
+func NewMsft_WmiProvider_ComServerLoadOperationEventEx1(instance *cim.WmiInstance) (newInstance *Msft_WmiProvider_ComServerLoadOperationEvent, err error) {
+	tmp, err := NewMsft_WmiProvider_OperationEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_ComServerLoadOperationEvent{
+		Msft_WmiProvider_OperationEvent: tmp,
+	}
+	return
+}
+
+func NewMsft_WmiProvider_ComServerLoadOperationEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_WmiProvider_ComServerLoadOperationEvent, err error) {
+	tmp, err := NewMsft_WmiProvider_OperationEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_ComServerLoadOperationEvent{
+		Msft_WmiProvider_OperationEvent: tmp,
+	}
+	return
 }
 
 // SetClsid sets the value of Clsid for the instance

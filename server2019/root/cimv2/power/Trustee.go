@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __Trustee struct
 type __Trustee struct {
-	__SecurityRelatedClass
+	*__SecurityRelatedClass
 
 	//
 	Domain string
@@ -29,6 +34,35 @@ type __Trustee struct {
 
 	//
 	TIME_CREATED uint64
+}
+
+func New__TrusteeEx1(instance *cim.WmiInstance) (newInstance *__Trustee, err error) {
+	tmp, err := New__SecurityRelatedClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Trustee{
+		__SecurityRelatedClass: tmp,
+	}
+	return
+}
+
+func New__TrusteeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__Trustee, err error) {
+	tmp, err := New__SecurityRelatedClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Trustee{
+		__SecurityRelatedClass: tmp,
+	}
+	return
 }
 
 // SetDomain sets the value of Domain for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_JobObjectStatus struct
 type Win32_JobObjectStatus struct {
-	__ExtendedStatus
+	*__ExtendedStatus
 
 	//
 	AdditionalDescription string
 
 	//
 	Win32ErrorCode uint32
+}
+
+func NewWin32_JobObjectStatusEx1(instance *cim.WmiInstance) (newInstance *Win32_JobObjectStatus, err error) {
+	tmp, err := New__ExtendedStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_JobObjectStatus{
+		__ExtendedStatus: tmp,
+	}
+	return
+}
+
+func NewWin32_JobObjectStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_JobObjectStatus, err error) {
+	tmp, err := New__ExtendedStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_JobObjectStatus{
+		__ExtendedStatus: tmp,
+	}
+	return
 }
 
 // SetAdditionalDescription sets the value of AdditionalDescription for the instance

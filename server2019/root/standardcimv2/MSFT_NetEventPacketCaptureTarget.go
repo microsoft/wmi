@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetEventPacketCaptureTarget struct
 type MSFT_NetEventPacketCaptureTarget struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	CaptureStatus uint32
@@ -20,6 +25,35 @@ type MSFT_NetEventPacketCaptureTarget struct {
 
 	//
 	ProviderName string
+}
+
+func NewMSFT_NetEventPacketCaptureTargetEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetEventPacketCaptureTarget, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventPacketCaptureTarget{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetEventPacketCaptureTargetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetEventPacketCaptureTarget, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventPacketCaptureTarget{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCaptureStatus sets the value of CaptureStatus for the instance

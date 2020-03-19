@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_PhysicalDisk struct
 type MSFT_PhysicalDisk struct {
-	MSFT_StorageFaultDomain
+	*MSFT_StorageFaultDomain
 
 	// A string representation of the Adapter's serial number.
 	AdapterSerialNumber string
@@ -87,6 +92,35 @@ type MSFT_PhysicalDisk struct {
 
 	// This field indicates the size in bytes of the user data footprint from virtual disks on this physical disk.
 	VirtualDiskFootprint uint64
+}
+
+func NewMSFT_PhysicalDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_PhysicalDisk, err error) {
+	tmp, err := NewMSFT_StorageFaultDomainEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PhysicalDisk{
+		MSFT_StorageFaultDomain: tmp,
+	}
+	return
+}
+
+func NewMSFT_PhysicalDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PhysicalDisk, err error) {
+	tmp, err := NewMSFT_StorageFaultDomainEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PhysicalDisk{
+		MSFT_StorageFaultDomain: tmp,
+	}
+	return
 }
 
 // SetAdapterSerialNumber sets the value of AdapterSerialNumber for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_NetworkPort struct
 type CIM_NetworkPort struct {
-	CIM_LogicalPort
+	*CIM_LogicalPort
 
 	//
 	ActiveMaximumTransmissionUnit uint64
@@ -41,6 +46,35 @@ type CIM_NetworkPort struct {
 
 	//
 	SupportedMaximumTransmissionUnit uint64
+}
+
+func NewCIM_NetworkPortEx1(instance *cim.WmiInstance) (newInstance *CIM_NetworkPort, err error) {
+	tmp, err := NewCIM_LogicalPortEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NetworkPort{
+		CIM_LogicalPort: tmp,
+	}
+	return
+}
+
+func NewCIM_NetworkPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_NetworkPort, err error) {
+	tmp, err := NewCIM_LogicalPortEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NetworkPort{
+		CIM_LogicalPort: tmp,
+	}
+	return
 }
 
 // SetActiveMaximumTransmissionUnit sets the value of ActiveMaximumTransmissionUnit for the instance

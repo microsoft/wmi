@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetSARule struct
 type MSFT_NetSARule struct {
-	CIM_SARule
+	*CIM_SARule
 
 	//
 	DisplayGroup string
@@ -56,6 +61,35 @@ type MSFT_NetSARule struct {
 
 	//
 	StatusCode uint32
+}
+
+func NewMSFT_NetSARuleEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetSARule, err error) {
+	tmp, err := NewCIM_SARuleEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSARule{
+		CIM_SARule: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetSARuleEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetSARule, err error) {
+	tmp, err := NewCIM_SARuleEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSARule{
+		CIM_SARule: tmp,
+	}
+	return
 }
 
 // SetDisplayGroup sets the value of DisplayGroup for the instance

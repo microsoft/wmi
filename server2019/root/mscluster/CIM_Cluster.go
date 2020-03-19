@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Cluster struct
 type CIM_Cluster struct {
-	CIM_ComputerSystem
+	*CIM_ComputerSystem
 
 	//
 	MaxNumberOfNodes uint32
+}
+
+func NewCIM_ClusterEx1(instance *cim.WmiInstance) (newInstance *CIM_Cluster, err error) {
+	tmp, err := NewCIM_ComputerSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Cluster{
+		CIM_ComputerSystem: tmp,
+	}
+	return
+}
+
+func NewCIM_ClusterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Cluster, err error) {
+	tmp, err := NewCIM_ComputerSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Cluster{
+		CIM_ComputerSystem: tmp,
+	}
+	return
 }
 
 // SetMaxNumberOfNodes sets the value of MaxNumberOfNodes for the instance

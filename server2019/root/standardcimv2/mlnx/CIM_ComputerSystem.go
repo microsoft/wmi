@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ComputerSystem struct
 type CIM_ComputerSystem struct {
-	CIM_System
+	*CIM_System
 
 	//
 	Dedicated []ComputerSystem_Dedicated
@@ -23,6 +28,35 @@ type CIM_ComputerSystem struct {
 
 	//
 	ResetCapability ComputerSystem_ResetCapability
+}
+
+func NewCIM_ComputerSystemEx1(instance *cim.WmiInstance) (newInstance *CIM_ComputerSystem, err error) {
+	tmp, err := NewCIM_SystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ComputerSystem{
+		CIM_System: tmp,
+	}
+	return
+}
+
+func NewCIM_ComputerSystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ComputerSystem, err error) {
+	tmp, err := NewCIM_SystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ComputerSystem{
+		CIM_System: tmp,
+	}
+	return
 }
 
 // SetDedicated sets the value of Dedicated for the instance

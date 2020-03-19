@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msft_MiCompareSuppression struct
 type Msft_MiCompareSuppression struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	SuppressionSignal []interface{}
 
 	//
 	Timestamp string
+}
+
+func NewMsft_MiCompareSuppressionEx1(instance *cim.WmiInstance) (newInstance *Msft_MiCompareSuppression, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiCompareSuppression{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsft_MiCompareSuppressionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_MiCompareSuppression, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiCompareSuppression{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetSuppressionSignal sets the value of SuppressionSignal for the instance

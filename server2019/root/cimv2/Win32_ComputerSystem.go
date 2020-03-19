@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ComputerSystem struct
 type Win32_ComputerSystem struct {
-	CIM_UnitaryComputerSystem
+	*CIM_UnitaryComputerSystem
 
 	//
 	AdminPasswordStatus uint16
@@ -155,6 +160,35 @@ type Win32_ComputerSystem struct {
 
 	//
 	Workgroup string
+}
+
+func NewWin32_ComputerSystemEx1(instance *cim.WmiInstance) (newInstance *Win32_ComputerSystem, err error) {
+	tmp, err := NewCIM_UnitaryComputerSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ComputerSystem{
+		CIM_UnitaryComputerSystem: tmp,
+	}
+	return
+}
+
+func NewWin32_ComputerSystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ComputerSystem, err error) {
+	tmp, err := NewCIM_UnitaryComputerSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ComputerSystem{
+		CIM_UnitaryComputerSystem: tmp,
+	}
+	return
 }
 
 // SetAdminPasswordStatus sets the value of AdminPasswordStatus for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetBaseIPProtocol struct
 type MSFT_NetBaseIPProtocol struct {
-	CIM_ProtocolEndpoint
+	*CIM_ProtocolEndpoint
 
 	//
 	AddressMaskReply uint8
@@ -56,6 +61,35 @@ type MSFT_NetBaseIPProtocol struct {
 
 	//
 	SourceRoutingBehavior uint32
+}
+
+func NewMSFT_NetBaseIPProtocolEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetBaseIPProtocol, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetBaseIPProtocol{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetBaseIPProtocolEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetBaseIPProtocol, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetBaseIPProtocol{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
 }
 
 // SetAddressMaskReply sets the value of AddressMaskReply for the instance

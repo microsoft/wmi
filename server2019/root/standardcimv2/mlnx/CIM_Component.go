@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_Component struct
 type CIM_Component struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	GroupComponent CIM_ManagedElement
 
 	//
 	PartComponent CIM_ManagedElement
+}
+
+func NewCIM_ComponentEx1(instance *cim.WmiInstance) (newInstance *CIM_Component, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Component{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ComponentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Component, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Component{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetGroupComponent sets the value of GroupComponent for the instance

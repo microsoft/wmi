@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_FailoverIndication struct
 type Msvm_FailoverIndication struct {
-	CIM_ProcessIndication
+	*CIM_ProcessIndication
 
 	//
 	FailoverType uint16
@@ -47,6 +52,35 @@ type Msvm_FailoverIndication struct {
 
 	//
 	PreviousHostingSystemFormat uint16
+}
+
+func NewMsvm_FailoverIndicationEx1(instance *cim.WmiInstance) (newInstance *Msvm_FailoverIndication, err error) {
+	tmp, err := NewCIM_ProcessIndicationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_FailoverIndication{
+		CIM_ProcessIndication: tmp,
+	}
+	return
+}
+
+func NewMsvm_FailoverIndicationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_FailoverIndication, err error) {
+	tmp, err := NewCIM_ProcessIndicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_FailoverIndication{
+		CIM_ProcessIndication: tmp,
+	}
+	return
 }
 
 // SetFailoverType sets the value of FailoverType for the instance

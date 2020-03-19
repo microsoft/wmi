@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Indication struct
 type CIM_Indication struct {
-	__ExtrinsicEvent
+	*__ExtrinsicEvent
 
 	// A list of IndicationIdentifiers whose notifications are correlated with (related to) this one.
 	CorrelatedIndications []string
@@ -58,6 +63,35 @@ type CIM_Indication struct {
 	///If a CIM service supports sequence identifiers for indications, this property shall be maintained by the CIM service for each registered listener destination, and its value shall uniquely identify the indication within the sequence context provided by SequenceContext. It shall start at 0 whenever the sequence context string changes. Otherwise, it shall be increased by 1 for every new indication to that listener destination, and it shall wrap to 0 when the value range is exceeded.
 	///When retrying the delivery of an indication, this property shall have the same value as in the original delivery.
 	SequenceNumber int64
+}
+
+func NewCIM_IndicationEx1(instance *cim.WmiInstance) (newInstance *CIM_Indication, err error) {
+	tmp, err := New__ExtrinsicEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Indication{
+		__ExtrinsicEvent: tmp,
+	}
+	return
+}
+
+func NewCIM_IndicationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Indication, err error) {
+	tmp, err := New__ExtrinsicEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Indication{
+		__ExtrinsicEvent: tmp,
+	}
+	return
 }
 
 // SetCorrelatedIndications sets the value of CorrelatedIndications for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_Perf struct
 type Win32_Perf struct {
-	CIM_StatisticalInformation
+	*CIM_StatisticalInformation
 
 	//
 	Frequency_Object uint64
@@ -29,6 +34,35 @@ type Win32_Perf struct {
 
 	//
 	Timestamp_Sys100NS uint64
+}
+
+func NewWin32_PerfEx1(instance *cim.WmiInstance) (newInstance *Win32_Perf, err error) {
+	tmp, err := NewCIM_StatisticalInformationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Perf{
+		CIM_StatisticalInformation: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_Perf, err error) {
+	tmp, err := NewCIM_StatisticalInformationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Perf{
+		CIM_StatisticalInformation: tmp,
+	}
+	return
 }
 
 // SetFrequency_Object sets the value of Frequency_Object for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_TaskMaintenanceSettings struct
 type MSFT_TaskMaintenanceSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Deadline string
@@ -24,6 +26,35 @@ type MSFT_TaskMaintenanceSettings struct {
 
 	//
 	Period string
+}
+
+func NewMSFT_TaskMaintenanceSettingsEx1(instance *cim.WmiInstance) (newInstance *MSFT_TaskMaintenanceSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskMaintenanceSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_TaskMaintenanceSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TaskMaintenanceSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskMaintenanceSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDeadline sets the value of Deadline for the instance

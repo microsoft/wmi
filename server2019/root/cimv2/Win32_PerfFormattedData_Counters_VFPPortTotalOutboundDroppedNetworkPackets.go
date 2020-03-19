@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets struct
 type Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets struct {
-	Win32_PerfFormattedData
+	*Win32_PerfFormattedData
 
 	//
 	TotalOutboundDroppedACLPackets uint64
@@ -80,6 +85,35 @@ type Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets 
 
 	//
 	TotalOutboundDroppedSimulationPackets uint64
+}
+
+func NewWin32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPacketsEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets, err error) {
+	tmp, err := NewWin32_PerfFormattedDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets{
+		Win32_PerfFormattedData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPacketsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets, err error) {
+	tmp, err := NewWin32_PerfFormattedDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfFormattedData_Counters_VFPPortTotalOutboundDroppedNetworkPackets{
+		Win32_PerfFormattedData: tmp,
+	}
+	return
 }
 
 // SetTotalOutboundDroppedACLPackets sets the value of TotalOutboundDroppedACLPackets for the instance

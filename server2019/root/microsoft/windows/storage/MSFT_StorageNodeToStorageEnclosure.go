@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageNodeToStorageEnclosure struct
 type MSFT_StorageNodeToStorageEnclosure struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	CurrentSensorOperationalStatus []uint16
@@ -51,6 +53,35 @@ type MSFT_StorageNodeToStorageEnclosure struct {
 
 	//
 	VoltageSensorOperationalStatus []uint16
+}
+
+func NewMSFT_StorageNodeToStorageEnclosureEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageNodeToStorageEnclosure, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageNodeToStorageEnclosure{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageNodeToStorageEnclosureEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageNodeToStorageEnclosure, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageNodeToStorageEnclosure{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCurrentSensorOperationalStatus sets the value of CurrentSensorOperationalStatus for the instance

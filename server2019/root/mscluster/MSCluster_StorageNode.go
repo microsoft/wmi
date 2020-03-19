@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSCluster_StorageNode struct
 type MSCluster_StorageNode struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ConnectionString string
@@ -48,6 +50,35 @@ type MSCluster_StorageNode struct {
 
 	//
 	StorageNodeOperationalStatus uint32
+}
+
+func NewMSCluster_StorageNodeEx1(instance *cim.WmiInstance) (newInstance *MSCluster_StorageNode, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_StorageNode{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSCluster_StorageNodeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_StorageNode, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_StorageNode{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnectionString sets the value of ConnectionString for the instance

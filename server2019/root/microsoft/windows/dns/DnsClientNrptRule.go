@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // DnsClientNrptRule struct
 type DnsClientNrptRule struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Comment string
@@ -69,6 +71,35 @@ type DnsClientNrptRule struct {
 
 	//
 	Version uint32
+}
+
+func NewDnsClientNrptRuleEx1(instance *cim.WmiInstance) (newInstance *DnsClientNrptRule, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &DnsClientNrptRule{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewDnsClientNrptRuleEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *DnsClientNrptRule, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &DnsClientNrptRule{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetComment sets the value of Comment for the instance

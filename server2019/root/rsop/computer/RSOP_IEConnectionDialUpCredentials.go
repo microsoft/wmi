@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IEConnectionDialUpCredentials struct
 type RSOP_IEConnectionDialUpCredentials struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	callbackID uint32
@@ -57,6 +59,35 @@ type RSOP_IEConnectionDialUpCredentials struct {
 
 	//
 	windowsVersion uint32
+}
+
+func NewRSOP_IEConnectionDialUpCredentialsEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEConnectionDialUpCredentials, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionDialUpCredentials{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEConnectionDialUpCredentialsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEConnectionDialUpCredentials, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionDialUpCredentials{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetcallbackID sets the value of callbackID for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_UserStateConfigurationControls struct
 type Win32_UserStateConfigurationControls struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// Controls whether the computer's folder redirection feature settings are configured by using UST Manageability WMI classes or by using Group Policy.
 	FolderRedirection UserStateConfigurationControls_FolderRedirection
@@ -24,6 +26,35 @@ type Win32_UserStateConfigurationControls struct {
 
 	// Controls whether the computer's roaming user profile feature settings are configured by using UST Manageability WMI classes or by using Group Policy.
 	RoamingUserProfile UserStateConfigurationControls_RoamingUserProfile
+}
+
+func NewWin32_UserStateConfigurationControlsEx1(instance *cim.WmiInstance) (newInstance *Win32_UserStateConfigurationControls, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_UserStateConfigurationControls{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_UserStateConfigurationControlsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_UserStateConfigurationControls, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_UserStateConfigurationControls{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetFolderRedirection sets the value of FolderRedirection for the instance

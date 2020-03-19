@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_MemoryMappedIO struct
 type CIM_MemoryMappedIO struct {
-	CIM_SystemResource
+	*CIM_SystemResource
 
 	//
 	CreationClassName string
@@ -26,6 +31,35 @@ type CIM_MemoryMappedIO struct {
 
 	//
 	StartingAddress uint64
+}
+
+func NewCIM_MemoryMappedIOEx1(instance *cim.WmiInstance) (newInstance *CIM_MemoryMappedIO, err error) {
+	tmp, err := NewCIM_SystemResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MemoryMappedIO{
+		CIM_SystemResource: tmp,
+	}
+	return
+}
+
+func NewCIM_MemoryMappedIOEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_MemoryMappedIO, err error) {
+	tmp, err := NewCIM_SystemResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MemoryMappedIO{
+		CIM_SystemResource: tmp,
+	}
+	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance

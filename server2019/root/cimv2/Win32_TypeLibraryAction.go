@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TypeLibraryAction struct
 type Win32_TypeLibraryAction struct {
-	CIM_Action
+	*CIM_Action
 
 	//
 	Cost uint32
@@ -20,6 +25,35 @@ type Win32_TypeLibraryAction struct {
 
 	//
 	LibID string
+}
+
+func NewWin32_TypeLibraryActionEx1(instance *cim.WmiInstance) (newInstance *Win32_TypeLibraryAction, err error) {
+	tmp, err := NewCIM_ActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TypeLibraryAction{
+		CIM_Action: tmp,
+	}
+	return
+}
+
+func NewWin32_TypeLibraryActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TypeLibraryAction, err error) {
+	tmp, err := NewCIM_ActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TypeLibraryAction{
+		CIM_Action: tmp,
+	}
+	return
 }
 
 // SetCost sets the value of Cost for the instance

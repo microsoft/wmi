@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ControlledBy struct
 type CIM_ControlledBy struct {
-	CIM_DeviceConnection
+	*CIM_DeviceConnection
 
 	//
 	AccessMode ControlledBy_AccessMode
@@ -32,6 +37,35 @@ type CIM_ControlledBy struct {
 
 	//
 	TimeOfDeviceReset string
+}
+
+func NewCIM_ControlledByEx1(instance *cim.WmiInstance) (newInstance *CIM_ControlledBy, err error) {
+	tmp, err := NewCIM_DeviceConnectionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ControlledBy{
+		CIM_DeviceConnection: tmp,
+	}
+	return
+}
+
+func NewCIM_ControlledByEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ControlledBy, err error) {
+	tmp, err := NewCIM_DeviceConnectionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ControlledBy{
+		CIM_DeviceConnection: tmp,
+	}
+	return
 }
 
 // SetAccessMode sets the value of AccessMode for the instance

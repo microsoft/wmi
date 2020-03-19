@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CliProperty struct
 type MSFT_CliProperty struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Derivation string
@@ -27,6 +29,35 @@ type MSFT_CliProperty struct {
 
 	//
 	Qualifiers []MSFT_CliQualifier
+}
+
+func NewMSFT_CliPropertyEx1(instance *cim.WmiInstance) (newInstance *MSFT_CliProperty, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliProperty{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CliPropertyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CliProperty, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliProperty{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDerivation sets the value of Derivation for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // HNet_PortMappingProtocol struct
 type HNet_PortMappingProtocol struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	BuiltIn bool
@@ -30,6 +32,35 @@ type HNet_PortMappingProtocol struct {
 
 	//
 	Port uint16
+}
+
+func NewHNet_PortMappingProtocolEx1(instance *cim.WmiInstance) (newInstance *HNet_PortMappingProtocol, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_PortMappingProtocol{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewHNet_PortMappingProtocolEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *HNet_PortMappingProtocol, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_PortMappingProtocol{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetBuiltIn sets the value of BuiltIn for the instance

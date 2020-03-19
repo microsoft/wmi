@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_FolderRedirection struct
 type Win32_FolderRedirection struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// Move the contents of local <folder> to the new location. This will copy the redirected folder data into the local UNC location. Then this content will be synced with the server share content. Effectively, moving the content from the local location to the share
 	ContentsMoved bool
@@ -39,6 +41,35 @@ type Win32_FolderRedirection struct {
 
 	// The type of folder redirection to be performed.
 	RedirectionType FolderRedirection_RedirectionType
+}
+
+func NewWin32_FolderRedirectionEx1(instance *cim.WmiInstance) (newInstance *Win32_FolderRedirection, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirection{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_FolderRedirectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_FolderRedirection, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirection{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetContentsMoved sets the value of ContentsMoved for the instance
