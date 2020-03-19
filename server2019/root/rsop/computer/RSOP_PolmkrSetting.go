@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_PolmkrSetting struct
 type RSOP_PolmkrSetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	//
 	polmkrBaseCseGuid string
@@ -32,6 +37,35 @@ type RSOP_PolmkrSetting struct {
 
 	//
 	polmkrBaseKeyValues []string
+}
+
+func NewRSOP_PolmkrSettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_PolmkrSetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PolmkrSetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_PolmkrSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_PolmkrSetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PolmkrSetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // SetpolmkrBaseCseGuid sets the value of polmkrBaseCseGuid for the instance

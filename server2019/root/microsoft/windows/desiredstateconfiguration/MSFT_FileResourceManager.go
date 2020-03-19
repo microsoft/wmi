@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_FileResourceManager struct
 type MSFT_FileResourceManager struct {
-	OMI_ResourceModuleManager
+	*OMI_ResourceModuleManager
 
 	//
 	Credential MSFT_Credential
 
 	//
 	SourcePath string
+}
+
+func NewMSFT_FileResourceManagerEx1(instance *cim.WmiInstance) (newInstance *MSFT_FileResourceManager, err error) {
+	tmp, err := NewOMI_ResourceModuleManagerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_FileResourceManager{
+		OMI_ResourceModuleManager: tmp,
+	}
+	return
+}
+
+func NewMSFT_FileResourceManagerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_FileResourceManager, err error) {
+	tmp, err := NewOMI_ResourceModuleManagerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_FileResourceManager{
+		OMI_ResourceModuleManager: tmp,
+	}
+	return
 }
 
 // SetCredential sets the value of Credential for the instance

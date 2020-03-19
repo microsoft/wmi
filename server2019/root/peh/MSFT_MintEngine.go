@@ -3,14 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MintEngine struct
 type MSFT_MintEngine struct {
-	MSFT_Engine
+	*MSFT_Engine
+}
+
+func NewMSFT_MintEngineEx1(instance *cim.WmiInstance) (newInstance *MSFT_MintEngine, err error) {
+	tmp, err := NewMSFT_EngineEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MintEngine{
+		MSFT_Engine: tmp,
+	}
+	return
+}
+
+func NewMSFT_MintEngineEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MintEngine, err error) {
+	tmp, err := NewMSFT_EngineEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MintEngine{
+		MSFT_Engine: tmp,
+	}
+	return
 }
 
 //

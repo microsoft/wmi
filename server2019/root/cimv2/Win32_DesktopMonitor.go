@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_DesktopMonitor struct
 type Win32_DesktopMonitor struct {
-	CIM_DesktopMonitor
+	*CIM_DesktopMonitor
 
 	//
 	MonitorManufacturer string
@@ -23,6 +28,35 @@ type Win32_DesktopMonitor struct {
 
 	//
 	PixelsPerYLogicalInch uint32
+}
+
+func NewWin32_DesktopMonitorEx1(instance *cim.WmiInstance) (newInstance *Win32_DesktopMonitor, err error) {
+	tmp, err := NewCIM_DesktopMonitorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DesktopMonitor{
+		CIM_DesktopMonitor: tmp,
+	}
+	return
+}
+
+func NewWin32_DesktopMonitorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_DesktopMonitor, err error) {
+	tmp, err := NewCIM_DesktopMonitorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DesktopMonitor{
+		CIM_DesktopMonitor: tmp,
+	}
+	return
 }
 
 // SetMonitorManufacturer sets the value of MonitorManufacturer for the instance

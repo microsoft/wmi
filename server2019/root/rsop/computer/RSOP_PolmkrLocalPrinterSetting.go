@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_PolmkrLocalPrinterSetting struct
 type RSOP_PolmkrLocalPrinterSetting struct {
-	RSOP_PolmkrPrinterSetting
+	*RSOP_PolmkrPrinterSetting
+}
+
+func NewRSOP_PolmkrLocalPrinterSettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_PolmkrLocalPrinterSetting, err error) {
+	tmp, err := NewRSOP_PolmkrPrinterSettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PolmkrLocalPrinterSetting{
+		RSOP_PolmkrPrinterSetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_PolmkrLocalPrinterSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_PolmkrLocalPrinterSetting, err error) {
+	tmp, err := NewRSOP_PolmkrPrinterSettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PolmkrLocalPrinterSetting{
+		RSOP_PolmkrPrinterSetting: tmp,
+	}
+	return
 }

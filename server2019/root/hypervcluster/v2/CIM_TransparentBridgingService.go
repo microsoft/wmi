@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_TransparentBridgingService struct
 type CIM_TransparentBridgingService struct {
-	CIM_ForwardingService
+	*CIM_ForwardingService
 
 	// The timeout period in seconds for aging out dynamically learned forwarding information. 802.1D-1990 recommends a default of 300 seconds.
 	AgingTime uint32
 
 	// Filtering Database Identifier used by VLAN-aware switches that have more than one filtering database.
 	FID uint32
+}
+
+func NewCIM_TransparentBridgingServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_TransparentBridgingService, err error) {
+	tmp, err := NewCIM_ForwardingServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_TransparentBridgingService{
+		CIM_ForwardingService: tmp,
+	}
+	return
+}
+
+func NewCIM_TransparentBridgingServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_TransparentBridgingService, err error) {
+	tmp, err := NewCIM_ForwardingServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_TransparentBridgingService{
+		CIM_ForwardingService: tmp,
+	}
+	return
 }
 
 // SetAgingTime sets the value of AgingTime for the instance

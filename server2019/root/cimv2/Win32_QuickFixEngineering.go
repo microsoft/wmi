@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_QuickFixEngineering struct
 type Win32_QuickFixEngineering struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	CSName string
@@ -29,6 +34,35 @@ type Win32_QuickFixEngineering struct {
 
 	//
 	ServicePackInEffect string
+}
+
+func NewWin32_QuickFixEngineeringEx1(instance *cim.WmiInstance) (newInstance *Win32_QuickFixEngineering, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_QuickFixEngineering{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_QuickFixEngineeringEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_QuickFixEngineering, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_QuickFixEngineering{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCSName sets the value of CSName for the instance

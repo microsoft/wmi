@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbMapping struct
 type MSFT_SmbMapping struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	LocalPath string
@@ -33,6 +35,35 @@ type MSFT_SmbMapping struct {
 
 	//
 	UseWriteThrough bool
+}
+
+func NewMSFT_SmbMappingEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbMapping, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbMapping{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbMappingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbMapping, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbMapping{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetLocalPath sets the value of LocalPath for the instance

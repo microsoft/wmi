@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_PCIDeviceSettingData struct
 type MLNX_PCIDeviceSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	Name string
@@ -20,6 +25,35 @@ type MLNX_PCIDeviceSettingData struct {
 
 	//
 	SystemName string
+}
+
+func NewMLNX_PCIDeviceSettingDataEx1(instance *cim.WmiInstance) (newInstance *MLNX_PCIDeviceSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDeviceSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMLNX_PCIDeviceSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_PCIDeviceSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDeviceSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetName sets the value of Name for the instance

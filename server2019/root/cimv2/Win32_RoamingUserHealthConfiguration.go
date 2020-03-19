@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_RoamingUserHealthConfiguration struct
 type Win32_RoamingUserHealthConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// Configure how the Win32_UserProfile::HealthStatus property should reflect the use of temporary profiles.
 	HealthStatusForTempProfiles RoamingUserHealthConfiguration_HealthStatusForTempProfiles
@@ -30,6 +32,35 @@ type Win32_RoamingUserHealthConfiguration struct {
 
 	// This is the time threshold, in hours, after which the profile health is reported as Unhealthy when the profile has not been downloaded yet
 	LastProfileUploadIntervalUnhealthyInHours uint16
+}
+
+func NewWin32_RoamingUserHealthConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_RoamingUserHealthConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingUserHealthConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_RoamingUserHealthConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_RoamingUserHealthConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingUserHealthConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetHealthStatusForTempProfiles sets the value of HealthStatusForTempProfiles for the instance

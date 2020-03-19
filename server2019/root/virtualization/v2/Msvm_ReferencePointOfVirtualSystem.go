@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_ReferencePointOfVirtualSystem struct
 type Msvm_ReferencePointOfVirtualSystem struct {
-	CIM_Dependency
+	*CIM_Dependency
+}
+
+func NewMsvm_ReferencePointOfVirtualSystemEx1(instance *cim.WmiInstance) (newInstance *Msvm_ReferencePointOfVirtualSystem, err error) {
+	tmp, err := NewCIM_DependencyEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReferencePointOfVirtualSystem{
+		CIM_Dependency: tmp,
+	}
+	return
+}
+
+func NewMsvm_ReferencePointOfVirtualSystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ReferencePointOfVirtualSystem, err error) {
+	tmp, err := NewCIM_DependencyEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReferencePointOfVirtualSystem{
+		CIM_Dependency: tmp,
+	}
+	return
 }

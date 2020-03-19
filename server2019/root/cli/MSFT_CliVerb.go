@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CliVerb struct
 type MSFT_CliVerb struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Derivation string
@@ -36,6 +38,35 @@ type MSFT_CliVerb struct {
 
 	//
 	VerbType uint32
+}
+
+func NewMSFT_CliVerbEx1(instance *cim.WmiInstance) (newInstance *MSFT_CliVerb, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliVerb{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CliVerbEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CliVerb, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliVerb{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDerivation sets the value of Derivation for the instance

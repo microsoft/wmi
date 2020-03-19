@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DeliveryOptimization
 //////////////////////////////////////////////
 package deliveryoptimization
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DOUsage struct
 type MSFT_DOUsage struct {
-	MSFT_DOBaseStatus
+	*MSFT_DOBaseStatus
 
 	//
 	LinkBps uint32
@@ -23,6 +28,35 @@ type MSFT_DOUsage struct {
 
 	//
 	MonthlyLanBytes uint64
+}
+
+func NewMSFT_DOUsageEx1(instance *cim.WmiInstance) (newInstance *MSFT_DOUsage, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DOUsage{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
+}
+
+func NewMSFT_DOUsageEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DOUsage, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DOUsage{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
 }
 
 // SetLinkBps sets the value of LinkBps for the instance

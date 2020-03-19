@@ -3,14 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_FirmwareInstallationService struct
 type MLNX_FirmwareInstallationService struct {
-	CIM_SoftwareInstallationService
+	*CIM_SoftwareInstallationService
+}
+
+func NewMLNX_FirmwareInstallationServiceEx1(instance *cim.WmiInstance) (newInstance *MLNX_FirmwareInstallationService, err error) {
+	tmp, err := NewCIM_SoftwareInstallationServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_FirmwareInstallationService{
+		CIM_SoftwareInstallationService: tmp,
+	}
+	return
+}
+
+func NewMLNX_FirmwareInstallationServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_FirmwareInstallationService, err error) {
+	tmp, err := NewCIM_SoftwareInstallationServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_FirmwareInstallationService{
+		CIM_SoftwareInstallationService: tmp,
+	}
+	return
 }
 
 //

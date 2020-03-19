@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NCProvEvent struct
 type MSFT_NCProvEvent struct {
-	__ExtrinsicEvent
+	*__ExtrinsicEvent
 
 	//
 	Namespace string
@@ -20,6 +25,35 @@ type MSFT_NCProvEvent struct {
 
 	//
 	Result uint32
+}
+
+func NewMSFT_NCProvEventEx1(instance *cim.WmiInstance) (newInstance *MSFT_NCProvEvent, err error) {
+	tmp, err := New__ExtrinsicEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NCProvEvent{
+		__ExtrinsicEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NCProvEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NCProvEvent, err error) {
+	tmp, err := New__ExtrinsicEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NCProvEvent{
+		__ExtrinsicEvent: tmp,
+	}
+	return
 }
 
 // SetNamespace sets the value of Namespace for the instance

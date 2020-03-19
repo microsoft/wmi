@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_Keyboard struct
 type Msvm_Keyboard struct {
-	CIM_UserDevice
+	*CIM_UserDevice
 
 	//
 	Layout string
@@ -23,6 +28,35 @@ type Msvm_Keyboard struct {
 
 	//
 	UnicodeSupported bool
+}
+
+func NewMsvm_KeyboardEx1(instance *cim.WmiInstance) (newInstance *Msvm_Keyboard, err error) {
+	tmp, err := NewCIM_UserDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_Keyboard{
+		CIM_UserDevice: tmp,
+	}
+	return
+}
+
+func NewMsvm_KeyboardEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_Keyboard, err error) {
+	tmp, err := NewCIM_UserDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_Keyboard{
+		CIM_UserDevice: tmp,
+	}
+	return
 }
 
 // SetLayout sets the value of Layout for the instance
@@ -201,4 +235,12 @@ func (instance *Msvm_Keyboard) TypeScancodes( /* IN */ Scancodes []uint8) (resul
 	result = uint32(retVal)
 	return
 
+}
+
+func (instance *Msvm_Keyboard) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_Keyboard) GetRelatedResourceAllocationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourceAllocationSettingData")
 }

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetNatStaticMapping struct
 type MSFT_NetNatStaticMapping struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	Active uint8
@@ -41,6 +46,35 @@ type MSFT_NetNatStaticMapping struct {
 
 	//
 	StaticMappingID uint32
+}
+
+func NewMSFT_NetNatStaticMappingEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetNatStaticMapping, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetNatStaticMapping{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetNatStaticMappingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetNatStaticMapping, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetNatStaticMapping{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetActive sets the value of Active for the instance

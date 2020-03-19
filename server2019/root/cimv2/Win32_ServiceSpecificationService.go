@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_ServiceSpecificationService struct
 type Win32_ServiceSpecificationService struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Check Win32_ServiceSpecification
 
 	//
 	Element Win32_Service
+}
+
+func NewWin32_ServiceSpecificationServiceEx1(instance *cim.WmiInstance) (newInstance *Win32_ServiceSpecificationService, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServiceSpecificationService{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_ServiceSpecificationServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ServiceSpecificationService, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServiceSpecificationService{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCheck sets the value of Check for the instance

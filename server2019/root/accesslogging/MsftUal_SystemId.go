@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MsftUal_SystemId struct
 type MsftUal_SystemId struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The number of cores for an instance of the physical processor in the system. For example, for a dual-core processor system, this property has a value of 2.
 	CoresPerPhysicalProcessor uint32
@@ -87,6 +89,35 @@ type MsftUal_SystemId struct {
 
 	// The SMBIOS reported universally unique identifier for this server unit.
 	SystemSMBIOSUUID string
+}
+
+func NewMsftUal_SystemIdEx1(instance *cim.WmiInstance) (newInstance *MsftUal_SystemId, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_SystemId{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsftUal_SystemIdEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftUal_SystemId, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_SystemId{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCoresPerPhysicalProcessor sets the value of CoresPerPhysicalProcessor for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_AllocationCapabilities struct
 type CIM_AllocationCapabilities struct {
-	CIM_Capabilities
+	*CIM_Capabilities
 
 	// A string that describes the resource type when a well defined value is not available and ResourceType has the value "Other".
 	OtherResourceType string
@@ -38,6 +43,35 @@ type CIM_AllocationCapabilities struct {
 
 	// Indicates the states that the System, to which the resource is associated via SystemDevice, may be in when a the resource is removed .
 	SupportedRemoveStates []AllocationCapabilities_SupportedRemoveStates
+}
+
+func NewCIM_AllocationCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_AllocationCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AllocationCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
+}
+
+func NewCIM_AllocationCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_AllocationCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AllocationCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
 }
 
 // SetOtherResourceType sets the value of OtherResourceType for the instance

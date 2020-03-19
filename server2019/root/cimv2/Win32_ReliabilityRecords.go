@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ReliabilityRecords struct
 type Win32_ReliabilityRecords struct {
-	Win32_Reliability
+	*Win32_Reliability
 
 	//
 	ComputerName string
@@ -41,6 +46,35 @@ type Win32_ReliabilityRecords struct {
 
 	//
 	User string
+}
+
+func NewWin32_ReliabilityRecordsEx1(instance *cim.WmiInstance) (newInstance *Win32_ReliabilityRecords, err error) {
+	tmp, err := NewWin32_ReliabilityEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ReliabilityRecords{
+		Win32_Reliability: tmp,
+	}
+	return
+}
+
+func NewWin32_ReliabilityRecordsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ReliabilityRecords, err error) {
+	tmp, err := NewWin32_ReliabilityEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ReliabilityRecords{
+		Win32_Reliability: tmp,
+	}
+	return
 }
 
 // SetComputerName sets the value of ComputerName for the instance

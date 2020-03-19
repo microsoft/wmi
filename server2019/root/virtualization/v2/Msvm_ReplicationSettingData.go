@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_ReplicationSettingData struct
 type Msvm_ReplicationSettingData struct {
-	CIM_VirtualSystemSettingData
+	*CIM_VirtualSystemSettingData
 
 	//
 	AdditionalSettings string
@@ -74,6 +79,35 @@ type Msvm_ReplicationSettingData struct {
 
 	//
 	RootCertificateThumbPrint string
+}
+
+func NewMsvm_ReplicationSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_ReplicationSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReplicationSettingData{
+		CIM_VirtualSystemSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_ReplicationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ReplicationSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReplicationSettingData{
+		CIM_VirtualSystemSettingData: tmp,
+	}
+	return
 }
 
 // SetAdditionalSettings sets the value of AdditionalSettings for the instance
@@ -452,4 +486,11 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyRootCertificateThumbPrin
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_ReplicationSettingData) GetRelatedReplicationRelationship() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ReplicationRelationship")
+}
+
+func (instance *Msvm_ReplicationSettingData) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
 }

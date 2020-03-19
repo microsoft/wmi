@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Validation
 //////////////////////////////////////////////
 package validation
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFTCluster_ValidationDiskInfo struct
 type MSFTCluster_ValidationDiskInfo struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// 2
 	AdapterDescription string
@@ -87,6 +89,35 @@ type MSFTCluster_ValidationDiskInfo struct {
 
 	// 2
 	StackType ValidationDiskInfo_StackType
+}
+
+func NewMSFTCluster_ValidationDiskInfoEx1(instance *cim.WmiInstance) (newInstance *MSFTCluster_ValidationDiskInfo, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFTCluster_ValidationDiskInfo{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFTCluster_ValidationDiskInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFTCluster_ValidationDiskInfo, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFTCluster_ValidationDiskInfo{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAdapterDescription sets the value of AdapterDescription for the instance

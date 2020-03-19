@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02 struct
 type MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	CommercialDataOptIn int32
@@ -36,6 +38,35 @@ type MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02 struct {
 
 	//
 	TelemetryOptIn int32
+}
+
+func NewMDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCommercialDataOptIn sets the value of CommercialDataOptIn for the instance

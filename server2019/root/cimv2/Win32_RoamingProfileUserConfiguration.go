@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_RoamingProfileUserConfiguration struct
 type Win32_RoamingProfileUserConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// An array of strings containing network directories to synchronize at when the user logs on to or off of a local computer.
 	DirectoriesToSyncAtLogonLogoff []string
@@ -24,6 +26,35 @@ type Win32_RoamingProfileUserConfiguration struct {
 
 	// Indicates if the settings configured through this WMI class are taking affect.
 	IsConfiguredByWMI bool
+}
+
+func NewWin32_RoamingProfileUserConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_RoamingProfileUserConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingProfileUserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_RoamingProfileUserConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_RoamingProfileUserConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingProfileUserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDirectoriesToSyncAtLogonLogoff sets the value of DirectoriesToSyncAtLogonLogoff for the instance

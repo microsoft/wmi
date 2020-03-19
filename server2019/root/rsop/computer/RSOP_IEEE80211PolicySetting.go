@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_IEEE80211PolicySetting struct
 type RSOP_IEEE80211PolicySetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	//
 	ClassName string
@@ -32,6 +37,35 @@ type RSOP_IEEE80211PolicySetting struct {
 
 	//
 	whenChanged uint32
+}
+
+func NewRSOP_IEEE80211PolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEEE80211PolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEEE80211PolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEEE80211PolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEEE80211PolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEEE80211PolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // SetClassName sets the value of ClassName for the instance

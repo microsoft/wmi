@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_Volume_Repair_AsyncOutput struct
 type MSFT_Volume_Repair_AsyncOutput struct {
-	MSFT_StorageJobOutParams
+	*MSFT_StorageJobOutParams
 
 	//
 	Output uint32
+}
+
+func NewMSFT_Volume_Repair_AsyncOutputEx1(instance *cim.WmiInstance) (newInstance *MSFT_Volume_Repair_AsyncOutput, err error) {
+	tmp, err := NewMSFT_StorageJobOutParamsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Volume_Repair_AsyncOutput{
+		MSFT_StorageJobOutParams: tmp,
+	}
+	return
+}
+
+func NewMSFT_Volume_Repair_AsyncOutputEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_Volume_Repair_AsyncOutput, err error) {
+	tmp, err := NewMSFT_StorageJobOutParamsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Volume_Repair_AsyncOutput{
+		MSFT_StorageJobOutParams: tmp,
+	}
+	return
 }
 
 // SetOutput sets the value of Output for the instance

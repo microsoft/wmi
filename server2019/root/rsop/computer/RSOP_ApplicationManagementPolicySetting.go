@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_ApplicationManagementPolicySetting struct
 type RSOP_ApplicationManagementPolicySetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	//
 	AllowX86OnIA64 bool
@@ -128,6 +133,35 @@ type RSOP_ApplicationManagementPolicySetting struct {
 
 	//
 	VersionNumberLo uint32
+}
+
+func NewRSOP_ApplicationManagementPolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_ApplicationManagementPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ApplicationManagementPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_ApplicationManagementPolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_ApplicationManagementPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ApplicationManagementPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // SetAllowX86OnIA64 sets the value of AllowX86OnIA64 for the instance

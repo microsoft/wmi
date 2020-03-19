@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_EventClusterCallback struct
 type MSCluster_EventClusterCallback struct {
-	MSCluster_Event
+	*MSCluster_Event
 
 	//
 	ObjectName string
@@ -29,6 +34,35 @@ type MSCluster_EventClusterCallback struct {
 
 	//
 	Status int32
+}
+
+func NewMSCluster_EventClusterCallbackEx1(instance *cim.WmiInstance) (newInstance *MSCluster_EventClusterCallback, err error) {
+	tmp, err := NewMSCluster_EventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_EventClusterCallback{
+		MSCluster_Event: tmp,
+	}
+	return
+}
+
+func NewMSCluster_EventClusterCallbackEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_EventClusterCallback, err error) {
+	tmp, err := NewMSCluster_EventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_EventClusterCallback{
+		MSCluster_Event: tmp,
+	}
+	return
 }
 
 // SetObjectName sets the value of ObjectName for the instance

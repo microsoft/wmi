@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msft_WmiProvider_DeleteClassAsyncEvent_Post struct
 type Msft_WmiProvider_DeleteClassAsyncEvent_Post struct {
-	Msft_WmiProvider_OperationEvent_Post
+	*Msft_WmiProvider_OperationEvent_Post
 
 	//
 	ClassName string
@@ -26,6 +31,35 @@ type Msft_WmiProvider_DeleteClassAsyncEvent_Post struct {
 
 	//
 	StringParameter string
+}
+
+func NewMsft_WmiProvider_DeleteClassAsyncEvent_PostEx1(instance *cim.WmiInstance) (newInstance *Msft_WmiProvider_DeleteClassAsyncEvent_Post, err error) {
+	tmp, err := NewMsft_WmiProvider_OperationEvent_PostEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_DeleteClassAsyncEvent_Post{
+		Msft_WmiProvider_OperationEvent_Post: tmp,
+	}
+	return
+}
+
+func NewMsft_WmiProvider_DeleteClassAsyncEvent_PostEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_WmiProvider_DeleteClassAsyncEvent_Post, err error) {
+	tmp, err := NewMsft_WmiProvider_OperationEvent_PostEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_DeleteClassAsyncEvent_Post{
+		Msft_WmiProvider_OperationEvent_Post: tmp,
+	}
+	return
 }
 
 // SetClassName sets the value of ClassName for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSDeploymentSettings struct
 type Win32_TSDeploymentSettings struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// Allow Font Smoothing
 	AllowFontSmoothing bool
@@ -65,6 +70,35 @@ type Win32_TSDeploymentSettings struct {
 
 	// Enable Multi-Monitor for desktop (not RAIL)
 	UseMultimon bool
+}
+
+func NewWin32_TSDeploymentSettingsEx1(instance *cim.WmiInstance) (newInstance *Win32_TSDeploymentSettings, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSDeploymentSettings{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_TSDeploymentSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSDeploymentSettings, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSDeploymentSettings{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAllowFontSmoothing sets the value of AllowFontSmoothing for the instance

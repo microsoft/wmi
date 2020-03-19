@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_ReferencePointCollection struct
 type Msvm_ReferencePointCollection struct {
-	CIM_Collection
+	*CIM_Collection
 
 	//
 	CollectionID string
@@ -26,6 +31,35 @@ type Msvm_ReferencePointCollection struct {
 
 	//
 	VirtualSystemCollectionId string
+}
+
+func NewMsvm_ReferencePointCollectionEx1(instance *cim.WmiInstance) (newInstance *Msvm_ReferencePointCollection, err error) {
+	tmp, err := NewCIM_CollectionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReferencePointCollection{
+		CIM_Collection: tmp,
+	}
+	return
+}
+
+func NewMsvm_ReferencePointCollectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ReferencePointCollection, err error) {
+	tmp, err := NewCIM_CollectionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ReferencePointCollection{
+		CIM_Collection: tmp,
+	}
+	return
 }
 
 // SetCollectionID sets the value of CollectionID for the instance

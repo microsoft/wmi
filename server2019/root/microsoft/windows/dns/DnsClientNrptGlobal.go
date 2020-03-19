@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // DnsClientNrptGlobal struct
 type DnsClientNrptGlobal struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	EnableDAForAllNetworks string
@@ -24,6 +26,35 @@ type DnsClientNrptGlobal struct {
 
 	//
 	SecureNameQueryFallback string
+}
+
+func NewDnsClientNrptGlobalEx1(instance *cim.WmiInstance) (newInstance *DnsClientNrptGlobal, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &DnsClientNrptGlobal{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewDnsClientNrptGlobalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *DnsClientNrptGlobal, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &DnsClientNrptGlobal{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEnableDAForAllNetworks sets the value of EnableDAForAllNetworks for the instance

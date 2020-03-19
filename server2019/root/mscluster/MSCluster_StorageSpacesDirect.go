@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSCluster_StorageSpacesDirect struct
 type MSCluster_StorageSpacesDirect struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	CacheDeviceModel []string
@@ -54,6 +56,35 @@ type MSCluster_StorageSpacesDirect struct {
 
 	//
 	UseSedExclusively bool
+}
+
+func NewMSCluster_StorageSpacesDirectEx1(instance *cim.WmiInstance) (newInstance *MSCluster_StorageSpacesDirect, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_StorageSpacesDirect{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSCluster_StorageSpacesDirectEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_StorageSpacesDirect, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_StorageSpacesDirect{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCacheDeviceModel sets the value of CacheDeviceModel for the instance

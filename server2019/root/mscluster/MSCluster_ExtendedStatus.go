@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_ExtendedStatus struct
 type MSCluster_ExtendedStatus struct {
-	__ExtendedStatus
+	*__ExtendedStatus
 
 	//
 	ErrorType uint32
+}
+
+func NewMSCluster_ExtendedStatusEx1(instance *cim.WmiInstance) (newInstance *MSCluster_ExtendedStatus, err error) {
+	tmp, err := New__ExtendedStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ExtendedStatus{
+		__ExtendedStatus: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ExtendedStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_ExtendedStatus, err error) {
+	tmp, err := New__ExtendedStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ExtendedStatus{
+		__ExtendedStatus: tmp,
+	}
+	return
 }
 
 // SetErrorType sets the value of ErrorType for the instance

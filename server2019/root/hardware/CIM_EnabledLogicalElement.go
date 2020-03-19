@@ -3,19 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 	standardcimv2 "github.com/microsoft/wmi/server2019/root/standardcimv2"
 )
 
 // CIM_EnabledLogicalElement struct
 type CIM_EnabledLogicalElement struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	EnabledDefault uint16
@@ -31,6 +32,35 @@ type CIM_EnabledLogicalElement struct {
 
 	//
 	TimeOfLastStateChange string
+}
+
+func NewCIM_EnabledLogicalElementEx1(instance *cim.WmiInstance) (newInstance *CIM_EnabledLogicalElement, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EnabledLogicalElement{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_EnabledLogicalElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_EnabledLogicalElement, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EnabledLogicalElement{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetEnabledDefault sets the value of EnabledDefault for the instance

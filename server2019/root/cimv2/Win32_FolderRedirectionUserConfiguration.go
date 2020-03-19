@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_FolderRedirectionUserConfiguration struct
 type Win32_FolderRedirectionUserConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// AppData\Roaming folder, GUID is {3EB685DB-65F9-4CF6-A03A-E3EF65729F3D}
 	AppDataRoaming Win32_FolderRedirection
@@ -60,6 +62,35 @@ type Win32_FolderRedirectionUserConfiguration struct {
 
 	// Videos folder, GUID is {18989B1D-99B5-455B-841C-AB7C74E4DDFC}
 	Videos Win32_FolderRedirection
+}
+
+func NewWin32_FolderRedirectionUserConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_FolderRedirectionUserConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirectionUserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_FolderRedirectionUserConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_FolderRedirectionUserConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirectionUserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAppDataRoaming sets the value of AppDataRoaming for the instance

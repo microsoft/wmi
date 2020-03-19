@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PhysicalMedia struct
 type CIM_PhysicalMedia struct {
-	CIM_PhysicalComponent
+	*CIM_PhysicalComponent
 
 	//
 	Capacity uint64
@@ -26,6 +31,35 @@ type CIM_PhysicalMedia struct {
 
 	//
 	WriteProtectOn bool
+}
+
+func NewCIM_PhysicalMediaEx1(instance *cim.WmiInstance) (newInstance *CIM_PhysicalMedia, err error) {
+	tmp, err := NewCIM_PhysicalComponentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalMedia{
+		CIM_PhysicalComponent: tmp,
+	}
+	return
+}
+
+func NewCIM_PhysicalMediaEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PhysicalMedia, err error) {
+	tmp, err := NewCIM_PhysicalComponentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalMedia{
+		CIM_PhysicalComponent: tmp,
+	}
+	return
 }
 
 // SetCapacity sets the value of Capacity for the instance

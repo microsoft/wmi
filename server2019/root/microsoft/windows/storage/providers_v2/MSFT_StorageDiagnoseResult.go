@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageDiagnoseResult struct
 type MSFT_StorageDiagnoseResult struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// A unique identifier for the fault
 	FaultId string
@@ -53,6 +55,35 @@ type MSFT_StorageDiagnoseResult struct {
 
 	// Free form descriptions of the recommended actions to take to resolve the cause of the fault.
 	RecommendedActions []string
+}
+
+func NewMSFT_StorageDiagnoseResultEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageDiagnoseResult, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageDiagnoseResult{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageDiagnoseResultEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageDiagnoseResult, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageDiagnoseResult{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetFaultId sets the value of FaultId for the instance

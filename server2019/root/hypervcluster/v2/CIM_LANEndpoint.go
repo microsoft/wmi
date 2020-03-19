@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_LANEndpoint struct
 type CIM_LANEndpoint struct {
-	CIM_ProtocolEndpoint
+	*CIM_ProtocolEndpoint
 
 	// Other unicast addresses that may be used to communicate with the LANEndpoint.
 	AliasAddresses []string
@@ -32,6 +37,35 @@ type CIM_LANEndpoint struct {
 
 	// A free-form string that describes the type of technology used on the LAN when the value of the LANType property is equal to 1 (i.e., "Other"). This property is deprecated since its purpose overlaps with OtherTypeDescription, which which is inherited from ProtocolEndpoint.
 	OtherLANType string
+}
+
+func NewCIM_LANEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_LANEndpoint, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LANEndpoint{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
+}
+
+func NewCIM_LANEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_LANEndpoint, err error) {
+	tmp, err := NewCIM_ProtocolEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LANEndpoint{
+		CIM_ProtocolEndpoint: tmp,
+	}
+	return
 }
 
 // SetAliasAddresses sets the value of AliasAddresses for the instance

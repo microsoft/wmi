@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ServerClusterInformation struct
 type MSFT_ServerClusterInformation struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	GroupType int32
@@ -24,6 +26,35 @@ type MSFT_ServerClusterInformation struct {
 
 	//
 	ObjectType uint8
+}
+
+func NewMSFT_ServerClusterInformationEx1(instance *cim.WmiInstance) (newInstance *MSFT_ServerClusterInformation, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerClusterInformation{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ServerClusterInformationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ServerClusterInformation, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerClusterInformation{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetGroupType sets the value of GroupType for the instance

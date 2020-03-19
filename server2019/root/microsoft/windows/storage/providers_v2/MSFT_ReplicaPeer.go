@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_ReplicaPeer struct
 type MSFT_ReplicaPeer struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	// Indicates if the ReplicaPeer is primary i.e: If the ReplicaPeer is a System Element and not a Synced Element
 	IsPrimary bool
@@ -35,6 +40,35 @@ type MSFT_ReplicaPeer struct {
 
 	// The UniqueId of the replica peer within the replica's storage subsystem.
 	PeerUniqueId string
+}
+
+func NewMSFT_ReplicaPeerEx1(instance *cim.WmiInstance) (newInstance *MSFT_ReplicaPeer, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ReplicaPeer{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_ReplicaPeerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ReplicaPeer, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ReplicaPeer{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetIsPrimary sets the value of IsPrimary for the instance

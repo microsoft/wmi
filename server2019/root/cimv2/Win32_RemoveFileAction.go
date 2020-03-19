@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_RemoveFileAction struct
 type Win32_RemoveFileAction struct {
-	CIM_RemoveFileAction
+	*CIM_RemoveFileAction
 
 	//
 	DirProperty string
@@ -23,6 +28,35 @@ type Win32_RemoveFileAction struct {
 
 	//
 	InstallMode uint16
+}
+
+func NewWin32_RemoveFileActionEx1(instance *cim.WmiInstance) (newInstance *Win32_RemoveFileAction, err error) {
+	tmp, err := NewCIM_RemoveFileActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RemoveFileAction{
+		CIM_RemoveFileAction: tmp,
+	}
+	return
+}
+
+func NewWin32_RemoveFileActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_RemoveFileAction, err error) {
+	tmp, err := NewCIM_RemoveFileActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RemoveFileAction{
+		CIM_RemoveFileAction: tmp,
+	}
+	return
 }
 
 // SetDirProperty sets the value of DirProperty for the instance

@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __IntervalTimerInstruction struct
 type __IntervalTimerInstruction struct {
-	__TimerInstruction
+	*__TimerInstruction
 
 	//
 	IntervalBetweenEvents uint32
+}
+
+func New__IntervalTimerInstructionEx1(instance *cim.WmiInstance) (newInstance *__IntervalTimerInstruction, err error) {
+	tmp, err := New__TimerInstructionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__IntervalTimerInstruction{
+		__TimerInstruction: tmp,
+	}
+	return
+}
+
+func New__IntervalTimerInstructionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__IntervalTimerInstruction, err error) {
+	tmp, err := New__TimerInstructionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__IntervalTimerInstruction{
+		__TimerInstruction: tmp,
+	}
+	return
 }
 
 // SetIntervalBetweenEvents sets the value of IntervalBetweenEvents for the instance

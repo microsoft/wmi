@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MsftUal_DeviceAccess struct
 type MsftUal_DeviceAccess struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The incremental counter of device accesses for a particular client device.
 	ActivityCount uint32
@@ -39,6 +41,35 @@ type MsftUal_DeviceAccess struct {
 
 	// A unique GUID for a tenant client of an installed role or product which accompanies the UAL data payload, if applicable.
 	TenantIdentifier string
+}
+
+func NewMsftUal_DeviceAccessEx1(instance *cim.WmiInstance) (newInstance *MsftUal_DeviceAccess, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_DeviceAccess{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsftUal_DeviceAccessEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftUal_DeviceAccess, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_DeviceAccess{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetActivityCount sets the value of ActivityCount for the instance

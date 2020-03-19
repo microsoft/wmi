@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_StatisticalData struct
 type CIM_StatisticalData struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	SampleInterval string
@@ -20,6 +25,35 @@ type CIM_StatisticalData struct {
 
 	//
 	StatisticTime string
+}
+
+func NewCIM_StatisticalDataEx1(instance *cim.WmiInstance) (newInstance *CIM_StatisticalData, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_StatisticalData{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewCIM_StatisticalDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_StatisticalData, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_StatisticalData{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetSampleInterval sets the value of SampleInterval for the instance

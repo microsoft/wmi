@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageQoSPolicyToChildPolicy struct
 type MSFT_StorageQoSPolicyToChildPolicy struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ChildPolicy MSFT_StorageQoSPolicy
 
 	//
 	ParentPolicy MSFT_StorageQoSPolicy
+}
+
+func NewMSFT_StorageQoSPolicyToChildPolicyEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageQoSPolicyToChildPolicy, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageQoSPolicyToChildPolicy{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageQoSPolicyToChildPolicyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageQoSPolicyToChildPolicy, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageQoSPolicyToChildPolicy{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetChildPolicy sets the value of ChildPolicy for the instance

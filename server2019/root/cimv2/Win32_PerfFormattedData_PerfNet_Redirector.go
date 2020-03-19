@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfFormattedData_PerfNet_Redirector struct
 type Win32_PerfFormattedData_PerfNet_Redirector struct {
-	Win32_PerfFormattedData
+	*Win32_PerfFormattedData
 
 	//
 	BytesReceivedPersec uint64
@@ -122,6 +127,35 @@ type Win32_PerfFormattedData_PerfNet_Redirector struct {
 
 	//
 	WritesLargePersec uint32
+}
+
+func NewWin32_PerfFormattedData_PerfNet_RedirectorEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfFormattedData_PerfNet_Redirector, err error) {
+	tmp, err := NewWin32_PerfFormattedDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfFormattedData_PerfNet_Redirector{
+		Win32_PerfFormattedData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfFormattedData_PerfNet_RedirectorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfFormattedData_PerfNet_Redirector, err error) {
+	tmp, err := NewWin32_PerfFormattedDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfFormattedData_PerfNet_Redirector{
+		Win32_PerfFormattedData: tmp,
+	}
+	return
 }
 
 // SetBytesReceivedPersec sets the value of BytesReceivedPersec for the instance

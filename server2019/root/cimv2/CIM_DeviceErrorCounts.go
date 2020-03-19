@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DeviceErrorCounts struct
 type CIM_DeviceErrorCounts struct {
-	CIM_StatisticalInformation
+	*CIM_StatisticalInformation
 
 	//
 	CriticalErrorCount uint64
@@ -38,6 +43,35 @@ type CIM_DeviceErrorCounts struct {
 
 	//
 	WarningCount uint64
+}
+
+func NewCIM_DeviceErrorCountsEx1(instance *cim.WmiInstance) (newInstance *CIM_DeviceErrorCounts, err error) {
+	tmp, err := NewCIM_StatisticalInformationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DeviceErrorCounts{
+		CIM_StatisticalInformation: tmp,
+	}
+	return
+}
+
+func NewCIM_DeviceErrorCountsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DeviceErrorCounts, err error) {
+	tmp, err := NewCIM_StatisticalInformationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DeviceErrorCounts{
+		CIM_StatisticalInformation: tmp,
+	}
+	return
 }
 
 // SetCriticalErrorCount sets the value of CriticalErrorCount for the instance

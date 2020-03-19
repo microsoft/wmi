@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_VirtualSystemSettingData struct
 type Msvm_VirtualSystemSettingData struct {
-	CIM_VirtualSystemSettingData
+	*CIM_VirtualSystemSettingData
 
 	//
 	AdditionalRecoveryInformation string
@@ -146,6 +151,35 @@ type Msvm_VirtualSystemSettingData struct {
 
 	//
 	VirtualSystemSubType VirtualSystemSettingData_VirtualSystemSubType
+}
+
+func NewMsvm_VirtualSystemSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemSettingData{
+		CIM_VirtualSystemSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualSystemSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualSystemSettingData, err error) {
+	tmp, err := NewCIM_VirtualSystemSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemSettingData{
+		CIM_VirtualSystemSettingData: tmp,
+	}
+	return
 }
 
 // SetAdditionalRecoveryInformation sets the value of AdditionalRecoveryInformation for the instance

@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP
 //////////////////////////////////////////////
 package rsop
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_ExtendedStatus struct
 type MSFT_ExtendedStatus struct {
-	MSFT_WmiError
+	*MSFT_WmiError
 
 	//
 	original_error interface{}
+}
+
+func NewMSFT_ExtendedStatusEx1(instance *cim.WmiInstance) (newInstance *MSFT_ExtendedStatus, err error) {
+	tmp, err := NewMSFT_WmiErrorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExtendedStatus{
+		MSFT_WmiError: tmp,
+	}
+	return
+}
+
+func NewMSFT_ExtendedStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ExtendedStatus, err error) {
+	tmp, err := NewMSFT_WmiErrorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExtendedStatus{
+		MSFT_WmiError: tmp,
+	}
+	return
 }
 
 // Setoriginal_error sets the value of original_error for the instance

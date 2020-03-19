@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ManagedSystemElement struct
 type CIM_ManagedSystemElement struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	// CommunicationStatus indicates the ability of the instrumentation to communicate with the underlying ManagedElement. CommunicationStatus consists of one of the following values: Unknown, None, Communication OK, Lost Communication, or No Contact.
 	///A Null return indicates the implementation (provider) does not implement this property.
@@ -97,6 +102,35 @@ type CIM_ManagedSystemElement struct {
 
 	// Strings describing the various OperationalStatus array values. For example, if "Stopping" is the value assigned to OperationalStatus, then this property may contain an explanation as to why an object is being stopped. Note that entries in this array are correlated with those at the same array index in OperationalStatus.
 	StatusDescriptions []string
+}
+
+func NewCIM_ManagedSystemElementEx1(instance *cim.WmiInstance) (newInstance *CIM_ManagedSystemElement, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ManagedSystemElement{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewCIM_ManagedSystemElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ManagedSystemElement, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ManagedSystemElement{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetCommunicationStatus sets the value of CommunicationStatus for the instance

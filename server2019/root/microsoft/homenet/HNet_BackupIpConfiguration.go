@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // HNet_BackupIpConfiguration struct
 type HNet_BackupIpConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Connection HNet_Connection
@@ -30,6 +32,35 @@ type HNet_BackupIpConfiguration struct {
 
 	//
 	SubnetMask string
+}
+
+func NewHNet_BackupIpConfigurationEx1(instance *cim.WmiInstance) (newInstance *HNet_BackupIpConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_BackupIpConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewHNet_BackupIpConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *HNet_BackupIpConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_BackupIpConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnection sets the value of Connection for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VirtualSystemMigrationSettingData struct
 type CIM_VirtualSystemMigrationSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	// Bandwidth indicates the bandwidth assigned to or requested for a virtual system migration operation. The special value 0 indicates:
 	///- in migration requests the default bandwidth
@@ -46,6 +51,35 @@ type CIM_VirtualSystemMigrationSettingData struct {
 	///- 5(TCP) indicates the TCP transport type.
 	///- 6(IPC) indicates the inter-process communication socket transport type. This transport type includes Unix domain sockets.
 	TransportType VirtualSystemMigrationSettingData_TransportType
+}
+
+func NewCIM_VirtualSystemMigrationSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemMigrationSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewCIM_VirtualSystemMigrationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VirtualSystemMigrationSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemMigrationSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetBandwidth sets the value of Bandwidth for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetTransportConnection struct
 type MSFT_NetTransportConnection struct {
-	CIM_NetworkPipe
+	*CIM_NetworkPipe
 
 	//
 	CreationTime string
@@ -23,6 +28,35 @@ type MSFT_NetTransportConnection struct {
 
 	//
 	OwningProcess uint32
+}
+
+func NewMSFT_NetTransportConnectionEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetTransportConnection, err error) {
+	tmp, err := NewCIM_NetworkPipeEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTransportConnection{
+		CIM_NetworkPipe: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetTransportConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetTransportConnection, err error) {
+	tmp, err := NewCIM_NetworkPipeEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTransportConnection{
+		CIM_NetworkPipe: tmp,
+	}
+	return
 }
 
 // SetCreationTime sets the value of CreationTime for the instance

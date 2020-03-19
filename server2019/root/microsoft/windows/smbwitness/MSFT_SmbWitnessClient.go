@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SmbWitness
 //////////////////////////////////////////////
 package smbwitness
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbWitnessClient struct
 type MSFT_SmbWitnessClient struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ClientName string
@@ -51,6 +53,35 @@ type MSFT_SmbWitnessClient struct {
 
 	//
 	WitnessNodeName string
+}
+
+func NewMSFT_SmbWitnessClientEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbWitnessClient, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbWitnessClient{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbWitnessClientEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbWitnessClient, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbWitnessClient{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetClientName sets the value of ClientName for the instance

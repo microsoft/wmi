@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 	cimv2 "github.com/microsoft/wmi/server2019/root/cimv2"
 )
 
 // Win32_TerminalServiceToSetting struct
 type Win32_TerminalServiceToSetting struct {
-	CIM_ElementSetting
+	*CIM_ElementSetting
 
 	//
 	Element cimv2.Win32_TerminalService
 
 	//
 	Setting Win32_TerminalServiceSetting
+}
+
+func NewWin32_TerminalServiceToSettingEx1(instance *cim.WmiInstance) (newInstance *Win32_TerminalServiceToSetting, err error) {
+	tmp, err := NewCIM_ElementSettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TerminalServiceToSetting{
+		CIM_ElementSetting: tmp,
+	}
+	return
+}
+
+func NewWin32_TerminalServiceToSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TerminalServiceToSetting, err error) {
+	tmp, err := NewCIM_ElementSettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TerminalServiceToSetting{
+		CIM_ElementSetting: tmp,
+	}
+	return
 }
 
 // SetElement sets the value of Element for the instance

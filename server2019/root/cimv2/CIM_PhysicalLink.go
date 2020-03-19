@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PhysicalLink struct
 type CIM_PhysicalLink struct {
-	CIM_PhysicalElement
+	*CIM_PhysicalElement
 
 	//
 	Length float64
@@ -23,6 +28,35 @@ type CIM_PhysicalLink struct {
 
 	//
 	Wired bool
+}
+
+func NewCIM_PhysicalLinkEx1(instance *cim.WmiInstance) (newInstance *CIM_PhysicalLink, err error) {
+	tmp, err := NewCIM_PhysicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalLink{
+		CIM_PhysicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_PhysicalLinkEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PhysicalLink, err error) {
+	tmp, err := NewCIM_PhysicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalLink{
+		CIM_PhysicalElement: tmp,
+	}
+	return
 }
 
 // SetLength sets the value of Length for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PageFile struct
 type Win32_PageFile struct {
-	CIM_DataFile
+	*CIM_DataFile
 
 	//
 	FreeSpace uint32
@@ -20,6 +25,35 @@ type Win32_PageFile struct {
 
 	//
 	MaximumSize uint32
+}
+
+func NewWin32_PageFileEx1(instance *cim.WmiInstance) (newInstance *Win32_PageFile, err error) {
+	tmp, err := NewCIM_DataFileEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PageFile{
+		CIM_DataFile: tmp,
+	}
+	return
+}
+
+func NewWin32_PageFileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PageFile, err error) {
+	tmp, err := NewCIM_DataFileEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PageFile{
+		CIM_DataFile: tmp,
+	}
+	return
 }
 
 // SetFreeSpace sets the value of FreeSpace for the instance

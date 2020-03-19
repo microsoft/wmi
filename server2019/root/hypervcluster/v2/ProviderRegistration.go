@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ProviderRegistration struct
 type __ProviderRegistration struct {
-	__SystemClass
+	*__SystemClass
 
 	//
 	provider __Provider
+}
+
+func New__ProviderRegistrationEx1(instance *cim.WmiInstance) (newInstance *__ProviderRegistration, err error) {
+	tmp, err := New__SystemClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ProviderRegistration{
+		__SystemClass: tmp,
+	}
+	return
+}
+
+func New__ProviderRegistrationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ProviderRegistration, err error) {
+	tmp, err := New__SystemClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ProviderRegistration{
+		__SystemClass: tmp,
+	}
+	return
 }
 
 // Setprovider sets the value of provider for the instance

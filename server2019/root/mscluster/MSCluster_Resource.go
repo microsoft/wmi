@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_Resource struct
 type MSCluster_Resource struct {
-	MSCluster_LogicalElement
+	*MSCluster_LogicalElement
 
 	//
 	CoreResource bool
@@ -116,6 +121,35 @@ type MSCluster_Resource struct {
 
 	//
 	Type string
+}
+
+func NewMSCluster_ResourceEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Resource, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Resource{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ResourceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_Resource, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Resource{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCoreResource sets the value of CoreResource for the instance

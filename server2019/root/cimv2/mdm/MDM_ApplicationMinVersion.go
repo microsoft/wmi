@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_ApplicationMinVersion struct
 type MDM_ApplicationMinVersion struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	MinimumPackageVersion string
@@ -36,6 +38,35 @@ type MDM_ApplicationMinVersion struct {
 
 	//
 	UserSID string
+}
+
+func NewMDM_ApplicationMinVersionEx1(instance *cim.WmiInstance) (newInstance *MDM_ApplicationMinVersion, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_ApplicationMinVersion{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_ApplicationMinVersionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_ApplicationMinVersion, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_ApplicationMinVersion{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetMinimumPackageVersion sets the value of MinimumPackageVersion for the instance

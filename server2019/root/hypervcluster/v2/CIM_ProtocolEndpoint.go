@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ProtocolEndpoint struct
 type CIM_ProtocolEndpoint struct {
-	CIM_ServiceAccessPoint
+	*CIM_ServiceAccessPoint
 
 	// NameFormat contains the naming heuristic that is selected to ensure that the value of the Name property is unique. For example, you might choose to prepend the name of the port or interface with the Type of ProtocolEndpoint (for example, IPv4) of this instance followed by an underscore.
 	NameFormat string
@@ -24,6 +29,35 @@ type CIM_ProtocolEndpoint struct {
 	// Note: This property is deprecated in lieu of the ProtocolIFType enumeration. This deprecation was done to have better alignment between the IF-MIB of the IETF and this CIM class.
 	///Deprecated description: ProtocolType is an enumeration that provides information to categorize and classify different instances of this class. For most instances, information in this enumeration and the definition of the subclass overlap. However, there are several cases where a specific subclass of ProtocolEndpoint is not required (for example, there is no Fibre Channel subclass of ProtocolEndpoint). Therefore, this property is needed to define the type of Endpoint.
 	ProtocolType ProtocolEndpoint_ProtocolType
+}
+
+func NewCIM_ProtocolEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_ProtocolEndpoint, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ProtocolEndpoint{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
+}
+
+func NewCIM_ProtocolEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ProtocolEndpoint, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ProtocolEndpoint{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
 }
 
 // SetNameFormat sets the value of NameFormat for the instance

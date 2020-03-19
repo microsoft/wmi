@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.EventTracingManagement
 //////////////////////////////////////////////
 package eventtracingmanagement
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_EtwTraceProvider struct
 type MSFT_EtwTraceProvider struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	AutologgerName string
@@ -32,6 +37,35 @@ type MSFT_EtwTraceProvider struct {
 
 	//
 	SessionName string
+}
+
+func NewMSFT_EtwTraceProviderEx1(instance *cim.WmiInstance) (newInstance *MSFT_EtwTraceProvider, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_EtwTraceProvider{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_EtwTraceProviderEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_EtwTraceProvider, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_EtwTraceProvider{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAutologgerName sets the value of AutologgerName for the instance

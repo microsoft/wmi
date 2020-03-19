@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_USBDevice struct
 type CIM_USBDevice struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// Indicates the USB class code.
 	ClassCode uint8
@@ -59,6 +64,35 @@ type CIM_USBDevice struct {
 
 	// From the USB specification Device Descriptor, Vendor ID assigned by USB.org.
 	VendorID uint16
+}
+
+func NewCIM_USBDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_USBDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_USBDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_USBDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_USBDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_USBDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetClassCode sets the value of ClassCode for the instance

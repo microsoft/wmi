@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ExtensionInfoAction struct
 type Win32_ExtensionInfoAction struct {
-	CIM_Action
+	*CIM_Action
 
 	//
 	Argument string
@@ -35,6 +40,35 @@ type Win32_ExtensionInfoAction struct {
 
 	//
 	Verb string
+}
+
+func NewWin32_ExtensionInfoActionEx1(instance *cim.WmiInstance) (newInstance *Win32_ExtensionInfoAction, err error) {
+	tmp, err := NewCIM_ActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ExtensionInfoAction{
+		CIM_Action: tmp,
+	}
+	return
+}
+
+func NewWin32_ExtensionInfoActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ExtensionInfoAction, err error) {
+	tmp, err := NewCIM_ActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ExtensionInfoAction{
+		CIM_Action: tmp,
+	}
+	return
 }
 
 // SetArgument sets the value of Argument for the instance

@@ -3,21 +3,52 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MsftUal_Admin struct
 type MsftUal_Admin struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Enabled bool
+}
+
+func NewMsftUal_AdminEx1(instance *cim.WmiInstance) (newInstance *MsftUal_Admin, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_Admin{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsftUal_AdminEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftUal_Admin, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftUal_Admin{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEnabled sets the value of Enabled for the instance

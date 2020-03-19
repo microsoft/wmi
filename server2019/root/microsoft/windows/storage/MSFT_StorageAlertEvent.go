@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_StorageAlertEvent struct
 type MSFT_StorageAlertEvent struct {
-	MSFT_StorageEvent
+	*MSFT_StorageEvent
 
 	//
 	AlertType uint16
+}
+
+func NewMSFT_StorageAlertEventEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageAlertEvent, err error) {
+	tmp, err := NewMSFT_StorageEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageAlertEvent{
+		MSFT_StorageEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageAlertEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageAlertEvent, err error) {
+	tmp, err := NewMSFT_StorageEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageAlertEvent{
+		MSFT_StorageEvent: tmp,
+	}
+	return
 }
 
 // SetAlertType sets the value of AlertType for the instance

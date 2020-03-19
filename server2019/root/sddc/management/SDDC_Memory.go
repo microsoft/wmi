@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // SDDC_Memory struct
 type SDDC_Memory struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Manufacturer string
@@ -30,6 +32,35 @@ type SDDC_Memory struct {
 
 	//
 	SpeedInMHz uint32
+}
+
+func NewSDDC_MemoryEx1(instance *cim.WmiInstance) (newInstance *SDDC_Memory, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDDC_Memory{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewSDDC_MemoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SDDC_Memory, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDDC_Memory{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_WebReportManager struct
 type MSFT_WebReportManager struct {
-	OMI_ReportManager
+	*OMI_ReportManager
 
 	//
 	AllowUnsecureConnection bool
@@ -29,6 +34,35 @@ type MSFT_WebReportManager struct {
 
 	//
 	ServerURL string
+}
+
+func NewMSFT_WebReportManagerEx1(instance *cim.WmiInstance) (newInstance *MSFT_WebReportManager, err error) {
+	tmp, err := NewOMI_ReportManagerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WebReportManager{
+		OMI_ReportManager: tmp,
+	}
+	return
+}
+
+func NewMSFT_WebReportManagerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_WebReportManager, err error) {
+	tmp, err := NewOMI_ReportManagerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WebReportManager{
+		OMI_ReportManager: tmp,
+	}
+	return
 }
 
 // SetAllowUnsecureConnection sets the value of AllowUnsecureConnection for the instance

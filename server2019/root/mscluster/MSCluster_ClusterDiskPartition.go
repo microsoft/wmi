@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_ClusterDiskPartition struct
 type MSCluster_ClusterDiskPartition struct {
-	MSCluster_LogicalElement
+	*MSCluster_LogicalElement
 
 	//
 	FileSystem string
@@ -44,6 +49,35 @@ type MSCluster_ClusterDiskPartition struct {
 
 	//
 	VolumeLabel string
+}
+
+func NewMSCluster_ClusterDiskPartitionEx1(instance *cim.WmiInstance) (newInstance *MSCluster_ClusterDiskPartition, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterDiskPartition{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ClusterDiskPartitionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_ClusterDiskPartition, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterDiskPartition{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetFileSystem sets the value of FileSystem for the instance

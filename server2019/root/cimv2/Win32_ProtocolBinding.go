@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_ProtocolBinding struct
 type Win32_ProtocolBinding struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Antecedent Win32_NetworkProtocol
@@ -24,6 +26,35 @@ type Win32_ProtocolBinding struct {
 
 	//
 	Device Win32_NetworkAdapter
+}
+
+func NewWin32_ProtocolBindingEx1(instance *cim.WmiInstance) (newInstance *Win32_ProtocolBinding, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ProtocolBinding{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_ProtocolBindingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ProtocolBinding, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ProtocolBinding{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAntecedent sets the value of Antecedent for the instance

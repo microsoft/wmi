@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_RoamingProfileSlowLinkParams struct
 type Win32_RoamingProfileSlowLinkParams struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The connection speed, in kilobytes per second (kbps). This threshold is used to determine if the connection is a slow link. If the server's transfer rate in kbps is less than this threshold, the connection is considered to be slow. This property applies to IP networks.
 	ConnectionTransferRate uint32
 
 	// The slow-network connection timeout, in milliseconds. This threshold is used to determine if the connection is a slow link. If the delay in milliseconds is greater than this threshold, the connection is considered to be slow. This property applies to non-IP networks.
 	TimeOut uint16
+}
+
+func NewWin32_RoamingProfileSlowLinkParamsEx1(instance *cim.WmiInstance) (newInstance *Win32_RoamingProfileSlowLinkParams, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingProfileSlowLinkParams{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_RoamingProfileSlowLinkParamsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_RoamingProfileSlowLinkParams, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_RoamingProfileSlowLinkParams{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnectionTransferRate sets the value of ConnectionTransferRate for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IEConnectionWinINetSettings struct
 type RSOP_IEConnectionWinINetSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	connectionName string
@@ -30,6 +32,35 @@ type RSOP_IEConnectionWinINetSettings struct {
 
 	//
 	rsopPrecedence int32
+}
+
+func NewRSOP_IEConnectionWinINetSettingsEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEConnectionWinINetSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionWinINetSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEConnectionWinINetSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEConnectionWinINetSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEConnectionWinINetSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetconnectionName sets the value of connectionName for the instance

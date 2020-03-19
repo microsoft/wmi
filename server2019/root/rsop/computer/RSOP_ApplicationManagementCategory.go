@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_ApplicationManagementCategory struct
 type RSOP_ApplicationManagementCategory struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	CategoryId string
@@ -24,6 +26,35 @@ type RSOP_ApplicationManagementCategory struct {
 
 	//
 	Name string
+}
+
+func NewRSOP_ApplicationManagementCategoryEx1(instance *cim.WmiInstance) (newInstance *RSOP_ApplicationManagementCategory, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ApplicationManagementCategory{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_ApplicationManagementCategoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_ApplicationManagementCategory, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ApplicationManagementCategory{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCategoryId sets the value of CategoryId for the instance

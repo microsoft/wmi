@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.HardwareManagement
 //////////////////////////////////////////////
 package hardwaremanagement
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_RecordForLog struct
 type CIM_RecordForLog struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	Locale string
@@ -23,6 +28,35 @@ type CIM_RecordForLog struct {
 
 	//
 	RecordFormat string
+}
+
+func NewCIM_RecordForLogEx1(instance *cim.WmiInstance) (newInstance *CIM_RecordForLog, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RecordForLog{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewCIM_RecordForLogEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_RecordForLog, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_RecordForLog{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetLocale sets the value of Locale for the instance

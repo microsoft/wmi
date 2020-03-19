@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // DtcTransactionInfo struct
 type DtcTransactionInfo struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Description string
@@ -30,6 +32,35 @@ type DtcTransactionInfo struct {
 
 	//
 	TransactionId string
+}
+
+func NewDtcTransactionInfoEx1(instance *cim.WmiInstance) (newInstance *DtcTransactionInfo, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcTransactionInfo{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewDtcTransactionInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *DtcTransactionInfo, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcTransactionInfo{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDescription sets the value of Description for the instance

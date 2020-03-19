@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_FileServer struct
 type MSFT_FileServer struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	//
 	FileSharingProtocols []uint16
@@ -38,6 +43,35 @@ type MSFT_FileServer struct {
 
 	//
 	SupportsFileShareCreation bool
+}
+
+func NewMSFT_FileServerEx1(instance *cim.WmiInstance) (newInstance *MSFT_FileServer, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_FileServer{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_FileServerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_FileServer, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_FileServer{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetFileSharingProtocols sets the value of FileSharingProtocols for the instance

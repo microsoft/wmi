@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapterSettingData struct
 type MSFT_NetAdapterSettingData struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	InterfaceDescription string
@@ -23,6 +28,35 @@ type MSFT_NetAdapterSettingData struct {
 
 	//
 	SystemName string
+}
+
+func NewMSFT_NetAdapterSettingDataEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterSettingData, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterSettingData{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterSettingData, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterSettingData{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetInterfaceDescription sets the value of InterfaceDescription for the instance

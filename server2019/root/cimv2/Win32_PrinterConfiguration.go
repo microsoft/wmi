@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PrinterConfiguration struct
 type Win32_PrinterConfiguration struct {
-	CIM_Setting
+	*CIM_Setting
 
 	// The BitsPerPel property contains the number of bits per pixel for the output device Win32 printer.  This member is used by display drivers and not by printer drivers.
 	///Example: 8.
@@ -120,6 +125,35 @@ type Win32_PrinterConfiguration struct {
 
 	// The YResolution property has been deprecated to theVerticalResolution property.  Please refer to the description of that property.
 	YResolution uint32
+}
+
+func NewWin32_PrinterConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_PrinterConfiguration, err error) {
+	tmp, err := NewCIM_SettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PrinterConfiguration{
+		CIM_Setting: tmp,
+	}
+	return
+}
+
+func NewWin32_PrinterConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PrinterConfiguration, err error) {
+	tmp, err := NewCIM_SettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PrinterConfiguration{
+		CIM_Setting: tmp,
+	}
+	return
 }
 
 // SetBitsPerPel sets the value of BitsPerPel for the instance

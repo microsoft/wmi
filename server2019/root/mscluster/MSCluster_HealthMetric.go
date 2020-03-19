@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSCluster_HealthMetric struct
 type MSCluster_HealthMetric struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	MetricId string
 
 	//
 	Records []MSCluster_MetricRecord
+}
+
+func NewMSCluster_HealthMetricEx1(instance *cim.WmiInstance) (newInstance *MSCluster_HealthMetric, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_HealthMetric{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSCluster_HealthMetricEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_HealthMetric, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_HealthMetric{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetMetricId sets the value of MetricId for the instance

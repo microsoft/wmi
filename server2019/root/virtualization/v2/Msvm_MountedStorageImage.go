@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_MountedStorageImage struct
 type Msvm_MountedStorageImage struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	Access uint16
@@ -32,6 +37,35 @@ type Msvm_MountedStorageImage struct {
 
 	//
 	Type uint16
+}
+
+func NewMsvm_MountedStorageImageEx1(instance *cim.WmiInstance) (newInstance *Msvm_MountedStorageImage, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_MountedStorageImage{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMsvm_MountedStorageImageEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_MountedStorageImage, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_MountedStorageImage{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAccess sets the value of Access for the instance

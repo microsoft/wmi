@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ElementCapabilities struct
 type CIM_ElementCapabilities struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Capabilities CIM_Capabilities
@@ -24,6 +26,35 @@ type CIM_ElementCapabilities struct {
 
 	//
 	ManagedElement CIM_ManagedElement
+}
+
+func NewCIM_ElementCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_ElementCapabilities, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ElementCapabilities{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ElementCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ElementCapabilities, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ElementCapabilities{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCapabilities sets the value of Capabilities for the instance

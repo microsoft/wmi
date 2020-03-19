@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_NetworkAdapter struct
 type Win32_NetworkAdapter struct {
-	CIM_NetworkAdapter
+	*CIM_NetworkAdapter
 
 	//
 	AdapterType string
@@ -59,6 +64,35 @@ type Win32_NetworkAdapter struct {
 
 	//
 	TimeOfLastReset string
+}
+
+func NewWin32_NetworkAdapterEx1(instance *cim.WmiInstance) (newInstance *Win32_NetworkAdapter, err error) {
+	tmp, err := NewCIM_NetworkAdapterEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NetworkAdapter{
+		CIM_NetworkAdapter: tmp,
+	}
+	return
+}
+
+func NewWin32_NetworkAdapterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_NetworkAdapter, err error) {
+	tmp, err := NewCIM_NetworkAdapterEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_NetworkAdapter{
+		CIM_NetworkAdapter: tmp,
+	}
+	return
 }
 
 // SetAdapterType sets the value of AdapterType for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.SECURITY
 //////////////////////////////////////////////
 package security
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __TimerNextFiring struct
 type __TimerNextFiring struct {
-	__IndicationRelated
+	*__IndicationRelated
 
 	//
 	NextEvent64BitTime int64
 
 	//
 	TimerId string
+}
+
+func New__TimerNextFiringEx1(instance *cim.WmiInstance) (newInstance *__TimerNextFiring, err error) {
+	tmp, err := New__IndicationRelatedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__TimerNextFiring{
+		__IndicationRelated: tmp,
+	}
+	return
+}
+
+func New__TimerNextFiringEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__TimerNextFiring, err error) {
+	tmp, err := New__IndicationRelatedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__TimerNextFiring{
+		__IndicationRelated: tmp,
+	}
+	return
 }
 
 // SetNextEvent64BitTime sets the value of NextEvent64BitTime for the instance

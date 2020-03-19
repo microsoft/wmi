@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ProtocolControllerForDevice struct
 type CIM_ProtocolControllerForDevice struct {
-	CIM_Dependency
+	*CIM_Dependency
 
 	// This property describes the priority given to accesses of the device through this Controller. The highest priority path will have the lowest value for this parameter.
 	AccessPriority uint16
@@ -25,6 +30,35 @@ type CIM_ProtocolControllerForDevice struct {
 
 	// Address of the associated Device in the context of the Antecedent Controller.
 	DeviceNumber string
+}
+
+func NewCIM_ProtocolControllerForDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_ProtocolControllerForDevice, err error) {
+	tmp, err := NewCIM_DependencyEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ProtocolControllerForDevice{
+		CIM_Dependency: tmp,
+	}
+	return
+}
+
+func NewCIM_ProtocolControllerForDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ProtocolControllerForDevice, err error) {
+	tmp, err := NewCIM_DependencyEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ProtocolControllerForDevice{
+		CIM_Dependency: tmp,
+	}
+	return
 }
 
 // SetAccessPriority sets the value of AccessPriority for the instance

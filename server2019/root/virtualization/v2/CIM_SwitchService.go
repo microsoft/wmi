@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_SwitchService struct
 type CIM_SwitchService struct {
-	CIM_ForwardingService
+	*CIM_ForwardingService
 
 	// Address used by this SwitchService when it must be uniquely identified. For an ethernet bridge, the MAC Address serves as the BridgeAddress. When concatenated with a SpanningTreeService Priority, a unique bridge identifier results. The MAC address is formatted as twelve hexadecimal digits (e.g., "010203040506"), with each pair representing one of the six octets of the MAC address in "canonical" bit order according to RFC 2469. In other scenarios, like Ipv6, the address is formatted as "ffff:ffff:ffff:ffff".
 	BridgeAddress string
@@ -23,6 +28,35 @@ type CIM_SwitchService struct {
 
 	// The number of switch ports controlled by this switching service.
 	NumPorts uint16
+}
+
+func NewCIM_SwitchServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_SwitchService, err error) {
+	tmp, err := NewCIM_ForwardingServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SwitchService{
+		CIM_ForwardingService: tmp,
+	}
+	return
+}
+
+func NewCIM_SwitchServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_SwitchService, err error) {
+	tmp, err := NewCIM_ForwardingServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SwitchService{
+		CIM_ForwardingService: tmp,
+	}
+	return
 }
 
 // SetBridgeAddress sets the value of BridgeAddress for the instance

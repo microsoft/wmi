@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Hgs
 //////////////////////////////////////////////
 package hgs
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_HgsKeyProtector struct
 type MSFT_HgsKeyProtector struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Guardians []MSFT_HgsGuardian
@@ -24,6 +26,35 @@ type MSFT_HgsKeyProtector struct {
 
 	//
 	RawData []uint8
+}
+
+func NewMSFT_HgsKeyProtectorEx1(instance *cim.WmiInstance) (newInstance *MSFT_HgsKeyProtector, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_HgsKeyProtector{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_HgsKeyProtectorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_HgsKeyProtector, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_HgsKeyProtector{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetGuardians sets the value of Guardians for the instance

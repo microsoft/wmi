@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_MediaAccessDevice struct
 type CIM_MediaAccessDevice struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	// Capabilities of the MediaAccessDevice. For example, the Device may support "Random Access", removeable media and "Automatic Cleaning". In this case, the values 3, 7 and 9 would be written to the array.
 	///Several of the enumerated values require some explanation: 1) Value 11, Supports Dual Sided Media, distinguishes a Device that can access both sides of dual sided Media, from a Device that reads only a single side and requires the Media to be flipped; and, 2) Value 12, Predismount Eject Not Required, indicates that Media does not have to be explicitly ejected from the Device before being accessed by a PickerElement.
@@ -81,6 +86,35 @@ type CIM_MediaAccessDevice struct {
 
 	// Time in milliseconds from being able to read or write a Media to its 'unload'. For example, for DiskDrives, this is the interval between a disk spinning at nominal speeds and a disk not spinning. For TapeDrives, this is the time for a Media to go from its BOT to being fully ejected and accessible to a PickerElement or human operator.
 	UnloadTime uint64
+}
+
+func NewCIM_MediaAccessDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_MediaAccessDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MediaAccessDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_MediaAccessDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_MediaAccessDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MediaAccessDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetCapabilities sets the value of Capabilities for the instance

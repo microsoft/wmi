@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_iSCSISessionToiSCSITargetPortal struct
 type MSFT_iSCSISessionToiSCSITargetPortal struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	iSCSISession MSFT_iSCSISession
 
 	//
 	iSCSITargetPortal MSFT_iSCSITargetPortal
+}
+
+func NewMSFT_iSCSISessionToiSCSITargetPortalEx1(instance *cim.WmiInstance) (newInstance *MSFT_iSCSISessionToiSCSITargetPortal, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSISessionToiSCSITargetPortal{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_iSCSISessionToiSCSITargetPortalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_iSCSISessionToiSCSITargetPortal, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSISessionToiSCSITargetPortal{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetiSCSISession sets the value of iSCSISession for the instance

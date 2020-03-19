@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Scaleout
 //////////////////////////////////////////////
 package scaleout
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ClusterSetNode struct
 type MSFT_ClusterSetNode struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AvailableMemory uint64
@@ -69,6 +71,35 @@ type MSFT_ClusterSetNode struct {
 
 	//
 	TotalMemory uint64
+}
+
+func NewMSFT_ClusterSetNodeEx1(instance *cim.WmiInstance) (newInstance *MSFT_ClusterSetNode, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ClusterSetNode{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ClusterSetNodeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ClusterSetNode, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ClusterSetNode{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAvailableMemory sets the value of AvailableMemory for the instance

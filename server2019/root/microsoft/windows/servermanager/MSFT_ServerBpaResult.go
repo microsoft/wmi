@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ServerBpaResult struct
 type MSFT_ServerBpaResult struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	BpaXPath string
 
 	//
 	Values []string
+}
+
+func NewMSFT_ServerBpaResultEx1(instance *cim.WmiInstance) (newInstance *MSFT_ServerBpaResult, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerBpaResult{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ServerBpaResultEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ServerBpaResult, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerBpaResult{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetBpaXPath sets the value of BpaXPath for the instance

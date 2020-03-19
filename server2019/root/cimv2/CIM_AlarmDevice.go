@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_AlarmDevice struct
 type CIM_AlarmDevice struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	//
 	AudibleAlarm bool
@@ -20,6 +25,35 @@ type CIM_AlarmDevice struct {
 
 	//
 	VisibleAlarm bool
+}
+
+func NewCIM_AlarmDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_AlarmDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AlarmDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_AlarmDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_AlarmDevice, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AlarmDevice{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetAudibleAlarm sets the value of AudibleAlarm for the instance

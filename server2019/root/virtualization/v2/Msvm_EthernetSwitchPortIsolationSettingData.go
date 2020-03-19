@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchPortIsolationSettingData struct
 type Msvm_EthernetSwitchPortIsolationSettingData struct {
-	Msvm_EthernetSwitchPortFeatureSettingData
+	*Msvm_EthernetSwitchPortFeatureSettingData
 
 	//
 	AllowUntaggedTraffic bool
@@ -27,6 +28,35 @@ type Msvm_EthernetSwitchPortIsolationSettingData struct {
 
 	//
 	IsolationMode uint32
+}
+
+func NewMsvm_EthernetSwitchPortIsolationSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchPortIsolationSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortIsolationSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchPortIsolationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchPortIsolationSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortIsolationSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
 }
 
 // SetAllowUntaggedTraffic sets the value of AllowUntaggedTraffic for the instance

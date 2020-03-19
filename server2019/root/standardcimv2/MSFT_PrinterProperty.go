@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_PrinterProperty struct
 type MSFT_PrinterProperty struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	ComputerName string
@@ -26,6 +31,35 @@ type MSFT_PrinterProperty struct {
 
 	//
 	Value string
+}
+
+func NewMSFT_PrinterPropertyEx1(instance *cim.WmiInstance) (newInstance *MSFT_PrinterProperty, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PrinterProperty{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_PrinterPropertyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PrinterProperty, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PrinterProperty{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetComputerName sets the value of ComputerName for the instance

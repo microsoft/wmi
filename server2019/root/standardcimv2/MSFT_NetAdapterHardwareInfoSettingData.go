@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapterHardwareInfoSettingData struct
 type MSFT_NetAdapterHardwareInfoSettingData struct {
-	MSFT_NetAdapterSettingData
+	*MSFT_NetAdapterSettingData
 
 	//
 	BusNumber uint32
@@ -119,6 +124,35 @@ type MSFT_NetAdapterHardwareInfoSettingData struct {
 
 	//
 	SriovSupport uint32
+}
+
+func NewMSFT_NetAdapterHardwareInfoSettingDataEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterHardwareInfoSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterHardwareInfoSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterHardwareInfoSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterHardwareInfoSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterHardwareInfoSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
 }
 
 // SetBusNumber sets the value of BusNumber for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MaskingSet struct
 type MSFT_MaskingSet struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	// FriendlyName is a user-friendly name of the masking set. It is specified during the creation of the masking set, and can be changed using the SetFriendlyName method.
 	FriendlyName string
@@ -20,6 +25,35 @@ type MSFT_MaskingSet struct {
 
 	// Name is a user-friendly system defined name for the masking set. Name is unique within the scope of the owning storage subsystem.
 	Name string
+}
+
+func NewMSFT_MaskingSetEx1(instance *cim.WmiInstance) (newInstance *MSFT_MaskingSet, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MaskingSet{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_MaskingSetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MaskingSet, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MaskingSet{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetServiceLogonTypeNotGranted struct
 type MSFT_NetServiceLogonTypeNotGranted struct {
-	MSFT_SCMEventLogEvent
+	*MSFT_SCMEventLogEvent
 
 	//
 	Account string
@@ -20,6 +25,35 @@ type MSFT_NetServiceLogonTypeNotGranted struct {
 
 	//
 	Service string
+}
+
+func NewMSFT_NetServiceLogonTypeNotGrantedEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetServiceLogonTypeNotGranted, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceLogonTypeNotGranted{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetServiceLogonTypeNotGrantedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetServiceLogonTypeNotGranted, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceLogonTypeNotGranted{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
 }
 
 // SetAccount sets the value of Account for the instance

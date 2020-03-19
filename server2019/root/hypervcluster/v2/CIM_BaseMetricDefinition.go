@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_BaseMetricDefinition struct
 type CIM_BaseMetricDefinition struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	// Defines one or more strings that can be used to refine (break down) queries against the BaseMetricValues along a certain dimension. An example is a transaction name, allowing the break down of the total value for all transactions into a set of values, one for each transaction name. Other examples might be application system or user group name. The strings are free format and should be meaningful to the end users of the metric data. The strings indicate which break down dimensions are supported for this metric definition, by the underlying instrumentation.
 	BreakdownDimensions []string
@@ -60,6 +65,35 @@ type CIM_BaseMetricDefinition struct {
 
 	// Identifies the specific units of a value. Examples are Bytes, Packets, Jobs, Files, Milliseconds, and Amps.
 	Units string
+}
+
+func NewCIM_BaseMetricDefinitionEx1(instance *cim.WmiInstance) (newInstance *CIM_BaseMetricDefinition, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BaseMetricDefinition{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewCIM_BaseMetricDefinitionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_BaseMetricDefinition, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BaseMetricDefinition{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetBreakdownDimensions sets the value of BreakdownDimensions for the instance

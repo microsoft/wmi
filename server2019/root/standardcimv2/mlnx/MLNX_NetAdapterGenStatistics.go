@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_NetAdapterGenStatistics struct
 type MLNX_NetAdapterGenStatistics struct {
-	MLNX_NetAdapterStatistics
+	*MLNX_NetAdapterStatistics
 
 	//
 	ifHCInBroadcastOctets uint64
@@ -71,6 +76,35 @@ type MLNX_NetAdapterGenStatistics struct {
 
 	//
 	ifOutErrors uint64
+}
+
+func NewMLNX_NetAdapterGenStatisticsEx1(instance *cim.WmiInstance) (newInstance *MLNX_NetAdapterGenStatistics, err error) {
+	tmp, err := NewMLNX_NetAdapterStatisticsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_NetAdapterGenStatistics{
+		MLNX_NetAdapterStatistics: tmp,
+	}
+	return
+}
+
+func NewMLNX_NetAdapterGenStatisticsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_NetAdapterGenStatistics, err error) {
+	tmp, err := NewMLNX_NetAdapterStatisticsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_NetAdapterGenStatistics{
+		MLNX_NetAdapterStatistics: tmp,
+	}
+	return
 }
 
 // SetifHCInBroadcastOctets sets the value of ifHCInBroadcastOctets for the instance

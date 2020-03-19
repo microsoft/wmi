@@ -3,14 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSExpandEnvironmentVariables struct
 type Win32_TSExpandEnvironmentVariables struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
+}
+
+func NewWin32_TSExpandEnvironmentVariablesEx1(instance *cim.WmiInstance) (newInstance *Win32_TSExpandEnvironmentVariables, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSExpandEnvironmentVariables{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_TSExpandEnvironmentVariablesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSExpandEnvironmentVariables, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSExpandEnvironmentVariables{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // Expands System Defined Environment Variables

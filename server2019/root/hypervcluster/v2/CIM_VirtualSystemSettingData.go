@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VirtualSystemSettingData struct
 type CIM_VirtualSystemSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	// Action to take for the virtual system when the software executed by the virtual system fails. Failures in this case means a failure that is detectable by the host platform, such as a non-interuptable wait state condition.
 	AutomaticRecoveryAction VirtualSystemSettingData_AutomaticRecoveryAction
@@ -74,6 +79,35 @@ type CIM_VirtualSystemSettingData struct {
 	///As stated in the class description, instances of this class may be used for various purposes. A management application intending to use an instance of this class as input parameter to an operation that creates or modifies a virtual system should first determine the set of valid virtual system types that are supported by the virtualization platform hosting the virtual system by inspecting values of array property VirtualSystemTypesSupported of the instance of class CIM_VirtualSystemManagementCapabilities that describes the capabilities of the virtualization platform.
 	///The following DMTF values are defined: DMTF:unknown - the virtual system type is unknown or cannot be determined
 	VirtualSystemType string
+}
+
+func NewCIM_VirtualSystemSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewCIM_VirtualSystemSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VirtualSystemSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VirtualSystemSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetAutomaticRecoveryAction sets the value of AutomaticRecoveryAction for the instance

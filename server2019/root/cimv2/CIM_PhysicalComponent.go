@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PhysicalComponent struct
 type CIM_PhysicalComponent struct {
-	CIM_PhysicalElement
+	*CIM_PhysicalElement
 
 	//
 	HotSwappable bool
@@ -20,6 +25,35 @@ type CIM_PhysicalComponent struct {
 
 	//
 	Replaceable bool
+}
+
+func NewCIM_PhysicalComponentEx1(instance *cim.WmiInstance) (newInstance *CIM_PhysicalComponent, err error) {
+	tmp, err := NewCIM_PhysicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalComponent{
+		CIM_PhysicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_PhysicalComponentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PhysicalComponent, err error) {
+	tmp, err := NewCIM_PhysicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalComponent{
+		CIM_PhysicalElement: tmp,
+	}
+	return
 }
 
 // SetHotSwappable sets the value of HotSwappable for the instance

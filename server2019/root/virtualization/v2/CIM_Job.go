@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Job struct
 type CIM_Job struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// Indicates whether or not the job should be automatically deleted upon completion. Note that the 'completion' of a recurring job is defined by its JobRunTimes or UntilTime properties, or when the Job is terminated by manual intervention. If this property is set to false and the job completes, then the extrinsic method DeleteInstance must be used to delete the job instead of updating this property.
 	DeleteOnCompletion bool
@@ -85,6 +90,35 @@ type CIM_Job struct {
 
 	// The time after which the Job is invalid or should be stopped. This time can be represented by an actual date and time, or by an interval relative to the time that this property is requested. A value of all nines indicates that the Job can run indefinitely.
 	UntilTime string
+}
+
+func NewCIM_JobEx1(instance *cim.WmiInstance) (newInstance *CIM_Job, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Job{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_JobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Job, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Job{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetDeleteOnCompletion sets the value of DeleteOnCompletion for the instance

@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.protectionManagement
 //////////////////////////////////////////////
 package protectionmanagement
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_MpSignature struct
 type MSFT_MpSignature struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewMSFT_MpSignatureEx1(instance *cim.WmiInstance) (newInstance *MSFT_MpSignature, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpSignature{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_MpSignatureEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MpSignature, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpSignature{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

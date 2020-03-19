@@ -3,14 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_VssService struct
 type Msvm_VssService struct {
-	Msvm_GuestService
+	*Msvm_GuestService
+}
+
+func NewMsvm_VssServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_VssService, err error) {
+	tmp, err := NewMsvm_GuestServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VssService{
+		Msvm_GuestService: tmp,
+	}
+	return
+}
+
+func NewMsvm_VssServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VssService, err error) {
+	tmp, err := NewMsvm_GuestServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VssService{
+		Msvm_GuestService: tmp,
+	}
+	return
 }
 
 //
@@ -26,4 +60,8 @@ func (instance *Msvm_VssService) QueryGuestClusterInformation( /* OUT */ GuestCl
 	result = uint32(retValue)
 	return
 
+}
+
+func (instance *Msvm_VssService) GetRelatedVssComponent() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VssComponent")
 }

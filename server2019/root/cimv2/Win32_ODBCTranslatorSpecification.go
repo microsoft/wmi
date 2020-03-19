@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ODBCTranslatorSpecification struct
 type Win32_ODBCTranslatorSpecification struct {
-	CIM_Check
+	*CIM_Check
 
 	//
 	File string
@@ -20,6 +25,35 @@ type Win32_ODBCTranslatorSpecification struct {
 
 	//
 	Translator string
+}
+
+func NewWin32_ODBCTranslatorSpecificationEx1(instance *cim.WmiInstance) (newInstance *Win32_ODBCTranslatorSpecification, err error) {
+	tmp, err := NewCIM_CheckEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ODBCTranslatorSpecification{
+		CIM_Check: tmp,
+	}
+	return
+}
+
+func NewWin32_ODBCTranslatorSpecificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ODBCTranslatorSpecification, err error) {
+	tmp, err := NewCIM_CheckEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ODBCTranslatorSpecification{
+		CIM_Check: tmp,
+	}
+	return
 }
 
 // SetFile sets the value of File for the instance

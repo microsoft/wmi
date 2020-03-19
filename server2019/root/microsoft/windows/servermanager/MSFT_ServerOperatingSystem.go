@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ServerOperatingSystem struct
 type MSFT_ServerOperatingSystem struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Architecture uint8
@@ -45,6 +47,35 @@ type MSFT_ServerOperatingSystem struct {
 
 	//
 	SPMinorVersion uint16
+}
+
+func NewMSFT_ServerOperatingSystemEx1(instance *cim.WmiInstance) (newInstance *MSFT_ServerOperatingSystem, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerOperatingSystem{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ServerOperatingSystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ServerOperatingSystem, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ServerOperatingSystem{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetArchitecture sets the value of Architecture for the instance

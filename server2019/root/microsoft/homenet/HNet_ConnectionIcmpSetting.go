@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // HNet_ConnectionIcmpSetting struct
 type HNet_ConnectionIcmpSetting struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Connection HNet_Connection
 
 	//
 	IcmpSettings HNet_FwIcmpSettings
+}
+
+func NewHNet_ConnectionIcmpSettingEx1(instance *cim.WmiInstance) (newInstance *HNet_ConnectionIcmpSetting, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_ConnectionIcmpSetting{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewHNet_ConnectionIcmpSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *HNet_ConnectionIcmpSetting, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_ConnectionIcmpSetting{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConnection sets the value of Connection for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_AssignedAccess struct
 type MDM_AssignedAccess struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Configuration string
@@ -30,6 +32,35 @@ type MDM_AssignedAccess struct {
 
 	//
 	ShellLauncher string
+}
+
+func NewMDM_AssignedAccessEx1(instance *cim.WmiInstance) (newInstance *MDM_AssignedAccess, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_AssignedAccess{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_AssignedAccessEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_AssignedAccess, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_AssignedAccess{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConfiguration sets the value of Configuration for the instance

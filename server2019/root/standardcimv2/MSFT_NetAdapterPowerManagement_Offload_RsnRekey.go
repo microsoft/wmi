@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapterPowerManagement_Offload_RsnRekey struct
 type MSFT_NetAdapterPowerManagement_Offload_RsnRekey struct {
-	MSFT_NetAdapterPowerManagement_Offload
+	*MSFT_NetAdapterPowerManagement_Offload
 
 	//
 	KCK []uint8
@@ -20,6 +25,35 @@ type MSFT_NetAdapterPowerManagement_Offload_RsnRekey struct {
 
 	//
 	ReplayCounter uint64
+}
+
+func NewMSFT_NetAdapterPowerManagement_Offload_RsnRekeyEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey, err error) {
+	tmp, err := NewMSFT_NetAdapterPowerManagement_OffloadEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterPowerManagement_Offload_RsnRekey{
+		MSFT_NetAdapterPowerManagement_Offload: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterPowerManagement_Offload_RsnRekeyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey, err error) {
+	tmp, err := NewMSFT_NetAdapterPowerManagement_OffloadEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterPowerManagement_Offload_RsnRekey{
+		MSFT_NetAdapterPowerManagement_Offload: tmp,
+	}
+	return
 }
 
 // SetKCK sets the value of KCK for the instance

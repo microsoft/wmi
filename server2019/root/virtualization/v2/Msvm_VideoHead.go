@@ -3,12 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_VideoHead struct
 type Msvm_VideoHead struct {
-	CIM_VideoHead
+	*CIM_VideoHead
+}
+
+func NewMsvm_VideoHeadEx1(instance *cim.WmiInstance) (newInstance *Msvm_VideoHead, err error) {
+	tmp, err := NewCIM_VideoHeadEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VideoHead{
+		CIM_VideoHead: tmp,
+	}
+	return
+}
+
+func NewMsvm_VideoHeadEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VideoHead, err error) {
+	tmp, err := NewCIM_VideoHeadEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VideoHead{
+		CIM_VideoHead: tmp,
+	}
+	return
+}
+
+func (instance *Msvm_VideoHead) GetRelatedSyntheticDisplayController() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SyntheticDisplayController")
+}
+
+func (instance *Msvm_VideoHead) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ComputerSystem")
 }

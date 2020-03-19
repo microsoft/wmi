@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Memory struct
 type CIM_Memory struct {
-	CIM_StorageExtent
+	*CIM_StorageExtent
 
 	//
 	AdditionalErrorData []uint8
@@ -53,6 +58,35 @@ type CIM_Memory struct {
 
 	//
 	SystemLevelAddress bool
+}
+
+func NewCIM_MemoryEx1(instance *cim.WmiInstance) (newInstance *CIM_Memory, err error) {
+	tmp, err := NewCIM_StorageExtentEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Memory{
+		CIM_StorageExtent: tmp,
+	}
+	return
+}
+
+func NewCIM_MemoryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Memory, err error) {
+	tmp, err := NewCIM_StorageExtentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Memory{
+		CIM_StorageExtent: tmp,
+	}
+	return
 }
 
 // SetAdditionalErrorData sets the value of AdditionalErrorData for the instance

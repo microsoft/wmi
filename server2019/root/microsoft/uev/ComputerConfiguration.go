@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Uev
 //////////////////////////////////////////////
 package uev
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // ComputerConfiguration struct
 type ComputerConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// Contact IT Description
 	ContactITDescription string
@@ -78,6 +80,35 @@ type ComputerConfiguration struct {
 
 	// Wait timeout for synchronization from the settings repository (in milliseconds)
 	WaitForSyncTimeoutInMilliseconds uint32
+}
+
+func NewComputerConfigurationEx1(instance *cim.WmiInstance) (newInstance *ComputerConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &ComputerConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewComputerConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *ComputerConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ComputerConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetContactITDescription sets the value of ContactITDescription for the instance

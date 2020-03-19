@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageObject struct
 type MSFT_StorageObject struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// ObjectId is a mandatory property that is used to opaquely and uniquely identify an instance of a class. ObjectIds must be unique within the scope of the management server (which is hosting the provider). The ObjectId is created and maintained for use of the Storage Management Providers and their clients to track instances of objects. If an object is visible through two different paths (for example: there are two separate Storage Management Providers that point to the same storage subsystem) then the same object may appear with two different ObjectIds. For determining if two object instances are the same object, refer to the UniqueId property.
 	ObjectId string
@@ -33,6 +35,35 @@ type MSFT_StorageObject struct {
 
 	// UniqueId is a mandatory property that is used to uniquely identify a logical instance of a storage subsystem's object. This value must be the same for an object viewed by two or more provider instances (even if they are running on seperate management servers). UniqueId can be any globally unique, opaque value unless otherwise specified by a derived class.
 	UniqueId string
+}
+
+func NewMSFT_StorageObjectEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageObject, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageObject{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageObjectEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageObject, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageObject{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetObjectId sets the value of ObjectId for the instance

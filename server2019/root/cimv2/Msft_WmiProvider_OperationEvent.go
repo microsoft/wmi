@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msft_WmiProvider_OperationEvent struct
 type Msft_WmiProvider_OperationEvent struct {
-	MSFT_WmiSelfEvent
+	*MSFT_WmiSelfEvent
 
 	//
 	HostingGroup string
@@ -32,6 +37,35 @@ type Msft_WmiProvider_OperationEvent struct {
 
 	//
 	User string
+}
+
+func NewMsft_WmiProvider_OperationEventEx1(instance *cim.WmiInstance) (newInstance *Msft_WmiProvider_OperationEvent, err error) {
+	tmp, err := NewMSFT_WmiSelfEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_OperationEvent{
+		MSFT_WmiSelfEvent: tmp,
+	}
+	return
+}
+
+func NewMsft_WmiProvider_OperationEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_WmiProvider_OperationEvent, err error) {
+	tmp, err := NewMSFT_WmiSelfEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_WmiProvider_OperationEvent{
+		MSFT_WmiSelfEvent: tmp,
+	}
+	return
 }
 
 // SetHostingGroup sets the value of HostingGroup for the instance

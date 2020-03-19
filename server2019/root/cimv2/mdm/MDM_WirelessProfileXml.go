@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_WirelessProfileXml struct
 type MDM_WirelessProfileXml struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Name string
 
 	//
 	ProfileXml string
+}
+
+func NewMDM_WirelessProfileXmlEx1(instance *cim.WmiInstance) (newInstance *MDM_WirelessProfileXml, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_WirelessProfileXml{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_WirelessProfileXmlEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_WirelessProfileXml, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_WirelessProfileXml{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetName sets the value of Name for the instance

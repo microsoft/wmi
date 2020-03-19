@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // WMI_extension struct
 type WMI_extension struct {
-	__Win32Provider
+	*__Win32Provider
 
 	//
 	AssemblyName string
@@ -20,6 +25,35 @@ type WMI_extension struct {
 
 	//
 	CLRVersion string
+}
+
+func NewWMI_extensionEx1(instance *cim.WmiInstance) (newInstance *WMI_extension, err error) {
+	tmp, err := New__Win32ProviderEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &WMI_extension{
+		__Win32Provider: tmp,
+	}
+	return
+}
+
+func NewWMI_extensionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *WMI_extension, err error) {
+	tmp, err := New__Win32ProviderEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &WMI_extension{
+		__Win32Provider: tmp,
+	}
+	return
 }
 
 // SetAssemblyName sets the value of AssemblyName for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DiagnosticSetting struct
 type CIM_DiagnosticSetting struct {
-	CIM_Setting
+	*CIM_Setting
 
 	//
 	HaltOnError bool
@@ -62,6 +67,35 @@ type CIM_DiagnosticSetting struct {
 
 	//
 	VerbosityLevel []DiagnosticSetting_VerbosityLevel
+}
+
+func NewCIM_DiagnosticSettingEx1(instance *cim.WmiInstance) (newInstance *CIM_DiagnosticSetting, err error) {
+	tmp, err := NewCIM_SettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticSetting{
+		CIM_Setting: tmp,
+	}
+	return
+}
+
+func NewCIM_DiagnosticSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DiagnosticSetting, err error) {
+	tmp, err := NewCIM_SettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DiagnosticSetting{
+		CIM_Setting: tmp,
+	}
+	return
 }
 
 // SetHaltOnError sets the value of HaltOnError for the instance

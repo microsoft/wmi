@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_Card struct
 type CIM_Card struct {
-	CIM_PhysicalPackage
+	*CIM_PhysicalPackage
 
 	//
 	HostingBoard bool
@@ -26,6 +31,35 @@ type CIM_Card struct {
 
 	//
 	SpecialRequirements bool
+}
+
+func NewCIM_CardEx1(instance *cim.WmiInstance) (newInstance *CIM_Card, err error) {
+	tmp, err := NewCIM_PhysicalPackageEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Card{
+		CIM_PhysicalPackage: tmp,
+	}
+	return
+}
+
+func NewCIM_CardEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Card, err error) {
+	tmp, err := NewCIM_PhysicalPackageEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Card{
+		CIM_PhysicalPackage: tmp,
+	}
+	return
 }
 
 // SetHostingBoard sets the value of HostingBoard for the instance

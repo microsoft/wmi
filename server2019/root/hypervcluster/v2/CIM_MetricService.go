@@ -3,14 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_MetricService struct
 type CIM_MetricService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewCIM_MetricServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_MetricService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MetricService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewCIM_MetricServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_MetricService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_MetricService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 // ShowMetrics reports the Metrics available to be collected for a ManagedElement, the ManagedElements for which a metric defined by an instance of CIM_BaseMetricDefinition is available to be collected, and whether or not a particular metric is currently being collected for a ManagedElement.

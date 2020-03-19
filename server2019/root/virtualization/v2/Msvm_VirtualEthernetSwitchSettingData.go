@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VirtualEthernetSwitchSettingData struct
 type Msvm_VirtualEthernetSwitchSettingData struct {
-	CIM_VirtualEthernetSwitchSettingData
+	*CIM_VirtualEthernetSwitchSettingData
 
 	//
 	BandwidthReservationMode uint32
@@ -30,6 +31,35 @@ type Msvm_VirtualEthernetSwitchSettingData struct {
 
 	//
 	TeamingEnabled bool
+}
+
+func NewMsvm_VirtualEthernetSwitchSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualEthernetSwitchSettingData, err error) {
+	tmp, err := NewCIM_VirtualEthernetSwitchSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualEthernetSwitchSettingData{
+		CIM_VirtualEthernetSwitchSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualEthernetSwitchSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualEthernetSwitchSettingData, err error) {
+	tmp, err := NewCIM_VirtualEthernetSwitchSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualEthernetSwitchSettingData{
+		CIM_VirtualEthernetSwitchSettingData: tmp,
+	}
+	return
 }
 
 // SetBandwidthReservationMode sets the value of BandwidthReservationMode for the instance

@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Scaleout
 //////////////////////////////////////////////
 package scaleout
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_ClusterSetKey struct
 type MSFT_ClusterSetKey struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Cert []uint8
 
 	//
 	key []uint8
+}
+
+func NewMSFT_ClusterSetKeyEx1(instance *cim.WmiInstance) (newInstance *MSFT_ClusterSetKey, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ClusterSetKey{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_ClusterSetKeyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ClusterSetKey, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ClusterSetKey{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCert sets the value of Cert for the instance

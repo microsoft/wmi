@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // DtcTransactionsTraceSettings struct
 type DtcTransactionsTraceSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AbortedTransactionsTracingEnabled bool
@@ -24,6 +26,35 @@ type DtcTransactionsTraceSettings struct {
 
 	//
 	LongLivedTransactionsTracingEnabled bool
+}
+
+func NewDtcTransactionsTraceSettingsEx1(instance *cim.WmiInstance) (newInstance *DtcTransactionsTraceSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcTransactionsTraceSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewDtcTransactionsTraceSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *DtcTransactionsTraceSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &DtcTransactionsTraceSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAbortedTransactionsTracingEnabled sets the value of AbortedTransactionsTracingEnabled for the instance

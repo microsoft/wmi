@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_SummaryInformation struct
 type Msvm_SummaryInformation struct {
-	Msvm_SummaryInformationBase
+	*Msvm_SummaryInformationBase
 
 	//
 	AllocatedGPU string
@@ -89,6 +94,35 @@ type Msvm_SummaryInformation struct {
 
 	//
 	ThumbnailImageWidth uint16
+}
+
+func NewMsvm_SummaryInformationEx1(instance *cim.WmiInstance) (newInstance *Msvm_SummaryInformation, err error) {
+	tmp, err := NewMsvm_SummaryInformationBaseEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SummaryInformation{
+		Msvm_SummaryInformationBase: tmp,
+	}
+	return
+}
+
+func NewMsvm_SummaryInformationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_SummaryInformation, err error) {
+	tmp, err := NewMsvm_SummaryInformationBaseEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SummaryInformation{
+		Msvm_SummaryInformationBase: tmp,
+	}
+	return
 }
 
 // SetAllocatedGPU sets the value of AllocatedGPU for the instance

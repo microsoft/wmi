@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ServerConnection struct
 type Win32_ServerConnection struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	ActiveTime uint32
@@ -32,6 +37,35 @@ type Win32_ServerConnection struct {
 
 	//
 	UserName string
+}
+
+func NewWin32_ServerConnectionEx1(instance *cim.WmiInstance) (newInstance *Win32_ServerConnection, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServerConnection{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_ServerConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ServerConnection, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServerConnection{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetActiveTime sets the value of ActiveTime for the instance

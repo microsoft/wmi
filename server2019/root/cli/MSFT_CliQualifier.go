@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CliQualifier struct
 type MSFT_CliQualifier struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Name string
 
 	//
 	QualifierValue []string
+}
+
+func NewMSFT_CliQualifierEx1(instance *cim.WmiInstance) (newInstance *MSFT_CliQualifier, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliQualifier{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CliQualifierEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CliQualifier, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CliQualifier{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetName sets the value of Name for the instance

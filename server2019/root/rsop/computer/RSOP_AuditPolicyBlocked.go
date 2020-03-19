@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_AuditPolicyBlocked struct
 type RSOP_AuditPolicyBlocked struct {
-	RSOP_SecuritySettingsBlocked
+	*RSOP_SecuritySettingsBlocked
 
 	//
 	Category string
@@ -20,6 +25,35 @@ type RSOP_AuditPolicyBlocked struct {
 
 	//
 	Success bool
+}
+
+func NewRSOP_AuditPolicyBlockedEx1(instance *cim.WmiInstance) (newInstance *RSOP_AuditPolicyBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_AuditPolicyBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
+}
+
+func NewRSOP_AuditPolicyBlockedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_AuditPolicyBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_AuditPolicyBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
 }
 
 // SetCategory sets the value of Category for the instance

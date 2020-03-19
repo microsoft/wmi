@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.protectionManagement
 //////////////////////////////////////////////
 package protectionmanagement
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MpThreat struct
 type MSFT_MpThreat struct {
-	BaseStatus
+	*BaseStatus
 
 	//
 	CategoryID uint8
@@ -41,6 +46,35 @@ type MSFT_MpThreat struct {
 
 	//
 	TypeID uint8
+}
+
+func NewMSFT_MpThreatEx1(instance *cim.WmiInstance) (newInstance *MSFT_MpThreat, err error) {
+	tmp, err := NewBaseStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpThreat{
+		BaseStatus: tmp,
+	}
+	return
+}
+
+func NewMSFT_MpThreatEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MpThreat, err error) {
+	tmp, err := NewBaseStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpThreat{
+		BaseStatus: tmp,
+	}
+	return
 }
 
 // SetCategoryID sets the value of CategoryID for the instance

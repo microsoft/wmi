@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_DriverIbCapabilities struct
 type MLNX_DriverIbCapabilities struct {
-	MLNX_DriverCapabilities
+	*MLNX_DriverCapabilities
 
 	//
 	DebugFlags_Max uint32
@@ -29,6 +34,35 @@ type MLNX_DriverIbCapabilities struct {
 
 	//
 	IbalDebugLevel_Min uint32
+}
+
+func NewMLNX_DriverIbCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MLNX_DriverIbCapabilities, err error) {
+	tmp, err := NewMLNX_DriverCapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverIbCapabilities{
+		MLNX_DriverCapabilities: tmp,
+	}
+	return
+}
+
+func NewMLNX_DriverIbCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_DriverIbCapabilities, err error) {
+	tmp, err := NewMLNX_DriverCapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverIbCapabilities{
+		MLNX_DriverCapabilities: tmp,
+	}
+	return
 }
 
 // SetDebugFlags_Max sets the value of DebugFlags_Max for the instance

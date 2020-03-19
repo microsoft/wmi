@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_AlertIndication struct
 type CIM_AlertIndication struct {
-	CIM_ProcessIndication
+	*CIM_ProcessIndication
 
 	// The format of the AlertingManagedElement property is interpretable based upon the value of this property. Values are defined as:
 	///0 - Unknown. The format is unknown or not meaningfully interpretable by a CIM client application.
@@ -79,6 +84,35 @@ type CIM_AlertIndication struct {
 
 	// Provides information on trending - trending up, down or no change.
 	Trending AlertIndication_Trending
+}
+
+func NewCIM_AlertIndicationEx1(instance *cim.WmiInstance) (newInstance *CIM_AlertIndication, err error) {
+	tmp, err := NewCIM_ProcessIndicationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AlertIndication{
+		CIM_ProcessIndication: tmp,
+	}
+	return
+}
+
+func NewCIM_AlertIndicationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_AlertIndication, err error) {
+	tmp, err := NewCIM_ProcessIndicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AlertIndication{
+		CIM_ProcessIndication: tmp,
+	}
+	return
 }
 
 // SetAlertingElementFormat sets the value of AlertingElementFormat for the instance

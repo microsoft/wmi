@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DMA struct
 type CIM_DMA struct {
-	CIM_SystemResource
+	*CIM_SystemResource
 
 	//
 	AddressSize uint16
@@ -50,6 +55,35 @@ type CIM_DMA struct {
 
 	//
 	WordMode uint16
+}
+
+func NewCIM_DMAEx1(instance *cim.WmiInstance) (newInstance *CIM_DMA, err error) {
+	tmp, err := NewCIM_SystemResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DMA{
+		CIM_SystemResource: tmp,
+	}
+	return
+}
+
+func NewCIM_DMAEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DMA, err error) {
+	tmp, err := NewCIM_SystemResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DMA{
+		CIM_SystemResource: tmp,
+	}
+	return
 }
 
 // SetAddressSize sets the value of AddressSize for the instance

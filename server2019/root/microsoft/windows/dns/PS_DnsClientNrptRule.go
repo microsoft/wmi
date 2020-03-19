@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // PS_DnsClientNrptRule struct
 type PS_DnsClientNrptRule struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewPS_DnsClientNrptRuleEx1(instance *cim.WmiInstance) (newInstance *PS_DnsClientNrptRule, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_DnsClientNrptRule{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewPS_DnsClientNrptRuleEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *PS_DnsClientNrptRule, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &PS_DnsClientNrptRule{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

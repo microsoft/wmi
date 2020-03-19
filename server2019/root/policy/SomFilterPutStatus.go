@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Policy
 //////////////////////////////////////////////
 package policy
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // SomFilterPutStatus struct
 type SomFilterPutStatus struct {
-	__ExtendedStatus
+	*__ExtendedStatus
 
 	//
 	RuleValidationResults []uint32
+}
+
+func NewSomFilterPutStatusEx1(instance *cim.WmiInstance) (newInstance *SomFilterPutStatus, err error) {
+	tmp, err := New__ExtendedStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SomFilterPutStatus{
+		__ExtendedStatus: tmp,
+	}
+	return
+}
+
+func NewSomFilterPutStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SomFilterPutStatus, err error) {
+	tmp, err := New__ExtendedStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SomFilterPutStatus{
+		__ExtendedStatus: tmp,
+	}
+	return
 }
 
 // SetRuleValidationResults sets the value of RuleValidationResults for the instance

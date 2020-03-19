@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_SerialPort struct
 type Win32_SerialPort struct {
-	CIM_SerialController
+	*CIM_SerialController
 
 	//
 	Binary bool
@@ -77,6 +82,35 @@ type Win32_SerialPort struct {
 
 	//
 	SupportsXOnXOffSet bool
+}
+
+func NewWin32_SerialPortEx1(instance *cim.WmiInstance) (newInstance *Win32_SerialPort, err error) {
+	tmp, err := NewCIM_SerialControllerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SerialPort{
+		CIM_SerialController: tmp,
+	}
+	return
+}
+
+func NewWin32_SerialPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_SerialPort, err error) {
+	tmp, err := NewCIM_SerialControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SerialPort{
+		CIM_SerialController: tmp,
+	}
+	return
 }
 
 // SetBinary sets the value of Binary for the instance

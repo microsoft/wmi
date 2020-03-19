@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_IEAKPolicySetting struct
 type RSOP_IEAKPolicySetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	//
 	categories int32
@@ -116,6 +121,35 @@ type RSOP_IEAKPolicySetting struct {
 
 	//
 	userAgentText string
+}
+
+func NewRSOP_IEAKPolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEAKPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEAKPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEAKPolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEAKPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEAKPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // Setcategories sets the value of categories for the instance

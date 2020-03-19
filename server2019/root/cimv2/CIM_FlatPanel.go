@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_FlatPanel struct
 type CIM_FlatPanel struct {
-	CIM_Display
+	*CIM_Display
 
 	//
 	DisplayType uint16
@@ -29,6 +34,35 @@ type CIM_FlatPanel struct {
 
 	//
 	VerticalResolution uint32
+}
+
+func NewCIM_FlatPanelEx1(instance *cim.WmiInstance) (newInstance *CIM_FlatPanel, err error) {
+	tmp, err := NewCIM_DisplayEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FlatPanel{
+		CIM_Display: tmp,
+	}
+	return
+}
+
+func NewCIM_FlatPanelEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_FlatPanel, err error) {
+	tmp, err := NewCIM_DisplayEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_FlatPanel{
+		CIM_Display: tmp,
+	}
+	return
 }
 
 // SetDisplayType sets the value of DisplayType for the instance

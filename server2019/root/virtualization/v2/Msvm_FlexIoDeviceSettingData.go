@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_FlexIoDeviceSettingData struct
 type Msvm_FlexIoDeviceSettingData struct {
-	CIM_ResourceAllocationSettingData
+	*CIM_ResourceAllocationSettingData
 
 	//
 	EmulatorConfiguration []string
@@ -27,6 +28,35 @@ type Msvm_FlexIoDeviceSettingData struct {
 
 	//
 	VirtualSystemIdentifiers []string
+}
+
+func NewMsvm_FlexIoDeviceSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_FlexIoDeviceSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_FlexIoDeviceSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_FlexIoDeviceSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_FlexIoDeviceSettingData, err error) {
+	tmp, err := NewCIM_ResourceAllocationSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_FlexIoDeviceSettingData{
+		CIM_ResourceAllocationSettingData: tmp,
+	}
+	return
 }
 
 // SetEmulatorConfiguration sets the value of EmulatorConfiguration for the instance

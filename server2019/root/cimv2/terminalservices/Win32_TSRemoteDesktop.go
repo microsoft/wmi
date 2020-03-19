@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSRemoteDesktop struct
 type Win32_TSRemoteDesktop struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// Alias of the Desktop
 	Alias string
@@ -38,6 +43,35 @@ type Win32_TSRemoteDesktop struct {
 
 	// Virtual machine farm settigns corresponding to the desktop
 	VmFarmSettings string
+}
+
+func NewWin32_TSRemoteDesktopEx1(instance *cim.WmiInstance) (newInstance *Win32_TSRemoteDesktop, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSRemoteDesktop{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_TSRemoteDesktopEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSRemoteDesktop, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSRemoteDesktop{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAlias sets the value of Alias for the instance

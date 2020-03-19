@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_ReplicationGroup struct
 type MSFT_ReplicationGroup struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	// A user-friendly string representing the description of the replication group.
 	Description string
@@ -26,6 +31,35 @@ type MSFT_ReplicationGroup struct {
 
 	// Indicates the current operating conditions of the group. Unlike HealthStatus, this field indicates the status of hardware, software, and infrastructure issues related to this group, and can contain multiple values.
 	OperationalStatus []ReplicationGroup_OperationalStatus
+}
+
+func NewMSFT_ReplicationGroupEx1(instance *cim.WmiInstance) (newInstance *MSFT_ReplicationGroup, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ReplicationGroup{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_ReplicationGroupEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ReplicationGroup, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ReplicationGroup{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetDescription sets the value of Description for the instance

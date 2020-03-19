@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DeliveryOptimization
 //////////////////////////////////////////////
 package deliveryoptimization
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DeliveryOptimizationExtendedConfig struct
 type MSFT_DeliveryOptimizationExtendedConfig struct {
-	MSFT_DOBaseStatus
+	*MSFT_DOBaseStatus
 
 	//
 	BatteryPctToSeed uint32
@@ -47,6 +52,35 @@ type MSFT_DeliveryOptimizationExtendedConfig struct {
 
 	//
 	WorkingDirectoryProvider DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider
+}
+
+func NewMSFT_DeliveryOptimizationExtendedConfigEx1(instance *cim.WmiInstance) (newInstance *MSFT_DeliveryOptimizationExtendedConfig, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DeliveryOptimizationExtendedConfig{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
+}
+
+func NewMSFT_DeliveryOptimizationExtendedConfigEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DeliveryOptimizationExtendedConfig, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DeliveryOptimizationExtendedConfig{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
 }
 
 // SetBatteryPctToSeed sets the value of BatteryPctToSeed for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSStartMenuApplication struct
 type Win32_TSStartMenuApplication struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// Command line arguments
 	CommandLineArguments string
@@ -26,6 +31,35 @@ type Win32_TSStartMenuApplication struct {
 
 	// Virtual Path to the application (includes Environment Variables)
 	VPath string
+}
+
+func NewWin32_TSStartMenuApplicationEx1(instance *cim.WmiInstance) (newInstance *Win32_TSStartMenuApplication, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSStartMenuApplication{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_TSStartMenuApplicationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSStartMenuApplication, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSStartMenuApplication{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCommandLineArguments sets the value of CommandLineArguments for the instance

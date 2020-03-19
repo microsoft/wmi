@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TcpIpPrinterPort struct
 type MSFT_TcpIpPrinterPort struct {
-	MSFT_PrinterPort
+	*MSFT_PrinterPort
 
 	//
 	LprByteCounting bool
@@ -38,6 +43,35 @@ type MSFT_TcpIpPrinterPort struct {
 
 	//
 	SNMPIndex uint32
+}
+
+func NewMSFT_TcpIpPrinterPortEx1(instance *cim.WmiInstance) (newInstance *MSFT_TcpIpPrinterPort, err error) {
+	tmp, err := NewMSFT_PrinterPortEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TcpIpPrinterPort{
+		MSFT_PrinterPort: tmp,
+	}
+	return
+}
+
+func NewMSFT_TcpIpPrinterPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TcpIpPrinterPort, err error) {
+	tmp, err := NewMSFT_PrinterPortEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TcpIpPrinterPort{
+		MSFT_PrinterPort: tmp,
+	}
+	return
 }
 
 // SetLprByteCounting sets the value of LprByteCounting for the instance

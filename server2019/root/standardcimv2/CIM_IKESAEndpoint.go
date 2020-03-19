@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_IKESAEndpoint struct
 type CIM_IKESAEndpoint struct {
-	CIM_SecurityAssociationEndpoint
+	*CIM_SecurityAssociationEndpoint
 
 	//
 	AuthenticationMethod uint16
@@ -41,6 +46,35 @@ type CIM_IKESAEndpoint struct {
 
 	//
 	VendorID string
+}
+
+func NewCIM_IKESAEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_IKESAEndpoint, err error) {
+	tmp, err := NewCIM_SecurityAssociationEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IKESAEndpoint{
+		CIM_SecurityAssociationEndpoint: tmp,
+	}
+	return
+}
+
+func NewCIM_IKESAEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_IKESAEndpoint, err error) {
+	tmp, err := NewCIM_SecurityAssociationEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IKESAEndpoint{
+		CIM_SecurityAssociationEndpoint: tmp,
+	}
+	return
 }
 
 // SetAuthenticationMethod sets the value of AuthenticationMethod for the instance

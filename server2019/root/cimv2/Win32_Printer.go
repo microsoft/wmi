@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_Printer struct
 type Win32_Printer struct {
-	CIM_Printer
+	*CIM_Printer
 
 	// The Attributes property indicates the attributes of the Win32 printing device. These attributes are represented through a combination of flags. Attributes of the printer include:
 	///Queued  - Print jobs are buffered and queued.
@@ -142,6 +147,35 @@ type Win32_Printer struct {
 
 	// The WorkOffline property indicates whether to queue print jobs on the computer if the printer is offline.
 	WorkOffline bool
+}
+
+func NewWin32_PrinterEx1(instance *cim.WmiInstance) (newInstance *Win32_Printer, err error) {
+	tmp, err := NewCIM_PrinterEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Printer{
+		CIM_Printer: tmp,
+	}
+	return
+}
+
+func NewWin32_PrinterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_Printer, err error) {
+	tmp, err := NewCIM_PrinterEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Printer{
+		CIM_Printer: tmp,
+	}
+	return
 }
 
 // SetAttributes sets the value of Attributes for the instance

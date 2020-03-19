@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_OfflineFilesUserConfiguration struct
 type Win32_OfflineFilesUserConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AssignedOfflineFiles []string
@@ -27,6 +29,35 @@ type Win32_OfflineFilesUserConfiguration struct {
 
 	//
 	WorkOfflineButtonRemoved bool
+}
+
+func NewWin32_OfflineFilesUserConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_OfflineFilesUserConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OfflineFilesUserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_OfflineFilesUserConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_OfflineFilesUserConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_OfflineFilesUserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAssignedOfflineFiles sets the value of AssignedOfflineFiles for the instance

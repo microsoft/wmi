@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Uev
 //////////////////////////////////////////////
 package uev
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // UserConfiguration struct
 type UserConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// Flag for enabling / disabling sync settings for Windows apps
 	DontSyncWindows8AppSettings bool
@@ -63,6 +65,35 @@ type UserConfiguration struct {
 
 	// Wait timeout for synchronization from the settings repository (in milliseconds)
 	WaitForSyncTimeoutInMilliseconds uint32
+}
+
+func NewUserConfigurationEx1(instance *cim.WmiInstance) (newInstance *UserConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &UserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewUserConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *UserConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &UserConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDontSyncWindows8AppSettings sets the value of DontSyncWindows8AppSettings for the instance

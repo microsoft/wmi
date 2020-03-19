@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_PushPrinterConnectionsPolicySetting struct
 type RSOP_PushPrinterConnectionsPolicySetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	// Whether the the connection is applied per machine, per user1 = User, 2 = Machine.
 	ConnectionType PushPrinterConnectionsPolicySetting_ConnectionType
@@ -29,6 +34,35 @@ type RSOP_PushPrinterConnectionsPolicySetting struct {
 
 	// Short server name
 	uncName string
+}
+
+func NewRSOP_PushPrinterConnectionsPolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_PushPrinterConnectionsPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PushPrinterConnectionsPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_PushPrinterConnectionsPolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_PushPrinterConnectionsPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_PushPrinterConnectionsPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // SetConnectionType sets the value of ConnectionType for the instance

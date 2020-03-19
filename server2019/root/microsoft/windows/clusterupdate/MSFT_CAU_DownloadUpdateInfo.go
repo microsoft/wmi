@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_CAU_DownloadUpdateInfo struct
 type MSFT_CAU_DownloadUpdateInfo struct {
-	MSFT_CAU_ScanUpdateInfo
+	*MSFT_CAU_ScanUpdateInfo
 
 	//
 	UpdateErrorCode int32
@@ -20,6 +25,35 @@ type MSFT_CAU_DownloadUpdateInfo struct {
 
 	//
 	UpdateTimestamp string
+}
+
+func NewMSFT_CAU_DownloadUpdateInfoEx1(instance *cim.WmiInstance) (newInstance *MSFT_CAU_DownloadUpdateInfo, err error) {
+	tmp, err := NewMSFT_CAU_ScanUpdateInfoEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAU_DownloadUpdateInfo{
+		MSFT_CAU_ScanUpdateInfo: tmp,
+	}
+	return
+}
+
+func NewMSFT_CAU_DownloadUpdateInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CAU_DownloadUpdateInfo, err error) {
+	tmp, err := NewMSFT_CAU_ScanUpdateInfoEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAU_DownloadUpdateInfo{
+		MSFT_CAU_ScanUpdateInfo: tmp,
+	}
+	return
 }
 
 // SetUpdateErrorCode sets the value of UpdateErrorCode for the instance

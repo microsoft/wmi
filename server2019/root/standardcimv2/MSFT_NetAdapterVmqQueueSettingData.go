@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapterVmqQueueSettingData struct
 type MSFT_NetAdapterVmqQueueSettingData struct {
-	MSFT_NetAdapterSettingData
+	*MSFT_NetAdapterSettingData
 
 	//
 	FilterList []MSFT_NetAdapter_VmqFilter
@@ -38,6 +43,35 @@ type MSFT_NetAdapterVmqQueueSettingData struct {
 
 	//
 	VmID string
+}
+
+func NewMSFT_NetAdapterVmqQueueSettingDataEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterVmqQueueSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterVmqQueueSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterVmqQueueSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterVmqQueueSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterVmqQueueSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
 }
 
 // SetFilterList sets the value of FilterList for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_StorageProvider struct
 type MSFT_StorageProvider struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	//
 	CimServerName string
@@ -41,6 +46,35 @@ type MSFT_StorageProvider struct {
 
 	//
 	Version string
+}
+
+func NewMSFT_StorageProviderEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageProvider, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageProvider{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageProviderEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageProvider, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageProvider{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetCimServerName sets the value of CimServerName for the instance

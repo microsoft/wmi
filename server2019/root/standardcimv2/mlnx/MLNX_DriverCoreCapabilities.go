@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_DriverCoreCapabilities struct
 type MLNX_DriverCoreCapabilities struct {
-	MLNX_DriverCapabilities
+	*MLNX_DriverCapabilities
 
 	//
 	LogMttsPerSeg_Max uint32
@@ -83,6 +88,35 @@ type MLNX_DriverCoreCapabilities struct {
 
 	//
 	Set4kMtu_Min uint32
+}
+
+func NewMLNX_DriverCoreCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MLNX_DriverCoreCapabilities, err error) {
+	tmp, err := NewMLNX_DriverCapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverCoreCapabilities{
+		MLNX_DriverCapabilities: tmp,
+	}
+	return
+}
+
+func NewMLNX_DriverCoreCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_DriverCoreCapabilities, err error) {
+	tmp, err := NewMLNX_DriverCapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DriverCoreCapabilities{
+		MLNX_DriverCapabilities: tmp,
+	}
+	return
 }
 
 // SetLogMttsPerSeg_Max sets the value of LogMttsPerSeg_Max for the instance

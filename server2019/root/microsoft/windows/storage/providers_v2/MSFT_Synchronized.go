@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_Synchronized struct
 type MSFT_Synchronized struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// CopyMethodology specifies what copy methodology the copy engine uses to create and/or maintain the target element. Values are:
 	///0 - 'Not Specified': The method of maintaining the copy is not specified.
@@ -127,6 +129,35 @@ type MSFT_Synchronized struct {
 	///7 - 'Snapshot': create a point-in-time, virtual copy of the source.
 	///8 - 'Clone': create a point-in-time, full copy the source.
 	SyncType Synchronized_SyncType
+}
+
+func NewMSFT_SynchronizedEx1(instance *cim.WmiInstance) (newInstance *MSFT_Synchronized, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Synchronized{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SynchronizedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_Synchronized, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Synchronized{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCopyMethodology sets the value of CopyMethodology for the instance

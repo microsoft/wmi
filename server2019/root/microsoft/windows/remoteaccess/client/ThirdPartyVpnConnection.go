@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // ThirdPartyVpnConnection struct
 type ThirdPartyVpnConnection struct {
-	VpnCommonConfig
+	*VpnCommonConfig
 
 	//
 	CustomConfiguration string
@@ -20,6 +25,35 @@ type ThirdPartyVpnConnection struct {
 
 	//
 	VpnConfigurationXml string
+}
+
+func NewThirdPartyVpnConnectionEx1(instance *cim.WmiInstance) (newInstance *ThirdPartyVpnConnection, err error) {
+	tmp, err := NewVpnCommonConfigEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ThirdPartyVpnConnection{
+		VpnCommonConfig: tmp,
+	}
+	return
+}
+
+func NewThirdPartyVpnConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *ThirdPartyVpnConnection, err error) {
+	tmp, err := NewVpnCommonConfigEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ThirdPartyVpnConnection{
+		VpnCommonConfig: tmp,
+	}
+	return
 }
 
 // SetCustomConfiguration sets the value of CustomConfiguration for the instance

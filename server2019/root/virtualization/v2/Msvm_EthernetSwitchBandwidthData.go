@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchBandwidthData struct
 type Msvm_EthernetSwitchBandwidthData struct {
-	Msvm_EthernetSwitchData
+	*Msvm_EthernetSwitchData
 
 	//
 	Capacity uint64
@@ -30,6 +31,35 @@ type Msvm_EthernetSwitchBandwidthData struct {
 
 	//
 	Reservation uint64
+}
+
+func NewMsvm_EthernetSwitchBandwidthDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchBandwidthData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchBandwidthData{
+		Msvm_EthernetSwitchData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchBandwidthDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchBandwidthData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchBandwidthData{
+		Msvm_EthernetSwitchData: tmp,
+	}
+	return
 }
 
 // SetCapacity sets the value of Capacity for the instance

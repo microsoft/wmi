@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Sensor struct
 type Sensor struct {
-	CIM_Sensor
+	*CIM_Sensor
+}
+
+func NewSensorEx1(instance *cim.WmiInstance) (newInstance *Sensor, err error) {
+	tmp, err := NewCIM_SensorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Sensor{
+		CIM_Sensor: tmp,
+	}
+	return
+}
+
+func NewSensorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Sensor, err error) {
+	tmp, err := NewCIM_SensorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Sensor{
+		CIM_Sensor: tmp,
+	}
+	return
 }

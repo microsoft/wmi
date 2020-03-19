@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ServiceAffectsElement struct
 type CIM_ServiceAffectsElement struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AffectedElement CIM_ManagedElement
@@ -27,6 +29,35 @@ type CIM_ServiceAffectsElement struct {
 
 	//
 	OtherElementEffectsDescriptions []string
+}
+
+func NewCIM_ServiceAffectsElementEx1(instance *cim.WmiInstance) (newInstance *CIM_ServiceAffectsElement, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ServiceAffectsElement{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ServiceAffectsElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ServiceAffectsElement, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ServiceAffectsElement{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAffectedElement sets the value of AffectedElement for the instance

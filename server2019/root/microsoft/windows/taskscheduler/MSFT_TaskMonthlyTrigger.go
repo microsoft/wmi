@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TaskMonthlyTrigger struct
 type MSFT_TaskMonthlyTrigger struct {
-	MSFT_TaskTrigger
+	*MSFT_TaskTrigger
 
 	//
 	DaysOfMonth uint16
@@ -23,6 +28,35 @@ type MSFT_TaskMonthlyTrigger struct {
 
 	//
 	RunOnLastDayOfMonth bool
+}
+
+func NewMSFT_TaskMonthlyTriggerEx1(instance *cim.WmiInstance) (newInstance *MSFT_TaskMonthlyTrigger, err error) {
+	tmp, err := NewMSFT_TaskTriggerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskMonthlyTrigger{
+		MSFT_TaskTrigger: tmp,
+	}
+	return
+}
+
+func NewMSFT_TaskMonthlyTriggerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TaskMonthlyTrigger, err error) {
+	tmp, err := NewMSFT_TaskTriggerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskMonthlyTrigger{
+		MSFT_TaskTrigger: tmp,
+	}
+	return
 }
 
 // SetDaysOfMonth sets the value of DaysOfMonth for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetOffloadGlobalSetting struct
 type MSFT_NetOffloadGlobalSetting struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	Chimney uint8
@@ -32,6 +37,35 @@ type MSFT_NetOffloadGlobalSetting struct {
 
 	//
 	TaskOffload uint8
+}
+
+func NewMSFT_NetOffloadGlobalSettingEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetOffloadGlobalSetting, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetOffloadGlobalSetting{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetOffloadGlobalSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetOffloadGlobalSetting, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetOffloadGlobalSetting{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetChimney sets the value of Chimney for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msft_MiCompare struct
 type Msft_MiCompare struct {
-	Msft_MiStream
+	*Msft_MiStream
 
 	//
 	Input Msft_MiStream
@@ -20,6 +25,35 @@ type Msft_MiCompare struct {
 
 	//
 	SuppressionHint Msft_MiCompareSuppression
+}
+
+func NewMsft_MiCompareEx1(instance *cim.WmiInstance) (newInstance *Msft_MiCompare, err error) {
+	tmp, err := NewMsft_MiStreamEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiCompare{
+		Msft_MiStream: tmp,
+	}
+	return
+}
+
+func NewMsft_MiCompareEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_MiCompare, err error) {
+	tmp, err := NewMsft_MiStreamEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiCompare{
+		Msft_MiStream: tmp,
+	}
+	return
 }
 
 // SetInput sets the value of Input for the instance

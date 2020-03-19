@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_AbstractResourcePoolSettingData struct
 type Msvm_AbstractResourcePoolSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	LoadBalancingBehavior uint16
@@ -39,6 +40,35 @@ type Msvm_AbstractResourcePoolSettingData struct {
 
 	//
 	ResourceType uint16
+}
+
+func NewMsvm_AbstractResourcePoolSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_AbstractResourcePoolSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_AbstractResourcePoolSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_AbstractResourcePoolSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_AbstractResourcePoolSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_AbstractResourcePoolSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetLoadBalancingBehavior sets the value of LoadBalancingBehavior for the instance

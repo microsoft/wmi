@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_ClusterSharedVolume struct
 type MSCluster_ClusterSharedVolume struct {
-	MSCluster_LogicalElement
+	*MSCluster_LogicalElement
 
 	//
 	BackupState uint32
@@ -23,6 +28,35 @@ type MSCluster_ClusterSharedVolume struct {
 
 	//
 	VolumeOffset uint64
+}
+
+func NewMSCluster_ClusterSharedVolumeEx1(instance *cim.WmiInstance) (newInstance *MSCluster_ClusterSharedVolume, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterSharedVolume{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ClusterSharedVolumeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_ClusterSharedVolume, err error) {
+	tmp, err := NewMSCluster_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterSharedVolume{
+		MSCluster_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetBackupState sets the value of BackupState for the instance

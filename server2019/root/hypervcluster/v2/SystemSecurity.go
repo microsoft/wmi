@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // __SystemSecurity struct
 type __SystemSecurity struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func New__SystemSecurityEx1(instance *cim.WmiInstance) (newInstance *__SystemSecurity, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &__SystemSecurity{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func New__SystemSecurityEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__SystemSecurity, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__SystemSecurity{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

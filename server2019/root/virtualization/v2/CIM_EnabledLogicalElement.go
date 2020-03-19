@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_EnabledLogicalElement struct
 type CIM_EnabledLogicalElement struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// AvailableRequestedStates indicates the possible values for the RequestedState parameter of the method RequestStateChange, used to initiate a state change. The values listed shall be a subset of the values contained in the RequestedStatesSupported property of the associated instance of CIM_EnabledLogicalElementCapabilities where the values selected are a function of the current state of the CIM_EnabledLogicalElement. This property may be non-null if an implementation is able to advertise the set of possible values as a function of the current state. This property shall be null if an implementation is unable to determine the set of possible values as a function of the current state.
 	AvailableRequestedStates []EnabledLogicalElement_AvailableRequestedStates
@@ -54,6 +55,35 @@ type CIM_EnabledLogicalElement struct {
 	///A value of 5 "No Change" shall indicate that no transition is in progress.A value of 12 "Not Applicable" shall indicate the implementation does not support representing ongoing transitions.
 	///A value other than 5 or 12 shall identify the state to which the element is in the process of transitioning.
 	TransitioningToState EnabledLogicalElement_TransitioningToState
+}
+
+func NewCIM_EnabledLogicalElementEx1(instance *cim.WmiInstance) (newInstance *CIM_EnabledLogicalElement, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EnabledLogicalElement{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_EnabledLogicalElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_EnabledLogicalElement, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EnabledLogicalElement{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetAvailableRequestedStates sets the value of AvailableRequestedStates for the instance

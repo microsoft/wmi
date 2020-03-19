@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetConnectionTimeout struct
 type MSFT_NetConnectionTimeout struct {
-	MSFT_SCMEventLogEvent
+	*MSFT_SCMEventLogEvent
 
 	//
 	Milliseconds uint32
 
 	//
 	Service string
+}
+
+func NewMSFT_NetConnectionTimeoutEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetConnectionTimeout, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetConnectionTimeout{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetConnectionTimeoutEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetConnectionTimeout, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetConnectionTimeout{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
 }
 
 // SetMilliseconds sets the value of Milliseconds for the instance

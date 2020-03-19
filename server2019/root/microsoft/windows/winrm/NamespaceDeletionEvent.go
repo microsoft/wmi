@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.winrm
 //////////////////////////////////////////////
 package winrm
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __NamespaceDeletionEvent struct
 type __NamespaceDeletionEvent struct {
-	__NamespaceOperationEvent
+	*__NamespaceOperationEvent
+}
+
+func New__NamespaceDeletionEventEx1(instance *cim.WmiInstance) (newInstance *__NamespaceDeletionEvent, err error) {
+	tmp, err := New__NamespaceOperationEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NamespaceDeletionEvent{
+		__NamespaceOperationEvent: tmp,
+	}
+	return
+}
+
+func New__NamespaceDeletionEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__NamespaceDeletionEvent, err error) {
+	tmp, err := New__NamespaceOperationEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NamespaceDeletionEvent{
+		__NamespaceOperationEvent: tmp,
+	}
+	return
 }

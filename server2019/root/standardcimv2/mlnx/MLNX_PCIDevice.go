@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_PCIDevice struct
 type MLNX_PCIDevice struct {
-	CIM_PCIDevice
+	*CIM_PCIDevice
 
 	//
 	BusType string
@@ -23,6 +28,35 @@ type MLNX_PCIDevice struct {
 
 	//
 	PartNumber string
+}
+
+func NewMLNX_PCIDeviceEx1(instance *cim.WmiInstance) (newInstance *MLNX_PCIDevice, err error) {
+	tmp, err := NewCIM_PCIDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDevice{
+		CIM_PCIDevice: tmp,
+	}
+	return
+}
+
+func NewMLNX_PCIDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_PCIDevice, err error) {
+	tmp, err := NewCIM_PCIDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDevice{
+		CIM_PCIDevice: tmp,
+	}
+	return
 }
 
 // SetBusType sets the value of BusType for the instance

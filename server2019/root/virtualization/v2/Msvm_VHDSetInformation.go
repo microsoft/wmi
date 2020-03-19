@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VHDSetInformation struct
 type Msvm_VHDSetInformation struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AllPaths []string
@@ -24,6 +26,35 @@ type Msvm_VHDSetInformation struct {
 
 	//
 	SnapshotIdList []string
+}
+
+func NewMsvm_VHDSetInformationEx1(instance *cim.WmiInstance) (newInstance *Msvm_VHDSetInformation, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VHDSetInformation{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsvm_VHDSetInformationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VHDSetInformation, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VHDSetInformation{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAllPaths sets the value of AllPaths for the instance

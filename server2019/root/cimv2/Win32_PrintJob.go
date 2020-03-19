@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PrintJob struct
 type Win32_PrintJob struct {
-	CIM_Job
+	*CIM_Job
 
 	// The Color property indicates whether the document is to be printed in color or monochrome.  Some color printers have the capability to print using true black instead of a combination of Yellow, Cyan, and Magenta.  This usually creates darker and sharper text for documents.  This option is only useful for color printers that support true black printing.
 	Color string
@@ -64,6 +69,35 @@ type Win32_PrintJob struct {
 
 	// The TotalPages property specifies the number of pages required to complete the job. This value may be zero if the print job does not contain page-delimiting information.
 	TotalPages uint32
+}
+
+func NewWin32_PrintJobEx1(instance *cim.WmiInstance) (newInstance *Win32_PrintJob, err error) {
+	tmp, err := NewCIM_JobEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PrintJob{
+		CIM_Job: tmp,
+	}
+	return
+}
+
+func NewWin32_PrintJobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PrintJob, err error) {
+	tmp, err := NewCIM_JobEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PrintJob{
+		CIM_Job: tmp,
+	}
+	return
 }
 
 // SetColor sets the value of Color for the instance

@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_CollectionSnapshotService struct
 type Msvm_CollectionSnapshotService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewMsvm_CollectionSnapshotServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_CollectionSnapshotService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_CollectionSnapshotService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewMsvm_CollectionSnapshotServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_CollectionSnapshotService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_CollectionSnapshotService{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 //

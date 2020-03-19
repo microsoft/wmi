@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.AppBackgroundTask
 //////////////////////////////////////////////
 package appbackgroundtask
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_BackgroundTask struct
 type MSFT_BackgroundTask struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	EntryPoint []string
@@ -30,6 +32,35 @@ type MSFT_BackgroundTask struct {
 
 	//
 	TaskName []string
+}
+
+func NewMSFT_BackgroundTaskEx1(instance *cim.WmiInstance) (newInstance *MSFT_BackgroundTask, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_BackgroundTask{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_BackgroundTaskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_BackgroundTask, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_BackgroundTask{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEntryPoint sets the value of EntryPoint for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_Account struct
 type Win32_Account struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	Domain string
@@ -23,6 +28,35 @@ type Win32_Account struct {
 
 	//
 	SIDType uint8
+}
+
+func NewWin32_AccountEx1(instance *cim.WmiInstance) (newInstance *Win32_Account, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Account{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_AccountEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_Account, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Account{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetDomain sets the value of Domain for the instance

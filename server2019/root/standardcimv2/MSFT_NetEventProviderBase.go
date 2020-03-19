@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetEventProviderBase struct
 type MSFT_NetEventProviderBase struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	Guid string
@@ -29,6 +34,35 @@ type MSFT_NetEventProviderBase struct {
 
 	//
 	SessionName string
+}
+
+func NewMSFT_NetEventProviderBaseEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetEventProviderBase, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventProviderBase{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetEventProviderBaseEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetEventProviderBase, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventProviderBase{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetGuid sets the value of Guid for the instance

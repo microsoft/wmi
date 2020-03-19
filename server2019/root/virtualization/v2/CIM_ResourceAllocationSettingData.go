@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ResourceAllocationSettingData struct
 type CIM_ResourceAllocationSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	// The address of the resource. For example, the MAC address of a Ethernet port.
 	Address string
@@ -92,6 +97,35 @@ type CIM_ResourceAllocationSettingData struct {
 
 	// This property specifies a relative priority for this allocation in relation to other allocations from the same ResourcePool. This property has no unit of measure, and is only relevant when compared to other allocations vying for the same host resources.
 	Weight uint32
+}
+
+func NewCIM_ResourceAllocationSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_ResourceAllocationSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourceAllocationSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewCIM_ResourceAllocationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ResourceAllocationSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ResourceAllocationSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetAddress sets the value of Address for the instance

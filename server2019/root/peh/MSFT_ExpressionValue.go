@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_ExpressionValue struct
 type MSFT_ExpressionValue struct {
-	MSFT_Expression
+	*MSFT_Expression
 
 	//
 	hasValue bool
+}
+
+func NewMSFT_ExpressionValueEx1(instance *cim.WmiInstance) (newInstance *MSFT_ExpressionValue, err error) {
+	tmp, err := NewMSFT_ExpressionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionValue{
+		MSFT_Expression: tmp,
+	}
+	return
+}
+
+func NewMSFT_ExpressionValueEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_ExpressionValue, err error) {
+	tmp, err := NewMSFT_ExpressionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_ExpressionValue{
+		MSFT_Expression: tmp,
+	}
+	return
 }
 
 // SethasValue sets the value of hasValue for the instance

@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageSubSystemToFileShare struct
 type MSFT_StorageSubSystemToFileShare struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	FileShare MSFT_FileShare
 
 	//
 	StorageSubSystem MSFT_StorageSubSystem
+}
+
+func NewMSFT_StorageSubSystemToFileShareEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageSubSystemToFileShare, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToFileShare{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageSubSystemToFileShareEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageSubSystemToFileShare, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageSubSystemToFileShare{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetFileShare sets the value of FileShare for the instance

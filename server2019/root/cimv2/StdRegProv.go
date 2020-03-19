@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // StdRegProv struct
 type StdRegProv struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewStdRegProvEx1(instance *cim.WmiInstance) (newInstance *StdRegProv, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &StdRegProv{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewStdRegProvEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *StdRegProv, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &StdRegProv{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

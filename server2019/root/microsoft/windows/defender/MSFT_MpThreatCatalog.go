@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Defender
 //////////////////////////////////////////////
 package defender
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_MpThreatCatalog struct
 type MSFT_MpThreatCatalog struct {
-	BaseStatus
+	*BaseStatus
 
 	//
 	CategoryID uint8
@@ -26,6 +31,35 @@ type MSFT_MpThreatCatalog struct {
 
 	//
 	TypeID uint8
+}
+
+func NewMSFT_MpThreatCatalogEx1(instance *cim.WmiInstance) (newInstance *MSFT_MpThreatCatalog, err error) {
+	tmp, err := NewBaseStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpThreatCatalog{
+		BaseStatus: tmp,
+	}
+	return
+}
+
+func NewMSFT_MpThreatCatalogEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MpThreatCatalog, err error) {
+	tmp, err := NewBaseStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpThreatCatalog{
+		BaseStatus: tmp,
+	}
+	return
 }
 
 // SetCategoryID sets the value of CategoryID for the instance

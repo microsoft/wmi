@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_Service struct
 type Win32_Service struct {
-	Win32_BaseService
+	*Win32_BaseService
 
 	//
 	CheckPoint uint32
@@ -23,6 +28,35 @@ type Win32_Service struct {
 
 	//
 	WaitHint uint32
+}
+
+func NewWin32_ServiceEx1(instance *cim.WmiInstance) (newInstance *Win32_Service, err error) {
+	tmp, err := NewWin32_BaseServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Service{
+		Win32_BaseService: tmp,
+	}
+	return
+}
+
+func NewWin32_ServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_Service, err error) {
+	tmp, err := NewWin32_BaseServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_Service{
+		Win32_BaseService: tmp,
+	}
+	return
 }
 
 // SetCheckPoint sets the value of CheckPoint for the instance

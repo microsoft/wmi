@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_SmbServerConfiguration struct
 type MSFT_SmbServerConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AnnounceComment string
@@ -141,6 +143,35 @@ type MSFT_SmbServerConfiguration struct {
 
 	//
 	ValidateTargetName bool
+}
+
+func NewMSFT_SmbServerConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_SmbServerConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbServerConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_SmbServerConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SmbServerConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SmbServerConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAnnounceComment sets the value of AnnounceComment for the instance

@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageFaultDomainToStorageFaultDomain struct
 type MSFT_StorageFaultDomainToStorageFaultDomain struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	SourceStorageFaultDomain MSFT_StorageFaultDomain
 
 	//
 	TargetStorageFaultDomain MSFT_StorageFaultDomain
+}
+
+func NewMSFT_StorageFaultDomainToStorageFaultDomainEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageFaultDomainToStorageFaultDomain, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageFaultDomainToStorageFaultDomain{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageFaultDomainToStorageFaultDomainEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageFaultDomainToStorageFaultDomain, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageFaultDomainToStorageFaultDomain{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetSourceStorageFaultDomain sets the value of SourceStorageFaultDomain for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_ServiceSpecification struct
 type Win32_ServiceSpecification struct {
-	CIM_Check
+	*CIM_Check
 
 	//
 	Dependencies string
@@ -38,6 +43,35 @@ type Win32_ServiceSpecification struct {
 
 	//
 	StartType int32
+}
+
+func NewWin32_ServiceSpecificationEx1(instance *cim.WmiInstance) (newInstance *Win32_ServiceSpecification, err error) {
+	tmp, err := NewCIM_CheckEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServiceSpecification{
+		CIM_Check: tmp,
+	}
+	return
+}
+
+func NewWin32_ServiceSpecificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_ServiceSpecification, err error) {
+	tmp, err := NewCIM_CheckEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_ServiceSpecification{
+		CIM_Check: tmp,
+	}
+	return
 }
 
 // SetDependencies sets the value of Dependencies for the instance

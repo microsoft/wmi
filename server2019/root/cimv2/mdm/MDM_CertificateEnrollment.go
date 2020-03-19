@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_CertificateEnrollment struct
 type MDM_CertificateEnrollment struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ConfigurationParameters string
@@ -57,6 +59,35 @@ type MDM_CertificateEnrollment struct {
 
 	//
 	ValidTo string
+}
+
+func NewMDM_CertificateEnrollmentEx1(instance *cim.WmiInstance) (newInstance *MDM_CertificateEnrollment, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_CertificateEnrollment{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_CertificateEnrollmentEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_CertificateEnrollment, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_CertificateEnrollment{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConfigurationParameters sets the value of ConfigurationParameters for the instance

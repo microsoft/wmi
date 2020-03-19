@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.protectionManagement
 //////////////////////////////////////////////
 package protectionmanagement
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_MpEvent struct
 type MSFT_MpEvent struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AdditionalData uint32
@@ -36,6 +38,35 @@ type MSFT_MpEvent struct {
 
 	//
 	ThreatNotificationsValue uint32
+}
+
+func NewMSFT_MpEventEx1(instance *cim.WmiInstance) (newInstance *MSFT_MpEvent, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpEvent{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_MpEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_MpEvent, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_MpEvent{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAdditionalData sets the value of AdditionalData for the instance

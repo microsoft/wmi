@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_CAU_ScanUpdateInfo struct
 type MSFT_CAU_ScanUpdateInfo struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	UpdateDesc string
@@ -24,6 +26,35 @@ type MSFT_CAU_ScanUpdateInfo struct {
 
 	//
 	UpdateTitle string
+}
+
+func NewMSFT_CAU_ScanUpdateInfoEx1(instance *cim.WmiInstance) (newInstance *MSFT_CAU_ScanUpdateInfo, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAU_ScanUpdateInfo{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_CAU_ScanUpdateInfoEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_CAU_ScanUpdateInfo, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_CAU_ScanUpdateInfo{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetUpdateDesc sets the value of UpdateDesc for the instance

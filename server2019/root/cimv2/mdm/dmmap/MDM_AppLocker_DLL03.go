@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_AppLocker_DLL03 struct
 type MDM_AppLocker_DLL03 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	EnforcementMode string
@@ -30,6 +32,35 @@ type MDM_AppLocker_DLL03 struct {
 
 	//
 	Policy string
+}
+
+func NewMDM_AppLocker_DLL03Ex1(instance *cim.WmiInstance) (newInstance *MDM_AppLocker_DLL03, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_AppLocker_DLL03{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_AppLocker_DLL03Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_AppLocker_DLL03, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_AppLocker_DLL03{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEnforcementMode sets the value of EnforcementMode for the instance

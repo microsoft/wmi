@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetServiceExitFailed struct
 type MSFT_NetServiceExitFailed struct {
-	MSFT_SCMEventLogEvent
+	*MSFT_SCMEventLogEvent
 
 	//
 	Error uint32
 
 	//
 	Service string
+}
+
+func NewMSFT_NetServiceExitFailedEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetServiceExitFailed, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceExitFailed{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetServiceExitFailedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetServiceExitFailed, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetServiceExitFailed{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
 }
 
 // SetError sets the value of Error for the instance

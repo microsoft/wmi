@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_VLANEndpointSettingData struct
 type CIM_VLANEndpointSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	// The access VLAN for the referenced VLANEndpoint.
 	AccessVLAN uint16
@@ -26,6 +31,35 @@ type CIM_VLANEndpointSettingData struct {
 
 	// If a VLAN Id is part of this array, then the system MAY trunk the traffic on the related endpoint/port. This property is applicable only when the endpoint is operating in trunking mode (determined by examining the OperationalEndpointMode property).
 	TrunkedVLANList []uint16
+}
+
+func NewCIM_VLANEndpointSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VLANEndpointSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VLANEndpointSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewCIM_VLANEndpointSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_VLANEndpointSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_VLANEndpointSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetAccessVLAN sets the value of AccessVLAN for the instance

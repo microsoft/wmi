@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.HardwareManagement
 //////////////////////////////////////////////
 package hardwaremanagement
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_PCSVDevice struct
 type MSFT_PCSVDevice struct {
-	CIM_PhysicalComputerSystemView
+	*CIM_PhysicalComputerSystemView
 
 	//
 	IPv4Address string
@@ -39,6 +40,35 @@ type MSFT_PCSVDevice struct {
 
 	//
 	TargetAddress string
+}
+
+func NewMSFT_PCSVDeviceEx1(instance *cim.WmiInstance) (newInstance *MSFT_PCSVDevice, err error) {
+	tmp, err := NewCIM_PhysicalComputerSystemViewEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PCSVDevice{
+		CIM_PhysicalComputerSystemView: tmp,
+	}
+	return
+}
+
+func NewMSFT_PCSVDeviceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PCSVDevice, err error) {
+	tmp, err := NewCIM_PhysicalComputerSystemViewEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PCSVDevice{
+		CIM_PhysicalComputerSystemView: tmp,
+	}
+	return
 }
 
 // SetIPv4Address sets the value of IPv4Address for the instance

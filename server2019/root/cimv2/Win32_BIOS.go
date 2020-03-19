@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_BIOS struct
 type Win32_BIOS struct {
-	CIM_BIOSElement
+	*CIM_BIOSElement
 
 	//
 	BiosCharacteristics []uint16
@@ -53,6 +58,35 @@ type Win32_BIOS struct {
 
 	//
 	SystemBiosMinorVersion uint8
+}
+
+func NewWin32_BIOSEx1(instance *cim.WmiInstance) (newInstance *Win32_BIOS, err error) {
+	tmp, err := NewCIM_BIOSElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_BIOS{
+		CIM_BIOSElement: tmp,
+	}
+	return
+}
+
+func NewWin32_BIOSEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_BIOS, err error) {
+	tmp, err := NewCIM_BIOSElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_BIOS{
+		CIM_BIOSElement: tmp,
+	}
+	return
 }
 
 // SetBiosCharacteristics sets the value of BiosCharacteristics for the instance

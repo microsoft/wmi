@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DeliveryOptimization
 //////////////////////////////////////////////
 package deliveryoptimization
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_DOCurrentStatus struct
 type MSFT_DOCurrentStatus struct {
-	MSFT_DOBaseStatus
+	*MSFT_DOBaseStatus
 
 	//
 	CacheServerConnections uint32
@@ -53,6 +58,35 @@ type MSFT_DOCurrentStatus struct {
 
 	//
 	Swarms uint32
+}
+
+func NewMSFT_DOCurrentStatusEx1(instance *cim.WmiInstance) (newInstance *MSFT_DOCurrentStatus, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DOCurrentStatus{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
+}
+
+func NewMSFT_DOCurrentStatusEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DOCurrentStatus, err error) {
+	tmp, err := NewMSFT_DOBaseStatusEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DOCurrentStatus{
+		MSFT_DOBaseStatus: tmp,
+	}
+	return
 }
 
 // SetCacheServerConnections sets the value of CacheServerConnections for the instance

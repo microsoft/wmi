@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.PT.Alt
 //////////////////////////////////////////////
 package alt
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ClassProviderRegistration struct
 type __ClassProviderRegistration struct {
-	__ObjectProviderRegistration
+	*__ObjectProviderRegistration
 
 	//
 	CacheRefreshInterval string
@@ -32,6 +37,35 @@ type __ClassProviderRegistration struct {
 
 	//
 	Version uint32
+}
+
+func New__ClassProviderRegistrationEx1(instance *cim.WmiInstance) (newInstance *__ClassProviderRegistration, err error) {
+	tmp, err := New__ObjectProviderRegistrationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ClassProviderRegistration{
+		__ObjectProviderRegistration: tmp,
+	}
+	return
+}
+
+func New__ClassProviderRegistrationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ClassProviderRegistration, err error) {
+	tmp, err := New__ObjectProviderRegistrationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ClassProviderRegistration{
+		__ObjectProviderRegistration: tmp,
+	}
+	return
 }
 
 // SetCacheRefreshInterval sets the value of CacheRefreshInterval for the instance

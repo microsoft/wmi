@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_SoftwareIdentity struct
 type CIM_SoftwareIdentity struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	BuildNumber uint16
@@ -86,6 +91,35 @@ type CIM_SoftwareIdentity struct {
 
 	//
 	VersionString string
+}
+
+func NewCIM_SoftwareIdentityEx1(instance *cim.WmiInstance) (newInstance *CIM_SoftwareIdentity, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SoftwareIdentity{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_SoftwareIdentityEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_SoftwareIdentity, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SoftwareIdentity{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetBuildNumber sets the value of BuildNumber for the instance

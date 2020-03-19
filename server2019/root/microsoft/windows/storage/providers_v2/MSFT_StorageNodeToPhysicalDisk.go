@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageNodeToPhysicalDisk struct
 type MSFT_StorageNodeToPhysicalDisk struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The operating system's number for the disk on this StorageNode. Disk 0 is typically the boot device. Disk numbers may not necessarily remain the same across reboot, and are not necessarily the same on different nodes.
 	DiskNumber uint32
@@ -45,6 +47,35 @@ type MSFT_StorageNodeToPhysicalDisk struct {
 
 	//
 	StorageNode MSFT_StorageNode
+}
+
+func NewMSFT_StorageNodeToPhysicalDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageNodeToPhysicalDisk, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageNodeToPhysicalDisk{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageNodeToPhysicalDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageNodeToPhysicalDisk, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageNodeToPhysicalDisk{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDiskNumber sets the value of DiskNumber for the instance

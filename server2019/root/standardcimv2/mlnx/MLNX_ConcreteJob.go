@@ -3,21 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MLNX_ConcreteJob struct
 type MLNX_ConcreteJob struct {
-	CIM_ConcreteJob
+	*CIM_ConcreteJob
 
 	//
 	CommandLine string
+}
+
+func NewMLNX_ConcreteJobEx1(instance *cim.WmiInstance) (newInstance *MLNX_ConcreteJob, err error) {
+	tmp, err := NewCIM_ConcreteJobEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_ConcreteJob{
+		CIM_ConcreteJob: tmp,
+	}
+	return
+}
+
+func NewMLNX_ConcreteJobEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_ConcreteJob, err error) {
+	tmp, err := NewCIM_ConcreteJobEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_ConcreteJob{
+		CIM_ConcreteJob: tmp,
+	}
+	return
 }
 
 // SetCommandLine sets the value of CommandLine for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_ProtocolEndpoint struct
 type CIM_ProtocolEndpoint struct {
-	CIM_ServiceAccessPoint
+	*CIM_ServiceAccessPoint
 
 	// 381
 	NameFormat string
@@ -23,6 +28,35 @@ type CIM_ProtocolEndpoint struct {
 
 	// 382
 	ProtocolType ProtocolEndpoint_ProtocolType
+}
+
+func NewCIM_ProtocolEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_ProtocolEndpoint, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ProtocolEndpoint{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
+}
+
+func NewCIM_ProtocolEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ProtocolEndpoint, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ProtocolEndpoint{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
 }
 
 // SetNameFormat sets the value of NameFormat for the instance

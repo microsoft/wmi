@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __NamespaceModificationEvent struct
 type __NamespaceModificationEvent struct {
-	__NamespaceOperationEvent
+	*__NamespaceOperationEvent
 
 	//
 	PreviousNamespace __Namespace
+}
+
+func New__NamespaceModificationEventEx1(instance *cim.WmiInstance) (newInstance *__NamespaceModificationEvent, err error) {
+	tmp, err := New__NamespaceOperationEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NamespaceModificationEvent{
+		__NamespaceOperationEvent: tmp,
+	}
+	return
+}
+
+func New__NamespaceModificationEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__NamespaceModificationEvent, err error) {
+	tmp, err := New__NamespaceOperationEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__NamespaceModificationEvent{
+		__NamespaceOperationEvent: tmp,
+	}
+	return
 }
 
 // SetPreviousNamespace sets the value of PreviousNamespace for the instance

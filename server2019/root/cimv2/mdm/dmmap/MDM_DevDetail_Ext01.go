@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_DevDetail_Ext01 struct
 type MDM_DevDetail_Ext01 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DeviceHardwareData string
@@ -27,6 +29,35 @@ type MDM_DevDetail_Ext01 struct {
 
 	//
 	WLANMACAddress string
+}
+
+func NewMDM_DevDetail_Ext01Ex1(instance *cim.WmiInstance) (newInstance *MDM_DevDetail_Ext01, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_DevDetail_Ext01{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_DevDetail_Ext01Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_DevDetail_Ext01, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_DevDetail_Ext01{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDeviceHardwareData sets the value of DeviceHardwareData for the instance

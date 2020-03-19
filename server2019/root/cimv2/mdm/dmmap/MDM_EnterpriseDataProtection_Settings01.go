@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_EnterpriseDataProtection_Settings01 struct
 type MDM_EnterpriseDataProtection_Settings01 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AllowAzureRMSForEDP int32
@@ -48,6 +50,35 @@ type MDM_EnterpriseDataProtection_Settings01 struct {
 
 	//
 	SMBAutoEncryptedFileExtensions string
+}
+
+func NewMDM_EnterpriseDataProtection_Settings01Ex1(instance *cim.WmiInstance) (newInstance *MDM_EnterpriseDataProtection_Settings01, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_EnterpriseDataProtection_Settings01{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_EnterpriseDataProtection_Settings01Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_EnterpriseDataProtection_Settings01, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_EnterpriseDataProtection_Settings01{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAllowAzureRMSForEDP sets the value of AllowAzureRMSForEDP for the instance

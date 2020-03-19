@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_UnitaryComputerSystem struct
 type CIM_UnitaryComputerSystem struct {
-	CIM_ComputerSystem
+	*CIM_ComputerSystem
 
 	//
 	InitialLoadInfo []string
@@ -29,6 +34,35 @@ type CIM_UnitaryComputerSystem struct {
 
 	//
 	ResetCapability uint16
+}
+
+func NewCIM_UnitaryComputerSystemEx1(instance *cim.WmiInstance) (newInstance *CIM_UnitaryComputerSystem, err error) {
+	tmp, err := NewCIM_ComputerSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_UnitaryComputerSystem{
+		CIM_ComputerSystem: tmp,
+	}
+	return
+}
+
+func NewCIM_UnitaryComputerSystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_UnitaryComputerSystem, err error) {
+	tmp, err := NewCIM_ComputerSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_UnitaryComputerSystem{
+		CIM_ComputerSystem: tmp,
+	}
+	return
 }
 
 // SetInitialLoadInfo sets the value of InitialLoadInfo for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_POTSModem struct
 type Win32_POTSModem struct {
-	CIM_PotsModem
+	*CIM_PotsModem
 
 	//
 	AttachedTo string
@@ -143,6 +148,35 @@ type Win32_POTSModem struct {
 
 	//
 	VoiceSwitchFeature string
+}
+
+func NewWin32_POTSModemEx1(instance *cim.WmiInstance) (newInstance *Win32_POTSModem, err error) {
+	tmp, err := NewCIM_PotsModemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_POTSModem{
+		CIM_PotsModem: tmp,
+	}
+	return
+}
+
+func NewWin32_POTSModemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_POTSModem, err error) {
+	tmp, err := NewCIM_PotsModemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_POTSModem{
+		CIM_PotsModem: tmp,
+	}
+	return
 }
 
 // SetAttachedTo sets the value of AttachedTo for the instance

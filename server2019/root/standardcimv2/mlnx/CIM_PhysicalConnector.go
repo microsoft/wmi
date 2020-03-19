@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_PhysicalConnector struct
 type CIM_PhysicalConnector struct {
-	CIM_PhysicalElement
+	*CIM_PhysicalElement
 
 	//
 	ConnectorDescription string
@@ -38,6 +43,35 @@ type CIM_PhysicalConnector struct {
 
 	//
 	OtherTypeDescription string
+}
+
+func NewCIM_PhysicalConnectorEx1(instance *cim.WmiInstance) (newInstance *CIM_PhysicalConnector, err error) {
+	tmp, err := NewCIM_PhysicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalConnector{
+		CIM_PhysicalElement: tmp,
+	}
+	return
+}
+
+func NewCIM_PhysicalConnectorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_PhysicalConnector, err error) {
+	tmp, err := NewCIM_PhysicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_PhysicalConnector{
+		CIM_PhysicalElement: tmp,
+	}
+	return
 }
 
 // SetConnectorDescription sets the value of ConnectorDescription for the instance

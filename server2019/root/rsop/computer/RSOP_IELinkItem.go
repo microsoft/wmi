@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_IELinkItem struct
 type RSOP_IELinkItem struct {
-	RSOP_IEFavoriteOrLinkItem
+	*RSOP_IEFavoriteOrLinkItem
 
 	//
 	rsopID string
 
 	//
 	rsopPrecedence uint32
+}
+
+func NewRSOP_IELinkItemEx1(instance *cim.WmiInstance) (newInstance *RSOP_IELinkItem, err error) {
+	tmp, err := NewRSOP_IEFavoriteOrLinkItemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IELinkItem{
+		RSOP_IEFavoriteOrLinkItem: tmp,
+	}
+	return
+}
+
+func NewRSOP_IELinkItemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IELinkItem, err error) {
+	tmp, err := NewRSOP_IEFavoriteOrLinkItemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IELinkItem{
+		RSOP_IEFavoriteOrLinkItem: tmp,
+	}
+	return
 }
 
 // SetrsopID sets the value of rsopID for the instance

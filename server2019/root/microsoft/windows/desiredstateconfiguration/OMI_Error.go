@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // OMI_Error struct
 type OMI_Error struct {
-	CIM_Error
+	*CIM_Error
 
 	//
 	error_Category uint16
@@ -20,6 +25,35 @@ type OMI_Error struct {
 
 	//
 	error_Type string
+}
+
+func NewOMI_ErrorEx1(instance *cim.WmiInstance) (newInstance *OMI_Error, err error) {
+	tmp, err := NewCIM_ErrorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &OMI_Error{
+		CIM_Error: tmp,
+	}
+	return
+}
+
+func NewOMI_ErrorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *OMI_Error, err error) {
+	tmp, err := NewCIM_ErrorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &OMI_Error{
+		CIM_Error: tmp,
+	}
+	return
 }
 
 // Seterror_Category sets the value of error_Category for the instance

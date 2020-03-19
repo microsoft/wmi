@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PrinterDriver struct
 type Win32_PrinterDriver struct {
-	CIM_Service
+	*CIM_Service
 
 	// The ConfigFile property contains the configuration file for this printer driver, (example: pscrptui.dll).
 	ConfigFile string
@@ -47,6 +52,35 @@ type Win32_PrinterDriver struct {
 
 	// The Version property indicates the operating system version that the driver is intended for.
 	Version PrinterDriver_Version
+}
+
+func NewWin32_PrinterDriverEx1(instance *cim.WmiInstance) (newInstance *Win32_PrinterDriver, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PrinterDriver{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewWin32_PrinterDriverEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PrinterDriver, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PrinterDriver{
+		CIM_Service: tmp,
+	}
+	return
 }
 
 // SetConfigFile sets the value of ConfigFile for the instance

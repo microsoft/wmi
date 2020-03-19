@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_File struct
 type RSOP_File struct {
-	RSOP_SecuritySettings
+	*RSOP_SecuritySettings
 
 	//
 	Mode File_Mode
@@ -23,6 +28,35 @@ type RSOP_File struct {
 
 	//
 	SDDLString string
+}
+
+func NewRSOP_FileEx1(instance *cim.WmiInstance) (newInstance *RSOP_File, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_File{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
+}
+
+func NewRSOP_FileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_File, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_File{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
 }
 
 // SetMode sets the value of Mode for the instance

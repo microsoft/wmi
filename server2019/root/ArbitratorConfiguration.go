@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __ArbitratorConfiguration struct
 type __ArbitratorConfiguration struct {
-	__SystemClass
+	*__SystemClass
 
 	//
 	OutstandingTasksPerUser uint32
@@ -74,6 +79,35 @@ type __ArbitratorConfiguration struct {
 
 	//
 	TotalUsers uint32
+}
+
+func New__ArbitratorConfigurationEx1(instance *cim.WmiInstance) (newInstance *__ArbitratorConfiguration, err error) {
+	tmp, err := New__SystemClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ArbitratorConfiguration{
+		__SystemClass: tmp,
+	}
+	return
+}
+
+func New__ArbitratorConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__ArbitratorConfiguration, err error) {
+	tmp, err := New__SystemClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__ArbitratorConfiguration{
+		__SystemClass: tmp,
+	}
+	return
 }
 
 // SetOutstandingTasksPerUser sets the value of OutstandingTasksPerUser for the instance

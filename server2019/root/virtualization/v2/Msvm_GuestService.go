@@ -3,12 +3,50 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_GuestService struct
 type Msvm_GuestService struct {
-	CIM_Service
+	*CIM_Service
+}
+
+func NewMsvm_GuestServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_GuestService, err error) {
+	tmp, err := NewCIM_ServiceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func NewMsvm_GuestServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_GuestService, err error) {
+	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestService{
+		CIM_Service: tmp,
+	}
+	return
+}
+
+func (instance *Msvm_GuestService) GetRelatedGuestServiceInterfaceComponent() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_GuestServiceInterfaceComponent")
 }

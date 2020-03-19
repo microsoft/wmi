@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_Cluster struct
 type MSCluster_Cluster struct {
-	CIM_Cluster
+	*CIM_Cluster
 
 	//
 	AddEvictDelay uint32
@@ -320,6 +325,35 @@ type MSCluster_Cluster struct {
 
 	//
 	WitnessRestartInterval uint32
+}
+
+func NewMSCluster_ClusterEx1(instance *cim.WmiInstance) (newInstance *MSCluster_Cluster, err error) {
+	tmp, err := NewCIM_ClusterEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Cluster{
+		CIM_Cluster: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ClusterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_Cluster, err error) {
+	tmp, err := NewCIM_ClusterEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_Cluster{
+		CIM_Cluster: tmp,
+	}
+	return
 }
 
 // SetAddEvictDelay sets the value of AddEvictDelay for the instance

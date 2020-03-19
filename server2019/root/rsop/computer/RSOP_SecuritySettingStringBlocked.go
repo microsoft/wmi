@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_SecuritySettingStringBlocked struct
 type RSOP_SecuritySettingStringBlocked struct {
-	RSOP_SecuritySettingsBlocked
+	*RSOP_SecuritySettingsBlocked
 
 	//
 	KeyName string
 
 	//
 	Setting string
+}
+
+func NewRSOP_SecuritySettingStringBlockedEx1(instance *cim.WmiInstance) (newInstance *RSOP_SecuritySettingStringBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SecuritySettingStringBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
+}
+
+func NewRSOP_SecuritySettingStringBlockedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_SecuritySettingStringBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SecuritySettingStringBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
 }
 
 // SetKeyName sets the value of KeyName for the instance

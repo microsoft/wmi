@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_IBPort struct
 type CIM_IBPort struct {
-	CIM_NetworkPort
+	*CIM_NetworkPort
 
 	//
 	LIDMask uint8
@@ -20,6 +25,35 @@ type CIM_IBPort struct {
 
 	//
 	LinkWidthActive uint16
+}
+
+func NewCIM_IBPortEx1(instance *cim.WmiInstance) (newInstance *CIM_IBPort, err error) {
+	tmp, err := NewCIM_NetworkPortEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IBPort{
+		CIM_NetworkPort: tmp,
+	}
+	return
+}
+
+func NewCIM_IBPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_IBPort, err error) {
+	tmp, err := NewCIM_NetworkPortEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IBPort{
+		CIM_NetworkPort: tmp,
+	}
+	return
 }
 
 // SetLIDMask sets the value of LIDMask for the instance

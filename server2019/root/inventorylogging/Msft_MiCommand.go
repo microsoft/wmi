@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msft_MiCommand struct
 type Msft_MiCommand struct {
-	Msft_MiStream
+	*Msft_MiStream
 
 	//
 	ClassName string
@@ -26,6 +31,35 @@ type Msft_MiCommand struct {
 
 	//
 	Parameters interface{}
+}
+
+func NewMsft_MiCommandEx1(instance *cim.WmiInstance) (newInstance *Msft_MiCommand, err error) {
+	tmp, err := NewMsft_MiStreamEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiCommand{
+		Msft_MiStream: tmp,
+	}
+	return
+}
+
+func NewMsft_MiCommandEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_MiCommand, err error) {
+	tmp, err := NewMsft_MiStreamEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiCommand{
+		Msft_MiStream: tmp,
+	}
+	return
 }
 
 // SetClassName sets the value of ClassName for the instance

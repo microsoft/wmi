@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TCPIPPrinterPort struct
 type Win32_TCPIPPrinterPort struct {
-	CIM_ServiceAccessPoint
+	*CIM_ServiceAccessPoint
 
 	// The ByteCount property, when true, causes the computer to count the number of bytes in a document before sending them to the printer and the printer to report back the number of bytes actually read.  This is used for diagnostics when one discovers that bytes are missing from the print output.
 	ByteCount bool
@@ -35,6 +40,35 @@ type Win32_TCPIPPrinterPort struct {
 
 	// The SNMPEnabled property, when true, indicates that this printer supports RFC1759 (Simple Network Management Protocol) and can provide rich status information from the device.
 	SNMPEnabled bool
+}
+
+func NewWin32_TCPIPPrinterPortEx1(instance *cim.WmiInstance) (newInstance *Win32_TCPIPPrinterPort, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TCPIPPrinterPort{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
+}
+
+func NewWin32_TCPIPPrinterPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TCPIPPrinterPort, err error) {
+	tmp, err := NewCIM_ServiceAccessPointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TCPIPPrinterPort{
+		CIM_ServiceAccessPoint: tmp,
+	}
+	return
 }
 
 // SetByteCount sets the value of ByteCount for the instance

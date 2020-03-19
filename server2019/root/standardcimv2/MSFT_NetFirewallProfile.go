@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetFirewallProfile struct
 type MSFT_NetFirewallProfile struct {
-	CIM_ManagedElement
+	*CIM_ManagedElement
 
 	//
 	AllowInboundRules uint16
@@ -65,6 +70,35 @@ type MSFT_NetFirewallProfile struct {
 
 	//
 	NotifyOnListen uint16
+}
+
+func NewMSFT_NetFirewallProfileEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetFirewallProfile, err error) {
+	tmp, err := NewCIM_ManagedElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetFirewallProfile{
+		CIM_ManagedElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetFirewallProfileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetFirewallProfile, err error) {
+	tmp, err := NewCIM_ManagedElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetFirewallProfile{
+		CIM_ManagedElement: tmp,
+	}
+	return
 }
 
 // SetAllowInboundRules sets the value of AllowInboundRules for the instance

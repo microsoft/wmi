@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VirtualSystemMigrationNetworkSettingData struct
 type Msvm_VirtualSystemMigrationNetworkSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	Metric uint32
@@ -27,6 +28,35 @@ type Msvm_VirtualSystemMigrationNetworkSettingData struct {
 
 	//
 	Tags []string
+}
+
+func NewMsvm_VirtualSystemMigrationNetworkSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemMigrationNetworkSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemMigrationNetworkSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualSystemMigrationNetworkSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualSystemMigrationNetworkSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemMigrationNetworkSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetMetric sets the value of Metric for the instance

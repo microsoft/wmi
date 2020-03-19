@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_VirtualSystemCollection struct
 type Msvm_VirtualSystemCollection struct {
-	CIM_CollectionOfMSEs
+	*CIM_CollectionOfMSEs
 
 	//
 	FailedOverReplicationType uint16
@@ -29,6 +34,35 @@ type Msvm_VirtualSystemCollection struct {
 
 	//
 	ReplicationState uint16
+}
+
+func NewMsvm_VirtualSystemCollectionEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemCollection, err error) {
+	tmp, err := NewCIM_CollectionOfMSEsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemCollection{
+		CIM_CollectionOfMSEs: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualSystemCollectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualSystemCollection, err error) {
+	tmp, err := NewCIM_CollectionOfMSEsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualSystemCollection{
+		CIM_CollectionOfMSEs: tmp,
+	}
+	return
 }
 
 // SetFailedOverReplicationType sets the value of FailedOverReplicationType for the instance

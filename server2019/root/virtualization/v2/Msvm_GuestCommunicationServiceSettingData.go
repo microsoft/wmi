@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_GuestCommunicationServiceSettingData struct
 type Msvm_GuestCommunicationServiceSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	// EnabledStatePolicy is an integer enumeration that indicates the enabled, disabled or default state of the Msvm_GuestCommunicationServiceSettingData.Enabled (2) indicates that the communication service is set to the enabled state.
 	///Disabled (3) indicates that the communication service is set to the disabled state.
@@ -20,6 +25,35 @@ type Msvm_GuestCommunicationServiceSettingData struct {
 
 	//
 	Name string
+}
+
+func NewMsvm_GuestCommunicationServiceSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_GuestCommunicationServiceSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestCommunicationServiceSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_GuestCommunicationServiceSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_GuestCommunicationServiceSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_GuestCommunicationServiceSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetEnabledStatePolicy sets the value of EnabledStatePolicy for the instance

@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MLNX_DiagnosticTestHca struct
 type MLNX_DiagnosticTestHca struct {
-	MLNX_DiagnosticTest
+	*MLNX_DiagnosticTest
+}
+
+func NewMLNX_DiagnosticTestHcaEx1(instance *cim.WmiInstance) (newInstance *MLNX_DiagnosticTestHca, err error) {
+	tmp, err := NewMLNX_DiagnosticTestEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DiagnosticTestHca{
+		MLNX_DiagnosticTest: tmp,
+	}
+	return
+}
+
+func NewMLNX_DiagnosticTestHcaEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_DiagnosticTestHca, err error) {
+	tmp, err := NewMLNX_DiagnosticTestEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_DiagnosticTestHca{
+		MLNX_DiagnosticTest: tmp,
+	}
+	return
 }
 
 //

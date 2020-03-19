@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_StorageObject struct
 type MSFT_StorageObject struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ObjectId string
@@ -33,6 +35,35 @@ type MSFT_StorageObject struct {
 
 	//
 	UniqueId string
+}
+
+func NewMSFT_StorageObjectEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageObject, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageObject{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageObjectEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageObject, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageObject{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetObjectId sets the value of ObjectId for the instance

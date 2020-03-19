@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServer struct
 type Win32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServer struct {
-	Win32_PerfRawData
+	*Win32_PerfRawData
 
 	//
 	HardConnectsPerSecond uint32
@@ -53,6 +58,35 @@ type Win32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServer s
 
 	//
 	SoftDisconnectsPerSecond uint32
+}
+
+func NewWin32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServerEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServer, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServer{
+		Win32_PerfRawData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServer, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_NETDataProviderforSqlServer_NETDataProviderforSqlServer{
+		Win32_PerfRawData: tmp,
+	}
+	return
 }
 
 // SetHardConnectsPerSecond sets the value of HardConnectsPerSecond for the instance

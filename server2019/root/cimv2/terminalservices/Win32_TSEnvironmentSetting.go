@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSEnvironmentSetting struct
 type Win32_TSEnvironmentSetting struct {
-	Win32_TerminalSetting
+	*Win32_TerminalSetting
 
 	//
 	ClientWallPaper uint32
@@ -32,6 +37,35 @@ type Win32_TSEnvironmentSetting struct {
 
 	//
 	Startin string
+}
+
+func NewWin32_TSEnvironmentSettingEx1(instance *cim.WmiInstance) (newInstance *Win32_TSEnvironmentSetting, err error) {
+	tmp, err := NewWin32_TerminalSettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSEnvironmentSetting{
+		Win32_TerminalSetting: tmp,
+	}
+	return
+}
+
+func NewWin32_TSEnvironmentSettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSEnvironmentSetting, err error) {
+	tmp, err := NewWin32_TerminalSettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSEnvironmentSetting{
+		Win32_TerminalSetting: tmp,
+	}
+	return
 }
 
 // SetClientWallPaper sets the value of ClientWallPaper for the instance

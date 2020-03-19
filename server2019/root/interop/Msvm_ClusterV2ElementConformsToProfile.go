@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Interop
 //////////////////////////////////////////////
 package interop
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_ClusterV2ElementConformsToProfile struct
 type Msvm_ClusterV2ElementConformsToProfile struct {
-	Msvm_ElementConformsToProfile
+	*Msvm_ElementConformsToProfile
+}
+
+func NewMsvm_ClusterV2ElementConformsToProfileEx1(instance *cim.WmiInstance) (newInstance *Msvm_ClusterV2ElementConformsToProfile, err error) {
+	tmp, err := NewMsvm_ElementConformsToProfileEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ClusterV2ElementConformsToProfile{
+		Msvm_ElementConformsToProfile: tmp,
+	}
+	return
+}
+
+func NewMsvm_ClusterV2ElementConformsToProfileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ClusterV2ElementConformsToProfile, err error) {
+	tmp, err := NewMsvm_ElementConformsToProfileEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ClusterV2ElementConformsToProfile{
+		Msvm_ElementConformsToProfile: tmp,
+	}
+	return
 }

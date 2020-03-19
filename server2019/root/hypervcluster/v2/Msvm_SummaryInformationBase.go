@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_SummaryInformationBase struct
 type Msvm_SummaryInformationBase struct {
-	CIM_View
+	*CIM_View
 
 	//
 	CreationTime string
@@ -56,6 +61,35 @@ type Msvm_SummaryInformationBase struct {
 
 	//
 	VirtualSystemSubType SummaryInformationBase_VirtualSystemSubType
+}
+
+func NewMsvm_SummaryInformationBaseEx1(instance *cim.WmiInstance) (newInstance *Msvm_SummaryInformationBase, err error) {
+	tmp, err := NewCIM_ViewEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SummaryInformationBase{
+		CIM_View: tmp,
+	}
+	return
+}
+
+func NewMsvm_SummaryInformationBaseEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_SummaryInformationBase, err error) {
+	tmp, err := NewCIM_ViewEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_SummaryInformationBase{
+		CIM_View: tmp,
+	}
+	return
 }
 
 // SetCreationTime sets the value of CreationTime for the instance

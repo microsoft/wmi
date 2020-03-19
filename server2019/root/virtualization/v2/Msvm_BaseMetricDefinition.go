@@ -3,18 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_BaseMetricDefinition struct
 type Msvm_BaseMetricDefinition struct {
-	CIM_BaseMetricDefinition
+	*CIM_BaseMetricDefinition
+}
+
+func NewMsvm_BaseMetricDefinitionEx1(instance *cim.WmiInstance) (newInstance *Msvm_BaseMetricDefinition, err error) {
+	tmp, err := NewCIM_BaseMetricDefinitionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_BaseMetricDefinition{
+		CIM_BaseMetricDefinition: tmp,
+	}
+	return
+}
+
+func NewMsvm_BaseMetricDefinitionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_BaseMetricDefinition, err error) {
+	tmp, err := NewCIM_BaseMetricDefinitionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_BaseMetricDefinition{
+		CIM_BaseMetricDefinition: tmp,
+	}
+	return
 }
 
 func (instance *Msvm_BaseMetricDefinition) GetRelatedBaseMetricDefinition() (value *cim.WmiInstance, err error) {

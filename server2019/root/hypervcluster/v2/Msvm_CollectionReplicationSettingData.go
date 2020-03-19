@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_CollectionReplicationSettingData struct
 type Msvm_CollectionReplicationSettingData struct {
-	Msvm_CollectionSettingData
+	*Msvm_CollectionSettingData
 
 	//
 	ApplicationConsistentSnapshotInterval uint16
@@ -65,6 +70,35 @@ type Msvm_CollectionReplicationSettingData struct {
 
 	//
 	RootCertificateThumbPrint string
+}
+
+func NewMsvm_CollectionReplicationSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_CollectionReplicationSettingData, err error) {
+	tmp, err := NewMsvm_CollectionSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_CollectionReplicationSettingData{
+		Msvm_CollectionSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_CollectionReplicationSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_CollectionReplicationSettingData, err error) {
+	tmp, err := NewMsvm_CollectionSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_CollectionReplicationSettingData{
+		Msvm_CollectionSettingData: tmp,
+	}
+	return
 }
 
 // SetApplicationConsistentSnapshotInterval sets the value of ApplicationConsistentSnapshotInterval for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_WmiCancelNotificationSink struct
 type MSFT_WmiCancelNotificationSink struct {
-	MSFT_WmiEssEvent
+	*MSFT_WmiEssEvent
 
 	//
 	Namespace string
@@ -23,6 +28,35 @@ type MSFT_WmiCancelNotificationSink struct {
 
 	//
 	Sink uint64
+}
+
+func NewMSFT_WmiCancelNotificationSinkEx1(instance *cim.WmiInstance) (newInstance *MSFT_WmiCancelNotificationSink, err error) {
+	tmp, err := NewMSFT_WmiEssEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WmiCancelNotificationSink{
+		MSFT_WmiEssEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_WmiCancelNotificationSinkEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_WmiCancelNotificationSink, err error) {
+	tmp, err := NewMSFT_WmiEssEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WmiCancelNotificationSink{
+		MSFT_WmiEssEvent: tmp,
+	}
+	return
 }
 
 // SetNamespace sets the value of Namespace for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_DevDetail struct
 type MDM_DevDetail struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DevTyp string
@@ -39,6 +41,35 @@ type MDM_DevDetail struct {
 
 	//
 	SwV string
+}
+
+func NewMDM_DevDetailEx1(instance *cim.WmiInstance) (newInstance *MDM_DevDetail, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_DevDetail{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_DevDetailEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_DevDetail, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_DevDetail{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDevTyp sets the value of DevTyp for the instance

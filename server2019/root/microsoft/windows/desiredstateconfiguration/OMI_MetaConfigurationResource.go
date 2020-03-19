@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // OMI_MetaConfigurationResource struct
 type OMI_MetaConfigurationResource struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ResourceId string
 
 	//
 	SourceInfo string
+}
+
+func NewOMI_MetaConfigurationResourceEx1(instance *cim.WmiInstance) (newInstance *OMI_MetaConfigurationResource, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &OMI_MetaConfigurationResource{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewOMI_MetaConfigurationResourceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *OMI_MetaConfigurationResource, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &OMI_MetaConfigurationResource{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetResourceId sets the value of ResourceId for the instance

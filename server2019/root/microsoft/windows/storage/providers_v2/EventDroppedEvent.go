@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __EventDroppedEvent struct
 type __EventDroppedEvent struct {
-	__SystemEvent
+	*__SystemEvent
 
 	//
 	Event __Event
 
 	//
 	IntendedConsumer __EventConsumer
+}
+
+func New__EventDroppedEventEx1(instance *cim.WmiInstance) (newInstance *__EventDroppedEvent, err error) {
+	tmp, err := New__SystemEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__EventDroppedEvent{
+		__SystemEvent: tmp,
+	}
+	return
+}
+
+func New__EventDroppedEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__EventDroppedEvent, err error) {
+	tmp, err := New__SystemEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__EventDroppedEvent{
+		__SystemEvent: tmp,
+	}
+	return
 }
 
 // SetEvent sets the value of Event for the instance

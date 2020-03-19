@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapterUsoSettingData struct
 type MSFT_NetAdapterUsoSettingData struct {
-	MSFT_NetAdapterSettingData
+	*MSFT_NetAdapterSettingData
 
 	//
 	IPv4Enabled bool
@@ -20,6 +25,35 @@ type MSFT_NetAdapterUsoSettingData struct {
 
 	//
 	UdpSegmentationOffloadHardwareCapabilities MSFT_NetAdapterUdpSegmentationOffloadCapabilities
+}
+
+func NewMSFT_NetAdapterUsoSettingDataEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterUsoSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterUsoSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterUsoSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterUsoSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterUsoSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
 }
 
 // SetIPv4Enabled sets the value of IPv4Enabled for the instance

@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSoP_PolicySettingLink struct
 type RSoP_PolicySettingLink struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	setting RSOP_PolicySetting
 
 	//
 	status RSoP_PolicySettingStatus
+}
+
+func NewRSoP_PolicySettingLinkEx1(instance *cim.WmiInstance) (newInstance *RSoP_PolicySettingLink, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSoP_PolicySettingLink{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSoP_PolicySettingLinkEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSoP_PolicySettingLink, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSoP_PolicySettingLink{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // Setsetting sets the value of setting for the instance

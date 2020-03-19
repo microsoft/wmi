@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DeviceGuard
 //////////////////////////////////////////////
 package deviceguard
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_DeviceGuard struct
 type Win32_DeviceGuard struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AvailableSecurityProperties []uint32
@@ -42,6 +44,35 @@ type Win32_DeviceGuard struct {
 
 	//
 	VirtualizationBasedSecurityStatus uint32
+}
+
+func NewWin32_DeviceGuardEx1(instance *cim.WmiInstance) (newInstance *Win32_DeviceGuard, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DeviceGuard{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_DeviceGuardEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_DeviceGuard, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_DeviceGuard{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAvailableSecurityProperties sets the value of AvailableSecurityProperties for the instance

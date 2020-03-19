@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_PartialConfiguration struct
 type MSFT_PartialConfiguration struct {
-	OMI_MetaConfigurationResource
+	*OMI_MetaConfigurationResource
 
 	//
 	ConfigurationSource []string
@@ -29,6 +34,35 @@ type MSFT_PartialConfiguration struct {
 
 	//
 	ResourceModuleSource []string
+}
+
+func NewMSFT_PartialConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_PartialConfiguration, err error) {
+	tmp, err := NewOMI_MetaConfigurationResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PartialConfiguration{
+		OMI_MetaConfigurationResource: tmp,
+	}
+	return
+}
+
+func NewMSFT_PartialConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PartialConfiguration, err error) {
+	tmp, err := NewOMI_MetaConfigurationResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PartialConfiguration{
+		OMI_MetaConfigurationResource: tmp,
+	}
+	return
 }
 
 // SetConfigurationSource sets the value of ConfigurationSource for the instance

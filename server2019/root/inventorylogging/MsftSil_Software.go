@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MsftSil_Software struct
 type MsftSil_Software struct {
-	MsftSil_Data
+	*MsftSil_Data
 
 	//
 	ID string
@@ -26,6 +31,35 @@ type MsftSil_Software struct {
 
 	//
 	Version string
+}
+
+func NewMsftSil_SoftwareEx1(instance *cim.WmiInstance) (newInstance *MsftSil_Software, err error) {
+	tmp, err := NewMsftSil_DataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_Software{
+		MsftSil_Data: tmp,
+	}
+	return
+}
+
+func NewMsftSil_SoftwareEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftSil_Software, err error) {
+	tmp, err := NewMsftSil_DataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_Software{
+		MsftSil_Data: tmp,
+	}
+	return
 }
 
 // SetID sets the value of ID for the instance

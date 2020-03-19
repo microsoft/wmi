@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_EnrollmentStatusTracking_TrackedResourceTypes04 struct
 type MDM_EnrollmentStatusTracking_TrackedResourceTypes04 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Apps bool
@@ -24,6 +26,35 @@ type MDM_EnrollmentStatusTracking_TrackedResourceTypes04 struct {
 
 	//
 	ParentID string
+}
+
+func NewMDM_EnrollmentStatusTracking_TrackedResourceTypes04Ex1(instance *cim.WmiInstance) (newInstance *MDM_EnrollmentStatusTracking_TrackedResourceTypes04, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_EnrollmentStatusTracking_TrackedResourceTypes04{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_EnrollmentStatusTracking_TrackedResourceTypes04Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_EnrollmentStatusTracking_TrackedResourceTypes04, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_EnrollmentStatusTracking_TrackedResourceTypes04{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetApps sets the value of Apps for the instance

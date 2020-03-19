@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetIKEKerbAuthProposal struct
 type MSFT_NetIKEKerbAuthProposal struct {
-	MSFT_NetIKEAuthProposal
+	*MSFT_NetIKEAuthProposal
 
 	//
 	KerbProxy string
+}
+
+func NewMSFT_NetIKEKerbAuthProposalEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetIKEKerbAuthProposal, err error) {
+	tmp, err := NewMSFT_NetIKEAuthProposalEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEKerbAuthProposal{
+		MSFT_NetIKEAuthProposal: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetIKEKerbAuthProposalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetIKEKerbAuthProposal, err error) {
+	tmp, err := NewMSFT_NetIKEAuthProposalEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEKerbAuthProposal{
+		MSFT_NetIKEAuthProposal: tmp,
+	}
+	return
 }
 
 // SetKerbProxy sets the value of KerbProxy for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfRawData_Counters_WFPReauthorization struct
 type Win32_PerfRawData_Counters_WFPReauthorization struct {
-	Win32_PerfRawData
+	*Win32_PerfRawData
 
 	//
 	FamilyV4 uint64
@@ -89,6 +94,35 @@ type Win32_PerfRawData_Counters_WFPReauthorization struct {
 
 	//
 	ReasonSocketPropertyChanged uint64
+}
+
+func NewWin32_PerfRawData_Counters_WFPReauthorizationEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_Counters_WFPReauthorization, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_Counters_WFPReauthorization{
+		Win32_PerfRawData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfRawData_Counters_WFPReauthorizationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_Counters_WFPReauthorization, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_Counters_WFPReauthorization{
+		Win32_PerfRawData: tmp,
+	}
+	return
 }
 
 // SetFamilyV4 sets the value of FamilyV4 for the instance

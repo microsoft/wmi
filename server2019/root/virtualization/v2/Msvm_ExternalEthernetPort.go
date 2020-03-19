@@ -3,21 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_ExternalEthernetPort struct
 type Msvm_ExternalEthernetPort struct {
-	CIM_EthernetPort
+	*CIM_EthernetPort
 
 	//
 	IsBound bool
+}
+
+func NewMsvm_ExternalEthernetPortEx1(instance *cim.WmiInstance) (newInstance *Msvm_ExternalEthernetPort, err error) {
+	tmp, err := NewCIM_EthernetPortEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ExternalEthernetPort{
+		CIM_EthernetPort: tmp,
+	}
+	return
+}
+
+func NewMsvm_ExternalEthernetPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ExternalEthernetPort, err error) {
+	tmp, err := NewCIM_EthernetPortEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ExternalEthernetPort{
+		CIM_EthernetPort: tmp,
+	}
+	return
 }
 
 // SetIsBound sets the value of IsBound for the instance

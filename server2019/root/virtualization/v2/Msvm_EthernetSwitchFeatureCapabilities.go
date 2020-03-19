@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchFeatureCapabilities struct
 type Msvm_EthernetSwitchFeatureCapabilities struct {
-	CIM_Capabilities
+	*CIM_Capabilities
 
 	//
 	Applicability EthernetSwitchFeatureCapabilities_Applicability
@@ -24,6 +25,35 @@ type Msvm_EthernetSwitchFeatureCapabilities struct {
 
 	//
 	Version string
+}
+
+func NewMsvm_EthernetSwitchFeatureCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchFeatureCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchFeatureCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchFeatureCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchFeatureCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchFeatureCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
 }
 
 // SetApplicability sets the value of Applicability for the instance

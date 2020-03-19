@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetTeredoConfiguration struct
 type MSFT_NetTeredoConfiguration struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	ClientPort uint32
@@ -35,6 +40,35 @@ type MSFT_NetTeredoConfiguration struct {
 
 	//
 	Type uint32
+}
+
+func NewMSFT_NetTeredoConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetTeredoConfiguration, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTeredoConfiguration{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetTeredoConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetTeredoConfiguration, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetTeredoConfiguration{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetClientPort sets the value of ClientPort for the instance

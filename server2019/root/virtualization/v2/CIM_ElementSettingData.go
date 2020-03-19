@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ElementSettingData struct
 type CIM_ElementSettingData struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// An enumerated integer indicating that the referenced setting is currently being used in the operation of the element, or that this information is unknown.
 	IsCurrent ElementSettingData_IsCurrent
@@ -30,6 +32,35 @@ type CIM_ElementSettingData struct {
 
 	// The SettingData object associated with the element.
 	SettingData CIM_SettingData
+}
+
+func NewCIM_ElementSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_ElementSettingData, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ElementSettingData{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ElementSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ElementSettingData, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ElementSettingData{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetIsCurrent sets the value of IsCurrent for the instance

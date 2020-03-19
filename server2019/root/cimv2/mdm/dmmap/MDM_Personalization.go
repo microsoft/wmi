@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_Personalization struct
 type MDM_Personalization struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DesktopImageStatus int32
@@ -33,6 +35,35 @@ type MDM_Personalization struct {
 
 	//
 	ParentID string
+}
+
+func NewMDM_PersonalizationEx1(instance *cim.WmiInstance) (newInstance *MDM_Personalization, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Personalization{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_PersonalizationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_Personalization, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Personalization{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDesktopImageStatus sets the value of DesktopImageStatus for the instance

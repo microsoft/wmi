@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msft_MiQuery struct
 type Msft_MiQuery struct {
-	Msft_MiStream
+	*Msft_MiStream
 
 	//
 	Dialect string
@@ -20,6 +25,35 @@ type Msft_MiQuery struct {
 
 	//
 	NamespaceName string
+}
+
+func NewMsft_MiQueryEx1(instance *cim.WmiInstance) (newInstance *Msft_MiQuery, err error) {
+	tmp, err := NewMsft_MiStreamEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiQuery{
+		Msft_MiStream: tmp,
+	}
+	return
+}
+
+func NewMsft_MiQueryEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msft_MiQuery, err error) {
+	tmp, err := NewMsft_MiStreamEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msft_MiQuery{
+		Msft_MiStream: tmp,
+	}
+	return
 }
 
 // SetDialect sets the value of Dialect for the instance

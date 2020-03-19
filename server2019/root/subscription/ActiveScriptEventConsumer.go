@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.subscription
 //////////////////////////////////////////////
 package subscription
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // ActiveScriptEventConsumer struct
 type ActiveScriptEventConsumer struct {
-	__EventConsumer
+	*__EventConsumer
 
 	//
 	KillTimeout uint32
@@ -26,6 +31,35 @@ type ActiveScriptEventConsumer struct {
 
 	//
 	ScriptText string
+}
+
+func NewActiveScriptEventConsumerEx1(instance *cim.WmiInstance) (newInstance *ActiveScriptEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ActiveScriptEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
+}
+
+func NewActiveScriptEventConsumerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *ActiveScriptEventConsumer, err error) {
+	tmp, err := New__EventConsumerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &ActiveScriptEventConsumer{
+		__EventConsumer: tmp,
+	}
+	return
 }
 
 // SetKillTimeout sets the value of KillTimeout for the instance

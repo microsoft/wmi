@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IEFavoriteOrLinkItem struct
 type RSOP_IEFavoriteOrLinkItem struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	iconPath string
@@ -30,6 +32,35 @@ type RSOP_IEFavoriteOrLinkItem struct {
 
 	//
 	url string
+}
+
+func NewRSOP_IEFavoriteOrLinkItemEx1(instance *cim.WmiInstance) (newInstance *RSOP_IEFavoriteOrLinkItem, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEFavoriteOrLinkItem{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IEFavoriteOrLinkItemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IEFavoriteOrLinkItem, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IEFavoriteOrLinkItem{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SeticonPath sets the value of iconPath for the instance

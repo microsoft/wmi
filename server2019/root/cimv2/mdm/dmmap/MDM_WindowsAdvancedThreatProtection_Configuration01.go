@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_WindowsAdvancedThreatProtection_Configuration01 struct
 type MDM_WindowsAdvancedThreatProtection_Configuration01 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	GroupIds string
@@ -30,6 +32,35 @@ type MDM_WindowsAdvancedThreatProtection_Configuration01 struct {
 
 	//
 	TelemetryReportingFrequency int32
+}
+
+func NewMDM_WindowsAdvancedThreatProtection_Configuration01Ex1(instance *cim.WmiInstance) (newInstance *MDM_WindowsAdvancedThreatProtection_Configuration01, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_WindowsAdvancedThreatProtection_Configuration01{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_WindowsAdvancedThreatProtection_Configuration01Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_WindowsAdvancedThreatProtection_Configuration01, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_WindowsAdvancedThreatProtection_Configuration01{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetGroupIds sets the value of GroupIds for the instance

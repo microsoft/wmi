@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __AbsoluteTimerInstruction struct
 type __AbsoluteTimerInstruction struct {
-	__TimerInstruction
+	*__TimerInstruction
 
 	//
 	EventDateTime string
+}
+
+func New__AbsoluteTimerInstructionEx1(instance *cim.WmiInstance) (newInstance *__AbsoluteTimerInstruction, err error) {
+	tmp, err := New__TimerInstructionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__AbsoluteTimerInstruction{
+		__TimerInstruction: tmp,
+	}
+	return
+}
+
+func New__AbsoluteTimerInstructionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__AbsoluteTimerInstruction, err error) {
+	tmp, err := New__TimerInstructionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__AbsoluteTimerInstruction{
+		__TimerInstruction: tmp,
+	}
+	return
 }
 
 // SetEventDateTime sets the value of EventDateTime for the instance

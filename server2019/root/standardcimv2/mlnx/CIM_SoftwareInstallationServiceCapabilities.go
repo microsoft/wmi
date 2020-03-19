@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_SoftwareInstallationServiceCapabilities struct
 type CIM_SoftwareInstallationServiceCapabilities struct {
-	CIM_Capabilities
+	*CIM_Capabilities
 
 	//
 	CanAddToCollection bool
@@ -47,6 +52,35 @@ type CIM_SoftwareInstallationServiceCapabilities struct {
 
 	//
 	SupportedURISchemes []SoftwareInstallationServiceCapabilities_SupportedURISchemes
+}
+
+func NewCIM_SoftwareInstallationServiceCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_SoftwareInstallationServiceCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SoftwareInstallationServiceCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
+}
+
+func NewCIM_SoftwareInstallationServiceCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_SoftwareInstallationServiceCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_SoftwareInstallationServiceCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
 }
 
 // SetCanAddToCollection sets the value of CanAddToCollection for the instance

@@ -3,24 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_ExternalEthernetPortCapabilities struct
 type Msvm_ExternalEthernetPortCapabilities struct {
-	CIM_Capabilities
+	*CIM_Capabilities
 
 	// A boolean value which indicates whether IOV is supported by the network adapter.If the value is TRUE, then IOV is supported by the network adapter and IOVSupportReasons will be empty. Otherwise the IOVSupportReasons property will have the reasons why IOV cannot be supported.
 	IOVSupport bool
 
 	// An array of strings that indicates the possible reasons why IOV is not supported. If the value of IOVSupport is TRUE this array will be empty.
 	IOVSupportReasons []string
+}
+
+func NewMsvm_ExternalEthernetPortCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *Msvm_ExternalEthernetPortCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ExternalEthernetPortCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
+}
+
+func NewMsvm_ExternalEthernetPortCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_ExternalEthernetPortCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_ExternalEthernetPortCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
 }
 
 // SetIOVSupport sets the value of IOVSupport for the instance

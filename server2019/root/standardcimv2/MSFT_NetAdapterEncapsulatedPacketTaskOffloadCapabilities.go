@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities struct
 type MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	LsoV2Supported uint32
@@ -30,6 +32,35 @@ type MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities struct {
 
 	//
 	VmqSupported uint32
+}
+
+func NewMSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetLsoV2Supported sets the value of LsoV2Supported for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // HNet_Connection struct
 type HNet_Connection struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Guid string
@@ -27,6 +29,35 @@ type HNet_Connection struct {
 
 	//
 	PhonebookPath string
+}
+
+func NewHNet_ConnectionEx1(instance *cim.WmiInstance) (newInstance *HNet_Connection, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_Connection{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewHNet_ConnectionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *HNet_Connection, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_Connection{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetGuid sets the value of Guid for the instance

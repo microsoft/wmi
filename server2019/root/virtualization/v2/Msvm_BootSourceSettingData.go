@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_BootSourceSettingData struct
 type Msvm_BootSourceSettingData struct {
-	CIM_SettingData
+	*CIM_SettingData
 
 	//
 	BootSourceDescription string
@@ -26,6 +31,35 @@ type Msvm_BootSourceSettingData struct {
 
 	//
 	OtherLocation string
+}
+
+func NewMsvm_BootSourceSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_BootSourceSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_BootSourceSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_BootSourceSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_BootSourceSettingData, err error) {
+	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_BootSourceSettingData{
+		CIM_SettingData: tmp,
+	}
+	return
 }
 
 // SetBootSourceDescription sets the value of BootSourceDescription for the instance
@@ -116,4 +150,11 @@ func (instance *Msvm_BootSourceSettingData) GetPropertyOtherLocation() (value st
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_BootSourceSettingData) GetRelatedSyntheticEthernetPortSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SyntheticEthernetPortSettingData")
+}
+
+func (instance *Msvm_BootSourceSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemSettingData")
 }

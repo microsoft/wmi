@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_OwningJobElement struct
 type CIM_OwningJobElement struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The Job created by the ManagedElement.
 	OwnedElement CIM_Job
 
 	// The ManagedElement responsible for the creation of the Job.
 	OwningElement CIM_ManagedElement
+}
+
+func NewCIM_OwningJobElementEx1(instance *cim.WmiInstance) (newInstance *CIM_OwningJobElement, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_OwningJobElement{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_OwningJobElementEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_OwningJobElement, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_OwningJobElement{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetOwnedElement sets the value of OwnedElement for the instance

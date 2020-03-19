@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_Certificate struct
 type MDM_Certificate struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Blob string
@@ -30,6 +32,35 @@ type MDM_Certificate struct {
 
 	//
 	Thumbprint string
+}
+
+func NewMDM_CertificateEx1(instance *cim.WmiInstance) (newInstance *MDM_Certificate, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Certificate{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_CertificateEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_Certificate, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Certificate{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetBlob sets the value of Blob for the instance

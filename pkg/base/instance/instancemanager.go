@@ -4,13 +4,15 @@
 package instance
 
 import (
+	"fmt"
+	"strings"
+	"sync"
+
 	"github.com/microsoft/wmi/pkg/base/credential"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	wmisession "github.com/microsoft/wmi/pkg/base/session"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"strings"
-	"sync"
 )
 
 var (
@@ -87,12 +89,12 @@ func GetWmiInstanceByName(whost *host.WmiHost, namespaceName, className, instanc
 }
 
 func GetWmiInstanceEx2(hostName string, cred credential.WmiCredential, namespaceName string, inquery *query.WmiQuery) (*wmi.WmiInstance, error) {
-	return GetWmiInstance(hostName, namespaceName, cred.UserName, cred.Password, cred.DomainName, inquery)
+	return GetWmiInstance(hostName, namespaceName, cred.UserName, cred.Password, cred.Domain, inquery)
 }
 
 func GetWmiInstanceEx(whost *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (*wmi.WmiInstance, error) {
 	cred := whost.GetCredential()
-	return GetWmiInstance(whost.HostName, namespaceName, cred.UserName, cred.Password, cred.DomainName, inquery)
+	return GetWmiInstance(whost.HostName, namespaceName, cred.UserName, cred.Password, cred.Domain, inquery)
 }
 
 func GetWmiInstance(hostname, namespaceName, userName, password, domainName string, inquery *query.WmiQuery) (*wmi.WmiInstance, error) {

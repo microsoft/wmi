@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetDnsTransitionMonitoring struct
 type MSFT_NetDnsTransitionMonitoring struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	NumAAAAQueriesFailed uint32
@@ -29,6 +34,35 @@ type MSFT_NetDnsTransitionMonitoring struct {
 
 	//
 	NumOtherQueriesSucceeded uint32
+}
+
+func NewMSFT_NetDnsTransitionMonitoringEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetDnsTransitionMonitoring, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetDnsTransitionMonitoring{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetDnsTransitionMonitoringEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetDnsTransitionMonitoring, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetDnsTransitionMonitoring{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetNumAAAAQueriesFailed sets the value of NumAAAAQueriesFailed for the instance

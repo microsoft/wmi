@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_IELinkItemLink struct
 type RSOP_IELinkItemLink struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	linkItem RSOP_IELinkItem
 
 	//
 	policySetting RSOP_IEAKPolicySetting
+}
+
+func NewRSOP_IELinkItemLinkEx1(instance *cim.WmiInstance) (newInstance *RSOP_IELinkItemLink, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IELinkItemLink{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_IELinkItemLinkEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_IELinkItemLink, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_IELinkItemLink{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetlinkItem sets the value of linkItem for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Wdac
 //////////////////////////////////////////////
 package wdac
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_OdbcDriver struct
 type MSFT_OdbcDriver struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	KeyValuePair []MSFT_OdbcKeyValuePair
@@ -24,6 +26,35 @@ type MSFT_OdbcDriver struct {
 
 	//
 	Platform string
+}
+
+func NewMSFT_OdbcDriverEx1(instance *cim.WmiInstance) (newInstance *MSFT_OdbcDriver, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_OdbcDriver{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_OdbcDriverEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_OdbcDriver, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_OdbcDriver{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetKeyValuePair sets the value of KeyValuePair for the instance

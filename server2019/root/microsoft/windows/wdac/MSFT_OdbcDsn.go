@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Wdac
 //////////////////////////////////////////////
 package wdac
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_OdbcDsn struct
 type MSFT_OdbcDsn struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DriverName string
@@ -30,6 +32,35 @@ type MSFT_OdbcDsn struct {
 
 	//
 	Platform string
+}
+
+func NewMSFT_OdbcDsnEx1(instance *cim.WmiInstance) (newInstance *MSFT_OdbcDsn, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_OdbcDsn{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_OdbcDsnEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_OdbcDsn, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_OdbcDsn{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDriverName sets the value of DriverName for the instance

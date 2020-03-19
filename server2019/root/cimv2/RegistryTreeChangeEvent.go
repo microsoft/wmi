@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RegistryTreeChangeEvent struct
 type RegistryTreeChangeEvent struct {
-	RegistryEvent
+	*RegistryEvent
 
 	//
 	Hive string
 
 	//
 	RootPath string
+}
+
+func NewRegistryTreeChangeEventEx1(instance *cim.WmiInstance) (newInstance *RegistryTreeChangeEvent, err error) {
+	tmp, err := NewRegistryEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RegistryTreeChangeEvent{
+		RegistryEvent: tmp,
+	}
+	return
+}
+
+func NewRegistryTreeChangeEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RegistryTreeChangeEvent, err error) {
+	tmp, err := NewRegistryEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RegistryTreeChangeEvent{
+		RegistryEvent: tmp,
+	}
+	return
 }
 
 // SetHive sets the value of Hive for the instance

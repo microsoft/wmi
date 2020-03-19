@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_SignatureValidation struct
 type MSFT_SignatureValidation struct {
-	OMI_MetaConfigurationResource
+	*OMI_MetaConfigurationResource
 
 	//
 	SignedItemType []string
 
 	//
 	TrustedStorePath string
+}
+
+func NewMSFT_SignatureValidationEx1(instance *cim.WmiInstance) (newInstance *MSFT_SignatureValidation, err error) {
+	tmp, err := NewOMI_MetaConfigurationResourceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SignatureValidation{
+		OMI_MetaConfigurationResource: tmp,
+	}
+	return
+}
+
+func NewMSFT_SignatureValidationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_SignatureValidation, err error) {
+	tmp, err := NewOMI_MetaConfigurationResourceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_SignatureValidation{
+		OMI_MetaConfigurationResource: tmp,
+	}
+	return
 }
 
 // SetSignedItemType sets the value of SignedItemType for the instance

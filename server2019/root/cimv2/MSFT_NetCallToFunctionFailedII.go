@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetCallToFunctionFailedII struct
 type MSFT_NetCallToFunctionFailedII struct {
-	MSFT_SCMEventLogEvent
+	*MSFT_SCMEventLogEvent
 
 	//
 	Argument string
@@ -20,6 +25,35 @@ type MSFT_NetCallToFunctionFailedII struct {
 
 	//
 	FunctionName string
+}
+
+func NewMSFT_NetCallToFunctionFailedIIEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetCallToFunctionFailedII, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetCallToFunctionFailedII{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetCallToFunctionFailedIIEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetCallToFunctionFailedII, err error) {
+	tmp, err := NewMSFT_SCMEventLogEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetCallToFunctionFailedII{
+		MSFT_SCMEventLogEvent: tmp,
+	}
+	return
 }
 
 // SetArgument sets the value of Argument for the instance

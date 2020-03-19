@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchPortSecuritySettingData struct
 type Msvm_EthernetSwitchPortSecuritySettingData struct {
-	Msvm_EthernetSwitchPortFeatureSettingData
+	*Msvm_EthernetSwitchPortFeatureSettingData
 
 	//
 	AllowIeeePriorityTag bool
@@ -57,6 +58,35 @@ type Msvm_EthernetSwitchPortSecuritySettingData struct {
 
 	//
 	VirtualSubnetId uint32
+}
+
+func NewMsvm_EthernetSwitchPortSecuritySettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchPortSecuritySettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortSecuritySettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchPortSecuritySettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchPortSecuritySettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortSecuritySettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
 }
 
 // SetAllowIeeePriorityTag sets the value of AllowIeeePriorityTag for the instance

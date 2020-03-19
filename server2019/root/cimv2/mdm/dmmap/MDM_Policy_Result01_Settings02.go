@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MDM_Policy_Result01_Settings02 struct
 type MDM_Policy_Result01_Settings02 struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AllowAutoPlay int32
@@ -60,6 +62,35 @@ type MDM_Policy_Result01_Settings02 struct {
 
 	//
 	ParentID string
+}
+
+func NewMDM_Policy_Result01_Settings02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Result01_Settings02, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Policy_Result01_Settings02{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMDM_Policy_Result01_Settings02Ex6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MDM_Policy_Result01_Settings02, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MDM_Policy_Result01_Settings02{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAllowAutoPlay sets the value of AllowAutoPlay for the instance

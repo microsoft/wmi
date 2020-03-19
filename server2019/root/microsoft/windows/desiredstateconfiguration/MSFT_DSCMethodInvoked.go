@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_DSCMethodInvoked struct
 type MSFT_DSCMethodInvoked struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	ConfigurationData []uint8
@@ -39,6 +41,35 @@ type MSFT_DSCMethodInvoked struct {
 
 	//
 	UserSid string
+}
+
+func NewMSFT_DSCMethodInvokedEx1(instance *cim.WmiInstance) (newInstance *MSFT_DSCMethodInvoked, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DSCMethodInvoked{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_DSCMethodInvokedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DSCMethodInvoked, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DSCMethodInvoked{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetConfigurationData sets the value of ConfigurationData for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_WMI_GenericNonCOMEvent struct
 type MSFT_WMI_GenericNonCOMEvent struct {
-	__ExtrinsicEvent
+	*__ExtrinsicEvent
 
 	//
 	ProcessId uint32
@@ -23,6 +28,35 @@ type MSFT_WMI_GenericNonCOMEvent struct {
 
 	//
 	ProviderName string
+}
+
+func NewMSFT_WMI_GenericNonCOMEventEx1(instance *cim.WmiInstance) (newInstance *MSFT_WMI_GenericNonCOMEvent, err error) {
+	tmp, err := New__ExtrinsicEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WMI_GenericNonCOMEvent{
+		__ExtrinsicEvent: tmp,
+	}
+	return
+}
+
+func NewMSFT_WMI_GenericNonCOMEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_WMI_GenericNonCOMEvent, err error) {
+	tmp, err := New__ExtrinsicEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_WMI_GenericNonCOMEvent{
+		__ExtrinsicEvent: tmp,
+	}
+	return
 }
 
 // SetProcessId sets the value of ProcessId for the instance

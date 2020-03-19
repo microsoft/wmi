@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PowerMeter struct
 type Win32_PowerMeter struct {
-	CIM_NumericSensor
+	*CIM_NumericSensor
 
 	//
 	AveragingInterval uint32
@@ -44,6 +49,35 @@ type Win32_PowerMeter struct {
 
 	//
 	SupportCapabilities uint32
+}
+
+func NewWin32_PowerMeterEx1(instance *cim.WmiInstance) (newInstance *Win32_PowerMeter, err error) {
+	tmp, err := NewCIM_NumericSensorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PowerMeter{
+		CIM_NumericSensor: tmp,
+	}
+	return
+}
+
+func NewWin32_PowerMeterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PowerMeter, err error) {
+	tmp, err := NewCIM_NumericSensorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PowerMeter{
+		CIM_NumericSensor: tmp,
+	}
+	return
 }
 
 // SetAveragingInterval sets the value of AveragingInterval for the instance

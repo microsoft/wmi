@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_NetAdapterChecksumOffloadCapabilities struct
 type MSFT_NetAdapterChecksumOffloadCapabilities struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	IPv4ReceiveEncapsulation MSFT_NetAdapterChecksumOffloadEncapsulationTypes
@@ -81,6 +83,35 @@ type MSFT_NetAdapterChecksumOffloadCapabilities struct {
 
 	//
 	IPv6TransmitUdpChecksumSupported bool
+}
+
+func NewMSFT_NetAdapterChecksumOffloadCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterChecksumOffloadCapabilities, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterChecksumOffloadCapabilities{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterChecksumOffloadCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterChecksumOffloadCapabilities, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterChecksumOffloadCapabilities{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetIPv4ReceiveEncapsulation sets the value of IPv4ReceiveEncapsulation for the instance

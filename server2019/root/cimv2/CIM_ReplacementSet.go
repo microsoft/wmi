@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_ReplacementSet struct
 type CIM_ReplacementSet struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Description string
 
 	//
 	Name string
+}
+
+func NewCIM_ReplacementSetEx1(instance *cim.WmiInstance) (newInstance *CIM_ReplacementSet, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ReplacementSet{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ReplacementSetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_ReplacementSet, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_ReplacementSet{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDescription sets the value of Description for the instance

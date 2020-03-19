@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_StorageSettingData struct
 type Msvm_StorageSettingData struct {
-	Msvm_SystemComponentSettingData
+	*Msvm_SystemComponentSettingData
 
 	//
 	DisableInterruptBatching bool
@@ -20,6 +25,35 @@ type Msvm_StorageSettingData struct {
 
 	//
 	VirtualProcessorsPerChannel uint16
+}
+
+func NewMsvm_StorageSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_StorageSettingData, err error) {
+	tmp, err := NewMsvm_SystemComponentSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_StorageSettingData{
+		Msvm_SystemComponentSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_StorageSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_StorageSettingData, err error) {
+	tmp, err := NewMsvm_SystemComponentSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_StorageSettingData{
+		Msvm_SystemComponentSettingData: tmp,
+	}
+	return
 }
 
 // SetDisableInterruptBatching sets the value of DisableInterruptBatching for the instance
@@ -74,4 +108,7 @@ func (instance *Msvm_StorageSettingData) GetPropertyVirtualProcessorsPerChannel(
 		// TODO: Set an error
 	}
 	return
+}
+func (instance *Msvm_StorageSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualSystemSettingData")
 }

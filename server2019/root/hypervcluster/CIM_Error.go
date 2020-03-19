@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster
 //////////////////////////////////////////////
 package hypervcluster
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_Error struct
 type CIM_Error struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// The CIM status code that characterizes this instance.
 	///This property defines the status codes that MAY be return by a conforming CIM Server or Listener. Note that not all status codes are valid for each operation. The specification for each operation SHOULD define the status codes that may be returned by that operation.
@@ -109,6 +111,35 @@ type CIM_Error struct {
 
 	// A free-form string describing recommended actions to take to resolve the error.
 	RecommendedActions []string
+}
+
+func NewCIM_ErrorEx1(instance *cim.WmiInstance) (newInstance *CIM_Error, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Error{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_ErrorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_Error, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_Error{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetCIMStatusCode sets the value of CIMStatusCode for the instance

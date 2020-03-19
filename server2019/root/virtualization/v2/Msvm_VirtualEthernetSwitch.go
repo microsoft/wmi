@@ -3,24 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VirtualEthernetSwitch struct
 type Msvm_VirtualEthernetSwitch struct {
-	CIM_ComputerSystem
+	*CIM_ComputerSystem
 
 	//
 	MaxIOVOffloads uint32
 
 	//
 	MaxVMQOffloads uint32
+}
+
+func NewMsvm_VirtualEthernetSwitchEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualEthernetSwitch, err error) {
+	tmp, err := NewCIM_ComputerSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualEthernetSwitch{
+		CIM_ComputerSystem: tmp,
+	}
+	return
+}
+
+func NewMsvm_VirtualEthernetSwitchEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_VirtualEthernetSwitch, err error) {
+	tmp, err := NewCIM_ComputerSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_VirtualEthernetSwitch{
+		CIM_ComputerSystem: tmp,
+	}
+	return
 }
 
 // SetMaxIOVOffloads sets the value of MaxIOVOffloads for the instance
@@ -78,12 +108,12 @@ func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchPort() (valu
 	return instance.GetAllRelated("Msvm_EthernetSwitchPort")
 }
 
-func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchExtension() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_EthernetSwitchExtension")
-}
-
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePool")
+}
+
+func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchExtension() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_EthernetSwitchExtension")
 }
 
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedVirtualEthernetSwitchSettingData() (value *cim.WmiInstance, err error) {

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_StorageFaultDomain struct
 type MSFT_StorageFaultDomain struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	// A user settable description of the fault domain object.
 	Description string
@@ -38,6 +43,35 @@ type MSFT_StorageFaultDomain struct {
 
 	// This field represents the serial number of the hardware. For physical disk it must match the disk's SCSI inquiry data.
 	SerialNumber string
+}
+
+func NewMSFT_StorageFaultDomainEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageFaultDomain, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageFaultDomain{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageFaultDomainEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageFaultDomain, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageFaultDomain{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetDescription sets the value of Description for the instance

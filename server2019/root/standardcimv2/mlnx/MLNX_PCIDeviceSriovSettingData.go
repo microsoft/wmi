@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MLNX_PCIDeviceSriovSettingData struct
 type MLNX_PCIDeviceSriovSettingData struct {
-	MLNX_PCIDeviceSettingData
+	*MLNX_PCIDeviceSettingData
 
 	//
 	SriovPort1NumVFs uint32
@@ -20,6 +25,35 @@ type MLNX_PCIDeviceSriovSettingData struct {
 
 	//
 	SriovPortMode uint32
+}
+
+func NewMLNX_PCIDeviceSriovSettingDataEx1(instance *cim.WmiInstance) (newInstance *MLNX_PCIDeviceSriovSettingData, err error) {
+	tmp, err := NewMLNX_PCIDeviceSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDeviceSriovSettingData{
+		MLNX_PCIDeviceSettingData: tmp,
+	}
+	return
+}
+
+func NewMLNX_PCIDeviceSriovSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MLNX_PCIDeviceSriovSettingData, err error) {
+	tmp, err := NewMLNX_PCIDeviceSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MLNX_PCIDeviceSriovSettingData{
+		MLNX_PCIDeviceSettingData: tmp,
+	}
+	return
 }
 
 // SetSriovPort1NumVFs sets the value of SriovPort1NumVFs for the instance

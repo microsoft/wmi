@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetAdapterPowerManagementSettingData struct
 type MSFT_NetAdapterPowerManagementSettingData struct {
-	MSFT_NetAdapterSettingData
+	*MSFT_NetAdapterSettingData
 
 	//
 	AllowComputerToTurnOffDevice uint32
@@ -44,6 +49,35 @@ type MSFT_NetAdapterPowerManagementSettingData struct {
 
 	//
 	WakePatterns []MSFT_NetAdapterPowerManagement_WakePattern
+}
+
+func NewMSFT_NetAdapterPowerManagementSettingDataEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterPowerManagementSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterPowerManagementSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterPowerManagementSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterPowerManagementSettingData, err error) {
+	tmp, err := NewMSFT_NetAdapterSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterPowerManagementSettingData{
+		MSFT_NetAdapterSettingData: tmp,
+	}
+	return
 }
 
 // SetAllowComputerToTurnOffDevice sets the value of AllowComputerToTurnOffDevice for the instance

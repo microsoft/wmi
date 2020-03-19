@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetEventSession struct
 type MSFT_NetEventSession struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	//
 	CaptureMode uint8
@@ -32,6 +37,35 @@ type MSFT_NetEventSession struct {
 
 	//
 	TraceBufferSize uint32
+}
+
+func NewMSFT_NetEventSessionEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetEventSession, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventSession{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetEventSessionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetEventSession, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventSession{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetCaptureMode sets the value of CaptureMode for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.SECURITY
 //////////////////////////////////////////////
 package security
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __Subject struct
 type __Subject struct {
-	__SecurityRelatedClass
+	*__SecurityRelatedClass
 
 	//
 	Authority string
@@ -29,6 +34,35 @@ type __Subject struct {
 
 	//
 	Permissions int32
+}
+
+func New__SubjectEx1(instance *cim.WmiInstance) (newInstance *__Subject, err error) {
+	tmp, err := New__SecurityRelatedClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Subject{
+		__SecurityRelatedClass: tmp,
+	}
+	return
+}
+
+func New__SubjectEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__Subject, err error) {
+	tmp, err := New__SecurityRelatedClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__Subject{
+		__SecurityRelatedClass: tmp,
+	}
+	return
 }
 
 // SetAuthority sets the value of Authority for the instance

@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_EventResourceStateChange struct
 type MSCluster_EventResourceStateChange struct {
-	MSCluster_EventStateChange
+	*MSCluster_EventStateChange
 
 	//
 	EventGroup string
 
 	//
 	EventNode string
+}
+
+func NewMSCluster_EventResourceStateChangeEx1(instance *cim.WmiInstance) (newInstance *MSCluster_EventResourceStateChange, err error) {
+	tmp, err := NewMSCluster_EventStateChangeEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_EventResourceStateChange{
+		MSCluster_EventStateChange: tmp,
+	}
+	return
+}
+
+func NewMSCluster_EventResourceStateChangeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_EventResourceStateChange, err error) {
+	tmp, err := NewMSCluster_EventStateChangeEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_EventResourceStateChange{
+		MSCluster_EventStateChange: tmp,
+	}
+	return
 }
 
 // SetEventGroup sets the value of EventGroup for the instance

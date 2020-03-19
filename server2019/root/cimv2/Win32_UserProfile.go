@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_UserProfile struct
 type Win32_UserProfile struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// A Win32_FolderRedirectionHealth object that represents the health of the user's redirected AppData\Roaming folder.
 	AppDataRoaming Win32_FolderRedirectionHealth
@@ -102,6 +104,35 @@ type Win32_UserProfile struct {
 
 	// A Win32_FolderRedirectionHealth object that represents the health of the user's redirected Videos folder.
 	Videos Win32_FolderRedirectionHealth
+}
+
+func NewWin32_UserProfileEx1(instance *cim.WmiInstance) (newInstance *Win32_UserProfile, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_UserProfile{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_UserProfileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_UserProfile, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_UserProfile{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAppDataRoaming sets the value of AppDataRoaming for the instance

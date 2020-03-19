@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_StorageReliabilityCounter struct
 type MSFT_StorageReliabilityCounter struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	// DeviceId identifies the associated storage device. When associated with an MSFT_PhysicalDisk, it will be the same as its DeviceId field. When associated with an MSFT_Disk, it will be the same as its Number field.
 	DeviceId string
@@ -68,6 +73,35 @@ type MSFT_StorageReliabilityCounter struct {
 
 	//
 	WriteLatencyMax uint64
+}
+
+func NewMSFT_StorageReliabilityCounterEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageReliabilityCounter, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageReliabilityCounter{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageReliabilityCounterEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageReliabilityCounter, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageReliabilityCounter{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetDeviceId sets the value of DeviceId for the instance

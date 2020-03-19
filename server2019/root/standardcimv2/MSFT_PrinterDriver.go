@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_PrinterDriver struct
 type MSFT_PrinterDriver struct {
-	CIM_ManagedSystemElement
+	*CIM_ManagedSystemElement
 
 	//
 	ColorProfiles []string
@@ -80,6 +85,35 @@ type MSFT_PrinterDriver struct {
 
 	//
 	VendorSetup string
+}
+
+func NewMSFT_PrinterDriverEx1(instance *cim.WmiInstance) (newInstance *MSFT_PrinterDriver, err error) {
+	tmp, err := NewCIM_ManagedSystemElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PrinterDriver{
+		CIM_ManagedSystemElement: tmp,
+	}
+	return
+}
+
+func NewMSFT_PrinterDriverEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PrinterDriver, err error) {
+	tmp, err := NewCIM_ManagedSystemElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PrinterDriver{
+		CIM_ManagedSystemElement: tmp,
+	}
+	return
 }
 
 // SetColorProfiles sets the value of ColorProfiles for the instance

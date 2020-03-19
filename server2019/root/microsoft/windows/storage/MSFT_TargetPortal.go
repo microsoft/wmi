@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TargetPortal struct
 type MSFT_TargetPortal struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	//
 	IPv4Address string
@@ -23,6 +28,35 @@ type MSFT_TargetPortal struct {
 
 	//
 	SubnetMask string
+}
+
+func NewMSFT_TargetPortalEx1(instance *cim.WmiInstance) (newInstance *MSFT_TargetPortal, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TargetPortal{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_TargetPortalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TargetPortal, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TargetPortal{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetIPv4Address sets the value of IPv4Address for the instance

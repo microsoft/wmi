@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_IBPortStatistics struct
 type CIM_IBPortStatistics struct {
-	CIM_NetworkPortStatistics
+	*CIM_NetworkPortStatistics
 
 	//
 	ExcessiveBufferOverrunErrors uint16
@@ -47,6 +52,35 @@ type CIM_IBPortStatistics struct {
 
 	//
 	VL15Dropped uint16
+}
+
+func NewCIM_IBPortStatisticsEx1(instance *cim.WmiInstance) (newInstance *CIM_IBPortStatistics, err error) {
+	tmp, err := NewCIM_NetworkPortStatisticsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IBPortStatistics{
+		CIM_NetworkPortStatistics: tmp,
+	}
+	return
+}
+
+func NewCIM_IBPortStatisticsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_IBPortStatistics, err error) {
+	tmp, err := NewCIM_NetworkPortStatisticsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IBPortStatistics{
+		CIM_NetworkPortStatistics: tmp,
+	}
+	return
 }
 
 // SetExcessiveBufferOverrunErrors sets the value of ExcessiveBufferOverrunErrors for the instance

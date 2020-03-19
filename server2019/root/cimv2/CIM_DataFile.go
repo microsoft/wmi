@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_DataFile struct
 type CIM_DataFile struct {
-	CIM_LogicalFile
+	*CIM_LogicalFile
 
 	//
 	Manufacturer string
 
 	//
 	Version string
+}
+
+func NewCIM_DataFileEx1(instance *cim.WmiInstance) (newInstance *CIM_DataFile, err error) {
+	tmp, err := NewCIM_LogicalFileEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DataFile{
+		CIM_LogicalFile: tmp,
+	}
+	return
+}
+
+func NewCIM_DataFileEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_DataFile, err error) {
+	tmp, err := NewCIM_LogicalFileEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_DataFile{
+		CIM_LogicalFile: tmp,
+	}
+	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance

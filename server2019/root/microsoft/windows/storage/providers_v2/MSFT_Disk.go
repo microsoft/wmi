@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_Disk struct
 type MSFT_Disk struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	// A string representation of the Adapter's serial number.
 	AdapterSerialNumber string
@@ -142,6 +147,35 @@ type MSFT_Disk struct {
 
 	// UniqueIdFormat informs the user what VPD Page 0x83 descriptor type was used to populate the UniqueId field.
 	UniqueIdFormat Disk_UniqueIdFormat
+}
+
+func NewMSFT_DiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_Disk, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Disk{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_DiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_Disk, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_Disk{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetAdapterSerialNumber sets the value of AdapterSerialNumber for the instance

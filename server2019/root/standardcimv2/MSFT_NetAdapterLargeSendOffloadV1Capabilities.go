@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_NetAdapterLargeSendOffloadV1Capabilities struct
 type MSFT_NetAdapterLargeSendOffloadV1Capabilities struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	IPv4Encapsulation MSFT_NetAdapterLsoEncapsulationTypes
@@ -30,6 +32,35 @@ type MSFT_NetAdapterLargeSendOffloadV1Capabilities struct {
 
 	//
 	IPv4TcpOptionsSupported bool
+}
+
+func NewMSFT_NetAdapterLargeSendOffloadV1CapabilitiesEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetAdapterLargeSendOffloadV1Capabilities, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterLargeSendOffloadV1Capabilities{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetAdapterLargeSendOffloadV1CapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetAdapterLargeSendOffloadV1Capabilities, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetAdapterLargeSendOffloadV1Capabilities{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetIPv4Encapsulation sets the value of IPv4Encapsulation for the instance

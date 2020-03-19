@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_InitiatorIdToVirtualDisk struct
 type MSFT_InitiatorIdToVirtualDisk struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	InitiatorId MSFT_InitiatorId
 
 	//
 	VirtualDisk MSFT_VirtualDisk
+}
+
+func NewMSFT_InitiatorIdToVirtualDiskEx1(instance *cim.WmiInstance) (newInstance *MSFT_InitiatorIdToVirtualDisk, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_InitiatorIdToVirtualDisk{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_InitiatorIdToVirtualDiskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_InitiatorIdToVirtualDisk, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_InitiatorIdToVirtualDisk{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetInitiatorId sets the value of InitiatorId for the instance

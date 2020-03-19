@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetISATAPConfiguration struct
 type MSFT_NetISATAPConfiguration struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	PolicyStore string
@@ -26,6 +31,35 @@ type MSFT_NetISATAPConfiguration struct {
 
 	//
 	State uint32
+}
+
+func NewMSFT_NetISATAPConfigurationEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetISATAPConfiguration, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetISATAPConfiguration{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetISATAPConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetISATAPConfiguration, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetISATAPConfiguration{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance

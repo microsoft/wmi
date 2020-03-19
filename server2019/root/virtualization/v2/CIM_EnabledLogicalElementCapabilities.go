@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_EnabledLogicalElementCapabilities struct
 type CIM_EnabledLogicalElementCapabilities struct {
-	CIM_Capabilities
+	*CIM_Capabilities
 
 	// Boolean indicating whether the ElementName can be modified.
 	ElementNameEditSupported bool
@@ -24,6 +29,35 @@ type CIM_EnabledLogicalElementCapabilities struct {
 
 	// RequestedStatesSupported indicates the possible states that can be requested when using the method RequestStateChange on the EnabledLogicalElement.
 	RequestedStatesSupported []EnabledLogicalElementCapabilities_RequestedStatesSupported
+}
+
+func NewCIM_EnabledLogicalElementCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_EnabledLogicalElementCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EnabledLogicalElementCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
+}
+
+func NewCIM_EnabledLogicalElementCapabilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_EnabledLogicalElementCapabilities, err error) {
+	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EnabledLogicalElementCapabilities{
+		CIM_Capabilities: tmp,
+	}
+	return
 }
 
 // SetElementNameEditSupported sets the value of ElementNameEditSupported for the instance

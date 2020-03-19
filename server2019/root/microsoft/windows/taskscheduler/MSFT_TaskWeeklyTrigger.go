@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_TaskWeeklyTrigger struct
 type MSFT_TaskWeeklyTrigger struct {
-	MSFT_TaskTrigger
+	*MSFT_TaskTrigger
 
 	//
 	DaysOfWeek uint16
@@ -20,6 +25,35 @@ type MSFT_TaskWeeklyTrigger struct {
 
 	//
 	WeeksInterval uint16
+}
+
+func NewMSFT_TaskWeeklyTriggerEx1(instance *cim.WmiInstance) (newInstance *MSFT_TaskWeeklyTrigger, err error) {
+	tmp, err := NewMSFT_TaskTriggerEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskWeeklyTrigger{
+		MSFT_TaskTrigger: tmp,
+	}
+	return
+}
+
+func NewMSFT_TaskWeeklyTriggerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_TaskWeeklyTrigger, err error) {
+	tmp, err := NewMSFT_TaskTriggerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_TaskWeeklyTrigger{
+		MSFT_TaskTrigger: tmp,
+	}
+	return
 }
 
 // SetDaysOfWeek sets the value of DaysOfWeek for the instance

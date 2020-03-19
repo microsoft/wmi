@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetIKEAuthSet struct
 type MSFT_NetIKEAuthSet struct {
-	CIM_IKEAction
+	*CIM_IKEAction
 
 	//
 	DisplayGroup string
@@ -41,6 +46,35 @@ type MSFT_NetIKEAuthSet struct {
 
 	//
 	StatusCode uint32
+}
+
+func NewMSFT_NetIKEAuthSetEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetIKEAuthSet, err error) {
+	tmp, err := NewCIM_IKEActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEAuthSet{
+		CIM_IKEAction: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetIKEAuthSetEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetIKEAuthSet, err error) {
+	tmp, err := NewCIM_IKEActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetIKEAuthSet{
+		CIM_IKEAction: tmp,
+	}
+	return
 }
 
 // SetDisplayGroup sets the value of DisplayGroup for the instance

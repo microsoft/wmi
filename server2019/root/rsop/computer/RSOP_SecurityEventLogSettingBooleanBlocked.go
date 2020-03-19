@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_SecurityEventLogSettingBooleanBlocked struct
 type RSOP_SecurityEventLogSettingBooleanBlocked struct {
-	RSOP_SecuritySettingsBlocked
+	*RSOP_SecuritySettingsBlocked
 
 	//
 	KeyName string
@@ -20,6 +25,35 @@ type RSOP_SecurityEventLogSettingBooleanBlocked struct {
 
 	//
 	Type string
+}
+
+func NewRSOP_SecurityEventLogSettingBooleanBlockedEx1(instance *cim.WmiInstance) (newInstance *RSOP_SecurityEventLogSettingBooleanBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SecurityEventLogSettingBooleanBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
+}
+
+func NewRSOP_SecurityEventLogSettingBooleanBlockedEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_SecurityEventLogSettingBooleanBlocked, err error) {
+	tmp, err := NewRSOP_SecuritySettingsBlockedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SecurityEventLogSettingBooleanBlocked{
+		RSOP_SecuritySettingsBlocked: tmp,
+	}
+	return
 }
 
 // SetKeyName sets the value of KeyName for the instance

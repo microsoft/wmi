@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __CIMOMIdentification struct
 type __CIMOMIdentification struct {
-	__SystemClass
+	*__SystemClass
 
 	//
 	SetupDateTime string
@@ -23,6 +28,35 @@ type __CIMOMIdentification struct {
 
 	//
 	WorkingDirectory string
+}
+
+func New__CIMOMIdentificationEx1(instance *cim.WmiInstance) (newInstance *__CIMOMIdentification, err error) {
+	tmp, err := New__SystemClassEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__CIMOMIdentification{
+		__SystemClass: tmp,
+	}
+	return
+}
+
+func New__CIMOMIdentificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__CIMOMIdentification, err error) {
+	tmp, err := New__SystemClassEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__CIMOMIdentification{
+		__SystemClass: tmp,
+	}
+	return
 }
 
 // SetSetupDateTime sets the value of SetupDateTime for the instance

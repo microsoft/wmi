@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Uev
 //////////////////////////////////////////////
 package uev
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // SettingsLocationTemplate struct
 type SettingsLocationTemplate struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// Flag indicating whether the template defers to MS account.
 	DeferToMSAccount bool
@@ -51,6 +53,35 @@ type SettingsLocationTemplate struct {
 
 	// Version of the settings location template.
 	TemplateVersion uint32
+}
+
+func NewSettingsLocationTemplateEx1(instance *cim.WmiInstance) (newInstance *SettingsLocationTemplate, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &SettingsLocationTemplate{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewSettingsLocationTemplateEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SettingsLocationTemplate, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SettingsLocationTemplate{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDeferToMSAccount sets the value of DeferToMSAccount for the instance

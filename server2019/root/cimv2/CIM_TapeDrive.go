@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_TapeDrive struct
 type CIM_TapeDrive struct {
-	CIM_MediaAccessDevice
+	*CIM_MediaAccessDevice
 
 	//
 	EOTWarningZoneSize uint32
@@ -20,6 +25,35 @@ type CIM_TapeDrive struct {
 
 	//
 	Padding uint32
+}
+
+func NewCIM_TapeDriveEx1(instance *cim.WmiInstance) (newInstance *CIM_TapeDrive, err error) {
+	tmp, err := NewCIM_MediaAccessDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_TapeDrive{
+		CIM_MediaAccessDevice: tmp,
+	}
+	return
+}
+
+func NewCIM_TapeDriveEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_TapeDrive, err error) {
+	tmp, err := NewCIM_MediaAccessDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_TapeDrive{
+		CIM_MediaAccessDevice: tmp,
+	}
+	return
 }
 
 // SetEOTWarningZoneSize sets the value of EOTWarningZoneSize for the instance

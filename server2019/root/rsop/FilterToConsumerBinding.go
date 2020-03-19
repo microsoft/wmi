@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP
 //////////////////////////////////////////////
 package rsop
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __FilterToConsumerBinding struct
 type __FilterToConsumerBinding struct {
-	__IndicationRelated
+	*__IndicationRelated
 
 	//
 	Consumer __EventConsumer
@@ -32,6 +37,35 @@ type __FilterToConsumerBinding struct {
 
 	//
 	SlowDownProviders bool
+}
+
+func New__FilterToConsumerBindingEx1(instance *cim.WmiInstance) (newInstance *__FilterToConsumerBinding, err error) {
+	tmp, err := New__IndicationRelatedEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__FilterToConsumerBinding{
+		__IndicationRelated: tmp,
+	}
+	return
+}
+
+func New__FilterToConsumerBindingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__FilterToConsumerBinding, err error) {
+	tmp, err := New__IndicationRelatedEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__FilterToConsumerBinding{
+		__IndicationRelated: tmp,
+	}
+	return
 }
 
 // SetConsumer sets the value of Consumer for the instance

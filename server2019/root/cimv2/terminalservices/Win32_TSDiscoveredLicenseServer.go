@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_TSDiscoveredLicenseServer struct
 type Win32_TSDiscoveredLicenseServer struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	HowDiscovered uint32
@@ -30,6 +32,35 @@ type Win32_TSDiscoveredLicenseServer struct {
 
 	//
 	LicenseServer string
+}
+
+func NewWin32_TSDiscoveredLicenseServerEx1(instance *cim.WmiInstance) (newInstance *Win32_TSDiscoveredLicenseServer, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSDiscoveredLicenseServer{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_TSDiscoveredLicenseServerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSDiscoveredLicenseServer, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSDiscoveredLicenseServer{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetHowDiscovered sets the value of HowDiscovered for the instance

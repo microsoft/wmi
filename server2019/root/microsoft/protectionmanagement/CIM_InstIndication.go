@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.protectionManagement
 //////////////////////////////////////////////
 package protectionmanagement
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_InstIndication struct
 type CIM_InstIndication struct {
-	CIM_Indication
+	*CIM_Indication
 
 	// A copy of the instance that changed to generate the Indication. SourceInstance contains the current values of the properties selected by the Indication Filter's Query. In the case of CIM_InstDeletion, the property values are copied before the instance is deleted.
 	SourceInstance interface{}
@@ -22,6 +27,35 @@ type CIM_InstIndication struct {
 	///<NamespacePath>:<ClassName>.<Prop1>="<Value1>",
 	///<Prop2>="<Value2>", ...
 	SourceInstanceModelPath string
+}
+
+func NewCIM_InstIndicationEx1(instance *cim.WmiInstance) (newInstance *CIM_InstIndication, err error) {
+	tmp, err := NewCIM_IndicationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstIndication{
+		CIM_Indication: tmp,
+	}
+	return
+}
+
+func NewCIM_InstIndicationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_InstIndication, err error) {
+	tmp, err := NewCIM_IndicationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_InstIndication{
+		CIM_Indication: tmp,
+	}
+	return
 }
 
 // SetSourceInstance sets the value of SourceInstance for the instance

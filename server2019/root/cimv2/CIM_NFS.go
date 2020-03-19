@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_NFS struct
 type CIM_NFS struct {
-	CIM_RemoteFileSystem
+	*CIM_RemoteFileSystem
 
 	//
 	AttributeCaching bool
@@ -53,6 +58,35 @@ type CIM_NFS struct {
 
 	//
 	WriteBufferSize uint64
+}
+
+func NewCIM_NFSEx1(instance *cim.WmiInstance) (newInstance *CIM_NFS, err error) {
+	tmp, err := NewCIM_RemoteFileSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NFS{
+		CIM_RemoteFileSystem: tmp,
+	}
+	return
+}
+
+func NewCIM_NFSEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_NFS, err error) {
+	tmp, err := NewCIM_RemoteFileSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_NFS{
+		CIM_RemoteFileSystem: tmp,
+	}
+	return
 }
 
 // SetAttributeCaching sets the value of AttributeCaching for the instance

@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Hgs
 //////////////////////////////////////////////
 package hgs
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_HgsGuardian struct
 type MSFT_HgsGuardian struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	EncryptionCertificate []uint8
@@ -36,6 +38,35 @@ type MSFT_HgsGuardian struct {
 
 	//
 	SigningCertificate []uint8
+}
+
+func NewMSFT_HgsGuardianEx1(instance *cim.WmiInstance) (newInstance *MSFT_HgsGuardian, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_HgsGuardian{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_HgsGuardianEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_HgsGuardian, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_HgsGuardian{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetEncryptionCertificate sets the value of EncryptionCertificate for the instance

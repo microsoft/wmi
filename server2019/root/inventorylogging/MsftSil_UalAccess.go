@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MsftSil_UalAccess struct
 type MsftSil_UalAccess struct {
-	MsftSil_Data
+	*MsftSil_Data
 
 	//
 	ProductName string
@@ -29,6 +34,35 @@ type MsftSil_UalAccess struct {
 
 	//
 	UniqueUserAccessCount uint32
+}
+
+func NewMsftSil_UalAccessEx1(instance *cim.WmiInstance) (newInstance *MsftSil_UalAccess, err error) {
+	tmp, err := NewMsftSil_DataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_UalAccess{
+		MsftSil_Data: tmp,
+	}
+	return
+}
+
+func NewMsftSil_UalAccessEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftSil_UalAccess, err error) {
+	tmp, err := NewMsftSil_DataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_UalAccess{
+		MsftSil_Data: tmp,
+	}
+	return
 }
 
 // SetProductName sets the value of ProductName for the instance

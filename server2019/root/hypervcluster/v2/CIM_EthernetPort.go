@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_EthernetPort struct
 type CIM_EthernetPort struct {
-	CIM_NetworkPort
+	*CIM_NetworkPort
 
 	// Capabilities of the EthernetPort. For example, the Device might support AlertOnLan, WakeOnLan, Load Balancing, or FailOver. If failover or load balancing capabilities are listed, a SpareGroup (failover) or ExtraCapacityGroup (load balancing) should also be defined to completely describe the capability.
 	Capabilities []EthernetPort_Capabilities
@@ -26,6 +31,35 @@ type CIM_EthernetPort struct {
 
 	// An array of free-form strings that provides more detailed explanations for any of the enabled capabilities that are specified as 'Other'.
 	OtherEnabledCapabilities []string
+}
+
+func NewCIM_EthernetPortEx1(instance *cim.WmiInstance) (newInstance *CIM_EthernetPort, err error) {
+	tmp, err := NewCIM_NetworkPortEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EthernetPort{
+		CIM_NetworkPort: tmp,
+	}
+	return
+}
+
+func NewCIM_EthernetPortEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_EthernetPort, err error) {
+	tmp, err := NewCIM_NetworkPortEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_EthernetPort{
+		CIM_NetworkPort: tmp,
+	}
+	return
 }
 
 // SetCapabilities sets the value of Capabilities for the instance

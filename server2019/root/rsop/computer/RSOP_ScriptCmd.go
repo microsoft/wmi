@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // RSOP_ScriptCmd struct
 type RSOP_ScriptCmd struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	arguments string
@@ -24,6 +26,35 @@ type RSOP_ScriptCmd struct {
 
 	//
 	script string
+}
+
+func NewRSOP_ScriptCmdEx1(instance *cim.WmiInstance) (newInstance *RSOP_ScriptCmd, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ScriptCmd{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewRSOP_ScriptCmdEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_ScriptCmd, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ScriptCmd{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // Setarguments sets the value of arguments for the instance

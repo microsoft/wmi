@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TSDeploymentLicensing struct
 type Win32_TSDeploymentLicensing struct {
-	CIM_LogicalElement
+	*CIM_LogicalElement
 
 	// License Servers to use
 	LicenseServers []string
@@ -20,6 +25,35 @@ type Win32_TSDeploymentLicensing struct {
 
 	// Use deployment-wide licensing settings, as opposed to setting them per-server.  If this is set to false, all other licensing settings are ignored.
 	UseCentralLicensingSettings bool
+}
+
+func NewWin32_TSDeploymentLicensingEx1(instance *cim.WmiInstance) (newInstance *Win32_TSDeploymentLicensing, err error) {
+	tmp, err := NewCIM_LogicalElementEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSDeploymentLicensing{
+		CIM_LogicalElement: tmp,
+	}
+	return
+}
+
+func NewWin32_TSDeploymentLicensingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TSDeploymentLicensing, err error) {
+	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TSDeploymentLicensing{
+		CIM_LogicalElement: tmp,
+	}
+	return
 }
 
 // SetLicenseServers sets the value of LicenseServers for the instance

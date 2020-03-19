@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_StorageNode struct
 type MSFT_StorageNode struct {
-	MSFT_StorageObject
+	*MSFT_StorageObject
 
 	// This field is a string representation of the node's firmware version.
 	FirmwareVersion string
@@ -38,6 +43,35 @@ type MSFT_StorageNode struct {
 
 	//
 	SerialNumber string
+}
+
+func NewMSFT_StorageNodeEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageNode, err error) {
+	tmp, err := NewMSFT_StorageObjectEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageNode{
+		MSFT_StorageObject: tmp,
+	}
+	return
+}
+
+func NewMSFT_StorageNodeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_StorageNode, err error) {
+	tmp, err := NewMSFT_StorageObjectEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_StorageNode{
+		MSFT_StorageObject: tmp,
+	}
+	return
 }
 
 // SetFirmwareVersion sets the value of FirmwareVersion for the instance

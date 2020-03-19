@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Msvm_PlannedComputerSystem struct
 type Msvm_PlannedComputerSystem struct {
-	CIM_ComputerSystem
+	*CIM_ComputerSystem
 
 	//
 	AssignedNumaNodeList []uint16
@@ -23,6 +28,35 @@ type Msvm_PlannedComputerSystem struct {
 
 	//
 	TimeOfLastConfigurationChange string
+}
+
+func NewMsvm_PlannedComputerSystemEx1(instance *cim.WmiInstance) (newInstance *Msvm_PlannedComputerSystem, err error) {
+	tmp, err := NewCIM_ComputerSystemEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_PlannedComputerSystem{
+		CIM_ComputerSystem: tmp,
+	}
+	return
+}
+
+func NewMsvm_PlannedComputerSystemEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_PlannedComputerSystem, err error) {
+	tmp, err := NewCIM_ComputerSystemEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_PlannedComputerSystem{
+		CIM_ComputerSystem: tmp,
+	}
+	return
 }
 
 // SetAssignedNumaNodeList sets the value of AssignedNumaNodeList for the instance

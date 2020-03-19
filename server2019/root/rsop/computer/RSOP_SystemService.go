@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_SystemService struct
 type RSOP_SystemService struct {
-	RSOP_SecuritySettings
+	*RSOP_SecuritySettings
 
 	//
 	SDDLString string
@@ -20,6 +25,35 @@ type RSOP_SystemService struct {
 
 	//
 	StartupMode SystemService_StartupMode
+}
+
+func NewRSOP_SystemServiceEx1(instance *cim.WmiInstance) (newInstance *RSOP_SystemService, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SystemService{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
+}
+
+func NewRSOP_SystemServiceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_SystemService, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SystemService{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
 }
 
 // SetSDDLString sets the value of SDDLString for the instance

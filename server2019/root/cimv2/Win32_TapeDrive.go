@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_TapeDrive struct
 type Win32_TapeDrive struct {
-	CIM_TapeDrive
+	*CIM_TapeDrive
 
 	//
 	Compression uint32
@@ -35,6 +40,35 @@ type Win32_TapeDrive struct {
 
 	//
 	ReportSetMarks uint32
+}
+
+func NewWin32_TapeDriveEx1(instance *cim.WmiInstance) (newInstance *Win32_TapeDrive, err error) {
+	tmp, err := NewCIM_TapeDriveEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TapeDrive{
+		CIM_TapeDrive: tmp,
+	}
+	return
+}
+
+func NewWin32_TapeDriveEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_TapeDrive, err error) {
+	tmp, err := NewCIM_TapeDriveEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_TapeDrive{
+		CIM_TapeDrive: tmp,
+	}
+	return
 }
 
 // SetCompression sets the value of Compression for the instance

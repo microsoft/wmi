@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_AdjacentSlots struct
 type CIM_AdjacentSlots struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	DistanceBetweenSlots float32
@@ -27,6 +29,35 @@ type CIM_AdjacentSlots struct {
 
 	//
 	SlotB CIM_Slot
+}
+
+func NewCIM_AdjacentSlotsEx1(instance *cim.WmiInstance) (newInstance *CIM_AdjacentSlots, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AdjacentSlots{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewCIM_AdjacentSlotsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_AdjacentSlots, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_AdjacentSlots{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetDistanceBetweenSlots sets the value of DistanceBetweenSlots for the instance

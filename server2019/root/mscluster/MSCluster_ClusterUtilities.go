@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSCluster_ClusterUtilities struct
 type MSCluster_ClusterUtilities struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Fqdn string
 
 	//
 	HasSystemAccess bool
+}
+
+func NewMSCluster_ClusterUtilitiesEx1(instance *cim.WmiInstance) (newInstance *MSCluster_ClusterUtilities, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterUtilities{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSCluster_ClusterUtilitiesEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_ClusterUtilities, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_ClusterUtilities{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetFqdn sets the value of Fqdn for the instance

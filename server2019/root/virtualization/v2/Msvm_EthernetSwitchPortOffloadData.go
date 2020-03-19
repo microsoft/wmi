@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchPortOffloadData struct
 type Msvm_EthernetSwitchPortOffloadData struct {
-	Msvm_EthernetPortData
+	*Msvm_EthernetPortData
 
 	//
 	IovOffloadUsage uint32
@@ -60,6 +61,35 @@ type Msvm_EthernetSwitchPortOffloadData struct {
 
 	//
 	VrssVmbusChannelAffinityPolicy uint32
+}
+
+func NewMsvm_EthernetSwitchPortOffloadDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchPortOffloadData, err error) {
+	tmp, err := NewMsvm_EthernetPortDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortOffloadData{
+		Msvm_EthernetPortData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchPortOffloadDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchPortOffloadData, err error) {
+	tmp, err := NewMsvm_EthernetPortDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortOffloadData{
+		Msvm_EthernetPortData: tmp,
+	}
+	return
 }
 
 // SetIovOffloadUsage sets the value of IovOffloadUsage for the instance

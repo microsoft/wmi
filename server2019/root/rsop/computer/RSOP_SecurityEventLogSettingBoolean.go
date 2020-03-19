@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_SecurityEventLogSettingBoolean struct
 type RSOP_SecurityEventLogSettingBoolean struct {
-	RSOP_SecuritySettings
+	*RSOP_SecuritySettings
 
 	//
 	KeyName string
@@ -20,6 +25,35 @@ type RSOP_SecurityEventLogSettingBoolean struct {
 
 	//
 	Type string
+}
+
+func NewRSOP_SecurityEventLogSettingBooleanEx1(instance *cim.WmiInstance) (newInstance *RSOP_SecurityEventLogSettingBoolean, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SecurityEventLogSettingBoolean{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
+}
+
+func NewRSOP_SecurityEventLogSettingBooleanEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_SecurityEventLogSettingBoolean, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_SecurityEventLogSettingBoolean{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
 }
 
 // SetKeyName sets the value of KeyName for the instance

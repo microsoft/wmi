@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetSecuritySettingData struct
 type MSFT_NetSecuritySettingData struct {
-	MSFT_NetSettingData
+	*MSFT_NetSettingData
 
 	//
 	AllowIPsecThroughNAT uint16
@@ -53,6 +58,35 @@ type MSFT_NetSecuritySettingData struct {
 
 	//
 	RequireFullAuthSupport uint16
+}
+
+func NewMSFT_NetSecuritySettingDataEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetSecuritySettingData, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSecuritySettingData{
+		MSFT_NetSettingData: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetSecuritySettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetSecuritySettingData, err error) {
+	tmp, err := NewMSFT_NetSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSecuritySettingData{
+		MSFT_NetSettingData: tmp,
+	}
+	return
 }
 
 // SetAllowIPsecThroughNAT sets the value of AllowIPsecThroughNAT for the instance

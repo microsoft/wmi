@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PortConnector struct
 type Win32_PortConnector struct {
-	CIM_PhysicalConnector
+	*CIM_PhysicalConnector
 
 	//
 	ExternalReferenceDesignator string
@@ -20,6 +25,35 @@ type Win32_PortConnector struct {
 
 	//
 	PortType uint16
+}
+
+func NewWin32_PortConnectorEx1(instance *cim.WmiInstance) (newInstance *Win32_PortConnector, err error) {
+	tmp, err := NewCIM_PhysicalConnectorEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PortConnector{
+		CIM_PhysicalConnector: tmp,
+	}
+	return
+}
+
+func NewWin32_PortConnectorEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PortConnector, err error) {
+	tmp, err := NewCIM_PhysicalConnectorEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PortConnector{
+		CIM_PhysicalConnector: tmp,
+	}
+	return
 }
 
 // SetExternalReferenceDesignator sets the value of ExternalReferenceDesignator for the instance

@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchHardwareOffloadData struct
 type Msvm_EthernetSwitchHardwareOffloadData struct {
-	Msvm_EthernetSwitchData
+	*Msvm_EthernetSwitchData
 
 	//
 	DefaultQueueVmmqEnabled bool
@@ -63,6 +64,35 @@ type Msvm_EthernetSwitchHardwareOffloadData struct {
 
 	//
 	VmqUsage uint32
+}
+
+func NewMsvm_EthernetSwitchHardwareOffloadDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchHardwareOffloadData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchHardwareOffloadData{
+		Msvm_EthernetSwitchData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchHardwareOffloadDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchHardwareOffloadData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchHardwareOffloadData{
+		Msvm_EthernetSwitchData: tmp,
+	}
+	return
 }
 
 // SetDefaultQueueVmmqEnabled sets the value of DefaultQueueVmmqEnabled for the instance

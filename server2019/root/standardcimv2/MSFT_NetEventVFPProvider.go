@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetEventVFPProvider struct
 type MSFT_NetEventVFPProvider struct {
-	MSFT_NetEventProviderBase
+	*MSFT_NetEventProviderBase
 
 	//
 	DestinationIPAddresses []string
@@ -50,6 +55,35 @@ type MSFT_NetEventVFPProvider struct {
 
 	//
 	VLANIds []uint16
+}
+
+func NewMSFT_NetEventVFPProviderEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetEventVFPProvider, err error) {
+	tmp, err := NewMSFT_NetEventProviderBaseEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventVFPProvider{
+		MSFT_NetEventProviderBase: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetEventVFPProviderEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetEventVFPProvider, err error) {
+	tmp, err := NewMSFT_NetEventProviderBaseEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetEventVFPProvider{
+		MSFT_NetEventProviderBase: tmp,
+	}
+	return
 }
 
 // SetDestinationIPAddresses sets the value of DestinationIPAddresses for the instance

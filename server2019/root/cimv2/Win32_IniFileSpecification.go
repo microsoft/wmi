@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_IniFileSpecification struct
 type Win32_IniFileSpecification struct {
-	CIM_FileSpecification
+	*CIM_FileSpecification
 
 	//
 	Action uint16
@@ -26,6 +31,35 @@ type Win32_IniFileSpecification struct {
 
 	//
 	Value string
+}
+
+func NewWin32_IniFileSpecificationEx1(instance *cim.WmiInstance) (newInstance *Win32_IniFileSpecification, err error) {
+	tmp, err := NewCIM_FileSpecificationEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_IniFileSpecification{
+		CIM_FileSpecification: tmp,
+	}
+	return
+}
+
+func NewWin32_IniFileSpecificationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_IniFileSpecification, err error) {
+	tmp, err := NewCIM_FileSpecificationEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_IniFileSpecification{
+		CIM_FileSpecification: tmp,
+	}
+	return
 }
 
 // SetAction sets the value of Action for the instance

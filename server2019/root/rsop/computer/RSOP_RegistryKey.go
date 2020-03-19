@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_RegistryKey struct
 type RSOP_RegistryKey struct {
-	RSOP_SecuritySettings
+	*RSOP_SecuritySettings
 
 	//
 	Mode RegistryKey_Mode
@@ -20,6 +25,35 @@ type RSOP_RegistryKey struct {
 
 	//
 	SDDLString string
+}
+
+func NewRSOP_RegistryKeyEx1(instance *cim.WmiInstance) (newInstance *RSOP_RegistryKey, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RegistryKey{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
+}
+
+func NewRSOP_RegistryKeyEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_RegistryKey, err error) {
+	tmp, err := NewRSOP_SecuritySettingsEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_RegistryKey{
+		RSOP_SecuritySettings: tmp,
+	}
+	return
 }
 
 // SetMode sets the value of Mode for the instance

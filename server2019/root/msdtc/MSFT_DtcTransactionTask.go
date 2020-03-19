@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_DtcTransactionTask struct
 type MSFT_DtcTransactionTask struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewMSFT_DtcTransactionTaskEx1(instance *cim.WmiInstance) (newInstance *MSFT_DtcTransactionTask, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DtcTransactionTask{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_DtcTransactionTaskEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_DtcTransactionTask, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_DtcTransactionTask{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

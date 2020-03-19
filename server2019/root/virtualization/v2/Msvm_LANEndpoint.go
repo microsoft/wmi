@@ -3,21 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_LANEndpoint struct
 type Msvm_LANEndpoint struct {
-	CIM_LANEndpoint
+	*CIM_LANEndpoint
 
 	//
 	Connected bool
+}
+
+func NewMsvm_LANEndpointEx1(instance *cim.WmiInstance) (newInstance *Msvm_LANEndpoint, err error) {
+	tmp, err := NewCIM_LANEndpointEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_LANEndpoint{
+		CIM_LANEndpoint: tmp,
+	}
+	return
+}
+
+func NewMsvm_LANEndpointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_LANEndpoint, err error) {
+	tmp, err := NewCIM_LANEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_LANEndpoint{
+		CIM_LANEndpoint: tmp,
+	}
+	return
 }
 
 // SetConnected sets the value of Connected for the instance

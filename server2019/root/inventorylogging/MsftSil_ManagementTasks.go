@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MsftSil_ManagementTasks struct
 type MsftSil_ManagementTasks struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewMsftSil_ManagementTasksEx1(instance *cim.WmiInstance) (newInstance *MsftSil_ManagementTasks, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_ManagementTasks{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsftSil_ManagementTasksEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MsftSil_ManagementTasks, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MsftSil_ManagementTasks{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

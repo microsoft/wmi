@@ -3,14 +3,48 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSFT_NetSwitchTeam struct
 type MSFT_NetSwitchTeam struct {
-	MSFT_NetImPlatTeam
+	*MSFT_NetImPlatTeam
+}
+
+func NewMSFT_NetSwitchTeamEx1(instance *cim.WmiInstance) (newInstance *MSFT_NetSwitchTeam, err error) {
+	tmp, err := NewMSFT_NetImPlatTeamEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSwitchTeam{
+		MSFT_NetImPlatTeam: tmp,
+	}
+	return
+}
+
+func NewMSFT_NetSwitchTeamEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_NetSwitchTeam, err error) {
+	tmp, err := NewMSFT_NetImPlatTeamEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_NetSwitchTeam{
+		MSFT_NetImPlatTeam: tmp,
+	}
+	return
 }
 
 //

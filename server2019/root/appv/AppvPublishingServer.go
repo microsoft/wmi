@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // AppvPublishingServer struct
 type AppvPublishingServer struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	GlobalRefreshEnabled bool
@@ -48,6 +50,35 @@ type AppvPublishingServer struct {
 
 	//
 	UserRefreshOnLogon bool
+}
+
+func NewAppvPublishingServerEx1(instance *cim.WmiInstance) (newInstance *AppvPublishingServer, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &AppvPublishingServer{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewAppvPublishingServerEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *AppvPublishingServer, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &AppvPublishingServer{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetGlobalRefreshEnabled sets the value of GlobalRefreshEnabled for the instance

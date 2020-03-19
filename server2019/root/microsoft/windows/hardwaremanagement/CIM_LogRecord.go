@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.HardwareManagement
 //////////////////////////////////////////////
 package hardwaremanagement
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_LogRecord struct
 type CIM_LogRecord struct {
-	CIM_RecordForLog
+	*CIM_RecordForLog
 
 	//
 	CreationClassName string
@@ -29,6 +34,35 @@ type CIM_LogRecord struct {
 
 	//
 	RecordID string
+}
+
+func NewCIM_LogRecordEx1(instance *cim.WmiInstance) (newInstance *CIM_LogRecord, err error) {
+	tmp, err := NewCIM_RecordForLogEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogRecord{
+		CIM_RecordForLog: tmp,
+	}
+	return
+}
+
+func NewCIM_LogRecordEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_LogRecord, err error) {
+	tmp, err := NewCIM_RecordForLogEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_LogRecord{
+		CIM_RecordForLog: tmp,
+	}
+	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance

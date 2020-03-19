@@ -3,17 +3,51 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_CentralAccessPolicySetting struct
 type RSOP_CentralAccessPolicySetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	//
 	CentralAccessPolicyName []string
+}
+
+func NewRSOP_CentralAccessPolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_CentralAccessPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_CentralAccessPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_CentralAccessPolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_CentralAccessPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_CentralAccessPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // SetCentralAccessPolicyName sets the value of CentralAccessPolicyName for the instance

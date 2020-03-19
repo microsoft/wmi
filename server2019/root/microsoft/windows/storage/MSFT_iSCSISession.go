@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_iSCSISession struct
 type MSFT_iSCSISession struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AuthenticationType string
@@ -57,6 +59,35 @@ type MSFT_iSCSISession struct {
 
 	//
 	TargetSideIdentifier string
+}
+
+func NewMSFT_iSCSISessionEx1(instance *cim.WmiInstance) (newInstance *MSFT_iSCSISession, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSISession{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_iSCSISessionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_iSCSISession, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSISession{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAuthenticationType sets the value of AuthenticationType for the instance

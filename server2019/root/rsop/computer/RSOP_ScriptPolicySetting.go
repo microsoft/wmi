@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // RSOP_ScriptPolicySetting struct
 type RSOP_ScriptPolicySetting struct {
-	RSOP_PolicySetting
+	*RSOP_PolicySetting
 
 	//
 	psScriptOrder uint32
@@ -23,6 +28,35 @@ type RSOP_ScriptPolicySetting struct {
 
 	//
 	scriptType uint32
+}
+
+func NewRSOP_ScriptPolicySettingEx1(instance *cim.WmiInstance) (newInstance *RSOP_ScriptPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ScriptPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
+}
+
+func NewRSOP_ScriptPolicySettingEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *RSOP_ScriptPolicySetting, err error) {
+	tmp, err := NewRSOP_PolicySettingEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &RSOP_ScriptPolicySetting{
+		RSOP_PolicySetting: tmp,
+	}
+	return
 }
 
 // SetpsScriptOrder sets the value of psScriptOrder for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_SoftwareFeature struct
 type Win32_SoftwareFeature struct {
-	CIM_SoftwareFeature
+	*CIM_SoftwareFeature
 
 	//
 	Accesses uint16
@@ -23,6 +28,35 @@ type Win32_SoftwareFeature struct {
 
 	//
 	LastUse string
+}
+
+func NewWin32_SoftwareFeatureEx1(instance *cim.WmiInstance) (newInstance *Win32_SoftwareFeature, err error) {
+	tmp, err := NewCIM_SoftwareFeatureEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SoftwareFeature{
+		CIM_SoftwareFeature: tmp,
+	}
+	return
+}
+
+func NewWin32_SoftwareFeatureEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_SoftwareFeature, err error) {
+	tmp, err := NewCIM_SoftwareFeatureEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_SoftwareFeature{
+		CIM_SoftwareFeature: tmp,
+	}
+	return
 }
 
 // SetAccesses sets the value of Accesses for the instance

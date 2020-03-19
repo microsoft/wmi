@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_iSCSITargetPortal struct
 type MSFT_iSCSITargetPortal struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	InitiatorInstanceName string
@@ -33,6 +35,35 @@ type MSFT_iSCSITargetPortal struct {
 
 	//
 	TargetPortalPortNumber uint16
+}
+
+func NewMSFT_iSCSITargetPortalEx1(instance *cim.WmiInstance) (newInstance *MSFT_iSCSITargetPortal, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSITargetPortal{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_iSCSITargetPortalEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_iSCSITargetPortal, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_iSCSITargetPortal{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetInitiatorInstanceName sets the value of InitiatorInstanceName for the instance

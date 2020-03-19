@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Win32_FolderRedirectionHealthConfiguration struct
 type Win32_FolderRedirectionHealthConfiguration struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	// Cautious threshold, in hours. If the number of hours since the last attempted synchronization is greater than or equal to this threshold, the HealthStatus property of the Win32_FolderRedirectionHealth class is set to Caution.
 	LastSyncDurationCautionInHours uint32
 
 	// Unhealthy threshold, in hours. If the number of hours since the last attempted synchronization is greater than or equal to this threshold, the HealthStatus property of the Win32_FolderRedirectionHealth class is set to Unhealthy.
 	LastSyncDurationUnhealthyInHours uint32
+}
+
+func NewWin32_FolderRedirectionHealthConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_FolderRedirectionHealthConfiguration, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirectionHealthConfiguration{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewWin32_FolderRedirectionHealthConfigurationEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_FolderRedirectionHealthConfiguration, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_FolderRedirectionHealthConfiguration{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetLastSyncDurationCautionInHours sets the value of LastSyncDurationCautionInHours for the instance

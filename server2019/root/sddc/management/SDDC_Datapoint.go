@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // SDDC_Datapoint struct
 type SDDC_Datapoint struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Timestamp string
 
 	//
 	Value float64
+}
+
+func NewSDDC_DatapointEx1(instance *cim.WmiInstance) (newInstance *SDDC_Datapoint, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDDC_Datapoint{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewSDDC_DatapointEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *SDDC_Datapoint, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &SDDC_Datapoint{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetTimestamp sets the value of Timestamp for the instance

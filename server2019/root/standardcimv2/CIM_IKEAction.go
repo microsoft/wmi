@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_IKEAction struct
 type CIM_IKEAction struct {
-	CIM_SANegotiationAction
+	*CIM_SANegotiationAction
 
 	//
 	AggressiveModeGroupID uint16
@@ -23,6 +28,35 @@ type CIM_IKEAction struct {
 
 	//
 	VendorID string
+}
+
+func NewCIM_IKEActionEx1(instance *cim.WmiInstance) (newInstance *CIM_IKEAction, err error) {
+	tmp, err := NewCIM_SANegotiationActionEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IKEAction{
+		CIM_SANegotiationAction: tmp,
+	}
+	return
+}
+
+func NewCIM_IKEActionEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_IKEAction, err error) {
+	tmp, err := NewCIM_SANegotiationActionEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_IKEAction{
+		CIM_SANegotiationAction: tmp,
+	}
+	return
 }
 
 // SetAggressiveModeGroupID sets the value of AggressiveModeGroupID for the instance

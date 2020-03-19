@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // CIM_BasedOn struct
 type CIM_BasedOn struct {
-	CIM_Dependency
+	*CIM_Dependency
 
 	// EndingAddress indicates where in lower level storage, the higher level Extent ends. This property is useful when mapping non-contiguous Extents into a higher level grouping.
 	EndingAddress uint64
@@ -20,6 +25,35 @@ type CIM_BasedOn struct {
 
 	// StartingAddress indicates where in lower level storage, the higher level Extent begins.
 	StartingAddress uint64
+}
+
+func NewCIM_BasedOnEx1(instance *cim.WmiInstance) (newInstance *CIM_BasedOn, err error) {
+	tmp, err := NewCIM_DependencyEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BasedOn{
+		CIM_Dependency: tmp,
+	}
+	return
+}
+
+func NewCIM_BasedOnEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *CIM_BasedOn, err error) {
+	tmp, err := NewCIM_DependencyEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &CIM_BasedOn{
+		CIM_Dependency: tmp,
+	}
+	return
 }
 
 // SetEndingAddress sets the value of EndingAddress for the instance

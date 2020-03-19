@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // __MethodInvocationEvent struct
 type __MethodInvocationEvent struct {
-	__InstanceOperationEvent
+	*__InstanceOperationEvent
 
 	//
 	Method string
@@ -20,6 +25,35 @@ type __MethodInvocationEvent struct {
 
 	//
 	PreCall bool
+}
+
+func New__MethodInvocationEventEx1(instance *cim.WmiInstance) (newInstance *__MethodInvocationEvent, err error) {
+	tmp, err := New__InstanceOperationEventEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__MethodInvocationEvent{
+		__InstanceOperationEvent: tmp,
+	}
+	return
+}
+
+func New__MethodInvocationEventEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *__MethodInvocationEvent, err error) {
+	tmp, err := New__InstanceOperationEventEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &__MethodInvocationEvent{
+		__InstanceOperationEvent: tmp,
+	}
+	return
 }
 
 // SetMethod sets the value of Method for the instance

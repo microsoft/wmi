@@ -3,18 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_EthernetSwitchPortOffloadSettingData struct
 type Msvm_EthernetSwitchPortOffloadSettingData struct {
-	Msvm_EthernetSwitchPortFeatureSettingData
+	*Msvm_EthernetSwitchPortFeatureSettingData
 
 	//
 	IOVInterruptModeration EthernetSwitchPortOffloadSettingData_IOVInterruptModeration
@@ -63,6 +64,35 @@ type Msvm_EthernetSwitchPortOffloadSettingData struct {
 
 	//
 	VrssVmbusChannelAffinityPolicy uint32
+}
+
+func NewMsvm_EthernetSwitchPortOffloadSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_EthernetSwitchPortOffloadSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortOffloadSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
+}
+
+func NewMsvm_EthernetSwitchPortOffloadSettingDataEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_EthernetSwitchPortOffloadSettingData, err error) {
+	tmp, err := NewMsvm_EthernetSwitchPortFeatureSettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_EthernetSwitchPortOffloadSettingData{
+		Msvm_EthernetSwitchPortFeatureSettingData: tmp,
+	}
+	return
 }
 
 // SetIOVInterruptModeration sets the value of IOVInterruptModeration for the instance

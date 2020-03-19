@@ -3,18 +3,20 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // HNet_FirewallLoggingSettings struct
 type HNet_FirewallLoggingSettings struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Id string
@@ -30,6 +32,35 @@ type HNet_FirewallLoggingSettings struct {
 
 	//
 	Path string
+}
+
+func NewHNet_FirewallLoggingSettingsEx1(instance *cim.WmiInstance) (newInstance *HNet_FirewallLoggingSettings, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_FirewallLoggingSettings{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewHNet_FirewallLoggingSettingsEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *HNet_FirewallLoggingSettings, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &HNet_FirewallLoggingSettings{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetId sets the value of Id for the instance

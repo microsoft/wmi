@@ -3,12 +3,46 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // WSP_StorageSubSystemToFileShare struct
 type WSP_StorageSubSystemToFileShare struct {
-	MSFT_StorageSubSystemToFileShare
+	*MSFT_StorageSubSystemToFileShare
+}
+
+func NewWSP_StorageSubSystemToFileShareEx1(instance *cim.WmiInstance) (newInstance *WSP_StorageSubSystemToFileShare, err error) {
+	tmp, err := NewMSFT_StorageSubSystemToFileShareEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &WSP_StorageSubSystemToFileShare{
+		MSFT_StorageSubSystemToFileShare: tmp,
+	}
+	return
+}
+
+func NewWSP_StorageSubSystemToFileShareEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *WSP_StorageSubSystemToFileShare, err error) {
+	tmp, err := NewMSFT_StorageSubSystemToFileShareEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &WSP_StorageSubSystemToFileShare{
+		MSFT_StorageSubSystemToFileShare: tmp,
+	}
+	return
 }

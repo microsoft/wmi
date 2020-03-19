@@ -3,18 +3,49 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // MSFT_PrinterNfcTagTasks struct
 type MSFT_PrinterNfcTagTasks struct {
-	cim.WmiInstance
+	*cim.WmiInstance
+}
+
+func NewMSFT_PrinterNfcTagTasksEx1(instance *cim.WmiInstance) (newInstance *MSFT_PrinterNfcTagTasks, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PrinterNfcTagTasks{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMSFT_PrinterNfcTagTasksEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSFT_PrinterNfcTagTasks, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSFT_PrinterNfcTagTasks{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 //

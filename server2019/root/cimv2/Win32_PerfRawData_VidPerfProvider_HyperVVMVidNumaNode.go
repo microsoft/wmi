@@ -3,20 +3,54 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // Win32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNode struct
 type Win32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNode struct {
-	Win32_PerfRawData
+	*Win32_PerfRawData
 
 	//
 	PageCount uint64
 
 	//
 	ProcessorCount uint64
+}
+
+func NewWin32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNodeEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNode, err error) {
+	tmp, err := NewWin32_PerfRawDataEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNode{
+		Win32_PerfRawData: tmp,
+	}
+	return
+}
+
+func NewWin32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNodeEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Win32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNode, err error) {
+	tmp, err := NewWin32_PerfRawDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Win32_PerfRawData_VidPerfProvider_HyperVVMVidNumaNode{
+		Win32_PerfRawData: tmp,
+	}
+	return
 }
 
 // SetPageCount sets the value of PageCount for the instance

@@ -3,24 +3,55 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
-	"github.com/microsoft/wmi/pkg/wmiinstance"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_InteractiveSessionACE struct
 type Msvm_InteractiveSessionACE struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	AccessType uint16
 
 	//
 	Trustee string
+}
+
+func NewMsvm_InteractiveSessionACEEx1(instance *cim.WmiInstance) (newInstance *Msvm_InteractiveSessionACE, err error) {
+	tmp, err := instance, nil
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_InteractiveSessionACE{
+		WmiInstance: tmp,
+	}
+	return
+}
+
+func NewMsvm_InteractiveSessionACEEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *Msvm_InteractiveSessionACE, err error) {
+	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &Msvm_InteractiveSessionACE{
+		WmiInstance: tmp,
+	}
+	return
 }
 
 // SetAccessType sets the value of AccessType for the instance

@@ -3,14 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/16/2020 using wmigen
+//      Auto Generated on 3/19/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
+import (
+	"github.com/microsoft/wmi/pkg/base/query"
+	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+)
+
 // MSCluster_NetworkInterface struct
 type MSCluster_NetworkInterface struct {
-	CIM_LogicalDevice
+	*CIM_LogicalDevice
 
 	//
 	Adapter string
@@ -50,6 +55,35 @@ type MSCluster_NetworkInterface struct {
 
 	//
 	State uint32
+}
+
+func NewMSCluster_NetworkInterfaceEx1(instance *cim.WmiInstance) (newInstance *MSCluster_NetworkInterface, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx1(instance)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_NetworkInterface{
+		CIM_LogicalDevice: tmp,
+	}
+	return
+}
+
+func NewMSCluster_NetworkInterfaceEx6(hostName string,
+	wmiNamespace string,
+	userName string,
+	password string,
+	domainName string,
+	query *query.WmiQuery) (newInstance *MSCluster_NetworkInterface, err error) {
+	tmp, err := NewCIM_LogicalDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+
+	if err != nil {
+		return
+	}
+	newInstance = &MSCluster_NetworkInterface{
+		CIM_LogicalDevice: tmp,
+	}
+	return
 }
 
 // SetAdapter sets the value of Adapter for the instance
