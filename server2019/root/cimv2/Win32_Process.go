@@ -10,7 +10,7 @@ package cimv2
 
 // Win32_Process struct
 type Win32_Process struct {
-	CIM_Process
+	*CIM_Process
 
 	//
 	CommandLine string
@@ -92,6 +92,16 @@ type Win32_Process struct {
 
 	//
 	WriteTransferCount uint64
+}
+
+func NewWin32_Process() (*Win32_Process, error) {
+	cimprocess, err := NewCIM_Process()
+	if err != nil {
+		return nil, err
+	}
+	return &Win32_Process{
+		CIM_Process: &cimprocess,
+	}, nil
 }
 
 // SetCommandLine sets the value of CommandLine for the instance

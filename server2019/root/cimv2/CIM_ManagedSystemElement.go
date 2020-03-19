@@ -14,7 +14,7 @@ import (
 
 // CIM_ManagedSystemElement struct
 type CIM_ManagedSystemElement struct {
-	cim.WmiInstance
+	*cim.WmiInstance
 
 	//
 	Caption string
