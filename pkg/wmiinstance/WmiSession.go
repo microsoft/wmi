@@ -205,7 +205,6 @@ func (c *WmiSession) EnumerateInstances(className string) ([]*WmiInstance, error
 
 // QueryInstances
 func (c *WmiSession) QueryInstances(queryExpression string) ([]*WmiInstance, error) {
-	fmt.Printf("QueryInstances %s", queryExpression)
 	enum, err := c.PerformRawQuery(queryExpression)
 	if err != nil {
 		return nil, err
