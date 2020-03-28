@@ -373,5 +373,6 @@ func CloseAllInstances(instances []*WmiInstance) {
 
 // Dispose
 func (c *WmiInstance) Close() error {
+	c.instance.Release()
 	return c.instanceVar.Clear()
 }
