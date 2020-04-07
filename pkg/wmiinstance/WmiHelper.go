@@ -5,6 +5,7 @@ package cim
 
 import (
 	"reflect"
+	"syscall"
 	"unsafe"
 
 	"github.com/go-ole/go-ole"
@@ -187,14 +188,14 @@ func FindStringInSlice(stringList []string, value string) (int, bool) {
 //
 // This function appears to block. PeekMessage does not block.
 func PeekMessage(msg *ole.Msg, hwnd uint32, MsgFilterMin uint32, MsgFilterMax uint32, RemoveMsg RemoveMessageFlags) (ret bool, err error) {
-	r0, _, err := procPeekMessageW.Call(uintptr(unsafe.Pointer(msg)), uintptr(hwnd), uintptr(MsgFilterMin), uintptr(MsgFilterMax), uintptr(RemoveMsg))
+	r0, _, err := syscall.Syscall6(procPeekMessageW.Addr(), 5, uintptr(unsafe.Pointer(msg)), uintptr(hwnd), uintptr(MsgFilterMin), uintptr(MsgFilterMax), uintptr(RemoveMsg), 0)
 	ret = bool(r0 > 0)
 	return
 }
 
 func CoInitializeSecurity(authLevel RpcAuthenticationLevel, impLevel RpcImpersonationLevel) (err error) {
 	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/setting-the-default-process-security-level-using-c-
-	hr, _, _ := procCoInitializeSecurity.Call(uintptr(0), ^uintptr(0), uintptr(0), uintptr(0), uintptr(authLevel), uintptr(impLevel), uintptr(0), uintptr(EOAC_NONE), uintptr(0))
+	hr, _, _ := syscall.Syscall9(procCoInitializeSecurity.Addr(), 9, uintptr(0), ^uintptr(0), uintptr(0), uintptr(0), uintptr(authLevel), uintptr(impLevel), uintptr(0), uintptr(EOAC_NONE), uintptr(0))
 	if hr != 0 {
 		err = ole.NewError(hr)
 	}
