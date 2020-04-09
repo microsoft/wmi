@@ -9,6 +9,9 @@ package cim
 import (
 	"fmt"
 
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
+
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 )
@@ -32,7 +35,14 @@ type WmiInstance struct {
 }
 
 // WmiInstanceCollection is a slice of WmiInstance
-type WmiInstanceCollection []WmiInstance
+type WmiInstanceCollection []*WmiInstance
+
+// Close all instances in a collection
+func (wmic *WmiInstanceCollection) Close() {
+	for _, i := range *wmic {
+		i.Close()
+	}
+}
 
 func CreateWmiInstance(instanceVar *ole.VARIANT, session *WmiSession) (*WmiInstance, error) {
 	return &WmiInstance{
@@ -45,6 +55,16 @@ func CreateWmiInstance(instanceVar *ole.VARIANT, session *WmiSession) (*WmiInsta
 // GetInstance returns the latest Instance
 func (c *WmiInstance) GetInstance() (*WmiInstance, error) {
 	return c.session.GetInstance(c.InstancePath())
+}
+func (c *WmiInstance) GetSession() *WmiSession {
+	return c.session
+}
+
+func (c *WmiInstance) GetIDispatch() *ole.IDispatch {
+	return c.instance
+}
+func (c *WmiInstance) GetRawInstance() *ole.VARIANT {
+	return c.instanceVar
 }
 
 func (c *WmiInstance) GetSystemProperty(name string) (*WmiProperty, error) {
@@ -110,7 +130,7 @@ func (c *WmiInstance) ResetProperty(name string) error {
 func (c *WmiInstance) GetClassName() string {
 	className, err := c.GetSystemProperty("__CLASS")
 	if err != nil {
-		panic("The class doesn't have a __CLASS member")
+		panic("The class doesn't have a __CLASS member " + err.Error())
 	}
 	if className == nil {
 		panic("The __CLASS member doesn't contain one element, while it was expected to be")
@@ -124,7 +144,7 @@ func (c *WmiInstance) GetClassName() string {
 func (c *WmiInstance) GetClass() *WmiClass {
 	class, err := c.session.GetClass(c.GetClassName())
 	if err != nil {
-		panic("The class for this instance doesn't exist")
+		panic("The class for this instance doesn't exist" + err.Error())
 	}
 
 	return class
@@ -155,6 +175,16 @@ func (c *WmiInstance) Equals(instance *WmiInstance) bool {
 	return value.(bool)
 }
 
+// Clone
+func (c *WmiInstance) Clone() (*WmiInstance, error) {
+	rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
+	if err != nil {
+		return nil, err
+	}
+	return CreateWmiInstance(rawResult, c.session)
+	// return c.session.GetInstance(c.InstancePath())
+}
+
 // Refresh
 func (c *WmiInstance) Refresh() error {
 	instance, err := c.session.GetInstance(c.InstancePath())
@@ -162,6 +192,7 @@ func (c *WmiInstance) Refresh() error {
 		return err
 	}
 
+	c.instance.Release()
 	c.instance = instance.instance
 
 	return nil
@@ -197,7 +228,7 @@ func (c *WmiInstance) Delete() error {
 func (c *WmiInstance) InstancePath() string {
 	path, err := c.GetSystemProperty("__PATH")
 	if err != nil {
-		panic("The instance doesn't have a path")
+		panic("The instance doesn't have a path " + err.Error())
 	}
 	defer path.Close()
 
@@ -208,7 +239,7 @@ func (c *WmiInstance) InstancePath() string {
 func (c *WmiInstance) RelativePath() string {
 	path, err := c.GetSystemProperty("__RELPATH")
 	if err != nil {
-		panic("The instance doesn't have a path")
+		panic("The instance doesn't have a path" + err.Error())
 	}
 	defer path.Close()
 
@@ -223,25 +254,62 @@ func (c *WmiInstance) InvokeMethod(methodName string, params ...interface{}) ([]
 	}
 	defer rawResult.Clear()
 	values, err := GetVariantValues(rawResult)
-
 	return values, err
+}
+
+func (c *WmiInstance) GetWmiMethod(methodName string) (*WmiMethod, error) {
+	return NewWmiMethod(methodName, c)
 }
 
 // InvokeMethodAsync
 func (c *WmiInstance) InvokeMethodAsync(methodName string, action UserAction, percentComplete, timeoutSeconds uint32, params ...interface{}) ([]interface{}, error) {
-	// TODO: implement Async
-	return c.InvokeMethod(methodName, params)
+	rawResult, err := oleutil.CallMethod(c.instance, methodName, params...)
+	if err != nil {
+		return nil, err
+	}
+	defer rawResult.Clear()
+	return GetVariantValues(rawResult)
 }
 
 // InvokeMethodWithReturn invokes a method with return
 func (c *WmiInstance) InvokeMethodWithReturn(methodName string, params ...interface{}) (int32, error) {
-
 	results, err := c.InvokeMethod(methodName, params...)
 	if err != nil {
 		return 0, err
 	}
 
 	return results[0].(int32), nil
+}
+
+// GetAllRelatedWithQuery returns all related instances matching the query
+func (c *WmiInstance) GetAllRelatedWithQuery(q *query.WmiQuery) ([]*WmiInstance, error) {
+	winstances, err := c.GetAllRelated(q.ClassName)
+	if err != nil {
+		return nil, err
+	}
+
+	if !q.HasFilter() {
+		return winstances, nil
+	}
+
+	// For now, only Equals is implemented
+	filter := q.Filters[0]
+	filteredCollection := []*WmiInstance{}
+	for _, inst := range winstances {
+		propVal, err := inst.GetProperty(filter.Name)
+		if err != nil {
+			inst.Close()
+			continue
+		}
+		propString := fmt.Sprintf("%v", propVal)
+		if propString == filter.Value {
+			filteredCollection = append(filteredCollection, inst)
+			continue
+		}
+		inst.Close()
+	}
+	fmt.Printf("Query[%s]=>[%d] instances\n", q.String(), len(filteredCollection))
+	return filteredCollection, nil
 }
 
 // GetAllRelated
@@ -257,7 +325,7 @@ func (c *WmiInstance) GetRelated(resultClassName string) (*WmiInstance, error) {
 	}
 
 	if len(result) == 0 {
-		return nil, fmt.Errorf("No Related Items were received")
+		return nil, errors.Wrapf(errors.NotFound, "No Related Items were received for [%s]", resultClassName)
 	}
 	return result[0], nil
 }
@@ -373,6 +441,11 @@ func CloseAllInstances(instances []*WmiInstance) {
 
 // Dispose
 func (c *WmiInstance) Close() error {
-	c.instance.Release()
-	return c.instanceVar.Clear()
+	if c.instance != nil {
+		c.instance.Release()
+	}
+	if c.instanceVar != nil {
+		return c.instanceVar.Clear()
+	}
+	return nil
 }

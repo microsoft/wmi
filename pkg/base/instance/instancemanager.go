@@ -12,6 +12,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	wmisession "github.com/microsoft/wmi/pkg/base/session"
+	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
@@ -74,8 +75,10 @@ func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInsta
 	}
 
 	if len(instances) == 0 {
-		return nil, fmt.Errorf("No Instance Found")
+		return nil, errors.Wrapf(errors.NotFound, "Query [%s] failed with no instance", queryString)
 	}
+
+	fmt.Printf("QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
 
 	return instances[0], nil
 }

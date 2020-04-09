@@ -56,6 +56,12 @@ func (q *WmiQueryFilter) String() string {
 	}
 }
 
+// HasFilter
+func (q *WmiQuery) HasFilter() bool {
+	return len(q.Filters) > 0
+}
+
+// String
 func (q *WmiQuery) String() (queryString string) {
 	queryString = fmt.Sprintf("SELECT * FROM %s", q.ClassName)
 

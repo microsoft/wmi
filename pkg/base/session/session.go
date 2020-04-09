@@ -17,10 +17,11 @@ import (
 var (
 	sessionManager *wmi.WmiSessionManager
 	sessionsMap    map[string]*wmi.WmiSession
+	localHostName  string
 )
 
-// StartWMI
-func StartWMI() {
+func init() {
+	localHostName, _ = os.Hostname()
 	sessionsMap = make(map[string]*wmi.WmiSession)
 	sessionManager = wmi.NewWmiSessionManager()
 }
@@ -62,14 +63,6 @@ func GetSession(namespaceName string, serverName string, domain string, userName
 	}
 
 	return sessionsMap[sessionsMapId], nil
-}
-
-var (
-	localHostName string
-)
-
-func init() {
-	localHostName, _ = os.Hostname()
 }
 
 ////////////// Private functions ////////////////////////////
