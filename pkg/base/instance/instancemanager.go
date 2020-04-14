@@ -4,7 +4,7 @@
 package instance
 
 import (
-	"fmt"
+	//"fmt"
 	"strings"
 	"sync"
 
@@ -78,7 +78,7 @@ func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInsta
 		return nil, errors.Wrapf(errors.NotFound, "Query [%s] failed with no instance", queryString)
 	}
 
-	fmt.Printf("QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
+	//fmt.Printf("QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
 
 	return instances[0], nil
 }

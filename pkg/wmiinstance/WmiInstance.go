@@ -308,7 +308,7 @@ func (c *WmiInstance) GetAllRelatedWithQuery(q *query.WmiQuery) ([]*WmiInstance,
 		}
 		inst.Close()
 	}
-	fmt.Printf("Query[%s]=>[%d] instances\n", q.String(), len(filteredCollection))
+	//fmt.Printf("Query[%s]=>[%d] instances\n", q.String(), len(filteredCollection))
 	return filteredCollection, nil
 }
 
