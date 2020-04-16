@@ -5,11 +5,14 @@ package virtualsystem
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/virtualization/core/job"
+	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
@@ -76,33 +79,47 @@ func GetVirtualMachine(whost *host.WmiHost, vmName string) (vm *VirtualMachine, 
 }
 
 // GetVirtualMachineState get the virtual machine state
-func (vm *VirtualMachine) State() (VirtualMachineState, error) {
-	state, err := vm.GetPropertyEnabledState()
+func (vm *VirtualMachine) State() (state VirtualMachineState, err error) {
+	err = vm.Refresh()
 	if err != nil {
-		return Unknown, err
+		return
 	}
-	return VirtualMachineState(state), nil
+
+	retValue, err := vm.GetProperty("EnabledState")
+	if err != nil {
+		return
+	}
+	intstate, ok := retValue.(int32)
+	if !ok {
+		return Unknown, errors.Wrapf(errors.Failed, "Failed to get the state of the VM [%+v]", retValue)
+	}
+	return VirtualMachineState(intstate), nil
 }
 
 // Stop Virtual Machine
 func (vm *VirtualMachine) Stop(force bool) error {
-	jobState := v2.ConcreteJob_JobType_Shut_Down_Virtual_Machine
-	state := Stopping
-	//job := v2.CIM_ConcreteJob{}
-	if force {
-		state = Off
-		jobState = v2.ConcreteJob_JobType_Power_Off_Virtual_Machine
-	}
-	return vm.ChangeState(state, jobState)
+	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine)
 }
 
 // Start Virtual Machine
 func (vm *VirtualMachine) Start() error {
-	return vm.ChangeState(Running, v2.ConcreteJob_JobType_Start_Virtual_Machine)
+	err := vm.ChangeState(Running, v2.ConcreteJob_JobType_Start_Virtual_Machine)
+	if err != nil {
+		return err
+	}
+	return vm.WaitForState(Running, 30)
 }
 
 // ChangeState changes the state of the Virtual Machine
-func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType) error {
+func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType) (err error) {
+	cstate, err := vm.State()
+	if err != nil {
+		return err
+	}
+	// If the state is already satisfied, just return
+	if cstate == state {
+		return nil
+	}
 	result, err := vm.InvokeMethodWithReturn("RequestStateChange", int32(state))
 	if err != nil {
 		return err
@@ -110,6 +127,32 @@ func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.Conc
 	return vm.WaitForJobCompletion(result, jobType)
 }
 
+// WaitForState
+func (vm *VirtualMachine) WaitForState(state VirtualMachineState, timeoutSeconds int32) (err error) {
+	start := time.Now()
+	// Run the loop, only if the job is actually running
+	for {
+		curState, err1 := vm.State()
+		if err1 != nil {
+			return err1
+		}
+
+		if curState == state {
+			// Break for any valid state
+			// TODO: WaitForSomeState
+			return nil
+		}
+		time.Sleep(100 * time.Millisecond)
+
+		// If we have waited enough time, break
+		if time.Since(start) > (time.Duration(timeoutSeconds) * time.Second) {
+			err = errors.Wrapf(errors.Timedout, "WaitForState timeout")
+			break
+		}
+	}
+
+	return
+}
 func (vm *VirtualMachine) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType) error {
 	if result == 0 {
 		return nil
@@ -119,10 +162,12 @@ func (vm *VirtualMachine) WaitForJobCompletion(result int32, jobType v2.Concrete
 			return err
 			// Job is scheduled, but we were not able to find the job
 		}
+		defer vmjob.Close()
 
 		return vmjob.WaitForAction(wmi.Wait, 100, 10)
 	} else {
-		return errors.Wrapf(errors.Failed, "Unable to Change the state of the Virtual Machine Result[%d]", result)
+		return errors.Wrapf(errors.Failed,
+			"Unable to Change the state of the Virtual Machine Result[%d] [%d]", result, jobType)
 	}
 }
 
@@ -136,5 +181,29 @@ func (vm *VirtualMachine) getJob(jobType v2.ConcreteJob_JobType) (*job.VirtualSy
 	if len(jobs) == 0 {
 		return nil, errors.Wrapf(errors.NotFound, "Unable to find related Job with type [%d]", jobType)
 	}
-	return job.NewVirtualSystemJob(jobs[0])
+	defer jobs.Close()
+	jobInstance, err := jobs[0].Clone()
+	if err != nil {
+		return nil, err
+	}
+
+	return job.NewVirtualSystemJob(jobInstance)
+}
+
+func (vm *VirtualMachine) GetVirtualMachineSetting() (*VirtualMachineSetting, error) {
+	inst, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
+	if err != nil {
+		return nil, err
+	}
+	return NewVirtualMachineSetting(inst)
+}
+
+func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.VirtualNetworkAdapter, err error) {
+	settings, err := vm.GetVirtualMachineSetting()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+	vna, err = settings.GetVirtualNetworkAdapterByName(name)
+	return
 }

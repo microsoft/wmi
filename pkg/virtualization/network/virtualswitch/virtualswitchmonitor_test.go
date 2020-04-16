@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package virtualsystem
+package virtualswitch
 
 import (
 	"fmt"
@@ -16,12 +16,12 @@ func onCallback(ctx interface{}, data string) {
 	fmt.Println("Modified :" + data)
 }
 
-func TestCreateVirtualMachineMonitor(t *testing.T) {
+func TestCreateVirtualSwitchMonitor(t *testing.T) {
+	//return
 	ctx := &testContext{}
-	vmMonior := CreateVirtualMachineMonitor(ctx, onCallback, "ID")
-	defer vmMonior.Close()
-	vmMonior.AddEntity("test")
-	vmMonior.AddEntity("test2")
+	vnicMonior := CreateVirtualSwitchMonitor(ctx, onCallback)
+	defer vnicMonior.Close()
+	vnicMonior.AddEntity("test")
 	for {
 	}
 }

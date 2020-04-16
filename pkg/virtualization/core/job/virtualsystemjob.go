@@ -51,12 +51,12 @@ func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete, timeoutSe
 }
 
 // WaitForAction waits for the task based on the action type, percent complete and timeoutSeconds
-func (vm *VirtualSystemJob) WaitForAction(action cim.UserAction, percentComplete, timeoutSeconds uint16) error {
+func (vmjob *VirtualSystemJob) WaitForAction(action cim.UserAction, percentComplete, timeoutSeconds uint16) error {
 	switch action {
 	case cim.Wait:
-		return vm.WaitForPercentComplete(percentComplete, timeoutSeconds)
+		return vmjob.WaitForPercentComplete(percentComplete, timeoutSeconds)
 	case cim.Cancel:
-		return vm.WaitForPercentComplete(percentComplete, timeoutSeconds)
+		return vmjob.WaitForPercentComplete(percentComplete, timeoutSeconds)
 		// Fixme
 		// vm.Cancel()
 	case cim.None:
@@ -66,13 +66,6 @@ func (vm *VirtualSystemJob) WaitForAction(action cim.UserAction, percentComplete
 	case cim.Async:
 		break
 	}
-	return nil
-}
-
-func (vm *VirtualSystemJob) Start() error {
-	//	_, err := vm.InvokeMethod("RequestStateChange", int32(Running))
-	//job := v2.CIM_ConcreteVirtualSystemJob{}
-	//_, err := vm.RequestStateChange(int32(Running), job, "10", cim.Default, 100, 0)
 	return nil
 }
 

@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT license.
 GOCMD=go
-GOBUILD=$(GOCMD) build -v #-mod=vendor 
+GOBUILD=$(GOCMD) build -v 
 GOHOSTOS=$(strip $(shell $(GOCMD) env get GOHOSTOS))
 
 TAG ?= $(shell git describe --tags)
@@ -14,7 +14,6 @@ all: format library
  
 .PHONY: vendor
 vendor:
-	#GO111MODULE=on go mod vendor -v
 	GO111MODULE=on go mod tidy
 
 library:

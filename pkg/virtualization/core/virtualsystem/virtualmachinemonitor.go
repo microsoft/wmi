@@ -5,8 +5,16 @@ package virtualsystem
 
 import (
 	"github.com/microsoft/wmi/pkg/base/monitor"
+	"github.com/microsoft/wmi/pkg/base/query"
 	_ "github.com/microsoft/wmi/pkg/base/session"
 	"github.com/microsoft/wmi/pkg/constant"
+)
+
+const (
+	// Monitor for State Changes
+	queryString = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_ComputerSystem' "
+	// Monitor for Setting Changes
+	settingQueryString = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_VirtualSystemSettingData' "
 )
 
 type VirtualMachineMonitor struct {
@@ -15,17 +23,19 @@ type VirtualMachineMonitor struct {
 
 // CreateVirtualMachineMonitor createa a new VirtualMachineMonitor
 func CreateVirtualMachineMonitor(callbackContext interface{},
-	callbackFunction func(interface{}, string),
-	propertyToQuery string) *VirtualMachineMonitor {
+	callbackFunction func(interface{}, string)) *VirtualMachineMonitor {
 
-	queryString := "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_ComputerSystem' "
 	monitorBase := monitor.CreateMonitor(
 		string(constant.Virtualization),
 		callbackContext,
 		callbackFunction,
-		queryString,
-		propertyToQuery,
 	)
 
 	return &VirtualMachineMonitor{monitorBase}
+}
+
+func (m *VirtualMachineMonitor) AddEntity(entityName string) error {
+	filters := query.WmiQueryFilterCollection{}
+	filters = append(filters, query.NewWmiQueryFilter("TargetInstance.ElementName", entityName, query.Equals))
+	return m.AddEntityWithFilter(entityName, queryString, filters)
 }

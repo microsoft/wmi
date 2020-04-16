@@ -9,6 +9,7 @@ package cim
 import (
 	"fmt"
 
+	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 
@@ -58,6 +59,9 @@ func (c *WmiInstance) GetInstance() (*WmiInstance, error) {
 }
 func (c *WmiInstance) GetSession() *WmiSession {
 	return c.session
+}
+func (c *WmiInstance) GetWmiHost() *host.WmiHost {
+	return c.session.WMIHost
 }
 
 func (c *WmiInstance) GetIDispatch() *ole.IDispatch {
@@ -150,7 +154,17 @@ func (c *WmiInstance) GetClass() *WmiClass {
 	return class
 }
 
-// Class
+// EmbeddedXMLInstance
+func (c *WmiInstance) EmbeddedXMLInstance() (string, error) {
+	rawResult, err := oleutil.CallMethod(c.instance, "GetText_", 1)
+	if err != nil {
+		return "", err
+	}
+	defer rawResult.Clear()
+	return rawResult.ToString(), err
+}
+
+// EmbeddedInstance
 func (c *WmiInstance) EmbeddedInstance() (string, error) {
 	rawResult, err := oleutil.CallMethod(c.instance, "GetObjectText_")
 	if err != nil {
@@ -177,12 +191,12 @@ func (c *WmiInstance) Equals(instance *WmiInstance) bool {
 
 // Clone
 func (c *WmiInstance) Clone() (*WmiInstance, error) {
-	rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
-	if err != nil {
-		return nil, err
-	}
-	return CreateWmiInstance(rawResult, c.session)
-	// return c.session.GetInstance(c.InstancePath())
+	//rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
+	//if err != nil {
+	//		return nil, err
+	//	}
+	//	return CreateWmiInstance(rawResult, c.session)
+	return c.session.GetInstance(c.InstancePath())
 }
 
 // Refresh
@@ -192,7 +206,7 @@ func (c *WmiInstance) Refresh() error {
 		return err
 	}
 
-	c.instance.Release()
+	// c.instance.Release()
 	c.instance = instance.instance
 
 	return nil
@@ -282,7 +296,7 @@ func (c *WmiInstance) InvokeMethodWithReturn(methodName string, params ...interf
 }
 
 // GetAllRelatedWithQuery returns all related instances matching the query
-func (c *WmiInstance) GetAllRelatedWithQuery(q *query.WmiQuery) ([]*WmiInstance, error) {
+func (c *WmiInstance) GetAllRelatedWithQuery(q *query.WmiQuery) (WmiInstanceCollection, error) {
 	winstances, err := c.GetAllRelated(q.ClassName)
 	if err != nil {
 		return nil, err
@@ -294,7 +308,7 @@ func (c *WmiInstance) GetAllRelatedWithQuery(q *query.WmiQuery) ([]*WmiInstance,
 
 	// For now, only Equals is implemented
 	filter := q.Filters[0]
-	filteredCollection := []*WmiInstance{}
+	filteredCollection := WmiInstanceCollection{}
 	for _, inst := range winstances {
 		propVal, err := inst.GetProperty(filter.Name)
 		if err != nil {
@@ -313,7 +327,7 @@ func (c *WmiInstance) GetAllRelatedWithQuery(q *query.WmiQuery) ([]*WmiInstance,
 }
 
 // GetAllRelated
-func (c *WmiInstance) GetAllRelated(resultClassName string) ([]*WmiInstance, error) {
+func (c *WmiInstance) GetAllRelated(resultClassName string) (WmiInstanceCollection, error) {
 	return c.GetAssociated("", resultClassName, "", "")
 }
 
@@ -331,12 +345,12 @@ func (c *WmiInstance) GetRelated(resultClassName string) (*WmiInstance, error) {
 }
 
 // GetRelatedEx
-func (c *WmiInstance) GetRelatedEx(associatedClassName, resultClassName, resultRole, sourceRole string) ([]*WmiInstance, error) {
+func (c *WmiInstance) GetRelatedEx(associatedClassName, resultClassName, resultRole, sourceRole string) (WmiInstanceCollection, error) {
 	return c.GetAssociated(associatedClassName, resultClassName, resultRole, sourceRole)
 }
 
 // GetAssociated
-func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, resultRole, sourceRole string) ([]*WmiInstance, error) {
+func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, resultRole, sourceRole string) (WmiInstanceCollection, error) {
 	// Documentation here: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemobject-associators-
 	rawResult, err := oleutil.CallMethod(c.instance, "Associators_",
 		associatedClassName,
@@ -369,7 +383,7 @@ func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, result
 
 	defer enum.Release()
 
-	wmiInstances := []*WmiInstance{}
+	wmiInstances := WmiInstanceCollection{}
 	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
 		if err != nil {
 			return nil, err
@@ -387,7 +401,7 @@ func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, result
 }
 
 // EnumerateReferencingInstances
-func (c *WmiInstance) EnumerateReferencingInstances(resultClassName, sourceRole string) ([]*WmiInstance, error) {
+func (c *WmiInstance) EnumerateReferencingInstances(resultClassName, sourceRole string) (WmiInstanceCollection, error) {
 	//Documentation: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemobject-references-
 	rawResult, err := oleutil.CallMethod(c.instance, "References_", resultClassName, sourceRole)
 	if err != nil {
@@ -415,7 +429,7 @@ func (c *WmiInstance) EnumerateReferencingInstances(resultClassName, sourceRole 
 
 	defer enum.Release()
 
-	wmiInstances := []*WmiInstance{}
+	wmiInstances := WmiInstanceCollection{}
 	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
 		if err != nil {
 			return nil, err

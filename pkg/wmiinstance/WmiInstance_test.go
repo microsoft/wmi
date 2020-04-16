@@ -156,6 +156,13 @@ func Test_WmiInstance(t *testing.T) {
 		return
 	}
 
+	embeddedxmlInstance, err := systemIdleProcess.EmbeddedXMLInstance()
+	if err != nil {
+		t.Errorf("EmbeddedXMLInstance() failed with error: %v", err)
+		return
+	}
+	t.Logf(embeddedxmlInstance)
+
 	if !systemIdleProcess.Equals(systemIdleProcess) {
 		t.Errorf("Error: Equals() considered the systemIdleProcess is not equal to itself")
 		return
@@ -188,7 +195,7 @@ func Test_WmiInstance(t *testing.T) {
 		return
 	}
 
-	relatedInstances, err := systemIdleProcess.GetRelated("Win32_ComputerSystem")
+	relatedInstances, err := systemIdleProcess.GetAllRelated("Win32_ComputerSystem")
 	if err != nil {
 		t.Errorf("systemIdleProcess.GetRelated failed with error %v", err)
 		return

@@ -9,6 +9,7 @@ import (
 
 var (
 	NotFound       error = errors.New("Not Found")
+	Timedout       error = errors.New("Timedout")
 	InvalidInput   error = errors.New("Invalid Input")
 	NotSupported   error = errors.New("Not Supported")
 	AlreadyExists  error = errors.New("Already Exists")
