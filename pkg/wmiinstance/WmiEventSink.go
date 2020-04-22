@@ -207,23 +207,23 @@ func getTypeInfo(ptypeif *uintptr) uintptr {
 func invoke(this *ole.IDispatch, dispid int, riid *ole.GUID, lcid int, flags int16, rawdispparams *DISPPARAMS, result *ole.VARIANT, pexcepinfo *ole.EXCEPINFO, nerr *uint) uintptr {
 	pthis := (*WmiEventSink)(unsafe.Pointer(this))
 	dispparams := GetDispParamsFromRaw(rawdispparams)
-	msClusterEventInstances, err := GetVariantArrayAsWmiInstances(dispparams.rgvarg, pthis.session)
+	wmiEventInstances, err := GetVariantArrayAsWmiInstances(dispparams.rgvarg, pthis.session)
 	if err != nil {
 		return ole.S_OK
 	}
 
 	switch dispid {
 	case 1:
-		pthis.onObjectReady(pthis.callbackContext, msClusterEventInstances)
+		pthis.onObjectReady(pthis.callbackContext, wmiEventInstances)
 		return ole.S_OK
 	case 2:
-		pthis.onCompleted(pthis.callbackContext, msClusterEventInstances)
+		pthis.onCompleted(pthis.callbackContext, wmiEventInstances)
 		return ole.S_OK
 	case 3:
-		pthis.onProgress(pthis.callbackContext, msClusterEventInstances)
+		pthis.onProgress(pthis.callbackContext, wmiEventInstances)
 		return ole.S_OK
 	case 4:
-		pthis.onObjectPut(pthis.callbackContext, msClusterEventInstances)
+		pthis.onObjectPut(pthis.callbackContext, wmiEventInstances)
 		return ole.S_OK
 	default:
 	}

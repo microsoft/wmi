@@ -14,6 +14,7 @@ import (
 	ole "github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 	"github.com/microsoft/wmi/go/wmi"
+	"github.com/microsoft/wmi/pkg/base/host"
 )
 
 // WmiSession struct to hold the current session information
@@ -23,6 +24,7 @@ type WmiSession struct {
 	Username      string
 	Password      string
 	Domain        string
+	WMIHost       *host.WmiHost
 	Status        wmi.SessionStatus
 	RawSession    *ole.VARIANT
 	Session       *ole.IDispatch
@@ -44,6 +46,7 @@ func CreateSession(CimwmiService *ole.IDispatch, wmiNamespace, serverName, domai
 		Password:      password,
 		Domain:        domain,
 		Status:        wmi.Created,
+		WMIHost:       host.NewWmiHostWithCredential(serverName, userName, password, domain),
 	}, nil
 }
 

@@ -76,16 +76,11 @@ const (
 )
 
 func GetVariantValue(rawValue *ole.VARIANT) (interface{}, error) {
-	values, err := GetVariantValues(rawValue)
-	if err != nil {
-		panic("Couldn't retreive a variant value.")
+	array := rawValue.ToArray()
+	if array == nil {
+		return rawValue.Value(), nil
 	}
-
-	if len(values) != 1 {
-		panic("Returned an unexpected number of variants")
-	}
-
-	return values[0], nil
+	return array.ToValueArray(), nil
 }
 
 func GetVariantValues(rawValue *ole.VARIANT) ([]interface{}, error) {

@@ -4,7 +4,7 @@
 package instance
 
 import (
-	"fmt"
+	//"log"
 	"strings"
 	"sync"
 
@@ -12,6 +12,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	wmisession "github.com/microsoft/wmi/pkg/base/session"
+	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
@@ -46,6 +47,12 @@ func newWmiInstanceManager(hostname, namespaceName, userName, password, domainNa
 
 }
 
+func GetWmiInstanceManagerFromWHost(whost *host.WmiHost, namespaceName string) (*WmiInstanceManager, error) {
+	return GetWmiInstanceManagerFromCred(whost.HostName, namespaceName, whost.GetCredential())
+}
+func GetWmiInstanceManagerFromCred(hostname, namespaceName string, cred *credential.WmiCredential) (*WmiInstanceManager, error) {
+	return GetWmiInstanceManager(hostname, namespaceName, cred.UserName, cred.Password, cred.Domain)
+}
 func GetWmiInstanceManager(hostname, namespaceName, userName, password, domainName string) (*WmiInstanceManager, error) {
 	mapId := strings.Join([]string{hostname, namespaceName, domainName}, "_")
 	if val, ok := instanceManagerMap[mapId]; ok {
@@ -74,8 +81,10 @@ func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInsta
 	}
 
 	if len(instances) == 0 {
-		return nil, fmt.Errorf("No Instance Found")
+		return nil, errors.Wrapf(errors.NotFound, "Query [%s] failed with no instance", queryString)
 	}
+
+	//log.Printf("QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
 
 	return instances[0], nil
 }
@@ -103,4 +112,18 @@ func GetWmiInstance(hostname, namespaceName, userName, password, domainName stri
 		return nil, err
 	}
 	return im.QueryInstance(inquery)
+}
+
+func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (*wmi.WmiInstanceCollection, error) {
+	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
+	if err != nil {
+		return nil, err
+	}
+	instances, err := im.QueryInstances(inquery.String())
+	if err != nil {
+		return nil, err
+	}
+	winstances := wmi.WmiInstanceCollection{}
+	winstances = append(winstances, instances...)
+	return &winstances, nil
 }

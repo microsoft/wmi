@@ -11,9 +11,13 @@ type WmiHost struct {
 	credential *credential.WmiCredential
 }
 
+func NewWmiLocalHost() *WmiHost {
+	return NewWmiHost("localhost")
+}
+
 // NewWmiHost
 func NewWmiHost(hostname string) *WmiHost {
-	return &WmiHost{HostName: hostname}
+	return NewWmiHostWithCredential(hostname, "", "", "")
 }
 
 // NewWmiHostWithCredential

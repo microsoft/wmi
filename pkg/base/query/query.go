@@ -6,6 +6,8 @@ import (
 	"fmt"
 )
 
+// https://docs.microsoft.com/en-us/windows/win32/wmisdk/wql-sql-for-wmi
+
 type CompareOperator string
 
 const (
@@ -16,6 +18,7 @@ const (
 	GreaterThanEquals CompareOperator = ">="
 	NotEquals         CompareOperator = "<>"
 	Like              CompareOperator = "LIKE"
+	Isa               CompareOperator = "ISA"
 )
 
 type WmiQueryFilter struct {
@@ -56,6 +59,12 @@ func (q *WmiQueryFilter) String() string {
 	}
 }
 
+// HasFilter
+func (q *WmiQuery) HasFilter() bool {
+	return len(q.Filters) > 0
+}
+
+// String
 func (q *WmiQuery) String() (queryString string) {
 	queryString = fmt.Sprintf("SELECT * FROM %s", q.ClassName)
 
@@ -71,4 +80,14 @@ func (q *WmiQuery) String() (queryString string) {
 
 	queryString = queryString + fmt.Sprintf(" %s ", q.Filters[len(q.Filters)-1].String())
 	return
+}
+
+type WmiQueryFilterCollection []*WmiQueryFilter
+
+func (c *WmiQueryFilterCollection) String() string {
+	queryString := ""
+	for _, query := range *c {
+		queryString = fmt.Sprintf("%s AND %s", queryString, query.String())
+	}
+	return queryString
 }
