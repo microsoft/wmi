@@ -197,19 +197,19 @@ func Test_WmiInstance(t *testing.T) {
 
 	relatedInstances, err := systemIdleProcess.GetAllRelated("Win32_ComputerSystem")
 	if err != nil {
-		t.Errorf("systemIdleProcess.GetRelated failed with error %v", err)
+		t.Errorf("systemIdleProcess.GetAllRelated failed with error %v", err)
 		return
 	}
 	defer CloseAllInstances(relatedInstances)
 
 	if len(relatedInstances) < 1 {
-		t.Errorf("systemIdleProcess.GetRelated didn't find any related Win32_ComputerSystem instances of Win32_Process")
+		t.Errorf("systemIdleProcess.GetAllRelated didn't find any related Win32_ComputerSystem instances of Win32_Process")
 		return
 	}
 
 	for _, relatedInstance := range relatedInstances {
 		if relatedInstance.GetClassName() != "Win32_ComputerSystem" {
-			t.Errorf("systemIdleProcess.GetRelated didn't find any related instances of Win32_ComputerSystem")
+			t.Errorf("systemIdleProcess.GetAllRelated didn't find any related instances of Win32_ComputerSystem")
 			return
 		}
 	}

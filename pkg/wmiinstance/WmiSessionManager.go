@@ -5,6 +5,7 @@ package cim
 
 import (
 	"errors"
+	"fmt"
 
 	ole "github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
@@ -50,7 +51,7 @@ func (c *WmiSessionManager) init() error {
 
 		// Note: RPC_E_TOO_LATE means we have already initialized security.
 		if oleCode != ole.S_OK && oleCode != S_FALSE && oleCode != uintptr(RPC_E_TOO_LATE) {
-			panic("Couldn't initialize COM/DCOM security")
+			panic(fmt.Sprintf("Couldn't initialize COM/DCOM security. Error: [%v]", err))
 		}
 	}
 
