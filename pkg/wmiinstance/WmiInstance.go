@@ -70,6 +70,9 @@ func (c *WmiInstance) GetIDispatch() *ole.IDispatch {
 func (c *WmiInstance) GetRawInstance() *ole.VARIANT {
 	return c.instanceVar
 }
+func (c *WmiInstance) addRef() {
+	c.instance.AddRef()
+}
 
 func (c *WmiInstance) GetSystemProperty(name string) (*WmiProperty, error) {
 	// Documentation: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemobjectex-systemproperties-
@@ -191,24 +194,19 @@ func (c *WmiInstance) Equals(instance *WmiInstance) bool {
 
 // Clone
 func (c *WmiInstance) Clone() (*WmiInstance, error) {
-	//rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
-	//if err != nil {
-	//		return nil, err
-	//	}
-	//	return CreateWmiInstance(rawResult, c.session)
-	return c.session.GetInstance(c.InstancePath())
+	rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
+	winstance, err := CreateWmiInstance(rawResult, c.session)
+	winstance.addRef()
+	return winstance, err
 }
 
 // Refresh
 func (c *WmiInstance) Refresh() error {
-	instance, err := c.session.GetInstance(c.InstancePath())
+	rawResult, err := oleutil.CallMethod(c.instance, "Refresh_")
 	if err != nil {
 		return err
 	}
-
-	// c.instance.Release()
-	c.instance = instance.instance
-
+	defer rawResult.Clear()
 	return nil
 }
 
@@ -306,23 +304,25 @@ func (c *WmiInstance) GetAllRelatedWithQuery(q *query.WmiQuery) (WmiInstanceColl
 		return winstances, nil
 	}
 
+	defer winstances.Close()
 	// For now, only Equals is implemented
 	filter := q.Filters[0]
 	filteredCollection := WmiInstanceCollection{}
 	for _, inst := range winstances {
 		propVal, err := inst.GetProperty(filter.Name)
 		if err != nil {
-			inst.Close()
 			continue
 		}
 		propString := fmt.Sprintf("%v", propVal)
 		if propString == filter.Value {
-			filteredCollection = append(filteredCollection, inst)
+			clins, err := inst.Clone()
+			if err != nil {
+				return nil, err
+			}
+			filteredCollection = append(filteredCollection, clins)
 			continue
 		}
-		inst.Close()
 	}
-	//fmt.Printf("Query[%s]=>[%d] instances\n", q.String(), len(filteredCollection))
 	return filteredCollection, nil
 }
 
@@ -385,12 +385,18 @@ func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, result
 
 	wmiInstances := WmiInstanceCollection{}
 	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
+		//defer func() {
+		//	if err != nil {
+		//		wmiInstances.Close()
+		//	}
+		//}()
 		if err != nil {
 			return nil, err
 		}
 
 		wmiInstance, err := CreateWmiInstance(&tmp, c.session)
 		if err != nil {
+			//	tmp.Clear()
 			return nil, err
 		}
 
@@ -431,12 +437,19 @@ func (c *WmiInstance) EnumerateReferencingInstances(resultClassName, sourceRole 
 
 	wmiInstances := WmiInstanceCollection{}
 	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
+		//defer func() {
+		//	if err != nil {
+		//		wmiInstances.Close()
+		//	}
+		//}()
+
 		if err != nil {
 			return nil, err
 		}
 
 		wmiInstance, err := CreateWmiInstance(&tmp, c.session)
 		if err != nil {
+			//tmp.Clear()
 			return nil, err
 		}
 
@@ -453,13 +466,21 @@ func CloseAllInstances(instances []*WmiInstance) {
 	}
 }
 
-// Dispose
-func (c *WmiInstance) Close() error {
+// Close
+func (c *WmiInstance) Close() (err error) {
 	if c.instance != nil {
-		c.instance.Release()
+		refCount := c.instance.Release()
+		if refCount > 0 {
+			return
+		}
+		c.instance = nil
 	}
 	if c.instanceVar != nil {
-		return c.instanceVar.Clear()
+		err = c.instanceVar.Clear()
+		if err != nil {
+			return
+		}
+		c.instanceVar = nil
 	}
-	return nil
+	return
 }

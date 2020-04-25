@@ -33,6 +33,7 @@ type WmiEventSink struct {
 	lpVtbl          *WmiEventSinkVtbl
 	ref             int32
 	instance        *ole.IDispatch
+	closed          bool
 	session         *WmiSession
 	onObjectReady   func(interface{}, []*WmiInstance)
 	onCompleted     func(interface{}, []*WmiInstance)
@@ -137,8 +138,12 @@ func (c *WmiEventSink) PeekAndDispatchMessages() bool {
 	return msgAvailable
 }
 
+func (c *WmiEventSink) IsClosed() bool {
+	return c.closed
+}
 func (c *WmiEventSink) Close() {
 	c.instance.Release()
+	c.closed = true
 }
 
 /////////////////////////////// Private methods and callbacks /////////////////////////////////////////////////////
@@ -206,11 +211,16 @@ func getTypeInfo(ptypeif *uintptr) uintptr {
 
 func invoke(this *ole.IDispatch, dispid int, riid *ole.GUID, lcid int, flags int16, rawdispparams *DISPPARAMS, result *ole.VARIANT, pexcepinfo *ole.EXCEPINFO, nerr *uint) uintptr {
 	pthis := (*WmiEventSink)(unsafe.Pointer(this))
+	if pthis.IsClosed() {
+		return ole.S_OK
+	}
+
 	dispparams := GetDispParamsFromRaw(rawdispparams)
 	wmiEventInstances, err := GetVariantArrayAsWmiInstances(dispparams.rgvarg, pthis.session)
 	if err != nil {
 		return ole.S_OK
 	}
+	defer wmiEventInstances.Close()
 
 	switch dispid {
 	case 1:

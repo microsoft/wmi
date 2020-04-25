@@ -128,11 +128,12 @@ func GetDispParamsFromRaw(dispparams *DISPPARAMS) *DispParams {
 	return &params
 }
 
-func GetVariantArrayAsWmiInstances(rawValues []ole.VARIANT, session *WmiSession) ([]*WmiInstance, error) {
-	var wmiInstances []*WmiInstance
+func GetVariantArrayAsWmiInstances(rawValues []ole.VARIANT, session *WmiSession) (WmiInstanceCollection, error) {
+	wcol := WmiInstanceCollection{}
 	for _, rawValue := range rawValues {
 		// skip wrong types and empty objects
 		if rawValue.VT != ole.VT_DISPATCH || rawValue.Val == 0 {
+			rawValue.Clear()
 			continue
 		}
 
@@ -140,10 +141,10 @@ func GetVariantArrayAsWmiInstances(rawValues []ole.VARIANT, session *WmiSession)
 		if err != nil {
 			return nil, err
 		}
-		wmiInstances = append(wmiInstances, instance)
+		wcol = append(wcol, instance)
 	}
 
-	return wmiInstances, nil
+	return wcol, nil
 }
 
 func GetVariantArrayValues(rawValues []ole.VARIANT) ([]interface{}, error) {

@@ -23,11 +23,11 @@ func NewCallbackContext(cb func(*wmi.WmiInstance, string), data string) *Callbac
 }
 
 // Execute the callback
-func (cb *CallbackContext) Execute(instance *wmi.WmiInstance) {
+func (cb *CallbackContext) Execute() {
 	if cb.callback == nil {
 		return
 	}
-	cb.callback(instance, cb.callbackData)
+	cb.callback(nil, cb.callbackData)
 }
 
 func onInstanceReady(ctx interface{}, wmiInstances []*wmi.WmiInstance) {
@@ -36,11 +36,7 @@ func onInstanceReady(ctx interface{}, wmiInstances []*wmi.WmiInstance) {
 		return
 	}
 
-	if len(wmiInstances) < 1 {
-		return
-	}
-
-	context.Execute(wmiInstances[0])
+	context.Execute()
 }
 
 func onCompleted(ctx interface{}, wmiInstances []*wmi.WmiInstance) {
