@@ -72,12 +72,16 @@ func (c *Monitor) AddEntityWithFilter(entityName, wqlQueryString string, filters
 
 // RemoveEntity to remove the entity being monitored for changes
 func (c *Monitor) RemoveEntity(entityName string) (err error) {
-	if _, ok := c.eventSinks[entityName]; !ok {
+	val, ok := c.eventSinks[entityName]
+	if !ok {
 		return nil // error NOT Found
 	}
+	for _, es := range val {
+		es.Close()
+	}
+
 	c.mux.Lock()
 	defer c.mux.Unlock()
-
 	delete(c.eventSinks, entityName)
 	return
 }
@@ -88,6 +92,7 @@ func (c *Monitor) Close() error {
 		for _, s := range c.eventSinks[k] {
 			s.Close()
 		}
+		// TODO: There may be pending/ongoing events - delay cleanp?
 		delete(c.eventSinks, k)
 	}
 	return nil
