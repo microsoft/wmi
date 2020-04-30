@@ -33,6 +33,7 @@ type WmiEventSink struct {
 	lpVtbl          *WmiEventSinkVtbl
 	ref             int32
 	instance        *ole.IDispatch
+	unknown         *ole.IUnknown
 	closed          bool
 	session         *WmiSession
 	onObjectReady   func(interface{}, []*WmiInstance)
@@ -86,6 +87,7 @@ func CreateWmiEventSink(session *WmiSession, callbackContext interface{}, onObje
 	wmiEventSink.onObjectPut = onObjectPut
 	wmiEventSink.callbackContext = callbackContext
 	wmiEventSink.instance = eventSinkInstance
+	wmiEventSink.unknown = eventSinkObject
 	wmiEventSink.session = session
 
 	return wmiEventSink, nil
@@ -142,7 +144,14 @@ func (c *WmiEventSink) IsClosed() bool {
 	return c.closed
 }
 func (c *WmiEventSink) Close() {
-	c.instance.Release()
+	if c.instance != nil {
+		c.instance.Release()
+		c.instance = nil
+	}
+	if c.unknown != nil {
+		c.unknown.Release()
+		c.unknown = nil
+	}
 	c.closed = true
 }
 
