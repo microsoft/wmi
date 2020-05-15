@@ -70,6 +70,18 @@ func GetWmiInstanceManager(hostname, namespaceName, userName, password, domainNa
 
 }
 
+func (im *WmiInstanceManager) CreateInstance(className string) (*wmi.WmiInstance, error) {
+	cls, err := im.session.GetClass(className)
+	if err != nil {
+		return nil, err
+	}
+	return cls.MakeInstance()
+}
+
+func (im *WmiInstanceManager) GetInstance(instancePath string) (*wmi.WmiInstance, error) {
+	return im.session.GetInstance(instancePath)
+}
+
 func (im *WmiInstanceManager) QueryInstances(queryString string) ([]*wmi.WmiInstance, error) {
 	return im.session.QueryInstances(queryString)
 }
@@ -114,7 +126,14 @@ func GetWmiInstance(hostname, namespaceName, userName, password, domainName stri
 	return im.QueryInstance(inquery)
 }
 
-func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (*wmi.WmiInstanceCollection, error) {
+func CreateWmiInstance(host *host.WmiHost, namespaceName, class string) (*wmi.WmiInstance, error) {
+	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
+	if err != nil {
+		return nil, err
+	}
+	return im.CreateInstance(class)
+}
+func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *query.WmiQuery) (wmi.WmiInstanceCollection, error) {
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
 	if err != nil {
 		return nil, err
@@ -125,5 +144,24 @@ func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *
 	}
 	winstances := wmi.WmiInstanceCollection{}
 	winstances = append(winstances, instances...)
-	return &winstances, nil
+	return winstances, nil
+}
+func GetWmiInstanceFromPath(host *host.WmiHost, namespaceName, instancePath string) (*wmi.WmiInstance, error) {
+	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
+	if err != nil {
+		return nil, err
+	}
+	return im.GetInstance(instancePath)
+}
+
+func GetWmiJob(host *host.WmiHost, namespaceName, instancePath string) (*wmi.WmiJob, error) {
+	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
+	if err != nil {
+		return nil, err
+	}
+	instance, err := im.GetInstance(instancePath)
+	if err != nil {
+		return nil, err
+	}
+	return wmi.NewWmiJob(instance)
 }

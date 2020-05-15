@@ -4,14 +4,17 @@
 package virtualsystemmanagement
 
 import (
-	"fmt"
+	"log"
+	"strings"
 	"sync"
 
 	"github.com/microsoft/wmi/pkg/base/host"
+	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
-	"github.com/microsoft/wmi/pkg/virtualization/core/job"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	vswitch "github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -111,69 +114,287 @@ func (vmms *VirtualSystemManagementService) GetVirtualMachineByName(vmName strin
 	return nil, errors.Wrapf(errors.NotFound, "Unable to find a virtual system with name [%s]", vmName)
 }
 
-func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsystem.VirtualMachine) error {
-	result, err := vmms.InvokeMethodWithReturn("DestroySystem", vm.InstancePath(), nil)
-	//method, err := vmms.GetWmiMethod("DestroySystem")
+func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtualsystem.VirtualSystemSettingData) (
+	vm *virtualsystem.VirtualMachine,
+	err error) {
+
+	method, err := vmms.GetWmiMethod("DefineSystem")
 	if err != nil {
-		return err
+		return
 	}
 
-	//method.AddInParam("AffectedSystem", (vmms.GetIDispatch()))
-	//result, err := method.Execute()
-	//if err != nil {
-	//	return err
-	//}
-	return vmms.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Destroy_Virtual_Machine)
+	embeddedInstance, err := settings.EmbeddedXMLInstance()
+	if err != nil {
+		return
+	}
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("SystemSettings", embeddedInstance))
+	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", nil))
+	inparams = append(inparams, wmi.NewWmiMethodParam("ReferenceConfiguration", nil))
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingSystem", nil))
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	if result.ReturnValue != 4096 {
+		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+		return
+	}
+	val, ok := result.OutMethodParams["ResultingSystem"]
+	if ok {
+		vminstance, err := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+		if err == nil {
+			vm, err = virtualsystem.NewVirtualMachine(vminstance)
+			//
+		}
+	}
+
+	val, ok = result.OutMethodParams["Job"]
+	if !ok || val.Value == nil {
+		err = errors.Wrapf(errors.NotFound, "Job")
+		return
+	}
+	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+	err = job.WaitForJobCompletion(result.ReturnValue)
+	return
+}
+func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsystem.VirtualMachine) (err error) {
+	method, err := vmms.GetWmiMethod("DestroySystem")
+	if err != nil {
+		return
+	}
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("AffectedSystem", vm.InstancePath()))
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	if result.ReturnValue != 4096 {
+		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+		return
+	}
+
+	val, ok := result.OutMethodParams["Job"]
+	if !ok || val.Value == nil {
+		err = errors.Wrapf(errors.NotFound, "Job")
+		return
+	}
+	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+	return job.WaitForJobCompletion(result.ReturnValue)
+}
+
+//
+func (vmms *VirtualSystemManagementService) AddVirtualSystemResource(
+	vmsettings *virtualsystem.VirtualSystemSettingData,
+	data *v2.CIM_ResourceAllocationSettingData) (resultingResources wmi.WmiInstanceCollection, err error) {
+
+	embeddedInstance, err := data.EmbeddedXMLInstance()
+	if err != nil {
+		return
+	}
+
+	method, err := vmms.GetWmiMethod("AddResourceSettings")
+	if err != nil {
+		return
+	}
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("AffectedConfiguration", vmsettings.InstancePath()))
+	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", []string{embeddedInstance}))
+
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingResourceSettings", nil))
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	returnVal := result.ReturnValue
+	if returnVal != 0 && returnVal != 4096 {
+		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+		return
+	}
+
+	// Try to get the Out Params
+	val := result.OutMethodParams["ResultingResourceSettings"]
+	if val.Value != nil {
+		for _, resultingVal := range val.Value.([]interface{}) {
+			inst, err1 := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), resultingVal.(string))
+			if err1 != nil {
+				err = err1
+				return
+			}
+			resultingResources = append(resultingResources, inst)
+		}
+	}
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	val = result.OutMethodParams["Job"]
+	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+
+	err = job.WaitForJobCompletion(result.ReturnValue)
+	return
+}
+
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResourceEx(data *wmi.WmiInstance) (err error) {
+	result, err := vmms.ModifyVirtualSystemResource(wmi.WmiInstanceCollection{data})
+	if err != nil {
+		return
+	}
+	result.Close()
+	return
+}
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResourceEx2(data *wmi.WmiInstance) (instance *wmi.WmiInstance, err error) {
+	result, err := vmms.ModifyVirtualSystemResource(wmi.WmiInstanceCollection{data})
+	if err != nil {
+		return
+	}
+	result.Close()
+	if len(result) == 0 {
+		err = errors.Wrapf(errors.NotFound, "ModifyVirtualSystemResource didnt not return any resulting system")
+		return
+	}
+	instance, err = result[0].Clone()
+	return
 }
 
 // ModifyVirtualSystemResource
-func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data *wmi.WmiInstance) error {
-	embeddedInstance, err := data.EmbeddedXMLInstance()
-	if err != nil {
-		return err
-	}
-	result, err := vmms.InvokeMethodWithReturn("ModifyResourceSettings", []string{embeddedInstance})
-	if err != nil {
-		return err
-	}
-	return vmms.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Modify_Virtual_Machine_Resources)
-}
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi.WmiInstanceCollection) (
+	resultingResources wmi.WmiInstanceCollection, err error) {
 
-func (vmms *VirtualSystemManagementService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType) error {
-	if result == 0 {
-		return nil
-	} else if result == 4096 {
-		vmjob, err := vmms.getJob(jobType)
-		if err != nil {
-			// Job is scheduled, but we were not able to find the job
-			return err
+	embeddedInstance, err := data.EmbeddedXMLInstances()
+	if err != nil {
+		return
+	}
+	// vmms.ModifyResourceSettings
+	//vmms.ModifyResourceSettings
+	//result, err := vmms.InvokeMethodWithReturn("ModifyResourceSettings", []string{embeddedInstance})
+	//if err != nil {
+	//	return err
+	//}
+	//return job.WaitForJobCompletion(vmms.WmiInstance, result, v2.ConcreteJob_JobType_Modify_Virtual_Machine_Resources)
+
+	//vmms.ModifyResourceSettings
+	method, err := vmms.GetWmiMethod("ModifyResourceSettings")
+	if err != nil {
+		return
+	}
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", embeddedInstance))
+
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingResourceSettings", nil))
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	returnVal := result.ReturnValue
+	if returnVal != 0 && returnVal != 4096 {
+		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+		return
+	}
+
+	// Try to get the Out Params
+	val := result.OutMethodParams["ResultingResourceSettings"]
+	if val.Value != nil {
+		for _, resultingVal := range val.Value.([]interface{}) {
+			inst, err1 := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), resultingVal.(string))
+			if err1 != nil {
+				err = err1
+				return
+			}
+			resultingResources = append(resultingResources, inst)
 		}
-		defer vmjob.Close()
-
-		return vmjob.WaitForAction(wmi.Wait, 100, 10)
-	} else {
-		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Virtual Machine Result[%d] JobType[%d]", result, jobType)
 	}
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	val = result.OutMethodParams["Job"]
+	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+
+	err = job.WaitForJobCompletion(result.ReturnValue)
+	return
+
 }
 
-func (vmms *VirtualSystemManagementService) getJob(jobType v2.ConcreteJob_JobType) (*job.VirtualSystemJob, error) {
-	jobString := fmt.Sprintf("%d", jobType)
-	query := query.NewWmiQuery("Msvm_ConcreteJob", "JobType", jobString)
-	jobs, err := vmms.GetAllRelatedWithQuery(query)
+// RemoveVirtualSystemResource - Will be removed, when auto gen code is regenerated
+func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
+	data *v2.CIM_ResourceAllocationSettingData) (err error) {
+
+	//embeddedInstance, err := data.EmbeddedXMLInstance()
+	//if err != nil {
+	//	return
+	//}
+
+	method, err := vmms.GetWmiMethod("RemoveResourceSettings")
 	if err != nil {
-		return nil, err
-	}
-	if len(jobs) == 0 {
-		return nil, errors.Wrapf(errors.NotFound, "Unable to find related Job with type [%d]", jobType)
-	}
-	defer jobs.Close()
-	// FIXME: Find the correct Job, when multiple jobs are returned
-	jobInstance, err := jobs[0].Clone()
-	if err != nil {
-		return nil, err
+		return
 	}
 
-	return job.NewVirtualSystemJob(jobInstance)
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", []string{data.InstancePath()}))
+
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	returnVal := result.ReturnValue
+	if returnVal != 0 && returnVal != 4096 {
+		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+		return
+	}
+
+	// Try to get the Out Params
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	val := result.OutMethodParams["Job"]
+	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+
+	err = job.WaitForJobCompletion(result.ReturnValue)
+	return
 }
 
 func (vmms *VirtualSystemManagementService) RenameVirtualNetworkAdapter(vm *virtualsystem.VirtualMachine, adapterName, newName string) (err error) {
@@ -187,7 +408,7 @@ func (vmms *VirtualSystemManagementService) RenameVirtualNetworkAdapter(vm *virt
 		return
 	}
 
-	return vmms.ModifyVirtualSystemResource(adapter.WmiInstance)
+	return vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance)
 }
 
 func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(vm *virtualsystem.VirtualMachine, adapterName, macAddress string) (err error) {
@@ -200,7 +421,7 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(v
 	if err != nil {
 		return
 	}
-	return vmms.ModifyVirtualSystemResource(adapter.WmiInstance)
+	return vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance)
 }
 
 func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string, virtSwitch *vswitch.VirtualSwitch) (err error) {
@@ -223,7 +444,7 @@ func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *vi
 	if err != nil {
 		return
 	}
-	return vmms.ModifyVirtualSystemResource(pasd)
+	return vmms.ModifyVirtualSystemResourceEx(pasd)
 }
 
 func (vmms *VirtualSystemManagementService) DisconnectAdapterFromVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string) (err error) {
@@ -242,5 +463,133 @@ func (vmms *VirtualSystemManagementService) DisconnectAdapterFromVirtualSwitch(v
 	if err != nil {
 		return
 	}
-	return vmms.ModifyVirtualSystemResource(pasd)
+	return vmms.ModifyVirtualSystemResourceEx(pasd)
+}
+
+// AttachVirtualHardDisk -
+// * Create a Synthetic Disk Drive
+// *    Add a drive to available first controller at available location
+// * Connects the Disk to the Drive
+// Returns Disk and Drive
+func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsystem.VirtualMachine, path string) (
+	vhd *disk.VirtualHardDisk,
+	vhddrive *drive.SyntheticDiskDrive,
+	err error) {
+
+	// Add a drive
+	vhddrive, err = vmms.AddSyntheticDiskDrive(vm, -1, -1)
+	if err != nil {
+		return
+	}
+
+	defer func() {
+		if err == nil {
+			return
+		}
+		log.Printf("[%+v]\n", err)
+		// Remove the drive
+		err1 := vmms.RemoveSyntheticDiskDrive(vhddrive)
+		log.Printf("RemoveSyntheticDiskDrive [%+v]\n", err1)
+		vhddrive.Close()
+	}()
+
+	// Add a disk
+	vhdtmp, err := vm.NewVirtualHardDisk(path)
+	if err != nil {
+		return
+	}
+	defer vhdtmp.Close()
+
+	// Connect disk to drive
+	err = vhdtmp.SetPropertyParent(vhddrive.InstancePath())
+	if err != nil {
+		return
+	}
+
+	if !strings.Contains(vhdtmp.InstancePath(), "Definition") {
+		err = vmms.ModifyVirtualSystemResourceEx(vhdtmp.WmiInstance)
+		if err != nil {
+			return
+		}
+	}
+
+	vmsetting, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer vmsetting.Close()
+
+	// apply the settings
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhdtmp.CIM_ResourceAllocationSettingData)
+	if err != nil {
+		return
+	}
+	defer resultcol.Close()
+
+	if len(resultcol) == 0 {
+		err = errors.Wrapf(errors.NotFound, "AddVirtualSystemResource")
+		return
+	}
+
+	vhdInstance, err := resultcol[0].Clone()
+	if err != nil {
+		return
+	}
+
+	vhd, err = disk.NewVirtualHardDisk(vhdInstance)
+	return
+}
+
+func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.VirtualHardDisk) (err error) {
+	// Remove Disk
+	err = vmms.RemoveVirtualSystemResource(vhd.CIM_ResourceAllocationSettingData)
+	if err != nil {
+		return
+	}
+	// Remove Drive
+	drive, err := vhd.GetDrive()
+	err = vmms.RemoveVirtualSystemResource(drive.CIM_ResourceAllocationSettingData)
+	if err != nil {
+		return
+	}
+	return
+}
+
+func (vmms *VirtualSystemManagementService) AddSyntheticDiskDrive(vm *virtualsystem.VirtualMachine,
+	controllernumber,
+	controllerlocation int32) (vhddrive *drive.SyntheticDiskDrive, err error) {
+	vmsetting, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer vmsetting.Close()
+
+	vhddrivetmp, err := vm.NewSyntheticDiskDrive(controllernumber, controllerlocation)
+	if err != nil {
+		return
+	}
+	defer vhddrivetmp.Close()
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhddrivetmp.CIM_ResourceAllocationSettingData)
+	if err != nil {
+		return
+	}
+	defer resultcol.Close()
+	if len(resultcol) == 0 {
+		err = errors.Wrapf(errors.NotFound, "AddVirtualSystemResource")
+		return
+	}
+	driveInstance, err := resultcol[0].Clone()
+	if err != nil {
+		return
+	}
+
+	vhddrive, err = drive.NewSyntheticDiskDrive(driveInstance)
+
+	return
+}
+
+func (vmms *VirtualSystemManagementService) RemoveSyntheticDiskDrive(
+	vhddrive *drive.SyntheticDiskDrive) (err error) {
+	err = vmms.RemoveVirtualSystemResource(vhddrive.CIM_ResourceAllocationSettingData)
+	return
 }

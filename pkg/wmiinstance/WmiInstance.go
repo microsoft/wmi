@@ -8,6 +8,7 @@ package cim
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -37,6 +38,18 @@ type WmiInstance struct {
 
 // WmiInstanceCollection is a slice of WmiInstance
 type WmiInstanceCollection []*WmiInstance
+
+func (wmic *WmiInstanceCollection) EmbeddedXMLInstances() (xmls []string, err error) {
+	for _, inst := range *wmic {
+		xml, err1 := inst.EmbeddedXMLInstance()
+		if err1 != nil {
+			err = err1
+			return
+		}
+		xmls = append(xmls, xml)
+	}
+	return
+}
 
 // Close all instances in a collection
 func (wmic *WmiInstanceCollection) Close() {
@@ -121,6 +134,7 @@ func (c *WmiInstance) GetProperty(name string) (interface{}, error) {
 func (c *WmiInstance) SetProperty(name string, value interface{}) error {
 	rawResult, err := oleutil.PutProperty(c.instance, name, value)
 	if err != nil {
+		log.Printf("SetProperty Name[%s] Value[%+v] Err[%+v]\n", name, value, err)
 		return err
 	}
 
@@ -165,6 +179,10 @@ func (c *WmiInstance) EmbeddedXMLInstance() (string, error) {
 	}
 	defer rawResult.Clear()
 	return rawResult.ToString(), err
+}
+
+func (c *WmiInstance) String() string {
+	return c.InstancePath()
 }
 
 // EmbeddedInstance
@@ -349,6 +367,10 @@ func (c *WmiInstance) GetRelatedEx(associatedClassName, resultClassName, resultR
 	return c.GetAssociated(associatedClassName, resultClassName, resultRole, sourceRole)
 }
 
+func (c *WmiInstance) GetAssociatedEx(associatedClassName string) (WmiInstanceCollection, error) {
+	return c.GetAssociated(associatedClassName, "", "", "")
+}
+
 // GetAssociated
 func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, resultRole, sourceRole string) (WmiInstanceCollection, error) {
 	// Documentation here: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemobject-associators-
@@ -404,6 +426,11 @@ func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, result
 	}
 
 	return wmiInstances, nil
+}
+
+// GetReferences
+func (c *WmiInstance) GetReferences(associatedClassName string) (WmiInstanceCollection, error) {
+	return c.EnumerateReferencingInstances(associatedClassName, "")
 }
 
 // EnumerateReferencingInstances

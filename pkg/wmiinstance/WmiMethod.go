@@ -10,6 +10,7 @@ import (
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 	"github.com/microsoft/wmi/pkg/errors"
+	// "log"
 	//"github.com/microsoft/wmi/go/wmi"
 )
 
@@ -25,7 +26,11 @@ type WmiMethod struct {
 	outparameter    *ole.IDispatch
 	method          *ole.IDispatch
 	methodVar       *ole.VARIANT
-	MethodParams    map[string]*WmiMethodParam
+}
+
+type WmiMethodResult struct {
+	ReturnValue     int32
+	OutMethodParams map[string]*WmiMethodParam
 }
 
 // NewWmiMethod
@@ -64,11 +69,10 @@ func NewWmiMethod(methodName string, instance *WmiInstance) (*WmiMethod, error) 
 		inparameterVar: inparams,
 		method:         rawMethod.ToIDispatch(),
 		methodVar:      rawMethod,
-		MethodParams:   map[string]*WmiMethodParam{},
 	}, nil
 }
 
-func (c *WmiMethod) AddInParam(paramName string, paramValue interface{}) error {
+func (c *WmiMethod) addInParam(paramName string, paramValue interface{}) error {
 	rawProperties, err := c.inparameter.GetProperty("Properties_")
 	if err != nil {
 		return err
@@ -84,33 +88,51 @@ func (c *WmiMethod) AddInParam(paramName string, paramValue interface{}) error {
 	if err != nil {
 		return err
 	}
-	c.MethodParams[paramName], err = NewWmiMethodParam(paramName, paramValue, p, c.session)
-	if err != nil {
-		return err
-	}
-
+	defer p.Clear()
 	return nil
 }
 
-func (c *WmiMethod) Execute() (int32, error) {
+func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result *WmiMethodResult, err error) {
+	// log.Printf("Executing Method [%s]\n", c.Name)
+	for _, inp := range inParam {
+		// 	log.Printf("InParam [%s]=>[%+v]\n", inp.Name, inp.Value)
+		c.addInParam(inp.Name, inp.Value)
+	}
+
+	result = &WmiMethodResult{
+		OutMethodParams: map[string]*WmiMethodParam{},
+	}
 	outparams, err := c.classInstance.GetIDispatch().CallMethod("ExecMethod_", c.Name, c.inparameter)
 	if err != nil {
-		return 0, err
+		return
 	}
 	defer outparams.Clear()
 	returnRaw, err := outparams.ToIDispatch().GetProperty("ReturnValue")
 	if err != nil {
-		return 0, err
+		return
 	}
 	defer returnRaw.Clear()
-	outRaw, err := outparams.ToIDispatch().GetProperty("OutParameters")
-	if err != nil {
-		return 0, err
-	}
-	c.outparameterVar = outRaw
-	c.outparameter = outRaw.ToIDispatch()
+	result.ReturnValue = returnRaw.Value().(int32)
+	// log.Printf("Return [%d] ", result.ReturnValue)
 
-	return returnRaw.Value().(int32), nil
+	for _, outp := range outParam {
+		returnRaw, err1 := outparams.ToIDispatch().GetProperty(outp.Name)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		defer returnRaw.Clear()
+
+		value, err1 := GetVariantValue(returnRaw)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		// log.Printf("OutParam [%s]=> [%+v]\n", outp.Name, value)
+
+		result.OutMethodParams[outp.Name] = NewWmiMethodParam(outp.Name, value)
+	}
+	return
 }
 
 func (c *WmiMethod) Close() error {
@@ -130,10 +152,7 @@ func (c *WmiMethod) Close() error {
 		c.outparameter.Release()
 		c.outparameter = nil
 	}
-	// Close the MethodParams
-	for _, k := range c.MethodParams {
-		k.Close()
-	}
+
 	return nil
 }
 

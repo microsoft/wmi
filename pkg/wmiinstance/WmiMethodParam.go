@@ -7,30 +7,31 @@
 package cim
 
 import (
-	"github.com/go-ole/go-ole"
+//"github.com/go-ole/go-ole"
 )
 
 type WmiMethodParam struct {
-	Name        string
-	Value       interface{}
-	session     *WmiSession
-	property    *ole.IDispatch
-	propertyVar *ole.VARIANT
+	Name  string
+	Value interface{}
+	//session     *WmiSession
+	//property    *ole.IDispatch
+	//propertyVar *ole.VARIANT
 }
 
-func NewWmiMethodParam(name string, val interface{}, propertyVariant *ole.VARIANT, session *WmiSession) (*WmiMethodParam, error) {
+//func NewWmiMethodParam(name string, val interface{}, propertyVariant *ole.VARIANT, session *WmiSession) (*WmiMethodParam, error) {
+func NewWmiMethodParam(name string, val interface{}) *WmiMethodParam {
 	return &WmiMethodParam{
-		Name:        name,
-		propertyVar: propertyVariant,
-		property:    propertyVariant.ToIDispatch(),
-		session:     session,
-		Value:       val,
-	}, nil
+		Name: name,
+		//propertyVar: propertyVariant,
+		//property:    propertyVariant.ToIDispatch(),
+		//session: session,
+		Value: val,
+	}
 }
 
 // Dispose
 func (c *WmiMethodParam) Close() error {
-	return c.propertyVar.Clear()
+	return nil //c.propertyVar.Clear()
 }
 
 type WmiMethodParamCollection []*WmiMethodParam
