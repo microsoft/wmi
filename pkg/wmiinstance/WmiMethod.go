@@ -7,11 +7,11 @@
 package cim
 
 import (
+	"log"
+
 	"github.com/go-ole/go-ole"
 	"github.com/go-ole/go-ole/oleutil"
 	"github.com/microsoft/wmi/pkg/errors"
-	// "log"
-	//"github.com/microsoft/wmi/go/wmi"
 )
 
 type WmiMethod struct {
@@ -93,7 +93,7 @@ func (c *WmiMethod) addInParam(paramName string, paramValue interface{}) error {
 }
 
 func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result *WmiMethodResult, err error) {
-	// log.Printf("Executing Method [%s]\n", c.Name)
+	log.Printf("[WMI] - Executing Method [%s]\n", c.Name)
 	for _, inp := range inParam {
 		// 	log.Printf("InParam [%s]=>[%+v]\n", inp.Name, inp.Value)
 		c.addInParam(inp.Name, inp.Value)
@@ -113,7 +113,7 @@ func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result 
 	}
 	defer returnRaw.Clear()
 	result.ReturnValue = returnRaw.Value().(int32)
-	// log.Printf("Return [%d] ", result.ReturnValue)
+	log.Printf("[WMI] - Return [%d] ", result.ReturnValue)
 
 	for _, outp := range outParam {
 		returnRaw, err1 := outparams.ToIDispatch().GetProperty(outp.Name)

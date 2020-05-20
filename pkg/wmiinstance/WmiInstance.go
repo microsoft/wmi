@@ -134,7 +134,7 @@ func (c *WmiInstance) GetProperty(name string) (interface{}, error) {
 func (c *WmiInstance) SetProperty(name string, value interface{}) error {
 	rawResult, err := oleutil.PutProperty(c.instance, name, value)
 	if err != nil {
-		log.Printf("SetProperty Name[%s] Value[%+v] Err[%+v]\n", name, value, err)
+		log.Printf("[WMI] SetProperty Name[%s] Value[%+v] Err[%+v]\n", name, value, err)
 		return err
 	}
 

@@ -5,6 +5,7 @@ package controller
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
@@ -32,8 +33,16 @@ func (settings *SCSIControllerSettings) GetFreeLocation() (int32, error) {
 		return -1, err
 	}
 	defer col.Close()
+	dvdcol, err := settings.getResourceAllocationSettingData(v2.ResourceAllocationSettingData_ResourceType_DVD_drive)
+	if err != nil {
+		return -1, err
+	}
+	col = append(col, dvdcol...)
 
 	freeLocation := 0
+	defer func() {
+		log.Printf("[WMI] - FreeLocation [%d] - Total Drives [%d]\n", freeLocation, len(col))
+	}()
 	for _, _ = range col {
 		exists, err := checkIfLocationExists(col, freeLocation)
 		if err != nil {
