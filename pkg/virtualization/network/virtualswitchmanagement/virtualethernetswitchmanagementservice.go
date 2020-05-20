@@ -82,7 +82,7 @@ func (vsms *VirtualEthernetSwitchManagementService) GetVirtualSwitches() (*virtu
 		}
 	}()
 	vmc := virtualswitch.VirtualSwitchCollection{}
-	for _, ins := range *instances {
+	for _, ins := range instances {
 		vm, err := virtualswitch.NewVirtualSwitch(ins)
 		if err != nil {
 			return nil, err

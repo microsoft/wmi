@@ -4,10 +4,15 @@
 package virtualsystemmanagement
 
 import (
-	"github.com/microsoft/wmi/pkg/base/host"
-	_ "github.com/microsoft/wmi/pkg/base/session"
+	"fmt"
+	"os"
 	"testing"
 
+	"github.com/microsoft/wmi/pkg/base/host"
+	_ "github.com/microsoft/wmi/pkg/base/session"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/service"
+	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
 )
 
@@ -21,6 +26,43 @@ func init() {
 
 func TestGetVirtualMachineManagementService(t *testing.T) {
 	_, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+}
+
+func TestCreateVirtualMachines(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "temp")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer setting.Close()
+	t.Logf("Create VMSettings")
+
+	_, err = vmms.CreateVirtualMachine(setting)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	t.Logf("Created VM [%s]", "temp")
+	//defer vm.Close()
+}
+
+func TestVirtualMachineDelete(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	vm, err := vmms.GetVirtualMachineByName("temp")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+
+	defer vm.Close()
+	err = vmms.DeleteVirtualMachine(vm)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -95,7 +137,7 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 	t.Logf("Disconnect VM[%s] from VirtualSwitch[%s]", "test", "test")
 }
 
-func TestVirtualMachineDelete(t *testing.T) {
+func TestAddRemoveVirtualHardDisk(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
@@ -104,10 +146,58 @@ func TestVirtualMachineDelete(t *testing.T) {
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
-
 	defer vm.Close()
-	err = vmms.DeleteVirtualMachine(vm)
+	t.Logf("Found [%s] VMs", "test")
+
+	ims, err := service.GetImageManagementService(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
+	}
+	t.Logf("Got ImageManagementService ")
+
+	for i := 1; i <= 4; i++ {
+		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
+		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		defer setting.Close()
+		err = ims.CreateDisk(setting)
+		if err != nil {
+			t.Fatal("Create Failed " + err.Error())
+		}
+		defer os.RemoveAll(path)
+		t.Logf("Created vhd [%s]", path)
+
+		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		defer vhd.Close()
+		defer vhddrive.Close()
+		t.Logf("Attached vhd [%s] to [%s]", path, "test")
+		controllerlocation, err := vhddrive.GetControllerLocation()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		controllerNumber, err := vhddrive.GetControllerNumber()
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
+	}
+
+	for i := 1; i <= 4; i++ {
+		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
+		vhd, err := vm.GetVirtualHardDiskByLocation(0, i-1)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		defer vhd.Close()
+		err = vmms.DetachVirtualHardDisk(vhd)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		t.Logf("Detached vhd [%s] from [%s]", path, "test")
 	}
 }

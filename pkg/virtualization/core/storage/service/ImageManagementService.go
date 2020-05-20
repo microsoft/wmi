@@ -1,0 +1,158 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+package service
+
+import (
+	"sync"
+
+	"github.com/microsoft/wmi/pkg/base/host"
+	"github.com/microsoft/wmi/pkg/base/instance"
+	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/constant"
+	"github.com/microsoft/wmi/pkg/errors"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
+	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
+)
+
+var (
+	serviceStoreMap map[string]*ImageManagementService
+	mux             sync.Mutex
+)
+
+func init() {
+	serviceStoreMap = map[string]*ImageManagementService{}
+
+	whost := host.NewWmiLocalHost()
+	serviceStoreMap[whost.HostName], _ = getService(whost)
+}
+
+type ImageManagementService struct {
+	*v2.Msvm_ImageManagementService
+}
+
+// GetVirtualEthernetSwitchManagementService gets the VMMS Switch Management Service
+func GetImageManagementService(whost *host.WmiHost) (mgmt *ImageManagementService, err error) {
+	if val, ok := serviceStoreMap[whost.HostName]; ok {
+		mgmt = val
+		return
+	}
+
+	mgmt, err = getService(whost)
+	if err != nil {
+		return
+	}
+
+	mux.Lock()
+	defer mux.Unlock()
+	serviceStoreMap[whost.HostName] = mgmt
+	return
+}
+
+func getService(whost *host.WmiHost) (mgmt *ImageManagementService, err error) {
+	creds := whost.GetCredential()
+	query := query.NewWmiQuery("Msvm_ImageManagementService", "Caption", "Hyper-V Image Management Service")
+	// TODO: Regenerate wrappers that would take WmiHost directly
+	imswmi, err := v2.NewMsvm_ImageManagementServiceEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
+	if err != nil {
+		return
+	}
+
+	mgmt = &ImageManagementService{imswmi}
+	return
+}
+
+// ResizeDisk
+func (ims *ImageManagementService) ResizeDisk(path string, size uint64) (err error) {
+	method, err := ims.GetWmiMethod("ResizeVirtualHardDisk")
+	if err != nil {
+		return
+	}
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("Path", path))
+	inparams = append(inparams, wmi.NewWmiMethodParam("MaxInternalSize", size))
+
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	if result.ReturnValue != 4096 {
+		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+		return
+	}
+
+	val, ok := result.OutMethodParams["Job"]
+	if !ok || val.Value == nil {
+		err = errors.Wrapf(errors.NotFound, "Job")
+		return
+	}
+	job, err := instance.GetWmiJob(ims.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+	return job.WaitForJobCompletion(result.ReturnValue)
+}
+
+// CreateDiskEx
+func (ims *ImageManagementService) CreateDiskEx(path string,
+	logicalSectorSize, physicalSectorSize, blockSize uint32,
+	diskSize uint64, dynamic bool) (err error) {
+
+	setting, err := disk.GetVirtualHardDiskSettingData(ims.GetWmiHost(), path, logicalSectorSize,
+		physicalSectorSize, blockSize, diskSize, dynamic)
+	if err != nil {
+		return
+	}
+	defer setting.Close()
+
+	err = ims.CreateDisk(setting)
+	return
+}
+
+// CreateDisk
+func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSettingData) (err error) {
+	method, err := ims.GetWmiMethod("CreateVirtualHardDisk")
+	if err != nil {
+		return
+	}
+	embeddedInstance, err := settings.EmbeddedXMLInstance()
+	if err != nil {
+		return err
+	}
+	inparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("VirtualDiskSettingData", embeddedInstance)}
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+
+	result, err := method.Execute(inparams, outparams)
+	if err != nil {
+		return
+	}
+
+	if result.ReturnValue == 0 {
+		return
+	}
+
+	if result.ReturnValue != 4096 {
+		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+		return
+	}
+
+	val, ok := result.OutMethodParams["Job"]
+	if !ok || val.Value == nil {
+		err = errors.Wrapf(errors.NotFound, "Job")
+		return
+	}
+	job, err := instance.GetWmiJob(ims.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+	if err != nil {
+		return
+	}
+	return job.WaitForJobCompletion(result.ReturnValue)
+}

@@ -5,13 +5,21 @@ package virtualsystem
 
 import (
 	"fmt"
+	//"log"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
+
 	"github.com/microsoft/wmi/pkg/virtualization/core/job"
+	"github.com/microsoft/wmi/pkg/virtualization/core/resource"
+	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourceallocation"
+	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourcepool"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/controller"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
+	"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
@@ -78,6 +86,11 @@ func GetVirtualMachine(whost *host.WmiHost, vmName string) (vm *VirtualMachine, 
 	return
 }
 
+func (vm *VirtualMachine) Name() (name string) {
+	name, _ = vm.GetPropertyElementName()
+	return
+}
+
 // GetVirtualMachineState get the virtual machine state
 func (vm *VirtualMachine) State() (state VirtualMachineState, err error) {
 	err = vm.Refresh()
@@ -124,7 +137,7 @@ func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.Conc
 	if err != nil {
 		return err
 	}
-	return vm.WaitForJobCompletion(result, jobType)
+	return job.WaitForJobCompletion(vm.WmiInstance, result, jobType)
 }
 
 // WaitForState
@@ -153,57 +166,245 @@ func (vm *VirtualMachine) WaitForState(state VirtualMachineState, timeoutSeconds
 
 	return
 }
-func (vm *VirtualMachine) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType) error {
-	if result == 0 {
-		return nil
-	} else if result == 4096 {
-		vmjob, err := vm.getJob(jobType)
-		if err != nil {
-			return err
-			// Job is scheduled, but we were not able to find the job
-		}
-		defer vmjob.Close()
 
-		return vmjob.WaitForAction(wmi.Wait, 100, 10)
-	} else {
-		return errors.Wrapf(errors.Failed,
-			"Unable to Change the state of the Virtual Machine Result[%d] [%d]", result, jobType)
-	}
-}
-
-func (vm *VirtualMachine) getJob(jobType v2.ConcreteJob_JobType) (*job.VirtualSystemJob, error) {
-	jobString := fmt.Sprintf("%d", jobType)
-	query := query.NewWmiQuery("Msvm_ConcreteJob", "JobType", jobString)
-	jobs, err := vm.GetAllRelatedWithQuery(query)
-	if err != nil {
-		return nil, err
-	}
-	if len(jobs) == 0 {
-		return nil, errors.Wrapf(errors.NotFound, "Unable to find related Job with type [%d]", jobType)
-	}
-	defer jobs.Close()
-	jobInstance, err := jobs[0].Clone()
-	if err != nil {
-		return nil, err
-	}
-
-	return job.NewVirtualSystemJob(jobInstance)
-}
-
-func (vm *VirtualMachine) GetVirtualMachineSetting() (*VirtualMachineSetting, error) {
+func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingData, error) {
 	inst, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
 	if err != nil {
 		return nil, err
 	}
-	return NewVirtualMachineSetting(inst)
+	return NewVirtualSystemSettingData(inst)
 }
 
 func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.VirtualNetworkAdapter, err error) {
-	settings, err := vm.GetVirtualMachineSetting()
+	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
 	}
 	defer settings.Close()
 	vna, err = settings.GetVirtualNetworkAdapterByName(name)
+	return
+}
+
+func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerlocation int32) (synDrive *drive.SyntheticDiskDrive, err error) {
+	driverp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Disk_Drive)
+	if err != nil {
+		return
+	}
+	defer driverp.Close()
+
+	rasd, err := driverp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	synDrive, err = drive.NewSyntheticDiskDrive(rasd.WmiInstance)
+	if err != nil {
+		return
+	}
+
+	// Only support SCSI
+	controllers, err := vm.GetSCSIControllers()
+	if err != nil {
+		return
+	}
+	defer controllers.Close()
+	// 1. Find the correct controller to use vased on the controllernumber
+	if len(controllers) == 0 {
+		err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have SCSI Controller", vm.Name())
+		return
+	}
+	if int(controllernumber) > len(controllers) {
+		err = errors.Wrapf(errors.NotFound,
+			"VirtualMachine [%s] doesnt have SCSI Controller with bus location [%d]", vm.Name(), controllernumber)
+		return
+	}
+
+	if controllernumber == -1 {
+		controllernumber = 0
+	}
+	scsicontroller, err := controller.NewSCSIControllerSettings(controllers[controllernumber].WmiInstance)
+	if err != nil {
+		return
+	}
+
+	synDrive.SetPropertyParent(scsicontroller.InstancePath())
+	if controllerlocation == -1 {
+		controllerlocation, err = scsicontroller.GetFreeLocation()
+		if err != nil {
+			err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
+			return
+		}
+		// Find a free location
+	}
+	synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
+
+	return
+}
+
+func (vm *VirtualMachine) NewVirtualHardDisk(path string) (vhd *disk.VirtualHardDisk, err error) {
+	vhdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Logical_Disk)
+	if err != nil {
+		return
+	}
+	defer vhdrp.Close()
+	rasd, err := vhdrp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	vhd, err = disk.NewVirtualHardDisk(rasd.WmiInstance)
+	if err != nil {
+		return
+	}
+	err = vhd.SetPropertyHostResource([]string{path})
+	if err != nil {
+		return
+	}
+
+	return
+}
+
+func (vm *VirtualMachine) GetSCSIControllers() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
+	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Parallel_SCSI_HBA)
+	return
+}
+
+func (vm *VirtualMachine) GetVirtualHardDisks() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
+	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Logical_Disk)
+	return
+}
+
+func (vm *VirtualMachine) GetVirtualHardDrives() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
+	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Disk_Drive)
+	return
+}
+
+func (vm *VirtualMachine) GetVirtualHardDiskByLocation(controllerNumber, controllerLocation int) (vhd *disk.VirtualHardDisk, err error) {
+	col, err := vm.GetVirtualHardDisks()
+	if err != nil {
+		return
+	}
+	defer col.Close()
+	for _, inst := range col {
+		tmpvhd, err1 := disk.NewVirtualHardDisk(inst.WmiInstance)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		tmpdrive, err1 := tmpvhd.GetDrive()
+		if err1 != nil {
+			err = err1
+			return
+		}
+		defer tmpdrive.Close()
+		vhddrive, err1 := drive.NewVirtualDrive(tmpdrive.WmiInstance)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		tmpcontrollerLocation, err1 := vhddrive.GetControllerLocation()
+		if err1 != nil {
+			err = err1
+			return
+		}
+		tmpcontrollerNumber, err1 := vhddrive.GetControllerNumber()
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		if tmpcontrollerNumber == fmt.Sprintf("%d", controllerNumber) &&
+			tmpcontrollerLocation == fmt.Sprintf("%d", controllerLocation) {
+			// Found the match
+			vhdclone, err1 := tmpvhd.Clone()
+			if err1 != nil {
+				err = err1
+				return
+			}
+			vhd, err = disk.NewVirtualHardDisk(vhdclone)
+			return
+		}
+	}
+	err = errors.Wrapf(errors.NotFound,
+		"Vhd with controllerNumber[%d] controllerLocation[%d] not found in Vm [%s]",
+		controllerNumber, controllerLocation, vm.Name())
+	return
+
+}
+func (vm *VirtualMachine) GetVirtualHardDiskByPath(path string) (vhd *disk.VirtualHardDisk, err error) {
+	col, err := vm.GetVirtualHardDisks()
+	if err != nil {
+		return
+	}
+	defer col.Close()
+	for _, inst := range col {
+		tmpvhd, err1 := disk.NewVirtualHardDisk(inst.WmiInstance)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		vhdpath, err1 := tmpvhd.GetPath()
+		if err != nil {
+			err = err1
+			return
+		}
+		if vhdpath == path {
+			vhdclone, err1 := tmpvhd.Clone()
+			if err1 != nil {
+				err = err1
+				return
+			}
+			vhd, err = disk.NewVirtualHardDisk(vhdclone)
+			return
+		}
+	}
+	err = errors.Wrapf(errors.NotFound, "Vhd with path [%s] not found in Vm [%s]", path, vm.Name())
+	return
+}
+
+func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool_ResourceType) (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	rasdcol, err := settings.GetAllRelated("CIM_ResourceAllocationSettingData")
+	if err != nil {
+		return
+	}
+	defer rasdcol.Close()
+
+	resType := resource.GetResourceTypeValue(rtype)
+	for _, ins := range rasdcol {
+		rasd, err1 := resourceallocation.NewResourceAllocationSettingData(ins)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		curresType, err1 := rasd.GetResourceType()
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		if !curresType.Equals(resType) {
+			continue
+		}
+		instance, err1 := rasd.Clone()
+		if err1 != nil {
+			err = err1
+			return
+		}
+		rasdfound, err1 := resourceallocation.NewResourceAllocationSettingData(instance)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		col = append(col, rasdfound)
+	}
+	if len(col) == 0 {
+		err = errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingData [%s] ", resType)
+	}
 	return
 }

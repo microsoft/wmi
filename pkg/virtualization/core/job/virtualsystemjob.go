@@ -4,12 +4,12 @@
 package job
 
 import (
-	//"fmt"
-	//"reflect"
+	"fmt"
 	"time"
 
+	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
@@ -18,12 +18,34 @@ type VirtualSystemJob struct {
 }
 
 // NewVirtualSystemJob
-func NewVirtualSystemJob(instance *cim.WmiInstance) (*VirtualSystemJob, error) {
+func NewVirtualSystemJob(instance *wmi.WmiInstance) (*VirtualSystemJob, error) {
 	j, err := v2.NewMsvm_ConcreteJobEx1(instance)
 	if err != nil {
 		return nil, err
 	}
 	return &VirtualSystemJob{j}, nil
+}
+
+func (vmjob *VirtualSystemJob) String() string {
+	jtype, err := vmjob.JobType()
+	if err != nil {
+		return ""
+	}
+	return fmt.Sprintf("Type[%s]", jtype)
+}
+
+// GetJobType gets the value of JobType for the instance
+func (vmjob *VirtualSystemJob) JobType() (value v2.ConcreteJob_JobType, err error) {
+	retValue, err := vmjob.GetProperty("JobType")
+	if err != nil {
+		return
+	}
+	valueint, ok := retValue.(int32)
+	if !ok {
+		// TODO: Set an error
+	}
+	value = v2.ConcreteJob_JobType(valueint)
+	return
 }
 
 // WaitForPercentComplete waits for the percentComplete or timeout
@@ -51,19 +73,19 @@ func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete, timeoutSe
 }
 
 // WaitForAction waits for the task based on the action type, percent complete and timeoutSeconds
-func (vmjob *VirtualSystemJob) WaitForAction(action cim.UserAction, percentComplete, timeoutSeconds uint16) error {
+func (vmjob *VirtualSystemJob) WaitForAction(action wmi.UserAction, percentComplete, timeoutSeconds uint16) error {
 	switch action {
-	case cim.Wait:
+	case wmi.Wait:
 		return vmjob.WaitForPercentComplete(percentComplete, timeoutSeconds)
-	case cim.Cancel:
+	case wmi.Cancel:
 		return vmjob.WaitForPercentComplete(percentComplete, timeoutSeconds)
 		// Fixme
 		// vm.Cancel()
-	case cim.None:
+	case wmi.None:
 		fallthrough
-	case cim.Default:
+	case wmi.Default:
 		fallthrough
-	case cim.Async:
+	case wmi.Async:
 		break
 	}
 	return nil
@@ -134,4 +156,74 @@ func (vmjob *VirtualSystemJob) GetException() error {
 			errorCode, errorDescription, errorSummaryDescription)
 	}
 	return nil
+}
+
+func WaitForJobCompletionEx(result int32, currentJob *VirtualSystemJob) error {
+	if result == 0 {
+		return nil
+	} else if result == 4096 {
+		return currentJob.WaitForAction(wmi.Wait, 100, 10)
+	} else {
+		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Result[%d] ", result)
+	}
+
+}
+
+func WaitForJobCompletionEx2(instance *wmi.WmiInstance, result int32, jobName string) error {
+	return nil
+}
+
+func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.ConcreteJob_JobType) error {
+	if result == 0 {
+		return nil
+	} else if result == 4096 {
+		vmjob, err := getJob(instance, jobType)
+		if err != nil {
+			// Job is scheduled, but we were not able to find the job
+			return err
+		}
+		defer vmjob.Close()
+		return vmjob.WaitForAction(wmi.Wait, 100, 10)
+	} else {
+		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Resource Pool Result[%d] JobType[%d]", result, jobType)
+	}
+}
+
+func getJob(instance *wmi.WmiInstance, jobType v2.ConcreteJob_JobType) (*VirtualSystemJob, error) {
+	jobString := fmt.Sprintf("%d", jobType)
+	query := query.NewWmiQuery("Msvm_ConcreteJob", "JobType", jobString)
+	jobs, err := instance.GetAllRelatedWithQuery(query)
+	if err != nil {
+		return nil, err
+	}
+	if len(jobs) == 0 {
+		return nil, errors.Wrapf(errors.NotFound, "Unable to find related Job with type [%d]", jobType)
+	}
+	defer jobs.Close()
+	// FIXME: Find the correct Job, when multiple jobs are returned
+	jobInstance, err := jobs[0].Clone()
+	if err != nil {
+		return nil, err
+	}
+
+	return NewVirtualSystemJob(jobInstance)
+}
+
+func getCIMJob(instance *wmi.WmiInstance, jobName string) (*VirtualSystemJob, error) {
+	query := query.NewWmiQuery("CIM_ConcreteJob", "Name", jobName)
+	jobs, err := instance.GetAllRelatedWithQuery(query)
+	if err != nil {
+		return nil, err
+	}
+	if len(jobs) == 0 {
+		return nil, errors.Wrapf(errors.NotFound, "Unable to find related Job with name [%s]", jobName)
+	}
+	defer jobs.Close()
+	// FIXME: Find the correct Job, when multiple jobs are returned
+	jobInstance, err := jobs[0].Clone()
+	if err != nil {
+		return nil, err
+	}
+
+	return NewVirtualSystemJob(jobInstance)
 }
