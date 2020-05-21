@@ -19,13 +19,11 @@ type WmiMethod struct {
 	// Reference
 	session *WmiSession
 	// Reference
-	classInstance   *WmiInstance
-	inparameterVar  *ole.VARIANT
-	inparameter     *ole.IDispatch
-	outparameterVar *ole.VARIANT
-	outparameter    *ole.IDispatch
-	method          *ole.IDispatch
-	methodVar       *ole.VARIANT
+	classInstance  *WmiInstance
+	inparameterVar *ole.VARIANT
+	inparameter    *ole.IDispatch
+	method         *ole.IDispatch
+	methodVar      *ole.VARIANT
 }
 
 type WmiMethodResult struct {
@@ -144,13 +142,13 @@ func (c *WmiMethod) Close() error {
 		c.inparameter.Release()
 		c.inparameter = nil
 	}
-	if c.outparameterVar != nil {
-		c.outparameterVar.Clear()
-		c.outparameterVar = nil
+	if c.methodVar != nil {
+		c.methodVar.Clear()
+		c.methodVar = nil
 	}
-	if c.outparameter != nil {
-		c.outparameter.Release()
-		c.outparameter = nil
+	if c.method != nil {
+		c.method.Release()
+		c.method = nil
 	}
 
 	return nil
