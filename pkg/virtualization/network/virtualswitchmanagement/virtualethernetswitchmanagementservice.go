@@ -30,13 +30,6 @@ type VirtualEthernetSwitchManagementService struct {
 
 func init() {
 	serviceStoreMap = map[string]*VirtualEthernetSwitchManagementService{}
-
-	whost := host.NewWmiLocalHost()
-	tmp, err := getService(whost)
-	if err != nil {
-		panic("Unable to Get Local Virtual Ethernet Switch Management Service " + err.Error())
-	}
-	serviceStoreMap[whost.HostName] = tmp
 }
 
 // GetVirtualEthernetSwitchManagementService gets the VMMS Switch Management Service
@@ -46,10 +39,15 @@ func GetVirtualEthernetSwitchManagementService(whost *host.WmiHost) (mgmt *Virtu
 		return
 	}
 
-	mux.Lock()
-	defer mux.Unlock()
 	mgmt, err = getService(whost)
 	if err != nil {
+		return
+	}
+	mux.Lock()
+	defer mux.Unlock()
+	if val, ok := serviceStoreMap[whost.HostName]; ok {
+		mgmt.Close()
+		mgmt = val
 		return
 	}
 	serviceStoreMap[whost.HostName] = mgmt

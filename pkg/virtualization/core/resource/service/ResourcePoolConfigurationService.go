@@ -25,9 +25,6 @@ var (
 
 func init() {
 	serviceStoreMap = map[string]*ResourcePoolConfigurationService{}
-
-	whost := host.NewWmiLocalHost()
-	serviceStoreMap[whost.HostName], _ = getService(whost)
 }
 
 type ResourcePoolConfigurationService struct {
@@ -48,6 +45,11 @@ func GetResourcePoolConfigurationService(whost *host.WmiHost) (mgmt *ResourcePoo
 
 	mux.Lock()
 	defer mux.Unlock()
+	if val, ok := serviceStoreMap[whost.HostName]; ok {
+		mgmt.Close()
+		mgmt = val
+		return
+	}
 	serviceStoreMap[whost.HostName] = mgmt
 	return
 }

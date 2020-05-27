@@ -28,9 +28,6 @@ var (
 
 func init() {
 	serviceStoreMap = map[string]*VirtualSystemManagementService{}
-
-	whost := host.NewWmiLocalHost()
-	serviceStoreMap[whost.HostName], _ = getService(whost)
 }
 
 type VirtualSystemManagementService struct {
@@ -51,6 +48,12 @@ func GetVirtualSystemManagementService(whost *host.WmiHost) (mgmt *VirtualSystem
 
 	mux.Lock()
 	defer mux.Unlock()
+	if val, ok := serviceStoreMap[whost.HostName]; ok {
+		mgmt.Close()
+		mgmt = val
+		return
+	}
+
 	serviceStoreMap[whost.HostName] = mgmt
 	return
 }
