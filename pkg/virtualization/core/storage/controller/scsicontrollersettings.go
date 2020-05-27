@@ -43,7 +43,7 @@ func (settings *SCSIControllerSettings) GetFreeLocation() (int32, error) {
 	defer func() {
 		log.Printf("[WMI] - FreeLocation [%d] - Total Drives [%d]\n", freeLocation, len(col))
 	}()
-	for _, _ = range col {
+	for range col {
 		exists, err := checkIfLocationExists(col, freeLocation)
 		if err != nil {
 			return -1, err

@@ -23,9 +23,6 @@ var (
 
 func init() {
 	serviceStoreMap = map[string]*ImageManagementService{}
-
-	whost := host.NewWmiLocalHost()
-	serviceStoreMap[whost.HostName], _ = getService(whost)
 }
 
 type ImageManagementService struct {
@@ -46,6 +43,12 @@ func GetImageManagementService(whost *host.WmiHost) (mgmt *ImageManagementServic
 
 	mux.Lock()
 	defer mux.Unlock()
+	if val, ok := serviceStoreMap[whost.HostName]; ok {
+		mgmt.Close()
+		mgmt = val
+		return
+	}
+
 	serviceStoreMap[whost.HostName] = mgmt
 	return
 }
