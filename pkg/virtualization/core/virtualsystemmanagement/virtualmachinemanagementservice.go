@@ -169,6 +169,7 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 	if err != nil {
 		return
 	}
+	defer job.Close()
 	err = job.WaitForJobCompletion(result.ReturnValue)
 	return
 }
@@ -205,6 +206,7 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 	if err != nil {
 		return
 	}
+	defer job.Close()
 	return job.WaitForJobCompletion(result.ReturnValue)
 }
 
@@ -262,7 +264,7 @@ func (vmms *VirtualSystemManagementService) AddVirtualSystemResource(
 	if err != nil {
 		return
 	}
-
+	defer job.Close()
 	err = job.WaitForJobCompletion(result.ReturnValue)
 	return
 }
@@ -297,15 +299,6 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi
 	if err != nil {
 		return
 	}
-	// vmms.ModifyResourceSettings
-	//vmms.ModifyResourceSettings
-	//result, err := vmms.InvokeMethodWithReturn("ModifyResourceSettings", []string{embeddedInstance})
-	//if err != nil {
-	//	return err
-	//}
-	//return job.WaitForJobCompletion(vmms.WmiInstance, result, v2.ConcreteJob_JobType_Modify_Virtual_Machine_Resources)
-
-	//vmms.ModifyResourceSettings
 	method, err := vmms.GetWmiMethod("ModifyResourceSettings")
 	if err != nil {
 		return
@@ -349,7 +342,7 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi
 	if err != nil {
 		return
 	}
-
+	defer job.Close()
 	err = job.WaitForJobCompletion(result.ReturnValue)
 	return
 
@@ -395,6 +388,7 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 	if err != nil {
 		return
 	}
+	defer job.Close()
 
 	err = job.WaitForJobCompletion(result.ReturnValue)
 	return

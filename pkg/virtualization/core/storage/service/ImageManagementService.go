@@ -102,6 +102,7 @@ func (ims *ImageManagementService) ResizeDisk(path string, size uint64) (err err
 	if err != nil {
 		return
 	}
+	defer job.Close()
 	return job.WaitForJobCompletion(result.ReturnValue)
 }
 
@@ -157,5 +158,6 @@ func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSett
 	if err != nil {
 		return
 	}
+	defer job.Close()
 	return job.WaitForJobCompletion(result.ReturnValue)
 }
