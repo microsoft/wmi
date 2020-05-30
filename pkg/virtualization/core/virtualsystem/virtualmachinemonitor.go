@@ -12,7 +12,7 @@ import (
 
 const (
 	// Monitor for State Changes
-	queryString = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_ComputerSystem' "
+	queryString = "SELECT * FROM __InstanceOperationEvent WITHIN 5 WHERE TargetInstance isa 'Msvm_ComputerSystem' "
 	// Monitor for Setting Changes
 	settingQueryString = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_VirtualSystemSettingData' "
 )
