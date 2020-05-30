@@ -18,7 +18,7 @@ const (
 	// Port Properties
 	ethernetPortAllocationSettingDataQueryString = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_EthernetPortAllocationSettingData' "
 	// Guest Network Propertiesa - Depends on Integration Component
-	guestNetworkAdapterSettingDataQueryString = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_GuestNetworkAdapterConfiguration' "
+	guestNetworkAdapterSettingDataQueryString = "SELECT * FROM __InstanceOperationEvent WITHIN 10 WHERE TargetInstance isa 'Msvm_GuestNetworkAdapterConfiguration' "
 )
 
 type VirtualNetworkAdapterMonitor struct {
