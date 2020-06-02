@@ -32,6 +32,9 @@ func (vhd *VirtualHardDisk) GetDrive() (*resourceallocation.ResourceAllocationSe
 	}
 
 	inst, err := instance.GetWmiInstanceFromPath(vhd.GetWmiHost(), string(constant.Virtualization), parent)
+	if err != nil {
+		return nil, err
+	}
 	return resourceallocation.NewResourceAllocationSettingData(inst)
 }
 

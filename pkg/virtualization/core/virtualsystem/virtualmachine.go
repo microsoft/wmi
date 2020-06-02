@@ -201,6 +201,12 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	if err != nil {
 		return
 	}
+	defer func() {
+		if err == nil {
+			return
+		}
+		synDrive.Close()
+	}()
 
 	// Only support SCSI
 	controllers, err := vm.GetSCSIControllers()

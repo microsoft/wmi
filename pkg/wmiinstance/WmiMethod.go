@@ -19,11 +19,7 @@ type WmiMethod struct {
 	// Reference
 	session *WmiSession
 	// Reference
-	classInstance  *WmiInstance
-	inparameterVar *ole.VARIANT
-	inparameter    *ole.IDispatch
-	method         *ole.IDispatch
-	methodVar      *ole.VARIANT
+	classInstance *WmiInstance
 }
 
 type WmiMethodResult struct {
@@ -33,45 +29,15 @@ type WmiMethodResult struct {
 
 // NewWmiMethod
 func NewWmiMethod(methodName string, instance *WmiInstance) (*WmiMethod, error) {
-	iDispatchInstance := instance.GetIDispatch()
-	if iDispatchInstance == nil {
-		return nil, errors.Wrapf(errors.InvalidInput, "InvalidInstance")
-	}
-	rawResult, err := iDispatchInstance.GetProperty("Methods_")
-	if err != nil {
-		return nil, err
-	}
-	defer rawResult.Clear()
-	// Retrive the method
-	rawMethod, err := rawResult.ToIDispatch().CallMethod("Item", methodName)
-	if err != nil {
-		return nil, err
-	}
-
-	inparamsRaw, err := rawMethod.ToIDispatch().GetProperty("InParameters")
-	if err != nil {
-		return nil, err
-	}
-	defer inparamsRaw.Clear()
-
-	inparams, err := oleutil.CallMethod(inparamsRaw.ToIDispatch(), "SpawnInstance_")
-	if err != nil {
-		return nil, err
-	}
-
 	return &WmiMethod{
-		Name:           methodName,
-		classInstance:  instance,
-		session:        instance.GetSession(),
-		inparameter:    inparams.ToIDispatch(),
-		inparameterVar: inparams,
-		method:         rawMethod.ToIDispatch(),
-		methodVar:      rawMethod,
+		Name:          methodName,
+		classInstance: instance,
+		session:       instance.GetSession(),
 	}, nil
 }
 
-func (c *WmiMethod) addInParam(paramName string, paramValue interface{}) error {
-	rawProperties, err := c.inparameter.GetProperty("Properties_")
+func (c *WmiMethod) addInParam(inparamVariant *ole.VARIANT, paramName string, paramValue interface{}) error {
+	rawProperties, err := inparamVariant.ToIDispatch().GetProperty("Properties_")
 	if err != nil {
 		return err
 	}
@@ -92,15 +58,44 @@ func (c *WmiMethod) addInParam(paramName string, paramValue interface{}) error {
 
 func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result *WmiMethodResult, err error) {
 	log.Printf("[WMI] - Executing Method [%s]\n", c.Name)
+
+	iDispatchInstance := c.classInstance.GetIDispatch()
+	if iDispatchInstance == nil {
+		return nil, errors.Wrapf(errors.InvalidInput, "InvalidInstance")
+	}
+	rawResult, err := iDispatchInstance.GetProperty("Methods_")
+	if err != nil {
+		return nil, err
+	}
+	defer rawResult.Clear()
+	// Retrive the method
+	rawMethod, err := rawResult.ToIDispatch().CallMethod("Item", c.Name)
+	if err != nil {
+		return nil, err
+	}
+	defer rawMethod.Clear()
+
+	inparamsRaw, err := rawMethod.ToIDispatch().GetProperty("InParameters")
+	if err != nil {
+		return nil, err
+	}
+	defer inparamsRaw.Clear()
+
+	inparams, err := oleutil.CallMethod(inparamsRaw.ToIDispatch(), "SpawnInstance_")
+	if err != nil {
+		return nil, err
+	}
+	defer inparams.Clear()
+
 	for _, inp := range inParam {
 		// 	log.Printf("InParam [%s]=>[%+v]\n", inp.Name, inp.Value)
-		c.addInParam(inp.Name, inp.Value)
+		c.addInParam(inparams, inp.Name, inp.Value)
 	}
 
 	result = &WmiMethodResult{
 		OutMethodParams: map[string]*WmiMethodParam{},
 	}
-	outparams, err := c.classInstance.GetIDispatch().CallMethod("ExecMethod_", c.Name, c.inparameter)
+	outparams, err := c.classInstance.GetIDispatch().CallMethod("ExecMethod_", c.Name, inparams)
 	if err != nil {
 		return
 	}
@@ -114,14 +109,14 @@ func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result 
 	log.Printf("[WMI] - Return [%d] ", result.ReturnValue)
 
 	for _, outp := range outParam {
-		returnRaw, err1 := outparams.ToIDispatch().GetProperty(outp.Name)
+		returnRawIn, err1 := outparams.ToIDispatch().GetProperty(outp.Name)
 		if err1 != nil {
 			err = err1
 			return
 		}
-		defer returnRaw.Clear()
+		defer returnRawIn.Clear()
 
-		value, err1 := GetVariantValue(returnRaw)
+		value, err1 := GetVariantValue(returnRawIn)
 		if err1 != nil {
 			err = err1
 			return
@@ -134,23 +129,6 @@ func (c *WmiMethod) Execute(inParam, outParam WmiMethodParamCollection) (result 
 }
 
 func (c *WmiMethod) Close() error {
-	if c.inparameterVar != nil {
-		c.inparameterVar.Clear()
-		c.inparameterVar = nil
-	}
-	if c.inparameter != nil {
-		c.inparameter.Release()
-		c.inparameter = nil
-	}
-	if c.methodVar != nil {
-		c.methodVar.Clear()
-		c.methodVar = nil
-	}
-	if c.method != nil {
-		c.method.Release()
-		c.method = nil
-	}
-
 	return nil
 }
 

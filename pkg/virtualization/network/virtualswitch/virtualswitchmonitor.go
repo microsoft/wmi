@@ -14,7 +14,7 @@ type VirtualSwitchMonitor struct {
 }
 
 const (
-	queryString = "SELECT * FROM __InstanceOperationEvent WITHIN 1 WHERE TargetInstance isa 'Msvm_VirtualEthernetSwitch' "
+	queryString = "SELECT * FROM __InstanceOperationEvent WITHIN 10 WHERE TargetInstance isa 'Msvm_VirtualEthernetSwitch' "
 )
 
 // CreateVirtualSwitchMonitor createa a new VirtualSwitchMonitor

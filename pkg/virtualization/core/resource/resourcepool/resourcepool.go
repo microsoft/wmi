@@ -74,12 +74,12 @@ func (rp *ResourcePool) GetResourceAllocationSettingData(crole v2.SettingsDefine
 				return
 			}
 			tmpInstancePath := tmp.(string)
-			inst, err1 := instance.GetWmiInstanceFromPath(rp.GetWmiHost(), string(constant.Virtualization), tmpInstancePath)
+			instnew, err1 := instance.GetWmiInstanceFromPath(rp.GetWmiHost(), string(constant.Virtualization), tmpInstancePath)
 			if err1 != nil {
 				err = err1
 				return
 			}
-			return resourceallocation.NewResourceAllocationSettingData(inst)
+			return resourceallocation.NewResourceAllocationSettingData(instnew)
 		}
 	}
 	return nil, errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingData [%d] [%d]", crole, crange)
