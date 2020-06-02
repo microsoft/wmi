@@ -72,6 +72,7 @@ func (ims *ImageManagementService) ResizeDisk(path string, size uint64) (err err
 	if err != nil {
 		return
 	}
+	defer method.Close()
 
 	inparams := wmi.WmiMethodParamCollection{}
 	inparams = append(inparams, wmi.NewWmiMethodParam("Path", path))
@@ -128,6 +129,7 @@ func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSett
 	if err != nil {
 		return
 	}
+	defer method.Close()
 	embeddedInstance, err := settings.EmbeddedXMLInstance()
 	if err != nil {
 		return err

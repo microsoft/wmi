@@ -125,6 +125,7 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 	if err != nil {
 		return
 	}
+	defer method.Close()
 
 	embeddedInstance, err := settings.EmbeddedXMLInstance()
 	if err != nil {
@@ -178,6 +179,7 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 	if err != nil {
 		return
 	}
+	defer method.Close()
 
 	inparams := wmi.WmiMethodParamCollection{}
 	inparams = append(inparams, wmi.NewWmiMethodParam("AffectedSystem", vm.InstancePath()))
@@ -224,6 +226,7 @@ func (vmms *VirtualSystemManagementService) AddVirtualSystemResource(
 	if err != nil {
 		return
 	}
+	defer method.Close()
 
 	inparams := wmi.WmiMethodParamCollection{}
 	inparams = append(inparams, wmi.NewWmiMethodParam("AffectedConfiguration", vmsettings.InstancePath()))
@@ -303,6 +306,7 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi
 	if err != nil {
 		return
 	}
+	defer method.Close()
 
 	inparams := wmi.WmiMethodParamCollection{}
 	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", embeddedInstance))
@@ -351,16 +355,11 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi
 // RemoveVirtualSystemResource - Will be removed, when auto gen code is regenerated
 func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 	data *v2.CIM_ResourceAllocationSettingData) (err error) {
-
-	//embeddedInstance, err := data.EmbeddedXMLInstance()
-	//if err != nil {
-	//	return
-	//}
-
 	method, err := vmms.GetWmiMethod("RemoveResourceSettings")
 	if err != nil {
 		return
 	}
+	defer method.Close()
 
 	inparams := wmi.WmiMethodParamCollection{}
 	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", []string{data.InstancePath()}))
@@ -545,6 +544,11 @@ func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.Virt
 	}
 	// Remove Drive
 	drive, err := vhd.GetDrive()
+	if err != nil {
+		return
+	}
+	defer drive.Close()
+
 	err = vmms.RemoveVirtualSystemResource(drive.CIM_ResourceAllocationSettingData)
 	if err != nil {
 		return
