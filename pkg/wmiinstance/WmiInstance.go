@@ -213,7 +213,13 @@ func (c *WmiInstance) Equals(instance *WmiInstance) bool {
 // Clone
 func (c *WmiInstance) Clone() (*WmiInstance, error) {
 	rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
+	if err != nil {
+		return nil, err
+	}
 	winstance, err := CreateWmiInstance(rawResult, c.session)
+	if err != nil {
+		return nil, err
+	}
 	winstance.addRef()
 	return winstance, err
 }
@@ -406,19 +412,21 @@ func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, result
 	defer enum.Release()
 
 	wmiInstances := WmiInstanceCollection{}
+	defer func() {
+		if err != nil {
+			wmiInstances.Close()
+			wmiInstances = nil
+		}
+	}()
+
 	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
-		//defer func() {
-		//	if err != nil {
-		//		wmiInstances.Close()
-		//	}
-		//}()
 		if err != nil {
 			return nil, err
 		}
 
 		wmiInstance, err := CreateWmiInstance(&tmp, c.session)
 		if err != nil {
-			//	tmp.Clear()
+			tmp.Clear()
 			return nil, err
 		}
 
@@ -463,12 +471,14 @@ func (c *WmiInstance) EnumerateReferencingInstances(resultClassName, sourceRole 
 	defer enum.Release()
 
 	wmiInstances := WmiInstanceCollection{}
+	defer func() {
+		if err != nil {
+			wmiInstances.Close()
+			wmiInstances = nil
+		}
+	}()
+
 	for tmp, length, err := enum.Next(1); length > 0; tmp, length, err = enum.Next(1) {
-		//defer func() {
-		//	if err != nil {
-		//		wmiInstances.Close()
-		//	}
-		//}()
 
 		if err != nil {
 			return nil, err
@@ -476,7 +486,7 @@ func (c *WmiInstance) EnumerateReferencingInstances(resultClassName, sourceRole 
 
 		wmiInstance, err := CreateWmiInstance(&tmp, c.session)
 		if err != nil {
-			//tmp.Clear()
+			tmp.Clear()
 			return nil, err
 		}
 

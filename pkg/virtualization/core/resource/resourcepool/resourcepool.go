@@ -44,23 +44,26 @@ func (rp *ResourcePool) GetResourceAllocationSettingData(crole v2.SettingsDefine
 			err = err1
 			return
 		}
-		defer col2.Close()
+		// defer col2.Close()
 		for _, dc := range col2 {
 			tmpInstance, err2 := v2.NewCIM_SettingsDefineCapabilitiesEx1(dc)
 			if err2 != nil {
 				err = err2
+				col2.Close()
 				return
 			}
 
 			tmp, err2 := tmpInstance.GetProperty("ValueRange")
 			if err2 != nil {
 				err = err2
+				col2.Close()
 				return
 			}
 			valueRange := tmp.(int32)
 			tmp, err2 = tmpInstance.GetProperty("ValueRole")
 			if err != nil {
 				err = err2
+				col2.Close()
 				return
 			}
 			valueRole := tmp.(int32)
@@ -71,16 +74,20 @@ func (rp *ResourcePool) GetResourceAllocationSettingData(crole v2.SettingsDefine
 			tmp, err1 := tmpInstance.GetProperty("PartComponent")
 			if err1 != nil {
 				err = err1
+				col2.Close()
 				return
 			}
 			tmpInstancePath := tmp.(string)
 			instnew, err1 := instance.GetWmiInstanceFromPath(rp.GetWmiHost(), string(constant.Virtualization), tmpInstancePath)
 			if err1 != nil {
 				err = err1
+				col2.Close()
 				return
 			}
+			col2.Close()
 			return resourceallocation.NewResourceAllocationSettingData(instnew)
 		}
+		col2.Close()
 	}
 	return nil, errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingData [%d] [%d]", crole, crange)
 }
