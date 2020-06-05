@@ -167,6 +167,7 @@ func (vm *VirtualMachine) WaitForState(state VirtualMachineState, timeoutSeconds
 	return
 }
 
+// GetVirtualSystemSettingData - Close should be called on the settingdata once done
 func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingData, error) {
 	inst, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
 	if err != nil {
@@ -206,6 +207,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 			return
 		}
 		synDrive.Close()
+		synDrive = nil
 	}()
 
 	// Only support SCSI
@@ -404,6 +406,7 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 		}
 		rasdfound, err1 := resourceallocation.NewResourceAllocationSettingData(instance)
 		if err1 != nil {
+			instance.Close()
 			err = err1
 			return
 		}
