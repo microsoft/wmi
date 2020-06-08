@@ -20,6 +20,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/controller"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
+	"github.com/microsoft/wmi/pkg/virtualization/network/switchport"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
@@ -202,10 +203,10 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 		return
 	}
 	defer func() {
-		if err == nil {
-			return
+		if err != nil {
+			synDrive.Close()
+			synDrive = nil
 		}
-		synDrive.Close()
 	}()
 
 	// Only support SCSI
@@ -244,6 +245,78 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	}
 	synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
 
+	return
+}
+
+func (vm *VirtualMachine) NewEthernetPortAllocationSettingData(vna *na.VirtualNetworkAdapter) (epas *switchport.EthernetPortAllocationSettingData, err error) {
+	vhdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Ethernet_Connection)
+	if err != nil {
+		return
+	}
+	defer vhdrp.Close()
+	rasd, err := vhdrp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+	err = rasd.SetPropertyParent(vna.InstancePath())
+	if err != nil {
+		rasd.Close()
+		return
+	}
+
+	return switchport.NewEthernetPortAllocationSettingData(rasd.WmiInstance)
+}
+
+func (vm *VirtualMachine) NewSCSIController() (resource *resourceallocation.ResourceAllocationSettingData, err error) {
+	rp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Parallel_SCSI_HBA)
+	if err != nil {
+		return
+	}
+	defer rp.Close()
+	rasd, err := rp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	resource, err = resourceallocation.NewResourceAllocationSettingData(rasd.WmiInstance)
+	return
+}
+
+func (vm *VirtualMachine) NewSyntheticNetworkAdapter(name string) (adapter *na.VirtualNetworkAdapter, err error) {
+	vhdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Ethernet_Adapter)
+	if err != nil {
+		return
+	}
+	defer vhdrp.Close()
+	rasd, err := vhdrp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	adapter, err = na.NewVirtualNetworkAdapter(rasd.WmiInstance)
+	if err != nil {
+		rasd.Close()
+		return
+	}
+
+	defer func() {
+		if err != nil {
+			adapter.Close()
+			adapter = nil
+		}
+	}()
+
+	syntheticNetworkAdapter, err := na.NewSyntheticNetworkAdapter(rasd.WmiInstance)
+	if err != nil {
+		return
+	}
+
+	err = syntheticNetworkAdapter.InitializeIdentifier()
+	if err != nil {
+		return
+	}
+
+	err = adapter.SetPropertyElementName(name)
 	return
 }
 

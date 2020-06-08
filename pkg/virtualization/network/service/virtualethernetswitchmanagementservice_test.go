@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package virtualswitchmanagement
+package service
 
 import (
 	"github.com/microsoft/wmi/pkg/base/host"

@@ -1,11 +1,10 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package virtualswitch
+package switchport
 
 import (
 	"github.com/microsoft/wmi/pkg/errors"
-	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
@@ -23,7 +22,7 @@ func NewEthernetSwitchPort(instance *wmi.WmiInstance) (*EthernetSwitchPort, erro
 	return &EthernetSwitchPort{wmivm}, nil
 }
 
-func (vs *EthernetSwitchPort) GetEthernetPortAllocationSettingData() (*na.EthernetPortAllocationSettingData, error) {
+func (vs *EthernetSwitchPort) GetEthernetPortAllocationSettingData() (*EthernetPortAllocationSettingData, error) {
 	wmipasd, err := vs.GetAllRelated("Msvm_EthernetPortAllocationSettingData")
 	////	"Msvm_ElementSettingData",
 	//	"SettingData", "ManagedElement")
@@ -40,5 +39,5 @@ func (vs *EthernetSwitchPort) GetEthernetPortAllocationSettingData() (*na.Ethern
 		return nil, err
 	}
 
-	return na.NewEthernetPortAllocationSettingData(pasd)
+	return NewEthernetPortAllocationSettingData(pasd)
 }
