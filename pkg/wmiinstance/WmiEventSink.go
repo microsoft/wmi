@@ -229,7 +229,7 @@ func invoke(this *ole.IDispatch, dispid int, riid *ole.GUID, lcid int, flags int
 	if err != nil {
 		return ole.S_OK
 	}
-	// defer wmiEventInstances.Close()
+	defer wmiEventInstances.Close()
 
 	switch dispid {
 	case 1:

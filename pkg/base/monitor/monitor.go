@@ -88,8 +88,6 @@ func (c *Monitor) RemoveEntity(entityName string) (err error) {
 
 // Close the monitor
 func (c *Monitor) Close() error {
-	c.mux.Lock()
-	defer c.mux.Unlock()
 	for k := range c.eventSinks {
 		for _, s := range c.eventSinks[k] {
 			s.Close()
