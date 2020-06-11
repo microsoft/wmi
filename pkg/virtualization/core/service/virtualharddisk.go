@@ -59,14 +59,14 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 	}
 
 	defer func() {
-		if err == nil {
-			return
+		if err != nil {
+			log.Printf("[%+v]\n", err)
+			// Remove the drive
+			err1 := vmms.RemoveSyntheticDiskDrive(vhddrive)
+			log.Printf("RemoveSyntheticDiskDrive [%+v]\n", err1)
+			vhddrive.Close()
+			vhddrive = nil
 		}
-		log.Printf("[%+v]\n", err)
-		// Remove the drive
-		err1 := vmms.RemoveSyntheticDiskDrive(vhddrive)
-		log.Printf("RemoveSyntheticDiskDrive [%+v]\n", err1)
-		vhddrive.Close()
 	}()
 
 	// Add a disk
@@ -103,7 +103,8 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 	defer resultcol.Close()
 
 	if len(resultcol) == 0 {
-		err = errors.Wrapf(errors.NotFound, "AddVirtualSystemResource")
+		// Sometimes this could hapen - Find out why
+		vhd, err = vm.GetVirtualHardDiskByPath(path)
 		return
 	}
 

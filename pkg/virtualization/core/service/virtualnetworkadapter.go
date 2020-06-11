@@ -174,7 +174,7 @@ func (vmms *VirtualSystemManagementService) DisconnectAdapterFromVirtualSwitch(v
 	return vmms.ModifyVirtualSystemResourceEx(pasd.WmiInstance)
 }
 
-func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortProfile(vm *virtualsystem.VirtualMachine,
+func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortProfile(
 	vna *na.VirtualNetworkAdapter, profileName, vendorGuid, profileGuid string, profileData uint32) (err error) {
 
 	hc, err := vmms.GetHostComputerSystem()
@@ -197,7 +197,7 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortProfile(
 	return vmms.AddEthernetFeatureEx1(vna.Msvm_EthernetPortAllocationSettingData, profileSettings.WmiInstance)
 }
 
-func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortIsolation(vm *virtualsystem.VirtualMachine,
+func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortIsolation(
 	vna *na.VirtualNetworkAdapter, vlanId uint16) (err error) {
 	return errors.NotImplemented
 }
