@@ -22,6 +22,6 @@ func TestCreateVirtualSwitchMonitor(t *testing.T) {
 	vnicMonior := CreateVirtualSwitchMonitor(ctx, onCallback)
 	defer vnicMonior.Close()
 	vnicMonior.AddEntity("test")
-	for {
-	}
+	//for {
+	//}
 }

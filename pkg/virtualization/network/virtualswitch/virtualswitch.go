@@ -10,6 +10,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
+	"github.com/microsoft/wmi/pkg/virtualization/network/switchextension"
+	"github.com/microsoft/wmi/pkg/virtualization/network/switchport"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
@@ -108,7 +110,7 @@ func (vs *VirtualSwitch) GetVirtualMachineAdapters() (col na.VirtualNetworkAdapt
 	return
 }
 
-func (vs *VirtualSwitch) getEthernetSwitchPorts() (col EthernetSwitchPortCollection, err error) {
+func (vs *VirtualSwitch) getEthernetSwitchPorts() (col switchport.EthernetSwitchPortCollection, err error) {
 	instances, err := vs.GetAllRelated("Msvm_EthernetSwitchPort")
 	//	"Msvm_SystemDevice",
 	//	"PartComponent", "GroupComponent")
@@ -116,10 +118,47 @@ func (vs *VirtualSwitch) getEthernetSwitchPorts() (col EthernetSwitchPortCollect
 		return nil, err
 	}
 
-	col, err = NewEthernetSwitchPortCollection(instances)
+	col, err = switchport.NewEthernetSwitchPortCollection(instances)
 	if err != nil {
 		instances.Close()
 	}
 
+	return
+}
+
+func (vs *VirtualSwitch) GetEthernetSwitchExtensions() (col switchextension.EthernetSwitchExtensionCollection, err error) {
+	instances, err := vs.GetAllRelated("Msvm_EthernetSwitchExtension")
+	if err != nil {
+		return nil, err
+	}
+	col, err = switchextension.NewEthernetSwitchExtensionCollection(instances)
+	if err != nil {
+		instances.Close()
+	}
+	return
+}
+
+func (vs *VirtualSwitch) GetEthernetSwitchExtensionByName(name string) (se *switchextension.EthernetSwitchExtension, err error) {
+	exts, err := vs.GetEthernetSwitchExtensions()
+	if err != nil {
+		return
+	}
+	defer exts.Close()
+
+	for _, ext := range exts {
+		extName, err1 := ext.GetPropertyElementName()
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		if extName != name {
+			continue
+		}
+
+		return ext.CloneEx1()
+	}
+
+	err = errors.Wrapf(errors.NotFound, "SwitchExtension [%s]", name)
 	return
 }

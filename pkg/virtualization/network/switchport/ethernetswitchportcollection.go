@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package virtualswitch
+package switchport
 
 import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"

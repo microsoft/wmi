@@ -79,7 +79,7 @@ func (vm *VirtualSystemSettingData) GetEmulatedVirtualNetworkAdapters() (col na.
 
 func (vm *VirtualSystemSettingData) GetVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
 	psds, err := vm.GetSyntheticVirtualNetworkAdapters()
-	if err != nil {
+	if err != nil && !errors.IsNotFound(err) {
 		return nil, err
 	}
 	defer func() {
@@ -88,7 +88,7 @@ func (vm *VirtualSystemSettingData) GetVirtualNetworkAdapters() (col na.VirtualN
 		}
 	}()
 	psdse, err := vm.GetEmulatedVirtualNetworkAdapters()
-	if err != nil {
+	if err != nil && !errors.IsNotFound(err) {
 		return nil, err
 	}
 	defer func() {
@@ -130,13 +130,7 @@ func (vm *VirtualSystemSettingData) GetVirtualNetworkAdapterByMACAddress(macAddr
 		if hw.String() == hwcurrent.String() {
 			// Found the match
 			// Assumption is only one adapter would match, as MAC is unique
-			inst, err1 := networkAdapter.Clone()
-			if err1 != nil {
-				err = err1
-				return
-			}
-			vna, err = na.NewVirtualNetworkAdapter(inst)
-			return
+			return networkAdapter.CloneEx1()
 		}
 	}
 	err = errors.Wrapf(errors.NotFound, "Virtual Network Adapter with macaddress [%s]", macAddress)
@@ -161,13 +155,7 @@ func (vm *VirtualSystemSettingData) GetVirtualNetworkAdapterByName(adapterName s
 		if name == adapterName {
 			// Found the match
 			// Assumption is only one adapter would match, - FIXME - Duplicates
-			inst, err1 := networkAdapter.Clone()
-			if err1 != nil {
-				err = err1
-				return
-			}
-			vna, err = na.NewVirtualNetworkAdapter(inst)
-			return
+			return networkAdapter.CloneEx1()
 		}
 	}
 	err = errors.Wrapf(errors.NotFound, "Virtual Network Adapter with name [%s]", adapterName)

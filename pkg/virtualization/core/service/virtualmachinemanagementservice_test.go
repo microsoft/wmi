@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package virtualsystemmanagement
+package service
 
 import (
 	"fmt"
@@ -36,7 +36,7 @@ func TestCreateVirtualMachines(t *testing.T) {
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
-	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "temp")
+	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -47,25 +47,8 @@ func TestCreateVirtualMachines(t *testing.T) {
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
-	t.Logf("Created VM [%s]", "temp")
+	t.Logf("Created VM [%s]", "test")
 	//defer vm.Close()
-}
-
-func TestVirtualMachineDelete(t *testing.T) {
-	vmms, err := GetVirtualSystemManagementService(whost)
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-	vm, err := vmms.GetVirtualMachineByName("temp")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-
-	defer vm.Close()
-	err = vmms.DeleteVirtualMachine(vm)
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
 }
 
 func TestGetVirtualMachines(t *testing.T) {
@@ -87,11 +70,20 @@ func TestGetVirtualMachines(t *testing.T) {
 	t.Logf("Found [%s] VMs", "test")
 	defer vm.Close()
 }
+
 func TestVirtualMachineAdapterScenario(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
+
+	vs, err := virtualswitch.GetVirtualSwitch(whost, "test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vs.Close()
+	t.Logf("Got VirtualSwitch[%s]", "test")
+
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
@@ -99,42 +91,66 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 	t.Logf("Found [%s] VMs", "test")
 	defer vm.Close()
 
-	err = vmms.RenameVirtualNetworkAdapter(vm, "Network Adapter", "testadapter")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-	t.Logf("Renamed Adapter [%s]", "testadapter")
+	for i := 1; i <= 4; i++ {
+		adapterName := fmt.Sprintf("testadapter-%d", i)
+		t.Logf("Adding VmNic to [%s]", "test")
+		na, err := vmms.AddVirtualNetworkAdapter(vm, "Network Adapter")
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		defer na.Close()
 
-	testna, err := vm.GetVirtualNetworkAdapterByName("testadapter")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-	defer testna.Close()
-	t.Logf("Found Renamed Adapter [%s]", "testadapter")
+		err = vmms.RenameVirtualNetworkAdapter(vm, "Network Adapter", adapterName)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		t.Logf("Renamed Adapter [%s]", adapterName)
 
-	err = vmms.SetVirtualNetworkAdapterMACAddress(vm, "testadapter", "001122334455")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-	t.Logf("Set Adapter Mac [%s]", "001122334455")
+		testna, err := vm.GetVirtualNetworkAdapterByName(adapterName)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		defer testna.Close()
+		t.Logf("Found Renamed Adapter [%s]", adapterName)
 
-	vs, err := virtualswitch.GetVirtualSwitch(whost, "test")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-	defer vs.Close()
-	t.Logf("Got VirtualSwitch[%s]", "test")
+		macAddress := fmt.Sprintf("00112233445%d", i)
+		err = vmms.SetVirtualNetworkAdapterMACAddress(vm, adapterName, macAddress)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		t.Logf("Set Adapter Mac [%s]", macAddress)
 
-	err = vmms.ConnectAdapterToVirtualSwitch(vm, "testadapter", vs)
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		err = vmms.ConnectAdapterToVirtualSwitch(vm, adapterName, vs)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		t.Logf("Connect VM[%s] to VirtualSwitch[%s]", "test", "test")
+
+		err = vmms.SetVirtualNetworkAdapterAccessVLAN(testna, uint16(i))
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		t.Logf("Set Adapter VLAN [%d]", i)
 	}
-	t.Logf("Connect VM[%s] to VirtualSwitch[%s]", "test", "test")
-	err = vmms.DisconnectAdapterFromVirtualSwitch(vm, "testadapter")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
+	for i := 1; i <= 4; i++ {
+		adapterName := fmt.Sprintf("testadapter-%d", i)
+		err = vmms.DisconnectAdapterFromVirtualSwitch(vm, adapterName)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		t.Logf("Disconnect VM[%s] from VirtualSwitch[%s]", "test", "test")
+		testna, err := vm.GetVirtualNetworkAdapterByName(adapterName)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+		}
+		defer testna.Close()
+		t.Logf("Removing VmNic [%s] from VM[%s] ", adapterName, "test")
+		err = vmms.RemoveVirtualNetworkAdapter(testna)
+		if err != nil {
+			t.Fatal("Failed " + err.Error())
+
+		}
 	}
-	t.Logf("Disconnect VM[%s] from VirtualSwitch[%s]", "test", "test")
 }
 
 func TestAddRemoveVirtualHardDisk(t *testing.T) {
@@ -148,6 +164,11 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 	}
 	defer vm.Close()
 	t.Logf("Found [%s] VMs", "test")
+
+	err = vmms.AddSCSIController(vm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
 
 	ims, err := service.GetImageManagementService(whost)
 	if err != nil {
@@ -199,5 +220,22 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 			t.Fatal("Failed " + err.Error())
 		}
 		t.Logf("Detached vhd [%s] from [%s]", path, "test")
+	}
+}
+
+func TestVirtualMachineDelete(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+
+	defer vm.Close()
+	err = vmms.DeleteVirtualMachine(vm)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
 	}
 }

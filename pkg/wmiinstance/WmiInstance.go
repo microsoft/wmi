@@ -367,6 +367,21 @@ func (c *WmiInstance) GetRelatedEx(associatedClassName, resultClassName, resultR
 	return c.GetAssociated(associatedClassName, resultClassName, resultRole, sourceRole)
 }
 
+// GetFirstRelatedEx
+func (c *WmiInstance) GetFirstRelatedEx(associatedClassName, resultClassName, resultRole, sourceRole string) (*WmiInstance, error) {
+	col, err := c.GetAssociated(associatedClassName, resultClassName, resultRole, sourceRole)
+	if err != nil {
+		return nil, err
+	}
+	defer col.Close()
+
+	if len(col) == 0 {
+		return nil, errors.Wrapf(errors.NotFound, "No Related Items were received for [%s]", resultClassName)
+	}
+
+	return col[0].Clone()
+}
+
 func (c *WmiInstance) GetAssociatedEx(associatedClassName string) (WmiInstanceCollection, error) {
 	return c.GetAssociated(associatedClassName, "", "", "")
 }
@@ -424,6 +439,10 @@ func (c *WmiInstance) GetAssociated(associatedClassName, resultClassName, result
 
 		wmiInstances = append(wmiInstances, wmiInstance)
 	}
+
+	//if len(wmiInstances) == 0 {
+	//	return nil, errors.Wrapf(errors.NotFound, "GetAssociated [%s] [%s]", associatedClassName, resultClassName)
+	//}
 
 	return wmiInstances, nil
 }
