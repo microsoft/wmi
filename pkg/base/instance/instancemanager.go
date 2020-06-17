@@ -4,7 +4,7 @@
 package instance
 
 import (
-	//"log"
+	"log"
 	"strings"
 	"sync"
 
@@ -91,12 +91,11 @@ func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInsta
 	if err != nil {
 		return nil, err
 	}
-
 	if len(instances) == 0 {
 		return nil, errors.Wrapf(errors.NotFound, "Query [%s] failed with no instance", queryString)
 	}
 
-	//log.Printf("QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
+	log.Printf("[WMI] QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
 
 	return instances[0], nil
 }
@@ -147,6 +146,7 @@ func GetWmiInstancesFromHost(host *host.WmiHost, namespaceName string, inquery *
 	return winstances, nil
 }
 func GetWmiInstanceFromPath(host *host.WmiHost, namespaceName, instancePath string) (*wmi.WmiInstance, error) {
+	log.Printf("[WMI] Get Instance from path [%s]\n", instancePath)
 	im, err := GetWmiInstanceManagerFromWHost(host, namespaceName)
 	if err != nil {
 		return nil, err

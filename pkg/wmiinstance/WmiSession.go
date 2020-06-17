@@ -8,7 +8,7 @@ package cim
 
 import (
 	"fmt"
-	//"log"
+	"log"
 	"runtime/debug"
 	"strings"
 
@@ -209,7 +209,6 @@ func (c *WmiSession) EnumerateInstances(className string) ([]*WmiInstance, error
 
 // QueryInstances
 func (c *WmiSession) QueryInstances(queryExpression string) ([]*WmiInstance, error) {
-	//log.Printf("QueryInstances [%s]\n", queryExpression)
 	enum, err := c.PerformRawQuery(queryExpression)
 	if err != nil {
 		return nil, err
@@ -230,6 +229,7 @@ func (c *WmiSession) QueryInstances(queryExpression string) ([]*WmiInstance, err
 		wmiInstances = append(wmiInstances, wmiInstance)
 	}
 
+	log.Printf("[WMI] QueryInstances [%s]=> [%d]\n", queryExpression, len(wmiInstances))
 	return wmiInstances, nil
 }
 

@@ -4,6 +4,7 @@
 package service
 
 import (
+	"log"
 	"sync"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -111,8 +112,9 @@ func (vmms *VirtualSystemManagementService) AddVirtualSystemResource(
 		for _, resultingVal := range val.Value.([]interface{}) {
 			inst, err1 := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), resultingVal.(string))
 			if err1 != nil {
-				err = err1
-				return
+				log.Printf("[WMI] ResultingResourceSettings - GetInstanceFromPath [%+v]\n", err1)
+				//err = err1
+				continue
 			}
 			resultingResources = append(resultingResources, inst)
 		}

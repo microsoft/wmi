@@ -8,6 +8,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
+	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourceallocation"
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 )
@@ -151,4 +152,47 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 	}
 	defer job.Close()
 	return job.WaitForJobCompletion(result.ReturnValue)
+}
+
+func (vmms *VirtualSystemManagementService) AddTPM(vm *virtualsystem.VirtualMachine) (resource *resourceallocation.ResourceAllocationSettingData, err error) {
+	tmp, err := vm.NewTPM()
+	if err != nil {
+		return
+	}
+	defer tmp.Close()
+
+	vmsetting, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer vmsetting.Close()
+
+	// apply the settings
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData)
+	if err != nil {
+		return
+	}
+	defer resultcol.Close()
+
+	if len(resultcol) == 0 {
+		err = errors.Wrapf(errors.NotFound, "AddVirtualSystemResource")
+		return
+	}
+
+	resultInstance, err := resultcol[0].Clone()
+	if err != nil {
+		return
+	}
+
+	resource, err = resourceallocation.NewResourceAllocationSettingData(resultInstance)
+	if err != nil {
+		resultInstance.Close()
+	}
+
+	return
+}
+
+func (vmms *VirtualSystemManagementService) RemoveTPM(resource *resourceallocation.ResourceAllocationSettingData) (err error) {
+	err = vmms.RemoveVirtualSystemResource(resource.CIM_ResourceAllocationSettingData)
+	return
 }

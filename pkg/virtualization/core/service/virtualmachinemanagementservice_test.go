@@ -131,6 +131,14 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Set Adapter VLAN [%d]", i)
+		err = vmms.SetVirtualNetworkAdapterPortProfile(testna, "test",
+			"1fa41b39-b444-b35a-e1f7985fd548",
+			"00000000-0000-0000-000000000000", 1)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		t.Logf("Set Adapter VLAN [%d]", i)
+
 	}
 	for i := 1; i <= 4; i++ {
 		adapterName := fmt.Sprintf("testadapter-%d", i)
@@ -221,6 +229,33 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 		}
 		t.Logf("Detached vhd [%s] from [%s]", path, "test")
 	}
+}
+
+func TestAddRemoveTPM(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "test")
+
+	tpm, err := vmms.AddTPM(vm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	fmt.Scanln()
+	t.Logf("Added TPM to [%s] VMs", "test")
+
+	err = vmms.RemoveTPM(tpm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Removed TPM from [%s] VMs", "test")
+	fmt.Scanln()
 }
 
 func TestVirtualMachineDelete(t *testing.T) {

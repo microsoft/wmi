@@ -282,6 +282,21 @@ func (vm *VirtualMachine) NewSCSIController() (resource *resourceallocation.Reso
 	return
 }
 
+func (vm *VirtualMachine) NewTPM() (resource *resourceallocation.ResourceAllocationSettingData, err error) {
+	rp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Other)
+	if err != nil {
+		return
+	}
+	defer rp.Close()
+	rasd, err := rp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	resource, err = resourceallocation.NewResourceAllocationSettingData(rasd.WmiInstance)
+	return
+}
+
 func (vm *VirtualMachine) NewSyntheticNetworkAdapter(name string) (adapter *na.VirtualNetworkAdapter, err error) {
 	vhdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Ethernet_Adapter)
 	if err != nil {

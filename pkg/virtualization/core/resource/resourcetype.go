@@ -16,17 +16,31 @@ type ResourceTypeValue struct {
 }
 
 var ResourceSubTypeName = map[int32]string{
-	0:  "Unknown",
-	6:  "Microsoft:Hyper-V:Synthetic SCSI Controller",
-	10: "Microsoft:Hyper-V:Synthetic Ethernet Port",
-	17: "Microsoft:Hyper-V:Synthetic Disk Drive",
-	31: "Microsoft:Hyper-V:Virtual Hard Disk",
+	0:     "Unknown",
+	1:     "",
+	6:     "Microsoft:Hyper-V:Synthetic SCSI Controller",
+	10:    "Microsoft:Hyper-V:Synthetic Ethernet Port",
+	17:    "Microsoft:Hyper-V:Synthetic Disk Drive",
+	31:    "Microsoft:Hyper-V:Virtual Hard Disk",
+	33:    "Microsoft:Hyper-V:Ethernet Connection",
+	32770: "Microsoft:Hyper-V:GPU Partition",
+}
+
+var OtherResourceTypeName = map[int32]string{
+	0:     "",
+	1:     "Microsoft:Hyper-V:TPM",
+	6:     "",
+	10:    "",
+	17:    "",
+	31:    "",
+	33:    "",
+	32770: "",
 }
 
 func GetResourceTypeValue(rtype v2.ResourcePool_ResourceType) *ResourceTypeValue {
 	return &ResourceTypeValue{
 		ResourceType:      rtype,
-		OtherResourceType: "",
+		OtherResourceType: OtherResourceTypeName[int32(rtype)],
 		ResourceSubType:   ResourceSubTypeName[int32(rtype)],
 	}
 }
