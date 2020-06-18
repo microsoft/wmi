@@ -121,20 +121,21 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 }
 
 func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.VirtualHardDisk) (err error) {
-	// Remove Disk
-	err = vmms.RemoveVirtualSystemResource(vhd.CIM_ResourceAllocationSettingData)
-	if err != nil {
-		return
-	}
-	// Remove Drive
 	drive, err := vhd.GetDrive()
 	if err != nil {
 		return
 	}
 	defer drive.Close()
 
+	// Remove Disk
+	err1 := vmms.RemoveVirtualSystemResource(vhd.CIM_ResourceAllocationSettingData)
+	// Remove Drive
 	err = vmms.RemoveVirtualSystemResource(drive.CIM_ResourceAllocationSettingData)
 	if err != nil {
+		return
+	}
+	if err1 != nil {
+		err = err1
 		return
 	}
 	return
