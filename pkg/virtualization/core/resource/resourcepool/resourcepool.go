@@ -124,6 +124,9 @@ func GetResourcePools(whost *host.WmiHost, isPrimordial bool, resType *resource.
 		}
 	}
 	col, err = instance.GetWmiInstancesFromHost(whost, string(constant.Virtualization), query)
+	if err != nil {
+		return
+	}
 	if len(col) == 0 {
 		err = errors.Wrapf(errors.NotFound, "Cim_ResourcePool Primordial[%s] Type[%s]", isPrimordial, resType.String())
 	}
