@@ -515,26 +515,19 @@ func CloseAllInstances(instances []*WmiInstance) {
 // Close
 func (c *WmiInstance) Close() (err error) {
 	if c.instance != nil {
-		refCount := c.instance.Release()
-		if refCount > 0 {
-			return
-		}
+		// Releasing the instance and then Clearing the Variant, causes memory corruption
+		// Commenting this
+		// refCount := c.instance.Release()
+		// if refCount > 1 {
+		// 	return
+		// }
 		c.instance = nil
 	}
 	if c.instanceVar != nil {
-		// FIXME: Figure out why syscal panics rarely.
-		// Workaround : Recover the panic and continue only in this scenario
-		//    - This may cause some leak - Pending Investigation
-		defer func() {
-			if r := recover(); r != nil {
-				log.Printf("[WMI][INVESTIGATE][Recoverd Stack] [%+v], [%+v]\n", r, c.instanceVar)
-			}
-		}()
-
-		err = c.instanceVar.Clear()
-		if err != nil {
-			return
-		}
+		// https://docs.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-variantclear
+		// VariantClear would release the reference if its VT_DISPATCH.
+		// In our case, WmiInstance holds only VT_DISPATCH
+		c.instanceVar.Clear()
 		c.instanceVar = nil
 	}
 	return
