@@ -522,6 +522,15 @@ func (c *WmiInstance) Close() (err error) {
 		c.instance = nil
 	}
 	if c.instanceVar != nil {
+		// FIXME: Figure out why syscal panics rarely.
+		// Workaround : Recover the panic and continue only in this scenario
+		//    - This may cause some leak - Pending Investigation
+		defer func() {
+			if r := recover(); r != nil {
+				log.Printf("[WMI][INVESTIGATE][Recoverd Stack] [%+v], [%+v]\n", r, c.instanceVar)
+			}
+		}()
+
 		err = c.instanceVar.Clear()
 		if err != nil {
 			return
