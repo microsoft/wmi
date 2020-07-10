@@ -86,6 +86,50 @@ func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapter(vm *virtual
 
 }
 
+func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapterWithMac(vm *virtualsystem.VirtualMachine, name, macAddress string) (vna *na.VirtualNetworkAdapter, err error) {
+	// Add a adapter
+	tmp, err := vm.NewSyntheticNetworkAdapter(name)
+	if err != nil {
+		return
+	}
+	defer tmp.Close()
+
+	vmsetting, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer vmsetting.Close()
+
+	err = tmp.SetPropertyAddress(macAddress)
+	if err != nil {
+		return
+	}
+
+	// apply the settings
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData)
+	if err != nil {
+		return
+	}
+	defer resultcol.Close()
+
+	if len(resultcol) == 0 {
+		err = errors.Wrapf(errors.NotFound, "AddVirtualSystemResource")
+		return
+	}
+
+	resultInstance, err := resultcol[0].Clone()
+	if err != nil {
+		return
+	}
+
+	vna, err = na.NewVirtualNetworkAdapter(resultInstance)
+	if err != nil {
+		resultInstance.Close()
+	}
+	return
+
+}
+
 func (vmms *VirtualSystemManagementService) RemoveVirtualNetworkAdapter(vna *na.VirtualNetworkAdapter) (err error) {
 	// Remove adapter
 	err = vmms.RemoveVirtualSystemResource(vna.CIM_ResourceAllocationSettingData)
@@ -116,7 +160,8 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(v
 	if err != nil {
 		return
 	}
-	return vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance)
+	err = vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance)
+	return err
 }
 
 func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string, virtSwitch *vswitch.VirtualSwitch) (err error) {

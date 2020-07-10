@@ -176,6 +176,16 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
+func (vm *VirtualMachine) GetVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+	col, err = settings.GetVirtualNetworkAdapters()
+	return
+}
+
 func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.VirtualNetworkAdapter, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {

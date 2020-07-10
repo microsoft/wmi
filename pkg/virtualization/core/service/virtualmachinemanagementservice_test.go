@@ -161,6 +161,49 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 	}
 }
 
+func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+
+	vs, err := virtualswitch.GetVirtualSwitch(whost, "test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vs.Close()
+	t.Logf("Got VirtualSwitch[%s]", "test")
+
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	t.Logf("Found [%s] VMs", "test")
+	defer vm.Close()
+
+	adapterName := "testadapter"
+	macAddress := "001122334450"
+	t.Logf("Adding VmNic with MAC to [%s]", "test")
+	na, err := vmms.AddVirtualNetworkAdapterWithMac(vm, adapterName, macAddress)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer na.Close()
+
+	testna, err := vm.GetVirtualNetworkAdapterByName(adapterName)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer testna.Close()
+	t.Logf("Found Adapter [%s]", adapterName)
+
+	t.Logf("Removing VmNic [%s] from VM[%s] ", adapterName, "test")
+	err = vmms.RemoveVirtualNetworkAdapter(testna)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+}
+
 func TestAddRemoveVirtualHardDisk(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
