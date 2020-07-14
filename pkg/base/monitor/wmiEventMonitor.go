@@ -64,7 +64,17 @@ func NewWmiNotificationMonitor(wmiNamespace string, wmiObjectName string, wmiHos
 	}
 }
 
+var CallbackIdentifierLock sync.Mutex
 var CallbackIdentifier uint64 = 0
+
+func getNextIdentifier() uint64 {
+	CallbackIdentifierLock.Lock()
+	callbackIdentifier := CallbackIdentifier
+	CallbackIdentifier++
+	CallbackIdentifierLock.Unlock()
+
+	return callbackIdentifier
+}
 
 // AddCallback adds a corresponding callback to be called when a notification comes in for the corresponding operation
 func (n *WmiNotificationMonitor) AddCallback(filter interface{}, cb func(context.Context, WmiEventMessage, interface{}) error, callbackContext interface{}) uint64 {
@@ -76,10 +86,11 @@ func (n *WmiNotificationMonitor) AddCallback(filter interface{}, cb func(context
 		callbackContext: callbackContext,
 	}
 
-	n.callbacks[filter][CallbackIdentifier] = callback
-	CallbackIdentifier++
+	callbackIdentifier := getNextIdentifier()
 
-	return CallbackIdentifier
+	n.callbacks[filter][callbackIdentifier] = callback
+
+	return callbackIdentifier
 }
 
 // RemoveCallback removes the corresponding callback
