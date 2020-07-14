@@ -39,6 +39,7 @@ type WmiNotificationMonitor struct {
 	queryString       string
 	wmiEventFactory   WmiEventMessageFactory
 	wmiEventTriggered chan WmiEventMessage
+	callbackMapLock   sync.Mutex
 	callbacks         map[interface{}]map[uint64]*WmiNotificationLockedCallback
 }
 
@@ -78,15 +79,18 @@ func getNextIdentifier() uint64 {
 
 // AddCallback adds a corresponding callback to be called when a notification comes in for the corresponding operation
 func (n *WmiNotificationMonitor) AddCallback(filter interface{}, cb func(context.Context, WmiEventMessage, interface{}) error, callbackContext interface{}) uint64 {
+	callbackIdentifier := getNextIdentifier()
+
+	n.callbackMapLock.Lock()
+	defer n.callbackMapLock.Unlock()
 	if n.callbacks[filter] == nil {
 		n.callbacks[filter] = map[uint64]*WmiNotificationLockedCallback{}
 	}
+
 	callback := &WmiNotificationLockedCallback{
 		callback:        cb,
 		callbackContext: callbackContext,
 	}
-
-	callbackIdentifier := getNextIdentifier()
 
 	n.callbacks[filter][callbackIdentifier] = callback
 
@@ -95,6 +99,9 @@ func (n *WmiNotificationMonitor) AddCallback(filter interface{}, cb func(context
 
 // RemoveCallback removes the corresponding callback
 func (n *WmiNotificationMonitor) RemoveCallback(filter interface{}, cbID uint64) {
+
+	n.callbackMapLock.Lock()
+	defer n.callbackMapLock.Unlock()
 	delete(n.callbacks[filter], cbID)
 
 	if len(n.callbacks[filter]) == 0 {
@@ -143,7 +150,9 @@ func (n *WmiNotificationMonitor) Start() error {
 func (n *WmiNotificationMonitor) handleNotification(wmiEventMessage WmiEventMessage) {
 	ctx := context.Background()
 
+	n.callbackMapLock.Lock()
 	notifCallbackList, ok := n.callbacks[wmiEventMessage.AsFilter()]
+	n.callbackMapLock.Unlock()
 	if !ok {
 		return
 	}
