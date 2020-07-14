@@ -39,7 +39,7 @@ type WmiNotificationMonitor struct {
 	queryString       string
 	wmiEventFactory   WmiEventMessageFactory
 	wmiEventTriggered chan WmiEventMessage
-	callbacks         map[interface{}]map[interface{}]*WmiNotificationLockedCallback
+	callbacks         map[interface{}]map[uint64]*WmiNotificationLockedCallback
 }
 
 type WmiNotificationMonitorInstance struct {
@@ -60,28 +60,31 @@ func NewWmiNotificationMonitor(wmiNamespace string, wmiObjectName string, wmiHos
 		wmiEventTriggered: make(chan WmiEventMessage, 2),
 		queryString:       queryString,
 		ctrlchannel:       make(chan bool),
-		callbacks:         map[interface{}]map[interface{}]*WmiNotificationLockedCallback{},
+		callbacks:         map[interface{}]map[uint64]*WmiNotificationLockedCallback{},
 	}
 }
 
+var CallbackIdentifier uint64 = 0
+
 // AddCallback adds a corresponding callback to be called when a notification comes in for the corresponding operation
-func (n *WmiNotificationMonitor) AddCallback(filter interface{}, cb func(context.Context, WmiEventMessage, interface{}) error, callbackContext interface{}) (err error) {
+func (n *WmiNotificationMonitor) AddCallback(filter interface{}, cb func(context.Context, WmiEventMessage, interface{}) error, callbackContext interface{}) uint64 {
 	if n.callbacks[filter] == nil {
-		n.callbacks[filter] = map[interface{}]*WmiNotificationLockedCallback{}
+		n.callbacks[filter] = map[uint64]*WmiNotificationLockedCallback{}
 	}
 	callback := &WmiNotificationLockedCallback{
 		callback:        cb,
 		callbackContext: callbackContext,
 	}
 
-	n.callbacks[filter][cb] = callback
+	n.callbacks[filter][CallbackIdentifier] = callback
+	CallbackIdentifier++
 
-	return nil
+	return CallbackIdentifier
 }
 
 // RemoveCallback removes the corresponding callback
-func (n *WmiNotificationMonitor) RemoveCallback(filter interface{}, cb func(context.Context, WmiEventMessage, interface{}) error) {
-	delete(n.callbacks[filter], cb)
+func (n *WmiNotificationMonitor) RemoveCallback(filter interface{}, cbID uint64) {
+	delete(n.callbacks[filter], cbID)
 
 	if len(n.callbacks[filter]) == 0 {
 		delete(n.callbacks, filter)
