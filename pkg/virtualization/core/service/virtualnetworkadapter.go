@@ -4,6 +4,9 @@
 package service
 
 import (
+	"log"
+	"time"
+
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
@@ -304,40 +307,51 @@ func (vmms *VirtualSystemManagementService) AddEthernetFeature(
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingFeatureSettings", nil))
 
-	result, err := method.Execute(inparams, outparams)
-	if err != nil {
-		return
-	}
-
-	returnVal := result.ReturnValue
-	if returnVal != 0 && returnVal != 4096 {
-		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
-		return
-	}
-
-	// Try to get the Out Params
-	val := result.OutMethodParams["ResultingFeatureSettings"]
-	if val.Value != nil {
-		for _, resultingVal := range val.Value.([]interface{}) {
-			inst, err1 := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), resultingVal.(string))
-			if err1 != nil {
-				err = err1
-				return
-			}
-			resultingResources = append(resultingResources, inst)
+	for {
+		result, err1 := method.Execute(inparams, outparams)
+		if err1 != nil {
+			err = err1
+			return
 		}
-	}
-	if result.ReturnValue == 0 {
-		return
-	}
 
-	val = result.OutMethodParams["Job"]
-	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
-	if err != nil {
-		return
+		returnVal := result.ReturnValue
+		if returnVal != 0 && returnVal != 4096 {
+			// Virtual System is in Invalid State, try to retry
+			if returnVal == 32775 {
+				log.Printf("[WMI] Method [%s] failed with [%d]. Retrying ...", method.Name, returnVal)
+				time.Sleep(100 * time.Millisecond)
+				continue
+			}
+			err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+			return
+		}
+
+		// Try to get the Out Params
+		val := result.OutMethodParams["ResultingFeatureSettings"]
+		if val.Value != nil {
+			for _, resultingVal := range val.Value.([]interface{}) {
+				inst, err1 := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), resultingVal.(string))
+				if err1 != nil {
+					err = err1
+					return
+				}
+				resultingResources = append(resultingResources, inst)
+			}
+		}
+		if result.ReturnValue == 0 {
+			return
+		}
+
+		val = result.OutMethodParams["Job"]
+		job, err1 := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+		if err1 != nil {
+			err = err1
+			return
+		}
+		defer job.Close()
+		err = job.WaitForJobCompletion(result.ReturnValue)
+		break
 	}
-	defer job.Close()
-	err = job.WaitForJobCompletion(result.ReturnValue)
 	return
 }
 
@@ -362,40 +376,51 @@ func (vmms *VirtualSystemManagementService) ModifyEthernetFeature(
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingFeatureSettings", nil))
 
-	result, err := method.Execute(inparams, outparams)
-	if err != nil {
-		return
-	}
-
-	returnVal := result.ReturnValue
-	if returnVal != 0 && returnVal != 4096 {
-		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
-		return
-	}
-
-	// Try to get the Out Params
-	val := result.OutMethodParams["ResultingFeatureSettings"]
-	if val.Value != nil {
-		for _, resultingVal := range val.Value.([]interface{}) {
-			inst, err1 := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), resultingVal.(string))
-			if err1 != nil {
-				err = err1
-				return
-			}
-			resultingResources = append(resultingResources, inst)
+	for {
+		result, err1 := method.Execute(inparams, outparams)
+		if err1 != nil {
+			err = err1
+			return
 		}
-	}
-	if result.ReturnValue == 0 {
-		return
-	}
 
-	val = result.OutMethodParams["Job"]
-	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
-	if err != nil {
-		return
+		returnVal := result.ReturnValue
+		if returnVal != 0 && returnVal != 4096 {
+			// Virtual System is in Invalid State, try to retry
+			if returnVal == 32775 {
+				log.Printf("[WMI] Method [%s] failed with [%d]. Retrying ...", method.Name, returnVal)
+				time.Sleep(100 * time.Millisecond)
+				continue
+			}
+			err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+			return
+		}
+
+		// Try to get the Out Params
+		val := result.OutMethodParams["ResultingFeatureSettings"]
+		if val.Value != nil {
+			for _, resultingVal := range val.Value.([]interface{}) {
+				inst, err1 := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), resultingVal.(string))
+				if err1 != nil {
+					err = err1
+					return
+				}
+				resultingResources = append(resultingResources, inst)
+			}
+		}
+		if result.ReturnValue == 0 {
+			return
+		}
+
+		val = result.OutMethodParams["Job"]
+		job, err1 := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+		if err1 != nil {
+			err = err1
+			return
+		}
+		defer job.Close()
+		err = job.WaitForJobCompletion(result.ReturnValue)
+		break
 	}
-	defer job.Close()
-	err = job.WaitForJobCompletion(result.ReturnValue)
 	return
 }
 
@@ -418,27 +443,38 @@ func (vmms *VirtualSystemManagementService) RemoveEthernetFeature(
 	inparams = append(inparams, wmi.NewWmiMethodParam("FeatureSettings", embeddedInstances))
 
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
-	result, err := method.Execute(inparams, outparams)
-	if err != nil {
-		return
-	}
+	for {
+		result, err1 := method.Execute(inparams, outparams)
+		if err1 != nil {
+			err = err1
+			return
+		}
 
-	returnVal := result.ReturnValue
-	if returnVal != 0 && returnVal != 4096 {
-		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
-		return
-	}
+		returnVal := result.ReturnValue
+		if returnVal != 0 && returnVal != 4096 {
+			// Virtual System is in Invalid State, try to retry
+			if returnVal == 32775 {
+				log.Printf("[WMI] Method [%s] failed with [%d]. Retrying ...", method.Name, returnVal)
+				time.Sleep(100 * time.Millisecond)
+				continue
+			}
+			err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+			return
+		}
 
-	if result.ReturnValue == 0 {
-		return
-	}
+		if result.ReturnValue == 0 {
+			return
+		}
 
-	val := result.OutMethodParams["Job"]
-	job, err := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
-	if err != nil {
-		return
+		val := result.OutMethodParams["Job"]
+		job, err1 := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+		if err1 != nil {
+			err = err1
+			return
+		}
+		defer job.Close()
+		err = job.WaitForJobCompletion(result.ReturnValue)
+		break
 	}
-	defer job.Close()
-	err = job.WaitForJobCompletion(result.ReturnValue)
 	return
 }
