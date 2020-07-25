@@ -14,6 +14,8 @@ import (
 	"github.com/microsoft/wmi/pkg/errors"
 
 	"github.com/microsoft/wmi/pkg/virtualization/core/job"
+	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
+	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourceallocation"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourcepool"
@@ -511,4 +513,25 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 		err = errors.Wrapf(errors.NotFound, "GetResourceAllocationSettingData [%s] ", resType)
 	}
 	return
+}
+
+func (vm *VirtualMachine) GetMemory() (vmmemory *memory.MemorySettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+	vmmemory, err = settings.GetMemorySetting()
+	return
+}
+
+func (vm *VirtualMachine) GetProcessor() (vmprocessor *processor.ProcessorSettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+	vmprocessor, err = settings.GetProcessorSetting()
+	return
+
 }

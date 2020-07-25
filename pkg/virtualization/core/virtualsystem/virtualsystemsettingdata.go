@@ -12,6 +12,8 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
+	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
+	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -180,4 +182,22 @@ func (vm *VirtualSystemSettingData) getResourceAllocationSettingData(rtype v2.Re
 	query := query.NewWmiQuery("Cim_ResourceAllocationSettingData", "ResourceType", resourceType)
 	col, err = vm.GetAllRelatedWithQuery(query)
 	return
+}
+
+func (vm *VirtualSystemSettingData) GetMemorySetting() (out *memory.MemorySettingData, err error) {
+	msd, err := vm.GetRelated("Msvm_MemorySettingData")
+	if err != nil {
+		return nil, err
+	}
+
+	return memory.NewMemorySettingData(msd)
+}
+
+func (vm *VirtualSystemSettingData) GetProcessorSetting() (out *processor.ProcessorSettingData, err error) {
+	psd, err := vm.GetRelated("Msvm_ProcessorSettingData")
+	if err != nil {
+		return nil, err
+	}
+
+	return processor.NewProcessorSettingData(psd)
 }

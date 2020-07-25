@@ -211,3 +211,35 @@ func (vmms *VirtualSystemManagementService) RemoveTPM(resource *resourceallocati
 	err = vmms.RemoveVirtualSystemResource(resource.CIM_ResourceAllocationSettingData)
 	return
 }
+
+func (vmms *VirtualSystemManagementService) SetProcessorCount(vm *virtualsystem.VirtualMachine, count uint64) (err error) {
+	proc, err := vm.GetProcessor()
+	if err != nil {
+		return
+	}
+	defer proc.Close()
+
+	err = proc.SetCPUCount(count)
+	if err != nil {
+		return
+	}
+
+	err = vmms.ModifyVirtualSystemResourceEx(proc.WmiInstance)
+	return
+}
+
+func (vmms *VirtualSystemManagementService) SetMemoryMB(vm *virtualsystem.VirtualMachine, sizeMB uint64) (err error) {
+	mem, err := vm.GetMemory()
+	if err != nil {
+		return
+	}
+	defer mem.Close()
+
+	err = mem.SetSizeMB(sizeMB)
+	if err != nil {
+		return
+	}
+
+	err = vmms.ModifyVirtualSystemResourceEx(mem.WmiInstance)
+	return
+}
