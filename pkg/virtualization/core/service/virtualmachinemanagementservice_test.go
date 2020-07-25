@@ -43,12 +43,42 @@ func TestCreateVirtualMachines(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	_, err = vmms.CreateVirtualMachine(setting)
+	vm, err := vmms.CreateVirtualMachine(setting)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
 	t.Logf("Created VM [%s]", "test")
-	//defer vm.Close()
+	defer func() {
+		if vm != nil {
+			vm.Close()
+		}
+	}()
+	return
+}
+
+func TestModifyVirtualMachine(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	t.Logf("Found [%s] VMs", "test")
+	defer vm.Close()
+
+	t.Logf("Setting Memory [%d] [%s] VMs", 2048, "test")
+	err = vmms.SetMemoryMB(vm, 2048)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Setting Processor [%d] [%s] VMs", 4, "test")
+	err = vmms.SetProcessorCount(vm, 4)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
 }
 
 func TestGetVirtualMachines(t *testing.T) {
@@ -312,6 +342,15 @@ func TestVirtualMachineDelete(t *testing.T) {
 	}
 
 	defer vm.Close()
+	err = vm.Start()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	err = vm.Stop(true)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
 	err = vmms.DeleteVirtualMachine(vm)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
