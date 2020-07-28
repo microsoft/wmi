@@ -36,6 +36,10 @@ func (sna *SyntheticNetworkAdapter) InitializeIdentifier() (err error) {
 }
 
 func (sna *SyntheticNetworkAdapter) SetMACAddress(mac string) (err error) {
+	err = sna.SetPropertyStaticMacAddress(true)
+	if err != nil {
+		return
+	}
 	return sna.SetPropertyAddress(mac)
 }
 

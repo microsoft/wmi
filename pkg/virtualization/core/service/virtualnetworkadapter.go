@@ -103,6 +103,10 @@ func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapterWithMac(vm *
 	}
 	defer vmsetting.Close()
 
+	err = tmp.SetProperty("StaticMacAddress", true)
+	if err != nil {
+		return
+	}
 	err = tmp.SetPropertyAddress(macAddress)
 	if err != nil {
 		return
@@ -159,6 +163,11 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(v
 		return
 	}
 	defer adapter.Close()
+
+	err = adapter.SetProperty("StaticMacAddress", true)
+	if err != nil {
+		return
+	}
 	err = adapter.SetPropertyAddress(macAddress)
 	if err != nil {
 		return
