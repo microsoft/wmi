@@ -56,7 +56,7 @@ func GetResourcePoolConfigurationService(whost *host.WmiHost) (mgmt *ResourcePoo
 
 func getService(whost *host.WmiHost) (mgmt *ResourcePoolConfigurationService, err error) {
 	creds := whost.GetCredential()
-	query := query.NewWmiQuery("Msvm_ResourcePoolConfigurationService", "Caption", "Hyper-V Resource Pool Configuration Service")
+	query := query.NewWmiQuery("Msvm_ResourcePoolConfigurationService")
 	// TODO: Regenerate wrappers that would take WmiHost directly
 	rpcswmi, err := v2.NewMsvm_ResourcePoolConfigurationServiceEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
 	if err != nil {

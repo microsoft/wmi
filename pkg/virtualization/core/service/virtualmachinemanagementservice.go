@@ -58,7 +58,7 @@ func GetVirtualSystemManagementService(whost *host.WmiHost) (mgmt *VirtualSystem
 
 func getService(whost *host.WmiHost) (mgmt *VirtualSystemManagementService, err error) {
 	creds := whost.GetCredential()
-	query := query.NewWmiQuery("Msvm_VirtualSystemManagementService", "Caption", "Hyper-V Virtual System Management Service")
+	query := query.NewWmiQuery("Msvm_VirtualSystemManagementService")
 	// TODO: Regenerate wrappers that would take WmiHost directly
 	vmmswmi, err := v2.NewMsvm_VirtualSystemManagementServiceEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
 	if err != nil {

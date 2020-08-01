@@ -18,7 +18,7 @@ import (
 
 // GetVirtualMachines would get all virtual machines
 func (vmms *VirtualSystemManagementService) GetVirtualMachines() (virtualsystem.VirtualMachineCollection, error) {
-	query := query.NewWmiQuery("Msvm_ComputerSystem", "Caption", "Virtual Machine")
+	query := query.NewWmiQuery("Msvm_ComputerSystem", "Description", "Microsoft Virtual Machine")
 	instances, err := vmms.GetAllRelatedWithQuery(query)
 	if err != nil {
 		return nil, err

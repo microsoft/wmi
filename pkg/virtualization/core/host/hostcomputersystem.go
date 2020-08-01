@@ -34,8 +34,9 @@ func NewHostComputerSystem(instance *wmi.WmiInstance) (*HostComputerSystem, erro
 // GetHostComputerSystem gets an existing virtual machine
 func GetHostComputerSystem(whost *host.WmiHost) (vm *HostComputerSystem, err error) {
 	creds := whost.GetCredential()
-	query := query.NewWmiQuery("Msvm_ComputerSystem", "Caption", "Hosting Computer System")
-	wmivm, err := v2.NewMsvm_ComputerSystemEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
+	querytmp := query.NewWmiQuery("Msvm_ComputerSystem")
+	querytmp.AddFilterWithComparer("Description", "Microsoft Virtual Machine", query.NotEquals)
+	wmivm, err := v2.NewMsvm_ComputerSystemEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, querytmp)
 	if err != nil {
 		return
 	}
