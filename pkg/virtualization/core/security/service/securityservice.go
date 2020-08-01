@@ -54,7 +54,7 @@ func GetSecurityService(whost *host.WmiHost) (mgmt *SecurityService, err error) 
 
 func getService(whost *host.WmiHost) (mgmt *SecurityService, err error) {
 	creds := whost.GetCredential()
-	query := query.NewWmiQuery("Msvm_SecurityService", "Caption", "Hyper-V Security Service")
+	query := query.NewWmiQuery("Msvm_SecurityService")
 	// TODO: Regenerate wrappers that would take WmiHost directly
 	vmmswmi, err := v2.NewMsvm_SecurityServiceEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
 	if err != nil {

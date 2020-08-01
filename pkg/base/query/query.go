@@ -58,6 +58,10 @@ func (q *WmiQueryFilter) String() string {
 		return fmt.Sprintf("%s %s '%s'", q.Name, q.Operator, q.Value)
 	}
 }
+func (q *WmiQuery) AddFilterWithComparer(propertyName, value string, oper CompareOperator) {
+	q.Filters = append(q.Filters, NewWmiQueryFilter(propertyName, value, oper))
+	return
+}
 func (q *WmiQuery) AddFilter(propertyName, value string) {
 	q.Filters = append(q.Filters, NewWmiQueryFilter(propertyName, value, Equals))
 	return

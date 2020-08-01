@@ -55,7 +55,7 @@ func GetImageManagementService(whost *host.WmiHost) (mgmt *ImageManagementServic
 
 func getService(whost *host.WmiHost) (mgmt *ImageManagementService, err error) {
 	creds := whost.GetCredential()
-	query := query.NewWmiQuery("Msvm_ImageManagementService", "Caption", "Hyper-V Image Management Service")
+	query := query.NewWmiQuery("Msvm_ImageManagementService")
 	// TODO: Regenerate wrappers that would take WmiHost directly
 	imswmi, err := v2.NewMsvm_ImageManagementServiceEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
 	if err != nil {

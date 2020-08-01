@@ -80,7 +80,7 @@ func (c *WmiSession) Connect() (bool, error) {
 	// (as opposed to C++ where these two are exposed as one parameter)
 	// See here for an example illustrating the scripting syntax: https://docs.microsoft.com/en-us/windows/win32/wmisdk/connecting-to-wmi-with-vbscript
 	c.RawSession, err = oleutil.CallMethod(
-		c.CimwmiService, "ConnectServer", strings.Join([]string{c.ServerName, c.Domain}, "."), c.Namespace, c.Username, c.Password, "")
+		c.CimwmiService, "ConnectServer", strings.Join([]string{c.ServerName, c.Domain}, "."), c.Namespace, c.Username, c.Password, "MS_409")
 	if err != nil {
 		return false, err
 	}
