@@ -55,6 +55,9 @@ func CreateMonitor(wmiNamespace string, callbackContext interface{},
 
 // AddEntityWithFilter would add the entity to be monitored for changes
 func (c *Monitor) AddEntityWithFilter(entityName, wqlQueryString string, filters query.WmiQueryFilterCollection) (err error) {
+	c.mux.Lock()
+	defer c.mux.Unlock()
+
 	if _, ok := c.eventSinks[entityName]; ok {
 		return nil // error
 	}
@@ -64,14 +67,15 @@ func (c *Monitor) AddEntityWithFilter(entityName, wqlQueryString string, filters
 	if err != nil {
 		return
 	}
-	c.mux.Lock()
-	defer c.mux.Unlock()
 	c.eventSinks[entityName] = append(c.eventSinks[entityName], esink)
 	return
 }
 
 // RemoveEntity to remove the entity being monitored for changes
 func (c *Monitor) RemoveEntity(entityName string) (err error) {
+	c.mux.Lock()
+	defer c.mux.Unlock()
+
 	val, ok := c.eventSinks[entityName]
 	if !ok {
 		return nil // error NOT Found
@@ -80,14 +84,15 @@ func (c *Monitor) RemoveEntity(entityName string) (err error) {
 		es.Close()
 	}
 
-	c.mux.Lock()
-	defer c.mux.Unlock()
 	delete(c.eventSinks, entityName)
 	return
 }
 
 // Close the monitor
 func (c *Monitor) Close() error {
+	c.mux.Lock()
+	defer c.mux.Unlock()
+
 	for k := range c.eventSinks {
 		for _, s := range c.eventSinks[k] {
 			s.Close()
