@@ -40,3 +40,15 @@ func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortProfileSetti
 
 	return NewEthernetSwitchPortProfileSettingData(tmp)
 }
+
+func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortOffloadSettingData() (*EthernetSwitchPortOffloadSettingData, error) {
+	tmp, err := epas.GetFirstRelatedEx("",
+		"Msvm_EthernetSwitchPortOffloadSettingData",
+		"",
+		"")
+	if err != nil {
+		return nil, err
+	}
+
+	return NewEthernetSwitchPortOffloadSettingData(tmp)
+}

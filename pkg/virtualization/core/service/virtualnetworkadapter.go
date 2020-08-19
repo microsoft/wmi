@@ -176,6 +176,34 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(v
 	return err
 }
 
+func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterIOVOffloadWeight(vm *virtualsystem.VirtualMachine, adapterName string, iovOffloadWeight uint32) (err error) {
+	adapter, err := vm.GetVirtualNetworkAdapterByName(adapterName)
+	if err != nil {
+		return
+	}
+	defer adapter.Close()
+
+	netPortAllocSettingData, err := adapter.GetEthernetPortAllocationSettingData()
+	if err != nil {
+		return
+	}
+	defer netPortAllocSettingData.Close()
+
+	portOffloadSettingData, err := netPortAllocSettingData.GetEthernetSwitchPortOffloadSettingData()
+	if err != nil {
+		return
+	}
+	defer portOffloadSettingData.Close()
+
+	err = portOffloadSettingData.SetPropertyIOVOffloadWeight(iovOffloadWeight)
+	if err != nil {
+		return
+	}
+
+	err = vmms.ModifyVirtualSystemFeatureEx(portOffloadSettingData.WmiInstance)
+	return err
+}
+
 func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string, virtSwitch *vswitch.VirtualSwitch) (err error) {
 	adapter, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 	if err != nil {
