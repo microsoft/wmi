@@ -65,7 +65,7 @@ func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete, timeoutSe
 		time.Sleep(100 * time.Millisecond)
 		// If we have waited enough time, break
 		if time.Since(start) > (time.Duration(timeoutSeconds) * time.Second) {
-			state, err2 := vmjob.GetPropertyJobState()
+			state, err2 := vmjob.getPropertyJobStateFixed()
 			if err2 != nil {
 				state = 0
 			}
@@ -109,12 +109,31 @@ func (vmjob *VirtualSystemJob) PercentComplete() (uint16, error) {
 	return uint16(retValue.(int32)), nil
 }
 
+// GetJobState gets the value of JobState for the instance
+// TODO: this is a fixed version of the CIM_ConcreteJob GetPropertyJobState() call.
+// We forked the code to allow for a temporary fix until we re-generate the auto-generated CIM_ConcreteJob with the proper fixes.
+// Remove the getPropertyJobStateFixed call once the base code is working.
+func (vmjob *VirtualSystemJob) getPropertyJobStateFixed() (value v2.ConcreteJob_JobState, err error) {
+	retValue, err := vmjob.GetProperty("JobState")
+	if err != nil {
+		return
+	}
+
+	valueint, ok := retValue.(int32)
+	if !ok {
+		panic(fmt.Sprintf("JobState interface was type-casted to the wrong type. Correct type is: %T", retValue))
+	}
+	value = v2.ConcreteJob_JobState(valueint)
+
+	return
+}
+
 func (vmjob *VirtualSystemJob) IsComplete() bool {
 	err := vmjob.Refresh()
 	if err != nil {
 
 	}
-	state, err := vmjob.GetPropertyJobState()
+	state, err := vmjob.getPropertyJobStateFixed()
 	if err != nil {
 		return false
 	}
@@ -143,7 +162,7 @@ func (vmjob *VirtualSystemJob) IsComplete() bool {
 
 func (vmjob *VirtualSystemJob) GetException() error {
 	vmjob.Refresh()
-	state, err := vmjob.GetPropertyJobState()
+	state, err := vmjob.getPropertyJobStateFixed()
 	if err != nil {
 		return err
 	}
