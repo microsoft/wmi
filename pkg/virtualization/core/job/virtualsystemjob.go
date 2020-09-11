@@ -65,7 +65,12 @@ func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete, timeoutSe
 		time.Sleep(100 * time.Millisecond)
 		// If we have waited enough time, break
 		if time.Since(start) > (time.Duration(timeoutSeconds) * time.Second) {
-			break
+			state, err2 := vmjob.GetPropertyJobState()
+			if err2 != nil {
+				state = 0
+			}
+			exception := vmjob.GetException()
+			return errors.Wrapf(errors.Timedout, "WaitForPercentComplete timeout. Current state: [%v], Exception: [%v]", state, exception)
 		}
 	}
 

@@ -112,6 +112,43 @@ func (vm *VirtualMachine) State() (state VirtualMachineState, err error) {
 	return VirtualMachineState(intstate), nil
 }
 
+func (vm *VirtualMachine) StatusDescriptions() ([]string, error) {
+	err := vm.Refresh()
+	if err != nil {
+		return nil, err
+	}
+
+	retValue, err := vm.GetProperty("StatusDescriptions")
+	if err != nil {
+		return nil, err
+	}
+
+	var statuses []string
+	for _, status := range retValue.([]interface{}) {
+		statuses = append(statuses, status.(string))
+	}
+
+	return statuses, nil
+}
+
+func (vm *VirtualMachine) Status() (string, error) {
+	err := vm.Refresh()
+	if err != nil {
+		return "", err
+	}
+
+	retValue, err := vm.GetProperty("Status")
+	if err != nil {
+		return "", err
+	}
+	status, ok := retValue.(string)
+	if !ok {
+		return "", errors.Wrapf(errors.Failed, "Failed to get status for this VM [%+v]", retValue)
+	}
+
+	return status, nil
+}
+
 // Stop Virtual Machine
 func (vm *VirtualMachine) Stop(force bool) error {
 	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine)
@@ -162,8 +199,20 @@ func (vm *VirtualMachine) WaitForState(state VirtualMachineState, timeoutSeconds
 
 		// If we have waited enough time, break
 		if time.Since(start) > (time.Duration(timeoutSeconds) * time.Second) {
-			err = errors.Wrapf(errors.Timedout, "WaitForState timeout")
-			break
+			vmState, err2 := vm.State()
+			if err2 != nil {
+				vmState = Unknown
+			}
+			status, err2 := vm.Status()
+			if err2 != nil {
+				status = fmt.Sprintf("Unknown (error retreiving the status [%+v])", err2)
+			}
+			statusDescriptions, err2 := vm.StatusDescriptions()
+			if err2 != nil {
+				statusDescriptions = []string{fmt.Sprintf("Unknown (error retreiving the status descriptions [%+v])", err2)}
+			}
+			err = errors.Wrapf(errors.Timedout, "WaitForState timeout. Current state: [%v], status: [%v], status descriptions: [%v]", vmState, status, statusDescriptions)
+			return err
 		}
 	}
 

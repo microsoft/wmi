@@ -67,10 +67,13 @@ func (instance *CIM_ConcreteJob) GetPropertyJobState() (value ConcreteJob_JobSta
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ConcreteJob_JobState)
+
+	valueint, ok := retValue.(int32)
 	if !ok {
 		// TODO: Set an error
 	}
+	value = ConcreteJob_JobState(valueint)
+
 	return
 }
 
