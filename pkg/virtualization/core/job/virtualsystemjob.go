@@ -186,7 +186,7 @@ func WaitForJobCompletionEx(result int32, currentJob *VirtualSystemJob) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
-		return currentJob.WaitForAction(wmi.Wait, 100, 10)
+		return currentJob.WaitForAction(wmi.Wait, 100, 30)
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Result[%d] ", result)
 	}
@@ -207,7 +207,7 @@ func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.Co
 			return err
 		}
 		defer vmjob.Close()
-		return vmjob.WaitForAction(wmi.Wait, 100, 10)
+		return vmjob.WaitForAction(wmi.Wait, 100, 30)
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Resource Pool Result[%d] JobType[%d]", result, jobType)
 	}
