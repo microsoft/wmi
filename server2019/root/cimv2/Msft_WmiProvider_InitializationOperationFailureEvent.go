@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_WmiProvider_InitializationOperationFailureEvent struct
@@ -52,7 +54,7 @@ func NewMsft_WmiProvider_InitializationOperationFailureEventEx6(hostName string,
 
 // SetResultCode sets the value of ResultCode for the instance
 func (instance *Msft_WmiProvider_InitializationOperationFailureEvent) SetPropertyResultCode(value uint32) (err error) {
-	return instance.SetProperty("ResultCode", value)
+	return instance.SetProperty("ResultCode", (value))
 }
 
 // GetResultCode gets the value of ResultCode for the instance
@@ -61,9 +63,18 @@ func (instance *Msft_WmiProvider_InitializationOperationFailureEvent) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

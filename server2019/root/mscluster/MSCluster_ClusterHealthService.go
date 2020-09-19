@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
@@ -11,7 +11,9 @@ package mscluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ClusterHealthService struct
@@ -53,7 +55,7 @@ func NewMSCluster_ClusterHealthServiceEx6(hostName string,
 
 // SetElementName sets the value of ElementName for the instance
 func (instance *MSCluster_ClusterHealthService) SetPropertyElementName(value string) (err error) {
-	return instance.SetProperty("ElementName", value)
+	return instance.SetProperty("ElementName", (value))
 }
 
 // GetElementName gets the value of ElementName for the instance
@@ -62,10 +64,19 @@ func (instance *MSCluster_ClusterHealthService) GetPropertyElementName() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageHealthReport struct
@@ -59,7 +61,7 @@ func NewMSFT_StorageHealthReportEx6(hostName string,
 
 // SetRecords sets the value of Records for the instance
 func (instance *MSFT_StorageHealthReport) SetPropertyRecords(value []MSFT_HealthRecord) (err error) {
-	return instance.SetProperty("Records", value)
+	return instance.SetProperty("Records", (value))
 }
 
 // GetRecords gets the value of Records for the instance
@@ -68,16 +70,26 @@ func (instance *MSFT_StorageHealthReport) GetPropertyRecords() (value []MSFT_Hea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_HealthRecord)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_HealthRecord)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_HealthRecord is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_HealthRecord(valuetmp))
+	}
+
 	return
 }
 
 // SetReportedObjectUniqueId sets the value of ReportedObjectUniqueId for the instance
 func (instance *MSFT_StorageHealthReport) SetPropertyReportedObjectUniqueId(value string) (err error) {
-	return instance.SetProperty("ReportedObjectUniqueId", value)
+	return instance.SetProperty("ReportedObjectUniqueId", (value))
 }
 
 // GetReportedObjectUniqueId gets the value of ReportedObjectUniqueId for the instance
@@ -86,16 +98,25 @@ func (instance *MSFT_StorageHealthReport) GetPropertyReportedObjectUniqueId() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStorageSubsystemUniqueId sets the value of StorageSubsystemUniqueId for the instance
 func (instance *MSFT_StorageHealthReport) SetPropertyStorageSubsystemUniqueId(value string) (err error) {
-	return instance.SetProperty("StorageSubsystemUniqueId", value)
+	return instance.SetProperty("StorageSubsystemUniqueId", (value))
 }
 
 // GetStorageSubsystemUniqueId gets the value of StorageSubsystemUniqueId for the instance
@@ -104,9 +125,18 @@ func (instance *MSFT_StorageHealthReport) GetPropertyStorageSubsystemUniqueId() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

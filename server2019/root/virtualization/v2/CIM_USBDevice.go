@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_USBDevice struct
@@ -97,7 +99,7 @@ func NewCIM_USBDeviceEx6(hostName string,
 
 // SetClassCode sets the value of ClassCode for the instance
 func (instance *CIM_USBDevice) SetPropertyClassCode(value uint8) (err error) {
-	return instance.SetProperty("ClassCode", value)
+	return instance.SetProperty("ClassCode", (value))
 }
 
 // GetClassCode gets the value of ClassCode for the instance
@@ -106,16 +108,25 @@ func (instance *CIM_USBDevice) GetPropertyClassCode() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCommandTimeout sets the value of CommandTimeout for the instance
 func (instance *CIM_USBDevice) SetPropertyCommandTimeout(value string) (err error) {
-	return instance.SetProperty("CommandTimeout", value)
+	return instance.SetProperty("CommandTimeout", (value))
 }
 
 // GetCommandTimeout gets the value of CommandTimeout for the instance
@@ -124,16 +135,25 @@ func (instance *CIM_USBDevice) GetPropertyCommandTimeout() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCurrentAlternateSettings sets the value of CurrentAlternateSettings for the instance
 func (instance *CIM_USBDevice) SetPropertyCurrentAlternateSettings(value []uint8) (err error) {
-	return instance.SetProperty("CurrentAlternateSettings", value)
+	return instance.SetProperty("CurrentAlternateSettings", (value))
 }
 
 // GetCurrentAlternateSettings gets the value of CurrentAlternateSettings for the instance
@@ -142,16 +162,26 @@ func (instance *CIM_USBDevice) GetPropertyCurrentAlternateSettings() (value []ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetCurrentConfigValue sets the value of CurrentConfigValue for the instance
 func (instance *CIM_USBDevice) SetPropertyCurrentConfigValue(value uint8) (err error) {
-	return instance.SetProperty("CurrentConfigValue", value)
+	return instance.SetProperty("CurrentConfigValue", (value))
 }
 
 // GetCurrentConfigValue gets the value of CurrentConfigValue for the instance
@@ -160,16 +190,25 @@ func (instance *CIM_USBDevice) GetPropertyCurrentConfigValue() (value uint8, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDeviceReleaseNumber sets the value of DeviceReleaseNumber for the instance
 func (instance *CIM_USBDevice) SetPropertyDeviceReleaseNumber(value uint16) (err error) {
-	return instance.SetProperty("DeviceReleaseNumber", value)
+	return instance.SetProperty("DeviceReleaseNumber", (value))
 }
 
 // GetDeviceReleaseNumber gets the value of DeviceReleaseNumber for the instance
@@ -178,16 +217,25 @@ func (instance *CIM_USBDevice) GetPropertyDeviceReleaseNumber() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *CIM_USBDevice) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -196,16 +244,25 @@ func (instance *CIM_USBDevice) GetPropertyManufacturer() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxPacketSize sets the value of MaxPacketSize for the instance
 func (instance *CIM_USBDevice) SetPropertyMaxPacketSize(value uint8) (err error) {
-	return instance.SetProperty("MaxPacketSize", value)
+	return instance.SetProperty("MaxPacketSize", (value))
 }
 
 // GetMaxPacketSize gets the value of MaxPacketSize for the instance
@@ -214,16 +271,25 @@ func (instance *CIM_USBDevice) GetPropertyMaxPacketSize() (value uint8, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNumberOfConfigs sets the value of NumberOfConfigs for the instance
 func (instance *CIM_USBDevice) SetPropertyNumberOfConfigs(value uint8) (err error) {
-	return instance.SetProperty("NumberOfConfigs", value)
+	return instance.SetProperty("NumberOfConfigs", (value))
 }
 
 // GetNumberOfConfigs gets the value of NumberOfConfigs for the instance
@@ -232,16 +298,25 @@ func (instance *CIM_USBDevice) GetPropertyNumberOfConfigs() (value uint8, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetProduct sets the value of Product for the instance
 func (instance *CIM_USBDevice) SetPropertyProduct(value string) (err error) {
-	return instance.SetProperty("Product", value)
+	return instance.SetProperty("Product", (value))
 }
 
 // GetProduct gets the value of Product for the instance
@@ -250,16 +325,25 @@ func (instance *CIM_USBDevice) GetPropertyProduct() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductID sets the value of ProductID for the instance
 func (instance *CIM_USBDevice) SetPropertyProductID(value uint16) (err error) {
-	return instance.SetProperty("ProductID", value)
+	return instance.SetProperty("ProductID", (value))
 }
 
 // GetProductID gets the value of ProductID for the instance
@@ -268,16 +352,25 @@ func (instance *CIM_USBDevice) GetPropertyProductID() (value uint16, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProtocolCode sets the value of ProtocolCode for the instance
 func (instance *CIM_USBDevice) SetPropertyProtocolCode(value uint8) (err error) {
-	return instance.SetProperty("ProtocolCode", value)
+	return instance.SetProperty("ProtocolCode", (value))
 }
 
 // GetProtocolCode gets the value of ProtocolCode for the instance
@@ -286,16 +379,25 @@ func (instance *CIM_USBDevice) GetPropertyProtocolCode() (value uint8, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *CIM_USBDevice) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -304,16 +406,25 @@ func (instance *CIM_USBDevice) GetPropertySerialNumber() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSubclassCode sets the value of SubclassCode for the instance
 func (instance *CIM_USBDevice) SetPropertySubclassCode(value uint8) (err error) {
-	return instance.SetProperty("SubclassCode", value)
+	return instance.SetProperty("SubclassCode", (value))
 }
 
 // GetSubclassCode gets the value of SubclassCode for the instance
@@ -322,16 +433,25 @@ func (instance *CIM_USBDevice) GetPropertySubclassCode() (value uint8, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetUSBVersion sets the value of USBVersion for the instance
 func (instance *CIM_USBDevice) SetPropertyUSBVersion(value uint16) (err error) {
-	return instance.SetProperty("USBVersion", value)
+	return instance.SetProperty("USBVersion", (value))
 }
 
 // GetUSBVersion gets the value of USBVersion for the instance
@@ -340,16 +460,25 @@ func (instance *CIM_USBDevice) GetPropertyUSBVersion() (value uint16, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetUSBVersionInBCD sets the value of USBVersionInBCD for the instance
 func (instance *CIM_USBDevice) SetPropertyUSBVersionInBCD(value uint16) (err error) {
-	return instance.SetProperty("USBVersionInBCD", value)
+	return instance.SetProperty("USBVersionInBCD", (value))
 }
 
 // GetUSBVersionInBCD gets the value of USBVersionInBCD for the instance
@@ -358,16 +487,25 @@ func (instance *CIM_USBDevice) GetPropertyUSBVersionInBCD() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVendorID sets the value of VendorID for the instance
 func (instance *CIM_USBDevice) SetPropertyVendorID(value uint16) (err error) {
-	return instance.SetProperty("VendorID", value)
+	return instance.SetProperty("VendorID", (value))
 }
 
 // GetVendorID gets the value of VendorID for the instance
@@ -376,10 +514,19 @@ func (instance *CIM_USBDevice) GetPropertyVendorID() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

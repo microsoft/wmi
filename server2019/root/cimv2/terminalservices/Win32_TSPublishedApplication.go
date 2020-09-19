@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSPublishedApplication struct
@@ -85,7 +87,7 @@ func NewWin32_TSPublishedApplicationEx6(hostName string,
 
 // SetAlias sets the value of Alias for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyAlias(value string) (err error) {
-	return instance.SetProperty("Alias", value)
+	return instance.SetProperty("Alias", (value))
 }
 
 // GetAlias gets the value of Alias for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyAlias() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCommandLineSetting sets the value of CommandLineSetting for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyCommandLineSetting(value TSPublishedApplication_CommandLineSetting) (err error) {
-	return instance.SetProperty("CommandLineSetting", value)
+	return instance.SetProperty("CommandLineSetting", (value))
 }
 
 // GetCommandLineSetting gets the value of CommandLineSetting for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyCommandLineSetting() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TSPublishedApplication_CommandLineSetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TSPublishedApplication_CommandLineSetting(valuetmp)
+
 	return
 }
 
 // SetIconContents sets the value of IconContents for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyIconContents(value []uint8) (err error) {
-	return instance.SetProperty("IconContents", value)
+	return instance.SetProperty("IconContents", (value))
 }
 
 // GetIconContents gets the value of IconContents for the instance
@@ -130,16 +150,26 @@ func (instance *Win32_TSPublishedApplication) GetPropertyIconContents() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetIconIndex sets the value of IconIndex for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyIconIndex(value int32) (err error) {
-	return instance.SetProperty("IconIndex", value)
+	return instance.SetProperty("IconIndex", (value))
 }
 
 // GetIconIndex gets the value of IconIndex for the instance
@@ -148,16 +178,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyIconIndex() (value int3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetIconPath sets the value of IconPath for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyIconPath(value string) (err error) {
-	return instance.SetProperty("IconPath", value)
+	return instance.SetProperty("IconPath", (value))
 }
 
 // GetIconPath gets the value of IconPath for the instance
@@ -166,16 +205,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyIconPath() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -184,16 +232,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyPath() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPathExists sets the value of PathExists for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyPathExists(value bool) (err error) {
-	return instance.SetProperty("PathExists", value)
+	return instance.SetProperty("PathExists", (value))
 }
 
 // GetPathExists gets the value of PathExists for the instance
@@ -202,16 +259,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyPathExists() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRDPFileContents sets the value of RDPFileContents for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyRDPFileContents(value string) (err error) {
-	return instance.SetProperty("RDPFileContents", value)
+	return instance.SetProperty("RDPFileContents", (value))
 }
 
 // GetRDPFileContents gets the value of RDPFileContents for the instance
@@ -220,16 +286,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyRDPFileContents() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequiredCommandLine sets the value of RequiredCommandLine for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyRequiredCommandLine(value string) (err error) {
-	return instance.SetProperty("RequiredCommandLine", value)
+	return instance.SetProperty("RequiredCommandLine", (value))
 }
 
 // GetRequiredCommandLine gets the value of RequiredCommandLine for the instance
@@ -238,16 +313,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyRequiredCommandLine() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSecurityDescriptor sets the value of SecurityDescriptor for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertySecurityDescriptor(value string) (err error) {
-	return instance.SetProperty("SecurityDescriptor", value)
+	return instance.SetProperty("SecurityDescriptor", (value))
 }
 
 // GetSecurityDescriptor gets the value of SecurityDescriptor for the instance
@@ -256,16 +340,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertySecurityDescriptor() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShowInPortal sets the value of ShowInPortal for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyShowInPortal(value bool) (err error) {
-	return instance.SetProperty("ShowInPortal", value)
+	return instance.SetProperty("ShowInPortal", (value))
 }
 
 // GetShowInPortal gets the value of ShowInPortal for the instance
@@ -274,16 +367,25 @@ func (instance *Win32_TSPublishedApplication) GetPropertyShowInPortal() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVPath sets the value of VPath for the instance
 func (instance *Win32_TSPublishedApplication) SetPropertyVPath(value string) (err error) {
-	return instance.SetProperty("VPath", value)
+	return instance.SetProperty("VPath", (value))
 }
 
 // GetVPath gets the value of VPath for the instance
@@ -292,9 +394,18 @@ func (instance *Win32_TSPublishedApplication) GetPropertyVPath() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

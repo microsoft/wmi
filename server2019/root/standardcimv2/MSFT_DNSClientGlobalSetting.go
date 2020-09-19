@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DNSClientGlobalSetting struct
@@ -61,7 +63,7 @@ func NewMSFT_DNSClientGlobalSettingEx6(hostName string,
 
 // SetDevolutionLevel sets the value of DevolutionLevel for the instance
 func (instance *MSFT_DNSClientGlobalSetting) SetPropertyDevolutionLevel(value uint32) (err error) {
-	return instance.SetProperty("DevolutionLevel", value)
+	return instance.SetProperty("DevolutionLevel", (value))
 }
 
 // GetDevolutionLevel gets the value of DevolutionLevel for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_DNSClientGlobalSetting) GetPropertyDevolutionLevel() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSuffixSearchList sets the value of SuffixSearchList for the instance
 func (instance *MSFT_DNSClientGlobalSetting) SetPropertySuffixSearchList(value []string) (err error) {
-	return instance.SetProperty("SuffixSearchList", value)
+	return instance.SetProperty("SuffixSearchList", (value))
 }
 
 // GetSuffixSearchList gets the value of SuffixSearchList for the instance
@@ -88,16 +99,26 @@ func (instance *MSFT_DNSClientGlobalSetting) GetPropertySuffixSearchList() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetUseDevolution sets the value of UseDevolution for the instance
 func (instance *MSFT_DNSClientGlobalSetting) SetPropertyUseDevolution(value bool) (err error) {
-	return instance.SetProperty("UseDevolution", value)
+	return instance.SetProperty("UseDevolution", (value))
 }
 
 // GetUseDevolution gets the value of UseDevolution for the instance
@@ -106,16 +127,25 @@ func (instance *MSFT_DNSClientGlobalSetting) GetPropertyUseDevolution() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUseSuffixSearchList sets the value of UseSuffixSearchList for the instance
 func (instance *MSFT_DNSClientGlobalSetting) SetPropertyUseSuffixSearchList(value bool) (err error) {
-	return instance.SetProperty("UseSuffixSearchList", value)
+	return instance.SetProperty("UseSuffixSearchList", (value))
 }
 
 // GetUseSuffixSearchList gets the value of UseSuffixSearchList for the instance
@@ -124,9 +154,18 @@ func (instance *MSFT_DNSClientGlobalSetting) GetPropertyUseSuffixSearchList() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

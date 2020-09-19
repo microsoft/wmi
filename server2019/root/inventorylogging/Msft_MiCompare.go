@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_MiCompare struct
@@ -58,7 +60,7 @@ func NewMsft_MiCompareEx6(hostName string,
 
 // SetInput sets the value of Input for the instance
 func (instance *Msft_MiCompare) SetPropertyInput(value Msft_MiStream) (err error) {
-	return instance.SetProperty("Input", value)
+	return instance.SetProperty("Input", (value))
 }
 
 // GetInput gets the value of Input for the instance
@@ -67,16 +69,25 @@ func (instance *Msft_MiCompare) GetPropertyInput() (value Msft_MiStream, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Msft_MiStream)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Msft_MiStream)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Msft_MiStream is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Msft_MiStream(valuetmp)
+
 	return
 }
 
 // SetOnlyUpdateSnapshot sets the value of OnlyUpdateSnapshot for the instance
 func (instance *Msft_MiCompare) SetPropertyOnlyUpdateSnapshot(value bool) (err error) {
-	return instance.SetProperty("OnlyUpdateSnapshot", value)
+	return instance.SetProperty("OnlyUpdateSnapshot", (value))
 }
 
 // GetOnlyUpdateSnapshot gets the value of OnlyUpdateSnapshot for the instance
@@ -85,16 +96,25 @@ func (instance *Msft_MiCompare) GetPropertyOnlyUpdateSnapshot() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSuppressionHint sets the value of SuppressionHint for the instance
 func (instance *Msft_MiCompare) SetPropertySuppressionHint(value Msft_MiCompareSuppression) (err error) {
-	return instance.SetProperty("SuppressionHint", value)
+	return instance.SetProperty("SuppressionHint", (value))
 }
 
 // GetSuppressionHint gets the value of SuppressionHint for the instance
@@ -103,9 +123,18 @@ func (instance *Msft_MiCompare) GetPropertySuppressionHint() (value Msft_MiCompa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Msft_MiCompareSuppression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Msft_MiCompareSuppression)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Msft_MiCompareSuppression is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Msft_MiCompareSuppression(valuetmp)
+
 	return
 }

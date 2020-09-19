@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbShareAccessControlEntry struct
@@ -65,7 +67,7 @@ func NewMSFT_SmbShareAccessControlEntryEx6(hostName string,
 
 // SetAccessControlType sets the value of AccessControlType for the instance
 func (instance *MSFT_SmbShareAccessControlEntry) SetPropertyAccessControlType(value SmbShareAccessControlEntry_AccessControlType) (err error) {
-	return instance.SetProperty("AccessControlType", value)
+	return instance.SetProperty("AccessControlType", (value))
 }
 
 // GetAccessControlType gets the value of AccessControlType for the instance
@@ -74,16 +76,25 @@ func (instance *MSFT_SmbShareAccessControlEntry) GetPropertyAccessControlType() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShareAccessControlEntry_AccessControlType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShareAccessControlEntry_AccessControlType(valuetmp)
+
 	return
 }
 
 // SetAccessRight sets the value of AccessRight for the instance
 func (instance *MSFT_SmbShareAccessControlEntry) SetPropertyAccessRight(value SmbShareAccessControlEntry_AccessRight) (err error) {
-	return instance.SetProperty("AccessRight", value)
+	return instance.SetProperty("AccessRight", (value))
 }
 
 // GetAccessRight gets the value of AccessRight for the instance
@@ -92,16 +103,25 @@ func (instance *MSFT_SmbShareAccessControlEntry) GetPropertyAccessRight() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShareAccessControlEntry_AccessRight)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShareAccessControlEntry_AccessRight(valuetmp)
+
 	return
 }
 
 // SetAccountName sets the value of AccountName for the instance
 func (instance *MSFT_SmbShareAccessControlEntry) SetPropertyAccountName(value string) (err error) {
-	return instance.SetProperty("AccountName", value)
+	return instance.SetProperty("AccountName", (value))
 }
 
 // GetAccountName gets the value of AccountName for the instance
@@ -110,16 +130,25 @@ func (instance *MSFT_SmbShareAccessControlEntry) GetPropertyAccountName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_SmbShareAccessControlEntry) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -128,16 +157,25 @@ func (instance *MSFT_SmbShareAccessControlEntry) GetPropertyName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScopeName sets the value of ScopeName for the instance
 func (instance *MSFT_SmbShareAccessControlEntry) SetPropertyScopeName(value string) (err error) {
-	return instance.SetProperty("ScopeName", value)
+	return instance.SetProperty("ScopeName", (value))
 }
 
 // GetScopeName gets the value of ScopeName for the instance
@@ -146,9 +184,18 @@ func (instance *MSFT_SmbShareAccessControlEntry) GetPropertyScopeName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

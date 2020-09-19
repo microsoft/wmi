@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_FolderRedirectionPolicySetting struct
@@ -85,7 +87,7 @@ func NewRSOP_FolderRedirectionPolicySettingEx6(hostName string,
 
 // SetconfigurationControl sets the value of configurationControl for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyconfigurationControl(value uint32) (err error) {
-	return instance.SetProperty("configurationControl", value)
+	return instance.SetProperty("configurationControl", (value))
 }
 
 // GetconfigurationControl gets the value of configurationControl for the instance
@@ -94,16 +96,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyconfigurationCon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetgrantType sets the value of grantType for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertygrantType(value bool) (err error) {
-	return instance.SetProperty("grantType", value)
+	return instance.SetProperty("grantType", (value))
 }
 
 // GetgrantType gets the value of grantType for the instance
@@ -112,16 +123,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertygrantType() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetinstallationType sets the value of installationType for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyinstallationType(value uint32) (err error) {
-	return instance.SetProperty("installationType", value)
+	return instance.SetProperty("installationType", (value))
 }
 
 // GetinstallationType gets the value of installationType for the instance
@@ -130,16 +150,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyinstallationType
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetmoveType sets the value of moveType for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertymoveType(value bool) (err error) {
-	return instance.SetProperty("moveType", value)
+	return instance.SetProperty("moveType", (value))
 }
 
 // GetmoveType gets the value of moveType for the instance
@@ -148,16 +177,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertymoveType() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetparentFolderId sets the value of parentFolderId for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyparentFolderId(value string) (err error) {
-	return instance.SetProperty("parentFolderId", value)
+	return instance.SetProperty("parentFolderId", (value))
 }
 
 // GetparentFolderId gets the value of parentFolderId for the instance
@@ -166,16 +204,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyparentFolderId()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetpolicyRemoval sets the value of policyRemoval for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertypolicyRemoval(value uint32) (err error) {
-	return instance.SetProperty("policyRemoval", value)
+	return instance.SetProperty("policyRemoval", (value))
 }
 
 // GetpolicyRemoval gets the value of policyRemoval for the instance
@@ -184,16 +231,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertypolicyRemoval() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetprimaryComputerEvaluation sets the value of primaryComputerEvaluation for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyprimaryComputerEvaluation(value uint32) (err error) {
-	return instance.SetProperty("primaryComputerEvaluation", value)
+	return instance.SetProperty("primaryComputerEvaluation", (value))
 }
 
 // GetprimaryComputerEvaluation gets the value of primaryComputerEvaluation for the instance
@@ -202,16 +258,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyprimaryComputerE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetredirectedPaths sets the value of redirectedPaths for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyredirectedPaths(value []string) (err error) {
-	return instance.SetProperty("redirectedPaths", value)
+	return instance.SetProperty("redirectedPaths", (value))
 }
 
 // GetredirectedPaths gets the value of redirectedPaths for the instance
@@ -220,16 +285,26 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyredirectedPaths(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetredirectingGroup sets the value of redirectingGroup for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyredirectingGroup(value string) (err error) {
-	return instance.SetProperty("redirectingGroup", value)
+	return instance.SetProperty("redirectingGroup", (value))
 }
 
 // GetredirectingGroup gets the value of redirectingGroup for the instance
@@ -238,16 +313,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyredirectingGroup
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetredirectionFlags sets the value of redirectionFlags for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyredirectionFlags(value uint32) (err error) {
-	return instance.SetProperty("redirectionFlags", value)
+	return instance.SetProperty("redirectionFlags", (value))
 }
 
 // GetredirectionFlags gets the value of redirectionFlags for the instance
@@ -256,16 +340,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyredirectionFlags
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetresultantPath sets the value of resultantPath for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertyresultantPath(value string) (err error) {
-	return instance.SetProperty("resultantPath", value)
+	return instance.SetProperty("resultantPath", (value))
 }
 
 // GetresultantPath gets the value of resultantPath for the instance
@@ -274,16 +367,25 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertyresultantPath() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetsecurityGroups sets the value of securityGroups for the instance
 func (instance *RSOP_FolderRedirectionPolicySetting) SetPropertysecurityGroups(value []string) (err error) {
-	return instance.SetProperty("securityGroups", value)
+	return instance.SetProperty("securityGroups", (value))
 }
 
 // GetsecurityGroups gets the value of securityGroups for the instance
@@ -292,9 +394,19 @@ func (instance *RSOP_FolderRedirectionPolicySetting) GetPropertysecurityGroups()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

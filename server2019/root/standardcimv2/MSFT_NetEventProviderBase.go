@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventProviderBase struct
@@ -67,7 +69,7 @@ func NewMSFT_NetEventProviderBaseEx6(hostName string,
 
 // SetGuid sets the value of Guid for the instance
 func (instance *MSFT_NetEventProviderBase) SetPropertyGuid(value string) (err error) {
-	return instance.SetProperty("Guid", value)
+	return instance.SetProperty("Guid", (value))
 }
 
 // GetGuid gets the value of Guid for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NetEventProviderBase) GetPropertyGuid() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLevel sets the value of Level for the instance
 func (instance *MSFT_NetEventProviderBase) SetPropertyLevel(value uint8) (err error) {
-	return instance.SetProperty("Level", value)
+	return instance.SetProperty("Level", (value))
 }
 
 // GetLevel gets the value of Level for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NetEventProviderBase) GetPropertyLevel() (value uint8, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetMatchAllKeyword sets the value of MatchAllKeyword for the instance
 func (instance *MSFT_NetEventProviderBase) SetPropertyMatchAllKeyword(value uint64) (err error) {
-	return instance.SetProperty("MatchAllKeyword", value)
+	return instance.SetProperty("MatchAllKeyword", (value))
 }
 
 // GetMatchAllKeyword gets the value of MatchAllKeyword for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_NetEventProviderBase) GetPropertyMatchAllKeyword() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMatchAnyKeyword sets the value of MatchAnyKeyword for the instance
 func (instance *MSFT_NetEventProviderBase) SetPropertyMatchAnyKeyword(value uint64) (err error) {
-	return instance.SetProperty("MatchAnyKeyword", value)
+	return instance.SetProperty("MatchAnyKeyword", (value))
 }
 
 // GetMatchAnyKeyword gets the value of MatchAnyKeyword for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_NetEventProviderBase) GetPropertyMatchAnyKeyword() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSessionGuid sets the value of SessionGuid for the instance
 func (instance *MSFT_NetEventProviderBase) SetPropertySessionGuid(value string) (err error) {
-	return instance.SetProperty("SessionGuid", value)
+	return instance.SetProperty("SessionGuid", (value))
 }
 
 // GetSessionGuid gets the value of SessionGuid for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_NetEventProviderBase) GetPropertySessionGuid() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSessionName sets the value of SessionName for the instance
 func (instance *MSFT_NetEventProviderBase) SetPropertySessionName(value string) (err error) {
-	return instance.SetProperty("SessionName", value)
+	return instance.SetProperty("SessionName", (value))
 }
 
 // GetSessionName gets the value of SessionName for the instance
@@ -166,9 +213,18 @@ func (instance *MSFT_NetEventProviderBase) GetPropertySessionName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

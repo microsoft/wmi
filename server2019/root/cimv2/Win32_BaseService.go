@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_BaseService struct
@@ -85,7 +87,7 @@ func NewWin32_BaseServiceEx6(hostName string,
 
 // SetAcceptPause sets the value of AcceptPause for the instance
 func (instance *Win32_BaseService) SetPropertyAcceptPause(value bool) (err error) {
-	return instance.SetProperty("AcceptPause", value)
+	return instance.SetProperty("AcceptPause", (value))
 }
 
 // GetAcceptPause gets the value of AcceptPause for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_BaseService) GetPropertyAcceptPause() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAcceptStop sets the value of AcceptStop for the instance
 func (instance *Win32_BaseService) SetPropertyAcceptStop(value bool) (err error) {
-	return instance.SetProperty("AcceptStop", value)
+	return instance.SetProperty("AcceptStop", (value))
 }
 
 // GetAcceptStop gets the value of AcceptStop for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_BaseService) GetPropertyAcceptStop() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDesktopInteract sets the value of DesktopInteract for the instance
 func (instance *Win32_BaseService) SetPropertyDesktopInteract(value bool) (err error) {
-	return instance.SetProperty("DesktopInteract", value)
+	return instance.SetProperty("DesktopInteract", (value))
 }
 
 // GetDesktopInteract gets the value of DesktopInteract for the instance
@@ -130,16 +150,25 @@ func (instance *Win32_BaseService) GetPropertyDesktopInteract() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDisplayName sets the value of DisplayName for the instance
 func (instance *Win32_BaseService) SetPropertyDisplayName(value string) (err error) {
-	return instance.SetProperty("DisplayName", value)
+	return instance.SetProperty("DisplayName", (value))
 }
 
 // GetDisplayName gets the value of DisplayName for the instance
@@ -148,16 +177,25 @@ func (instance *Win32_BaseService) GetPropertyDisplayName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorControl sets the value of ErrorControl for the instance
 func (instance *Win32_BaseService) SetPropertyErrorControl(value string) (err error) {
-	return instance.SetProperty("ErrorControl", value)
+	return instance.SetProperty("ErrorControl", (value))
 }
 
 // GetErrorControl gets the value of ErrorControl for the instance
@@ -166,16 +204,25 @@ func (instance *Win32_BaseService) GetPropertyErrorControl() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExitCode sets the value of ExitCode for the instance
 func (instance *Win32_BaseService) SetPropertyExitCode(value uint32) (err error) {
-	return instance.SetProperty("ExitCode", value)
+	return instance.SetProperty("ExitCode", (value))
 }
 
 // GetExitCode gets the value of ExitCode for the instance
@@ -184,16 +231,25 @@ func (instance *Win32_BaseService) GetPropertyExitCode() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPathName sets the value of PathName for the instance
 func (instance *Win32_BaseService) SetPropertyPathName(value string) (err error) {
-	return instance.SetProperty("PathName", value)
+	return instance.SetProperty("PathName", (value))
 }
 
 // GetPathName gets the value of PathName for the instance
@@ -202,16 +258,25 @@ func (instance *Win32_BaseService) GetPropertyPathName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServiceSpecificExitCode sets the value of ServiceSpecificExitCode for the instance
 func (instance *Win32_BaseService) SetPropertyServiceSpecificExitCode(value uint32) (err error) {
-	return instance.SetProperty("ServiceSpecificExitCode", value)
+	return instance.SetProperty("ServiceSpecificExitCode", (value))
 }
 
 // GetServiceSpecificExitCode gets the value of ServiceSpecificExitCode for the instance
@@ -220,16 +285,25 @@ func (instance *Win32_BaseService) GetPropertyServiceSpecificExitCode() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServiceType sets the value of ServiceType for the instance
 func (instance *Win32_BaseService) SetPropertyServiceType(value string) (err error) {
-	return instance.SetProperty("ServiceType", value)
+	return instance.SetProperty("ServiceType", (value))
 }
 
 // GetServiceType gets the value of ServiceType for the instance
@@ -238,16 +312,25 @@ func (instance *Win32_BaseService) GetPropertyServiceType() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartName sets the value of StartName for the instance
 func (instance *Win32_BaseService) SetPropertyStartName(value string) (err error) {
-	return instance.SetProperty("StartName", value)
+	return instance.SetProperty("StartName", (value))
 }
 
 // GetStartName gets the value of StartName for the instance
@@ -256,16 +339,25 @@ func (instance *Win32_BaseService) GetPropertyStartName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *Win32_BaseService) SetPropertyState(value string) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -274,16 +366,25 @@ func (instance *Win32_BaseService) GetPropertyState() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTagId sets the value of TagId for the instance
 func (instance *Win32_BaseService) SetPropertyTagId(value uint32) (err error) {
-	return instance.SetProperty("TagId", value)
+	return instance.SetProperty("TagId", (value))
 }
 
 // GetTagId gets the value of TagId for the instance
@@ -292,10 +393,19 @@ func (instance *Win32_BaseService) GetPropertyTagId() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

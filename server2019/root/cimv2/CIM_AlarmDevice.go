@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_AlarmDevice struct
@@ -58,7 +60,7 @@ func NewCIM_AlarmDeviceEx6(hostName string,
 
 // SetAudibleAlarm sets the value of AudibleAlarm for the instance
 func (instance *CIM_AlarmDevice) SetPropertyAudibleAlarm(value bool) (err error) {
-	return instance.SetProperty("AudibleAlarm", value)
+	return instance.SetProperty("AudibleAlarm", (value))
 }
 
 // GetAudibleAlarm gets the value of AudibleAlarm for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_AlarmDevice) GetPropertyAudibleAlarm() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUrgency sets the value of Urgency for the instance
 func (instance *CIM_AlarmDevice) SetPropertyUrgency(value uint16) (err error) {
-	return instance.SetProperty("Urgency", value)
+	return instance.SetProperty("Urgency", (value))
 }
 
 // GetUrgency gets the value of Urgency for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_AlarmDevice) GetPropertyUrgency() (value uint16, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVisibleAlarm sets the value of VisibleAlarm for the instance
 func (instance *CIM_AlarmDevice) SetPropertyVisibleAlarm(value bool) (err error) {
-	return instance.SetProperty("VisibleAlarm", value)
+	return instance.SetProperty("VisibleAlarm", (value))
 }
 
 // GetVisibleAlarm gets the value of VisibleAlarm for the instance
@@ -103,10 +123,19 @@ func (instance *CIM_AlarmDevice) GetPropertyVisibleAlarm() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

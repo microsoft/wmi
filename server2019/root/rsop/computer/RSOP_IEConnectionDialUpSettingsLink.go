@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEConnectionDialUpSettingsLink struct
@@ -56,7 +58,7 @@ func NewRSOP_IEConnectionDialUpSettingsLinkEx6(hostName string,
 
 // SetdialUpSettings sets the value of dialUpSettings for the instance
 func (instance *RSOP_IEConnectionDialUpSettingsLink) SetPropertydialUpSettings(value RSOP_IEConnectionDialUpSettings) (err error) {
-	return instance.SetProperty("dialUpSettings", value)
+	return instance.SetProperty("dialUpSettings", (value))
 }
 
 // GetdialUpSettings gets the value of dialUpSettings for the instance
@@ -65,16 +67,25 @@ func (instance *RSOP_IEConnectionDialUpSettingsLink) GetPropertydialUpSettings()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_IEConnectionDialUpSettings)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_IEConnectionDialUpSettings)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_IEConnectionDialUpSettings is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_IEConnectionDialUpSettings(valuetmp)
+
 	return
 }
 
 // SetpolicySetting sets the value of policySetting for the instance
 func (instance *RSOP_IEConnectionDialUpSettingsLink) SetPropertypolicySetting(value RSOP_IEAKPolicySetting) (err error) {
-	return instance.SetProperty("policySetting", value)
+	return instance.SetProperty("policySetting", (value))
 }
 
 // GetpolicySetting gets the value of policySetting for the instance
@@ -83,9 +94,18 @@ func (instance *RSOP_IEConnectionDialUpSettingsLink) GetPropertypolicySetting() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_IEAKPolicySetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_IEAKPolicySetting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_IEAKPolicySetting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_IEAKPolicySetting(valuetmp)
+
 	return
 }

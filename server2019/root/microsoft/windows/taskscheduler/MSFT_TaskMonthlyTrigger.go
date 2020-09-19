@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskMonthlyTrigger struct
@@ -61,7 +63,7 @@ func NewMSFT_TaskMonthlyTriggerEx6(hostName string,
 
 // SetDaysOfMonth sets the value of DaysOfMonth for the instance
 func (instance *MSFT_TaskMonthlyTrigger) SetPropertyDaysOfMonth(value uint16) (err error) {
-	return instance.SetProperty("DaysOfMonth", value)
+	return instance.SetProperty("DaysOfMonth", (value))
 }
 
 // GetDaysOfMonth gets the value of DaysOfMonth for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_TaskMonthlyTrigger) GetPropertyDaysOfMonth() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMonthOfYear sets the value of MonthOfYear for the instance
 func (instance *MSFT_TaskMonthlyTrigger) SetPropertyMonthOfYear(value uint16) (err error) {
-	return instance.SetProperty("MonthOfYear", value)
+	return instance.SetProperty("MonthOfYear", (value))
 }
 
 // GetMonthOfYear gets the value of MonthOfYear for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_TaskMonthlyTrigger) GetPropertyMonthOfYear() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRandomDelay sets the value of RandomDelay for the instance
 func (instance *MSFT_TaskMonthlyTrigger) SetPropertyRandomDelay(value string) (err error) {
-	return instance.SetProperty("RandomDelay", value)
+	return instance.SetProperty("RandomDelay", (value))
 }
 
 // GetRandomDelay gets the value of RandomDelay for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_TaskMonthlyTrigger) GetPropertyRandomDelay() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRunOnLastDayOfMonth sets the value of RunOnLastDayOfMonth for the instance
 func (instance *MSFT_TaskMonthlyTrigger) SetPropertyRunOnLastDayOfMonth(value bool) (err error) {
-	return instance.SetProperty("RunOnLastDayOfMonth", value)
+	return instance.SetProperty("RunOnLastDayOfMonth", (value))
 }
 
 // GetRunOnLastDayOfMonth gets the value of RunOnLastDayOfMonth for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_TaskMonthlyTrigger) GetPropertyRunOnLastDayOfMonth() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

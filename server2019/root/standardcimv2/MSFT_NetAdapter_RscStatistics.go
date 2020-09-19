@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_RscStatistics struct
@@ -62,7 +64,7 @@ func NewMSFT_NetAdapter_RscStatisticsEx6(hostName string,
 
 // SetCoalescedBytes sets the value of CoalescedBytes for the instance
 func (instance *MSFT_NetAdapter_RscStatistics) SetPropertyCoalescedBytes(value uint64) (err error) {
-	return instance.SetProperty("CoalescedBytes", value)
+	return instance.SetProperty("CoalescedBytes", (value))
 }
 
 // GetCoalescedBytes gets the value of CoalescedBytes for the instance
@@ -71,16 +73,25 @@ func (instance *MSFT_NetAdapter_RscStatistics) GetPropertyCoalescedBytes() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCoalescedPackets sets the value of CoalescedPackets for the instance
 func (instance *MSFT_NetAdapter_RscStatistics) SetPropertyCoalescedPackets(value uint64) (err error) {
-	return instance.SetProperty("CoalescedPackets", value)
+	return instance.SetProperty("CoalescedPackets", (value))
 }
 
 // GetCoalescedPackets gets the value of CoalescedPackets for the instance
@@ -89,16 +100,25 @@ func (instance *MSFT_NetAdapter_RscStatistics) GetPropertyCoalescedPackets() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCoalescingEvents sets the value of CoalescingEvents for the instance
 func (instance *MSFT_NetAdapter_RscStatistics) SetPropertyCoalescingEvents(value uint64) (err error) {
-	return instance.SetProperty("CoalescingEvents", value)
+	return instance.SetProperty("CoalescingEvents", (value))
 }
 
 // GetCoalescingEvents gets the value of CoalescingEvents for the instance
@@ -107,16 +127,25 @@ func (instance *MSFT_NetAdapter_RscStatistics) GetPropertyCoalescingEvents() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCoalescingExceptions sets the value of CoalescingExceptions for the instance
 func (instance *MSFT_NetAdapter_RscStatistics) SetPropertyCoalescingExceptions(value uint64) (err error) {
-	return instance.SetProperty("CoalescingExceptions", value)
+	return instance.SetProperty("CoalescingExceptions", (value))
 }
 
 // GetCoalescingExceptions gets the value of CoalescingExceptions for the instance
@@ -125,9 +154,18 @@ func (instance *MSFT_NetAdapter_RscStatistics) GetPropertyCoalescingExceptions()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

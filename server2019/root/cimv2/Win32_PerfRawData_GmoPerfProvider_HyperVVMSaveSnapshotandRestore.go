@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore struct
@@ -67,7 +69,7 @@ func NewWin32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestoreEx6(host
 
 // SetOperationTime sets the value of OperationTime for the instance
 func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore) SetPropertyOperationTime(value uint32) (err error) {
-	return instance.SetProperty("OperationTime", value)
+	return instance.SetProperty("OperationTime", (value))
 }
 
 // GetOperationTime gets the value of OperationTime for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRequestsActive sets the value of RequestsActive for the instance
 func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore) SetPropertyRequestsActive(value uint32) (err error) {
-	return instance.SetProperty("RequestsActive", value)
+	return instance.SetProperty("RequestsActive", (value))
 }
 
 // GetRequestsActive gets the value of RequestsActive for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRequestsDispatched sets the value of RequestsDispatched for the instance
 func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore) SetPropertyRequestsDispatched(value uint32) (err error) {
-	return instance.SetProperty("RequestsDispatched", value)
+	return instance.SetProperty("RequestsDispatched", (value))
 }
 
 // GetRequestsDispatched gets the value of RequestsDispatched for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRequestsHighPriority sets the value of RequestsHighPriority for the instance
 func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore) SetPropertyRequestsHighPriority(value uint32) (err error) {
-	return instance.SetProperty("RequestsHighPriority", value)
+	return instance.SetProperty("RequestsHighPriority", (value))
 }
 
 // GetRequestsHighPriority gets the value of RequestsHighPriority for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRequestsProcessed sets the value of RequestsProcessed for the instance
 func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore) SetPropertyRequestsProcessed(value uint32) (err error) {
-	return instance.SetProperty("RequestsProcessed", value)
+	return instance.SetProperty("RequestsProcessed", (value))
 }
 
 // GetRequestsProcessed gets the value of RequestsProcessed for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThreadsSpawned sets the value of ThreadsSpawned for the instance
 func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore) SetPropertyThreadsSpawned(value uint32) (err error) {
-	return instance.SetProperty("ThreadsSpawned", value)
+	return instance.SetProperty("ThreadsSpawned", (value))
 }
 
 // GetThreadsSpawned gets the value of ThreadsSpawned for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfRawData_GmoPerfProvider_HyperVVMSaveSnapshotandRestore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

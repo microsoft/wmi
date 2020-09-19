@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_DiskMergeSettingData struct
@@ -52,7 +54,7 @@ func NewMsvm_DiskMergeSettingDataEx6(hostName string,
 
 // SetEnabledState sets the value of EnabledState for the instance
 func (instance *Msvm_DiskMergeSettingData) SetPropertyEnabledState(value uint32) (err error) {
-	return instance.SetProperty("EnabledState", value)
+	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
@@ -61,10 +63,19 @@ func (instance *Msvm_DiskMergeSettingData) GetPropertyEnabledState() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 func (instance *Msvm_DiskMergeSettingData) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {

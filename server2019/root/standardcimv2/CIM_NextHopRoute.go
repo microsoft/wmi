@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_NextHopRoute struct
@@ -64,7 +66,7 @@ func NewCIM_NextHopRouteEx6(hostName string,
 
 // SetAdminDistance sets the value of AdminDistance for the instance
 func (instance *CIM_NextHopRoute) SetPropertyAdminDistance(value uint16) (err error) {
-	return instance.SetProperty("AdminDistance", value)
+	return instance.SetProperty("AdminDistance", (value))
 }
 
 // GetAdminDistance gets the value of AdminDistance for the instance
@@ -73,16 +75,25 @@ func (instance *CIM_NextHopRoute) GetPropertyAdminDistance() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDestinationAddress sets the value of DestinationAddress for the instance
 func (instance *CIM_NextHopRoute) SetPropertyDestinationAddress(value string) (err error) {
-	return instance.SetProperty("DestinationAddress", value)
+	return instance.SetProperty("DestinationAddress", (value))
 }
 
 // GetDestinationAddress gets the value of DestinationAddress for the instance
@@ -91,16 +102,25 @@ func (instance *CIM_NextHopRoute) GetPropertyDestinationAddress() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsStatic sets the value of IsStatic for the instance
 func (instance *CIM_NextHopRoute) SetPropertyIsStatic(value bool) (err error) {
-	return instance.SetProperty("IsStatic", value)
+	return instance.SetProperty("IsStatic", (value))
 }
 
 // GetIsStatic gets the value of IsStatic for the instance
@@ -109,16 +129,25 @@ func (instance *CIM_NextHopRoute) GetPropertyIsStatic() (value bool, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRouteMetric sets the value of RouteMetric for the instance
 func (instance *CIM_NextHopRoute) SetPropertyRouteMetric(value uint16) (err error) {
-	return instance.SetProperty("RouteMetric", value)
+	return instance.SetProperty("RouteMetric", (value))
 }
 
 // GetRouteMetric gets the value of RouteMetric for the instance
@@ -127,16 +156,25 @@ func (instance *CIM_NextHopRoute) GetPropertyRouteMetric() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTypeOfRoute sets the value of TypeOfRoute for the instance
 func (instance *CIM_NextHopRoute) SetPropertyTypeOfRoute(value uint16) (err error) {
-	return instance.SetProperty("TypeOfRoute", value)
+	return instance.SetProperty("TypeOfRoute", (value))
 }
 
 // GetTypeOfRoute gets the value of TypeOfRoute for the instance
@@ -145,9 +183,18 @@ func (instance *CIM_NextHopRoute) GetPropertyTypeOfRoute() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

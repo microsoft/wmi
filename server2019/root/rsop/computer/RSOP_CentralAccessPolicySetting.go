@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_CentralAccessPolicySetting struct
@@ -52,7 +54,7 @@ func NewRSOP_CentralAccessPolicySettingEx6(hostName string,
 
 // SetCentralAccessPolicyName sets the value of CentralAccessPolicyName for the instance
 func (instance *RSOP_CentralAccessPolicySetting) SetPropertyCentralAccessPolicyName(value []string) (err error) {
-	return instance.SetProperty("CentralAccessPolicyName", value)
+	return instance.SetProperty("CentralAccessPolicyName", (value))
 }
 
 // GetCentralAccessPolicyName gets the value of CentralAccessPolicyName for the instance
@@ -61,9 +63,19 @@ func (instance *RSOP_CentralAccessPolicySetting) GetPropertyCentralAccessPolicyN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

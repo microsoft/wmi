@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO struct
@@ -133,7 +135,7 @@ func NewWin32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIOEx6(hostName str
 
 // SetAvgBytesPerRead sets the value of AvgBytesPerRead for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgBytesPerRead(value uint64) (err error) {
-	return instance.SetProperty("AvgBytesPerRead", value)
+	return instance.SetProperty("AvgBytesPerRead", (value))
 }
 
 // GetAvgBytesPerRead gets the value of AvgBytesPerRead for the instance
@@ -142,16 +144,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgBytesPerRead_Base sets the value of AvgBytesPerRead_Base for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgBytesPerRead_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgBytesPerRead_Base", value)
+	return instance.SetProperty("AvgBytesPerRead_Base", (value))
 }
 
 // GetAvgBytesPerRead_Base gets the value of AvgBytesPerRead_Base for the instance
@@ -160,16 +171,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgBytesPerWrite sets the value of AvgBytesPerWrite for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgBytesPerWrite(value uint64) (err error) {
-	return instance.SetProperty("AvgBytesPerWrite", value)
+	return instance.SetProperty("AvgBytesPerWrite", (value))
 }
 
 // GetAvgBytesPerWrite gets the value of AvgBytesPerWrite for the instance
@@ -178,16 +198,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgBytesPerWrite_Base sets the value of AvgBytesPerWrite_Base for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgBytesPerWrite_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgBytesPerWrite_Base", value)
+	return instance.SetProperty("AvgBytesPerWrite_Base", (value))
 }
 
 // GetAvgBytesPerWrite_Base gets the value of AvgBytesPerWrite_Base for the instance
@@ -196,16 +225,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgReadQueueLength sets the value of AvgReadQueueLength for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgReadQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgReadQueueLength", value)
+	return instance.SetProperty("AvgReadQueueLength", (value))
 }
 
 // GetAvgReadQueueLength gets the value of AvgReadQueueLength for the instance
@@ -214,16 +252,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgsecPerRead sets the value of AvgsecPerRead for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgsecPerRead(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerRead", value)
+	return instance.SetProperty("AvgsecPerRead", (value))
 }
 
 // GetAvgsecPerRead gets the value of AvgsecPerRead for the instance
@@ -232,16 +279,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgsecPerRead_Base sets the value of AvgsecPerRead_Base for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgsecPerRead_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerRead_Base", value)
+	return instance.SetProperty("AvgsecPerRead_Base", (value))
 }
 
 // GetAvgsecPerRead_Base gets the value of AvgsecPerRead_Base for the instance
@@ -250,16 +306,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgsecPerWrite sets the value of AvgsecPerWrite for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgsecPerWrite(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerWrite", value)
+	return instance.SetProperty("AvgsecPerWrite", (value))
 }
 
 // GetAvgsecPerWrite gets the value of AvgsecPerWrite for the instance
@@ -268,16 +333,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgsecPerWrite_Base sets the value of AvgsecPerWrite_Base for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgsecPerWrite_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerWrite_Base", value)
+	return instance.SetProperty("AvgsecPerWrite_Base", (value))
 }
 
 // GetAvgsecPerWrite_Base gets the value of AvgsecPerWrite_Base for the instance
@@ -286,16 +360,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgWriteQueueLength sets the value of AvgWriteQueueLength for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyAvgWriteQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgWriteQueueLength", value)
+	return instance.SetProperty("AvgWriteQueueLength", (value))
 }
 
 // GetAvgWriteQueueLength gets the value of AvgWriteQueueLength for the instance
@@ -304,16 +387,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCurrentReadQueueLength sets the value of CurrentReadQueueLength for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyCurrentReadQueueLength(value uint64) (err error) {
-	return instance.SetProperty("CurrentReadQueueLength", value)
+	return instance.SetProperty("CurrentReadQueueLength", (value))
 }
 
 // GetCurrentReadQueueLength gets the value of CurrentReadQueueLength for the instance
@@ -322,16 +414,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCurrentWriteQueueLength sets the value of CurrentWriteQueueLength for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyCurrentWriteQueueLength(value uint64) (err error) {
-	return instance.SetProperty("CurrentWriteQueueLength", value)
+	return instance.SetProperty("CurrentWriteQueueLength", (value))
 }
 
 // GetCurrentWriteQueueLength gets the value of CurrentWriteQueueLength for the instance
@@ -340,16 +441,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonSplitReads sets the value of NonSplitReads for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyNonSplitReads(value uint64) (err error) {
-	return instance.SetProperty("NonSplitReads", value)
+	return instance.SetProperty("NonSplitReads", (value))
 }
 
 // GetNonSplitReads gets the value of NonSplitReads for the instance
@@ -358,16 +468,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonSplitReadsPersec sets the value of NonSplitReadsPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyNonSplitReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("NonSplitReadsPersec", value)
+	return instance.SetProperty("NonSplitReadsPersec", (value))
 }
 
 // GetNonSplitReadsPersec gets the value of NonSplitReadsPersec for the instance
@@ -376,16 +495,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonSplitWrites sets the value of NonSplitWrites for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyNonSplitWrites(value uint64) (err error) {
-	return instance.SetProperty("NonSplitWrites", value)
+	return instance.SetProperty("NonSplitWrites", (value))
 }
 
 // GetNonSplitWrites gets the value of NonSplitWrites for the instance
@@ -394,16 +522,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonSplitWritesPersec sets the value of NonSplitWritesPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyNonSplitWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("NonSplitWritesPersec", value)
+	return instance.SetProperty("NonSplitWritesPersec", (value))
 }
 
 // GetNonSplitWritesPersec gets the value of NonSplitWritesPersec for the instance
@@ -412,16 +549,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadBytes sets the value of ReadBytes for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyReadBytes(value uint64) (err error) {
-	return instance.SetProperty("ReadBytes", value)
+	return instance.SetProperty("ReadBytes", (value))
 }
 
 // GetReadBytes gets the value of ReadBytes for the instance
@@ -430,16 +576,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadBytesPersec sets the value of ReadBytesPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersec", value)
+	return instance.SetProperty("ReadBytesPersec", (value))
 }
 
 // GetReadBytesPersec gets the value of ReadBytesPersec for the instance
@@ -448,16 +603,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReads sets the value of Reads for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyReads(value uint64) (err error) {
-	return instance.SetProperty("Reads", value)
+	return instance.SetProperty("Reads", (value))
 }
 
 // GetReads gets the value of Reads for the instance
@@ -466,16 +630,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadsPersec sets the value of ReadsPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadsPersec", value)
+	return instance.SetProperty("ReadsPersec", (value))
 }
 
 // GetReadsPersec gets the value of ReadsPersec for the instance
@@ -484,16 +657,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSplitReads sets the value of SplitReads for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertySplitReads(value uint64) (err error) {
-	return instance.SetProperty("SplitReads", value)
+	return instance.SetProperty("SplitReads", (value))
 }
 
 // GetSplitReads gets the value of SplitReads for the instance
@@ -502,16 +684,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSplitReadsPersec sets the value of SplitReadsPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertySplitReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("SplitReadsPersec", value)
+	return instance.SetProperty("SplitReadsPersec", (value))
 }
 
 // GetSplitReadsPersec gets the value of SplitReadsPersec for the instance
@@ -520,16 +711,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSplitWrites sets the value of SplitWrites for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertySplitWrites(value uint64) (err error) {
-	return instance.SetProperty("SplitWrites", value)
+	return instance.SetProperty("SplitWrites", (value))
 }
 
 // GetSplitWrites gets the value of SplitWrites for the instance
@@ -538,16 +738,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSplitWritesPersec sets the value of SplitWritesPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertySplitWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("SplitWritesPersec", value)
+	return instance.SetProperty("SplitWritesPersec", (value))
 }
 
 // GetSplitWritesPersec gets the value of SplitWritesPersec for the instance
@@ -556,16 +765,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBytes sets the value of WriteBytes for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyWriteBytes(value uint64) (err error) {
-	return instance.SetProperty("WriteBytes", value)
+	return instance.SetProperty("WriteBytes", (value))
 }
 
 // GetWriteBytes gets the value of WriteBytes for the instance
@@ -574,16 +792,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBytesPersec sets the value of WriteBytesPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBytesPersec", value)
+	return instance.SetProperty("WriteBytesPersec", (value))
 }
 
 // GetWriteBytesPersec gets the value of WriteBytesPersec for the instance
@@ -592,16 +819,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWrites sets the value of Writes for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyWrites(value uint64) (err error) {
-	return instance.SetProperty("Writes", value)
+	return instance.SetProperty("Writes", (value))
 }
 
 // GetWrites gets the value of Writes for the instance
@@ -610,16 +846,25 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWritesPersec sets the value of WritesPersec for the instance
 func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) SetPropertyWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("WritesPersec", value)
+	return instance.SetProperty("WritesPersec", (value))
 }
 
 // GetWritesPersec gets the value of WritesPersec for the instance
@@ -628,9 +873,18 @@ func (instance *Win32_PerfRawData_CsvFsPerfProvider_ClusterCSVFSDirectIO) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

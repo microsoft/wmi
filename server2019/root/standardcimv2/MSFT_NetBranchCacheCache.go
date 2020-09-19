@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetBranchCacheCache struct
@@ -61,7 +63,7 @@ func NewMSFT_NetBranchCacheCacheEx6(hostName string,
 
 // SetCacheFileDirectoryPath sets the value of CacheFileDirectoryPath for the instance
 func (instance *MSFT_NetBranchCacheCache) SetPropertyCacheFileDirectoryPath(value string) (err error) {
-	return instance.SetProperty("CacheFileDirectoryPath", value)
+	return instance.SetProperty("CacheFileDirectoryPath", (value))
 }
 
 // GetCacheFileDirectoryPath gets the value of CacheFileDirectoryPath for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetBranchCacheCache) GetPropertyCacheFileDirectoryPath() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCurrentSizeOnDiskAsNumberOfBytes sets the value of CurrentSizeOnDiskAsNumberOfBytes for the instance
 func (instance *MSFT_NetBranchCacheCache) SetPropertyCurrentSizeOnDiskAsNumberOfBytes(value uint64) (err error) {
-	return instance.SetProperty("CurrentSizeOnDiskAsNumberOfBytes", value)
+	return instance.SetProperty("CurrentSizeOnDiskAsNumberOfBytes", (value))
 }
 
 // GetCurrentSizeOnDiskAsNumberOfBytes gets the value of CurrentSizeOnDiskAsNumberOfBytes for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetBranchCacheCache) GetPropertyCurrentSizeOnDiskAsNumberOf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxCacheSizeAsNumberOfBytes sets the value of MaxCacheSizeAsNumberOfBytes for the instance
 func (instance *MSFT_NetBranchCacheCache) SetPropertyMaxCacheSizeAsNumberOfBytes(value uint64) (err error) {
-	return instance.SetProperty("MaxCacheSizeAsNumberOfBytes", value)
+	return instance.SetProperty("MaxCacheSizeAsNumberOfBytes", (value))
 }
 
 // GetMaxCacheSizeAsNumberOfBytes gets the value of MaxCacheSizeAsNumberOfBytes for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetBranchCacheCache) GetPropertyMaxCacheSizeAsNumberOfBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxCacheSizeAsPercentageOfDiskVolume sets the value of MaxCacheSizeAsPercentageOfDiskVolume for the instance
 func (instance *MSFT_NetBranchCacheCache) SetPropertyMaxCacheSizeAsPercentageOfDiskVolume(value uint32) (err error) {
-	return instance.SetProperty("MaxCacheSizeAsPercentageOfDiskVolume", value)
+	return instance.SetProperty("MaxCacheSizeAsPercentageOfDiskVolume", (value))
 }
 
 // GetMaxCacheSizeAsPercentageOfDiskVolume gets the value of MaxCacheSizeAsPercentageOfDiskVolume for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_NetBranchCacheCache) GetPropertyMaxCacheSizeAsPercentageOfD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

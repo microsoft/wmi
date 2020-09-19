@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Updates struct
@@ -56,7 +58,7 @@ func NewMDM_UpdatesEx6(hostName string,
 
 // SetAutoUpdatePolicy sets the value of AutoUpdatePolicy for the instance
 func (instance *MDM_Updates) SetPropertyAutoUpdatePolicy(value uint32) (err error) {
-	return instance.SetProperty("AutoUpdatePolicy", value)
+	return instance.SetProperty("AutoUpdatePolicy", (value))
 }
 
 // GetAutoUpdatePolicy gets the value of AutoUpdatePolicy for the instance
@@ -65,16 +67,25 @@ func (instance *MDM_Updates) GetPropertyAutoUpdatePolicy() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *MDM_Updates) SetPropertykey(value uint32) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -83,9 +94,18 @@ func (instance *MDM_Updates) GetPropertykey() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

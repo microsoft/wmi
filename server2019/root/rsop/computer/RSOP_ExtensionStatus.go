@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_ExtensionStatus struct
@@ -68,7 +70,7 @@ func NewRSOP_ExtensionStatusEx6(hostName string,
 
 // SetbeginTime sets the value of beginTime for the instance
 func (instance *RSOP_ExtensionStatus) SetPropertybeginTime(value string) (err error) {
-	return instance.SetProperty("beginTime", value)
+	return instance.SetProperty("beginTime", (value))
 }
 
 // GetbeginTime gets the value of beginTime for the instance
@@ -77,16 +79,25 @@ func (instance *RSOP_ExtensionStatus) GetPropertybeginTime() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetdisplayName sets the value of displayName for the instance
 func (instance *RSOP_ExtensionStatus) SetPropertydisplayName(value string) (err error) {
-	return instance.SetProperty("displayName", value)
+	return instance.SetProperty("displayName", (value))
 }
 
 // GetdisplayName gets the value of displayName for the instance
@@ -95,16 +106,25 @@ func (instance *RSOP_ExtensionStatus) GetPropertydisplayName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetendTime sets the value of endTime for the instance
 func (instance *RSOP_ExtensionStatus) SetPropertyendTime(value string) (err error) {
-	return instance.SetProperty("endTime", value)
+	return instance.SetProperty("endTime", (value))
 }
 
 // GetendTime gets the value of endTime for the instance
@@ -113,16 +133,25 @@ func (instance *RSOP_ExtensionStatus) GetPropertyendTime() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Seterror sets the value of error for the instance
 func (instance *RSOP_ExtensionStatus) SetPropertyerror(value uint32) (err error) {
-	return instance.SetProperty("error", value)
+	return instance.SetProperty("error", (value))
 }
 
 // Geterror gets the value of error for the instance
@@ -131,16 +160,25 @@ func (instance *RSOP_ExtensionStatus) GetPropertyerror() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetextensionGuid sets the value of extensionGuid for the instance
 func (instance *RSOP_ExtensionStatus) SetPropertyextensionGuid(value string) (err error) {
-	return instance.SetProperty("extensionGuid", value)
+	return instance.SetProperty("extensionGuid", (value))
 }
 
 // GetextensionGuid gets the value of extensionGuid for the instance
@@ -149,16 +187,25 @@ func (instance *RSOP_ExtensionStatus) GetPropertyextensionGuid() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetloggingStatus sets the value of loggingStatus for the instance
 func (instance *RSOP_ExtensionStatus) SetPropertyloggingStatus(value uint32) (err error) {
-	return instance.SetProperty("loggingStatus", value)
+	return instance.SetProperty("loggingStatus", (value))
 }
 
 // GetloggingStatus gets the value of loggingStatus for the instance
@@ -167,9 +214,18 @@ func (instance *RSOP_ExtensionStatus) GetPropertyloggingStatus() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

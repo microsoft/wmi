@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_FlexIoDevice struct
@@ -55,7 +57,7 @@ func NewMsvm_FlexIoDeviceEx6(hostName string,
 
 // SetEmulatorConfiguration sets the value of EmulatorConfiguration for the instance
 func (instance *Msvm_FlexIoDevice) SetPropertyEmulatorConfiguration(value []string) (err error) {
-	return instance.SetProperty("EmulatorConfiguration", value)
+	return instance.SetProperty("EmulatorConfiguration", (value))
 }
 
 // GetEmulatorConfiguration gets the value of EmulatorConfiguration for the instance
@@ -64,16 +66,26 @@ func (instance *Msvm_FlexIoDevice) GetPropertyEmulatorConfiguration() (value []s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetEmulatorId sets the value of EmulatorId for the instance
 func (instance *Msvm_FlexIoDevice) SetPropertyEmulatorId(value string) (err error) {
-	return instance.SetProperty("EmulatorId", value)
+	return instance.SetProperty("EmulatorId", (value))
 }
 
 // GetEmulatorId gets the value of EmulatorId for the instance
@@ -82,9 +94,18 @@ func (instance *Msvm_FlexIoDevice) GetPropertyEmulatorId() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

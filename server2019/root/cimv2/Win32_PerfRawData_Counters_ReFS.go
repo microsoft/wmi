@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_ReFS struct
@@ -199,7 +201,7 @@ func NewWin32_PerfRawData_Counters_ReFSEx6(hostName string,
 
 // SetAllocationofDataClustersonFastTierPersec sets the value of AllocationofDataClustersonFastTierPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyAllocationofDataClustersonFastTierPersec(value uint64) (err error) {
-	return instance.SetProperty("AllocationofDataClustersonFastTierPersec", value)
+	return instance.SetProperty("AllocationofDataClustersonFastTierPersec", (value))
 }
 
 // GetAllocationofDataClustersonFastTierPersec gets the value of AllocationofDataClustersonFastTierPersec for the instance
@@ -208,16 +210,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyAllocationofDataClus
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAllocationofDataClustersonSlowTierPersec sets the value of AllocationofDataClustersonSlowTierPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyAllocationofDataClustersonSlowTierPersec(value uint64) (err error) {
-	return instance.SetProperty("AllocationofDataClustersonSlowTierPersec", value)
+	return instance.SetProperty("AllocationofDataClustersonSlowTierPersec", (value))
 }
 
 // GetAllocationofDataClustersonSlowTierPersec gets the value of AllocationofDataClustersonSlowTierPersec for the instance
@@ -226,16 +237,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyAllocationofDataClus
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAllocationofMetadataClustersonFastTierPersec sets the value of AllocationofMetadataClustersonFastTierPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyAllocationofMetadataClustersonFastTierPersec(value uint64) (err error) {
-	return instance.SetProperty("AllocationofMetadataClustersonFastTierPersec", value)
+	return instance.SetProperty("AllocationofMetadataClustersonFastTierPersec", (value))
 }
 
 // GetAllocationofMetadataClustersonFastTierPersec gets the value of AllocationofMetadataClustersonFastTierPersec for the instance
@@ -244,16 +264,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyAllocationofMetadata
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAllocationofMetadataClustersonSlowTierPersec sets the value of AllocationofMetadataClustersonSlowTierPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyAllocationofMetadataClustersonSlowTierPersec(value uint64) (err error) {
-	return instance.SetProperty("AllocationofMetadataClustersonSlowTierPersec", value)
+	return instance.SetProperty("AllocationofMetadataClustersonSlowTierPersec", (value))
 }
 
 // GetAllocationofMetadataClustersonSlowTierPersec gets the value of AllocationofMetadataClustersonSlowTierPersec for the instance
@@ -262,16 +291,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyAllocationofMetadata
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCheckpointlatency100ns sets the value of Checkpointlatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCheckpointlatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Checkpointlatency100ns", value)
+	return instance.SetProperty("Checkpointlatency100ns", (value))
 }
 
 // GetCheckpointlatency100ns gets the value of Checkpointlatency100ns for the instance
@@ -280,16 +318,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCheckpointlatency100
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCheckpointlatency100ns_Base sets the value of Checkpointlatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCheckpointlatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Checkpointlatency100ns_Base", value)
+	return instance.SetProperty("Checkpointlatency100ns_Base", (value))
 }
 
 // GetCheckpointlatency100ns_Base gets the value of Checkpointlatency100ns_Base for the instance
@@ -298,16 +345,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCheckpointlatency100
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCheckpointsPersec sets the value of CheckpointsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCheckpointsPersec(value uint64) (err error) {
-	return instance.SetProperty("CheckpointsPersec", value)
+	return instance.SetProperty("CheckpointsPersec", (value))
 }
 
 // GetCheckpointsPersec gets the value of CheckpointsPersec for the instance
@@ -316,16 +372,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCheckpointsPersec() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompactedContainerFillRatioPercent sets the value of CompactedContainerFillRatioPercent for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactedContainerFillRatioPercent(value uint64) (err error) {
-	return instance.SetProperty("CompactedContainerFillRatioPercent", value)
+	return instance.SetProperty("CompactedContainerFillRatioPercent", (value))
 }
 
 // GetCompactedContainerFillRatioPercent gets the value of CompactedContainerFillRatioPercent for the instance
@@ -334,16 +399,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactedContainerFi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompactedContainerFillRatioPercent_Base sets the value of CompactedContainerFillRatioPercent_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactedContainerFillRatioPercent_Base(value uint32) (err error) {
-	return instance.SetProperty("CompactedContainerFillRatioPercent_Base", value)
+	return instance.SetProperty("CompactedContainerFillRatioPercent_Base", (value))
 }
 
 // GetCompactedContainerFillRatioPercent_Base gets the value of CompactedContainerFillRatioPercent_Base for the instance
@@ -352,16 +426,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactedContainerFi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompactionFailureCount sets the value of CompactionFailureCount for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactionFailureCount(value uint32) (err error) {
-	return instance.SetProperty("CompactionFailureCount", value)
+	return instance.SetProperty("CompactionFailureCount", (value))
 }
 
 // GetCompactionFailureCount gets the value of CompactionFailureCount for the instance
@@ -370,16 +453,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactionFailureCou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompactionreadlatency100ns sets the value of Compactionreadlatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactionreadlatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Compactionreadlatency100ns", value)
+	return instance.SetProperty("Compactionreadlatency100ns", (value))
 }
 
 // GetCompactionreadlatency100ns gets the value of Compactionreadlatency100ns for the instance
@@ -388,16 +480,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactionreadlatenc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompactionreadlatency100ns_Base sets the value of Compactionreadlatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactionreadlatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Compactionreadlatency100ns_Base", value)
+	return instance.SetProperty("Compactionreadlatency100ns_Base", (value))
 }
 
 // GetCompactionreadlatency100ns_Base gets the value of Compactionreadlatency100ns_Base for the instance
@@ -406,16 +507,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactionreadlatenc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompactionsfailedduetoineligiblecontainer sets the value of Compactionsfailedduetoineligiblecontainer for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactionsfailedduetoineligiblecontainer(value uint32) (err error) {
-	return instance.SetProperty("Compactionsfailedduetoineligiblecontainer", value)
+	return instance.SetProperty("Compactionsfailedduetoineligiblecontainer", (value))
 }
 
 // GetCompactionsfailedduetoineligiblecontainer gets the value of Compactionsfailedduetoineligiblecontainer for the instance
@@ -424,16 +534,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactionsfaileddue
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompactionsfailedduetomaxfragmentation sets the value of Compactionsfailedduetomaxfragmentation for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactionsfailedduetomaxfragmentation(value uint32) (err error) {
-	return instance.SetProperty("Compactionsfailedduetomaxfragmentation", value)
+	return instance.SetProperty("Compactionsfailedduetomaxfragmentation", (value))
 }
 
 // GetCompactionsfailedduetomaxfragmentation gets the value of Compactionsfailedduetomaxfragmentation for the instance
@@ -442,16 +561,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactionsfaileddue
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompactionwritelatency100ns sets the value of Compactionwritelatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactionwritelatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Compactionwritelatency100ns", value)
+	return instance.SetProperty("Compactionwritelatency100ns", (value))
 }
 
 // GetCompactionwritelatency100ns gets the value of Compactionwritelatency100ns for the instance
@@ -460,16 +588,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactionwritelaten
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompactionwritelatency100ns_Base sets the value of Compactionwritelatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCompactionwritelatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Compactionwritelatency100ns_Base", value)
+	return instance.SetProperty("Compactionwritelatency100ns_Base", (value))
 }
 
 // GetCompactionwritelatency100ns_Base gets the value of Compactionwritelatency100ns_Base for the instance
@@ -478,16 +615,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCompactionwritelaten
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContainerDestagesFromFastTierPersec sets the value of ContainerDestagesFromFastTierPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyContainerDestagesFromFastTierPersec(value uint64) (err error) {
-	return instance.SetProperty("ContainerDestagesFromFastTierPersec", value)
+	return instance.SetProperty("ContainerDestagesFromFastTierPersec", (value))
 }
 
 // GetContainerDestagesFromFastTierPersec gets the value of ContainerDestagesFromFastTierPersec for the instance
@@ -496,16 +642,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyContainerDestagesFro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetContainerDestagesFromSlowTierPersec sets the value of ContainerDestagesFromSlowTierPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyContainerDestagesFromSlowTierPersec(value uint64) (err error) {
-	return instance.SetProperty("ContainerDestagesFromSlowTierPersec", value)
+	return instance.SetProperty("ContainerDestagesFromSlowTierPersec", (value))
 }
 
 // GetContainerDestagesFromSlowTierPersec gets the value of ContainerDestagesFromSlowTierPersec for the instance
@@ -514,16 +669,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyContainerDestagesFro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetContainerMoveFailureCount sets the value of ContainerMoveFailureCount for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyContainerMoveFailureCount(value uint32) (err error) {
-	return instance.SetProperty("ContainerMoveFailureCount", value)
+	return instance.SetProperty("ContainerMoveFailureCount", (value))
 }
 
 // GetContainerMoveFailureCount gets the value of ContainerMoveFailureCount for the instance
@@ -532,16 +696,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyContainerMoveFailure
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContainerMoveRetryCount sets the value of ContainerMoveRetryCount for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyContainerMoveRetryCount(value uint32) (err error) {
-	return instance.SetProperty("ContainerMoveRetryCount", value)
+	return instance.SetProperty("ContainerMoveRetryCount", (value))
 }
 
 // GetContainerMoveRetryCount gets the value of ContainerMoveRetryCount for the instance
@@ -550,16 +723,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyContainerMoveRetryCo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContainermovesfailedduetoineligiblecontainer sets the value of Containermovesfailedduetoineligiblecontainer for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyContainermovesfailedduetoineligiblecontainer(value uint32) (err error) {
-	return instance.SetProperty("Containermovesfailedduetoineligiblecontainer", value)
+	return instance.SetProperty("Containermovesfailedduetoineligiblecontainer", (value))
 }
 
 // GetContainermovesfailedduetoineligiblecontainer gets the value of Containermovesfailedduetoineligiblecontainer for the instance
@@ -568,16 +750,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyContainermovesfailed
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentFastTierDataFillPercentage sets the value of CurrentFastTierDataFillPercentage for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCurrentFastTierDataFillPercentage(value uint32) (err error) {
-	return instance.SetProperty("CurrentFastTierDataFillPercentage", value)
+	return instance.SetProperty("CurrentFastTierDataFillPercentage", (value))
 }
 
 // GetCurrentFastTierDataFillPercentage gets the value of CurrentFastTierDataFillPercentage for the instance
@@ -586,16 +777,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCurrentFastTierDataF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentFastTierMetadataFillPercentage sets the value of CurrentFastTierMetadataFillPercentage for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCurrentFastTierMetadataFillPercentage(value uint32) (err error) {
-	return instance.SetProperty("CurrentFastTierMetadataFillPercentage", value)
+	return instance.SetProperty("CurrentFastTierMetadataFillPercentage", (value))
 }
 
 // GetCurrentFastTierMetadataFillPercentage gets the value of CurrentFastTierMetadataFillPercentage for the instance
@@ -604,16 +804,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCurrentFastTierMetad
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentSlowTierDataFillPercentage sets the value of CurrentSlowTierDataFillPercentage for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCurrentSlowTierDataFillPercentage(value uint32) (err error) {
-	return instance.SetProperty("CurrentSlowTierDataFillPercentage", value)
+	return instance.SetProperty("CurrentSlowTierDataFillPercentage", (value))
 }
 
 // GetCurrentSlowTierDataFillPercentage gets the value of CurrentSlowTierDataFillPercentage for the instance
@@ -622,16 +831,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCurrentSlowTierDataF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentSlowTierMetadataFillPercentage sets the value of CurrentSlowTierMetadataFillPercentage for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyCurrentSlowTierMetadataFillPercentage(value uint32) (err error) {
-	return instance.SetProperty("CurrentSlowTierMetadataFillPercentage", value)
+	return instance.SetProperty("CurrentSlowTierMetadataFillPercentage", (value))
 }
 
 // GetCurrentSlowTierMetadataFillPercentage gets the value of CurrentSlowTierMetadataFillPercentage for the instance
@@ -640,16 +858,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyCurrentSlowTierMetad
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataCompactionsPersec sets the value of DataCompactionsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyDataCompactionsPersec(value uint64) (err error) {
-	return instance.SetProperty("DataCompactionsPersec", value)
+	return instance.SetProperty("DataCompactionsPersec", (value))
 }
 
 // GetDataCompactionsPersec gets the value of DataCompactionsPersec for the instance
@@ -658,16 +885,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyDataCompactionsPerse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDataInPlaceWriteClustersPersec sets the value of DataInPlaceWriteClustersPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyDataInPlaceWriteClustersPersec(value uint64) (err error) {
-	return instance.SetProperty("DataInPlaceWriteClustersPersec", value)
+	return instance.SetProperty("DataInPlaceWriteClustersPersec", (value))
 }
 
 // GetDataInPlaceWriteClustersPersec gets the value of DataInPlaceWriteClustersPersec for the instance
@@ -676,16 +912,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyDataInPlaceWriteClus
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDeleteQueueentries sets the value of DeleteQueueentries for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyDeleteQueueentries(value uint32) (err error) {
-	return instance.SetProperty("DeleteQueueentries", value)
+	return instance.SetProperty("DeleteQueueentries", (value))
 }
 
 // GetDeleteQueueentries gets the value of DeleteQueueentries for the instance
@@ -694,16 +939,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyDeleteQueueentries()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDirtymetadatapages sets the value of Dirtymetadatapages for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyDirtymetadatapages(value uint64) (err error) {
-	return instance.SetProperty("Dirtymetadatapages", value)
+	return instance.SetProperty("Dirtymetadatapages", (value))
 }
 
 // GetDirtymetadatapages gets the value of Dirtymetadatapages for the instance
@@ -712,16 +966,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyDirtymetadatapages()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirtytablelistentries sets the value of Dirtytablelistentries for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyDirtytablelistentries(value uint32) (err error) {
-	return instance.SetProperty("Dirtytablelistentries", value)
+	return instance.SetProperty("Dirtytablelistentries", (value))
 }
 
 // GetDirtytablelistentries gets the value of Dirtytablelistentries for the instance
@@ -730,16 +993,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyDirtytablelistentrie
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFastTierDestagedContainerFillRatioPercent sets the value of FastTierDestagedContainerFillRatioPercent for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyFastTierDestagedContainerFillRatioPercent(value uint64) (err error) {
-	return instance.SetProperty("FastTierDestagedContainerFillRatioPercent", value)
+	return instance.SetProperty("FastTierDestagedContainerFillRatioPercent", (value))
 }
 
 // GetFastTierDestagedContainerFillRatioPercent gets the value of FastTierDestagedContainerFillRatioPercent for the instance
@@ -748,16 +1020,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyFastTierDestagedCont
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFastTierDestagedContainerFillRatioPercent_Base sets the value of FastTierDestagedContainerFillRatioPercent_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyFastTierDestagedContainerFillRatioPercent_Base(value uint32) (err error) {
-	return instance.SetProperty("FastTierDestagedContainerFillRatioPercent_Base", value)
+	return instance.SetProperty("FastTierDestagedContainerFillRatioPercent_Base", (value))
 }
 
 // GetFastTierDestagedContainerFillRatioPercent_Base gets the value of FastTierDestagedContainerFillRatioPercent_Base for the instance
@@ -766,16 +1047,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyFastTierDestagedCont
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFasttierdestagereadlatency100ns sets the value of Fasttierdestagereadlatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyFasttierdestagereadlatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Fasttierdestagereadlatency100ns", value)
+	return instance.SetProperty("Fasttierdestagereadlatency100ns", (value))
 }
 
 // GetFasttierdestagereadlatency100ns gets the value of Fasttierdestagereadlatency100ns for the instance
@@ -784,16 +1074,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyFasttierdestagereadl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFasttierdestagereadlatency100ns_Base sets the value of Fasttierdestagereadlatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyFasttierdestagereadlatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Fasttierdestagereadlatency100ns_Base", value)
+	return instance.SetProperty("Fasttierdestagereadlatency100ns_Base", (value))
 }
 
 // GetFasttierdestagereadlatency100ns_Base gets the value of Fasttierdestagereadlatency100ns_Base for the instance
@@ -802,16 +1101,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyFasttierdestagereadl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFasttierdestagewritelatency100ns sets the value of Fasttierdestagewritelatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyFasttierdestagewritelatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Fasttierdestagewritelatency100ns", value)
+	return instance.SetProperty("Fasttierdestagewritelatency100ns", (value))
 }
 
 // GetFasttierdestagewritelatency100ns gets the value of Fasttierdestagewritelatency100ns for the instance
@@ -820,16 +1128,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyFasttierdestagewrite
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFasttierdestagewritelatency100ns_Base sets the value of Fasttierdestagewritelatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyFasttierdestagewritelatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Fasttierdestagewritelatency100ns_Base", value)
+	return instance.SetProperty("Fasttierdestagewritelatency100ns_Base", (value))
 }
 
 // GetFasttierdestagewritelatency100ns_Base gets the value of Fasttierdestagewritelatency100ns_Base for the instance
@@ -838,16 +1155,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyFasttierdestagewrite
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogfillpercentage sets the value of Logfillpercentage for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyLogfillpercentage(value uint32) (err error) {
-	return instance.SetProperty("Logfillpercentage", value)
+	return instance.SetProperty("Logfillpercentage", (value))
 }
 
 // GetLogfillpercentage gets the value of Logfillpercentage for the instance
@@ -856,16 +1182,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyLogfillpercentage() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogwritesPersec sets the value of LogwritesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyLogwritesPersec(value uint64) (err error) {
-	return instance.SetProperty("LogwritesPersec", value)
+	return instance.SetProperty("LogwritesPersec", (value))
 }
 
 // GetLogwritesPersec gets the value of LogwritesPersec for the instance
@@ -874,16 +1209,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyLogwritesPersec() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSlowTierDestagedContainerFillRatioPercent sets the value of SlowTierDestagedContainerFillRatioPercent for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertySlowTierDestagedContainerFillRatioPercent(value uint64) (err error) {
-	return instance.SetProperty("SlowTierDestagedContainerFillRatioPercent", value)
+	return instance.SetProperty("SlowTierDestagedContainerFillRatioPercent", (value))
 }
 
 // GetSlowTierDestagedContainerFillRatioPercent gets the value of SlowTierDestagedContainerFillRatioPercent for the instance
@@ -892,16 +1236,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertySlowTierDestagedCont
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSlowTierDestagedContainerFillRatioPercent_Base sets the value of SlowTierDestagedContainerFillRatioPercent_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertySlowTierDestagedContainerFillRatioPercent_Base(value uint32) (err error) {
-	return instance.SetProperty("SlowTierDestagedContainerFillRatioPercent_Base", value)
+	return instance.SetProperty("SlowTierDestagedContainerFillRatioPercent_Base", (value))
 }
 
 // GetSlowTierDestagedContainerFillRatioPercent_Base gets the value of SlowTierDestagedContainerFillRatioPercent_Base for the instance
@@ -910,16 +1263,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertySlowTierDestagedCont
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSlowtierdestagereadlatency100ns sets the value of Slowtierdestagereadlatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertySlowtierdestagereadlatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Slowtierdestagereadlatency100ns", value)
+	return instance.SetProperty("Slowtierdestagereadlatency100ns", (value))
 }
 
 // GetSlowtierdestagereadlatency100ns gets the value of Slowtierdestagereadlatency100ns for the instance
@@ -928,16 +1290,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertySlowtierdestagereadl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSlowtierdestagereadlatency100ns_Base sets the value of Slowtierdestagereadlatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertySlowtierdestagereadlatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Slowtierdestagereadlatency100ns_Base", value)
+	return instance.SetProperty("Slowtierdestagereadlatency100ns_Base", (value))
 }
 
 // GetSlowtierdestagereadlatency100ns_Base gets the value of Slowtierdestagereadlatency100ns_Base for the instance
@@ -946,16 +1317,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertySlowtierdestagereadl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSlowtierdestagewritelatency100ns sets the value of Slowtierdestagewritelatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertySlowtierdestagewritelatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Slowtierdestagewritelatency100ns", value)
+	return instance.SetProperty("Slowtierdestagewritelatency100ns", (value))
 }
 
 // GetSlowtierdestagewritelatency100ns gets the value of Slowtierdestagewritelatency100ns for the instance
@@ -964,16 +1344,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertySlowtierdestagewrite
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSlowtierdestagewritelatency100ns_Base sets the value of Slowtierdestagewritelatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertySlowtierdestagewritelatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Slowtierdestagewritelatency100ns_Base", value)
+	return instance.SetProperty("Slowtierdestagewritelatency100ns_Base", (value))
 }
 
 // GetSlowtierdestagewritelatency100ns_Base gets the value of Slowtierdestagewritelatency100ns_Base for the instance
@@ -982,16 +1371,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertySlowtierdestagewrite
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalAllocationofClustersPersec sets the value of TotalAllocationofClustersPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyTotalAllocationofClustersPersec(value uint64) (err error) {
-	return instance.SetProperty("TotalAllocationofClustersPersec", value)
+	return instance.SetProperty("TotalAllocationofClustersPersec", (value))
 }
 
 // GetTotalAllocationofClustersPersec gets the value of TotalAllocationofClustersPersec for the instance
@@ -1000,16 +1398,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyTotalAllocationofClu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTreeupdatelatency100ns sets the value of Treeupdatelatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyTreeupdatelatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Treeupdatelatency100ns", value)
+	return instance.SetProperty("Treeupdatelatency100ns", (value))
 }
 
 // GetTreeupdatelatency100ns gets the value of Treeupdatelatency100ns for the instance
@@ -1018,16 +1425,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyTreeupdatelatency100
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTreeupdatelatency100ns_Base sets the value of Treeupdatelatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyTreeupdatelatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Treeupdatelatency100ns_Base", value)
+	return instance.SetProperty("Treeupdatelatency100ns_Base", (value))
 }
 
 // GetTreeupdatelatency100ns_Base gets the value of Treeupdatelatency100ns_Base for the instance
@@ -1036,16 +1452,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyTreeupdatelatency100
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTreeupdatesPersec sets the value of TreeupdatesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyTreeupdatesPersec(value uint64) (err error) {
-	return instance.SetProperty("TreeupdatesPersec", value)
+	return instance.SetProperty("TreeupdatesPersec", (value))
 }
 
 // GetTreeupdatesPersec gets the value of TreeupdatesPersec for the instance
@@ -1054,16 +1479,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyTreeupdatesPersec() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTrimlatency100ns sets the value of Trimlatency100ns for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyTrimlatency100ns(value uint64) (err error) {
-	return instance.SetProperty("Trimlatency100ns", value)
+	return instance.SetProperty("Trimlatency100ns", (value))
 }
 
 // GetTrimlatency100ns gets the value of Trimlatency100ns for the instance
@@ -1072,16 +1506,25 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyTrimlatency100ns() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTrimlatency100ns_Base sets the value of Trimlatency100ns_Base for the instance
 func (instance *Win32_PerfRawData_Counters_ReFS) SetPropertyTrimlatency100ns_Base(value uint32) (err error) {
-	return instance.SetProperty("Trimlatency100ns_Base", value)
+	return instance.SetProperty("Trimlatency100ns_Base", (value))
 }
 
 // GetTrimlatency100ns_Base gets the value of Trimlatency100ns_Base for the instance
@@ -1090,9 +1533,18 @@ func (instance *Win32_PerfRawData_Counters_ReFS) GetPropertyTrimlatency100ns_Bas
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

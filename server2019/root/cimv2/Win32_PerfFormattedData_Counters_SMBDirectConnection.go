@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_SMBDirectConnection struct
@@ -49,12 +51,6 @@ type Win32_PerfFormattedData_Counters_SMBDirectConnection struct {
 
 	//
 	SendsPersec uint32
-
-	//
-	SpuriousRCQNotificationEvents uint64
-
-	//
-	SpuriousSCQNotificationEvents uint64
 
 	//
 	StallsRDMAReadPersec uint32
@@ -100,7 +96,7 @@ func NewWin32_PerfFormattedData_Counters_SMBDirectConnectionEx6(hostName string,
 
 // SetBytesRDMAReadPersec sets the value of BytesRDMAReadPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyBytesRDMAReadPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesRDMAReadPersec", value)
+	return instance.SetProperty("BytesRDMAReadPersec", (value))
 }
 
 // GetBytesRDMAReadPersec gets the value of BytesRDMAReadPersec for the instance
@@ -109,16 +105,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesRDMAWrittenPersec sets the value of BytesRDMAWrittenPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyBytesRDMAWrittenPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesRDMAWrittenPersec", value)
+	return instance.SetProperty("BytesRDMAWrittenPersec", (value))
 }
 
 // GetBytesRDMAWrittenPersec gets the value of BytesRDMAWrittenPersec for the instance
@@ -127,16 +132,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesReceivedPersec sets the value of BytesReceivedPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyBytesReceivedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesReceivedPersec", value)
+	return instance.SetProperty("BytesReceivedPersec", (value))
 }
 
 // GetBytesReceivedPersec gets the value of BytesReceivedPersec for the instance
@@ -145,16 +159,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesSentPersec sets the value of BytesSentPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyBytesSentPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesSentPersec", value)
+	return instance.SetProperty("BytesSentPersec", (value))
 }
 
 // GetBytesSentPersec gets the value of BytesSentPersec for the instance
@@ -163,16 +186,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryRegions sets the value of MemoryRegions for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyMemoryRegions(value uint32) (err error) {
-	return instance.SetProperty("MemoryRegions", value)
+	return instance.SetProperty("MemoryRegions", (value))
 }
 
 // GetMemoryRegions gets the value of MemoryRegions for the instance
@@ -181,16 +213,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRCQNotificationEventsPersec sets the value of RCQNotificationEventsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyRCQNotificationEventsPersec(value uint32) (err error) {
-	return instance.SetProperty("RCQNotificationEventsPersec", value)
+	return instance.SetProperty("RCQNotificationEventsPersec", (value))
 }
 
 // GetRCQNotificationEventsPersec gets the value of RCQNotificationEventsPersec for the instance
@@ -199,16 +240,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRDMARegistrationsPersec sets the value of RDMARegistrationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyRDMARegistrationsPersec(value uint32) (err error) {
-	return instance.SetProperty("RDMARegistrationsPersec", value)
+	return instance.SetProperty("RDMARegistrationsPersec", (value))
 }
 
 // GetRDMARegistrationsPersec gets the value of RDMARegistrationsPersec for the instance
@@ -217,16 +267,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivesPersec sets the value of ReceivesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyReceivesPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceivesPersec", value)
+	return instance.SetProperty("ReceivesPersec", (value))
 }
 
 // GetReceivesPersec gets the value of ReceivesPersec for the instance
@@ -235,16 +294,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemoteInvalidationsPersec sets the value of RemoteInvalidationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyRemoteInvalidationsPersec(value uint32) (err error) {
-	return instance.SetProperty("RemoteInvalidationsPersec", value)
+	return instance.SetProperty("RemoteInvalidationsPersec", (value))
 }
 
 // GetRemoteInvalidationsPersec gets the value of RemoteInvalidationsPersec for the instance
@@ -253,16 +321,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSCQNotificationEventsPersec sets the value of SCQNotificationEventsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertySCQNotificationEventsPersec(value uint32) (err error) {
-	return instance.SetProperty("SCQNotificationEventsPersec", value)
+	return instance.SetProperty("SCQNotificationEventsPersec", (value))
 }
 
 // GetSCQNotificationEventsPersec gets the value of SCQNotificationEventsPersec for the instance
@@ -271,16 +348,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSendsPersec sets the value of SendsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertySendsPersec(value uint32) (err error) {
-	return instance.SetProperty("SendsPersec", value)
+	return instance.SetProperty("SendsPersec", (value))
 }
 
 // GetSendsPersec gets the value of SendsPersec for the instance
@@ -289,52 +375,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetSpuriousRCQNotificationEvents sets the value of SpuriousRCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertySpuriousRCQNotificationEvents(value uint64) (err error) {
-	return instance.SetProperty("SpuriousRCQNotificationEvents", value)
-}
-
-// GetSpuriousRCQNotificationEvents gets the value of SpuriousRCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropertySpuriousRCQNotificationEvents() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SpuriousRCQNotificationEvents")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint64)
+
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetSpuriousSCQNotificationEvents sets the value of SpuriousSCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertySpuriousSCQNotificationEvents(value uint64) (err error) {
-	return instance.SetProperty("SpuriousSCQNotificationEvents", value)
-}
-
-// GetSpuriousSCQNotificationEvents gets the value of SpuriousSCQNotificationEvents for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropertySpuriousSCQNotificationEvents() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SpuriousSCQNotificationEvents")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
-	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStallsRDMAReadPersec sets the value of StallsRDMAReadPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyStallsRDMAReadPersec(value uint32) (err error) {
-	return instance.SetProperty("StallsRDMAReadPersec", value)
+	return instance.SetProperty("StallsRDMAReadPersec", (value))
 }
 
 // GetStallsRDMAReadPersec gets the value of StallsRDMAReadPersec for the instance
@@ -343,16 +402,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStallsRDMARegistrationsPersec sets the value of StallsRDMARegistrationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyStallsRDMARegistrationsPersec(value uint32) (err error) {
-	return instance.SetProperty("StallsRDMARegistrationsPersec", value)
+	return instance.SetProperty("StallsRDMARegistrationsPersec", (value))
 }
 
 // GetStallsRDMARegistrationsPersec gets the value of StallsRDMARegistrationsPersec for the instance
@@ -361,16 +429,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStallsSendCreditPersec sets the value of StallsSendCreditPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyStallsSendCreditPersec(value uint32) (err error) {
-	return instance.SetProperty("StallsSendCreditPersec", value)
+	return instance.SetProperty("StallsSendCreditPersec", (value))
 }
 
 // GetStallsSendCreditPersec gets the value of StallsSendCreditPersec for the instance
@@ -379,16 +456,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStallsSendQueuePersec sets the value of StallsSendQueuePersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) SetPropertyStallsSendQueuePersec(value uint32) (err error) {
-	return instance.SetProperty("StallsSendQueuePersec", value)
+	return instance.SetProperty("StallsSendQueuePersec", (value))
 }
 
 // GetStallsSendQueuePersec gets the value of StallsSendQueuePersec for the instance
@@ -397,9 +483,18 @@ func (instance *Win32_PerfFormattedData_Counters_SMBDirectConnection) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

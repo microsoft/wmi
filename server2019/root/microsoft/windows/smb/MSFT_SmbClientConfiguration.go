@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbClientConfiguration struct
@@ -125,7 +127,7 @@ func NewMSFT_SmbClientConfigurationEx6(hostName string,
 
 // SetConnectionCountPerRssNetworkInterface sets the value of ConnectionCountPerRssNetworkInterface for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyConnectionCountPerRssNetworkInterface(value uint32) (err error) {
-	return instance.SetProperty("ConnectionCountPerRssNetworkInterface", value)
+	return instance.SetProperty("ConnectionCountPerRssNetworkInterface", (value))
 }
 
 // GetConnectionCountPerRssNetworkInterface gets the value of ConnectionCountPerRssNetworkInterface for the instance
@@ -134,16 +136,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyConnectionCountPerRssNet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDirectoryCacheEntriesMax sets the value of DirectoryCacheEntriesMax for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyDirectoryCacheEntriesMax(value uint32) (err error) {
-	return instance.SetProperty("DirectoryCacheEntriesMax", value)
+	return instance.SetProperty("DirectoryCacheEntriesMax", (value))
 }
 
 // GetDirectoryCacheEntriesMax gets the value of DirectoryCacheEntriesMax for the instance
@@ -152,16 +163,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyDirectoryCacheEntriesMax
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDirectoryCacheEntrySizeMax sets the value of DirectoryCacheEntrySizeMax for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyDirectoryCacheEntrySizeMax(value uint32) (err error) {
-	return instance.SetProperty("DirectoryCacheEntrySizeMax", value)
+	return instance.SetProperty("DirectoryCacheEntrySizeMax", (value))
 }
 
 // GetDirectoryCacheEntrySizeMax gets the value of DirectoryCacheEntrySizeMax for the instance
@@ -170,16 +190,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyDirectoryCacheEntrySizeM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDirectoryCacheLifetime sets the value of DirectoryCacheLifetime for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyDirectoryCacheLifetime(value uint32) (err error) {
-	return instance.SetProperty("DirectoryCacheLifetime", value)
+	return instance.SetProperty("DirectoryCacheLifetime", (value))
 }
 
 // GetDirectoryCacheLifetime gets the value of DirectoryCacheLifetime for the instance
@@ -188,16 +217,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyDirectoryCacheLifetime()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDormantFileLimit sets the value of DormantFileLimit for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyDormantFileLimit(value uint32) (err error) {
-	return instance.SetProperty("DormantFileLimit", value)
+	return instance.SetProperty("DormantFileLimit", (value))
 }
 
 // GetDormantFileLimit gets the value of DormantFileLimit for the instance
@@ -206,16 +244,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyDormantFileLimit() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnableBandwidthThrottling sets the value of EnableBandwidthThrottling for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableBandwidthThrottling(value bool) (err error) {
-	return instance.SetProperty("EnableBandwidthThrottling", value)
+	return instance.SetProperty("EnableBandwidthThrottling", (value))
 }
 
 // GetEnableBandwidthThrottling gets the value of EnableBandwidthThrottling for the instance
@@ -224,16 +271,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableBandwidthThrottlin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableByteRangeLockingOnReadOnlyFiles sets the value of EnableByteRangeLockingOnReadOnlyFiles for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableByteRangeLockingOnReadOnlyFiles(value bool) (err error) {
-	return instance.SetProperty("EnableByteRangeLockingOnReadOnlyFiles", value)
+	return instance.SetProperty("EnableByteRangeLockingOnReadOnlyFiles", (value))
 }
 
 // GetEnableByteRangeLockingOnReadOnlyFiles gets the value of EnableByteRangeLockingOnReadOnlyFiles for the instance
@@ -242,16 +298,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableByteRangeLockingOn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableInsecureGuestLogons sets the value of EnableInsecureGuestLogons for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableInsecureGuestLogons(value bool) (err error) {
-	return instance.SetProperty("EnableInsecureGuestLogons", value)
+	return instance.SetProperty("EnableInsecureGuestLogons", (value))
 }
 
 // GetEnableInsecureGuestLogons gets the value of EnableInsecureGuestLogons for the instance
@@ -260,16 +325,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableInsecureGuestLogon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableLargeMtu sets the value of EnableLargeMtu for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableLargeMtu(value bool) (err error) {
-	return instance.SetProperty("EnableLargeMtu", value)
+	return instance.SetProperty("EnableLargeMtu", (value))
 }
 
 // GetEnableLargeMtu gets the value of EnableLargeMtu for the instance
@@ -278,16 +352,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableLargeMtu() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableLoadBalanceScaleOut sets the value of EnableLoadBalanceScaleOut for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableLoadBalanceScaleOut(value bool) (err error) {
-	return instance.SetProperty("EnableLoadBalanceScaleOut", value)
+	return instance.SetProperty("EnableLoadBalanceScaleOut", (value))
 }
 
 // GetEnableLoadBalanceScaleOut gets the value of EnableLoadBalanceScaleOut for the instance
@@ -296,16 +379,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableLoadBalanceScaleOu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableMultiChannel sets the value of EnableMultiChannel for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableMultiChannel(value bool) (err error) {
-	return instance.SetProperty("EnableMultiChannel", value)
+	return instance.SetProperty("EnableMultiChannel", (value))
 }
 
 // GetEnableMultiChannel gets the value of EnableMultiChannel for the instance
@@ -314,16 +406,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableMultiChannel() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableSecuritySignature sets the value of EnableSecuritySignature for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyEnableSecuritySignature(value bool) (err error) {
-	return instance.SetProperty("EnableSecuritySignature", value)
+	return instance.SetProperty("EnableSecuritySignature", (value))
 }
 
 // GetEnableSecuritySignature gets the value of EnableSecuritySignature for the instance
@@ -332,16 +433,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyEnableSecuritySignature(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetExtendedSessionTimeout sets the value of ExtendedSessionTimeout for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyExtendedSessionTimeout(value uint32) (err error) {
-	return instance.SetProperty("ExtendedSessionTimeout", value)
+	return instance.SetProperty("ExtendedSessionTimeout", (value))
 }
 
 // GetExtendedSessionTimeout gets the value of ExtendedSessionTimeout for the instance
@@ -350,16 +460,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyExtendedSessionTimeout()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileInfoCacheEntriesMax sets the value of FileInfoCacheEntriesMax for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyFileInfoCacheEntriesMax(value uint32) (err error) {
-	return instance.SetProperty("FileInfoCacheEntriesMax", value)
+	return instance.SetProperty("FileInfoCacheEntriesMax", (value))
 }
 
 // GetFileInfoCacheEntriesMax gets the value of FileInfoCacheEntriesMax for the instance
@@ -368,16 +487,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyFileInfoCacheEntriesMax(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileInfoCacheLifetime sets the value of FileInfoCacheLifetime for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyFileInfoCacheLifetime(value uint32) (err error) {
-	return instance.SetProperty("FileInfoCacheLifetime", value)
+	return instance.SetProperty("FileInfoCacheLifetime", (value))
 }
 
 // GetFileInfoCacheLifetime gets the value of FileInfoCacheLifetime for the instance
@@ -386,16 +514,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyFileInfoCacheLifetime() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileNotFoundCacheEntriesMax sets the value of FileNotFoundCacheEntriesMax for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyFileNotFoundCacheEntriesMax(value uint32) (err error) {
-	return instance.SetProperty("FileNotFoundCacheEntriesMax", value)
+	return instance.SetProperty("FileNotFoundCacheEntriesMax", (value))
 }
 
 // GetFileNotFoundCacheEntriesMax gets the value of FileNotFoundCacheEntriesMax for the instance
@@ -404,16 +541,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyFileNotFoundCacheEntries
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileNotFoundCacheLifetime sets the value of FileNotFoundCacheLifetime for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyFileNotFoundCacheLifetime(value uint32) (err error) {
-	return instance.SetProperty("FileNotFoundCacheLifetime", value)
+	return instance.SetProperty("FileNotFoundCacheLifetime", (value))
 }
 
 // GetFileNotFoundCacheLifetime gets the value of FileNotFoundCacheLifetime for the instance
@@ -422,16 +568,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyFileNotFoundCacheLifetim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeepConn sets the value of KeepConn for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyKeepConn(value uint32) (err error) {
-	return instance.SetProperty("KeepConn", value)
+	return instance.SetProperty("KeepConn", (value))
 }
 
 // GetKeepConn gets the value of KeepConn for the instance
@@ -440,16 +595,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyKeepConn() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxCmds sets the value of MaxCmds for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyMaxCmds(value uint32) (err error) {
-	return instance.SetProperty("MaxCmds", value)
+	return instance.SetProperty("MaxCmds", (value))
 }
 
 // GetMaxCmds gets the value of MaxCmds for the instance
@@ -458,16 +622,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyMaxCmds() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumConnectionCountPerServer sets the value of MaximumConnectionCountPerServer for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyMaximumConnectionCountPerServer(value uint32) (err error) {
-	return instance.SetProperty("MaximumConnectionCountPerServer", value)
+	return instance.SetProperty("MaximumConnectionCountPerServer", (value))
 }
 
 // GetMaximumConnectionCountPerServer gets the value of MaximumConnectionCountPerServer for the instance
@@ -476,16 +649,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyMaximumConnectionCountPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOplocksDisabled sets the value of OplocksDisabled for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyOplocksDisabled(value bool) (err error) {
-	return instance.SetProperty("OplocksDisabled", value)
+	return instance.SetProperty("OplocksDisabled", (value))
 }
 
 // GetOplocksDisabled gets the value of OplocksDisabled for the instance
@@ -494,16 +676,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyOplocksDisabled() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRequireSecuritySignature sets the value of RequireSecuritySignature for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyRequireSecuritySignature(value bool) (err error) {
-	return instance.SetProperty("RequireSecuritySignature", value)
+	return instance.SetProperty("RequireSecuritySignature", (value))
 }
 
 // GetRequireSecuritySignature gets the value of RequireSecuritySignature for the instance
@@ -512,16 +703,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyRequireSecuritySignature
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSessionTimeout sets the value of SessionTimeout for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertySessionTimeout(value uint32) (err error) {
-	return instance.SetProperty("SessionTimeout", value)
+	return instance.SetProperty("SessionTimeout", (value))
 }
 
 // GetSessionTimeout gets the value of SessionTimeout for the instance
@@ -530,16 +730,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertySessionTimeout() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUseOpportunisticLocking sets the value of UseOpportunisticLocking for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyUseOpportunisticLocking(value bool) (err error) {
-	return instance.SetProperty("UseOpportunisticLocking", value)
+	return instance.SetProperty("UseOpportunisticLocking", (value))
 }
 
 // GetUseOpportunisticLocking gets the value of UseOpportunisticLocking for the instance
@@ -548,16 +757,25 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyUseOpportunisticLocking(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetWindowSizeThreshold sets the value of WindowSizeThreshold for the instance
 func (instance *MSFT_SmbClientConfiguration) SetPropertyWindowSizeThreshold(value uint32) (err error) {
-	return instance.SetProperty("WindowSizeThreshold", value)
+	return instance.SetProperty("WindowSizeThreshold", (value))
 }
 
 // GetWindowSizeThreshold gets the value of WindowSizeThreshold for the instance
@@ -566,10 +784,19 @@ func (instance *MSFT_SmbClientConfiguration) GetPropertyWindowSizeThreshold() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

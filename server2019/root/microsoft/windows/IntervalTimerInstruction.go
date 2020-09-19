@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows
 //////////////////////////////////////////////
 package windows
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __IntervalTimerInstruction struct
@@ -52,7 +54,7 @@ func New__IntervalTimerInstructionEx6(hostName string,
 
 // SetIntervalBetweenEvents sets the value of IntervalBetweenEvents for the instance
 func (instance *__IntervalTimerInstruction) SetPropertyIntervalBetweenEvents(value uint32) (err error) {
-	return instance.SetProperty("IntervalBetweenEvents", value)
+	return instance.SetProperty("IntervalBetweenEvents", (value))
 }
 
 // GetIntervalBetweenEvents gets the value of IntervalBetweenEvents for the instance
@@ -61,9 +63,18 @@ func (instance *__IntervalTimerInstruction) GetPropertyIntervalBetweenEvents() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

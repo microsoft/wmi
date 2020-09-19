@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_QosCapabilities struct
@@ -68,7 +70,7 @@ func NewMSFT_NetAdapter_QosCapabilitiesEx6(hostName string,
 
 // SetCeeDcbxSupported sets the value of CeeDcbxSupported for the instance
 func (instance *MSFT_NetAdapter_QosCapabilities) SetPropertyCeeDcbxSupported(value bool) (err error) {
-	return instance.SetProperty("CeeDcbxSupported", value)
+	return instance.SetProperty("CeeDcbxSupported", (value))
 }
 
 // GetCeeDcbxSupported gets the value of CeeDcbxSupported for the instance
@@ -77,16 +79,25 @@ func (instance *MSFT_NetAdapter_QosCapabilities) GetPropertyCeeDcbxSupported() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIeeeDcbxSupported sets the value of IeeeDcbxSupported for the instance
 func (instance *MSFT_NetAdapter_QosCapabilities) SetPropertyIeeeDcbxSupported(value bool) (err error) {
-	return instance.SetProperty("IeeeDcbxSupported", value)
+	return instance.SetProperty("IeeeDcbxSupported", (value))
 }
 
 // GetIeeeDcbxSupported gets the value of IeeeDcbxSupported for the instance
@@ -95,16 +106,25 @@ func (instance *MSFT_NetAdapter_QosCapabilities) GetPropertyIeeeDcbxSupported() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMacSecBypassSupported sets the value of MacSecBypassSupported for the instance
 func (instance *MSFT_NetAdapter_QosCapabilities) SetPropertyMacSecBypassSupported(value bool) (err error) {
-	return instance.SetProperty("MacSecBypassSupported", value)
+	return instance.SetProperty("MacSecBypassSupported", (value))
 }
 
 // GetMacSecBypassSupported gets the value of MacSecBypassSupported for the instance
@@ -113,16 +133,25 @@ func (instance *MSFT_NetAdapter_QosCapabilities) GetPropertyMacSecBypassSupporte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNumberOfEtsCapableTrafficClasses sets the value of NumberOfEtsCapableTrafficClasses for the instance
 func (instance *MSFT_NetAdapter_QosCapabilities) SetPropertyNumberOfEtsCapableTrafficClasses(value uint8) (err error) {
-	return instance.SetProperty("NumberOfEtsCapableTrafficClasses", value)
+	return instance.SetProperty("NumberOfEtsCapableTrafficClasses", (value))
 }
 
 // GetNumberOfEtsCapableTrafficClasses gets the value of NumberOfEtsCapableTrafficClasses for the instance
@@ -131,16 +160,25 @@ func (instance *MSFT_NetAdapter_QosCapabilities) GetPropertyNumberOfEtsCapableTr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNumberOfPfcEnabledTrafficClasses sets the value of NumberOfPfcEnabledTrafficClasses for the instance
 func (instance *MSFT_NetAdapter_QosCapabilities) SetPropertyNumberOfPfcEnabledTrafficClasses(value uint8) (err error) {
-	return instance.SetProperty("NumberOfPfcEnabledTrafficClasses", value)
+	return instance.SetProperty("NumberOfPfcEnabledTrafficClasses", (value))
 }
 
 // GetNumberOfPfcEnabledTrafficClasses gets the value of NumberOfPfcEnabledTrafficClasses for the instance
@@ -149,16 +187,25 @@ func (instance *MSFT_NetAdapter_QosCapabilities) GetPropertyNumberOfPfcEnabledTr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNumberOfTrafficClasses sets the value of NumberOfTrafficClasses for the instance
 func (instance *MSFT_NetAdapter_QosCapabilities) SetPropertyNumberOfTrafficClasses(value uint8) (err error) {
-	return instance.SetProperty("NumberOfTrafficClasses", value)
+	return instance.SetProperty("NumberOfTrafficClasses", (value))
 }
 
 // GetNumberOfTrafficClasses gets the value of NumberOfTrafficClasses for the instance
@@ -167,9 +214,18 @@ func (instance *MSFT_NetAdapter_QosCapabilities) GetPropertyNumberOfTrafficClass
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

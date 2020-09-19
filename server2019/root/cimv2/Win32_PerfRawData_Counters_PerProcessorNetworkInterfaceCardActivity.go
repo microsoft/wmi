@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity struct
@@ -112,7 +114,7 @@ func NewWin32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivityEx6(h
 
 // SetBuildScatterGatherListCallsPersec sets the value of BuildScatterGatherListCallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyBuildScatterGatherListCallsPersec(value uint64) (err error) {
-	return instance.SetProperty("BuildScatterGatherListCallsPersec", value)
+	return instance.SetProperty("BuildScatterGatherListCallsPersec", (value))
 }
 
 // GetBuildScatterGatherListCallsPersec gets the value of BuildScatterGatherListCallsPersec for the instance
@@ -121,16 +123,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDPCsDeferredPersec sets the value of DPCsDeferredPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyDPCsDeferredPersec(value uint64) (err error) {
-	return instance.SetProperty("DPCsDeferredPersec", value)
+	return instance.SetProperty("DPCsDeferredPersec", (value))
 }
 
 // GetDPCsDeferredPersec gets the value of DPCsDeferredPersec for the instance
@@ -139,16 +150,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDPCsQueuedonOtherCPUsPersec sets the value of DPCsQueuedonOtherCPUsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyDPCsQueuedonOtherCPUsPersec(value uint64) (err error) {
-	return instance.SetProperty("DPCsQueuedonOtherCPUsPersec", value)
+	return instance.SetProperty("DPCsQueuedonOtherCPUsPersec", (value))
 }
 
 // GetDPCsQueuedonOtherCPUsPersec gets the value of DPCsQueuedonOtherCPUsPersec for the instance
@@ -157,16 +177,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDPCsQueuedPersec sets the value of DPCsQueuedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyDPCsQueuedPersec(value uint64) (err error) {
-	return instance.SetProperty("DPCsQueuedPersec", value)
+	return instance.SetProperty("DPCsQueuedPersec", (value))
 }
 
 // GetDPCsQueuedPersec gets the value of DPCsQueuedPersec for the instance
@@ -175,16 +204,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterruptsPersec sets the value of InterruptsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyInterruptsPersec(value uint64) (err error) {
-	return instance.SetProperty("InterruptsPersec", value)
+	return instance.SetProperty("InterruptsPersec", (value))
 }
 
 // GetInterruptsPersec gets the value of InterruptsPersec for the instance
@@ -193,16 +231,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLowResourceReceivedPacketsPersec sets the value of LowResourceReceivedPacketsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyLowResourceReceivedPacketsPersec(value uint64) (err error) {
-	return instance.SetProperty("LowResourceReceivedPacketsPersec", value)
+	return instance.SetProperty("LowResourceReceivedPacketsPersec", (value))
 }
 
 // GetLowResourceReceivedPacketsPersec gets the value of LowResourceReceivedPacketsPersec for the instance
@@ -211,16 +258,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLowResourceReceiveIndicationsPersec sets the value of LowResourceReceiveIndicationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyLowResourceReceiveIndicationsPersec(value uint64) (err error) {
-	return instance.SetProperty("LowResourceReceiveIndicationsPersec", value)
+	return instance.SetProperty("LowResourceReceiveIndicationsPersec", (value))
 }
 
 // GetLowResourceReceiveIndicationsPersec gets the value of LowResourceReceiveIndicationsPersec for the instance
@@ -229,16 +285,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsCoalescedPersec sets the value of PacketsCoalescedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyPacketsCoalescedPersec(value uint64) (err error) {
-	return instance.SetProperty("PacketsCoalescedPersec", value)
+	return instance.SetProperty("PacketsCoalescedPersec", (value))
 }
 
 // GetPacketsCoalescedPersec gets the value of PacketsCoalescedPersec for the instance
@@ -247,16 +312,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceivedPacketsPersec sets the value of ReceivedPacketsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyReceivedPacketsPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceivedPacketsPersec", value)
+	return instance.SetProperty("ReceivedPacketsPersec", (value))
 }
 
 // GetReceivedPacketsPersec gets the value of ReceivedPacketsPersec for the instance
@@ -265,16 +339,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiveIndicationsPersec sets the value of ReceiveIndicationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyReceiveIndicationsPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiveIndicationsPersec", value)
+	return instance.SetProperty("ReceiveIndicationsPersec", (value))
 }
 
 // GetReceiveIndicationsPersec gets the value of ReceiveIndicationsPersec for the instance
@@ -283,16 +366,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReturnedPacketsPersec sets the value of ReturnedPacketsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyReturnedPacketsPersec(value uint64) (err error) {
-	return instance.SetProperty("ReturnedPacketsPersec", value)
+	return instance.SetProperty("ReturnedPacketsPersec", (value))
 }
 
 // GetReturnedPacketsPersec gets the value of ReturnedPacketsPersec for the instance
@@ -301,16 +393,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReturnPacketCallsPersec sets the value of ReturnPacketCallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyReturnPacketCallsPersec(value uint64) (err error) {
-	return instance.SetProperty("ReturnPacketCallsPersec", value)
+	return instance.SetProperty("ReturnPacketCallsPersec", (value))
 }
 
 // GetReturnPacketCallsPersec gets the value of ReturnPacketCallsPersec for the instance
@@ -319,16 +420,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRSSIndirectionTableChangeCallsPersec sets the value of RSSIndirectionTableChangeCallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyRSSIndirectionTableChangeCallsPersec(value uint64) (err error) {
-	return instance.SetProperty("RSSIndirectionTableChangeCallsPersec", value)
+	return instance.SetProperty("RSSIndirectionTableChangeCallsPersec", (value))
 }
 
 // GetRSSIndirectionTableChangeCallsPersec gets the value of RSSIndirectionTableChangeCallsPersec for the instance
@@ -337,16 +447,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSendCompleteCallsPersec sets the value of SendCompleteCallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertySendCompleteCallsPersec(value uint64) (err error) {
-	return instance.SetProperty("SendCompleteCallsPersec", value)
+	return instance.SetProperty("SendCompleteCallsPersec", (value))
 }
 
 // GetSendCompleteCallsPersec gets the value of SendCompleteCallsPersec for the instance
@@ -355,16 +474,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSendRequestCallsPersec sets the value of SendRequestCallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertySendRequestCallsPersec(value uint64) (err error) {
-	return instance.SetProperty("SendRequestCallsPersec", value)
+	return instance.SetProperty("SendRequestCallsPersec", (value))
 }
 
 // GetSendRequestCallsPersec gets the value of SendRequestCallsPersec for the instance
@@ -373,16 +501,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSentCompletePacketsPersec sets the value of SentCompletePacketsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertySentCompletePacketsPersec(value uint64) (err error) {
-	return instance.SetProperty("SentCompletePacketsPersec", value)
+	return instance.SetProperty("SentCompletePacketsPersec", (value))
 }
 
 // GetSentCompletePacketsPersec gets the value of SentCompletePacketsPersec for the instance
@@ -391,16 +528,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSentPacketsPersec sets the value of SentPacketsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertySentPacketsPersec(value uint64) (err error) {
-	return instance.SetProperty("SentPacketsPersec", value)
+	return instance.SetProperty("SentPacketsPersec", (value))
 }
 
 // GetSentPacketsPersec gets the value of SentPacketsPersec for the instance
@@ -409,16 +555,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTcpOffloadReceivebytesPersec sets the value of TcpOffloadReceivebytesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyTcpOffloadReceivebytesPersec(value uint64) (err error) {
-	return instance.SetProperty("TcpOffloadReceivebytesPersec", value)
+	return instance.SetProperty("TcpOffloadReceivebytesPersec", (value))
 }
 
 // GetTcpOffloadReceivebytesPersec gets the value of TcpOffloadReceivebytesPersec for the instance
@@ -427,16 +582,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTcpOffloadReceiveIndicationsPersec sets the value of TcpOffloadReceiveIndicationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyTcpOffloadReceiveIndicationsPersec(value uint64) (err error) {
-	return instance.SetProperty("TcpOffloadReceiveIndicationsPersec", value)
+	return instance.SetProperty("TcpOffloadReceiveIndicationsPersec", (value))
 }
 
 // GetTcpOffloadReceiveIndicationsPersec gets the value of TcpOffloadReceiveIndicationsPersec for the instance
@@ -445,16 +609,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTcpOffloadSendbytesPersec sets the value of TcpOffloadSendbytesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyTcpOffloadSendbytesPersec(value uint64) (err error) {
-	return instance.SetProperty("TcpOffloadSendbytesPersec", value)
+	return instance.SetProperty("TcpOffloadSendbytesPersec", (value))
 }
 
 // GetTcpOffloadSendbytesPersec gets the value of TcpOffloadSendbytesPersec for the instance
@@ -463,16 +636,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTcpOffloadSendRequestCallsPersec sets the value of TcpOffloadSendRequestCallsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActivity) SetPropertyTcpOffloadSendRequestCallsPersec(value uint64) (err error) {
-	return instance.SetProperty("TcpOffloadSendRequestCallsPersec", value)
+	return instance.SetProperty("TcpOffloadSendRequestCallsPersec", (value))
 }
 
 // GetTcpOffloadSendRequestCallsPersec gets the value of TcpOffloadSendRequestCallsPersec for the instance
@@ -481,9 +663,18 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkInterfaceCardActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_PerfOS_Cache struct
@@ -136,7 +138,7 @@ func NewWin32_PerfFormattedData_PerfOS_CacheEx6(hostName string,
 
 // SetAsyncCopyReadsPersec sets the value of AsyncCopyReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyAsyncCopyReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("AsyncCopyReadsPersec", value)
+	return instance.SetProperty("AsyncCopyReadsPersec", (value))
 }
 
 // GetAsyncCopyReadsPersec gets the value of AsyncCopyReadsPersec for the instance
@@ -145,16 +147,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyAsyncCopyReadsP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAsyncDataMapsPersec sets the value of AsyncDataMapsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyAsyncDataMapsPersec(value uint32) (err error) {
-	return instance.SetProperty("AsyncDataMapsPersec", value)
+	return instance.SetProperty("AsyncDataMapsPersec", (value))
 }
 
 // GetAsyncDataMapsPersec gets the value of AsyncDataMapsPersec for the instance
@@ -163,16 +174,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyAsyncDataMapsPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAsyncFastReadsPersec sets the value of AsyncFastReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyAsyncFastReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("AsyncFastReadsPersec", value)
+	return instance.SetProperty("AsyncFastReadsPersec", (value))
 }
 
 // GetAsyncFastReadsPersec gets the value of AsyncFastReadsPersec for the instance
@@ -181,16 +201,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyAsyncFastReadsP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAsyncMDLReadsPersec sets the value of AsyncMDLReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyAsyncMDLReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("AsyncMDLReadsPersec", value)
+	return instance.SetProperty("AsyncMDLReadsPersec", (value))
 }
 
 // GetAsyncMDLReadsPersec gets the value of AsyncMDLReadsPersec for the instance
@@ -199,16 +228,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyAsyncMDLReadsPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAsyncPinReadsPersec sets the value of AsyncPinReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyAsyncPinReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("AsyncPinReadsPersec", value)
+	return instance.SetProperty("AsyncPinReadsPersec", (value))
 }
 
 // GetAsyncPinReadsPersec gets the value of AsyncPinReadsPersec for the instance
@@ -217,16 +255,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyAsyncPinReadsPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCopyReadHitsPercent sets the value of CopyReadHitsPercent for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyCopyReadHitsPercent(value uint32) (err error) {
-	return instance.SetProperty("CopyReadHitsPercent", value)
+	return instance.SetProperty("CopyReadHitsPercent", (value))
 }
 
 // GetCopyReadHitsPercent gets the value of CopyReadHitsPercent for the instance
@@ -235,16 +282,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyCopyReadHitsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCopyReadsPersec sets the value of CopyReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyCopyReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("CopyReadsPersec", value)
+	return instance.SetProperty("CopyReadsPersec", (value))
 }
 
 // GetCopyReadsPersec gets the value of CopyReadsPersec for the instance
@@ -253,16 +309,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyCopyReadsPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataFlushesPersec sets the value of DataFlushesPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyDataFlushesPersec(value uint32) (err error) {
-	return instance.SetProperty("DataFlushesPersec", value)
+	return instance.SetProperty("DataFlushesPersec", (value))
 }
 
 // GetDataFlushesPersec gets the value of DataFlushesPersec for the instance
@@ -271,16 +336,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyDataFlushesPers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataFlushPagesPersec sets the value of DataFlushPagesPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyDataFlushPagesPersec(value uint32) (err error) {
-	return instance.SetProperty("DataFlushPagesPersec", value)
+	return instance.SetProperty("DataFlushPagesPersec", (value))
 }
 
 // GetDataFlushPagesPersec gets the value of DataFlushPagesPersec for the instance
@@ -289,16 +363,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyDataFlushPagesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataMapHitsPercent sets the value of DataMapHitsPercent for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyDataMapHitsPercent(value uint32) (err error) {
-	return instance.SetProperty("DataMapHitsPercent", value)
+	return instance.SetProperty("DataMapHitsPercent", (value))
 }
 
 // GetDataMapHitsPercent gets the value of DataMapHitsPercent for the instance
@@ -307,16 +390,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyDataMapHitsPerc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataMapPinsPersec sets the value of DataMapPinsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyDataMapPinsPersec(value uint32) (err error) {
-	return instance.SetProperty("DataMapPinsPersec", value)
+	return instance.SetProperty("DataMapPinsPersec", (value))
 }
 
 // GetDataMapPinsPersec gets the value of DataMapPinsPersec for the instance
@@ -325,16 +417,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyDataMapPinsPers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataMapsPersec sets the value of DataMapsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyDataMapsPersec(value uint32) (err error) {
-	return instance.SetProperty("DataMapsPersec", value)
+	return instance.SetProperty("DataMapsPersec", (value))
 }
 
 // GetDataMapsPersec gets the value of DataMapsPersec for the instance
@@ -343,16 +444,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyDataMapsPersec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDirtyPages sets the value of DirtyPages for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyDirtyPages(value uint64) (err error) {
-	return instance.SetProperty("DirtyPages", value)
+	return instance.SetProperty("DirtyPages", (value))
 }
 
 // GetDirtyPages gets the value of DirtyPages for the instance
@@ -361,16 +471,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyDirtyPages() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirtyPageThreshold sets the value of DirtyPageThreshold for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyDirtyPageThreshold(value uint64) (err error) {
-	return instance.SetProperty("DirtyPageThreshold", value)
+	return instance.SetProperty("DirtyPageThreshold", (value))
 }
 
 // GetDirtyPageThreshold gets the value of DirtyPageThreshold for the instance
@@ -379,16 +498,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyDirtyPageThresh
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFastReadNotPossiblesPersec sets the value of FastReadNotPossiblesPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyFastReadNotPossiblesPersec(value uint32) (err error) {
-	return instance.SetProperty("FastReadNotPossiblesPersec", value)
+	return instance.SetProperty("FastReadNotPossiblesPersec", (value))
 }
 
 // GetFastReadNotPossiblesPersec gets the value of FastReadNotPossiblesPersec for the instance
@@ -397,16 +525,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyFastReadNotPoss
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFastReadResourceMissesPersec sets the value of FastReadResourceMissesPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyFastReadResourceMissesPersec(value uint32) (err error) {
-	return instance.SetProperty("FastReadResourceMissesPersec", value)
+	return instance.SetProperty("FastReadResourceMissesPersec", (value))
 }
 
 // GetFastReadResourceMissesPersec gets the value of FastReadResourceMissesPersec for the instance
@@ -415,16 +552,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyFastReadResourc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFastReadsPersec sets the value of FastReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyFastReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("FastReadsPersec", value)
+	return instance.SetProperty("FastReadsPersec", (value))
 }
 
 // GetFastReadsPersec gets the value of FastReadsPersec for the instance
@@ -433,16 +579,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyFastReadsPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLazyWriteFlushesPersec sets the value of LazyWriteFlushesPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyLazyWriteFlushesPersec(value uint32) (err error) {
-	return instance.SetProperty("LazyWriteFlushesPersec", value)
+	return instance.SetProperty("LazyWriteFlushesPersec", (value))
 }
 
 // GetLazyWriteFlushesPersec gets the value of LazyWriteFlushesPersec for the instance
@@ -451,16 +606,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyLazyWriteFlushe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLazyWritePagesPersec sets the value of LazyWritePagesPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyLazyWritePagesPersec(value uint32) (err error) {
-	return instance.SetProperty("LazyWritePagesPersec", value)
+	return instance.SetProperty("LazyWritePagesPersec", (value))
 }
 
 // GetLazyWritePagesPersec gets the value of LazyWritePagesPersec for the instance
@@ -469,16 +633,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyLazyWritePagesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMDLReadHitsPercent sets the value of MDLReadHitsPercent for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyMDLReadHitsPercent(value uint32) (err error) {
-	return instance.SetProperty("MDLReadHitsPercent", value)
+	return instance.SetProperty("MDLReadHitsPercent", (value))
 }
 
 // GetMDLReadHitsPercent gets the value of MDLReadHitsPercent for the instance
@@ -487,16 +660,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyMDLReadHitsPerc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMDLReadsPersec sets the value of MDLReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyMDLReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("MDLReadsPersec", value)
+	return instance.SetProperty("MDLReadsPersec", (value))
 }
 
 // GetMDLReadsPersec gets the value of MDLReadsPersec for the instance
@@ -505,16 +687,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyMDLReadsPersec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPinReadHitsPercent sets the value of PinReadHitsPercent for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyPinReadHitsPercent(value uint32) (err error) {
-	return instance.SetProperty("PinReadHitsPercent", value)
+	return instance.SetProperty("PinReadHitsPercent", (value))
 }
 
 // GetPinReadHitsPercent gets the value of PinReadHitsPercent for the instance
@@ -523,16 +714,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyPinReadHitsPerc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPinReadsPersec sets the value of PinReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyPinReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("PinReadsPersec", value)
+	return instance.SetProperty("PinReadsPersec", (value))
 }
 
 // GetPinReadsPersec gets the value of PinReadsPersec for the instance
@@ -541,16 +741,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyPinReadsPersec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadAheadsPersec sets the value of ReadAheadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertyReadAheadsPersec(value uint32) (err error) {
-	return instance.SetProperty("ReadAheadsPersec", value)
+	return instance.SetProperty("ReadAheadsPersec", (value))
 }
 
 // GetReadAheadsPersec gets the value of ReadAheadsPersec for the instance
@@ -559,16 +768,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertyReadAheadsPerse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSyncCopyReadsPersec sets the value of SyncCopyReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertySyncCopyReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("SyncCopyReadsPersec", value)
+	return instance.SetProperty("SyncCopyReadsPersec", (value))
 }
 
 // GetSyncCopyReadsPersec gets the value of SyncCopyReadsPersec for the instance
@@ -577,16 +795,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertySyncCopyReadsPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSyncDataMapsPersec sets the value of SyncDataMapsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertySyncDataMapsPersec(value uint32) (err error) {
-	return instance.SetProperty("SyncDataMapsPersec", value)
+	return instance.SetProperty("SyncDataMapsPersec", (value))
 }
 
 // GetSyncDataMapsPersec gets the value of SyncDataMapsPersec for the instance
@@ -595,16 +822,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertySyncDataMapsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSyncFastReadsPersec sets the value of SyncFastReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertySyncFastReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("SyncFastReadsPersec", value)
+	return instance.SetProperty("SyncFastReadsPersec", (value))
 }
 
 // GetSyncFastReadsPersec gets the value of SyncFastReadsPersec for the instance
@@ -613,16 +849,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertySyncFastReadsPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSyncMDLReadsPersec sets the value of SyncMDLReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertySyncMDLReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("SyncMDLReadsPersec", value)
+	return instance.SetProperty("SyncMDLReadsPersec", (value))
 }
 
 // GetSyncMDLReadsPersec gets the value of SyncMDLReadsPersec for the instance
@@ -631,16 +876,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertySyncMDLReadsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSyncPinReadsPersec sets the value of SyncPinReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Cache) SetPropertySyncPinReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("SyncPinReadsPersec", value)
+	return instance.SetProperty("SyncPinReadsPersec", (value))
 }
 
 // GetSyncPinReadsPersec gets the value of SyncPinReadsPersec for the instance
@@ -649,9 +903,18 @@ func (instance *Win32_PerfFormattedData_PerfOS_Cache) GetPropertySyncPinReadsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

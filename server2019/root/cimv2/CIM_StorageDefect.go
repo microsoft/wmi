@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_StorageDefect struct
@@ -56,7 +58,7 @@ func NewCIM_StorageDefectEx6(hostName string,
 
 // SetError sets the value of Error for the instance
 func (instance *CIM_StorageDefect) SetPropertyError(value CIM_StorageError) (err error) {
-	return instance.SetProperty("Error", value)
+	return instance.SetProperty("Error", (value))
 }
 
 // GetError gets the value of Error for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_StorageDefect) GetPropertyError() (value CIM_StorageError, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_StorageError)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_StorageError)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_StorageError is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_StorageError(valuetmp)
+
 	return
 }
 
 // SetExtent sets the value of Extent for the instance
 func (instance *CIM_StorageDefect) SetPropertyExtent(value CIM_StorageExtent) (err error) {
-	return instance.SetProperty("Extent", value)
+	return instance.SetProperty("Extent", (value))
 }
 
 // GetExtent gets the value of Extent for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_StorageDefect) GetPropertyExtent() (value CIM_StorageExtent,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_StorageExtent)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_StorageExtent)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_StorageExtent is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_StorageExtent(valuetmp)
+
 	return
 }

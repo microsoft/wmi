@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_IKEAction struct
@@ -61,7 +63,7 @@ func NewCIM_IKEActionEx6(hostName string,
 
 // SetAggressiveModeGroupID sets the value of AggressiveModeGroupID for the instance
 func (instance *CIM_IKEAction) SetPropertyAggressiveModeGroupID(value uint16) (err error) {
-	return instance.SetProperty("AggressiveModeGroupID", value)
+	return instance.SetProperty("AggressiveModeGroupID", (value))
 }
 
 // GetAggressiveModeGroupID gets the value of AggressiveModeGroupID for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_IKEAction) GetPropertyAggressiveModeGroupID() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetExchangeMode sets the value of ExchangeMode for the instance
 func (instance *CIM_IKEAction) SetPropertyExchangeMode(value uint16) (err error) {
-	return instance.SetProperty("ExchangeMode", value)
+	return instance.SetProperty("ExchangeMode", (value))
 }
 
 // GetExchangeMode gets the value of ExchangeMode for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_IKEAction) GetPropertyExchangeMode() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetUseIKEIdentityType sets the value of UseIKEIdentityType for the instance
 func (instance *CIM_IKEAction) SetPropertyUseIKEIdentityType(value uint16) (err error) {
-	return instance.SetProperty("UseIKEIdentityType", value)
+	return instance.SetProperty("UseIKEIdentityType", (value))
 }
 
 // GetUseIKEIdentityType gets the value of UseIKEIdentityType for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_IKEAction) GetPropertyUseIKEIdentityType() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVendorID sets the value of VendorID for the instance
 func (instance *CIM_IKEAction) SetPropertyVendorID(value string) (err error) {
-	return instance.SetProperty("VendorID", value)
+	return instance.SetProperty("VendorID", (value))
 }
 
 // GetVendorID gets the value of VendorID for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_IKEAction) GetPropertyVendorID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

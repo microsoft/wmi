@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DeviceGuard
 //////////////////////////////////////////////
 package deviceguard
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ClassModification struct
@@ -52,7 +54,7 @@ func NewCIM_ClassModificationEx6(hostName string,
 
 // SetPreviousClassDefinition sets the value of PreviousClassDefinition for the instance
 func (instance *CIM_ClassModification) SetPropertyPreviousClassDefinition(value interface{}) (err error) {
-	return instance.SetProperty("PreviousClassDefinition", value)
+	return instance.SetProperty("PreviousClassDefinition", (value))
 }
 
 // GetPreviousClassDefinition gets the value of PreviousClassDefinition for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_ClassModification) GetPropertyPreviousClassDefinition() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

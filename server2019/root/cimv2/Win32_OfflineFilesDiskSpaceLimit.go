@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_OfflineFilesDiskSpaceLimit struct
@@ -56,7 +58,7 @@ func NewWin32_OfflineFilesDiskSpaceLimitEx6(hostName string,
 
 // SetAutoCacheSizeInMB sets the value of AutoCacheSizeInMB for the instance
 func (instance *Win32_OfflineFilesDiskSpaceLimit) SetPropertyAutoCacheSizeInMB(value uint32) (err error) {
-	return instance.SetProperty("AutoCacheSizeInMB", value)
+	return instance.SetProperty("AutoCacheSizeInMB", (value))
 }
 
 // GetAutoCacheSizeInMB gets the value of AutoCacheSizeInMB for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_OfflineFilesDiskSpaceLimit) GetPropertyAutoCacheSizeInMB()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalSizeInMB sets the value of TotalSizeInMB for the instance
 func (instance *Win32_OfflineFilesDiskSpaceLimit) SetPropertyTotalSizeInMB(value uint32) (err error) {
-	return instance.SetProperty("TotalSizeInMB", value)
+	return instance.SetProperty("TotalSizeInMB", (value))
 }
 
 // GetTotalSizeInMB gets the value of TotalSizeInMB for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_OfflineFilesDiskSpaceLimit) GetPropertyTotalSizeInMB() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

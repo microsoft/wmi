@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads struct
@@ -79,7 +81,7 @@ func NewWin32_PerfRawData_NETFramework_NETCLRLocksAndThreadsEx6(hostName string,
 
 // SetContentionRatePersec sets the value of ContentionRatePersec for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyContentionRatePersec(value uint32) (err error) {
-	return instance.SetProperty("ContentionRatePersec", value)
+	return instance.SetProperty("ContentionRatePersec", (value))
 }
 
 // GetContentionRatePersec gets the value of ContentionRatePersec for the instance
@@ -88,16 +90,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentQueueLength sets the value of CurrentQueueLength for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyCurrentQueueLength(value uint32) (err error) {
-	return instance.SetProperty("CurrentQueueLength", value)
+	return instance.SetProperty("CurrentQueueLength", (value))
 }
 
 // GetCurrentQueueLength gets the value of CurrentQueueLength for the instance
@@ -106,16 +117,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofcurrentlogicalThreads sets the value of NumberofcurrentlogicalThreads for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyNumberofcurrentlogicalThreads(value uint32) (err error) {
-	return instance.SetProperty("NumberofcurrentlogicalThreads", value)
+	return instance.SetProperty("NumberofcurrentlogicalThreads", (value))
 }
 
 // GetNumberofcurrentlogicalThreads gets the value of NumberofcurrentlogicalThreads for the instance
@@ -124,16 +144,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofcurrentphysicalThreads sets the value of NumberofcurrentphysicalThreads for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyNumberofcurrentphysicalThreads(value uint32) (err error) {
-	return instance.SetProperty("NumberofcurrentphysicalThreads", value)
+	return instance.SetProperty("NumberofcurrentphysicalThreads", (value))
 }
 
 // GetNumberofcurrentphysicalThreads gets the value of NumberofcurrentphysicalThreads for the instance
@@ -142,16 +171,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofcurrentrecognizedthreads sets the value of Numberofcurrentrecognizedthreads for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyNumberofcurrentrecognizedthreads(value uint32) (err error) {
-	return instance.SetProperty("Numberofcurrentrecognizedthreads", value)
+	return instance.SetProperty("Numberofcurrentrecognizedthreads", (value))
 }
 
 // GetNumberofcurrentrecognizedthreads gets the value of Numberofcurrentrecognizedthreads for the instance
@@ -160,16 +198,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberoftotalrecognizedthreads sets the value of Numberoftotalrecognizedthreads for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyNumberoftotalrecognizedthreads(value uint32) (err error) {
-	return instance.SetProperty("Numberoftotalrecognizedthreads", value)
+	return instance.SetProperty("Numberoftotalrecognizedthreads", (value))
 }
 
 // GetNumberoftotalrecognizedthreads gets the value of Numberoftotalrecognizedthreads for the instance
@@ -178,16 +225,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQueueLengthPeak sets the value of QueueLengthPeak for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyQueueLengthPeak(value uint32) (err error) {
-	return instance.SetProperty("QueueLengthPeak", value)
+	return instance.SetProperty("QueueLengthPeak", (value))
 }
 
 // GetQueueLengthPeak gets the value of QueueLengthPeak for the instance
@@ -196,16 +252,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQueueLengthPersec sets the value of QueueLengthPersec for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyQueueLengthPersec(value uint32) (err error) {
-	return instance.SetProperty("QueueLengthPersec", value)
+	return instance.SetProperty("QueueLengthPersec", (value))
 }
 
 // GetQueueLengthPersec gets the value of QueueLengthPersec for the instance
@@ -214,16 +279,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetrateofrecognizedthreadsPersec sets the value of rateofrecognizedthreadsPersec for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyrateofrecognizedthreadsPersec(value uint32) (err error) {
-	return instance.SetProperty("rateofrecognizedthreadsPersec", value)
+	return instance.SetProperty("rateofrecognizedthreadsPersec", (value))
 }
 
 // GetrateofrecognizedthreadsPersec gets the value of rateofrecognizedthreadsPersec for the instance
@@ -232,16 +306,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalNumberofContentions sets the value of TotalNumberofContentions for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) SetPropertyTotalNumberofContentions(value uint32) (err error) {
-	return instance.SetProperty("TotalNumberofContentions", value)
+	return instance.SetProperty("TotalNumberofContentions", (value))
 }
 
 // GetTotalNumberofContentions gets the value of TotalNumberofContentions for the instance
@@ -250,9 +333,18 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRLocksAndThreads) GetPropert
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

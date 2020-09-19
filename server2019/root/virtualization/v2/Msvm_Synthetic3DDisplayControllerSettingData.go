@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_Synthetic3DDisplayControllerSettingData struct
@@ -58,7 +60,7 @@ func NewMsvm_Synthetic3DDisplayControllerSettingDataEx6(hostName string,
 
 // SetMaximumMonitors sets the value of MaximumMonitors for the instance
 func (instance *Msvm_Synthetic3DDisplayControllerSettingData) SetPropertyMaximumMonitors(value uint8) (err error) {
-	return instance.SetProperty("MaximumMonitors", value)
+	return instance.SetProperty("MaximumMonitors", (value))
 }
 
 // GetMaximumMonitors gets the value of MaximumMonitors for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_Synthetic3DDisplayControllerSettingData) GetPropertyMaximum
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetMaximumScreenResolution sets the value of MaximumScreenResolution for the instance
 func (instance *Msvm_Synthetic3DDisplayControllerSettingData) SetPropertyMaximumScreenResolution(value uint8) (err error) {
-	return instance.SetProperty("MaximumScreenResolution", value)
+	return instance.SetProperty("MaximumScreenResolution", (value))
 }
 
 // GetMaximumScreenResolution gets the value of MaximumScreenResolution for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_Synthetic3DDisplayControllerSettingData) GetPropertyMaximum
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetVRAMSizeBytes sets the value of VRAMSizeBytes for the instance
 func (instance *Msvm_Synthetic3DDisplayControllerSettingData) SetPropertyVRAMSizeBytes(value uint64) (err error) {
-	return instance.SetProperty("VRAMSizeBytes", value)
+	return instance.SetProperty("VRAMSizeBytes", (value))
 }
 
 // GetVRAMSizeBytes gets the value of VRAMSizeBytes for the instance
@@ -103,10 +123,19 @@ func (instance *Msvm_Synthetic3DDisplayControllerSettingData) GetPropertyVRAMSiz
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 func (instance *Msvm_Synthetic3DDisplayControllerSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

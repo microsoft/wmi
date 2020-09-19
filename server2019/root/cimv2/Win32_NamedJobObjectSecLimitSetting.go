@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NamedJobObjectSecLimitSetting struct
@@ -61,7 +63,7 @@ func NewWin32_NamedJobObjectSecLimitSettingEx6(hostName string,
 
 // SetPrivilegesToDelete sets the value of PrivilegesToDelete for the instance
 func (instance *Win32_NamedJobObjectSecLimitSetting) SetPropertyPrivilegesToDelete(value Win32_TokenPrivileges) (err error) {
-	return instance.SetProperty("PrivilegesToDelete", value)
+	return instance.SetProperty("PrivilegesToDelete", (value))
 }
 
 // GetPrivilegesToDelete gets the value of PrivilegesToDelete for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_NamedJobObjectSecLimitSetting) GetPropertyPrivilegesToDele
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_TokenPrivileges)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_TokenPrivileges)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_TokenPrivileges is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_TokenPrivileges(valuetmp)
+
 	return
 }
 
 // SetRestrictedSIDs sets the value of RestrictedSIDs for the instance
 func (instance *Win32_NamedJobObjectSecLimitSetting) SetPropertyRestrictedSIDs(value Win32_TokenGroups) (err error) {
-	return instance.SetProperty("RestrictedSIDs", value)
+	return instance.SetProperty("RestrictedSIDs", (value))
 }
 
 // GetRestrictedSIDs gets the value of RestrictedSIDs for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_NamedJobObjectSecLimitSetting) GetPropertyRestrictedSIDs()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_TokenGroups)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_TokenGroups)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_TokenGroups is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_TokenGroups(valuetmp)
+
 	return
 }
 
 // SetSecurityLimitFlags sets the value of SecurityLimitFlags for the instance
 func (instance *Win32_NamedJobObjectSecLimitSetting) SetPropertySecurityLimitFlags(value uint32) (err error) {
-	return instance.SetProperty("SecurityLimitFlags", value)
+	return instance.SetProperty("SecurityLimitFlags", (value))
 }
 
 // GetSecurityLimitFlags gets the value of SecurityLimitFlags for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_NamedJobObjectSecLimitSetting) GetPropertySecurityLimitFla
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSIDsToDisable sets the value of SIDsToDisable for the instance
 func (instance *Win32_NamedJobObjectSecLimitSetting) SetPropertySIDsToDisable(value Win32_TokenGroups) (err error) {
-	return instance.SetProperty("SIDsToDisable", value)
+	return instance.SetProperty("SIDsToDisable", (value))
 }
 
 // GetSIDsToDisable gets the value of SIDsToDisable for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_NamedJobObjectSecLimitSetting) GetPropertySIDsToDisable() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_TokenGroups)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_TokenGroups)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_TokenGroups is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_TokenGroups(valuetmp)
+
 	return
 }

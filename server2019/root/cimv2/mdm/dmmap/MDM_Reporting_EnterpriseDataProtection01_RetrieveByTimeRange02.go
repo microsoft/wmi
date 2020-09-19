@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02 struct
@@ -68,7 +70,7 @@ func NewMDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02Ex6(hostNa
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -77,16 +79,25 @@ func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLogs sets the value of Logs for the instance
 func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) SetPropertyLogs(value string) (err error) {
-	return instance.SetProperty("Logs", value)
+	return instance.SetProperty("Logs", (value))
 }
 
 // GetLogs gets the value of Logs for the instance
@@ -95,16 +106,25 @@ func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -113,16 +133,25 @@ func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartTime sets the value of StartTime for the instance
 func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) SetPropertyStartTime(value string) (err error) {
-	return instance.SetProperty("StartTime", value)
+	return instance.SetProperty("StartTime", (value))
 }
 
 // GetStartTime gets the value of StartTime for the instance
@@ -131,16 +160,25 @@ func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStopTime sets the value of StopTime for the instance
 func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) SetPropertyStopTime(value string) (err error) {
-	return instance.SetProperty("StopTime", value)
+	return instance.SetProperty("StopTime", (value))
 }
 
 // GetStopTime gets the value of StopTime for the instance
@@ -149,16 +187,25 @@ func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) SetPropertyType(value int32) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -167,9 +214,18 @@ func (instance *MDM_Reporting_EnterpriseDataProtection01_RetrieveByTimeRange02) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_GuestCommunicationServiceSettingData struct
@@ -58,7 +60,7 @@ func NewMsvm_GuestCommunicationServiceSettingDataEx6(hostName string,
 
 // SetEnabledStatePolicy sets the value of EnabledStatePolicy for the instance
 func (instance *Msvm_GuestCommunicationServiceSettingData) SetPropertyEnabledStatePolicy(value GuestCommunicationServiceSettingData_EnabledStatePolicy) (err error) {
-	return instance.SetProperty("EnabledStatePolicy", value)
+	return instance.SetProperty("EnabledStatePolicy", (value))
 }
 
 // GetEnabledStatePolicy gets the value of EnabledStatePolicy for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_GuestCommunicationServiceSettingData) GetPropertyEnabledSta
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(GuestCommunicationServiceSettingData_EnabledStatePolicy)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = GuestCommunicationServiceSettingData_EnabledStatePolicy(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Msvm_GuestCommunicationServiceSettingData) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -85,9 +96,18 @@ func (instance *Msvm_GuestCommunicationServiceSettingData) GetPropertyName() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

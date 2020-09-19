@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DSCConfigurationOutputWriteArray struct
@@ -55,7 +57,7 @@ func NewMSFT_DSCConfigurationOutputWriteArrayEx6(hostName string,
 
 // SetArray sets the value of Array for the instance
 func (instance *MSFT_DSCConfigurationOutputWriteArray) SetPropertyArray(value []interface{}) (err error) {
-	return instance.SetProperty("Array", value)
+	return instance.SetProperty("Array", (value))
 }
 
 // GetArray gets the value of Array for the instance
@@ -64,16 +66,26 @@ func (instance *MSFT_DSCConfigurationOutputWriteArray) GetPropertyArray() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(interface{})
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, interface{}(valuetmp))
+	}
+
 	return
 }
 
 // SetParameterName sets the value of ParameterName for the instance
 func (instance *MSFT_DSCConfigurationOutputWriteArray) SetPropertyParameterName(value string) (err error) {
-	return instance.SetProperty("ParameterName", value)
+	return instance.SetProperty("ParameterName", (value))
 }
 
 // GetParameterName gets the value of ParameterName for the instance
@@ -82,9 +94,18 @@ func (instance *MSFT_DSCConfigurationOutputWriteArray) GetPropertyParameterName(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

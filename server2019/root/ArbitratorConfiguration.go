@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __ArbitratorConfiguration struct
@@ -112,7 +114,7 @@ func New__ArbitratorConfigurationEx6(hostName string,
 
 // SetOutstandingTasksPerUser sets the value of OutstandingTasksPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyOutstandingTasksPerUser(value uint32) (err error) {
-	return instance.SetProperty("OutstandingTasksPerUser", value)
+	return instance.SetProperty("OutstandingTasksPerUser", (value))
 }
 
 // GetOutstandingTasksPerUser gets the value of OutstandingTasksPerUser for the instance
@@ -121,16 +123,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyOutstandingTasksPerUser() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutstandingTasksTotal sets the value of OutstandingTasksTotal for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyOutstandingTasksTotal(value uint32) (err error) {
-	return instance.SetProperty("OutstandingTasksTotal", value)
+	return instance.SetProperty("OutstandingTasksTotal", (value))
 }
 
 // GetOutstandingTasksTotal gets the value of OutstandingTasksTotal for the instance
@@ -139,16 +150,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyOutstandingTasksTotal() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPermanentSubscriptionsPerUser sets the value of PermanentSubscriptionsPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyPermanentSubscriptionsPerUser(value uint32) (err error) {
-	return instance.SetProperty("PermanentSubscriptionsPerUser", value)
+	return instance.SetProperty("PermanentSubscriptionsPerUser", (value))
 }
 
 // GetPermanentSubscriptionsPerUser gets the value of PermanentSubscriptionsPerUser for the instance
@@ -157,16 +177,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyPermanentSubscriptionsPerU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPermanentSubscriptionsTotal sets the value of PermanentSubscriptionsTotal for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyPermanentSubscriptionsTotal(value uint32) (err error) {
-	return instance.SetProperty("PermanentSubscriptionsTotal", value)
+	return instance.SetProperty("PermanentSubscriptionsTotal", (value))
 }
 
 // GetPermanentSubscriptionsTotal gets the value of PermanentSubscriptionsTotal for the instance
@@ -175,16 +204,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyPermanentSubscriptionsTota
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPollingInstructionsPerUser sets the value of PollingInstructionsPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyPollingInstructionsPerUser(value uint32) (err error) {
-	return instance.SetProperty("PollingInstructionsPerUser", value)
+	return instance.SetProperty("PollingInstructionsPerUser", (value))
 }
 
 // GetPollingInstructionsPerUser gets the value of PollingInstructionsPerUser for the instance
@@ -193,16 +231,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyPollingInstructionsPerUser
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPollingInstructionsTotal sets the value of PollingInstructionsTotal for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyPollingInstructionsTotal(value uint32) (err error) {
-	return instance.SetProperty("PollingInstructionsTotal", value)
+	return instance.SetProperty("PollingInstructionsTotal", (value))
 }
 
 // GetPollingInstructionsTotal gets the value of PollingInstructionsTotal for the instance
@@ -211,16 +258,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyPollingInstructionsTotal()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPollingMemoryPerUser sets the value of PollingMemoryPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyPollingMemoryPerUser(value uint32) (err error) {
-	return instance.SetProperty("PollingMemoryPerUser", value)
+	return instance.SetProperty("PollingMemoryPerUser", (value))
 }
 
 // GetPollingMemoryPerUser gets the value of PollingMemoryPerUser for the instance
@@ -229,16 +285,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyPollingMemoryPerUser() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPollingMemoryTotal sets the value of PollingMemoryTotal for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyPollingMemoryTotal(value uint32) (err error) {
-	return instance.SetProperty("PollingMemoryTotal", value)
+	return instance.SetProperty("PollingMemoryTotal", (value))
 }
 
 // GetPollingMemoryTotal gets the value of PollingMemoryTotal for the instance
@@ -247,16 +312,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyPollingMemoryTotal() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuotaRetryCount sets the value of QuotaRetryCount for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyQuotaRetryCount(value uint32) (err error) {
-	return instance.SetProperty("QuotaRetryCount", value)
+	return instance.SetProperty("QuotaRetryCount", (value))
 }
 
 // GetQuotaRetryCount gets the value of QuotaRetryCount for the instance
@@ -265,16 +339,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyQuotaRetryCount() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuotaRetryWaitInterval sets the value of QuotaRetryWaitInterval for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyQuotaRetryWaitInterval(value uint32) (err error) {
-	return instance.SetProperty("QuotaRetryWaitInterval", value)
+	return instance.SetProperty("QuotaRetryWaitInterval", (value))
 }
 
 // GetQuotaRetryWaitInterval gets the value of QuotaRetryWaitInterval for the instance
@@ -283,16 +366,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyQuotaRetryWaitInterval() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTaskThreadsPerUser sets the value of TaskThreadsPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTaskThreadsPerUser(value uint32) (err error) {
-	return instance.SetProperty("TaskThreadsPerUser", value)
+	return instance.SetProperty("TaskThreadsPerUser", (value))
 }
 
 // GetTaskThreadsPerUser gets the value of TaskThreadsPerUser for the instance
@@ -301,16 +393,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTaskThreadsPerUser() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTaskThreadsTotal sets the value of TaskThreadsTotal for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTaskThreadsTotal(value uint32) (err error) {
-	return instance.SetProperty("TaskThreadsTotal", value)
+	return instance.SetProperty("TaskThreadsTotal", (value))
 }
 
 // GetTaskThreadsTotal gets the value of TaskThreadsTotal for the instance
@@ -319,16 +420,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTaskThreadsTotal() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTemporarySubscriptionsPerUser sets the value of TemporarySubscriptionsPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTemporarySubscriptionsPerUser(value uint32) (err error) {
-	return instance.SetProperty("TemporarySubscriptionsPerUser", value)
+	return instance.SetProperty("TemporarySubscriptionsPerUser", (value))
 }
 
 // GetTemporarySubscriptionsPerUser gets the value of TemporarySubscriptionsPerUser for the instance
@@ -337,16 +447,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTemporarySubscriptionsPerU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTemporarySubscriptionsTotal sets the value of TemporarySubscriptionsTotal for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTemporarySubscriptionsTotal(value uint32) (err error) {
-	return instance.SetProperty("TemporarySubscriptionsTotal", value)
+	return instance.SetProperty("TemporarySubscriptionsTotal", (value))
 }
 
 // GetTemporarySubscriptionsTotal gets the value of TemporarySubscriptionsTotal for the instance
@@ -355,16 +474,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTemporarySubscriptionsTota
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalCacheDisk sets the value of TotalCacheDisk for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTotalCacheDisk(value uint32) (err error) {
-	return instance.SetProperty("TotalCacheDisk", value)
+	return instance.SetProperty("TotalCacheDisk", (value))
 }
 
 // GetTotalCacheDisk gets the value of TotalCacheDisk for the instance
@@ -373,16 +501,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTotalCacheDisk() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalCacheDiskPerTask sets the value of TotalCacheDiskPerTask for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTotalCacheDiskPerTask(value uint32) (err error) {
-	return instance.SetProperty("TotalCacheDiskPerTask", value)
+	return instance.SetProperty("TotalCacheDiskPerTask", (value))
 }
 
 // GetTotalCacheDiskPerTask gets the value of TotalCacheDiskPerTask for the instance
@@ -391,16 +528,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTotalCacheDiskPerTask() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalCacheDiskPerUser sets the value of TotalCacheDiskPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTotalCacheDiskPerUser(value uint32) (err error) {
-	return instance.SetProperty("TotalCacheDiskPerUser", value)
+	return instance.SetProperty("TotalCacheDiskPerUser", (value))
 }
 
 // GetTotalCacheDiskPerUser gets the value of TotalCacheDiskPerUser for the instance
@@ -409,16 +555,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTotalCacheDiskPerUser() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalCacheMemory sets the value of TotalCacheMemory for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTotalCacheMemory(value uint32) (err error) {
-	return instance.SetProperty("TotalCacheMemory", value)
+	return instance.SetProperty("TotalCacheMemory", (value))
 }
 
 // GetTotalCacheMemory gets the value of TotalCacheMemory for the instance
@@ -427,16 +582,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTotalCacheMemory() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalCacheMemoryPerTask sets the value of TotalCacheMemoryPerTask for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTotalCacheMemoryPerTask(value uint32) (err error) {
-	return instance.SetProperty("TotalCacheMemoryPerTask", value)
+	return instance.SetProperty("TotalCacheMemoryPerTask", (value))
 }
 
 // GetTotalCacheMemoryPerTask gets the value of TotalCacheMemoryPerTask for the instance
@@ -445,16 +609,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTotalCacheMemoryPerTask() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalCacheMemoryPerUser sets the value of TotalCacheMemoryPerUser for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTotalCacheMemoryPerUser(value uint32) (err error) {
-	return instance.SetProperty("TotalCacheMemoryPerUser", value)
+	return instance.SetProperty("TotalCacheMemoryPerUser", (value))
 }
 
 // GetTotalCacheMemoryPerUser gets the value of TotalCacheMemoryPerUser for the instance
@@ -463,16 +636,25 @@ func (instance *__ArbitratorConfiguration) GetPropertyTotalCacheMemoryPerUser() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalUsers sets the value of TotalUsers for the instance
 func (instance *__ArbitratorConfiguration) SetPropertyTotalUsers(value uint32) (err error) {
-	return instance.SetProperty("TotalUsers", value)
+	return instance.SetProperty("TotalUsers", (value))
 }
 
 // GetTotalUsers gets the value of TotalUsers for the instance
@@ -481,9 +663,18 @@ func (instance *__ArbitratorConfiguration) GetPropertyTotalUsers() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

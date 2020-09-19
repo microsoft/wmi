@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
@@ -11,7 +11,9 @@ package msdtc
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DtcLogFileSettings struct
@@ -59,7 +61,7 @@ func NewDtcLogFileSettingsEx6(hostName string,
 
 // SetMaxSizeInMB sets the value of MaxSizeInMB for the instance
 func (instance *DtcLogFileSettings) SetPropertyMaxSizeInMB(value uint32) (err error) {
-	return instance.SetProperty("MaxSizeInMB", value)
+	return instance.SetProperty("MaxSizeInMB", (value))
 }
 
 // GetMaxSizeInMB gets the value of MaxSizeInMB for the instance
@@ -68,16 +70,25 @@ func (instance *DtcLogFileSettings) GetPropertyMaxSizeInMB() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *DtcLogFileSettings) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -86,16 +97,25 @@ func (instance *DtcLogFileSettings) GetPropertyPath() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSizeInMB sets the value of SizeInMB for the instance
 func (instance *DtcLogFileSettings) SetPropertySizeInMB(value uint32) (err error) {
-	return instance.SetProperty("SizeInMB", value)
+	return instance.SetProperty("SizeInMB", (value))
 }
 
 // GetSizeInMB gets the value of SizeInMB for the instance
@@ -104,9 +124,18 @@ func (instance *DtcLogFileSettings) GetPropertySizeInMB() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_IPAssignmentSettingData struct
@@ -55,7 +57,7 @@ func NewCIM_IPAssignmentSettingDataEx6(hostName string,
 
 // SetAddressOrigin sets the value of AddressOrigin for the instance
 func (instance *CIM_IPAssignmentSettingData) SetPropertyAddressOrigin(value IPAssignmentSettingData_AddressOrigin) (err error) {
-	return instance.SetProperty("AddressOrigin", value)
+	return instance.SetProperty("AddressOrigin", (value))
 }
 
 // GetAddressOrigin gets the value of AddressOrigin for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_IPAssignmentSettingData) GetPropertyAddressOrigin() (value I
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(IPAssignmentSettingData_AddressOrigin)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = IPAssignmentSettingData_AddressOrigin(valuetmp)
+
 	return
 }
 
 // SetProtocolIFType sets the value of ProtocolIFType for the instance
 func (instance *CIM_IPAssignmentSettingData) SetPropertyProtocolIFType(value IPAssignmentSettingData_ProtocolIFType) (err error) {
-	return instance.SetProperty("ProtocolIFType", value)
+	return instance.SetProperty("ProtocolIFType", (value))
 }
 
 // GetProtocolIFType gets the value of ProtocolIFType for the instance
@@ -82,9 +93,18 @@ func (instance *CIM_IPAssignmentSettingData) GetPropertyProtocolIFType() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(IPAssignmentSettingData_ProtocolIFType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = IPAssignmentSettingData_ProtocolIFType(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSPermissionsSetting struct
@@ -58,7 +60,7 @@ func NewWin32_TSPermissionsSettingEx6(hostName string,
 
 // SetDenyAdminPermissionForCustomization sets the value of DenyAdminPermissionForCustomization for the instance
 func (instance *Win32_TSPermissionsSetting) SetPropertyDenyAdminPermissionForCustomization(value uint32) (err error) {
-	return instance.SetProperty("DenyAdminPermissionForCustomization", value)
+	return instance.SetProperty("DenyAdminPermissionForCustomization", (value))
 }
 
 // GetDenyAdminPermissionForCustomization gets the value of DenyAdminPermissionForCustomization for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_TSPermissionsSetting) GetPropertyDenyAdminPermissionForCus
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceDenyAdminPermissionForCustomization sets the value of PolicySourceDenyAdminPermissionForCustomization for the instance
 func (instance *Win32_TSPermissionsSetting) SetPropertyPolicySourceDenyAdminPermissionForCustomization(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceDenyAdminPermissionForCustomization", value)
+	return instance.SetProperty("PolicySourceDenyAdminPermissionForCustomization", (value))
 }
 
 // GetPolicySourceDenyAdminPermissionForCustomization gets the value of PolicySourceDenyAdminPermissionForCustomization for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_TSPermissionsSetting) GetPropertyPolicySourceDenyAdminPerm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStringSecurityDescriptor sets the value of StringSecurityDescriptor for the instance
 func (instance *Win32_TSPermissionsSetting) SetPropertyStringSecurityDescriptor(value string) (err error) {
-	return instance.SetProperty("StringSecurityDescriptor", value)
+	return instance.SetProperty("StringSecurityDescriptor", (value))
 }
 
 // GetStringSecurityDescriptor gets the value of StringSecurityDescriptor for the instance
@@ -103,10 +123,19 @@ func (instance *Win32_TSPermissionsSetting) GetPropertyStringSecurityDescriptor(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

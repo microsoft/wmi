@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NTDomain struct
@@ -100,7 +102,7 @@ func NewWin32_NTDomainEx6(hostName string,
 
 // SetClientSiteName sets the value of ClientSiteName for the instance
 func (instance *Win32_NTDomain) SetPropertyClientSiteName(value string) (err error) {
-	return instance.SetProperty("ClientSiteName", value)
+	return instance.SetProperty("ClientSiteName", (value))
 }
 
 // GetClientSiteName gets the value of ClientSiteName for the instance
@@ -109,16 +111,25 @@ func (instance *Win32_NTDomain) GetPropertyClientSiteName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDcSiteName sets the value of DcSiteName for the instance
 func (instance *Win32_NTDomain) SetPropertyDcSiteName(value string) (err error) {
-	return instance.SetProperty("DcSiteName", value)
+	return instance.SetProperty("DcSiteName", (value))
 }
 
 // GetDcSiteName gets the value of DcSiteName for the instance
@@ -127,16 +138,25 @@ func (instance *Win32_NTDomain) GetPropertyDcSiteName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDnsForestName sets the value of DnsForestName for the instance
 func (instance *Win32_NTDomain) SetPropertyDnsForestName(value string) (err error) {
-	return instance.SetProperty("DnsForestName", value)
+	return instance.SetProperty("DnsForestName", (value))
 }
 
 // GetDnsForestName gets the value of DnsForestName for the instance
@@ -145,16 +165,25 @@ func (instance *Win32_NTDomain) GetPropertyDnsForestName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomainControllerAddress sets the value of DomainControllerAddress for the instance
 func (instance *Win32_NTDomain) SetPropertyDomainControllerAddress(value string) (err error) {
-	return instance.SetProperty("DomainControllerAddress", value)
+	return instance.SetProperty("DomainControllerAddress", (value))
 }
 
 // GetDomainControllerAddress gets the value of DomainControllerAddress for the instance
@@ -163,16 +192,25 @@ func (instance *Win32_NTDomain) GetPropertyDomainControllerAddress() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomainControllerAddressType sets the value of DomainControllerAddressType for the instance
 func (instance *Win32_NTDomain) SetPropertyDomainControllerAddressType(value int32) (err error) {
-	return instance.SetProperty("DomainControllerAddressType", value)
+	return instance.SetProperty("DomainControllerAddressType", (value))
 }
 
 // GetDomainControllerAddressType gets the value of DomainControllerAddressType for the instance
@@ -181,16 +219,25 @@ func (instance *Win32_NTDomain) GetPropertyDomainControllerAddressType() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDomainControllerName sets the value of DomainControllerName for the instance
 func (instance *Win32_NTDomain) SetPropertyDomainControllerName(value string) (err error) {
-	return instance.SetProperty("DomainControllerName", value)
+	return instance.SetProperty("DomainControllerName", (value))
 }
 
 // GetDomainControllerName gets the value of DomainControllerName for the instance
@@ -199,16 +246,25 @@ func (instance *Win32_NTDomain) GetPropertyDomainControllerName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomainGuid sets the value of DomainGuid for the instance
 func (instance *Win32_NTDomain) SetPropertyDomainGuid(value string) (err error) {
-	return instance.SetProperty("DomainGuid", value)
+	return instance.SetProperty("DomainGuid", (value))
 }
 
 // GetDomainGuid gets the value of DomainGuid for the instance
@@ -217,16 +273,25 @@ func (instance *Win32_NTDomain) GetPropertyDomainGuid() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomainName sets the value of DomainName for the instance
 func (instance *Win32_NTDomain) SetPropertyDomainName(value string) (err error) {
-	return instance.SetProperty("DomainName", value)
+	return instance.SetProperty("DomainName", (value))
 }
 
 // GetDomainName gets the value of DomainName for the instance
@@ -235,16 +300,25 @@ func (instance *Win32_NTDomain) GetPropertyDomainName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDSDirectoryServiceFlag sets the value of DSDirectoryServiceFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSDirectoryServiceFlag(value bool) (err error) {
-	return instance.SetProperty("DSDirectoryServiceFlag", value)
+	return instance.SetProperty("DSDirectoryServiceFlag", (value))
 }
 
 // GetDSDirectoryServiceFlag gets the value of DSDirectoryServiceFlag for the instance
@@ -253,16 +327,25 @@ func (instance *Win32_NTDomain) GetPropertyDSDirectoryServiceFlag() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSDnsControllerFlag sets the value of DSDnsControllerFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSDnsControllerFlag(value bool) (err error) {
-	return instance.SetProperty("DSDnsControllerFlag", value)
+	return instance.SetProperty("DSDnsControllerFlag", (value))
 }
 
 // GetDSDnsControllerFlag gets the value of DSDnsControllerFlag for the instance
@@ -271,16 +354,25 @@ func (instance *Win32_NTDomain) GetPropertyDSDnsControllerFlag() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSDnsDomainFlag sets the value of DSDnsDomainFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSDnsDomainFlag(value bool) (err error) {
-	return instance.SetProperty("DSDnsDomainFlag", value)
+	return instance.SetProperty("DSDnsDomainFlag", (value))
 }
 
 // GetDSDnsDomainFlag gets the value of DSDnsDomainFlag for the instance
@@ -289,16 +381,25 @@ func (instance *Win32_NTDomain) GetPropertyDSDnsDomainFlag() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSDnsForestFlag sets the value of DSDnsForestFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSDnsForestFlag(value bool) (err error) {
-	return instance.SetProperty("DSDnsForestFlag", value)
+	return instance.SetProperty("DSDnsForestFlag", (value))
 }
 
 // GetDSDnsForestFlag gets the value of DSDnsForestFlag for the instance
@@ -307,16 +408,25 @@ func (instance *Win32_NTDomain) GetPropertyDSDnsForestFlag() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSGlobalCatalogFlag sets the value of DSGlobalCatalogFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSGlobalCatalogFlag(value bool) (err error) {
-	return instance.SetProperty("DSGlobalCatalogFlag", value)
+	return instance.SetProperty("DSGlobalCatalogFlag", (value))
 }
 
 // GetDSGlobalCatalogFlag gets the value of DSGlobalCatalogFlag for the instance
@@ -325,16 +435,25 @@ func (instance *Win32_NTDomain) GetPropertyDSGlobalCatalogFlag() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSKerberosDistributionCenterFlag sets the value of DSKerberosDistributionCenterFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSKerberosDistributionCenterFlag(value bool) (err error) {
-	return instance.SetProperty("DSKerberosDistributionCenterFlag", value)
+	return instance.SetProperty("DSKerberosDistributionCenterFlag", (value))
 }
 
 // GetDSKerberosDistributionCenterFlag gets the value of DSKerberosDistributionCenterFlag for the instance
@@ -343,16 +462,25 @@ func (instance *Win32_NTDomain) GetPropertyDSKerberosDistributionCenterFlag() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSPrimaryDomainControllerFlag sets the value of DSPrimaryDomainControllerFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSPrimaryDomainControllerFlag(value bool) (err error) {
-	return instance.SetProperty("DSPrimaryDomainControllerFlag", value)
+	return instance.SetProperty("DSPrimaryDomainControllerFlag", (value))
 }
 
 // GetDSPrimaryDomainControllerFlag gets the value of DSPrimaryDomainControllerFlag for the instance
@@ -361,16 +489,25 @@ func (instance *Win32_NTDomain) GetPropertyDSPrimaryDomainControllerFlag() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSTimeServiceFlag sets the value of DSTimeServiceFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSTimeServiceFlag(value bool) (err error) {
-	return instance.SetProperty("DSTimeServiceFlag", value)
+	return instance.SetProperty("DSTimeServiceFlag", (value))
 }
 
 // GetDSTimeServiceFlag gets the value of DSTimeServiceFlag for the instance
@@ -379,16 +516,25 @@ func (instance *Win32_NTDomain) GetPropertyDSTimeServiceFlag() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDSWritableFlag sets the value of DSWritableFlag for the instance
 func (instance *Win32_NTDomain) SetPropertyDSWritableFlag(value bool) (err error) {
-	return instance.SetProperty("DSWritableFlag", value)
+	return instance.SetProperty("DSWritableFlag", (value))
 }
 
 // GetDSWritableFlag gets the value of DSWritableFlag for the instance
@@ -397,9 +543,18 @@ func (instance *Win32_NTDomain) GetPropertyDSWritableFlag() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_DdmCounterProvider_RAS struct
@@ -64,7 +66,7 @@ func NewWin32_PerfFormattedData_DdmCounterProvider_RASEx6(hostName string,
 
 // SetBytesReceivedByDisconnectedClients sets the value of BytesReceivedByDisconnectedClients for the instance
 func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) SetPropertyBytesReceivedByDisconnectedClients(value uint64) (err error) {
-	return instance.SetProperty("BytesReceivedByDisconnectedClients", value)
+	return instance.SetProperty("BytesReceivedByDisconnectedClients", (value))
 }
 
 // GetBytesReceivedByDisconnectedClients gets the value of BytesReceivedByDisconnectedClients for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) GetPropertyBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTransmittedByDisconnectedClients sets the value of BytesTransmittedByDisconnectedClients for the instance
 func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) SetPropertyBytesTransmittedByDisconnectedClients(value uint64) (err error) {
-	return instance.SetProperty("BytesTransmittedByDisconnectedClients", value)
+	return instance.SetProperty("BytesTransmittedByDisconnectedClients", (value))
 }
 
 // GetBytesTransmittedByDisconnectedClients gets the value of BytesTransmittedByDisconnectedClients for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) GetPropertyBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFailedAuthentications sets the value of FailedAuthentications for the instance
 func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) SetPropertyFailedAuthentications(value uint32) (err error) {
-	return instance.SetProperty("FailedAuthentications", value)
+	return instance.SetProperty("FailedAuthentications", (value))
 }
 
 // GetFailedAuthentications gets the value of FailedAuthentications for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) GetPropertyFaile
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxClients sets the value of MaxClients for the instance
 func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) SetPropertyMaxClients(value uint32) (err error) {
-	return instance.SetProperty("MaxClients", value)
+	return instance.SetProperty("MaxClients", (value))
 }
 
 // GetMaxClients gets the value of MaxClients for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) GetPropertyMaxCl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalClients sets the value of TotalClients for the instance
 func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) SetPropertyTotalClients(value uint32) (err error) {
-	return instance.SetProperty("TotalClients", value)
+	return instance.SetProperty("TotalClients", (value))
 }
 
 // GetTotalClients gets the value of TotalClients for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_PerfFormattedData_DdmCounterProvider_RAS) GetPropertyTotal
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

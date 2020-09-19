@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DedupProperties struct
@@ -74,7 +76,7 @@ func NewMSFT_DedupPropertiesEx6(hostName string,
 
 // SetInPolicyFilesCount sets the value of InPolicyFilesCount for the instance
 func (instance *MSFT_DedupProperties) SetPropertyInPolicyFilesCount(value uint64) (err error) {
-	return instance.SetProperty("InPolicyFilesCount", value)
+	return instance.SetProperty("InPolicyFilesCount", (value))
 }
 
 // GetInPolicyFilesCount gets the value of InPolicyFilesCount for the instance
@@ -83,16 +85,25 @@ func (instance *MSFT_DedupProperties) GetPropertyInPolicyFilesCount() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInPolicyFilesSize sets the value of InPolicyFilesSize for the instance
 func (instance *MSFT_DedupProperties) SetPropertyInPolicyFilesSize(value uint64) (err error) {
-	return instance.SetProperty("InPolicyFilesSize", value)
+	return instance.SetProperty("InPolicyFilesSize", (value))
 }
 
 // GetInPolicyFilesSize gets the value of InPolicyFilesSize for the instance
@@ -101,16 +112,25 @@ func (instance *MSFT_DedupProperties) GetPropertyInPolicyFilesSize() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOptimizedFilesCount sets the value of OptimizedFilesCount for the instance
 func (instance *MSFT_DedupProperties) SetPropertyOptimizedFilesCount(value uint64) (err error) {
-	return instance.SetProperty("OptimizedFilesCount", value)
+	return instance.SetProperty("OptimizedFilesCount", (value))
 }
 
 // GetOptimizedFilesCount gets the value of OptimizedFilesCount for the instance
@@ -119,16 +139,25 @@ func (instance *MSFT_DedupProperties) GetPropertyOptimizedFilesCount() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOptimizedFilesSavingsRate sets the value of OptimizedFilesSavingsRate for the instance
 func (instance *MSFT_DedupProperties) SetPropertyOptimizedFilesSavingsRate(value uint32) (err error) {
-	return instance.SetProperty("OptimizedFilesSavingsRate", value)
+	return instance.SetProperty("OptimizedFilesSavingsRate", (value))
 }
 
 // GetOptimizedFilesSavingsRate gets the value of OptimizedFilesSavingsRate for the instance
@@ -137,16 +166,25 @@ func (instance *MSFT_DedupProperties) GetPropertyOptimizedFilesSavingsRate() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOptimizedFilesSize sets the value of OptimizedFilesSize for the instance
 func (instance *MSFT_DedupProperties) SetPropertyOptimizedFilesSize(value uint64) (err error) {
-	return instance.SetProperty("OptimizedFilesSize", value)
+	return instance.SetProperty("OptimizedFilesSize", (value))
 }
 
 // GetOptimizedFilesSize gets the value of OptimizedFilesSize for the instance
@@ -155,16 +193,25 @@ func (instance *MSFT_DedupProperties) GetPropertyOptimizedFilesSize() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSavingsRate sets the value of SavingsRate for the instance
 func (instance *MSFT_DedupProperties) SetPropertySavingsRate(value uint32) (err error) {
-	return instance.SetProperty("SavingsRate", value)
+	return instance.SetProperty("SavingsRate", (value))
 }
 
 // GetSavingsRate gets the value of SavingsRate for the instance
@@ -173,16 +220,25 @@ func (instance *MSFT_DedupProperties) GetPropertySavingsRate() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSavingsSize sets the value of SavingsSize for the instance
 func (instance *MSFT_DedupProperties) SetPropertySavingsSize(value uint64) (err error) {
-	return instance.SetProperty("SavingsSize", value)
+	return instance.SetProperty("SavingsSize", (value))
 }
 
 // GetSavingsSize gets the value of SavingsSize for the instance
@@ -191,16 +247,25 @@ func (instance *MSFT_DedupProperties) GetPropertySavingsSize() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUnoptimizedSize sets the value of UnoptimizedSize for the instance
 func (instance *MSFT_DedupProperties) SetPropertyUnoptimizedSize(value uint64) (err error) {
-	return instance.SetProperty("UnoptimizedSize", value)
+	return instance.SetProperty("UnoptimizedSize", (value))
 }
 
 // GetUnoptimizedSize gets the value of UnoptimizedSize for the instance
@@ -209,9 +274,18 @@ func (instance *MSFT_DedupProperties) GetPropertyUnoptimizedSize() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

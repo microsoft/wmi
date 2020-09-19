@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __CIMOMIdentification struct
@@ -61,7 +63,7 @@ func New__CIMOMIdentificationEx6(hostName string,
 
 // SetSetupDateTime sets the value of SetupDateTime for the instance
 func (instance *__CIMOMIdentification) SetPropertySetupDateTime(value string) (err error) {
-	return instance.SetProperty("SetupDateTime", value)
+	return instance.SetProperty("SetupDateTime", (value))
 }
 
 // GetSetupDateTime gets the value of SetupDateTime for the instance
@@ -70,16 +72,25 @@ func (instance *__CIMOMIdentification) GetPropertySetupDateTime() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersionCurrentlyRunning sets the value of VersionCurrentlyRunning for the instance
 func (instance *__CIMOMIdentification) SetPropertyVersionCurrentlyRunning(value string) (err error) {
-	return instance.SetProperty("VersionCurrentlyRunning", value)
+	return instance.SetProperty("VersionCurrentlyRunning", (value))
 }
 
 // GetVersionCurrentlyRunning gets the value of VersionCurrentlyRunning for the instance
@@ -88,16 +99,25 @@ func (instance *__CIMOMIdentification) GetPropertyVersionCurrentlyRunning() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersionUsedToCreateDB sets the value of VersionUsedToCreateDB for the instance
 func (instance *__CIMOMIdentification) SetPropertyVersionUsedToCreateDB(value string) (err error) {
-	return instance.SetProperty("VersionUsedToCreateDB", value)
+	return instance.SetProperty("VersionUsedToCreateDB", (value))
 }
 
 // GetVersionUsedToCreateDB gets the value of VersionUsedToCreateDB for the instance
@@ -106,16 +126,25 @@ func (instance *__CIMOMIdentification) GetPropertyVersionUsedToCreateDB() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWorkingDirectory sets the value of WorkingDirectory for the instance
 func (instance *__CIMOMIdentification) SetPropertyWorkingDirectory(value string) (err error) {
-	return instance.SetProperty("WorkingDirectory", value)
+	return instance.SetProperty("WorkingDirectory", (value))
 }
 
 // GetWorkingDirectory gets the value of WorkingDirectory for the instance
@@ -124,9 +153,18 @@ func (instance *__CIMOMIdentification) GetPropertyWorkingDirectory() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

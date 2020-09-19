@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbMultichannelConnection struct
@@ -104,7 +106,7 @@ func NewMSFT_SmbMultichannelConnectionEx6(hostName string,
 
 // SetClientInterfaceFriendlyName sets the value of ClientInterfaceFriendlyName for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyClientInterfaceFriendlyName(value string) (err error) {
-	return instance.SetProperty("ClientInterfaceFriendlyName", value)
+	return instance.SetProperty("ClientInterfaceFriendlyName", (value))
 }
 
 // GetClientInterfaceFriendlyName gets the value of ClientInterfaceFriendlyName for the instance
@@ -113,16 +115,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyClientInterfaceFriend
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetClientInterfaceIndex sets the value of ClientInterfaceIndex for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyClientInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("ClientInterfaceIndex", value)
+	return instance.SetProperty("ClientInterfaceIndex", (value))
 }
 
 // GetClientInterfaceIndex gets the value of ClientInterfaceIndex for the instance
@@ -131,16 +142,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyClientInterfaceIndex(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClientIpAddress sets the value of ClientIpAddress for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyClientIpAddress(value string) (err error) {
-	return instance.SetProperty("ClientIpAddress", value)
+	return instance.SetProperty("ClientIpAddress", (value))
 }
 
 // GetClientIpAddress gets the value of ClientIpAddress for the instance
@@ -149,16 +169,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyClientIpAddress() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetClientLinkSpeed sets the value of ClientLinkSpeed for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyClientLinkSpeed(value uint64) (err error) {
-	return instance.SetProperty("ClientLinkSpeed", value)
+	return instance.SetProperty("ClientLinkSpeed", (value))
 }
 
 // GetClientLinkSpeed gets the value of ClientLinkSpeed for the instance
@@ -167,16 +196,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyClientLinkSpeed() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetClientRdmaCapable sets the value of ClientRdmaCapable for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyClientRdmaCapable(value bool) (err error) {
-	return instance.SetProperty("ClientRdmaCapable", value)
+	return instance.SetProperty("ClientRdmaCapable", (value))
 }
 
 // GetClientRdmaCapable gets the value of ClientRdmaCapable for the instance
@@ -185,16 +223,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyClientRdmaCapable() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetClientRSSCapable sets the value of ClientRSSCapable for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyClientRSSCapable(value bool) (err error) {
-	return instance.SetProperty("ClientRSSCapable", value)
+	return instance.SetProperty("ClientRSSCapable", (value))
 }
 
 // GetClientRSSCapable gets the value of ClientRSSCapable for the instance
@@ -203,16 +250,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyClientRSSCapable() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCurrentChannels sets the value of CurrentChannels for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyCurrentChannels(value uint32) (err error) {
-	return instance.SetProperty("CurrentChannels", value)
+	return instance.SetProperty("CurrentChannels", (value))
 }
 
 // GetCurrentChannels gets the value of CurrentChannels for the instance
@@ -221,16 +277,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyCurrentChannels() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailed sets the value of Failed for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyFailed(value bool) (err error) {
-	return instance.SetProperty("Failed", value)
+	return instance.SetProperty("Failed", (value))
 }
 
 // GetFailed gets the value of Failed for the instance
@@ -239,16 +304,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyFailed() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFailureCount sets the value of FailureCount for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyFailureCount(value uint32) (err error) {
-	return instance.SetProperty("FailureCount", value)
+	return instance.SetProperty("FailureCount", (value))
 }
 
 // GetFailureCount gets the value of FailureCount for the instance
@@ -257,16 +331,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyFailureCount() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxChannels sets the value of MaxChannels for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyMaxChannels(value uint32) (err error) {
-	return instance.SetProperty("MaxChannels", value)
+	return instance.SetProperty("MaxChannels", (value))
 }
 
 // GetMaxChannels gets the value of MaxChannels for the instance
@@ -275,16 +358,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyMaxChannels() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSelected sets the value of Selected for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertySelected(value bool) (err error) {
-	return instance.SetProperty("Selected", value)
+	return instance.SetProperty("Selected", (value))
 }
 
 // GetSelected gets the value of Selected for the instance
@@ -293,16 +385,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertySelected() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetServerInterfaceIndex sets the value of ServerInterfaceIndex for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyServerInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("ServerInterfaceIndex", value)
+	return instance.SetProperty("ServerInterfaceIndex", (value))
 }
 
 // GetServerInterfaceIndex gets the value of ServerInterfaceIndex for the instance
@@ -311,16 +412,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyServerInterfaceIndex(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServerIpAddress sets the value of ServerIpAddress for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyServerIpAddress(value string) (err error) {
-	return instance.SetProperty("ServerIpAddress", value)
+	return instance.SetProperty("ServerIpAddress", (value))
 }
 
 // GetServerIpAddress gets the value of ServerIpAddress for the instance
@@ -329,16 +439,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyServerIpAddress() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerLinkSpeed sets the value of ServerLinkSpeed for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyServerLinkSpeed(value uint64) (err error) {
-	return instance.SetProperty("ServerLinkSpeed", value)
+	return instance.SetProperty("ServerLinkSpeed", (value))
 }
 
 // GetServerLinkSpeed gets the value of ServerLinkSpeed for the instance
@@ -347,16 +466,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyServerLinkSpeed() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetServerName sets the value of ServerName for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyServerName(value string) (err error) {
-	return instance.SetProperty("ServerName", value)
+	return instance.SetProperty("ServerName", (value))
 }
 
 // GetServerName gets the value of ServerName for the instance
@@ -365,16 +493,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyServerName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerRdmaCapable sets the value of ServerRdmaCapable for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyServerRdmaCapable(value bool) (err error) {
-	return instance.SetProperty("ServerRdmaCapable", value)
+	return instance.SetProperty("ServerRdmaCapable", (value))
 }
 
 // GetServerRdmaCapable gets the value of ServerRdmaCapable for the instance
@@ -383,16 +520,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyServerRdmaCapable() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetServerRSSCapable sets the value of ServerRSSCapable for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertyServerRSSCapable(value bool) (err error) {
-	return instance.SetProperty("ServerRSSCapable", value)
+	return instance.SetProperty("ServerRSSCapable", (value))
 }
 
 // GetServerRSSCapable gets the value of ServerRSSCapable for the instance
@@ -401,16 +547,25 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertyServerRSSCapable() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSmbInstance sets the value of SmbInstance for the instance
 func (instance *MSFT_SmbMultichannelConnection) SetPropertySmbInstance(value SmbMultichannelConnection_SmbInstance) (err error) {
-	return instance.SetProperty("SmbInstance", value)
+	return instance.SetProperty("SmbInstance", (value))
 }
 
 // GetSmbInstance gets the value of SmbInstance for the instance
@@ -419,10 +574,19 @@ func (instance *MSFT_SmbMultichannelConnection) GetPropertySmbInstance() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbMultichannelConnection_SmbInstance)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbMultichannelConnection_SmbInstance(valuetmp)
+
 	return
 }
 

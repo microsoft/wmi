@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_NETFramework_NETCLRExceptions struct
@@ -64,7 +66,7 @@ func NewWin32_PerfRawData_NETFramework_NETCLRExceptionsEx6(hostName string,
 
 // SetNumberofExcepsThrown sets the value of NumberofExcepsThrown for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) SetPropertyNumberofExcepsThrown(value uint32) (err error) {
-	return instance.SetProperty("NumberofExcepsThrown", value)
+	return instance.SetProperty("NumberofExcepsThrown", (value))
 }
 
 // GetNumberofExcepsThrown gets the value of NumberofExcepsThrown for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) GetPropertyNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofExcepsThrownPersec sets the value of NumberofExcepsThrownPersec for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) SetPropertyNumberofExcepsThrownPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofExcepsThrownPersec", value)
+	return instance.SetProperty("NumberofExcepsThrownPersec", (value))
 }
 
 // GetNumberofExcepsThrownPersec gets the value of NumberofExcepsThrownPersec for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) GetPropertyNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofFiltersPersec sets the value of NumberofFiltersPersec for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) SetPropertyNumberofFiltersPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofFiltersPersec", value)
+	return instance.SetProperty("NumberofFiltersPersec", (value))
 }
 
 // GetNumberofFiltersPersec gets the value of NumberofFiltersPersec for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) GetPropertyNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofFinallysPersec sets the value of NumberofFinallysPersec for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) SetPropertyNumberofFinallysPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofFinallysPersec", value)
+	return instance.SetProperty("NumberofFinallysPersec", (value))
 }
 
 // GetNumberofFinallysPersec gets the value of NumberofFinallysPersec for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) GetPropertyNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThrowToCatchDepthPersec sets the value of ThrowToCatchDepthPersec for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) SetPropertyThrowToCatchDepthPersec(value uint32) (err error) {
-	return instance.SetProperty("ThrowToCatchDepthPersec", value)
+	return instance.SetProperty("ThrowToCatchDepthPersec", (value))
 }
 
 // GetThrowToCatchDepthPersec gets the value of ThrowToCatchDepthPersec for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRExceptions) GetPropertyThro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

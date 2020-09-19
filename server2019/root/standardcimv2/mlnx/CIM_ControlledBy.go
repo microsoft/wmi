@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ControlledBy struct
@@ -70,7 +72,7 @@ func NewCIM_ControlledByEx6(hostName string,
 
 // SetAccessMode sets the value of AccessMode for the instance
 func (instance *CIM_ControlledBy) SetPropertyAccessMode(value ControlledBy_AccessMode) (err error) {
-	return instance.SetProperty("AccessMode", value)
+	return instance.SetProperty("AccessMode", (value))
 }
 
 // GetAccessMode gets the value of AccessMode for the instance
@@ -79,16 +81,25 @@ func (instance *CIM_ControlledBy) GetPropertyAccessMode() (value ControlledBy_Ac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ControlledBy_AccessMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ControlledBy_AccessMode(valuetmp)
+
 	return
 }
 
 // SetAccessPriority sets the value of AccessPriority for the instance
 func (instance *CIM_ControlledBy) SetPropertyAccessPriority(value uint16) (err error) {
-	return instance.SetProperty("AccessPriority", value)
+	return instance.SetProperty("AccessPriority", (value))
 }
 
 // GetAccessPriority gets the value of AccessPriority for the instance
@@ -97,16 +108,25 @@ func (instance *CIM_ControlledBy) GetPropertyAccessPriority() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAccessState sets the value of AccessState for the instance
 func (instance *CIM_ControlledBy) SetPropertyAccessState(value ControlledBy_AccessState) (err error) {
-	return instance.SetProperty("AccessState", value)
+	return instance.SetProperty("AccessState", (value))
 }
 
 // GetAccessState gets the value of AccessState for the instance
@@ -115,16 +135,25 @@ func (instance *CIM_ControlledBy) GetPropertyAccessState() (value ControlledBy_A
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ControlledBy_AccessState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ControlledBy_AccessState(valuetmp)
+
 	return
 }
 
 // SetDeviceNumber sets the value of DeviceNumber for the instance
 func (instance *CIM_ControlledBy) SetPropertyDeviceNumber(value string) (err error) {
-	return instance.SetProperty("DeviceNumber", value)
+	return instance.SetProperty("DeviceNumber", (value))
 }
 
 // GetDeviceNumber gets the value of DeviceNumber for the instance
@@ -133,16 +162,25 @@ func (instance *CIM_ControlledBy) GetPropertyDeviceNumber() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfHardResets sets the value of NumberOfHardResets for the instance
 func (instance *CIM_ControlledBy) SetPropertyNumberOfHardResets(value uint32) (err error) {
-	return instance.SetProperty("NumberOfHardResets", value)
+	return instance.SetProperty("NumberOfHardResets", (value))
 }
 
 // GetNumberOfHardResets gets the value of NumberOfHardResets for the instance
@@ -151,16 +189,25 @@ func (instance *CIM_ControlledBy) GetPropertyNumberOfHardResets() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfSoftResets sets the value of NumberOfSoftResets for the instance
 func (instance *CIM_ControlledBy) SetPropertyNumberOfSoftResets(value uint32) (err error) {
-	return instance.SetProperty("NumberOfSoftResets", value)
+	return instance.SetProperty("NumberOfSoftResets", (value))
 }
 
 // GetNumberOfSoftResets gets the value of NumberOfSoftResets for the instance
@@ -169,16 +216,25 @@ func (instance *CIM_ControlledBy) GetPropertyNumberOfSoftResets() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeOfDeviceReset sets the value of TimeOfDeviceReset for the instance
 func (instance *CIM_ControlledBy) SetPropertyTimeOfDeviceReset(value string) (err error) {
-	return instance.SetProperty("TimeOfDeviceReset", value)
+	return instance.SetProperty("TimeOfDeviceReset", (value))
 }
 
 // GetTimeOfDeviceReset gets the value of TimeOfDeviceReset for the instance
@@ -187,9 +243,18 @@ func (instance *CIM_ControlledBy) GetPropertyTimeOfDeviceReset() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __FilterToConsumerBinding struct
@@ -70,7 +72,7 @@ func New__FilterToConsumerBindingEx6(hostName string,
 
 // SetConsumer sets the value of Consumer for the instance
 func (instance *__FilterToConsumerBinding) SetPropertyConsumer(value __EventConsumer) (err error) {
-	return instance.SetProperty("Consumer", value)
+	return instance.SetProperty("Consumer", (value))
 }
 
 // GetConsumer gets the value of Consumer for the instance
@@ -79,16 +81,25 @@ func (instance *__FilterToConsumerBinding) GetPropertyConsumer() (value __EventC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(__EventConsumer)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(__EventConsumer)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " __EventConsumer is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = __EventConsumer(valuetmp)
+
 	return
 }
 
 // SetCreatorSID sets the value of CreatorSID for the instance
 func (instance *__FilterToConsumerBinding) SetPropertyCreatorSID(value []uint8) (err error) {
-	return instance.SetProperty("CreatorSID", value)
+	return instance.SetProperty("CreatorSID", (value))
 }
 
 // GetCreatorSID gets the value of CreatorSID for the instance
@@ -97,16 +108,26 @@ func (instance *__FilterToConsumerBinding) GetPropertyCreatorSID() (value []uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetDeliverSynchronously sets the value of DeliverSynchronously for the instance
 func (instance *__FilterToConsumerBinding) SetPropertyDeliverSynchronously(value bool) (err error) {
-	return instance.SetProperty("DeliverSynchronously", value)
+	return instance.SetProperty("DeliverSynchronously", (value))
 }
 
 // GetDeliverSynchronously gets the value of DeliverSynchronously for the instance
@@ -115,16 +136,25 @@ func (instance *__FilterToConsumerBinding) GetPropertyDeliverSynchronously() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDeliveryQoS sets the value of DeliveryQoS for the instance
 func (instance *__FilterToConsumerBinding) SetPropertyDeliveryQoS(value uint32) (err error) {
-	return instance.SetProperty("DeliveryQoS", value)
+	return instance.SetProperty("DeliveryQoS", (value))
 }
 
 // GetDeliveryQoS gets the value of DeliveryQoS for the instance
@@ -133,16 +163,25 @@ func (instance *__FilterToConsumerBinding) GetPropertyDeliveryQoS() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFilter sets the value of Filter for the instance
 func (instance *__FilterToConsumerBinding) SetPropertyFilter(value __EventFilter) (err error) {
-	return instance.SetProperty("Filter", value)
+	return instance.SetProperty("Filter", (value))
 }
 
 // GetFilter gets the value of Filter for the instance
@@ -151,16 +190,25 @@ func (instance *__FilterToConsumerBinding) GetPropertyFilter() (value __EventFil
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(__EventFilter)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(__EventFilter)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " __EventFilter is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = __EventFilter(valuetmp)
+
 	return
 }
 
 // SetMaintainSecurityContext sets the value of MaintainSecurityContext for the instance
 func (instance *__FilterToConsumerBinding) SetPropertyMaintainSecurityContext(value bool) (err error) {
-	return instance.SetProperty("MaintainSecurityContext", value)
+	return instance.SetProperty("MaintainSecurityContext", (value))
 }
 
 // GetMaintainSecurityContext gets the value of MaintainSecurityContext for the instance
@@ -169,16 +217,25 @@ func (instance *__FilterToConsumerBinding) GetPropertyMaintainSecurityContext() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSlowDownProviders sets the value of SlowDownProviders for the instance
 func (instance *__FilterToConsumerBinding) SetPropertySlowDownProviders(value bool) (err error) {
-	return instance.SetProperty("SlowDownProviders", value)
+	return instance.SetProperty("SlowDownProviders", (value))
 }
 
 // GetSlowDownProviders gets the value of SlowDownProviders for the instance
@@ -187,9 +244,18 @@ func (instance *__FilterToConsumerBinding) GetPropertySlowDownProviders() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

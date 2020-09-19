@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualEthernetSwitchBandwidthSettingData struct
@@ -55,7 +57,7 @@ func NewMsvm_VirtualEthernetSwitchBandwidthSettingDataEx6(hostName string,
 
 // SetDefaultFlowReservation sets the value of DefaultFlowReservation for the instance
 func (instance *Msvm_VirtualEthernetSwitchBandwidthSettingData) SetPropertyDefaultFlowReservation(value uint64) (err error) {
-	return instance.SetProperty("DefaultFlowReservation", value)
+	return instance.SetProperty("DefaultFlowReservation", (value))
 }
 
 // GetDefaultFlowReservation gets the value of DefaultFlowReservation for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_VirtualEthernetSwitchBandwidthSettingData) GetPropertyDefau
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDefaultFlowWeight sets the value of DefaultFlowWeight for the instance
 func (instance *Msvm_VirtualEthernetSwitchBandwidthSettingData) SetPropertyDefaultFlowWeight(value uint64) (err error) {
-	return instance.SetProperty("DefaultFlowWeight", value)
+	return instance.SetProperty("DefaultFlowWeight", (value))
 }
 
 // GetDefaultFlowWeight gets the value of DefaultFlowWeight for the instance
@@ -82,10 +93,19 @@ func (instance *Msvm_VirtualEthernetSwitchBandwidthSettingData) GetPropertyDefau
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 func (instance *Msvm_VirtualEthernetSwitchBandwidthSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {

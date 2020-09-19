@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_ExtensionEventSource struct
@@ -59,7 +61,7 @@ func NewRSOP_ExtensionEventSourceEx6(hostName string,
 
 // SeteventLogName sets the value of eventLogName for the instance
 func (instance *RSOP_ExtensionEventSource) SetPropertyeventLogName(value string) (err error) {
-	return instance.SetProperty("eventLogName", value)
+	return instance.SetProperty("eventLogName", (value))
 }
 
 // GeteventLogName gets the value of eventLogName for the instance
@@ -68,16 +70,25 @@ func (instance *RSOP_ExtensionEventSource) GetPropertyeventLogName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SeteventLogSource sets the value of eventLogSource for the instance
 func (instance *RSOP_ExtensionEventSource) SetPropertyeventLogSource(value string) (err error) {
-	return instance.SetProperty("eventLogSource", value)
+	return instance.SetProperty("eventLogSource", (value))
 }
 
 // GeteventLogSource gets the value of eventLogSource for the instance
@@ -86,16 +97,25 @@ func (instance *RSOP_ExtensionEventSource) GetPropertyeventLogSource() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setid sets the value of id for the instance
 func (instance *RSOP_ExtensionEventSource) SetPropertyid(value string) (err error) {
-	return instance.SetProperty("id", value)
+	return instance.SetProperty("id", (value))
 }
 
 // Getid gets the value of id for the instance
@@ -104,9 +124,18 @@ func (instance *RSOP_ExtensionEventSource) GetPropertyid() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

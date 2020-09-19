@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProcessExecutable struct
@@ -61,7 +63,7 @@ func NewCIM_ProcessExecutableEx6(hostName string,
 
 // SetBaseAddress sets the value of BaseAddress for the instance
 func (instance *CIM_ProcessExecutable) SetPropertyBaseAddress(value uint64) (err error) {
-	return instance.SetProperty("BaseAddress", value)
+	return instance.SetProperty("BaseAddress", (value))
 }
 
 // GetBaseAddress gets the value of BaseAddress for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_ProcessExecutable) GetPropertyBaseAddress() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetGlobalProcessCount sets the value of GlobalProcessCount for the instance
 func (instance *CIM_ProcessExecutable) SetPropertyGlobalProcessCount(value uint32) (err error) {
-	return instance.SetProperty("GlobalProcessCount", value)
+	return instance.SetProperty("GlobalProcessCount", (value))
 }
 
 // GetGlobalProcessCount gets the value of GlobalProcessCount for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_ProcessExecutable) GetPropertyGlobalProcessCount() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetModuleInstance sets the value of ModuleInstance for the instance
 func (instance *CIM_ProcessExecutable) SetPropertyModuleInstance(value uint32) (err error) {
-	return instance.SetProperty("ModuleInstance", value)
+	return instance.SetProperty("ModuleInstance", (value))
 }
 
 // GetModuleInstance gets the value of ModuleInstance for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_ProcessExecutable) GetPropertyModuleInstance() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessCount sets the value of ProcessCount for the instance
 func (instance *CIM_ProcessExecutable) SetPropertyProcessCount(value uint32) (err error) {
-	return instance.SetProperty("ProcessCount", value)
+	return instance.SetProperty("ProcessCount", (value))
 }
 
 // GetProcessCount gets the value of ProcessCount for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_ProcessExecutable) GetPropertyProcessCount() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Firewall_PrivateProfile02 struct
@@ -92,7 +94,7 @@ func NewMDM_Firewall_PrivateProfile02Ex6(hostName string,
 
 // SetAllowLocalIpsecPolicyMerge sets the value of AllowLocalIpsecPolicyMerge for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyAllowLocalIpsecPolicyMerge(value bool) (err error) {
-	return instance.SetProperty("AllowLocalIpsecPolicyMerge", value)
+	return instance.SetProperty("AllowLocalIpsecPolicyMerge", (value))
 }
 
 // GetAllowLocalIpsecPolicyMerge gets the value of AllowLocalIpsecPolicyMerge for the instance
@@ -101,16 +103,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyAllowLocalIpsecPolicyM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowLocalPolicyMerge sets the value of AllowLocalPolicyMerge for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyAllowLocalPolicyMerge(value bool) (err error) {
-	return instance.SetProperty("AllowLocalPolicyMerge", value)
+	return instance.SetProperty("AllowLocalPolicyMerge", (value))
 }
 
 // GetAllowLocalPolicyMerge gets the value of AllowLocalPolicyMerge for the instance
@@ -119,16 +130,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyAllowLocalPolicyMerge(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAuthAppsAllowUserPrefMerge sets the value of AuthAppsAllowUserPrefMerge for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyAuthAppsAllowUserPrefMerge(value bool) (err error) {
-	return instance.SetProperty("AuthAppsAllowUserPrefMerge", value)
+	return instance.SetProperty("AuthAppsAllowUserPrefMerge", (value))
 }
 
 // GetAuthAppsAllowUserPrefMerge gets the value of AuthAppsAllowUserPrefMerge for the instance
@@ -137,16 +157,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyAuthAppsAllowUserPrefM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDefaultInboundAction sets the value of DefaultInboundAction for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyDefaultInboundAction(value int32) (err error) {
-	return instance.SetProperty("DefaultInboundAction", value)
+	return instance.SetProperty("DefaultInboundAction", (value))
 }
 
 // GetDefaultInboundAction gets the value of DefaultInboundAction for the instance
@@ -155,16 +184,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyDefaultInboundAction()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDefaultOutboundAction sets the value of DefaultOutboundAction for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyDefaultOutboundAction(value int32) (err error) {
-	return instance.SetProperty("DefaultOutboundAction", value)
+	return instance.SetProperty("DefaultOutboundAction", (value))
 }
 
 // GetDefaultOutboundAction gets the value of DefaultOutboundAction for the instance
@@ -173,16 +211,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyDefaultOutboundAction(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableInboundNotifications sets the value of DisableInboundNotifications for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyDisableInboundNotifications(value bool) (err error) {
-	return instance.SetProperty("DisableInboundNotifications", value)
+	return instance.SetProperty("DisableInboundNotifications", (value))
 }
 
 // GetDisableInboundNotifications gets the value of DisableInboundNotifications for the instance
@@ -191,16 +238,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyDisableInboundNotifica
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDisableStealthMode sets the value of DisableStealthMode for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyDisableStealthMode(value bool) (err error) {
-	return instance.SetProperty("DisableStealthMode", value)
+	return instance.SetProperty("DisableStealthMode", (value))
 }
 
 // GetDisableStealthMode gets the value of DisableStealthMode for the instance
@@ -209,16 +265,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyDisableStealthMode() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDisableStealthModeIpsecSecuredPacketExemption sets the value of DisableStealthModeIpsecSecuredPacketExemption for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyDisableStealthModeIpsecSecuredPacketExemption(value bool) (err error) {
-	return instance.SetProperty("DisableStealthModeIpsecSecuredPacketExemption", value)
+	return instance.SetProperty("DisableStealthModeIpsecSecuredPacketExemption", (value))
 }
 
 // GetDisableStealthModeIpsecSecuredPacketExemption gets the value of DisableStealthModeIpsecSecuredPacketExemption for the instance
@@ -227,16 +292,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyDisableStealthModeIpse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDisableUnicastResponsesToMulticastBroadcast sets the value of DisableUnicastResponsesToMulticastBroadcast for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyDisableUnicastResponsesToMulticastBroadcast(value bool) (err error) {
-	return instance.SetProperty("DisableUnicastResponsesToMulticastBroadcast", value)
+	return instance.SetProperty("DisableUnicastResponsesToMulticastBroadcast", (value))
 }
 
 // GetDisableUnicastResponsesToMulticastBroadcast gets the value of DisableUnicastResponsesToMulticastBroadcast for the instance
@@ -245,16 +319,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyDisableUnicastResponse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableFirewall sets the value of EnableFirewall for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyEnableFirewall(value bool) (err error) {
-	return instance.SetProperty("EnableFirewall", value)
+	return instance.SetProperty("EnableFirewall", (value))
 }
 
 // GetEnableFirewall gets the value of EnableFirewall for the instance
@@ -263,16 +346,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyEnableFirewall() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGlobalPortsAllowUserPrefMerge sets the value of GlobalPortsAllowUserPrefMerge for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyGlobalPortsAllowUserPrefMerge(value bool) (err error) {
-	return instance.SetProperty("GlobalPortsAllowUserPrefMerge", value)
+	return instance.SetProperty("GlobalPortsAllowUserPrefMerge", (value))
 }
 
 // GetGlobalPortsAllowUserPrefMerge gets the value of GlobalPortsAllowUserPrefMerge for the instance
@@ -281,16 +373,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyGlobalPortsAllowUserPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -299,16 +400,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyInstanceID() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -317,16 +427,25 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyParentID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShielded sets the value of Shielded for the instance
 func (instance *MDM_Firewall_PrivateProfile02) SetPropertyShielded(value bool) (err error) {
-	return instance.SetProperty("Shielded", value)
+	return instance.SetProperty("Shielded", (value))
 }
 
 // GetShielded gets the value of Shielded for the instance
@@ -335,9 +454,18 @@ func (instance *MDM_Firewall_PrivateProfile02) GetPropertyShielded() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

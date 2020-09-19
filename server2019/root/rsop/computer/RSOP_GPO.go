@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_GPO struct
@@ -83,7 +85,7 @@ func NewRSOP_GPOEx6(hostName string,
 
 // SetaccessDenied sets the value of accessDenied for the instance
 func (instance *RSOP_GPO) SetPropertyaccessDenied(value bool) (err error) {
-	return instance.SetProperty("accessDenied", value)
+	return instance.SetProperty("accessDenied", (value))
 }
 
 // GetaccessDenied gets the value of accessDenied for the instance
@@ -92,16 +94,25 @@ func (instance *RSOP_GPO) GetPropertyaccessDenied() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // Setenabled sets the value of enabled for the instance
 func (instance *RSOP_GPO) SetPropertyenabled(value bool) (err error) {
-	return instance.SetProperty("enabled", value)
+	return instance.SetProperty("enabled", (value))
 }
 
 // Getenabled gets the value of enabled for the instance
@@ -110,16 +121,25 @@ func (instance *RSOP_GPO) GetPropertyenabled() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetextensionIds sets the value of extensionIds for the instance
 func (instance *RSOP_GPO) SetPropertyextensionIds(value []string) (err error) {
-	return instance.SetProperty("extensionIds", value)
+	return instance.SetProperty("extensionIds", (value))
 }
 
 // GetextensionIds gets the value of extensionIds for the instance
@@ -128,16 +148,26 @@ func (instance *RSOP_GPO) GetPropertyextensionIds() (value []string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetfileSystemPath sets the value of fileSystemPath for the instance
 func (instance *RSOP_GPO) SetPropertyfileSystemPath(value string) (err error) {
-	return instance.SetProperty("fileSystemPath", value)
+	return instance.SetProperty("fileSystemPath", (value))
 }
 
 // GetfileSystemPath gets the value of fileSystemPath for the instance
@@ -146,16 +176,25 @@ func (instance *RSOP_GPO) GetPropertyfileSystemPath() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetfilterAllowed sets the value of filterAllowed for the instance
 func (instance *RSOP_GPO) SetPropertyfilterAllowed(value bool) (err error) {
-	return instance.SetProperty("filterAllowed", value)
+	return instance.SetProperty("filterAllowed", (value))
 }
 
 // GetfilterAllowed gets the value of filterAllowed for the instance
@@ -164,16 +203,25 @@ func (instance *RSOP_GPO) GetPropertyfilterAllowed() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetfilterId sets the value of filterId for the instance
 func (instance *RSOP_GPO) SetPropertyfilterId(value string) (err error) {
-	return instance.SetProperty("filterId", value)
+	return instance.SetProperty("filterId", (value))
 }
 
 // GetfilterId gets the value of filterId for the instance
@@ -182,16 +230,25 @@ func (instance *RSOP_GPO) GetPropertyfilterId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetguidName sets the value of guidName for the instance
 func (instance *RSOP_GPO) SetPropertyguidName(value string) (err error) {
-	return instance.SetProperty("guidName", value)
+	return instance.SetProperty("guidName", (value))
 }
 
 // GetguidName gets the value of guidName for the instance
@@ -200,16 +257,25 @@ func (instance *RSOP_GPO) GetPropertyguidName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setid sets the value of id for the instance
 func (instance *RSOP_GPO) SetPropertyid(value string) (err error) {
-	return instance.SetProperty("id", value)
+	return instance.SetProperty("id", (value))
 }
 
 // Getid gets the value of id for the instance
@@ -218,16 +284,25 @@ func (instance *RSOP_GPO) GetPropertyid() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setname sets the value of name for the instance
 func (instance *RSOP_GPO) SetPropertyname(value string) (err error) {
-	return instance.SetProperty("name", value)
+	return instance.SetProperty("name", (value))
 }
 
 // Getname gets the value of name for the instance
@@ -236,16 +311,25 @@ func (instance *RSOP_GPO) GetPropertyname() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetsecurityDescriptor sets the value of securityDescriptor for the instance
 func (instance *RSOP_GPO) SetPropertysecurityDescriptor(value []uint8) (err error) {
-	return instance.SetProperty("securityDescriptor", value)
+	return instance.SetProperty("securityDescriptor", (value))
 }
 
 // GetsecurityDescriptor gets the value of securityDescriptor for the instance
@@ -254,16 +338,26 @@ func (instance *RSOP_GPO) GetPropertysecurityDescriptor() (value []uint8, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // Setversion sets the value of version for the instance
 func (instance *RSOP_GPO) SetPropertyversion(value uint32) (err error) {
-	return instance.SetProperty("version", value)
+	return instance.SetProperty("version", (value))
 }
 
 // Getversion gets the value of version for the instance
@@ -272,9 +366,18 @@ func (instance *RSOP_GPO) GetPropertyversion() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

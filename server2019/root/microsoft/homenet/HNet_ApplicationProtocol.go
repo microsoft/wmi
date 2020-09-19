@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_ApplicationProtocol struct
@@ -74,7 +76,7 @@ func NewHNet_ApplicationProtocolEx6(hostName string,
 
 // SetBuiltIn sets the value of BuiltIn for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyBuiltIn(value bool) (err error) {
-	return instance.SetProperty("BuiltIn", value)
+	return instance.SetProperty("BuiltIn", (value))
 }
 
 // GetBuiltIn gets the value of BuiltIn for the instance
@@ -83,16 +85,25 @@ func (instance *HNet_ApplicationProtocol) GetPropertyBuiltIn() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -101,16 +112,25 @@ func (instance *HNet_ApplicationProtocol) GetPropertyEnabled() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -119,16 +139,25 @@ func (instance *HNet_ApplicationProtocol) GetPropertyId() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -137,16 +166,25 @@ func (instance *HNet_ApplicationProtocol) GetPropertyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOutgoingIPProtocol sets the value of OutgoingIPProtocol for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyOutgoingIPProtocol(value uint8) (err error) {
-	return instance.SetProperty("OutgoingIPProtocol", value)
+	return instance.SetProperty("OutgoingIPProtocol", (value))
 }
 
 // GetOutgoingIPProtocol gets the value of OutgoingIPProtocol for the instance
@@ -155,16 +193,25 @@ func (instance *HNet_ApplicationProtocol) GetPropertyOutgoingIPProtocol() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetOutgoingPort sets the value of OutgoingPort for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyOutgoingPort(value uint16) (err error) {
-	return instance.SetProperty("OutgoingPort", value)
+	return instance.SetProperty("OutgoingPort", (value))
 }
 
 // GetOutgoingPort gets the value of OutgoingPort for the instance
@@ -173,16 +220,25 @@ func (instance *HNet_ApplicationProtocol) GetPropertyOutgoingPort() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetResponseArray sets the value of ResponseArray for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyResponseArray(value []HNet_ResponseRange) (err error) {
-	return instance.SetProperty("ResponseArray", value)
+	return instance.SetProperty("ResponseArray", (value))
 }
 
 // GetResponseArray gets the value of ResponseArray for the instance
@@ -191,16 +247,26 @@ func (instance *HNet_ApplicationProtocol) GetPropertyResponseArray() (value []HN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]HNet_ResponseRange)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(HNet_ResponseRange)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " HNet_ResponseRange is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, HNet_ResponseRange(valuetmp))
+	}
+
 	return
 }
 
 // SetResponseCount sets the value of ResponseCount for the instance
 func (instance *HNet_ApplicationProtocol) SetPropertyResponseCount(value uint16) (err error) {
-	return instance.SetProperty("ResponseCount", value)
+	return instance.SetProperty("ResponseCount", (value))
 }
 
 // GetResponseCount gets the value of ResponseCount for the instance
@@ -209,9 +275,18 @@ func (instance *HNet_ApplicationProtocol) GetPropertyResponseCount() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

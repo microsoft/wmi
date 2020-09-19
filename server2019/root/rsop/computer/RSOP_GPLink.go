@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_GPLink struct
@@ -71,7 +73,7 @@ func NewRSOP_GPLinkEx6(hostName string,
 
 // SetappliedOrder sets the value of appliedOrder for the instance
 func (instance *RSOP_GPLink) SetPropertyappliedOrder(value uint32) (err error) {
-	return instance.SetProperty("appliedOrder", value)
+	return instance.SetProperty("appliedOrder", (value))
 }
 
 // GetappliedOrder gets the value of appliedOrder for the instance
@@ -80,16 +82,25 @@ func (instance *RSOP_GPLink) GetPropertyappliedOrder() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // Setenabled sets the value of enabled for the instance
 func (instance *RSOP_GPLink) SetPropertyenabled(value bool) (err error) {
-	return instance.SetProperty("enabled", value)
+	return instance.SetProperty("enabled", (value))
 }
 
 // Getenabled gets the value of enabled for the instance
@@ -98,16 +109,25 @@ func (instance *RSOP_GPLink) GetPropertyenabled() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGPO sets the value of GPO for the instance
 func (instance *RSOP_GPLink) SetPropertyGPO(value RSOP_GPO) (err error) {
-	return instance.SetProperty("GPO", value)
+	return instance.SetProperty("GPO", (value))
 }
 
 // GetGPO gets the value of GPO for the instance
@@ -116,16 +136,25 @@ func (instance *RSOP_GPLink) GetPropertyGPO() (value RSOP_GPO, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_GPO)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_GPO)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_GPO is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_GPO(valuetmp)
+
 	return
 }
 
 // SetlinkOrder sets the value of linkOrder for the instance
 func (instance *RSOP_GPLink) SetPropertylinkOrder(value uint32) (err error) {
-	return instance.SetProperty("linkOrder", value)
+	return instance.SetProperty("linkOrder", (value))
 }
 
 // GetlinkOrder gets the value of linkOrder for the instance
@@ -134,16 +163,25 @@ func (instance *RSOP_GPLink) GetPropertylinkOrder() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetnoOverride sets the value of noOverride for the instance
 func (instance *RSOP_GPLink) SetPropertynoOverride(value bool) (err error) {
-	return instance.SetProperty("noOverride", value)
+	return instance.SetProperty("noOverride", (value))
 }
 
 // GetnoOverride gets the value of noOverride for the instance
@@ -152,16 +190,25 @@ func (instance *RSOP_GPLink) GetPropertynoOverride() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSOM sets the value of SOM for the instance
 func (instance *RSOP_GPLink) SetPropertySOM(value RSOP_SOM) (err error) {
-	return instance.SetProperty("SOM", value)
+	return instance.SetProperty("SOM", (value))
 }
 
 // GetSOM gets the value of SOM for the instance
@@ -170,16 +217,25 @@ func (instance *RSOP_GPLink) GetPropertySOM() (value RSOP_SOM, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_SOM)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_SOM)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_SOM is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_SOM(valuetmp)
+
 	return
 }
 
 // SetsomOrder sets the value of somOrder for the instance
 func (instance *RSOP_GPLink) SetPropertysomOrder(value uint32) (err error) {
-	return instance.SetProperty("somOrder", value)
+	return instance.SetProperty("somOrder", (value))
 }
 
 // GetsomOrder gets the value of somOrder for the instance
@@ -188,9 +244,18 @@ func (instance *RSOP_GPLink) GetPropertysomOrder() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

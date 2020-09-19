@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DiskPartition struct
@@ -55,7 +57,7 @@ func NewCIM_DiskPartitionEx6(hostName string,
 
 // SetBootable sets the value of Bootable for the instance
 func (instance *CIM_DiskPartition) SetPropertyBootable(value bool) (err error) {
-	return instance.SetProperty("Bootable", value)
+	return instance.SetProperty("Bootable", (value))
 }
 
 // GetBootable gets the value of Bootable for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_DiskPartition) GetPropertyBootable() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPrimaryPartition sets the value of PrimaryPartition for the instance
 func (instance *CIM_DiskPartition) SetPropertyPrimaryPartition(value bool) (err error) {
-	return instance.SetProperty("PrimaryPartition", value)
+	return instance.SetProperty("PrimaryPartition", (value))
 }
 
 // GetPrimaryPartition gets the value of PrimaryPartition for the instance
@@ -82,9 +93,18 @@ func (instance *CIM_DiskPartition) GetPropertyPrimaryPartition() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

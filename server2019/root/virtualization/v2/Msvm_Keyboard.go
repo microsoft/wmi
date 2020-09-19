@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_Keyboard struct
@@ -61,7 +63,7 @@ func NewMsvm_KeyboardEx6(hostName string,
 
 // SetLayout sets the value of Layout for the instance
 func (instance *Msvm_Keyboard) SetPropertyLayout(value string) (err error) {
-	return instance.SetProperty("Layout", value)
+	return instance.SetProperty("Layout", (value))
 }
 
 // GetLayout gets the value of Layout for the instance
@@ -70,16 +72,25 @@ func (instance *Msvm_Keyboard) GetPropertyLayout() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfFunctionKeys sets the value of NumberOfFunctionKeys for the instance
 func (instance *Msvm_Keyboard) SetPropertyNumberOfFunctionKeys(value uint16) (err error) {
-	return instance.SetProperty("NumberOfFunctionKeys", value)
+	return instance.SetProperty("NumberOfFunctionKeys", (value))
 }
 
 // GetNumberOfFunctionKeys gets the value of NumberOfFunctionKeys for the instance
@@ -88,16 +99,25 @@ func (instance *Msvm_Keyboard) GetPropertyNumberOfFunctionKeys() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPassword sets the value of Password for the instance
 func (instance *Msvm_Keyboard) SetPropertyPassword(value uint16) (err error) {
-	return instance.SetProperty("Password", value)
+	return instance.SetProperty("Password", (value))
 }
 
 // GetPassword gets the value of Password for the instance
@@ -106,16 +126,25 @@ func (instance *Msvm_Keyboard) GetPropertyPassword() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetUnicodeSupported sets the value of UnicodeSupported for the instance
 func (instance *Msvm_Keyboard) SetPropertyUnicodeSupported(value bool) (err error) {
-	return instance.SetProperty("UnicodeSupported", value)
+	return instance.SetProperty("UnicodeSupported", (value))
 }
 
 // GetUnicodeSupported gets the value of UnicodeSupported for the instance
@@ -124,10 +153,19 @@ func (instance *Msvm_Keyboard) GetPropertyUnicodeSupported() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

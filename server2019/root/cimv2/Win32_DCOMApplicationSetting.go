@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_DCOMApplicationSetting struct
@@ -76,7 +78,7 @@ func NewWin32_DCOMApplicationSettingEx6(hostName string,
 
 // SetAppID sets the value of AppID for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyAppID(value string) (err error) {
-	return instance.SetProperty("AppID", value)
+	return instance.SetProperty("AppID", (value))
 }
 
 // GetAppID gets the value of AppID for the instance
@@ -85,16 +87,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyAppID() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAuthenticationLevel sets the value of AuthenticationLevel for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyAuthenticationLevel(value uint32) (err error) {
-	return instance.SetProperty("AuthenticationLevel", value)
+	return instance.SetProperty("AuthenticationLevel", (value))
 }
 
 // GetAuthenticationLevel gets the value of AuthenticationLevel for the instance
@@ -103,16 +114,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyAuthenticationLevel() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCustomSurrogate sets the value of CustomSurrogate for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyCustomSurrogate(value string) (err error) {
-	return instance.SetProperty("CustomSurrogate", value)
+	return instance.SetProperty("CustomSurrogate", (value))
 }
 
 // GetCustomSurrogate gets the value of CustomSurrogate for the instance
@@ -121,16 +141,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyCustomSurrogate() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnableAtStorageActivation sets the value of EnableAtStorageActivation for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyEnableAtStorageActivation(value bool) (err error) {
-	return instance.SetProperty("EnableAtStorageActivation", value)
+	return instance.SetProperty("EnableAtStorageActivation", (value))
 }
 
 // GetEnableAtStorageActivation gets the value of EnableAtStorageActivation for the instance
@@ -139,16 +168,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyEnableAtStorageActivati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLocalService sets the value of LocalService for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyLocalService(value string) (err error) {
-	return instance.SetProperty("LocalService", value)
+	return instance.SetProperty("LocalService", (value))
 }
 
 // GetLocalService gets the value of LocalService for the instance
@@ -157,16 +195,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyLocalService() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteServerName sets the value of RemoteServerName for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyRemoteServerName(value string) (err error) {
-	return instance.SetProperty("RemoteServerName", value)
+	return instance.SetProperty("RemoteServerName", (value))
 }
 
 // GetRemoteServerName gets the value of RemoteServerName for the instance
@@ -175,16 +222,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyRemoteServerName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRunAsUser sets the value of RunAsUser for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyRunAsUser(value string) (err error) {
-	return instance.SetProperty("RunAsUser", value)
+	return instance.SetProperty("RunAsUser", (value))
 }
 
 // GetRunAsUser gets the value of RunAsUser for the instance
@@ -193,16 +249,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyRunAsUser() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServiceParameters sets the value of ServiceParameters for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyServiceParameters(value string) (err error) {
-	return instance.SetProperty("ServiceParameters", value)
+	return instance.SetProperty("ServiceParameters", (value))
 }
 
 // GetServiceParameters gets the value of ServiceParameters for the instance
@@ -211,16 +276,25 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyServiceParameters() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUseSurrogate sets the value of UseSurrogate for the instance
 func (instance *Win32_DCOMApplicationSetting) SetPropertyUseSurrogate(value bool) (err error) {
-	return instance.SetProperty("UseSurrogate", value)
+	return instance.SetProperty("UseSurrogate", (value))
 }
 
 // GetUseSurrogate gets the value of UseSurrogate for the instance
@@ -229,10 +303,19 @@ func (instance *Win32_DCOMApplicationSetting) GetPropertyUseSurrogate() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

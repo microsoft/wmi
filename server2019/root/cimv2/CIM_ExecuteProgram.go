@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ExecuteProgram struct
@@ -55,7 +57,7 @@ func NewCIM_ExecuteProgramEx6(hostName string,
 
 // SetCommandLine sets the value of CommandLine for the instance
 func (instance *CIM_ExecuteProgram) SetPropertyCommandLine(value string) (err error) {
-	return instance.SetProperty("CommandLine", value)
+	return instance.SetProperty("CommandLine", (value))
 }
 
 // GetCommandLine gets the value of CommandLine for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_ExecuteProgram) GetPropertyCommandLine() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProgramPath sets the value of ProgramPath for the instance
 func (instance *CIM_ExecuteProgram) SetPropertyProgramPath(value string) (err error) {
-	return instance.SetProperty("ProgramPath", value)
+	return instance.SetProperty("ProgramPath", (value))
 }
 
 // GetProgramPath gets the value of ProgramPath for the instance
@@ -82,9 +93,18 @@ func (instance *CIM_ExecuteProgram) GetPropertyProgramPath() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

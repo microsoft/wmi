@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
@@ -11,7 +11,9 @@ package cli
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CliSeeAlso struct
@@ -59,7 +61,7 @@ func NewMSFT_CliSeeAlsoEx6(hostName string,
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_CliSeeAlso) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_CliSeeAlso) GetPropertyDescription() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOriginal sets the value of Original for the instance
 func (instance *MSFT_CliSeeAlso) SetPropertyOriginal(value MSFT_CliAlias) (err error) {
-	return instance.SetProperty("Original", value)
+	return instance.SetProperty("Original", (value))
 }
 
 // GetOriginal gets the value of Original for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_CliSeeAlso) GetPropertyOriginal() (value MSFT_CliAlias, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_CliAlias)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_CliAlias)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_CliAlias is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_CliAlias(valuetmp)
+
 	return
 }
 
 // SetRelated sets the value of Related for the instance
 func (instance *MSFT_CliSeeAlso) SetPropertyRelated(value MSFT_CliAlias) (err error) {
-	return instance.SetProperty("Related", value)
+	return instance.SetProperty("Related", (value))
 }
 
 // GetRelated gets the value of Related for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_CliSeeAlso) GetPropertyRelated() (value MSFT_CliAlias, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_CliAlias)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_CliAlias)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_CliAlias is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_CliAlias(valuetmp)
+
 	return
 }

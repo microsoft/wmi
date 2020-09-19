@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_TerminalServiceSettingData struct
@@ -64,7 +66,7 @@ func NewMsvm_TerminalServiceSettingDataEx6(hostName string,
 
 // SetAllowedHashAlgorithms sets the value of AllowedHashAlgorithms for the instance
 func (instance *Msvm_TerminalServiceSettingData) SetPropertyAllowedHashAlgorithms(value []string) (err error) {
-	return instance.SetProperty("AllowedHashAlgorithms", value)
+	return instance.SetProperty("AllowedHashAlgorithms", (value))
 }
 
 // GetAllowedHashAlgorithms gets the value of AllowedHashAlgorithms for the instance
@@ -73,16 +75,26 @@ func (instance *Msvm_TerminalServiceSettingData) GetPropertyAllowedHashAlgorithm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetAuthCertificateHash sets the value of AuthCertificateHash for the instance
 func (instance *Msvm_TerminalServiceSettingData) SetPropertyAuthCertificateHash(value []uint8) (err error) {
-	return instance.SetProperty("AuthCertificateHash", value)
+	return instance.SetProperty("AuthCertificateHash", (value))
 }
 
 // GetAuthCertificateHash gets the value of AuthCertificateHash for the instance
@@ -91,16 +103,26 @@ func (instance *Msvm_TerminalServiceSettingData) GetPropertyAuthCertificateHash(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetDisableSelfSignedCertificateGeneration sets the value of DisableSelfSignedCertificateGeneration for the instance
 func (instance *Msvm_TerminalServiceSettingData) SetPropertyDisableSelfSignedCertificateGeneration(value bool) (err error) {
-	return instance.SetProperty("DisableSelfSignedCertificateGeneration", value)
+	return instance.SetProperty("DisableSelfSignedCertificateGeneration", (value))
 }
 
 // GetDisableSelfSignedCertificateGeneration gets the value of DisableSelfSignedCertificateGeneration for the instance
@@ -109,16 +131,25 @@ func (instance *Msvm_TerminalServiceSettingData) GetPropertyDisableSelfSignedCer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetListenerPort sets the value of ListenerPort for the instance
 func (instance *Msvm_TerminalServiceSettingData) SetPropertyListenerPort(value uint32) (err error) {
-	return instance.SetProperty("ListenerPort", value)
+	return instance.SetProperty("ListenerPort", (value))
 }
 
 // GetListenerPort gets the value of ListenerPort for the instance
@@ -127,16 +158,25 @@ func (instance *Msvm_TerminalServiceSettingData) GetPropertyListenerPort() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTrustedIssuerCertificateHashes sets the value of TrustedIssuerCertificateHashes for the instance
 func (instance *Msvm_TerminalServiceSettingData) SetPropertyTrustedIssuerCertificateHashes(value []string) (err error) {
-	return instance.SetProperty("TrustedIssuerCertificateHashes", value)
+	return instance.SetProperty("TrustedIssuerCertificateHashes", (value))
 }
 
 // GetTrustedIssuerCertificateHashes gets the value of TrustedIssuerCertificateHashes for the instance
@@ -145,10 +185,20 @@ func (instance *Msvm_TerminalServiceSettingData) GetPropertyTrustedIssuerCertifi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_TerminalServiceSettingData) GetRelatedTerminalService() (value *cim.WmiInstance, err error) {

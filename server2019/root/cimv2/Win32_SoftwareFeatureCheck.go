@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SoftwareFeatureCheck struct
@@ -56,7 +58,7 @@ func NewWin32_SoftwareFeatureCheckEx6(hostName string,
 
 // SetCheck sets the value of Check for the instance
 func (instance *Win32_SoftwareFeatureCheck) SetPropertyCheck(value CIM_Check) (err error) {
-	return instance.SetProperty("Check", value)
+	return instance.SetProperty("Check", (value))
 }
 
 // GetCheck gets the value of Check for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_SoftwareFeatureCheck) GetPropertyCheck() (value CIM_Check,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Check)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Check)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Check is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Check(valuetmp)
+
 	return
 }
 
 // SetElement sets the value of Element for the instance
 func (instance *Win32_SoftwareFeatureCheck) SetPropertyElement(value Win32_SoftwareFeature) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_SoftwareFeatureCheck) GetPropertyElement() (value Win32_So
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_SoftwareFeature)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_SoftwareFeature)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_SoftwareFeature is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_SoftwareFeature(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProtocolControllerForUnit struct
@@ -53,7 +55,7 @@ func NewCIM_ProtocolControllerForUnitEx6(hostName string,
 
 // SetDeviceAccess sets the value of DeviceAccess for the instance
 func (instance *CIM_ProtocolControllerForUnit) SetPropertyDeviceAccess(value ProtocolControllerForUnit_DeviceAccess) (err error) {
-	return instance.SetProperty("DeviceAccess", value)
+	return instance.SetProperty("DeviceAccess", (value))
 }
 
 // GetDeviceAccess gets the value of DeviceAccess for the instance
@@ -62,9 +64,18 @@ func (instance *CIM_ProtocolControllerForUnit) GetPropertyDeviceAccess() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ProtocolControllerForUnit_DeviceAccess)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ProtocolControllerForUnit_DeviceAccess(valuetmp)
+
 	return
 }

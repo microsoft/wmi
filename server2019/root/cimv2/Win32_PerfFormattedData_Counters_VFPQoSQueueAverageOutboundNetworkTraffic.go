@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic struct
@@ -85,7 +87,7 @@ func NewWin32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffi
 
 // SetAverageOutboundBytesAllowedThroughtheQueue sets the value of AverageOutboundBytesAllowedThroughtheQueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundBytesAllowedThroughtheQueue(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundBytesAllowedThroughtheQueue", value)
+	return instance.SetProperty("AverageOutboundBytesAllowedThroughtheQueue", (value))
 }
 
 // GetAverageOutboundBytesAllowedThroughtheQueue gets the value of AverageOutboundBytesAllowedThroughtheQueue for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundBytesDropped sets the value of AverageOutboundBytesDropped for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundBytesDropped(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundBytesDropped", value)
+	return instance.SetProperty("AverageOutboundBytesDropped", (value))
 }
 
 // GetAverageOutboundBytesDropped gets the value of AverageOutboundBytesDropped for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundBytesEnteringtheQueue sets the value of AverageOutboundBytesEnteringtheQueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundBytesEnteringtheQueue(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundBytesEnteringtheQueue", value)
+	return instance.SetProperty("AverageOutboundBytesEnteringtheQueue", (value))
 }
 
 // GetAverageOutboundBytesEnteringtheQueue gets the value of AverageOutboundBytesEnteringtheQueue for the instance
@@ -130,16 +150,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundBytesQueuedduetoBacklog sets the value of AverageOutboundBytesQueuedduetoBacklog for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundBytesQueuedduetoBacklog(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundBytesQueuedduetoBacklog", value)
+	return instance.SetProperty("AverageOutboundBytesQueuedduetoBacklog", (value))
 }
 
 // GetAverageOutboundBytesQueuedduetoBacklog gets the value of AverageOutboundBytesQueuedduetoBacklog for the instance
@@ -148,16 +177,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundBytesQueuedduetoInsufficientTokens sets the value of AverageOutboundBytesQueuedduetoInsufficientTokens for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundBytesQueuedduetoInsufficientTokens(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundBytesQueuedduetoInsufficientTokens", value)
+	return instance.SetProperty("AverageOutboundBytesQueuedduetoInsufficientTokens", (value))
 }
 
 // GetAverageOutboundBytesQueuedduetoInsufficientTokens gets the value of AverageOutboundBytesQueuedduetoInsufficientTokens for the instance
@@ -166,16 +204,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundBytesResumed sets the value of AverageOutboundBytesResumed for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundBytesResumed(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundBytesResumed", value)
+	return instance.SetProperty("AverageOutboundBytesResumed", (value))
 }
 
 // GetAverageOutboundBytesResumed gets the value of AverageOutboundBytesResumed for the instance
@@ -184,16 +231,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundPacketsAllowedThroughtheQueue sets the value of AverageOutboundPacketsAllowedThroughtheQueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundPacketsAllowedThroughtheQueue(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundPacketsAllowedThroughtheQueue", value)
+	return instance.SetProperty("AverageOutboundPacketsAllowedThroughtheQueue", (value))
 }
 
 // GetAverageOutboundPacketsAllowedThroughtheQueue gets the value of AverageOutboundPacketsAllowedThroughtheQueue for the instance
@@ -202,16 +258,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundPacketsDropped sets the value of AverageOutboundPacketsDropped for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundPacketsDropped(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundPacketsDropped", value)
+	return instance.SetProperty("AverageOutboundPacketsDropped", (value))
 }
 
 // GetAverageOutboundPacketsDropped gets the value of AverageOutboundPacketsDropped for the instance
@@ -220,16 +285,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundPacketsEnteringtheQueue sets the value of AverageOutboundPacketsEnteringtheQueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundPacketsEnteringtheQueue(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundPacketsEnteringtheQueue", value)
+	return instance.SetProperty("AverageOutboundPacketsEnteringtheQueue", (value))
 }
 
 // GetAverageOutboundPacketsEnteringtheQueue gets the value of AverageOutboundPacketsEnteringtheQueue for the instance
@@ -238,16 +312,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundPacketsQueuedduetoBacklog sets the value of AverageOutboundPacketsQueuedduetoBacklog for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundPacketsQueuedduetoBacklog(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundPacketsQueuedduetoBacklog", value)
+	return instance.SetProperty("AverageOutboundPacketsQueuedduetoBacklog", (value))
 }
 
 // GetAverageOutboundPacketsQueuedduetoBacklog gets the value of AverageOutboundPacketsQueuedduetoBacklog for the instance
@@ -256,16 +339,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundPacketsQueuedduetoInsufficientTokens sets the value of AverageOutboundPacketsQueuedduetoInsufficientTokens for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundPacketsQueuedduetoInsufficientTokens(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundPacketsQueuedduetoInsufficientTokens", value)
+	return instance.SetProperty("AverageOutboundPacketsQueuedduetoInsufficientTokens", (value))
 }
 
 // GetAverageOutboundPacketsQueuedduetoInsufficientTokens gets the value of AverageOutboundPacketsQueuedduetoInsufficientTokens for the instance
@@ -274,16 +366,25 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageOutboundPacketsResumed sets the value of AverageOutboundPacketsResumed for the instance
 func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetworkTraffic) SetPropertyAverageOutboundPacketsResumed(value uint64) (err error) {
-	return instance.SetProperty("AverageOutboundPacketsResumed", value)
+	return instance.SetProperty("AverageOutboundPacketsResumed", (value))
 }
 
 // GetAverageOutboundPacketsResumed gets the value of AverageOutboundPacketsResumed for the instance
@@ -292,9 +393,18 @@ func (instance *Win32_PerfFormattedData_Counters_VFPQoSQueueAverageOutboundNetwo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

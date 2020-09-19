@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEFavoriteItem struct
@@ -64,7 +66,7 @@ func NewRSOP_IEFavoriteItemEx6(hostName string,
 
 // SetfolderItem sets the value of folderItem for the instance
 func (instance *RSOP_IEFavoriteItem) SetPropertyfolderItem(value bool) (err error) {
-	return instance.SetProperty("folderItem", value)
+	return instance.SetProperty("folderItem", (value))
 }
 
 // GetfolderItem gets the value of folderItem for the instance
@@ -73,16 +75,25 @@ func (instance *RSOP_IEFavoriteItem) GetPropertyfolderItem() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetparentPath sets the value of parentPath for the instance
 func (instance *RSOP_IEFavoriteItem) SetPropertyparentPath(value string) (err error) {
-	return instance.SetProperty("parentPath", value)
+	return instance.SetProperty("parentPath", (value))
 }
 
 // GetparentPath gets the value of parentPath for the instance
@@ -91,16 +102,25 @@ func (instance *RSOP_IEFavoriteItem) GetPropertyparentPath() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IEFavoriteItem) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -109,16 +129,25 @@ func (instance *RSOP_IEFavoriteItem) GetPropertyrsopID() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IEFavoriteItem) SetPropertyrsopPrecedence(value uint32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -127,16 +156,25 @@ func (instance *RSOP_IEFavoriteItem) GetPropertyrsopPrecedence() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetshortName sets the value of shortName for the instance
 func (instance *RSOP_IEFavoriteItem) SetPropertyshortName(value string) (err error) {
-	return instance.SetProperty("shortName", value)
+	return instance.SetProperty("shortName", (value))
 }
 
 // GetshortName gets the value of shortName for the instance
@@ -145,9 +183,18 @@ func (instance *RSOP_IEFavoriteItem) GetPropertyshortName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

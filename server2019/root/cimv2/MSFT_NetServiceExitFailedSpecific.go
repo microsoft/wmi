@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetServiceExitFailedSpecific struct
@@ -55,7 +57,7 @@ func NewMSFT_NetServiceExitFailedSpecificEx6(hostName string,
 
 // SetError sets the value of Error for the instance
 func (instance *MSFT_NetServiceExitFailedSpecific) SetPropertyError(value uint32) (err error) {
-	return instance.SetProperty("Error", value)
+	return instance.SetProperty("Error", (value))
 }
 
 // GetError gets the value of Error for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_NetServiceExitFailedSpecific) GetPropertyError() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetService sets the value of Service for the instance
 func (instance *MSFT_NetServiceExitFailedSpecific) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_NetServiceExitFailedSpecific) GetPropertyService() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
@@ -11,7 +11,9 @@ package management
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SDDC_VmSnapshot struct
@@ -65,7 +67,7 @@ func NewSDDC_VmSnapshotEx6(hostName string,
 
 // SetCreationTime sets the value of CreationTime for the instance
 func (instance *SDDC_VmSnapshot) SetPropertyCreationTime(value string) (err error) {
-	return instance.SetProperty("CreationTime", value)
+	return instance.SetProperty("CreationTime", (value))
 }
 
 // GetCreationTime gets the value of CreationTime for the instance
@@ -74,16 +76,25 @@ func (instance *SDDC_VmSnapshot) GetPropertyCreationTime() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *SDDC_VmSnapshot) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -92,16 +103,25 @@ func (instance *SDDC_VmSnapshot) GetPropertyId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsCurrentlyApplied sets the value of IsCurrentlyApplied for the instance
 func (instance *SDDC_VmSnapshot) SetPropertyIsCurrentlyApplied(value bool) (err error) {
-	return instance.SetProperty("IsCurrentlyApplied", value)
+	return instance.SetProperty("IsCurrentlyApplied", (value))
 }
 
 // GetIsCurrentlyApplied gets the value of IsCurrentlyApplied for the instance
@@ -110,16 +130,25 @@ func (instance *SDDC_VmSnapshot) GetPropertyIsCurrentlyApplied() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *SDDC_VmSnapshot) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -128,16 +157,25 @@ func (instance *SDDC_VmSnapshot) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentId sets the value of ParentId for the instance
 func (instance *SDDC_VmSnapshot) SetPropertyParentId(value string) (err error) {
-	return instance.SetProperty("ParentId", value)
+	return instance.SetProperty("ParentId", (value))
 }
 
 // GetParentId gets the value of ParentId for the instance
@@ -146,9 +184,18 @@ func (instance *SDDC_VmSnapshot) GetPropertyParentId() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

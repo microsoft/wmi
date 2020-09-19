@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MTDiskVolume struct
@@ -61,7 +63,7 @@ func NewMSFT_MTDiskVolumeEx6(hostName string,
 
 // SetFormattedSize sets the value of FormattedSize for the instance
 func (instance *MSFT_MTDiskVolume) SetPropertyFormattedSize(value uint64) (err error) {
-	return instance.SetProperty("FormattedSize", value)
+	return instance.SetProperty("FormattedSize", (value))
 }
 
 // GetFormattedSize gets the value of FormattedSize for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_MTDiskVolume) GetPropertyFormattedSize() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPageFile sets the value of PageFile for the instance
 func (instance *MSFT_MTDiskVolume) SetPropertyPageFile(value bool) (err error) {
-	return instance.SetProperty("PageFile", value)
+	return instance.SetProperty("PageFile", (value))
 }
 
 // GetPageFile gets the value of PageFile for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_MTDiskVolume) GetPropertyPageFile() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSystemDisk sets the value of SystemDisk for the instance
 func (instance *MSFT_MTDiskVolume) SetPropertySystemDisk(value bool) (err error) {
-	return instance.SetProperty("SystemDisk", value)
+	return instance.SetProperty("SystemDisk", (value))
 }
 
 // GetSystemDisk gets the value of SystemDisk for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_MTDiskVolume) GetPropertySystemDisk() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVolumePath sets the value of VolumePath for the instance
 func (instance *MSFT_MTDiskVolume) SetPropertyVolumePath(value string) (err error) {
-	return instance.SetProperty("VolumePath", value)
+	return instance.SetProperty("VolumePath", (value))
 }
 
 // GetVolumePath gets the value of VolumePath for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_MTDiskVolume) GetPropertyVolumePath() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

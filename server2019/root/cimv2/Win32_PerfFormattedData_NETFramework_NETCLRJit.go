@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NETFramework_NETCLRJit struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_NETFramework_NETCLRJitEx6(hostName string,
 
 // SetILBytesJittedPersec sets the value of ILBytesJittedPersec for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) SetPropertyILBytesJittedPersec(value uint32) (err error) {
-	return instance.SetProperty("ILBytesJittedPersec", value)
+	return instance.SetProperty("ILBytesJittedPersec", (value))
 }
 
 // GetILBytesJittedPersec gets the value of ILBytesJittedPersec for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) GetPropertyILByt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofILBytesJitted sets the value of NumberofILBytesJitted for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) SetPropertyNumberofILBytesJitted(value uint32) (err error) {
-	return instance.SetProperty("NumberofILBytesJitted", value)
+	return instance.SetProperty("NumberofILBytesJitted", (value))
 }
 
 // GetNumberofILBytesJitted gets the value of NumberofILBytesJitted for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) GetPropertyNumbe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofMethodsJitted sets the value of NumberofMethodsJitted for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) SetPropertyNumberofMethodsJitted(value uint32) (err error) {
-	return instance.SetProperty("NumberofMethodsJitted", value)
+	return instance.SetProperty("NumberofMethodsJitted", (value))
 }
 
 // GetNumberofMethodsJitted gets the value of NumberofMethodsJitted for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) GetPropertyNumbe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentTimeinJit sets the value of PercentTimeinJit for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) SetPropertyPercentTimeinJit(value uint32) (err error) {
-	return instance.SetProperty("PercentTimeinJit", value)
+	return instance.SetProperty("PercentTimeinJit", (value))
 }
 
 // GetPercentTimeinJit gets the value of PercentTimeinJit for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) GetPropertyPerce
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStandardJitFailures sets the value of StandardJitFailures for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) SetPropertyStandardJitFailures(value uint32) (err error) {
-	return instance.SetProperty("StandardJitFailures", value)
+	return instance.SetProperty("StandardJitFailures", (value))
 }
 
 // GetStandardJitFailures gets the value of StandardJitFailures for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) GetPropertyStand
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalNumberofILBytesJitted sets the value of TotalNumberofILBytesJitted for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) SetPropertyTotalNumberofILBytesJitted(value uint32) (err error) {
-	return instance.SetProperty("TotalNumberofILBytesJitted", value)
+	return instance.SetProperty("TotalNumberofILBytesJitted", (value))
 }
 
 // GetTotalNumberofILBytesJitted gets the value of TotalNumberofILBytesJitted for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRJit) GetPropertyTotal
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

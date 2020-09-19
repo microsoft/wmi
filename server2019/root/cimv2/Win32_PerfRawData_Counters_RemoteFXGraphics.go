@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_RemoteFXGraphics struct
@@ -76,7 +78,7 @@ func NewWin32_PerfRawData_Counters_RemoteFXGraphicsEx6(hostName string,
 
 // SetAverageEncodingTime sets the value of AverageEncodingTime for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyAverageEncodingTime(value uint32) (err error) {
-	return instance.SetProperty("AverageEncodingTime", value)
+	return instance.SetProperty("AverageEncodingTime", (value))
 }
 
 // GetAverageEncodingTime gets the value of AverageEncodingTime for the instance
@@ -85,16 +87,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyAverageE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFrameQuality sets the value of FrameQuality for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyFrameQuality(value uint32) (err error) {
-	return instance.SetProperty("FrameQuality", value)
+	return instance.SetProperty("FrameQuality", (value))
 }
 
 // GetFrameQuality gets the value of FrameQuality for the instance
@@ -103,16 +114,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyFrameQua
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesSkippedPerSecondInsufficientClientResources sets the value of FramesSkippedPerSecondInsufficientClientResources for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyFramesSkippedPerSecondInsufficientClientResources(value uint32) (err error) {
-	return instance.SetProperty("FramesSkippedPerSecondInsufficientClientResources", value)
+	return instance.SetProperty("FramesSkippedPerSecondInsufficientClientResources", (value))
 }
 
 // GetFramesSkippedPerSecondInsufficientClientResources gets the value of FramesSkippedPerSecondInsufficientClientResources for the instance
@@ -121,16 +141,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyFramesSk
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesSkippedPerSecondInsufficientNetworkResources sets the value of FramesSkippedPerSecondInsufficientNetworkResources for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyFramesSkippedPerSecondInsufficientNetworkResources(value uint32) (err error) {
-	return instance.SetProperty("FramesSkippedPerSecondInsufficientNetworkResources", value)
+	return instance.SetProperty("FramesSkippedPerSecondInsufficientNetworkResources", (value))
 }
 
 // GetFramesSkippedPerSecondInsufficientNetworkResources gets the value of FramesSkippedPerSecondInsufficientNetworkResources for the instance
@@ -139,16 +168,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyFramesSk
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesSkippedPerSecondInsufficientServerResources sets the value of FramesSkippedPerSecondInsufficientServerResources for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyFramesSkippedPerSecondInsufficientServerResources(value uint32) (err error) {
-	return instance.SetProperty("FramesSkippedPerSecondInsufficientServerResources", value)
+	return instance.SetProperty("FramesSkippedPerSecondInsufficientServerResources", (value))
 }
 
 // GetFramesSkippedPerSecondInsufficientServerResources gets the value of FramesSkippedPerSecondInsufficientServerResources for the instance
@@ -157,16 +195,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyFramesSk
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGraphicsCompressionratio sets the value of GraphicsCompressionratio for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyGraphicsCompressionratio(value uint32) (err error) {
-	return instance.SetProperty("GraphicsCompressionratio", value)
+	return instance.SetProperty("GraphicsCompressionratio", (value))
 }
 
 // GetGraphicsCompressionratio gets the value of GraphicsCompressionratio for the instance
@@ -175,16 +222,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyGraphics
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInputFramesPerSecond sets the value of InputFramesPerSecond for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyInputFramesPerSecond(value uint32) (err error) {
-	return instance.SetProperty("InputFramesPerSecond", value)
+	return instance.SetProperty("InputFramesPerSecond", (value))
 }
 
 // GetInputFramesPerSecond gets the value of InputFramesPerSecond for the instance
@@ -193,16 +249,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyInputFra
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutputFramesPerSecond sets the value of OutputFramesPerSecond for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertyOutputFramesPerSecond(value uint32) (err error) {
-	return instance.SetProperty("OutputFramesPerSecond", value)
+	return instance.SetProperty("OutputFramesPerSecond", (value))
 }
 
 // GetOutputFramesPerSecond gets the value of OutputFramesPerSecond for the instance
@@ -211,16 +276,25 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertyOutputFr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSourceFramesPerSecond sets the value of SourceFramesPerSecond for the instance
 func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) SetPropertySourceFramesPerSecond(value uint32) (err error) {
-	return instance.SetProperty("SourceFramesPerSecond", value)
+	return instance.SetProperty("SourceFramesPerSecond", (value))
 }
 
 // GetSourceFramesPerSecond gets the value of SourceFramesPerSecond for the instance
@@ -229,9 +303,18 @@ func (instance *Win32_PerfRawData_Counters_RemoteFXGraphics) GetPropertySourceFr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

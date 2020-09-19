@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_PassportForWork_PINComplexity03 struct
@@ -80,7 +82,7 @@ func NewMDM_PassportForWork_PINComplexity03Ex6(hostName string,
 
 // SetDigits sets the value of Digits for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyDigits(value int32) (err error) {
-	return instance.SetProperty("Digits", value)
+	return instance.SetProperty("Digits", (value))
 }
 
 // GetDigits gets the value of Digits for the instance
@@ -89,16 +91,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyDigits() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetExpiration sets the value of Expiration for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyExpiration(value int32) (err error) {
-	return instance.SetProperty("Expiration", value)
+	return instance.SetProperty("Expiration", (value))
 }
 
 // GetExpiration gets the value of Expiration for the instance
@@ -107,16 +118,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyExpiration() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHistory sets the value of History for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyHistory(value int32) (err error) {
-	return instance.SetProperty("History", value)
+	return instance.SetProperty("History", (value))
 }
 
 // GetHistory gets the value of History for the instance
@@ -125,16 +145,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyHistory() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -143,16 +172,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyInstanceID() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLowercaseLetters sets the value of LowercaseLetters for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyLowercaseLetters(value int32) (err error) {
-	return instance.SetProperty("LowercaseLetters", value)
+	return instance.SetProperty("LowercaseLetters", (value))
 }
 
 // GetLowercaseLetters gets the value of LowercaseLetters for the instance
@@ -161,16 +199,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyLowercaseLetters
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMaximumPINLength sets the value of MaximumPINLength for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyMaximumPINLength(value int32) (err error) {
-	return instance.SetProperty("MaximumPINLength", value)
+	return instance.SetProperty("MaximumPINLength", (value))
 }
 
 // GetMaximumPINLength gets the value of MaximumPINLength for the instance
@@ -179,16 +226,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyMaximumPINLength
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMinimumPINLength sets the value of MinimumPINLength for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyMinimumPINLength(value int32) (err error) {
-	return instance.SetProperty("MinimumPINLength", value)
+	return instance.SetProperty("MinimumPINLength", (value))
 }
 
 // GetMinimumPINLength gets the value of MinimumPINLength for the instance
@@ -197,16 +253,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyMinimumPINLength
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -215,16 +280,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyParentID() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSpecialCharacters sets the value of SpecialCharacters for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertySpecialCharacters(value int32) (err error) {
-	return instance.SetProperty("SpecialCharacters", value)
+	return instance.SetProperty("SpecialCharacters", (value))
 }
 
 // GetSpecialCharacters gets the value of SpecialCharacters for the instance
@@ -233,16 +307,25 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertySpecialCharacter
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUppercaseLetters sets the value of UppercaseLetters for the instance
 func (instance *MDM_PassportForWork_PINComplexity03) SetPropertyUppercaseLetters(value int32) (err error) {
-	return instance.SetProperty("UppercaseLetters", value)
+	return instance.SetProperty("UppercaseLetters", (value))
 }
 
 // GetUppercaseLetters gets the value of UppercaseLetters for the instance
@@ -251,9 +334,18 @@ func (instance *MDM_PassportForWork_PINComplexity03) GetPropertyUppercaseLetters
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

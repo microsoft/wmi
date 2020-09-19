@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_PCIDeviceSriovSettingData struct
@@ -58,7 +60,7 @@ func NewMLNX_PCIDeviceSriovSettingDataEx6(hostName string,
 
 // SetSriovPort1NumVFs sets the value of SriovPort1NumVFs for the instance
 func (instance *MLNX_PCIDeviceSriovSettingData) SetPropertySriovPort1NumVFs(value uint32) (err error) {
-	return instance.SetProperty("SriovPort1NumVFs", value)
+	return instance.SetProperty("SriovPort1NumVFs", (value))
 }
 
 // GetSriovPort1NumVFs gets the value of SriovPort1NumVFs for the instance
@@ -67,16 +69,25 @@ func (instance *MLNX_PCIDeviceSriovSettingData) GetPropertySriovPort1NumVFs() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSriovPort2NumVFs sets the value of SriovPort2NumVFs for the instance
 func (instance *MLNX_PCIDeviceSriovSettingData) SetPropertySriovPort2NumVFs(value uint32) (err error) {
-	return instance.SetProperty("SriovPort2NumVFs", value)
+	return instance.SetProperty("SriovPort2NumVFs", (value))
 }
 
 // GetSriovPort2NumVFs gets the value of SriovPort2NumVFs for the instance
@@ -85,16 +96,25 @@ func (instance *MLNX_PCIDeviceSriovSettingData) GetPropertySriovPort2NumVFs() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSriovPortMode sets the value of SriovPortMode for the instance
 func (instance *MLNX_PCIDeviceSriovSettingData) SetPropertySriovPortMode(value uint32) (err error) {
-	return instance.SetProperty("SriovPortMode", value)
+	return instance.SetProperty("SriovPortMode", (value))
 }
 
 // GetSriovPortMode gets the value of SriovPortMode for the instance
@@ -103,10 +123,19 @@ func (instance *MLNX_PCIDeviceSriovSettingData) GetPropertySriovPortMode() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

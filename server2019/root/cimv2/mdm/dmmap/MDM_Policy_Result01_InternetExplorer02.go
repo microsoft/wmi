@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_InternetExplorer02 struct
@@ -35,9 +37,6 @@ type MDM_Policy_Result01_InternetExplorer02 struct {
 
 	//
 	AllowEnhancedProtectedMode string
-
-	//
-	AllowEnhancedSuggestionsInAddressBar string
 
 	//
 	AllowEnterpriseModeFromToolsMenu string
@@ -115,9 +114,6 @@ type MDM_Policy_Result01_InternetExplorer02 struct {
 	DisableBypassOfSmartScreenWarningsAboutUncommonFiles string
 
 	//
-	DisableCompatView string
-
-	//
 	DisableConfiguringHistory string
 
 	//
@@ -136,16 +132,10 @@ type MDM_Policy_Result01_InternetExplorer02 struct {
 	DisableEncryptionSupport string
 
 	//
-	DisableFeedsBackgroundSync string
-
-	//
 	DisableFirstRunWizard string
 
 	//
 	DisableFlipAheadFeature string
-
-	//
-	DisableGeolocation string
 
 	//
 	DisableIgnoringCertificateErrors string
@@ -170,9 +160,6 @@ type MDM_Policy_Result01_InternetExplorer02 struct {
 
 	//
 	DisableUpdateCheck string
-
-	//
-	DisableWebAddressAutoComplete string
 
 	//
 	DoNotAllowActiveXControlsInProtectedMode string
@@ -568,9 +555,6 @@ type MDM_Policy_Result01_InternetExplorer02 struct {
 	MKProtocolSecurityRestrictionInternetExplorerProcesses string
 
 	//
-	NewTabDefaultPage string
-
-	//
 	NotificationBarInternetExplorerProcesses string
 
 	//
@@ -803,7 +787,7 @@ func NewMDM_Policy_Result01_InternetExplorer02Ex6(hostName string,
 
 // SetAddSearchProvider sets the value of AddSearchProvider for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAddSearchProvider(value string) (err error) {
-	return instance.SetProperty("AddSearchProvider", value)
+	return instance.SetProperty("AddSearchProvider", (value))
 }
 
 // GetAddSearchProvider gets the value of AddSearchProvider for the instance
@@ -812,16 +796,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAddSearchProv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowActiveXFiltering sets the value of AllowActiveXFiltering for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowActiveXFiltering(value string) (err error) {
-	return instance.SetProperty("AllowActiveXFiltering", value)
+	return instance.SetProperty("AllowActiveXFiltering", (value))
 }
 
 // GetAllowActiveXFiltering gets the value of AllowActiveXFiltering for the instance
@@ -830,16 +823,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowActiveXF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowAddOnList sets the value of AllowAddOnList for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowAddOnList(value string) (err error) {
-	return instance.SetProperty("AllowAddOnList", value)
+	return instance.SetProperty("AllowAddOnList", (value))
 }
 
 // GetAllowAddOnList gets the value of AllowAddOnList for the instance
@@ -848,16 +850,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowAddOnLis
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowCertificateAddressMismatchWarning sets the value of AllowCertificateAddressMismatchWarning for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowCertificateAddressMismatchWarning(value string) (err error) {
-	return instance.SetProperty("AllowCertificateAddressMismatchWarning", value)
+	return instance.SetProperty("AllowCertificateAddressMismatchWarning", (value))
 }
 
 // GetAllowCertificateAddressMismatchWarning gets the value of AllowCertificateAddressMismatchWarning for the instance
@@ -866,16 +877,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowCertific
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowDeletingBrowsingHistoryOnExit sets the value of AllowDeletingBrowsingHistoryOnExit for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowDeletingBrowsingHistoryOnExit(value string) (err error) {
-	return instance.SetProperty("AllowDeletingBrowsingHistoryOnExit", value)
+	return instance.SetProperty("AllowDeletingBrowsingHistoryOnExit", (value))
 }
 
 // GetAllowDeletingBrowsingHistoryOnExit gets the value of AllowDeletingBrowsingHistoryOnExit for the instance
@@ -884,16 +904,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowDeleting
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowEnhancedProtectedMode sets the value of AllowEnhancedProtectedMode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowEnhancedProtectedMode(value string) (err error) {
-	return instance.SetProperty("AllowEnhancedProtectedMode", value)
+	return instance.SetProperty("AllowEnhancedProtectedMode", (value))
 }
 
 // GetAllowEnhancedProtectedMode gets the value of AllowEnhancedProtectedMode for the instance
@@ -902,34 +931,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowEnhanced
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetAllowEnhancedSuggestionsInAddressBar sets the value of AllowEnhancedSuggestionsInAddressBar for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowEnhancedSuggestionsInAddressBar(value string) (err error) {
-	return instance.SetProperty("AllowEnhancedSuggestionsInAddressBar", value)
-}
-
-// GetAllowEnhancedSuggestionsInAddressBar gets the value of AllowEnhancedSuggestionsInAddressBar for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowEnhancedSuggestionsInAddressBar() (value string, err error) {
-	retValue, err := instance.GetProperty("AllowEnhancedSuggestionsInAddressBar")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowEnterpriseModeFromToolsMenu sets the value of AllowEnterpriseModeFromToolsMenu for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowEnterpriseModeFromToolsMenu(value string) (err error) {
-	return instance.SetProperty("AllowEnterpriseModeFromToolsMenu", value)
+	return instance.SetProperty("AllowEnterpriseModeFromToolsMenu", (value))
 }
 
 // GetAllowEnterpriseModeFromToolsMenu gets the value of AllowEnterpriseModeFromToolsMenu for the instance
@@ -938,16 +958,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowEnterpri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowEnterpriseModeSiteList sets the value of AllowEnterpriseModeSiteList for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowEnterpriseModeSiteList(value string) (err error) {
-	return instance.SetProperty("AllowEnterpriseModeSiteList", value)
+	return instance.SetProperty("AllowEnterpriseModeSiteList", (value))
 }
 
 // GetAllowEnterpriseModeSiteList gets the value of AllowEnterpriseModeSiteList for the instance
@@ -956,16 +985,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowEnterpri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowFallbackToSSL3 sets the value of AllowFallbackToSSL3 for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowFallbackToSSL3(value string) (err error) {
-	return instance.SetProperty("AllowFallbackToSSL3", value)
+	return instance.SetProperty("AllowFallbackToSSL3", (value))
 }
 
 // GetAllowFallbackToSSL3 gets the value of AllowFallbackToSSL3 for the instance
@@ -974,16 +1012,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowFallback
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowInternetExplorer7PolicyList sets the value of AllowInternetExplorer7PolicyList for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowInternetExplorer7PolicyList(value string) (err error) {
-	return instance.SetProperty("AllowInternetExplorer7PolicyList", value)
+	return instance.SetProperty("AllowInternetExplorer7PolicyList", (value))
 }
 
 // GetAllowInternetExplorer7PolicyList gets the value of AllowInternetExplorer7PolicyList for the instance
@@ -992,16 +1039,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowInternet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowInternetExplorerStandardsMode sets the value of AllowInternetExplorerStandardsMode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowInternetExplorerStandardsMode(value string) (err error) {
-	return instance.SetProperty("AllowInternetExplorerStandardsMode", value)
+	return instance.SetProperty("AllowInternetExplorerStandardsMode", (value))
 }
 
 // GetAllowInternetExplorerStandardsMode gets the value of AllowInternetExplorerStandardsMode for the instance
@@ -1010,16 +1066,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowInternet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowInternetZoneTemplate sets the value of AllowInternetZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowInternetZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowInternetZoneTemplate", value)
+	return instance.SetProperty("AllowInternetZoneTemplate", (value))
 }
 
 // GetAllowInternetZoneTemplate gets the value of AllowInternetZoneTemplate for the instance
@@ -1028,16 +1093,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowInternet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowIntranetZoneTemplate sets the value of AllowIntranetZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowIntranetZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowIntranetZoneTemplate", value)
+	return instance.SetProperty("AllowIntranetZoneTemplate", (value))
 }
 
 // GetAllowIntranetZoneTemplate gets the value of AllowIntranetZoneTemplate for the instance
@@ -1046,16 +1120,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowIntranet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowLocalMachineZoneTemplate sets the value of AllowLocalMachineZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowLocalMachineZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowLocalMachineZoneTemplate", value)
+	return instance.SetProperty("AllowLocalMachineZoneTemplate", (value))
 }
 
 // GetAllowLocalMachineZoneTemplate gets the value of AllowLocalMachineZoneTemplate for the instance
@@ -1064,16 +1147,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowLocalMac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowLockedDownInternetZoneTemplate sets the value of AllowLockedDownInternetZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowLockedDownInternetZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowLockedDownInternetZoneTemplate", value)
+	return instance.SetProperty("AllowLockedDownInternetZoneTemplate", (value))
 }
 
 // GetAllowLockedDownInternetZoneTemplate gets the value of AllowLockedDownInternetZoneTemplate for the instance
@@ -1082,16 +1174,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowLockedDo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowLockedDownIntranetZoneTemplate sets the value of AllowLockedDownIntranetZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowLockedDownIntranetZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowLockedDownIntranetZoneTemplate", value)
+	return instance.SetProperty("AllowLockedDownIntranetZoneTemplate", (value))
 }
 
 // GetAllowLockedDownIntranetZoneTemplate gets the value of AllowLockedDownIntranetZoneTemplate for the instance
@@ -1100,16 +1201,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowLockedDo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowLockedDownLocalMachineZoneTemplate sets the value of AllowLockedDownLocalMachineZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowLockedDownLocalMachineZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowLockedDownLocalMachineZoneTemplate", value)
+	return instance.SetProperty("AllowLockedDownLocalMachineZoneTemplate", (value))
 }
 
 // GetAllowLockedDownLocalMachineZoneTemplate gets the value of AllowLockedDownLocalMachineZoneTemplate for the instance
@@ -1118,16 +1228,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowLockedDo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowLockedDownRestrictedSitesZoneTemplate sets the value of AllowLockedDownRestrictedSitesZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowLockedDownRestrictedSitesZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowLockedDownRestrictedSitesZoneTemplate", value)
+	return instance.SetProperty("AllowLockedDownRestrictedSitesZoneTemplate", (value))
 }
 
 // GetAllowLockedDownRestrictedSitesZoneTemplate gets the value of AllowLockedDownRestrictedSitesZoneTemplate for the instance
@@ -1136,16 +1255,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowLockedDo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowOneWordEntry sets the value of AllowOneWordEntry for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowOneWordEntry(value string) (err error) {
-	return instance.SetProperty("AllowOneWordEntry", value)
+	return instance.SetProperty("AllowOneWordEntry", (value))
 }
 
 // GetAllowOneWordEntry gets the value of AllowOneWordEntry for the instance
@@ -1154,16 +1282,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowOneWordE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowSiteToZoneAssignmentList sets the value of AllowSiteToZoneAssignmentList for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowSiteToZoneAssignmentList(value string) (err error) {
-	return instance.SetProperty("AllowSiteToZoneAssignmentList", value)
+	return instance.SetProperty("AllowSiteToZoneAssignmentList", (value))
 }
 
 // GetAllowSiteToZoneAssignmentList gets the value of AllowSiteToZoneAssignmentList for the instance
@@ -1172,16 +1309,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowSiteToZo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowsLockedDownTrustedSitesZoneTemplate sets the value of AllowsLockedDownTrustedSitesZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowsLockedDownTrustedSitesZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowsLockedDownTrustedSitesZoneTemplate", value)
+	return instance.SetProperty("AllowsLockedDownTrustedSitesZoneTemplate", (value))
 }
 
 // GetAllowsLockedDownTrustedSitesZoneTemplate gets the value of AllowsLockedDownTrustedSitesZoneTemplate for the instance
@@ -1190,16 +1336,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowsLockedD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowSoftwareWhenSignatureIsInvalid sets the value of AllowSoftwareWhenSignatureIsInvalid for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowSoftwareWhenSignatureIsInvalid(value string) (err error) {
-	return instance.SetProperty("AllowSoftwareWhenSignatureIsInvalid", value)
+	return instance.SetProperty("AllowSoftwareWhenSignatureIsInvalid", (value))
 }
 
 // GetAllowSoftwareWhenSignatureIsInvalid gets the value of AllowSoftwareWhenSignatureIsInvalid for the instance
@@ -1208,16 +1363,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowSoftware
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowsRestrictedSitesZoneTemplate sets the value of AllowsRestrictedSitesZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowsRestrictedSitesZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowsRestrictedSitesZoneTemplate", value)
+	return instance.SetProperty("AllowsRestrictedSitesZoneTemplate", (value))
 }
 
 // GetAllowsRestrictedSitesZoneTemplate gets the value of AllowsRestrictedSitesZoneTemplate for the instance
@@ -1226,16 +1390,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowsRestric
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowSuggestedSites sets the value of AllowSuggestedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowSuggestedSites(value string) (err error) {
-	return instance.SetProperty("AllowSuggestedSites", value)
+	return instance.SetProperty("AllowSuggestedSites", (value))
 }
 
 // GetAllowSuggestedSites gets the value of AllowSuggestedSites for the instance
@@ -1244,16 +1417,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowSuggeste
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowTrustedSitesZoneTemplate sets the value of AllowTrustedSitesZoneTemplate for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyAllowTrustedSitesZoneTemplate(value string) (err error) {
-	return instance.SetProperty("AllowTrustedSitesZoneTemplate", value)
+	return instance.SetProperty("AllowTrustedSitesZoneTemplate", (value))
 }
 
 // GetAllowTrustedSitesZoneTemplate gets the value of AllowTrustedSitesZoneTemplate for the instance
@@ -1262,16 +1444,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyAllowTrustedS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCheckServerCertificateRevocation sets the value of CheckServerCertificateRevocation for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyCheckServerCertificateRevocation(value string) (err error) {
-	return instance.SetProperty("CheckServerCertificateRevocation", value)
+	return instance.SetProperty("CheckServerCertificateRevocation", (value))
 }
 
 // GetCheckServerCertificateRevocation gets the value of CheckServerCertificateRevocation for the instance
@@ -1280,16 +1471,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyCheckServerCe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCheckSignaturesOnDownloadedPrograms sets the value of CheckSignaturesOnDownloadedPrograms for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyCheckSignaturesOnDownloadedPrograms(value string) (err error) {
-	return instance.SetProperty("CheckSignaturesOnDownloadedPrograms", value)
+	return instance.SetProperty("CheckSignaturesOnDownloadedPrograms", (value))
 }
 
 // GetCheckSignaturesOnDownloadedPrograms gets the value of CheckSignaturesOnDownloadedPrograms for the instance
@@ -1298,16 +1498,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyCheckSignatur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConsistentMimeHandlingInternetExplorerProcesses sets the value of ConsistentMimeHandlingInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyConsistentMimeHandlingInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("ConsistentMimeHandlingInternetExplorerProcesses", value)
+	return instance.SetProperty("ConsistentMimeHandlingInternetExplorerProcesses", (value))
 }
 
 // GetConsistentMimeHandlingInternetExplorerProcesses gets the value of ConsistentMimeHandlingInternetExplorerProcesses for the instance
@@ -1316,16 +1525,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyConsistentMim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableAdobeFlash sets the value of DisableAdobeFlash for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableAdobeFlash(value string) (err error) {
-	return instance.SetProperty("DisableAdobeFlash", value)
+	return instance.SetProperty("DisableAdobeFlash", (value))
 }
 
 // GetDisableAdobeFlash gets the value of DisableAdobeFlash for the instance
@@ -1334,16 +1552,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableAdobeF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableBypassOfSmartScreenWarnings sets the value of DisableBypassOfSmartScreenWarnings for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableBypassOfSmartScreenWarnings(value string) (err error) {
-	return instance.SetProperty("DisableBypassOfSmartScreenWarnings", value)
+	return instance.SetProperty("DisableBypassOfSmartScreenWarnings", (value))
 }
 
 // GetDisableBypassOfSmartScreenWarnings gets the value of DisableBypassOfSmartScreenWarnings for the instance
@@ -1352,16 +1579,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableBypass
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableBypassOfSmartScreenWarningsAboutUncommonFiles sets the value of DisableBypassOfSmartScreenWarningsAboutUncommonFiles for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableBypassOfSmartScreenWarningsAboutUncommonFiles(value string) (err error) {
-	return instance.SetProperty("DisableBypassOfSmartScreenWarningsAboutUncommonFiles", value)
+	return instance.SetProperty("DisableBypassOfSmartScreenWarningsAboutUncommonFiles", (value))
 }
 
 // GetDisableBypassOfSmartScreenWarningsAboutUncommonFiles gets the value of DisableBypassOfSmartScreenWarningsAboutUncommonFiles for the instance
@@ -1370,34 +1606,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableBypass
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetDisableCompatView sets the value of DisableCompatView for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableCompatView(value string) (err error) {
-	return instance.SetProperty("DisableCompatView", value)
-}
-
-// GetDisableCompatView gets the value of DisableCompatView for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableCompatView() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableCompatView")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableConfiguringHistory sets the value of DisableConfiguringHistory for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableConfiguringHistory(value string) (err error) {
-	return instance.SetProperty("DisableConfiguringHistory", value)
+	return instance.SetProperty("DisableConfiguringHistory", (value))
 }
 
 // GetDisableConfiguringHistory gets the value of DisableConfiguringHistory for the instance
@@ -1406,16 +1633,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableConfig
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableCrashDetection sets the value of DisableCrashDetection for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableCrashDetection(value string) (err error) {
-	return instance.SetProperty("DisableCrashDetection", value)
+	return instance.SetProperty("DisableCrashDetection", (value))
 }
 
 // GetDisableCrashDetection gets the value of DisableCrashDetection for the instance
@@ -1424,16 +1660,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableCrashD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableCustomerExperienceImprovementProgramParticipation sets the value of DisableCustomerExperienceImprovementProgramParticipation for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableCustomerExperienceImprovementProgramParticipation(value string) (err error) {
-	return instance.SetProperty("DisableCustomerExperienceImprovementProgramParticipation", value)
+	return instance.SetProperty("DisableCustomerExperienceImprovementProgramParticipation", (value))
 }
 
 // GetDisableCustomerExperienceImprovementProgramParticipation gets the value of DisableCustomerExperienceImprovementProgramParticipation for the instance
@@ -1442,16 +1687,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableCustom
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableDeletingUserVisitedWebsites sets the value of DisableDeletingUserVisitedWebsites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableDeletingUserVisitedWebsites(value string) (err error) {
-	return instance.SetProperty("DisableDeletingUserVisitedWebsites", value)
+	return instance.SetProperty("DisableDeletingUserVisitedWebsites", (value))
 }
 
 // GetDisableDeletingUserVisitedWebsites gets the value of DisableDeletingUserVisitedWebsites for the instance
@@ -1460,16 +1714,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableDeleti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableEnclosureDownloading sets the value of DisableEnclosureDownloading for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableEnclosureDownloading(value string) (err error) {
-	return instance.SetProperty("DisableEnclosureDownloading", value)
+	return instance.SetProperty("DisableEnclosureDownloading", (value))
 }
 
 // GetDisableEnclosureDownloading gets the value of DisableEnclosureDownloading for the instance
@@ -1478,16 +1741,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableEnclos
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableEncryptionSupport sets the value of DisableEncryptionSupport for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableEncryptionSupport(value string) (err error) {
-	return instance.SetProperty("DisableEncryptionSupport", value)
+	return instance.SetProperty("DisableEncryptionSupport", (value))
 }
 
 // GetDisableEncryptionSupport gets the value of DisableEncryptionSupport for the instance
@@ -1496,34 +1768,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableEncryp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetDisableFeedsBackgroundSync sets the value of DisableFeedsBackgroundSync for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableFeedsBackgroundSync(value string) (err error) {
-	return instance.SetProperty("DisableFeedsBackgroundSync", value)
-}
-
-// GetDisableFeedsBackgroundSync gets the value of DisableFeedsBackgroundSync for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableFeedsBackgroundSync() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableFeedsBackgroundSync")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableFirstRunWizard sets the value of DisableFirstRunWizard for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableFirstRunWizard(value string) (err error) {
-	return instance.SetProperty("DisableFirstRunWizard", value)
+	return instance.SetProperty("DisableFirstRunWizard", (value))
 }
 
 // GetDisableFirstRunWizard gets the value of DisableFirstRunWizard for the instance
@@ -1532,16 +1795,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableFirstR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableFlipAheadFeature sets the value of DisableFlipAheadFeature for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableFlipAheadFeature(value string) (err error) {
-	return instance.SetProperty("DisableFlipAheadFeature", value)
+	return instance.SetProperty("DisableFlipAheadFeature", (value))
 }
 
 // GetDisableFlipAheadFeature gets the value of DisableFlipAheadFeature for the instance
@@ -1550,34 +1822,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableFlipAh
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetDisableGeolocation sets the value of DisableGeolocation for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableGeolocation(value string) (err error) {
-	return instance.SetProperty("DisableGeolocation", value)
-}
-
-// GetDisableGeolocation gets the value of DisableGeolocation for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableGeolocation() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableGeolocation")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableIgnoringCertificateErrors sets the value of DisableIgnoringCertificateErrors for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableIgnoringCertificateErrors(value string) (err error) {
-	return instance.SetProperty("DisableIgnoringCertificateErrors", value)
+	return instance.SetProperty("DisableIgnoringCertificateErrors", (value))
 }
 
 // GetDisableIgnoringCertificateErrors gets the value of DisableIgnoringCertificateErrors for the instance
@@ -1586,16 +1849,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableIgnori
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableInPrivateBrowsing sets the value of DisableInPrivateBrowsing for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableInPrivateBrowsing(value string) (err error) {
-	return instance.SetProperty("DisableInPrivateBrowsing", value)
+	return instance.SetProperty("DisableInPrivateBrowsing", (value))
 }
 
 // GetDisableInPrivateBrowsing gets the value of DisableInPrivateBrowsing for the instance
@@ -1604,16 +1876,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableInPriv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableProcessesInEnhancedProtectedMode sets the value of DisableProcessesInEnhancedProtectedMode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableProcessesInEnhancedProtectedMode(value string) (err error) {
-	return instance.SetProperty("DisableProcessesInEnhancedProtectedMode", value)
+	return instance.SetProperty("DisableProcessesInEnhancedProtectedMode", (value))
 }
 
 // GetDisableProcessesInEnhancedProtectedMode gets the value of DisableProcessesInEnhancedProtectedMode for the instance
@@ -1622,16 +1903,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableProces
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableProxyChange sets the value of DisableProxyChange for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableProxyChange(value string) (err error) {
-	return instance.SetProperty("DisableProxyChange", value)
+	return instance.SetProperty("DisableProxyChange", (value))
 }
 
 // GetDisableProxyChange gets the value of DisableProxyChange for the instance
@@ -1640,16 +1930,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableProxyC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableSearchProviderChange sets the value of DisableSearchProviderChange for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableSearchProviderChange(value string) (err error) {
-	return instance.SetProperty("DisableSearchProviderChange", value)
+	return instance.SetProperty("DisableSearchProviderChange", (value))
 }
 
 // GetDisableSearchProviderChange gets the value of DisableSearchProviderChange for the instance
@@ -1658,16 +1957,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableSearch
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableSecondaryHomePageChange sets the value of DisableSecondaryHomePageChange for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableSecondaryHomePageChange(value string) (err error) {
-	return instance.SetProperty("DisableSecondaryHomePageChange", value)
+	return instance.SetProperty("DisableSecondaryHomePageChange", (value))
 }
 
 // GetDisableSecondaryHomePageChange gets the value of DisableSecondaryHomePageChange for the instance
@@ -1676,16 +1984,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableSecond
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableSecuritySettingsCheck sets the value of DisableSecuritySettingsCheck for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableSecuritySettingsCheck(value string) (err error) {
-	return instance.SetProperty("DisableSecuritySettingsCheck", value)
+	return instance.SetProperty("DisableSecuritySettingsCheck", (value))
 }
 
 // GetDisableSecuritySettingsCheck gets the value of DisableSecuritySettingsCheck for the instance
@@ -1694,16 +2011,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableSecuri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableUpdateCheck sets the value of DisableUpdateCheck for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableUpdateCheck(value string) (err error) {
-	return instance.SetProperty("DisableUpdateCheck", value)
+	return instance.SetProperty("DisableUpdateCheck", (value))
 }
 
 // GetDisableUpdateCheck gets the value of DisableUpdateCheck for the instance
@@ -1712,34 +2038,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableUpdate
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetDisableWebAddressAutoComplete sets the value of DisableWebAddressAutoComplete for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDisableWebAddressAutoComplete(value string) (err error) {
-	return instance.SetProperty("DisableWebAddressAutoComplete", value)
-}
-
-// GetDisableWebAddressAutoComplete gets the value of DisableWebAddressAutoComplete for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDisableWebAddressAutoComplete() (value string, err error) {
-	retValue, err := instance.GetProperty("DisableWebAddressAutoComplete")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDoNotAllowActiveXControlsInProtectedMode sets the value of DoNotAllowActiveXControlsInProtectedMode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDoNotAllowActiveXControlsInProtectedMode(value string) (err error) {
-	return instance.SetProperty("DoNotAllowActiveXControlsInProtectedMode", value)
+	return instance.SetProperty("DoNotAllowActiveXControlsInProtectedMode", (value))
 }
 
 // GetDoNotAllowActiveXControlsInProtectedMode gets the value of DoNotAllowActiveXControlsInProtectedMode for the instance
@@ -1748,16 +2065,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDoNotAllowAct
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDoNotAllowUsersToAddSites sets the value of DoNotAllowUsersToAddSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDoNotAllowUsersToAddSites(value string) (err error) {
-	return instance.SetProperty("DoNotAllowUsersToAddSites", value)
+	return instance.SetProperty("DoNotAllowUsersToAddSites", (value))
 }
 
 // GetDoNotAllowUsersToAddSites gets the value of DoNotAllowUsersToAddSites for the instance
@@ -1766,16 +2092,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDoNotAllowUse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDoNotAllowUsersToChangePolicies sets the value of DoNotAllowUsersToChangePolicies for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDoNotAllowUsersToChangePolicies(value string) (err error) {
-	return instance.SetProperty("DoNotAllowUsersToChangePolicies", value)
+	return instance.SetProperty("DoNotAllowUsersToChangePolicies", (value))
 }
 
 // GetDoNotAllowUsersToChangePolicies gets the value of DoNotAllowUsersToChangePolicies for the instance
@@ -1784,16 +2119,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDoNotAllowUse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDoNotBlockOutdatedActiveXControls sets the value of DoNotBlockOutdatedActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDoNotBlockOutdatedActiveXControls(value string) (err error) {
-	return instance.SetProperty("DoNotBlockOutdatedActiveXControls", value)
+	return instance.SetProperty("DoNotBlockOutdatedActiveXControls", (value))
 }
 
 // GetDoNotBlockOutdatedActiveXControls gets the value of DoNotBlockOutdatedActiveXControls for the instance
@@ -1802,16 +2146,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDoNotBlockOut
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDoNotBlockOutdatedActiveXControlsOnSpecificDomains sets the value of DoNotBlockOutdatedActiveXControlsOnSpecificDomains for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyDoNotBlockOutdatedActiveXControlsOnSpecificDomains(value string) (err error) {
-	return instance.SetProperty("DoNotBlockOutdatedActiveXControlsOnSpecificDomains", value)
+	return instance.SetProperty("DoNotBlockOutdatedActiveXControlsOnSpecificDomains", (value))
 }
 
 // GetDoNotBlockOutdatedActiveXControlsOnSpecificDomains gets the value of DoNotBlockOutdatedActiveXControlsOnSpecificDomains for the instance
@@ -1820,16 +2173,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyDoNotBlockOut
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIncludeAllLocalSites sets the value of IncludeAllLocalSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIncludeAllLocalSites(value string) (err error) {
-	return instance.SetProperty("IncludeAllLocalSites", value)
+	return instance.SetProperty("IncludeAllLocalSites", (value))
 }
 
 // GetIncludeAllLocalSites gets the value of IncludeAllLocalSites for the instance
@@ -1838,16 +2200,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIncludeAllLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIncludeAllNetworkPaths sets the value of IncludeAllNetworkPaths for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIncludeAllNetworkPaths(value string) (err error) {
-	return instance.SetProperty("IncludeAllNetworkPaths", value)
+	return instance.SetProperty("IncludeAllNetworkPaths", (value))
 }
 
 // GetIncludeAllNetworkPaths gets the value of IncludeAllNetworkPaths for the instance
@@ -1856,16 +2227,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIncludeAllNet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -1874,16 +2254,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInstanceID() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowAccessToDataSources sets the value of InternetZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("InternetZoneAllowAccessToDataSources", (value))
 }
 
 // GetInternetZoneAllowAccessToDataSources gets the value of InternetZoneAllowAccessToDataSources for the instance
@@ -1892,16 +2281,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowAutomaticPromptingForActiveXControls sets the value of InternetZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("InternetZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetInternetZoneAllowAutomaticPromptingForActiveXControls gets the value of InternetZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -1910,16 +2308,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowAutomaticPromptingForFileDownloads sets the value of InternetZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("InternetZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetInternetZoneAllowAutomaticPromptingForFileDownloads gets the value of InternetZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -1928,16 +2335,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowCopyPasteViaScript sets the value of InternetZoneAllowCopyPasteViaScript for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowCopyPasteViaScript(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowCopyPasteViaScript", value)
+	return instance.SetProperty("InternetZoneAllowCopyPasteViaScript", (value))
 }
 
 // GetInternetZoneAllowCopyPasteViaScript gets the value of InternetZoneAllowCopyPasteViaScript for the instance
@@ -1946,16 +2362,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowDragAndDropCopyAndPasteFiles sets the value of InternetZoneAllowDragAndDropCopyAndPasteFiles for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowDragAndDropCopyAndPasteFiles(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowDragAndDropCopyAndPasteFiles", value)
+	return instance.SetProperty("InternetZoneAllowDragAndDropCopyAndPasteFiles", (value))
 }
 
 // GetInternetZoneAllowDragAndDropCopyAndPasteFiles gets the value of InternetZoneAllowDragAndDropCopyAndPasteFiles for the instance
@@ -1964,16 +2389,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowFontDownloads sets the value of InternetZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowFontDownloads", value)
+	return instance.SetProperty("InternetZoneAllowFontDownloads", (value))
 }
 
 // GetInternetZoneAllowFontDownloads gets the value of InternetZoneAllowFontDownloads for the instance
@@ -1982,16 +2416,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowLessPrivilegedSites sets the value of InternetZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("InternetZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetInternetZoneAllowLessPrivilegedSites gets the value of InternetZoneAllowLessPrivilegedSites for the instance
@@ -2000,16 +2443,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowLoadingOfXAMLFiles sets the value of InternetZoneAllowLoadingOfXAMLFiles for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowLoadingOfXAMLFiles(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowLoadingOfXAMLFiles", value)
+	return instance.SetProperty("InternetZoneAllowLoadingOfXAMLFiles", (value))
 }
 
 // GetInternetZoneAllowLoadingOfXAMLFiles gets the value of InternetZoneAllowLoadingOfXAMLFiles for the instance
@@ -2018,16 +2470,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowNETFrameworkReliantComponents sets the value of InternetZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("InternetZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetInternetZoneAllowNETFrameworkReliantComponents gets the value of InternetZoneAllowNETFrameworkReliantComponents for the instance
@@ -2036,16 +2497,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowOnlyApprovedDomainsToUseActiveXControls sets the value of InternetZoneAllowOnlyApprovedDomainsToUseActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowOnlyApprovedDomainsToUseActiveXControls(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowOnlyApprovedDomainsToUseActiveXControls", value)
+	return instance.SetProperty("InternetZoneAllowOnlyApprovedDomainsToUseActiveXControls", (value))
 }
 
 // GetInternetZoneAllowOnlyApprovedDomainsToUseActiveXControls gets the value of InternetZoneAllowOnlyApprovedDomainsToUseActiveXControls for the instance
@@ -2054,16 +2524,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl sets the value of InternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl", value)
+	return instance.SetProperty("InternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl", (value))
 }
 
 // GetInternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl gets the value of InternetZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl for the instance
@@ -2072,16 +2551,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowScriptingOfInternetExplorerWebBrowserControls sets the value of InternetZoneAllowScriptingOfInternetExplorerWebBrowserControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowScriptingOfInternetExplorerWebBrowserControls(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowScriptingOfInternetExplorerWebBrowserControls", value)
+	return instance.SetProperty("InternetZoneAllowScriptingOfInternetExplorerWebBrowserControls", (value))
 }
 
 // GetInternetZoneAllowScriptingOfInternetExplorerWebBrowserControls gets the value of InternetZoneAllowScriptingOfInternetExplorerWebBrowserControls for the instance
@@ -2090,16 +2578,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowScriptInitiatedWindows sets the value of InternetZoneAllowScriptInitiatedWindows for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowScriptInitiatedWindows(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowScriptInitiatedWindows", value)
+	return instance.SetProperty("InternetZoneAllowScriptInitiatedWindows", (value))
 }
 
 // GetInternetZoneAllowScriptInitiatedWindows gets the value of InternetZoneAllowScriptInitiatedWindows for the instance
@@ -2108,16 +2605,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowScriptlets sets the value of InternetZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowScriptlets", value)
+	return instance.SetProperty("InternetZoneAllowScriptlets", (value))
 }
 
 // GetInternetZoneAllowScriptlets gets the value of InternetZoneAllowScriptlets for the instance
@@ -2126,16 +2632,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowSmartScreenIE sets the value of InternetZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("InternetZoneAllowSmartScreenIE", (value))
 }
 
 // GetInternetZoneAllowSmartScreenIE gets the value of InternetZoneAllowSmartScreenIE for the instance
@@ -2144,16 +2659,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowUpdatesToStatusBarViaScript sets the value of InternetZoneAllowUpdatesToStatusBarViaScript for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowUpdatesToStatusBarViaScript(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowUpdatesToStatusBarViaScript", value)
+	return instance.SetProperty("InternetZoneAllowUpdatesToStatusBarViaScript", (value))
 }
 
 // GetInternetZoneAllowUpdatesToStatusBarViaScript gets the value of InternetZoneAllowUpdatesToStatusBarViaScript for the instance
@@ -2162,16 +2686,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowUserDataPersistence sets the value of InternetZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("InternetZoneAllowUserDataPersistence", (value))
 }
 
 // GetInternetZoneAllowUserDataPersistence gets the value of InternetZoneAllowUserDataPersistence for the instance
@@ -2180,16 +2713,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneAllowVBScriptToRunInInternetExplorer sets the value of InternetZoneAllowVBScriptToRunInInternetExplorer for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneAllowVBScriptToRunInInternetExplorer(value string) (err error) {
-	return instance.SetProperty("InternetZoneAllowVBScriptToRunInInternetExplorer", value)
+	return instance.SetProperty("InternetZoneAllowVBScriptToRunInInternetExplorer", (value))
 }
 
 // GetInternetZoneAllowVBScriptToRunInInternetExplorer gets the value of InternetZoneAllowVBScriptToRunInInternetExplorer for the instance
@@ -2198,16 +2740,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneDoNotRunAntimalwareAgainstActiveXControls sets the value of InternetZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneDoNotRunAntimalwareAgainstActiveXControls(value string) (err error) {
-	return instance.SetProperty("InternetZoneDoNotRunAntimalwareAgainstActiveXControls", value)
+	return instance.SetProperty("InternetZoneDoNotRunAntimalwareAgainstActiveXControls", (value))
 }
 
 // GetInternetZoneDoNotRunAntimalwareAgainstActiveXControls gets the value of InternetZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
@@ -2216,16 +2767,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneDownloadSignedActiveXControls sets the value of InternetZoneDownloadSignedActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneDownloadSignedActiveXControls(value string) (err error) {
-	return instance.SetProperty("InternetZoneDownloadSignedActiveXControls", value)
+	return instance.SetProperty("InternetZoneDownloadSignedActiveXControls", (value))
 }
 
 // GetInternetZoneDownloadSignedActiveXControls gets the value of InternetZoneDownloadSignedActiveXControls for the instance
@@ -2234,16 +2794,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneDownloadUnsignedActiveXControls sets the value of InternetZoneDownloadUnsignedActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneDownloadUnsignedActiveXControls(value string) (err error) {
-	return instance.SetProperty("InternetZoneDownloadUnsignedActiveXControls", value)
+	return instance.SetProperty("InternetZoneDownloadUnsignedActiveXControls", (value))
 }
 
 // GetInternetZoneDownloadUnsignedActiveXControls gets the value of InternetZoneDownloadUnsignedActiveXControls for the instance
@@ -2252,16 +2821,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneEnableCrossSiteScriptingFilter sets the value of InternetZoneEnableCrossSiteScriptingFilter for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneEnableCrossSiteScriptingFilter(value string) (err error) {
-	return instance.SetProperty("InternetZoneEnableCrossSiteScriptingFilter", value)
+	return instance.SetProperty("InternetZoneEnableCrossSiteScriptingFilter", (value))
 }
 
 // GetInternetZoneEnableCrossSiteScriptingFilter gets the value of InternetZoneEnableCrossSiteScriptingFilter for the instance
@@ -2270,16 +2848,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows sets the value of InternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows(value string) (err error) {
-	return instance.SetProperty("InternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows", value)
+	return instance.SetProperty("InternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows", (value))
 }
 
 // GetInternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows gets the value of InternetZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows for the instance
@@ -2288,16 +2875,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows sets the value of InternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows(value string) (err error) {
-	return instance.SetProperty("InternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows", value)
+	return instance.SetProperty("InternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows", (value))
 }
 
 // GetInternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows gets the value of InternetZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows for the instance
@@ -2306,16 +2902,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneEnableMIMESniffing sets the value of InternetZoneEnableMIMESniffing for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneEnableMIMESniffing(value string) (err error) {
-	return instance.SetProperty("InternetZoneEnableMIMESniffing", value)
+	return instance.SetProperty("InternetZoneEnableMIMESniffing", (value))
 }
 
 // GetInternetZoneEnableMIMESniffing gets the value of InternetZoneEnableMIMESniffing for the instance
@@ -2324,16 +2929,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneEnableProtectedMode sets the value of InternetZoneEnableProtectedMode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneEnableProtectedMode(value string) (err error) {
-	return instance.SetProperty("InternetZoneEnableProtectedMode", value)
+	return instance.SetProperty("InternetZoneEnableProtectedMode", (value))
 }
 
 // GetInternetZoneEnableProtectedMode gets the value of InternetZoneEnableProtectedMode for the instance
@@ -2342,16 +2956,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneIncludeLocalPathWhenUploadingFilesToServer sets the value of InternetZoneIncludeLocalPathWhenUploadingFilesToServer for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneIncludeLocalPathWhenUploadingFilesToServer(value string) (err error) {
-	return instance.SetProperty("InternetZoneIncludeLocalPathWhenUploadingFilesToServer", value)
+	return instance.SetProperty("InternetZoneIncludeLocalPathWhenUploadingFilesToServer", (value))
 }
 
 // GetInternetZoneIncludeLocalPathWhenUploadingFilesToServer gets the value of InternetZoneIncludeLocalPathWhenUploadingFilesToServer for the instance
@@ -2360,16 +2983,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneInitializeAndScriptActiveXControls sets the value of InternetZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("InternetZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("InternetZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetInternetZoneInitializeAndScriptActiveXControls gets the value of InternetZoneInitializeAndScriptActiveXControls for the instance
@@ -2378,16 +3010,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneJavaPermissions sets the value of InternetZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("InternetZoneJavaPermissions", value)
+	return instance.SetProperty("InternetZoneJavaPermissions", (value))
 }
 
 // GetInternetZoneJavaPermissions gets the value of InternetZoneJavaPermissions for the instance
@@ -2396,16 +3037,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneJ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneLaunchingApplicationsAndFilesInIFRAME sets the value of InternetZoneLaunchingApplicationsAndFilesInIFRAME for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneLaunchingApplicationsAndFilesInIFRAME(value string) (err error) {
-	return instance.SetProperty("InternetZoneLaunchingApplicationsAndFilesInIFRAME", value)
+	return instance.SetProperty("InternetZoneLaunchingApplicationsAndFilesInIFRAME", (value))
 }
 
 // GetInternetZoneLaunchingApplicationsAndFilesInIFRAME gets the value of InternetZoneLaunchingApplicationsAndFilesInIFRAME for the instance
@@ -2414,16 +3064,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneLogonOptions sets the value of InternetZoneLogonOptions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneLogonOptions(value string) (err error) {
-	return instance.SetProperty("InternetZoneLogonOptions", value)
+	return instance.SetProperty("InternetZoneLogonOptions", (value))
 }
 
 // GetInternetZoneLogonOptions gets the value of InternetZoneLogonOptions for the instance
@@ -2432,16 +3091,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneNavigateWindowsAndFrames sets the value of InternetZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("InternetZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("InternetZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetInternetZoneNavigateWindowsAndFrames gets the value of InternetZoneNavigateWindowsAndFrames for the instance
@@ -2450,16 +3118,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode sets the value of InternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode(value string) (err error) {
-	return instance.SetProperty("InternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode", value)
+	return instance.SetProperty("InternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode", (value))
 }
 
 // GetInternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode gets the value of InternetZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode for the instance
@@ -2468,16 +3145,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneShowSecurityWarningForPotentiallyUnsafeFiles sets the value of InternetZoneShowSecurityWarningForPotentiallyUnsafeFiles for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneShowSecurityWarningForPotentiallyUnsafeFiles(value string) (err error) {
-	return instance.SetProperty("InternetZoneShowSecurityWarningForPotentiallyUnsafeFiles", value)
+	return instance.SetProperty("InternetZoneShowSecurityWarningForPotentiallyUnsafeFiles", (value))
 }
 
 // GetInternetZoneShowSecurityWarningForPotentiallyUnsafeFiles gets the value of InternetZoneShowSecurityWarningForPotentiallyUnsafeFiles for the instance
@@ -2486,16 +3172,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetZoneUsePopupBlocker sets the value of InternetZoneUsePopupBlocker for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyInternetZoneUsePopupBlocker(value string) (err error) {
-	return instance.SetProperty("InternetZoneUsePopupBlocker", value)
+	return instance.SetProperty("InternetZoneUsePopupBlocker", (value))
 }
 
 // GetInternetZoneUsePopupBlocker gets the value of InternetZoneUsePopupBlocker for the instance
@@ -2504,16 +3199,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyInternetZoneU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowAccessToDataSources sets the value of IntranetZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("IntranetZoneAllowAccessToDataSources", (value))
 }
 
 // GetIntranetZoneAllowAccessToDataSources gets the value of IntranetZoneAllowAccessToDataSources for the instance
@@ -2522,16 +3226,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowAutomaticPromptingForActiveXControls sets the value of IntranetZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("IntranetZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetIntranetZoneAllowAutomaticPromptingForActiveXControls gets the value of IntranetZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -2540,16 +3253,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowAutomaticPromptingForFileDownloads sets the value of IntranetZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("IntranetZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetIntranetZoneAllowAutomaticPromptingForFileDownloads gets the value of IntranetZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -2558,16 +3280,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowFontDownloads sets the value of IntranetZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowFontDownloads", value)
+	return instance.SetProperty("IntranetZoneAllowFontDownloads", (value))
 }
 
 // GetIntranetZoneAllowFontDownloads gets the value of IntranetZoneAllowFontDownloads for the instance
@@ -2576,16 +3307,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowLessPrivilegedSites sets the value of IntranetZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("IntranetZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetIntranetZoneAllowLessPrivilegedSites gets the value of IntranetZoneAllowLessPrivilegedSites for the instance
@@ -2594,16 +3334,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowNETFrameworkReliantComponents sets the value of IntranetZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("IntranetZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetIntranetZoneAllowNETFrameworkReliantComponents gets the value of IntranetZoneAllowNETFrameworkReliantComponents for the instance
@@ -2612,16 +3361,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowScriptlets sets the value of IntranetZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowScriptlets", value)
+	return instance.SetProperty("IntranetZoneAllowScriptlets", (value))
 }
 
 // GetIntranetZoneAllowScriptlets gets the value of IntranetZoneAllowScriptlets for the instance
@@ -2630,16 +3388,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowSmartScreenIE sets the value of IntranetZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("IntranetZoneAllowSmartScreenIE", (value))
 }
 
 // GetIntranetZoneAllowSmartScreenIE gets the value of IntranetZoneAllowSmartScreenIE for the instance
@@ -2648,16 +3415,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneAllowUserDataPersistence sets the value of IntranetZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("IntranetZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("IntranetZoneAllowUserDataPersistence", (value))
 }
 
 // GetIntranetZoneAllowUserDataPersistence gets the value of IntranetZoneAllowUserDataPersistence for the instance
@@ -2666,16 +3442,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneDoNotRunAntimalwareAgainstActiveXControls sets the value of IntranetZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneDoNotRunAntimalwareAgainstActiveXControls(value string) (err error) {
-	return instance.SetProperty("IntranetZoneDoNotRunAntimalwareAgainstActiveXControls", value)
+	return instance.SetProperty("IntranetZoneDoNotRunAntimalwareAgainstActiveXControls", (value))
 }
 
 // GetIntranetZoneDoNotRunAntimalwareAgainstActiveXControls gets the value of IntranetZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
@@ -2684,16 +3469,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneInitializeAndScriptActiveXControls sets the value of IntranetZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("IntranetZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("IntranetZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetIntranetZoneInitializeAndScriptActiveXControls gets the value of IntranetZoneInitializeAndScriptActiveXControls for the instance
@@ -2702,16 +3496,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneJavaPermissions sets the value of IntranetZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("IntranetZoneJavaPermissions", value)
+	return instance.SetProperty("IntranetZoneJavaPermissions", (value))
 }
 
 // GetIntranetZoneJavaPermissions gets the value of IntranetZoneJavaPermissions for the instance
@@ -2720,16 +3523,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneJ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneNavigateWindowsAndFrames sets the value of IntranetZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyIntranetZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("IntranetZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("IntranetZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetIntranetZoneNavigateWindowsAndFrames gets the value of IntranetZoneNavigateWindowsAndFrames for the instance
@@ -2738,16 +3550,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyIntranetZoneN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowAccessToDataSources sets the value of LocalMachineZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("LocalMachineZoneAllowAccessToDataSources", (value))
 }
 
 // GetLocalMachineZoneAllowAccessToDataSources gets the value of LocalMachineZoneAllowAccessToDataSources for the instance
@@ -2756,16 +3577,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowAutomaticPromptingForActiveXControls sets the value of LocalMachineZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("LocalMachineZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetLocalMachineZoneAllowAutomaticPromptingForActiveXControls gets the value of LocalMachineZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -2774,16 +3604,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowAutomaticPromptingForFileDownloads sets the value of LocalMachineZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("LocalMachineZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetLocalMachineZoneAllowAutomaticPromptingForFileDownloads gets the value of LocalMachineZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -2792,16 +3631,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowFontDownloads sets the value of LocalMachineZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowFontDownloads", value)
+	return instance.SetProperty("LocalMachineZoneAllowFontDownloads", (value))
 }
 
 // GetLocalMachineZoneAllowFontDownloads gets the value of LocalMachineZoneAllowFontDownloads for the instance
@@ -2810,16 +3658,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowLessPrivilegedSites sets the value of LocalMachineZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("LocalMachineZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetLocalMachineZoneAllowLessPrivilegedSites gets the value of LocalMachineZoneAllowLessPrivilegedSites for the instance
@@ -2828,16 +3685,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowNETFrameworkReliantComponents sets the value of LocalMachineZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("LocalMachineZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetLocalMachineZoneAllowNETFrameworkReliantComponents gets the value of LocalMachineZoneAllowNETFrameworkReliantComponents for the instance
@@ -2846,16 +3712,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowScriptlets sets the value of LocalMachineZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowScriptlets", value)
+	return instance.SetProperty("LocalMachineZoneAllowScriptlets", (value))
 }
 
 // GetLocalMachineZoneAllowScriptlets gets the value of LocalMachineZoneAllowScriptlets for the instance
@@ -2864,16 +3739,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowSmartScreenIE sets the value of LocalMachineZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("LocalMachineZoneAllowSmartScreenIE", (value))
 }
 
 // GetLocalMachineZoneAllowSmartScreenIE gets the value of LocalMachineZoneAllowSmartScreenIE for the instance
@@ -2882,16 +3766,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneAllowUserDataPersistence sets the value of LocalMachineZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("LocalMachineZoneAllowUserDataPersistence", (value))
 }
 
 // GetLocalMachineZoneAllowUserDataPersistence gets the value of LocalMachineZoneAllowUserDataPersistence for the instance
@@ -2900,16 +3793,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls sets the value of LocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls", value)
+	return instance.SetProperty("LocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls", (value))
 }
 
 // GetLocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls gets the value of LocalMachineZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
@@ -2918,16 +3820,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneInitializeAndScriptActiveXControls sets the value of LocalMachineZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("LocalMachineZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetLocalMachineZoneInitializeAndScriptActiveXControls gets the value of LocalMachineZoneInitializeAndScriptActiveXControls for the instance
@@ -2936,16 +3847,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneJavaPermissions sets the value of LocalMachineZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneJavaPermissions", value)
+	return instance.SetProperty("LocalMachineZoneJavaPermissions", (value))
 }
 
 // GetLocalMachineZoneJavaPermissions gets the value of LocalMachineZoneJavaPermissions for the instance
@@ -2954,16 +3874,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalMachineZoneNavigateWindowsAndFrames sets the value of LocalMachineZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLocalMachineZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("LocalMachineZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("LocalMachineZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetLocalMachineZoneNavigateWindowsAndFrames gets the value of LocalMachineZoneNavigateWindowsAndFrames for the instance
@@ -2972,16 +3901,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLocalMachineZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowAccessToDataSources sets the value of LockedDownInternetZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowAccessToDataSources", (value))
 }
 
 // GetLockedDownInternetZoneAllowAccessToDataSources gets the value of LockedDownInternetZoneAllowAccessToDataSources for the instance
@@ -2990,16 +3928,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowAutomaticPromptingForActiveXControls sets the value of LockedDownInternetZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetLockedDownInternetZoneAllowAutomaticPromptingForActiveXControls gets the value of LockedDownInternetZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -3008,16 +3955,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowAutomaticPromptingForFileDownloads sets the value of LockedDownInternetZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetLockedDownInternetZoneAllowAutomaticPromptingForFileDownloads gets the value of LockedDownInternetZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -3026,16 +3982,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowFontDownloads sets the value of LockedDownInternetZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowFontDownloads", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowFontDownloads", (value))
 }
 
 // GetLockedDownInternetZoneAllowFontDownloads gets the value of LockedDownInternetZoneAllowFontDownloads for the instance
@@ -3044,16 +4009,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowLessPrivilegedSites sets the value of LockedDownInternetZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetLockedDownInternetZoneAllowLessPrivilegedSites gets the value of LockedDownInternetZoneAllowLessPrivilegedSites for the instance
@@ -3062,16 +4036,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowNETFrameworkReliantComponents sets the value of LockedDownInternetZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetLockedDownInternetZoneAllowNETFrameworkReliantComponents gets the value of LockedDownInternetZoneAllowNETFrameworkReliantComponents for the instance
@@ -3080,16 +4063,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowScriptlets sets the value of LockedDownInternetZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowScriptlets", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowScriptlets", (value))
 }
 
 // GetLockedDownInternetZoneAllowScriptlets gets the value of LockedDownInternetZoneAllowScriptlets for the instance
@@ -3098,16 +4090,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowSmartScreenIE sets the value of LockedDownInternetZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowSmartScreenIE", (value))
 }
 
 // GetLockedDownInternetZoneAllowSmartScreenIE gets the value of LockedDownInternetZoneAllowSmartScreenIE for the instance
@@ -3116,16 +4117,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneAllowUserDataPersistence sets the value of LockedDownInternetZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("LockedDownInternetZoneAllowUserDataPersistence", (value))
 }
 
 // GetLockedDownInternetZoneAllowUserDataPersistence gets the value of LockedDownInternetZoneAllowUserDataPersistence for the instance
@@ -3134,16 +4144,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneInitializeAndScriptActiveXControls sets the value of LockedDownInternetZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("LockedDownInternetZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetLockedDownInternetZoneInitializeAndScriptActiveXControls gets the value of LockedDownInternetZoneInitializeAndScriptActiveXControls for the instance
@@ -3152,16 +4171,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneJavaPermissions sets the value of LockedDownInternetZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneJavaPermissions", value)
+	return instance.SetProperty("LockedDownInternetZoneJavaPermissions", (value))
 }
 
 // GetLockedDownInternetZoneJavaPermissions gets the value of LockedDownInternetZoneJavaPermissions for the instance
@@ -3170,16 +4198,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownInternetZoneNavigateWindowsAndFrames sets the value of LockedDownInternetZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownInternetZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("LockedDownInternetZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("LockedDownInternetZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetLockedDownInternetZoneNavigateWindowsAndFrames gets the value of LockedDownInternetZoneNavigateWindowsAndFrames for the instance
@@ -3188,16 +4225,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetJavaPermissions sets the value of LockedDownIntranetJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetJavaPermissions(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetJavaPermissions", value)
+	return instance.SetProperty("LockedDownIntranetJavaPermissions", (value))
 }
 
 // GetLockedDownIntranetJavaPermissions gets the value of LockedDownIntranetJavaPermissions for the instance
@@ -3206,16 +4252,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowAccessToDataSources sets the value of LockedDownIntranetZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowAccessToDataSources", (value))
 }
 
 // GetLockedDownIntranetZoneAllowAccessToDataSources gets the value of LockedDownIntranetZoneAllowAccessToDataSources for the instance
@@ -3224,16 +4279,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowAutomaticPromptingForActiveXControls sets the value of LockedDownIntranetZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetLockedDownIntranetZoneAllowAutomaticPromptingForActiveXControls gets the value of LockedDownIntranetZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -3242,16 +4306,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowAutomaticPromptingForFileDownloads sets the value of LockedDownIntranetZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetLockedDownIntranetZoneAllowAutomaticPromptingForFileDownloads gets the value of LockedDownIntranetZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -3260,16 +4333,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowFontDownloads sets the value of LockedDownIntranetZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowFontDownloads", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowFontDownloads", (value))
 }
 
 // GetLockedDownIntranetZoneAllowFontDownloads gets the value of LockedDownIntranetZoneAllowFontDownloads for the instance
@@ -3278,16 +4360,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowLessPrivilegedSites sets the value of LockedDownIntranetZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetLockedDownIntranetZoneAllowLessPrivilegedSites gets the value of LockedDownIntranetZoneAllowLessPrivilegedSites for the instance
@@ -3296,16 +4387,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowNETFrameworkReliantComponents sets the value of LockedDownIntranetZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetLockedDownIntranetZoneAllowNETFrameworkReliantComponents gets the value of LockedDownIntranetZoneAllowNETFrameworkReliantComponents for the instance
@@ -3314,16 +4414,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowScriptlets sets the value of LockedDownIntranetZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowScriptlets", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowScriptlets", (value))
 }
 
 // GetLockedDownIntranetZoneAllowScriptlets gets the value of LockedDownIntranetZoneAllowScriptlets for the instance
@@ -3332,16 +4441,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowSmartScreenIE sets the value of LockedDownIntranetZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowSmartScreenIE", (value))
 }
 
 // GetLockedDownIntranetZoneAllowSmartScreenIE gets the value of LockedDownIntranetZoneAllowSmartScreenIE for the instance
@@ -3350,16 +4468,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneAllowUserDataPersistence sets the value of LockedDownIntranetZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("LockedDownIntranetZoneAllowUserDataPersistence", (value))
 }
 
 // GetLockedDownIntranetZoneAllowUserDataPersistence gets the value of LockedDownIntranetZoneAllowUserDataPersistence for the instance
@@ -3368,16 +4495,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneInitializeAndScriptActiveXControls sets the value of LockedDownIntranetZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("LockedDownIntranetZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetLockedDownIntranetZoneInitializeAndScriptActiveXControls gets the value of LockedDownIntranetZoneInitializeAndScriptActiveXControls for the instance
@@ -3386,16 +4522,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownIntranetZoneNavigateWindowsAndFrames sets the value of LockedDownIntranetZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownIntranetZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("LockedDownIntranetZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("LockedDownIntranetZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetLockedDownIntranetZoneNavigateWindowsAndFrames gets the value of LockedDownIntranetZoneNavigateWindowsAndFrames for the instance
@@ -3404,16 +4549,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowAccessToDataSources sets the value of LockedDownLocalMachineZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowAccessToDataSources", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowAccessToDataSources gets the value of LockedDownLocalMachineZoneAllowAccessToDataSources for the instance
@@ -3422,16 +4576,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowAutomaticPromptingForActiveXControls sets the value of LockedDownLocalMachineZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowAutomaticPromptingForActiveXControls gets the value of LockedDownLocalMachineZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -3440,16 +4603,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowAutomaticPromptingForFileDownloads sets the value of LockedDownLocalMachineZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowAutomaticPromptingForFileDownloads gets the value of LockedDownLocalMachineZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -3458,16 +4630,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowFontDownloads sets the value of LockedDownLocalMachineZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowFontDownloads", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowFontDownloads", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowFontDownloads gets the value of LockedDownLocalMachineZoneAllowFontDownloads for the instance
@@ -3476,16 +4657,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowLessPrivilegedSites sets the value of LockedDownLocalMachineZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowLessPrivilegedSites gets the value of LockedDownLocalMachineZoneAllowLessPrivilegedSites for the instance
@@ -3494,16 +4684,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowNETFrameworkReliantComponents sets the value of LockedDownLocalMachineZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowNETFrameworkReliantComponents gets the value of LockedDownLocalMachineZoneAllowNETFrameworkReliantComponents for the instance
@@ -3512,16 +4711,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowScriptlets sets the value of LockedDownLocalMachineZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowScriptlets", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowScriptlets", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowScriptlets gets the value of LockedDownLocalMachineZoneAllowScriptlets for the instance
@@ -3530,16 +4738,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowSmartScreenIE sets the value of LockedDownLocalMachineZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowSmartScreenIE", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowSmartScreenIE gets the value of LockedDownLocalMachineZoneAllowSmartScreenIE for the instance
@@ -3548,16 +4765,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneAllowUserDataPersistence sets the value of LockedDownLocalMachineZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneAllowUserDataPersistence", (value))
 }
 
 // GetLockedDownLocalMachineZoneAllowUserDataPersistence gets the value of LockedDownLocalMachineZoneAllowUserDataPersistence for the instance
@@ -3566,16 +4792,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneInitializeAndScriptActiveXControls sets the value of LockedDownLocalMachineZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetLockedDownLocalMachineZoneInitializeAndScriptActiveXControls gets the value of LockedDownLocalMachineZoneInitializeAndScriptActiveXControls for the instance
@@ -3584,16 +4819,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneJavaPermissions sets the value of LockedDownLocalMachineZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneJavaPermissions", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneJavaPermissions", (value))
 }
 
 // GetLockedDownLocalMachineZoneJavaPermissions gets the value of LockedDownLocalMachineZoneJavaPermissions for the instance
@@ -3602,16 +4846,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownLocalMachineZoneNavigateWindowsAndFrames sets the value of LockedDownLocalMachineZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownLocalMachineZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("LockedDownLocalMachineZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("LockedDownLocalMachineZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetLockedDownLocalMachineZoneNavigateWindowsAndFrames gets the value of LockedDownLocalMachineZoneNavigateWindowsAndFrames for the instance
@@ -3620,16 +4873,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownLoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowAccessToDataSources sets the value of LockedDownRestrictedSitesZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowAccessToDataSources", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowAccessToDataSources gets the value of LockedDownRestrictedSitesZoneAllowAccessToDataSources for the instance
@@ -3638,16 +4900,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls sets the value of LockedDownRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls gets the value of LockedDownRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -3656,16 +4927,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads sets the value of LockedDownRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads gets the value of LockedDownRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -3674,16 +4954,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowFontDownloads sets the value of LockedDownRestrictedSitesZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowFontDownloads", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowFontDownloads", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowFontDownloads gets the value of LockedDownRestrictedSitesZoneAllowFontDownloads for the instance
@@ -3692,16 +4981,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowLessPrivilegedSites sets the value of LockedDownRestrictedSitesZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowLessPrivilegedSites gets the value of LockedDownRestrictedSitesZoneAllowLessPrivilegedSites for the instance
@@ -3710,16 +5008,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowNETFrameworkReliantComponents sets the value of LockedDownRestrictedSitesZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowNETFrameworkReliantComponents gets the value of LockedDownRestrictedSitesZoneAllowNETFrameworkReliantComponents for the instance
@@ -3728,16 +5035,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowScriptlets sets the value of LockedDownRestrictedSitesZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowScriptlets", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowScriptlets", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowScriptlets gets the value of LockedDownRestrictedSitesZoneAllowScriptlets for the instance
@@ -3746,16 +5062,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowSmartScreenIE sets the value of LockedDownRestrictedSitesZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowSmartScreenIE", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowSmartScreenIE gets the value of LockedDownRestrictedSitesZoneAllowSmartScreenIE for the instance
@@ -3764,16 +5089,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneAllowUserDataPersistence sets the value of LockedDownRestrictedSitesZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneAllowUserDataPersistence", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneAllowUserDataPersistence gets the value of LockedDownRestrictedSitesZoneAllowUserDataPersistence for the instance
@@ -3782,16 +5116,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneInitializeAndScriptActiveXControls sets the value of LockedDownRestrictedSitesZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneInitializeAndScriptActiveXControls gets the value of LockedDownRestrictedSitesZoneInitializeAndScriptActiveXControls for the instance
@@ -3800,16 +5143,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneJavaPermissions sets the value of LockedDownRestrictedSitesZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneJavaPermissions", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneJavaPermissions", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneJavaPermissions gets the value of LockedDownRestrictedSitesZoneJavaPermissions for the instance
@@ -3818,16 +5170,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownRestrictedSitesZoneNavigateWindowsAndFrames sets the value of LockedDownRestrictedSitesZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownRestrictedSitesZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("LockedDownRestrictedSitesZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("LockedDownRestrictedSitesZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetLockedDownRestrictedSitesZoneNavigateWindowsAndFrames gets the value of LockedDownRestrictedSitesZoneNavigateWindowsAndFrames for the instance
@@ -3836,16 +5197,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowAccessToDataSources sets the value of LockedDownTrustedSitesZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowAccessToDataSources", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowAccessToDataSources gets the value of LockedDownTrustedSitesZoneAllowAccessToDataSources for the instance
@@ -3854,16 +5224,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowAutomaticPromptingForActiveXControls sets the value of LockedDownTrustedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowAutomaticPromptingForActiveXControls gets the value of LockedDownTrustedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -3872,16 +5251,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowAutomaticPromptingForFileDownloads sets the value of LockedDownTrustedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowAutomaticPromptingForFileDownloads gets the value of LockedDownTrustedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -3890,16 +5278,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowFontDownloads sets the value of LockedDownTrustedSitesZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowFontDownloads", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowFontDownloads", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowFontDownloads gets the value of LockedDownTrustedSitesZoneAllowFontDownloads for the instance
@@ -3908,16 +5305,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowLessPrivilegedSites sets the value of LockedDownTrustedSitesZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowLessPrivilegedSites gets the value of LockedDownTrustedSitesZoneAllowLessPrivilegedSites for the instance
@@ -3926,16 +5332,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowNETFrameworkReliantComponents sets the value of LockedDownTrustedSitesZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowNETFrameworkReliantComponents gets the value of LockedDownTrustedSitesZoneAllowNETFrameworkReliantComponents for the instance
@@ -3944,16 +5359,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowScriptlets sets the value of LockedDownTrustedSitesZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowScriptlets", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowScriptlets", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowScriptlets gets the value of LockedDownTrustedSitesZoneAllowScriptlets for the instance
@@ -3962,16 +5386,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowSmartScreenIE sets the value of LockedDownTrustedSitesZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowSmartScreenIE", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowSmartScreenIE gets the value of LockedDownTrustedSitesZoneAllowSmartScreenIE for the instance
@@ -3980,16 +5413,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneAllowUserDataPersistence sets the value of LockedDownTrustedSitesZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneAllowUserDataPersistence", (value))
 }
 
 // GetLockedDownTrustedSitesZoneAllowUserDataPersistence gets the value of LockedDownTrustedSitesZoneAllowUserDataPersistence for the instance
@@ -3998,16 +5440,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneInitializeAndScriptActiveXControls sets the value of LockedDownTrustedSitesZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetLockedDownTrustedSitesZoneInitializeAndScriptActiveXControls gets the value of LockedDownTrustedSitesZoneInitializeAndScriptActiveXControls for the instance
@@ -4016,16 +5467,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneJavaPermissions sets the value of LockedDownTrustedSitesZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneJavaPermissions", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneJavaPermissions", (value))
 }
 
 // GetLockedDownTrustedSitesZoneJavaPermissions gets the value of LockedDownTrustedSitesZoneJavaPermissions for the instance
@@ -4034,16 +5494,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockedDownTrustedSitesZoneNavigateWindowsAndFrames sets the value of LockedDownTrustedSitesZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyLockedDownTrustedSitesZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("LockedDownTrustedSitesZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("LockedDownTrustedSitesZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetLockedDownTrustedSitesZoneNavigateWindowsAndFrames gets the value of LockedDownTrustedSitesZoneNavigateWindowsAndFrames for the instance
@@ -4052,16 +5521,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyLockedDownTru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMimeSniffingSafetyFeatureInternetExplorerProcesses sets the value of MimeSniffingSafetyFeatureInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyMimeSniffingSafetyFeatureInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("MimeSniffingSafetyFeatureInternetExplorerProcesses", value)
+	return instance.SetProperty("MimeSniffingSafetyFeatureInternetExplorerProcesses", (value))
 }
 
 // GetMimeSniffingSafetyFeatureInternetExplorerProcesses gets the value of MimeSniffingSafetyFeatureInternetExplorerProcesses for the instance
@@ -4070,16 +5548,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyMimeSniffingS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMKProtocolSecurityRestrictionInternetExplorerProcesses sets the value of MKProtocolSecurityRestrictionInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyMKProtocolSecurityRestrictionInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("MKProtocolSecurityRestrictionInternetExplorerProcesses", value)
+	return instance.SetProperty("MKProtocolSecurityRestrictionInternetExplorerProcesses", (value))
 }
 
 // GetMKProtocolSecurityRestrictionInternetExplorerProcesses gets the value of MKProtocolSecurityRestrictionInternetExplorerProcesses for the instance
@@ -4088,34 +5575,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyMKProtocolSec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetNewTabDefaultPage sets the value of NewTabDefaultPage for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyNewTabDefaultPage(value string) (err error) {
-	return instance.SetProperty("NewTabDefaultPage", value)
-}
-
-// GetNewTabDefaultPage gets the value of NewTabDefaultPage for the instance
-func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyNewTabDefaultPage() (value string, err error) {
-	retValue, err := instance.GetProperty("NewTabDefaultPage")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNotificationBarInternetExplorerProcesses sets the value of NotificationBarInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyNotificationBarInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("NotificationBarInternetExplorerProcesses", value)
+	return instance.SetProperty("NotificationBarInternetExplorerProcesses", (value))
 }
 
 // GetNotificationBarInternetExplorerProcesses gets the value of NotificationBarInternetExplorerProcesses for the instance
@@ -4124,16 +5602,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyNotificationB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -4142,16 +5629,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyParentID() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreventManagingSmartScreenFilter sets the value of PreventManagingSmartScreenFilter for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyPreventManagingSmartScreenFilter(value string) (err error) {
-	return instance.SetProperty("PreventManagingSmartScreenFilter", value)
+	return instance.SetProperty("PreventManagingSmartScreenFilter", (value))
 }
 
 // GetPreventManagingSmartScreenFilter gets the value of PreventManagingSmartScreenFilter for the instance
@@ -4160,16 +5656,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyPreventManagi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreventPerUserInstallationOfActiveXControls sets the value of PreventPerUserInstallationOfActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyPreventPerUserInstallationOfActiveXControls(value string) (err error) {
-	return instance.SetProperty("PreventPerUserInstallationOfActiveXControls", value)
+	return instance.SetProperty("PreventPerUserInstallationOfActiveXControls", (value))
 }
 
 // GetPreventPerUserInstallationOfActiveXControls gets the value of PreventPerUserInstallationOfActiveXControls for the instance
@@ -4178,16 +5683,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyPreventPerUse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProtectionFromZoneElevationInternetExplorerProcesses sets the value of ProtectionFromZoneElevationInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyProtectionFromZoneElevationInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("ProtectionFromZoneElevationInternetExplorerProcesses", value)
+	return instance.SetProperty("ProtectionFromZoneElevationInternetExplorerProcesses", (value))
 }
 
 // GetProtectionFromZoneElevationInternetExplorerProcesses gets the value of ProtectionFromZoneElevationInternetExplorerProcesses for the instance
@@ -4196,16 +5710,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyProtectionFro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoveRunThisTimeButtonForOutdatedActiveXControls sets the value of RemoveRunThisTimeButtonForOutdatedActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRemoveRunThisTimeButtonForOutdatedActiveXControls(value string) (err error) {
-	return instance.SetProperty("RemoveRunThisTimeButtonForOutdatedActiveXControls", value)
+	return instance.SetProperty("RemoveRunThisTimeButtonForOutdatedActiveXControls", (value))
 }
 
 // GetRemoveRunThisTimeButtonForOutdatedActiveXControls gets the value of RemoveRunThisTimeButtonForOutdatedActiveXControls for the instance
@@ -4214,16 +5737,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRemoveRunThis
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictActiveXInstallInternetExplorerProcesses sets the value of RestrictActiveXInstallInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictActiveXInstallInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("RestrictActiveXInstallInternetExplorerProcesses", value)
+	return instance.SetProperty("RestrictActiveXInstallInternetExplorerProcesses", (value))
 }
 
 // GetRestrictActiveXInstallInternetExplorerProcesses gets the value of RestrictActiveXInstallInternetExplorerProcesses for the instance
@@ -4232,16 +5764,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictActiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowAccessToDataSources sets the value of RestrictedSitesZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowAccessToDataSources", (value))
 }
 
 // GetRestrictedSitesZoneAllowAccessToDataSources gets the value of RestrictedSitesZoneAllowAccessToDataSources for the instance
@@ -4250,16 +5791,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowActiveScripting sets the value of RestrictedSitesZoneAllowActiveScripting for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowActiveScripting(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowActiveScripting", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowActiveScripting", (value))
 }
 
 // GetRestrictedSitesZoneAllowActiveScripting gets the value of RestrictedSitesZoneAllowActiveScripting for the instance
@@ -4268,16 +5818,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls sets the value of RestrictedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetRestrictedSitesZoneAllowAutomaticPromptingForActiveXControls gets the value of RestrictedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -4286,16 +5845,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads sets the value of RestrictedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetRestrictedSitesZoneAllowAutomaticPromptingForFileDownloads gets the value of RestrictedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -4304,16 +5872,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowBinaryAndScriptBehaviors sets the value of RestrictedSitesZoneAllowBinaryAndScriptBehaviors for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowBinaryAndScriptBehaviors(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowBinaryAndScriptBehaviors", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowBinaryAndScriptBehaviors", (value))
 }
 
 // GetRestrictedSitesZoneAllowBinaryAndScriptBehaviors gets the value of RestrictedSitesZoneAllowBinaryAndScriptBehaviors for the instance
@@ -4322,16 +5899,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowCopyPasteViaScript sets the value of RestrictedSitesZoneAllowCopyPasteViaScript for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowCopyPasteViaScript(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowCopyPasteViaScript", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowCopyPasteViaScript", (value))
 }
 
 // GetRestrictedSitesZoneAllowCopyPasteViaScript gets the value of RestrictedSitesZoneAllowCopyPasteViaScript for the instance
@@ -4340,16 +5926,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles sets the value of RestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles", (value))
 }
 
 // GetRestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles gets the value of RestrictedSitesZoneAllowDragAndDropCopyAndPasteFiles for the instance
@@ -4358,16 +5953,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowFileDownloads sets the value of RestrictedSitesZoneAllowFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowFileDownloads(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowFileDownloads", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowFileDownloads", (value))
 }
 
 // GetRestrictedSitesZoneAllowFileDownloads gets the value of RestrictedSitesZoneAllowFileDownloads for the instance
@@ -4376,16 +5980,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowFontDownloads sets the value of RestrictedSitesZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowFontDownloads", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowFontDownloads", (value))
 }
 
 // GetRestrictedSitesZoneAllowFontDownloads gets the value of RestrictedSitesZoneAllowFontDownloads for the instance
@@ -4394,16 +6007,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowLessPrivilegedSites sets the value of RestrictedSitesZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetRestrictedSitesZoneAllowLessPrivilegedSites gets the value of RestrictedSitesZoneAllowLessPrivilegedSites for the instance
@@ -4412,16 +6034,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowLoadingOfXAMLFiles sets the value of RestrictedSitesZoneAllowLoadingOfXAMLFiles for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowLoadingOfXAMLFiles(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowLoadingOfXAMLFiles", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowLoadingOfXAMLFiles", (value))
 }
 
 // GetRestrictedSitesZoneAllowLoadingOfXAMLFiles gets the value of RestrictedSitesZoneAllowLoadingOfXAMLFiles for the instance
@@ -4430,16 +6061,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowMETAREFRESH sets the value of RestrictedSitesZoneAllowMETAREFRESH for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowMETAREFRESH(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowMETAREFRESH", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowMETAREFRESH", (value))
 }
 
 // GetRestrictedSitesZoneAllowMETAREFRESH gets the value of RestrictedSitesZoneAllowMETAREFRESH for the instance
@@ -4448,16 +6088,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowNETFrameworkReliantComponents sets the value of RestrictedSitesZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetRestrictedSitesZoneAllowNETFrameworkReliantComponents gets the value of RestrictedSitesZoneAllowNETFrameworkReliantComponents for the instance
@@ -4466,16 +6115,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls sets the value of RestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls", (value))
 }
 
 // GetRestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls gets the value of RestrictedSitesZoneAllowOnlyApprovedDomainsToUseActiveXControls for the instance
@@ -4484,16 +6142,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl sets the value of RestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl", (value))
 }
 
 // GetRestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl gets the value of RestrictedSitesZoneAllowOnlyApprovedDomainsToUseTDCActiveXControl for the instance
@@ -4502,16 +6169,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls sets the value of RestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls", (value))
 }
 
 // GetRestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls gets the value of RestrictedSitesZoneAllowScriptingOfInternetExplorerWebBrowserControls for the instance
@@ -4520,16 +6196,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowScriptInitiatedWindows sets the value of RestrictedSitesZoneAllowScriptInitiatedWindows for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowScriptInitiatedWindows(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowScriptInitiatedWindows", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowScriptInitiatedWindows", (value))
 }
 
 // GetRestrictedSitesZoneAllowScriptInitiatedWindows gets the value of RestrictedSitesZoneAllowScriptInitiatedWindows for the instance
@@ -4538,16 +6223,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowScriptlets sets the value of RestrictedSitesZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowScriptlets", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowScriptlets", (value))
 }
 
 // GetRestrictedSitesZoneAllowScriptlets gets the value of RestrictedSitesZoneAllowScriptlets for the instance
@@ -4556,16 +6250,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowSmartScreenIE sets the value of RestrictedSitesZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowSmartScreenIE", (value))
 }
 
 // GetRestrictedSitesZoneAllowSmartScreenIE gets the value of RestrictedSitesZoneAllowSmartScreenIE for the instance
@@ -4574,16 +6277,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowUpdatesToStatusBarViaScript sets the value of RestrictedSitesZoneAllowUpdatesToStatusBarViaScript for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowUpdatesToStatusBarViaScript(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowUpdatesToStatusBarViaScript", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowUpdatesToStatusBarViaScript", (value))
 }
 
 // GetRestrictedSitesZoneAllowUpdatesToStatusBarViaScript gets the value of RestrictedSitesZoneAllowUpdatesToStatusBarViaScript for the instance
@@ -4592,16 +6304,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowUserDataPersistence sets the value of RestrictedSitesZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowUserDataPersistence", (value))
 }
 
 // GetRestrictedSitesZoneAllowUserDataPersistence gets the value of RestrictedSitesZoneAllowUserDataPersistence for the instance
@@ -4610,16 +6331,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneAllowVBScriptToRunInInternetExplorer sets the value of RestrictedSitesZoneAllowVBScriptToRunInInternetExplorer for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneAllowVBScriptToRunInInternetExplorer(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneAllowVBScriptToRunInInternetExplorer", value)
+	return instance.SetProperty("RestrictedSitesZoneAllowVBScriptToRunInInternetExplorer", (value))
 }
 
 // GetRestrictedSitesZoneAllowVBScriptToRunInInternetExplorer gets the value of RestrictedSitesZoneAllowVBScriptToRunInInternetExplorer for the instance
@@ -4628,16 +6358,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls sets the value of RestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls", value)
+	return instance.SetProperty("RestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls", (value))
 }
 
 // GetRestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls gets the value of RestrictedSitesZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
@@ -4646,16 +6385,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneDownloadSignedActiveXControls sets the value of RestrictedSitesZoneDownloadSignedActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneDownloadSignedActiveXControls(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneDownloadSignedActiveXControls", value)
+	return instance.SetProperty("RestrictedSitesZoneDownloadSignedActiveXControls", (value))
 }
 
 // GetRestrictedSitesZoneDownloadSignedActiveXControls gets the value of RestrictedSitesZoneDownloadSignedActiveXControls for the instance
@@ -4664,16 +6412,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneDownloadUnsignedActiveXControls sets the value of RestrictedSitesZoneDownloadUnsignedActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneDownloadUnsignedActiveXControls(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneDownloadUnsignedActiveXControls", value)
+	return instance.SetProperty("RestrictedSitesZoneDownloadUnsignedActiveXControls", (value))
 }
 
 // GetRestrictedSitesZoneDownloadUnsignedActiveXControls gets the value of RestrictedSitesZoneDownloadUnsignedActiveXControls for the instance
@@ -4682,16 +6439,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneEnableCrossSiteScriptingFilter sets the value of RestrictedSitesZoneEnableCrossSiteScriptingFilter for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneEnableCrossSiteScriptingFilter(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneEnableCrossSiteScriptingFilter", value)
+	return instance.SetProperty("RestrictedSitesZoneEnableCrossSiteScriptingFilter", (value))
 }
 
 // GetRestrictedSitesZoneEnableCrossSiteScriptingFilter gets the value of RestrictedSitesZoneEnableCrossSiteScriptingFilter for the instance
@@ -4700,16 +6466,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows sets the value of RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows", value)
+	return instance.SetProperty("RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows", (value))
 }
 
 // GetRestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows gets the value of RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsAcrossWindows for the instance
@@ -4718,16 +6493,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows sets the value of RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows", value)
+	return instance.SetProperty("RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows", (value))
 }
 
 // GetRestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows gets the value of RestrictedSitesZoneEnableDraggingOfContentFromDifferentDomainsWithinWindows for the instance
@@ -4736,16 +6520,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneEnableMIMESniffing sets the value of RestrictedSitesZoneEnableMIMESniffing for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneEnableMIMESniffing(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneEnableMIMESniffing", value)
+	return instance.SetProperty("RestrictedSitesZoneEnableMIMESniffing", (value))
 }
 
 // GetRestrictedSitesZoneEnableMIMESniffing gets the value of RestrictedSitesZoneEnableMIMESniffing for the instance
@@ -4754,16 +6547,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer sets the value of RestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer", value)
+	return instance.SetProperty("RestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer", (value))
 }
 
 // GetRestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer gets the value of RestrictedSitesZoneIncludeLocalPathWhenUploadingFilesToServer for the instance
@@ -4772,16 +6574,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneInitializeAndScriptActiveXControls sets the value of RestrictedSitesZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("RestrictedSitesZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetRestrictedSitesZoneInitializeAndScriptActiveXControls gets the value of RestrictedSitesZoneInitializeAndScriptActiveXControls for the instance
@@ -4790,16 +6601,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneJavaPermissions sets the value of RestrictedSitesZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneJavaPermissions", value)
+	return instance.SetProperty("RestrictedSitesZoneJavaPermissions", (value))
 }
 
 // GetRestrictedSitesZoneJavaPermissions gets the value of RestrictedSitesZoneJavaPermissions for the instance
@@ -4808,16 +6628,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME sets the value of RestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME", value)
+	return instance.SetProperty("RestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME", (value))
 }
 
 // GetRestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME gets the value of RestrictedSitesZoneLaunchingApplicationsAndFilesInIFRAME for the instance
@@ -4826,16 +6655,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneLogonOptions sets the value of RestrictedSitesZoneLogonOptions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneLogonOptions(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneLogonOptions", value)
+	return instance.SetProperty("RestrictedSitesZoneLogonOptions", (value))
 }
 
 // GetRestrictedSitesZoneLogonOptions gets the value of RestrictedSitesZoneLogonOptions for the instance
@@ -4844,16 +6682,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneNavigateWindowsAndFrames sets the value of RestrictedSitesZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("RestrictedSitesZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetRestrictedSitesZoneNavigateWindowsAndFrames gets the value of RestrictedSitesZoneNavigateWindowsAndFrames for the instance
@@ -4862,16 +6709,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneRunActiveXControlsAndPlugins sets the value of RestrictedSitesZoneRunActiveXControlsAndPlugins for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneRunActiveXControlsAndPlugins(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneRunActiveXControlsAndPlugins", value)
+	return instance.SetProperty("RestrictedSitesZoneRunActiveXControlsAndPlugins", (value))
 }
 
 // GetRestrictedSitesZoneRunActiveXControlsAndPlugins gets the value of RestrictedSitesZoneRunActiveXControlsAndPlugins for the instance
@@ -4880,16 +6736,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode sets the value of RestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode", value)
+	return instance.SetProperty("RestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode", (value))
 }
 
 // GetRestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode gets the value of RestrictedSitesZoneRunNETFrameworkReliantComponentsSignedWithAuthenticode for the instance
@@ -4898,16 +6763,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting sets the value of RestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting", value)
+	return instance.SetProperty("RestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting", (value))
 }
 
 // GetRestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting gets the value of RestrictedSitesZoneScriptActiveXControlsMarkedSafeForScripting for the instance
@@ -4916,16 +6790,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneScriptingOfJavaApplets sets the value of RestrictedSitesZoneScriptingOfJavaApplets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneScriptingOfJavaApplets(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneScriptingOfJavaApplets", value)
+	return instance.SetProperty("RestrictedSitesZoneScriptingOfJavaApplets", (value))
 }
 
 // GetRestrictedSitesZoneScriptingOfJavaApplets gets the value of RestrictedSitesZoneScriptingOfJavaApplets for the instance
@@ -4934,16 +6817,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles sets the value of RestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles", value)
+	return instance.SetProperty("RestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles", (value))
 }
 
 // GetRestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles gets the value of RestrictedSitesZoneShowSecurityWarningForPotentiallyUnsafeFiles for the instance
@@ -4952,16 +6844,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneTurnOnProtectedMode sets the value of RestrictedSitesZoneTurnOnProtectedMode for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneTurnOnProtectedMode(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneTurnOnProtectedMode", value)
+	return instance.SetProperty("RestrictedSitesZoneTurnOnProtectedMode", (value))
 }
 
 // GetRestrictedSitesZoneTurnOnProtectedMode gets the value of RestrictedSitesZoneTurnOnProtectedMode for the instance
@@ -4970,16 +6871,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneUsePopupBlocker sets the value of RestrictedSitesZoneUsePopupBlocker for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictedSitesZoneUsePopupBlocker(value string) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneUsePopupBlocker", value)
+	return instance.SetProperty("RestrictedSitesZoneUsePopupBlocker", (value))
 }
 
 // GetRestrictedSitesZoneUsePopupBlocker gets the value of RestrictedSitesZoneUsePopupBlocker for the instance
@@ -4988,16 +6898,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictedSit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestrictFileDownloadInternetExplorerProcesses sets the value of RestrictFileDownloadInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyRestrictFileDownloadInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("RestrictFileDownloadInternetExplorerProcesses", value)
+	return instance.SetProperty("RestrictFileDownloadInternetExplorerProcesses", (value))
 }
 
 // GetRestrictFileDownloadInternetExplorerProcesses gets the value of RestrictFileDownloadInternetExplorerProcesses for the instance
@@ -5006,16 +6925,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyRestrictFileD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScriptedWindowSecurityRestrictionsInternetExplorerProcesses sets the value of ScriptedWindowSecurityRestrictionsInternetExplorerProcesses for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyScriptedWindowSecurityRestrictionsInternetExplorerProcesses(value string) (err error) {
-	return instance.SetProperty("ScriptedWindowSecurityRestrictionsInternetExplorerProcesses", value)
+	return instance.SetProperty("ScriptedWindowSecurityRestrictionsInternetExplorerProcesses", (value))
 }
 
 // GetScriptedWindowSecurityRestrictionsInternetExplorerProcesses gets the value of ScriptedWindowSecurityRestrictionsInternetExplorerProcesses for the instance
@@ -5024,16 +6952,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyScriptedWindo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSearchProviderList sets the value of SearchProviderList for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertySearchProviderList(value string) (err error) {
-	return instance.SetProperty("SearchProviderList", value)
+	return instance.SetProperty("SearchProviderList", (value))
 }
 
 // GetSearchProviderList gets the value of SearchProviderList for the instance
@@ -5042,16 +6979,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertySearchProvide
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSecurityZonesUseOnlyMachineSettings sets the value of SecurityZonesUseOnlyMachineSettings for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertySecurityZonesUseOnlyMachineSettings(value string) (err error) {
-	return instance.SetProperty("SecurityZonesUseOnlyMachineSettings", value)
+	return instance.SetProperty("SecurityZonesUseOnlyMachineSettings", (value))
 }
 
 // GetSecurityZonesUseOnlyMachineSettings gets the value of SecurityZonesUseOnlyMachineSettings for the instance
@@ -5060,16 +7006,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertySecurityZones
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSpecifyUseOfActiveXInstallerService sets the value of SpecifyUseOfActiveXInstallerService for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertySpecifyUseOfActiveXInstallerService(value string) (err error) {
-	return instance.SetProperty("SpecifyUseOfActiveXInstallerService", value)
+	return instance.SetProperty("SpecifyUseOfActiveXInstallerService", (value))
 }
 
 // GetSpecifyUseOfActiveXInstallerService gets the value of SpecifyUseOfActiveXInstallerService for the instance
@@ -5078,16 +7033,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertySpecifyUseOfA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowAccessToDataSources sets the value of TrustedSitesZoneAllowAccessToDataSources for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowAccessToDataSources(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowAccessToDataSources", value)
+	return instance.SetProperty("TrustedSitesZoneAllowAccessToDataSources", (value))
 }
 
 // GetTrustedSitesZoneAllowAccessToDataSources gets the value of TrustedSitesZoneAllowAccessToDataSources for the instance
@@ -5096,16 +7060,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowAutomaticPromptingForActiveXControls sets the value of TrustedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowAutomaticPromptingForActiveXControls(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowAutomaticPromptingForActiveXControls", value)
+	return instance.SetProperty("TrustedSitesZoneAllowAutomaticPromptingForActiveXControls", (value))
 }
 
 // GetTrustedSitesZoneAllowAutomaticPromptingForActiveXControls gets the value of TrustedSitesZoneAllowAutomaticPromptingForActiveXControls for the instance
@@ -5114,16 +7087,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowAutomaticPromptingForFileDownloads sets the value of TrustedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowAutomaticPromptingForFileDownloads(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowAutomaticPromptingForFileDownloads", value)
+	return instance.SetProperty("TrustedSitesZoneAllowAutomaticPromptingForFileDownloads", (value))
 }
 
 // GetTrustedSitesZoneAllowAutomaticPromptingForFileDownloads gets the value of TrustedSitesZoneAllowAutomaticPromptingForFileDownloads for the instance
@@ -5132,16 +7114,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowFontDownloads sets the value of TrustedSitesZoneAllowFontDownloads for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowFontDownloads(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowFontDownloads", value)
+	return instance.SetProperty("TrustedSitesZoneAllowFontDownloads", (value))
 }
 
 // GetTrustedSitesZoneAllowFontDownloads gets the value of TrustedSitesZoneAllowFontDownloads for the instance
@@ -5150,16 +7141,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowLessPrivilegedSites sets the value of TrustedSitesZoneAllowLessPrivilegedSites for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowLessPrivilegedSites(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowLessPrivilegedSites", value)
+	return instance.SetProperty("TrustedSitesZoneAllowLessPrivilegedSites", (value))
 }
 
 // GetTrustedSitesZoneAllowLessPrivilegedSites gets the value of TrustedSitesZoneAllowLessPrivilegedSites for the instance
@@ -5168,16 +7168,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowNETFrameworkReliantComponents sets the value of TrustedSitesZoneAllowNETFrameworkReliantComponents for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowNETFrameworkReliantComponents(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowNETFrameworkReliantComponents", value)
+	return instance.SetProperty("TrustedSitesZoneAllowNETFrameworkReliantComponents", (value))
 }
 
 // GetTrustedSitesZoneAllowNETFrameworkReliantComponents gets the value of TrustedSitesZoneAllowNETFrameworkReliantComponents for the instance
@@ -5186,16 +7195,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowScriptlets sets the value of TrustedSitesZoneAllowScriptlets for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowScriptlets(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowScriptlets", value)
+	return instance.SetProperty("TrustedSitesZoneAllowScriptlets", (value))
 }
 
 // GetTrustedSitesZoneAllowScriptlets gets the value of TrustedSitesZoneAllowScriptlets for the instance
@@ -5204,16 +7222,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowSmartScreenIE sets the value of TrustedSitesZoneAllowSmartScreenIE for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowSmartScreenIE(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowSmartScreenIE", value)
+	return instance.SetProperty("TrustedSitesZoneAllowSmartScreenIE", (value))
 }
 
 // GetTrustedSitesZoneAllowSmartScreenIE gets the value of TrustedSitesZoneAllowSmartScreenIE for the instance
@@ -5222,16 +7249,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneAllowUserDataPersistence sets the value of TrustedSitesZoneAllowUserDataPersistence for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneAllowUserDataPersistence(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneAllowUserDataPersistence", value)
+	return instance.SetProperty("TrustedSitesZoneAllowUserDataPersistence", (value))
 }
 
 // GetTrustedSitesZoneAllowUserDataPersistence gets the value of TrustedSitesZoneAllowUserDataPersistence for the instance
@@ -5240,16 +7276,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls sets the value of TrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls", value)
+	return instance.SetProperty("TrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls", (value))
 }
 
 // GetTrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls gets the value of TrustedSitesZoneDoNotRunAntimalwareAgainstActiveXControls for the instance
@@ -5258,16 +7303,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneInitializeAndScriptActiveXControls sets the value of TrustedSitesZoneInitializeAndScriptActiveXControls for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneInitializeAndScriptActiveXControls(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneInitializeAndScriptActiveXControls", value)
+	return instance.SetProperty("TrustedSitesZoneInitializeAndScriptActiveXControls", (value))
 }
 
 // GetTrustedSitesZoneInitializeAndScriptActiveXControls gets the value of TrustedSitesZoneInitializeAndScriptActiveXControls for the instance
@@ -5276,16 +7330,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneJavaPermissions sets the value of TrustedSitesZoneJavaPermissions for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneJavaPermissions(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneJavaPermissions", value)
+	return instance.SetProperty("TrustedSitesZoneJavaPermissions", (value))
 }
 
 // GetTrustedSitesZoneJavaPermissions gets the value of TrustedSitesZoneJavaPermissions for the instance
@@ -5294,16 +7357,25 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneNavigateWindowsAndFrames sets the value of TrustedSitesZoneNavigateWindowsAndFrames for the instance
 func (instance *MDM_Policy_Result01_InternetExplorer02) SetPropertyTrustedSitesZoneNavigateWindowsAndFrames(value string) (err error) {
-	return instance.SetProperty("TrustedSitesZoneNavigateWindowsAndFrames", value)
+	return instance.SetProperty("TrustedSitesZoneNavigateWindowsAndFrames", (value))
 }
 
 // GetTrustedSitesZoneNavigateWindowsAndFrames gets the value of TrustedSitesZoneNavigateWindowsAndFrames for the instance
@@ -5312,9 +7384,18 @@ func (instance *MDM_Policy_Result01_InternetExplorer02) GetPropertyTrustedSitesZ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

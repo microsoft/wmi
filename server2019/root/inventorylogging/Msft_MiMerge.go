@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_MiMerge struct
@@ -52,7 +54,7 @@ func NewMsft_MiMergeEx6(hostName string,
 
 // SetInputs sets the value of Inputs for the instance
 func (instance *Msft_MiMerge) SetPropertyInputs(value []Msft_MiStream) (err error) {
-	return instance.SetProperty("Inputs", value)
+	return instance.SetProperty("Inputs", (value))
 }
 
 // GetInputs gets the value of Inputs for the instance
@@ -61,9 +63,19 @@ func (instance *Msft_MiMerge) GetPropertyInputs() (value []Msft_MiStream, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]Msft_MiStream)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(Msft_MiStream)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " Msft_MiStream is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, Msft_MiStream(valuetmp))
+	}
+
 	return
 }

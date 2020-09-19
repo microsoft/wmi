@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_usbhub_USB struct
@@ -106,7 +108,7 @@ func NewWin32_PerfRawData_usbhub_USBEx6(hostName string,
 
 // SetAvgBytesPerTransfer sets the value of AvgBytesPerTransfer for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyAvgBytesPerTransfer(value uint64) (err error) {
-	return instance.SetProperty("AvgBytesPerTransfer", value)
+	return instance.SetProperty("AvgBytesPerTransfer", (value))
 }
 
 // GetAvgBytesPerTransfer gets the value of AvgBytesPerTransfer for the instance
@@ -115,16 +117,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyAvgBytesPerTransfer() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgBytesPerTransfer_Base sets the value of AvgBytesPerTransfer_Base for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyAvgBytesPerTransfer_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgBytesPerTransfer_Base", value)
+	return instance.SetProperty("AvgBytesPerTransfer_Base", (value))
 }
 
 // GetAvgBytesPerTransfer_Base gets the value of AvgBytesPerTransfer_Base for the instance
@@ -133,16 +144,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyAvgBytesPerTransfer_Bas
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgmslatencyforISOtransfers sets the value of AvgmslatencyforISOtransfers for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyAvgmslatencyforISOtransfers(value uint64) (err error) {
-	return instance.SetProperty("AvgmslatencyforISOtransfers", value)
+	return instance.SetProperty("AvgmslatencyforISOtransfers", (value))
 }
 
 // GetAvgmslatencyforISOtransfers gets the value of AvgmslatencyforISOtransfers for the instance
@@ -151,16 +171,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyAvgmslatencyforISOtrans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgmslatencyforISOtransfers_Base sets the value of AvgmslatencyforISOtransfers_Base for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyAvgmslatencyforISOtransfers_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgmslatencyforISOtransfers_Base", value)
+	return instance.SetProperty("AvgmslatencyforISOtransfers_Base", (value))
 }
 
 // GetAvgmslatencyforISOtransfers_Base gets the value of AvgmslatencyforISOtransfers_Base for the instance
@@ -169,16 +198,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyAvgmslatencyforISOtrans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBulkBytesPerSec sets the value of BulkBytesPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyBulkBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("BulkBytesPerSec", value)
+	return instance.SetProperty("BulkBytesPerSec", (value))
 }
 
 // GetBulkBytesPerSec gets the value of BulkBytesPerSec for the instance
@@ -187,16 +225,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyBulkBytesPerSec() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetControlDataBytesPerSec sets the value of ControlDataBytesPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyControlDataBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("ControlDataBytesPerSec", value)
+	return instance.SetProperty("ControlDataBytesPerSec", (value))
 }
 
 // GetControlDataBytesPerSec gets the value of ControlDataBytesPerSec for the instance
@@ -205,16 +252,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyControlDataBytesPerSec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetControllerPCIInterruptsPerSec sets the value of ControllerPCIInterruptsPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyControllerPCIInterruptsPerSec(value uint32) (err error) {
-	return instance.SetProperty("ControllerPCIInterruptsPerSec", value)
+	return instance.SetProperty("ControllerPCIInterruptsPerSec", (value))
 }
 
 // GetControllerPCIInterruptsPerSec gets the value of ControllerPCIInterruptsPerSec for the instance
@@ -223,16 +279,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyControllerPCIInterrupts
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetControllerWorkSignalsPerSec sets the value of ControllerWorkSignalsPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyControllerWorkSignalsPerSec(value uint32) (err error) {
-	return instance.SetProperty("ControllerWorkSignalsPerSec", value)
+	return instance.SetProperty("ControllerWorkSignalsPerSec", (value))
 }
 
 // GetControllerWorkSignalsPerSec gets the value of ControllerWorkSignalsPerSec for the instance
@@ -241,16 +306,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyControllerWorkSignalsPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHostControllerAsyncCacheFlushCount sets the value of HostControllerAsyncCacheFlushCount for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyHostControllerAsyncCacheFlushCount(value uint32) (err error) {
-	return instance.SetProperty("HostControllerAsyncCacheFlushCount", value)
+	return instance.SetProperty("HostControllerAsyncCacheFlushCount", (value))
 }
 
 // GetHostControllerAsyncCacheFlushCount gets the value of HostControllerAsyncCacheFlushCount for the instance
@@ -259,16 +333,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyHostControllerAsyncCach
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHostControllerAsyncIdle sets the value of HostControllerAsyncIdle for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyHostControllerAsyncIdle(value uint32) (err error) {
-	return instance.SetProperty("HostControllerAsyncIdle", value)
+	return instance.SetProperty("HostControllerAsyncIdle", (value))
 }
 
 // GetHostControllerAsyncIdle gets the value of HostControllerAsyncIdle for the instance
@@ -277,16 +360,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyHostControllerAsyncIdle
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHostControllerIdle sets the value of HostControllerIdle for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyHostControllerIdle(value uint32) (err error) {
-	return instance.SetProperty("HostControllerIdle", value)
+	return instance.SetProperty("HostControllerIdle", (value))
 }
 
 // GetHostControllerIdle gets the value of HostControllerIdle for the instance
@@ -295,16 +387,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyHostControllerIdle() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHostControllerPeriodicCacheFlushCount sets the value of HostControllerPeriodicCacheFlushCount for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyHostControllerPeriodicCacheFlushCount(value uint32) (err error) {
-	return instance.SetProperty("HostControllerPeriodicCacheFlushCount", value)
+	return instance.SetProperty("HostControllerPeriodicCacheFlushCount", (value))
 }
 
 // GetHostControllerPeriodicCacheFlushCount gets the value of HostControllerPeriodicCacheFlushCount for the instance
@@ -313,16 +414,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyHostControllerPeriodicC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHostControllerPeriodicIdle sets the value of HostControllerPeriodicIdle for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyHostControllerPeriodicIdle(value uint32) (err error) {
-	return instance.SetProperty("HostControllerPeriodicIdle", value)
+	return instance.SetProperty("HostControllerPeriodicIdle", (value))
 }
 
 // GetHostControllerPeriodicIdle gets the value of HostControllerPeriodicIdle for the instance
@@ -331,16 +441,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyHostControllerPeriodicI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInterruptBytesPerSec sets the value of InterruptBytesPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyInterruptBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("InterruptBytesPerSec", value)
+	return instance.SetProperty("InterruptBytesPerSec", (value))
 }
 
 // GetInterruptBytesPerSec gets the value of InterruptBytesPerSec for the instance
@@ -349,16 +468,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyInterruptBytesPerSec() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsochronousBytesPerSec sets the value of IsochronousBytesPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyIsochronousBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("IsochronousBytesPerSec", value)
+	return instance.SetProperty("IsochronousBytesPerSec", (value))
 }
 
 // GetIsochronousBytesPerSec gets the value of IsochronousBytesPerSec for the instance
@@ -367,16 +495,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyIsochronousBytesPerSec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsoPacketErrorsPerSec sets the value of IsoPacketErrorsPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyIsoPacketErrorsPerSec(value uint32) (err error) {
-	return instance.SetProperty("IsoPacketErrorsPerSec", value)
+	return instance.SetProperty("IsoPacketErrorsPerSec", (value))
 }
 
 // GetIsoPacketErrorsPerSec gets the value of IsoPacketErrorsPerSec for the instance
@@ -385,16 +522,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyIsoPacketErrorsPerSec()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentTotalBandwidthUsedforInterrupt sets the value of PercentTotalBandwidthUsedforInterrupt for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyPercentTotalBandwidthUsedforInterrupt(value uint32) (err error) {
-	return instance.SetProperty("PercentTotalBandwidthUsedforInterrupt", value)
+	return instance.SetProperty("PercentTotalBandwidthUsedforInterrupt", (value))
 }
 
 // GetPercentTotalBandwidthUsedforInterrupt gets the value of PercentTotalBandwidthUsedforInterrupt for the instance
@@ -403,16 +549,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyPercentTotalBandwidthUs
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentTotalBandwidthUsedforIso sets the value of PercentTotalBandwidthUsedforIso for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyPercentTotalBandwidthUsedforIso(value uint32) (err error) {
-	return instance.SetProperty("PercentTotalBandwidthUsedforIso", value)
+	return instance.SetProperty("PercentTotalBandwidthUsedforIso", (value))
 }
 
 // GetPercentTotalBandwidthUsedforIso gets the value of PercentTotalBandwidthUsedforIso for the instance
@@ -421,16 +576,25 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyPercentTotalBandwidthUs
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransferErrorsPerSec sets the value of TransferErrorsPerSec for the instance
 func (instance *Win32_PerfRawData_usbhub_USB) SetPropertyTransferErrorsPerSec(value uint32) (err error) {
-	return instance.SetProperty("TransferErrorsPerSec", value)
+	return instance.SetProperty("TransferErrorsPerSec", (value))
 }
 
 // GetTransferErrorsPerSec gets the value of TransferErrorsPerSec for the instance
@@ -439,9 +603,18 @@ func (instance *Win32_PerfRawData_usbhub_USB) GetPropertyTransferErrorsPerSec() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_FileSpecification struct
@@ -67,7 +69,7 @@ func NewCIM_FileSpecificationEx6(hostName string,
 
 // SetCheckSum sets the value of CheckSum for the instance
 func (instance *CIM_FileSpecification) SetPropertyCheckSum(value uint32) (err error) {
-	return instance.SetProperty("CheckSum", value)
+	return instance.SetProperty("CheckSum", (value))
 }
 
 // GetCheckSum gets the value of CheckSum for the instance
@@ -76,16 +78,25 @@ func (instance *CIM_FileSpecification) GetPropertyCheckSum() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCRC1 sets the value of CRC1 for the instance
 func (instance *CIM_FileSpecification) SetPropertyCRC1(value uint32) (err error) {
-	return instance.SetProperty("CRC1", value)
+	return instance.SetProperty("CRC1", (value))
 }
 
 // GetCRC1 gets the value of CRC1 for the instance
@@ -94,16 +105,25 @@ func (instance *CIM_FileSpecification) GetPropertyCRC1() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCRC2 sets the value of CRC2 for the instance
 func (instance *CIM_FileSpecification) SetPropertyCRC2(value uint32) (err error) {
-	return instance.SetProperty("CRC2", value)
+	return instance.SetProperty("CRC2", (value))
 }
 
 // GetCRC2 gets the value of CRC2 for the instance
@@ -112,16 +132,25 @@ func (instance *CIM_FileSpecification) GetPropertyCRC2() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCreateTimeStamp sets the value of CreateTimeStamp for the instance
 func (instance *CIM_FileSpecification) SetPropertyCreateTimeStamp(value string) (err error) {
-	return instance.SetProperty("CreateTimeStamp", value)
+	return instance.SetProperty("CreateTimeStamp", (value))
 }
 
 // GetCreateTimeStamp gets the value of CreateTimeStamp for the instance
@@ -130,16 +159,25 @@ func (instance *CIM_FileSpecification) GetPropertyCreateTimeStamp() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileSize sets the value of FileSize for the instance
 func (instance *CIM_FileSpecification) SetPropertyFileSize(value uint64) (err error) {
-	return instance.SetProperty("FileSize", value)
+	return instance.SetProperty("FileSize", (value))
 }
 
 // GetFileSize gets the value of FileSize for the instance
@@ -148,16 +186,25 @@ func (instance *CIM_FileSpecification) GetPropertyFileSize() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMD5Checksum sets the value of MD5Checksum for the instance
 func (instance *CIM_FileSpecification) SetPropertyMD5Checksum(value string) (err error) {
-	return instance.SetProperty("MD5Checksum", value)
+	return instance.SetProperty("MD5Checksum", (value))
 }
 
 // GetMD5Checksum gets the value of MD5Checksum for the instance
@@ -166,9 +213,18 @@ func (instance *CIM_FileSpecification) GetPropertyMD5Checksum() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

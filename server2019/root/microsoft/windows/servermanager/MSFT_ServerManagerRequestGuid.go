@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerManagerRequestGuid struct
@@ -56,7 +58,7 @@ func NewMSFT_ServerManagerRequestGuidEx6(hostName string,
 
 // SetHighHalf sets the value of HighHalf for the instance
 func (instance *MSFT_ServerManagerRequestGuid) SetPropertyHighHalf(value uint64) (err error) {
-	return instance.SetProperty("HighHalf", value)
+	return instance.SetProperty("HighHalf", (value))
 }
 
 // GetHighHalf gets the value of HighHalf for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_ServerManagerRequestGuid) GetPropertyHighHalf() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLowHalf sets the value of LowHalf for the instance
 func (instance *MSFT_ServerManagerRequestGuid) SetPropertyLowHalf(value uint64) (err error) {
-	return instance.SetProperty("LowHalf", value)
+	return instance.SetProperty("LowHalf", (value))
 }
 
 // GetLowHalf gets the value of LowHalf for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_ServerManagerRequestGuid) GetPropertyLowHalf() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

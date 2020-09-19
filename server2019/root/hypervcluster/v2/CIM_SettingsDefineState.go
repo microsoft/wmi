@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SettingsDefineState struct
@@ -56,7 +58,7 @@ func NewCIM_SettingsDefineStateEx6(hostName string,
 
 // SetManagedElement sets the value of ManagedElement for the instance
 func (instance *CIM_SettingsDefineState) SetPropertyManagedElement(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("ManagedElement", value)
+	return instance.SetProperty("ManagedElement", (value))
 }
 
 // GetManagedElement gets the value of ManagedElement for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_SettingsDefineState) GetPropertyManagedElement() (value CIM_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }
 
 // SetSettingData sets the value of SettingData for the instance
 func (instance *CIM_SettingsDefineState) SetPropertySettingData(value CIM_SettingData) (err error) {
-	return instance.SetProperty("SettingData", value)
+	return instance.SetProperty("SettingData", (value))
 }
 
 // GetSettingData gets the value of SettingData for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_SettingsDefineState) GetPropertySettingData() (value CIM_Set
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_SettingData)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_SettingData)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_SettingData is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_SettingData(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
@@ -11,7 +11,9 @@ package management
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SDDC_Cluster struct
@@ -59,7 +61,7 @@ func NewSDDC_ClusterEx6(hostName string,
 
 // SetAlerts sets the value of Alerts for the instance
 func (instance *SDDC_Cluster) SetPropertyAlerts(value []SDDC_Alert) (err error) {
-	return instance.SetProperty("Alerts", value)
+	return instance.SetProperty("Alerts", (value))
 }
 
 // GetAlerts gets the value of Alerts for the instance
@@ -68,16 +70,26 @@ func (instance *SDDC_Cluster) GetPropertyAlerts() (value []SDDC_Alert, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]SDDC_Alert)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(SDDC_Alert)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " SDDC_Alert is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, SDDC_Alert(valuetmp))
+	}
+
 	return
 }
 
 // SetJobs sets the value of Jobs for the instance
 func (instance *SDDC_Cluster) SetPropertyJobs(value []SDDC_Job) (err error) {
-	return instance.SetProperty("Jobs", value)
+	return instance.SetProperty("Jobs", (value))
 }
 
 // GetJobs gets the value of Jobs for the instance
@@ -86,16 +98,26 @@ func (instance *SDDC_Cluster) GetPropertyJobs() (value []SDDC_Job, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]SDDC_Job)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(SDDC_Job)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " SDDC_Job is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, SDDC_Job(valuetmp))
+	}
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *SDDC_Cluster) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -104,10 +126,19 @@ func (instance *SDDC_Cluster) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

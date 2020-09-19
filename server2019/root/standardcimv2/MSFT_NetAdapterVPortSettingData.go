@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterVPortSettingData struct
@@ -82,7 +84,7 @@ func NewMSFT_NetAdapterVPortSettingDataEx6(hostName string,
 
 // SetFilterList sets the value of FilterList for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyFilterList(value []MSFT_NetAdapter_VmqFilter) (err error) {
-	return instance.SetProperty("FilterList", value)
+	return instance.SetProperty("FilterList", (value))
 }
 
 // GetFilterList gets the value of FilterList for the instance
@@ -91,16 +93,26 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyFilterList() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetAdapter_VmqFilter)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetAdapter_VmqFilter)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapter_VmqFilter is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetAdapter_VmqFilter(valuetmp))
+	}
+
 	return
 }
 
 // SetFunctionID sets the value of FunctionID for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyFunctionID(value uint16) (err error) {
-	return instance.SetProperty("FunctionID", value)
+	return instance.SetProperty("FunctionID", (value))
 }
 
 // GetFunctionID gets the value of FunctionID for the instance
@@ -109,16 +121,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyFunctionID() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetInterruptModeration sets the value of InterruptModeration for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyInterruptModeration(value uint32) (err error) {
-	return instance.SetProperty("InterruptModeration", value)
+	return instance.SetProperty("InterruptModeration", (value))
 }
 
 // GetInterruptModeration gets the value of InterruptModeration for the instance
@@ -127,16 +148,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyInterruptModeration(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumFilters sets the value of NumFilters for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyNumFilters(value uint32) (err error) {
-	return instance.SetProperty("NumFilters", value)
+	return instance.SetProperty("NumFilters", (value))
 }
 
 // GetNumFilters gets the value of NumFilters for the instance
@@ -145,16 +175,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyNumFilters() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumQueuePairs sets the value of NumQueuePairs for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyNumQueuePairs(value uint32) (err error) {
-	return instance.SetProperty("NumQueuePairs", value)
+	return instance.SetProperty("NumQueuePairs", (value))
 }
 
 // GetNumQueuePairs gets the value of NumQueuePairs for the instance
@@ -163,16 +202,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyNumQueuePairs() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessorAffinityMask sets the value of ProcessorAffinityMask for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyProcessorAffinityMask(value uint64) (err error) {
-	return instance.SetProperty("ProcessorAffinityMask", value)
+	return instance.SetProperty("ProcessorAffinityMask", (value))
 }
 
 // GetProcessorAffinityMask gets the value of ProcessorAffinityMask for the instance
@@ -181,16 +229,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyProcessorAffinityMas
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProcessorGroup sets the value of ProcessorGroup for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyProcessorGroup(value uint16) (err error) {
-	return instance.SetProperty("ProcessorGroup", value)
+	return instance.SetProperty("ProcessorGroup", (value))
 }
 
 // GetProcessorGroup gets the value of ProcessorGroup for the instance
@@ -199,16 +256,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyProcessorGroup() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSwitchID sets the value of SwitchID for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertySwitchID(value uint32) (err error) {
-	return instance.SetProperty("SwitchID", value)
+	return instance.SetProperty("SwitchID", (value))
 }
 
 // GetSwitchID gets the value of SwitchID for the instance
@@ -217,16 +283,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertySwitchID() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVPortID sets the value of VPortID for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyVPortID(value uint32) (err error) {
-	return instance.SetProperty("VPortID", value)
+	return instance.SetProperty("VPortID", (value))
 }
 
 // GetVPortID gets the value of VPortID for the instance
@@ -235,16 +310,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyVPortID() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVPortName sets the value of VPortName for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyVPortName(value string) (err error) {
-	return instance.SetProperty("VPortName", value)
+	return instance.SetProperty("VPortName", (value))
 }
 
 // GetVPortName gets the value of VPortName for the instance
@@ -253,16 +337,25 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyVPortName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVPortState sets the value of VPortState for the instance
 func (instance *MSFT_NetAdapterVPortSettingData) SetPropertyVPortState(value uint32) (err error) {
-	return instance.SetProperty("VPortState", value)
+	return instance.SetProperty("VPortState", (value))
 }
 
 // GetVPortState gets the value of VPortState for the instance
@@ -271,9 +364,18 @@ func (instance *MSFT_NetAdapterVPortSettingData) GetPropertyVPortState() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

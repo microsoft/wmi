@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_BindsToLANEndpoint struct
@@ -52,7 +54,7 @@ func NewCIM_BindsToLANEndpointEx6(hostName string,
 
 // SetFrameType sets the value of FrameType for the instance
 func (instance *CIM_BindsToLANEndpoint) SetPropertyFrameType(value BindsToLANEndpoint_FrameType) (err error) {
-	return instance.SetProperty("FrameType", value)
+	return instance.SetProperty("FrameType", (value))
 }
 
 // GetFrameType gets the value of FrameType for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_BindsToLANEndpoint) GetPropertyFrameType() (value BindsToLAN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(BindsToLANEndpoint_FrameType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = BindsToLANEndpoint_FrameType(valuetmp)
+
 	return
 }

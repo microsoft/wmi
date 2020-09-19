@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VLANEndpointSettingData struct
@@ -64,7 +66,7 @@ func NewCIM_VLANEndpointSettingDataEx6(hostName string,
 
 // SetAccessVLAN sets the value of AccessVLAN for the instance
 func (instance *CIM_VLANEndpointSettingData) SetPropertyAccessVLAN(value uint16) (err error) {
-	return instance.SetProperty("AccessVLAN", value)
+	return instance.SetProperty("AccessVLAN", (value))
 }
 
 // GetAccessVLAN gets the value of AccessVLAN for the instance
@@ -73,16 +75,25 @@ func (instance *CIM_VLANEndpointSettingData) GetPropertyAccessVLAN() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDefaultVLAN sets the value of DefaultVLAN for the instance
 func (instance *CIM_VLANEndpointSettingData) SetPropertyDefaultVLAN(value uint16) (err error) {
-	return instance.SetProperty("DefaultVLAN", value)
+	return instance.SetProperty("DefaultVLAN", (value))
 }
 
 // GetDefaultVLAN gets the value of DefaultVLAN for the instance
@@ -91,16 +102,25 @@ func (instance *CIM_VLANEndpointSettingData) GetPropertyDefaultVLAN() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNativeVLAN sets the value of NativeVLAN for the instance
 func (instance *CIM_VLANEndpointSettingData) SetPropertyNativeVLAN(value uint16) (err error) {
-	return instance.SetProperty("NativeVLAN", value)
+	return instance.SetProperty("NativeVLAN", (value))
 }
 
 // GetNativeVLAN gets the value of NativeVLAN for the instance
@@ -109,16 +129,25 @@ func (instance *CIM_VLANEndpointSettingData) GetPropertyNativeVLAN() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPruneEligibleVLANList sets the value of PruneEligibleVLANList for the instance
 func (instance *CIM_VLANEndpointSettingData) SetPropertyPruneEligibleVLANList(value []uint16) (err error) {
-	return instance.SetProperty("PruneEligibleVLANList", value)
+	return instance.SetProperty("PruneEligibleVLANList", (value))
 }
 
 // GetPruneEligibleVLANList gets the value of PruneEligibleVLANList for the instance
@@ -127,16 +156,26 @@ func (instance *CIM_VLANEndpointSettingData) GetPropertyPruneEligibleVLANList() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetTrunkedVLANList sets the value of TrunkedVLANList for the instance
 func (instance *CIM_VLANEndpointSettingData) SetPropertyTrunkedVLANList(value []uint16) (err error) {
-	return instance.SetProperty("TrunkedVLANList", value)
+	return instance.SetProperty("TrunkedVLANList", (value))
 }
 
 // GetTrunkedVLANList gets the value of TrunkedVLANList for the instance
@@ -145,9 +184,19 @@ func (instance *CIM_VLANEndpointSettingData) GetPropertyTrunkedVLANList() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }

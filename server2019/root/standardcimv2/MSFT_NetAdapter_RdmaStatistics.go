@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_RdmaStatistics struct
@@ -80,7 +82,7 @@ func NewMSFT_NetAdapter_RdmaStatisticsEx6(hostName string,
 
 // SetAcceptedConnections sets the value of AcceptedConnections for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyAcceptedConnections(value uint64) (err error) {
-	return instance.SetProperty("AcceptedConnections", value)
+	return instance.SetProperty("AcceptedConnections", (value))
 }
 
 // GetAcceptedConnections gets the value of AcceptedConnections for the instance
@@ -89,16 +91,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyAcceptedConnections()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetActiveConnections sets the value of ActiveConnections for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyActiveConnections(value uint64) (err error) {
-	return instance.SetProperty("ActiveConnections", value)
+	return instance.SetProperty("ActiveConnections", (value))
 }
 
 // GetActiveConnections gets the value of ActiveConnections for the instance
@@ -107,16 +118,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyActiveConnections() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompletionQueueErrors sets the value of CompletionQueueErrors for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyCompletionQueueErrors(value uint64) (err error) {
-	return instance.SetProperty("CompletionQueueErrors", value)
+	return instance.SetProperty("CompletionQueueErrors", (value))
 }
 
 // GetCompletionQueueErrors gets the value of CompletionQueueErrors for the instance
@@ -125,16 +145,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyCompletionQueueErrors
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetConnectionErrors sets the value of ConnectionErrors for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyConnectionErrors(value uint64) (err error) {
-	return instance.SetProperty("ConnectionErrors", value)
+	return instance.SetProperty("ConnectionErrors", (value))
 }
 
 // GetConnectionErrors gets the value of ConnectionErrors for the instance
@@ -143,16 +172,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyConnectionErrors() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFailedConnectionAttempts sets the value of FailedConnectionAttempts for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyFailedConnectionAttempts(value uint64) (err error) {
-	return instance.SetProperty("FailedConnectionAttempts", value)
+	return instance.SetProperty("FailedConnectionAttempts", (value))
 }
 
 // GetFailedConnectionAttempts gets the value of FailedConnectionAttempts for the instance
@@ -161,16 +199,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyFailedConnectionAttem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInboundBytes sets the value of InboundBytes for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyInboundBytes(value uint64) (err error) {
-	return instance.SetProperty("InboundBytes", value)
+	return instance.SetProperty("InboundBytes", (value))
 }
 
 // GetInboundBytes gets the value of InboundBytes for the instance
@@ -179,16 +226,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyInboundBytes() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInboundFrames sets the value of InboundFrames for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyInboundFrames(value uint64) (err error) {
-	return instance.SetProperty("InboundFrames", value)
+	return instance.SetProperty("InboundFrames", (value))
 }
 
 // GetInboundFrames gets the value of InboundFrames for the instance
@@ -197,16 +253,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyInboundFrames() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInitiatedConnections sets the value of InitiatedConnections for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyInitiatedConnections(value uint64) (err error) {
-	return instance.SetProperty("InitiatedConnections", value)
+	return instance.SetProperty("InitiatedConnections", (value))
 }
 
 // GetInitiatedConnections gets the value of InitiatedConnections for the instance
@@ -215,16 +280,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyInitiatedConnections(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutboundBytes sets the value of OutboundBytes for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyOutboundBytes(value uint64) (err error) {
-	return instance.SetProperty("OutboundBytes", value)
+	return instance.SetProperty("OutboundBytes", (value))
 }
 
 // GetOutboundBytes gets the value of OutboundBytes for the instance
@@ -233,16 +307,25 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyOutboundBytes() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutboundFrames sets the value of OutboundFrames for the instance
 func (instance *MSFT_NetAdapter_RdmaStatistics) SetPropertyOutboundFrames(value uint64) (err error) {
-	return instance.SetProperty("OutboundFrames", value)
+	return instance.SetProperty("OutboundFrames", (value))
 }
 
 // GetOutboundFrames gets the value of OutboundFrames for the instance
@@ -251,9 +334,18 @@ func (instance *MSFT_NetAdapter_RdmaStatistics) GetPropertyOutboundFrames() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

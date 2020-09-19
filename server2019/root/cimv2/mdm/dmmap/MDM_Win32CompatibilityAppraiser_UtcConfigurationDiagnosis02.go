@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02 struct
@@ -71,7 +73,7 @@ func NewMDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02Ex6(hostName 
 
 // SetCommercialDataOptIn sets the value of CommercialDataOptIn for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) SetPropertyCommercialDataOptIn(value int32) (err error) {
-	return instance.SetProperty("CommercialDataOptIn", value)
+	return instance.SetProperty("CommercialDataOptIn", (value))
 }
 
 // GetCommercialDataOptIn gets the value of CommercialDataOptIn for the instance
@@ -80,16 +82,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDiagTrackServiceRunning sets the value of DiagTrackServiceRunning for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) SetPropertyDiagTrackServiceRunning(value bool) (err error) {
-	return instance.SetProperty("DiagTrackServiceRunning", value)
+	return instance.SetProperty("DiagTrackServiceRunning", (value))
 }
 
 // GetDiagTrackServiceRunning gets the value of DiagTrackServiceRunning for the instance
@@ -98,16 +109,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -116,16 +136,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternetExplorerTelemetryOptIn sets the value of InternetExplorerTelemetryOptIn for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) SetPropertyInternetExplorerTelemetryOptIn(value int32) (err error) {
-	return instance.SetProperty("InternetExplorerTelemetryOptIn", value)
+	return instance.SetProperty("InternetExplorerTelemetryOptIn", (value))
 }
 
 // GetInternetExplorerTelemetryOptIn gets the value of InternetExplorerTelemetryOptIn for the instance
@@ -134,16 +163,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMsaServiceEnabled sets the value of MsaServiceEnabled for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) SetPropertyMsaServiceEnabled(value bool) (err error) {
-	return instance.SetProperty("MsaServiceEnabled", value)
+	return instance.SetProperty("MsaServiceEnabled", (value))
 }
 
 // GetMsaServiceEnabled gets the value of MsaServiceEnabled for the instance
@@ -152,16 +190,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -170,16 +217,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTelemetryOptIn sets the value of TelemetryOptIn for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) SetPropertyTelemetryOptIn(value int32) (err error) {
-	return instance.SetProperty("TelemetryOptIn", value)
+	return instance.SetProperty("TelemetryOptIn", (value))
 }
 
 // GetTelemetryOptIn gets the value of TelemetryOptIn for the instance
@@ -188,9 +244,18 @@ func (instance *MDM_Win32CompatibilityAppraiser_UtcConfigurationDiagnosis02) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

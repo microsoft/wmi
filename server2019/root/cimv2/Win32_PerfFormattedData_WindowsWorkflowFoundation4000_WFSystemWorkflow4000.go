@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000 struct
@@ -112,7 +114,7 @@ func NewWin32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow40
 
 // SetWorkflowsAborted sets the value of WorkflowsAborted for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsAborted(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsAborted", value)
+	return instance.SetProperty("WorkflowsAborted", (value))
 }
 
 // GetWorkflowsAborted gets the value of WorkflowsAborted for the instance
@@ -121,16 +123,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsAbortedPersec sets the value of WorkflowsAbortedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsAbortedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsAbortedPersec", value)
+	return instance.SetProperty("WorkflowsAbortedPersec", (value))
 }
 
 // GetWorkflowsAbortedPersec gets the value of WorkflowsAbortedPersec for the instance
@@ -139,16 +150,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsCompleted sets the value of WorkflowsCompleted for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsCompleted(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsCompleted", value)
+	return instance.SetProperty("WorkflowsCompleted", (value))
 }
 
 // GetWorkflowsCompleted gets the value of WorkflowsCompleted for the instance
@@ -157,16 +177,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsCompletedPersec sets the value of WorkflowsCompletedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsCompletedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsCompletedPersec", value)
+	return instance.SetProperty("WorkflowsCompletedPersec", (value))
 }
 
 // GetWorkflowsCompletedPersec gets the value of WorkflowsCompletedPersec for the instance
@@ -175,16 +204,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsCreated sets the value of WorkflowsCreated for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsCreated(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsCreated", value)
+	return instance.SetProperty("WorkflowsCreated", (value))
 }
 
 // GetWorkflowsCreated gets the value of WorkflowsCreated for the instance
@@ -193,16 +231,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsCreatedPersec sets the value of WorkflowsCreatedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsCreatedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsCreatedPersec", value)
+	return instance.SetProperty("WorkflowsCreatedPersec", (value))
 }
 
 // GetWorkflowsCreatedPersec gets the value of WorkflowsCreatedPersec for the instance
@@ -211,16 +258,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsExecuting sets the value of WorkflowsExecuting for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsExecuting(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsExecuting", value)
+	return instance.SetProperty("WorkflowsExecuting", (value))
 }
 
 // GetWorkflowsExecuting gets the value of WorkflowsExecuting for the instance
@@ -229,16 +285,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsIdlePersec sets the value of WorkflowsIdlePersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsIdlePersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsIdlePersec", value)
+	return instance.SetProperty("WorkflowsIdlePersec", (value))
 }
 
 // GetWorkflowsIdlePersec gets the value of WorkflowsIdlePersec for the instance
@@ -247,16 +312,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsInMemory sets the value of WorkflowsInMemory for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsInMemory(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsInMemory", value)
+	return instance.SetProperty("WorkflowsInMemory", (value))
 }
 
 // GetWorkflowsInMemory gets the value of WorkflowsInMemory for the instance
@@ -265,16 +339,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsLoaded sets the value of WorkflowsLoaded for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsLoaded(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsLoaded", value)
+	return instance.SetProperty("WorkflowsLoaded", (value))
 }
 
 // GetWorkflowsLoaded gets the value of WorkflowsLoaded for the instance
@@ -283,16 +366,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsLoadedPersec sets the value of WorkflowsLoadedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsLoadedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsLoadedPersec", value)
+	return instance.SetProperty("WorkflowsLoadedPersec", (value))
 }
 
 // GetWorkflowsLoadedPersec gets the value of WorkflowsLoadedPersec for the instance
@@ -301,16 +393,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsPending sets the value of WorkflowsPending for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsPending(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsPending", value)
+	return instance.SetProperty("WorkflowsPending", (value))
 }
 
 // GetWorkflowsPending gets the value of WorkflowsPending for the instance
@@ -319,16 +420,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsPersisted sets the value of WorkflowsPersisted for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsPersisted(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsPersisted", value)
+	return instance.SetProperty("WorkflowsPersisted", (value))
 }
 
 // GetWorkflowsPersisted gets the value of WorkflowsPersisted for the instance
@@ -337,16 +447,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsPersistedPersec sets the value of WorkflowsPersistedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsPersistedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsPersistedPersec", value)
+	return instance.SetProperty("WorkflowsPersistedPersec", (value))
 }
 
 // GetWorkflowsPersistedPersec gets the value of WorkflowsPersistedPersec for the instance
@@ -355,16 +474,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsRunnable sets the value of WorkflowsRunnable for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsRunnable(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsRunnable", value)
+	return instance.SetProperty("WorkflowsRunnable", (value))
 }
 
 // GetWorkflowsRunnable gets the value of WorkflowsRunnable for the instance
@@ -373,16 +501,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsSuspended sets the value of WorkflowsSuspended for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsSuspended(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsSuspended", value)
+	return instance.SetProperty("WorkflowsSuspended", (value))
 }
 
 // GetWorkflowsSuspended gets the value of WorkflowsSuspended for the instance
@@ -391,16 +528,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsSuspendedPersec sets the value of WorkflowsSuspendedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsSuspendedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsSuspendedPersec", value)
+	return instance.SetProperty("WorkflowsSuspendedPersec", (value))
 }
 
 // GetWorkflowsSuspendedPersec gets the value of WorkflowsSuspendedPersec for the instance
@@ -409,16 +555,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsTerminated sets the value of WorkflowsTerminated for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsTerminated(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsTerminated", value)
+	return instance.SetProperty("WorkflowsTerminated", (value))
 }
 
 // GetWorkflowsTerminated gets the value of WorkflowsTerminated for the instance
@@ -427,16 +582,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsTerminatedPersec sets the value of WorkflowsTerminatedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsTerminatedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsTerminatedPersec", value)
+	return instance.SetProperty("WorkflowsTerminatedPersec", (value))
 }
 
 // GetWorkflowsTerminatedPersec gets the value of WorkflowsTerminatedPersec for the instance
@@ -445,16 +609,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsUnloaded sets the value of WorkflowsUnloaded for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsUnloaded(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsUnloaded", value)
+	return instance.SetProperty("WorkflowsUnloaded", (value))
 }
 
 // GetWorkflowsUnloaded gets the value of WorkflowsUnloaded for the instance
@@ -463,16 +636,25 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkflowsUnloadedPersec sets the value of WorkflowsUnloadedPersec for the instance
 func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWorkflow4000) SetPropertyWorkflowsUnloadedPersec(value uint32) (err error) {
-	return instance.SetProperty("WorkflowsUnloadedPersec", value)
+	return instance.SetProperty("WorkflowsUnloadedPersec", (value))
 }
 
 // GetWorkflowsUnloadedPersec gets the value of WorkflowsUnloadedPersec for the instance
@@ -481,9 +663,18 @@ func (instance *Win32_PerfFormattedData_WindowsWorkflowFoundation4000_WFSystemWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

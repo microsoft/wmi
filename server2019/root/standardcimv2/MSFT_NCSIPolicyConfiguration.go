@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NCSIPolicyConfiguration struct
@@ -67,7 +69,7 @@ func NewMSFT_NCSIPolicyConfigurationEx6(hostName string,
 
 // SetCorporateDNSProbeHostAddress sets the value of CorporateDNSProbeHostAddress for the instance
 func (instance *MSFT_NCSIPolicyConfiguration) SetPropertyCorporateDNSProbeHostAddress(value string) (err error) {
-	return instance.SetProperty("CorporateDNSProbeHostAddress", value)
+	return instance.SetProperty("CorporateDNSProbeHostAddress", (value))
 }
 
 // GetCorporateDNSProbeHostAddress gets the value of CorporateDNSProbeHostAddress for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NCSIPolicyConfiguration) GetPropertyCorporateDNSProbeHostAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCorporateDNSProbeHostName sets the value of CorporateDNSProbeHostName for the instance
 func (instance *MSFT_NCSIPolicyConfiguration) SetPropertyCorporateDNSProbeHostName(value string) (err error) {
-	return instance.SetProperty("CorporateDNSProbeHostName", value)
+	return instance.SetProperty("CorporateDNSProbeHostName", (value))
 }
 
 // GetCorporateDNSProbeHostName gets the value of CorporateDNSProbeHostName for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NCSIPolicyConfiguration) GetPropertyCorporateDNSProbeHostNa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCorporateSitePrefixList sets the value of CorporateSitePrefixList for the instance
 func (instance *MSFT_NCSIPolicyConfiguration) SetPropertyCorporateSitePrefixList(value []string) (err error) {
-	return instance.SetProperty("CorporateSitePrefixList", value)
+	return instance.SetProperty("CorporateSitePrefixList", (value))
 }
 
 // GetCorporateSitePrefixList gets the value of CorporateSitePrefixList for the instance
@@ -112,16 +132,26 @@ func (instance *MSFT_NCSIPolicyConfiguration) GetPropertyCorporateSitePrefixList
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetCorporateWebsiteProbeURL sets the value of CorporateWebsiteProbeURL for the instance
 func (instance *MSFT_NCSIPolicyConfiguration) SetPropertyCorporateWebsiteProbeURL(value string) (err error) {
-	return instance.SetProperty("CorporateWebsiteProbeURL", value)
+	return instance.SetProperty("CorporateWebsiteProbeURL", (value))
 }
 
 // GetCorporateWebsiteProbeURL gets the value of CorporateWebsiteProbeURL for the instance
@@ -130,16 +160,25 @@ func (instance *MSFT_NCSIPolicyConfiguration) GetPropertyCorporateWebsiteProbeUR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomainLocationDeterminationURL sets the value of DomainLocationDeterminationURL for the instance
 func (instance *MSFT_NCSIPolicyConfiguration) SetPropertyDomainLocationDeterminationURL(value string) (err error) {
-	return instance.SetProperty("DomainLocationDeterminationURL", value)
+	return instance.SetProperty("DomainLocationDeterminationURL", (value))
 }
 
 // GetDomainLocationDeterminationURL gets the value of DomainLocationDeterminationURL for the instance
@@ -148,16 +187,25 @@ func (instance *MSFT_NCSIPolicyConfiguration) GetPropertyDomainLocationDetermina
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_NCSIPolicyConfiguration) SetPropertyPolicyStore(value string) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -166,10 +214,19 @@ func (instance *MSFT_NCSIPolicyConfiguration) GetPropertyPolicyStore() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_DevDetail_Microsoft02 struct
@@ -83,7 +85,7 @@ func NewMDM_DevDetail_Microsoft02Ex6(hostName string,
 
 // SetCommercializationOperator sets the value of CommercializationOperator for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyCommercializationOperator(value string) (err error) {
-	return instance.SetProperty("CommercializationOperator", value)
+	return instance.SetProperty("CommercializationOperator", (value))
 }
 
 // GetCommercializationOperator gets the value of CommercializationOperator for the instance
@@ -92,16 +94,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyCommercializationOperator(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDeviceName sets the value of DeviceName for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyDeviceName(value string) (err error) {
-	return instance.SetProperty("DeviceName", value)
+	return instance.SetProperty("DeviceName", (value))
 }
 
 // GetDeviceName gets the value of DeviceName for the instance
@@ -110,16 +121,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyDeviceName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -128,16 +148,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyInstanceID() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalTime sets the value of LocalTime for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyLocalTime(value string) (err error) {
-	return instance.SetProperty("LocalTime", value)
+	return instance.SetProperty("LocalTime", (value))
 }
 
 // GetLocalTime gets the value of LocalTime for the instance
@@ -146,16 +175,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyLocalTime() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMobileID sets the value of MobileID for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyMobileID(value string) (err error) {
-	return instance.SetProperty("MobileID", value)
+	return instance.SetProperty("MobileID", (value))
 }
 
 // GetMobileID gets the value of MobileID for the instance
@@ -164,16 +202,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyMobileID() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOSPlatform sets the value of OSPlatform for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyOSPlatform(value string) (err error) {
-	return instance.SetProperty("OSPlatform", value)
+	return instance.SetProperty("OSPlatform", (value))
 }
 
 // GetOSPlatform gets the value of OSPlatform for the instance
@@ -182,16 +229,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyOSPlatform() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -200,16 +256,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyParentID() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProcessorArchitecture sets the value of ProcessorArchitecture for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyProcessorArchitecture(value int32) (err error) {
-	return instance.SetProperty("ProcessorArchitecture", value)
+	return instance.SetProperty("ProcessorArchitecture", (value))
 }
 
 // GetProcessorArchitecture gets the value of ProcessorArchitecture for the instance
@@ -218,16 +283,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyProcessorArchitecture() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetProcessorType sets the value of ProcessorType for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyProcessorType(value int32) (err error) {
-	return instance.SetProperty("ProcessorType", value)
+	return instance.SetProperty("ProcessorType", (value))
 }
 
 // GetProcessorType gets the value of ProcessorType for the instance
@@ -236,16 +310,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyProcessorType() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRadioSwV sets the value of RadioSwV for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyRadioSwV(value string) (err error) {
-	return instance.SetProperty("RadioSwV", value)
+	return instance.SetProperty("RadioSwV", (value))
 }
 
 // GetRadioSwV gets the value of RadioSwV for the instance
@@ -254,16 +337,25 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyRadioSwV() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResolution sets the value of Resolution for the instance
 func (instance *MDM_DevDetail_Microsoft02) SetPropertyResolution(value string) (err error) {
-	return instance.SetProperty("Resolution", value)
+	return instance.SetProperty("Resolution", (value))
 }
 
 // GetResolution gets the value of Resolution for the instance
@@ -272,9 +364,18 @@ func (instance *MDM_DevDetail_Microsoft02) GetPropertyResolution() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

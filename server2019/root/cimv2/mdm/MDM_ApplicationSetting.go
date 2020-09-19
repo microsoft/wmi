@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_ApplicationSetting struct
@@ -62,7 +64,7 @@ func NewMDM_ApplicationSettingEx6(hostName string,
 
 // SetPackageFamilyName sets the value of PackageFamilyName for the instance
 func (instance *MDM_ApplicationSetting) SetPropertyPackageFamilyName(value string) (err error) {
-	return instance.SetProperty("PackageFamilyName", value)
+	return instance.SetProperty("PackageFamilyName", (value))
 }
 
 // GetPackageFamilyName gets the value of PackageFamilyName for the instance
@@ -71,16 +73,25 @@ func (instance *MDM_ApplicationSetting) GetPropertyPackageFamilyName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSettingName sets the value of SettingName for the instance
 func (instance *MDM_ApplicationSetting) SetPropertySettingName(value string) (err error) {
-	return instance.SetProperty("SettingName", value)
+	return instance.SetProperty("SettingName", (value))
 }
 
 // GetSettingName gets the value of SettingName for the instance
@@ -89,16 +100,25 @@ func (instance *MDM_ApplicationSetting) GetPropertySettingName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSettingType sets the value of SettingType for the instance
 func (instance *MDM_ApplicationSetting) SetPropertySettingType(value uint32) (err error) {
-	return instance.SetProperty("SettingType", value)
+	return instance.SetProperty("SettingType", (value))
 }
 
 // GetSettingType gets the value of SettingType for the instance
@@ -107,16 +127,25 @@ func (instance *MDM_ApplicationSetting) GetPropertySettingType() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSettingValue sets the value of SettingValue for the instance
 func (instance *MDM_ApplicationSetting) SetPropertySettingValue(value string) (err error) {
-	return instance.SetProperty("SettingValue", value)
+	return instance.SetProperty("SettingValue", (value))
 }
 
 // GetSettingValue gets the value of SettingValue for the instance
@@ -125,9 +154,18 @@ func (instance *MDM_ApplicationSetting) GetPropertySettingValue() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

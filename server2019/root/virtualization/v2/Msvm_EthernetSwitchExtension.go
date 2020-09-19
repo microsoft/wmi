@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchExtension struct
@@ -67,7 +69,7 @@ func NewMsvm_EthernetSwitchExtensionEx6(hostName string,
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *Msvm_EthernetSwitchExtension) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -76,16 +78,25 @@ func (instance *Msvm_EthernetSwitchExtension) GetPropertyCreationClassName() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExtensionType sets the value of ExtensionType for the instance
 func (instance *Msvm_EthernetSwitchExtension) SetPropertyExtensionType(value uint8) (err error) {
-	return instance.SetProperty("ExtensionType", value)
+	return instance.SetProperty("ExtensionType", (value))
 }
 
 // GetExtensionType gets the value of ExtensionType for the instance
@@ -94,16 +105,25 @@ func (instance *Msvm_EthernetSwitchExtension) GetPropertyExtensionType() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *Msvm_EthernetSwitchExtension) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -112,16 +132,25 @@ func (instance *Msvm_EthernetSwitchExtension) GetPropertySystemCreationClassName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *Msvm_EthernetSwitchExtension) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -130,16 +159,25 @@ func (instance *Msvm_EthernetSwitchExtension) GetPropertySystemName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVendor sets the value of Vendor for the instance
 func (instance *Msvm_EthernetSwitchExtension) SetPropertyVendor(value string) (err error) {
-	return instance.SetProperty("Vendor", value)
+	return instance.SetProperty("Vendor", (value))
 }
 
 // GetVendor gets the value of Vendor for the instance
@@ -148,16 +186,25 @@ func (instance *Msvm_EthernetSwitchExtension) GetPropertyVendor() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Msvm_EthernetSwitchExtension) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -166,16 +213,25 @@ func (instance *Msvm_EthernetSwitchExtension) GetPropertyVersion() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
-func (instance *Msvm_EthernetSwitchExtension) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
-}
-
 func (instance *Msvm_EthernetSwitchExtension) GetRelatedInstalledEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_InstalledEthernetSwitchExtension")
+}
+
+func (instance *Msvm_EthernetSwitchExtension) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
 }

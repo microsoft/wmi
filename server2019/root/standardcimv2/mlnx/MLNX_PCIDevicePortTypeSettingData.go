@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_PCIDevicePortTypeSettingData struct
@@ -58,7 +60,7 @@ func NewMLNX_PCIDevicePortTypeSettingDataEx6(hostName string,
 
 // SetConfiguration sets the value of Configuration for the instance
 func (instance *MLNX_PCIDevicePortTypeSettingData) SetPropertyConfiguration(value []string) (err error) {
-	return instance.SetProperty("Configuration", value)
+	return instance.SetProperty("Configuration", (value))
 }
 
 // GetConfiguration gets the value of Configuration for the instance
@@ -67,16 +69,26 @@ func (instance *MLNX_PCIDevicePortTypeSettingData) GetPropertyConfiguration() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetCurrentSetting sets the value of CurrentSetting for the instance
 func (instance *MLNX_PCIDevicePortTypeSettingData) SetPropertyCurrentSetting(value []string) (err error) {
-	return instance.SetProperty("CurrentSetting", value)
+	return instance.SetProperty("CurrentSetting", (value))
 }
 
 // GetCurrentSetting gets the value of CurrentSetting for the instance
@@ -85,16 +97,26 @@ func (instance *MLNX_PCIDevicePortTypeSettingData) GetPropertyCurrentSetting() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDefaultSetting sets the value of DefaultSetting for the instance
 func (instance *MLNX_PCIDevicePortTypeSettingData) SetPropertyDefaultSetting(value []string) (err error) {
-	return instance.SetProperty("DefaultSetting", value)
+	return instance.SetProperty("DefaultSetting", (value))
 }
 
 // GetDefaultSetting gets the value of DefaultSetting for the instance
@@ -103,10 +125,20 @@ func (instance *MLNX_PCIDevicePortTypeSettingData) GetPropertyDefaultSetting() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 

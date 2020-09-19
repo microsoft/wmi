@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_AssignedAccess struct
@@ -65,7 +67,7 @@ func NewMDM_AssignedAccessEx6(hostName string,
 
 // SetConfiguration sets the value of Configuration for the instance
 func (instance *MDM_AssignedAccess) SetPropertyConfiguration(value string) (err error) {
-	return instance.SetProperty("Configuration", value)
+	return instance.SetProperty("Configuration", (value))
 }
 
 // GetConfiguration gets the value of Configuration for the instance
@@ -74,16 +76,25 @@ func (instance *MDM_AssignedAccess) GetPropertyConfiguration() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_AssignedAccess) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -92,16 +103,25 @@ func (instance *MDM_AssignedAccess) GetPropertyInstanceID() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKioskModeApp sets the value of KioskModeApp for the instance
 func (instance *MDM_AssignedAccess) SetPropertyKioskModeApp(value string) (err error) {
-	return instance.SetProperty("KioskModeApp", value)
+	return instance.SetProperty("KioskModeApp", (value))
 }
 
 // GetKioskModeApp gets the value of KioskModeApp for the instance
@@ -110,16 +130,25 @@ func (instance *MDM_AssignedAccess) GetPropertyKioskModeApp() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_AssignedAccess) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -128,16 +157,25 @@ func (instance *MDM_AssignedAccess) GetPropertyParentID() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShellLauncher sets the value of ShellLauncher for the instance
 func (instance *MDM_AssignedAccess) SetPropertyShellLauncher(value string) (err error) {
-	return instance.SetProperty("ShellLauncher", value)
+	return instance.SetProperty("ShellLauncher", (value))
 }
 
 // GetShellLauncher gets the value of ShellLauncher for the instance
@@ -146,9 +184,18 @@ func (instance *MDM_AssignedAccess) GetPropertyShellLauncher() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

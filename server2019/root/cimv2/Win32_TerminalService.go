@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TerminalService struct
@@ -55,7 +57,7 @@ func NewWin32_TerminalServiceEx6(hostName string,
 
 // SetDisconnectedSessions sets the value of DisconnectedSessions for the instance
 func (instance *Win32_TerminalService) SetPropertyDisconnectedSessions(value uint32) (err error) {
-	return instance.SetProperty("DisconnectedSessions", value)
+	return instance.SetProperty("DisconnectedSessions", (value))
 }
 
 // GetDisconnectedSessions gets the value of DisconnectedSessions for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_TerminalService) GetPropertyDisconnectedSessions() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalSessions sets the value of TotalSessions for the instance
 func (instance *Win32_TerminalService) SetPropertyTotalSessions(value uint32) (err error) {
-	return instance.SetProperty("TotalSessions", value)
+	return instance.SetProperty("TotalSessions", (value))
 }
 
 // GetTotalSessions gets the value of TotalSessions for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_TerminalService) GetPropertyTotalSessions() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

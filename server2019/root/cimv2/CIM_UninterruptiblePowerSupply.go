@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_UninterruptiblePowerSupply struct
@@ -61,7 +63,7 @@ func NewCIM_UninterruptiblePowerSupplyEx6(hostName string,
 
 // SetEstimatedChargeRemaining sets the value of EstimatedChargeRemaining for the instance
 func (instance *CIM_UninterruptiblePowerSupply) SetPropertyEstimatedChargeRemaining(value uint16) (err error) {
-	return instance.SetProperty("EstimatedChargeRemaining", value)
+	return instance.SetProperty("EstimatedChargeRemaining", (value))
 }
 
 // GetEstimatedChargeRemaining gets the value of EstimatedChargeRemaining for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_UninterruptiblePowerSupply) GetPropertyEstimatedChargeRemain
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEstimatedRunTime sets the value of EstimatedRunTime for the instance
 func (instance *CIM_UninterruptiblePowerSupply) SetPropertyEstimatedRunTime(value uint32) (err error) {
-	return instance.SetProperty("EstimatedRunTime", value)
+	return instance.SetProperty("EstimatedRunTime", (value))
 }
 
 // GetEstimatedRunTime gets the value of EstimatedRunTime for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_UninterruptiblePowerSupply) GetPropertyEstimatedRunTime() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemainingCapacityStatus sets the value of RemainingCapacityStatus for the instance
 func (instance *CIM_UninterruptiblePowerSupply) SetPropertyRemainingCapacityStatus(value uint16) (err error) {
-	return instance.SetProperty("RemainingCapacityStatus", value)
+	return instance.SetProperty("RemainingCapacityStatus", (value))
 }
 
 // GetRemainingCapacityStatus gets the value of RemainingCapacityStatus for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_UninterruptiblePowerSupply) GetPropertyRemainingCapacityStat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTimeOnBackup sets the value of TimeOnBackup for the instance
 func (instance *CIM_UninterruptiblePowerSupply) SetPropertyTimeOnBackup(value uint32) (err error) {
-	return instance.SetProperty("TimeOnBackup", value)
+	return instance.SetProperty("TimeOnBackup", (value))
 }
 
 // GetTimeOnBackup gets the value of TimeOnBackup for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_UninterruptiblePowerSupply) GetPropertyTimeOnBackup() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters struct
@@ -157,7 +159,7 @@ func NewWin32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounter
 
 // SetCQOverflows sets the value of CQOverflows for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyCQOverflows(value uint64) (err error) {
-	return instance.SetProperty("CQOverflows", value)
+	return instance.SetProperty("CQOverflows", (value))
 }
 
 // GetCQOverflows gets the value of CQOverflows for the instance
@@ -166,16 +168,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDevicedetectedstalledstate sets the value of Devicedetectedstalledstate for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyDevicedetectedstalledstate(value uint64) (err error) {
-	return instance.SetProperty("Devicedetectedstalledstate", value)
+	return instance.SetProperty("Devicedetectedstalledstate", (value))
 }
 
 // GetDevicedetectedstalledstate gets the value of Devicedetectedstalledstate for the instance
@@ -184,16 +195,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDroplessModeEntries sets the value of DroplessModeEntries for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyDroplessModeEntries(value uint64) (err error) {
-	return instance.SetProperty("DroplessModeEntries", value)
+	return instance.SetProperty("DroplessModeEntries", (value))
 }
 
 // GetDroplessModeEntries gets the value of DroplessModeEntries for the instance
@@ -202,16 +222,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDroplessModeExits sets the value of DroplessModeExits for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyDroplessModeExits(value uint64) (err error) {
-	return instance.SetProperty("DroplessModeExits", value)
+	return instance.SetProperty("DroplessModeExits", (value))
 }
 
 // GetDroplessModeExits gets the value of DroplessModeExits for the instance
@@ -220,16 +249,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLinkdowneventsphy sets the value of Linkdowneventsphy for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyLinkdowneventsphy(value uint64) (err error) {
-	return instance.SetProperty("Linkdowneventsphy", value)
+	return instance.SetProperty("Linkdowneventsphy", (value))
 }
 
 // GetLinkdowneventsphy gets the value of Linkdowneventsphy for the instance
@@ -238,16 +276,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketdetectedasstalled sets the value of Packetdetectedasstalled for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyPacketdetectedasstalled(value uint64) (err error) {
-	return instance.SetProperty("Packetdetectedasstalled", value)
+	return instance.SetProperty("Packetdetectedasstalled", (value))
 }
 
 // GetPacketdetectedasstalled gets the value of Packetdetectedasstalled for the instance
@@ -256,16 +303,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsdiscardedduetoHeadOfQueuelifetimelimit sets the value of PacketsdiscardedduetoHeadOfQueuelifetimelimit for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyPacketsdiscardedduetoHeadOfQueuelifetimelimit(value uint64) (err error) {
-	return instance.SetProperty("PacketsdiscardedduetoHeadOfQueuelifetimelimit", value)
+	return instance.SetProperty("PacketsdiscardedduetoHeadOfQueuelifetimelimit", (value))
 }
 
 // GetPacketsdiscardedduetoHeadOfQueuelifetimelimit gets the value of PacketsdiscardedduetoHeadOfQueuelifetimelimit for the instance
@@ -274,16 +330,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsdiscardedduetoTCinstalledstate sets the value of PacketsdiscardedduetoTCinstalledstate for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyPacketsdiscardedduetoTCinstalledstate(value uint64) (err error) {
-	return instance.SetProperty("PacketsdiscardedduetoTCinstalledstate", value)
+	return instance.SetProperty("PacketsdiscardedduetoTCinstalledstate", (value))
 }
 
 // GetPacketsdiscardedduetoTCinstalledstate gets the value of PacketsdiscardedduetoTCinstalledstate for the instance
@@ -292,16 +357,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterCQEErrors sets the value of RequesterCQEErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterCQEErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterCQEErrors", value)
+	return instance.SetProperty("RequesterCQEErrors", (value))
 }
 
 // GetRequesterCQEErrors gets the value of RequesterCQEErrors for the instance
@@ -310,16 +384,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterInvalidRequestErrors sets the value of RequesterInvalidRequestErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterInvalidRequestErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterInvalidRequestErrors", value)
+	return instance.SetProperty("RequesterInvalidRequestErrors", (value))
 }
 
 // GetRequesterInvalidRequestErrors gets the value of RequesterInvalidRequestErrors for the instance
@@ -328,16 +411,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterLengthErrors sets the value of RequesterLengthErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterLengthErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterLengthErrors", value)
+	return instance.SetProperty("RequesterLengthErrors", (value))
 }
 
 // GetRequesterLengthErrors gets the value of RequesterLengthErrors for the instance
@@ -346,16 +438,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterOutoforderSequenceNAK sets the value of RequesterOutoforderSequenceNAK for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterOutoforderSequenceNAK(value uint64) (err error) {
-	return instance.SetProperty("RequesterOutoforderSequenceNAK", value)
+	return instance.SetProperty("RequesterOutoforderSequenceNAK", (value))
 }
 
 // GetRequesterOutoforderSequenceNAK gets the value of RequesterOutoforderSequenceNAK for the instance
@@ -364,16 +465,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterProtectionErrors sets the value of RequesterProtectionErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterProtectionErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterProtectionErrors", value)
+	return instance.SetProperty("RequesterProtectionErrors", (value))
 }
 
 // GetRequesterProtectionErrors gets the value of RequesterProtectionErrors for the instance
@@ -382,16 +492,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterQPOperationErrors sets the value of RequesterQPOperationErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterQPOperationErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterQPOperationErrors", value)
+	return instance.SetProperty("RequesterQPOperationErrors", (value))
 }
 
 // GetRequesterQPOperationErrors gets the value of RequesterQPOperationErrors for the instance
@@ -400,16 +519,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterQPTransportRetriesExceededErrors sets the value of RequesterQPTransportRetriesExceededErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterQPTransportRetriesExceededErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterQPTransportRetriesExceededErrors", value)
+	return instance.SetProperty("RequesterQPTransportRetriesExceededErrors", (value))
 }
 
 // GetRequesterQPTransportRetriesExceededErrors gets the value of RequesterQPTransportRetriesExceededErrors for the instance
@@ -418,16 +546,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterRemoteAccessErrors sets the value of RequesterRemoteAccessErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterRemoteAccessErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterRemoteAccessErrors", value)
+	return instance.SetProperty("RequesterRemoteAccessErrors", (value))
 }
 
 // GetRequesterRemoteAccessErrors gets the value of RequesterRemoteAccessErrors for the instance
@@ -436,16 +573,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterRemoteOperationErrors sets the value of RequesterRemoteOperationErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterRemoteOperationErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterRemoteOperationErrors", value)
+	return instance.SetProperty("RequesterRemoteOperationErrors", (value))
 }
 
 // GetRequesterRemoteOperationErrors gets the value of RequesterRemoteOperationErrors for the instance
@@ -454,16 +600,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterRNRNAK sets the value of RequesterRNRNAK for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterRNRNAK(value uint64) (err error) {
-	return instance.SetProperty("RequesterRNRNAK", value)
+	return instance.SetProperty("RequesterRNRNAK", (value))
 }
 
 // GetRequesterRNRNAK gets the value of RequesterRNRNAK for the instance
@@ -472,16 +627,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterRNRNAKRetriesExceededErrors sets the value of RequesterRNRNAKRetriesExceededErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterRNRNAKRetriesExceededErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterRNRNAKRetriesExceededErrors", value)
+	return instance.SetProperty("RequesterRNRNAKRetriesExceededErrors", (value))
 }
 
 // GetRequesterRNRNAKRetriesExceededErrors gets the value of RequesterRNRNAKRetriesExceededErrors for the instance
@@ -490,16 +654,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterTimeoutReceived sets the value of RequesterTimeoutReceived for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterTimeoutReceived(value uint64) (err error) {
-	return instance.SetProperty("RequesterTimeoutReceived", value)
+	return instance.SetProperty("RequesterTimeoutReceived", (value))
 }
 
 // GetRequesterTimeoutReceived gets the value of RequesterTimeoutReceived for the instance
@@ -508,16 +681,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequesterTransportRetriesExceededErrors sets the value of RequesterTransportRetriesExceededErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRequesterTransportRetriesExceededErrors(value uint64) (err error) {
-	return instance.SetProperty("RequesterTransportRetriesExceededErrors", value)
+	return instance.SetProperty("RequesterTransportRetriesExceededErrors", (value))
 }
 
 // GetRequesterTransportRetriesExceededErrors gets the value of RequesterTransportRetriesExceededErrors for the instance
@@ -526,16 +708,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderCQEErrors sets the value of ResponderCQEErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderCQEErrors(value uint64) (err error) {
-	return instance.SetProperty("ResponderCQEErrors", value)
+	return instance.SetProperty("ResponderCQEErrors", (value))
 }
 
 // GetResponderCQEErrors gets the value of ResponderCQEErrors for the instance
@@ -544,16 +735,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderDuplicateRequestReceived sets the value of ResponderDuplicateRequestReceived for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderDuplicateRequestReceived(value uint64) (err error) {
-	return instance.SetProperty("ResponderDuplicateRequestReceived", value)
+	return instance.SetProperty("ResponderDuplicateRequestReceived", (value))
 }
 
 // GetResponderDuplicateRequestReceived gets the value of ResponderDuplicateRequestReceived for the instance
@@ -562,16 +762,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderInvalidRequestErrors sets the value of ResponderInvalidRequestErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderInvalidRequestErrors(value uint64) (err error) {
-	return instance.SetProperty("ResponderInvalidRequestErrors", value)
+	return instance.SetProperty("ResponderInvalidRequestErrors", (value))
 }
 
 // GetResponderInvalidRequestErrors gets the value of ResponderInvalidRequestErrors for the instance
@@ -580,16 +789,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderLengthErrors sets the value of ResponderLengthErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderLengthErrors(value uint64) (err error) {
-	return instance.SetProperty("ResponderLengthErrors", value)
+	return instance.SetProperty("ResponderLengthErrors", (value))
 }
 
 // GetResponderLengthErrors gets the value of ResponderLengthErrors for the instance
@@ -598,16 +816,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderOutoforderSequenceReceived sets the value of ResponderOutoforderSequenceReceived for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderOutoforderSequenceReceived(value uint64) (err error) {
-	return instance.SetProperty("ResponderOutoforderSequenceReceived", value)
+	return instance.SetProperty("ResponderOutoforderSequenceReceived", (value))
 }
 
 // GetResponderOutoforderSequenceReceived gets the value of ResponderOutoforderSequenceReceived for the instance
@@ -616,16 +843,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderProtectionErrors sets the value of ResponderProtectionErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderProtectionErrors(value uint64) (err error) {
-	return instance.SetProperty("ResponderProtectionErrors", value)
+	return instance.SetProperty("ResponderProtectionErrors", (value))
 }
 
 // GetResponderProtectionErrors gets the value of ResponderProtectionErrors for the instance
@@ -634,16 +870,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderQPOperationErrors sets the value of ResponderQPOperationErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderQPOperationErrors(value uint64) (err error) {
-	return instance.SetProperty("ResponderQPOperationErrors", value)
+	return instance.SetProperty("ResponderQPOperationErrors", (value))
 }
 
 // GetResponderQPOperationErrors gets the value of ResponderQPOperationErrors for the instance
@@ -652,16 +897,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderRemoteAccessErrors sets the value of ResponderRemoteAccessErrors for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderRemoteAccessErrors(value uint64) (err error) {
-	return instance.SetProperty("ResponderRemoteAccessErrors", value)
+	return instance.SetProperty("ResponderRemoteAccessErrors", (value))
 }
 
 // GetResponderRemoteAccessErrors gets the value of ResponderRemoteAccessErrors for the instance
@@ -670,16 +924,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResponderRNRNAK sets the value of ResponderRNRNAK for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyResponderRNRNAK(value uint64) (err error) {
-	return instance.SetProperty("ResponderRNRNAK", value)
+	return instance.SetProperty("ResponderRNRNAK", (value))
 }
 
 // GetResponderRNRNAK gets the value of ResponderRNRNAK for the instance
@@ -688,16 +951,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRscAborts sets the value of RscAborts for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRscAborts(value uint64) (err error) {
-	return instance.SetProperty("RscAborts", value)
+	return instance.SetProperty("RscAborts", (value))
 }
 
 // GetRscAborts gets the value of RscAborts for the instance
@@ -706,16 +978,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRscCoalesceEvents sets the value of RscCoalesceEvents for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRscCoalesceEvents(value uint64) (err error) {
-	return instance.SetProperty("RscCoalesceEvents", value)
+	return instance.SetProperty("RscCoalesceEvents", (value))
 }
 
 // GetRscCoalesceEvents gets the value of RscCoalesceEvents for the instance
@@ -724,16 +1005,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRscCoalesceOctets sets the value of RscCoalesceOctets for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRscCoalesceOctets(value uint64) (err error) {
-	return instance.SetProperty("RscCoalesceOctets", value)
+	return instance.SetProperty("RscCoalesceOctets", (value))
 }
 
 // GetRscCoalesceOctets gets the value of RscCoalesceOctets for the instance
@@ -742,16 +1032,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRscCoalescePackets sets the value of RscCoalescePackets for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyRscCoalescePackets(value uint64) (err error) {
-	return instance.SetProperty("RscCoalescePackets", value)
+	return instance.SetProperty("RscCoalescePackets", (value))
 }
 
 // GetRscCoalescePackets gets the value of RscCoalescePackets for the instance
@@ -760,16 +1059,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTXCopiedPackets sets the value of TXCopiedPackets for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyTXCopiedPackets(value uint64) (err error) {
-	return instance.SetProperty("TXCopiedPackets", value)
+	return instance.SetProperty("TXCopiedPackets", (value))
 }
 
 // GetTXCopiedPackets gets the value of TXCopiedPackets for the instance
@@ -778,16 +1086,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTXRingIsFullPackets sets the value of TXRingIsFullPackets for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosticCounters) SetPropertyTXRingIsFullPackets(value uint64) (err error) {
-	return instance.SetProperty("TXRingIsFullPackets", value)
+	return instance.SetProperty("TXRingIsFullPackets", (value))
 }
 
 // GetTXRingIsFullPackets gets the value of TXRingIsFullPackets for the instance
@@ -796,9 +1113,18 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterDiagnosti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

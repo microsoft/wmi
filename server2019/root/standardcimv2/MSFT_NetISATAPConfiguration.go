@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetISATAPConfiguration struct
@@ -64,7 +66,7 @@ func NewMSFT_NetISATAPConfigurationEx6(hostName string,
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_NetISATAPConfiguration) SetPropertyPolicyStore(value string) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -73,16 +75,25 @@ func (instance *MSFT_NetISATAPConfiguration) GetPropertyPolicyStore() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResolutionInterval sets the value of ResolutionInterval for the instance
 func (instance *MSFT_NetISATAPConfiguration) SetPropertyResolutionInterval(value uint32) (err error) {
-	return instance.SetProperty("ResolutionInterval", value)
+	return instance.SetProperty("ResolutionInterval", (value))
 }
 
 // GetResolutionInterval gets the value of ResolutionInterval for the instance
@@ -91,16 +102,25 @@ func (instance *MSFT_NetISATAPConfiguration) GetPropertyResolutionInterval() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResolutionState sets the value of ResolutionState for the instance
 func (instance *MSFT_NetISATAPConfiguration) SetPropertyResolutionState(value uint32) (err error) {
-	return instance.SetProperty("ResolutionState", value)
+	return instance.SetProperty("ResolutionState", (value))
 }
 
 // GetResolutionState gets the value of ResolutionState for the instance
@@ -109,16 +129,25 @@ func (instance *MSFT_NetISATAPConfiguration) GetPropertyResolutionState() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRouter sets the value of Router for the instance
 func (instance *MSFT_NetISATAPConfiguration) SetPropertyRouter(value string) (err error) {
-	return instance.SetProperty("Router", value)
+	return instance.SetProperty("Router", (value))
 }
 
 // GetRouter gets the value of Router for the instance
@@ -127,16 +156,25 @@ func (instance *MSFT_NetISATAPConfiguration) GetPropertyRouter() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_NetISATAPConfiguration) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -145,10 +183,19 @@ func (instance *MSFT_NetISATAPConfiguration) GetPropertyState() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

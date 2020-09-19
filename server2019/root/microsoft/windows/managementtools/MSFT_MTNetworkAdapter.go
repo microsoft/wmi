@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MTNetworkAdapter struct
@@ -175,7 +177,7 @@ func NewMSFT_MTNetworkAdapterEx6(hostName string,
 
 // SetBytesReceived sets the value of BytesReceived for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("BytesReceived", value)
+	return instance.SetProperty("BytesReceived", (value))
 }
 
 // GetBytesReceived gets the value of BytesReceived for the instance
@@ -184,16 +186,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesReceived() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesReceivedPerInterval sets the value of BytesReceivedPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesReceivedPerInterval(value uint64) (err error) {
-	return instance.SetProperty("BytesReceivedPerInterval", value)
+	return instance.SetProperty("BytesReceivedPerInterval", (value))
 }
 
 // GetBytesReceivedPerInterval gets the value of BytesReceivedPerInterval for the instance
@@ -202,16 +213,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesReceivedPerInterval() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesReceivedThroughput sets the value of BytesReceivedThroughput for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesReceivedThroughput(value float32) (err error) {
-	return instance.SetProperty("BytesReceivedThroughput", value)
+	return instance.SetProperty("BytesReceivedThroughput", (value))
 }
 
 // GetBytesReceivedThroughput gets the value of BytesReceivedThroughput for the instance
@@ -220,16 +240,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesReceivedThroughput() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float32(valuetmp)
+
 	return
 }
 
 // SetBytesSent sets the value of BytesSent for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesSent(value uint64) (err error) {
-	return instance.SetProperty("BytesSent", value)
+	return instance.SetProperty("BytesSent", (value))
 }
 
 // GetBytesSent gets the value of BytesSent for the instance
@@ -238,16 +267,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesSent() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesSentPerInterval sets the value of BytesSentPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesSentPerInterval(value uint64) (err error) {
-	return instance.SetProperty("BytesSentPerInterval", value)
+	return instance.SetProperty("BytesSentPerInterval", (value))
 }
 
 // GetBytesSentPerInterval gets the value of BytesSentPerInterval for the instance
@@ -256,16 +294,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesSentPerInterval() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesSentThroughput sets the value of BytesSentThroughput for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesSentThroughput(value float32) (err error) {
-	return instance.SetProperty("BytesSentThroughput", value)
+	return instance.SetProperty("BytesSentThroughput", (value))
 }
 
 // GetBytesSentThroughput gets the value of BytesSentThroughput for the instance
@@ -274,16 +321,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesSentThroughput() (value f
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float32(valuetmp)
+
 	return
 }
 
 // SetBytesTotal sets the value of BytesTotal for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesTotal(value uint64) (err error) {
-	return instance.SetProperty("BytesTotal", value)
+	return instance.SetProperty("BytesTotal", (value))
 }
 
 // GetBytesTotal gets the value of BytesTotal for the instance
@@ -292,16 +348,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesTotal() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTotalPerInterval sets the value of BytesTotalPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesTotalPerInterval(value uint64) (err error) {
-	return instance.SetProperty("BytesTotalPerInterval", value)
+	return instance.SetProperty("BytesTotalPerInterval", (value))
 }
 
 // GetBytesTotalPerInterval gets the value of BytesTotalPerInterval for the instance
@@ -310,16 +375,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesTotalPerInterval() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTotalThroughput sets the value of BytesTotalThroughput for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyBytesTotalThroughput(value float32) (err error) {
-	return instance.SetProperty("BytesTotalThroughput", value)
+	return instance.SetProperty("BytesTotalThroughput", (value))
 }
 
 // GetBytesTotalThroughput gets the value of BytesTotalThroughput for the instance
@@ -328,16 +402,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyBytesTotalThroughput() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float32(valuetmp)
+
 	return
 }
 
 // SetCurrentIndex sets the value of CurrentIndex for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyCurrentIndex(value uint16) (err error) {
-	return instance.SetProperty("CurrentIndex", value)
+	return instance.SetProperty("CurrentIndex", (value))
 }
 
 // GetCurrentIndex gets the value of CurrentIndex for the instance
@@ -346,16 +429,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyCurrentIndex() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDNSName sets the value of DNSName for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyDNSName(value string) (err error) {
-	return instance.SetProperty("DNSName", value)
+	return instance.SetProperty("DNSName", (value))
 }
 
 // GetDNSName gets the value of DNSName for the instance
@@ -364,16 +456,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyDNSName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceDescription sets the value of InterfaceDescription for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyInterfaceDescription(value string) (err error) {
-	return instance.SetProperty("InterfaceDescription", value)
+	return instance.SetProperty("InterfaceDescription", (value))
 }
 
 // GetInterfaceDescription gets the value of InterfaceDescription for the instance
@@ -382,16 +483,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyInterfaceDescription() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceGuid sets the value of InterfaceGuid for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyInterfaceGuid(value string) (err error) {
-	return instance.SetProperty("InterfaceGuid", value)
+	return instance.SetProperty("InterfaceGuid", (value))
 }
 
 // GetInterfaceGuid gets the value of InterfaceGuid for the instance
@@ -400,16 +510,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyInterfaceGuid() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntervalSeconds sets the value of IntervalSeconds for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyIntervalSeconds(value uint16) (err error) {
-	return instance.SetProperty("IntervalSeconds", value)
+	return instance.SetProperty("IntervalSeconds", (value))
 }
 
 // GetIntervalSeconds gets the value of IntervalSeconds for the instance
@@ -418,16 +537,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyIntervalSeconds() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIPv4Address sets the value of IPv4Address for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyIPv4Address(value string) (err error) {
-	return instance.SetProperty("IPv4Address", value)
+	return instance.SetProperty("IPv4Address", (value))
 }
 
 // GetIPv4Address gets the value of IPv4Address for the instance
@@ -436,16 +564,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyIPv4Address() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv6Address sets the value of IPv6Address for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyIPv6Address(value string) (err error) {
-	return instance.SetProperty("IPv6Address", value)
+	return instance.SetProperty("IPv6Address", (value))
 }
 
 // GetIPv6Address gets the value of IPv6Address for the instance
@@ -454,16 +591,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyIPv6Address() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLinkSpeed sets the value of LinkSpeed for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyLinkSpeed(value uint64) (err error) {
-	return instance.SetProperty("LinkSpeed", value)
+	return instance.SetProperty("LinkSpeed", (value))
 }
 
 // GetLinkSpeed gets the value of LinkSpeed for the instance
@@ -472,16 +618,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyLinkSpeed() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMachineJoinedName sets the value of MachineJoinedName for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyMachineJoinedName(value string) (err error) {
-	return instance.SetProperty("MachineJoinedName", value)
+	return instance.SetProperty("MachineJoinedName", (value))
 }
 
 // GetMachineJoinedName gets the value of MachineJoinedName for the instance
@@ -490,16 +645,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyMachineJoinedName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMachineJoinedType sets the value of MachineJoinedType for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyMachineJoinedType(value uint16) (err error) {
-	return instance.SetProperty("MachineJoinedType", value)
+	return instance.SetProperty("MachineJoinedType", (value))
 }
 
 // GetMachineJoinedType gets the value of MachineJoinedType for the instance
@@ -508,16 +672,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyMachineJoinedType() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxReceivedBitsPerSecond sets the value of MaxReceivedBitsPerSecond for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyMaxReceivedBitsPerSecond(value []float32) (err error) {
-	return instance.SetProperty("MaxReceivedBitsPerSecond", value)
+	return instance.SetProperty("MaxReceivedBitsPerSecond", (value))
 }
 
 // GetMaxReceivedBitsPerSecond gets the value of MaxReceivedBitsPerSecond for the instance
@@ -526,16 +699,26 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyMaxReceivedBitsPerSecond() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(float32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, float32(valuetmp))
+	}
+
 	return
 }
 
 // SetMaxSentBitsPerSecond sets the value of MaxSentBitsPerSecond for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyMaxSentBitsPerSecond(value []float32) (err error) {
-	return instance.SetProperty("MaxSentBitsPerSecond", value)
+	return instance.SetProperty("MaxSentBitsPerSecond", (value))
 }
 
 // GetMaxSentBitsPerSecond gets the value of MaxSentBitsPerSecond for the instance
@@ -544,16 +727,26 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyMaxSentBitsPerSecond() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(float32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, float32(valuetmp))
+	}
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -562,16 +755,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNdisMedium sets the value of NdisMedium for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNdisMedium(value uint32) (err error) {
-	return instance.SetProperty("NdisMedium", value)
+	return instance.SetProperty("NdisMedium", (value))
 }
 
 // GetNdisMedium gets the value of NdisMedium for the instance
@@ -580,16 +782,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNdisMedium() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNdisPhysicalMedium sets the value of NdisPhysicalMedium for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNdisPhysicalMedium(value uint32) (err error) {
-	return instance.SetProperty("NdisPhysicalMedium", value)
+	return instance.SetProperty("NdisPhysicalMedium", (value))
 }
 
 // GetNdisPhysicalMedium gets the value of NdisPhysicalMedium for the instance
@@ -598,16 +809,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNdisPhysicalMedium() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonUniCastsReceived sets the value of NonUniCastsReceived for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNonUniCastsReceived(value uint64) (err error) {
-	return instance.SetProperty("NonUniCastsReceived", value)
+	return instance.SetProperty("NonUniCastsReceived", (value))
 }
 
 // GetNonUniCastsReceived gets the value of NonUniCastsReceived for the instance
@@ -616,16 +836,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNonUniCastsReceived() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonUniCastsReceivedPerInterval sets the value of NonUniCastsReceivedPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNonUniCastsReceivedPerInterval(value uint64) (err error) {
-	return instance.SetProperty("NonUniCastsReceivedPerInterval", value)
+	return instance.SetProperty("NonUniCastsReceivedPerInterval", (value))
 }
 
 // GetNonUniCastsReceivedPerInterval gets the value of NonUniCastsReceivedPerInterval for the instance
@@ -634,16 +863,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNonUniCastsReceivedPerInterval
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonUniCastsSent sets the value of NonUniCastsSent for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNonUniCastsSent(value uint64) (err error) {
-	return instance.SetProperty("NonUniCastsSent", value)
+	return instance.SetProperty("NonUniCastsSent", (value))
 }
 
 // GetNonUniCastsSent gets the value of NonUniCastsSent for the instance
@@ -652,16 +890,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNonUniCastsSent() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonUniCastsSentPerInterval sets the value of NonUniCastsSentPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNonUniCastsSentPerInterval(value uint64) (err error) {
-	return instance.SetProperty("NonUniCastsSentPerInterval", value)
+	return instance.SetProperty("NonUniCastsSentPerInterval", (value))
 }
 
 // GetNonUniCastsSentPerInterval gets the value of NonUniCastsSentPerInterval for the instance
@@ -670,16 +917,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNonUniCastsSentPerInterval() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonUniCastsTotal sets the value of NonUniCastsTotal for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNonUniCastsTotal(value uint64) (err error) {
-	return instance.SetProperty("NonUniCastsTotal", value)
+	return instance.SetProperty("NonUniCastsTotal", (value))
 }
 
 // GetNonUniCastsTotal gets the value of NonUniCastsTotal for the instance
@@ -688,16 +944,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNonUniCastsTotal() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonUniCastsTotalPerInterval sets the value of NonUniCastsTotalPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyNonUniCastsTotalPerInterval(value uint64) (err error) {
-	return instance.SetProperty("NonUniCastsTotalPerInterval", value)
+	return instance.SetProperty("NonUniCastsTotalPerInterval", (value))
 }
 
 // GetNonUniCastsTotalPerInterval gets the value of NonUniCastsTotalPerInterval for the instance
@@ -706,16 +971,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyNonUniCastsTotalPerInterval() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOperationStatus sets the value of OperationStatus for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyOperationStatus(value uint16) (err error) {
-	return instance.SetProperty("OperationStatus", value)
+	return instance.SetProperty("OperationStatus", (value))
 }
 
 // GetOperationStatus gets the value of OperationStatus for the instance
@@ -724,16 +998,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyOperationStatus() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReceivedBitsPerSecond sets the value of ReceivedBitsPerSecond for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyReceivedBitsPerSecond(value []float32) (err error) {
-	return instance.SetProperty("ReceivedBitsPerSecond", value)
+	return instance.SetProperty("ReceivedBitsPerSecond", (value))
 }
 
 // GetReceivedBitsPerSecond gets the value of ReceivedBitsPerSecond for the instance
@@ -742,16 +1025,26 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyReceivedBitsPerSecond() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(float32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, float32(valuetmp))
+	}
+
 	return
 }
 
 // SetReceivedThroughput sets the value of ReceivedThroughput for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyReceivedThroughput(value []float32) (err error) {
-	return instance.SetProperty("ReceivedThroughput", value)
+	return instance.SetProperty("ReceivedThroughput", (value))
 }
 
 // GetReceivedThroughput gets the value of ReceivedThroughput for the instance
@@ -760,16 +1053,26 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyReceivedThroughput() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(float32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, float32(valuetmp))
+	}
+
 	return
 }
 
 // SetSentBitsPerSecond sets the value of SentBitsPerSecond for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertySentBitsPerSecond(value []float32) (err error) {
-	return instance.SetProperty("SentBitsPerSecond", value)
+	return instance.SetProperty("SentBitsPerSecond", (value))
 }
 
 // GetSentBitsPerSecond gets the value of SentBitsPerSecond for the instance
@@ -778,16 +1081,26 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertySentBitsPerSecond() (value []f
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(float32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, float32(valuetmp))
+	}
+
 	return
 }
 
 // SetSentThroughput sets the value of SentThroughput for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertySentThroughput(value []float32) (err error) {
-	return instance.SetProperty("SentThroughput", value)
+	return instance.SetProperty("SentThroughput", (value))
 }
 
 // GetSentThroughput gets the value of SentThroughput for the instance
@@ -796,16 +1109,26 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertySentThroughput() (value []floa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(float32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, float32(valuetmp))
+	}
+
 	return
 }
 
 // SetUniCastsReceived sets the value of UniCastsReceived for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyUniCastsReceived(value uint64) (err error) {
-	return instance.SetProperty("UniCastsReceived", value)
+	return instance.SetProperty("UniCastsReceived", (value))
 }
 
 // GetUniCastsReceived gets the value of UniCastsReceived for the instance
@@ -814,16 +1137,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyUniCastsReceived() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUniCastsReceivedPerInterval sets the value of UniCastsReceivedPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyUniCastsReceivedPerInterval(value uint64) (err error) {
-	return instance.SetProperty("UniCastsReceivedPerInterval", value)
+	return instance.SetProperty("UniCastsReceivedPerInterval", (value))
 }
 
 // GetUniCastsReceivedPerInterval gets the value of UniCastsReceivedPerInterval for the instance
@@ -832,16 +1164,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyUniCastsReceivedPerInterval() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUniCastsSent sets the value of UniCastsSent for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyUniCastsSent(value uint64) (err error) {
-	return instance.SetProperty("UniCastsSent", value)
+	return instance.SetProperty("UniCastsSent", (value))
 }
 
 // GetUniCastsSent gets the value of UniCastsSent for the instance
@@ -850,16 +1191,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyUniCastsSent() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUniCastsSentPerInterval sets the value of UniCastsSentPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyUniCastsSentPerInterval(value uint64) (err error) {
-	return instance.SetProperty("UniCastsSentPerInterval", value)
+	return instance.SetProperty("UniCastsSentPerInterval", (value))
 }
 
 // GetUniCastsSentPerInterval gets the value of UniCastsSentPerInterval for the instance
@@ -868,16 +1218,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyUniCastsSentPerInterval() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUniCastsTotal sets the value of UniCastsTotal for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyUniCastsTotal(value uint64) (err error) {
-	return instance.SetProperty("UniCastsTotal", value)
+	return instance.SetProperty("UniCastsTotal", (value))
 }
 
 // GetUniCastsTotal gets the value of UniCastsTotal for the instance
@@ -886,16 +1245,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyUniCastsTotal() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUniCastsTotalPerInterval sets the value of UniCastsTotalPerInterval for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyUniCastsTotalPerInterval(value uint64) (err error) {
-	return instance.SetProperty("UniCastsTotalPerInterval", value)
+	return instance.SetProperty("UniCastsTotalPerInterval", (value))
 }
 
 // GetUniCastsTotalPerInterval gets the value of UniCastsTotalPerInterval for the instance
@@ -904,16 +1272,25 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyUniCastsTotalPerInterval() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUtilization sets the value of Utilization for the instance
 func (instance *MSFT_MTNetworkAdapter) SetPropertyUtilization(value float32) (err error) {
-	return instance.SetProperty("Utilization", value)
+	return instance.SetProperty("Utilization", (value))
 }
 
 // GetUtilization gets the value of Utilization for the instance
@@ -922,9 +1299,18 @@ func (instance *MSFT_MTNetworkAdapter) GetPropertyUtilization() (value float32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float32(valuetmp)
+
 	return
 }

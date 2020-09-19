@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_WindowsAdvancedThreatProtection_HealthState01 struct
@@ -68,7 +70,7 @@ func NewMDM_WindowsAdvancedThreatProtection_HealthState01Ex6(hostName string,
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -77,16 +79,25 @@ func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) GetPropertyIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastConnected sets the value of LastConnected for the instance
 func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) SetPropertyLastConnected(value string) (err error) {
-	return instance.SetProperty("LastConnected", value)
+	return instance.SetProperty("LastConnected", (value))
 }
 
 // GetLastConnected gets the value of LastConnected for the instance
@@ -95,16 +106,25 @@ func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) GetPropertyLa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOnboardingState sets the value of OnboardingState for the instance
 func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) SetPropertyOnboardingState(value int32) (err error) {
-	return instance.SetProperty("OnboardingState", value)
+	return instance.SetProperty("OnboardingState", (value))
 }
 
 // GetOnboardingState gets the value of OnboardingState for the instance
@@ -113,16 +133,25 @@ func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) GetPropertyOn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetOrgId sets the value of OrgId for the instance
 func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) SetPropertyOrgId(value string) (err error) {
-	return instance.SetProperty("OrgId", value)
+	return instance.SetProperty("OrgId", (value))
 }
 
 // GetOrgId gets the value of OrgId for the instance
@@ -131,16 +160,25 @@ func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) GetPropertyOr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -149,16 +187,25 @@ func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) GetPropertyPa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSenseIsRunning sets the value of SenseIsRunning for the instance
 func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) SetPropertySenseIsRunning(value bool) (err error) {
-	return instance.SetProperty("SenseIsRunning", value)
+	return instance.SetProperty("SenseIsRunning", (value))
 }
 
 // GetSenseIsRunning gets the value of SenseIsRunning for the instance
@@ -167,9 +214,18 @@ func (instance *MDM_WindowsAdvancedThreatProtection_HealthState01) GetPropertySe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

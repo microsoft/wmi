@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RoamingProfileMachineConfiguration struct
@@ -104,7 +106,7 @@ func NewWin32_RoamingProfileMachineConfigurationEx6(hostName string,
 
 // SetAddAdminGroupToRUPEnabled sets the value of AddAdminGroupToRUPEnabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyAddAdminGroupToRUPEnabled(value bool) (err error) {
-	return instance.SetProperty("AddAdminGroupToRUPEnabled", value)
+	return instance.SetProperty("AddAdminGroupToRUPEnabled", (value))
 }
 
 // GetAddAdminGroupToRUPEnabled gets the value of AddAdminGroupToRUPEnabled for the instance
@@ -113,16 +115,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyAddAdminGro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowCrossForestUserPolicy sets the value of AllowCrossForestUserPolicy for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyAllowCrossForestUserPolicy(value bool) (err error) {
-	return instance.SetProperty("AllowCrossForestUserPolicy", value)
+	return instance.SetProperty("AllowCrossForestUserPolicy", (value))
 }
 
 // GetAllowCrossForestUserPolicy gets the value of AllowCrossForestUserPolicy for the instance
@@ -131,16 +142,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyAllowCrossF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBackgroundUploadParams sets the value of BackgroundUploadParams for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyBackgroundUploadParams(value Win32_RoamingProfileBackgroundUploadParams) (err error) {
-	return instance.SetProperty("BackgroundUploadParams", value)
+	return instance.SetProperty("BackgroundUploadParams", (value))
 }
 
 // GetBackgroundUploadParams gets the value of BackgroundUploadParams for the instance
@@ -149,16 +169,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyBackgroundU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_RoamingProfileBackgroundUploadParams)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_RoamingProfileBackgroundUploadParams)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_RoamingProfileBackgroundUploadParams is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_RoamingProfileBackgroundUploadParams(valuetmp)
+
 	return
 }
 
 // SetDeleteProfilesOlderDays sets the value of DeleteProfilesOlderDays for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyDeleteProfilesOlderDays(value uint16) (err error) {
-	return instance.SetProperty("DeleteProfilesOlderDays", value)
+	return instance.SetProperty("DeleteProfilesOlderDays", (value))
 }
 
 // GetDeleteProfilesOlderDays gets the value of DeleteProfilesOlderDays for the instance
@@ -167,16 +196,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyDeleteProfi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDeleteRoamingCacheEnabled sets the value of DeleteRoamingCacheEnabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyDeleteRoamingCacheEnabled(value bool) (err error) {
-	return instance.SetProperty("DeleteRoamingCacheEnabled", value)
+	return instance.SetProperty("DeleteRoamingCacheEnabled", (value))
 }
 
 // GetDeleteRoamingCacheEnabled gets the value of DeleteRoamingCacheEnabled for the instance
@@ -185,16 +223,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyDeleteRoami
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDetectSlowLinkDisabled sets the value of DetectSlowLinkDisabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyDetectSlowLinkDisabled(value bool) (err error) {
-	return instance.SetProperty("DetectSlowLinkDisabled", value)
+	return instance.SetProperty("DetectSlowLinkDisabled", (value))
 }
 
 // GetDetectSlowLinkDisabled gets the value of DetectSlowLinkDisabled for the instance
@@ -203,16 +250,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyDetectSlowL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetForceUnloadDisabled sets the value of ForceUnloadDisabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyForceUnloadDisabled(value bool) (err error) {
-	return instance.SetProperty("ForceUnloadDisabled", value)
+	return instance.SetProperty("ForceUnloadDisabled", (value))
 }
 
 // GetForceUnloadDisabled gets the value of ForceUnloadDisabled for the instance
@@ -221,16 +277,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyForceUnload
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsConfiguredByWMI sets the value of IsConfiguredByWMI for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyIsConfiguredByWMI(value bool) (err error) {
-	return instance.SetProperty("IsConfiguredByWMI", value)
+	return instance.SetProperty("IsConfiguredByWMI", (value))
 }
 
 // GetIsConfiguredByWMI gets the value of IsConfiguredByWMI for the instance
@@ -239,16 +304,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyIsConfigure
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMachineProfilePath sets the value of MachineProfilePath for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyMachineProfilePath(value string) (err error) {
-	return instance.SetProperty("MachineProfilePath", value)
+	return instance.SetProperty("MachineProfilePath", (value))
 }
 
 // GetMachineProfilePath gets the value of MachineProfilePath for the instance
@@ -257,16 +331,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyMachineProf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOnlyAllowLocalProfiles sets the value of OnlyAllowLocalProfiles for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyOnlyAllowLocalProfiles(value bool) (err error) {
-	return instance.SetProperty("OnlyAllowLocalProfiles", value)
+	return instance.SetProperty("OnlyAllowLocalProfiles", (value))
 }
 
 // GetOnlyAllowLocalProfiles gets the value of OnlyAllowLocalProfiles for the instance
@@ -275,16 +358,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyOnlyAllowLo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOwnerCheckDisabled sets the value of OwnerCheckDisabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyOwnerCheckDisabled(value bool) (err error) {
-	return instance.SetProperty("OwnerCheckDisabled", value)
+	return instance.SetProperty("OwnerCheckDisabled", (value))
 }
 
 // GetOwnerCheckDisabled gets the value of OwnerCheckDisabled for the instance
@@ -293,16 +385,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyOwnerCheckD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPrimaryComputerEnabled sets the value of PrimaryComputerEnabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyPrimaryComputerEnabled(value bool) (err error) {
-	return instance.SetProperty("PrimaryComputerEnabled", value)
+	return instance.SetProperty("PrimaryComputerEnabled", (value))
 }
 
 // GetPrimaryComputerEnabled gets the value of PrimaryComputerEnabled for the instance
@@ -311,16 +412,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyPrimaryComp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetProfileUploadDisabled sets the value of ProfileUploadDisabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyProfileUploadDisabled(value bool) (err error) {
-	return instance.SetProperty("ProfileUploadDisabled", value)
+	return instance.SetProperty("ProfileUploadDisabled", (value))
 }
 
 // GetProfileUploadDisabled gets the value of ProfileUploadDisabled for the instance
@@ -329,16 +439,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyProfileUplo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSlowLinkTimeOutParams sets the value of SlowLinkTimeOutParams for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertySlowLinkTimeOutParams(value Win32_RoamingProfileSlowLinkParams) (err error) {
-	return instance.SetProperty("SlowLinkTimeOutParams", value)
+	return instance.SetProperty("SlowLinkTimeOutParams", (value))
 }
 
 // GetSlowLinkTimeOutParams gets the value of SlowLinkTimeOutParams for the instance
@@ -347,16 +466,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertySlowLinkTim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_RoamingProfileSlowLinkParams)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_RoamingProfileSlowLinkParams)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_RoamingProfileSlowLinkParams is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_RoamingProfileSlowLinkParams(valuetmp)
+
 	return
 }
 
 // SetSlowLinkUIEnabled sets the value of SlowLinkUIEnabled for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertySlowLinkUIEnabled(value bool) (err error) {
-	return instance.SetProperty("SlowLinkUIEnabled", value)
+	return instance.SetProperty("SlowLinkUIEnabled", (value))
 }
 
 // GetSlowLinkUIEnabled gets the value of SlowLinkUIEnabled for the instance
@@ -365,16 +493,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertySlowLinkUIE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTempProfileLogonBlocked sets the value of TempProfileLogonBlocked for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyTempProfileLogonBlocked(value bool) (err error) {
-	return instance.SetProperty("TempProfileLogonBlocked", value)
+	return instance.SetProperty("TempProfileLogonBlocked", (value))
 }
 
 // GetTempProfileLogonBlocked gets the value of TempProfileLogonBlocked for the instance
@@ -383,16 +520,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyTempProfile
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetWaitForNetworkInSec sets the value of WaitForNetworkInSec for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyWaitForNetworkInSec(value uint16) (err error) {
-	return instance.SetProperty("WaitForNetworkInSec", value)
+	return instance.SetProperty("WaitForNetworkInSec", (value))
 }
 
 // GetWaitForNetworkInSec gets the value of WaitForNetworkInSec for the instance
@@ -401,16 +547,25 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyWaitForNetw
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetWaitForRemoteProfile sets the value of WaitForRemoteProfile for the instance
 func (instance *Win32_RoamingProfileMachineConfiguration) SetPropertyWaitForRemoteProfile(value bool) (err error) {
-	return instance.SetProperty("WaitForRemoteProfile", value)
+	return instance.SetProperty("WaitForRemoteProfile", (value))
 }
 
 // GetWaitForRemoteProfile gets the value of WaitForRemoteProfile for the instance
@@ -419,9 +574,18 @@ func (instance *Win32_RoamingProfileMachineConfiguration) GetPropertyWaitForRemo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

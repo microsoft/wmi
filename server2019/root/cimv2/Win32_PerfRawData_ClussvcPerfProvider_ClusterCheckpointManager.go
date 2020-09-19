@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager struct
@@ -73,7 +75,7 @@ func NewWin32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManagerEx6(hostNa
 
 // SetCryptoCheckpointsRestored sets the value of CryptoCheckpointsRestored for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyCryptoCheckpointsRestored(value uint64) (err error) {
-	return instance.SetProperty("CryptoCheckpointsRestored", value)
+	return instance.SetProperty("CryptoCheckpointsRestored", (value))
 }
 
 // GetCryptoCheckpointsRestored gets the value of CryptoCheckpointsRestored for the instance
@@ -82,16 +84,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCryptoCheckpointsRestoredPersec sets the value of CryptoCheckpointsRestoredPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyCryptoCheckpointsRestoredPersec(value uint64) (err error) {
-	return instance.SetProperty("CryptoCheckpointsRestoredPersec", value)
+	return instance.SetProperty("CryptoCheckpointsRestoredPersec", (value))
 }
 
 // GetCryptoCheckpointsRestoredPersec gets the value of CryptoCheckpointsRestoredPersec for the instance
@@ -100,16 +111,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCryptoCheckpointsSaved sets the value of CryptoCheckpointsSaved for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyCryptoCheckpointsSaved(value uint64) (err error) {
-	return instance.SetProperty("CryptoCheckpointsSaved", value)
+	return instance.SetProperty("CryptoCheckpointsSaved", (value))
 }
 
 // GetCryptoCheckpointsSaved gets the value of CryptoCheckpointsSaved for the instance
@@ -118,16 +138,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCryptoCheckpointsSavedPersec sets the value of CryptoCheckpointsSavedPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyCryptoCheckpointsSavedPersec(value uint64) (err error) {
-	return instance.SetProperty("CryptoCheckpointsSavedPersec", value)
+	return instance.SetProperty("CryptoCheckpointsSavedPersec", (value))
 }
 
 // GetCryptoCheckpointsSavedPersec gets the value of CryptoCheckpointsSavedPersec for the instance
@@ -136,16 +165,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRegistryCheckpointsRestored sets the value of RegistryCheckpointsRestored for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyRegistryCheckpointsRestored(value uint64) (err error) {
-	return instance.SetProperty("RegistryCheckpointsRestored", value)
+	return instance.SetProperty("RegistryCheckpointsRestored", (value))
 }
 
 // GetRegistryCheckpointsRestored gets the value of RegistryCheckpointsRestored for the instance
@@ -154,16 +192,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRegistryCheckpointsRestoredPersec sets the value of RegistryCheckpointsRestoredPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyRegistryCheckpointsRestoredPersec(value uint64) (err error) {
-	return instance.SetProperty("RegistryCheckpointsRestoredPersec", value)
+	return instance.SetProperty("RegistryCheckpointsRestoredPersec", (value))
 }
 
 // GetRegistryCheckpointsRestoredPersec gets the value of RegistryCheckpointsRestoredPersec for the instance
@@ -172,16 +219,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRegistryCheckpointsSaved sets the value of RegistryCheckpointsSaved for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyRegistryCheckpointsSaved(value uint64) (err error) {
-	return instance.SetProperty("RegistryCheckpointsSaved", value)
+	return instance.SetProperty("RegistryCheckpointsSaved", (value))
 }
 
 // GetRegistryCheckpointsSaved gets the value of RegistryCheckpointsSaved for the instance
@@ -190,16 +246,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRegistryCheckpointsSavedPersec sets the value of RegistryCheckpointsSavedPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) SetPropertyRegistryCheckpointsSavedPersec(value uint64) (err error) {
-	return instance.SetProperty("RegistryCheckpointsSavedPersec", value)
+	return instance.SetProperty("RegistryCheckpointsSavedPersec", (value))
 }
 
 // GetRegistryCheckpointsSavedPersec gets the value of RegistryCheckpointsSavedPersec for the instance
@@ -208,9 +273,18 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterCheckpointManager) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

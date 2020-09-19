@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbShare struct
@@ -122,7 +124,7 @@ func NewMSFT_SmbShareEx6(hostName string,
 
 // SetAvailabilityType sets the value of AvailabilityType for the instance
 func (instance *MSFT_SmbShare) SetPropertyAvailabilityType(value SmbShare_AvailabilityType) (err error) {
-	return instance.SetProperty("AvailabilityType", value)
+	return instance.SetProperty("AvailabilityType", (value))
 }
 
 // GetAvailabilityType gets the value of AvailabilityType for the instance
@@ -131,16 +133,25 @@ func (instance *MSFT_SmbShare) GetPropertyAvailabilityType() (value SmbShare_Ava
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShare_AvailabilityType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShare_AvailabilityType(valuetmp)
+
 	return
 }
 
 // SetCachingMode sets the value of CachingMode for the instance
 func (instance *MSFT_SmbShare) SetPropertyCachingMode(value SmbShare_CachingMode) (err error) {
-	return instance.SetProperty("CachingMode", value)
+	return instance.SetProperty("CachingMode", (value))
 }
 
 // GetCachingMode gets the value of CachingMode for the instance
@@ -149,16 +160,25 @@ func (instance *MSFT_SmbShare) GetPropertyCachingMode() (value SmbShare_CachingM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShare_CachingMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShare_CachingMode(valuetmp)
+
 	return
 }
 
 // SetCATimeout sets the value of CATimeout for the instance
 func (instance *MSFT_SmbShare) SetPropertyCATimeout(value uint32) (err error) {
-	return instance.SetProperty("CATimeout", value)
+	return instance.SetProperty("CATimeout", (value))
 }
 
 // GetCATimeout gets the value of CATimeout for the instance
@@ -167,16 +187,25 @@ func (instance *MSFT_SmbShare) GetPropertyCATimeout() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConcurrentUserLimit sets the value of ConcurrentUserLimit for the instance
 func (instance *MSFT_SmbShare) SetPropertyConcurrentUserLimit(value uint32) (err error) {
-	return instance.SetProperty("ConcurrentUserLimit", value)
+	return instance.SetProperty("ConcurrentUserLimit", (value))
 }
 
 // GetConcurrentUserLimit gets the value of ConcurrentUserLimit for the instance
@@ -185,16 +214,25 @@ func (instance *MSFT_SmbShare) GetPropertyConcurrentUserLimit() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContinuouslyAvailable sets the value of ContinuouslyAvailable for the instance
 func (instance *MSFT_SmbShare) SetPropertyContinuouslyAvailable(value bool) (err error) {
-	return instance.SetProperty("ContinuouslyAvailable", value)
+	return instance.SetProperty("ContinuouslyAvailable", (value))
 }
 
 // GetContinuouslyAvailable gets the value of ContinuouslyAvailable for the instance
@@ -203,16 +241,25 @@ func (instance *MSFT_SmbShare) GetPropertyContinuouslyAvailable() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCurrentUsers sets the value of CurrentUsers for the instance
 func (instance *MSFT_SmbShare) SetPropertyCurrentUsers(value uint32) (err error) {
-	return instance.SetProperty("CurrentUsers", value)
+	return instance.SetProperty("CurrentUsers", (value))
 }
 
 // GetCurrentUsers gets the value of CurrentUsers for the instance
@@ -221,16 +268,25 @@ func (instance *MSFT_SmbShare) GetPropertyCurrentUsers() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_SmbShare) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -239,16 +295,25 @@ func (instance *MSFT_SmbShare) GetPropertyDescription() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEncryptData sets the value of EncryptData for the instance
 func (instance *MSFT_SmbShare) SetPropertyEncryptData(value bool) (err error) {
-	return instance.SetProperty("EncryptData", value)
+	return instance.SetProperty("EncryptData", (value))
 }
 
 // GetEncryptData gets the value of EncryptData for the instance
@@ -257,16 +322,25 @@ func (instance *MSFT_SmbShare) GetPropertyEncryptData() (value bool, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFolderEnumerationMode sets the value of FolderEnumerationMode for the instance
 func (instance *MSFT_SmbShare) SetPropertyFolderEnumerationMode(value SmbShare_FolderEnumerationMode) (err error) {
-	return instance.SetProperty("FolderEnumerationMode", value)
+	return instance.SetProperty("FolderEnumerationMode", (value))
 }
 
 // GetFolderEnumerationMode gets the value of FolderEnumerationMode for the instance
@@ -275,16 +349,25 @@ func (instance *MSFT_SmbShare) GetPropertyFolderEnumerationMode() (value SmbShar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShare_FolderEnumerationMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShare_FolderEnumerationMode(valuetmp)
+
 	return
 }
 
 // SetIdentityRemoting sets the value of IdentityRemoting for the instance
 func (instance *MSFT_SmbShare) SetPropertyIdentityRemoting(value bool) (err error) {
-	return instance.SetProperty("IdentityRemoting", value)
+	return instance.SetProperty("IdentityRemoting", (value))
 }
 
 // GetIdentityRemoting gets the value of IdentityRemoting for the instance
@@ -293,16 +376,25 @@ func (instance *MSFT_SmbShare) GetPropertyIdentityRemoting() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInfrastructure sets the value of Infrastructure for the instance
 func (instance *MSFT_SmbShare) SetPropertyInfrastructure(value bool) (err error) {
-	return instance.SetProperty("Infrastructure", value)
+	return instance.SetProperty("Infrastructure", (value))
 }
 
 // GetInfrastructure gets the value of Infrastructure for the instance
@@ -311,16 +403,25 @@ func (instance *MSFT_SmbShare) GetPropertyInfrastructure() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLeasingMode sets the value of LeasingMode for the instance
 func (instance *MSFT_SmbShare) SetPropertyLeasingMode(value SmbShare_LeasingMode) (err error) {
-	return instance.SetProperty("LeasingMode", value)
+	return instance.SetProperty("LeasingMode", (value))
 }
 
 // GetLeasingMode gets the value of LeasingMode for the instance
@@ -329,16 +430,25 @@ func (instance *MSFT_SmbShare) GetPropertyLeasingMode() (value SmbShare_LeasingM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShare_LeasingMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShare_LeasingMode(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_SmbShare) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -347,16 +457,25 @@ func (instance *MSFT_SmbShare) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *MSFT_SmbShare) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -365,16 +484,25 @@ func (instance *MSFT_SmbShare) GetPropertyPath() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScoped sets the value of Scoped for the instance
 func (instance *MSFT_SmbShare) SetPropertyScoped(value bool) (err error) {
-	return instance.SetProperty("Scoped", value)
+	return instance.SetProperty("Scoped", (value))
 }
 
 // GetScoped gets the value of Scoped for the instance
@@ -383,16 +511,25 @@ func (instance *MSFT_SmbShare) GetPropertyScoped() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetScopeName sets the value of ScopeName for the instance
 func (instance *MSFT_SmbShare) SetPropertyScopeName(value string) (err error) {
-	return instance.SetProperty("ScopeName", value)
+	return instance.SetProperty("ScopeName", (value))
 }
 
 // GetScopeName gets the value of ScopeName for the instance
@@ -401,16 +538,25 @@ func (instance *MSFT_SmbShare) GetPropertyScopeName() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSecurityDescriptor sets the value of SecurityDescriptor for the instance
 func (instance *MSFT_SmbShare) SetPropertySecurityDescriptor(value string) (err error) {
-	return instance.SetProperty("SecurityDescriptor", value)
+	return instance.SetProperty("SecurityDescriptor", (value))
 }
 
 // GetSecurityDescriptor gets the value of SecurityDescriptor for the instance
@@ -419,16 +565,25 @@ func (instance *MSFT_SmbShare) GetPropertySecurityDescriptor() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShadowCopy sets the value of ShadowCopy for the instance
 func (instance *MSFT_SmbShare) SetPropertyShadowCopy(value bool) (err error) {
-	return instance.SetProperty("ShadowCopy", value)
+	return instance.SetProperty("ShadowCopy", (value))
 }
 
 // GetShadowCopy gets the value of ShadowCopy for the instance
@@ -437,16 +592,25 @@ func (instance *MSFT_SmbShare) GetPropertyShadowCopy() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetShareState sets the value of ShareState for the instance
 func (instance *MSFT_SmbShare) SetPropertyShareState(value SmbShare_ShareState) (err error) {
-	return instance.SetProperty("ShareState", value)
+	return instance.SetProperty("ShareState", (value))
 }
 
 // GetShareState gets the value of ShareState for the instance
@@ -455,16 +619,25 @@ func (instance *MSFT_SmbShare) GetPropertyShareState() (value SmbShare_ShareStat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShare_ShareState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShare_ShareState(valuetmp)
+
 	return
 }
 
 // SetShareType sets the value of ShareType for the instance
 func (instance *MSFT_SmbShare) SetPropertyShareType(value SmbShare_ShareType) (err error) {
-	return instance.SetProperty("ShareType", value)
+	return instance.SetProperty("ShareType", (value))
 }
 
 // GetShareType gets the value of ShareType for the instance
@@ -473,16 +646,25 @@ func (instance *MSFT_SmbShare) GetPropertyShareType() (value SmbShare_ShareType,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShare_ShareType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShare_ShareType(valuetmp)
+
 	return
 }
 
 // SetSmbInstance sets the value of SmbInstance for the instance
 func (instance *MSFT_SmbShare) SetPropertySmbInstance(value SmbShare_SmbInstance) (err error) {
-	return instance.SetProperty("SmbInstance", value)
+	return instance.SetProperty("SmbInstance", (value))
 }
 
 // GetSmbInstance gets the value of SmbInstance for the instance
@@ -491,16 +673,25 @@ func (instance *MSFT_SmbShare) GetPropertySmbInstance() (value SmbShare_SmbInsta
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbShare_SmbInstance)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbShare_SmbInstance(valuetmp)
+
 	return
 }
 
 // SetSpecial sets the value of Special for the instance
 func (instance *MSFT_SmbShare) SetPropertySpecial(value bool) (err error) {
-	return instance.SetProperty("Special", value)
+	return instance.SetProperty("Special", (value))
 }
 
 // GetSpecial gets the value of Special for the instance
@@ -509,16 +700,25 @@ func (instance *MSFT_SmbShare) GetPropertySpecial() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTemporary sets the value of Temporary for the instance
 func (instance *MSFT_SmbShare) SetPropertyTemporary(value bool) (err error) {
-	return instance.SetProperty("Temporary", value)
+	return instance.SetProperty("Temporary", (value))
 }
 
 // GetTemporary gets the value of Temporary for the instance
@@ -527,16 +727,25 @@ func (instance *MSFT_SmbShare) GetPropertyTemporary() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVolume sets the value of Volume for the instance
 func (instance *MSFT_SmbShare) SetPropertyVolume(value string) (err error) {
-	return instance.SetProperty("Volume", value)
+	return instance.SetProperty("Volume", (value))
 }
 
 // GetVolume gets the value of Volume for the instance
@@ -545,10 +754,19 @@ func (instance *MSFT_SmbShare) GetPropertyVolume() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

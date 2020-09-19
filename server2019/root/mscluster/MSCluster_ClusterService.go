@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
@@ -11,7 +11,9 @@ package mscluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ClusterService struct
@@ -53,7 +55,7 @@ func NewMSCluster_ClusterServiceEx6(hostName string,
 
 // SetElementName sets the value of ElementName for the instance
 func (instance *MSCluster_ClusterService) SetPropertyElementName(value string) (err error) {
-	return instance.SetProperty("ElementName", value)
+	return instance.SetProperty("ElementName", (value))
 }
 
 // GetElementName gets the value of ElementName for the instance
@@ -62,10 +64,19 @@ func (instance *MSCluster_ClusterService) GetPropertyElementName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
@@ -320,15 +331,13 @@ func (instance *MSCluster_ClusterService) ChangeVMSettings( /* IN */ VmResourceN
 // <param name="AccountName" type="string "></param>
 // <param name="CloudWitnessName" type="string "></param>
 // <param name="EndpointInfo" type="string "></param>
-// <param name="SASToken" type="string "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSCluster_ClusterService) CreateCloudWitness( /* IN */ AccountName string,
 	/* IN */ AccountKey string,
-	/* IN */ SASToken string,
 	/* IN */ EndpointInfo string,
 	/* IN */ CloudWitnessName string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("CreateCloudWitness", AccountName, AccountKey, SASToken, EndpointInfo, CloudWitnessName)
+	retVal, err := instance.InvokeMethodWithReturn("CreateCloudWitness", AccountName, AccountKey, EndpointInfo, CloudWitnessName)
 	if err != nil {
 		return
 	}
@@ -340,12 +349,10 @@ func (instance *MSCluster_ClusterService) CreateCloudWitness( /* IN */ AccountNa
 //
 
 // <param name="AccountKey" type="string "></param>
-// <param name="SASToken" type="string "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSCluster_ClusterService) UpdateCloudWitnessKey( /* IN */ AccountKey string,
-	/* IN */ SASToken string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("UpdateCloudWitnessKey", AccountKey, SASToken)
+func (instance *MSCluster_ClusterService) UpdateCloudWitnessKey( /* IN */ AccountKey string) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("UpdateCloudWitnessKey", AccountKey)
 	if err != nil {
 		return
 	}

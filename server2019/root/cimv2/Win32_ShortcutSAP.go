@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ShortcutSAP struct
@@ -56,7 +58,7 @@ func NewWin32_ShortcutSAPEx6(hostName string,
 
 // SetAction sets the value of Action for the instance
 func (instance *Win32_ShortcutSAP) SetPropertyAction(value Win32_ShortcutAction) (err error) {
-	return instance.SetProperty("Action", value)
+	return instance.SetProperty("Action", (value))
 }
 
 // GetAction gets the value of Action for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_ShortcutSAP) GetPropertyAction() (value Win32_ShortcutActi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_ShortcutAction)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_ShortcutAction)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_ShortcutAction is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_ShortcutAction(valuetmp)
+
 	return
 }
 
 // SetElement sets the value of Element for the instance
 func (instance *Win32_ShortcutSAP) SetPropertyElement(value Win32_CommandLineAccess) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_ShortcutSAP) GetPropertyElement() (value Win32_CommandLine
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_CommandLineAccess)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_CommandLineAccess)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_CommandLineAccess is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_CommandLineAccess(valuetmp)
+
 	return
 }

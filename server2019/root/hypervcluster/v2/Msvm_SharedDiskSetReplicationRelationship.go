@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_SharedDiskSetReplicationRelationship struct
@@ -83,7 +85,7 @@ func NewMsvm_SharedDiskSetReplicationRelationshipEx6(hostName string,
 
 // SetCaption sets the value of Caption for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyCaption(value string) (err error) {
-	return instance.SetProperty("Caption", value)
+	return instance.SetProperty("Caption", (value))
 }
 
 // GetCaption gets the value of Caption for the instance
@@ -92,16 +94,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyCaption() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCollectionID sets the value of CollectionID for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyCollectionID(value string) (err error) {
-	return instance.SetProperty("CollectionID", value)
+	return instance.SetProperty("CollectionID", (value))
 }
 
 // GetCollectionID gets the value of CollectionID for the instance
@@ -110,16 +121,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyCollection
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -128,16 +148,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyDescriptio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetElementName sets the value of ElementName for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyElementName(value string) (err error) {
-	return instance.SetProperty("ElementName", value)
+	return instance.SetProperty("ElementName", (value))
 }
 
 // GetElementName gets the value of ElementName for the instance
@@ -146,16 +175,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyElementNam
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFailedOverReplicationType sets the value of FailedOverReplicationType for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyFailedOverReplicationType(value uint16) (err error) {
-	return instance.SetProperty("FailedOverReplicationType", value)
+	return instance.SetProperty("FailedOverReplicationType", (value))
 }
 
 // GetFailedOverReplicationType gets the value of FailedOverReplicationType for the instance
@@ -164,16 +202,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyFailedOver
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLastApplicationConsistentReplicationTime sets the value of LastApplicationConsistentReplicationTime for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyLastApplicationConsistentReplicationTime(value string) (err error) {
-	return instance.SetProperty("LastApplicationConsistentReplicationTime", value)
+	return instance.SetProperty("LastApplicationConsistentReplicationTime", (value))
 }
 
 // GetLastApplicationConsistentReplicationTime gets the value of LastApplicationConsistentReplicationTime for the instance
@@ -182,16 +229,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyLastApplic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastApplyTime sets the value of LastApplyTime for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyLastApplyTime(value string) (err error) {
-	return instance.SetProperty("LastApplyTime", value)
+	return instance.SetProperty("LastApplyTime", (value))
 }
 
 // GetLastApplyTime gets the value of LastApplyTime for the instance
@@ -200,16 +256,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyLastApplyT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastReplicationTime sets the value of LastReplicationTime for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyLastReplicationTime(value string) (err error) {
-	return instance.SetProperty("LastReplicationTime", value)
+	return instance.SetProperty("LastReplicationTime", (value))
 }
 
 // GetLastReplicationTime gets the value of LastReplicationTime for the instance
@@ -218,16 +283,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyLastReplic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastReplicationType sets the value of LastReplicationType for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyLastReplicationType(value uint16) (err error) {
-	return instance.SetProperty("LastReplicationType", value)
+	return instance.SetProperty("LastReplicationType", (value))
 }
 
 // GetLastReplicationType gets the value of LastReplicationType for the instance
@@ -236,16 +310,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyLastReplic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicationHealth sets the value of ReplicationHealth for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyReplicationHealth(value uint16) (err error) {
-	return instance.SetProperty("ReplicationHealth", value)
+	return instance.SetProperty("ReplicationHealth", (value))
 }
 
 // GetReplicationHealth gets the value of ReplicationHealth for the instance
@@ -254,16 +337,25 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyReplicatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicationState sets the value of ReplicationState for the instance
 func (instance *Msvm_SharedDiskSetReplicationRelationship) SetPropertyReplicationState(value uint16) (err error) {
-	return instance.SetProperty("ReplicationState", value)
+	return instance.SetProperty("ReplicationState", (value))
 }
 
 // GetReplicationState gets the value of ReplicationState for the instance
@@ -272,9 +364,18 @@ func (instance *Msvm_SharedDiskSetReplicationRelationship) GetPropertyReplicatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

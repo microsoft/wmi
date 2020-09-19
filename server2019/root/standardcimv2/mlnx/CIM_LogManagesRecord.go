@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
@@ -11,7 +11,9 @@ package mlnx
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_LogManagesRecord struct
@@ -56,7 +58,7 @@ func NewCIM_LogManagesRecordEx6(hostName string,
 
 // SetLog sets the value of Log for the instance
 func (instance *CIM_LogManagesRecord) SetPropertyLog(value CIM_Log) (err error) {
-	return instance.SetProperty("Log", value)
+	return instance.SetProperty("Log", (value))
 }
 
 // GetLog gets the value of Log for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_LogManagesRecord) GetPropertyLog() (value CIM_Log, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Log)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Log)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Log is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Log(valuetmp)
+
 	return
 }
 
 // SetRecord sets the value of Record for the instance
 func (instance *CIM_LogManagesRecord) SetPropertyRecord(value CIM_RecordForLog) (err error) {
-	return instance.SetProperty("Record", value)
+	return instance.SetProperty("Record", (value))
 }
 
 // GetRecord gets the value of Record for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_LogManagesRecord) GetPropertyRecord() (value CIM_RecordForLo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_RecordForLog)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_RecordForLog)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_RecordForLog is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_RecordForLog(valuetmp)
+
 	return
 }

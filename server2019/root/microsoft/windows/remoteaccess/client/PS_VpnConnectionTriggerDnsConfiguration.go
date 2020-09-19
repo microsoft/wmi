@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
@@ -11,7 +11,9 @@ package client
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // PS_VpnConnectionTriggerDnsConfiguration struct
@@ -56,7 +58,7 @@ func NewPS_VpnConnectionTriggerDnsConfigurationEx6(hostName string,
 
 // SetDnsIPAddress sets the value of DnsIPAddress for the instance
 func (instance *PS_VpnConnectionTriggerDnsConfiguration) SetPropertyDnsIPAddress(value []string) (err error) {
-	return instance.SetProperty("DnsIPAddress", value)
+	return instance.SetProperty("DnsIPAddress", (value))
 }
 
 // GetDnsIPAddress gets the value of DnsIPAddress for the instance
@@ -65,16 +67,26 @@ func (instance *PS_VpnConnectionTriggerDnsConfiguration) GetPropertyDnsIPAddress
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDnsSuffix sets the value of DnsSuffix for the instance
 func (instance *PS_VpnConnectionTriggerDnsConfiguration) SetPropertyDnsSuffix(value string) (err error) {
-	return instance.SetProperty("DnsSuffix", value)
+	return instance.SetProperty("DnsSuffix", (value))
 }
 
 // GetDnsSuffix gets the value of DnsSuffix for the instance
@@ -83,10 +95,19 @@ func (instance *PS_VpnConnectionTriggerDnsConfiguration) GetPropertyDnsSuffix() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager struct
@@ -103,7 +105,7 @@ func NewWin32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManagerEx6(hostN
 
 // SetDirectIOFailureRedirection sets the value of DirectIOFailureRedirection for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyDirectIOFailureRedirection(value uint64) (err error) {
-	return instance.SetProperty("DirectIOFailureRedirection", value)
+	return instance.SetProperty("DirectIOFailureRedirection", (value))
 }
 
 // GetDirectIOFailureRedirection gets the value of DirectIOFailureRedirection for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectIOFailureRedirectionPersec sets the value of DirectIOFailureRedirectionPersec for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyDirectIOFailureRedirectionPersec(value uint64) (err error) {
-	return instance.SetProperty("DirectIOFailureRedirectionPersec", value)
+	return instance.SetProperty("DirectIOFailureRedirectionPersec", (value))
 }
 
 // GetDirectIOFailureRedirectionPersec gets the value of DirectIOFailureRedirectionPersec for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadBytes sets the value of IOReadBytes for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReadBytes(value uint64) (err error) {
-	return instance.SetProperty("IOReadBytes", value)
+	return instance.SetProperty("IOReadBytes", (value))
 }
 
 // GetIOReadBytes gets the value of IOReadBytes for the instance
@@ -148,16 +168,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadBytesPersec sets the value of IOReadBytesPersec for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOReadBytesPersec", value)
+	return instance.SetProperty("IOReadBytesPersec", (value))
 }
 
 // GetIOReadBytesPersec gets the value of IOReadBytesPersec for the instance
@@ -166,16 +195,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadBytesPersecRedirected sets the value of IOReadBytesPersecRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReadBytesPersecRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOReadBytesPersecRedirected", value)
+	return instance.SetProperty("IOReadBytesPersecRedirected", (value))
 }
 
 // GetIOReadBytesPersecRedirected gets the value of IOReadBytesPersecRedirected for the instance
@@ -184,16 +222,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadBytesRedirected sets the value of IOReadBytesRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReadBytesRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOReadBytesRedirected", value)
+	return instance.SetProperty("IOReadBytesRedirected", (value))
 }
 
 // GetIOReadBytesRedirected gets the value of IOReadBytesRedirected for the instance
@@ -202,16 +249,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadPersecRedirected sets the value of IOReadPersecRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReadPersecRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOReadPersecRedirected", value)
+	return instance.SetProperty("IOReadPersecRedirected", (value))
 }
 
 // GetIOReadPersecRedirected gets the value of IOReadPersecRedirected for the instance
@@ -220,16 +276,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReads sets the value of IOReads for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReads(value uint64) (err error) {
-	return instance.SetProperty("IOReads", value)
+	return instance.SetProperty("IOReads", (value))
 }
 
 // GetIOReads gets the value of IOReads for the instance
@@ -238,16 +303,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadsPersec sets the value of IOReadsPersec for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("IOReadsPersec", value)
+	return instance.SetProperty("IOReadsPersec", (value))
 }
 
 // GetIOReadsPersec gets the value of IOReadsPersec for the instance
@@ -256,16 +330,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadsRedirected sets the value of IOReadsRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOReadsRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOReadsRedirected", value)
+	return instance.SetProperty("IOReadsRedirected", (value))
 }
 
 // GetIOReadsRedirected gets the value of IOReadsRedirected for the instance
@@ -274,16 +357,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWriteBytes sets the value of IOWriteBytes for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWriteBytes(value uint64) (err error) {
-	return instance.SetProperty("IOWriteBytes", value)
+	return instance.SetProperty("IOWriteBytes", (value))
 }
 
 // GetIOWriteBytes gets the value of IOWriteBytes for the instance
@@ -292,16 +384,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWriteBytesPersec sets the value of IOWriteBytesPersec for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOWriteBytesPersec", value)
+	return instance.SetProperty("IOWriteBytesPersec", (value))
 }
 
 // GetIOWriteBytesPersec gets the value of IOWriteBytesPersec for the instance
@@ -310,16 +411,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWriteBytesPersecRedirected sets the value of IOWriteBytesPersecRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWriteBytesPersecRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOWriteBytesPersecRedirected", value)
+	return instance.SetProperty("IOWriteBytesPersecRedirected", (value))
 }
 
 // GetIOWriteBytesPersecRedirected gets the value of IOWriteBytesPersecRedirected for the instance
@@ -328,16 +438,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWriteBytesRedirected sets the value of IOWriteBytesRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWriteBytesRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOWriteBytesRedirected", value)
+	return instance.SetProperty("IOWriteBytesRedirected", (value))
 }
 
 // GetIOWriteBytesRedirected gets the value of IOWriteBytesRedirected for the instance
@@ -346,16 +465,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWrites sets the value of IOWrites for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWrites(value uint64) (err error) {
-	return instance.SetProperty("IOWrites", value)
+	return instance.SetProperty("IOWrites", (value))
 }
 
 // GetIOWrites gets the value of IOWrites for the instance
@@ -364,16 +492,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWritesPersec sets the value of IOWritesPersec for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOWritesPersec", value)
+	return instance.SetProperty("IOWritesPersec", (value))
 }
 
 // GetIOWritesPersec gets the value of IOWritesPersec for the instance
@@ -382,16 +519,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWritesPersecRedirected sets the value of IOWritesPersecRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWritesPersecRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOWritesPersecRedirected", value)
+	return instance.SetProperty("IOWritesPersecRedirected", (value))
 }
 
 // GetIOWritesPersecRedirected gets the value of IOWritesPersecRedirected for the instance
@@ -400,16 +546,25 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWritesRedirected sets the value of IOWritesRedirected for the instance
 func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager) SetPropertyIOWritesRedirected(value uint64) (err error) {
-	return instance.SetProperty("IOWritesRedirected", value)
+	return instance.SetProperty("IOWritesRedirected", (value))
 }
 
 // GetIOWritesRedirected gets the value of IOWritesRedirected for the instance
@@ -418,9 +573,18 @@ func (instance *Win32_PerfRawData_CsvVolumePerfProvider_ClusterCSVVolumeManager)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

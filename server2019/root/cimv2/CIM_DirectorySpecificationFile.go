@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DirectorySpecificationFile struct
@@ -56,7 +58,7 @@ func NewCIM_DirectorySpecificationFileEx6(hostName string,
 
 // SetDirectorySpecification sets the value of DirectorySpecification for the instance
 func (instance *CIM_DirectorySpecificationFile) SetPropertyDirectorySpecification(value CIM_DirectorySpecification) (err error) {
-	return instance.SetProperty("DirectorySpecification", value)
+	return instance.SetProperty("DirectorySpecification", (value))
 }
 
 // GetDirectorySpecification gets the value of DirectorySpecification for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_DirectorySpecificationFile) GetPropertyDirectorySpecificatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_DirectorySpecification)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_DirectorySpecification)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_DirectorySpecification is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_DirectorySpecification(valuetmp)
+
 	return
 }
 
 // SetFileSpecification sets the value of FileSpecification for the instance
 func (instance *CIM_DirectorySpecificationFile) SetPropertyFileSpecification(value CIM_FileSpecification) (err error) {
-	return instance.SetProperty("FileSpecification", value)
+	return instance.SetProperty("FileSpecification", (value))
 }
 
 // GetFileSpecification gets the value of FileSpecification for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_DirectorySpecificationFile) GetPropertyFileSpecification() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_FileSpecification)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_FileSpecification)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_FileSpecification is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_FileSpecification(valuetmp)
+
 	return
 }

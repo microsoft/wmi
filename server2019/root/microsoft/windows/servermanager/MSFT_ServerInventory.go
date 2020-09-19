@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerInventory struct
@@ -95,7 +97,7 @@ func NewMSFT_ServerInventoryEx6(hostName string,
 
 // SetActivationStatus sets the value of ActivationStatus for the instance
 func (instance *MSFT_ServerInventory) SetPropertyActivationStatus(value uint8) (err error) {
-	return instance.SetProperty("ActivationStatus", value)
+	return instance.SetProperty("ActivationStatus", (value))
 }
 
 // GetActivationStatus gets the value of ActivationStatus for the instance
@@ -104,16 +106,25 @@ func (instance *MSFT_ServerInventory) GetPropertyActivationStatus() (value uint8
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCbsTimestamp sets the value of CbsTimestamp for the instance
 func (instance *MSFT_ServerInventory) SetPropertyCbsTimestamp(value string) (err error) {
-	return instance.SetProperty("CbsTimestamp", value)
+	return instance.SetProperty("CbsTimestamp", (value))
 }
 
 // GetCbsTimestamp gets the value of CbsTimestamp for the instance
@@ -122,16 +133,25 @@ func (instance *MSFT_ServerInventory) GetPropertyCbsTimestamp() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCeipSetting sets the value of CeipSetting for the instance
 func (instance *MSFT_ServerInventory) SetPropertyCeipSetting(value uint8) (err error) {
-	return instance.SetProperty("CeipSetting", value)
+	return instance.SetProperty("CeipSetting", (value))
 }
 
 // GetCeipSetting gets the value of CeipSetting for the instance
@@ -140,16 +160,25 @@ func (instance *MSFT_ServerInventory) GetPropertyCeipSetting() (value uint8, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_ServerInventory) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -158,16 +187,25 @@ func (instance *MSFT_ServerInventory) GetPropertyDescription() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomain sets the value of Domain for the instance
 func (instance *MSFT_ServerInventory) SetPropertyDomain(value string) (err error) {
-	return instance.SetProperty("Domain", value)
+	return instance.SetProperty("Domain", (value))
 }
 
 // GetDomain gets the value of Domain for the instance
@@ -176,16 +214,25 @@ func (instance *MSFT_ServerInventory) GetPropertyDomain() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFqdn sets the value of Fqdn for the instance
 func (instance *MSFT_ServerInventory) SetPropertyFqdn(value string) (err error) {
-	return instance.SetProperty("Fqdn", value)
+	return instance.SetProperty("Fqdn", (value))
 }
 
 // GetFqdn gets the value of Fqdn for the instance
@@ -194,16 +241,25 @@ func (instance *MSFT_ServerInventory) GetPropertyFqdn() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsDomainJoined sets the value of IsDomainJoined for the instance
 func (instance *MSFT_ServerInventory) SetPropertyIsDomainJoined(value bool) (err error) {
-	return instance.SetProperty("IsDomainJoined", value)
+	return instance.SetProperty("IsDomainJoined", (value))
 }
 
 // GetIsDomainJoined gets the value of IsDomainJoined for the instance
@@ -212,16 +268,25 @@ func (instance *MSFT_ServerInventory) GetPropertyIsDomainJoined() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsWerSettingEnforcedByGP sets the value of IsWerSettingEnforcedByGP for the instance
 func (instance *MSFT_ServerInventory) SetPropertyIsWerSettingEnforcedByGP(value bool) (err error) {
-	return instance.SetProperty("IsWerSettingEnforcedByGP", value)
+	return instance.SetProperty("IsWerSettingEnforcedByGP", (value))
 }
 
 // GetIsWerSettingEnforcedByGP gets the value of IsWerSettingEnforcedByGP for the instance
@@ -230,16 +295,25 @@ func (instance *MSFT_ServerInventory) GetPropertyIsWerSettingEnforcedByGP() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *MSFT_ServerInventory) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -248,16 +322,25 @@ func (instance *MSFT_ServerInventory) GetPropertyManufacturer() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_ServerInventory) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -266,16 +349,25 @@ func (instance *MSFT_ServerInventory) GetPropertyName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProcessorNames sets the value of ProcessorNames for the instance
 func (instance *MSFT_ServerInventory) SetPropertyProcessorNames(value []string) (err error) {
-	return instance.SetProperty("ProcessorNames", value)
+	return instance.SetProperty("ProcessorNames", (value))
 }
 
 // GetProcessorNames gets the value of ProcessorNames for the instance
@@ -284,16 +376,26 @@ func (instance *MSFT_ServerInventory) GetPropertyProcessorNames() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetProductId sets the value of ProductId for the instance
 func (instance *MSFT_ServerInventory) SetPropertyProductId(value string) (err error) {
-	return instance.SetProperty("ProductId", value)
+	return instance.SetProperty("ProductId", (value))
 }
 
 // GetProductId gets the value of ProductId for the instance
@@ -302,16 +404,25 @@ func (instance *MSFT_ServerInventory) GetPropertyProductId() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTotalPhysicalMemory sets the value of TotalPhysicalMemory for the instance
 func (instance *MSFT_ServerInventory) SetPropertyTotalPhysicalMemory(value uint64) (err error) {
-	return instance.SetProperty("TotalPhysicalMemory", value)
+	return instance.SetProperty("TotalPhysicalMemory", (value))
 }
 
 // GetTotalPhysicalMemory gets the value of TotalPhysicalMemory for the instance
@@ -320,16 +431,25 @@ func (instance *MSFT_ServerInventory) GetPropertyTotalPhysicalMemory() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_ServerInventory) SetPropertyType(value uint8) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -338,16 +458,25 @@ func (instance *MSFT_ServerInventory) GetPropertyType() (value uint8, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetWerSetting sets the value of WerSetting for the instance
 func (instance *MSFT_ServerInventory) SetPropertyWerSetting(value uint8) (err error) {
-	return instance.SetProperty("WerSetting", value)
+	return instance.SetProperty("WerSetting", (value))
 }
 
 // GetWerSetting gets the value of WerSetting for the instance
@@ -356,9 +485,18 @@ func (instance *MSFT_ServerInventory) GetPropertyWerSetting() (value uint8, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

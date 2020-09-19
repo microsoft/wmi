@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_SummaryInformationBase struct
@@ -94,7 +96,7 @@ func NewMsvm_SummaryInformationBaseEx6(hostName string,
 
 // SetCreationTime sets the value of CreationTime for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyCreationTime(value string) (err error) {
-	return instance.SetProperty("CreationTime", value)
+	return instance.SetProperty("CreationTime", (value))
 }
 
 // GetCreationTime gets the value of CreationTime for the instance
@@ -103,16 +105,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyCreationTime() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnabledState sets the value of EnabledState for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyEnabledState(value uint16) (err error) {
-	return instance.SetProperty("EnabledState", value)
+	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
@@ -121,16 +132,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyEnabledState() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEnhancedSessionModeState sets the value of EnhancedSessionModeState for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyEnhancedSessionModeState(value uint16) (err error) {
-	return instance.SetProperty("EnhancedSessionModeState", value)
+	return instance.SetProperty("EnhancedSessionModeState", (value))
 }
 
 // GetEnhancedSessionModeState gets the value of EnhancedSessionModeState for the instance
@@ -139,16 +159,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyEnhancedSessionModeState
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHealthState sets the value of HealthState for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyHealthState(value uint16) (err error) {
-	return instance.SetProperty("HealthState", value)
+	return instance.SetProperty("HealthState", (value))
 }
 
 // GetHealthState gets the value of HealthState for the instance
@@ -157,16 +186,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyHealthState() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHostComputerSystemName sets the value of HostComputerSystemName for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyHostComputerSystemName(value string) (err error) {
-	return instance.SetProperty("HostComputerSystemName", value)
+	return instance.SetProperty("HostComputerSystemName", (value))
 }
 
 // GetHostComputerSystemName gets the value of HostComputerSystemName for the instance
@@ -175,16 +213,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyHostComputerSystemName()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -193,16 +240,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNotes sets the value of Notes for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyNotes(value string) (err error) {
-	return instance.SetProperty("Notes", value)
+	return instance.SetProperty("Notes", (value))
 }
 
 // GetNotes gets the value of Notes for the instance
@@ -211,16 +267,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyNotes() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfProcessors sets the value of NumberOfProcessors for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyNumberOfProcessors(value uint16) (err error) {
-	return instance.SetProperty("NumberOfProcessors", value)
+	return instance.SetProperty("NumberOfProcessors", (value))
 }
 
 // GetNumberOfProcessors gets the value of NumberOfProcessors for the instance
@@ -229,16 +294,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyNumberOfProcessors() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -247,16 +321,26 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyOperationalStatus() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherEnabledState sets the value of OtherEnabledState for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyOtherEnabledState(value string) (err error) {
-	return instance.SetProperty("OtherEnabledState", value)
+	return instance.SetProperty("OtherEnabledState", (value))
 }
 
 // GetOtherEnabledState gets the value of OtherEnabledState for the instance
@@ -265,16 +349,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyOtherEnabledState() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatusDescriptions sets the value of StatusDescriptions for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyStatusDescriptions(value []string) (err error) {
-	return instance.SetProperty("StatusDescriptions", value)
+	return instance.SetProperty("StatusDescriptions", (value))
 }
 
 // GetStatusDescriptions gets the value of StatusDescriptions for the instance
@@ -283,16 +376,26 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyStatusDescriptions() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetUpTime sets the value of UpTime for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyUpTime(value uint64) (err error) {
-	return instance.SetProperty("UpTime", value)
+	return instance.SetProperty("UpTime", (value))
 }
 
 // GetUpTime gets the value of UpTime for the instance
@@ -301,16 +404,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyUpTime() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -319,16 +431,25 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyVersion() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualSwitchNames sets the value of VirtualSwitchNames for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyVirtualSwitchNames(value []string) (err error) {
-	return instance.SetProperty("VirtualSwitchNames", value)
+	return instance.SetProperty("VirtualSwitchNames", (value))
 }
 
 // GetVirtualSwitchNames gets the value of VirtualSwitchNames for the instance
@@ -337,16 +458,26 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyVirtualSwitchNames() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetVirtualSystemSubType sets the value of VirtualSystemSubType for the instance
 func (instance *Msvm_SummaryInformationBase) SetPropertyVirtualSystemSubType(value SummaryInformationBase_VirtualSystemSubType) (err error) {
-	return instance.SetProperty("VirtualSystemSubType", value)
+	return instance.SetProperty("VirtualSystemSubType", (value))
 }
 
 // GetVirtualSystemSubType gets the value of VirtualSystemSubType for the instance
@@ -355,9 +486,18 @@ func (instance *Msvm_SummaryInformationBase) GetPropertyVirtualSystemSubType() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SummaryInformationBase_VirtualSystemSubType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SummaryInformationBase_VirtualSystemSubType(valuetmp)
+
 	return
 }

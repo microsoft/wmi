@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40 struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40Ex6(hostName st
 
 // SetCacheEntries sets the value of CacheEntries for the instance
 func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) SetPropertyCacheEntries(value uint32) (err error) {
-	return instance.SetProperty("CacheEntries", value)
+	return instance.SetProperty("CacheEntries", (value))
 }
 
 // GetCacheEntries gets the value of CacheEntries for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheHitRatio sets the value of CacheHitRatio for the instance
 func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) SetPropertyCacheHitRatio(value uint32) (err error) {
-	return instance.SetProperty("CacheHitRatio", value)
+	return instance.SetProperty("CacheHitRatio", (value))
 }
 
 // GetCacheHitRatio gets the value of CacheHitRatio for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheHits sets the value of CacheHits for the instance
 func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) SetPropertyCacheHits(value uint32) (err error) {
-	return instance.SetProperty("CacheHits", value)
+	return instance.SetProperty("CacheHits", (value))
 }
 
 // GetCacheHits gets the value of CacheHits for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheMisses sets the value of CacheMisses for the instance
 func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) SetPropertyCacheMisses(value uint32) (err error) {
-	return instance.SetProperty("CacheMisses", value)
+	return instance.SetProperty("CacheMisses", (value))
 }
 
 // GetCacheMisses gets the value of CacheMisses for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheTrims sets the value of CacheTrims for the instance
 func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) SetPropertyCacheTrims(value uint32) (err error) {
-	return instance.SetProperty("CacheTrims", value)
+	return instance.SetProperty("CacheTrims", (value))
 }
 
 // GetCacheTrims gets the value of CacheTrims for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheTurnoverRate sets the value of CacheTurnoverRate for the instance
 func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) SetPropertyCacheTurnoverRate(value uint32) (err error) {
-	return instance.SetProperty("CacheTurnoverRate", value)
+	return instance.SetProperty("CacheTurnoverRate", (value))
 }
 
 // GetCacheTurnoverRate gets the value of CacheTurnoverRate for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_NETMemoryCache40_NETMemoryCache40) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

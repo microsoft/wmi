@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
@@ -11,7 +11,9 @@ package dns
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DnsClientPolicyConfiguration struct
@@ -98,7 +100,7 @@ func NewDnsClientPolicyConfigurationEx6(hostName string,
 
 // SetDirectAccessDnsServers sets the value of DirectAccessDnsServers for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDirectAccessDnsServers(value []string) (err error) {
-	return instance.SetProperty("DirectAccessDnsServers", value)
+	return instance.SetProperty("DirectAccessDnsServers", (value))
 }
 
 // GetDirectAccessDnsServers gets the value of DirectAccessDnsServers for the instance
@@ -107,16 +109,26 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDirectAccessDnsServers(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDirectAccessEnabled sets the value of DirectAccessEnabled for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDirectAccessEnabled(value bool) (err error) {
-	return instance.SetProperty("DirectAccessEnabled", value)
+	return instance.SetProperty("DirectAccessEnabled", (value))
 }
 
 // GetDirectAccessEnabled gets the value of DirectAccessEnabled for the instance
@@ -125,16 +137,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDirectAccessEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDirectAccessIPsecCARestriction sets the value of DirectAccessIPsecCARestriction for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDirectAccessIPsecCARestriction(value string) (err error) {
-	return instance.SetProperty("DirectAccessIPsecCARestriction", value)
+	return instance.SetProperty("DirectAccessIPsecCARestriction", (value))
 }
 
 // GetDirectAccessIPsecCARestriction gets the value of DirectAccessIPsecCARestriction for the instance
@@ -143,16 +164,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDirectAccessIPsecCARest
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessProxyName sets the value of DirectAccessProxyName for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDirectAccessProxyName(value string) (err error) {
-	return instance.SetProperty("DirectAccessProxyName", value)
+	return instance.SetProperty("DirectAccessProxyName", (value))
 }
 
 // GetDirectAccessProxyName gets the value of DirectAccessProxyName for the instance
@@ -161,16 +191,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDirectAccessProxyName()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessProxyType sets the value of DirectAccessProxyType for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDirectAccessProxyType(value string) (err error) {
-	return instance.SetProperty("DirectAccessProxyType", value)
+	return instance.SetProperty("DirectAccessProxyType", (value))
 }
 
 // GetDirectAccessProxyType gets the value of DirectAccessProxyType for the instance
@@ -179,16 +218,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDirectAccessProxyType()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessQueryIPsecEncryption sets the value of DirectAccessQueryIPsecEncryption for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDirectAccessQueryIPsecEncryption(value string) (err error) {
-	return instance.SetProperty("DirectAccessQueryIPsecEncryption", value)
+	return instance.SetProperty("DirectAccessQueryIPsecEncryption", (value))
 }
 
 // GetDirectAccessQueryIPsecEncryption gets the value of DirectAccessQueryIPsecEncryption for the instance
@@ -197,16 +245,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDirectAccessQueryIPsecE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessQueryIPsecRequired sets the value of DirectAccessQueryIPsecRequired for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDirectAccessQueryIPsecRequired(value bool) (err error) {
-	return instance.SetProperty("DirectAccessQueryIPsecRequired", value)
+	return instance.SetProperty("DirectAccessQueryIPsecRequired", (value))
 }
 
 // GetDirectAccessQueryIPsecRequired gets the value of DirectAccessQueryIPsecRequired for the instance
@@ -215,16 +272,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDirectAccessQueryIPsecR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDnsSecIPsecCARestriction sets the value of DnsSecIPsecCARestriction for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDnsSecIPsecCARestriction(value string) (err error) {
-	return instance.SetProperty("DnsSecIPsecCARestriction", value)
+	return instance.SetProperty("DnsSecIPsecCARestriction", (value))
 }
 
 // GetDnsSecIPsecCARestriction gets the value of DnsSecIPsecCARestriction for the instance
@@ -233,16 +299,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDnsSecIPsecCARestrictio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDnsSecQueryIPsecEncryption sets the value of DnsSecQueryIPsecEncryption for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDnsSecQueryIPsecEncryption(value string) (err error) {
-	return instance.SetProperty("DnsSecQueryIPsecEncryption", value)
+	return instance.SetProperty("DnsSecQueryIPsecEncryption", (value))
 }
 
 // GetDnsSecQueryIPsecEncryption gets the value of DnsSecQueryIPsecEncryption for the instance
@@ -251,16 +326,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDnsSecQueryIPsecEncrypt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDnsSecQueryIPsecRequired sets the value of DnsSecQueryIPsecRequired for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDnsSecQueryIPsecRequired(value bool) (err error) {
-	return instance.SetProperty("DnsSecQueryIPsecRequired", value)
+	return instance.SetProperty("DnsSecQueryIPsecRequired", (value))
 }
 
 // GetDnsSecQueryIPsecRequired gets the value of DnsSecQueryIPsecRequired for the instance
@@ -269,16 +353,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDnsSecQueryIPsecRequire
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDnsSecValidationRequired sets the value of DnsSecValidationRequired for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyDnsSecValidationRequired(value bool) (err error) {
-	return instance.SetProperty("DnsSecValidationRequired", value)
+	return instance.SetProperty("DnsSecValidationRequired", (value))
 }
 
 // GetDnsSecValidationRequired gets the value of DnsSecValidationRequired for the instance
@@ -287,16 +380,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyDnsSecValidationRequire
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNameEncoding sets the value of NameEncoding for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyNameEncoding(value string) (err error) {
-	return instance.SetProperty("NameEncoding", value)
+	return instance.SetProperty("NameEncoding", (value))
 }
 
 // GetNameEncoding gets the value of NameEncoding for the instance
@@ -305,16 +407,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyNameEncoding() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameServers sets the value of NameServers for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyNameServers(value []string) (err error) {
-	return instance.SetProperty("NameServers", value)
+	return instance.SetProperty("NameServers", (value))
 }
 
 // GetNameServers gets the value of NameServers for the instance
@@ -323,16 +434,26 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyNameServers() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNamespace sets the value of Namespace for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyNamespace(value string) (err error) {
-	return instance.SetProperty("Namespace", value)
+	return instance.SetProperty("Namespace", (value))
 }
 
 // GetNamespace gets the value of Namespace for the instance
@@ -341,16 +462,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyNamespace() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQueryPolicy sets the value of QueryPolicy for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertyQueryPolicy(value string) (err error) {
-	return instance.SetProperty("QueryPolicy", value)
+	return instance.SetProperty("QueryPolicy", (value))
 }
 
 // GetQueryPolicy gets the value of QueryPolicy for the instance
@@ -359,16 +489,25 @@ func (instance *DnsClientPolicyConfiguration) GetPropertyQueryPolicy() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSecureNameQueryFallback sets the value of SecureNameQueryFallback for the instance
 func (instance *DnsClientPolicyConfiguration) SetPropertySecureNameQueryFallback(value string) (err error) {
-	return instance.SetProperty("SecureNameQueryFallback", value)
+	return instance.SetProperty("SecureNameQueryFallback", (value))
 }
 
 // GetSecureNameQueryFallback gets the value of SecureNameQueryFallback for the instance
@@ -377,9 +516,18 @@ func (instance *DnsClientPolicyConfiguration) GetPropertySecureNameQueryFallback
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

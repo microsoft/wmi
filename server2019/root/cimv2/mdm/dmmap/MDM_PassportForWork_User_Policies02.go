@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_PassportForWork_User_Policies02 struct
@@ -65,7 +67,7 @@ func NewMDM_PassportForWork_User_Policies02Ex6(hostName string,
 
 // SetEnablePinRecovery sets the value of EnablePinRecovery for the instance
 func (instance *MDM_PassportForWork_User_Policies02) SetPropertyEnablePinRecovery(value bool) (err error) {
-	return instance.SetProperty("EnablePinRecovery", value)
+	return instance.SetProperty("EnablePinRecovery", (value))
 }
 
 // GetEnablePinRecovery gets the value of EnablePinRecovery for the instance
@@ -74,16 +76,25 @@ func (instance *MDM_PassportForWork_User_Policies02) GetPropertyEnablePinRecover
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_PassportForWork_User_Policies02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -92,16 +103,25 @@ func (instance *MDM_PassportForWork_User_Policies02) GetPropertyInstanceID() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_PassportForWork_User_Policies02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -110,16 +130,25 @@ func (instance *MDM_PassportForWork_User_Policies02) GetPropertyParentID() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequireSecurityDevice sets the value of RequireSecurityDevice for the instance
 func (instance *MDM_PassportForWork_User_Policies02) SetPropertyRequireSecurityDevice(value bool) (err error) {
-	return instance.SetProperty("RequireSecurityDevice", value)
+	return instance.SetProperty("RequireSecurityDevice", (value))
 }
 
 // GetRequireSecurityDevice gets the value of RequireSecurityDevice for the instance
@@ -128,16 +157,25 @@ func (instance *MDM_PassportForWork_User_Policies02) GetPropertyRequireSecurityD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUsePassportForWork sets the value of UsePassportForWork for the instance
 func (instance *MDM_PassportForWork_User_Policies02) SetPropertyUsePassportForWork(value bool) (err error) {
-	return instance.SetProperty("UsePassportForWork", value)
+	return instance.SetProperty("UsePassportForWork", (value))
 }
 
 // GetUsePassportForWork gets the value of UsePassportForWork for the instance
@@ -146,9 +184,18 @@ func (instance *MDM_PassportForWork_User_Policies02) GetPropertyUsePassportForWo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

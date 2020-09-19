@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_LUIDandAttributes struct
@@ -56,7 +58,7 @@ func NewWin32_LUIDandAttributesEx6(hostName string,
 
 // SetAttributes sets the value of Attributes for the instance
 func (instance *Win32_LUIDandAttributes) SetPropertyAttributes(value uint32) (err error) {
-	return instance.SetProperty("Attributes", value)
+	return instance.SetProperty("Attributes", (value))
 }
 
 // GetAttributes gets the value of Attributes for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_LUIDandAttributes) GetPropertyAttributes() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLUID sets the value of LUID for the instance
 func (instance *Win32_LUIDandAttributes) SetPropertyLUID(value Win32_LUID) (err error) {
-	return instance.SetProperty("LUID", value)
+	return instance.SetProperty("LUID", (value))
 }
 
 // GetLUID gets the value of LUID for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_LUIDandAttributes) GetPropertyLUID() (value Win32_LUID, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_LUID)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_LUID)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_LUID is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_LUID(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_StorageAllocationSettingData struct
@@ -76,7 +78,7 @@ func NewMsvm_StorageAllocationSettingDataEx6(hostName string,
 
 // SetCachingMode sets the value of CachingMode for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyCachingMode(value uint16) (err error) {
-	return instance.SetProperty("CachingMode", value)
+	return instance.SetProperty("CachingMode", (value))
 }
 
 // GetCachingMode gets the value of CachingMode for the instance
@@ -85,16 +87,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyCachingMode() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIgnoreFlushes sets the value of IgnoreFlushes for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyIgnoreFlushes(value bool) (err error) {
-	return instance.SetProperty("IgnoreFlushes", value)
+	return instance.SetProperty("IgnoreFlushes", (value))
 }
 
 // GetIgnoreFlushes gets the value of IgnoreFlushes for the instance
@@ -103,16 +114,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyIgnoreFlushes() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIOPSAllocationUnits sets the value of IOPSAllocationUnits for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyIOPSAllocationUnits(value string) (err error) {
-	return instance.SetProperty("IOPSAllocationUnits", value)
+	return instance.SetProperty("IOPSAllocationUnits", (value))
 }
 
 // GetIOPSAllocationUnits gets the value of IOPSAllocationUnits for the instance
@@ -121,16 +141,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyIOPSAllocationUnit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIOPSLimit sets the value of IOPSLimit for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyIOPSLimit(value uint64) (err error) {
-	return instance.SetProperty("IOPSLimit", value)
+	return instance.SetProperty("IOPSLimit", (value))
 }
 
 // GetIOPSLimit gets the value of IOPSLimit for the instance
@@ -139,16 +168,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyIOPSLimit() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOPSReservation sets the value of IOPSReservation for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyIOPSReservation(value uint64) (err error) {
-	return instance.SetProperty("IOPSReservation", value)
+	return instance.SetProperty("IOPSReservation", (value))
 }
 
 // GetIOPSReservation gets the value of IOPSReservation for the instance
@@ -157,16 +195,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyIOPSReservation() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPersistentReservationsSupported sets the value of PersistentReservationsSupported for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyPersistentReservationsSupported(value bool) (err error) {
-	return instance.SetProperty("PersistentReservationsSupported", value)
+	return instance.SetProperty("PersistentReservationsSupported", (value))
 }
 
 // GetPersistentReservationsSupported gets the value of PersistentReservationsSupported for the instance
@@ -175,16 +222,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyPersistentReservat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSnapshotId sets the value of SnapshotId for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertySnapshotId(value string) (err error) {
-	return instance.SetProperty("SnapshotId", value)
+	return instance.SetProperty("SnapshotId", (value))
 }
 
 // GetSnapshotId gets the value of SnapshotId for the instance
@@ -193,16 +249,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertySnapshotId() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStorageQoSPolicyID sets the value of StorageQoSPolicyID for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyStorageQoSPolicyID(value string) (err error) {
-	return instance.SetProperty("StorageQoSPolicyID", value)
+	return instance.SetProperty("StorageQoSPolicyID", (value))
 }
 
 // GetStorageQoSPolicyID gets the value of StorageQoSPolicyID for the instance
@@ -211,16 +276,25 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyStorageQoSPolicyID
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWriteHardeningMethod sets the value of WriteHardeningMethod for the instance
 func (instance *Msvm_StorageAllocationSettingData) SetPropertyWriteHardeningMethod(value uint16) (err error) {
-	return instance.SetProperty("WriteHardeningMethod", value)
+	return instance.SetProperty("WriteHardeningMethod", (value))
 }
 
 // GetWriteHardeningMethod gets the value of WriteHardeningMethod for the instance
@@ -229,10 +303,19 @@ func (instance *Msvm_StorageAllocationSettingData) GetPropertyWriteHardeningMeth
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 func (instance *Msvm_StorageAllocationSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

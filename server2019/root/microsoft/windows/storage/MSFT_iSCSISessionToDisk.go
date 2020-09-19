@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_iSCSISessionToDisk struct
@@ -56,7 +58,7 @@ func NewMSFT_iSCSISessionToDiskEx6(hostName string,
 
 // SetDisk sets the value of Disk for the instance
 func (instance *MSFT_iSCSISessionToDisk) SetPropertyDisk(value MSFT_Disk) (err error) {
-	return instance.SetProperty("Disk", value)
+	return instance.SetProperty("Disk", (value))
 }
 
 // GetDisk gets the value of Disk for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_iSCSISessionToDisk) GetPropertyDisk() (value MSFT_Disk, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Disk)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Disk)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Disk is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Disk(valuetmp)
+
 	return
 }
 
 // SetiSCSISession sets the value of iSCSISession for the instance
 func (instance *MSFT_iSCSISessionToDisk) SetPropertyiSCSISession(value MSFT_iSCSISession) (err error) {
-	return instance.SetProperty("iSCSISession", value)
+	return instance.SetProperty("iSCSISession", (value))
 }
 
 // GetiSCSISession gets the value of iSCSISession for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_iSCSISessionToDisk) GetPropertyiSCSISession() (value MSFT_i
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_iSCSISession)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_iSCSISession)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_iSCSISession is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_iSCSISession(valuetmp)
+
 	return
 }

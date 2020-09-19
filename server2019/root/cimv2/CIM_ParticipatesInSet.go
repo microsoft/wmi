@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ParticipatesInSet struct
@@ -56,7 +58,7 @@ func NewCIM_ParticipatesInSetEx6(hostName string,
 
 // SetElement sets the value of Element for the instance
 func (instance *CIM_ParticipatesInSet) SetPropertyElement(value CIM_PhysicalElement) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ParticipatesInSet) GetPropertyElement() (value CIM_PhysicalE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_PhysicalElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_PhysicalElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_PhysicalElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_PhysicalElement(valuetmp)
+
 	return
 }
 
 // SetSet sets the value of Set for the instance
 func (instance *CIM_ParticipatesInSet) SetPropertySet(value CIM_ReplacementSet) (err error) {
-	return instance.SetProperty("Set", value)
+	return instance.SetProperty("Set", (value))
 }
 
 // GetSet gets the value of Set for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ParticipatesInSet) GetPropertySet() (value CIM_ReplacementSe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ReplacementSet)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ReplacementSet)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ReplacementSet is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ReplacementSet(valuetmp)
+
 	return
 }

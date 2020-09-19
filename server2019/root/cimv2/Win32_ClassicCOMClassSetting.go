@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ClassicCOMClassSetting struct
@@ -118,7 +120,7 @@ func NewWin32_ClassicCOMClassSettingEx6(hostName string,
 
 // SetAppID sets the value of AppID for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyAppID(value string) (err error) {
-	return instance.SetProperty("AppID", value)
+	return instance.SetProperty("AppID", (value))
 }
 
 // GetAppID gets the value of AppID for the instance
@@ -127,16 +129,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyAppID() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutoConvertToClsid sets the value of AutoConvertToClsid for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyAutoConvertToClsid(value string) (err error) {
-	return instance.SetProperty("AutoConvertToClsid", value)
+	return instance.SetProperty("AutoConvertToClsid", (value))
 }
 
 // GetAutoConvertToClsid gets the value of AutoConvertToClsid for the instance
@@ -145,16 +156,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyAutoConvertToClsid() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutoTreatAsClsid sets the value of AutoTreatAsClsid for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyAutoTreatAsClsid(value string) (err error) {
-	return instance.SetProperty("AutoTreatAsClsid", value)
+	return instance.SetProperty("AutoTreatAsClsid", (value))
 }
 
 // GetAutoTreatAsClsid gets the value of AutoTreatAsClsid for the instance
@@ -163,16 +183,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyAutoTreatAsClsid() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetComponentId sets the value of ComponentId for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyComponentId(value string) (err error) {
-	return instance.SetProperty("ComponentId", value)
+	return instance.SetProperty("ComponentId", (value))
 }
 
 // GetComponentId gets the value of ComponentId for the instance
@@ -181,16 +210,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyComponentId() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetControl sets the value of Control for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyControl(value bool) (err error) {
-	return instance.SetProperty("Control", value)
+	return instance.SetProperty("Control", (value))
 }
 
 // GetControl gets the value of Control for the instance
@@ -199,16 +237,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyControl() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDefaultIcon sets the value of DefaultIcon for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyDefaultIcon(value string) (err error) {
-	return instance.SetProperty("DefaultIcon", value)
+	return instance.SetProperty("DefaultIcon", (value))
 }
 
 // GetDefaultIcon gets the value of DefaultIcon for the instance
@@ -217,16 +264,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyDefaultIcon() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInprocHandler sets the value of InprocHandler for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyInprocHandler(value string) (err error) {
-	return instance.SetProperty("InprocHandler", value)
+	return instance.SetProperty("InprocHandler", (value))
 }
 
 // GetInprocHandler gets the value of InprocHandler for the instance
@@ -235,16 +291,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyInprocHandler() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInprocHandler32 sets the value of InprocHandler32 for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyInprocHandler32(value string) (err error) {
-	return instance.SetProperty("InprocHandler32", value)
+	return instance.SetProperty("InprocHandler32", (value))
 }
 
 // GetInprocHandler32 gets the value of InprocHandler32 for the instance
@@ -253,16 +318,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyInprocHandler32() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInprocServer sets the value of InprocServer for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyInprocServer(value string) (err error) {
-	return instance.SetProperty("InprocServer", value)
+	return instance.SetProperty("InprocServer", (value))
 }
 
 // GetInprocServer gets the value of InprocServer for the instance
@@ -271,16 +345,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyInprocServer() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInprocServer32 sets the value of InprocServer32 for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyInprocServer32(value string) (err error) {
-	return instance.SetProperty("InprocServer32", value)
+	return instance.SetProperty("InprocServer32", (value))
 }
 
 // GetInprocServer32 gets the value of InprocServer32 for the instance
@@ -289,16 +372,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyInprocServer32() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInsertable sets the value of Insertable for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyInsertable(value bool) (err error) {
-	return instance.SetProperty("Insertable", value)
+	return instance.SetProperty("Insertable", (value))
 }
 
 // GetInsertable gets the value of Insertable for the instance
@@ -307,16 +399,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyInsertable() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetJavaClass sets the value of JavaClass for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyJavaClass(value bool) (err error) {
-	return instance.SetProperty("JavaClass", value)
+	return instance.SetProperty("JavaClass", (value))
 }
 
 // GetJavaClass gets the value of JavaClass for the instance
@@ -325,16 +426,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyJavaClass() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLocalServer sets the value of LocalServer for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyLocalServer(value string) (err error) {
-	return instance.SetProperty("LocalServer", value)
+	return instance.SetProperty("LocalServer", (value))
 }
 
 // GetLocalServer gets the value of LocalServer for the instance
@@ -343,16 +453,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyLocalServer() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalServer32 sets the value of LocalServer32 for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyLocalServer32(value string) (err error) {
-	return instance.SetProperty("LocalServer32", value)
+	return instance.SetProperty("LocalServer32", (value))
 }
 
 // GetLocalServer32 gets the value of LocalServer32 for the instance
@@ -361,16 +480,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyLocalServer32() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLongDisplayName sets the value of LongDisplayName for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyLongDisplayName(value string) (err error) {
-	return instance.SetProperty("LongDisplayName", value)
+	return instance.SetProperty("LongDisplayName", (value))
 }
 
 // GetLongDisplayName gets the value of LongDisplayName for the instance
@@ -379,16 +507,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyLongDisplayName() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProgId sets the value of ProgId for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyProgId(value string) (err error) {
-	return instance.SetProperty("ProgId", value)
+	return instance.SetProperty("ProgId", (value))
 }
 
 // GetProgId gets the value of ProgId for the instance
@@ -397,16 +534,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyProgId() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShortDisplayName sets the value of ShortDisplayName for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyShortDisplayName(value string) (err error) {
-	return instance.SetProperty("ShortDisplayName", value)
+	return instance.SetProperty("ShortDisplayName", (value))
 }
 
 // GetShortDisplayName gets the value of ShortDisplayName for the instance
@@ -415,16 +561,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyShortDisplayName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetThreadingModel sets the value of ThreadingModel for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyThreadingModel(value string) (err error) {
-	return instance.SetProperty("ThreadingModel", value)
+	return instance.SetProperty("ThreadingModel", (value))
 }
 
 // GetThreadingModel gets the value of ThreadingModel for the instance
@@ -433,16 +588,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyThreadingModel() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetToolBoxBitmap32 sets the value of ToolBoxBitmap32 for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyToolBoxBitmap32(value string) (err error) {
-	return instance.SetProperty("ToolBoxBitmap32", value)
+	return instance.SetProperty("ToolBoxBitmap32", (value))
 }
 
 // GetToolBoxBitmap32 gets the value of ToolBoxBitmap32 for the instance
@@ -451,16 +615,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyToolBoxBitmap32() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTreatAsClsid sets the value of TreatAsClsid for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyTreatAsClsid(value string) (err error) {
-	return instance.SetProperty("TreatAsClsid", value)
+	return instance.SetProperty("TreatAsClsid", (value))
 }
 
 // GetTreatAsClsid gets the value of TreatAsClsid for the instance
@@ -469,16 +642,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyTreatAsClsid() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTypeLibraryId sets the value of TypeLibraryId for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyTypeLibraryId(value string) (err error) {
-	return instance.SetProperty("TypeLibraryId", value)
+	return instance.SetProperty("TypeLibraryId", (value))
 }
 
 // GetTypeLibraryId gets the value of TypeLibraryId for the instance
@@ -487,16 +669,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyTypeLibraryId() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -505,16 +696,25 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyVersion() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersionIndependentProgId sets the value of VersionIndependentProgId for the instance
 func (instance *Win32_ClassicCOMClassSetting) SetPropertyVersionIndependentProgId(value string) (err error) {
-	return instance.SetProperty("VersionIndependentProgId", value)
+	return instance.SetProperty("VersionIndependentProgId", (value))
 }
 
 // GetVersionIndependentProgId gets the value of VersionIndependentProgId for the instance
@@ -523,9 +723,18 @@ func (instance *Win32_ClassicCOMClassSetting) GetPropertyVersionIndependentProgI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

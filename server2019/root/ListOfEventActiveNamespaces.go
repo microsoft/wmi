@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __ListOfEventActiveNamespaces struct
@@ -52,7 +54,7 @@ func New__ListOfEventActiveNamespacesEx6(hostName string,
 
 // SetNamespaces sets the value of Namespaces for the instance
 func (instance *__ListOfEventActiveNamespaces) SetPropertyNamespaces(value []string) (err error) {
-	return instance.SetProperty("Namespaces", value)
+	return instance.SetProperty("Namespaces", (value))
 }
 
 // GetNamespaces gets the value of Namespaces for the instance
@@ -61,9 +63,19 @@ func (instance *__ListOfEventActiveNamespaces) GetPropertyNamespaces() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

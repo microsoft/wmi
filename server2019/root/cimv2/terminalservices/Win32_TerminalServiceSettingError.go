@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TerminalServiceSettingError struct
@@ -52,7 +54,7 @@ func NewWin32_TerminalServiceSettingErrorEx6(hostName string,
 
 // SetTerminalServiceMode sets the value of TerminalServiceMode for the instance
 func (instance *Win32_TerminalServiceSettingError) SetPropertyTerminalServiceMode(value int32) (err error) {
-	return instance.SetProperty("TerminalServiceMode", value)
+	return instance.SetProperty("TerminalServiceMode", (value))
 }
 
 // GetTerminalServiceMode gets the value of TerminalServiceMode for the instance
@@ -61,9 +63,18 @@ func (instance *Win32_TerminalServiceSettingError) GetPropertyTerminalServiceMod
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

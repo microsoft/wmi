@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSDeploymentLicensing struct
@@ -58,7 +60,7 @@ func NewWin32_TSDeploymentLicensingEx6(hostName string,
 
 // SetLicenseServers sets the value of LicenseServers for the instance
 func (instance *Win32_TSDeploymentLicensing) SetPropertyLicenseServers(value []string) (err error) {
-	return instance.SetProperty("LicenseServers", value)
+	return instance.SetProperty("LicenseServers", (value))
 }
 
 // GetLicenseServers gets the value of LicenseServers for the instance
@@ -67,16 +69,26 @@ func (instance *Win32_TSDeploymentLicensing) GetPropertyLicenseServers() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLicensingType sets the value of LicensingType for the instance
 func (instance *Win32_TSDeploymentLicensing) SetPropertyLicensingType(value TSDeploymentLicensing_LicensingType) (err error) {
-	return instance.SetProperty("LicensingType", value)
+	return instance.SetProperty("LicensingType", (value))
 }
 
 // GetLicensingType gets the value of LicensingType for the instance
@@ -85,16 +97,25 @@ func (instance *Win32_TSDeploymentLicensing) GetPropertyLicensingType() (value T
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TSDeploymentLicensing_LicensingType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TSDeploymentLicensing_LicensingType(valuetmp)
+
 	return
 }
 
 // SetUseCentralLicensingSettings sets the value of UseCentralLicensingSettings for the instance
 func (instance *Win32_TSDeploymentLicensing) SetPropertyUseCentralLicensingSettings(value bool) (err error) {
-	return instance.SetProperty("UseCentralLicensingSettings", value)
+	return instance.SetProperty("UseCentralLicensingSettings", (value))
 }
 
 // GetUseCentralLicensingSettings gets the value of UseCentralLicensingSettings for the instance
@@ -103,9 +124,18 @@ func (instance *Win32_TSDeploymentLicensing) GetPropertyUseCentralLicensingSetti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

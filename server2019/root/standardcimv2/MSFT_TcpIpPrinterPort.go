@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TcpIpPrinterPort struct
@@ -76,7 +78,7 @@ func NewMSFT_TcpIpPrinterPortEx6(hostName string,
 
 // SetLprByteCounting sets the value of LprByteCounting for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertyLprByteCounting(value bool) (err error) {
-	return instance.SetProperty("LprByteCounting", value)
+	return instance.SetProperty("LprByteCounting", (value))
 }
 
 // GetLprByteCounting gets the value of LprByteCounting for the instance
@@ -85,16 +87,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertyLprByteCounting() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLprQueueName sets the value of LprQueueName for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertyLprQueueName(value string) (err error) {
-	return instance.SetProperty("LprQueueName", value)
+	return instance.SetProperty("LprQueueName", (value))
 }
 
 // GetLprQueueName gets the value of LprQueueName for the instance
@@ -103,16 +114,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertyLprQueueName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPortNumber sets the value of PortNumber for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertyPortNumber(value uint32) (err error) {
-	return instance.SetProperty("PortNumber", value)
+	return instance.SetProperty("PortNumber", (value))
 }
 
 // GetPortNumber gets the value of PortNumber for the instance
@@ -121,16 +141,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertyPortNumber() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrinterHostAddress sets the value of PrinterHostAddress for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertyPrinterHostAddress(value string) (err error) {
-	return instance.SetProperty("PrinterHostAddress", value)
+	return instance.SetProperty("PrinterHostAddress", (value))
 }
 
 // GetPrinterHostAddress gets the value of PrinterHostAddress for the instance
@@ -139,16 +168,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertyPrinterHostAddress() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrinterHostIP sets the value of PrinterHostIP for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertyPrinterHostIP(value string) (err error) {
-	return instance.SetProperty("PrinterHostIP", value)
+	return instance.SetProperty("PrinterHostIP", (value))
 }
 
 // GetPrinterHostIP gets the value of PrinterHostIP for the instance
@@ -157,16 +195,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertyPrinterHostIP() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProtocol sets the value of Protocol for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertyProtocol(value uint32) (err error) {
-	return instance.SetProperty("Protocol", value)
+	return instance.SetProperty("Protocol", (value))
 }
 
 // GetProtocol gets the value of Protocol for the instance
@@ -175,16 +222,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertyProtocol() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSNMPCommunity sets the value of SNMPCommunity for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertySNMPCommunity(value string) (err error) {
-	return instance.SetProperty("SNMPCommunity", value)
+	return instance.SetProperty("SNMPCommunity", (value))
 }
 
 // GetSNMPCommunity gets the value of SNMPCommunity for the instance
@@ -193,16 +249,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertySNMPCommunity() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSNMPEnabled sets the value of SNMPEnabled for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertySNMPEnabled(value bool) (err error) {
-	return instance.SetProperty("SNMPEnabled", value)
+	return instance.SetProperty("SNMPEnabled", (value))
 }
 
 // GetSNMPEnabled gets the value of SNMPEnabled for the instance
@@ -211,16 +276,25 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertySNMPEnabled() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSNMPIndex sets the value of SNMPIndex for the instance
 func (instance *MSFT_TcpIpPrinterPort) SetPropertySNMPIndex(value uint32) (err error) {
-	return instance.SetProperty("SNMPIndex", value)
+	return instance.SetProperty("SNMPIndex", (value))
 }
 
 // GetSNMPIndex gets the value of SNMPIndex for the instance
@@ -229,9 +303,18 @@ func (instance *MSFT_TcpIpPrinterPort) GetPropertySNMPIndex() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

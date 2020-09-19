@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Hgs
 //////////////////////////////////////////////
 package hgs
@@ -11,7 +11,9 @@ package hgs
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_HgsKeyProtector struct
@@ -59,7 +61,7 @@ func NewMSFT_HgsKeyProtectorEx6(hostName string,
 
 // SetGuardians sets the value of Guardians for the instance
 func (instance *MSFT_HgsKeyProtector) SetPropertyGuardians(value []MSFT_HgsGuardian) (err error) {
-	return instance.SetProperty("Guardians", value)
+	return instance.SetProperty("Guardians", (value))
 }
 
 // GetGuardians gets the value of Guardians for the instance
@@ -68,16 +70,26 @@ func (instance *MSFT_HgsKeyProtector) GetPropertyGuardians() (value []MSFT_HgsGu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_HgsGuardian)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_HgsGuardian)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_HgsGuardian is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_HgsGuardian(valuetmp))
+	}
+
 	return
 }
 
 // SetOwner sets the value of Owner for the instance
 func (instance *MSFT_HgsKeyProtector) SetPropertyOwner(value MSFT_HgsGuardian) (err error) {
-	return instance.SetProperty("Owner", value)
+	return instance.SetProperty("Owner", (value))
 }
 
 // GetOwner gets the value of Owner for the instance
@@ -86,16 +98,25 @@ func (instance *MSFT_HgsKeyProtector) GetPropertyOwner() (value MSFT_HgsGuardian
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_HgsGuardian)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_HgsGuardian)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_HgsGuardian is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_HgsGuardian(valuetmp)
+
 	return
 }
 
 // SetRawData sets the value of RawData for the instance
 func (instance *MSFT_HgsKeyProtector) SetPropertyRawData(value []uint8) (err error) {
-	return instance.SetProperty("RawData", value)
+	return instance.SetProperty("RawData", (value))
 }
 
 // GetRawData gets the value of RawData for the instance
@@ -104,10 +125,20 @@ func (instance *MSFT_HgsKeyProtector) GetPropertyRawData() (value []uint8, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 

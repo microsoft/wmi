@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __NamespaceModificationEvent struct
@@ -52,7 +54,7 @@ func New__NamespaceModificationEventEx6(hostName string,
 
 // SetPreviousNamespace sets the value of PreviousNamespace for the instance
 func (instance *__NamespaceModificationEvent) SetPropertyPreviousNamespace(value __Namespace) (err error) {
-	return instance.SetProperty("PreviousNamespace", value)
+	return instance.SetProperty("PreviousNamespace", (value))
 }
 
 // GetPreviousNamespace gets the value of PreviousNamespace for the instance
@@ -61,9 +63,18 @@ func (instance *__NamespaceModificationEvent) GetPropertyPreviousNamespace() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(__Namespace)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(__Namespace)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " __Namespace is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = __Namespace(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_Net6to4Configuration struct
@@ -67,7 +69,7 @@ func NewMSFT_Net6to4ConfigurationEx6(hostName string,
 
 // SetAutoSharing sets the value of AutoSharing for the instance
 func (instance *MSFT_Net6to4Configuration) SetPropertyAutoSharing(value uint32) (err error) {
-	return instance.SetProperty("AutoSharing", value)
+	return instance.SetProperty("AutoSharing", (value))
 }
 
 // GetAutoSharing gets the value of AutoSharing for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_Net6to4Configuration) GetPropertyAutoSharing() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_Net6to4Configuration) SetPropertyPolicyStore(value string) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_Net6to4Configuration) GetPropertyPolicyStore() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRelayName sets the value of RelayName for the instance
 func (instance *MSFT_Net6to4Configuration) SetPropertyRelayName(value string) (err error) {
-	return instance.SetProperty("RelayName", value)
+	return instance.SetProperty("RelayName", (value))
 }
 
 // GetRelayName gets the value of RelayName for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_Net6to4Configuration) GetPropertyRelayName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRelayState sets the value of RelayState for the instance
 func (instance *MSFT_Net6to4Configuration) SetPropertyRelayState(value uint32) (err error) {
-	return instance.SetProperty("RelayState", value)
+	return instance.SetProperty("RelayState", (value))
 }
 
 // GetRelayState gets the value of RelayState for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_Net6to4Configuration) GetPropertyRelayState() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResolutionInterval sets the value of ResolutionInterval for the instance
 func (instance *MSFT_Net6to4Configuration) SetPropertyResolutionInterval(value uint32) (err error) {
-	return instance.SetProperty("ResolutionInterval", value)
+	return instance.SetProperty("ResolutionInterval", (value))
 }
 
 // GetResolutionInterval gets the value of ResolutionInterval for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_Net6to4Configuration) GetPropertyResolutionInterval() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_Net6to4Configuration) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -166,10 +213,19 @@ func (instance *MSFT_Net6to4Configuration) GetPropertyState() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_BasedOn struct
@@ -58,7 +60,7 @@ func NewCIM_BasedOnEx6(hostName string,
 
 // SetEndingAddress sets the value of EndingAddress for the instance
 func (instance *CIM_BasedOn) SetPropertyEndingAddress(value uint64) (err error) {
-	return instance.SetProperty("EndingAddress", value)
+	return instance.SetProperty("EndingAddress", (value))
 }
 
 // GetEndingAddress gets the value of EndingAddress for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_BasedOn) GetPropertyEndingAddress() (value uint64, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOrderIndex sets the value of OrderIndex for the instance
 func (instance *CIM_BasedOn) SetPropertyOrderIndex(value uint16) (err error) {
-	return instance.SetProperty("OrderIndex", value)
+	return instance.SetProperty("OrderIndex", (value))
 }
 
 // GetOrderIndex gets the value of OrderIndex for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_BasedOn) GetPropertyOrderIndex() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetStartingAddress sets the value of StartingAddress for the instance
 func (instance *CIM_BasedOn) SetPropertyStartingAddress(value uint64) (err error) {
-	return instance.SetProperty("StartingAddress", value)
+	return instance.SetProperty("StartingAddress", (value))
 }
 
 // GetStartingAddress gets the value of StartingAddress for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_BasedOn) GetPropertyStartingAddress() (value uint64, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

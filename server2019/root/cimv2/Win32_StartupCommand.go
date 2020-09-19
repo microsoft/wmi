@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_StartupCommand struct
@@ -64,7 +66,7 @@ func NewWin32_StartupCommandEx6(hostName string,
 
 // SetCommand sets the value of Command for the instance
 func (instance *Win32_StartupCommand) SetPropertyCommand(value string) (err error) {
-	return instance.SetProperty("Command", value)
+	return instance.SetProperty("Command", (value))
 }
 
 // GetCommand gets the value of Command for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_StartupCommand) GetPropertyCommand() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocation sets the value of Location for the instance
 func (instance *Win32_StartupCommand) SetPropertyLocation(value string) (err error) {
-	return instance.SetProperty("Location", value)
+	return instance.SetProperty("Location", (value))
 }
 
 // GetLocation gets the value of Location for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_StartupCommand) GetPropertyLocation() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_StartupCommand) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_StartupCommand) GetPropertyName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUser sets the value of User for the instance
 func (instance *Win32_StartupCommand) SetPropertyUser(value string) (err error) {
-	return instance.SetProperty("User", value)
+	return instance.SetProperty("User", (value))
 }
 
 // GetUser gets the value of User for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_StartupCommand) GetPropertyUser() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserSID sets the value of UserSID for the instance
 func (instance *Win32_StartupCommand) SetPropertyUserSID(value string) (err error) {
-	return instance.SetProperty("UserSID", value)
+	return instance.SetProperty("UserSID", (value))
 }
 
 // GetUserSID gets the value of UserSID for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_StartupCommand) GetPropertyUserSID() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

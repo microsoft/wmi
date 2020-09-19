@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration struct
@@ -148,7 +150,7 @@ func NewWin32_PerfRawData_LmPerfProvider_HyperVVMLiveMigrationEx6(hostName strin
 
 // SetCompressorBytestobeCompressed sets the value of CompressorBytestobeCompressed for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyCompressorBytestobeCompressed(value uint64) (err error) {
-	return instance.SetProperty("CompressorBytestobeCompressed", value)
+	return instance.SetProperty("CompressorBytestobeCompressed", (value))
 }
 
 // GetCompressorBytestobeCompressed gets the value of CompressorBytestobeCompressed for the instance
@@ -157,16 +159,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompressorCompressedBytesSent sets the value of CompressorCompressedBytesSent for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyCompressorCompressedBytesSent(value uint64) (err error) {
-	return instance.SetProperty("CompressorCompressedBytesSent", value)
+	return instance.SetProperty("CompressorCompressedBytesSent", (value))
 }
 
 // GetCompressorCompressedBytesSent gets the value of CompressorCompressedBytesSent for the instance
@@ -175,16 +186,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompressorCompressedBytesSentPersec sets the value of CompressorCompressedBytesSentPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyCompressorCompressedBytesSentPersec(value uint64) (err error) {
-	return instance.SetProperty("CompressorCompressedBytesSentPersec", value)
+	return instance.SetProperty("CompressorCompressedBytesSentPersec", (value))
 }
 
 // GetCompressorCompressedBytesSentPersec gets the value of CompressorCompressedBytesSentPersec for the instance
@@ -193,16 +213,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompressorEnabledThreads sets the value of CompressorEnabledThreads for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyCompressorEnabledThreads(value uint64) (err error) {
-	return instance.SetProperty("CompressorEnabledThreads", value)
+	return instance.SetProperty("CompressorEnabledThreads", (value))
 }
 
 // GetCompressorEnabledThreads gets the value of CompressorEnabledThreads for the instance
@@ -211,16 +240,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompressorMaximumThreads sets the value of CompressorMaximumThreads for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyCompressorMaximumThreads(value uint64) (err error) {
-	return instance.SetProperty("CompressorMaximumThreads", value)
+	return instance.SetProperty("CompressorMaximumThreads", (value))
 }
 
 // GetCompressorMaximumThreads gets the value of CompressorMaximumThreads for the instance
@@ -229,16 +267,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryWalkerBytesReadPersec sets the value of MemoryWalkerBytesReadPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyMemoryWalkerBytesReadPersec(value uint64) (err error) {
-	return instance.SetProperty("MemoryWalkerBytesReadPersec", value)
+	return instance.SetProperty("MemoryWalkerBytesReadPersec", (value))
 }
 
 // GetMemoryWalkerBytesReadPersec gets the value of MemoryWalkerBytesReadPersec for the instance
@@ -247,16 +294,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryWalkerBytesSentforCompression sets the value of MemoryWalkerBytesSentforCompression for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyMemoryWalkerBytesSentforCompression(value uint64) (err error) {
-	return instance.SetProperty("MemoryWalkerBytesSentforCompression", value)
+	return instance.SetProperty("MemoryWalkerBytesSentforCompression", (value))
 }
 
 // GetMemoryWalkerBytesSentforCompression gets the value of MemoryWalkerBytesSentforCompression for the instance
@@ -265,16 +321,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryWalkerBytesSentforCompressionPersec sets the value of MemoryWalkerBytesSentforCompressionPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyMemoryWalkerBytesSentforCompressionPersec(value uint64) (err error) {
-	return instance.SetProperty("MemoryWalkerBytesSentforCompressionPersec", value)
+	return instance.SetProperty("MemoryWalkerBytesSentforCompressionPersec", (value))
 }
 
 // GetMemoryWalkerBytesSentforCompressionPersec gets the value of MemoryWalkerBytesSentforCompressionPersec for the instance
@@ -283,16 +348,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryWalkerMaximumThreads sets the value of MemoryWalkerMaximumThreads for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyMemoryWalkerMaximumThreads(value uint64) (err error) {
-	return instance.SetProperty("MemoryWalkerMaximumThreads", value)
+	return instance.SetProperty("MemoryWalkerMaximumThreads", (value))
 }
 
 // GetMemoryWalkerMaximumThreads gets the value of MemoryWalkerMaximumThreads for the instance
@@ -301,16 +375,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryWalkerUncompressedBytesSent sets the value of MemoryWalkerUncompressedBytesSent for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyMemoryWalkerUncompressedBytesSent(value uint64) (err error) {
-	return instance.SetProperty("MemoryWalkerUncompressedBytesSent", value)
+	return instance.SetProperty("MemoryWalkerUncompressedBytesSent", (value))
 }
 
 // GetMemoryWalkerUncompressedBytesSent gets the value of MemoryWalkerUncompressedBytesSent for the instance
@@ -319,16 +402,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryWalkerUncompressedBytesSentPersec sets the value of MemoryWalkerUncompressedBytesSentPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyMemoryWalkerUncompressedBytesSentPersec(value uint64) (err error) {
-	return instance.SetProperty("MemoryWalkerUncompressedBytesSentPersec", value)
+	return instance.SetProperty("MemoryWalkerUncompressedBytesSentPersec", (value))
 }
 
 // GetMemoryWalkerUncompressedBytesSentPersec gets the value of MemoryWalkerUncompressedBytesSentPersec for the instance
@@ -337,16 +429,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiverBytesPendingDecompression sets the value of ReceiverBytesPendingDecompression for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyReceiverBytesPendingDecompression(value uint64) (err error) {
-	return instance.SetProperty("ReceiverBytesPendingDecompression", value)
+	return instance.SetProperty("ReceiverBytesPendingDecompression", (value))
 }
 
 // GetReceiverBytesPendingDecompression gets the value of ReceiverBytesPendingDecompression for the instance
@@ -355,16 +456,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiverBytesPendingWrite sets the value of ReceiverBytesPendingWrite for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyReceiverBytesPendingWrite(value uint64) (err error) {
-	return instance.SetProperty("ReceiverBytesPendingWrite", value)
+	return instance.SetProperty("ReceiverBytesPendingWrite", (value))
 }
 
 // GetReceiverBytesPendingWrite gets the value of ReceiverBytesPendingWrite for the instance
@@ -373,16 +483,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiverBytesWrittenPersec sets the value of ReceiverBytesWrittenPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyReceiverBytesWrittenPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiverBytesWrittenPersec", value)
+	return instance.SetProperty("ReceiverBytesWrittenPersec", (value))
 }
 
 // GetReceiverBytesWrittenPersec gets the value of ReceiverBytesWrittenPersec for the instance
@@ -391,16 +510,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiverCompressedBytesReceivedPersec sets the value of ReceiverCompressedBytesReceivedPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyReceiverCompressedBytesReceivedPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiverCompressedBytesReceivedPersec", value)
+	return instance.SetProperty("ReceiverCompressedBytesReceivedPersec", (value))
 }
 
 // GetReceiverCompressedBytesReceivedPersec gets the value of ReceiverCompressedBytesReceivedPersec for the instance
@@ -409,16 +537,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiverDecompressedBytesPersec sets the value of ReceiverDecompressedBytesPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyReceiverDecompressedBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiverDecompressedBytesPersec", value)
+	return instance.SetProperty("ReceiverDecompressedBytesPersec", (value))
 }
 
 // GetReceiverDecompressedBytesPersec gets the value of ReceiverDecompressedBytesPersec for the instance
@@ -427,16 +564,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiverMaximumThreadpoolThreadCount sets the value of ReceiverMaximumThreadpoolThreadCount for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyReceiverMaximumThreadpoolThreadCount(value uint64) (err error) {
-	return instance.SetProperty("ReceiverMaximumThreadpoolThreadCount", value)
+	return instance.SetProperty("ReceiverMaximumThreadpoolThreadCount", (value))
 }
 
 // GetReceiverMaximumThreadpoolThreadCount gets the value of ReceiverMaximumThreadpoolThreadCount for the instance
@@ -445,16 +591,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiverUncompressedBytesReceivedPersec sets the value of ReceiverUncompressedBytesReceivedPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyReceiverUncompressedBytesReceivedPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiverUncompressedBytesReceivedPersec", value)
+	return instance.SetProperty("ReceiverUncompressedBytesReceivedPersec", (value))
 }
 
 // GetReceiverUncompressedBytesReceivedPersec gets the value of ReceiverUncompressedBytesReceivedPersec for the instance
@@ -463,16 +618,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBTransportBytesSent sets the value of SMBTransportBytesSent for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertySMBTransportBytesSent(value uint64) (err error) {
-	return instance.SetProperty("SMBTransportBytesSent", value)
+	return instance.SetProperty("SMBTransportBytesSent", (value))
 }
 
 // GetSMBTransportBytesSent gets the value of SMBTransportBytesSent for the instance
@@ -481,16 +645,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBTransportBytesSentPersec sets the value of SMBTransportBytesSentPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertySMBTransportBytesSentPersec(value uint64) (err error) {
-	return instance.SetProperty("SMBTransportBytesSentPersec", value)
+	return instance.SetProperty("SMBTransportBytesSentPersec", (value))
 }
 
 // GetSMBTransportBytesSentPersec gets the value of SMBTransportBytesSentPersec for the instance
@@ -499,16 +672,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBTransportPendingSendBytes sets the value of SMBTransportPendingSendBytes for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertySMBTransportPendingSendBytes(value uint64) (err error) {
-	return instance.SetProperty("SMBTransportPendingSendBytes", value)
+	return instance.SetProperty("SMBTransportPendingSendBytes", (value))
 }
 
 // GetSMBTransportPendingSendBytes gets the value of SMBTransportPendingSendBytes for the instance
@@ -517,16 +699,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBTransportPendingSendCount sets the value of SMBTransportPendingSendCount for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertySMBTransportPendingSendCount(value uint64) (err error) {
-	return instance.SetProperty("SMBTransportPendingSendCount", value)
+	return instance.SetProperty("SMBTransportPendingSendCount", (value))
 }
 
 // GetSMBTransportPendingSendCount gets the value of SMBTransportPendingSendCount for the instance
@@ -535,16 +726,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTCPTransportBytesPendingProcessing sets the value of TCPTransportBytesPendingProcessing for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTCPTransportBytesPendingProcessing(value uint64) (err error) {
-	return instance.SetProperty("TCPTransportBytesPendingProcessing", value)
+	return instance.SetProperty("TCPTransportBytesPendingProcessing", (value))
 }
 
 // GetTCPTransportBytesPendingProcessing gets the value of TCPTransportBytesPendingProcessing for the instance
@@ -553,16 +753,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTCPTransportBytesPendingSend sets the value of TCPTransportBytesPendingSend for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTCPTransportBytesPendingSend(value uint64) (err error) {
-	return instance.SetProperty("TCPTransportBytesPendingSend", value)
+	return instance.SetProperty("TCPTransportBytesPendingSend", (value))
 }
 
 // GetTCPTransportBytesPendingSend gets the value of TCPTransportBytesPendingSend for the instance
@@ -571,16 +780,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTCPTransportBytesReceivedPersec sets the value of TCPTransportBytesReceivedPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTCPTransportBytesReceivedPersec(value uint64) (err error) {
-	return instance.SetProperty("TCPTransportBytesReceivedPersec", value)
+	return instance.SetProperty("TCPTransportBytesReceivedPersec", (value))
 }
 
 // GetTCPTransportBytesReceivedPersec gets the value of TCPTransportBytesReceivedPersec for the instance
@@ -589,16 +807,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTCPTransportBytesSentPersec sets the value of TCPTransportBytesSentPersec for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTCPTransportBytesSentPersec(value uint64) (err error) {
-	return instance.SetProperty("TCPTransportBytesSentPersec", value)
+	return instance.SetProperty("TCPTransportBytesSentPersec", (value))
 }
 
 // GetTCPTransportBytesSentPersec gets the value of TCPTransportBytesSentPersec for the instance
@@ -607,16 +834,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTCPTransportPendingSendCount sets the value of TCPTransportPendingSendCount for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTCPTransportPendingSendCount(value uint64) (err error) {
-	return instance.SetProperty("TCPTransportPendingSendCount", value)
+	return instance.SetProperty("TCPTransportPendingSendCount", (value))
 }
 
 // GetTCPTransportPendingSendCount gets the value of TCPTransportPendingSendCount for the instance
@@ -625,16 +861,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTCPTransportPostedReceiveBufferCount sets the value of TCPTransportPostedReceiveBufferCount for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTCPTransportPostedReceiveBufferCount(value uint64) (err error) {
-	return instance.SetProperty("TCPTransportPostedReceiveBufferCount", value)
+	return instance.SetProperty("TCPTransportPostedReceiveBufferCount", (value))
 }
 
 // GetTCPTransportPostedReceiveBufferCount gets the value of TCPTransportPostedReceiveBufferCount for the instance
@@ -643,16 +888,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTCPTransportTotalbuffercount sets the value of TCPTransportTotalbuffercount for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTCPTransportTotalbuffercount(value uint64) (err error) {
-	return instance.SetProperty("TCPTransportTotalbuffercount", value)
+	return instance.SetProperty("TCPTransportTotalbuffercount", (value))
 }
 
 // GetTCPTransportTotalbuffercount gets the value of TCPTransportTotalbuffercount for the instance
@@ -661,16 +915,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTransferpassCPUCap sets the value of TransferpassCPUCap for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTransferpassCPUCap(value uint64) (err error) {
-	return instance.SetProperty("TransferpassCPUCap", value)
+	return instance.SetProperty("TransferpassCPUCap", (value))
 }
 
 // GetTransferpassCPUCap gets the value of TransferpassCPUCap for the instance
@@ -679,16 +942,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTransferpassDirtyPageCount sets the value of TransferpassDirtyPageCount for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTransferpassDirtyPageCount(value uint64) (err error) {
-	return instance.SetProperty("TransferpassDirtyPageCount", value)
+	return instance.SetProperty("TransferpassDirtyPageCount", (value))
 }
 
 // GetTransferpassDirtyPageCount gets the value of TransferpassDirtyPageCount for the instance
@@ -697,16 +969,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTransferPassIsblackout sets the value of TransferPassIsblackout for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTransferPassIsblackout(value uint64) (err error) {
-	return instance.SetProperty("TransferPassIsblackout", value)
+	return instance.SetProperty("TransferPassIsblackout", (value))
 }
 
 // GetTransferPassIsblackout gets the value of TransferPassIsblackout for the instance
@@ -715,16 +996,25 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTransferPassNumber sets the value of TransferPassNumber for the instance
 func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) SetPropertyTransferPassNumber(value uint64) (err error) {
-	return instance.SetProperty("TransferPassNumber", value)
+	return instance.SetProperty("TransferPassNumber", (value))
 }
 
 // GetTransferPassNumber gets the value of TransferPassNumber for the instance
@@ -733,9 +1023,18 @@ func (instance *Win32_PerfRawData_LmPerfProvider_HyperVVMLiveMigration) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

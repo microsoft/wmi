@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.Security.MicrosoftTpm
 //////////////////////////////////////////////
 package microsofttpm
@@ -11,7 +11,9 @@ package microsofttpm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Tpm struct
@@ -80,7 +82,7 @@ func NewWin32_TpmEx6(hostName string,
 
 // SetIsActivated_InitialValue sets the value of IsActivated_InitialValue for the instance
 func (instance *Win32_Tpm) SetPropertyIsActivated_InitialValue(value bool) (err error) {
-	return instance.SetProperty("IsActivated_InitialValue", value)
+	return instance.SetProperty("IsActivated_InitialValue", (value))
 }
 
 // GetIsActivated_InitialValue gets the value of IsActivated_InitialValue for the instance
@@ -89,16 +91,25 @@ func (instance *Win32_Tpm) GetPropertyIsActivated_InitialValue() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsEnabled_InitialValue sets the value of IsEnabled_InitialValue for the instance
 func (instance *Win32_Tpm) SetPropertyIsEnabled_InitialValue(value bool) (err error) {
-	return instance.SetProperty("IsEnabled_InitialValue", value)
+	return instance.SetProperty("IsEnabled_InitialValue", (value))
 }
 
 // GetIsEnabled_InitialValue gets the value of IsEnabled_InitialValue for the instance
@@ -107,16 +118,25 @@ func (instance *Win32_Tpm) GetPropertyIsEnabled_InitialValue() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsOwned_InitialValue sets the value of IsOwned_InitialValue for the instance
 func (instance *Win32_Tpm) SetPropertyIsOwned_InitialValue(value bool) (err error) {
-	return instance.SetProperty("IsOwned_InitialValue", value)
+	return instance.SetProperty("IsOwned_InitialValue", (value))
 }
 
 // GetIsOwned_InitialValue gets the value of IsOwned_InitialValue for the instance
@@ -125,16 +145,25 @@ func (instance *Win32_Tpm) GetPropertyIsOwned_InitialValue() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetManufacturerId sets the value of ManufacturerId for the instance
 func (instance *Win32_Tpm) SetPropertyManufacturerId(value uint32) (err error) {
-	return instance.SetProperty("ManufacturerId", value)
+	return instance.SetProperty("ManufacturerId", (value))
 }
 
 // GetManufacturerId gets the value of ManufacturerId for the instance
@@ -143,16 +172,25 @@ func (instance *Win32_Tpm) GetPropertyManufacturerId() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetManufacturerIdTxt sets the value of ManufacturerIdTxt for the instance
 func (instance *Win32_Tpm) SetPropertyManufacturerIdTxt(value string) (err error) {
-	return instance.SetProperty("ManufacturerIdTxt", value)
+	return instance.SetProperty("ManufacturerIdTxt", (value))
 }
 
 // GetManufacturerIdTxt gets the value of ManufacturerIdTxt for the instance
@@ -161,16 +199,25 @@ func (instance *Win32_Tpm) GetPropertyManufacturerIdTxt() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManufacturerVersion sets the value of ManufacturerVersion for the instance
 func (instance *Win32_Tpm) SetPropertyManufacturerVersion(value string) (err error) {
-	return instance.SetProperty("ManufacturerVersion", value)
+	return instance.SetProperty("ManufacturerVersion", (value))
 }
 
 // GetManufacturerVersion gets the value of ManufacturerVersion for the instance
@@ -179,16 +226,25 @@ func (instance *Win32_Tpm) GetPropertyManufacturerVersion() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManufacturerVersionFull20 sets the value of ManufacturerVersionFull20 for the instance
 func (instance *Win32_Tpm) SetPropertyManufacturerVersionFull20(value string) (err error) {
-	return instance.SetProperty("ManufacturerVersionFull20", value)
+	return instance.SetProperty("ManufacturerVersionFull20", (value))
 }
 
 // GetManufacturerVersionFull20 gets the value of ManufacturerVersionFull20 for the instance
@@ -197,16 +253,25 @@ func (instance *Win32_Tpm) GetPropertyManufacturerVersionFull20() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManufacturerVersionInfo sets the value of ManufacturerVersionInfo for the instance
 func (instance *Win32_Tpm) SetPropertyManufacturerVersionInfo(value string) (err error) {
-	return instance.SetProperty("ManufacturerVersionInfo", value)
+	return instance.SetProperty("ManufacturerVersionInfo", (value))
 }
 
 // GetManufacturerVersionInfo gets the value of ManufacturerVersionInfo for the instance
@@ -215,16 +280,25 @@ func (instance *Win32_Tpm) GetPropertyManufacturerVersionInfo() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPhysicalPresenceVersionInfo sets the value of PhysicalPresenceVersionInfo for the instance
 func (instance *Win32_Tpm) SetPropertyPhysicalPresenceVersionInfo(value string) (err error) {
-	return instance.SetProperty("PhysicalPresenceVersionInfo", value)
+	return instance.SetProperty("PhysicalPresenceVersionInfo", (value))
 }
 
 // GetPhysicalPresenceVersionInfo gets the value of PhysicalPresenceVersionInfo for the instance
@@ -233,16 +307,25 @@ func (instance *Win32_Tpm) GetPropertyPhysicalPresenceVersionInfo() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSpecVersion sets the value of SpecVersion for the instance
 func (instance *Win32_Tpm) SetPropertySpecVersion(value string) (err error) {
-	return instance.SetProperty("SpecVersion", value)
+	return instance.SetProperty("SpecVersion", (value))
 }
 
 // GetSpecVersion gets the value of SpecVersion for the instance
@@ -251,10 +334,19 @@ func (instance *Win32_Tpm) GetPropertySpecVersion() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

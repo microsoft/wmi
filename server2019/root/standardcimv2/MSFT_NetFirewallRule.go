@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetFirewallRule struct
@@ -100,7 +102,7 @@ func NewMSFT_NetFirewallRuleEx6(hostName string,
 
 // SetAction sets the value of Action for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyAction(value uint16) (err error) {
-	return instance.SetProperty("Action", value)
+	return instance.SetProperty("Action", (value))
 }
 
 // GetAction gets the value of Action for the instance
@@ -109,16 +111,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyAction() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDirection sets the value of Direction for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyDirection(value uint16) (err error) {
-	return instance.SetProperty("Direction", value)
+	return instance.SetProperty("Direction", (value))
 }
 
 // GetDirection gets the value of Direction for the instance
@@ -127,16 +138,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyDirection() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDisplayGroup sets the value of DisplayGroup for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyDisplayGroup(value string) (err error) {
-	return instance.SetProperty("DisplayGroup", value)
+	return instance.SetProperty("DisplayGroup", (value))
 }
 
 // GetDisplayGroup gets the value of DisplayGroup for the instance
@@ -145,16 +165,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyDisplayGroup() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisplayName sets the value of DisplayName for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyDisplayName(value string) (err error) {
-	return instance.SetProperty("DisplayName", value)
+	return instance.SetProperty("DisplayName", (value))
 }
 
 // GetDisplayName gets the value of DisplayName for the instance
@@ -163,16 +192,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyDisplayName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEdgeTraversalPolicy sets the value of EdgeTraversalPolicy for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyEdgeTraversalPolicy(value uint16) (err error) {
-	return instance.SetProperty("EdgeTraversalPolicy", value)
+	return instance.SetProperty("EdgeTraversalPolicy", (value))
 }
 
 // GetEdgeTraversalPolicy gets the value of EdgeTraversalPolicy for the instance
@@ -181,16 +219,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyEdgeTraversalPolicy() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEnforcementStatus sets the value of EnforcementStatus for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyEnforcementStatus(value []uint16) (err error) {
-	return instance.SetProperty("EnforcementStatus", value)
+	return instance.SetProperty("EnforcementStatus", (value))
 }
 
 // GetEnforcementStatus gets the value of EnforcementStatus for the instance
@@ -199,16 +246,26 @@ func (instance *MSFT_NetFirewallRule) GetPropertyEnforcementStatus() (value []ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetLocalOnlyMapping sets the value of LocalOnlyMapping for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyLocalOnlyMapping(value bool) (err error) {
-	return instance.SetProperty("LocalOnlyMapping", value)
+	return instance.SetProperty("LocalOnlyMapping", (value))
 }
 
 // GetLocalOnlyMapping gets the value of LocalOnlyMapping for the instance
@@ -217,16 +274,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyLocalOnlyMapping() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLooseSourceMapping sets the value of LooseSourceMapping for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyLooseSourceMapping(value bool) (err error) {
-	return instance.SetProperty("LooseSourceMapping", value)
+	return instance.SetProperty("LooseSourceMapping", (value))
 }
 
 // GetLooseSourceMapping gets the value of LooseSourceMapping for the instance
@@ -235,16 +301,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyLooseSourceMapping() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOwner sets the value of Owner for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyOwner(value string) (err error) {
-	return instance.SetProperty("Owner", value)
+	return instance.SetProperty("Owner", (value))
 }
 
 // GetOwner gets the value of Owner for the instance
@@ -253,16 +328,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyOwner() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPlatforms sets the value of Platforms for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyPlatforms(value []string) (err error) {
-	return instance.SetProperty("Platforms", value)
+	return instance.SetProperty("Platforms", (value))
 }
 
 // GetPlatforms gets the value of Platforms for the instance
@@ -271,16 +355,26 @@ func (instance *MSFT_NetFirewallRule) GetPropertyPlatforms() (value []string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPolicyStoreSource sets the value of PolicyStoreSource for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyPolicyStoreSource(value string) (err error) {
-	return instance.SetProperty("PolicyStoreSource", value)
+	return instance.SetProperty("PolicyStoreSource", (value))
 }
 
 // GetPolicyStoreSource gets the value of PolicyStoreSource for the instance
@@ -289,16 +383,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyPolicyStoreSource() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicyStoreSourceType sets the value of PolicyStoreSourceType for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyPolicyStoreSourceType(value uint16) (err error) {
-	return instance.SetProperty("PolicyStoreSourceType", value)
+	return instance.SetProperty("PolicyStoreSourceType", (value))
 }
 
 // GetPolicyStoreSourceType gets the value of PolicyStoreSourceType for the instance
@@ -307,16 +410,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyPolicyStoreSourceType() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPrimaryStatus sets the value of PrimaryStatus for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyPrimaryStatus(value uint16) (err error) {
-	return instance.SetProperty("PrimaryStatus", value)
+	return instance.SetProperty("PrimaryStatus", (value))
 }
 
 // GetPrimaryStatus gets the value of PrimaryStatus for the instance
@@ -325,16 +437,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyPrimaryStatus() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProfiles sets the value of Profiles for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyProfiles(value uint16) (err error) {
-	return instance.SetProperty("Profiles", value)
+	return instance.SetProperty("Profiles", (value))
 }
 
 // GetProfiles gets the value of Profiles for the instance
@@ -343,16 +464,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyProfiles() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRuleGroup sets the value of RuleGroup for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyRuleGroup(value string) (err error) {
-	return instance.SetProperty("RuleGroup", value)
+	return instance.SetProperty("RuleGroup", (value))
 }
 
 // GetRuleGroup gets the value of RuleGroup for the instance
@@ -361,16 +491,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyRuleGroup() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyStatus(value string) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -379,16 +518,25 @@ func (instance *MSFT_NetFirewallRule) GetPropertyStatus() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatusCode sets the value of StatusCode for the instance
 func (instance *MSFT_NetFirewallRule) SetPropertyStatusCode(value uint32) (err error) {
-	return instance.SetProperty("StatusCode", value)
+	return instance.SetProperty("StatusCode", (value))
 }
 
 // GetStatusCode gets the value of StatusCode for the instance
@@ -397,10 +545,19 @@ func (instance *MSFT_NetFirewallRule) GetPropertyStatusCode() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

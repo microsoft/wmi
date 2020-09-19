@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageSetting struct
@@ -56,7 +58,7 @@ func NewMSFT_StorageSettingEx6(hostName string,
 
 // SetNewDiskPolicy sets the value of NewDiskPolicy for the instance
 func (instance *MSFT_StorageSetting) SetPropertyNewDiskPolicy(value uint16) (err error) {
-	return instance.SetProperty("NewDiskPolicy", value)
+	return instance.SetProperty("NewDiskPolicy", (value))
 }
 
 // GetNewDiskPolicy gets the value of NewDiskPolicy for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_StorageSetting) GetPropertyNewDiskPolicy() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetScrubPolicy sets the value of ScrubPolicy for the instance
 func (instance *MSFT_StorageSetting) SetPropertyScrubPolicy(value uint32) (err error) {
-	return instance.SetProperty("ScrubPolicy", value)
+	return instance.SetProperty("ScrubPolicy", (value))
 }
 
 // GetScrubPolicy gets the value of ScrubPolicy for the instance
@@ -83,10 +94,19 @@ func (instance *MSFT_StorageSetting) GetPropertyScrubPolicy() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

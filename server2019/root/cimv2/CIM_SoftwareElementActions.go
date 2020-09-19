@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SoftwareElementActions struct
@@ -56,7 +58,7 @@ func NewCIM_SoftwareElementActionsEx6(hostName string,
 
 // SetAction sets the value of Action for the instance
 func (instance *CIM_SoftwareElementActions) SetPropertyAction(value CIM_Action) (err error) {
-	return instance.SetProperty("Action", value)
+	return instance.SetProperty("Action", (value))
 }
 
 // GetAction gets the value of Action for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_SoftwareElementActions) GetPropertyAction() (value CIM_Actio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Action)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Action)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Action is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Action(valuetmp)
+
 	return
 }
 
 // SetElement sets the value of Element for the instance
 func (instance *CIM_SoftwareElementActions) SetPropertyElement(value CIM_SoftwareElement) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_SoftwareElementActions) GetPropertyElement() (value CIM_Soft
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_SoftwareElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_SoftwareElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_SoftwareElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_SoftwareElement(valuetmp)
+
 	return
 }

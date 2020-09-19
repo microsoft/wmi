@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SBLTargetCacheConfiguration struct
@@ -98,7 +100,7 @@ func NewMSFT_SBLTargetCacheConfigurationEx6(hostName string,
 
 // SetCacheBehavior sets the value of CacheBehavior for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyCacheBehavior(value uint64) (err error) {
-	return instance.SetProperty("CacheBehavior", value)
+	return instance.SetProperty("CacheBehavior", (value))
 }
 
 // GetCacheBehavior gets the value of CacheBehavior for the instance
@@ -107,16 +109,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyCacheBehavior() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePageSizeinKB sets the value of CachePageSizeinKB for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyCachePageSizeinKB(value uint32) (err error) {
-	return instance.SetProperty("CachePageSizeinKB", value)
+	return instance.SetProperty("CachePageSizeinKB", (value))
 }
 
 // GetCachePageSizeinKB gets the value of CachePageSizeinKB for the instance
@@ -125,16 +136,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyCachePageSizeinKB()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentCacheModeHDD sets the value of CurrentCacheModeHDD for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyCurrentCacheModeHDD(value uint32) (err error) {
-	return instance.SetProperty("CurrentCacheModeHDD", value)
+	return instance.SetProperty("CurrentCacheModeHDD", (value))
 }
 
 // GetCurrentCacheModeHDD gets the value of CurrentCacheModeHDD for the instance
@@ -143,16 +163,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyCurrentCacheModeHDD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentCacheModeSSD sets the value of CurrentCacheModeSSD for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyCurrentCacheModeSSD(value uint32) (err error) {
-	return instance.SetProperty("CurrentCacheModeSSD", value)
+	return instance.SetProperty("CurrentCacheModeSSD", (value))
 }
 
 // GetCurrentCacheModeSSD gets the value of CurrentCacheModeSSD for the instance
@@ -161,16 +190,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyCurrentCacheModeSSD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentState sets the value of CurrentState for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyCurrentState(value uint32) (err error) {
-	return instance.SetProperty("CurrentState", value)
+	return instance.SetProperty("CurrentState", (value))
 }
 
 // GetCurrentState gets the value of CurrentState for the instance
@@ -179,16 +217,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyCurrentState() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentStateProgress sets the value of CurrentStateProgress for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyCurrentStateProgress(value uint64) (err error) {
-	return instance.SetProperty("CurrentStateProgress", value)
+	return instance.SetProperty("CurrentStateProgress", (value))
 }
 
 // GetCurrentStateProgress gets the value of CurrentStateProgress for the instance
@@ -197,16 +244,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyCurrentStateProgres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCurrentStateProgressMax sets the value of CurrentStateProgressMax for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyCurrentStateProgressMax(value uint64) (err error) {
-	return instance.SetProperty("CurrentStateProgressMax", value)
+	return instance.SetProperty("CurrentStateProgressMax", (value))
 }
 
 // GetCurrentStateProgressMax gets the value of CurrentStateProgressMax for the instance
@@ -215,16 +271,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyCurrentStateProgres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDesiredCacheModeHDD sets the value of DesiredCacheModeHDD for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyDesiredCacheModeHDD(value uint32) (err error) {
-	return instance.SetProperty("DesiredCacheModeHDD", value)
+	return instance.SetProperty("DesiredCacheModeHDD", (value))
 }
 
 // GetDesiredCacheModeHDD gets the value of DesiredCacheModeHDD for the instance
@@ -233,16 +298,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyDesiredCacheModeHDD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDesiredCacheModeSSD sets the value of DesiredCacheModeSSD for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyDesiredCacheModeSSD(value uint32) (err error) {
-	return instance.SetProperty("DesiredCacheModeSSD", value)
+	return instance.SetProperty("DesiredCacheModeSSD", (value))
 }
 
 // GetDesiredCacheModeSSD gets the value of DesiredCacheModeSSD for the instance
@@ -251,16 +325,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyDesiredCacheModeSSD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDesiredState sets the value of DesiredState for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyDesiredState(value uint32) (err error) {
-	return instance.SetProperty("DesiredState", value)
+	return instance.SetProperty("DesiredState", (value))
 }
 
 // GetDesiredState gets the value of DesiredState for the instance
@@ -269,16 +352,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyDesiredState() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlashMetadataReserveBytes sets the value of FlashMetadataReserveBytes for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyFlashMetadataReserveBytes(value uint64) (err error) {
-	return instance.SetProperty("FlashMetadataReserveBytes", value)
+	return instance.SetProperty("FlashMetadataReserveBytes", (value))
 }
 
 // GetFlashMetadataReserveBytes gets the value of FlashMetadataReserveBytes for the instance
@@ -287,16 +379,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyFlashMetadataReserv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFlashReservePercent sets the value of FlashReservePercent for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyFlashReservePercent(value uint32) (err error) {
-	return instance.SetProperty("FlashReservePercent", value)
+	return instance.SetProperty("FlashReservePercent", (value))
 }
 
 // GetFlashReservePercent gets the value of FlashReservePercent for the instance
@@ -305,16 +406,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyFlashReservePercent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIdentifier sets the value of Identifier for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyIdentifier(value string) (err error) {
-	return instance.SetProperty("Identifier", value)
+	return instance.SetProperty("Identifier", (value))
 }
 
 // GetIdentifier gets the value of Identifier for the instance
@@ -323,16 +433,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyIdentifier() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProvisioningStage sets the value of ProvisioningStage for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyProvisioningStage(value uint64) (err error) {
-	return instance.SetProperty("ProvisioningStage", value)
+	return instance.SetProperty("ProvisioningStage", (value))
 }
 
 // GetProvisioningStage gets the value of ProvisioningStage for the instance
@@ -341,16 +460,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyProvisioningStage()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProvisioningStageMax sets the value of ProvisioningStageMax for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertyProvisioningStageMax(value uint64) (err error) {
-	return instance.SetProperty("ProvisioningStageMax", value)
+	return instance.SetProperty("ProvisioningStageMax", (value))
 }
 
 // GetProvisioningStageMax gets the value of ProvisioningStageMax for the instance
@@ -359,16 +487,25 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertyProvisioningStageMa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSpacesDirectEnabled sets the value of SpacesDirectEnabled for the instance
 func (instance *MSFT_SBLTargetCacheConfiguration) SetPropertySpacesDirectEnabled(value bool) (err error) {
-	return instance.SetProperty("SpacesDirectEnabled", value)
+	return instance.SetProperty("SpacesDirectEnabled", (value))
 }
 
 // GetSpacesDirectEnabled gets the value of SpacesDirectEnabled for the instance
@@ -377,10 +514,19 @@ func (instance *MSFT_SBLTargetCacheConfiguration) GetPropertySpacesDirectEnabled
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

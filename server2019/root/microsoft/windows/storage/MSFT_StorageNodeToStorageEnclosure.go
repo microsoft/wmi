@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageNodeToStorageEnclosure struct
@@ -86,7 +88,7 @@ func NewMSFT_StorageNodeToStorageEnclosureEx6(hostName string,
 
 // SetCurrentSensorOperationalStatus sets the value of CurrentSensorOperationalStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyCurrentSensorOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("CurrentSensorOperationalStatus", value)
+	return instance.SetProperty("CurrentSensorOperationalStatus", (value))
 }
 
 // GetCurrentSensorOperationalStatus gets the value of CurrentSensorOperationalStatus for the instance
@@ -95,16 +97,26 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyCurrentSensorOper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetEnclosureNumber sets the value of EnclosureNumber for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyEnclosureNumber(value uint32) (err error) {
-	return instance.SetProperty("EnclosureNumber", value)
+	return instance.SetProperty("EnclosureNumber", (value))
 }
 
 // GetEnclosureNumber gets the value of EnclosureNumber for the instance
@@ -113,16 +125,25 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyEnclosureNumber()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFanOperationalStatus sets the value of FanOperationalStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyFanOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("FanOperationalStatus", value)
+	return instance.SetProperty("FanOperationalStatus", (value))
 }
 
 // GetFanOperationalStatus gets the value of FanOperationalStatus for the instance
@@ -131,16 +152,26 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyFanOperationalSta
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyHealthStatus(value uint16) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -149,16 +180,25 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyHealthStatus() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIOControllerOperationalStatus sets the value of IOControllerOperationalStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyIOControllerOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("IOControllerOperationalStatus", value)
+	return instance.SetProperty("IOControllerOperationalStatus", (value))
 }
 
 // GetIOControllerOperationalStatus gets the value of IOControllerOperationalStatus for the instance
@@ -167,16 +207,26 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyIOControllerOpera
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetIsPhysicallyConnected sets the value of IsPhysicallyConnected for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyIsPhysicallyConnected(value bool) (err error) {
-	return instance.SetProperty("IsPhysicallyConnected", value)
+	return instance.SetProperty("IsPhysicallyConnected", (value))
 }
 
 // GetIsPhysicallyConnected gets the value of IsPhysicallyConnected for the instance
@@ -185,16 +235,25 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyIsPhysicallyConne
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPowerSupplyOperationalStatus sets the value of PowerSupplyOperationalStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyPowerSupplyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("PowerSupplyOperationalStatus", value)
+	return instance.SetProperty("PowerSupplyOperationalStatus", (value))
 }
 
 // GetPowerSupplyOperationalStatus gets the value of PowerSupplyOperationalStatus for the instance
@@ -203,16 +262,26 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyPowerSupplyOperat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSlotOperationalStatus sets the value of SlotOperationalStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertySlotOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("SlotOperationalStatus", value)
+	return instance.SetProperty("SlotOperationalStatus", (value))
 }
 
 // GetSlotOperationalStatus gets the value of SlotOperationalStatus for the instance
@@ -221,16 +290,26 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertySlotOperationalSt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetStorageEnclosure sets the value of StorageEnclosure for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyStorageEnclosure(value MSFT_StorageEnclosure) (err error) {
-	return instance.SetProperty("StorageEnclosure", value)
+	return instance.SetProperty("StorageEnclosure", (value))
 }
 
 // GetStorageEnclosure gets the value of StorageEnclosure for the instance
@@ -239,16 +318,25 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyStorageEnclosure(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageEnclosure)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageEnclosure)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageEnclosure is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageEnclosure(valuetmp)
+
 	return
 }
 
 // SetStorageNode sets the value of StorageNode for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyStorageNode(value MSFT_StorageNode) (err error) {
-	return instance.SetProperty("StorageNode", value)
+	return instance.SetProperty("StorageNode", (value))
 }
 
 // GetStorageNode gets the value of StorageNode for the instance
@@ -257,16 +345,25 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyStorageNode() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageNode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageNode)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageNode is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageNode(valuetmp)
+
 	return
 }
 
 // SetTemperatureSensorOperationalStatus sets the value of TemperatureSensorOperationalStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyTemperatureSensorOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("TemperatureSensorOperationalStatus", value)
+	return instance.SetProperty("TemperatureSensorOperationalStatus", (value))
 }
 
 // GetTemperatureSensorOperationalStatus gets the value of TemperatureSensorOperationalStatus for the instance
@@ -275,16 +372,26 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyTemperatureSensor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetVoltageSensorOperationalStatus sets the value of VoltageSensorOperationalStatus for the instance
 func (instance *MSFT_StorageNodeToStorageEnclosure) SetPropertyVoltageSensorOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("VoltageSensorOperationalStatus", value)
+	return instance.SetProperty("VoltageSensorOperationalStatus", (value))
 }
 
 // GetVoltageSensorOperationalStatus gets the value of VoltageSensorOperationalStatus for the instance
@@ -293,9 +400,19 @@ func (instance *MSFT_StorageNodeToStorageEnclosure) GetPropertyVoltageSensorOper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }

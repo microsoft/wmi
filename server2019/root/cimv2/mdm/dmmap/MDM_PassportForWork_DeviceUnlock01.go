@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_PassportForWork_DeviceUnlock01 struct
@@ -65,7 +67,7 @@ func NewMDM_PassportForWork_DeviceUnlock01Ex6(hostName string,
 
 // SetGroupA sets the value of GroupA for the instance
 func (instance *MDM_PassportForWork_DeviceUnlock01) SetPropertyGroupA(value string) (err error) {
-	return instance.SetProperty("GroupA", value)
+	return instance.SetProperty("GroupA", (value))
 }
 
 // GetGroupA gets the value of GroupA for the instance
@@ -74,16 +76,25 @@ func (instance *MDM_PassportForWork_DeviceUnlock01) GetPropertyGroupA() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGroupB sets the value of GroupB for the instance
 func (instance *MDM_PassportForWork_DeviceUnlock01) SetPropertyGroupB(value string) (err error) {
-	return instance.SetProperty("GroupB", value)
+	return instance.SetProperty("GroupB", (value))
 }
 
 // GetGroupB gets the value of GroupB for the instance
@@ -92,16 +103,25 @@ func (instance *MDM_PassportForWork_DeviceUnlock01) GetPropertyGroupB() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_PassportForWork_DeviceUnlock01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -110,16 +130,25 @@ func (instance *MDM_PassportForWork_DeviceUnlock01) GetPropertyInstanceID() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_PassportForWork_DeviceUnlock01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -128,16 +157,25 @@ func (instance *MDM_PassportForWork_DeviceUnlock01) GetPropertyParentID() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPlugins sets the value of Plugins for the instance
 func (instance *MDM_PassportForWork_DeviceUnlock01) SetPropertyPlugins(value string) (err error) {
-	return instance.SetProperty("Plugins", value)
+	return instance.SetProperty("Plugins", (value))
 }
 
 // GetPlugins gets the value of Plugins for the instance
@@ -146,9 +184,18 @@ func (instance *MDM_PassportForWork_DeviceUnlock01) GetPropertyPlugins() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

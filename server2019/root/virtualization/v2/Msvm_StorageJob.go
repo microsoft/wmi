@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_StorageJob struct
@@ -67,7 +69,7 @@ func NewMsvm_StorageJobEx6(hostName string,
 
 // SetCancellable sets the value of Cancellable for the instance
 func (instance *Msvm_StorageJob) SetPropertyCancellable(value bool) (err error) {
-	return instance.SetProperty("Cancellable", value)
+	return instance.SetProperty("Cancellable", (value))
 }
 
 // GetCancellable gets the value of Cancellable for the instance
@@ -76,16 +78,25 @@ func (instance *Msvm_StorageJob) GetPropertyCancellable() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetChild sets the value of Child for the instance
 func (instance *Msvm_StorageJob) SetPropertyChild(value string) (err error) {
-	return instance.SetProperty("Child", value)
+	return instance.SetProperty("Child", (value))
 }
 
 // GetChild gets the value of Child for the instance
@@ -94,16 +105,25 @@ func (instance *Msvm_StorageJob) GetPropertyChild() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorSummaryDescription sets the value of ErrorSummaryDescription for the instance
 func (instance *Msvm_StorageJob) SetPropertyErrorSummaryDescription(value string) (err error) {
-	return instance.SetProperty("ErrorSummaryDescription", value)
+	return instance.SetProperty("ErrorSummaryDescription", (value))
 }
 
 // GetErrorSummaryDescription gets the value of ErrorSummaryDescription for the instance
@@ -112,16 +132,25 @@ func (instance *Msvm_StorageJob) GetPropertyErrorSummaryDescription() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetJobCompletionStatusCode sets the value of JobCompletionStatusCode for the instance
 func (instance *Msvm_StorageJob) SetPropertyJobCompletionStatusCode(value uint32) (err error) {
-	return instance.SetProperty("JobCompletionStatusCode", value)
+	return instance.SetProperty("JobCompletionStatusCode", (value))
 }
 
 // GetJobCompletionStatusCode gets the value of JobCompletionStatusCode for the instance
@@ -130,16 +159,25 @@ func (instance *Msvm_StorageJob) GetPropertyJobCompletionStatusCode() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetJobType sets the value of JobType for the instance
 func (instance *Msvm_StorageJob) SetPropertyJobType(value uint16) (err error) {
-	return instance.SetProperty("JobType", value)
+	return instance.SetProperty("JobType", (value))
 }
 
 // GetJobType gets the value of JobType for the instance
@@ -148,16 +186,25 @@ func (instance *Msvm_StorageJob) GetPropertyJobType() (value uint16, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetParent sets the value of Parent for the instance
 func (instance *Msvm_StorageJob) SetPropertyParent(value string) (err error) {
-	return instance.SetProperty("Parent", value)
+	return instance.SetProperty("Parent", (value))
 }
 
 // GetParent gets the value of Parent for the instance
@@ -166,10 +213,19 @@ func (instance *Msvm_StorageJob) GetPropertyParent() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

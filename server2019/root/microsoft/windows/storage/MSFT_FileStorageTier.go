@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_FileStorageTier struct
@@ -31,16 +33,10 @@ type MSFT_FileStorageTier struct {
 	FileSize uint64
 
 	//
-	FileSizeOnCapacityTierClass uint64
-
-	//
 	FileSizeOnDesiredStorageTier uint64
 
 	//
 	FileSizeOnDesiredStorageTierClass uint64
-
-	//
-	FileSizeOnPerformanceTierClass uint64
 
 	//
 	PlacementStatus uint16
@@ -80,7 +76,7 @@ func NewMSFT_FileStorageTierEx6(hostName string,
 
 // SetDesiredStorageTierClass sets the value of DesiredStorageTierClass for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyDesiredStorageTierClass(value uint16) (err error) {
-	return instance.SetProperty("DesiredStorageTierClass", value)
+	return instance.SetProperty("DesiredStorageTierClass", (value))
 }
 
 // GetDesiredStorageTierClass gets the value of DesiredStorageTierClass for the instance
@@ -89,16 +85,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyDesiredStorageTierClass() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDesiredStorageTierName sets the value of DesiredStorageTierName for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyDesiredStorageTierName(value string) (err error) {
-	return instance.SetProperty("DesiredStorageTierName", value)
+	return instance.SetProperty("DesiredStorageTierName", (value))
 }
 
 // GetDesiredStorageTierName gets the value of DesiredStorageTierName for the instance
@@ -107,16 +112,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyDesiredStorageTierName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFilePath sets the value of FilePath for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyFilePath(value string) (err error) {
-	return instance.SetProperty("FilePath", value)
+	return instance.SetProperty("FilePath", (value))
 }
 
 // GetFilePath gets the value of FilePath for the instance
@@ -125,16 +139,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyFilePath() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileSize sets the value of FileSize for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyFileSize(value uint64) (err error) {
-	return instance.SetProperty("FileSize", value)
+	return instance.SetProperty("FileSize", (value))
 }
 
 // GetFileSize gets the value of FileSize for the instance
@@ -143,34 +166,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyFileSize() (value uint64, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetFileSizeOnCapacityTierClass sets the value of FileSizeOnCapacityTierClass for the instance
-func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnCapacityTierClass(value uint64) (err error) {
-	return instance.SetProperty("FileSizeOnCapacityTierClass", value)
-}
-
-// GetFileSizeOnCapacityTierClass gets the value of FileSizeOnCapacityTierClass for the instance
-func (instance *MSFT_FileStorageTier) GetPropertyFileSizeOnCapacityTierClass() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FileSizeOnCapacityTierClass")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint64)
+
+	valuetmp, ok := retValue.(uint64)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFileSizeOnDesiredStorageTier sets the value of FileSizeOnDesiredStorageTier for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnDesiredStorageTier(value uint64) (err error) {
-	return instance.SetProperty("FileSizeOnDesiredStorageTier", value)
+	return instance.SetProperty("FileSizeOnDesiredStorageTier", (value))
 }
 
 // GetFileSizeOnDesiredStorageTier gets the value of FileSizeOnDesiredStorageTier for the instance
@@ -179,16 +193,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyFileSizeOnDesiredStorageTier() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFileSizeOnDesiredStorageTierClass sets the value of FileSizeOnDesiredStorageTierClass for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnDesiredStorageTierClass(value uint64) (err error) {
-	return instance.SetProperty("FileSizeOnDesiredStorageTierClass", value)
+	return instance.SetProperty("FileSizeOnDesiredStorageTierClass", (value))
 }
 
 // GetFileSizeOnDesiredStorageTierClass gets the value of FileSizeOnDesiredStorageTierClass for the instance
@@ -197,34 +220,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyFileSizeOnDesiredStorageTierCla
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetFileSizeOnPerformanceTierClass sets the value of FileSizeOnPerformanceTierClass for the instance
-func (instance *MSFT_FileStorageTier) SetPropertyFileSizeOnPerformanceTierClass(value uint64) (err error) {
-	return instance.SetProperty("FileSizeOnPerformanceTierClass", value)
-}
-
-// GetFileSizeOnPerformanceTierClass gets the value of FileSizeOnPerformanceTierClass for the instance
-func (instance *MSFT_FileStorageTier) GetPropertyFileSizeOnPerformanceTierClass() (value uint64, err error) {
-	retValue, err := instance.GetProperty("FileSizeOnPerformanceTierClass")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint64)
+
+	valuetmp, ok := retValue.(uint64)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPlacementStatus sets the value of PlacementStatus for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyPlacementStatus(value uint16) (err error) {
-	return instance.SetProperty("PlacementStatus", value)
+	return instance.SetProperty("PlacementStatus", (value))
 }
 
 // GetPlacementStatus gets the value of PlacementStatus for the instance
@@ -233,16 +247,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyPlacementStatus() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_FileStorageTier) SetPropertyState(value uint16) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -251,19 +274,25 @@ func (instance *MSFT_FileStorageTier) GetPropertyState() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 //
 
-// <param name="AllocatedStorageTierClass" type="uint16 "></param>
 // <param name="FilePath" type="string "></param>
-// <param name="PinnedState" type="uint16 "></param>
-// <param name="PinnedStorageTierClass" type="uint16 "></param>
 // <param name="Volume" type="MSFT_Volume "></param>
 // <param name="VolumeDriveLetter" type="byte "></param>
 // <param name="VolumePath" type="string "></param>
@@ -274,11 +303,8 @@ func (instance *MSFT_FileStorageTier) Get( /* IN */ FilePath string,
 	/* IN */ VolumeDriveLetter byte,
 	/* IN */ VolumePath string,
 	/* IN */ Volume MSFT_Volume,
-	/* IN */ PinnedState uint16,
-	/* IN */ PinnedStorageTierClass uint16,
-	/* IN */ AllocatedStorageTierClass uint16,
 	/* OUT */ FileStorageTier []MSFT_FileStorageTier) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("Get", FilePath, VolumeDriveLetter, VolumePath, Volume, PinnedState, PinnedStorageTierClass, AllocatedStorageTierClass)
+	retVal, err := instance.InvokeMethod("Get", FilePath, VolumeDriveLetter, VolumePath, Volume)
 	if err != nil {
 		return
 	}

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster
 //////////////////////////////////////////////
 package cluster
@@ -11,7 +11,9 @@ package cluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Error struct
@@ -89,7 +91,7 @@ type CIM_Error struct {
 	OtherErrorType string
 
 	// A string that uniquely identifies the entity that owns the definition of the format of the Message described in this instance. OwningEntity MUST include a copyrighted, trademarked or otherwise unique name that is owned by the business entity or standards body defining the format.
-	OwningEntity string
+	OWningEntity string
 
 	// An enumerated value that describes the severity of the Indication from the notifier's point of view:
 	///0 - the Perceived Severity of the indication is unknown or indeterminate.
@@ -144,7 +146,7 @@ func NewCIM_ErrorEx6(hostName string,
 
 // SetCIMStatusCode sets the value of CIMStatusCode for the instance
 func (instance *CIM_Error) SetPropertyCIMStatusCode(value Error_CIMStatusCode) (err error) {
-	return instance.SetProperty("CIMStatusCode", value)
+	return instance.SetProperty("CIMStatusCode", (value))
 }
 
 // GetCIMStatusCode gets the value of CIMStatusCode for the instance
@@ -153,16 +155,25 @@ func (instance *CIM_Error) GetPropertyCIMStatusCode() (value Error_CIMStatusCode
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Error_CIMStatusCode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Error_CIMStatusCode(valuetmp)
+
 	return
 }
 
 // SetCIMStatusCodeDescription sets the value of CIMStatusCodeDescription for the instance
 func (instance *CIM_Error) SetPropertyCIMStatusCodeDescription(value string) (err error) {
-	return instance.SetProperty("CIMStatusCodeDescription", value)
+	return instance.SetProperty("CIMStatusCodeDescription", (value))
 }
 
 // GetCIMStatusCodeDescription gets the value of CIMStatusCodeDescription for the instance
@@ -171,16 +182,25 @@ func (instance *CIM_Error) GetPropertyCIMStatusCodeDescription() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorSource sets the value of ErrorSource for the instance
 func (instance *CIM_Error) SetPropertyErrorSource(value string) (err error) {
-	return instance.SetProperty("ErrorSource", value)
+	return instance.SetProperty("ErrorSource", (value))
 }
 
 // GetErrorSource gets the value of ErrorSource for the instance
@@ -189,16 +209,25 @@ func (instance *CIM_Error) GetPropertyErrorSource() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorSourceFormat sets the value of ErrorSourceFormat for the instance
 func (instance *CIM_Error) SetPropertyErrorSourceFormat(value Error_ErrorSourceFormat) (err error) {
-	return instance.SetProperty("ErrorSourceFormat", value)
+	return instance.SetProperty("ErrorSourceFormat", (value))
 }
 
 // GetErrorSourceFormat gets the value of ErrorSourceFormat for the instance
@@ -207,16 +236,25 @@ func (instance *CIM_Error) GetPropertyErrorSourceFormat() (value Error_ErrorSour
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Error_ErrorSourceFormat)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Error_ErrorSourceFormat(valuetmp)
+
 	return
 }
 
 // SetErrorType sets the value of ErrorType for the instance
 func (instance *CIM_Error) SetPropertyErrorType(value Error_ErrorType) (err error) {
-	return instance.SetProperty("ErrorType", value)
+	return instance.SetProperty("ErrorType", (value))
 }
 
 // GetErrorType gets the value of ErrorType for the instance
@@ -225,16 +263,25 @@ func (instance *CIM_Error) GetPropertyErrorType() (value Error_ErrorType, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Error_ErrorType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Error_ErrorType(valuetmp)
+
 	return
 }
 
 // SetMessage sets the value of Message for the instance
 func (instance *CIM_Error) SetPropertyMessage(value string) (err error) {
-	return instance.SetProperty("Message", value)
+	return instance.SetProperty("Message", (value))
 }
 
 // GetMessage gets the value of Message for the instance
@@ -243,16 +290,25 @@ func (instance *CIM_Error) GetPropertyMessage() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMessageArguments sets the value of MessageArguments for the instance
 func (instance *CIM_Error) SetPropertyMessageArguments(value []string) (err error) {
-	return instance.SetProperty("MessageArguments", value)
+	return instance.SetProperty("MessageArguments", (value))
 }
 
 // GetMessageArguments gets the value of MessageArguments for the instance
@@ -261,16 +317,26 @@ func (instance *CIM_Error) GetPropertyMessageArguments() (value []string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMessageID sets the value of MessageID for the instance
 func (instance *CIM_Error) SetPropertyMessageID(value string) (err error) {
-	return instance.SetProperty("MessageID", value)
+	return instance.SetProperty("MessageID", (value))
 }
 
 // GetMessageID gets the value of MessageID for the instance
@@ -279,16 +345,25 @@ func (instance *CIM_Error) GetPropertyMessageID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherErrorSourceFormat sets the value of OtherErrorSourceFormat for the instance
 func (instance *CIM_Error) SetPropertyOtherErrorSourceFormat(value string) (err error) {
-	return instance.SetProperty("OtherErrorSourceFormat", value)
+	return instance.SetProperty("OtherErrorSourceFormat", (value))
 }
 
 // GetOtherErrorSourceFormat gets the value of OtherErrorSourceFormat for the instance
@@ -297,16 +372,25 @@ func (instance *CIM_Error) GetPropertyOtherErrorSourceFormat() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherErrorType sets the value of OtherErrorType for the instance
 func (instance *CIM_Error) SetPropertyOtherErrorType(value string) (err error) {
-	return instance.SetProperty("OtherErrorType", value)
+	return instance.SetProperty("OtherErrorType", (value))
 }
 
 // GetOtherErrorType gets the value of OtherErrorType for the instance
@@ -315,34 +399,52 @@ func (instance *CIM_Error) GetPropertyOtherErrorType() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
-// SetOwningEntity sets the value of OwningEntity for the instance
-func (instance *CIM_Error) SetPropertyOwningEntity(value string) (err error) {
-	return instance.SetProperty("OwningEntity", value)
+// SetOWningEntity sets the value of OWningEntity for the instance
+func (instance *CIM_Error) SetPropertyOWningEntity(value string) (err error) {
+	return instance.SetProperty("OWningEntity", (value))
 }
 
-// GetOwningEntity gets the value of OwningEntity for the instance
-func (instance *CIM_Error) GetPropertyOwningEntity() (value string, err error) {
-	retValue, err := instance.GetProperty("OwningEntity")
+// GetOWningEntity gets the value of OWningEntity for the instance
+func (instance *CIM_Error) GetPropertyOWningEntity() (value string, err error) {
+	retValue, err := instance.GetProperty("OWningEntity")
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPerceivedSeverity sets the value of PerceivedSeverity for the instance
 func (instance *CIM_Error) SetPropertyPerceivedSeverity(value Error_PerceivedSeverity) (err error) {
-	return instance.SetProperty("PerceivedSeverity", value)
+	return instance.SetProperty("PerceivedSeverity", (value))
 }
 
 // GetPerceivedSeverity gets the value of PerceivedSeverity for the instance
@@ -351,16 +453,25 @@ func (instance *CIM_Error) GetPropertyPerceivedSeverity() (value Error_Perceived
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Error_PerceivedSeverity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Error_PerceivedSeverity(valuetmp)
+
 	return
 }
 
 // SetProbableCause sets the value of ProbableCause for the instance
 func (instance *CIM_Error) SetPropertyProbableCause(value Error_ProbableCause) (err error) {
-	return instance.SetProperty("ProbableCause", value)
+	return instance.SetProperty("ProbableCause", (value))
 }
 
 // GetProbableCause gets the value of ProbableCause for the instance
@@ -369,16 +480,25 @@ func (instance *CIM_Error) GetPropertyProbableCause() (value Error_ProbableCause
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Error_ProbableCause)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Error_ProbableCause(valuetmp)
+
 	return
 }
 
 // SetProbableCauseDescription sets the value of ProbableCauseDescription for the instance
 func (instance *CIM_Error) SetPropertyProbableCauseDescription(value string) (err error) {
-	return instance.SetProperty("ProbableCauseDescription", value)
+	return instance.SetProperty("ProbableCauseDescription", (value))
 }
 
 // GetProbableCauseDescription gets the value of ProbableCauseDescription for the instance
@@ -387,16 +507,25 @@ func (instance *CIM_Error) GetPropertyProbableCauseDescription() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecommendedActions sets the value of RecommendedActions for the instance
 func (instance *CIM_Error) SetPropertyRecommendedActions(value []string) (err error) {
-	return instance.SetProperty("RecommendedActions", value)
+	return instance.SetProperty("RecommendedActions", (value))
 }
 
 // GetRecommendedActions gets the value of RecommendedActions for the instance
@@ -405,9 +534,19 @@ func (instance *CIM_Error) GetPropertyRecommendedActions() (value []string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_RecordForLog struct
@@ -61,7 +63,7 @@ func NewCIM_RecordForLogEx6(hostName string,
 
 // SetLocale sets the value of Locale for the instance
 func (instance *CIM_RecordForLog) SetPropertyLocale(value string) (err error) {
-	return instance.SetProperty("Locale", value)
+	return instance.SetProperty("Locale", (value))
 }
 
 // GetLocale gets the value of Locale for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_RecordForLog) GetPropertyLocale() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPerceivedSeverity sets the value of PerceivedSeverity for the instance
 func (instance *CIM_RecordForLog) SetPropertyPerceivedSeverity(value RecordForLog_PerceivedSeverity) (err error) {
-	return instance.SetProperty("PerceivedSeverity", value)
+	return instance.SetProperty("PerceivedSeverity", (value))
 }
 
 // GetPerceivedSeverity gets the value of PerceivedSeverity for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_RecordForLog) GetPropertyPerceivedSeverity() (value RecordFo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RecordForLog_PerceivedSeverity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RecordForLog_PerceivedSeverity(valuetmp)
+
 	return
 }
 
 // SetRecordData sets the value of RecordData for the instance
 func (instance *CIM_RecordForLog) SetPropertyRecordData(value string) (err error) {
-	return instance.SetProperty("RecordData", value)
+	return instance.SetProperty("RecordData", (value))
 }
 
 // GetRecordData gets the value of RecordData for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_RecordForLog) GetPropertyRecordData() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecordFormat sets the value of RecordFormat for the instance
 func (instance *CIM_RecordForLog) SetPropertyRecordFormat(value string) (err error) {
-	return instance.SetProperty("RecordFormat", value)
+	return instance.SetProperty("RecordFormat", (value))
 }
 
 // GetRecordFormat gets the value of RecordFormat for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_RecordForLog) GetPropertyRecordFormat() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProductFRU struct
@@ -56,7 +58,7 @@ func NewCIM_ProductFRUEx6(hostName string,
 
 // SetFRU sets the value of FRU for the instance
 func (instance *CIM_ProductFRU) SetPropertyFRU(value CIM_FRU) (err error) {
-	return instance.SetProperty("FRU", value)
+	return instance.SetProperty("FRU", (value))
 }
 
 // GetFRU gets the value of FRU for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ProductFRU) GetPropertyFRU() (value CIM_FRU, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_FRU)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_FRU)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_FRU is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_FRU(valuetmp)
+
 	return
 }
 
 // SetProduct sets the value of Product for the instance
 func (instance *CIM_ProductFRU) SetPropertyProduct(value CIM_Product) (err error) {
-	return instance.SetProperty("Product", value)
+	return instance.SetProperty("Product", (value))
 }
 
 // GetProduct gets the value of Product for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ProductFRU) GetPropertyProduct() (value CIM_Product, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }

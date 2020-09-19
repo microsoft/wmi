@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchPortIsolationSettingData struct
@@ -61,7 +63,7 @@ func NewMsvm_EthernetSwitchPortIsolationSettingDataEx6(hostName string,
 
 // SetAllowUntaggedTraffic sets the value of AllowUntaggedTraffic for the instance
 func (instance *Msvm_EthernetSwitchPortIsolationSettingData) SetPropertyAllowUntaggedTraffic(value bool) (err error) {
-	return instance.SetProperty("AllowUntaggedTraffic", value)
+	return instance.SetProperty("AllowUntaggedTraffic", (value))
 }
 
 // GetAllowUntaggedTraffic gets the value of AllowUntaggedTraffic for the instance
@@ -70,16 +72,25 @@ func (instance *Msvm_EthernetSwitchPortIsolationSettingData) GetPropertyAllowUnt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDefaultIsolationId sets the value of DefaultIsolationId for the instance
 func (instance *Msvm_EthernetSwitchPortIsolationSettingData) SetPropertyDefaultIsolationId(value uint32) (err error) {
-	return instance.SetProperty("DefaultIsolationId", value)
+	return instance.SetProperty("DefaultIsolationId", (value))
 }
 
 // GetDefaultIsolationId gets the value of DefaultIsolationId for the instance
@@ -88,16 +99,25 @@ func (instance *Msvm_EthernetSwitchPortIsolationSettingData) GetPropertyDefaultI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnableMultiTenantStack sets the value of EnableMultiTenantStack for the instance
 func (instance *Msvm_EthernetSwitchPortIsolationSettingData) SetPropertyEnableMultiTenantStack(value bool) (err error) {
-	return instance.SetProperty("EnableMultiTenantStack", value)
+	return instance.SetProperty("EnableMultiTenantStack", (value))
 }
 
 // GetEnableMultiTenantStack gets the value of EnableMultiTenantStack for the instance
@@ -106,16 +126,25 @@ func (instance *Msvm_EthernetSwitchPortIsolationSettingData) GetPropertyEnableMu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsolationMode sets the value of IsolationMode for the instance
 func (instance *Msvm_EthernetSwitchPortIsolationSettingData) SetPropertyIsolationMode(value uint32) (err error) {
-	return instance.SetProperty("IsolationMode", value)
+	return instance.SetProperty("IsolationMode", (value))
 }
 
 // GetIsolationMode gets the value of IsolationMode for the instance
@@ -124,10 +153,19 @@ func (instance *Msvm_EthernetSwitchPortIsolationSettingData) GetPropertyIsolatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 func (instance *Msvm_EthernetSwitchPortIsolationSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {

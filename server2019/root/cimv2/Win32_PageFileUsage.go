@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PageFileUsage struct
@@ -61,7 +63,7 @@ func NewWin32_PageFileUsageEx6(hostName string,
 
 // SetAllocatedBaseSize sets the value of AllocatedBaseSize for the instance
 func (instance *Win32_PageFileUsage) SetPropertyAllocatedBaseSize(value uint32) (err error) {
-	return instance.SetProperty("AllocatedBaseSize", value)
+	return instance.SetProperty("AllocatedBaseSize", (value))
 }
 
 // GetAllocatedBaseSize gets the value of AllocatedBaseSize for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PageFileUsage) GetPropertyAllocatedBaseSize() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentUsage sets the value of CurrentUsage for the instance
 func (instance *Win32_PageFileUsage) SetPropertyCurrentUsage(value uint32) (err error) {
-	return instance.SetProperty("CurrentUsage", value)
+	return instance.SetProperty("CurrentUsage", (value))
 }
 
 // GetCurrentUsage gets the value of CurrentUsage for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PageFileUsage) GetPropertyCurrentUsage() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPeakUsage sets the value of PeakUsage for the instance
 func (instance *Win32_PageFileUsage) SetPropertyPeakUsage(value uint32) (err error) {
-	return instance.SetProperty("PeakUsage", value)
+	return instance.SetProperty("PeakUsage", (value))
 }
 
 // GetPeakUsage gets the value of PeakUsage for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PageFileUsage) GetPropertyPeakUsage() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTempPageFile sets the value of TempPageFile for the instance
 func (instance *Win32_PageFileUsage) SetPropertyTempPageFile(value bool) (err error) {
-	return instance.SetProperty("TempPageFile", value)
+	return instance.SetProperty("TempPageFile", (value))
 }
 
 // GetTempPageFile gets the value of TempPageFile for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PageFileUsage) GetPropertyTempPageFile() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

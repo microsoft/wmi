@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_StorageQoSFilterFlow struct
@@ -79,7 +81,7 @@ func NewWin32_PerfFormattedData_Counters_StorageQoSFilterFlowEx6(hostName string
 
 // SetAvgBandwidth sets the value of AvgBandwidth for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyAvgBandwidth(value uint64) (err error) {
-	return instance.SetProperty("AvgBandwidth", value)
+	return instance.SetProperty("AvgBandwidth", (value))
 }
 
 // GetAvgBandwidth gets the value of AvgBandwidth for the instance
@@ -88,16 +90,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDeviceQueueLength sets the value of AvgDeviceQueueLength for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyAvgDeviceQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgDeviceQueueLength", value)
+	return instance.SetProperty("AvgDeviceQueueLength", (value))
 }
 
 // GetAvgDeviceQueueLength gets the value of AvgDeviceQueueLength for the instance
@@ -106,16 +117,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgIOQuotaReplenishmentOperationsPersec sets the value of AvgIOQuotaReplenishmentOperationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyAvgIOQuotaReplenishmentOperationsPersec(value uint64) (err error) {
-	return instance.SetProperty("AvgIOQuotaReplenishmentOperationsPersec", value)
+	return instance.SetProperty("AvgIOQuotaReplenishmentOperationsPersec", (value))
 }
 
 // GetAvgIOQuotaReplenishmentOperationsPersec gets the value of AvgIOQuotaReplenishmentOperationsPersec for the instance
@@ -124,16 +144,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgNormalizedIOPS sets the value of AvgNormalizedIOPS for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyAvgNormalizedIOPS(value uint64) (err error) {
-	return instance.SetProperty("AvgNormalizedIOPS", value)
+	return instance.SetProperty("AvgNormalizedIOPS", (value))
 }
 
 // GetAvgNormalizedIOPS gets the value of AvgNormalizedIOPS for the instance
@@ -142,16 +171,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgSchedulerQueueLength sets the value of AvgSchedulerQueueLength for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyAvgSchedulerQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgSchedulerQueueLength", value)
+	return instance.SetProperty("AvgSchedulerQueueLength", (value))
 }
 
 // GetAvgSchedulerQueueLength gets the value of AvgSchedulerQueueLength for the instance
@@ -160,16 +198,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaximumBandwidth sets the value of MaximumBandwidth for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyMaximumBandwidth(value uint64) (err error) {
-	return instance.SetProperty("MaximumBandwidth", value)
+	return instance.SetProperty("MaximumBandwidth", (value))
 }
 
 // GetMaximumBandwidth gets the value of MaximumBandwidth for the instance
@@ -178,16 +225,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNormalizedMaximumIORate sets the value of NormalizedMaximumIORate for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyNormalizedMaximumIORate(value uint64) (err error) {
-	return instance.SetProperty("NormalizedMaximumIORate", value)
+	return instance.SetProperty("NormalizedMaximumIORate", (value))
 }
 
 // GetNormalizedMaximumIORate gets the value of NormalizedMaximumIORate for the instance
@@ -196,16 +252,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNormalizedMinimumIORate sets the value of NormalizedMinimumIORate for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyNormalizedMinimumIORate(value uint64) (err error) {
-	return instance.SetProperty("NormalizedMinimumIORate", value)
+	return instance.SetProperty("NormalizedMinimumIORate", (value))
 }
 
 // GetNormalizedMinimumIORate gets the value of NormalizedMinimumIORate for the instance
@@ -214,16 +279,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalBandwidthquotaIncrementPersec sets the value of TotalBandwidthquotaIncrementPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyTotalBandwidthquotaIncrementPersec(value uint64) (err error) {
-	return instance.SetProperty("TotalBandwidthquotaIncrementPersec", value)
+	return instance.SetProperty("TotalBandwidthquotaIncrementPersec", (value))
 }
 
 // GetTotalBandwidthquotaIncrementPersec gets the value of TotalBandwidthquotaIncrementPersec for the instance
@@ -232,16 +306,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalNormalizedIOQuotaIncrement sets the value of TotalNormalizedIOQuotaIncrement for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) SetPropertyTotalNormalizedIOQuotaIncrement(value uint64) (err error) {
-	return instance.SetProperty("TotalNormalizedIOQuotaIncrement", value)
+	return instance.SetProperty("TotalNormalizedIOQuotaIncrement", (value))
 }
 
 // GetTotalNormalizedIOQuotaIncrement gets the value of TotalNormalizedIOQuotaIncrement for the instance
@@ -250,9 +333,18 @@ func (instance *Win32_PerfFormattedData_Counters_StorageQoSFilterFlow) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

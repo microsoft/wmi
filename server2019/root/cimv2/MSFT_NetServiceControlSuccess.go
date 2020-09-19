@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetServiceControlSuccess struct
@@ -58,7 +60,7 @@ func NewMSFT_NetServiceControlSuccessEx6(hostName string,
 
 // SetControl sets the value of Control for the instance
 func (instance *MSFT_NetServiceControlSuccess) SetPropertyControl(value string) (err error) {
-	return instance.SetProperty("Control", value)
+	return instance.SetProperty("Control", (value))
 }
 
 // GetControl gets the value of Control for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_NetServiceControlSuccess) GetPropertyControl() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetService sets the value of Service for the instance
 func (instance *MSFT_NetServiceControlSuccess) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_NetServiceControlSuccess) GetPropertyService() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setsid sets the value of sid for the instance
 func (instance *MSFT_NetServiceControlSuccess) SetPropertysid(value string) (err error) {
-	return instance.SetProperty("sid", value)
+	return instance.SetProperty("sid", (value))
 }
 
 // Getsid gets the value of sid for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_NetServiceControlSuccess) GetPropertysid() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

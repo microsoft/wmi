@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PnPEntity struct
@@ -70,7 +72,7 @@ func NewWin32_PnPEntityEx6(hostName string,
 
 // SetClassGuid sets the value of ClassGuid for the instance
 func (instance *Win32_PnPEntity) SetPropertyClassGuid(value string) (err error) {
-	return instance.SetProperty("ClassGuid", value)
+	return instance.SetProperty("ClassGuid", (value))
 }
 
 // GetClassGuid gets the value of ClassGuid for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_PnPEntity) GetPropertyClassGuid() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCompatibleID sets the value of CompatibleID for the instance
 func (instance *Win32_PnPEntity) SetPropertyCompatibleID(value []string) (err error) {
-	return instance.SetProperty("CompatibleID", value)
+	return instance.SetProperty("CompatibleID", (value))
 }
 
 // GetCompatibleID gets the value of CompatibleID for the instance
@@ -97,16 +108,26 @@ func (instance *Win32_PnPEntity) GetPropertyCompatibleID() (value []string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetHardwareID sets the value of HardwareID for the instance
 func (instance *Win32_PnPEntity) SetPropertyHardwareID(value []string) (err error) {
-	return instance.SetProperty("HardwareID", value)
+	return instance.SetProperty("HardwareID", (value))
 }
 
 // GetHardwareID gets the value of HardwareID for the instance
@@ -115,16 +136,26 @@ func (instance *Win32_PnPEntity) GetPropertyHardwareID() (value []string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *Win32_PnPEntity) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -133,16 +164,25 @@ func (instance *Win32_PnPEntity) GetPropertyManufacturer() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPNPClass sets the value of PNPClass for the instance
 func (instance *Win32_PnPEntity) SetPropertyPNPClass(value string) (err error) {
-	return instance.SetProperty("PNPClass", value)
+	return instance.SetProperty("PNPClass", (value))
 }
 
 // GetPNPClass gets the value of PNPClass for the instance
@@ -151,16 +191,25 @@ func (instance *Win32_PnPEntity) GetPropertyPNPClass() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPresent sets the value of Present for the instance
 func (instance *Win32_PnPEntity) SetPropertyPresent(value bool) (err error) {
-	return instance.SetProperty("Present", value)
+	return instance.SetProperty("Present", (value))
 }
 
 // GetPresent gets the value of Present for the instance
@@ -169,16 +218,25 @@ func (instance *Win32_PnPEntity) GetPropertyPresent() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetService sets the value of Service for the instance
 func (instance *Win32_PnPEntity) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -187,10 +245,19 @@ func (instance *Win32_PnPEntity) GetPropertyService() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_RestrictionsUser struct
@@ -62,7 +64,7 @@ func NewMDM_RestrictionsUserEx6(hostName string,
 
 // Setkey sets the value of key for the instance
 func (instance *MDM_RestrictionsUser) SetPropertykey(value uint32) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -71,16 +73,25 @@ func (instance *MDM_RestrictionsUser) GetPropertykey() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPCSettingsMeteredNetworkSyncEnabled sets the value of PCSettingsMeteredNetworkSyncEnabled for the instance
 func (instance *MDM_RestrictionsUser) SetPropertyPCSettingsMeteredNetworkSyncEnabled(value bool) (err error) {
-	return instance.SetProperty("PCSettingsMeteredNetworkSyncEnabled", value)
+	return instance.SetProperty("PCSettingsMeteredNetworkSyncEnabled", (value))
 }
 
 // GetPCSettingsMeteredNetworkSyncEnabled gets the value of PCSettingsMeteredNetworkSyncEnabled for the instance
@@ -89,16 +100,25 @@ func (instance *MDM_RestrictionsUser) GetPropertyPCSettingsMeteredNetworkSyncEna
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPCSettingsPasswordSyncEnabled sets the value of PCSettingsPasswordSyncEnabled for the instance
 func (instance *MDM_RestrictionsUser) SetPropertyPCSettingsPasswordSyncEnabled(value bool) (err error) {
-	return instance.SetProperty("PCSettingsPasswordSyncEnabled", value)
+	return instance.SetProperty("PCSettingsPasswordSyncEnabled", (value))
 }
 
 // GetPCSettingsPasswordSyncEnabled gets the value of PCSettingsPasswordSyncEnabled for the instance
@@ -107,16 +127,25 @@ func (instance *MDM_RestrictionsUser) GetPropertyPCSettingsPasswordSyncEnabled()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPCSettingsSyncEnabled sets the value of PCSettingsSyncEnabled for the instance
 func (instance *MDM_RestrictionsUser) SetPropertyPCSettingsSyncEnabled(value bool) (err error) {
-	return instance.SetProperty("PCSettingsSyncEnabled", value)
+	return instance.SetProperty("PCSettingsSyncEnabled", (value))
 }
 
 // GetPCSettingsSyncEnabled gets the value of PCSettingsSyncEnabled for the instance
@@ -125,9 +154,18 @@ func (instance *MDM_RestrictionsUser) GetPropertyPCSettingsSyncEnabled() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

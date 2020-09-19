@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DesktopMonitor struct
@@ -61,7 +63,7 @@ func NewCIM_DesktopMonitorEx6(hostName string,
 
 // SetBandwidth sets the value of Bandwidth for the instance
 func (instance *CIM_DesktopMonitor) SetPropertyBandwidth(value uint32) (err error) {
-	return instance.SetProperty("Bandwidth", value)
+	return instance.SetProperty("Bandwidth", (value))
 }
 
 // GetBandwidth gets the value of Bandwidth for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_DesktopMonitor) GetPropertyBandwidth() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDisplayType sets the value of DisplayType for the instance
 func (instance *CIM_DesktopMonitor) SetPropertyDisplayType(value DesktopMonitor_DisplayType) (err error) {
-	return instance.SetProperty("DisplayType", value)
+	return instance.SetProperty("DisplayType", (value))
 }
 
 // GetDisplayType gets the value of DisplayType for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_DesktopMonitor) GetPropertyDisplayType() (value DesktopMonit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(DesktopMonitor_DisplayType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = DesktopMonitor_DisplayType(valuetmp)
+
 	return
 }
 
 // SetScreenHeight sets the value of ScreenHeight for the instance
 func (instance *CIM_DesktopMonitor) SetPropertyScreenHeight(value uint32) (err error) {
-	return instance.SetProperty("ScreenHeight", value)
+	return instance.SetProperty("ScreenHeight", (value))
 }
 
 // GetScreenHeight gets the value of ScreenHeight for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_DesktopMonitor) GetPropertyScreenHeight() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetScreenWidth sets the value of ScreenWidth for the instance
 func (instance *CIM_DesktopMonitor) SetPropertyScreenWidth(value uint32) (err error) {
-	return instance.SetProperty("ScreenWidth", value)
+	return instance.SetProperty("ScreenWidth", (value))
 }
 
 // GetScreenWidth gets the value of ScreenWidth for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_DesktopMonitor) GetPropertyScreenWidth() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExpressionIdentifier struct
@@ -52,7 +54,7 @@ func NewMSFT_ExpressionIdentifierEx6(hostName string,
 
 // Setname sets the value of name for the instance
 func (instance *MSFT_ExpressionIdentifier) SetPropertyname(value string) (err error) {
-	return instance.SetProperty("name", value)
+	return instance.SetProperty("name", (value))
 }
 
 // Getname gets the value of name for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_ExpressionIdentifier) GetPropertyname() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

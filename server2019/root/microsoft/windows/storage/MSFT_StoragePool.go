@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StoragePool struct
@@ -142,7 +144,7 @@ func NewMSFT_StoragePoolEx6(hostName string,
 
 // SetAllocatedSize sets the value of AllocatedSize for the instance
 func (instance *MSFT_StoragePool) SetPropertyAllocatedSize(value uint64) (err error) {
-	return instance.SetProperty("AllocatedSize", value)
+	return instance.SetProperty("AllocatedSize", (value))
 }
 
 // GetAllocatedSize gets the value of AllocatedSize for the instance
@@ -151,16 +153,25 @@ func (instance *MSFT_StoragePool) GetPropertyAllocatedSize() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetClearOnDeallocate sets the value of ClearOnDeallocate for the instance
 func (instance *MSFT_StoragePool) SetPropertyClearOnDeallocate(value bool) (err error) {
-	return instance.SetProperty("ClearOnDeallocate", value)
+	return instance.SetProperty("ClearOnDeallocate", (value))
 }
 
 // GetClearOnDeallocate gets the value of ClearOnDeallocate for the instance
@@ -169,16 +180,25 @@ func (instance *MSFT_StoragePool) GetPropertyClearOnDeallocate() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnclosureAwareDefault sets the value of EnclosureAwareDefault for the instance
 func (instance *MSFT_StoragePool) SetPropertyEnclosureAwareDefault(value bool) (err error) {
-	return instance.SetProperty("EnclosureAwareDefault", value)
+	return instance.SetProperty("EnclosureAwareDefault", (value))
 }
 
 // GetEnclosureAwareDefault gets the value of EnclosureAwareDefault for the instance
@@ -187,16 +207,25 @@ func (instance *MSFT_StoragePool) GetPropertyEnclosureAwareDefault() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFaultDomainAwarenessDefault sets the value of FaultDomainAwarenessDefault for the instance
 func (instance *MSFT_StoragePool) SetPropertyFaultDomainAwarenessDefault(value uint16) (err error) {
-	return instance.SetProperty("FaultDomainAwarenessDefault", value)
+	return instance.SetProperty("FaultDomainAwarenessDefault", (value))
 }
 
 // GetFaultDomainAwarenessDefault gets the value of FaultDomainAwarenessDefault for the instance
@@ -205,16 +234,25 @@ func (instance *MSFT_StoragePool) GetPropertyFaultDomainAwarenessDefault() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_StoragePool) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -223,16 +261,25 @@ func (instance *MSFT_StoragePool) GetPropertyFriendlyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_StoragePool) SetPropertyHealthStatus(value uint16) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -241,16 +288,25 @@ func (instance *MSFT_StoragePool) GetPropertyHealthStatus() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIsClustered sets the value of IsClustered for the instance
 func (instance *MSFT_StoragePool) SetPropertyIsClustered(value bool) (err error) {
-	return instance.SetProperty("IsClustered", value)
+	return instance.SetProperty("IsClustered", (value))
 }
 
 // GetIsClustered gets the value of IsClustered for the instance
@@ -259,16 +315,25 @@ func (instance *MSFT_StoragePool) GetPropertyIsClustered() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsPowerProtected sets the value of IsPowerProtected for the instance
 func (instance *MSFT_StoragePool) SetPropertyIsPowerProtected(value bool) (err error) {
-	return instance.SetProperty("IsPowerProtected", value)
+	return instance.SetProperty("IsPowerProtected", (value))
 }
 
 // GetIsPowerProtected gets the value of IsPowerProtected for the instance
@@ -277,16 +342,25 @@ func (instance *MSFT_StoragePool) GetPropertyIsPowerProtected() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsPrimordial sets the value of IsPrimordial for the instance
 func (instance *MSFT_StoragePool) SetPropertyIsPrimordial(value bool) (err error) {
-	return instance.SetProperty("IsPrimordial", value)
+	return instance.SetProperty("IsPrimordial", (value))
 }
 
 // GetIsPrimordial gets the value of IsPrimordial for the instance
@@ -295,16 +369,25 @@ func (instance *MSFT_StoragePool) GetPropertyIsPrimordial() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsReadOnly sets the value of IsReadOnly for the instance
 func (instance *MSFT_StoragePool) SetPropertyIsReadOnly(value bool) (err error) {
-	return instance.SetProperty("IsReadOnly", value)
+	return instance.SetProperty("IsReadOnly", (value))
 }
 
 // GetIsReadOnly gets the value of IsReadOnly for the instance
@@ -313,16 +396,25 @@ func (instance *MSFT_StoragePool) GetPropertyIsReadOnly() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLogicalSectorSize sets the value of LogicalSectorSize for the instance
 func (instance *MSFT_StoragePool) SetPropertyLogicalSectorSize(value uint64) (err error) {
-	return instance.SetProperty("LogicalSectorSize", value)
+	return instance.SetProperty("LogicalSectorSize", (value))
 }
 
 // GetLogicalSectorSize gets the value of LogicalSectorSize for the instance
@@ -331,16 +423,25 @@ func (instance *MSFT_StoragePool) GetPropertyLogicalSectorSize() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMediaTypeDefault sets the value of MediaTypeDefault for the instance
 func (instance *MSFT_StoragePool) SetPropertyMediaTypeDefault(value uint16) (err error) {
-	return instance.SetProperty("MediaTypeDefault", value)
+	return instance.SetProperty("MediaTypeDefault", (value))
 }
 
 // GetMediaTypeDefault gets the value of MediaTypeDefault for the instance
@@ -349,16 +450,25 @@ func (instance *MSFT_StoragePool) GetPropertyMediaTypeDefault() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_StoragePool) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -367,16 +477,25 @@ func (instance *MSFT_StoragePool) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_StoragePool) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -385,16 +504,26 @@ func (instance *MSFT_StoragePool) GetPropertyOperationalStatus() (value []uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherOperationalStatusDescription sets the value of OtherOperationalStatusDescription for the instance
 func (instance *MSFT_StoragePool) SetPropertyOtherOperationalStatusDescription(value string) (err error) {
-	return instance.SetProperty("OtherOperationalStatusDescription", value)
+	return instance.SetProperty("OtherOperationalStatusDescription", (value))
 }
 
 // GetOtherOperationalStatusDescription gets the value of OtherOperationalStatusDescription for the instance
@@ -403,16 +532,25 @@ func (instance *MSFT_StoragePool) GetPropertyOtherOperationalStatusDescription()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherUsageDescription sets the value of OtherUsageDescription for the instance
 func (instance *MSFT_StoragePool) SetPropertyOtherUsageDescription(value string) (err error) {
-	return instance.SetProperty("OtherUsageDescription", value)
+	return instance.SetProperty("OtherUsageDescription", (value))
 }
 
 // GetOtherUsageDescription gets the value of OtherUsageDescription for the instance
@@ -421,16 +559,25 @@ func (instance *MSFT_StoragePool) GetPropertyOtherUsageDescription() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPhysicalSectorSize sets the value of PhysicalSectorSize for the instance
 func (instance *MSFT_StoragePool) SetPropertyPhysicalSectorSize(value uint64) (err error) {
-	return instance.SetProperty("PhysicalSectorSize", value)
+	return instance.SetProperty("PhysicalSectorSize", (value))
 }
 
 // GetPhysicalSectorSize gets the value of PhysicalSectorSize for the instance
@@ -439,16 +586,25 @@ func (instance *MSFT_StoragePool) GetPropertyPhysicalSectorSize() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProvisioningTypeDefault sets the value of ProvisioningTypeDefault for the instance
 func (instance *MSFT_StoragePool) SetPropertyProvisioningTypeDefault(value uint16) (err error) {
-	return instance.SetProperty("ProvisioningTypeDefault", value)
+	return instance.SetProperty("ProvisioningTypeDefault", (value))
 }
 
 // GetProvisioningTypeDefault gets the value of ProvisioningTypeDefault for the instance
@@ -457,16 +613,25 @@ func (instance *MSFT_StoragePool) GetPropertyProvisioningTypeDefault() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReadOnlyReason sets the value of ReadOnlyReason for the instance
 func (instance *MSFT_StoragePool) SetPropertyReadOnlyReason(value uint16) (err error) {
-	return instance.SetProperty("ReadOnlyReason", value)
+	return instance.SetProperty("ReadOnlyReason", (value))
 }
 
 // GetReadOnlyReason gets the value of ReadOnlyReason for the instance
@@ -475,16 +640,25 @@ func (instance *MSFT_StoragePool) GetPropertyReadOnlyReason() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRepairPolicy sets the value of RepairPolicy for the instance
 func (instance *MSFT_StoragePool) SetPropertyRepairPolicy(value uint16) (err error) {
-	return instance.SetProperty("RepairPolicy", value)
+	return instance.SetProperty("RepairPolicy", (value))
 }
 
 // GetRepairPolicy gets the value of RepairPolicy for the instance
@@ -493,16 +667,25 @@ func (instance *MSFT_StoragePool) GetPropertyRepairPolicy() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetResiliencySettingNameDefault sets the value of ResiliencySettingNameDefault for the instance
 func (instance *MSFT_StoragePool) SetPropertyResiliencySettingNameDefault(value string) (err error) {
-	return instance.SetProperty("ResiliencySettingNameDefault", value)
+	return instance.SetProperty("ResiliencySettingNameDefault", (value))
 }
 
 // GetResiliencySettingNameDefault gets the value of ResiliencySettingNameDefault for the instance
@@ -511,16 +694,25 @@ func (instance *MSFT_StoragePool) GetPropertyResiliencySettingNameDefault() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRetireMissingPhysicalDisks sets the value of RetireMissingPhysicalDisks for the instance
 func (instance *MSFT_StoragePool) SetPropertyRetireMissingPhysicalDisks(value uint16) (err error) {
-	return instance.SetProperty("RetireMissingPhysicalDisks", value)
+	return instance.SetProperty("RetireMissingPhysicalDisks", (value))
 }
 
 // GetRetireMissingPhysicalDisks gets the value of RetireMissingPhysicalDisks for the instance
@@ -529,16 +721,25 @@ func (instance *MSFT_StoragePool) GetPropertyRetireMissingPhysicalDisks() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_StoragePool) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -547,16 +748,25 @@ func (instance *MSFT_StoragePool) GetPropertySize() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSupportedProvisioningTypes sets the value of SupportedProvisioningTypes for the instance
 func (instance *MSFT_StoragePool) SetPropertySupportedProvisioningTypes(value []uint16) (err error) {
-	return instance.SetProperty("SupportedProvisioningTypes", value)
+	return instance.SetProperty("SupportedProvisioningTypes", (value))
 }
 
 // GetSupportedProvisioningTypes gets the value of SupportedProvisioningTypes for the instance
@@ -565,16 +775,26 @@ func (instance *MSFT_StoragePool) GetPropertySupportedProvisioningTypes() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportsDeduplication sets the value of SupportsDeduplication for the instance
 func (instance *MSFT_StoragePool) SetPropertySupportsDeduplication(value bool) (err error) {
-	return instance.SetProperty("SupportsDeduplication", value)
+	return instance.SetProperty("SupportsDeduplication", (value))
 }
 
 // GetSupportsDeduplication gets the value of SupportsDeduplication for the instance
@@ -583,16 +803,25 @@ func (instance *MSFT_StoragePool) GetPropertySupportsDeduplication() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetThinProvisioningAlertThresholds sets the value of ThinProvisioningAlertThresholds for the instance
 func (instance *MSFT_StoragePool) SetPropertyThinProvisioningAlertThresholds(value []uint16) (err error) {
-	return instance.SetProperty("ThinProvisioningAlertThresholds", value)
+	return instance.SetProperty("ThinProvisioningAlertThresholds", (value))
 }
 
 // GetThinProvisioningAlertThresholds gets the value of ThinProvisioningAlertThresholds for the instance
@@ -601,16 +830,26 @@ func (instance *MSFT_StoragePool) GetPropertyThinProvisioningAlertThresholds() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetUsage sets the value of Usage for the instance
 func (instance *MSFT_StoragePool) SetPropertyUsage(value uint16) (err error) {
-	return instance.SetProperty("Usage", value)
+	return instance.SetProperty("Usage", (value))
 }
 
 // GetUsage gets the value of Usage for the instance
@@ -619,16 +858,25 @@ func (instance *MSFT_StoragePool) GetPropertyUsage() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *MSFT_StoragePool) SetPropertyVersion(value uint16) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -637,16 +885,25 @@ func (instance *MSFT_StoragePool) GetPropertyVersion() (value uint16, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetWriteCacheSizeDefault sets the value of WriteCacheSizeDefault for the instance
 func (instance *MSFT_StoragePool) SetPropertyWriteCacheSizeDefault(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheSizeDefault", value)
+	return instance.SetProperty("WriteCacheSizeDefault", (value))
 }
 
 // GetWriteCacheSizeDefault gets the value of WriteCacheSizeDefault for the instance
@@ -655,16 +912,25 @@ func (instance *MSFT_StoragePool) GetPropertyWriteCacheSizeDefault() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheSizeMax sets the value of WriteCacheSizeMax for the instance
 func (instance *MSFT_StoragePool) SetPropertyWriteCacheSizeMax(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheSizeMax", value)
+	return instance.SetProperty("WriteCacheSizeMax", (value))
 }
 
 // GetWriteCacheSizeMax gets the value of WriteCacheSizeMax for the instance
@@ -673,16 +939,25 @@ func (instance *MSFT_StoragePool) GetPropertyWriteCacheSizeMax() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheSizeMin sets the value of WriteCacheSizeMin for the instance
 func (instance *MSFT_StoragePool) SetPropertyWriteCacheSizeMin(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheSizeMin", value)
+	return instance.SetProperty("WriteCacheSizeMin", (value))
 }
 
 // GetWriteCacheSizeMin gets the value of WriteCacheSizeMin for the instance
@@ -691,16 +966,24 @@ func (instance *MSFT_StoragePool) GetPropertyWriteCacheSizeMin() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 //
 
-// <param name="AddToCluster" type="bool "></param>
 // <param name="AllocationUnitSize" type="uint64 "></param>
 // <param name="AutoNumberOfColumns" type="bool "></param>
 // <param name="AutoWriteCacheSize" type="bool "></param>
@@ -709,7 +992,6 @@ func (instance *MSFT_StoragePool) GetPropertyWriteCacheSizeMin() (value uint64, 
 // <param name="FriendlyName" type="string "></param>
 // <param name="Interleave" type="uint64 "></param>
 // <param name="IsEnclosureAware" type="bool "></param>
-// <param name="IsManualAttach" type="bool "></param>
 // <param name="MediaType" type="uint16 "></param>
 // <param name="NumberOfColumns" type="uint16 "></param>
 // <param name="NumberOfDataCopies" type="uint16 "></param>
@@ -758,13 +1040,11 @@ func (instance *MSFT_StoragePool) CreateVirtualDisk( /* IN */ FriendlyName strin
 	/* IN */ WriteCacheSize uint64,
 	/* IN */ AutoWriteCacheSize bool,
 	/* IN */ ReadCacheSize uint64,
-	/* IN */ IsManualAttach bool,
-	/* IN */ AddToCluster bool,
 	/* IN */ RunAsJob bool,
 	/* OUT */ CreatedVirtualDisk MSFT_VirtualDisk,
 	/* OUT */ CreatedStorageJob MSFT_StorageJob,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CreateVirtualDisk", FriendlyName, Size, UseMaximumSize, ProvisioningType, AllocationUnitSize, MediaType, ResiliencySettingName, Usage, OtherUsageDescription, NumberOfDataCopies, PhysicalDiskRedundancy, NumberOfColumns, AutoNumberOfColumns, Interleave, NumberOfGroups, IsEnclosureAware, FaultDomainAwareness, ColumnIsolation, PhysicalDisksToUse, StorageFaultDomainsToUse, StorageTiers, StorageTierSizes, WriteCacheSize, AutoWriteCacheSize, ReadCacheSize, IsManualAttach, AddToCluster, RunAsJob)
+	retVal, err := instance.InvokeMethod("CreateVirtualDisk", FriendlyName, Size, UseMaximumSize, ProvisioningType, AllocationUnitSize, MediaType, ResiliencySettingName, Usage, OtherUsageDescription, NumberOfDataCopies, PhysicalDiskRedundancy, NumberOfColumns, AutoNumberOfColumns, Interleave, NumberOfGroups, IsEnclosureAware, FaultDomainAwareness, ColumnIsolation, PhysicalDisksToUse, StorageFaultDomainsToUse, StorageTiers, StorageTierSizes, WriteCacheSize, AutoWriteCacheSize, ReadCacheSize, RunAsJob)
 	if err != nil {
 		return
 	}

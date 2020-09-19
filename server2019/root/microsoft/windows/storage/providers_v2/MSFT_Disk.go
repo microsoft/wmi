@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_Disk struct
@@ -180,7 +182,7 @@ func NewMSFT_DiskEx6(hostName string,
 
 // SetAdapterSerialNumber sets the value of AdapterSerialNumber for the instance
 func (instance *MSFT_Disk) SetPropertyAdapterSerialNumber(value string) (err error) {
-	return instance.SetProperty("AdapterSerialNumber", value)
+	return instance.SetProperty("AdapterSerialNumber", (value))
 }
 
 // GetAdapterSerialNumber gets the value of AdapterSerialNumber for the instance
@@ -189,16 +191,25 @@ func (instance *MSFT_Disk) GetPropertyAdapterSerialNumber() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllocatedSize sets the value of AllocatedSize for the instance
 func (instance *MSFT_Disk) SetPropertyAllocatedSize(value uint64) (err error) {
-	return instance.SetProperty("AllocatedSize", value)
+	return instance.SetProperty("AllocatedSize", (value))
 }
 
 // GetAllocatedSize gets the value of AllocatedSize for the instance
@@ -207,16 +218,25 @@ func (instance *MSFT_Disk) GetPropertyAllocatedSize() (value uint64, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBootFromDisk sets the value of BootFromDisk for the instance
 func (instance *MSFT_Disk) SetPropertyBootFromDisk(value bool) (err error) {
-	return instance.SetProperty("BootFromDisk", value)
+	return instance.SetProperty("BootFromDisk", (value))
 }
 
 // GetBootFromDisk gets the value of BootFromDisk for the instance
@@ -225,16 +245,25 @@ func (instance *MSFT_Disk) GetPropertyBootFromDisk() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBusType sets the value of BusType for the instance
 func (instance *MSFT_Disk) SetPropertyBusType(value Disk_BusType) (err error) {
-	return instance.SetProperty("BusType", value)
+	return instance.SetProperty("BusType", (value))
 }
 
 // GetBusType gets the value of BusType for the instance
@@ -243,16 +272,25 @@ func (instance *MSFT_Disk) GetPropertyBusType() (value Disk_BusType, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Disk_BusType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Disk_BusType(valuetmp)
+
 	return
 }
 
 // SetFirmwareVersion sets the value of FirmwareVersion for the instance
 func (instance *MSFT_Disk) SetPropertyFirmwareVersion(value string) (err error) {
-	return instance.SetProperty("FirmwareVersion", value)
+	return instance.SetProperty("FirmwareVersion", (value))
 }
 
 // GetFirmwareVersion gets the value of FirmwareVersion for the instance
@@ -261,16 +299,25 @@ func (instance *MSFT_Disk) GetPropertyFirmwareVersion() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_Disk) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -279,16 +326,25 @@ func (instance *MSFT_Disk) GetPropertyFriendlyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGuid sets the value of Guid for the instance
 func (instance *MSFT_Disk) SetPropertyGuid(value string) (err error) {
-	return instance.SetProperty("Guid", value)
+	return instance.SetProperty("Guid", (value))
 }
 
 // GetGuid gets the value of Guid for the instance
@@ -297,16 +353,25 @@ func (instance *MSFT_Disk) GetPropertyGuid() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_Disk) SetPropertyHealthStatus(value Disk_HealthStatus) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -315,16 +380,25 @@ func (instance *MSFT_Disk) GetPropertyHealthStatus() (value Disk_HealthStatus, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Disk_HealthStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Disk_HealthStatus(valuetmp)
+
 	return
 }
 
 // SetIsBoot sets the value of IsBoot for the instance
 func (instance *MSFT_Disk) SetPropertyIsBoot(value bool) (err error) {
-	return instance.SetProperty("IsBoot", value)
+	return instance.SetProperty("IsBoot", (value))
 }
 
 // GetIsBoot gets the value of IsBoot for the instance
@@ -333,16 +407,25 @@ func (instance *MSFT_Disk) GetPropertyIsBoot() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsClustered sets the value of IsClustered for the instance
 func (instance *MSFT_Disk) SetPropertyIsClustered(value bool) (err error) {
-	return instance.SetProperty("IsClustered", value)
+	return instance.SetProperty("IsClustered", (value))
 }
 
 // GetIsClustered gets the value of IsClustered for the instance
@@ -351,16 +434,25 @@ func (instance *MSFT_Disk) GetPropertyIsClustered() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsHighlyAvailable sets the value of IsHighlyAvailable for the instance
 func (instance *MSFT_Disk) SetPropertyIsHighlyAvailable(value bool) (err error) {
-	return instance.SetProperty("IsHighlyAvailable", value)
+	return instance.SetProperty("IsHighlyAvailable", (value))
 }
 
 // GetIsHighlyAvailable gets the value of IsHighlyAvailable for the instance
@@ -369,16 +461,25 @@ func (instance *MSFT_Disk) GetPropertyIsHighlyAvailable() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsOffline sets the value of IsOffline for the instance
 func (instance *MSFT_Disk) SetPropertyIsOffline(value bool) (err error) {
-	return instance.SetProperty("IsOffline", value)
+	return instance.SetProperty("IsOffline", (value))
 }
 
 // GetIsOffline gets the value of IsOffline for the instance
@@ -387,16 +488,25 @@ func (instance *MSFT_Disk) GetPropertyIsOffline() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsReadOnly sets the value of IsReadOnly for the instance
 func (instance *MSFT_Disk) SetPropertyIsReadOnly(value bool) (err error) {
-	return instance.SetProperty("IsReadOnly", value)
+	return instance.SetProperty("IsReadOnly", (value))
 }
 
 // GetIsReadOnly gets the value of IsReadOnly for the instance
@@ -405,16 +515,25 @@ func (instance *MSFT_Disk) GetPropertyIsReadOnly() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsScaleOut sets the value of IsScaleOut for the instance
 func (instance *MSFT_Disk) SetPropertyIsScaleOut(value bool) (err error) {
-	return instance.SetProperty("IsScaleOut", value)
+	return instance.SetProperty("IsScaleOut", (value))
 }
 
 // GetIsScaleOut gets the value of IsScaleOut for the instance
@@ -423,16 +542,25 @@ func (instance *MSFT_Disk) GetPropertyIsScaleOut() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsSystem sets the value of IsSystem for the instance
 func (instance *MSFT_Disk) SetPropertyIsSystem(value bool) (err error) {
-	return instance.SetProperty("IsSystem", value)
+	return instance.SetProperty("IsSystem", (value))
 }
 
 // GetIsSystem gets the value of IsSystem for the instance
@@ -441,16 +569,25 @@ func (instance *MSFT_Disk) GetPropertyIsSystem() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLargestFreeExtent sets the value of LargestFreeExtent for the instance
 func (instance *MSFT_Disk) SetPropertyLargestFreeExtent(value uint64) (err error) {
-	return instance.SetProperty("LargestFreeExtent", value)
+	return instance.SetProperty("LargestFreeExtent", (value))
 }
 
 // GetLargestFreeExtent gets the value of LargestFreeExtent for the instance
@@ -459,16 +596,25 @@ func (instance *MSFT_Disk) GetPropertyLargestFreeExtent() (value uint64, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLocation sets the value of Location for the instance
 func (instance *MSFT_Disk) SetPropertyLocation(value string) (err error) {
-	return instance.SetProperty("Location", value)
+	return instance.SetProperty("Location", (value))
 }
 
 // GetLocation gets the value of Location for the instance
@@ -477,16 +623,25 @@ func (instance *MSFT_Disk) GetPropertyLocation() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLogicalSectorSize sets the value of LogicalSectorSize for the instance
 func (instance *MSFT_Disk) SetPropertyLogicalSectorSize(value uint32) (err error) {
-	return instance.SetProperty("LogicalSectorSize", value)
+	return instance.SetProperty("LogicalSectorSize", (value))
 }
 
 // GetLogicalSectorSize gets the value of LogicalSectorSize for the instance
@@ -495,16 +650,25 @@ func (instance *MSFT_Disk) GetPropertyLogicalSectorSize() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *MSFT_Disk) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -513,16 +677,25 @@ func (instance *MSFT_Disk) GetPropertyManufacturer() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *MSFT_Disk) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -531,16 +704,25 @@ func (instance *MSFT_Disk) GetPropertyModel() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumber sets the value of Number for the instance
 func (instance *MSFT_Disk) SetPropertyNumber(value uint32) (err error) {
-	return instance.SetProperty("Number", value)
+	return instance.SetProperty("Number", (value))
 }
 
 // GetNumber gets the value of Number for the instance
@@ -549,16 +731,25 @@ func (instance *MSFT_Disk) GetPropertyNumber() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfPartitions sets the value of NumberOfPartitions for the instance
 func (instance *MSFT_Disk) SetPropertyNumberOfPartitions(value uint32) (err error) {
-	return instance.SetProperty("NumberOfPartitions", value)
+	return instance.SetProperty("NumberOfPartitions", (value))
 }
 
 // GetNumberOfPartitions gets the value of NumberOfPartitions for the instance
@@ -567,16 +758,25 @@ func (instance *MSFT_Disk) GetPropertyNumberOfPartitions() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOfflineReason sets the value of OfflineReason for the instance
 func (instance *MSFT_Disk) SetPropertyOfflineReason(value Disk_OfflineReason) (err error) {
-	return instance.SetProperty("OfflineReason", value)
+	return instance.SetProperty("OfflineReason", (value))
 }
 
 // GetOfflineReason gets the value of OfflineReason for the instance
@@ -585,16 +785,25 @@ func (instance *MSFT_Disk) GetPropertyOfflineReason() (value Disk_OfflineReason,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Disk_OfflineReason)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Disk_OfflineReason(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_Disk) SetPropertyOperationalStatus(value []Disk_OperationalStatus) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -603,16 +812,26 @@ func (instance *MSFT_Disk) GetPropertyOperationalStatus() (value []Disk_Operatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]Disk_OperationalStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, Disk_OperationalStatus(valuetmp))
+	}
+
 	return
 }
 
 // SetPartitionStyle sets the value of PartitionStyle for the instance
 func (instance *MSFT_Disk) SetPropertyPartitionStyle(value Disk_PartitionStyle) (err error) {
-	return instance.SetProperty("PartitionStyle", value)
+	return instance.SetProperty("PartitionStyle", (value))
 }
 
 // GetPartitionStyle gets the value of PartitionStyle for the instance
@@ -621,16 +840,25 @@ func (instance *MSFT_Disk) GetPropertyPartitionStyle() (value Disk_PartitionStyl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Disk_PartitionStyle)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Disk_PartitionStyle(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *MSFT_Disk) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -639,16 +867,25 @@ func (instance *MSFT_Disk) GetPropertyPath() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPhysicalSectorSize sets the value of PhysicalSectorSize for the instance
 func (instance *MSFT_Disk) SetPropertyPhysicalSectorSize(value uint32) (err error) {
-	return instance.SetProperty("PhysicalSectorSize", value)
+	return instance.SetProperty("PhysicalSectorSize", (value))
 }
 
 // GetPhysicalSectorSize gets the value of PhysicalSectorSize for the instance
@@ -657,16 +894,25 @@ func (instance *MSFT_Disk) GetPropertyPhysicalSectorSize() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProvisioningType sets the value of ProvisioningType for the instance
 func (instance *MSFT_Disk) SetPropertyProvisioningType(value Disk_ProvisioningType) (err error) {
-	return instance.SetProperty("ProvisioningType", value)
+	return instance.SetProperty("ProvisioningType", (value))
 }
 
 // GetProvisioningType gets the value of ProvisioningType for the instance
@@ -675,16 +921,25 @@ func (instance *MSFT_Disk) GetPropertyProvisioningType() (value Disk_Provisionin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Disk_ProvisioningType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Disk_ProvisioningType(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *MSFT_Disk) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -693,16 +948,25 @@ func (instance *MSFT_Disk) GetPropertySerialNumber() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSignature sets the value of Signature for the instance
 func (instance *MSFT_Disk) SetPropertySignature(value uint32) (err error) {
-	return instance.SetProperty("Signature", value)
+	return instance.SetProperty("Signature", (value))
 }
 
 // GetSignature gets the value of Signature for the instance
@@ -711,16 +975,25 @@ func (instance *MSFT_Disk) GetPropertySignature() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_Disk) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -729,16 +1002,25 @@ func (instance *MSFT_Disk) GetPropertySize() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUniqueIdFormat sets the value of UniqueIdFormat for the instance
 func (instance *MSFT_Disk) SetPropertyUniqueIdFormat(value Disk_UniqueIdFormat) (err error) {
-	return instance.SetProperty("UniqueIdFormat", value)
+	return instance.SetProperty("UniqueIdFormat", (value))
 }
 
 // GetUniqueIdFormat gets the value of UniqueIdFormat for the instance
@@ -747,10 +1029,19 @@ func (instance *MSFT_Disk) GetPropertyUniqueIdFormat() (value Disk_UniqueIdForma
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Disk_UniqueIdFormat)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Disk_UniqueIdFormat(valuetmp)
+
 	return
 }
 

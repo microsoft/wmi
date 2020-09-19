@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NetworkAdapterConfiguration struct
@@ -223,7 +225,7 @@ func NewWin32_NetworkAdapterConfigurationEx6(hostName string,
 
 // SetArpAlwaysSourceRoute sets the value of ArpAlwaysSourceRoute for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyArpAlwaysSourceRoute(value bool) (err error) {
-	return instance.SetProperty("ArpAlwaysSourceRoute", value)
+	return instance.SetProperty("ArpAlwaysSourceRoute", (value))
 }
 
 // GetArpAlwaysSourceRoute gets the value of ArpAlwaysSourceRoute for the instance
@@ -232,16 +234,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyArpAlwaysSourceRou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetArpUseEtherSNAP sets the value of ArpUseEtherSNAP for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyArpUseEtherSNAP(value bool) (err error) {
-	return instance.SetProperty("ArpUseEtherSNAP", value)
+	return instance.SetProperty("ArpUseEtherSNAP", (value))
 }
 
 // GetArpUseEtherSNAP gets the value of ArpUseEtherSNAP for the instance
@@ -250,16 +261,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyArpUseEtherSNAP() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDatabasePath sets the value of DatabasePath for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDatabasePath(value string) (err error) {
-	return instance.SetProperty("DatabasePath", value)
+	return instance.SetProperty("DatabasePath", (value))
 }
 
 // GetDatabasePath gets the value of DatabasePath for the instance
@@ -268,16 +288,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDatabasePath() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDeadGWDetectEnabled sets the value of DeadGWDetectEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDeadGWDetectEnabled(value bool) (err error) {
-	return instance.SetProperty("DeadGWDetectEnabled", value)
+	return instance.SetProperty("DeadGWDetectEnabled", (value))
 }
 
 // GetDeadGWDetectEnabled gets the value of DeadGWDetectEnabled for the instance
@@ -286,16 +315,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDeadGWDetectEnable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDefaultIPGateway sets the value of DefaultIPGateway for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDefaultIPGateway(value []string) (err error) {
-	return instance.SetProperty("DefaultIPGateway", value)
+	return instance.SetProperty("DefaultIPGateway", (value))
 }
 
 // GetDefaultIPGateway gets the value of DefaultIPGateway for the instance
@@ -304,16 +342,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDefaultIPGateway()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDefaultTOS sets the value of DefaultTOS for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDefaultTOS(value uint8) (err error) {
-	return instance.SetProperty("DefaultTOS", value)
+	return instance.SetProperty("DefaultTOS", (value))
 }
 
 // GetDefaultTOS gets the value of DefaultTOS for the instance
@@ -322,16 +370,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDefaultTOS() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDefaultTTL sets the value of DefaultTTL for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDefaultTTL(value uint8) (err error) {
-	return instance.SetProperty("DefaultTTL", value)
+	return instance.SetProperty("DefaultTTL", (value))
 }
 
 // GetDefaultTTL gets the value of DefaultTTL for the instance
@@ -340,16 +397,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDefaultTTL() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDHCPEnabled sets the value of DHCPEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDHCPEnabled(value bool) (err error) {
-	return instance.SetProperty("DHCPEnabled", value)
+	return instance.SetProperty("DHCPEnabled", (value))
 }
 
 // GetDHCPEnabled gets the value of DHCPEnabled for the instance
@@ -358,16 +424,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDHCPEnabled() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDHCPLeaseExpires sets the value of DHCPLeaseExpires for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDHCPLeaseExpires(value string) (err error) {
-	return instance.SetProperty("DHCPLeaseExpires", value)
+	return instance.SetProperty("DHCPLeaseExpires", (value))
 }
 
 // GetDHCPLeaseExpires gets the value of DHCPLeaseExpires for the instance
@@ -376,16 +451,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDHCPLeaseExpires()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDHCPLeaseObtained sets the value of DHCPLeaseObtained for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDHCPLeaseObtained(value string) (err error) {
-	return instance.SetProperty("DHCPLeaseObtained", value)
+	return instance.SetProperty("DHCPLeaseObtained", (value))
 }
 
 // GetDHCPLeaseObtained gets the value of DHCPLeaseObtained for the instance
@@ -394,16 +478,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDHCPLeaseObtained(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDHCPServer sets the value of DHCPServer for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDHCPServer(value string) (err error) {
-	return instance.SetProperty("DHCPServer", value)
+	return instance.SetProperty("DHCPServer", (value))
 }
 
 // GetDHCPServer gets the value of DHCPServer for the instance
@@ -412,16 +505,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDHCPServer() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDNSDomain sets the value of DNSDomain for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDNSDomain(value string) (err error) {
-	return instance.SetProperty("DNSDomain", value)
+	return instance.SetProperty("DNSDomain", (value))
 }
 
 // GetDNSDomain gets the value of DNSDomain for the instance
@@ -430,16 +532,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDNSDomain() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDNSDomainSuffixSearchOrder sets the value of DNSDomainSuffixSearchOrder for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDNSDomainSuffixSearchOrder(value []string) (err error) {
-	return instance.SetProperty("DNSDomainSuffixSearchOrder", value)
+	return instance.SetProperty("DNSDomainSuffixSearchOrder", (value))
 }
 
 // GetDNSDomainSuffixSearchOrder gets the value of DNSDomainSuffixSearchOrder for the instance
@@ -448,16 +559,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDNSDomainSuffixSea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDNSEnabledForWINSResolution sets the value of DNSEnabledForWINSResolution for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDNSEnabledForWINSResolution(value bool) (err error) {
-	return instance.SetProperty("DNSEnabledForWINSResolution", value)
+	return instance.SetProperty("DNSEnabledForWINSResolution", (value))
 }
 
 // GetDNSEnabledForWINSResolution gets the value of DNSEnabledForWINSResolution for the instance
@@ -466,16 +587,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDNSEnabledForWINSR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDNSHostName sets the value of DNSHostName for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDNSHostName(value string) (err error) {
-	return instance.SetProperty("DNSHostName", value)
+	return instance.SetProperty("DNSHostName", (value))
 }
 
 // GetDNSHostName gets the value of DNSHostName for the instance
@@ -484,16 +614,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDNSHostName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDNSServerSearchOrder sets the value of DNSServerSearchOrder for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDNSServerSearchOrder(value []string) (err error) {
-	return instance.SetProperty("DNSServerSearchOrder", value)
+	return instance.SetProperty("DNSServerSearchOrder", (value))
 }
 
 // GetDNSServerSearchOrder gets the value of DNSServerSearchOrder for the instance
@@ -502,16 +641,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDNSServerSearchOrd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDomainDNSRegistrationEnabled sets the value of DomainDNSRegistrationEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyDomainDNSRegistrationEnabled(value bool) (err error) {
-	return instance.SetProperty("DomainDNSRegistrationEnabled", value)
+	return instance.SetProperty("DomainDNSRegistrationEnabled", (value))
 }
 
 // GetDomainDNSRegistrationEnabled gets the value of DomainDNSRegistrationEnabled for the instance
@@ -520,16 +669,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyDomainDNSRegistrat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetForwardBufferMemory sets the value of ForwardBufferMemory for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyForwardBufferMemory(value uint32) (err error) {
-	return instance.SetProperty("ForwardBufferMemory", value)
+	return instance.SetProperty("ForwardBufferMemory", (value))
 }
 
 // GetForwardBufferMemory gets the value of ForwardBufferMemory for the instance
@@ -538,16 +696,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyForwardBufferMemor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFullDNSRegistrationEnabled sets the value of FullDNSRegistrationEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyFullDNSRegistrationEnabled(value bool) (err error) {
-	return instance.SetProperty("FullDNSRegistrationEnabled", value)
+	return instance.SetProperty("FullDNSRegistrationEnabled", (value))
 }
 
 // GetFullDNSRegistrationEnabled gets the value of FullDNSRegistrationEnabled for the instance
@@ -556,16 +723,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyFullDNSRegistratio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGatewayCostMetric sets the value of GatewayCostMetric for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyGatewayCostMetric(value []uint16) (err error) {
-	return instance.SetProperty("GatewayCostMetric", value)
+	return instance.SetProperty("GatewayCostMetric", (value))
 }
 
 // GetGatewayCostMetric gets the value of GatewayCostMetric for the instance
@@ -574,16 +750,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyGatewayCostMetric(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetIGMPLevel sets the value of IGMPLevel for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIGMPLevel(value uint8) (err error) {
-	return instance.SetProperty("IGMPLevel", value)
+	return instance.SetProperty("IGMPLevel", (value))
 }
 
 // GetIGMPLevel gets the value of IGMPLevel for the instance
@@ -592,16 +778,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIGMPLevel() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetIndex sets the value of Index for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIndex(value uint32) (err error) {
-	return instance.SetProperty("Index", value)
+	return instance.SetProperty("Index", (value))
 }
 
 // GetIndex gets the value of Index for the instance
@@ -610,16 +805,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIndex() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInterfaceIndex sets the value of InterfaceIndex for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("InterfaceIndex", value)
+	return instance.SetProperty("InterfaceIndex", (value))
 }
 
 // GetInterfaceIndex gets the value of InterfaceIndex for the instance
@@ -628,16 +832,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyInterfaceIndex() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPAddress sets the value of IPAddress for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPAddress(value []string) (err error) {
-	return instance.SetProperty("IPAddress", value)
+	return instance.SetProperty("IPAddress", (value))
 }
 
 // GetIPAddress gets the value of IPAddress for the instance
@@ -646,16 +859,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPAddress() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPConnectionMetric sets the value of IPConnectionMetric for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPConnectionMetric(value uint32) (err error) {
-	return instance.SetProperty("IPConnectionMetric", value)
+	return instance.SetProperty("IPConnectionMetric", (value))
 }
 
 // GetIPConnectionMetric gets the value of IPConnectionMetric for the instance
@@ -664,16 +887,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPConnectionMetric
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPEnabled sets the value of IPEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPEnabled(value bool) (err error) {
-	return instance.SetProperty("IPEnabled", value)
+	return instance.SetProperty("IPEnabled", (value))
 }
 
 // GetIPEnabled gets the value of IPEnabled for the instance
@@ -682,16 +914,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPEnabled() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPFilterSecurityEnabled sets the value of IPFilterSecurityEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPFilterSecurityEnabled(value bool) (err error) {
-	return instance.SetProperty("IPFilterSecurityEnabled", value)
+	return instance.SetProperty("IPFilterSecurityEnabled", (value))
 }
 
 // GetIPFilterSecurityEnabled gets the value of IPFilterSecurityEnabled for the instance
@@ -700,16 +941,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPFilterSecurityEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPPortSecurityEnabled sets the value of IPPortSecurityEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPPortSecurityEnabled(value bool) (err error) {
-	return instance.SetProperty("IPPortSecurityEnabled", value)
+	return instance.SetProperty("IPPortSecurityEnabled", (value))
 }
 
 // GetIPPortSecurityEnabled gets the value of IPPortSecurityEnabled for the instance
@@ -718,16 +968,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPPortSecurityEnab
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPSecPermitIPProtocols sets the value of IPSecPermitIPProtocols for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPSecPermitIPProtocols(value []string) (err error) {
-	return instance.SetProperty("IPSecPermitIPProtocols", value)
+	return instance.SetProperty("IPSecPermitIPProtocols", (value))
 }
 
 // GetIPSecPermitIPProtocols gets the value of IPSecPermitIPProtocols for the instance
@@ -736,16 +995,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPSecPermitIPProto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPSecPermitTCPPorts sets the value of IPSecPermitTCPPorts for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPSecPermitTCPPorts(value []string) (err error) {
-	return instance.SetProperty("IPSecPermitTCPPorts", value)
+	return instance.SetProperty("IPSecPermitTCPPorts", (value))
 }
 
 // GetIPSecPermitTCPPorts gets the value of IPSecPermitTCPPorts for the instance
@@ -754,16 +1023,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPSecPermitTCPPort
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPSecPermitUDPPorts sets the value of IPSecPermitUDPPorts for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPSecPermitUDPPorts(value []string) (err error) {
-	return instance.SetProperty("IPSecPermitUDPPorts", value)
+	return instance.SetProperty("IPSecPermitUDPPorts", (value))
 }
 
 // GetIPSecPermitUDPPorts gets the value of IPSecPermitUDPPorts for the instance
@@ -772,16 +1051,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPSecPermitUDPPort
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPSubnet sets the value of IPSubnet for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPSubnet(value []string) (err error) {
-	return instance.SetProperty("IPSubnet", value)
+	return instance.SetProperty("IPSubnet", (value))
 }
 
 // GetIPSubnet gets the value of IPSubnet for the instance
@@ -790,16 +1079,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPSubnet() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPUseZeroBroadcast sets the value of IPUseZeroBroadcast for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPUseZeroBroadcast(value bool) (err error) {
-	return instance.SetProperty("IPUseZeroBroadcast", value)
+	return instance.SetProperty("IPUseZeroBroadcast", (value))
 }
 
 // GetIPUseZeroBroadcast gets the value of IPUseZeroBroadcast for the instance
@@ -808,16 +1107,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPUseZeroBroadcast
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPXAddress sets the value of IPXAddress for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPXAddress(value string) (err error) {
-	return instance.SetProperty("IPXAddress", value)
+	return instance.SetProperty("IPXAddress", (value))
 }
 
 // GetIPXAddress gets the value of IPXAddress for the instance
@@ -826,16 +1134,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPXAddress() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPXEnabled sets the value of IPXEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPXEnabled(value bool) (err error) {
-	return instance.SetProperty("IPXEnabled", value)
+	return instance.SetProperty("IPXEnabled", (value))
 }
 
 // GetIPXEnabled gets the value of IPXEnabled for the instance
@@ -844,16 +1161,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPXEnabled() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPXFrameType sets the value of IPXFrameType for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPXFrameType(value []uint32) (err error) {
-	return instance.SetProperty("IPXFrameType", value)
+	return instance.SetProperty("IPXFrameType", (value))
 }
 
 // GetIPXFrameType gets the value of IPXFrameType for the instance
@@ -862,16 +1188,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPXFrameType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetIPXMediaType sets the value of IPXMediaType for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPXMediaType(value uint32) (err error) {
-	return instance.SetProperty("IPXMediaType", value)
+	return instance.SetProperty("IPXMediaType", (value))
 }
 
 // GetIPXMediaType gets the value of IPXMediaType for the instance
@@ -880,16 +1216,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPXMediaType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPXNetworkNumber sets the value of IPXNetworkNumber for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPXNetworkNumber(value []string) (err error) {
-	return instance.SetProperty("IPXNetworkNumber", value)
+	return instance.SetProperty("IPXNetworkNumber", (value))
 }
 
 // GetIPXNetworkNumber gets the value of IPXNetworkNumber for the instance
@@ -898,16 +1243,26 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPXNetworkNumber()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPXVirtualNetNumber sets the value of IPXVirtualNetNumber for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyIPXVirtualNetNumber(value string) (err error) {
-	return instance.SetProperty("IPXVirtualNetNumber", value)
+	return instance.SetProperty("IPXVirtualNetNumber", (value))
 }
 
 // GetIPXVirtualNetNumber gets the value of IPXVirtualNetNumber for the instance
@@ -916,16 +1271,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyIPXVirtualNetNumbe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeepAliveInterval sets the value of KeepAliveInterval for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyKeepAliveInterval(value uint32) (err error) {
-	return instance.SetProperty("KeepAliveInterval", value)
+	return instance.SetProperty("KeepAliveInterval", (value))
 }
 
 // GetKeepAliveInterval gets the value of KeepAliveInterval for the instance
@@ -934,16 +1298,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyKeepAliveInterval(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeepAliveTime sets the value of KeepAliveTime for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyKeepAliveTime(value uint32) (err error) {
-	return instance.SetProperty("KeepAliveTime", value)
+	return instance.SetProperty("KeepAliveTime", (value))
 }
 
 // GetKeepAliveTime gets the value of KeepAliveTime for the instance
@@ -952,16 +1325,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyKeepAliveTime() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMACAddress sets the value of MACAddress for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyMACAddress(value string) (err error) {
-	return instance.SetProperty("MACAddress", value)
+	return instance.SetProperty("MACAddress", (value))
 }
 
 // GetMACAddress gets the value of MACAddress for the instance
@@ -970,16 +1352,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyMACAddress() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMTU sets the value of MTU for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyMTU(value uint32) (err error) {
-	return instance.SetProperty("MTU", value)
+	return instance.SetProperty("MTU", (value))
 }
 
 // GetMTU gets the value of MTU for the instance
@@ -988,16 +1379,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyMTU() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumForwardPackets sets the value of NumForwardPackets for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyNumForwardPackets(value uint32) (err error) {
-	return instance.SetProperty("NumForwardPackets", value)
+	return instance.SetProperty("NumForwardPackets", (value))
 }
 
 // GetNumForwardPackets gets the value of NumForwardPackets for the instance
@@ -1006,16 +1406,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyNumForwardPackets(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPMTUBHDetectEnabled sets the value of PMTUBHDetectEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyPMTUBHDetectEnabled(value bool) (err error) {
-	return instance.SetProperty("PMTUBHDetectEnabled", value)
+	return instance.SetProperty("PMTUBHDetectEnabled", (value))
 }
 
 // GetPMTUBHDetectEnabled gets the value of PMTUBHDetectEnabled for the instance
@@ -1024,16 +1433,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyPMTUBHDetectEnable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPMTUDiscoveryEnabled sets the value of PMTUDiscoveryEnabled for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyPMTUDiscoveryEnabled(value bool) (err error) {
-	return instance.SetProperty("PMTUDiscoveryEnabled", value)
+	return instance.SetProperty("PMTUDiscoveryEnabled", (value))
 }
 
 // GetPMTUDiscoveryEnabled gets the value of PMTUDiscoveryEnabled for the instance
@@ -1042,16 +1460,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyPMTUDiscoveryEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetServiceName sets the value of ServiceName for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyServiceName(value string) (err error) {
-	return instance.SetProperty("ServiceName", value)
+	return instance.SetProperty("ServiceName", (value))
 }
 
 // GetServiceName gets the value of ServiceName for the instance
@@ -1060,16 +1487,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyServiceName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTcpipNetbiosOptions sets the value of TcpipNetbiosOptions for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyTcpipNetbiosOptions(value uint32) (err error) {
-	return instance.SetProperty("TcpipNetbiosOptions", value)
+	return instance.SetProperty("TcpipNetbiosOptions", (value))
 }
 
 // GetTcpipNetbiosOptions gets the value of TcpipNetbiosOptions for the instance
@@ -1078,16 +1514,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyTcpipNetbiosOption
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpMaxConnectRetransmissions sets the value of TcpMaxConnectRetransmissions for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyTcpMaxConnectRetransmissions(value uint32) (err error) {
-	return instance.SetProperty("TcpMaxConnectRetransmissions", value)
+	return instance.SetProperty("TcpMaxConnectRetransmissions", (value))
 }
 
 // GetTcpMaxConnectRetransmissions gets the value of TcpMaxConnectRetransmissions for the instance
@@ -1096,16 +1541,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyTcpMaxConnectRetra
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpMaxDataRetransmissions sets the value of TcpMaxDataRetransmissions for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyTcpMaxDataRetransmissions(value uint32) (err error) {
-	return instance.SetProperty("TcpMaxDataRetransmissions", value)
+	return instance.SetProperty("TcpMaxDataRetransmissions", (value))
 }
 
 // GetTcpMaxDataRetransmissions gets the value of TcpMaxDataRetransmissions for the instance
@@ -1114,16 +1568,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyTcpMaxDataRetransm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpNumConnections sets the value of TcpNumConnections for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyTcpNumConnections(value uint32) (err error) {
-	return instance.SetProperty("TcpNumConnections", value)
+	return instance.SetProperty("TcpNumConnections", (value))
 }
 
 // GetTcpNumConnections gets the value of TcpNumConnections for the instance
@@ -1132,16 +1595,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyTcpNumConnections(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpUseRFC1122UrgentPointer sets the value of TcpUseRFC1122UrgentPointer for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyTcpUseRFC1122UrgentPointer(value bool) (err error) {
-	return instance.SetProperty("TcpUseRFC1122UrgentPointer", value)
+	return instance.SetProperty("TcpUseRFC1122UrgentPointer", (value))
 }
 
 // GetTcpUseRFC1122UrgentPointer gets the value of TcpUseRFC1122UrgentPointer for the instance
@@ -1150,16 +1622,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyTcpUseRFC1122Urgen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTcpWindowSize sets the value of TcpWindowSize for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyTcpWindowSize(value uint16) (err error) {
-	return instance.SetProperty("TcpWindowSize", value)
+	return instance.SetProperty("TcpWindowSize", (value))
 }
 
 // GetTcpWindowSize gets the value of TcpWindowSize for the instance
@@ -1168,16 +1649,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyTcpWindowSize() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetWINSEnableLMHostsLookup sets the value of WINSEnableLMHostsLookup for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyWINSEnableLMHostsLookup(value bool) (err error) {
-	return instance.SetProperty("WINSEnableLMHostsLookup", value)
+	return instance.SetProperty("WINSEnableLMHostsLookup", (value))
 }
 
 // GetWINSEnableLMHostsLookup gets the value of WINSEnableLMHostsLookup for the instance
@@ -1186,16 +1676,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyWINSEnableLMHostsL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetWINSHostLookupFile sets the value of WINSHostLookupFile for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyWINSHostLookupFile(value string) (err error) {
-	return instance.SetProperty("WINSHostLookupFile", value)
+	return instance.SetProperty("WINSHostLookupFile", (value))
 }
 
 // GetWINSHostLookupFile gets the value of WINSHostLookupFile for the instance
@@ -1204,16 +1703,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyWINSHostLookupFile
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWINSPrimaryServer sets the value of WINSPrimaryServer for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyWINSPrimaryServer(value string) (err error) {
-	return instance.SetProperty("WINSPrimaryServer", value)
+	return instance.SetProperty("WINSPrimaryServer", (value))
 }
 
 // GetWINSPrimaryServer gets the value of WINSPrimaryServer for the instance
@@ -1222,16 +1730,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyWINSPrimaryServer(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWINSScopeID sets the value of WINSScopeID for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyWINSScopeID(value string) (err error) {
-	return instance.SetProperty("WINSScopeID", value)
+	return instance.SetProperty("WINSScopeID", (value))
 }
 
 // GetWINSScopeID gets the value of WINSScopeID for the instance
@@ -1240,16 +1757,25 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyWINSScopeID() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWINSSecondaryServer sets the value of WINSSecondaryServer for the instance
 func (instance *Win32_NetworkAdapterConfiguration) SetPropertyWINSSecondaryServer(value string) (err error) {
-	return instance.SetProperty("WINSSecondaryServer", value)
+	return instance.SetProperty("WINSSecondaryServer", (value))
 }
 
 // GetWINSSecondaryServer gets the value of WINSSecondaryServer for the instance
@@ -1258,10 +1784,19 @@ func (instance *Win32_NetworkAdapterConfiguration) GetPropertyWINSSecondaryServe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

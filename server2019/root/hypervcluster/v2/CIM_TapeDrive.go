@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_TapeDrive struct
@@ -61,7 +63,7 @@ func NewCIM_TapeDriveEx6(hostName string,
 
 // SetEOTWarningZoneSize sets the value of EOTWarningZoneSize for the instance
 func (instance *CIM_TapeDrive) SetPropertyEOTWarningZoneSize(value uint32) (err error) {
-	return instance.SetProperty("EOTWarningZoneSize", value)
+	return instance.SetProperty("EOTWarningZoneSize", (value))
 }
 
 // GetEOTWarningZoneSize gets the value of EOTWarningZoneSize for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_TapeDrive) GetPropertyEOTWarningZoneSize() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxPartitionCount sets the value of MaxPartitionCount for the instance
 func (instance *CIM_TapeDrive) SetPropertyMaxPartitionCount(value uint32) (err error) {
-	return instance.SetProperty("MaxPartitionCount", value)
+	return instance.SetProperty("MaxPartitionCount", (value))
 }
 
 // GetMaxPartitionCount gets the value of MaxPartitionCount for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_TapeDrive) GetPropertyMaxPartitionCount() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxRewindTime sets the value of MaxRewindTime for the instance
 func (instance *CIM_TapeDrive) SetPropertyMaxRewindTime(value uint64) (err error) {
-	return instance.SetProperty("MaxRewindTime", value)
+	return instance.SetProperty("MaxRewindTime", (value))
 }
 
 // GetMaxRewindTime gets the value of MaxRewindTime for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_TapeDrive) GetPropertyMaxRewindTime() (value uint64, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPadding sets the value of Padding for the instance
 func (instance *CIM_TapeDrive) SetPropertyPadding(value uint32) (err error) {
-	return instance.SetProperty("Padding", value)
+	return instance.SetProperty("Padding", (value))
 }
 
 // GetPadding gets the value of Padding for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_TapeDrive) GetPropertyPadding() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

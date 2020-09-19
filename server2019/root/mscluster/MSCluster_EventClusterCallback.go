@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_EventClusterCallback struct
@@ -67,7 +69,7 @@ func NewMSCluster_EventClusterCallbackEx6(hostName string,
 
 // SetObjectName sets the value of ObjectName for the instance
 func (instance *MSCluster_EventClusterCallback) SetPropertyObjectName(value string) (err error) {
-	return instance.SetProperty("ObjectName", value)
+	return instance.SetProperty("ObjectName", (value))
 }
 
 // GetObjectName gets the value of ObjectName for the instance
@@ -76,16 +78,25 @@ func (instance *MSCluster_EventClusterCallback) GetPropertyObjectName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPercentComplete sets the value of PercentComplete for the instance
 func (instance *MSCluster_EventClusterCallback) SetPropertyPercentComplete(value int32) (err error) {
-	return instance.SetProperty("PercentComplete", value)
+	return instance.SetProperty("PercentComplete", (value))
 }
 
 // GetPercentComplete gets the value of PercentComplete for the instance
@@ -94,16 +105,25 @@ func (instance *MSCluster_EventClusterCallback) GetPropertyPercentComplete() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetPhaseSeverity sets the value of PhaseSeverity for the instance
 func (instance *MSCluster_EventClusterCallback) SetPropertyPhaseSeverity(value int32) (err error) {
-	return instance.SetProperty("PhaseSeverity", value)
+	return instance.SetProperty("PhaseSeverity", (value))
 }
 
 // GetPhaseSeverity gets the value of PhaseSeverity for the instance
@@ -112,16 +132,25 @@ func (instance *MSCluster_EventClusterCallback) GetPropertyPhaseSeverity() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetPhaseType sets the value of PhaseType for the instance
 func (instance *MSCluster_EventClusterCallback) SetPropertyPhaseType(value int32) (err error) {
-	return instance.SetProperty("PhaseType", value)
+	return instance.SetProperty("PhaseType", (value))
 }
 
 // GetPhaseType gets the value of PhaseType for the instance
@@ -130,16 +159,25 @@ func (instance *MSCluster_EventClusterCallback) GetPropertyPhaseType() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSetupPhase sets the value of SetupPhase for the instance
 func (instance *MSCluster_EventClusterCallback) SetPropertySetupPhase(value int32) (err error) {
-	return instance.SetProperty("SetupPhase", value)
+	return instance.SetProperty("SetupPhase", (value))
 }
 
 // GetSetupPhase gets the value of SetupPhase for the instance
@@ -148,16 +186,25 @@ func (instance *MSCluster_EventClusterCallback) GetPropertySetupPhase() (value i
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSCluster_EventClusterCallback) SetPropertyStatus(value int32) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -166,9 +213,18 @@ func (instance *MSCluster_EventClusterCallback) GetPropertyStatus() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

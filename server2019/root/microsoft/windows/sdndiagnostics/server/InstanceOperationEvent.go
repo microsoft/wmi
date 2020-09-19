@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SDNDiagnostics.Server
 //////////////////////////////////////////////
 package server
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __InstanceOperationEvent struct
@@ -52,7 +54,7 @@ func New__InstanceOperationEventEx6(hostName string,
 
 // SetTargetInstance sets the value of TargetInstance for the instance
 func (instance *__InstanceOperationEvent) SetPropertyTargetInstance(value interface{}) (err error) {
-	return instance.SetProperty("TargetInstance", value)
+	return instance.SetProperty("TargetInstance", (value))
 }
 
 // GetTargetInstance gets the value of TargetInstance for the instance
@@ -61,9 +63,18 @@ func (instance *__InstanceOperationEvent) GetPropertyTargetInstance() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

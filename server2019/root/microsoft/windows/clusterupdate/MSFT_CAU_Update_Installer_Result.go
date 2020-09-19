@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
@@ -11,7 +11,9 @@ package clusterupdate
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CAU_Update_Installer_Result struct
@@ -56,7 +58,7 @@ func NewMSFT_CAU_Update_Installer_ResultEx6(hostName string,
 
 // SetLaunchInstallerHResult sets the value of LaunchInstallerHResult for the instance
 func (instance *MSFT_CAU_Update_Installer_Result) SetPropertyLaunchInstallerHResult(value uint32) (err error) {
-	return instance.SetProperty("LaunchInstallerHResult", value)
+	return instance.SetProperty("LaunchInstallerHResult", (value))
 }
 
 // GetLaunchInstallerHResult gets the value of LaunchInstallerHResult for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_CAU_Update_Installer_Result) GetPropertyLaunchInstallerHRes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReturnCode sets the value of ReturnCode for the instance
 func (instance *MSFT_CAU_Update_Installer_Result) SetPropertyReturnCode(value int32) (err error) {
-	return instance.SetProperty("ReturnCode", value)
+	return instance.SetProperty("ReturnCode", (value))
 }
 
 // GetReturnCode gets the value of ReturnCode for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_CAU_Update_Installer_Result) GetPropertyReturnCode() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

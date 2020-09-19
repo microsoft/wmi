@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_ProcessorInformation struct
@@ -133,7 +135,7 @@ func NewWin32_PerfFormattedData_Counters_ProcessorInformationEx6(hostName string
 
 // SetAverageIdleTime sets the value of AverageIdleTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyAverageIdleTime(value uint64) (err error) {
-	return instance.SetProperty("AverageIdleTime", value)
+	return instance.SetProperty("AverageIdleTime", (value))
 }
 
 // GetAverageIdleTime gets the value of AverageIdleTime for the instance
@@ -142,16 +144,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetC1TransitionsPersec sets the value of C1TransitionsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyC1TransitionsPersec(value uint64) (err error) {
-	return instance.SetProperty("C1TransitionsPersec", value)
+	return instance.SetProperty("C1TransitionsPersec", (value))
 }
 
 // GetC1TransitionsPersec gets the value of C1TransitionsPersec for the instance
@@ -160,16 +171,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetC2TransitionsPersec sets the value of C2TransitionsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyC2TransitionsPersec(value uint64) (err error) {
-	return instance.SetProperty("C2TransitionsPersec", value)
+	return instance.SetProperty("C2TransitionsPersec", (value))
 }
 
 // GetC2TransitionsPersec gets the value of C2TransitionsPersec for the instance
@@ -178,16 +198,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetC3TransitionsPersec sets the value of C3TransitionsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyC3TransitionsPersec(value uint64) (err error) {
-	return instance.SetProperty("C3TransitionsPersec", value)
+	return instance.SetProperty("C3TransitionsPersec", (value))
 }
 
 // GetC3TransitionsPersec gets the value of C3TransitionsPersec for the instance
@@ -196,16 +225,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetClockInterruptsPersec sets the value of ClockInterruptsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyClockInterruptsPersec(value uint32) (err error) {
-	return instance.SetProperty("ClockInterruptsPersec", value)
+	return instance.SetProperty("ClockInterruptsPersec", (value))
 }
 
 // GetClockInterruptsPersec gets the value of ClockInterruptsPersec for the instance
@@ -214,16 +252,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDPCRate sets the value of DPCRate for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyDPCRate(value uint32) (err error) {
-	return instance.SetProperty("DPCRate", value)
+	return instance.SetProperty("DPCRate", (value))
 }
 
 // GetDPCRate gets the value of DPCRate for the instance
@@ -232,16 +279,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDPCsQueuedPersec sets the value of DPCsQueuedPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyDPCsQueuedPersec(value uint32) (err error) {
-	return instance.SetProperty("DPCsQueuedPersec", value)
+	return instance.SetProperty("DPCsQueuedPersec", (value))
 }
 
 // GetDPCsQueuedPersec gets the value of DPCsQueuedPersec for the instance
@@ -250,16 +306,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIdleBreakEventsPersec sets the value of IdleBreakEventsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyIdleBreakEventsPersec(value uint64) (err error) {
-	return instance.SetProperty("IdleBreakEventsPersec", value)
+	return instance.SetProperty("IdleBreakEventsPersec", (value))
 }
 
 // GetIdleBreakEventsPersec gets the value of IdleBreakEventsPersec for the instance
@@ -268,16 +333,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterruptsPersec sets the value of InterruptsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyInterruptsPersec(value uint32) (err error) {
-	return instance.SetProperty("InterruptsPersec", value)
+	return instance.SetProperty("InterruptsPersec", (value))
 }
 
 // GetInterruptsPersec gets the value of InterruptsPersec for the instance
@@ -286,16 +360,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetParkingStatus sets the value of ParkingStatus for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyParkingStatus(value uint32) (err error) {
-	return instance.SetProperty("ParkingStatus", value)
+	return instance.SetProperty("ParkingStatus", (value))
 }
 
 // GetParkingStatus gets the value of ParkingStatus for the instance
@@ -304,16 +387,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentC1Time sets the value of PercentC1Time for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentC1Time(value uint64) (err error) {
-	return instance.SetProperty("PercentC1Time", value)
+	return instance.SetProperty("PercentC1Time", (value))
 }
 
 // GetPercentC1Time gets the value of PercentC1Time for the instance
@@ -322,16 +414,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentC2Time sets the value of PercentC2Time for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentC2Time(value uint64) (err error) {
-	return instance.SetProperty("PercentC2Time", value)
+	return instance.SetProperty("PercentC2Time", (value))
 }
 
 // GetPercentC2Time gets the value of PercentC2Time for the instance
@@ -340,16 +441,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentC3Time sets the value of PercentC3Time for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentC3Time(value uint64) (err error) {
-	return instance.SetProperty("PercentC3Time", value)
+	return instance.SetProperty("PercentC3Time", (value))
 }
 
 // GetPercentC3Time gets the value of PercentC3Time for the instance
@@ -358,16 +468,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentDPCTime sets the value of PercentDPCTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentDPCTime(value uint64) (err error) {
-	return instance.SetProperty("PercentDPCTime", value)
+	return instance.SetProperty("PercentDPCTime", (value))
 }
 
 // GetPercentDPCTime gets the value of PercentDPCTime for the instance
@@ -376,16 +495,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentIdleTime sets the value of PercentIdleTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentIdleTime(value uint64) (err error) {
-	return instance.SetProperty("PercentIdleTime", value)
+	return instance.SetProperty("PercentIdleTime", (value))
 }
 
 // GetPercentIdleTime gets the value of PercentIdleTime for the instance
@@ -394,16 +522,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentInterruptTime sets the value of PercentInterruptTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentInterruptTime(value uint64) (err error) {
-	return instance.SetProperty("PercentInterruptTime", value)
+	return instance.SetProperty("PercentInterruptTime", (value))
 }
 
 // GetPercentInterruptTime gets the value of PercentInterruptTime for the instance
@@ -412,16 +549,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentofMaximumFrequency sets the value of PercentofMaximumFrequency for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentofMaximumFrequency(value uint32) (err error) {
-	return instance.SetProperty("PercentofMaximumFrequency", value)
+	return instance.SetProperty("PercentofMaximumFrequency", (value))
 }
 
 // GetPercentofMaximumFrequency gets the value of PercentofMaximumFrequency for the instance
@@ -430,16 +576,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentPerformanceLimit sets the value of PercentPerformanceLimit for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentPerformanceLimit(value uint32) (err error) {
-	return instance.SetProperty("PercentPerformanceLimit", value)
+	return instance.SetProperty("PercentPerformanceLimit", (value))
 }
 
 // GetPercentPerformanceLimit gets the value of PercentPerformanceLimit for the instance
@@ -448,16 +603,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentPriorityTime sets the value of PercentPriorityTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentPriorityTime(value uint64) (err error) {
-	return instance.SetProperty("PercentPriorityTime", value)
+	return instance.SetProperty("PercentPriorityTime", (value))
 }
 
 // GetPercentPriorityTime gets the value of PercentPriorityTime for the instance
@@ -466,16 +630,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentPrivilegedTime sets the value of PercentPrivilegedTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentPrivilegedTime(value uint64) (err error) {
-	return instance.SetProperty("PercentPrivilegedTime", value)
+	return instance.SetProperty("PercentPrivilegedTime", (value))
 }
 
 // GetPercentPrivilegedTime gets the value of PercentPrivilegedTime for the instance
@@ -484,16 +657,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentPrivilegedUtility sets the value of PercentPrivilegedUtility for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentPrivilegedUtility(value uint64) (err error) {
-	return instance.SetProperty("PercentPrivilegedUtility", value)
+	return instance.SetProperty("PercentPrivilegedUtility", (value))
 }
 
 // GetPercentPrivilegedUtility gets the value of PercentPrivilegedUtility for the instance
@@ -502,16 +684,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentProcessorPerformance sets the value of PercentProcessorPerformance for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentProcessorPerformance(value uint64) (err error) {
-	return instance.SetProperty("PercentProcessorPerformance", value)
+	return instance.SetProperty("PercentProcessorPerformance", (value))
 }
 
 // GetPercentProcessorPerformance gets the value of PercentProcessorPerformance for the instance
@@ -520,16 +711,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentProcessorTime sets the value of PercentProcessorTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentProcessorTime(value uint64) (err error) {
-	return instance.SetProperty("PercentProcessorTime", value)
+	return instance.SetProperty("PercentProcessorTime", (value))
 }
 
 // GetPercentProcessorTime gets the value of PercentProcessorTime for the instance
@@ -538,16 +738,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentProcessorUtility sets the value of PercentProcessorUtility for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentProcessorUtility(value uint64) (err error) {
-	return instance.SetProperty("PercentProcessorUtility", value)
+	return instance.SetProperty("PercentProcessorUtility", (value))
 }
 
 // GetPercentProcessorUtility gets the value of PercentProcessorUtility for the instance
@@ -556,16 +765,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentUserTime sets the value of PercentUserTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPercentUserTime(value uint64) (err error) {
-	return instance.SetProperty("PercentUserTime", value)
+	return instance.SetProperty("PercentUserTime", (value))
 }
 
 // GetPercentUserTime gets the value of PercentUserTime for the instance
@@ -574,16 +792,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPerformanceLimitFlags sets the value of PerformanceLimitFlags for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyPerformanceLimitFlags(value uint32) (err error) {
-	return instance.SetProperty("PerformanceLimitFlags", value)
+	return instance.SetProperty("PerformanceLimitFlags", (value))
 }
 
 // GetPerformanceLimitFlags gets the value of PerformanceLimitFlags for the instance
@@ -592,16 +819,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessorFrequency sets the value of ProcessorFrequency for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyProcessorFrequency(value uint32) (err error) {
-	return instance.SetProperty("ProcessorFrequency", value)
+	return instance.SetProperty("ProcessorFrequency", (value))
 }
 
 // GetProcessorFrequency gets the value of ProcessorFrequency for the instance
@@ -610,16 +846,25 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessorStateFlags sets the value of ProcessorStateFlags for the instance
 func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) SetPropertyProcessorStateFlags(value uint32) (err error) {
-	return instance.SetProperty("ProcessorStateFlags", value)
+	return instance.SetProperty("ProcessorStateFlags", (value))
 }
 
 // GetProcessorStateFlags gets the value of ProcessorStateFlags for the instance
@@ -628,9 +873,18 @@ func (instance *Win32_PerfFormattedData_Counters_ProcessorInformation) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

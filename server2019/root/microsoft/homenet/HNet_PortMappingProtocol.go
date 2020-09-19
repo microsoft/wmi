@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_PortMappingProtocol struct
@@ -65,7 +67,7 @@ func NewHNet_PortMappingProtocolEx6(hostName string,
 
 // SetBuiltIn sets the value of BuiltIn for the instance
 func (instance *HNet_PortMappingProtocol) SetPropertyBuiltIn(value bool) (err error) {
-	return instance.SetProperty("BuiltIn", value)
+	return instance.SetProperty("BuiltIn", (value))
 }
 
 // GetBuiltIn gets the value of BuiltIn for the instance
@@ -74,16 +76,25 @@ func (instance *HNet_PortMappingProtocol) GetPropertyBuiltIn() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *HNet_PortMappingProtocol) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -92,16 +103,25 @@ func (instance *HNet_PortMappingProtocol) GetPropertyId() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPProtocol sets the value of IPProtocol for the instance
 func (instance *HNet_PortMappingProtocol) SetPropertyIPProtocol(value uint8) (err error) {
-	return instance.SetProperty("IPProtocol", value)
+	return instance.SetProperty("IPProtocol", (value))
 }
 
 // GetIPProtocol gets the value of IPProtocol for the instance
@@ -110,16 +130,25 @@ func (instance *HNet_PortMappingProtocol) GetPropertyIPProtocol() (value uint8, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *HNet_PortMappingProtocol) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -128,16 +157,25 @@ func (instance *HNet_PortMappingProtocol) GetPropertyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPort sets the value of Port for the instance
 func (instance *HNet_PortMappingProtocol) SetPropertyPort(value uint16) (err error) {
-	return instance.SetProperty("Port", value)
+	return instance.SetProperty("Port", (value))
 }
 
 // GetPort gets the value of Port for the instance
@@ -146,9 +184,18 @@ func (instance *HNet_PortMappingProtocol) GetPropertyPort() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

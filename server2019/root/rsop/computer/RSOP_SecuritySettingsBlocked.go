@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_SecuritySettingsBlocked struct
@@ -55,7 +57,7 @@ func NewRSOP_SecuritySettingsBlockedEx6(hostName string,
 
 // SetErrorCode sets the value of ErrorCode for the instance
 func (instance *RSOP_SecuritySettingsBlocked) SetPropertyErrorCode(value uint32) (err error) {
-	return instance.SetProperty("ErrorCode", value)
+	return instance.SetProperty("ErrorCode", (value))
 }
 
 // GetErrorCode gets the value of ErrorCode for the instance
@@ -64,16 +66,25 @@ func (instance *RSOP_SecuritySettingsBlocked) GetPropertyErrorCode() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *RSOP_SecuritySettingsBlocked) SetPropertyStatus(value uint32) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -82,9 +93,18 @@ func (instance *RSOP_SecuritySettingsBlocked) GetPropertyStatus() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

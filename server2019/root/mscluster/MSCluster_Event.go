@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_Event struct
@@ -64,7 +66,7 @@ func NewMSCluster_EventEx6(hostName string,
 
 // SetEventObjectName sets the value of EventObjectName for the instance
 func (instance *MSCluster_Event) SetPropertyEventObjectName(value string) (err error) {
-	return instance.SetProperty("EventObjectName", value)
+	return instance.SetProperty("EventObjectName", (value))
 }
 
 // GetEventObjectName gets the value of EventObjectName for the instance
@@ -73,16 +75,25 @@ func (instance *MSCluster_Event) GetPropertyEventObjectName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEventObjectPath sets the value of EventObjectPath for the instance
 func (instance *MSCluster_Event) SetPropertyEventObjectPath(value string) (err error) {
-	return instance.SetProperty("EventObjectPath", value)
+	return instance.SetProperty("EventObjectPath", (value))
 }
 
 // GetEventObjectPath gets the value of EventObjectPath for the instance
@@ -91,16 +102,25 @@ func (instance *MSCluster_Event) GetPropertyEventObjectPath() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEventObjectType sets the value of EventObjectType for the instance
 func (instance *MSCluster_Event) SetPropertyEventObjectType(value uint32) (err error) {
-	return instance.SetProperty("EventObjectType", value)
+	return instance.SetProperty("EventObjectType", (value))
 }
 
 // GetEventObjectType gets the value of EventObjectType for the instance
@@ -109,16 +129,25 @@ func (instance *MSCluster_Event) GetPropertyEventObjectType() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEventTypeMajor sets the value of EventTypeMajor for the instance
 func (instance *MSCluster_Event) SetPropertyEventTypeMajor(value uint32) (err error) {
-	return instance.SetProperty("EventTypeMajor", value)
+	return instance.SetProperty("EventTypeMajor", (value))
 }
 
 // GetEventTypeMajor gets the value of EventTypeMajor for the instance
@@ -127,16 +156,25 @@ func (instance *MSCluster_Event) GetPropertyEventTypeMajor() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEventTypeMinor sets the value of EventTypeMinor for the instance
 func (instance *MSCluster_Event) SetPropertyEventTypeMinor(value uint32) (err error) {
-	return instance.SetProperty("EventTypeMinor", value)
+	return instance.SetProperty("EventTypeMinor", (value))
 }
 
 // GetEventTypeMinor gets the value of EventTypeMinor for the instance
@@ -145,9 +183,18 @@ func (instance *MSCluster_Event) GetPropertyEventTypeMinor() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

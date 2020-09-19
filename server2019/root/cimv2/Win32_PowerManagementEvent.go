@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PowerManagementEvent struct
@@ -55,7 +57,7 @@ func NewWin32_PowerManagementEventEx6(hostName string,
 
 // SetEventType sets the value of EventType for the instance
 func (instance *Win32_PowerManagementEvent) SetPropertyEventType(value uint16) (err error) {
-	return instance.SetProperty("EventType", value)
+	return instance.SetProperty("EventType", (value))
 }
 
 // GetEventType gets the value of EventType for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PowerManagementEvent) GetPropertyEventType() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOEMEventCode sets the value of OEMEventCode for the instance
 func (instance *Win32_PowerManagementEvent) SetPropertyOEMEventCode(value uint16) (err error) {
-	return instance.SetProperty("OEMEventCode", value)
+	return instance.SetProperty("OEMEventCode", (value))
 }
 
 // GetOEMEventCode gets the value of OEMEventCode for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PowerManagementEvent) GetPropertyOEMEventCode() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

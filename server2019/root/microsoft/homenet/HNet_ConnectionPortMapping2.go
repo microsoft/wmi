@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_ConnectionPortMapping2 struct
@@ -71,7 +73,7 @@ func NewHNet_ConnectionPortMapping2Ex6(hostName string,
 
 // SetConnection sets the value of Connection for the instance
 func (instance *HNet_ConnectionPortMapping2) SetPropertyConnection(value HNet_Connection) (err error) {
-	return instance.SetProperty("Connection", value)
+	return instance.SetProperty("Connection", (value))
 }
 
 // GetConnection gets the value of Connection for the instance
@@ -80,16 +82,25 @@ func (instance *HNet_ConnectionPortMapping2) GetPropertyConnection() (value HNet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(HNet_Connection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(HNet_Connection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " HNet_Connection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = HNet_Connection(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *HNet_ConnectionPortMapping2) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -98,16 +109,25 @@ func (instance *HNet_ConnectionPortMapping2) GetPropertyEnabled() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNameActive sets the value of NameActive for the instance
 func (instance *HNet_ConnectionPortMapping2) SetPropertyNameActive(value bool) (err error) {
-	return instance.SetProperty("NameActive", value)
+	return instance.SetProperty("NameActive", (value))
 }
 
 // GetNameActive gets the value of NameActive for the instance
@@ -116,16 +136,25 @@ func (instance *HNet_ConnectionPortMapping2) GetPropertyNameActive() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetProtocol sets the value of Protocol for the instance
 func (instance *HNet_ConnectionPortMapping2) SetPropertyProtocol(value HNet_PortMappingProtocol) (err error) {
-	return instance.SetProperty("Protocol", value)
+	return instance.SetProperty("Protocol", (value))
 }
 
 // GetProtocol gets the value of Protocol for the instance
@@ -134,16 +163,25 @@ func (instance *HNet_ConnectionPortMapping2) GetPropertyProtocol() (value HNet_P
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(HNet_PortMappingProtocol)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(HNet_PortMappingProtocol)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " HNet_PortMappingProtocol is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = HNet_PortMappingProtocol(valuetmp)
+
 	return
 }
 
 // SetTargetIPAddress sets the value of TargetIPAddress for the instance
 func (instance *HNet_ConnectionPortMapping2) SetPropertyTargetIPAddress(value uint32) (err error) {
-	return instance.SetProperty("TargetIPAddress", value)
+	return instance.SetProperty("TargetIPAddress", (value))
 }
 
 // GetTargetIPAddress gets the value of TargetIPAddress for the instance
@@ -152,16 +190,25 @@ func (instance *HNet_ConnectionPortMapping2) GetPropertyTargetIPAddress() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTargetName sets the value of TargetName for the instance
 func (instance *HNet_ConnectionPortMapping2) SetPropertyTargetName(value string) (err error) {
-	return instance.SetProperty("TargetName", value)
+	return instance.SetProperty("TargetName", (value))
 }
 
 // GetTargetName gets the value of TargetName for the instance
@@ -170,16 +217,25 @@ func (instance *HNet_ConnectionPortMapping2) GetPropertyTargetName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetPort sets the value of TargetPort for the instance
 func (instance *HNet_ConnectionPortMapping2) SetPropertyTargetPort(value uint16) (err error) {
-	return instance.SetProperty("TargetPort", value)
+	return instance.SetProperty("TargetPort", (value))
 }
 
 // GetTargetPort gets the value of TargetPort for the instance
@@ -188,9 +244,18 @@ func (instance *HNet_ConnectionPortMapping2) GetPropertyTargetPort() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

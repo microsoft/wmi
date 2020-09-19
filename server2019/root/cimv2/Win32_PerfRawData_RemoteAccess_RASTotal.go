@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_RemoteAccess_RASTotal struct
@@ -103,7 +105,7 @@ func NewWin32_PerfRawData_RemoteAccess_RASTotalEx6(hostName string,
 
 // SetAlignmentErrors sets the value of AlignmentErrors for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyAlignmentErrors(value uint32) (err error) {
-	return instance.SetProperty("AlignmentErrors", value)
+	return instance.SetProperty("AlignmentErrors", (value))
 }
 
 // GetAlignmentErrors gets the value of AlignmentErrors for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyAlignmentErr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBufferOverrunErrors sets the value of BufferOverrunErrors for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyBufferOverrunErrors(value uint32) (err error) {
-	return instance.SetProperty("BufferOverrunErrors", value)
+	return instance.SetProperty("BufferOverrunErrors", (value))
 }
 
 // GetBufferOverrunErrors gets the value of BufferOverrunErrors for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyBufferOverru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBytesReceived sets the value of BytesReceived for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("BytesReceived", value)
+	return instance.SetProperty("BytesReceived", (value))
 }
 
 // GetBytesReceived gets the value of BytesReceived for the instance
@@ -148,16 +168,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyBytesReceive
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesReceivedPerSec sets the value of BytesReceivedPerSec for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyBytesReceivedPerSec(value uint32) (err error) {
-	return instance.SetProperty("BytesReceivedPerSec", value)
+	return instance.SetProperty("BytesReceivedPerSec", (value))
 }
 
 // GetBytesReceivedPerSec gets the value of BytesReceivedPerSec for the instance
@@ -166,16 +195,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyBytesReceive
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBytesTransmitted sets the value of BytesTransmitted for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyBytesTransmitted(value uint64) (err error) {
-	return instance.SetProperty("BytesTransmitted", value)
+	return instance.SetProperty("BytesTransmitted", (value))
 }
 
 // GetBytesTransmitted gets the value of BytesTransmitted for the instance
@@ -184,16 +222,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyBytesTransmi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTransmittedPerSec sets the value of BytesTransmittedPerSec for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyBytesTransmittedPerSec(value uint32) (err error) {
-	return instance.SetProperty("BytesTransmittedPerSec", value)
+	return instance.SetProperty("BytesTransmittedPerSec", (value))
 }
 
 // GetBytesTransmittedPerSec gets the value of BytesTransmittedPerSec for the instance
@@ -202,16 +249,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyBytesTransmi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCRCErrors sets the value of CRCErrors for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyCRCErrors(value uint32) (err error) {
-	return instance.SetProperty("CRCErrors", value)
+	return instance.SetProperty("CRCErrors", (value))
 }
 
 // GetCRCErrors gets the value of CRCErrors for the instance
@@ -220,16 +276,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyCRCErrors() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesReceived sets the value of FramesReceived for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyFramesReceived(value uint32) (err error) {
-	return instance.SetProperty("FramesReceived", value)
+	return instance.SetProperty("FramesReceived", (value))
 }
 
 // GetFramesReceived gets the value of FramesReceived for the instance
@@ -238,16 +303,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyFramesReceiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesReceivedPerSec sets the value of FramesReceivedPerSec for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyFramesReceivedPerSec(value uint32) (err error) {
-	return instance.SetProperty("FramesReceivedPerSec", value)
+	return instance.SetProperty("FramesReceivedPerSec", (value))
 }
 
 // GetFramesReceivedPerSec gets the value of FramesReceivedPerSec for the instance
@@ -256,16 +330,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyFramesReceiv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesTransmitted sets the value of FramesTransmitted for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyFramesTransmitted(value uint32) (err error) {
-	return instance.SetProperty("FramesTransmitted", value)
+	return instance.SetProperty("FramesTransmitted", (value))
 }
 
 // GetFramesTransmitted gets the value of FramesTransmitted for the instance
@@ -274,16 +357,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyFramesTransm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesTransmittedPerSec sets the value of FramesTransmittedPerSec for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyFramesTransmittedPerSec(value uint32) (err error) {
-	return instance.SetProperty("FramesTransmittedPerSec", value)
+	return instance.SetProperty("FramesTransmittedPerSec", (value))
 }
 
 // GetFramesTransmittedPerSec gets the value of FramesTransmittedPerSec for the instance
@@ -292,16 +384,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyFramesTransm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentCompressionIn sets the value of PercentCompressionIn for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyPercentCompressionIn(value uint32) (err error) {
-	return instance.SetProperty("PercentCompressionIn", value)
+	return instance.SetProperty("PercentCompressionIn", (value))
 }
 
 // GetPercentCompressionIn gets the value of PercentCompressionIn for the instance
@@ -310,16 +411,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyPercentCompr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentCompressionOut sets the value of PercentCompressionOut for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyPercentCompressionOut(value uint32) (err error) {
-	return instance.SetProperty("PercentCompressionOut", value)
+	return instance.SetProperty("PercentCompressionOut", (value))
 }
 
 // GetPercentCompressionOut gets the value of PercentCompressionOut for the instance
@@ -328,16 +438,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyPercentCompr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSerialOverrunErrors sets the value of SerialOverrunErrors for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertySerialOverrunErrors(value uint32) (err error) {
-	return instance.SetProperty("SerialOverrunErrors", value)
+	return instance.SetProperty("SerialOverrunErrors", (value))
 }
 
 // GetSerialOverrunErrors gets the value of SerialOverrunErrors for the instance
@@ -346,16 +465,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertySerialOverru
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeoutErrors sets the value of TimeoutErrors for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyTimeoutErrors(value uint32) (err error) {
-	return instance.SetProperty("TimeoutErrors", value)
+	return instance.SetProperty("TimeoutErrors", (value))
 }
 
 // GetTimeoutErrors gets the value of TimeoutErrors for the instance
@@ -364,16 +492,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyTimeoutError
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalConnections sets the value of TotalConnections for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyTotalConnections(value uint32) (err error) {
-	return instance.SetProperty("TotalConnections", value)
+	return instance.SetProperty("TotalConnections", (value))
 }
 
 // GetTotalConnections gets the value of TotalConnections for the instance
@@ -382,16 +519,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyTotalConnect
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalErrors sets the value of TotalErrors for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyTotalErrors(value uint32) (err error) {
-	return instance.SetProperty("TotalErrors", value)
+	return instance.SetProperty("TotalErrors", (value))
 }
 
 // GetTotalErrors gets the value of TotalErrors for the instance
@@ -400,16 +546,25 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyTotalErrors(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalErrorsPerSec sets the value of TotalErrorsPerSec for the instance
 func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) SetPropertyTotalErrorsPerSec(value uint32) (err error) {
-	return instance.SetProperty("TotalErrorsPerSec", value)
+	return instance.SetProperty("TotalErrorsPerSec", (value))
 }
 
 // GetTotalErrorsPerSec gets the value of TotalErrorsPerSec for the instance
@@ -418,9 +573,18 @@ func (instance *Win32_PerfRawData_RemoteAccess_RASTotal) GetPropertyTotalErrorsP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

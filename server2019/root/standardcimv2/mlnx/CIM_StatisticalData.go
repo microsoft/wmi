@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_StatisticalData struct
@@ -58,7 +60,7 @@ func NewCIM_StatisticalDataEx6(hostName string,
 
 // SetSampleInterval sets the value of SampleInterval for the instance
 func (instance *CIM_StatisticalData) SetPropertySampleInterval(value string) (err error) {
-	return instance.SetProperty("SampleInterval", value)
+	return instance.SetProperty("SampleInterval", (value))
 }
 
 // GetSampleInterval gets the value of SampleInterval for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_StatisticalData) GetPropertySampleInterval() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartStatisticTime sets the value of StartStatisticTime for the instance
 func (instance *CIM_StatisticalData) SetPropertyStartStatisticTime(value string) (err error) {
-	return instance.SetProperty("StartStatisticTime", value)
+	return instance.SetProperty("StartStatisticTime", (value))
 }
 
 // GetStartStatisticTime gets the value of StartStatisticTime for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_StatisticalData) GetPropertyStartStatisticTime() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatisticTime sets the value of StatisticTime for the instance
 func (instance *CIM_StatisticalData) SetPropertyStatisticTime(value string) (err error) {
-	return instance.SetProperty("StatisticTime", value)
+	return instance.SetProperty("StatisticTime", (value))
 }
 
 // GetStatisticTime gets the value of StatisticTime for the instance
@@ -103,10 +123,19 @@ func (instance *CIM_StatisticalData) GetPropertyStatisticTime() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetMainModeSA struct
@@ -91,7 +93,7 @@ func NewMSFT_NetMainModeSAEx6(hostName string,
 
 // SetExtendedFilterId sets the value of ExtendedFilterId for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyExtendedFilterId(value uint64) (err error) {
-	return instance.SetProperty("ExtendedFilterId", value)
+	return instance.SetProperty("ExtendedFilterId", (value))
 }
 
 // GetExtendedFilterId gets the value of ExtendedFilterId for the instance
@@ -100,16 +102,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyExtendedFilterId() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIkePolicyKey sets the value of IkePolicyKey for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyIkePolicyKey(value string) (err error) {
-	return instance.SetProperty("IkePolicyKey", value)
+	return instance.SetProperty("IkePolicyKey", (value))
 }
 
 // GetIkePolicyKey gets the value of IkePolicyKey for the instance
@@ -118,16 +129,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyIkePolicyKey() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeyModule sets the value of KeyModule for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyKeyModule(value uint16) (err error) {
-	return instance.SetProperty("KeyModule", value)
+	return instance.SetProperty("KeyModule", (value))
 }
 
 // GetKeyModule gets the value of KeyModule for the instance
@@ -136,16 +156,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyKeyModule() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLocalEndpoint sets the value of LocalEndpoint for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyLocalEndpoint(value string) (err error) {
-	return instance.SetProperty("LocalEndpoint", value)
+	return instance.SetProperty("LocalEndpoint", (value))
 }
 
 // GetLocalEndpoint gets the value of LocalEndpoint for the instance
@@ -154,16 +183,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyLocalEndpoint() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalFirstId sets the value of LocalFirstId for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyLocalFirstId(value MSFT_NetIPsecIdentity) (err error) {
-	return instance.SetProperty("LocalFirstId", value)
+	return instance.SetProperty("LocalFirstId", (value))
 }
 
 // GetLocalFirstId gets the value of LocalFirstId for the instance
@@ -172,16 +210,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyLocalFirstId() (value MSFT_NetIPs
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetIPsecIdentity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetIPsecIdentity)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetIPsecIdentity is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetIPsecIdentity(valuetmp)
+
 	return
 }
 
 // SetLocalSecondId sets the value of LocalSecondId for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyLocalSecondId(value MSFT_NetIPsecIdentity) (err error) {
-	return instance.SetProperty("LocalSecondId", value)
+	return instance.SetProperty("LocalSecondId", (value))
 }
 
 // GetLocalSecondId gets the value of LocalSecondId for the instance
@@ -190,16 +237,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyLocalSecondId() (value MSFT_NetIP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetIPsecIdentity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetIPsecIdentity)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetIPsecIdentity is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetIPsecIdentity(valuetmp)
+
 	return
 }
 
 // SetLocalUdpEncapsulationPort sets the value of LocalUdpEncapsulationPort for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyLocalUdpEncapsulationPort(value uint16) (err error) {
-	return instance.SetProperty("LocalUdpEncapsulationPort", value)
+	return instance.SetProperty("LocalUdpEncapsulationPort", (value))
 }
 
 // GetLocalUdpEncapsulationPort gets the value of LocalUdpEncapsulationPort for the instance
@@ -208,16 +264,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyLocalUdpEncapsulationPort() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxQMSAs sets the value of MaxQMSAs for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyMaxQMSAs(value uint32) (err error) {
-	return instance.SetProperty("MaxQMSAs", value)
+	return instance.SetProperty("MaxQMSAs", (value))
 }
 
 // GetMaxQMSAs gets the value of MaxQMSAs for the instance
@@ -226,16 +291,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyMaxQMSAs() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherGroupId sets the value of OtherGroupId for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyOtherGroupId(value string) (err error) {
-	return instance.SetProperty("OtherGroupId", value)
+	return instance.SetProperty("OtherGroupId", (value))
 }
 
 // GetOtherGroupId gets the value of OtherGroupId for the instance
@@ -244,16 +318,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyOtherGroupId() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteEndpoint sets the value of RemoteEndpoint for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyRemoteEndpoint(value string) (err error) {
-	return instance.SetProperty("RemoteEndpoint", value)
+	return instance.SetProperty("RemoteEndpoint", (value))
 }
 
 // GetRemoteEndpoint gets the value of RemoteEndpoint for the instance
@@ -262,16 +345,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyRemoteEndpoint() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteFirstId sets the value of RemoteFirstId for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyRemoteFirstId(value MSFT_NetIPsecIdentity) (err error) {
-	return instance.SetProperty("RemoteFirstId", value)
+	return instance.SetProperty("RemoteFirstId", (value))
 }
 
 // GetRemoteFirstId gets the value of RemoteFirstId for the instance
@@ -280,16 +372,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyRemoteFirstId() (value MSFT_NetIP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetIPsecIdentity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetIPsecIdentity)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetIPsecIdentity is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetIPsecIdentity(valuetmp)
+
 	return
 }
 
 // SetRemoteSecondId sets the value of RemoteSecondId for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyRemoteSecondId(value MSFT_NetIPsecIdentity) (err error) {
-	return instance.SetProperty("RemoteSecondId", value)
+	return instance.SetProperty("RemoteSecondId", (value))
 }
 
 // GetRemoteSecondId gets the value of RemoteSecondId for the instance
@@ -298,16 +399,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyRemoteSecondId() (value MSFT_NetI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetIPsecIdentity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetIPsecIdentity)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetIPsecIdentity is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetIPsecIdentity(valuetmp)
+
 	return
 }
 
 // SetRemoteUdpEncapsulationPort sets the value of RemoteUdpEncapsulationPort for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyRemoteUdpEncapsulationPort(value uint16) (err error) {
-	return instance.SetProperty("RemoteUdpEncapsulationPort", value)
+	return instance.SetProperty("RemoteUdpEncapsulationPort", (value))
 }
 
 // GetRemoteUdpEncapsulationPort gets the value of RemoteUdpEncapsulationPort for the instance
@@ -316,16 +426,25 @@ func (instance *MSFT_NetMainModeSA) GetPropertyRemoteUdpEncapsulationPort() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVirtualIfTunnelId sets the value of VirtualIfTunnelId for the instance
 func (instance *MSFT_NetMainModeSA) SetPropertyVirtualIfTunnelId(value uint64) (err error) {
-	return instance.SetProperty("VirtualIfTunnelId", value)
+	return instance.SetProperty("VirtualIfTunnelId", (value))
 }
 
 // GetVirtualIfTunnelId gets the value of VirtualIfTunnelId for the instance
@@ -334,9 +453,18 @@ func (instance *MSFT_NetMainModeSA) GetPropertyVirtualIfTunnelId() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

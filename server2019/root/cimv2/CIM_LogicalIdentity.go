@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_LogicalIdentity struct
@@ -56,7 +58,7 @@ func NewCIM_LogicalIdentityEx6(hostName string,
 
 // SetSameElement sets the value of SameElement for the instance
 func (instance *CIM_LogicalIdentity) SetPropertySameElement(value CIM_LogicalElement) (err error) {
-	return instance.SetProperty("SameElement", value)
+	return instance.SetProperty("SameElement", (value))
 }
 
 // GetSameElement gets the value of SameElement for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_LogicalIdentity) GetPropertySameElement() (value CIM_Logical
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_LogicalElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_LogicalElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_LogicalElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_LogicalElement(valuetmp)
+
 	return
 }
 
 // SetSystemElement sets the value of SystemElement for the instance
 func (instance *CIM_LogicalIdentity) SetPropertySystemElement(value CIM_LogicalElement) (err error) {
-	return instance.SetProperty("SystemElement", value)
+	return instance.SetProperty("SystemElement", (value))
 }
 
 // GetSystemElement gets the value of SystemElement for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_LogicalIdentity) GetPropertySystemElement() (value CIM_Logic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_LogicalElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_LogicalElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_LogicalElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_LogicalElement(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DSCResource struct
@@ -79,7 +81,7 @@ func NewMSFT_DSCResourceEx6(hostName string,
 
 // SetDurationInSeconds sets the value of DurationInSeconds for the instance
 func (instance *MSFT_DSCResource) SetPropertyDurationInSeconds(value float64) (err error) {
-	return instance.SetProperty("DurationInSeconds", value)
+	return instance.SetProperty("DurationInSeconds", (value))
 }
 
 // GetDurationInSeconds gets the value of DurationInSeconds for the instance
@@ -88,16 +90,25 @@ func (instance *MSFT_DSCResource) GetPropertyDurationInSeconds() (value float64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float64(valuetmp)
+
 	return
 }
 
 // SetError sets the value of Error for the instance
 func (instance *MSFT_DSCResource) SetPropertyError(value string) (err error) {
-	return instance.SetProperty("Error", value)
+	return instance.SetProperty("Error", (value))
 }
 
 // GetError gets the value of Error for the instance
@@ -106,16 +117,25 @@ func (instance *MSFT_DSCResource) GetPropertyError() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFinalState sets the value of FinalState for the instance
 func (instance *MSFT_DSCResource) SetPropertyFinalState(value string) (err error) {
-	return instance.SetProperty("FinalState", value)
+	return instance.SetProperty("FinalState", (value))
 }
 
 // GetFinalState gets the value of FinalState for the instance
@@ -124,16 +144,25 @@ func (instance *MSFT_DSCResource) GetPropertyFinalState() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInDesiredState sets the value of InDesiredState for the instance
 func (instance *MSFT_DSCResource) SetPropertyInDesiredState(value bool) (err error) {
-	return instance.SetProperty("InDesiredState", value)
+	return instance.SetProperty("InDesiredState", (value))
 }
 
 // GetInDesiredState gets the value of InDesiredState for the instance
@@ -142,16 +171,25 @@ func (instance *MSFT_DSCResource) GetPropertyInDesiredState() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInitialState sets the value of InitialState for the instance
 func (instance *MSFT_DSCResource) SetPropertyInitialState(value string) (err error) {
-	return instance.SetProperty("InitialState", value)
+	return instance.SetProperty("InitialState", (value))
 }
 
 // GetInitialState gets the value of InitialState for the instance
@@ -160,16 +198,25 @@ func (instance *MSFT_DSCResource) GetPropertyInitialState() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceName sets the value of InstanceName for the instance
 func (instance *MSFT_DSCResource) SetPropertyInstanceName(value string) (err error) {
-	return instance.SetProperty("InstanceName", value)
+	return instance.SetProperty("InstanceName", (value))
 }
 
 // GetInstanceName gets the value of InstanceName for the instance
@@ -178,16 +225,25 @@ func (instance *MSFT_DSCResource) GetPropertyInstanceName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRebootRequested sets the value of RebootRequested for the instance
 func (instance *MSFT_DSCResource) SetPropertyRebootRequested(value bool) (err error) {
-	return instance.SetProperty("RebootRequested", value)
+	return instance.SetProperty("RebootRequested", (value))
 }
 
 // GetRebootRequested gets the value of RebootRequested for the instance
@@ -196,16 +252,25 @@ func (instance *MSFT_DSCResource) GetPropertyRebootRequested() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetResourceName sets the value of ResourceName for the instance
 func (instance *MSFT_DSCResource) SetPropertyResourceName(value string) (err error) {
-	return instance.SetProperty("ResourceName", value)
+	return instance.SetProperty("ResourceName", (value))
 }
 
 // GetResourceName gets the value of ResourceName for the instance
@@ -214,16 +279,25 @@ func (instance *MSFT_DSCResource) GetPropertyResourceName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartDate sets the value of StartDate for the instance
 func (instance *MSFT_DSCResource) SetPropertyStartDate(value string) (err error) {
-	return instance.SetProperty("StartDate", value)
+	return instance.SetProperty("StartDate", (value))
 }
 
 // GetStartDate gets the value of StartDate for the instance
@@ -232,16 +306,25 @@ func (instance *MSFT_DSCResource) GetPropertyStartDate() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStateChanged sets the value of StateChanged for the instance
 func (instance *MSFT_DSCResource) SetPropertyStateChanged(value bool) (err error) {
-	return instance.SetProperty("StateChanged", value)
+	return instance.SetProperty("StateChanged", (value))
 }
 
 // GetStateChanged gets the value of StateChanged for the instance
@@ -250,9 +333,18 @@ func (instance *MSFT_DSCResource) GetPropertyStateChanged() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

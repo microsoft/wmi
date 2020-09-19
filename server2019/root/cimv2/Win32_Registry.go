@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Registry struct
@@ -58,7 +60,7 @@ func NewWin32_RegistryEx6(hostName string,
 
 // SetCurrentSize sets the value of CurrentSize for the instance
 func (instance *Win32_Registry) SetPropertyCurrentSize(value uint32) (err error) {
-	return instance.SetProperty("CurrentSize", value)
+	return instance.SetProperty("CurrentSize", (value))
 }
 
 // GetCurrentSize gets the value of CurrentSize for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_Registry) GetPropertyCurrentSize() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumSize sets the value of MaximumSize for the instance
 func (instance *Win32_Registry) SetPropertyMaximumSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumSize", value)
+	return instance.SetProperty("MaximumSize", (value))
 }
 
 // GetMaximumSize gets the value of MaximumSize for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_Registry) GetPropertyMaximumSize() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProposedSize sets the value of ProposedSize for the instance
 func (instance *Win32_Registry) SetPropertyProposedSize(value uint32) (err error) {
-	return instance.SetProperty("ProposedSize", value)
+	return instance.SetProperty("ProposedSize", (value))
 }
 
 // GetProposedSize gets the value of ProposedSize for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_Registry) GetPropertyProposedSize() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

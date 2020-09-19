@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ModuleLoadTrace struct
@@ -70,7 +72,7 @@ func NewWin32_ModuleLoadTraceEx6(hostName string,
 
 // SetDefaultBase sets the value of DefaultBase for the instance
 func (instance *Win32_ModuleLoadTrace) SetPropertyDefaultBase(value uint64) (err error) {
-	return instance.SetProperty("DefaultBase", value)
+	return instance.SetProperty("DefaultBase", (value))
 }
 
 // GetDefaultBase gets the value of DefaultBase for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_ModuleLoadTrace) GetPropertyDefaultBase() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFileName sets the value of FileName for the instance
 func (instance *Win32_ModuleLoadTrace) SetPropertyFileName(value string) (err error) {
-	return instance.SetProperty("FileName", value)
+	return instance.SetProperty("FileName", (value))
 }
 
 // GetFileName gets the value of FileName for the instance
@@ -97,16 +108,25 @@ func (instance *Win32_ModuleLoadTrace) GetPropertyFileName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetImageBase sets the value of ImageBase for the instance
 func (instance *Win32_ModuleLoadTrace) SetPropertyImageBase(value uint64) (err error) {
-	return instance.SetProperty("ImageBase", value)
+	return instance.SetProperty("ImageBase", (value))
 }
 
 // GetImageBase gets the value of ImageBase for the instance
@@ -115,16 +135,25 @@ func (instance *Win32_ModuleLoadTrace) GetPropertyImageBase() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetImageChecksum sets the value of ImageChecksum for the instance
 func (instance *Win32_ModuleLoadTrace) SetPropertyImageChecksum(value uint32) (err error) {
-	return instance.SetProperty("ImageChecksum", value)
+	return instance.SetProperty("ImageChecksum", (value))
 }
 
 // GetImageChecksum gets the value of ImageChecksum for the instance
@@ -133,16 +162,25 @@ func (instance *Win32_ModuleLoadTrace) GetPropertyImageChecksum() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetImageSize sets the value of ImageSize for the instance
 func (instance *Win32_ModuleLoadTrace) SetPropertyImageSize(value uint64) (err error) {
-	return instance.SetProperty("ImageSize", value)
+	return instance.SetProperty("ImageSize", (value))
 }
 
 // GetImageSize gets the value of ImageSize for the instance
@@ -151,16 +189,25 @@ func (instance *Win32_ModuleLoadTrace) GetPropertyImageSize() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProcessID sets the value of ProcessID for the instance
 func (instance *Win32_ModuleLoadTrace) SetPropertyProcessID(value uint32) (err error) {
-	return instance.SetProperty("ProcessID", value)
+	return instance.SetProperty("ProcessID", (value))
 }
 
 // GetProcessID gets the value of ProcessID for the instance
@@ -169,16 +216,25 @@ func (instance *Win32_ModuleLoadTrace) GetPropertyProcessID() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeDateStamp sets the value of TimeDateStamp for the instance
 func (instance *Win32_ModuleLoadTrace) SetPropertyTimeDateStamp(value uint32) (err error) {
-	return instance.SetProperty("TimeDateStamp", value)
+	return instance.SetProperty("TimeDateStamp", (value))
 }
 
 // GetTimeDateStamp gets the value of TimeDateStamp for the instance
@@ -187,9 +243,18 @@ func (instance *Win32_ModuleLoadTrace) GetPropertyTimeDateStamp() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

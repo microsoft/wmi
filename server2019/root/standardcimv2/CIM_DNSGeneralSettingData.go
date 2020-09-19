@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DNSGeneralSettingData struct
@@ -58,7 +60,7 @@ func NewCIM_DNSGeneralSettingDataEx6(hostName string,
 
 // SetAppendParentSuffixes sets the value of AppendParentSuffixes for the instance
 func (instance *CIM_DNSGeneralSettingData) SetPropertyAppendParentSuffixes(value bool) (err error) {
-	return instance.SetProperty("AppendParentSuffixes", value)
+	return instance.SetProperty("AppendParentSuffixes", (value))
 }
 
 // GetAppendParentSuffixes gets the value of AppendParentSuffixes for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_DNSGeneralSettingData) GetPropertyAppendParentSuffixes() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAppendPrimarySuffixes sets the value of AppendPrimarySuffixes for the instance
 func (instance *CIM_DNSGeneralSettingData) SetPropertyAppendPrimarySuffixes(value bool) (err error) {
-	return instance.SetProperty("AppendPrimarySuffixes", value)
+	return instance.SetProperty("AppendPrimarySuffixes", (value))
 }
 
 // GetAppendPrimarySuffixes gets the value of AppendPrimarySuffixes for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_DNSGeneralSettingData) GetPropertyAppendPrimarySuffixes() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDNSSuffixesToAppend sets the value of DNSSuffixesToAppend for the instance
 func (instance *CIM_DNSGeneralSettingData) SetPropertyDNSSuffixesToAppend(value []string) (err error) {
-	return instance.SetProperty("DNSSuffixesToAppend", value)
+	return instance.SetProperty("DNSSuffixesToAppend", (value))
 }
 
 // GetDNSSuffixesToAppend gets the value of DNSSuffixesToAppend for the instance
@@ -103,9 +123,19 @@ func (instance *CIM_DNSGeneralSettingData) GetPropertyDNSSuffixesToAppend() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

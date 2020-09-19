@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_KvpExchangeComponent struct
@@ -55,7 +57,7 @@ func NewMsvm_KvpExchangeComponentEx6(hostName string,
 
 // SetGuestExchangeItems sets the value of GuestExchangeItems for the instance
 func (instance *Msvm_KvpExchangeComponent) SetPropertyGuestExchangeItems(value []string) (err error) {
-	return instance.SetProperty("GuestExchangeItems", value)
+	return instance.SetProperty("GuestExchangeItems", (value))
 }
 
 // GetGuestExchangeItems gets the value of GuestExchangeItems for the instance
@@ -64,16 +66,26 @@ func (instance *Msvm_KvpExchangeComponent) GetPropertyGuestExchangeItems() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetGuestIntrinsicExchangeItems sets the value of GuestIntrinsicExchangeItems for the instance
 func (instance *Msvm_KvpExchangeComponent) SetPropertyGuestIntrinsicExchangeItems(value []string) (err error) {
-	return instance.SetProperty("GuestIntrinsicExchangeItems", value)
+	return instance.SetProperty("GuestIntrinsicExchangeItems", (value))
 }
 
 // GetGuestIntrinsicExchangeItems gets the value of GuestIntrinsicExchangeItems for the instance
@@ -82,10 +94,20 @@ func (instance *Msvm_KvpExchangeComponent) GetPropertyGuestIntrinsicExchangeItem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_KvpExchangeComponent) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {

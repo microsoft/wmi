@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Action struct
@@ -77,7 +79,7 @@ func NewCIM_ActionEx6(hostName string,
 
 // SetActionID sets the value of ActionID for the instance
 func (instance *CIM_Action) SetPropertyActionID(value string) (err error) {
-	return instance.SetProperty("ActionID", value)
+	return instance.SetProperty("ActionID", (value))
 }
 
 // GetActionID gets the value of ActionID for the instance
@@ -86,16 +88,25 @@ func (instance *CIM_Action) GetPropertyActionID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCaption sets the value of Caption for the instance
 func (instance *CIM_Action) SetPropertyCaption(value string) (err error) {
-	return instance.SetProperty("Caption", value)
+	return instance.SetProperty("Caption", (value))
 }
 
 // GetCaption gets the value of Caption for the instance
@@ -104,16 +115,25 @@ func (instance *CIM_Action) GetPropertyCaption() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *CIM_Action) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -122,16 +142,25 @@ func (instance *CIM_Action) GetPropertyDescription() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirection sets the value of Direction for the instance
 func (instance *CIM_Action) SetPropertyDirection(value uint16) (err error) {
-	return instance.SetProperty("Direction", value)
+	return instance.SetProperty("Direction", (value))
 }
 
 // GetDirection gets the value of Direction for the instance
@@ -140,16 +169,25 @@ func (instance *CIM_Action) GetPropertyDirection() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *CIM_Action) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -158,16 +196,25 @@ func (instance *CIM_Action) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSoftwareElementID sets the value of SoftwareElementID for the instance
 func (instance *CIM_Action) SetPropertySoftwareElementID(value string) (err error) {
-	return instance.SetProperty("SoftwareElementID", value)
+	return instance.SetProperty("SoftwareElementID", (value))
 }
 
 // GetSoftwareElementID gets the value of SoftwareElementID for the instance
@@ -176,16 +223,25 @@ func (instance *CIM_Action) GetPropertySoftwareElementID() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSoftwareElementState sets the value of SoftwareElementState for the instance
 func (instance *CIM_Action) SetPropertySoftwareElementState(value uint16) (err error) {
-	return instance.SetProperty("SoftwareElementState", value)
+	return instance.SetProperty("SoftwareElementState", (value))
 }
 
 // GetSoftwareElementState gets the value of SoftwareElementState for the instance
@@ -194,16 +250,25 @@ func (instance *CIM_Action) GetPropertySoftwareElementState() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTargetOperatingSystem sets the value of TargetOperatingSystem for the instance
 func (instance *CIM_Action) SetPropertyTargetOperatingSystem(value uint16) (err error) {
-	return instance.SetProperty("TargetOperatingSystem", value)
+	return instance.SetProperty("TargetOperatingSystem", (value))
 }
 
 // GetTargetOperatingSystem gets the value of TargetOperatingSystem for the instance
@@ -212,16 +277,25 @@ func (instance *CIM_Action) GetPropertyTargetOperatingSystem() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *CIM_Action) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -230,10 +304,19 @@ func (instance *CIM_Action) GetPropertyVersion() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IESecurityContentRatings struct
@@ -77,7 +79,7 @@ func NewRSOP_IESecurityContentRatingsEx6(hostName string,
 
 // SetalwaysViewableSites sets the value of alwaysViewableSites for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyalwaysViewableSites(value []string) (err error) {
-	return instance.SetProperty("alwaysViewableSites", value)
+	return instance.SetProperty("alwaysViewableSites", (value))
 }
 
 // GetalwaysViewableSites gets the value of alwaysViewableSites for the instance
@@ -86,16 +88,26 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyalwaysViewableSites() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetneverViewableSites sets the value of neverViewableSites for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyneverViewableSites(value []string) (err error) {
-	return instance.SetProperty("neverViewableSites", value)
+	return instance.SetProperty("neverViewableSites", (value))
 }
 
 // GetneverViewableSites gets the value of neverViewableSites for the instance
@@ -104,16 +116,26 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyneverViewableSites() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetpasswordOverrideEnabled sets the value of passwordOverrideEnabled for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertypasswordOverrideEnabled(value bool) (err error) {
-	return instance.SetProperty("passwordOverrideEnabled", value)
+	return instance.SetProperty("passwordOverrideEnabled", (value))
 }
 
 // GetpasswordOverrideEnabled gets the value of passwordOverrideEnabled for the instance
@@ -122,16 +144,25 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertypasswordOverrideEnable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetratingSystemFileNames sets the value of ratingSystemFileNames for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyratingSystemFileNames(value []string) (err error) {
-	return instance.SetProperty("ratingSystemFileNames", value)
+	return instance.SetProperty("ratingSystemFileNames", (value))
 }
 
 // GetratingSystemFileNames gets the value of ratingSystemFileNames for the instance
@@ -140,16 +171,26 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyratingSystemFileNames(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetratingSystems sets the value of ratingSystems for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyratingSystems(value []string) (err error) {
-	return instance.SetProperty("ratingSystems", value)
+	return instance.SetProperty("ratingSystems", (value))
 }
 
 // GetratingSystems gets the value of ratingSystems for the instance
@@ -158,16 +199,26 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyratingSystems() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -176,16 +227,25 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyrsopID() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyrsopPrecedence(value int32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -194,16 +254,25 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyrsopPrecedence() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetselectedRatingsBureau sets the value of selectedRatingsBureau for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyselectedRatingsBureau(value string) (err error) {
-	return instance.SetProperty("selectedRatingsBureau", value)
+	return instance.SetProperty("selectedRatingsBureau", (value))
 }
 
 // GetselectedRatingsBureau gets the value of selectedRatingsBureau for the instance
@@ -212,16 +281,25 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyselectedRatingsBureau(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetviewUnknownRatedSites sets the value of viewUnknownRatedSites for the instance
 func (instance *RSOP_IESecurityContentRatings) SetPropertyviewUnknownRatedSites(value bool) (err error) {
-	return instance.SetProperty("viewUnknownRatedSites", value)
+	return instance.SetProperty("viewUnknownRatedSites", (value))
 }
 
 // GetviewUnknownRatedSites gets the value of viewUnknownRatedSites for the instance
@@ -230,9 +308,18 @@ func (instance *RSOP_IESecurityContentRatings) GetPropertyviewUnknownRatedSites(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

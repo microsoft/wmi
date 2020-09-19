@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_CredentialProviders02 struct
@@ -65,7 +67,7 @@ func NewMDM_Policy_Config01_CredentialProviders02Ex6(hostName string,
 
 // SetAllowPINLogon sets the value of AllowPINLogon for the instance
 func (instance *MDM_Policy_Config01_CredentialProviders02) SetPropertyAllowPINLogon(value string) (err error) {
-	return instance.SetProperty("AllowPINLogon", value)
+	return instance.SetProperty("AllowPINLogon", (value))
 }
 
 // GetAllowPINLogon gets the value of AllowPINLogon for the instance
@@ -74,16 +76,25 @@ func (instance *MDM_Policy_Config01_CredentialProviders02) GetPropertyAllowPINLo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBlockPicturePassword sets the value of BlockPicturePassword for the instance
 func (instance *MDM_Policy_Config01_CredentialProviders02) SetPropertyBlockPicturePassword(value string) (err error) {
-	return instance.SetProperty("BlockPicturePassword", value)
+	return instance.SetProperty("BlockPicturePassword", (value))
 }
 
 // GetBlockPicturePassword gets the value of BlockPicturePassword for the instance
@@ -92,16 +103,25 @@ func (instance *MDM_Policy_Config01_CredentialProviders02) GetPropertyBlockPictu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableAutomaticReDeploymentCredentials sets the value of DisableAutomaticReDeploymentCredentials for the instance
 func (instance *MDM_Policy_Config01_CredentialProviders02) SetPropertyDisableAutomaticReDeploymentCredentials(value int32) (err error) {
-	return instance.SetProperty("DisableAutomaticReDeploymentCredentials", value)
+	return instance.SetProperty("DisableAutomaticReDeploymentCredentials", (value))
 }
 
 // GetDisableAutomaticReDeploymentCredentials gets the value of DisableAutomaticReDeploymentCredentials for the instance
@@ -110,16 +130,25 @@ func (instance *MDM_Policy_Config01_CredentialProviders02) GetPropertyDisableAut
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_CredentialProviders02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -128,16 +157,25 @@ func (instance *MDM_Policy_Config01_CredentialProviders02) GetPropertyInstanceID
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_CredentialProviders02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -146,9 +184,18 @@ func (instance *MDM_Policy_Config01_CredentialProviders02) GetPropertyParentID()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

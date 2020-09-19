@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
@@ -11,7 +11,9 @@ package client
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // PS_VpnConnectionRoute struct
@@ -59,7 +61,7 @@ func NewPS_VpnConnectionRouteEx6(hostName string,
 
 // SetAddressFamily sets the value of AddressFamily for the instance
 func (instance *PS_VpnConnectionRoute) SetPropertyAddressFamily(value uint16) (err error) {
-	return instance.SetProperty("AddressFamily", value)
+	return instance.SetProperty("AddressFamily", (value))
 }
 
 // GetAddressFamily gets the value of AddressFamily for the instance
@@ -68,16 +70,25 @@ func (instance *PS_VpnConnectionRoute) GetPropertyAddressFamily() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDestinationPrefix sets the value of DestinationPrefix for the instance
 func (instance *PS_VpnConnectionRoute) SetPropertyDestinationPrefix(value string) (err error) {
-	return instance.SetProperty("DestinationPrefix", value)
+	return instance.SetProperty("DestinationPrefix", (value))
 }
 
 // GetDestinationPrefix gets the value of DestinationPrefix for the instance
@@ -86,16 +97,25 @@ func (instance *PS_VpnConnectionRoute) GetPropertyDestinationPrefix() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRouteMetric sets the value of RouteMetric for the instance
 func (instance *PS_VpnConnectionRoute) SetPropertyRouteMetric(value uint32) (err error) {
-	return instance.SetProperty("RouteMetric", value)
+	return instance.SetProperty("RouteMetric", (value))
 }
 
 // GetRouteMetric gets the value of RouteMetric for the instance
@@ -104,10 +124,19 @@ func (instance *PS_VpnConnectionRoute) GetPropertyRouteMetric() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

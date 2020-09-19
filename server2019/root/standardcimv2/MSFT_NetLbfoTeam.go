@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetLbfoTeam struct
@@ -61,7 +63,7 @@ func NewMSFT_NetLbfoTeamEx6(hostName string,
 
 // SetLacpTimer sets the value of LacpTimer for the instance
 func (instance *MSFT_NetLbfoTeam) SetPropertyLacpTimer(value uint32) (err error) {
-	return instance.SetProperty("LacpTimer", value)
+	return instance.SetProperty("LacpTimer", (value))
 }
 
 // GetLacpTimer gets the value of LacpTimer for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetLbfoTeam) GetPropertyLacpTimer() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLoadBalancingAlgorithm sets the value of LoadBalancingAlgorithm for the instance
 func (instance *MSFT_NetLbfoTeam) SetPropertyLoadBalancingAlgorithm(value uint32) (err error) {
-	return instance.SetProperty("LoadBalancingAlgorithm", value)
+	return instance.SetProperty("LoadBalancingAlgorithm", (value))
 }
 
 // GetLoadBalancingAlgorithm gets the value of LoadBalancingAlgorithm for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetLbfoTeam) GetPropertyLoadBalancingAlgorithm() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_NetLbfoTeam) SetPropertyStatus(value uint32) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetLbfoTeam) GetPropertyStatus() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTeamingMode sets the value of TeamingMode for the instance
 func (instance *MSFT_NetLbfoTeam) SetPropertyTeamingMode(value uint32) (err error) {
-	return instance.SetProperty("TeamingMode", value)
+	return instance.SetProperty("TeamingMode", (value))
 }
 
 // GetTeamingMode gets the value of TeamingMode for the instance
@@ -124,10 +153,19 @@ func (instance *MSFT_NetLbfoTeam) GetPropertyTeamingMode() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

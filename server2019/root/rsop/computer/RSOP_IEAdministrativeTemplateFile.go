@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEAdministrativeTemplateFile struct
@@ -59,7 +61,7 @@ func NewRSOP_IEAdministrativeTemplateFileEx6(hostName string,
 
 // SetGPOID sets the value of GPOID for the instance
 func (instance *RSOP_IEAdministrativeTemplateFile) SetPropertyGPOID(value string) (err error) {
-	return instance.SetProperty("GPOID", value)
+	return instance.SetProperty("GPOID", (value))
 }
 
 // GetGPOID gets the value of GPOID for the instance
@@ -68,16 +70,25 @@ func (instance *RSOP_IEAdministrativeTemplateFile) GetPropertyGPOID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetlastWriteTime sets the value of lastWriteTime for the instance
 func (instance *RSOP_IEAdministrativeTemplateFile) SetPropertylastWriteTime(value string) (err error) {
-	return instance.SetProperty("lastWriteTime", value)
+	return instance.SetProperty("lastWriteTime", (value))
 }
 
 // GetlastWriteTime gets the value of lastWriteTime for the instance
@@ -86,16 +97,25 @@ func (instance *RSOP_IEAdministrativeTemplateFile) GetPropertylastWriteTime() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setname sets the value of name for the instance
 func (instance *RSOP_IEAdministrativeTemplateFile) SetPropertyname(value string) (err error) {
-	return instance.SetProperty("name", value)
+	return instance.SetProperty("name", (value))
 }
 
 // Getname gets the value of name for the instance
@@ -104,9 +124,18 @@ func (instance *RSOP_IEAdministrativeTemplateFile) GetPropertyname() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

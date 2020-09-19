@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetOffloadGlobalSetting struct
@@ -70,7 +72,7 @@ func NewMSFT_NetOffloadGlobalSettingEx6(hostName string,
 
 // SetChimney sets the value of Chimney for the instance
 func (instance *MSFT_NetOffloadGlobalSetting) SetPropertyChimney(value uint8) (err error) {
-	return instance.SetProperty("Chimney", value)
+	return instance.SetProperty("Chimney", (value))
 }
 
 // GetChimney gets the value of Chimney for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_NetOffloadGlobalSetting) GetPropertyChimney() (value uint8,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNetworkDirect sets the value of NetworkDirect for the instance
 func (instance *MSFT_NetOffloadGlobalSetting) SetPropertyNetworkDirect(value uint8) (err error) {
-	return instance.SetProperty("NetworkDirect", value)
+	return instance.SetProperty("NetworkDirect", (value))
 }
 
 // GetNetworkDirect gets the value of NetworkDirect for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_NetOffloadGlobalSetting) GetPropertyNetworkDirect() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNetworkDirectAcrossIPSubnets sets the value of NetworkDirectAcrossIPSubnets for the instance
 func (instance *MSFT_NetOffloadGlobalSetting) SetPropertyNetworkDirectAcrossIPSubnets(value uint8) (err error) {
-	return instance.SetProperty("NetworkDirectAcrossIPSubnets", value)
+	return instance.SetProperty("NetworkDirectAcrossIPSubnets", (value))
 }
 
 // GetNetworkDirectAcrossIPSubnets gets the value of NetworkDirectAcrossIPSubnets for the instance
@@ -115,16 +135,25 @@ func (instance *MSFT_NetOffloadGlobalSetting) GetPropertyNetworkDirectAcrossIPSu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetPacketCoalescingFilter sets the value of PacketCoalescingFilter for the instance
 func (instance *MSFT_NetOffloadGlobalSetting) SetPropertyPacketCoalescingFilter(value uint8) (err error) {
-	return instance.SetProperty("PacketCoalescingFilter", value)
+	return instance.SetProperty("PacketCoalescingFilter", (value))
 }
 
 // GetPacketCoalescingFilter gets the value of PacketCoalescingFilter for the instance
@@ -133,16 +162,25 @@ func (instance *MSFT_NetOffloadGlobalSetting) GetPropertyPacketCoalescingFilter(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetReceiveSegmentCoalescing sets the value of ReceiveSegmentCoalescing for the instance
 func (instance *MSFT_NetOffloadGlobalSetting) SetPropertyReceiveSegmentCoalescing(value uint8) (err error) {
-	return instance.SetProperty("ReceiveSegmentCoalescing", value)
+	return instance.SetProperty("ReceiveSegmentCoalescing", (value))
 }
 
 // GetReceiveSegmentCoalescing gets the value of ReceiveSegmentCoalescing for the instance
@@ -151,16 +189,25 @@ func (instance *MSFT_NetOffloadGlobalSetting) GetPropertyReceiveSegmentCoalescin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetReceiveSideScaling sets the value of ReceiveSideScaling for the instance
 func (instance *MSFT_NetOffloadGlobalSetting) SetPropertyReceiveSideScaling(value uint8) (err error) {
-	return instance.SetProperty("ReceiveSideScaling", value)
+	return instance.SetProperty("ReceiveSideScaling", (value))
 }
 
 // GetReceiveSideScaling gets the value of ReceiveSideScaling for the instance
@@ -169,16 +216,25 @@ func (instance *MSFT_NetOffloadGlobalSetting) GetPropertyReceiveSideScaling() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetTaskOffload sets the value of TaskOffload for the instance
 func (instance *MSFT_NetOffloadGlobalSetting) SetPropertyTaskOffload(value uint8) (err error) {
-	return instance.SetProperty("TaskOffload", value)
+	return instance.SetProperty("TaskOffload", (value))
 }
 
 // GetTaskOffload gets the value of TaskOffload for the instance
@@ -187,9 +243,18 @@ func (instance *MSFT_NetOffloadGlobalSetting) GetPropertyTaskOffload() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

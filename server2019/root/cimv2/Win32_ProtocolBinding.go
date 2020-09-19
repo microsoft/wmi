@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ProtocolBinding struct
@@ -59,7 +61,7 @@ func NewWin32_ProtocolBindingEx6(hostName string,
 
 // SetAntecedent sets the value of Antecedent for the instance
 func (instance *Win32_ProtocolBinding) SetPropertyAntecedent(value Win32_NetworkProtocol) (err error) {
-	return instance.SetProperty("Antecedent", value)
+	return instance.SetProperty("Antecedent", (value))
 }
 
 // GetAntecedent gets the value of Antecedent for the instance
@@ -68,16 +70,25 @@ func (instance *Win32_ProtocolBinding) GetPropertyAntecedent() (value Win32_Netw
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_NetworkProtocol)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_NetworkProtocol)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_NetworkProtocol is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_NetworkProtocol(valuetmp)
+
 	return
 }
 
 // SetDependent sets the value of Dependent for the instance
 func (instance *Win32_ProtocolBinding) SetPropertyDependent(value Win32_SystemDriver) (err error) {
-	return instance.SetProperty("Dependent", value)
+	return instance.SetProperty("Dependent", (value))
 }
 
 // GetDependent gets the value of Dependent for the instance
@@ -86,16 +97,25 @@ func (instance *Win32_ProtocolBinding) GetPropertyDependent() (value Win32_Syste
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_SystemDriver)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_SystemDriver)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_SystemDriver is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_SystemDriver(valuetmp)
+
 	return
 }
 
 // SetDevice sets the value of Device for the instance
 func (instance *Win32_ProtocolBinding) SetPropertyDevice(value Win32_NetworkAdapter) (err error) {
-	return instance.SetProperty("Device", value)
+	return instance.SetProperty("Device", (value))
 }
 
 // GetDevice gets the value of Device for the instance
@@ -104,9 +124,18 @@ func (instance *Win32_ProtocolBinding) GetPropertyDevice() (value Win32_NetworkA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_NetworkAdapter)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_NetworkAdapter)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_NetworkAdapter is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_NetworkAdapter(valuetmp)
+
 	return
 }

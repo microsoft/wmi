@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_FileResourceManager struct
@@ -55,7 +57,7 @@ func NewMSFT_FileResourceManagerEx6(hostName string,
 
 // SetCredential sets the value of Credential for the instance
 func (instance *MSFT_FileResourceManager) SetPropertyCredential(value MSFT_Credential) (err error) {
-	return instance.SetProperty("Credential", value)
+	return instance.SetProperty("Credential", (value))
 }
 
 // GetCredential gets the value of Credential for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_FileResourceManager) GetPropertyCredential() (value MSFT_Cr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Credential)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Credential)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Credential is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Credential(valuetmp)
+
 	return
 }
 
 // SetSourcePath sets the value of SourcePath for the instance
 func (instance *MSFT_FileResourceManager) SetPropertySourcePath(value string) (err error) {
-	return instance.SetProperty("SourcePath", value)
+	return instance.SetProperty("SourcePath", (value))
 }
 
 // GetSourcePath gets the value of SourcePath for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_FileResourceManager) GetPropertySourcePath() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

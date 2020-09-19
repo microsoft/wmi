@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAddressFilter struct
@@ -55,7 +57,7 @@ func NewMSFT_NetAddressFilterEx6(hostName string,
 
 // SetLocalAddress sets the value of LocalAddress for the instance
 func (instance *MSFT_NetAddressFilter) SetPropertyLocalAddress(value []string) (err error) {
-	return instance.SetProperty("LocalAddress", value)
+	return instance.SetProperty("LocalAddress", (value))
 }
 
 // GetLocalAddress gets the value of LocalAddress for the instance
@@ -64,16 +66,26 @@ func (instance *MSFT_NetAddressFilter) GetPropertyLocalAddress() (value []string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRemoteAddress sets the value of RemoteAddress for the instance
 func (instance *MSFT_NetAddressFilter) SetPropertyRemoteAddress(value []string) (err error) {
-	return instance.SetProperty("RemoteAddress", value)
+	return instance.SetProperty("RemoteAddress", (value))
 }
 
 // GetRemoteAddress gets the value of RemoteAddress for the instance
@@ -82,10 +94,20 @@ func (instance *MSFT_NetAddressFilter) GetPropertyRemoteAddress() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 

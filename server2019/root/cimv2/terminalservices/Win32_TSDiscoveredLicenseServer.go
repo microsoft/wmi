@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
@@ -11,7 +11,9 @@ package terminalservices
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSDiscoveredLicenseServer struct
@@ -65,7 +67,7 @@ func NewWin32_TSDiscoveredLicenseServerEx6(hostName string,
 
 // SetHowDiscovered sets the value of HowDiscovered for the instance
 func (instance *Win32_TSDiscoveredLicenseServer) SetPropertyHowDiscovered(value uint32) (err error) {
-	return instance.SetProperty("HowDiscovered", value)
+	return instance.SetProperty("HowDiscovered", (value))
 }
 
 // GetHowDiscovered gets the value of HowDiscovered for the instance
@@ -74,16 +76,25 @@ func (instance *Win32_TSDiscoveredLicenseServer) GetPropertyHowDiscovered() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsAdminOnLS sets the value of IsAdminOnLS for the instance
 func (instance *Win32_TSDiscoveredLicenseServer) SetPropertyIsAdminOnLS(value uint32) (err error) {
-	return instance.SetProperty("IsAdminOnLS", value)
+	return instance.SetProperty("IsAdminOnLS", (value))
 }
 
 // GetIsAdminOnLS gets the value of IsAdminOnLS for the instance
@@ -92,16 +103,25 @@ func (instance *Win32_TSDiscoveredLicenseServer) GetPropertyIsAdminOnLS() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsLSAvailable sets the value of IsLSAvailable for the instance
 func (instance *Win32_TSDiscoveredLicenseServer) SetPropertyIsLSAvailable(value uint32) (err error) {
-	return instance.SetProperty("IsLSAvailable", value)
+	return instance.SetProperty("IsLSAvailable", (value))
 }
 
 // GetIsLSAvailable gets the value of IsLSAvailable for the instance
@@ -110,16 +130,25 @@ func (instance *Win32_TSDiscoveredLicenseServer) GetPropertyIsLSAvailable() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIssuingCALs sets the value of IssuingCALs for the instance
 func (instance *Win32_TSDiscoveredLicenseServer) SetPropertyIssuingCALs(value uint32) (err error) {
-	return instance.SetProperty("IssuingCALs", value)
+	return instance.SetProperty("IssuingCALs", (value))
 }
 
 // GetIssuingCALs gets the value of IssuingCALs for the instance
@@ -128,16 +157,25 @@ func (instance *Win32_TSDiscoveredLicenseServer) GetPropertyIssuingCALs() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLicenseServer sets the value of LicenseServer for the instance
 func (instance *Win32_TSDiscoveredLicenseServer) SetPropertyLicenseServer(value string) (err error) {
-	return instance.SetProperty("LicenseServer", value)
+	return instance.SetProperty("LicenseServer", (value))
 }
 
 // GetLicenseServer gets the value of LicenseServer for the instance
@@ -146,9 +184,18 @@ func (instance *Win32_TSDiscoveredLicenseServer) GetPropertyLicenseServer() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

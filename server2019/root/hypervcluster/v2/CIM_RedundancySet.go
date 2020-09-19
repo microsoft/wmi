@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_RedundancySet struct
@@ -77,7 +79,7 @@ func NewCIM_RedundancySetEx6(hostName string,
 
 // SetLoadBalanceAlgorithm sets the value of LoadBalanceAlgorithm for the instance
 func (instance *CIM_RedundancySet) SetPropertyLoadBalanceAlgorithm(value RedundancySet_LoadBalanceAlgorithm) (err error) {
-	return instance.SetProperty("LoadBalanceAlgorithm", value)
+	return instance.SetProperty("LoadBalanceAlgorithm", (value))
 }
 
 // GetLoadBalanceAlgorithm gets the value of LoadBalanceAlgorithm for the instance
@@ -86,16 +88,25 @@ func (instance *CIM_RedundancySet) GetPropertyLoadBalanceAlgorithm() (value Redu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RedundancySet_LoadBalanceAlgorithm)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RedundancySet_LoadBalanceAlgorithm(valuetmp)
+
 	return
 }
 
 // SetMaxNumberSupported sets the value of MaxNumberSupported for the instance
 func (instance *CIM_RedundancySet) SetPropertyMaxNumberSupported(value uint32) (err error) {
-	return instance.SetProperty("MaxNumberSupported", value)
+	return instance.SetProperty("MaxNumberSupported", (value))
 }
 
 // GetMaxNumberSupported gets the value of MaxNumberSupported for the instance
@@ -104,16 +115,25 @@ func (instance *CIM_RedundancySet) GetPropertyMaxNumberSupported() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinNumberNeeded sets the value of MinNumberNeeded for the instance
 func (instance *CIM_RedundancySet) SetPropertyMinNumberNeeded(value uint32) (err error) {
-	return instance.SetProperty("MinNumberNeeded", value)
+	return instance.SetProperty("MinNumberNeeded", (value))
 }
 
 // GetMinNumberNeeded gets the value of MinNumberNeeded for the instance
@@ -122,16 +142,25 @@ func (instance *CIM_RedundancySet) GetPropertyMinNumberNeeded() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherLoadBalanceAlgorithm sets the value of OtherLoadBalanceAlgorithm for the instance
 func (instance *CIM_RedundancySet) SetPropertyOtherLoadBalanceAlgorithm(value string) (err error) {
-	return instance.SetProperty("OtherLoadBalanceAlgorithm", value)
+	return instance.SetProperty("OtherLoadBalanceAlgorithm", (value))
 }
 
 // GetOtherLoadBalanceAlgorithm gets the value of OtherLoadBalanceAlgorithm for the instance
@@ -140,16 +169,25 @@ func (instance *CIM_RedundancySet) GetPropertyOtherLoadBalanceAlgorithm() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherTypeOfSet sets the value of OtherTypeOfSet for the instance
 func (instance *CIM_RedundancySet) SetPropertyOtherTypeOfSet(value []string) (err error) {
-	return instance.SetProperty("OtherTypeOfSet", value)
+	return instance.SetProperty("OtherTypeOfSet", (value))
 }
 
 // GetOtherTypeOfSet gets the value of OtherTypeOfSet for the instance
@@ -158,16 +196,26 @@ func (instance *CIM_RedundancySet) GetPropertyOtherTypeOfSet() (value []string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRedundancyStatus sets the value of RedundancyStatus for the instance
 func (instance *CIM_RedundancySet) SetPropertyRedundancyStatus(value RedundancySet_RedundancyStatus) (err error) {
-	return instance.SetProperty("RedundancyStatus", value)
+	return instance.SetProperty("RedundancyStatus", (value))
 }
 
 // GetRedundancyStatus gets the value of RedundancyStatus for the instance
@@ -176,16 +224,25 @@ func (instance *CIM_RedundancySet) GetPropertyRedundancyStatus() (value Redundan
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RedundancySet_RedundancyStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RedundancySet_RedundancyStatus(valuetmp)
+
 	return
 }
 
 // SetTypeOfSet sets the value of TypeOfSet for the instance
 func (instance *CIM_RedundancySet) SetPropertyTypeOfSet(value []RedundancySet_TypeOfSet) (err error) {
-	return instance.SetProperty("TypeOfSet", value)
+	return instance.SetProperty("TypeOfSet", (value))
 }
 
 // GetTypeOfSet gets the value of TypeOfSet for the instance
@@ -194,16 +251,26 @@ func (instance *CIM_RedundancySet) GetPropertyTypeOfSet() (value []RedundancySet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]RedundancySet_TypeOfSet)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, RedundancySet_TypeOfSet(valuetmp))
+	}
+
 	return
 }
 
 // SetVendorIdentifyingInfo sets the value of VendorIdentifyingInfo for the instance
 func (instance *CIM_RedundancySet) SetPropertyVendorIdentifyingInfo(value string) (err error) {
-	return instance.SetProperty("VendorIdentifyingInfo", value)
+	return instance.SetProperty("VendorIdentifyingInfo", (value))
 }
 
 // GetVendorIdentifyingInfo gets the value of VendorIdentifyingInfo for the instance
@@ -212,10 +279,19 @@ func (instance *CIM_RedundancySet) GetPropertyVendorIdentifyingInfo() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

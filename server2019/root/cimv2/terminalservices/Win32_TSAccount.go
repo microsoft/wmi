@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSAccount struct
@@ -67,7 +69,7 @@ func NewWin32_TSAccountEx6(hostName string,
 
 // SetAccountName sets the value of AccountName for the instance
 func (instance *Win32_TSAccount) SetPropertyAccountName(value string) (err error) {
-	return instance.SetProperty("AccountName", value)
+	return instance.SetProperty("AccountName", (value))
 }
 
 // GetAccountName gets the value of AccountName for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_TSAccount) GetPropertyAccountName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAuditFail sets the value of AuditFail for the instance
 func (instance *Win32_TSAccount) SetPropertyAuditFail(value uint32) (err error) {
-	return instance.SetProperty("AuditFail", value)
+	return instance.SetProperty("AuditFail", (value))
 }
 
 // GetAuditFail gets the value of AuditFail for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_TSAccount) GetPropertyAuditFail() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAuditSuccess sets the value of AuditSuccess for the instance
 func (instance *Win32_TSAccount) SetPropertyAuditSuccess(value uint32) (err error) {
-	return instance.SetProperty("AuditSuccess", value)
+	return instance.SetProperty("AuditSuccess", (value))
 }
 
 // GetAuditSuccess gets the value of AuditSuccess for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_TSAccount) GetPropertyAuditSuccess() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPermissionsAllowed sets the value of PermissionsAllowed for the instance
 func (instance *Win32_TSAccount) SetPropertyPermissionsAllowed(value uint32) (err error) {
-	return instance.SetProperty("PermissionsAllowed", value)
+	return instance.SetProperty("PermissionsAllowed", (value))
 }
 
 // GetPermissionsAllowed gets the value of PermissionsAllowed for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_TSAccount) GetPropertyPermissionsAllowed() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPermissionsDenied sets the value of PermissionsDenied for the instance
 func (instance *Win32_TSAccount) SetPropertyPermissionsDenied(value uint32) (err error) {
-	return instance.SetProperty("PermissionsDenied", value)
+	return instance.SetProperty("PermissionsDenied", (value))
 }
 
 // GetPermissionsDenied gets the value of PermissionsDenied for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_TSAccount) GetPropertyPermissionsDenied() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSID sets the value of SID for the instance
 func (instance *Win32_TSAccount) SetPropertySID(value string) (err error) {
-	return instance.SetProperty("SID", value)
+	return instance.SetProperty("SID", (value))
 }
 
 // GetSID gets the value of SID for the instance
@@ -166,10 +213,19 @@ func (instance *Win32_TSAccount) GetPropertySID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

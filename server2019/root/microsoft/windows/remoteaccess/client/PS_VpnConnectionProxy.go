@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
@@ -11,7 +11,9 @@ package client
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // PS_VpnConnectionProxy struct
@@ -65,7 +67,7 @@ func NewPS_VpnConnectionProxyEx6(hostName string,
 
 // SetAutoConfigurationScript sets the value of AutoConfigurationScript for the instance
 func (instance *PS_VpnConnectionProxy) SetPropertyAutoConfigurationScript(value string) (err error) {
-	return instance.SetProperty("AutoConfigurationScript", value)
+	return instance.SetProperty("AutoConfigurationScript", (value))
 }
 
 // GetAutoConfigurationScript gets the value of AutoConfigurationScript for the instance
@@ -74,16 +76,25 @@ func (instance *PS_VpnConnectionProxy) GetPropertyAutoConfigurationScript() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutoDetect sets the value of AutoDetect for the instance
 func (instance *PS_VpnConnectionProxy) SetPropertyAutoDetect(value bool) (err error) {
-	return instance.SetProperty("AutoDetect", value)
+	return instance.SetProperty("AutoDetect", (value))
 }
 
 // GetAutoDetect gets the value of AutoDetect for the instance
@@ -92,16 +103,25 @@ func (instance *PS_VpnConnectionProxy) GetPropertyAutoDetect() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBypassProxyForLocal sets the value of BypassProxyForLocal for the instance
 func (instance *PS_VpnConnectionProxy) SetPropertyBypassProxyForLocal(value bool) (err error) {
-	return instance.SetProperty("BypassProxyForLocal", value)
+	return instance.SetProperty("BypassProxyForLocal", (value))
 }
 
 // GetBypassProxyForLocal gets the value of BypassProxyForLocal for the instance
@@ -110,16 +130,25 @@ func (instance *PS_VpnConnectionProxy) GetPropertyBypassProxyForLocal() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetExceptionPrefix sets the value of ExceptionPrefix for the instance
 func (instance *PS_VpnConnectionProxy) SetPropertyExceptionPrefix(value []string) (err error) {
-	return instance.SetProperty("ExceptionPrefix", value)
+	return instance.SetProperty("ExceptionPrefix", (value))
 }
 
 // GetExceptionPrefix gets the value of ExceptionPrefix for the instance
@@ -128,16 +157,26 @@ func (instance *PS_VpnConnectionProxy) GetPropertyExceptionPrefix() (value []str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetProxyServer sets the value of ProxyServer for the instance
 func (instance *PS_VpnConnectionProxy) SetPropertyProxyServer(value string) (err error) {
-	return instance.SetProperty("ProxyServer", value)
+	return instance.SetProperty("ProxyServer", (value))
 }
 
 // GetProxyServer gets the value of ProxyServer for the instance
@@ -146,10 +185,19 @@ func (instance *PS_VpnConnectionProxy) GetPropertyProxyServer() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

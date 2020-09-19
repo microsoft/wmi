@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NetworkLoginProfile struct
@@ -136,7 +138,7 @@ func NewWin32_NetworkLoginProfileEx6(hostName string,
 
 // SetAccountExpires sets the value of AccountExpires for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyAccountExpires(value string) (err error) {
-	return instance.SetProperty("AccountExpires", value)
+	return instance.SetProperty("AccountExpires", (value))
 }
 
 // GetAccountExpires gets the value of AccountExpires for the instance
@@ -145,16 +147,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyAccountExpires() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAuthorizationFlags sets the value of AuthorizationFlags for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyAuthorizationFlags(value uint32) (err error) {
-	return instance.SetProperty("AuthorizationFlags", value)
+	return instance.SetProperty("AuthorizationFlags", (value))
 }
 
 // GetAuthorizationFlags gets the value of AuthorizationFlags for the instance
@@ -163,16 +174,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyAuthorizationFlags() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBadPasswordCount sets the value of BadPasswordCount for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyBadPasswordCount(value uint32) (err error) {
-	return instance.SetProperty("BadPasswordCount", value)
+	return instance.SetProperty("BadPasswordCount", (value))
 }
 
 // GetBadPasswordCount gets the value of BadPasswordCount for the instance
@@ -181,16 +201,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyBadPasswordCount() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCodePage sets the value of CodePage for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyCodePage(value uint32) (err error) {
-	return instance.SetProperty("CodePage", value)
+	return instance.SetProperty("CodePage", (value))
 }
 
 // GetCodePage gets the value of CodePage for the instance
@@ -199,16 +228,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyCodePage() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetComment sets the value of Comment for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyComment(value string) (err error) {
-	return instance.SetProperty("Comment", value)
+	return instance.SetProperty("Comment", (value))
 }
 
 // GetComment gets the value of Comment for the instance
@@ -217,16 +255,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyComment() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCountryCode sets the value of CountryCode for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyCountryCode(value uint32) (err error) {
-	return instance.SetProperty("CountryCode", value)
+	return instance.SetProperty("CountryCode", (value))
 }
 
 // GetCountryCode gets the value of CountryCode for the instance
@@ -235,16 +282,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyCountryCode() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlags sets the value of Flags for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyFlags(value uint32) (err error) {
-	return instance.SetProperty("Flags", value)
+	return instance.SetProperty("Flags", (value))
 }
 
 // GetFlags gets the value of Flags for the instance
@@ -253,16 +309,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyFlags() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFullName sets the value of FullName for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyFullName(value string) (err error) {
-	return instance.SetProperty("FullName", value)
+	return instance.SetProperty("FullName", (value))
 }
 
 // GetFullName gets the value of FullName for the instance
@@ -271,16 +336,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyFullName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHomeDirectory sets the value of HomeDirectory for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyHomeDirectory(value string) (err error) {
-	return instance.SetProperty("HomeDirectory", value)
+	return instance.SetProperty("HomeDirectory", (value))
 }
 
 // GetHomeDirectory gets the value of HomeDirectory for the instance
@@ -289,16 +363,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyHomeDirectory() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHomeDirectoryDrive sets the value of HomeDirectoryDrive for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyHomeDirectoryDrive(value string) (err error) {
-	return instance.SetProperty("HomeDirectoryDrive", value)
+	return instance.SetProperty("HomeDirectoryDrive", (value))
 }
 
 // GetHomeDirectoryDrive gets the value of HomeDirectoryDrive for the instance
@@ -307,16 +390,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyHomeDirectoryDrive() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastLogoff sets the value of LastLogoff for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyLastLogoff(value string) (err error) {
-	return instance.SetProperty("LastLogoff", value)
+	return instance.SetProperty("LastLogoff", (value))
 }
 
 // GetLastLogoff gets the value of LastLogoff for the instance
@@ -325,16 +417,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyLastLogoff() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastLogon sets the value of LastLogon for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyLastLogon(value string) (err error) {
-	return instance.SetProperty("LastLogon", value)
+	return instance.SetProperty("LastLogon", (value))
 }
 
 // GetLastLogon gets the value of LastLogon for the instance
@@ -343,16 +444,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyLastLogon() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLogonHours sets the value of LogonHours for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyLogonHours(value string) (err error) {
-	return instance.SetProperty("LogonHours", value)
+	return instance.SetProperty("LogonHours", (value))
 }
 
 // GetLogonHours gets the value of LogonHours for the instance
@@ -361,16 +471,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyLogonHours() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLogonServer sets the value of LogonServer for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyLogonServer(value string) (err error) {
-	return instance.SetProperty("LogonServer", value)
+	return instance.SetProperty("LogonServer", (value))
 }
 
 // GetLogonServer gets the value of LogonServer for the instance
@@ -379,16 +498,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyLogonServer() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaximumStorage sets the value of MaximumStorage for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyMaximumStorage(value uint64) (err error) {
-	return instance.SetProperty("MaximumStorage", value)
+	return instance.SetProperty("MaximumStorage", (value))
 }
 
 // GetMaximumStorage gets the value of MaximumStorage for the instance
@@ -397,16 +525,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyMaximumStorage() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -415,16 +552,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfLogons sets the value of NumberOfLogons for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyNumberOfLogons(value uint32) (err error) {
-	return instance.SetProperty("NumberOfLogons", value)
+	return instance.SetProperty("NumberOfLogons", (value))
 }
 
 // GetNumberOfLogons gets the value of NumberOfLogons for the instance
@@ -433,16 +579,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyNumberOfLogons() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetParameters sets the value of Parameters for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyParameters(value string) (err error) {
-	return instance.SetProperty("Parameters", value)
+	return instance.SetProperty("Parameters", (value))
 }
 
 // GetParameters gets the value of Parameters for the instance
@@ -451,16 +606,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyParameters() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPasswordAge sets the value of PasswordAge for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyPasswordAge(value string) (err error) {
-	return instance.SetProperty("PasswordAge", value)
+	return instance.SetProperty("PasswordAge", (value))
 }
 
 // GetPasswordAge gets the value of PasswordAge for the instance
@@ -469,16 +633,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyPasswordAge() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPasswordExpires sets the value of PasswordExpires for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyPasswordExpires(value string) (err error) {
-	return instance.SetProperty("PasswordExpires", value)
+	return instance.SetProperty("PasswordExpires", (value))
 }
 
 // GetPasswordExpires gets the value of PasswordExpires for the instance
@@ -487,16 +660,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyPasswordExpires() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrimaryGroupId sets the value of PrimaryGroupId for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyPrimaryGroupId(value uint32) (err error) {
-	return instance.SetProperty("PrimaryGroupId", value)
+	return instance.SetProperty("PrimaryGroupId", (value))
 }
 
 // GetPrimaryGroupId gets the value of PrimaryGroupId for the instance
@@ -505,16 +687,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyPrimaryGroupId() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrivileges sets the value of Privileges for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyPrivileges(value uint32) (err error) {
-	return instance.SetProperty("Privileges", value)
+	return instance.SetProperty("Privileges", (value))
 }
 
 // GetPrivileges gets the value of Privileges for the instance
@@ -523,16 +714,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyPrivileges() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProfile sets the value of Profile for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyProfile(value string) (err error) {
-	return instance.SetProperty("Profile", value)
+	return instance.SetProperty("Profile", (value))
 }
 
 // GetProfile gets the value of Profile for the instance
@@ -541,16 +741,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyProfile() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScriptPath sets the value of ScriptPath for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyScriptPath(value string) (err error) {
-	return instance.SetProperty("ScriptPath", value)
+	return instance.SetProperty("ScriptPath", (value))
 }
 
 // GetScriptPath gets the value of ScriptPath for the instance
@@ -559,16 +768,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyScriptPath() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUnitsPerWeek sets the value of UnitsPerWeek for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyUnitsPerWeek(value uint32) (err error) {
-	return instance.SetProperty("UnitsPerWeek", value)
+	return instance.SetProperty("UnitsPerWeek", (value))
 }
 
 // GetUnitsPerWeek gets the value of UnitsPerWeek for the instance
@@ -577,16 +795,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyUnitsPerWeek() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUserComment sets the value of UserComment for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyUserComment(value string) (err error) {
-	return instance.SetProperty("UserComment", value)
+	return instance.SetProperty("UserComment", (value))
 }
 
 // GetUserComment gets the value of UserComment for the instance
@@ -595,16 +822,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyUserComment() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserId sets the value of UserId for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyUserId(value uint32) (err error) {
-	return instance.SetProperty("UserId", value)
+	return instance.SetProperty("UserId", (value))
 }
 
 // GetUserId gets the value of UserId for the instance
@@ -613,16 +849,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyUserId() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUserType sets the value of UserType for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyUserType(value string) (err error) {
-	return instance.SetProperty("UserType", value)
+	return instance.SetProperty("UserType", (value))
 }
 
 // GetUserType gets the value of UserType for the instance
@@ -631,16 +876,25 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyUserType() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWorkstations sets the value of Workstations for the instance
 func (instance *Win32_NetworkLoginProfile) SetPropertyWorkstations(value string) (err error) {
-	return instance.SetProperty("Workstations", value)
+	return instance.SetProperty("Workstations", (value))
 }
 
 // GetWorkstations gets the value of Workstations for the instance
@@ -649,9 +903,18 @@ func (instance *Win32_NetworkLoginProfile) GetPropertyWorkstations() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

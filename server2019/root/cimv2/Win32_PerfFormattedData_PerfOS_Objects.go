@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_PerfOS_Objects struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_PerfOS_ObjectsEx6(hostName string,
 
 // SetEvents sets the value of Events for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Objects) SetPropertyEvents(value uint32) (err error) {
-	return instance.SetProperty("Events", value)
+	return instance.SetProperty("Events", (value))
 }
 
 // GetEvents gets the value of Events for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Objects) GetPropertyEvents() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMutexes sets the value of Mutexes for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Objects) SetPropertyMutexes(value uint32) (err error) {
-	return instance.SetProperty("Mutexes", value)
+	return instance.SetProperty("Mutexes", (value))
 }
 
 // GetMutexes gets the value of Mutexes for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Objects) GetPropertyMutexes() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcesses sets the value of Processes for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Objects) SetPropertyProcesses(value uint32) (err error) {
-	return instance.SetProperty("Processes", value)
+	return instance.SetProperty("Processes", (value))
 }
 
 // GetProcesses gets the value of Processes for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Objects) GetPropertyProcesses() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSections sets the value of Sections for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Objects) SetPropertySections(value uint32) (err error) {
-	return instance.SetProperty("Sections", value)
+	return instance.SetProperty("Sections", (value))
 }
 
 // GetSections gets the value of Sections for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Objects) GetPropertySections() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSemaphores sets the value of Semaphores for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Objects) SetPropertySemaphores(value uint32) (err error) {
-	return instance.SetProperty("Semaphores", value)
+	return instance.SetProperty("Semaphores", (value))
 }
 
 // GetSemaphores gets the value of Semaphores for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_PerfOS_Objects) GetPropertySemaphores() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThreads sets the value of Threads for the instance
 func (instance *Win32_PerfFormattedData_PerfOS_Objects) SetPropertyThreads(value uint32) (err error) {
-	return instance.SetProperty("Threads", value)
+	return instance.SetProperty("Threads", (value))
 }
 
 // GetThreads gets the value of Threads for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_PerfOS_Objects) GetPropertyThreads() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

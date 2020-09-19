@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -76,12 +76,12 @@ func (instance *Msvm_MetricService) GetRelatedAggregationMetricDefinition() (val
 	return instance.GetAllRelated("Msvm_AggregationMetricDefinition")
 }
 
-func (instance *Msvm_MetricService) GetRelatedMetricServiceSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_MetricServiceSettingData")
-}
-
 func (instance *Msvm_MetricService) GetRelatedBaseMetricDefinition() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_BaseMetricDefinition")
+}
+
+func (instance *Msvm_MetricService) GetRelatedMetricServiceSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_MetricServiceSettingData")
 }
 
 func (instance *Msvm_MetricService) GetRelatedMetricServiceCapabilities() (value *cim.WmiInstance, err error) {

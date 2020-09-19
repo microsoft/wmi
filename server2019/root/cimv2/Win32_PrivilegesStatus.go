@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PrivilegesStatus struct
@@ -55,7 +57,7 @@ func NewWin32_PrivilegesStatusEx6(hostName string,
 
 // SetPrivilegesNotHeld sets the value of PrivilegesNotHeld for the instance
 func (instance *Win32_PrivilegesStatus) SetPropertyPrivilegesNotHeld(value []string) (err error) {
-	return instance.SetProperty("PrivilegesNotHeld", value)
+	return instance.SetProperty("PrivilegesNotHeld", (value))
 }
 
 // GetPrivilegesNotHeld gets the value of PrivilegesNotHeld for the instance
@@ -64,16 +66,26 @@ func (instance *Win32_PrivilegesStatus) GetPropertyPrivilegesNotHeld() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPrivilegesRequired sets the value of PrivilegesRequired for the instance
 func (instance *Win32_PrivilegesStatus) SetPropertyPrivilegesRequired(value []string) (err error) {
-	return instance.SetProperty("PrivilegesRequired", value)
+	return instance.SetProperty("PrivilegesRequired", (value))
 }
 
 // GetPrivilegesRequired gets the value of PrivilegesRequired for the instance
@@ -82,9 +94,19 @@ func (instance *Win32_PrivilegesStatus) GetPropertyPrivilegesRequired() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

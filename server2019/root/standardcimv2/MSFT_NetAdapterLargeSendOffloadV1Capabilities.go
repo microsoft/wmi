@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterLargeSendOffloadV1Capabilities struct
@@ -65,7 +67,7 @@ func NewMSFT_NetAdapterLargeSendOffloadV1CapabilitiesEx6(hostName string,
 
 // SetIPv4Encapsulation sets the value of IPv4Encapsulation for the instance
 func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) SetPropertyIPv4Encapsulation(value MSFT_NetAdapterLsoEncapsulationTypes) (err error) {
-	return instance.SetProperty("IPv4Encapsulation", value)
+	return instance.SetProperty("IPv4Encapsulation", (value))
 }
 
 // GetIPv4Encapsulation gets the value of IPv4Encapsulation for the instance
@@ -74,16 +76,25 @@ func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) GetPropertyIPv4En
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterLsoEncapsulationTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterLsoEncapsulationTypes)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterLsoEncapsulationTypes is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterLsoEncapsulationTypes(valuetmp)
+
 	return
 }
 
 // SetIPv4IpOptionsSupported sets the value of IPv4IpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) SetPropertyIPv4IpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4IpOptionsSupported", value)
+	return instance.SetProperty("IPv4IpOptionsSupported", (value))
 }
 
 // GetIPv4IpOptionsSupported gets the value of IPv4IpOptionsSupported for the instance
@@ -92,16 +103,25 @@ func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) GetPropertyIPv4Ip
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4MaxOffloadSizeSupported sets the value of IPv4MaxOffloadSizeSupported for the instance
 func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) SetPropertyIPv4MaxOffloadSizeSupported(value uint32) (err error) {
-	return instance.SetProperty("IPv4MaxOffloadSizeSupported", value)
+	return instance.SetProperty("IPv4MaxOffloadSizeSupported", (value))
 }
 
 // GetIPv4MaxOffloadSizeSupported gets the value of IPv4MaxOffloadSizeSupported for the instance
@@ -110,16 +130,25 @@ func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) GetPropertyIPv4Ma
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4MinSegmentCountSupported sets the value of IPv4MinSegmentCountSupported for the instance
 func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) SetPropertyIPv4MinSegmentCountSupported(value uint32) (err error) {
-	return instance.SetProperty("IPv4MinSegmentCountSupported", value)
+	return instance.SetProperty("IPv4MinSegmentCountSupported", (value))
 }
 
 // GetIPv4MinSegmentCountSupported gets the value of IPv4MinSegmentCountSupported for the instance
@@ -128,16 +157,25 @@ func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) GetPropertyIPv4Mi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4TcpOptionsSupported sets the value of IPv4TcpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) SetPropertyIPv4TcpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4TcpOptionsSupported", value)
+	return instance.SetProperty("IPv4TcpOptionsSupported", (value))
 }
 
 // GetIPv4TcpOptionsSupported gets the value of IPv4TcpOptionsSupported for the instance
@@ -146,9 +184,18 @@ func (instance *MSFT_NetAdapterLargeSendOffloadV1Capabilities) GetPropertyIPv4Tc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

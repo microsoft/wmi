@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_ThermalZoneInformation struct
@@ -61,7 +63,7 @@ func NewWin32_PerfRawData_Counters_ThermalZoneInformationEx6(hostName string,
 
 // SetHighPrecisionTemperature sets the value of HighPrecisionTemperature for the instance
 func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) SetPropertyHighPrecisionTemperature(value uint32) (err error) {
-	return instance.SetProperty("HighPrecisionTemperature", value)
+	return instance.SetProperty("HighPrecisionTemperature", (value))
 }
 
 // GetHighPrecisionTemperature gets the value of HighPrecisionTemperature for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) GetPropertyHi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentPassiveLimit sets the value of PercentPassiveLimit for the instance
 func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) SetPropertyPercentPassiveLimit(value uint32) (err error) {
-	return instance.SetProperty("PercentPassiveLimit", value)
+	return instance.SetProperty("PercentPassiveLimit", (value))
 }
 
 // GetPercentPassiveLimit gets the value of PercentPassiveLimit for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) GetPropertyPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTemperature sets the value of Temperature for the instance
 func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) SetPropertyTemperature(value uint32) (err error) {
-	return instance.SetProperty("Temperature", value)
+	return instance.SetProperty("Temperature", (value))
 }
 
 // GetTemperature gets the value of Temperature for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) GetPropertyTe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThrottleReasons sets the value of ThrottleReasons for the instance
 func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) SetPropertyThrottleReasons(value uint32) (err error) {
-	return instance.SetProperty("ThrottleReasons", value)
+	return instance.SetProperty("ThrottleReasons", (value))
 }
 
 // GetThrottleReasons gets the value of ThrottleReasons for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfRawData_Counters_ThermalZoneInformation) GetPropertyTh
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

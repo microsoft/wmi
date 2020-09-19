@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_SecurityStatusUser struct
@@ -68,7 +70,7 @@ func NewMDM_SecurityStatusUserEx6(hostName string,
 
 // SetConnectedAccountPolicy sets the value of ConnectedAccountPolicy for the instance
 func (instance *MDM_SecurityStatusUser) SetPropertyConnectedAccountPolicy(value uint32) (err error) {
-	return instance.SetProperty("ConnectedAccountPolicy", value)
+	return instance.SetProperty("ConnectedAccountPolicy", (value))
 }
 
 // GetConnectedAccountPolicy gets the value of ConnectedAccountPolicy for the instance
@@ -77,16 +79,25 @@ func (instance *MDM_SecurityStatusUser) GetPropertyConnectedAccountPolicy() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDeviceEncryptionPolicy sets the value of DeviceEncryptionPolicy for the instance
 func (instance *MDM_SecurityStatusUser) SetPropertyDeviceEncryptionPolicy(value uint32) (err error) {
-	return instance.SetProperty("DeviceEncryptionPolicy", value)
+	return instance.SetProperty("DeviceEncryptionPolicy", (value))
 }
 
 // GetDeviceEncryptionPolicy gets the value of DeviceEncryptionPolicy for the instance
@@ -95,16 +106,25 @@ func (instance *MDM_SecurityStatusUser) GetPropertyDeviceEncryptionPolicy() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncryptionStatus sets the value of EncryptionStatus for the instance
 func (instance *MDM_SecurityStatusUser) SetPropertyEncryptionStatus(value uint32) (err error) {
-	return instance.SetProperty("EncryptionStatus", value)
+	return instance.SetProperty("EncryptionStatus", (value))
 }
 
 // GetEncryptionStatus gets the value of EncryptionStatus for the instance
@@ -113,16 +133,25 @@ func (instance *MDM_SecurityStatusUser) GetPropertyEncryptionStatus() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHasConnectedAccount sets the value of HasConnectedAccount for the instance
 func (instance *MDM_SecurityStatusUser) SetPropertyHasConnectedAccount(value bool) (err error) {
-	return instance.SetProperty("HasConnectedAccount", value)
+	return instance.SetProperty("HasConnectedAccount", (value))
 }
 
 // GetHasConnectedAccount gets the value of HasConnectedAccount for the instance
@@ -131,16 +160,25 @@ func (instance *MDM_SecurityStatusUser) GetPropertyHasConnectedAccount() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *MDM_SecurityStatusUser) SetPropertykey(value uint32) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -149,16 +187,25 @@ func (instance *MDM_SecurityStatusUser) GetPropertykey() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPasswordStatus sets the value of PasswordStatus for the instance
 func (instance *MDM_SecurityStatusUser) SetPropertyPasswordStatus(value uint32) (err error) {
-	return instance.SetProperty("PasswordStatus", value)
+	return instance.SetProperty("PasswordStatus", (value))
 }
 
 // GetPasswordStatus gets the value of PasswordStatus for the instance
@@ -167,9 +214,18 @@ func (instance *MDM_SecurityStatusUser) GetPropertyPasswordStatus() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

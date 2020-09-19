@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventVmSwitchProvider struct
@@ -55,7 +57,7 @@ func NewMSFT_NetEventVmSwitchProviderEx6(hostName string,
 
 // SetPortIds sets the value of PortIds for the instance
 func (instance *MSFT_NetEventVmSwitchProvider) SetPropertyPortIds(value []uint32) (err error) {
-	return instance.SetProperty("PortIds", value)
+	return instance.SetProperty("PortIds", (value))
 }
 
 // GetPortIds gets the value of PortIds for the instance
@@ -64,16 +66,26 @@ func (instance *MSFT_NetEventVmSwitchProvider) GetPropertyPortIds() (value []uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetSwitchName sets the value of SwitchName for the instance
 func (instance *MSFT_NetEventVmSwitchProvider) SetPropertySwitchName(value string) (err error) {
-	return instance.SetProperty("SwitchName", value)
+	return instance.SetProperty("SwitchName", (value))
 }
 
 // GetSwitchName gets the value of SwitchName for the instance
@@ -82,9 +94,18 @@ func (instance *MSFT_NetEventVmSwitchProvider) GetPropertySwitchName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_PacketDirectCapabilities struct
@@ -98,7 +100,7 @@ func NewMSFT_NetAdapter_PacketDirectCapabilitiesEx6(hostName string,
 
 // SetDrainNotificationSupported sets the value of DrainNotificationSupported for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyDrainNotificationSupported(value bool) (err error) {
-	return instance.SetProperty("DrainNotificationSupported", value)
+	return instance.SetProperty("DrainNotificationSupported", (value))
 }
 
 // GetDrainNotificationSupported gets the value of DrainNotificationSupported for the instance
@@ -107,16 +109,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyDrainNotifi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaximumModerationInterval sets the value of MaximumModerationInterval for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumModerationInterval(value uint32) (err error) {
-	return instance.SetProperty("MaximumModerationInterval", value)
+	return instance.SetProperty("MaximumModerationInterval", (value))
 }
 
 // GetMaximumModerationInterval gets the value of MaximumModerationInterval for the instance
@@ -125,16 +136,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumMode
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumNumberOfRxQueues sets the value of MaximumNumberOfRxQueues for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumNumberOfRxQueues(value uint32) (err error) {
-	return instance.SetProperty("MaximumNumberOfRxQueues", value)
+	return instance.SetProperty("MaximumNumberOfRxQueues", (value))
 }
 
 // GetMaximumNumberOfRxQueues gets the value of MaximumNumberOfRxQueues for the instance
@@ -143,16 +163,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumNumberOfRxQueuesForDefaultVPort sets the value of MaximumNumberOfRxQueuesForDefaultVPort for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumNumberOfRxQueuesForDefaultVPort(value uint32) (err error) {
-	return instance.SetProperty("MaximumNumberOfRxQueuesForDefaultVPort", value)
+	return instance.SetProperty("MaximumNumberOfRxQueuesForDefaultVPort", (value))
 }
 
 // GetMaximumNumberOfRxQueuesForDefaultVPort gets the value of MaximumNumberOfRxQueuesForDefaultVPort for the instance
@@ -161,16 +190,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumNumberOfRxQueuesPerNonDefaultVPort sets the value of MaximumNumberOfRxQueuesPerNonDefaultVPort for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumNumberOfRxQueuesPerNonDefaultVPort(value uint32) (err error) {
-	return instance.SetProperty("MaximumNumberOfRxQueuesPerNonDefaultVPort", value)
+	return instance.SetProperty("MaximumNumberOfRxQueuesPerNonDefaultVPort", (value))
 }
 
 // GetMaximumNumberOfRxQueuesPerNonDefaultVPort gets the value of MaximumNumberOfRxQueuesPerNonDefaultVPort for the instance
@@ -179,16 +217,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumNumberOfTxQueues sets the value of MaximumNumberOfTxQueues for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumNumberOfTxQueues(value uint32) (err error) {
-	return instance.SetProperty("MaximumNumberOfTxQueues", value)
+	return instance.SetProperty("MaximumNumberOfTxQueues", (value))
 }
 
 // GetMaximumNumberOfTxQueues gets the value of MaximumNumberOfTxQueues for the instance
@@ -197,16 +244,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumNumberOfTxQueuesForDefaultVPort sets the value of MaximumNumberOfTxQueuesForDefaultVPort for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumNumberOfTxQueuesForDefaultVPort(value uint32) (err error) {
-	return instance.SetProperty("MaximumNumberOfTxQueuesForDefaultVPort", value)
+	return instance.SetProperty("MaximumNumberOfTxQueuesForDefaultVPort", (value))
 }
 
 // GetMaximumNumberOfTxQueuesForDefaultVPort gets the value of MaximumNumberOfTxQueuesForDefaultVPort for the instance
@@ -215,16 +271,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumNumberOfTxQueuesPerNonDefaultVPort sets the value of MaximumNumberOfTxQueuesPerNonDefaultVPort for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumNumberOfTxQueuesPerNonDefaultVPort(value uint32) (err error) {
-	return instance.SetProperty("MaximumNumberOfTxQueuesPerNonDefaultVPort", value)
+	return instance.SetProperty("MaximumNumberOfTxQueuesPerNonDefaultVPort", (value))
 }
 
 // GetMaximumNumberOfTxQueuesPerNonDefaultVPort gets the value of MaximumNumberOfTxQueuesPerNonDefaultVPort for the instance
@@ -233,16 +298,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumNumb
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumRxPartialBufferCount sets the value of MaximumRxPartialBufferCount for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumRxPartialBufferCount(value uint32) (err error) {
-	return instance.SetProperty("MaximumRxPartialBufferCount", value)
+	return instance.SetProperty("MaximumRxPartialBufferCount", (value))
 }
 
 // GetMaximumRxPartialBufferCount gets the value of MaximumRxPartialBufferCount for the instance
@@ -251,16 +325,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumRxPa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumRxQueueSize sets the value of MaximumRxQueueSize for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumRxQueueSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumRxQueueSize", value)
+	return instance.SetProperty("MaximumRxQueueSize", (value))
 }
 
 // GetMaximumRxQueueSize gets the value of MaximumRxQueueSize for the instance
@@ -269,16 +352,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumRxQu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumTxPartialBufferCount sets the value of MaximumTxPartialBufferCount for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumTxPartialBufferCount(value uint32) (err error) {
-	return instance.SetProperty("MaximumTxPartialBufferCount", value)
+	return instance.SetProperty("MaximumTxPartialBufferCount", (value))
 }
 
 // GetMaximumTxPartialBufferCount gets the value of MaximumTxPartialBufferCount for the instance
@@ -287,16 +379,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumTxPa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumTxQueueSize sets the value of MaximumTxQueueSize for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMaximumTxQueueSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumTxQueueSize", value)
+	return instance.SetProperty("MaximumTxQueueSize", (value))
 }
 
 // GetMaximumTxQueueSize gets the value of MaximumTxQueueSize for the instance
@@ -305,16 +406,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMaximumTxQu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinimumModerationInterval sets the value of MinimumModerationInterval for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyMinimumModerationInterval(value uint32) (err error) {
-	return instance.SetProperty("MinimumModerationInterval", value)
+	return instance.SetProperty("MinimumModerationInterval", (value))
 }
 
 // GetMinimumModerationInterval gets the value of MinimumModerationInterval for the instance
@@ -323,16 +433,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyMinimumMode
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetModerationByCountSupported sets the value of ModerationByCountSupported for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyModerationByCountSupported(value bool) (err error) {
-	return instance.SetProperty("ModerationByCountSupported", value)
+	return instance.SetProperty("ModerationByCountSupported", (value))
 }
 
 // GetModerationByCountSupported gets the value of ModerationByCountSupported for the instance
@@ -341,16 +460,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyModerationB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetModerationByIntervalSupported sets the value of ModerationByIntervalSupported for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyModerationByIntervalSupported(value bool) (err error) {
-	return instance.SetProperty("ModerationByIntervalSupported", value)
+	return instance.SetProperty("ModerationByIntervalSupported", (value))
 }
 
 // GetModerationByIntervalSupported gets the value of ModerationByIntervalSupported for the instance
@@ -359,16 +487,25 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyModerationB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetModerationIntervalGranularity sets the value of ModerationIntervalGranularity for the instance
 func (instance *MSFT_NetAdapter_PacketDirectCapabilities) SetPropertyModerationIntervalGranularity(value uint32) (err error) {
-	return instance.SetProperty("ModerationIntervalGranularity", value)
+	return instance.SetProperty("ModerationIntervalGranularity", (value))
 }
 
 // GetModerationIntervalGranularity gets the value of ModerationIntervalGranularity for the instance
@@ -377,9 +514,18 @@ func (instance *MSFT_NetAdapter_PacketDirectCapabilities) GetPropertyModerationI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

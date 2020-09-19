@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_Cluster struct
@@ -315,9 +317,6 @@ type MSCluster_Cluster struct {
 	UseClientAccessNetworksForSharedVolumes uint32
 
 	//
-	UseRdmaForStorage uint32
-
-	//
 	WitnessDatabaseWriteTimeout uint32
 
 	//
@@ -358,7 +357,7 @@ func NewMSCluster_ClusterEx6(hostName string,
 
 // SetAddEvictDelay sets the value of AddEvictDelay for the instance
 func (instance *MSCluster_Cluster) SetPropertyAddEvictDelay(value uint32) (err error) {
-	return instance.SetProperty("AddEvictDelay", value)
+	return instance.SetProperty("AddEvictDelay", (value))
 }
 
 // GetAddEvictDelay gets the value of AddEvictDelay for the instance
@@ -367,16 +366,25 @@ func (instance *MSCluster_Cluster) GetPropertyAddEvictDelay() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAdminAccessPoint sets the value of AdminAccessPoint for the instance
 func (instance *MSCluster_Cluster) SetPropertyAdminAccessPoint(value uint32) (err error) {
-	return instance.SetProperty("AdminAccessPoint", value)
+	return instance.SetProperty("AdminAccessPoint", (value))
 }
 
 // GetAdminAccessPoint gets the value of AdminAccessPoint for the instance
@@ -385,16 +393,25 @@ func (instance *MSCluster_Cluster) GetPropertyAdminAccessPoint() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAdminExtensions sets the value of AdminExtensions for the instance
 func (instance *MSCluster_Cluster) SetPropertyAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("AdminExtensions", value)
+	return instance.SetProperty("AdminExtensions", (value))
 }
 
 // GetAdminExtensions gets the value of AdminExtensions for the instance
@@ -403,16 +420,26 @@ func (instance *MSCluster_Cluster) GetPropertyAdminExtensions() (value []string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetAutoAssignNodeSite sets the value of AutoAssignNodeSite for the instance
 func (instance *MSCluster_Cluster) SetPropertyAutoAssignNodeSite(value uint32) (err error) {
-	return instance.SetProperty("AutoAssignNodeSite", value)
+	return instance.SetProperty("AutoAssignNodeSite", (value))
 }
 
 // GetAutoAssignNodeSite gets the value of AutoAssignNodeSite for the instance
@@ -421,16 +448,25 @@ func (instance *MSCluster_Cluster) GetPropertyAutoAssignNodeSite() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAutoBalancerLevel sets the value of AutoBalancerLevel for the instance
 func (instance *MSCluster_Cluster) SetPropertyAutoBalancerLevel(value uint32) (err error) {
-	return instance.SetProperty("AutoBalancerLevel", value)
+	return instance.SetProperty("AutoBalancerLevel", (value))
 }
 
 // GetAutoBalancerLevel gets the value of AutoBalancerLevel for the instance
@@ -439,16 +475,25 @@ func (instance *MSCluster_Cluster) GetPropertyAutoBalancerLevel() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAutoBalancerMode sets the value of AutoBalancerMode for the instance
 func (instance *MSCluster_Cluster) SetPropertyAutoBalancerMode(value uint32) (err error) {
-	return instance.SetProperty("AutoBalancerMode", value)
+	return instance.SetProperty("AutoBalancerMode", (value))
 }
 
 // GetAutoBalancerMode gets the value of AutoBalancerMode for the instance
@@ -457,16 +502,25 @@ func (instance *MSCluster_Cluster) GetPropertyAutoBalancerMode() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBackupInProgress sets the value of BackupInProgress for the instance
 func (instance *MSCluster_Cluster) SetPropertyBackupInProgress(value uint32) (err error) {
-	return instance.SetProperty("BackupInProgress", value)
+	return instance.SetProperty("BackupInProgress", (value))
 }
 
 // GetBackupInProgress gets the value of BackupInProgress for the instance
@@ -475,16 +529,25 @@ func (instance *MSCluster_Cluster) GetPropertyBackupInProgress() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBlockCacheSize sets the value of BlockCacheSize for the instance
 func (instance *MSCluster_Cluster) SetPropertyBlockCacheSize(value uint32) (err error) {
-	return instance.SetProperty("BlockCacheSize", value)
+	return instance.SetProperty("BlockCacheSize", (value))
 }
 
 // GetBlockCacheSize gets the value of BlockCacheSize for the instance
@@ -493,16 +556,25 @@ func (instance *MSCluster_Cluster) GetPropertyBlockCacheSize() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusSvcHangTimeout sets the value of ClusSvcHangTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusSvcHangTimeout(value uint32) (err error) {
-	return instance.SetProperty("ClusSvcHangTimeout", value)
+	return instance.SetProperty("ClusSvcHangTimeout", (value))
 }
 
 // GetClusSvcHangTimeout gets the value of ClusSvcHangTimeout for the instance
@@ -511,16 +583,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusSvcHangTimeout() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusSvcRegroupOpeningTimeout sets the value of ClusSvcRegroupOpeningTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusSvcRegroupOpeningTimeout(value uint32) (err error) {
-	return instance.SetProperty("ClusSvcRegroupOpeningTimeout", value)
+	return instance.SetProperty("ClusSvcRegroupOpeningTimeout", (value))
 }
 
 // GetClusSvcRegroupOpeningTimeout gets the value of ClusSvcRegroupOpeningTimeout for the instance
@@ -529,16 +610,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusSvcRegroupOpeningTimeout() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusSvcRegroupPruningTimeout sets the value of ClusSvcRegroupPruningTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusSvcRegroupPruningTimeout(value uint32) (err error) {
-	return instance.SetProperty("ClusSvcRegroupPruningTimeout", value)
+	return instance.SetProperty("ClusSvcRegroupPruningTimeout", (value))
 }
 
 // GetClusSvcRegroupPruningTimeout gets the value of ClusSvcRegroupPruningTimeout for the instance
@@ -547,16 +637,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusSvcRegroupPruningTimeout() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusSvcRegroupStageTimeout sets the value of ClusSvcRegroupStageTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusSvcRegroupStageTimeout(value uint32) (err error) {
-	return instance.SetProperty("ClusSvcRegroupStageTimeout", value)
+	return instance.SetProperty("ClusSvcRegroupStageTimeout", (value))
 }
 
 // GetClusSvcRegroupStageTimeout gets the value of ClusSvcRegroupStageTimeout for the instance
@@ -565,16 +664,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusSvcRegroupStageTimeout() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusSvcRegroupTickInMilliseconds sets the value of ClusSvcRegroupTickInMilliseconds for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusSvcRegroupTickInMilliseconds(value uint32) (err error) {
-	return instance.SetProperty("ClusSvcRegroupTickInMilliseconds", value)
+	return instance.SetProperty("ClusSvcRegroupTickInMilliseconds", (value))
 }
 
 // GetClusSvcRegroupTickInMilliseconds gets the value of ClusSvcRegroupTickInMilliseconds for the instance
@@ -583,16 +691,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusSvcRegroupTickInMilliseconds()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusterEnforcedAntiAffinity sets the value of ClusterEnforcedAntiAffinity for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusterEnforcedAntiAffinity(value uint32) (err error) {
-	return instance.SetProperty("ClusterEnforcedAntiAffinity", value)
+	return instance.SetProperty("ClusterEnforcedAntiAffinity", (value))
 }
 
 // GetClusterEnforcedAntiAffinity gets the value of ClusterEnforcedAntiAffinity for the instance
@@ -601,16 +718,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusterEnforcedAntiAffinity() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusterFunctionalLevel sets the value of ClusterFunctionalLevel for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusterFunctionalLevel(value uint32) (err error) {
-	return instance.SetProperty("ClusterFunctionalLevel", value)
+	return instance.SetProperty("ClusterFunctionalLevel", (value))
 }
 
 // GetClusterFunctionalLevel gets the value of ClusterFunctionalLevel for the instance
@@ -619,16 +745,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusterFunctionalLevel() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusterGroupWaitDelay sets the value of ClusterGroupWaitDelay for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusterGroupWaitDelay(value uint32) (err error) {
-	return instance.SetProperty("ClusterGroupWaitDelay", value)
+	return instance.SetProperty("ClusterGroupWaitDelay", (value))
 }
 
 // GetClusterGroupWaitDelay gets the value of ClusterGroupWaitDelay for the instance
@@ -637,16 +772,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusterGroupWaitDelay() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusterLogLevel sets the value of ClusterLogLevel for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusterLogLevel(value uint32) (err error) {
-	return instance.SetProperty("ClusterLogLevel", value)
+	return instance.SetProperty("ClusterLogLevel", (value))
 }
 
 // GetClusterLogLevel gets the value of ClusterLogLevel for the instance
@@ -655,16 +799,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusterLogLevel() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusterLogSize sets the value of ClusterLogSize for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusterLogSize(value uint32) (err error) {
-	return instance.SetProperty("ClusterLogSize", value)
+	return instance.SetProperty("ClusterLogSize", (value))
 }
 
 // GetClusterLogSize gets the value of ClusterLogSize for the instance
@@ -673,16 +826,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusterLogSize() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusterUpgradeVersion sets the value of ClusterUpgradeVersion for the instance
 func (instance *MSCluster_Cluster) SetPropertyClusterUpgradeVersion(value uint32) (err error) {
-	return instance.SetProperty("ClusterUpgradeVersion", value)
+	return instance.SetProperty("ClusterUpgradeVersion", (value))
 }
 
 // GetClusterUpgradeVersion gets the value of ClusterUpgradeVersion for the instance
@@ -691,16 +853,25 @@ func (instance *MSCluster_Cluster) GetPropertyClusterUpgradeVersion() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCrossSiteDelay sets the value of CrossSiteDelay for the instance
 func (instance *MSCluster_Cluster) SetPropertyCrossSiteDelay(value uint32) (err error) {
-	return instance.SetProperty("CrossSiteDelay", value)
+	return instance.SetProperty("CrossSiteDelay", (value))
 }
 
 // GetCrossSiteDelay gets the value of CrossSiteDelay for the instance
@@ -709,16 +880,25 @@ func (instance *MSCluster_Cluster) GetPropertyCrossSiteDelay() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCrossSiteThreshold sets the value of CrossSiteThreshold for the instance
 func (instance *MSCluster_Cluster) SetPropertyCrossSiteThreshold(value uint32) (err error) {
-	return instance.SetProperty("CrossSiteThreshold", value)
+	return instance.SetProperty("CrossSiteThreshold", (value))
 }
 
 // GetCrossSiteThreshold gets the value of CrossSiteThreshold for the instance
@@ -727,16 +907,25 @@ func (instance *MSCluster_Cluster) GetPropertyCrossSiteThreshold() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCrossSubnetDelay sets the value of CrossSubnetDelay for the instance
 func (instance *MSCluster_Cluster) SetPropertyCrossSubnetDelay(value uint32) (err error) {
-	return instance.SetProperty("CrossSubnetDelay", value)
+	return instance.SetProperty("CrossSubnetDelay", (value))
 }
 
 // GetCrossSubnetDelay gets the value of CrossSubnetDelay for the instance
@@ -745,16 +934,25 @@ func (instance *MSCluster_Cluster) GetPropertyCrossSubnetDelay() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCrossSubnetThreshold sets the value of CrossSubnetThreshold for the instance
 func (instance *MSCluster_Cluster) SetPropertyCrossSubnetThreshold(value uint32) (err error) {
-	return instance.SetProperty("CrossSubnetThreshold", value)
+	return instance.SetProperty("CrossSubnetThreshold", (value))
 }
 
 // GetCrossSubnetThreshold gets the value of CrossSubnetThreshold for the instance
@@ -763,16 +961,25 @@ func (instance *MSCluster_Cluster) GetPropertyCrossSubnetThreshold() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCsvBalancer sets the value of CsvBalancer for the instance
 func (instance *MSCluster_Cluster) SetPropertyCsvBalancer(value uint32) (err error) {
-	return instance.SetProperty("CsvBalancer", value)
+	return instance.SetProperty("CsvBalancer", (value))
 }
 
 // GetCsvBalancer gets the value of CsvBalancer for the instance
@@ -781,16 +988,25 @@ func (instance *MSCluster_Cluster) GetPropertyCsvBalancer() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabaseReadWriteMode sets the value of DatabaseReadWriteMode for the instance
 func (instance *MSCluster_Cluster) SetPropertyDatabaseReadWriteMode(value uint32) (err error) {
-	return instance.SetProperty("DatabaseReadWriteMode", value)
+	return instance.SetProperty("DatabaseReadWriteMode", (value))
 }
 
 // GetDatabaseReadWriteMode gets the value of DatabaseReadWriteMode for the instance
@@ -799,16 +1015,25 @@ func (instance *MSCluster_Cluster) GetPropertyDatabaseReadWriteMode() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDefaultNetworkRole sets the value of DefaultNetworkRole for the instance
 func (instance *MSCluster_Cluster) SetPropertyDefaultNetworkRole(value uint32) (err error) {
-	return instance.SetProperty("DefaultNetworkRole", value)
+	return instance.SetProperty("DefaultNetworkRole", (value))
 }
 
 // GetDefaultNetworkRole gets the value of DefaultNetworkRole for the instance
@@ -817,16 +1042,25 @@ func (instance *MSCluster_Cluster) GetPropertyDefaultNetworkRole() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDetectedCloudPlatform sets the value of DetectedCloudPlatform for the instance
 func (instance *MSCluster_Cluster) SetPropertyDetectedCloudPlatform(value uint32) (err error) {
-	return instance.SetProperty("DetectedCloudPlatform", value)
+	return instance.SetProperty("DetectedCloudPlatform", (value))
 }
 
 // GetDetectedCloudPlatform gets the value of DetectedCloudPlatform for the instance
@@ -835,16 +1069,25 @@ func (instance *MSCluster_Cluster) GetPropertyDetectedCloudPlatform() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDetectManagedEvents sets the value of DetectManagedEvents for the instance
 func (instance *MSCluster_Cluster) SetPropertyDetectManagedEvents(value uint32) (err error) {
-	return instance.SetProperty("DetectManagedEvents", value)
+	return instance.SetProperty("DetectManagedEvents", (value))
 }
 
 // GetDetectManagedEvents gets the value of DetectManagedEvents for the instance
@@ -853,16 +1096,25 @@ func (instance *MSCluster_Cluster) GetPropertyDetectManagedEvents() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDetectManagedEventsThreshold sets the value of DetectManagedEventsThreshold for the instance
 func (instance *MSCluster_Cluster) SetPropertyDetectManagedEventsThreshold(value uint32) (err error) {
-	return instance.SetProperty("DetectManagedEventsThreshold", value)
+	return instance.SetProperty("DetectManagedEventsThreshold", (value))
 }
 
 // GetDetectManagedEventsThreshold gets the value of DetectManagedEventsThreshold for the instance
@@ -871,16 +1123,25 @@ func (instance *MSCluster_Cluster) GetPropertyDetectManagedEventsThreshold() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDisableGroupPreferredOwnerRandomization sets the value of DisableGroupPreferredOwnerRandomization for the instance
 func (instance *MSCluster_Cluster) SetPropertyDisableGroupPreferredOwnerRandomization(value uint32) (err error) {
-	return instance.SetProperty("DisableGroupPreferredOwnerRandomization", value)
+	return instance.SetProperty("DisableGroupPreferredOwnerRandomization", (value))
 }
 
 // GetDisableGroupPreferredOwnerRandomization gets the value of DisableGroupPreferredOwnerRandomization for the instance
@@ -889,16 +1150,25 @@ func (instance *MSCluster_Cluster) GetPropertyDisableGroupPreferredOwnerRandomiz
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDrainOnShutdown sets the value of DrainOnShutdown for the instance
 func (instance *MSCluster_Cluster) SetPropertyDrainOnShutdown(value uint32) (err error) {
-	return instance.SetProperty("DrainOnShutdown", value)
+	return instance.SetProperty("DrainOnShutdown", (value))
 }
 
 // GetDrainOnShutdown gets the value of DrainOnShutdown for the instance
@@ -907,16 +1177,25 @@ func (instance *MSCluster_Cluster) GetPropertyDrainOnShutdown() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDumpPolicy sets the value of DumpPolicy for the instance
 func (instance *MSCluster_Cluster) SetPropertyDumpPolicy(value uint64) (err error) {
-	return instance.SetProperty("DumpPolicy", value)
+	return instance.SetProperty("DumpPolicy", (value))
 }
 
 // GetDumpPolicy gets the value of DumpPolicy for the instance
@@ -925,16 +1204,25 @@ func (instance *MSCluster_Cluster) GetPropertyDumpPolicy() (value uint64, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDynamicQuorumEnabled sets the value of DynamicQuorumEnabled for the instance
 func (instance *MSCluster_Cluster) SetPropertyDynamicQuorumEnabled(value uint32) (err error) {
-	return instance.SetProperty("DynamicQuorumEnabled", value)
+	return instance.SetProperty("DynamicQuorumEnabled", (value))
 }
 
 // GetDynamicQuorumEnabled gets the value of DynamicQuorumEnabled for the instance
@@ -943,16 +1231,25 @@ func (instance *MSCluster_Cluster) GetPropertyDynamicQuorumEnabled() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnabledEventLogs sets the value of EnabledEventLogs for the instance
 func (instance *MSCluster_Cluster) SetPropertyEnabledEventLogs(value []string) (err error) {
-	return instance.SetProperty("EnabledEventLogs", value)
+	return instance.SetProperty("EnabledEventLogs", (value))
 }
 
 // GetEnabledEventLogs gets the value of EnabledEventLogs for the instance
@@ -961,16 +1258,26 @@ func (instance *MSCluster_Cluster) GetPropertyEnabledEventLogs() (value []string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetEnableSharedVolumes sets the value of EnableSharedVolumes for the instance
 func (instance *MSCluster_Cluster) SetPropertyEnableSharedVolumes(value uint32) (err error) {
-	return instance.SetProperty("EnableSharedVolumes", value)
+	return instance.SetProperty("EnableSharedVolumes", (value))
 }
 
 // GetEnableSharedVolumes gets the value of EnableSharedVolumes for the instance
@@ -979,16 +1286,25 @@ func (instance *MSCluster_Cluster) GetPropertyEnableSharedVolumes() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFixQuorum sets the value of FixQuorum for the instance
 func (instance *MSCluster_Cluster) SetPropertyFixQuorum(value uint32) (err error) {
-	return instance.SetProperty("FixQuorum", value)
+	return instance.SetProperty("FixQuorum", (value))
 }
 
 // GetFixQuorum gets the value of FixQuorum for the instance
@@ -997,16 +1313,25 @@ func (instance *MSCluster_Cluster) GetPropertyFixQuorum() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFqdn sets the value of Fqdn for the instance
 func (instance *MSCluster_Cluster) SetPropertyFqdn(value string) (err error) {
-	return instance.SetProperty("Fqdn", value)
+	return instance.SetProperty("Fqdn", (value))
 }
 
 // GetFqdn gets the value of Fqdn for the instance
@@ -1015,16 +1340,25 @@ func (instance *MSCluster_Cluster) GetPropertyFqdn() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGracePeriodEnabled sets the value of GracePeriodEnabled for the instance
 func (instance *MSCluster_Cluster) SetPropertyGracePeriodEnabled(value uint32) (err error) {
-	return instance.SetProperty("GracePeriodEnabled", value)
+	return instance.SetProperty("GracePeriodEnabled", (value))
 }
 
 // GetGracePeriodEnabled gets the value of GracePeriodEnabled for the instance
@@ -1033,16 +1367,25 @@ func (instance *MSCluster_Cluster) GetPropertyGracePeriodEnabled() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGracePeriodTimeout sets the value of GracePeriodTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyGracePeriodTimeout(value uint32) (err error) {
-	return instance.SetProperty("GracePeriodTimeout", value)
+	return instance.SetProperty("GracePeriodTimeout", (value))
 }
 
 // GetGracePeriodTimeout gets the value of GracePeriodTimeout for the instance
@@ -1051,16 +1394,25 @@ func (instance *MSCluster_Cluster) GetPropertyGracePeriodTimeout() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGroupAdminExtensions sets the value of GroupAdminExtensions for the instance
 func (instance *MSCluster_Cluster) SetPropertyGroupAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("GroupAdminExtensions", value)
+	return instance.SetProperty("GroupAdminExtensions", (value))
 }
 
 // GetGroupAdminExtensions gets the value of GroupAdminExtensions for the instance
@@ -1069,16 +1421,26 @@ func (instance *MSCluster_Cluster) GetPropertyGroupAdminExtensions() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetGroupDependencyTimeout sets the value of GroupDependencyTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyGroupDependencyTimeout(value uint32) (err error) {
-	return instance.SetProperty("GroupDependencyTimeout", value)
+	return instance.SetProperty("GroupDependencyTimeout", (value))
 }
 
 // GetGroupDependencyTimeout gets the value of GroupDependencyTimeout for the instance
@@ -1087,16 +1449,25 @@ func (instance *MSCluster_Cluster) GetPropertyGroupDependencyTimeout() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHangRecoveryAction sets the value of HangRecoveryAction for the instance
 func (instance *MSCluster_Cluster) SetPropertyHangRecoveryAction(value uint32) (err error) {
-	return instance.SetProperty("HangRecoveryAction", value)
+	return instance.SetProperty("HangRecoveryAction", (value))
 }
 
 // GetHangRecoveryAction gets the value of HangRecoveryAction for the instance
@@ -1105,16 +1476,25 @@ func (instance *MSCluster_Cluster) GetPropertyHangRecoveryAction() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIgnorePersistentStateOnStartup sets the value of IgnorePersistentStateOnStartup for the instance
 func (instance *MSCluster_Cluster) SetPropertyIgnorePersistentStateOnStartup(value uint32) (err error) {
-	return instance.SetProperty("IgnorePersistentStateOnStartup", value)
+	return instance.SetProperty("IgnorePersistentStateOnStartup", (value))
 }
 
 // GetIgnorePersistentStateOnStartup gets the value of IgnorePersistentStateOnStartup for the instance
@@ -1123,16 +1503,25 @@ func (instance *MSCluster_Cluster) GetPropertyIgnorePersistentStateOnStartup() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogResourceControls sets the value of LogResourceControls for the instance
 func (instance *MSCluster_Cluster) SetPropertyLogResourceControls(value uint32) (err error) {
-	return instance.SetProperty("LogResourceControls", value)
+	return instance.SetProperty("LogResourceControls", (value))
 }
 
 // GetLogResourceControls gets the value of LogResourceControls for the instance
@@ -1141,16 +1530,25 @@ func (instance *MSCluster_Cluster) GetPropertyLogResourceControls() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLowerQuorumPriorityNodeId sets the value of LowerQuorumPriorityNodeId for the instance
 func (instance *MSCluster_Cluster) SetPropertyLowerQuorumPriorityNodeId(value uint32) (err error) {
-	return instance.SetProperty("LowerQuorumPriorityNodeId", value)
+	return instance.SetProperty("LowerQuorumPriorityNodeId", (value))
 }
 
 // GetLowerQuorumPriorityNodeId gets the value of LowerQuorumPriorityNodeId for the instance
@@ -1159,16 +1557,25 @@ func (instance *MSCluster_Cluster) GetPropertyLowerQuorumPriorityNodeId() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaintenanceFile sets the value of MaintenanceFile for the instance
 func (instance *MSCluster_Cluster) SetPropertyMaintenanceFile(value string) (err error) {
-	return instance.SetProperty("MaintenanceFile", value)
+	return instance.SetProperty("MaintenanceFile", (value))
 }
 
 // GetMaintenanceFile gets the value of MaintenanceFile for the instance
@@ -1177,16 +1584,25 @@ func (instance *MSCluster_Cluster) GetPropertyMaintenanceFile() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMessageBufferLength sets the value of MessageBufferLength for the instance
 func (instance *MSCluster_Cluster) SetPropertyMessageBufferLength(value uint32) (err error) {
-	return instance.SetProperty("MessageBufferLength", value)
+	return instance.SetProperty("MessageBufferLength", (value))
 }
 
 // GetMessageBufferLength gets the value of MessageBufferLength for the instance
@@ -1195,16 +1611,25 @@ func (instance *MSCluster_Cluster) GetPropertyMessageBufferLength() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinimumNeverPreemptPriority sets the value of MinimumNeverPreemptPriority for the instance
 func (instance *MSCluster_Cluster) SetPropertyMinimumNeverPreemptPriority(value uint32) (err error) {
-	return instance.SetProperty("MinimumNeverPreemptPriority", value)
+	return instance.SetProperty("MinimumNeverPreemptPriority", (value))
 }
 
 // GetMinimumNeverPreemptPriority gets the value of MinimumNeverPreemptPriority for the instance
@@ -1213,16 +1638,25 @@ func (instance *MSCluster_Cluster) GetPropertyMinimumNeverPreemptPriority() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinimumPreemptorPriority sets the value of MinimumPreemptorPriority for the instance
 func (instance *MSCluster_Cluster) SetPropertyMinimumPreemptorPriority(value uint32) (err error) {
-	return instance.SetProperty("MinimumPreemptorPriority", value)
+	return instance.SetProperty("MinimumPreemptorPriority", (value))
 }
 
 // GetMinimumPreemptorPriority gets the value of MinimumPreemptorPriority for the instance
@@ -1231,16 +1665,25 @@ func (instance *MSCluster_Cluster) GetPropertyMinimumPreemptorPriority() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNetftIPSecEnabled sets the value of NetftIPSecEnabled for the instance
 func (instance *MSCluster_Cluster) SetPropertyNetftIPSecEnabled(value uint32) (err error) {
-	return instance.SetProperty("NetftIPSecEnabled", value)
+	return instance.SetProperty("NetftIPSecEnabled", (value))
 }
 
 // GetNetftIPSecEnabled gets the value of NetftIPSecEnabled for the instance
@@ -1249,16 +1692,25 @@ func (instance *MSCluster_Cluster) GetPropertyNetftIPSecEnabled() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNetworkAdminExtensions sets the value of NetworkAdminExtensions for the instance
 func (instance *MSCluster_Cluster) SetPropertyNetworkAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("NetworkAdminExtensions", value)
+	return instance.SetProperty("NetworkAdminExtensions", (value))
 }
 
 // GetNetworkAdminExtensions gets the value of NetworkAdminExtensions for the instance
@@ -1267,16 +1719,26 @@ func (instance *MSCluster_Cluster) GetPropertyNetworkAdminExtensions() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNetworkInterfaceAdminExtensions sets the value of NetworkInterfaceAdminExtensions for the instance
 func (instance *MSCluster_Cluster) SetPropertyNetworkInterfaceAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("NetworkInterfaceAdminExtensions", value)
+	return instance.SetProperty("NetworkInterfaceAdminExtensions", (value))
 }
 
 // GetNetworkInterfaceAdminExtensions gets the value of NetworkInterfaceAdminExtensions for the instance
@@ -1285,16 +1747,26 @@ func (instance *MSCluster_Cluster) GetPropertyNetworkInterfaceAdminExtensions() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNetworkPriorities sets the value of NetworkPriorities for the instance
 func (instance *MSCluster_Cluster) SetPropertyNetworkPriorities(value []string) (err error) {
-	return instance.SetProperty("NetworkPriorities", value)
+	return instance.SetProperty("NetworkPriorities", (value))
 }
 
 // GetNetworkPriorities gets the value of NetworkPriorities for the instance
@@ -1303,16 +1775,26 @@ func (instance *MSCluster_Cluster) GetPropertyNetworkPriorities() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNodeAdminExtensions sets the value of NodeAdminExtensions for the instance
 func (instance *MSCluster_Cluster) SetPropertyNodeAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("NodeAdminExtensions", value)
+	return instance.SetProperty("NodeAdminExtensions", (value))
 }
 
 // GetNodeAdminExtensions gets the value of NodeAdminExtensions for the instance
@@ -1321,16 +1803,26 @@ func (instance *MSCluster_Cluster) GetPropertyNodeAdminExtensions() (value []str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPlacementOptions sets the value of PlacementOptions for the instance
 func (instance *MSCluster_Cluster) SetPropertyPlacementOptions(value uint32) (err error) {
-	return instance.SetProperty("PlacementOptions", value)
+	return instance.SetProperty("PlacementOptions", (value))
 }
 
 // GetPlacementOptions gets the value of PlacementOptions for the instance
@@ -1339,16 +1831,25 @@ func (instance *MSCluster_Cluster) GetPropertyPlacementOptions() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPlumbAllCrossSubnetRoutes sets the value of PlumbAllCrossSubnetRoutes for the instance
 func (instance *MSCluster_Cluster) SetPropertyPlumbAllCrossSubnetRoutes(value uint32) (err error) {
-	return instance.SetProperty("PlumbAllCrossSubnetRoutes", value)
+	return instance.SetProperty("PlumbAllCrossSubnetRoutes", (value))
 }
 
 // GetPlumbAllCrossSubnetRoutes gets the value of PlumbAllCrossSubnetRoutes for the instance
@@ -1357,16 +1858,25 @@ func (instance *MSCluster_Cluster) GetPropertyPlumbAllCrossSubnetRoutes() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPreferredSite sets the value of PreferredSite for the instance
 func (instance *MSCluster_Cluster) SetPropertyPreferredSite(value string) (err error) {
-	return instance.SetProperty("PreferredSite", value)
+	return instance.SetProperty("PreferredSite", (value))
 }
 
 // GetPreferredSite gets the value of PreferredSite for the instance
@@ -1375,16 +1885,25 @@ func (instance *MSCluster_Cluster) GetPropertyPreferredSite() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreventQuorum sets the value of PreventQuorum for the instance
 func (instance *MSCluster_Cluster) SetPropertyPreventQuorum(value uint32) (err error) {
-	return instance.SetProperty("PreventQuorum", value)
+	return instance.SetProperty("PreventQuorum", (value))
 }
 
 // GetPreventQuorum gets the value of PreventQuorum for the instance
@@ -1393,16 +1912,25 @@ func (instance *MSCluster_Cluster) GetPropertyPreventQuorum() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrivateProperties sets the value of PrivateProperties for the instance
 func (instance *MSCluster_Cluster) SetPropertyPrivateProperties(value MSCluster_Property) (err error) {
-	return instance.SetProperty("PrivateProperties", value)
+	return instance.SetProperty("PrivateProperties", (value))
 }
 
 // GetPrivateProperties gets the value of PrivateProperties for the instance
@@ -1411,16 +1939,25 @@ func (instance *MSCluster_Cluster) GetPropertyPrivateProperties() (value MSClust
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSCluster_Property)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSCluster_Property)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSCluster_Property is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSCluster_Property(valuetmp)
+
 	return
 }
 
 // SetQuarantineDuration sets the value of QuarantineDuration for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuarantineDuration(value uint32) (err error) {
-	return instance.SetProperty("QuarantineDuration", value)
+	return instance.SetProperty("QuarantineDuration", (value))
 }
 
 // GetQuarantineDuration gets the value of QuarantineDuration for the instance
@@ -1429,16 +1966,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuarantineDuration() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuarantineThreshold sets the value of QuarantineThreshold for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuarantineThreshold(value uint32) (err error) {
-	return instance.SetProperty("QuarantineThreshold", value)
+	return instance.SetProperty("QuarantineThreshold", (value))
 }
 
 // GetQuarantineThreshold gets the value of QuarantineThreshold for the instance
@@ -1447,16 +1993,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuarantineThreshold() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuorumArbitrationTimeMax sets the value of QuorumArbitrationTimeMax for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuorumArbitrationTimeMax(value uint32) (err error) {
-	return instance.SetProperty("QuorumArbitrationTimeMax", value)
+	return instance.SetProperty("QuorumArbitrationTimeMax", (value))
 }
 
 // GetQuorumArbitrationTimeMax gets the value of QuorumArbitrationTimeMax for the instance
@@ -1465,16 +2020,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuorumArbitrationTimeMax() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuorumArbitrationTimeMin sets the value of QuorumArbitrationTimeMin for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuorumArbitrationTimeMin(value uint32) (err error) {
-	return instance.SetProperty("QuorumArbitrationTimeMin", value)
+	return instance.SetProperty("QuorumArbitrationTimeMin", (value))
 }
 
 // GetQuorumArbitrationTimeMin gets the value of QuorumArbitrationTimeMin for the instance
@@ -1483,16 +2047,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuorumArbitrationTimeMin() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuorumLogFileSize sets the value of QuorumLogFileSize for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuorumLogFileSize(value uint32) (err error) {
-	return instance.SetProperty("QuorumLogFileSize", value)
+	return instance.SetProperty("QuorumLogFileSize", (value))
 }
 
 // GetQuorumLogFileSize gets the value of QuorumLogFileSize for the instance
@@ -1501,16 +2074,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuorumLogFileSize() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuorumPath sets the value of QuorumPath for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuorumPath(value string) (err error) {
-	return instance.SetProperty("QuorumPath", value)
+	return instance.SetProperty("QuorumPath", (value))
 }
 
 // GetQuorumPath gets the value of QuorumPath for the instance
@@ -1519,16 +2101,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuorumPath() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQuorumType sets the value of QuorumType for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuorumType(value string) (err error) {
-	return instance.SetProperty("QuorumType", value)
+	return instance.SetProperty("QuorumType", (value))
 }
 
 // GetQuorumType gets the value of QuorumType for the instance
@@ -1537,16 +2128,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuorumType() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQuorumTypeValue sets the value of QuorumTypeValue for the instance
 func (instance *MSCluster_Cluster) SetPropertyQuorumTypeValue(value uint32) (err error) {
-	return instance.SetProperty("QuorumTypeValue", value)
+	return instance.SetProperty("QuorumTypeValue", (value))
 }
 
 // GetQuorumTypeValue gets the value of QuorumTypeValue for the instance
@@ -1555,16 +2155,25 @@ func (instance *MSCluster_Cluster) GetPropertyQuorumTypeValue() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRecentEventsResetTime sets the value of RecentEventsResetTime for the instance
 func (instance *MSCluster_Cluster) SetPropertyRecentEventsResetTime(value string) (err error) {
-	return instance.SetProperty("RecentEventsResetTime", value)
+	return instance.SetProperty("RecentEventsResetTime", (value))
 }
 
 // GetRecentEventsResetTime gets the value of RecentEventsResetTime for the instance
@@ -1573,16 +2182,25 @@ func (instance *MSCluster_Cluster) GetPropertyRecentEventsResetTime() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequestReplyTimeout sets the value of RequestReplyTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyRequestReplyTimeout(value uint32) (err error) {
-	return instance.SetProperty("RequestReplyTimeout", value)
+	return instance.SetProperty("RequestReplyTimeout", (value))
 }
 
 // GetRequestReplyTimeout gets the value of RequestReplyTimeout for the instance
@@ -1591,16 +2209,25 @@ func (instance *MSCluster_Cluster) GetPropertyRequestReplyTimeout() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResiliencyDefaultPeriod sets the value of ResiliencyDefaultPeriod for the instance
 func (instance *MSCluster_Cluster) SetPropertyResiliencyDefaultPeriod(value uint32) (err error) {
-	return instance.SetProperty("ResiliencyDefaultPeriod", value)
+	return instance.SetProperty("ResiliencyDefaultPeriod", (value))
 }
 
 // GetResiliencyDefaultPeriod gets the value of ResiliencyDefaultPeriod for the instance
@@ -1609,16 +2236,25 @@ func (instance *MSCluster_Cluster) GetPropertyResiliencyDefaultPeriod() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResiliencyLevel sets the value of ResiliencyLevel for the instance
 func (instance *MSCluster_Cluster) SetPropertyResiliencyLevel(value uint32) (err error) {
-	return instance.SetProperty("ResiliencyLevel", value)
+	return instance.SetProperty("ResiliencyLevel", (value))
 }
 
 // GetResiliencyLevel gets the value of ResiliencyLevel for the instance
@@ -1627,16 +2263,25 @@ func (instance *MSCluster_Cluster) GetPropertyResiliencyLevel() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResourceAdminExtensions sets the value of ResourceAdminExtensions for the instance
 func (instance *MSCluster_Cluster) SetPropertyResourceAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("ResourceAdminExtensions", value)
+	return instance.SetProperty("ResourceAdminExtensions", (value))
 }
 
 // GetResourceAdminExtensions gets the value of ResourceAdminExtensions for the instance
@@ -1645,16 +2290,26 @@ func (instance *MSCluster_Cluster) GetPropertyResourceAdminExtensions() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetResourceDllDeadlockPeriod sets the value of ResourceDllDeadlockPeriod for the instance
 func (instance *MSCluster_Cluster) SetPropertyResourceDllDeadlockPeriod(value uint32) (err error) {
-	return instance.SetProperty("ResourceDllDeadlockPeriod", value)
+	return instance.SetProperty("ResourceDllDeadlockPeriod", (value))
 }
 
 // GetResourceDllDeadlockPeriod gets the value of ResourceDllDeadlockPeriod for the instance
@@ -1663,16 +2318,25 @@ func (instance *MSCluster_Cluster) GetPropertyResourceDllDeadlockPeriod() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResourceTypeAdminExtensions sets the value of ResourceTypeAdminExtensions for the instance
 func (instance *MSCluster_Cluster) SetPropertyResourceTypeAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("ResourceTypeAdminExtensions", value)
+	return instance.SetProperty("ResourceTypeAdminExtensions", (value))
 }
 
 // GetResourceTypeAdminExtensions gets the value of ResourceTypeAdminExtensions for the instance
@@ -1681,16 +2345,26 @@ func (instance *MSCluster_Cluster) GetPropertyResourceTypeAdminExtensions() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRootMemoryReserved sets the value of RootMemoryReserved for the instance
 func (instance *MSCluster_Cluster) SetPropertyRootMemoryReserved(value uint32) (err error) {
-	return instance.SetProperty("RootMemoryReserved", value)
+	return instance.SetProperty("RootMemoryReserved", (value))
 }
 
 // GetRootMemoryReserved gets the value of RootMemoryReserved for the instance
@@ -1699,16 +2373,25 @@ func (instance *MSCluster_Cluster) GetPropertyRootMemoryReserved() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRouteHistoryLength sets the value of RouteHistoryLength for the instance
 func (instance *MSCluster_Cluster) SetPropertyRouteHistoryLength(value uint32) (err error) {
-	return instance.SetProperty("RouteHistoryLength", value)
+	return instance.SetProperty("RouteHistoryLength", (value))
 }
 
 // GetRouteHistoryLength gets the value of RouteHistoryLength for the instance
@@ -1717,16 +2400,25 @@ func (instance *MSCluster_Cluster) GetPropertyRouteHistoryLength() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetS2DBusTypes sets the value of S2DBusTypes for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DBusTypes(value uint32) (err error) {
-	return instance.SetProperty("S2DBusTypes", value)
+	return instance.SetProperty("S2DBusTypes", (value))
 }
 
 // GetS2DBusTypes gets the value of S2DBusTypes for the instance
@@ -1735,16 +2427,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DBusTypes() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetS2DCacheBehavior sets the value of S2DCacheBehavior for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DCacheBehavior(value uint64) (err error) {
-	return instance.SetProperty("S2DCacheBehavior", value)
+	return instance.SetProperty("S2DCacheBehavior", (value))
 }
 
 // GetS2DCacheBehavior gets the value of S2DCacheBehavior for the instance
@@ -1753,16 +2454,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DCacheBehavior() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetS2DCacheDesiredState sets the value of S2DCacheDesiredState for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DCacheDesiredState(value uint32) (err error) {
-	return instance.SetProperty("S2DCacheDesiredState", value)
+	return instance.SetProperty("S2DCacheDesiredState", (value))
 }
 
 // GetS2DCacheDesiredState gets the value of S2DCacheDesiredState for the instance
@@ -1771,16 +2481,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DCacheDesiredState() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetS2DCacheDeviceModel sets the value of S2DCacheDeviceModel for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DCacheDeviceModel(value []string) (err error) {
-	return instance.SetProperty("S2DCacheDeviceModel", value)
+	return instance.SetProperty("S2DCacheDeviceModel", (value))
 }
 
 // GetS2DCacheDeviceModel gets the value of S2DCacheDeviceModel for the instance
@@ -1789,16 +2508,26 @@ func (instance *MSCluster_Cluster) GetPropertyS2DCacheDeviceModel() (value []str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetS2DCacheFlashReservePercent sets the value of S2DCacheFlashReservePercent for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DCacheFlashReservePercent(value uint32) (err error) {
-	return instance.SetProperty("S2DCacheFlashReservePercent", value)
+	return instance.SetProperty("S2DCacheFlashReservePercent", (value))
 }
 
 // GetS2DCacheFlashReservePercent gets the value of S2DCacheFlashReservePercent for the instance
@@ -1807,16 +2536,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DCacheFlashReservePercent() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetS2DCacheMetadataReserveBytes sets the value of S2DCacheMetadataReserveBytes for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DCacheMetadataReserveBytes(value uint64) (err error) {
-	return instance.SetProperty("S2DCacheMetadataReserveBytes", value)
+	return instance.SetProperty("S2DCacheMetadataReserveBytes", (value))
 }
 
 // GetS2DCacheMetadataReserveBytes gets the value of S2DCacheMetadataReserveBytes for the instance
@@ -1825,16 +2563,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DCacheMetadataReserveBytes() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetS2DCachePageSizeKBytes sets the value of S2DCachePageSizeKBytes for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DCachePageSizeKBytes(value uint32) (err error) {
-	return instance.SetProperty("S2DCachePageSizeKBytes", value)
+	return instance.SetProperty("S2DCachePageSizeKBytes", (value))
 }
 
 // GetS2DCachePageSizeKBytes gets the value of S2DCachePageSizeKBytes for the instance
@@ -1843,16 +2590,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DCachePageSizeKBytes() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetS2DEnabled sets the value of S2DEnabled for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DEnabled(value uint32) (err error) {
-	return instance.SetProperty("S2DEnabled", value)
+	return instance.SetProperty("S2DEnabled", (value))
 }
 
 // GetS2DEnabled gets the value of S2DEnabled for the instance
@@ -1861,16 +2617,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DEnabled() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetS2DIOLatencyThreshold sets the value of S2DIOLatencyThreshold for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DIOLatencyThreshold(value uint32) (err error) {
-	return instance.SetProperty("S2DIOLatencyThreshold", value)
+	return instance.SetProperty("S2DIOLatencyThreshold", (value))
 }
 
 // GetS2DIOLatencyThreshold gets the value of S2DIOLatencyThreshold for the instance
@@ -1879,16 +2644,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DIOLatencyThreshold() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetS2DOptimizations sets the value of S2DOptimizations for the instance
 func (instance *MSCluster_Cluster) SetPropertyS2DOptimizations(value uint32) (err error) {
-	return instance.SetProperty("S2DOptimizations", value)
+	return instance.SetProperty("S2DOptimizations", (value))
 }
 
 // GetS2DOptimizations gets the value of S2DOptimizations for the instance
@@ -1897,16 +2671,25 @@ func (instance *MSCluster_Cluster) GetPropertyS2DOptimizations() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSameSubnetDelay sets the value of SameSubnetDelay for the instance
 func (instance *MSCluster_Cluster) SetPropertySameSubnetDelay(value uint32) (err error) {
-	return instance.SetProperty("SameSubnetDelay", value)
+	return instance.SetProperty("SameSubnetDelay", (value))
 }
 
 // GetSameSubnetDelay gets the value of SameSubnetDelay for the instance
@@ -1915,16 +2698,25 @@ func (instance *MSCluster_Cluster) GetPropertySameSubnetDelay() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSameSubnetThreshold sets the value of SameSubnetThreshold for the instance
 func (instance *MSCluster_Cluster) SetPropertySameSubnetThreshold(value uint32) (err error) {
-	return instance.SetProperty("SameSubnetThreshold", value)
+	return instance.SetProperty("SameSubnetThreshold", (value))
 }
 
 // GetSameSubnetThreshold gets the value of SameSubnetThreshold for the instance
@@ -1933,16 +2725,25 @@ func (instance *MSCluster_Cluster) GetPropertySameSubnetThreshold() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurity sets the value of Security for the instance
 func (instance *MSCluster_Cluster) SetPropertySecurity(value []uint8) (err error) {
-	return instance.SetProperty("Security", value)
+	return instance.SetProperty("Security", (value))
 }
 
 // GetSecurity gets the value of Security for the instance
@@ -1951,16 +2752,26 @@ func (instance *MSCluster_Cluster) GetPropertySecurity() (value []uint8, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetSecurity_Descriptor sets the value of Security_Descriptor for the instance
 func (instance *MSCluster_Cluster) SetPropertySecurity_Descriptor(value []uint8) (err error) {
-	return instance.SetProperty("Security_Descriptor", value)
+	return instance.SetProperty("Security_Descriptor", (value))
 }
 
 // GetSecurity_Descriptor gets the value of Security_Descriptor for the instance
@@ -1969,16 +2780,26 @@ func (instance *MSCluster_Cluster) GetPropertySecurity_Descriptor() (value []uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetSecurityLevel sets the value of SecurityLevel for the instance
 func (instance *MSCluster_Cluster) SetPropertySecurityLevel(value uint32) (err error) {
-	return instance.SetProperty("SecurityLevel", value)
+	return instance.SetProperty("SecurityLevel", (value))
 }
 
 // GetSecurityLevel gets the value of SecurityLevel for the instance
@@ -1987,16 +2808,25 @@ func (instance *MSCluster_Cluster) GetPropertySecurityLevel() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurityLevelForStorage sets the value of SecurityLevelForStorage for the instance
 func (instance *MSCluster_Cluster) SetPropertySecurityLevelForStorage(value uint32) (err error) {
-	return instance.SetProperty("SecurityLevelForStorage", value)
+	return instance.SetProperty("SecurityLevelForStorage", (value))
 }
 
 // GetSecurityLevelForStorage gets the value of SecurityLevelForStorage for the instance
@@ -2005,16 +2835,25 @@ func (instance *MSCluster_Cluster) GetPropertySecurityLevelForStorage() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSharedVolumeCompatibleFilters sets the value of SharedVolumeCompatibleFilters for the instance
 func (instance *MSCluster_Cluster) SetPropertySharedVolumeCompatibleFilters(value []string) (err error) {
-	return instance.SetProperty("SharedVolumeCompatibleFilters", value)
+	return instance.SetProperty("SharedVolumeCompatibleFilters", (value))
 }
 
 // GetSharedVolumeCompatibleFilters gets the value of SharedVolumeCompatibleFilters for the instance
@@ -2023,16 +2862,26 @@ func (instance *MSCluster_Cluster) GetPropertySharedVolumeCompatibleFilters() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSharedVolumeIncompatibleFilters sets the value of SharedVolumeIncompatibleFilters for the instance
 func (instance *MSCluster_Cluster) SetPropertySharedVolumeIncompatibleFilters(value []string) (err error) {
-	return instance.SetProperty("SharedVolumeIncompatibleFilters", value)
+	return instance.SetProperty("SharedVolumeIncompatibleFilters", (value))
 }
 
 // GetSharedVolumeIncompatibleFilters gets the value of SharedVolumeIncompatibleFilters for the instance
@@ -2041,16 +2890,26 @@ func (instance *MSCluster_Cluster) GetPropertySharedVolumeIncompatibleFilters() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSharedVolumeSecurityDescriptor sets the value of SharedVolumeSecurityDescriptor for the instance
 func (instance *MSCluster_Cluster) SetPropertySharedVolumeSecurityDescriptor(value []uint8) (err error) {
-	return instance.SetProperty("SharedVolumeSecurityDescriptor", value)
+	return instance.SetProperty("SharedVolumeSecurityDescriptor", (value))
 }
 
 // GetSharedVolumeSecurityDescriptor gets the value of SharedVolumeSecurityDescriptor for the instance
@@ -2059,16 +2918,26 @@ func (instance *MSCluster_Cluster) GetPropertySharedVolumeSecurityDescriptor() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetSharedVolumesRoot sets the value of SharedVolumesRoot for the instance
 func (instance *MSCluster_Cluster) SetPropertySharedVolumesRoot(value string) (err error) {
-	return instance.SetProperty("SharedVolumesRoot", value)
+	return instance.SetProperty("SharedVolumesRoot", (value))
 }
 
 // GetSharedVolumesRoot gets the value of SharedVolumesRoot for the instance
@@ -2077,16 +2946,25 @@ func (instance *MSCluster_Cluster) GetPropertySharedVolumesRoot() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSharedVolumeVssWriterOperationTimeout sets the value of SharedVolumeVssWriterOperationTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertySharedVolumeVssWriterOperationTimeout(value uint32) (err error) {
-	return instance.SetProperty("SharedVolumeVssWriterOperationTimeout", value)
+	return instance.SetProperty("SharedVolumeVssWriterOperationTimeout", (value))
 }
 
 // GetSharedVolumeVssWriterOperationTimeout gets the value of SharedVolumeVssWriterOperationTimeout for the instance
@@ -2095,16 +2973,25 @@ func (instance *MSCluster_Cluster) GetPropertySharedVolumeVssWriterOperationTime
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetShutdownTimeoutInMinutes sets the value of ShutdownTimeoutInMinutes for the instance
 func (instance *MSCluster_Cluster) SetPropertyShutdownTimeoutInMinutes(value uint32) (err error) {
-	return instance.SetProperty("ShutdownTimeoutInMinutes", value)
+	return instance.SetProperty("ShutdownTimeoutInMinutes", (value))
 }
 
 // GetShutdownTimeoutInMinutes gets the value of ShutdownTimeoutInMinutes for the instance
@@ -2113,16 +3000,25 @@ func (instance *MSCluster_Cluster) GetPropertyShutdownTimeoutInMinutes() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUseClientAccessNetworksForSharedVolumes sets the value of UseClientAccessNetworksForSharedVolumes for the instance
 func (instance *MSCluster_Cluster) SetPropertyUseClientAccessNetworksForSharedVolumes(value uint32) (err error) {
-	return instance.SetProperty("UseClientAccessNetworksForSharedVolumes", value)
+	return instance.SetProperty("UseClientAccessNetworksForSharedVolumes", (value))
 }
 
 // GetUseClientAccessNetworksForSharedVolumes gets the value of UseClientAccessNetworksForSharedVolumes for the instance
@@ -2131,34 +3027,25 @@ func (instance *MSCluster_Cluster) GetPropertyUseClientAccessNetworksForSharedVo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetUseRdmaForStorage sets the value of UseRdmaForStorage for the instance
-func (instance *MSCluster_Cluster) SetPropertyUseRdmaForStorage(value uint32) (err error) {
-	return instance.SetProperty("UseRdmaForStorage", value)
-}
-
-// GetUseRdmaForStorage gets the value of UseRdmaForStorage for the instance
-func (instance *MSCluster_Cluster) GetPropertyUseRdmaForStorage() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UseRdmaForStorage")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint32)
+
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWitnessDatabaseWriteTimeout sets the value of WitnessDatabaseWriteTimeout for the instance
 func (instance *MSCluster_Cluster) SetPropertyWitnessDatabaseWriteTimeout(value uint32) (err error) {
-	return instance.SetProperty("WitnessDatabaseWriteTimeout", value)
+	return instance.SetProperty("WitnessDatabaseWriteTimeout", (value))
 }
 
 // GetWitnessDatabaseWriteTimeout gets the value of WitnessDatabaseWriteTimeout for the instance
@@ -2167,16 +3054,25 @@ func (instance *MSCluster_Cluster) GetPropertyWitnessDatabaseWriteTimeout() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWitnessDynamicWeight sets the value of WitnessDynamicWeight for the instance
 func (instance *MSCluster_Cluster) SetPropertyWitnessDynamicWeight(value uint32) (err error) {
-	return instance.SetProperty("WitnessDynamicWeight", value)
+	return instance.SetProperty("WitnessDynamicWeight", (value))
 }
 
 // GetWitnessDynamicWeight gets the value of WitnessDynamicWeight for the instance
@@ -2185,16 +3081,25 @@ func (instance *MSCluster_Cluster) GetPropertyWitnessDynamicWeight() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWitnessRestartInterval sets the value of WitnessRestartInterval for the instance
 func (instance *MSCluster_Cluster) SetPropertyWitnessRestartInterval(value uint32) (err error) {
-	return instance.SetProperty("WitnessRestartInterval", value)
+	return instance.SetProperty("WitnessRestartInterval", (value))
 }
 
 // GetWitnessRestartInterval gets the value of WitnessRestartInterval for the instance
@@ -2203,10 +3108,19 @@ func (instance *MSCluster_Cluster) GetPropertyWitnessRestartInterval() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

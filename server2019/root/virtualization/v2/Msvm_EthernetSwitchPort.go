@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchPort struct
@@ -55,7 +57,7 @@ func NewMsvm_EthernetSwitchPortEx6(hostName string,
 
 // SetIOVOffloadUsage sets the value of IOVOffloadUsage for the instance
 func (instance *Msvm_EthernetSwitchPort) SetPropertyIOVOffloadUsage(value uint32) (err error) {
-	return instance.SetProperty("IOVOffloadUsage", value)
+	return instance.SetProperty("IOVOffloadUsage", (value))
 }
 
 // GetIOVOffloadUsage gets the value of IOVOffloadUsage for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_EthernetSwitchPort) GetPropertyIOVOffloadUsage() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVMQOffloadUsage sets the value of VMQOffloadUsage for the instance
 func (instance *Msvm_EthernetSwitchPort) SetPropertyVMQOffloadUsage(value uint32) (err error) {
-	return instance.SetProperty("VMQOffloadUsage", value)
+	return instance.SetProperty("VMQOffloadUsage", (value))
 }
 
 // GetVMQOffloadUsage gets the value of VMQOffloadUsage for the instance
@@ -82,18 +93,31 @@ func (instance *Msvm_EthernetSwitchPort) GetPropertyVMQOffloadUsage() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
-func (instance *Msvm_EthernetSwitchPort) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
+func (instance *Msvm_EthernetSwitchPort) GetRelatedDynamicForwardingEntry() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_DynamicForwardingEntry")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortOffloadData() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_EthernetSwitchPortOffloadData")
+}
+
+func (instance *Msvm_EthernetSwitchPort) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualEthernetSwitch")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortBandwidthData() (value *cim.WmiInstance, err error) {
@@ -102,10 +126,6 @@ func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetSwitchPortBandwidthDa
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedLANEndpoint() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_LANEndpoint")
-}
-
-func (instance *Msvm_EthernetSwitchPort) GetRelatedDynamicForwardingEntry() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_DynamicForwardingEntry")
 }
 
 func (instance *Msvm_EthernetSwitchPort) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {

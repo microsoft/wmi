@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Scaleout
 //////////////////////////////////////////////
 package scaleout
@@ -11,7 +11,9 @@ package scaleout
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ClusterSet struct
@@ -74,7 +76,7 @@ func NewMSFT_ClusterSetEx6(hostName string,
 
 // SetClusterName sets the value of ClusterName for the instance
 func (instance *MSFT_ClusterSet) SetPropertyClusterName(value string) (err error) {
-	return instance.SetProperty("ClusterName", value)
+	return instance.SetProperty("ClusterName", (value))
 }
 
 // GetClusterName gets the value of ClusterName for the instance
@@ -83,16 +85,25 @@ func (instance *MSFT_ClusterSet) GetPropertyClusterName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEvacuationMoveThreshold sets the value of EvacuationMoveThreshold for the instance
 func (instance *MSFT_ClusterSet) SetPropertyEvacuationMoveThreshold(value uint32) (err error) {
-	return instance.SetProperty("EvacuationMoveThreshold", value)
+	return instance.SetProperty("EvacuationMoveThreshold", (value))
 }
 
 // GetEvacuationMoveThreshold gets the value of EvacuationMoveThreshold for the instance
@@ -101,16 +112,25 @@ func (instance *MSFT_ClusterSet) GetPropertyEvacuationMoveThreshold() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_ClusterSet) SetPropertyId(value uint64) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -119,16 +139,25 @@ func (instance *MSFT_ClusterSet) GetPropertyId() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMigrationExcludeNetworks sets the value of MigrationExcludeNetworks for the instance
 func (instance *MSFT_ClusterSet) SetPropertyMigrationExcludeNetworks(value string) (err error) {
-	return instance.SetProperty("MigrationExcludeNetworks", value)
+	return instance.SetProperty("MigrationExcludeNetworks", (value))
 }
 
 // GetMigrationExcludeNetworks gets the value of MigrationExcludeNetworks for the instance
@@ -137,16 +166,25 @@ func (instance *MSFT_ClusterSet) GetPropertyMigrationExcludeNetworks() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMigrationNetworkOrder sets the value of MigrationNetworkOrder for the instance
 func (instance *MSFT_ClusterSet) SetPropertyMigrationNetworkOrder(value string) (err error) {
-	return instance.SetProperty("MigrationNetworkOrder", value)
+	return instance.SetProperty("MigrationNetworkOrder", (value))
 }
 
 // GetMigrationNetworkOrder gets the value of MigrationNetworkOrder for the instance
@@ -155,16 +193,25 @@ func (instance *MSFT_ClusterSet) GetPropertyMigrationNetworkOrder() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_ClusterSet) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -173,16 +220,25 @@ func (instance *MSFT_ClusterSet) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNamespaceRoot sets the value of NamespaceRoot for the instance
 func (instance *MSFT_ClusterSet) SetPropertyNamespaceRoot(value string) (err error) {
-	return instance.SetProperty("NamespaceRoot", value)
+	return instance.SetProperty("NamespaceRoot", (value))
 }
 
 // GetNamespaceRoot gets the value of NamespaceRoot for the instance
@@ -191,16 +247,25 @@ func (instance *MSFT_ClusterSet) GetPropertyNamespaceRoot() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVMFailoverMode sets the value of VMFailoverMode for the instance
 func (instance *MSFT_ClusterSet) SetPropertyVMFailoverMode(value uint32) (err error) {
-	return instance.SetProperty("VMFailoverMode", value)
+	return instance.SetProperty("VMFailoverMode", (value))
 }
 
 // GetVMFailoverMode gets the value of VMFailoverMode for the instance
@@ -209,10 +274,19 @@ func (instance *MSFT_ClusterSet) GetPropertyVMFailoverMode() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
@@ -325,31 +399,6 @@ func (instance *MSFT_ClusterSet) DoOp( /* IN */ operation string,
 func (instance *MSFT_ClusterSet) Set( /* IN */ NamespaceRoot string,
 	/* IN */ VMFailoverMode uint32) (result uint32, err error) {
 	retVal, err := instance.InvokeMethodWithReturn("Set", NamespaceRoot, VMFailoverMode)
-	if err != nil {
-		return
-	}
-	result = uint32(retVal)
-	return
-
-}
-
-//
-
-// <param name="DestinationClusterName" type="string "></param>
-// <param name="DestinationRGName" type="string "></param>
-// <param name="Flags" type="uint32 "></param>
-// <param name="Name" type="string "></param>
-// <param name="SourceClusterName" type="string "></param>
-// <param name="SourceRGName" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MSFT_ClusterSet) AddSRPartnership( /* IN */ Name string,
-	/* IN */ SourceClusterName string,
-	/* IN */ SourceRGName string,
-	/* IN */ DestinationClusterName string,
-	/* IN */ DestinationRGName string,
-	/* IN */ Flags uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("AddSRPartnership", Name, SourceClusterName, SourceRGName, DestinationClusterName, DestinationRGName, Flags)
 	if err != nil {
 		return
 	}

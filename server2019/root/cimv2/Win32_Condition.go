@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Condition struct
@@ -58,7 +60,7 @@ func NewWin32_ConditionEx6(hostName string,
 
 // SetCondition sets the value of Condition for the instance
 func (instance *Win32_Condition) SetPropertyCondition(value string) (err error) {
-	return instance.SetProperty("Condition", value)
+	return instance.SetProperty("Condition", (value))
 }
 
 // GetCondition gets the value of Condition for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_Condition) GetPropertyCondition() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFeature sets the value of Feature for the instance
 func (instance *Win32_Condition) SetPropertyFeature(value string) (err error) {
-	return instance.SetProperty("Feature", value)
+	return instance.SetProperty("Feature", (value))
 }
 
 // GetFeature gets the value of Feature for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_Condition) GetPropertyFeature() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLevel sets the value of Level for the instance
 func (instance *Win32_Condition) SetPropertyLevel(value uint16) (err error) {
-	return instance.SetProperty("Level", value)
+	return instance.SetProperty("Level", (value))
 }
 
 // GetLevel gets the value of Level for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_Condition) GetPropertyLevel() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

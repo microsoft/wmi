@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PhysicalExtent struct
@@ -58,7 +60,7 @@ func NewCIM_PhysicalExtentEx6(hostName string,
 
 // SetUnitsBeforeCheckDataInterleave sets the value of UnitsBeforeCheckDataInterleave for the instance
 func (instance *CIM_PhysicalExtent) SetPropertyUnitsBeforeCheckDataInterleave(value uint64) (err error) {
-	return instance.SetProperty("UnitsBeforeCheckDataInterleave", value)
+	return instance.SetProperty("UnitsBeforeCheckDataInterleave", (value))
 }
 
 // GetUnitsBeforeCheckDataInterleave gets the value of UnitsBeforeCheckDataInterleave for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_PhysicalExtent) GetPropertyUnitsBeforeCheckDataInterleave() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUnitsOfCheckData sets the value of UnitsOfCheckData for the instance
 func (instance *CIM_PhysicalExtent) SetPropertyUnitsOfCheckData(value uint64) (err error) {
-	return instance.SetProperty("UnitsOfCheckData", value)
+	return instance.SetProperty("UnitsOfCheckData", (value))
 }
 
 // GetUnitsOfCheckData gets the value of UnitsOfCheckData for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_PhysicalExtent) GetPropertyUnitsOfCheckData() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUnitsOfUserData sets the value of UnitsOfUserData for the instance
 func (instance *CIM_PhysicalExtent) SetPropertyUnitsOfUserData(value uint64) (err error) {
-	return instance.SetProperty("UnitsOfUserData", value)
+	return instance.SetProperty("UnitsOfUserData", (value))
 }
 
 // GetUnitsOfUserData gets the value of UnitsOfUserData for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_PhysicalExtent) GetPropertyUnitsOfUserData() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

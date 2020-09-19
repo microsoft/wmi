@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_AvailableDisk struct
@@ -58,7 +60,7 @@ func NewMSCluster_AvailableDiskEx6(hostName string,
 
 // SetConnectedNodes sets the value of ConnectedNodes for the instance
 func (instance *MSCluster_AvailableDisk) SetPropertyConnectedNodes(value []string) (err error) {
-	return instance.SetProperty("ConnectedNodes", value)
+	return instance.SetProperty("ConnectedNodes", (value))
 }
 
 // GetConnectedNodes gets the value of ConnectedNodes for the instance
@@ -67,16 +69,26 @@ func (instance *MSCluster_AvailableDisk) GetPropertyConnectedNodes() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNode sets the value of Node for the instance
 func (instance *MSCluster_AvailableDisk) SetPropertyNode(value string) (err error) {
-	return instance.SetProperty("Node", value)
+	return instance.SetProperty("Node", (value))
 }
 
 // GetNode gets the value of Node for the instance
@@ -85,16 +97,25 @@ func (instance *MSCluster_AvailableDisk) GetPropertyNode() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResourceName sets the value of ResourceName for the instance
 func (instance *MSCluster_AvailableDisk) SetPropertyResourceName(value string) (err error) {
-	return instance.SetProperty("ResourceName", value)
+	return instance.SetProperty("ResourceName", (value))
 }
 
 // GetResourceName gets the value of ResourceName for the instance
@@ -103,10 +124,19 @@ func (instance *MSCluster_AvailableDisk) GetPropertyResourceName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

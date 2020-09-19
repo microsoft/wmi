@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
@@ -11,7 +11,9 @@ package taskscheduler
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskPrincipal struct
@@ -68,7 +70,7 @@ func NewMSFT_TaskPrincipalEx6(hostName string,
 
 // SetDisplayName sets the value of DisplayName for the instance
 func (instance *MSFT_TaskPrincipal) SetPropertyDisplayName(value string) (err error) {
-	return instance.SetProperty("DisplayName", value)
+	return instance.SetProperty("DisplayName", (value))
 }
 
 // GetDisplayName gets the value of DisplayName for the instance
@@ -77,16 +79,25 @@ func (instance *MSFT_TaskPrincipal) GetPropertyDisplayName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGroupId sets the value of GroupId for the instance
 func (instance *MSFT_TaskPrincipal) SetPropertyGroupId(value string) (err error) {
-	return instance.SetProperty("GroupId", value)
+	return instance.SetProperty("GroupId", (value))
 }
 
 // GetGroupId gets the value of GroupId for the instance
@@ -95,16 +106,25 @@ func (instance *MSFT_TaskPrincipal) GetPropertyGroupId() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_TaskPrincipal) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -113,16 +133,25 @@ func (instance *MSFT_TaskPrincipal) GetPropertyId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLogonType sets the value of LogonType for the instance
 func (instance *MSFT_TaskPrincipal) SetPropertyLogonType(value TaskPrincipal_LogonType) (err error) {
-	return instance.SetProperty("LogonType", value)
+	return instance.SetProperty("LogonType", (value))
 }
 
 // GetLogonType gets the value of LogonType for the instance
@@ -131,16 +160,25 @@ func (instance *MSFT_TaskPrincipal) GetPropertyLogonType() (value TaskPrincipal_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TaskPrincipal_LogonType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TaskPrincipal_LogonType(valuetmp)
+
 	return
 }
 
 // SetRunLevel sets the value of RunLevel for the instance
 func (instance *MSFT_TaskPrincipal) SetPropertyRunLevel(value int32) (err error) {
-	return instance.SetProperty("RunLevel", value)
+	return instance.SetProperty("RunLevel", (value))
 }
 
 // GetRunLevel gets the value of RunLevel for the instance
@@ -149,16 +187,25 @@ func (instance *MSFT_TaskPrincipal) GetPropertyRunLevel() (value int32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUserId sets the value of UserId for the instance
 func (instance *MSFT_TaskPrincipal) SetPropertyUserId(value string) (err error) {
-	return instance.SetProperty("UserId", value)
+	return instance.SetProperty("UserId", (value))
 }
 
 // GetUserId gets the value of UserId for the instance
@@ -167,9 +214,18 @@ func (instance *MSFT_TaskPrincipal) GetPropertyUserId() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

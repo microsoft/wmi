@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_PacketDirectECUtilization struct
@@ -82,7 +84,7 @@ func NewWin32_PerfFormattedData_Counters_PacketDirectECUtilizationEx6(hostName s
 
 // SetBusyWaitIterationsPersec sets the value of BusyWaitIterationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyBusyWaitIterationsPersec(value uint32) (err error) {
-	return instance.SetProperty("BusyWaitIterationsPersec", value)
+	return instance.SetProperty("BusyWaitIterationsPersec", (value))
 }
 
 // GetBusyWaitIterationsPersec gets the value of BusyWaitIterationsPersec for the instance
@@ -91,16 +93,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIterationsPersec sets the value of IterationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyIterationsPersec(value uint32) (err error) {
-	return instance.SetProperty("IterationsPersec", value)
+	return instance.SetProperty("IterationsPersec", (value))
 }
 
 // GetIterationsPersec gets the value of IterationsPersec for the instance
@@ -109,16 +120,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentBusyWaitingTime sets the value of PercentBusyWaitingTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyPercentBusyWaitingTime(value uint64) (err error) {
-	return instance.SetProperty("PercentBusyWaitingTime", value)
+	return instance.SetProperty("PercentBusyWaitingTime", (value))
 }
 
 // GetPercentBusyWaitingTime gets the value of PercentBusyWaitingTime for the instance
@@ -127,16 +147,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentBusyWaitIterations sets the value of PercentBusyWaitIterations for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyPercentBusyWaitIterations(value uint32) (err error) {
-	return instance.SetProperty("PercentBusyWaitIterations", value)
+	return instance.SetProperty("PercentBusyWaitIterations", (value))
 }
 
 // GetPercentBusyWaitIterations gets the value of PercentBusyWaitIterations for the instance
@@ -145,16 +174,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentIdleTime sets the value of PercentIdleTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyPercentIdleTime(value uint64) (err error) {
-	return instance.SetProperty("PercentIdleTime", value)
+	return instance.SetProperty("PercentIdleTime", (value))
 }
 
 // GetPercentIdleTime gets the value of PercentIdleTime for the instance
@@ -163,16 +201,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentProcessingTime sets the value of PercentProcessingTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyPercentProcessingTime(value uint64) (err error) {
-	return instance.SetProperty("PercentProcessingTime", value)
+	return instance.SetProperty("PercentProcessingTime", (value))
 }
 
 // GetPercentProcessingTime gets the value of PercentProcessingTime for the instance
@@ -181,16 +228,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProcessorNumber sets the value of ProcessorNumber for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyProcessorNumber(value uint32) (err error) {
-	return instance.SetProperty("ProcessorNumber", value)
+	return instance.SetProperty("ProcessorNumber", (value))
 }
 
 // GetProcessorNumber gets the value of ProcessorNumber for the instance
@@ -199,16 +255,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRXQueueCount sets the value of RXQueueCount for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyRXQueueCount(value uint32) (err error) {
-	return instance.SetProperty("RXQueueCount", value)
+	return instance.SetProperty("RXQueueCount", (value))
 }
 
 // GetRXQueueCount gets the value of RXQueueCount for the instance
@@ -217,16 +282,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalBusyWaitIterations sets the value of TotalBusyWaitIterations for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyTotalBusyWaitIterations(value uint64) (err error) {
-	return instance.SetProperty("TotalBusyWaitIterations", value)
+	return instance.SetProperty("TotalBusyWaitIterations", (value))
 }
 
 // GetTotalBusyWaitIterations gets the value of TotalBusyWaitIterations for the instance
@@ -235,16 +309,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalIterations sets the value of TotalIterations for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyTotalIterations(value uint64) (err error) {
-	return instance.SetProperty("TotalIterations", value)
+	return instance.SetProperty("TotalIterations", (value))
 }
 
 // GetTotalIterations gets the value of TotalIterations for the instance
@@ -253,16 +336,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTXQueueCount sets the value of TXQueueCount for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) SetPropertyTXQueueCount(value uint32) (err error) {
-	return instance.SetProperty("TXQueueCount", value)
+	return instance.SetProperty("TXQueueCount", (value))
 }
 
 // GetTXQueueCount gets the value of TXQueueCount for the instance
@@ -271,9 +363,18 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectECUtilization) GetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

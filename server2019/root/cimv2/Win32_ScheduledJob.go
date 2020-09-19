@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ScheduledJob struct
@@ -67,7 +69,7 @@ func NewWin32_ScheduledJobEx6(hostName string,
 
 // SetCommand sets the value of Command for the instance
 func (instance *Win32_ScheduledJob) SetPropertyCommand(value string) (err error) {
-	return instance.SetProperty("Command", value)
+	return instance.SetProperty("Command", (value))
 }
 
 // GetCommand gets the value of Command for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_ScheduledJob) GetPropertyCommand() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDaysOfMonth sets the value of DaysOfMonth for the instance
 func (instance *Win32_ScheduledJob) SetPropertyDaysOfMonth(value uint32) (err error) {
-	return instance.SetProperty("DaysOfMonth", value)
+	return instance.SetProperty("DaysOfMonth", (value))
 }
 
 // GetDaysOfMonth gets the value of DaysOfMonth for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_ScheduledJob) GetPropertyDaysOfMonth() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDaysOfWeek sets the value of DaysOfWeek for the instance
 func (instance *Win32_ScheduledJob) SetPropertyDaysOfWeek(value uint32) (err error) {
-	return instance.SetProperty("DaysOfWeek", value)
+	return instance.SetProperty("DaysOfWeek", (value))
 }
 
 // GetDaysOfWeek gets the value of DaysOfWeek for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_ScheduledJob) GetPropertyDaysOfWeek() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInteractWithDesktop sets the value of InteractWithDesktop for the instance
 func (instance *Win32_ScheduledJob) SetPropertyInteractWithDesktop(value bool) (err error) {
-	return instance.SetProperty("InteractWithDesktop", value)
+	return instance.SetProperty("InteractWithDesktop", (value))
 }
 
 // GetInteractWithDesktop gets the value of InteractWithDesktop for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_ScheduledJob) GetPropertyInteractWithDesktop() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetJobId sets the value of JobId for the instance
 func (instance *Win32_ScheduledJob) SetPropertyJobId(value uint32) (err error) {
-	return instance.SetProperty("JobId", value)
+	return instance.SetProperty("JobId", (value))
 }
 
 // GetJobId gets the value of JobId for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_ScheduledJob) GetPropertyJobId() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRunRepeatedly sets the value of RunRepeatedly for the instance
 func (instance *Win32_ScheduledJob) SetPropertyRunRepeatedly(value bool) (err error) {
-	return instance.SetProperty("RunRepeatedly", value)
+	return instance.SetProperty("RunRepeatedly", (value))
 }
 
 // GetRunRepeatedly gets the value of RunRepeatedly for the instance
@@ -166,10 +213,19 @@ func (instance *Win32_ScheduledJob) GetPropertyRunRepeatedly() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

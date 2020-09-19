@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_VPNv2_CryptographySuite03 struct
@@ -74,7 +76,7 @@ func NewMDM_VPNv2_CryptographySuite03Ex6(hostName string,
 
 // SetAuthenticationTransformConstants sets the value of AuthenticationTransformConstants for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyAuthenticationTransformConstants(value string) (err error) {
-	return instance.SetProperty("AuthenticationTransformConstants", value)
+	return instance.SetProperty("AuthenticationTransformConstants", (value))
 }
 
 // GetAuthenticationTransformConstants gets the value of AuthenticationTransformConstants for the instance
@@ -83,16 +85,25 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyAuthenticationTransfor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCipherTransformConstants sets the value of CipherTransformConstants for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyCipherTransformConstants(value string) (err error) {
-	return instance.SetProperty("CipherTransformConstants", value)
+	return instance.SetProperty("CipherTransformConstants", (value))
 }
 
 // GetCipherTransformConstants gets the value of CipherTransformConstants for the instance
@@ -101,16 +112,25 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyCipherTransformConstan
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDHGroup sets the value of DHGroup for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyDHGroup(value string) (err error) {
-	return instance.SetProperty("DHGroup", value)
+	return instance.SetProperty("DHGroup", (value))
 }
 
 // GetDHGroup gets the value of DHGroup for the instance
@@ -119,16 +139,25 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyDHGroup() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEncryptionMethod sets the value of EncryptionMethod for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyEncryptionMethod(value string) (err error) {
-	return instance.SetProperty("EncryptionMethod", value)
+	return instance.SetProperty("EncryptionMethod", (value))
 }
 
 // GetEncryptionMethod gets the value of EncryptionMethod for the instance
@@ -137,16 +166,25 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyEncryptionMethod() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -155,16 +193,25 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyInstanceID() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIntegrityCheckMethod sets the value of IntegrityCheckMethod for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyIntegrityCheckMethod(value string) (err error) {
-	return instance.SetProperty("IntegrityCheckMethod", value)
+	return instance.SetProperty("IntegrityCheckMethod", (value))
 }
 
 // GetIntegrityCheckMethod gets the value of IntegrityCheckMethod for the instance
@@ -173,16 +220,25 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyIntegrityCheckMethod()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -191,16 +247,25 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyParentID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPfsGroup sets the value of PfsGroup for the instance
 func (instance *MDM_VPNv2_CryptographySuite03) SetPropertyPfsGroup(value string) (err error) {
-	return instance.SetProperty("PfsGroup", value)
+	return instance.SetProperty("PfsGroup", (value))
 }
 
 // GetPfsGroup gets the value of PfsGroup for the instance
@@ -209,9 +274,18 @@ func (instance *MDM_VPNv2_CryptographySuite03) GetPropertyPfsGroup() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIPAddress struct
@@ -85,7 +87,7 @@ func NewMSFT_NetIPAddressEx6(hostName string,
 
 // SetAddressFamily sets the value of AddressFamily for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyAddressFamily(value uint16) (err error) {
-	return instance.SetProperty("AddressFamily", value)
+	return instance.SetProperty("AddressFamily", (value))
 }
 
 // GetAddressFamily gets the value of AddressFamily for the instance
@@ -94,16 +96,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyAddressFamily() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAddressState sets the value of AddressState for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyAddressState(value uint16) (err error) {
-	return instance.SetProperty("AddressState", value)
+	return instance.SetProperty("AddressState", (value))
 }
 
 // GetAddressState gets the value of AddressState for the instance
@@ -112,16 +123,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyAddressState() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetInterfaceAlias sets the value of InterfaceAlias for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyInterfaceAlias(value string) (err error) {
-	return instance.SetProperty("InterfaceAlias", value)
+	return instance.SetProperty("InterfaceAlias", (value))
 }
 
 // GetInterfaceAlias gets the value of InterfaceAlias for the instance
@@ -130,16 +150,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyInterfaceAlias() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceIndex sets the value of InterfaceIndex for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("InterfaceIndex", value)
+	return instance.SetProperty("InterfaceIndex", (value))
 }
 
 // GetInterfaceIndex gets the value of InterfaceIndex for the instance
@@ -148,16 +177,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyInterfaceIndex() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPAddress sets the value of IPAddress for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyIPAddress(value string) (err error) {
-	return instance.SetProperty("IPAddress", value)
+	return instance.SetProperty("IPAddress", (value))
 }
 
 // GetIPAddress gets the value of IPAddress for the instance
@@ -166,16 +204,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyIPAddress() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreferredLifetime sets the value of PreferredLifetime for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyPreferredLifetime(value string) (err error) {
-	return instance.SetProperty("PreferredLifetime", value)
+	return instance.SetProperty("PreferredLifetime", (value))
 }
 
 // GetPreferredLifetime gets the value of PreferredLifetime for the instance
@@ -184,16 +231,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyPreferredLifetime() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrefixOrigin sets the value of PrefixOrigin for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyPrefixOrigin(value uint16) (err error) {
-	return instance.SetProperty("PrefixOrigin", value)
+	return instance.SetProperty("PrefixOrigin", (value))
 }
 
 // GetPrefixOrigin gets the value of PrefixOrigin for the instance
@@ -202,16 +258,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyPrefixOrigin() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSkipAsSource sets the value of SkipAsSource for the instance
 func (instance *MSFT_NetIPAddress) SetPropertySkipAsSource(value bool) (err error) {
-	return instance.SetProperty("SkipAsSource", value)
+	return instance.SetProperty("SkipAsSource", (value))
 }
 
 // GetSkipAsSource gets the value of SkipAsSource for the instance
@@ -220,16 +285,25 @@ func (instance *MSFT_NetIPAddress) GetPropertySkipAsSource() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStore sets the value of Store for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyStore(value uint8) (err error) {
-	return instance.SetProperty("Store", value)
+	return instance.SetProperty("Store", (value))
 }
 
 // GetStore gets the value of Store for the instance
@@ -238,16 +312,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyStore() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSuffixOrigin sets the value of SuffixOrigin for the instance
 func (instance *MSFT_NetIPAddress) SetPropertySuffixOrigin(value uint16) (err error) {
-	return instance.SetProperty("SuffixOrigin", value)
+	return instance.SetProperty("SuffixOrigin", (value))
 }
 
 // GetSuffixOrigin gets the value of SuffixOrigin for the instance
@@ -256,16 +339,25 @@ func (instance *MSFT_NetIPAddress) GetPropertySuffixOrigin() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyType(value uint8) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -274,16 +366,25 @@ func (instance *MSFT_NetIPAddress) GetPropertyType() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetValidLifetime sets the value of ValidLifetime for the instance
 func (instance *MSFT_NetIPAddress) SetPropertyValidLifetime(value string) (err error) {
-	return instance.SetProperty("ValidLifetime", value)
+	return instance.SetProperty("ValidLifetime", (value))
 }
 
 // GetValidLifetime gets the value of ValidLifetime for the instance
@@ -292,10 +393,19 @@ func (instance *MSFT_NetIPAddress) GetPropertyValidLifetime() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

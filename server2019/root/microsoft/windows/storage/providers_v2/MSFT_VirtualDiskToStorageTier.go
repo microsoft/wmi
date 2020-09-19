@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_VirtualDiskToStorageTier struct
@@ -56,7 +58,7 @@ func NewMSFT_VirtualDiskToStorageTierEx6(hostName string,
 
 // SetStorageTier sets the value of StorageTier for the instance
 func (instance *MSFT_VirtualDiskToStorageTier) SetPropertyStorageTier(value MSFT_StorageTier) (err error) {
-	return instance.SetProperty("StorageTier", value)
+	return instance.SetProperty("StorageTier", (value))
 }
 
 // GetStorageTier gets the value of StorageTier for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_VirtualDiskToStorageTier) GetPropertyStorageTier() (value M
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageTier)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageTier)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageTier is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageTier(valuetmp)
+
 	return
 }
 
 // SetVirtualDisk sets the value of VirtualDisk for the instance
 func (instance *MSFT_VirtualDiskToStorageTier) SetPropertyVirtualDisk(value MSFT_VirtualDisk) (err error) {
-	return instance.SetProperty("VirtualDisk", value)
+	return instance.SetProperty("VirtualDisk", (value))
 }
 
 // GetVirtualDisk gets the value of VirtualDisk for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_VirtualDiskToStorageTier) GetPropertyVirtualDisk() (value M
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_VirtualDisk)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_VirtualDisk)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_VirtualDisk is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_VirtualDisk(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_FileServer struct
@@ -79,7 +81,7 @@ func NewMSFT_FileServerEx6(hostName string,
 
 // SetFileSharingProtocols sets the value of FileSharingProtocols for the instance
 func (instance *MSFT_FileServer) SetPropertyFileSharingProtocols(value []FileServer_FileSharingProtocols) (err error) {
-	return instance.SetProperty("FileSharingProtocols", value)
+	return instance.SetProperty("FileSharingProtocols", (value))
 }
 
 // GetFileSharingProtocols gets the value of FileSharingProtocols for the instance
@@ -88,16 +90,26 @@ func (instance *MSFT_FileServer) GetPropertyFileSharingProtocols() (value []File
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]FileServer_FileSharingProtocols)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, FileServer_FileSharingProtocols(valuetmp))
+	}
+
 	return
 }
 
 // SetFileSharingProtocolVersions sets the value of FileSharingProtocolVersions for the instance
 func (instance *MSFT_FileServer) SetPropertyFileSharingProtocolVersions(value []string) (err error) {
-	return instance.SetProperty("FileSharingProtocolVersions", value)
+	return instance.SetProperty("FileSharingProtocolVersions", (value))
 }
 
 // GetFileSharingProtocolVersions gets the value of FileSharingProtocolVersions for the instance
@@ -106,16 +118,26 @@ func (instance *MSFT_FileServer) GetPropertyFileSharingProtocolVersions() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_FileServer) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -124,16 +146,25 @@ func (instance *MSFT_FileServer) GetPropertyFriendlyName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_FileServer) SetPropertyHealthStatus(value FileServer_HealthStatus) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -142,16 +173,25 @@ func (instance *MSFT_FileServer) GetPropertyHealthStatus() (value FileServer_Hea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(FileServer_HealthStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = FileServer_HealthStatus(valuetmp)
+
 	return
 }
 
 // SetHostNames sets the value of HostNames for the instance
 func (instance *MSFT_FileServer) SetPropertyHostNames(value []string) (err error) {
-	return instance.SetProperty("HostNames", value)
+	return instance.SetProperty("HostNames", (value))
 }
 
 // GetHostNames gets the value of HostNames for the instance
@@ -160,16 +200,26 @@ func (instance *MSFT_FileServer) GetPropertyHostNames() (value []string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_FileServer) SetPropertyOperationalStatus(value []FileServer_OperationalStatus) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -178,16 +228,26 @@ func (instance *MSFT_FileServer) GetPropertyOperationalStatus() (value []FileSer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]FileServer_OperationalStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, FileServer_OperationalStatus(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherOperationalStatusDescription sets the value of OtherOperationalStatusDescription for the instance
 func (instance *MSFT_FileServer) SetPropertyOtherOperationalStatusDescription(value string) (err error) {
-	return instance.SetProperty("OtherOperationalStatusDescription", value)
+	return instance.SetProperty("OtherOperationalStatusDescription", (value))
 }
 
 // GetOtherOperationalStatusDescription gets the value of OtherOperationalStatusDescription for the instance
@@ -196,16 +256,25 @@ func (instance *MSFT_FileServer) GetPropertyOtherOperationalStatusDescription() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSupportsContinuouslyAvailableFileShare sets the value of SupportsContinuouslyAvailableFileShare for the instance
 func (instance *MSFT_FileServer) SetPropertySupportsContinuouslyAvailableFileShare(value bool) (err error) {
-	return instance.SetProperty("SupportsContinuouslyAvailableFileShare", value)
+	return instance.SetProperty("SupportsContinuouslyAvailableFileShare", (value))
 }
 
 // GetSupportsContinuouslyAvailableFileShare gets the value of SupportsContinuouslyAvailableFileShare for the instance
@@ -214,16 +283,25 @@ func (instance *MSFT_FileServer) GetPropertySupportsContinuouslyAvailableFileSha
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsFileShareCreation sets the value of SupportsFileShareCreation for the instance
 func (instance *MSFT_FileServer) SetPropertySupportsFileShareCreation(value bool) (err error) {
-	return instance.SetProperty("SupportsFileShareCreation", value)
+	return instance.SetProperty("SupportsFileShareCreation", (value))
 }
 
 // GetSupportsFileShareCreation gets the value of SupportsFileShareCreation for the instance
@@ -232,10 +310,19 @@ func (instance *MSFT_FileServer) GetPropertySupportsFileShareCreation() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

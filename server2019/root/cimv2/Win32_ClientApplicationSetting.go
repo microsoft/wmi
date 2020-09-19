@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ClientApplicationSetting struct
@@ -56,7 +58,7 @@ func NewWin32_ClientApplicationSettingEx6(hostName string,
 
 // SetApplication sets the value of Application for the instance
 func (instance *Win32_ClientApplicationSetting) SetPropertyApplication(value Win32_DCOMApplication) (err error) {
-	return instance.SetProperty("Application", value)
+	return instance.SetProperty("Application", (value))
 }
 
 // GetApplication gets the value of Application for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_ClientApplicationSetting) GetPropertyApplication() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_DCOMApplication)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_DCOMApplication)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_DCOMApplication is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_DCOMApplication(valuetmp)
+
 	return
 }
 
 // SetClient sets the value of Client for the instance
 func (instance *Win32_ClientApplicationSetting) SetPropertyClient(value CIM_DataFile) (err error) {
-	return instance.SetProperty("Client", value)
+	return instance.SetProperty("Client", (value))
 }
 
 // GetClient gets the value of Client for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_ClientApplicationSetting) GetPropertyClient() (value CIM_D
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_DataFile)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_DataFile)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_DataFile is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_DataFile(valuetmp)
+
 	return
 }

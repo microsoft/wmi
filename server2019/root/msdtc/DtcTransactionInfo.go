@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
@@ -11,7 +11,9 @@ package msdtc
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DtcTransactionInfo struct
@@ -65,7 +67,7 @@ func NewDtcTransactionInfoEx6(hostName string,
 
 // SetDescription sets the value of Description for the instance
 func (instance *DtcTransactionInfo) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -74,16 +76,25 @@ func (instance *DtcTransactionInfo) GetPropertyDescription() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsolationLevel sets the value of IsolationLevel for the instance
 func (instance *DtcTransactionInfo) SetPropertyIsolationLevel(value uint32) (err error) {
-	return instance.SetProperty("IsolationLevel", value)
+	return instance.SetProperty("IsolationLevel", (value))
 }
 
 // GetIsolationLevel gets the value of IsolationLevel for the instance
@@ -92,16 +103,25 @@ func (instance *DtcTransactionInfo) GetPropertyIsolationLevel() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetParent sets the value of Parent for the instance
 func (instance *DtcTransactionInfo) SetPropertyParent(value string) (err error) {
-	return instance.SetProperty("Parent", value)
+	return instance.SetProperty("Parent", (value))
 }
 
 // GetParent gets the value of Parent for the instance
@@ -110,16 +130,25 @@ func (instance *DtcTransactionInfo) GetPropertyParent() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *DtcTransactionInfo) SetPropertyState(value string) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -128,16 +157,25 @@ func (instance *DtcTransactionInfo) GetPropertyState() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTransactionId sets the value of TransactionId for the instance
 func (instance *DtcTransactionInfo) SetPropertyTransactionId(value string) (err error) {
-	return instance.SetProperty("TransactionId", value)
+	return instance.SetProperty("TransactionId", (value))
 }
 
 // GetTransactionId gets the value of TransactionId for the instance
@@ -146,9 +184,18 @@ func (instance *DtcTransactionInfo) GetPropertyTransactionId() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

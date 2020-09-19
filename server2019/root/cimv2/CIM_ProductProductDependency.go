@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProductProductDependency struct
@@ -59,7 +61,7 @@ func NewCIM_ProductProductDependencyEx6(hostName string,
 
 // SetDependentProduct sets the value of DependentProduct for the instance
 func (instance *CIM_ProductProductDependency) SetPropertyDependentProduct(value CIM_Product) (err error) {
-	return instance.SetProperty("DependentProduct", value)
+	return instance.SetProperty("DependentProduct", (value))
 }
 
 // GetDependentProduct gets the value of DependentProduct for the instance
@@ -68,16 +70,25 @@ func (instance *CIM_ProductProductDependency) GetPropertyDependentProduct() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }
 
 // SetRequiredProduct sets the value of RequiredProduct for the instance
 func (instance *CIM_ProductProductDependency) SetPropertyRequiredProduct(value CIM_Product) (err error) {
-	return instance.SetProperty("RequiredProduct", value)
+	return instance.SetProperty("RequiredProduct", (value))
 }
 
 // GetRequiredProduct gets the value of RequiredProduct for the instance
@@ -86,16 +97,25 @@ func (instance *CIM_ProductProductDependency) GetPropertyRequiredProduct() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }
 
 // SetTypeOfDependency sets the value of TypeOfDependency for the instance
 func (instance *CIM_ProductProductDependency) SetPropertyTypeOfDependency(value uint16) (err error) {
-	return instance.SetProperty("TypeOfDependency", value)
+	return instance.SetProperty("TypeOfDependency", (value))
 }
 
 // GetTypeOfDependency gets the value of TypeOfDependency for the instance
@@ -104,9 +124,18 @@ func (instance *CIM_ProductProductDependency) GetPropertyTypeOfDependency() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

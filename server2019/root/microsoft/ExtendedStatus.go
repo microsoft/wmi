@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft
 //////////////////////////////////////////////
 package microsoft
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __ExtendedStatus struct
@@ -61,7 +63,7 @@ func New__ExtendedStatusEx6(hostName string,
 
 // SetDescription sets the value of Description for the instance
 func (instance *__ExtendedStatus) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -70,16 +72,25 @@ func (instance *__ExtendedStatus) GetPropertyDescription() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOperation sets the value of Operation for the instance
 func (instance *__ExtendedStatus) SetPropertyOperation(value string) (err error) {
-	return instance.SetProperty("Operation", value)
+	return instance.SetProperty("Operation", (value))
 }
 
 // GetOperation gets the value of Operation for the instance
@@ -88,16 +99,25 @@ func (instance *__ExtendedStatus) GetPropertyOperation() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParameterInfo sets the value of ParameterInfo for the instance
 func (instance *__ExtendedStatus) SetPropertyParameterInfo(value string) (err error) {
-	return instance.SetProperty("ParameterInfo", value)
+	return instance.SetProperty("ParameterInfo", (value))
 }
 
 // GetParameterInfo gets the value of ParameterInfo for the instance
@@ -106,16 +126,25 @@ func (instance *__ExtendedStatus) GetPropertyParameterInfo() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProviderName sets the value of ProviderName for the instance
 func (instance *__ExtendedStatus) SetPropertyProviderName(value string) (err error) {
-	return instance.SetProperty("ProviderName", value)
+	return instance.SetProperty("ProviderName", (value))
 }
 
 // GetProviderName gets the value of ProviderName for the instance
@@ -124,9 +153,18 @@ func (instance *__ExtendedStatus) GetPropertyProviderName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

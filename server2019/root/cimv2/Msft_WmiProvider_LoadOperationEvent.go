@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_WmiProvider_LoadOperationEvent struct
@@ -73,7 +75,7 @@ func NewMsft_WmiProvider_LoadOperationEventEx6(hostName string,
 
 // SetClsid sets the value of Clsid for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertyClsid(value string) (err error) {
-	return instance.SetProperty("Clsid", value)
+	return instance.SetProperty("Clsid", (value))
 }
 
 // GetClsid gets the value of Clsid for the instance
@@ -82,16 +84,25 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertyClsid() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInProcServer sets the value of InProcServer for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertyInProcServer(value bool) (err error) {
-	return instance.SetProperty("InProcServer", value)
+	return instance.SetProperty("InProcServer", (value))
 }
 
 // GetInProcServer gets the value of InProcServer for the instance
@@ -100,16 +111,25 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertyInProcServer() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInProcServerPath sets the value of InProcServerPath for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertyInProcServerPath(value string) (err error) {
-	return instance.SetProperty("InProcServerPath", value)
+	return instance.SetProperty("InProcServerPath", (value))
 }
 
 // GetInProcServerPath gets the value of InProcServerPath for the instance
@@ -118,16 +138,25 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertyInProcServerPath
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalServer sets the value of LocalServer for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertyLocalServer(value bool) (err error) {
-	return instance.SetProperty("LocalServer", value)
+	return instance.SetProperty("LocalServer", (value))
 }
 
 // GetLocalServer gets the value of LocalServer for the instance
@@ -136,16 +165,25 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertyLocalServer() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLocalServerPath sets the value of LocalServerPath for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertyLocalServerPath(value string) (err error) {
-	return instance.SetProperty("LocalServerPath", value)
+	return instance.SetProperty("LocalServerPath", (value))
 }
 
 // GetLocalServerPath gets the value of LocalServerPath for the instance
@@ -154,16 +192,25 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertyLocalServerPath(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerName sets the value of ServerName for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertyServerName(value string) (err error) {
-	return instance.SetProperty("ServerName", value)
+	return instance.SetProperty("ServerName", (value))
 }
 
 // GetServerName gets the value of ServerName for the instance
@@ -172,16 +219,25 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertyServerName() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSynchronisation sets the value of Synchronisation for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertySynchronisation(value uint32) (err error) {
-	return instance.SetProperty("Synchronisation", value)
+	return instance.SetProperty("Synchronisation", (value))
 }
 
 // GetSynchronisation gets the value of Synchronisation for the instance
@@ -190,16 +246,25 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertySynchronisation(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThreadingModel sets the value of ThreadingModel for the instance
 func (instance *Msft_WmiProvider_LoadOperationEvent) SetPropertyThreadingModel(value uint32) (err error) {
-	return instance.SetProperty("ThreadingModel", value)
+	return instance.SetProperty("ThreadingModel", (value))
 }
 
 // GetThreadingModel gets the value of ThreadingModel for the instance
@@ -208,9 +273,18 @@ func (instance *Msft_WmiProvider_LoadOperationEvent) GetPropertyThreadingModel()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

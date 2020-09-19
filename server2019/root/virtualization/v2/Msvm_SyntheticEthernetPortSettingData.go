@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_SyntheticEthernetPortSettingData struct
@@ -73,7 +75,7 @@ func NewMsvm_SyntheticEthernetPortSettingDataEx6(hostName string,
 
 // SetAllowPacketDirect sets the value of AllowPacketDirect for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyAllowPacketDirect(value bool) (err error) {
-	return instance.SetProperty("AllowPacketDirect", value)
+	return instance.SetProperty("AllowPacketDirect", (value))
 }
 
 // GetAllowPacketDirect gets the value of AllowPacketDirect for the instance
@@ -82,16 +84,25 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyAllowPacketDir
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetClusterMonitored sets the value of ClusterMonitored for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyClusterMonitored(value bool) (err error) {
-	return instance.SetProperty("ClusterMonitored", value)
+	return instance.SetProperty("ClusterMonitored", (value))
 }
 
 // GetClusterMonitored gets the value of ClusterMonitored for the instance
@@ -100,16 +111,25 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyClusterMonitor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDeviceNamingEnabled sets the value of DeviceNamingEnabled for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyDeviceNamingEnabled(value bool) (err error) {
-	return instance.SetProperty("DeviceNamingEnabled", value)
+	return instance.SetProperty("DeviceNamingEnabled", (value))
 }
 
 // GetDeviceNamingEnabled gets the value of DeviceNamingEnabled for the instance
@@ -118,16 +138,25 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyDeviceNamingEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInterruptModeration sets the value of InterruptModeration for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyInterruptModeration(value bool) (err error) {
-	return instance.SetProperty("InterruptModeration", value)
+	return instance.SetProperty("InterruptModeration", (value))
 }
 
 // GetInterruptModeration gets the value of InterruptModeration for the instance
@@ -136,16 +165,25 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyInterruptModer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMediaType sets the value of MediaType for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyMediaType(value uint32) (err error) {
-	return instance.SetProperty("MediaType", value)
+	return instance.SetProperty("MediaType", (value))
 }
 
 // GetMediaType gets the value of MediaType for the instance
@@ -154,16 +192,25 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyMediaType() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumaAwarePlacement sets the value of NumaAwarePlacement for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyNumaAwarePlacement(value bool) (err error) {
-	return instance.SetProperty("NumaAwarePlacement", value)
+	return instance.SetProperty("NumaAwarePlacement", (value))
 }
 
 // GetNumaAwarePlacement gets the value of NumaAwarePlacement for the instance
@@ -172,16 +219,25 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyNumaAwarePlace
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStaticMacAddress sets the value of StaticMacAddress for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyStaticMacAddress(value bool) (err error) {
-	return instance.SetProperty("StaticMacAddress", value)
+	return instance.SetProperty("StaticMacAddress", (value))
 }
 
 // GetStaticMacAddress gets the value of StaticMacAddress for the instance
@@ -190,16 +246,25 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyStaticMacAddre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVirtualSystemIdentifiers sets the value of VirtualSystemIdentifiers for the instance
 func (instance *Msvm_SyntheticEthernetPortSettingData) SetPropertyVirtualSystemIdentifiers(value []string) (err error) {
-	return instance.SetProperty("VirtualSystemIdentifiers", value)
+	return instance.SetProperty("VirtualSystemIdentifiers", (value))
 }
 
 // GetVirtualSystemIdentifiers gets the value of VirtualSystemIdentifiers for the instance
@@ -208,10 +273,20 @@ func (instance *Msvm_SyntheticEthernetPortSettingData) GetPropertyVirtualSystemI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_SyntheticEthernetPortSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

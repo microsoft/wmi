@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualEthernetSwitch struct
@@ -55,7 +57,7 @@ func NewMsvm_VirtualEthernetSwitchEx6(hostName string,
 
 // SetMaxIOVOffloads sets the value of MaxIOVOffloads for the instance
 func (instance *Msvm_VirtualEthernetSwitch) SetPropertyMaxIOVOffloads(value uint32) (err error) {
-	return instance.SetProperty("MaxIOVOffloads", value)
+	return instance.SetProperty("MaxIOVOffloads", (value))
 }
 
 // GetMaxIOVOffloads gets the value of MaxIOVOffloads for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_VirtualEthernetSwitch) GetPropertyMaxIOVOffloads() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxVMQOffloads sets the value of MaxVMQOffloads for the instance
 func (instance *Msvm_VirtualEthernetSwitch) SetPropertyMaxVMQOffloads(value uint32) (err error) {
-	return instance.SetProperty("MaxVMQOffloads", value)
+	return instance.SetProperty("MaxVMQOffloads", (value))
 }
 
 // GetMaxVMQOffloads gets the value of MaxVMQOffloads for the instance
@@ -82,10 +93,19 @@ func (instance *Msvm_VirtualEthernetSwitch) GetPropertyMaxVMQOffloads() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedTransparentBridgingService() (value *cim.WmiInstance, err error) {
@@ -104,16 +124,16 @@ func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchHardwareOffl
 	return instance.GetRelated("Msvm_EthernetSwitchHardwareOffloadData")
 }
 
+func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchExtension() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_EthernetSwitchExtension")
+}
+
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchPort() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_EthernetSwitchPort")
 }
 
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePool")
-}
-
-func (instance *Msvm_VirtualEthernetSwitch) GetRelatedEthernetSwitchExtension() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_EthernetSwitchExtension")
 }
 
 func (instance *Msvm_VirtualEthernetSwitch) GetRelatedVirtualEthernetSwitchSettingData() (value *cim.WmiInstance, err error) {

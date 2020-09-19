@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalancer struct
@@ -61,7 +63,7 @@ func NewWin32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalancerEx6(hos
 
 // SetAvailableMemory sets the value of AvailableMemory for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalancer) SetPropertyAvailableMemory(value uint32) (err error) {
-	return instance.SetProperty("AvailableMemory", value)
+	return instance.SetProperty("AvailableMemory", (value))
 }
 
 // GetAvailableMemory gets the value of AvailableMemory for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalance
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvailableMemoryForBalancing sets the value of AvailableMemoryForBalancing for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalancer) SetPropertyAvailableMemoryForBalancing(value uint32) (err error) {
-	return instance.SetProperty("AvailableMemoryForBalancing", value)
+	return instance.SetProperty("AvailableMemoryForBalancing", (value))
 }
 
 // GetAvailableMemoryForBalancing gets the value of AvailableMemoryForBalancing for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalance
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragePressure sets the value of AveragePressure for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalancer) SetPropertyAveragePressure(value uint32) (err error) {
-	return instance.SetProperty("AveragePressure", value)
+	return instance.SetProperty("AveragePressure", (value))
 }
 
 // GetAveragePressure gets the value of AveragePressure for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalance
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSystemCurrentPressure sets the value of SystemCurrentPressure for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalancer) SetPropertySystemCurrentPressure(value uint32) (err error) {
-	return instance.SetProperty("SystemCurrentPressure", value)
+	return instance.SetProperty("SystemCurrentPressure", (value))
 }
 
 // GetSystemCurrentPressure gets the value of SystemCurrentPressure for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryBalance
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

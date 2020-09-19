@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_NumericSensor struct
@@ -118,7 +120,7 @@ func NewCIM_NumericSensorEx6(hostName string,
 
 // SetAccuracy sets the value of Accuracy for the instance
 func (instance *CIM_NumericSensor) SetPropertyAccuracy(value int32) (err error) {
-	return instance.SetProperty("Accuracy", value)
+	return instance.SetProperty("Accuracy", (value))
 }
 
 // GetAccuracy gets the value of Accuracy for the instance
@@ -127,16 +129,25 @@ func (instance *CIM_NumericSensor) GetPropertyAccuracy() (value int32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetBaseUnits sets the value of BaseUnits for the instance
 func (instance *CIM_NumericSensor) SetPropertyBaseUnits(value uint16) (err error) {
-	return instance.SetProperty("BaseUnits", value)
+	return instance.SetProperty("BaseUnits", (value))
 }
 
 // GetBaseUnits gets the value of BaseUnits for the instance
@@ -145,16 +156,25 @@ func (instance *CIM_NumericSensor) GetPropertyBaseUnits() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentReading sets the value of CurrentReading for the instance
 func (instance *CIM_NumericSensor) SetPropertyCurrentReading(value int32) (err error) {
-	return instance.SetProperty("CurrentReading", value)
+	return instance.SetProperty("CurrentReading", (value))
 }
 
 // GetCurrentReading gets the value of CurrentReading for the instance
@@ -163,16 +183,25 @@ func (instance *CIM_NumericSensor) GetPropertyCurrentReading() (value int32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnabledThresholds sets the value of EnabledThresholds for the instance
 func (instance *CIM_NumericSensor) SetPropertyEnabledThresholds(value []uint16) (err error) {
-	return instance.SetProperty("EnabledThresholds", value)
+	return instance.SetProperty("EnabledThresholds", (value))
 }
 
 // GetEnabledThresholds gets the value of EnabledThresholds for the instance
@@ -181,16 +210,26 @@ func (instance *CIM_NumericSensor) GetPropertyEnabledThresholds() (value []uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetHysteresis sets the value of Hysteresis for the instance
 func (instance *CIM_NumericSensor) SetPropertyHysteresis(value uint32) (err error) {
-	return instance.SetProperty("Hysteresis", value)
+	return instance.SetProperty("Hysteresis", (value))
 }
 
 // GetHysteresis gets the value of Hysteresis for the instance
@@ -199,16 +238,25 @@ func (instance *CIM_NumericSensor) GetPropertyHysteresis() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsLinear sets the value of IsLinear for the instance
 func (instance *CIM_NumericSensor) SetPropertyIsLinear(value bool) (err error) {
-	return instance.SetProperty("IsLinear", value)
+	return instance.SetProperty("IsLinear", (value))
 }
 
 // GetIsLinear gets the value of IsLinear for the instance
@@ -217,16 +265,25 @@ func (instance *CIM_NumericSensor) GetPropertyIsLinear() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLowerThresholdCritical sets the value of LowerThresholdCritical for the instance
 func (instance *CIM_NumericSensor) SetPropertyLowerThresholdCritical(value int32) (err error) {
-	return instance.SetProperty("LowerThresholdCritical", value)
+	return instance.SetProperty("LowerThresholdCritical", (value))
 }
 
 // GetLowerThresholdCritical gets the value of LowerThresholdCritical for the instance
@@ -235,16 +292,25 @@ func (instance *CIM_NumericSensor) GetPropertyLowerThresholdCritical() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLowerThresholdFatal sets the value of LowerThresholdFatal for the instance
 func (instance *CIM_NumericSensor) SetPropertyLowerThresholdFatal(value int32) (err error) {
-	return instance.SetProperty("LowerThresholdFatal", value)
+	return instance.SetProperty("LowerThresholdFatal", (value))
 }
 
 // GetLowerThresholdFatal gets the value of LowerThresholdFatal for the instance
@@ -253,16 +319,25 @@ func (instance *CIM_NumericSensor) GetPropertyLowerThresholdFatal() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLowerThresholdNonCritical sets the value of LowerThresholdNonCritical for the instance
 func (instance *CIM_NumericSensor) SetPropertyLowerThresholdNonCritical(value int32) (err error) {
-	return instance.SetProperty("LowerThresholdNonCritical", value)
+	return instance.SetProperty("LowerThresholdNonCritical", (value))
 }
 
 // GetLowerThresholdNonCritical gets the value of LowerThresholdNonCritical for the instance
@@ -271,16 +346,25 @@ func (instance *CIM_NumericSensor) GetPropertyLowerThresholdNonCritical() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMaxReadable sets the value of MaxReadable for the instance
 func (instance *CIM_NumericSensor) SetPropertyMaxReadable(value int32) (err error) {
-	return instance.SetProperty("MaxReadable", value)
+	return instance.SetProperty("MaxReadable", (value))
 }
 
 // GetMaxReadable gets the value of MaxReadable for the instance
@@ -289,16 +373,25 @@ func (instance *CIM_NumericSensor) GetPropertyMaxReadable() (value int32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMinReadable sets the value of MinReadable for the instance
 func (instance *CIM_NumericSensor) SetPropertyMinReadable(value int32) (err error) {
-	return instance.SetProperty("MinReadable", value)
+	return instance.SetProperty("MinReadable", (value))
 }
 
 // GetMinReadable gets the value of MinReadable for the instance
@@ -307,16 +400,25 @@ func (instance *CIM_NumericSensor) GetPropertyMinReadable() (value int32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetNominalReading sets the value of NominalReading for the instance
 func (instance *CIM_NumericSensor) SetPropertyNominalReading(value int32) (err error) {
-	return instance.SetProperty("NominalReading", value)
+	return instance.SetProperty("NominalReading", (value))
 }
 
 // GetNominalReading gets the value of NominalReading for the instance
@@ -325,16 +427,25 @@ func (instance *CIM_NumericSensor) GetPropertyNominalReading() (value int32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetNormalMax sets the value of NormalMax for the instance
 func (instance *CIM_NumericSensor) SetPropertyNormalMax(value int32) (err error) {
-	return instance.SetProperty("NormalMax", value)
+	return instance.SetProperty("NormalMax", (value))
 }
 
 // GetNormalMax gets the value of NormalMax for the instance
@@ -343,16 +454,25 @@ func (instance *CIM_NumericSensor) GetPropertyNormalMax() (value int32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetNormalMin sets the value of NormalMin for the instance
 func (instance *CIM_NumericSensor) SetPropertyNormalMin(value int32) (err error) {
-	return instance.SetProperty("NormalMin", value)
+	return instance.SetProperty("NormalMin", (value))
 }
 
 // GetNormalMin gets the value of NormalMin for the instance
@@ -361,16 +481,25 @@ func (instance *CIM_NumericSensor) GetPropertyNormalMin() (value int32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRateUnits sets the value of RateUnits for the instance
 func (instance *CIM_NumericSensor) SetPropertyRateUnits(value uint16) (err error) {
-	return instance.SetProperty("RateUnits", value)
+	return instance.SetProperty("RateUnits", (value))
 }
 
 // GetRateUnits gets the value of RateUnits for the instance
@@ -379,16 +508,25 @@ func (instance *CIM_NumericSensor) GetPropertyRateUnits() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetResolution sets the value of Resolution for the instance
 func (instance *CIM_NumericSensor) SetPropertyResolution(value uint32) (err error) {
-	return instance.SetProperty("Resolution", value)
+	return instance.SetProperty("Resolution", (value))
 }
 
 // GetResolution gets the value of Resolution for the instance
@@ -397,16 +535,25 @@ func (instance *CIM_NumericSensor) GetPropertyResolution() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSettableThresholds sets the value of SettableThresholds for the instance
 func (instance *CIM_NumericSensor) SetPropertySettableThresholds(value []uint16) (err error) {
-	return instance.SetProperty("SettableThresholds", value)
+	return instance.SetProperty("SettableThresholds", (value))
 }
 
 // GetSettableThresholds gets the value of SettableThresholds for the instance
@@ -415,16 +562,26 @@ func (instance *CIM_NumericSensor) GetPropertySettableThresholds() (value []uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedThresholds sets the value of SupportedThresholds for the instance
 func (instance *CIM_NumericSensor) SetPropertySupportedThresholds(value []uint16) (err error) {
-	return instance.SetProperty("SupportedThresholds", value)
+	return instance.SetProperty("SupportedThresholds", (value))
 }
 
 // GetSupportedThresholds gets the value of SupportedThresholds for the instance
@@ -433,16 +590,26 @@ func (instance *CIM_NumericSensor) GetPropertySupportedThresholds() (value []uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetTolerance sets the value of Tolerance for the instance
 func (instance *CIM_NumericSensor) SetPropertyTolerance(value int32) (err error) {
-	return instance.SetProperty("Tolerance", value)
+	return instance.SetProperty("Tolerance", (value))
 }
 
 // GetTolerance gets the value of Tolerance for the instance
@@ -451,16 +618,25 @@ func (instance *CIM_NumericSensor) GetPropertyTolerance() (value int32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUnitModifier sets the value of UnitModifier for the instance
 func (instance *CIM_NumericSensor) SetPropertyUnitModifier(value int32) (err error) {
-	return instance.SetProperty("UnitModifier", value)
+	return instance.SetProperty("UnitModifier", (value))
 }
 
 // GetUnitModifier gets the value of UnitModifier for the instance
@@ -469,16 +645,25 @@ func (instance *CIM_NumericSensor) GetPropertyUnitModifier() (value int32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUpperThresholdCritical sets the value of UpperThresholdCritical for the instance
 func (instance *CIM_NumericSensor) SetPropertyUpperThresholdCritical(value int32) (err error) {
-	return instance.SetProperty("UpperThresholdCritical", value)
+	return instance.SetProperty("UpperThresholdCritical", (value))
 }
 
 // GetUpperThresholdCritical gets the value of UpperThresholdCritical for the instance
@@ -487,16 +672,25 @@ func (instance *CIM_NumericSensor) GetPropertyUpperThresholdCritical() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUpperThresholdFatal sets the value of UpperThresholdFatal for the instance
 func (instance *CIM_NumericSensor) SetPropertyUpperThresholdFatal(value int32) (err error) {
-	return instance.SetProperty("UpperThresholdFatal", value)
+	return instance.SetProperty("UpperThresholdFatal", (value))
 }
 
 // GetUpperThresholdFatal gets the value of UpperThresholdFatal for the instance
@@ -505,16 +699,25 @@ func (instance *CIM_NumericSensor) GetPropertyUpperThresholdFatal() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUpperThresholdNonCritical sets the value of UpperThresholdNonCritical for the instance
 func (instance *CIM_NumericSensor) SetPropertyUpperThresholdNonCritical(value int32) (err error) {
-	return instance.SetProperty("UpperThresholdNonCritical", value)
+	return instance.SetProperty("UpperThresholdNonCritical", (value))
 }
 
 // GetUpperThresholdNonCritical gets the value of UpperThresholdNonCritical for the instance
@@ -523,10 +726,19 @@ func (instance *CIM_NumericSensor) GetPropertyUpperThresholdNonCritical() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NTLogEventLog struct
@@ -56,7 +58,7 @@ func NewWin32_NTLogEventLogEx6(hostName string,
 
 // SetLog sets the value of Log for the instance
 func (instance *Win32_NTLogEventLog) SetPropertyLog(value Win32_NTEventlogFile) (err error) {
-	return instance.SetProperty("Log", value)
+	return instance.SetProperty("Log", (value))
 }
 
 // GetLog gets the value of Log for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_NTLogEventLog) GetPropertyLog() (value Win32_NTEventlogFil
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_NTEventlogFile)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_NTEventlogFile)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_NTEventlogFile is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_NTEventlogFile(valuetmp)
+
 	return
 }
 
 // SetRecord sets the value of Record for the instance
 func (instance *Win32_NTLogEventLog) SetPropertyRecord(value Win32_NTLogEvent) (err error) {
-	return instance.SetProperty("Record", value)
+	return instance.SetProperty("Record", (value))
 }
 
 // GetRecord gets the value of Record for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_NTLogEventLog) GetPropertyRecord() (value Win32_NTLogEvent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_NTLogEvent)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_NTLogEvent)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_NTLogEvent is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_NTLogEvent(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
@@ -11,7 +11,9 @@ package appv
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // AppvClientConnectionGroup struct
@@ -86,7 +88,7 @@ func NewAppvClientConnectionGroupEx6(hostName string,
 
 // SetCustomData sets the value of CustomData for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyCustomData(value string) (err error) {
-	return instance.SetProperty("CustomData", value)
+	return instance.SetProperty("CustomData", (value))
 }
 
 // GetCustomData gets the value of CustomData for the instance
@@ -95,16 +97,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyCustomData() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGlobalPending sets the value of GlobalPending for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyGlobalPending(value bool) (err error) {
-	return instance.SetProperty("GlobalPending", value)
+	return instance.SetProperty("GlobalPending", (value))
 }
 
 // GetGlobalPending gets the value of GlobalPending for the instance
@@ -113,16 +124,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyGlobalPending() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGroupId sets the value of GroupId for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyGroupId(value string) (err error) {
-	return instance.SetProperty("GroupId", value)
+	return instance.SetProperty("GroupId", (value))
 }
 
 // GetGroupId gets the value of GroupId for the instance
@@ -131,16 +151,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyGroupId() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInUse sets the value of InUse for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyInUse(value bool) (err error) {
-	return instance.SetProperty("InUse", value)
+	return instance.SetProperty("InUse", (value))
 }
 
 // GetInUse gets the value of InUse for the instance
@@ -149,16 +178,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyInUse() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsEnabledGlobally sets the value of IsEnabledGlobally for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyIsEnabledGlobally(value bool) (err error) {
-	return instance.SetProperty("IsEnabledGlobally", value)
+	return instance.SetProperty("IsEnabledGlobally", (value))
 }
 
 // GetIsEnabledGlobally gets the value of IsEnabledGlobally for the instance
@@ -167,16 +205,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyIsEnabledGlobally() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsEnabledToUser sets the value of IsEnabledToUser for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyIsEnabledToUser(value bool) (err error) {
-	return instance.SetProperty("IsEnabledToUser", value)
+	return instance.SetProperty("IsEnabledToUser", (value))
 }
 
 // GetIsEnabledToUser gets the value of IsEnabledToUser for the instance
@@ -185,16 +232,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyIsEnabledToUser() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -203,16 +259,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackages sets the value of Packages for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyPackages(value []string) (err error) {
-	return instance.SetProperty("Packages", value)
+	return instance.SetProperty("Packages", (value))
 }
 
 // GetPackages gets the value of Packages for the instance
@@ -221,16 +286,26 @@ func (instance *AppvClientConnectionGroup) GetPropertyPackages() (value []string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPercentLoaded sets the value of PercentLoaded for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyPercentLoaded(value uint16) (err error) {
-	return instance.SetProperty("PercentLoaded", value)
+	return instance.SetProperty("PercentLoaded", (value))
 }
 
 // GetPercentLoaded gets the value of PercentLoaded for the instance
@@ -239,16 +314,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyPercentLoaded() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPriority sets the value of Priority for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyPriority(value uint32) (err error) {
-	return instance.SetProperty("Priority", value)
+	return instance.SetProperty("Priority", (value))
 }
 
 // GetPriority gets the value of Priority for the instance
@@ -257,16 +341,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyPriority() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUserPending sets the value of UserPending for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyUserPending(value bool) (err error) {
-	return instance.SetProperty("UserPending", value)
+	return instance.SetProperty("UserPending", (value))
 }
 
 // GetUserPending gets the value of UserPending for the instance
@@ -275,16 +368,25 @@ func (instance *AppvClientConnectionGroup) GetPropertyUserPending() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVersionId sets the value of VersionId for the instance
 func (instance *AppvClientConnectionGroup) SetPropertyVersionId(value string) (err error) {
-	return instance.SetProperty("VersionId", value)
+	return instance.SetProperty("VersionId", (value))
 }
 
 // GetVersionId gets the value of VersionId for the instance
@@ -293,9 +395,18 @@ func (instance *AppvClientConnectionGroup) GetPropertyVersionId() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_NonVolatileStorage struct
@@ -52,7 +54,7 @@ func NewCIM_NonVolatileStorageEx6(hostName string,
 
 // SetIsWriteable sets the value of IsWriteable for the instance
 func (instance *CIM_NonVolatileStorage) SetPropertyIsWriteable(value bool) (err error) {
-	return instance.SetProperty("IsWriteable", value)
+	return instance.SetProperty("IsWriteable", (value))
 }
 
 // GetIsWriteable gets the value of IsWriteable for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_NonVolatileStorage) GetPropertyIsWriteable() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

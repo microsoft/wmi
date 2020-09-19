@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftSil_WindowsUpdate struct
@@ -55,7 +57,7 @@ func NewMsftSil_WindowsUpdateEx6(hostName string,
 
 // SetID sets the value of ID for the instance
 func (instance *MsftSil_WindowsUpdate) SetPropertyID(value string) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -64,16 +66,25 @@ func (instance *MsftSil_WindowsUpdate) GetPropertyID() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstallDate sets the value of InstallDate for the instance
 func (instance *MsftSil_WindowsUpdate) SetPropertyInstallDate(value string) (err error) {
-	return instance.SetProperty("InstallDate", value)
+	return instance.SetProperty("InstallDate", (value))
 }
 
 // GetInstallDate gets the value of InstallDate for the instance
@@ -82,9 +93,18 @@ func (instance *MsftSil_WindowsUpdate) GetPropertyInstallDate() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

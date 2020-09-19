@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSLogonSetting struct
@@ -70,7 +72,7 @@ func NewWin32_TSLogonSettingEx6(hostName string,
 
 // SetClientLogonInfoPolicy sets the value of ClientLogonInfoPolicy for the instance
 func (instance *Win32_TSLogonSetting) SetPropertyClientLogonInfoPolicy(value uint32) (err error) {
-	return instance.SetProperty("ClientLogonInfoPolicy", value)
+	return instance.SetProperty("ClientLogonInfoPolicy", (value))
 }
 
 // GetClientLogonInfoPolicy gets the value of ClientLogonInfoPolicy for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_TSLogonSetting) GetPropertyClientLogonInfoPolicy() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDomain sets the value of Domain for the instance
 func (instance *Win32_TSLogonSetting) SetPropertyDomain(value string) (err error) {
-	return instance.SetProperty("Domain", value)
+	return instance.SetProperty("Domain", (value))
 }
 
 // GetDomain gets the value of Domain for the instance
@@ -97,16 +108,25 @@ func (instance *Win32_TSLogonSetting) GetPropertyDomain() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicySourceDomain sets the value of PolicySourceDomain for the instance
 func (instance *Win32_TSLogonSetting) SetPropertyPolicySourceDomain(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceDomain", value)
+	return instance.SetProperty("PolicySourceDomain", (value))
 }
 
 // GetPolicySourceDomain gets the value of PolicySourceDomain for the instance
@@ -115,16 +135,25 @@ func (instance *Win32_TSLogonSetting) GetPropertyPolicySourceDomain() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourcePromptForPassword sets the value of PolicySourcePromptForPassword for the instance
 func (instance *Win32_TSLogonSetting) SetPropertyPolicySourcePromptForPassword(value uint32) (err error) {
-	return instance.SetProperty("PolicySourcePromptForPassword", value)
+	return instance.SetProperty("PolicySourcePromptForPassword", (value))
 }
 
 // GetPolicySourcePromptForPassword gets the value of PolicySourcePromptForPassword for the instance
@@ -133,16 +162,25 @@ func (instance *Win32_TSLogonSetting) GetPropertyPolicySourcePromptForPassword()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceUserName sets the value of PolicySourceUserName for the instance
 func (instance *Win32_TSLogonSetting) SetPropertyPolicySourceUserName(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceUserName", value)
+	return instance.SetProperty("PolicySourceUserName", (value))
 }
 
 // GetPolicySourceUserName gets the value of PolicySourceUserName for the instance
@@ -151,16 +189,25 @@ func (instance *Win32_TSLogonSetting) GetPropertyPolicySourceUserName() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPromptForPassword sets the value of PromptForPassword for the instance
 func (instance *Win32_TSLogonSetting) SetPropertyPromptForPassword(value uint32) (err error) {
-	return instance.SetProperty("PromptForPassword", value)
+	return instance.SetProperty("PromptForPassword", (value))
 }
 
 // GetPromptForPassword gets the value of PromptForPassword for the instance
@@ -169,16 +216,25 @@ func (instance *Win32_TSLogonSetting) GetPropertyPromptForPassword() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUserName sets the value of UserName for the instance
 func (instance *Win32_TSLogonSetting) SetPropertyUserName(value string) (err error) {
-	return instance.SetProperty("UserName", value)
+	return instance.SetProperty("UserName", (value))
 }
 
 // GetUserName gets the value of UserName for the instance
@@ -187,10 +243,19 @@ func (instance *Win32_TSLogonSetting) GetPropertyUserName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

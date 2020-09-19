@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
@@ -11,7 +11,9 @@ package clusterupdate
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CAU_ScanUpdateInfo struct
@@ -59,7 +61,7 @@ func NewMSFT_CAU_ScanUpdateInfoEx6(hostName string,
 
 // SetUpdateDesc sets the value of UpdateDesc for the instance
 func (instance *MSFT_CAU_ScanUpdateInfo) SetPropertyUpdateDesc(value string) (err error) {
-	return instance.SetProperty("UpdateDesc", value)
+	return instance.SetProperty("UpdateDesc", (value))
 }
 
 // GetUpdateDesc gets the value of UpdateDesc for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_CAU_ScanUpdateInfo) GetPropertyUpdateDesc() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUpdateId sets the value of UpdateId for the instance
 func (instance *MSFT_CAU_ScanUpdateInfo) SetPropertyUpdateId(value string) (err error) {
-	return instance.SetProperty("UpdateId", value)
+	return instance.SetProperty("UpdateId", (value))
 }
 
 // GetUpdateId gets the value of UpdateId for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_CAU_ScanUpdateInfo) GetPropertyUpdateId() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUpdateTitle sets the value of UpdateTitle for the instance
 func (instance *MSFT_CAU_ScanUpdateInfo) SetPropertyUpdateTitle(value string) (err error) {
-	return instance.SetProperty("UpdateTitle", value)
+	return instance.SetProperty("UpdateTitle", (value))
 }
 
 // GetUpdateTitle gets the value of UpdateTitle for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_CAU_ScanUpdateInfo) GetPropertyUpdateTitle() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

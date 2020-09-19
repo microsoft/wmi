@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SettingsDefineCapabilities struct
@@ -58,7 +60,7 @@ func NewCIM_SettingsDefineCapabilitiesEx6(hostName string,
 
 // SetPropertyPolicy sets the value of PropertyPolicy for the instance
 func (instance *CIM_SettingsDefineCapabilities) SetPropertyPropertyPolicy(value uint16) (err error) {
-	return instance.SetProperty("PropertyPolicy", value)
+	return instance.SetProperty("PropertyPolicy", (value))
 }
 
 // GetPropertyPolicy gets the value of PropertyPolicy for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_SettingsDefineCapabilities) GetPropertyPropertyPolicy() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetValueRange sets the value of ValueRange for the instance
 func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRange(value uint16) (err error) {
-	return instance.SetProperty("ValueRange", value)
+	return instance.SetProperty("ValueRange", (value))
 }
 
 // GetValueRange gets the value of ValueRange for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRange() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetValueRole sets the value of ValueRole for the instance
 func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRole(value uint16) (err error) {
-	return instance.SetProperty("ValueRole", value)
+	return instance.SetProperty("ValueRole", (value))
 }
 
 // GetValueRole gets the value of ValueRole for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRole() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

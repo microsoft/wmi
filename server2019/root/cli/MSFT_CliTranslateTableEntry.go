@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
@@ -11,7 +11,9 @@ package cli
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CliTranslateTableEntry struct
@@ -56,7 +58,7 @@ func NewMSFT_CliTranslateTableEntryEx6(hostName string,
 
 // SetFromValue sets the value of FromValue for the instance
 func (instance *MSFT_CliTranslateTableEntry) SetPropertyFromValue(value string) (err error) {
-	return instance.SetProperty("FromValue", value)
+	return instance.SetProperty("FromValue", (value))
 }
 
 // GetFromValue gets the value of FromValue for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_CliTranslateTableEntry) GetPropertyFromValue() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetToValue sets the value of ToValue for the instance
 func (instance *MSFT_CliTranslateTableEntry) SetPropertyToValue(value string) (err error) {
-	return instance.SetProperty("ToValue", value)
+	return instance.SetProperty("ToValue", (value))
 }
 
 // GetToValue gets the value of ToValue for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_CliTranslateTableEntry) GetPropertyToValue() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

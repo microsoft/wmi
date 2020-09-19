@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle struct
@@ -91,7 +93,7 @@ func NewWin32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracl
 
 // SetHardConnectsPerSecond sets the value of HardConnectsPerSecond for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyHardConnectsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("HardConnectsPerSecond", value)
+	return instance.SetProperty("HardConnectsPerSecond", (value))
 }
 
 // GetHardConnectsPerSecond gets the value of HardConnectsPerSecond for the instance
@@ -100,16 +102,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHardDisconnectsPerSecond sets the value of HardDisconnectsPerSecond for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyHardDisconnectsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("HardDisconnectsPerSecond", value)
+	return instance.SetProperty("HardDisconnectsPerSecond", (value))
 }
 
 // GetHardDisconnectsPerSecond gets the value of HardDisconnectsPerSecond for the instance
@@ -118,16 +129,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfActiveConnectionPoolGroups sets the value of NumberOfActiveConnectionPoolGroups for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfActiveConnectionPoolGroups(value uint32) (err error) {
-	return instance.SetProperty("NumberOfActiveConnectionPoolGroups", value)
+	return instance.SetProperty("NumberOfActiveConnectionPoolGroups", (value))
 }
 
 // GetNumberOfActiveConnectionPoolGroups gets the value of NumberOfActiveConnectionPoolGroups for the instance
@@ -136,16 +156,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfActiveConnectionPools sets the value of NumberOfActiveConnectionPools for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfActiveConnectionPools(value uint32) (err error) {
-	return instance.SetProperty("NumberOfActiveConnectionPools", value)
+	return instance.SetProperty("NumberOfActiveConnectionPools", (value))
 }
 
 // GetNumberOfActiveConnectionPools gets the value of NumberOfActiveConnectionPools for the instance
@@ -154,16 +183,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfActiveConnections sets the value of NumberOfActiveConnections for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfActiveConnections(value uint32) (err error) {
-	return instance.SetProperty("NumberOfActiveConnections", value)
+	return instance.SetProperty("NumberOfActiveConnections", (value))
 }
 
 // GetNumberOfActiveConnections gets the value of NumberOfActiveConnections for the instance
@@ -172,16 +210,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfFreeConnections sets the value of NumberOfFreeConnections for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfFreeConnections(value uint32) (err error) {
-	return instance.SetProperty("NumberOfFreeConnections", value)
+	return instance.SetProperty("NumberOfFreeConnections", (value))
 }
 
 // GetNumberOfFreeConnections gets the value of NumberOfFreeConnections for the instance
@@ -190,16 +237,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfInactiveConnectionPoolGroups sets the value of NumberOfInactiveConnectionPoolGroups for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfInactiveConnectionPoolGroups(value uint32) (err error) {
-	return instance.SetProperty("NumberOfInactiveConnectionPoolGroups", value)
+	return instance.SetProperty("NumberOfInactiveConnectionPoolGroups", (value))
 }
 
 // GetNumberOfInactiveConnectionPoolGroups gets the value of NumberOfInactiveConnectionPoolGroups for the instance
@@ -208,16 +264,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfInactiveConnectionPools sets the value of NumberOfInactiveConnectionPools for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfInactiveConnectionPools(value uint32) (err error) {
-	return instance.SetProperty("NumberOfInactiveConnectionPools", value)
+	return instance.SetProperty("NumberOfInactiveConnectionPools", (value))
 }
 
 // GetNumberOfInactiveConnectionPools gets the value of NumberOfInactiveConnectionPools for the instance
@@ -226,16 +291,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfNonPooledConnections sets the value of NumberOfNonPooledConnections for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfNonPooledConnections(value uint32) (err error) {
-	return instance.SetProperty("NumberOfNonPooledConnections", value)
+	return instance.SetProperty("NumberOfNonPooledConnections", (value))
 }
 
 // GetNumberOfNonPooledConnections gets the value of NumberOfNonPooledConnections for the instance
@@ -244,16 +318,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfPooledConnections sets the value of NumberOfPooledConnections for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfPooledConnections(value uint32) (err error) {
-	return instance.SetProperty("NumberOfPooledConnections", value)
+	return instance.SetProperty("NumberOfPooledConnections", (value))
 }
 
 // GetNumberOfPooledConnections gets the value of NumberOfPooledConnections for the instance
@@ -262,16 +345,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfReclaimedConnections sets the value of NumberOfReclaimedConnections for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfReclaimedConnections(value uint32) (err error) {
-	return instance.SetProperty("NumberOfReclaimedConnections", value)
+	return instance.SetProperty("NumberOfReclaimedConnections", (value))
 }
 
 // GetNumberOfReclaimedConnections gets the value of NumberOfReclaimedConnections for the instance
@@ -280,16 +372,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfStasisConnections sets the value of NumberOfStasisConnections for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertyNumberOfStasisConnections(value uint32) (err error) {
-	return instance.SetProperty("NumberOfStasisConnections", value)
+	return instance.SetProperty("NumberOfStasisConnections", (value))
 }
 
 // GetNumberOfStasisConnections gets the value of NumberOfStasisConnections for the instance
@@ -298,16 +399,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSoftConnectsPerSecond sets the value of SoftConnectsPerSecond for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertySoftConnectsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("SoftConnectsPerSecond", value)
+	return instance.SetProperty("SoftConnectsPerSecond", (value))
 }
 
 // GetSoftConnectsPerSecond gets the value of SoftConnectsPerSecond for the instance
@@ -316,16 +426,25 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSoftDisconnectsPerSecond sets the value of SoftDisconnectsPerSecond for the instance
 func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProviderforOracle) SetPropertySoftDisconnectsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("SoftDisconnectsPerSecond", value)
+	return instance.SetProperty("SoftDisconnectsPerSecond", (value))
 }
 
 // GetSoftDisconnectsPerSecond gets the value of SoftDisconnectsPerSecond for the instance
@@ -334,9 +453,18 @@ func (instance *Win32_PerfFormattedData_NETDataProviderforOracle_NETDataProvider
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

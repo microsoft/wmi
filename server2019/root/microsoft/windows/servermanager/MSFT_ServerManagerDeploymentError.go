@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerManagerDeploymentError struct
@@ -59,7 +61,7 @@ func NewMSFT_ServerManagerDeploymentErrorEx6(hostName string,
 
 // SetErrorCategory sets the value of ErrorCategory for the instance
 func (instance *MSFT_ServerManagerDeploymentError) SetPropertyErrorCategory(value uint8) (err error) {
-	return instance.SetProperty("ErrorCategory", value)
+	return instance.SetProperty("ErrorCategory", (value))
 }
 
 // GetErrorCategory gets the value of ErrorCategory for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_ServerManagerDeploymentError) GetPropertyErrorCategory() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetErrorId sets the value of ErrorId for the instance
 func (instance *MSFT_ServerManagerDeploymentError) SetPropertyErrorId(value string) (err error) {
-	return instance.SetProperty("ErrorId", value)
+	return instance.SetProperty("ErrorId", (value))
 }
 
 // GetErrorId gets the value of ErrorId for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_ServerManagerDeploymentError) GetPropertyErrorId() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorMessage sets the value of ErrorMessage for the instance
 func (instance *MSFT_ServerManagerDeploymentError) SetPropertyErrorMessage(value string) (err error) {
-	return instance.SetProperty("ErrorMessage", value)
+	return instance.SetProperty("ErrorMessage", (value))
 }
 
 // GetErrorMessage gets the value of ErrorMessage for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_ServerManagerDeploymentError) GetPropertyErrorMessage() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

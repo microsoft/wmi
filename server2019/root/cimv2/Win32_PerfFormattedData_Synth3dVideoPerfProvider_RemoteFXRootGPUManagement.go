@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPUManagement struct
@@ -58,7 +60,7 @@ func NewWin32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPUManageme
 
 // SetResourcesVMsrunningRemoteFX sets the value of ResourcesVMsrunningRemoteFX for the instance
 func (instance *Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPUManagement) SetPropertyResourcesVMsrunningRemoteFX(value uint64) (err error) {
-	return instance.SetProperty("ResourcesVMsrunningRemoteFX", value)
+	return instance.SetProperty("ResourcesVMsrunningRemoteFX", (value))
 }
 
 // GetResourcesVMsrunningRemoteFX gets the value of ResourcesVMsrunningRemoteFX for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVRAMAvailableMBperGPU sets the value of VRAMAvailableMBperGPU for the instance
 func (instance *Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPUManagement) SetPropertyVRAMAvailableMBperGPU(value uint64) (err error) {
-	return instance.SetProperty("VRAMAvailableMBperGPU", value)
+	return instance.SetProperty("VRAMAvailableMBperGPU", (value))
 }
 
 // GetVRAMAvailableMBperGPU gets the value of VRAMAvailableMBperGPU for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVRAMReservedPercentperGPU sets the value of VRAMReservedPercentperGPU for the instance
 func (instance *Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPUManagement) SetPropertyVRAMReservedPercentperGPU(value uint64) (err error) {
-	return instance.SetProperty("VRAMReservedPercentperGPU", value)
+	return instance.SetProperty("VRAMReservedPercentperGPU", (value))
 }
 
 // GetVRAMReservedPercentperGPU gets the value of VRAMReservedPercentperGPU for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_PerfFormattedData_Synth3dVideoPerfProvider_RemoteFXRootGPU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

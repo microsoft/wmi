@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetNatTransitionConfiguration struct
@@ -73,7 +75,7 @@ func NewMSFT_NetNatTransitionConfigurationEx6(hostName string,
 
 // SetInboundInterface sets the value of InboundInterface for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyInboundInterface(value []string) (err error) {
-	return instance.SetProperty("InboundInterface", value)
+	return instance.SetProperty("InboundInterface", (value))
 }
 
 // GetInboundInterface gets the value of InboundInterface for the instance
@@ -82,16 +84,26 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyInboundInterface(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetInstanceName sets the value of InstanceName for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyInstanceName(value string) (err error) {
-	return instance.SetProperty("InstanceName", value)
+	return instance.SetProperty("InstanceName", (value))
 }
 
 // GetInstanceName gets the value of InstanceName for the instance
@@ -100,16 +112,25 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyInstanceName() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv4AddressPortPool sets the value of IPv4AddressPortPool for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyIPv4AddressPortPool(value []string) (err error) {
-	return instance.SetProperty("IPv4AddressPortPool", value)
+	return instance.SetProperty("IPv4AddressPortPool", (value))
 }
 
 // GetIPv4AddressPortPool gets the value of IPv4AddressPortPool for the instance
@@ -118,16 +139,26 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyIPv4AddressPortPo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOutboundInterface sets the value of OutboundInterface for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyOutboundInterface(value []string) (err error) {
-	return instance.SetProperty("OutboundInterface", value)
+	return instance.SetProperty("OutboundInterface", (value))
 }
 
 // GetOutboundInterface gets the value of OutboundInterface for the instance
@@ -136,16 +167,26 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyOutboundInterface
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyPolicyStore(value uint32) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -154,16 +195,25 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyPolicyStore() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrefixMapping sets the value of PrefixMapping for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyPrefixMapping(value []string) (err error) {
-	return instance.SetProperty("PrefixMapping", value)
+	return instance.SetProperty("PrefixMapping", (value))
 }
 
 // GetPrefixMapping gets the value of PrefixMapping for the instance
@@ -172,16 +222,26 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyPrefixMapping() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -190,16 +250,25 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyState() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpMappingTimeout sets the value of TcpMappingTimeout for the instance
 func (instance *MSFT_NetNatTransitionConfiguration) SetPropertyTcpMappingTimeout(value uint32) (err error) {
-	return instance.SetProperty("TcpMappingTimeout", value)
+	return instance.SetProperty("TcpMappingTimeout", (value))
 }
 
 // GetTcpMappingTimeout gets the value of TcpMappingTimeout for the instance
@@ -208,10 +277,19 @@ func (instance *MSFT_NetNatTransitionConfiguration) GetPropertyTcpMappingTimeout
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

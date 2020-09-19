@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_StorageRedundancyGroup struct
@@ -52,7 +54,7 @@ func NewCIM_StorageRedundancyGroupEx6(hostName string,
 
 // SetTypeOfAlgorithm sets the value of TypeOfAlgorithm for the instance
 func (instance *CIM_StorageRedundancyGroup) SetPropertyTypeOfAlgorithm(value uint16) (err error) {
-	return instance.SetProperty("TypeOfAlgorithm", value)
+	return instance.SetProperty("TypeOfAlgorithm", (value))
 }
 
 // GetTypeOfAlgorithm gets the value of TypeOfAlgorithm for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_StorageRedundancyGroup) GetPropertyTypeOfAlgorithm() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

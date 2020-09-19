@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __TimerEvent struct
@@ -55,7 +57,7 @@ func New__TimerEventEx6(hostName string,
 
 // SetNumFirings sets the value of NumFirings for the instance
 func (instance *__TimerEvent) SetPropertyNumFirings(value uint32) (err error) {
-	return instance.SetProperty("NumFirings", value)
+	return instance.SetProperty("NumFirings", (value))
 }
 
 // GetNumFirings gets the value of NumFirings for the instance
@@ -64,16 +66,25 @@ func (instance *__TimerEvent) GetPropertyNumFirings() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimerId sets the value of TimerId for the instance
 func (instance *__TimerEvent) SetPropertyTimerId(value string) (err error) {
-	return instance.SetProperty("TimerId", value)
+	return instance.SetProperty("TimerId", (value))
 }
 
 // GetTimerId gets the value of TimerId for the instance
@@ -82,9 +93,18 @@ func (instance *__TimerEvent) GetPropertyTimerId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

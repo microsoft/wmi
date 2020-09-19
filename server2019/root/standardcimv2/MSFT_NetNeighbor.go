@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetNeighbor struct
@@ -70,7 +72,7 @@ func NewMSFT_NetNeighborEx6(hostName string,
 
 // SetAddressFamily sets the value of AddressFamily for the instance
 func (instance *MSFT_NetNeighbor) SetPropertyAddressFamily(value uint16) (err error) {
-	return instance.SetProperty("AddressFamily", value)
+	return instance.SetProperty("AddressFamily", (value))
 }
 
 // GetAddressFamily gets the value of AddressFamily for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_NetNeighbor) GetPropertyAddressFamily() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetInterfaceAlias sets the value of InterfaceAlias for the instance
 func (instance *MSFT_NetNeighbor) SetPropertyInterfaceAlias(value string) (err error) {
-	return instance.SetProperty("InterfaceAlias", value)
+	return instance.SetProperty("InterfaceAlias", (value))
 }
 
 // GetInterfaceAlias gets the value of InterfaceAlias for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_NetNeighbor) GetPropertyInterfaceAlias() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceIndex sets the value of InterfaceIndex for the instance
 func (instance *MSFT_NetNeighbor) SetPropertyInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("InterfaceIndex", value)
+	return instance.SetProperty("InterfaceIndex", (value))
 }
 
 // GetInterfaceIndex gets the value of InterfaceIndex for the instance
@@ -115,16 +135,25 @@ func (instance *MSFT_NetNeighbor) GetPropertyInterfaceIndex() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPAddress sets the value of IPAddress for the instance
 func (instance *MSFT_NetNeighbor) SetPropertyIPAddress(value string) (err error) {
-	return instance.SetProperty("IPAddress", value)
+	return instance.SetProperty("IPAddress", (value))
 }
 
 // GetIPAddress gets the value of IPAddress for the instance
@@ -133,16 +162,25 @@ func (instance *MSFT_NetNeighbor) GetPropertyIPAddress() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLinkLayerAddress sets the value of LinkLayerAddress for the instance
 func (instance *MSFT_NetNeighbor) SetPropertyLinkLayerAddress(value string) (err error) {
-	return instance.SetProperty("LinkLayerAddress", value)
+	return instance.SetProperty("LinkLayerAddress", (value))
 }
 
 // GetLinkLayerAddress gets the value of LinkLayerAddress for the instance
@@ -151,16 +189,25 @@ func (instance *MSFT_NetNeighbor) GetPropertyLinkLayerAddress() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_NetNeighbor) SetPropertyState(value uint8) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -169,16 +216,25 @@ func (instance *MSFT_NetNeighbor) GetPropertyState() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetStore sets the value of Store for the instance
 func (instance *MSFT_NetNeighbor) SetPropertyStore(value uint8) (err error) {
-	return instance.SetProperty("Store", value)
+	return instance.SetProperty("Store", (value))
 }
 
 // GetStore gets the value of Store for the instance
@@ -187,10 +243,19 @@ func (instance *MSFT_NetNeighbor) GetPropertyStore() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_LprPrinterPort struct
@@ -55,7 +57,7 @@ func NewMSFT_LprPrinterPortEx6(hostName string,
 
 // SetHostName sets the value of HostName for the instance
 func (instance *MSFT_LprPrinterPort) SetPropertyHostName(value string) (err error) {
-	return instance.SetProperty("HostName", value)
+	return instance.SetProperty("HostName", (value))
 }
 
 // GetHostName gets the value of HostName for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_LprPrinterPort) GetPropertyHostName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrinterName sets the value of PrinterName for the instance
 func (instance *MSFT_LprPrinterPort) SetPropertyPrinterName(value string) (err error) {
-	return instance.SetProperty("PrinterName", value)
+	return instance.SetProperty("PrinterName", (value))
 }
 
 // GetPrinterName gets the value of PrinterName for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_LprPrinterPort) GetPropertyPrinterName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

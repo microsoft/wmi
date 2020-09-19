@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetConSecRule struct
@@ -91,7 +93,7 @@ func NewMSFT_NetConSecRuleEx6(hostName string,
 
 // SetAllowSetKey sets the value of AllowSetKey for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyAllowSetKey(value bool) (err error) {
-	return instance.SetProperty("AllowSetKey", value)
+	return instance.SetProperty("AllowSetKey", (value))
 }
 
 // GetAllowSetKey gets the value of AllowSetKey for the instance
@@ -100,16 +102,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyAllowSetKey() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowWatchKey sets the value of AllowWatchKey for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyAllowWatchKey(value bool) (err error) {
-	return instance.SetProperty("AllowWatchKey", value)
+	return instance.SetProperty("AllowWatchKey", (value))
 }
 
 // GetAllowWatchKey gets the value of AllowWatchKey for the instance
@@ -118,16 +129,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyAllowWatchKey() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBypassTunnelIfEncrypted sets the value of BypassTunnelIfEncrypted for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyBypassTunnelIfEncrypted(value bool) (err error) {
-	return instance.SetProperty("BypassTunnelIfEncrypted", value)
+	return instance.SetProperty("BypassTunnelIfEncrypted", (value))
 }
 
 // GetBypassTunnelIfEncrypted gets the value of BypassTunnelIfEncrypted for the instance
@@ -136,16 +156,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyBypassTunnelIfEncrypted() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInboundSecurity sets the value of InboundSecurity for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyInboundSecurity(value uint16) (err error) {
-	return instance.SetProperty("InboundSecurity", value)
+	return instance.SetProperty("InboundSecurity", (value))
 }
 
 // GetInboundSecurity gets the value of InboundSecurity for the instance
@@ -154,16 +183,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyInboundSecurity() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetKeyModule sets the value of KeyModule for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyKeyModule(value uint16) (err error) {
-	return instance.SetProperty("KeyModule", value)
+	return instance.SetProperty("KeyModule", (value))
 }
 
 // GetKeyModule gets the value of KeyModule for the instance
@@ -172,16 +210,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyKeyModule() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLocalTunnelEndpoint sets the value of LocalTunnelEndpoint for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyLocalTunnelEndpoint(value []string) (err error) {
-	return instance.SetProperty("LocalTunnelEndpoint", value)
+	return instance.SetProperty("LocalTunnelEndpoint", (value))
 }
 
 // GetLocalTunnelEndpoint gets the value of LocalTunnelEndpoint for the instance
@@ -190,16 +237,26 @@ func (instance *MSFT_NetConSecRule) GetPropertyLocalTunnelEndpoint() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMachines sets the value of Machines for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyMachines(value string) (err error) {
-	return instance.SetProperty("Machines", value)
+	return instance.SetProperty("Machines", (value))
 }
 
 // GetMachines gets the value of Machines for the instance
@@ -208,16 +265,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyMachines() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxReturnPathLifetimeSeconds sets the value of MaxReturnPathLifetimeSeconds for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyMaxReturnPathLifetimeSeconds(value uint32) (err error) {
-	return instance.SetProperty("MaxReturnPathLifetimeSeconds", value)
+	return instance.SetProperty("MaxReturnPathLifetimeSeconds", (value))
 }
 
 // GetMaxReturnPathLifetimeSeconds gets the value of MaxReturnPathLifetimeSeconds for the instance
@@ -226,16 +292,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyMaxReturnPathLifetimeSeconds() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMode sets the value of Mode for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyMode(value uint16) (err error) {
-	return instance.SetProperty("Mode", value)
+	return instance.SetProperty("Mode", (value))
 }
 
 // GetMode gets the value of Mode for the instance
@@ -244,16 +319,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyMode() (value uint16, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOutboundSecurity sets the value of OutboundSecurity for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyOutboundSecurity(value uint16) (err error) {
-	return instance.SetProperty("OutboundSecurity", value)
+	return instance.SetProperty("OutboundSecurity", (value))
 }
 
 // GetOutboundSecurity gets the value of OutboundSecurity for the instance
@@ -262,16 +346,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyOutboundSecurity() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRemoteTunnelEndpoint sets the value of RemoteTunnelEndpoint for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyRemoteTunnelEndpoint(value []string) (err error) {
-	return instance.SetProperty("RemoteTunnelEndpoint", value)
+	return instance.SetProperty("RemoteTunnelEndpoint", (value))
 }
 
 // GetRemoteTunnelEndpoint gets the value of RemoteTunnelEndpoint for the instance
@@ -280,16 +373,26 @@ func (instance *MSFT_NetConSecRule) GetPropertyRemoteTunnelEndpoint() (value []s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRemoteTunnelEndpointDNSName sets the value of RemoteTunnelEndpointDNSName for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyRemoteTunnelEndpointDNSName(value string) (err error) {
-	return instance.SetProperty("RemoteTunnelEndpointDNSName", value)
+	return instance.SetProperty("RemoteTunnelEndpointDNSName", (value))
 }
 
 // GetRemoteTunnelEndpointDNSName gets the value of RemoteTunnelEndpointDNSName for the instance
@@ -298,16 +401,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyRemoteTunnelEndpointDNSName() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequireAuthorization sets the value of RequireAuthorization for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyRequireAuthorization(value bool) (err error) {
-	return instance.SetProperty("RequireAuthorization", value)
+	return instance.SetProperty("RequireAuthorization", (value))
 }
 
 // GetRequireAuthorization gets the value of RequireAuthorization for the instance
@@ -316,16 +428,25 @@ func (instance *MSFT_NetConSecRule) GetPropertyRequireAuthorization() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUsers sets the value of Users for the instance
 func (instance *MSFT_NetConSecRule) SetPropertyUsers(value string) (err error) {
-	return instance.SetProperty("Users", value)
+	return instance.SetProperty("Users", (value))
 }
 
 // GetUsers gets the value of Users for the instance
@@ -334,10 +455,19 @@ func (instance *MSFT_NetConSecRule) GetPropertyUsers() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

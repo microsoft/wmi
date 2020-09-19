@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Sensor struct
@@ -64,7 +66,7 @@ func NewCIM_SensorEx6(hostName string,
 
 // SetCurrentState sets the value of CurrentState for the instance
 func (instance *CIM_Sensor) SetPropertyCurrentState(value string) (err error) {
-	return instance.SetProperty("CurrentState", value)
+	return instance.SetProperty("CurrentState", (value))
 }
 
 // GetCurrentState gets the value of CurrentState for the instance
@@ -73,16 +75,25 @@ func (instance *CIM_Sensor) GetPropertyCurrentState() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherSensorTypeDescription sets the value of OtherSensorTypeDescription for the instance
 func (instance *CIM_Sensor) SetPropertyOtherSensorTypeDescription(value string) (err error) {
-	return instance.SetProperty("OtherSensorTypeDescription", value)
+	return instance.SetProperty("OtherSensorTypeDescription", (value))
 }
 
 // GetOtherSensorTypeDescription gets the value of OtherSensorTypeDescription for the instance
@@ -91,16 +102,25 @@ func (instance *CIM_Sensor) GetPropertyOtherSensorTypeDescription() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPollingInterval sets the value of PollingInterval for the instance
 func (instance *CIM_Sensor) SetPropertyPollingInterval(value uint64) (err error) {
-	return instance.SetProperty("PollingInterval", value)
+	return instance.SetProperty("PollingInterval", (value))
 }
 
 // GetPollingInterval gets the value of PollingInterval for the instance
@@ -109,16 +129,25 @@ func (instance *CIM_Sensor) GetPropertyPollingInterval() (value uint64, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPossibleStates sets the value of PossibleStates for the instance
 func (instance *CIM_Sensor) SetPropertyPossibleStates(value []string) (err error) {
-	return instance.SetProperty("PossibleStates", value)
+	return instance.SetProperty("PossibleStates", (value))
 }
 
 // GetPossibleStates gets the value of PossibleStates for the instance
@@ -127,16 +156,26 @@ func (instance *CIM_Sensor) GetPropertyPossibleStates() (value []string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSensorType sets the value of SensorType for the instance
 func (instance *CIM_Sensor) SetPropertySensorType(value uint16) (err error) {
-	return instance.SetProperty("SensorType", value)
+	return instance.SetProperty("SensorType", (value))
 }
 
 // GetSensorType gets the value of SensorType for the instance
@@ -145,9 +184,18 @@ func (instance *CIM_Sensor) GetPropertySensorType() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

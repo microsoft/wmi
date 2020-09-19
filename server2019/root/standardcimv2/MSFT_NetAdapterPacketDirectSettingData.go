@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterPacketDirectSettingData struct
@@ -67,7 +69,7 @@ func NewMSFT_NetAdapterPacketDirectSettingDataEx6(hostName string,
 
 // SetCapabilities sets the value of Capabilities for the instance
 func (instance *MSFT_NetAdapterPacketDirectSettingData) SetPropertyCapabilities(value MSFT_NetAdapter_PacketDirectCapabilities) (err error) {
-	return instance.SetProperty("Capabilities", value)
+	return instance.SetProperty("Capabilities", (value))
 }
 
 // GetCapabilities gets the value of Capabilities for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NetAdapterPacketDirectSettingData) GetPropertyCapabilities(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapter_PacketDirectCapabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapter_PacketDirectCapabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapter_PacketDirectCapabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapter_PacketDirectCapabilities(valuetmp)
+
 	return
 }
 
 // SetDiagnosticCode sets the value of DiagnosticCode for the instance
 func (instance *MSFT_NetAdapterPacketDirectSettingData) SetPropertyDiagnosticCode(value uint32) (err error) {
-	return instance.SetProperty("DiagnosticCode", value)
+	return instance.SetProperty("DiagnosticCode", (value))
 }
 
 // GetDiagnosticCode gets the value of DiagnosticCode for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NetAdapterPacketDirectSettingData) GetPropertyDiagnosticCod
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDmaAddressWidth sets the value of DmaAddressWidth for the instance
 func (instance *MSFT_NetAdapterPacketDirectSettingData) SetPropertyDmaAddressWidth(value uint8) (err error) {
-	return instance.SetProperty("DmaAddressWidth", value)
+	return instance.SetProperty("DmaAddressWidth", (value))
 }
 
 // GetDmaAddressWidth gets the value of DmaAddressWidth for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_NetAdapterPacketDirectSettingData) GetPropertyDmaAddressWid
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDomainId sets the value of DomainId for the instance
 func (instance *MSFT_NetAdapterPacketDirectSettingData) SetPropertyDomainId(value uint32) (err error) {
-	return instance.SetProperty("DomainId", value)
+	return instance.SetProperty("DomainId", (value))
 }
 
 // GetDomainId gets the value of DomainId for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_NetAdapterPacketDirectSettingData) GetPropertyDomainId() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *MSFT_NetAdapterPacketDirectSettingData) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_NetAdapterPacketDirectSettingData) GetPropertyEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOperational sets the value of Operational for the instance
 func (instance *MSFT_NetAdapterPacketDirectSettingData) SetPropertyOperational(value bool) (err error) {
-	return instance.SetProperty("Operational", value)
+	return instance.SetProperty("Operational", (value))
 }
 
 // GetOperational gets the value of Operational for the instance
@@ -166,10 +213,19 @@ func (instance *MSFT_NetAdapterPacketDirectSettingData) GetPropertyOperational()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

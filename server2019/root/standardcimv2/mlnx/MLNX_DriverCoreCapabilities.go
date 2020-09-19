@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_DriverCoreCapabilities struct
@@ -121,7 +123,7 @@ func NewMLNX_DriverCoreCapabilitiesEx6(hostName string,
 
 // SetLogMttsPerSeg_Max sets the value of LogMttsPerSeg_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogMttsPerSeg_Max(value uint32) (err error) {
-	return instance.SetProperty("LogMttsPerSeg_Max", value)
+	return instance.SetProperty("LogMttsPerSeg_Max", (value))
 }
 
 // GetLogMttsPerSeg_Max gets the value of LogMttsPerSeg_Max for the instance
@@ -130,16 +132,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogMttsPerSeg_Max() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogMttsPerSeg_Min sets the value of LogMttsPerSeg_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogMttsPerSeg_Min(value uint32) (err error) {
-	return instance.SetProperty("LogMttsPerSeg_Min", value)
+	return instance.SetProperty("LogMttsPerSeg_Min", (value))
 }
 
 // GetLogMttsPerSeg_Min gets the value of LogMttsPerSeg_Min for the instance
@@ -148,16 +159,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogMttsPerSeg_Min() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumCq_Max sets the value of LogNumCq_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumCq_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumCq_Max", value)
+	return instance.SetProperty("LogNumCq_Max", (value))
 }
 
 // GetLogNumCq_Max gets the value of LogNumCq_Max for the instance
@@ -166,16 +186,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumCq_Max() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumCq_Min sets the value of LogNumCq_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumCq_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumCq_Min", value)
+	return instance.SetProperty("LogNumCq_Min", (value))
 }
 
 // GetLogNumCq_Min gets the value of LogNumCq_Min for the instance
@@ -184,16 +213,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumCq_Min() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMac_Max sets the value of LogNumMac_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMac_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumMac_Max", value)
+	return instance.SetProperty("LogNumMac_Max", (value))
 }
 
 // GetLogNumMac_Max gets the value of LogNumMac_Max for the instance
@@ -202,16 +240,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMac_Max() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMac_Min sets the value of LogNumMac_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMac_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumMac_Min", value)
+	return instance.SetProperty("LogNumMac_Min", (value))
 }
 
 // GetLogNumMac_Min gets the value of LogNumMac_Min for the instance
@@ -220,16 +267,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMac_Min() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMcg_Max sets the value of LogNumMcg_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMcg_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumMcg_Max", value)
+	return instance.SetProperty("LogNumMcg_Max", (value))
 }
 
 // GetLogNumMcg_Max gets the value of LogNumMcg_Max for the instance
@@ -238,16 +294,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMcg_Max() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMcg_Min sets the value of LogNumMcg_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMcg_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumMcg_Min", value)
+	return instance.SetProperty("LogNumMcg_Min", (value))
 }
 
 // GetLogNumMcg_Min gets the value of LogNumMcg_Min for the instance
@@ -256,16 +321,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMcg_Min() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMpt_Max sets the value of LogNumMpt_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMpt_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumMpt_Max", value)
+	return instance.SetProperty("LogNumMpt_Max", (value))
 }
 
 // GetLogNumMpt_Max gets the value of LogNumMpt_Max for the instance
@@ -274,16 +348,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMpt_Max() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMpt_Min sets the value of LogNumMpt_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMpt_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumMpt_Min", value)
+	return instance.SetProperty("LogNumMpt_Min", (value))
 }
 
 // GetLogNumMpt_Min gets the value of LogNumMpt_Min for the instance
@@ -292,16 +375,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMpt_Min() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMtt_Max sets the value of LogNumMtt_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMtt_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumMtt_Max", value)
+	return instance.SetProperty("LogNumMtt_Max", (value))
 }
 
 // GetLogNumMtt_Max gets the value of LogNumMtt_Max for the instance
@@ -310,16 +402,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMtt_Max() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMtt_Min sets the value of LogNumMtt_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumMtt_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumMtt_Min", value)
+	return instance.SetProperty("LogNumMtt_Min", (value))
 }
 
 // GetLogNumMtt_Min gets the value of LogNumMtt_Min for the instance
@@ -328,16 +429,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumMtt_Min() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumQp_Max sets the value of LogNumQp_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumQp_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumQp_Max", value)
+	return instance.SetProperty("LogNumQp_Max", (value))
 }
 
 // GetLogNumQp_Max gets the value of LogNumQp_Max for the instance
@@ -346,16 +456,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumQp_Max() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumQp_Min sets the value of LogNumQp_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumQp_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumQp_Min", value)
+	return instance.SetProperty("LogNumQp_Min", (value))
 }
 
 // GetLogNumQp_Min gets the value of LogNumQp_Min for the instance
@@ -364,16 +483,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumQp_Min() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumRdmaRc_Max sets the value of LogNumRdmaRc_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumRdmaRc_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumRdmaRc_Max", value)
+	return instance.SetProperty("LogNumRdmaRc_Max", (value))
 }
 
 // GetLogNumRdmaRc_Max gets the value of LogNumRdmaRc_Max for the instance
@@ -382,16 +510,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumRdmaRc_Max() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumRdmaRc_Min sets the value of LogNumRdmaRc_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumRdmaRc_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumRdmaRc_Min", value)
+	return instance.SetProperty("LogNumRdmaRc_Min", (value))
 }
 
 // GetLogNumRdmaRc_Min gets the value of LogNumRdmaRc_Min for the instance
@@ -400,16 +537,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumRdmaRc_Min() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumSrq_Max sets the value of LogNumSrq_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumSrq_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumSrq_Max", value)
+	return instance.SetProperty("LogNumSrq_Max", (value))
 }
 
 // GetLogNumSrq_Max gets the value of LogNumSrq_Max for the instance
@@ -418,16 +564,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumSrq_Max() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumSrq_Min sets the value of LogNumSrq_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumSrq_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumSrq_Min", value)
+	return instance.SetProperty("LogNumSrq_Min", (value))
 }
 
 // GetLogNumSrq_Min gets the value of LogNumSrq_Min for the instance
@@ -436,16 +591,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumSrq_Min() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumVlan_Max sets the value of LogNumVlan_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumVlan_Max(value uint32) (err error) {
-	return instance.SetProperty("LogNumVlan_Max", value)
+	return instance.SetProperty("LogNumVlan_Max", (value))
 }
 
 // GetLogNumVlan_Max gets the value of LogNumVlan_Max for the instance
@@ -454,16 +618,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumVlan_Max() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumVlan_Min sets the value of LogNumVlan_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyLogNumVlan_Min(value uint32) (err error) {
-	return instance.SetProperty("LogNumVlan_Min", value)
+	return instance.SetProperty("LogNumVlan_Min", (value))
 }
 
 // GetLogNumVlan_Min gets the value of LogNumVlan_Min for the instance
@@ -472,16 +645,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyLogNumVlan_Min() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumWorkingThreads_Max sets the value of MaximumWorkingThreads_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyMaximumWorkingThreads_Max(value uint32) (err error) {
-	return instance.SetProperty("MaximumWorkingThreads_Max", value)
+	return instance.SetProperty("MaximumWorkingThreads_Max", (value))
 }
 
 // GetMaximumWorkingThreads_Max gets the value of MaximumWorkingThreads_Max for the instance
@@ -490,16 +672,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyMaximumWorkingThreads_Ma
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumWorkingThreads_Min sets the value of MaximumWorkingThreads_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertyMaximumWorkingThreads_Min(value uint32) (err error) {
-	return instance.SetProperty("MaximumWorkingThreads_Min", value)
+	return instance.SetProperty("MaximumWorkingThreads_Min", (value))
 }
 
 // GetMaximumWorkingThreads_Min gets the value of MaximumWorkingThreads_Min for the instance
@@ -508,16 +699,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertyMaximumWorkingThreads_Mi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSet4kMtu_Max sets the value of Set4kMtu_Max for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertySet4kMtu_Max(value uint32) (err error) {
-	return instance.SetProperty("Set4kMtu_Max", value)
+	return instance.SetProperty("Set4kMtu_Max", (value))
 }
 
 // GetSet4kMtu_Max gets the value of Set4kMtu_Max for the instance
@@ -526,16 +726,25 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertySet4kMtu_Max() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSet4kMtu_Min sets the value of Set4kMtu_Min for the instance
 func (instance *MLNX_DriverCoreCapabilities) SetPropertySet4kMtu_Min(value uint32) (err error) {
-	return instance.SetProperty("Set4kMtu_Min", value)
+	return instance.SetProperty("Set4kMtu_Min", (value))
 }
 
 // GetSet4kMtu_Min gets the value of Set4kMtu_Min for the instance
@@ -544,9 +753,18 @@ func (instance *MLNX_DriverCoreCapabilities) GetPropertySet4kMtu_Min() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

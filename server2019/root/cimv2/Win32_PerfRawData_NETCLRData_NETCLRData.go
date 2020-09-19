@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_NETCLRData_NETCLRData struct
@@ -67,7 +69,7 @@ func NewWin32_PerfRawData_NETCLRData_NETCLRDataEx6(hostName string,
 
 // SetSqlClientCurrentNumberconnectionpools sets the value of SqlClientCurrentNumberconnectionpools for the instance
 func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) SetPropertySqlClientCurrentNumberconnectionpools(value uint32) (err error) {
-	return instance.SetProperty("SqlClientCurrentNumberconnectionpools", value)
+	return instance.SetProperty("SqlClientCurrentNumberconnectionpools", (value))
 }
 
 // GetSqlClientCurrentNumberconnectionpools gets the value of SqlClientCurrentNumberconnectionpools for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) GetPropertySqlClientCur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSqlClientCurrentNumberpooledandnonpooledconnections sets the value of SqlClientCurrentNumberpooledandnonpooledconnections for the instance
 func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) SetPropertySqlClientCurrentNumberpooledandnonpooledconnections(value uint32) (err error) {
-	return instance.SetProperty("SqlClientCurrentNumberpooledandnonpooledconnections", value)
+	return instance.SetProperty("SqlClientCurrentNumberpooledandnonpooledconnections", (value))
 }
 
 // GetSqlClientCurrentNumberpooledandnonpooledconnections gets the value of SqlClientCurrentNumberpooledandnonpooledconnections for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) GetPropertySqlClientCur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSqlClientCurrentNumberpooledconnections sets the value of SqlClientCurrentNumberpooledconnections for the instance
 func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) SetPropertySqlClientCurrentNumberpooledconnections(value uint32) (err error) {
-	return instance.SetProperty("SqlClientCurrentNumberpooledconnections", value)
+	return instance.SetProperty("SqlClientCurrentNumberpooledconnections", (value))
 }
 
 // GetSqlClientCurrentNumberpooledconnections gets the value of SqlClientCurrentNumberpooledconnections for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) GetPropertySqlClientCur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSqlClientPeakNumberpooledconnections sets the value of SqlClientPeakNumberpooledconnections for the instance
 func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) SetPropertySqlClientPeakNumberpooledconnections(value uint32) (err error) {
-	return instance.SetProperty("SqlClientPeakNumberpooledconnections", value)
+	return instance.SetProperty("SqlClientPeakNumberpooledconnections", (value))
 }
 
 // GetSqlClientPeakNumberpooledconnections gets the value of SqlClientPeakNumberpooledconnections for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) GetPropertySqlClientPea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSqlClientTotalNumberfailedcommands sets the value of SqlClientTotalNumberfailedcommands for the instance
 func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) SetPropertySqlClientTotalNumberfailedcommands(value uint32) (err error) {
-	return instance.SetProperty("SqlClientTotalNumberfailedcommands", value)
+	return instance.SetProperty("SqlClientTotalNumberfailedcommands", (value))
 }
 
 // GetSqlClientTotalNumberfailedcommands gets the value of SqlClientTotalNumberfailedcommands for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) GetPropertySqlClientTot
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSqlClientTotalNumberfailedconnects sets the value of SqlClientTotalNumberfailedconnects for the instance
 func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) SetPropertySqlClientTotalNumberfailedconnects(value uint32) (err error) {
-	return instance.SetProperty("SqlClientTotalNumberfailedconnects", value)
+	return instance.SetProperty("SqlClientTotalNumberfailedconnects", (value))
 }
 
 // GetSqlClientTotalNumberfailedconnects gets the value of SqlClientTotalNumberfailedconnects for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfRawData_NETCLRData_NETCLRData) GetPropertySqlClientTot
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ReplicationCapabilities struct
@@ -88,7 +90,7 @@ func NewMSFT_ReplicationCapabilitiesEx6(hostName string,
 
 // SetDefaultRecoveryPointObjective sets the value of DefaultRecoveryPointObjective for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertyDefaultRecoveryPointObjective(value uint32) (err error) {
-	return instance.SetProperty("DefaultRecoveryPointObjective", value)
+	return instance.SetProperty("DefaultRecoveryPointObjective", (value))
 }
 
 // GetDefaultRecoveryPointObjective gets the value of DefaultRecoveryPointObjective for the instance
@@ -97,16 +99,25 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertyDefaultRecoveryPointObj
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSupportedAsynchronousActions sets the value of SupportedAsynchronousActions for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedAsynchronousActions(value []uint16) (err error) {
-	return instance.SetProperty("SupportedAsynchronousActions", value)
+	return instance.SetProperty("SupportedAsynchronousActions", (value))
 }
 
 // GetSupportedAsynchronousActions gets the value of SupportedAsynchronousActions for the instance
@@ -115,16 +126,26 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedAsynchronousAc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedLogVolumeFeatures sets the value of SupportedLogVolumeFeatures for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedLogVolumeFeatures(value []uint16) (err error) {
-	return instance.SetProperty("SupportedLogVolumeFeatures", value)
+	return instance.SetProperty("SupportedLogVolumeFeatures", (value))
 }
 
 // GetSupportedLogVolumeFeatures gets the value of SupportedLogVolumeFeatures for the instance
@@ -133,16 +154,26 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedLogVolumeFeatu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedMaximumLogSize sets the value of SupportedMaximumLogSize for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedMaximumLogSize(value uint64) (err error) {
-	return instance.SetProperty("SupportedMaximumLogSize", value)
+	return instance.SetProperty("SupportedMaximumLogSize", (value))
 }
 
 // GetSupportedMaximumLogSize gets the value of SupportedMaximumLogSize for the instance
@@ -151,16 +182,25 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedMaximumLogSize
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSupportedMinimumLogSize sets the value of SupportedMinimumLogSize for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedMinimumLogSize(value uint64) (err error) {
-	return instance.SetProperty("SupportedMinimumLogSize", value)
+	return instance.SetProperty("SupportedMinimumLogSize", (value))
 }
 
 // GetSupportedMinimumLogSize gets the value of SupportedMinimumLogSize for the instance
@@ -169,16 +209,25 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedMinimumLogSize
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSupportedObjectTypes sets the value of SupportedObjectTypes for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedObjectTypes(value []uint16) (err error) {
-	return instance.SetProperty("SupportedObjectTypes", value)
+	return instance.SetProperty("SupportedObjectTypes", (value))
 }
 
 // GetSupportedObjectTypes gets the value of SupportedObjectTypes for the instance
@@ -187,16 +236,26 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedObjectTypes() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedReplicatedPartitionFeatures sets the value of SupportedReplicatedPartitionFeatures for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedReplicatedPartitionFeatures(value []uint16) (err error) {
-	return instance.SetProperty("SupportedReplicatedPartitionFeatures", value)
+	return instance.SetProperty("SupportedReplicatedPartitionFeatures", (value))
 }
 
 // GetSupportedReplicatedPartitionFeatures gets the value of SupportedReplicatedPartitionFeatures for the instance
@@ -205,16 +264,26 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedReplicatedPart
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedReplicationTypes sets the value of SupportedReplicationTypes for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedReplicationTypes(value []uint16) (err error) {
-	return instance.SetProperty("SupportedReplicationTypes", value)
+	return instance.SetProperty("SupportedReplicationTypes", (value))
 }
 
 // GetSupportedReplicationTypes gets the value of SupportedReplicationTypes for the instance
@@ -223,16 +292,26 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedReplicationTyp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedSynchronousActions sets the value of SupportedSynchronousActions for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportedSynchronousActions(value []uint16) (err error) {
-	return instance.SetProperty("SupportedSynchronousActions", value)
+	return instance.SetProperty("SupportedSynchronousActions", (value))
 }
 
 // GetSupportedSynchronousActions gets the value of SupportedSynchronousActions for the instance
@@ -241,16 +320,26 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportedSynchronousAct
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportsCreateReplicationRelationshipMethod sets the value of SupportsCreateReplicationRelationshipMethod for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportsCreateReplicationRelationshipMethod(value bool) (err error) {
-	return instance.SetProperty("SupportsCreateReplicationRelationshipMethod", value)
+	return instance.SetProperty("SupportsCreateReplicationRelationshipMethod", (value))
 }
 
 // GetSupportsCreateReplicationRelationshipMethod gets the value of SupportsCreateReplicationRelationshipMethod for the instance
@@ -259,16 +348,25 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportsCreateReplicati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsEmptyReplicationGroup sets the value of SupportsEmptyReplicationGroup for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportsEmptyReplicationGroup(value bool) (err error) {
-	return instance.SetProperty("SupportsEmptyReplicationGroup", value)
+	return instance.SetProperty("SupportsEmptyReplicationGroup", (value))
 }
 
 // GetSupportsEmptyReplicationGroup gets the value of SupportsEmptyReplicationGroup for the instance
@@ -277,16 +375,25 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportsEmptyReplicatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsFullDiscovery sets the value of SupportsFullDiscovery for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportsFullDiscovery(value bool) (err error) {
-	return instance.SetProperty("SupportsFullDiscovery", value)
+	return instance.SetProperty("SupportsFullDiscovery", (value))
 }
 
 // GetSupportsFullDiscovery gets the value of SupportsFullDiscovery for the instance
@@ -295,16 +402,25 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportsFullDiscovery()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsReplicationGroup sets the value of SupportsReplicationGroup for the instance
 func (instance *MSFT_ReplicationCapabilities) SetPropertySupportsReplicationGroup(value bool) (err error) {
-	return instance.SetProperty("SupportsReplicationGroup", value)
+	return instance.SetProperty("SupportsReplicationGroup", (value))
 }
 
 // GetSupportsReplicationGroup gets the value of SupportsReplicationGroup for the instance
@@ -313,10 +429,19 @@ func (instance *MSFT_ReplicationCapabilities) GetPropertySupportsReplicationGrou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

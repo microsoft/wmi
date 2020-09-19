@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ElementCapabilities struct
@@ -62,7 +64,7 @@ func NewCIM_ElementCapabilitiesEx6(hostName string,
 
 // SetCapabilities sets the value of Capabilities for the instance
 func (instance *CIM_ElementCapabilities) SetPropertyCapabilities(value CIM_Capabilities) (err error) {
-	return instance.SetProperty("Capabilities", value)
+	return instance.SetProperty("Capabilities", (value))
 }
 
 // GetCapabilities gets the value of Capabilities for the instance
@@ -71,16 +73,25 @@ func (instance *CIM_ElementCapabilities) GetPropertyCapabilities() (value CIM_Ca
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Capabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Capabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Capabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Capabilities(valuetmp)
+
 	return
 }
 
 // SetCharacteristics sets the value of Characteristics for the instance
 func (instance *CIM_ElementCapabilities) SetPropertyCharacteristics(value []ElementCapabilities_Characteristics) (err error) {
-	return instance.SetProperty("Characteristics", value)
+	return instance.SetProperty("Characteristics", (value))
 }
 
 // GetCharacteristics gets the value of Characteristics for the instance
@@ -89,16 +100,26 @@ func (instance *CIM_ElementCapabilities) GetPropertyCharacteristics() (value []E
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]ElementCapabilities_Characteristics)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, ElementCapabilities_Characteristics(valuetmp))
+	}
+
 	return
 }
 
 // SetManagedElement sets the value of ManagedElement for the instance
 func (instance *CIM_ElementCapabilities) SetPropertyManagedElement(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("ManagedElement", value)
+	return instance.SetProperty("ManagedElement", (value))
 }
 
 // GetManagedElement gets the value of ManagedElement for the instance
@@ -107,9 +128,18 @@ func (instance *CIM_ElementCapabilities) GetPropertyManagedElement() (value CIM_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }

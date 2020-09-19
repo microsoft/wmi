@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_SOM struct
@@ -68,7 +70,7 @@ func NewRSOP_SOMEx6(hostName string,
 
 // Setblocked sets the value of blocked for the instance
 func (instance *RSOP_SOM) SetPropertyblocked(value bool) (err error) {
-	return instance.SetProperty("blocked", value)
+	return instance.SetProperty("blocked", (value))
 }
 
 // Getblocked gets the value of blocked for the instance
@@ -77,16 +79,25 @@ func (instance *RSOP_SOM) GetPropertyblocked() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // Setblocking sets the value of blocking for the instance
 func (instance *RSOP_SOM) SetPropertyblocking(value bool) (err error) {
-	return instance.SetProperty("blocking", value)
+	return instance.SetProperty("blocking", (value))
 }
 
 // Getblocking gets the value of blocking for the instance
@@ -95,16 +106,25 @@ func (instance *RSOP_SOM) GetPropertyblocking() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // Setid sets the value of id for the instance
 func (instance *RSOP_SOM) SetPropertyid(value string) (err error) {
-	return instance.SetProperty("id", value)
+	return instance.SetProperty("id", (value))
 }
 
 // Getid gets the value of id for the instance
@@ -113,16 +133,25 @@ func (instance *RSOP_SOM) GetPropertyid() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setreason sets the value of reason for the instance
 func (instance *RSOP_SOM) SetPropertyreason(value uint32) (err error) {
-	return instance.SetProperty("reason", value)
+	return instance.SetProperty("reason", (value))
 }
 
 // Getreason gets the value of reason for the instance
@@ -131,16 +160,25 @@ func (instance *RSOP_SOM) GetPropertyreason() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSOMOrder sets the value of SOMOrder for the instance
 func (instance *RSOP_SOM) SetPropertySOMOrder(value uint32) (err error) {
-	return instance.SetProperty("SOMOrder", value)
+	return instance.SetProperty("SOMOrder", (value))
 }
 
 // GetSOMOrder gets the value of SOMOrder for the instance
@@ -149,16 +187,25 @@ func (instance *RSOP_SOM) GetPropertySOMOrder() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // Settype sets the value of type for the instance
 func (instance *RSOP_SOM) SetPropertytype(value uint32) (err error) {
-	return instance.SetProperty("type", value)
+	return instance.SetProperty("type", (value))
 }
 
 // Gettype gets the value of type for the instance
@@ -167,9 +214,18 @@ func (instance *RSOP_SOM) GetPropertytype() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

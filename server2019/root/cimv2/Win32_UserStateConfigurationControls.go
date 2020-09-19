@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_UserStateConfigurationControls struct
@@ -59,7 +61,7 @@ func NewWin32_UserStateConfigurationControlsEx6(hostName string,
 
 // SetFolderRedirection sets the value of FolderRedirection for the instance
 func (instance *Win32_UserStateConfigurationControls) SetPropertyFolderRedirection(value UserStateConfigurationControls_FolderRedirection) (err error) {
-	return instance.SetProperty("FolderRedirection", value)
+	return instance.SetProperty("FolderRedirection", (value))
 }
 
 // GetFolderRedirection gets the value of FolderRedirection for the instance
@@ -68,16 +70,25 @@ func (instance *Win32_UserStateConfigurationControls) GetPropertyFolderRedirecti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(UserStateConfigurationControls_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = UserStateConfigurationControls_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetOfflineFiles sets the value of OfflineFiles for the instance
 func (instance *Win32_UserStateConfigurationControls) SetPropertyOfflineFiles(value UserStateConfigurationControls_OfflineFiles) (err error) {
-	return instance.SetProperty("OfflineFiles", value)
+	return instance.SetProperty("OfflineFiles", (value))
 }
 
 // GetOfflineFiles gets the value of OfflineFiles for the instance
@@ -86,16 +97,25 @@ func (instance *Win32_UserStateConfigurationControls) GetPropertyOfflineFiles() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(UserStateConfigurationControls_OfflineFiles)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = UserStateConfigurationControls_OfflineFiles(valuetmp)
+
 	return
 }
 
 // SetRoamingUserProfile sets the value of RoamingUserProfile for the instance
 func (instance *Win32_UserStateConfigurationControls) SetPropertyRoamingUserProfile(value UserStateConfigurationControls_RoamingUserProfile) (err error) {
-	return instance.SetProperty("RoamingUserProfile", value)
+	return instance.SetProperty("RoamingUserProfile", (value))
 }
 
 // GetRoamingUserProfile gets the value of RoamingUserProfile for the instance
@@ -104,9 +124,18 @@ func (instance *Win32_UserStateConfigurationControls) GetPropertyRoamingUserProf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(UserStateConfigurationControls_RoamingUserProfile)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = UserStateConfigurationControls_RoamingUserProfile(valuetmp)
+
 	return
 }

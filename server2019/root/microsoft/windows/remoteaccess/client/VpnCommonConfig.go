@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
@@ -11,7 +11,9 @@ package client
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // VpnCommonConfig struct
@@ -95,7 +97,7 @@ func NewVpnCommonConfigEx6(hostName string,
 
 // SetConnectionStatus sets the value of ConnectionStatus for the instance
 func (instance *VpnCommonConfig) SetPropertyConnectionStatus(value string) (err error) {
-	return instance.SetProperty("ConnectionStatus", value)
+	return instance.SetProperty("ConnectionStatus", (value))
 }
 
 // GetConnectionStatus gets the value of ConnectionStatus for the instance
@@ -104,16 +106,25 @@ func (instance *VpnCommonConfig) GetPropertyConnectionStatus() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDnsSuffix sets the value of DnsSuffix for the instance
 func (instance *VpnCommonConfig) SetPropertyDnsSuffix(value string) (err error) {
-	return instance.SetProperty("DnsSuffix", value)
+	return instance.SetProperty("DnsSuffix", (value))
 }
 
 // GetDnsSuffix gets the value of DnsSuffix for the instance
@@ -122,16 +133,25 @@ func (instance *VpnCommonConfig) GetPropertyDnsSuffix() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGuid sets the value of Guid for the instance
 func (instance *VpnCommonConfig) SetPropertyGuid(value string) (err error) {
-	return instance.SetProperty("Guid", value)
+	return instance.SetProperty("Guid", (value))
 }
 
 // GetGuid gets the value of Guid for the instance
@@ -140,16 +160,25 @@ func (instance *VpnCommonConfig) GetPropertyGuid() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIdleDisconnectSeconds sets the value of IdleDisconnectSeconds for the instance
 func (instance *VpnCommonConfig) SetPropertyIdleDisconnectSeconds(value uint32) (err error) {
-	return instance.SetProperty("IdleDisconnectSeconds", value)
+	return instance.SetProperty("IdleDisconnectSeconds", (value))
 }
 
 // GetIdleDisconnectSeconds gets the value of IdleDisconnectSeconds for the instance
@@ -158,16 +187,25 @@ func (instance *VpnCommonConfig) GetPropertyIdleDisconnectSeconds() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsAutoTriggerEnabled sets the value of IsAutoTriggerEnabled for the instance
 func (instance *VpnCommonConfig) SetPropertyIsAutoTriggerEnabled(value bool) (err error) {
-	return instance.SetProperty("IsAutoTriggerEnabled", value)
+	return instance.SetProperty("IsAutoTriggerEnabled", (value))
 }
 
 // GetIsAutoTriggerEnabled gets the value of IsAutoTriggerEnabled for the instance
@@ -176,16 +214,25 @@ func (instance *VpnCommonConfig) GetPropertyIsAutoTriggerEnabled() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *VpnCommonConfig) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -194,16 +241,25 @@ func (instance *VpnCommonConfig) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProfileType sets the value of ProfileType for the instance
 func (instance *VpnCommonConfig) SetPropertyProfileType(value string) (err error) {
-	return instance.SetProperty("ProfileType", value)
+	return instance.SetProperty("ProfileType", (value))
 }
 
 // GetProfileType gets the value of ProfileType for the instance
@@ -212,16 +268,25 @@ func (instance *VpnCommonConfig) GetPropertyProfileType() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProvisioningAuthority sets the value of ProvisioningAuthority for the instance
 func (instance *VpnCommonConfig) SetPropertyProvisioningAuthority(value string) (err error) {
-	return instance.SetProperty("ProvisioningAuthority", value)
+	return instance.SetProperty("ProvisioningAuthority", (value))
 }
 
 // GetProvisioningAuthority gets the value of ProvisioningAuthority for the instance
@@ -230,16 +295,25 @@ func (instance *VpnCommonConfig) GetPropertyProvisioningAuthority() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProxy sets the value of Proxy for the instance
 func (instance *VpnCommonConfig) SetPropertyProxy(value VpnConnectionProxy) (err error) {
-	return instance.SetProperty("Proxy", value)
+	return instance.SetProperty("Proxy", (value))
 }
 
 // GetProxy gets the value of Proxy for the instance
@@ -248,16 +322,25 @@ func (instance *VpnCommonConfig) GetPropertyProxy() (value VpnConnectionProxy, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VpnConnectionProxy)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(VpnConnectionProxy)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " VpnConnectionProxy is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VpnConnectionProxy(valuetmp)
+
 	return
 }
 
 // SetRememberCredential sets the value of RememberCredential for the instance
 func (instance *VpnCommonConfig) SetPropertyRememberCredential(value bool) (err error) {
-	return instance.SetProperty("RememberCredential", value)
+	return instance.SetProperty("RememberCredential", (value))
 }
 
 // GetRememberCredential gets the value of RememberCredential for the instance
@@ -266,16 +349,25 @@ func (instance *VpnCommonConfig) GetPropertyRememberCredential() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRoutes sets the value of Routes for the instance
 func (instance *VpnCommonConfig) SetPropertyRoutes(value []MSFT_NetRoute) (err error) {
-	return instance.SetProperty("Routes", value)
+	return instance.SetProperty("Routes", (value))
 }
 
 // GetRoutes gets the value of Routes for the instance
@@ -284,16 +376,26 @@ func (instance *VpnCommonConfig) GetPropertyRoutes() (value []MSFT_NetRoute, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetRoute)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetRoute)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetRoute is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetRoute(valuetmp))
+	}
+
 	return
 }
 
 // SetServerAddress sets the value of ServerAddress for the instance
 func (instance *VpnCommonConfig) SetPropertyServerAddress(value string) (err error) {
-	return instance.SetProperty("ServerAddress", value)
+	return instance.SetProperty("ServerAddress", (value))
 }
 
 // GetServerAddress gets the value of ServerAddress for the instance
@@ -302,16 +404,25 @@ func (instance *VpnCommonConfig) GetPropertyServerAddress() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerList sets the value of ServerList for the instance
 func (instance *VpnCommonConfig) SetPropertyServerList(value []VpnServerAddress) (err error) {
-	return instance.SetProperty("ServerList", value)
+	return instance.SetProperty("ServerList", (value))
 }
 
 // GetServerList gets the value of ServerList for the instance
@@ -320,16 +431,26 @@ func (instance *VpnCommonConfig) GetPropertyServerList() (value []VpnServerAddre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]VpnServerAddress)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(VpnServerAddress)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " VpnServerAddress is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VpnServerAddress(valuetmp))
+	}
+
 	return
 }
 
 // SetSplitTunneling sets the value of SplitTunneling for the instance
 func (instance *VpnCommonConfig) SetPropertySplitTunneling(value bool) (err error) {
-	return instance.SetProperty("SplitTunneling", value)
+	return instance.SetProperty("SplitTunneling", (value))
 }
 
 // GetSplitTunneling gets the value of SplitTunneling for the instance
@@ -338,16 +459,25 @@ func (instance *VpnCommonConfig) GetPropertySplitTunneling() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVpnTrigger sets the value of VpnTrigger for the instance
 func (instance *VpnCommonConfig) SetPropertyVpnTrigger(value VpnConnectionTrigger) (err error) {
-	return instance.SetProperty("VpnTrigger", value)
+	return instance.SetProperty("VpnTrigger", (value))
 }
 
 // GetVpnTrigger gets the value of VpnTrigger for the instance
@@ -356,9 +486,18 @@ func (instance *VpnCommonConfig) GetPropertyVpnTrigger() (value VpnConnectionTri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VpnConnectionTrigger)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(VpnConnectionTrigger)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " VpnConnectionTrigger is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VpnConnectionTrigger(valuetmp)
+
 	return
 }

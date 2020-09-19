@@ -12,6 +12,7 @@ var (
 	NotFound       error = errors.New("Not Found")
 	Timedout       error = errors.New("Timedout")
 	InvalidInput   error = errors.New("Invalid Input")
+	InvalidType    error = errors.New("Invalid Type")
 	NotSupported   error = errors.New("Not Supported")
 	AlreadyExists  error = errors.New("Already Exists")
 	InvalidFilter  error = errors.New("Invalid Filter")

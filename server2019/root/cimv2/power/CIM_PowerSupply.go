@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PowerSupply struct
@@ -85,7 +87,7 @@ func NewCIM_PowerSupplyEx6(hostName string,
 
 // SetActiveInputVoltage sets the value of ActiveInputVoltage for the instance
 func (instance *CIM_PowerSupply) SetPropertyActiveInputVoltage(value uint16) (err error) {
-	return instance.SetProperty("ActiveInputVoltage", value)
+	return instance.SetProperty("ActiveInputVoltage", (value))
 }
 
 // GetActiveInputVoltage gets the value of ActiveInputVoltage for the instance
@@ -94,16 +96,25 @@ func (instance *CIM_PowerSupply) GetPropertyActiveInputVoltage() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIsSwitchingSupply sets the value of IsSwitchingSupply for the instance
 func (instance *CIM_PowerSupply) SetPropertyIsSwitchingSupply(value bool) (err error) {
-	return instance.SetProperty("IsSwitchingSupply", value)
+	return instance.SetProperty("IsSwitchingSupply", (value))
 }
 
 // GetIsSwitchingSupply gets the value of IsSwitchingSupply for the instance
@@ -112,16 +123,25 @@ func (instance *CIM_PowerSupply) GetPropertyIsSwitchingSupply() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRange1InputFrequencyHigh sets the value of Range1InputFrequencyHigh for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange1InputFrequencyHigh(value uint32) (err error) {
-	return instance.SetProperty("Range1InputFrequencyHigh", value)
+	return instance.SetProperty("Range1InputFrequencyHigh", (value))
 }
 
 // GetRange1InputFrequencyHigh gets the value of Range1InputFrequencyHigh for the instance
@@ -130,16 +150,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange1InputFrequencyHigh() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRange1InputFrequencyLow sets the value of Range1InputFrequencyLow for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange1InputFrequencyLow(value uint32) (err error) {
-	return instance.SetProperty("Range1InputFrequencyLow", value)
+	return instance.SetProperty("Range1InputFrequencyLow", (value))
 }
 
 // GetRange1InputFrequencyLow gets the value of Range1InputFrequencyLow for the instance
@@ -148,16 +177,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange1InputFrequencyLow() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRange1InputVoltageHigh sets the value of Range1InputVoltageHigh for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange1InputVoltageHigh(value uint32) (err error) {
-	return instance.SetProperty("Range1InputVoltageHigh", value)
+	return instance.SetProperty("Range1InputVoltageHigh", (value))
 }
 
 // GetRange1InputVoltageHigh gets the value of Range1InputVoltageHigh for the instance
@@ -166,16 +204,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange1InputVoltageHigh() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRange1InputVoltageLow sets the value of Range1InputVoltageLow for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange1InputVoltageLow(value uint32) (err error) {
-	return instance.SetProperty("Range1InputVoltageLow", value)
+	return instance.SetProperty("Range1InputVoltageLow", (value))
 }
 
 // GetRange1InputVoltageLow gets the value of Range1InputVoltageLow for the instance
@@ -184,16 +231,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange1InputVoltageLow() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRange2InputFrequencyHigh sets the value of Range2InputFrequencyHigh for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange2InputFrequencyHigh(value uint32) (err error) {
-	return instance.SetProperty("Range2InputFrequencyHigh", value)
+	return instance.SetProperty("Range2InputFrequencyHigh", (value))
 }
 
 // GetRange2InputFrequencyHigh gets the value of Range2InputFrequencyHigh for the instance
@@ -202,16 +258,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange2InputFrequencyHigh() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRange2InputFrequencyLow sets the value of Range2InputFrequencyLow for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange2InputFrequencyLow(value uint32) (err error) {
-	return instance.SetProperty("Range2InputFrequencyLow", value)
+	return instance.SetProperty("Range2InputFrequencyLow", (value))
 }
 
 // GetRange2InputFrequencyLow gets the value of Range2InputFrequencyLow for the instance
@@ -220,16 +285,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange2InputFrequencyLow() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRange2InputVoltageHigh sets the value of Range2InputVoltageHigh for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange2InputVoltageHigh(value uint32) (err error) {
-	return instance.SetProperty("Range2InputVoltageHigh", value)
+	return instance.SetProperty("Range2InputVoltageHigh", (value))
 }
 
 // GetRange2InputVoltageHigh gets the value of Range2InputVoltageHigh for the instance
@@ -238,16 +312,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange2InputVoltageHigh() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRange2InputVoltageLow sets the value of Range2InputVoltageLow for the instance
 func (instance *CIM_PowerSupply) SetPropertyRange2InputVoltageLow(value uint32) (err error) {
-	return instance.SetProperty("Range2InputVoltageLow", value)
+	return instance.SetProperty("Range2InputVoltageLow", (value))
 }
 
 // GetRange2InputVoltageLow gets the value of Range2InputVoltageLow for the instance
@@ -256,16 +339,25 @@ func (instance *CIM_PowerSupply) GetPropertyRange2InputVoltageLow() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalOutputPower sets the value of TotalOutputPower for the instance
 func (instance *CIM_PowerSupply) SetPropertyTotalOutputPower(value uint32) (err error) {
-	return instance.SetProperty("TotalOutputPower", value)
+	return instance.SetProperty("TotalOutputPower", (value))
 }
 
 // GetTotalOutputPower gets the value of TotalOutputPower for the instance
@@ -274,16 +366,25 @@ func (instance *CIM_PowerSupply) GetPropertyTotalOutputPower() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTypeOfRangeSwitching sets the value of TypeOfRangeSwitching for the instance
 func (instance *CIM_PowerSupply) SetPropertyTypeOfRangeSwitching(value uint16) (err error) {
-	return instance.SetProperty("TypeOfRangeSwitching", value)
+	return instance.SetProperty("TypeOfRangeSwitching", (value))
 }
 
 // GetTypeOfRangeSwitching gets the value of TypeOfRangeSwitching for the instance
@@ -292,9 +393,18 @@ func (instance *CIM_PowerSupply) GetPropertyTypeOfRangeSwitching() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

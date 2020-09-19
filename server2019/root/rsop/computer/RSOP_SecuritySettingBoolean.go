@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_SecuritySettingBoolean struct
@@ -55,7 +57,7 @@ func NewRSOP_SecuritySettingBooleanEx6(hostName string,
 
 // SetKeyName sets the value of KeyName for the instance
 func (instance *RSOP_SecuritySettingBoolean) SetPropertyKeyName(value string) (err error) {
-	return instance.SetProperty("KeyName", value)
+	return instance.SetProperty("KeyName", (value))
 }
 
 // GetKeyName gets the value of KeyName for the instance
@@ -64,16 +66,25 @@ func (instance *RSOP_SecuritySettingBoolean) GetPropertyKeyName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSetting sets the value of Setting for the instance
 func (instance *RSOP_SecuritySettingBoolean) SetPropertySetting(value bool) (err error) {
-	return instance.SetProperty("Setting", value)
+	return instance.SetProperty("Setting", (value))
 }
 
 // GetSetting gets the value of Setting for the instance
@@ -82,9 +93,18 @@ func (instance *RSOP_SecuritySettingBoolean) GetPropertySetting() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

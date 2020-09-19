@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemManagementServiceSettingData struct
@@ -94,7 +96,7 @@ func NewMsvm_VirtualSystemManagementServiceSettingDataEx6(hostName string,
 
 // SetBiosLockString sets the value of BiosLockString for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyBiosLockString(value string) (err error) {
-	return instance.SetProperty("BiosLockString", value)
+	return instance.SetProperty("BiosLockString", (value))
 }
 
 // GetBiosLockString gets the value of BiosLockString for the instance
@@ -103,16 +105,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyBiosL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCurrentWWNNAddress sets the value of CurrentWWNNAddress for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyCurrentWWNNAddress(value string) (err error) {
-	return instance.SetProperty("CurrentWWNNAddress", value)
+	return instance.SetProperty("CurrentWWNNAddress", (value))
 }
 
 // GetCurrentWWNNAddress gets the value of CurrentWWNNAddress for the instance
@@ -121,16 +132,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyCurre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDefaultExternalDataRoot sets the value of DefaultExternalDataRoot for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyDefaultExternalDataRoot(value string) (err error) {
-	return instance.SetProperty("DefaultExternalDataRoot", value)
+	return instance.SetProperty("DefaultExternalDataRoot", (value))
 }
 
 // GetDefaultExternalDataRoot gets the value of DefaultExternalDataRoot for the instance
@@ -139,16 +159,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyDefau
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDefaultVirtualHardDiskCachingMode sets the value of DefaultVirtualHardDiskCachingMode for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyDefaultVirtualHardDiskCachingMode(value uint16) (err error) {
-	return instance.SetProperty("DefaultVirtualHardDiskCachingMode", value)
+	return instance.SetProperty("DefaultVirtualHardDiskCachingMode", (value))
 }
 
 // GetDefaultVirtualHardDiskCachingMode gets the value of DefaultVirtualHardDiskCachingMode for the instance
@@ -157,16 +186,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyDefau
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDefaultVirtualHardDiskPath sets the value of DefaultVirtualHardDiskPath for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyDefaultVirtualHardDiskPath(value string) (err error) {
-	return instance.SetProperty("DefaultVirtualHardDiskPath", value)
+	return instance.SetProperty("DefaultVirtualHardDiskPath", (value))
 }
 
 // GetDefaultVirtualHardDiskPath gets the value of DefaultVirtualHardDiskPath for the instance
@@ -175,16 +213,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyDefau
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnhancedSessionModeEnabled sets the value of EnhancedSessionModeEnabled for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyEnhancedSessionModeEnabled(value bool) (err error) {
-	return instance.SetProperty("EnhancedSessionModeEnabled", value)
+	return instance.SetProperty("EnhancedSessionModeEnabled", (value))
 }
 
 // GetEnhancedSessionModeEnabled gets the value of EnhancedSessionModeEnabled for the instance
@@ -193,16 +240,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyEnhan
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHbaLunTimeout sets the value of HbaLunTimeout for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyHbaLunTimeout(value uint32) (err error) {
-	return instance.SetProperty("HbaLunTimeout", value)
+	return instance.SetProperty("HbaLunTimeout", (value))
 }
 
 // GetHbaLunTimeout gets the value of HbaLunTimeout for the instance
@@ -211,16 +267,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyHbaLu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHypervisorRootSchedulerEnabled sets the value of HypervisorRootSchedulerEnabled for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyHypervisorRootSchedulerEnabled(value bool) (err error) {
-	return instance.SetProperty("HypervisorRootSchedulerEnabled", value)
+	return instance.SetProperty("HypervisorRootSchedulerEnabled", (value))
 }
 
 // GetHypervisorRootSchedulerEnabled gets the value of HypervisorRootSchedulerEnabled for the instance
@@ -229,16 +294,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyHyper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaximumMacAddress sets the value of MaximumMacAddress for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyMaximumMacAddress(value string) (err error) {
-	return instance.SetProperty("MaximumMacAddress", value)
+	return instance.SetProperty("MaximumMacAddress", (value))
 }
 
 // GetMaximumMacAddress gets the value of MaximumMacAddress for the instance
@@ -247,16 +321,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyMaxim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaximumWWPNAddress sets the value of MaximumWWPNAddress for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyMaximumWWPNAddress(value string) (err error) {
-	return instance.SetProperty("MaximumWWPNAddress", value)
+	return instance.SetProperty("MaximumWWPNAddress", (value))
 }
 
 // GetMaximumWWPNAddress gets the value of MaximumWWPNAddress for the instance
@@ -265,16 +348,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyMaxim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMinimumMacAddress sets the value of MinimumMacAddress for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyMinimumMacAddress(value string) (err error) {
-	return instance.SetProperty("MinimumMacAddress", value)
+	return instance.SetProperty("MinimumMacAddress", (value))
 }
 
 // GetMinimumMacAddress gets the value of MinimumMacAddress for the instance
@@ -283,16 +375,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyMinim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMinimumWWPNAddress sets the value of MinimumWWPNAddress for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyMinimumWWPNAddress(value string) (err error) {
-	return instance.SetProperty("MinimumWWPNAddress", value)
+	return instance.SetProperty("MinimumWWPNAddress", (value))
 }
 
 // GetMinimumWWPNAddress gets the value of MinimumWWPNAddress for the instance
@@ -301,16 +402,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyMinim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumaSpanningEnabled sets the value of NumaSpanningEnabled for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyNumaSpanningEnabled(value bool) (err error) {
-	return instance.SetProperty("NumaSpanningEnabled", value)
+	return instance.SetProperty("NumaSpanningEnabled", (value))
 }
 
 // GetNumaSpanningEnabled gets the value of NumaSpanningEnabled for the instance
@@ -319,16 +429,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyNumaS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPrimaryOwnerContact sets the value of PrimaryOwnerContact for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyPrimaryOwnerContact(value string) (err error) {
-	return instance.SetProperty("PrimaryOwnerContact", value)
+	return instance.SetProperty("PrimaryOwnerContact", (value))
 }
 
 // GetPrimaryOwnerContact gets the value of PrimaryOwnerContact for the instance
@@ -337,16 +456,25 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyPrima
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrimaryOwnerName sets the value of PrimaryOwnerName for the instance
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) SetPropertyPrimaryOwnerName(value string) (err error) {
-	return instance.SetProperty("PrimaryOwnerName", value)
+	return instance.SetProperty("PrimaryOwnerName", (value))
 }
 
 // GetPrimaryOwnerName gets the value of PrimaryOwnerName for the instance
@@ -355,10 +483,19 @@ func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetPropertyPrima
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_VirtualSystemManagementServiceSettingData) GetRelatedVirtualSystemManagementService() (value *cim.WmiInstance, err error) {

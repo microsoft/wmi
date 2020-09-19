@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEConnectionWinINetSettings struct
@@ -65,7 +67,7 @@ func NewRSOP_IEConnectionWinINetSettingsEx6(hostName string,
 
 // SetconnectionName sets the value of connectionName for the instance
 func (instance *RSOP_IEConnectionWinINetSettings) SetPropertyconnectionName(value string) (err error) {
-	return instance.SetProperty("connectionName", value)
+	return instance.SetProperty("connectionName", (value))
 }
 
 // GetconnectionName gets the value of connectionName for the instance
@@ -74,16 +76,25 @@ func (instance *RSOP_IEConnectionWinINetSettings) GetPropertyconnectionName() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetinternetPerConnOptionListData sets the value of internetPerConnOptionListData for the instance
 func (instance *RSOP_IEConnectionWinINetSettings) SetPropertyinternetPerConnOptionListData(value []uint8) (err error) {
-	return instance.SetProperty("internetPerConnOptionListData", value)
+	return instance.SetProperty("internetPerConnOptionListData", (value))
 }
 
 // GetinternetPerConnOptionListData gets the value of internetPerConnOptionListData for the instance
@@ -92,16 +103,26 @@ func (instance *RSOP_IEConnectionWinINetSettings) GetPropertyinternetPerConnOpti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetinternetPerConnOptionListDataSize sets the value of internetPerConnOptionListDataSize for the instance
 func (instance *RSOP_IEConnectionWinINetSettings) SetPropertyinternetPerConnOptionListDataSize(value uint32) (err error) {
-	return instance.SetProperty("internetPerConnOptionListDataSize", value)
+	return instance.SetProperty("internetPerConnOptionListDataSize", (value))
 }
 
 // GetinternetPerConnOptionListDataSize gets the value of internetPerConnOptionListDataSize for the instance
@@ -110,16 +131,25 @@ func (instance *RSOP_IEConnectionWinINetSettings) GetPropertyinternetPerConnOpti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IEConnectionWinINetSettings) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -128,16 +158,25 @@ func (instance *RSOP_IEConnectionWinINetSettings) GetPropertyrsopID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IEConnectionWinINetSettings) SetPropertyrsopPrecedence(value int32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -146,9 +185,18 @@ func (instance *RSOP_IEConnectionWinINetSettings) GetPropertyrsopPrecedence() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

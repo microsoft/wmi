@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageSubSystem struct
@@ -235,12 +237,6 @@ type MSFT_StorageSubSystem struct {
 
 	// Tag is an identifier for the subsystem that is independent from any location-based information. Examples of a tag could be the subsystem's serial number or asset tag.
 	Tag string
-
-	// Denotes whether virtual disk repair is enabled on this subsystem.
-	VirtualDiskRepairEnabled bool
-
-	// Denotes the virtual disk repair queue depth policy in this subsystem.
-	VirtualDiskRepairQueueDepth uint32
 }
 
 func NewMSFT_StorageSubSystemEx1(instance *cim.WmiInstance) (newInstance *MSFT_StorageSubSystem, err error) {
@@ -274,7 +270,7 @@ func NewMSFT_StorageSubSystemEx6(hostName string,
 
 // SetAutomaticClusteringEnabled sets the value of AutomaticClusteringEnabled for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyAutomaticClusteringEnabled(value bool) (err error) {
-	return instance.SetProperty("AutomaticClusteringEnabled", value)
+	return instance.SetProperty("AutomaticClusteringEnabled", (value))
 }
 
 // GetAutomaticClusteringEnabled gets the value of AutomaticClusteringEnabled for the instance
@@ -283,16 +279,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyAutomaticClusteringEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCurrentCacheLevel sets the value of CurrentCacheLevel for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyCurrentCacheLevel(value StorageSubSystem_CurrentCacheLevel) (err error) {
-	return instance.SetProperty("CurrentCacheLevel", value)
+	return instance.SetProperty("CurrentCacheLevel", (value))
 }
 
 // GetCurrentCacheLevel gets the value of CurrentCacheLevel for the instance
@@ -301,16 +306,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyCurrentCacheLevel() (value Sto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSubSystem_CurrentCacheLevel)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSubSystem_CurrentCacheLevel(valuetmp)
+
 	return
 }
 
 // SetDataTieringType sets the value of DataTieringType for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyDataTieringType(value StorageSubSystem_DataTieringType) (err error) {
-	return instance.SetProperty("DataTieringType", value)
+	return instance.SetProperty("DataTieringType", (value))
 }
 
 // GetDataTieringType gets the value of DataTieringType for the instance
@@ -319,16 +333,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyDataTieringType() (value Stora
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSubSystem_DataTieringType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSubSystem_DataTieringType(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -337,16 +360,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyDescription() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultDomainAwarenessDefault sets the value of FaultDomainAwarenessDefault for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyFaultDomainAwarenessDefault(value StorageSubSystem_FaultDomainAwarenessDefault) (err error) {
-	return instance.SetProperty("FaultDomainAwarenessDefault", value)
+	return instance.SetProperty("FaultDomainAwarenessDefault", (value))
 }
 
 // GetFaultDomainAwarenessDefault gets the value of FaultDomainAwarenessDefault for the instance
@@ -355,16 +387,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyFaultDomainAwarenessDefault() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSubSystem_FaultDomainAwarenessDefault)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSubSystem_FaultDomainAwarenessDefault(valuetmp)
+
 	return
 }
 
 // SetFirmwareVersion sets the value of FirmwareVersion for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyFirmwareVersion(value string) (err error) {
-	return instance.SetProperty("FirmwareVersion", value)
+	return instance.SetProperty("FirmwareVersion", (value))
 }
 
 // GetFirmwareVersion gets the value of FirmwareVersion for the instance
@@ -373,16 +414,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyFirmwareVersion() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -391,16 +441,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyFriendlyName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyHealthStatus(value StorageSubSystem_HealthStatus) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -409,16 +468,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyHealthStatus() (value StorageS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSubSystem_HealthStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSubSystem_HealthStatus(valuetmp)
+
 	return
 }
 
 // SetiSCSITargetCreationScheme sets the value of iSCSITargetCreationScheme for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyiSCSITargetCreationScheme(value StorageSubSystem_iSCSITargetCreationScheme) (err error) {
-	return instance.SetProperty("iSCSITargetCreationScheme", value)
+	return instance.SetProperty("iSCSITargetCreationScheme", (value))
 }
 
 // GetiSCSITargetCreationScheme gets the value of iSCSITargetCreationScheme for the instance
@@ -427,16 +495,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyiSCSITargetCreationScheme() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSubSystem_iSCSITargetCreationScheme)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSubSystem_iSCSITargetCreationScheme(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -445,16 +522,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyManufacturer() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaskingClientSelectableDeviceNumbers sets the value of MaskingClientSelectableDeviceNumbers for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyMaskingClientSelectableDeviceNumbers(value bool) (err error) {
-	return instance.SetProperty("MaskingClientSelectableDeviceNumbers", value)
+	return instance.SetProperty("MaskingClientSelectableDeviceNumbers", (value))
 }
 
 // GetMaskingClientSelectableDeviceNumbers gets the value of MaskingClientSelectableDeviceNumbers for the instance
@@ -463,16 +549,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyMaskingClientSelectableDeviceN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaskingMapCountMax sets the value of MaskingMapCountMax for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyMaskingMapCountMax(value uint16) (err error) {
-	return instance.SetProperty("MaskingMapCountMax", value)
+	return instance.SetProperty("MaskingMapCountMax", (value))
 }
 
 // GetMaskingMapCountMax gets the value of MaskingMapCountMax for the instance
@@ -481,16 +576,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyMaskingMapCountMax() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaskingOneInitiatorIdPerView sets the value of MaskingOneInitiatorIdPerView for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyMaskingOneInitiatorIdPerView(value bool) (err error) {
-	return instance.SetProperty("MaskingOneInitiatorIdPerView", value)
+	return instance.SetProperty("MaskingOneInitiatorIdPerView", (value))
 }
 
 // GetMaskingOneInitiatorIdPerView gets the value of MaskingOneInitiatorIdPerView for the instance
@@ -499,16 +603,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyMaskingOneInitiatorIdPerView()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaskingOtherValidInitiatorIdTypes sets the value of MaskingOtherValidInitiatorIdTypes for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyMaskingOtherValidInitiatorIdTypes(value []string) (err error) {
-	return instance.SetProperty("MaskingOtherValidInitiatorIdTypes", value)
+	return instance.SetProperty("MaskingOtherValidInitiatorIdTypes", (value))
 }
 
 // GetMaskingOtherValidInitiatorIdTypes gets the value of MaskingOtherValidInitiatorIdTypes for the instance
@@ -517,16 +630,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertyMaskingOtherValidInitiatorIdTy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMaskingPortsPerView sets the value of MaskingPortsPerView for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyMaskingPortsPerView(value StorageSubSystem_MaskingPortsPerView) (err error) {
-	return instance.SetProperty("MaskingPortsPerView", value)
+	return instance.SetProperty("MaskingPortsPerView", (value))
 }
 
 // GetMaskingPortsPerView gets the value of MaskingPortsPerView for the instance
@@ -535,16 +658,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyMaskingPortsPerView() (value S
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSubSystem_MaskingPortsPerView)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSubSystem_MaskingPortsPerView(valuetmp)
+
 	return
 }
 
 // SetMaskingValidInitiatorIdTypes sets the value of MaskingValidInitiatorIdTypes for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyMaskingValidInitiatorIdTypes(value []StorageSubSystem_MaskingValidInitiatorIdTypes) (err error) {
-	return instance.SetProperty("MaskingValidInitiatorIdTypes", value)
+	return instance.SetProperty("MaskingValidInitiatorIdTypes", (value))
 }
 
 // GetMaskingValidInitiatorIdTypes gets the value of MaskingValidInitiatorIdTypes for the instance
@@ -553,16 +685,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertyMaskingValidInitiatorIdTypes()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageSubSystem_MaskingValidInitiatorIdTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageSubSystem_MaskingValidInitiatorIdTypes(valuetmp))
+	}
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -571,16 +713,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyModel() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -589,16 +740,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameFormat sets the value of NameFormat for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyNameFormat(value StorageSubSystem_NameFormat) (err error) {
-	return instance.SetProperty("NameFormat", value)
+	return instance.SetProperty("NameFormat", (value))
 }
 
 // GetNameFormat gets the value of NameFormat for the instance
@@ -607,16 +767,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyNameFormat() (value StorageSub
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSubSystem_NameFormat)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSubSystem_NameFormat(valuetmp)
+
 	return
 }
 
 // SetNumberOfSlots sets the value of NumberOfSlots for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyNumberOfSlots(value uint32) (err error) {
-	return instance.SetProperty("NumberOfSlots", value)
+	return instance.SetProperty("NumberOfSlots", (value))
 }
 
 // GetNumberOfSlots gets the value of NumberOfSlots for the instance
@@ -625,16 +794,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyNumberOfSlots() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyOperationalStatus(value []StorageSubSystem_OperationalStatus) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -643,16 +821,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertyOperationalStatus() (value []S
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageSubSystem_OperationalStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageSubSystem_OperationalStatus(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherHostTypeDescription sets the value of OtherHostTypeDescription for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyOtherHostTypeDescription(value []string) (err error) {
-	return instance.SetProperty("OtherHostTypeDescription", value)
+	return instance.SetProperty("OtherHostTypeDescription", (value))
 }
 
 // GetOtherHostTypeDescription gets the value of OtherHostTypeDescription for the instance
@@ -661,16 +849,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertyOtherHostTypeDescription() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherIdentifyingInfo sets the value of OtherIdentifyingInfo for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyOtherIdentifyingInfo(value []string) (err error) {
-	return instance.SetProperty("OtherIdentifyingInfo", value)
+	return instance.SetProperty("OtherIdentifyingInfo", (value))
 }
 
 // GetOtherIdentifyingInfo gets the value of OtherIdentifyingInfo for the instance
@@ -679,16 +877,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertyOtherIdentifyingInfo() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherIdentifyingInfoDescription sets the value of OtherIdentifyingInfoDescription for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyOtherIdentifyingInfoDescription(value []string) (err error) {
-	return instance.SetProperty("OtherIdentifyingInfoDescription", value)
+	return instance.SetProperty("OtherIdentifyingInfoDescription", (value))
 }
 
 // GetOtherIdentifyingInfoDescription gets the value of OtherIdentifyingInfoDescription for the instance
@@ -697,16 +905,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertyOtherIdentifyingInfoDescriptio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherOperationalStatusDescription sets the value of OtherOperationalStatusDescription for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyOtherOperationalStatusDescription(value string) (err error) {
-	return instance.SetProperty("OtherOperationalStatusDescription", value)
+	return instance.SetProperty("OtherOperationalStatusDescription", (value))
 }
 
 // GetOtherOperationalStatusDescription gets the value of OtherOperationalStatusDescription for the instance
@@ -715,16 +933,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyOtherOperationalStatusDescript
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPhysicalDisksPerStoragePoolMin sets the value of PhysicalDisksPerStoragePoolMin for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyPhysicalDisksPerStoragePoolMin(value uint16) (err error) {
-	return instance.SetProperty("PhysicalDisksPerStoragePoolMin", value)
+	return instance.SetProperty("PhysicalDisksPerStoragePoolMin", (value))
 }
 
 // GetPhysicalDisksPerStoragePoolMin gets the value of PhysicalDisksPerStoragePoolMin for the instance
@@ -733,16 +960,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyPhysicalDisksPerStoragePoolMin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicasPerSourceCloneMax sets the value of ReplicasPerSourceCloneMax for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyReplicasPerSourceCloneMax(value uint16) (err error) {
-	return instance.SetProperty("ReplicasPerSourceCloneMax", value)
+	return instance.SetProperty("ReplicasPerSourceCloneMax", (value))
 }
 
 // GetReplicasPerSourceCloneMax gets the value of ReplicasPerSourceCloneMax for the instance
@@ -751,16 +987,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyReplicasPerSourceCloneMax() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicasPerSourceMirrorMax sets the value of ReplicasPerSourceMirrorMax for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyReplicasPerSourceMirrorMax(value uint16) (err error) {
-	return instance.SetProperty("ReplicasPerSourceMirrorMax", value)
+	return instance.SetProperty("ReplicasPerSourceMirrorMax", (value))
 }
 
 // GetReplicasPerSourceMirrorMax gets the value of ReplicasPerSourceMirrorMax for the instance
@@ -769,16 +1014,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyReplicasPerSourceMirrorMax() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicasPerSourceSnapshotMax sets the value of ReplicasPerSourceSnapshotMax for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyReplicasPerSourceSnapshotMax(value uint16) (err error) {
-	return instance.SetProperty("ReplicasPerSourceSnapshotMax", value)
+	return instance.SetProperty("ReplicasPerSourceSnapshotMax", (value))
 }
 
 // GetReplicasPerSourceSnapshotMax gets the value of ReplicasPerSourceSnapshotMax for the instance
@@ -787,16 +1041,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyReplicasPerSourceSnapshotMax()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -805,16 +1068,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySerialNumber() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStorageConnectionType sets the value of StorageConnectionType for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyStorageConnectionType(value uint16) (err error) {
-	return instance.SetProperty("StorageConnectionType", value)
+	return instance.SetProperty("StorageConnectionType", (value))
 }
 
 // GetStorageConnectionType gets the value of StorageConnectionType for the instance
@@ -823,16 +1095,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertyStorageConnectionType() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSupportedDeduplicationFileSystemTypes sets the value of SupportedDeduplicationFileSystemTypes for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportedDeduplicationFileSystemTypes(value []StorageSubSystem_SupportedDeduplicationFileSystemTypes) (err error) {
-	return instance.SetProperty("SupportedDeduplicationFileSystemTypes", value)
+	return instance.SetProperty("SupportedDeduplicationFileSystemTypes", (value))
 }
 
 // GetSupportedDeduplicationFileSystemTypes gets the value of SupportedDeduplicationFileSystemTypes for the instance
@@ -841,16 +1122,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportedDeduplicationFileSyst
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageSubSystem_SupportedDeduplicationFileSystemTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageSubSystem_SupportedDeduplicationFileSystemTypes(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedDeduplicationObjectTypes sets the value of SupportedDeduplicationObjectTypes for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportedDeduplicationObjectTypes(value []StorageSubSystem_SupportedDeduplicationObjectTypes) (err error) {
-	return instance.SetProperty("SupportedDeduplicationObjectTypes", value)
+	return instance.SetProperty("SupportedDeduplicationObjectTypes", (value))
 }
 
 // GetSupportedDeduplicationObjectTypes gets the value of SupportedDeduplicationObjectTypes for the instance
@@ -859,16 +1150,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportedDeduplicationObjectTy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageSubSystem_SupportedDeduplicationObjectTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageSubSystem_SupportedDeduplicationObjectTypes(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedFileServerProtocols sets the value of SupportedFileServerProtocols for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportedFileServerProtocols(value []StorageSubSystem_SupportedFileServerProtocols) (err error) {
-	return instance.SetProperty("SupportedFileServerProtocols", value)
+	return instance.SetProperty("SupportedFileServerProtocols", (value))
 }
 
 // GetSupportedFileServerProtocols gets the value of SupportedFileServerProtocols for the instance
@@ -877,16 +1178,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportedFileServerProtocols()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageSubSystem_SupportedFileServerProtocols)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageSubSystem_SupportedFileServerProtocols(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedFileSystems sets the value of SupportedFileSystems for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportedFileSystems(value []StorageSubSystem_SupportedFileSystems) (err error) {
-	return instance.SetProperty("SupportedFileSystems", value)
+	return instance.SetProperty("SupportedFileSystems", (value))
 }
 
 // GetSupportedFileSystems gets the value of SupportedFileSystems for the instance
@@ -895,16 +1206,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportedFileSystems() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageSubSystem_SupportedFileSystems)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageSubSystem_SupportedFileSystems(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedHostType sets the value of SupportedHostType for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportedHostType(value []StorageSubSystem_SupportedHostType) (err error) {
-	return instance.SetProperty("SupportedHostType", value)
+	return instance.SetProperty("SupportedHostType", (value))
 }
 
 // GetSupportedHostType gets the value of SupportedHostType for the instance
@@ -913,16 +1234,26 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportedHostType() (value []S
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageSubSystem_SupportedHostType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageSubSystem_SupportedHostType(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportsAutomaticStoragePoolSelection sets the value of SupportsAutomaticStoragePoolSelection for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsAutomaticStoragePoolSelection(value bool) (err error) {
-	return instance.SetProperty("SupportsAutomaticStoragePoolSelection", value)
+	return instance.SetProperty("SupportsAutomaticStoragePoolSelection", (value))
 }
 
 // GetSupportsAutomaticStoragePoolSelection gets the value of SupportsAutomaticStoragePoolSelection for the instance
@@ -931,16 +1262,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsAutomaticStoragePoolSe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsCloneLocal sets the value of SupportsCloneLocal for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsCloneLocal(value bool) (err error) {
-	return instance.SetProperty("SupportsCloneLocal", value)
+	return instance.SetProperty("SupportsCloneLocal", (value))
 }
 
 // GetSupportsCloneLocal gets the value of SupportsCloneLocal for the instance
@@ -949,16 +1289,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsCloneLocal() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsCloneRemote sets the value of SupportsCloneRemote for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsCloneRemote(value bool) (err error) {
-	return instance.SetProperty("SupportsCloneRemote", value)
+	return instance.SetProperty("SupportsCloneRemote", (value))
 }
 
 // GetSupportsCloneRemote gets the value of SupportsCloneRemote for the instance
@@ -967,16 +1316,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsCloneRemote() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsContinuouslyAvailableFileServer sets the value of SupportsContinuouslyAvailableFileServer for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsContinuouslyAvailableFileServer(value bool) (err error) {
-	return instance.SetProperty("SupportsContinuouslyAvailableFileServer", value)
+	return instance.SetProperty("SupportsContinuouslyAvailableFileServer", (value))
 }
 
 // GetSupportsContinuouslyAvailableFileServer gets the value of SupportsContinuouslyAvailableFileServer for the instance
@@ -985,16 +1343,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsContinuouslyAvailableF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsFileServer sets the value of SupportsFileServer for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsFileServer(value bool) (err error) {
-	return instance.SetProperty("SupportsFileServer", value)
+	return instance.SetProperty("SupportsFileServer", (value))
 }
 
 // GetSupportsFileServer gets the value of SupportsFileServer for the instance
@@ -1003,16 +1370,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsFileServer() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsFileServerCreation sets the value of SupportsFileServerCreation for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsFileServerCreation(value bool) (err error) {
-	return instance.SetProperty("SupportsFileServerCreation", value)
+	return instance.SetProperty("SupportsFileServerCreation", (value))
 }
 
 // GetSupportsFileServerCreation gets the value of SupportsFileServerCreation for the instance
@@ -1021,16 +1397,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsFileServerCreation() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsMaskingVirtualDiskToHosts sets the value of SupportsMaskingVirtualDiskToHosts for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsMaskingVirtualDiskToHosts(value bool) (err error) {
-	return instance.SetProperty("SupportsMaskingVirtualDiskToHosts", value)
+	return instance.SetProperty("SupportsMaskingVirtualDiskToHosts", (value))
 }
 
 // GetSupportsMaskingVirtualDiskToHosts gets the value of SupportsMaskingVirtualDiskToHosts for the instance
@@ -1039,16 +1424,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsMaskingVirtualDiskToHo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsMirrorLocal sets the value of SupportsMirrorLocal for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsMirrorLocal(value bool) (err error) {
-	return instance.SetProperty("SupportsMirrorLocal", value)
+	return instance.SetProperty("SupportsMirrorLocal", (value))
 }
 
 // GetSupportsMirrorLocal gets the value of SupportsMirrorLocal for the instance
@@ -1057,16 +1451,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsMirrorLocal() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsMirrorRemote sets the value of SupportsMirrorRemote for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsMirrorRemote(value bool) (err error) {
-	return instance.SetProperty("SupportsMirrorRemote", value)
+	return instance.SetProperty("SupportsMirrorRemote", (value))
 }
 
 // GetSupportsMirrorRemote gets the value of SupportsMirrorRemote for the instance
@@ -1075,16 +1478,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsMirrorRemote() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsMultipleResiliencySettingsPerStoragePool sets the value of SupportsMultipleResiliencySettingsPerStoragePool for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsMultipleResiliencySettingsPerStoragePool(value bool) (err error) {
-	return instance.SetProperty("SupportsMultipleResiliencySettingsPerStoragePool", value)
+	return instance.SetProperty("SupportsMultipleResiliencySettingsPerStoragePool", (value))
 }
 
 // GetSupportsMultipleResiliencySettingsPerStoragePool gets the value of SupportsMultipleResiliencySettingsPerStoragePool for the instance
@@ -1093,16 +1505,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsMultipleResiliencySett
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsSnapshotLocal sets the value of SupportsSnapshotLocal for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsSnapshotLocal(value bool) (err error) {
-	return instance.SetProperty("SupportsSnapshotLocal", value)
+	return instance.SetProperty("SupportsSnapshotLocal", (value))
 }
 
 // GetSupportsSnapshotLocal gets the value of SupportsSnapshotLocal for the instance
@@ -1111,16 +1532,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsSnapshotLocal() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsSnapshotRemote sets the value of SupportsSnapshotRemote for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsSnapshotRemote(value bool) (err error) {
-	return instance.SetProperty("SupportsSnapshotRemote", value)
+	return instance.SetProperty("SupportsSnapshotRemote", (value))
 }
 
 // GetSupportsSnapshotRemote gets the value of SupportsSnapshotRemote for the instance
@@ -1129,16 +1559,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsSnapshotRemote() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStoragePoolAddPhysicalDisk sets the value of SupportsStoragePoolAddPhysicalDisk for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStoragePoolAddPhysicalDisk(value bool) (err error) {
-	return instance.SetProperty("SupportsStoragePoolAddPhysicalDisk", value)
+	return instance.SetProperty("SupportsStoragePoolAddPhysicalDisk", (value))
 }
 
 // GetSupportsStoragePoolAddPhysicalDisk gets the value of SupportsStoragePoolAddPhysicalDisk for the instance
@@ -1147,16 +1586,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStoragePoolAddPhysical
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStoragePoolCreation sets the value of SupportsStoragePoolCreation for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStoragePoolCreation(value bool) (err error) {
-	return instance.SetProperty("SupportsStoragePoolCreation", value)
+	return instance.SetProperty("SupportsStoragePoolCreation", (value))
 }
 
 // GetSupportsStoragePoolCreation gets the value of SupportsStoragePoolCreation for the instance
@@ -1165,16 +1613,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStoragePoolCreation() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStoragePoolDeletion sets the value of SupportsStoragePoolDeletion for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStoragePoolDeletion(value bool) (err error) {
-	return instance.SetProperty("SupportsStoragePoolDeletion", value)
+	return instance.SetProperty("SupportsStoragePoolDeletion", (value))
 }
 
 // GetSupportsStoragePoolDeletion gets the value of SupportsStoragePoolDeletion for the instance
@@ -1183,16 +1640,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStoragePoolDeletion() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStoragePoolFriendlyNameModification sets the value of SupportsStoragePoolFriendlyNameModification for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStoragePoolFriendlyNameModification(value bool) (err error) {
-	return instance.SetProperty("SupportsStoragePoolFriendlyNameModification", value)
+	return instance.SetProperty("SupportsStoragePoolFriendlyNameModification", (value))
 }
 
 // GetSupportsStoragePoolFriendlyNameModification gets the value of SupportsStoragePoolFriendlyNameModification for the instance
@@ -1201,16 +1667,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStoragePoolFriendlyNam
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStoragePoolRemovePhysicalDisk sets the value of SupportsStoragePoolRemovePhysicalDisk for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStoragePoolRemovePhysicalDisk(value bool) (err error) {
-	return instance.SetProperty("SupportsStoragePoolRemovePhysicalDisk", value)
+	return instance.SetProperty("SupportsStoragePoolRemovePhysicalDisk", (value))
 }
 
 // GetSupportsStoragePoolRemovePhysicalDisk gets the value of SupportsStoragePoolRemovePhysicalDisk for the instance
@@ -1219,16 +1694,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStoragePoolRemovePhysi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStorageTierCreation sets the value of SupportsStorageTierCreation for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStorageTierCreation(value bool) (err error) {
-	return instance.SetProperty("SupportsStorageTierCreation", value)
+	return instance.SetProperty("SupportsStorageTierCreation", (value))
 }
 
 // GetSupportsStorageTierCreation gets the value of SupportsStorageTierCreation for the instance
@@ -1237,16 +1721,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStorageTierCreation() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStorageTierDeletion sets the value of SupportsStorageTierDeletion for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStorageTierDeletion(value bool) (err error) {
-	return instance.SetProperty("SupportsStorageTierDeletion", value)
+	return instance.SetProperty("SupportsStorageTierDeletion", (value))
 }
 
 // GetSupportsStorageTierDeletion gets the value of SupportsStorageTierDeletion for the instance
@@ -1255,16 +1748,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStorageTierDeletion() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStorageTieredVirtualDiskCreation sets the value of SupportsStorageTieredVirtualDiskCreation for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStorageTieredVirtualDiskCreation(value bool) (err error) {
-	return instance.SetProperty("SupportsStorageTieredVirtualDiskCreation", value)
+	return instance.SetProperty("SupportsStorageTieredVirtualDiskCreation", (value))
 }
 
 // GetSupportsStorageTieredVirtualDiskCreation gets the value of SupportsStorageTieredVirtualDiskCreation for the instance
@@ -1273,16 +1775,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStorageTieredVirtualDi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStorageTierFriendlyNameModification sets the value of SupportsStorageTierFriendlyNameModification for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStorageTierFriendlyNameModification(value bool) (err error) {
-	return instance.SetProperty("SupportsStorageTierFriendlyNameModification", value)
+	return instance.SetProperty("SupportsStorageTierFriendlyNameModification", (value))
 }
 
 // GetSupportsStorageTierFriendlyNameModification gets the value of SupportsStorageTierFriendlyNameModification for the instance
@@ -1291,16 +1802,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStorageTierFriendlyNam
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsStorageTierResize sets the value of SupportsStorageTierResize for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsStorageTierResize(value bool) (err error) {
-	return instance.SetProperty("SupportsStorageTierResize", value)
+	return instance.SetProperty("SupportsStorageTierResize", (value))
 }
 
 // GetSupportsStorageTierResize gets the value of SupportsStorageTierResize for the instance
@@ -1309,16 +1829,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsStorageTierResize() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsVirtualDiskCapacityExpansion sets the value of SupportsVirtualDiskCapacityExpansion for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsVirtualDiskCapacityExpansion(value bool) (err error) {
-	return instance.SetProperty("SupportsVirtualDiskCapacityExpansion", value)
+	return instance.SetProperty("SupportsVirtualDiskCapacityExpansion", (value))
 }
 
 // GetSupportsVirtualDiskCapacityExpansion gets the value of SupportsVirtualDiskCapacityExpansion for the instance
@@ -1327,16 +1856,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsVirtualDiskCapacityExp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsVirtualDiskCapacityReduction sets the value of SupportsVirtualDiskCapacityReduction for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsVirtualDiskCapacityReduction(value bool) (err error) {
-	return instance.SetProperty("SupportsVirtualDiskCapacityReduction", value)
+	return instance.SetProperty("SupportsVirtualDiskCapacityReduction", (value))
 }
 
 // GetSupportsVirtualDiskCapacityReduction gets the value of SupportsVirtualDiskCapacityReduction for the instance
@@ -1345,16 +1883,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsVirtualDiskCapacityRed
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsVirtualDiskCreation sets the value of SupportsVirtualDiskCreation for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsVirtualDiskCreation(value bool) (err error) {
-	return instance.SetProperty("SupportsVirtualDiskCreation", value)
+	return instance.SetProperty("SupportsVirtualDiskCreation", (value))
 }
 
 // GetSupportsVirtualDiskCreation gets the value of SupportsVirtualDiskCreation for the instance
@@ -1363,16 +1910,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsVirtualDiskCreation() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsVirtualDiskDeletion sets the value of SupportsVirtualDiskDeletion for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsVirtualDiskDeletion(value bool) (err error) {
-	return instance.SetProperty("SupportsVirtualDiskDeletion", value)
+	return instance.SetProperty("SupportsVirtualDiskDeletion", (value))
 }
 
 // GetSupportsVirtualDiskDeletion gets the value of SupportsVirtualDiskDeletion for the instance
@@ -1381,16 +1937,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsVirtualDiskDeletion() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsVirtualDiskModification sets the value of SupportsVirtualDiskModification for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsVirtualDiskModification(value bool) (err error) {
-	return instance.SetProperty("SupportsVirtualDiskModification", value)
+	return instance.SetProperty("SupportsVirtualDiskModification", (value))
 }
 
 // GetSupportsVirtualDiskModification gets the value of SupportsVirtualDiskModification for the instance
@@ -1399,16 +1964,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsVirtualDiskModificatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsVirtualDiskRepair sets the value of SupportsVirtualDiskRepair for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsVirtualDiskRepair(value bool) (err error) {
-	return instance.SetProperty("SupportsVirtualDiskRepair", value)
+	return instance.SetProperty("SupportsVirtualDiskRepair", (value))
 }
 
 // GetSupportsVirtualDiskRepair gets the value of SupportsVirtualDiskRepair for the instance
@@ -1417,16 +1991,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsVirtualDiskRepair() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsVolumeCreation sets the value of SupportsVolumeCreation for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertySupportsVolumeCreation(value bool) (err error) {
-	return instance.SetProperty("SupportsVolumeCreation", value)
+	return instance.SetProperty("SupportsVolumeCreation", (value))
 }
 
 // GetSupportsVolumeCreation gets the value of SupportsVolumeCreation for the instance
@@ -1435,16 +2018,25 @@ func (instance *MSFT_StorageSubSystem) GetPropertySupportsVolumeCreation() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTag sets the value of Tag for the instance
 func (instance *MSFT_StorageSubSystem) SetPropertyTag(value string) (err error) {
-	return instance.SetProperty("Tag", value)
+	return instance.SetProperty("Tag", (value))
 }
 
 // GetTag gets the value of Tag for the instance
@@ -1453,46 +2045,19 @@ func (instance *MSFT_StorageSubSystem) GetPropertyTag() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetVirtualDiskRepairEnabled sets the value of VirtualDiskRepairEnabled for the instance
-func (instance *MSFT_StorageSubSystem) SetPropertyVirtualDiskRepairEnabled(value bool) (err error) {
-	return instance.SetProperty("VirtualDiskRepairEnabled", value)
-}
-
-// GetVirtualDiskRepairEnabled gets the value of VirtualDiskRepairEnabled for the instance
-func (instance *MSFT_StorageSubSystem) GetPropertyVirtualDiskRepairEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRepairEnabled")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetVirtualDiskRepairQueueDepth sets the value of VirtualDiskRepairQueueDepth for the instance
-func (instance *MSFT_StorageSubSystem) SetPropertyVirtualDiskRepairQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("VirtualDiskRepairQueueDepth", value)
-}
-
-// GetVirtualDiskRepairQueueDepth gets the value of VirtualDiskRepairQueueDepth for the instance
-func (instance *MSFT_StorageSubSystem) GetPropertyVirtualDiskRepairQueueDepth() (value uint32, err error) {
-	retValue, err := instance.GetProperty("VirtualDiskRepairQueueDepth")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
+
+	value = string(valuetmp)
+
 	return
 }
 
@@ -1782,17 +2347,13 @@ func (instance *MSFT_StorageSubSystem) SetAttributes( /* IN */ AutomaticClusteri
 
 // <param name="AutomaticClusteringEnabled" type="bool "></param>
 // <param name="FaultDomainAwarenessDefault" type="uint16 "></param>
-// <param name="VirtualDiskRepairEnabled" type="bool "></param>
-// <param name="VirtualDiskRepairQueueDepth" type="uint32 "></param>
 
 // <param name="ExtendedStatus" type="MSFT_StorageExtendedStatus "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSFT_StorageSubSystem) SetAttributes2( /* IN */ AutomaticClusteringEnabled bool,
-	/* IN */ VirtualDiskRepairEnabled bool,
-	/* IN */ VirtualDiskRepairQueueDepth uint32,
 	/* IN */ FaultDomainAwarenessDefault uint16,
 	/* OUT */ ExtendedStatus MSFT_StorageExtendedStatus) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("SetAttributes2", AutomaticClusteringEnabled, VirtualDiskRepairEnabled, VirtualDiskRepairQueueDepth, FaultDomainAwarenessDefault)
+	retVal, err := instance.InvokeMethod("SetAttributes2", AutomaticClusteringEnabled, FaultDomainAwarenessDefault)
 	if err != nil {
 		return
 	}

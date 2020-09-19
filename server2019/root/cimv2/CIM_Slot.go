@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Slot struct
@@ -79,7 +81,7 @@ func NewCIM_SlotEx6(hostName string,
 
 // SetHeightAllowed sets the value of HeightAllowed for the instance
 func (instance *CIM_Slot) SetPropertyHeightAllowed(value float32) (err error) {
-	return instance.SetProperty("HeightAllowed", value)
+	return instance.SetProperty("HeightAllowed", (value))
 }
 
 // GetHeightAllowed gets the value of HeightAllowed for the instance
@@ -88,16 +90,25 @@ func (instance *CIM_Slot) GetPropertyHeightAllowed() (value float32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float32(valuetmp)
+
 	return
 }
 
 // SetLengthAllowed sets the value of LengthAllowed for the instance
 func (instance *CIM_Slot) SetPropertyLengthAllowed(value float32) (err error) {
-	return instance.SetProperty("LengthAllowed", value)
+	return instance.SetProperty("LengthAllowed", (value))
 }
 
 // GetLengthAllowed gets the value of LengthAllowed for the instance
@@ -106,16 +117,25 @@ func (instance *CIM_Slot) GetPropertyLengthAllowed() (value float32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float32(valuetmp)
+
 	return
 }
 
 // SetMaxDataWidth sets the value of MaxDataWidth for the instance
 func (instance *CIM_Slot) SetPropertyMaxDataWidth(value uint16) (err error) {
-	return instance.SetProperty("MaxDataWidth", value)
+	return instance.SetProperty("MaxDataWidth", (value))
 }
 
 // GetMaxDataWidth gets the value of MaxDataWidth for the instance
@@ -124,16 +144,25 @@ func (instance *CIM_Slot) GetPropertyMaxDataWidth() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumber sets the value of Number for the instance
 func (instance *CIM_Slot) SetPropertyNumber(value uint16) (err error) {
-	return instance.SetProperty("Number", value)
+	return instance.SetProperty("Number", (value))
 }
 
 // GetNumber gets the value of Number for the instance
@@ -142,16 +171,25 @@ func (instance *CIM_Slot) GetPropertyNumber() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPurposeDescription sets the value of PurposeDescription for the instance
 func (instance *CIM_Slot) SetPropertyPurposeDescription(value string) (err error) {
-	return instance.SetProperty("PurposeDescription", value)
+	return instance.SetProperty("PurposeDescription", (value))
 }
 
 // GetPurposeDescription gets the value of PurposeDescription for the instance
@@ -160,16 +198,25 @@ func (instance *CIM_Slot) GetPropertyPurposeDescription() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSpecialPurpose sets the value of SpecialPurpose for the instance
 func (instance *CIM_Slot) SetPropertySpecialPurpose(value bool) (err error) {
-	return instance.SetProperty("SpecialPurpose", value)
+	return instance.SetProperty("SpecialPurpose", (value))
 }
 
 // GetSpecialPurpose gets the value of SpecialPurpose for the instance
@@ -178,16 +225,25 @@ func (instance *CIM_Slot) GetPropertySpecialPurpose() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsHotPlug sets the value of SupportsHotPlug for the instance
 func (instance *CIM_Slot) SetPropertySupportsHotPlug(value bool) (err error) {
-	return instance.SetProperty("SupportsHotPlug", value)
+	return instance.SetProperty("SupportsHotPlug", (value))
 }
 
 // GetSupportsHotPlug gets the value of SupportsHotPlug for the instance
@@ -196,16 +252,25 @@ func (instance *CIM_Slot) GetPropertySupportsHotPlug() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetThermalRating sets the value of ThermalRating for the instance
 func (instance *CIM_Slot) SetPropertyThermalRating(value uint32) (err error) {
-	return instance.SetProperty("ThermalRating", value)
+	return instance.SetProperty("ThermalRating", (value))
 }
 
 // GetThermalRating gets the value of ThermalRating for the instance
@@ -214,16 +279,25 @@ func (instance *CIM_Slot) GetPropertyThermalRating() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVccMixedVoltageSupport sets the value of VccMixedVoltageSupport for the instance
 func (instance *CIM_Slot) SetPropertyVccMixedVoltageSupport(value []uint16) (err error) {
-	return instance.SetProperty("VccMixedVoltageSupport", value)
+	return instance.SetProperty("VccMixedVoltageSupport", (value))
 }
 
 // GetVccMixedVoltageSupport gets the value of VccMixedVoltageSupport for the instance
@@ -232,16 +306,26 @@ func (instance *CIM_Slot) GetPropertyVccMixedVoltageSupport() (value []uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetVppMixedVoltageSupport sets the value of VppMixedVoltageSupport for the instance
 func (instance *CIM_Slot) SetPropertyVppMixedVoltageSupport(value []uint16) (err error) {
-	return instance.SetProperty("VppMixedVoltageSupport", value)
+	return instance.SetProperty("VppMixedVoltageSupport", (value))
 }
 
 // GetVppMixedVoltageSupport gets the value of VppMixedVoltageSupport for the instance
@@ -250,9 +334,19 @@ func (instance *CIM_Slot) GetPropertyVppMixedVoltageSupport() (value []uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }

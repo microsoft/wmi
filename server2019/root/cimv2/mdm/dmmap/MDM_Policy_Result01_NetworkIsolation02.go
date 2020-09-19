@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_NetworkIsolation02 struct
@@ -80,7 +82,7 @@ func NewMDM_Policy_Result01_NetworkIsolation02Ex6(hostName string,
 
 // SetEnterpriseCloudResources sets the value of EnterpriseCloudResources for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyEnterpriseCloudResources(value string) (err error) {
-	return instance.SetProperty("EnterpriseCloudResources", value)
+	return instance.SetProperty("EnterpriseCloudResources", (value))
 }
 
 // GetEnterpriseCloudResources gets the value of EnterpriseCloudResources for the instance
@@ -89,16 +91,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyEnterpriseClo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnterpriseInternalProxyServers sets the value of EnterpriseInternalProxyServers for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyEnterpriseInternalProxyServers(value string) (err error) {
-	return instance.SetProperty("EnterpriseInternalProxyServers", value)
+	return instance.SetProperty("EnterpriseInternalProxyServers", (value))
 }
 
 // GetEnterpriseInternalProxyServers gets the value of EnterpriseInternalProxyServers for the instance
@@ -107,16 +118,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyEnterpriseInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnterpriseIPRange sets the value of EnterpriseIPRange for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyEnterpriseIPRange(value string) (err error) {
-	return instance.SetProperty("EnterpriseIPRange", value)
+	return instance.SetProperty("EnterpriseIPRange", (value))
 }
 
 // GetEnterpriseIPRange gets the value of EnterpriseIPRange for the instance
@@ -125,16 +145,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyEnterpriseIPR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnterpriseIPRangesAreAuthoritative sets the value of EnterpriseIPRangesAreAuthoritative for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyEnterpriseIPRangesAreAuthoritative(value int32) (err error) {
-	return instance.SetProperty("EnterpriseIPRangesAreAuthoritative", value)
+	return instance.SetProperty("EnterpriseIPRangesAreAuthoritative", (value))
 }
 
 // GetEnterpriseIPRangesAreAuthoritative gets the value of EnterpriseIPRangesAreAuthoritative for the instance
@@ -143,16 +172,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyEnterpriseIPR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnterpriseNetworkDomainNames sets the value of EnterpriseNetworkDomainNames for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyEnterpriseNetworkDomainNames(value string) (err error) {
-	return instance.SetProperty("EnterpriseNetworkDomainNames", value)
+	return instance.SetProperty("EnterpriseNetworkDomainNames", (value))
 }
 
 // GetEnterpriseNetworkDomainNames gets the value of EnterpriseNetworkDomainNames for the instance
@@ -161,16 +199,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyEnterpriseNet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnterpriseProxyServers sets the value of EnterpriseProxyServers for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyEnterpriseProxyServers(value string) (err error) {
-	return instance.SetProperty("EnterpriseProxyServers", value)
+	return instance.SetProperty("EnterpriseProxyServers", (value))
 }
 
 // GetEnterpriseProxyServers gets the value of EnterpriseProxyServers for the instance
@@ -179,16 +226,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyEnterprisePro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnterpriseProxyServersAreAuthoritative sets the value of EnterpriseProxyServersAreAuthoritative for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyEnterpriseProxyServersAreAuthoritative(value int32) (err error) {
-	return instance.SetProperty("EnterpriseProxyServersAreAuthoritative", value)
+	return instance.SetProperty("EnterpriseProxyServersAreAuthoritative", (value))
 }
 
 // GetEnterpriseProxyServersAreAuthoritative gets the value of EnterpriseProxyServersAreAuthoritative for the instance
@@ -197,16 +253,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyEnterprisePro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -215,16 +280,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyInstanceID() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNeutralResources sets the value of NeutralResources for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyNeutralResources(value string) (err error) {
-	return instance.SetProperty("NeutralResources", value)
+	return instance.SetProperty("NeutralResources", (value))
 }
 
 // GetNeutralResources gets the value of NeutralResources for the instance
@@ -233,16 +307,25 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyNeutralResour
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_NetworkIsolation02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -251,9 +334,18 @@ func (instance *MDM_Policy_Result01_NetworkIsolation02) GetPropertyParentID() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

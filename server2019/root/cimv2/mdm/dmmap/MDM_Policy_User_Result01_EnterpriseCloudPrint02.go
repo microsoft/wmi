@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_User_Result01_EnterpriseCloudPrint02 struct
@@ -74,7 +76,7 @@ func NewMDM_Policy_User_Result01_EnterpriseCloudPrint02Ex6(hostName string,
 
 // SetCloudPrinterDiscoveryEndPoint sets the value of CloudPrinterDiscoveryEndPoint for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyCloudPrinterDiscoveryEndPoint(value string) (err error) {
-	return instance.SetProperty("CloudPrinterDiscoveryEndPoint", value)
+	return instance.SetProperty("CloudPrinterDiscoveryEndPoint", (value))
 }
 
 // GetCloudPrinterDiscoveryEndPoint gets the value of CloudPrinterDiscoveryEndPoint for the instance
@@ -83,16 +85,25 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyClou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCloudPrintOAuthAuthority sets the value of CloudPrintOAuthAuthority for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyCloudPrintOAuthAuthority(value string) (err error) {
-	return instance.SetProperty("CloudPrintOAuthAuthority", value)
+	return instance.SetProperty("CloudPrintOAuthAuthority", (value))
 }
 
 // GetCloudPrintOAuthAuthority gets the value of CloudPrintOAuthAuthority for the instance
@@ -101,16 +112,25 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyClou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCloudPrintOAuthClientId sets the value of CloudPrintOAuthClientId for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyCloudPrintOAuthClientId(value string) (err error) {
-	return instance.SetProperty("CloudPrintOAuthClientId", value)
+	return instance.SetProperty("CloudPrintOAuthClientId", (value))
 }
 
 // GetCloudPrintOAuthClientId gets the value of CloudPrintOAuthClientId for the instance
@@ -119,16 +139,25 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyClou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCloudPrintResourceId sets the value of CloudPrintResourceId for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyCloudPrintResourceId(value string) (err error) {
-	return instance.SetProperty("CloudPrintResourceId", value)
+	return instance.SetProperty("CloudPrintResourceId", (value))
 }
 
 // GetCloudPrintResourceId gets the value of CloudPrintResourceId for the instance
@@ -137,16 +166,25 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyClou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDiscoveryMaxPrinterLimit sets the value of DiscoveryMaxPrinterLimit for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyDiscoveryMaxPrinterLimit(value int32) (err error) {
-	return instance.SetProperty("DiscoveryMaxPrinterLimit", value)
+	return instance.SetProperty("DiscoveryMaxPrinterLimit", (value))
 }
 
 // GetDiscoveryMaxPrinterLimit gets the value of DiscoveryMaxPrinterLimit for the instance
@@ -155,16 +193,25 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyDisc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -173,16 +220,25 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyInst
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMopriaDiscoveryResourceId sets the value of MopriaDiscoveryResourceId for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyMopriaDiscoveryResourceId(value string) (err error) {
-	return instance.SetProperty("MopriaDiscoveryResourceId", value)
+	return instance.SetProperty("MopriaDiscoveryResourceId", (value))
 }
 
 // GetMopriaDiscoveryResourceId gets the value of MopriaDiscoveryResourceId for the instance
@@ -191,16 +247,25 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyMopr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -209,9 +274,18 @@ func (instance *MDM_Policy_User_Result01_EnterpriseCloudPrint02) GetPropertyPare
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

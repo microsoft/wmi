@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __SecurityDescriptor struct
@@ -67,7 +69,7 @@ func New__SecurityDescriptorEx6(hostName string,
 
 // SetControlFlags sets the value of ControlFlags for the instance
 func (instance *__SecurityDescriptor) SetPropertyControlFlags(value uint32) (err error) {
-	return instance.SetProperty("ControlFlags", value)
+	return instance.SetProperty("ControlFlags", (value))
 }
 
 // GetControlFlags gets the value of ControlFlags for the instance
@@ -76,16 +78,25 @@ func (instance *__SecurityDescriptor) GetPropertyControlFlags() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDACL sets the value of DACL for the instance
 func (instance *__SecurityDescriptor) SetPropertyDACL(value []__ACE) (err error) {
-	return instance.SetProperty("DACL", value)
+	return instance.SetProperty("DACL", (value))
 }
 
 // GetDACL gets the value of DACL for the instance
@@ -94,16 +105,26 @@ func (instance *__SecurityDescriptor) GetPropertyDACL() (value []__ACE, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]__ACE)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(__ACE)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " __ACE is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, __ACE(valuetmp))
+	}
+
 	return
 }
 
 // SetGroup sets the value of Group for the instance
 func (instance *__SecurityDescriptor) SetPropertyGroup(value __ACE) (err error) {
-	return instance.SetProperty("Group", value)
+	return instance.SetProperty("Group", (value))
 }
 
 // GetGroup gets the value of Group for the instance
@@ -112,16 +133,25 @@ func (instance *__SecurityDescriptor) GetPropertyGroup() (value __ACE, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(__ACE)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(__ACE)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " __ACE is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = __ACE(valuetmp)
+
 	return
 }
 
 // SetOwner sets the value of Owner for the instance
 func (instance *__SecurityDescriptor) SetPropertyOwner(value __ACE) (err error) {
-	return instance.SetProperty("Owner", value)
+	return instance.SetProperty("Owner", (value))
 }
 
 // GetOwner gets the value of Owner for the instance
@@ -130,16 +160,25 @@ func (instance *__SecurityDescriptor) GetPropertyOwner() (value __ACE, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(__ACE)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(__ACE)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " __ACE is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = __ACE(valuetmp)
+
 	return
 }
 
 // SetSACL sets the value of SACL for the instance
 func (instance *__SecurityDescriptor) SetPropertySACL(value []__ACE) (err error) {
-	return instance.SetProperty("SACL", value)
+	return instance.SetProperty("SACL", (value))
 }
 
 // GetSACL gets the value of SACL for the instance
@@ -148,16 +187,26 @@ func (instance *__SecurityDescriptor) GetPropertySACL() (value []__ACE, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]__ACE)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(__ACE)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " __ACE is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, __ACE(valuetmp))
+	}
+
 	return
 }
 
 // SetTIME_CREATED sets the value of TIME_CREATED for the instance
 func (instance *__SecurityDescriptor) SetPropertyTIME_CREATED(value uint64) (err error) {
-	return instance.SetProperty("TIME_CREATED", value)
+	return instance.SetProperty("TIME_CREATED", (value))
 }
 
 // GetTIME_CREATED gets the value of TIME_CREATED for the instance
@@ -166,9 +215,18 @@ func (instance *__SecurityDescriptor) GetPropertyTIME_CREATED() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

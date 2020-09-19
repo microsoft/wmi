@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_RegistryPolicySettingBlocked struct
@@ -67,7 +69,7 @@ func NewRSOP_RegistryPolicySettingBlockedEx6(hostName string,
 
 // Setcommand sets the value of command for the instance
 func (instance *RSOP_RegistryPolicySettingBlocked) SetPropertycommand(value string) (err error) {
-	return instance.SetProperty("command", value)
+	return instance.SetProperty("command", (value))
 }
 
 // Getcommand gets the value of command for the instance
@@ -76,16 +78,25 @@ func (instance *RSOP_RegistryPolicySettingBlocked) GetPropertycommand() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setdeleted sets the value of deleted for the instance
 func (instance *RSOP_RegistryPolicySettingBlocked) SetPropertydeleted(value bool) (err error) {
-	return instance.SetProperty("deleted", value)
+	return instance.SetProperty("deleted", (value))
 }
 
 // Getdeleted gets the value of deleted for the instance
@@ -94,16 +105,25 @@ func (instance *RSOP_RegistryPolicySettingBlocked) GetPropertydeleted() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetregistryKey sets the value of registryKey for the instance
 func (instance *RSOP_RegistryPolicySettingBlocked) SetPropertyregistryKey(value string) (err error) {
-	return instance.SetProperty("registryKey", value)
+	return instance.SetProperty("registryKey", (value))
 }
 
 // GetregistryKey gets the value of registryKey for the instance
@@ -112,16 +132,25 @@ func (instance *RSOP_RegistryPolicySettingBlocked) GetPropertyregistryKey() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setvalue sets the value of value for the instance
 func (instance *RSOP_RegistryPolicySettingBlocked) SetPropertyvalue(value []uint8) (err error) {
-	return instance.SetProperty("value", value)
+	return instance.SetProperty("value", (value))
 }
 
 // Getvalue gets the value of value for the instance
@@ -130,16 +159,26 @@ func (instance *RSOP_RegistryPolicySettingBlocked) GetPropertyvalue() (value []u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetvalueName sets the value of valueName for the instance
 func (instance *RSOP_RegistryPolicySettingBlocked) SetPropertyvalueName(value string) (err error) {
-	return instance.SetProperty("valueName", value)
+	return instance.SetProperty("valueName", (value))
 }
 
 // GetvalueName gets the value of valueName for the instance
@@ -148,16 +187,25 @@ func (instance *RSOP_RegistryPolicySettingBlocked) GetPropertyvalueName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetvalueType sets the value of valueType for the instance
 func (instance *RSOP_RegistryPolicySettingBlocked) SetPropertyvalueType(value uint32) (err error) {
-	return instance.SetProperty("valueType", value)
+	return instance.SetProperty("valueType", (value))
 }
 
 // GetvalueType gets the value of valueType for the instance
@@ -166,9 +214,18 @@ func (instance *RSOP_RegistryPolicySettingBlocked) GetPropertyvalueType() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

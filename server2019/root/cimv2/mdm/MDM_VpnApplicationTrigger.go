@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_VpnApplicationTrigger struct
@@ -56,7 +58,7 @@ func NewMDM_VpnApplicationTriggerEx6(hostName string,
 
 // SetApplicationID sets the value of ApplicationID for the instance
 func (instance *MDM_VpnApplicationTrigger) SetPropertyApplicationID(value string) (err error) {
-	return instance.SetProperty("ApplicationID", value)
+	return instance.SetProperty("ApplicationID", (value))
 }
 
 // GetApplicationID gets the value of ApplicationID for the instance
@@ -65,16 +67,25 @@ func (instance *MDM_VpnApplicationTrigger) GetPropertyApplicationID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTriggerEnabledInAllMDMProfiles sets the value of TriggerEnabledInAllMDMProfiles for the instance
 func (instance *MDM_VpnApplicationTrigger) SetPropertyTriggerEnabledInAllMDMProfiles(value bool) (err error) {
-	return instance.SetProperty("TriggerEnabledInAllMDMProfiles", value)
+	return instance.SetProperty("TriggerEnabledInAllMDMProfiles", (value))
 }
 
 // GetTriggerEnabledInAllMDMProfiles gets the value of TriggerEnabledInAllMDMProfiles for the instance
@@ -83,9 +94,18 @@ func (instance *MDM_VpnApplicationTrigger) GetPropertyTriggerEnabledInAllMDMProf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

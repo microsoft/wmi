@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSoP_PolicySettingStatus struct
@@ -71,7 +73,7 @@ func NewRSoP_PolicySettingStatusEx6(hostName string,
 
 // SeterrorCode sets the value of errorCode for the instance
 func (instance *RSoP_PolicySettingStatus) SetPropertyerrorCode(value uint32) (err error) {
-	return instance.SetProperty("errorCode", value)
+	return instance.SetProperty("errorCode", (value))
 }
 
 // GeterrorCode gets the value of errorCode for the instance
@@ -80,16 +82,25 @@ func (instance *RSoP_PolicySettingStatus) GetPropertyerrorCode() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SeteventID sets the value of eventID for the instance
 func (instance *RSoP_PolicySettingStatus) SetPropertyeventID(value uint32) (err error) {
-	return instance.SetProperty("eventID", value)
+	return instance.SetProperty("eventID", (value))
 }
 
 // GeteventID gets the value of eventID for the instance
@@ -98,16 +109,25 @@ func (instance *RSoP_PolicySettingStatus) GetPropertyeventID() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SeteventLogName sets the value of eventLogName for the instance
 func (instance *RSoP_PolicySettingStatus) SetPropertyeventLogName(value string) (err error) {
-	return instance.SetProperty("eventLogName", value)
+	return instance.SetProperty("eventLogName", (value))
 }
 
 // GeteventLogName gets the value of eventLogName for the instance
@@ -116,16 +136,25 @@ func (instance *RSoP_PolicySettingStatus) GetPropertyeventLogName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SeteventSource sets the value of eventSource for the instance
 func (instance *RSoP_PolicySettingStatus) SetPropertyeventSource(value string) (err error) {
-	return instance.SetProperty("eventSource", value)
+	return instance.SetProperty("eventSource", (value))
 }
 
 // GeteventSource gets the value of eventSource for the instance
@@ -134,16 +163,25 @@ func (instance *RSoP_PolicySettingStatus) GetPropertyeventSource() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SeteventTime sets the value of eventTime for the instance
 func (instance *RSoP_PolicySettingStatus) SetPropertyeventTime(value string) (err error) {
-	return instance.SetProperty("eventTime", value)
+	return instance.SetProperty("eventTime", (value))
 }
 
 // GeteventTime gets the value of eventTime for the instance
@@ -152,16 +190,25 @@ func (instance *RSoP_PolicySettingStatus) GetPropertyeventTime() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setid sets the value of id for the instance
 func (instance *RSoP_PolicySettingStatus) SetPropertyid(value string) (err error) {
-	return instance.SetProperty("id", value)
+	return instance.SetProperty("id", (value))
 }
 
 // Getid gets the value of id for the instance
@@ -170,16 +217,25 @@ func (instance *RSoP_PolicySettingStatus) GetPropertyid() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setstatus sets the value of status for the instance
 func (instance *RSoP_PolicySettingStatus) SetPropertystatus(value int32) (err error) {
-	return instance.SetProperty("status", value)
+	return instance.SetProperty("status", (value))
 }
 
 // Getstatus gets the value of status for the instance
@@ -188,9 +244,18 @@ func (instance *RSoP_PolicySettingStatus) GetPropertystatus() (value int32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

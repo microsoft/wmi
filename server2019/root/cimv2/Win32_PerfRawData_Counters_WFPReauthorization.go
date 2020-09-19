@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_WFPReauthorization struct
@@ -127,7 +129,7 @@ func NewWin32_PerfRawData_Counters_WFPReauthorizationEx6(hostName string,
 
 // SetFamilyV4 sets the value of FamilyV4 for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyFamilyV4(value uint64) (err error) {
-	return instance.SetProperty("FamilyV4", value)
+	return instance.SetProperty("FamilyV4", (value))
 }
 
 // GetFamilyV4 gets the value of FamilyV4 for the instance
@@ -136,16 +138,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyFamily
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFamilyV6 sets the value of FamilyV6 for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyFamilyV6(value uint64) (err error) {
-	return instance.SetProperty("FamilyV6", value)
+	return instance.SetProperty("FamilyV6", (value))
 }
 
 // GetFamilyV6 gets the value of FamilyV6 for the instance
@@ -154,16 +165,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyFamily
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInbound sets the value of Inbound for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyInbound(value uint64) (err error) {
-	return instance.SetProperty("Inbound", value)
+	return instance.SetProperty("Inbound", (value))
 }
 
 // GetInbound gets the value of Inbound for the instance
@@ -172,16 +192,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyInboun
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutbound sets the value of Outbound for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyOutbound(value uint64) (err error) {
-	return instance.SetProperty("Outbound", value)
+	return instance.SetProperty("Outbound", (value))
 }
 
 // GetOutbound gets the value of Outbound for the instance
@@ -190,16 +219,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyOutbou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtocolICMP sets the value of ProtocolICMP for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyProtocolICMP(value uint64) (err error) {
-	return instance.SetProperty("ProtocolICMP", value)
+	return instance.SetProperty("ProtocolICMP", (value))
 }
 
 // GetProtocolICMP gets the value of ProtocolICMP for the instance
@@ -208,16 +246,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtocolICMP6 sets the value of ProtocolICMP6 for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyProtocolICMP6(value uint64) (err error) {
-	return instance.SetProperty("ProtocolICMP6", value)
+	return instance.SetProperty("ProtocolICMP6", (value))
 }
 
 // GetProtocolICMP6 gets the value of ProtocolICMP6 for the instance
@@ -226,16 +273,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtocolIPv4 sets the value of ProtocolIPv4 for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyProtocolIPv4(value uint64) (err error) {
-	return instance.SetProperty("ProtocolIPv4", value)
+	return instance.SetProperty("ProtocolIPv4", (value))
 }
 
 // GetProtocolIPv4 gets the value of ProtocolIPv4 for the instance
@@ -244,16 +300,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtocolIPv6 sets the value of ProtocolIPv6 for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyProtocolIPv6(value uint64) (err error) {
-	return instance.SetProperty("ProtocolIPv6", value)
+	return instance.SetProperty("ProtocolIPv6", (value))
 }
 
 // GetProtocolIPv6 gets the value of ProtocolIPv6 for the instance
@@ -262,16 +327,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtocolOther sets the value of ProtocolOther for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyProtocolOther(value uint64) (err error) {
-	return instance.SetProperty("ProtocolOther", value)
+	return instance.SetProperty("ProtocolOther", (value))
 }
 
 // GetProtocolOther gets the value of ProtocolOther for the instance
@@ -280,16 +354,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtocolTCP sets the value of ProtocolTCP for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyProtocolTCP(value uint64) (err error) {
-	return instance.SetProperty("ProtocolTCP", value)
+	return instance.SetProperty("ProtocolTCP", (value))
 }
 
 // GetProtocolTCP gets the value of ProtocolTCP for the instance
@@ -298,16 +381,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtocolUDP sets the value of ProtocolUDP for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyProtocolUDP(value uint64) (err error) {
-	return instance.SetProperty("ProtocolUDP", value)
+	return instance.SetProperty("ProtocolUDP", (value))
 }
 
 // GetProtocolUDP gets the value of ProtocolUDP for the instance
@@ -316,16 +408,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonClassifyCompletion sets the value of ReasonClassifyCompletion for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonClassifyCompletion(value uint64) (err error) {
-	return instance.SetProperty("ReasonClassifyCompletion", value)
+	return instance.SetProperty("ReasonClassifyCompletion", (value))
 }
 
 // GetReasonClassifyCompletion gets the value of ReasonClassifyCompletion for the instance
@@ -334,16 +435,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonEDPPolicyChanged sets the value of ReasonEDPPolicyChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonEDPPolicyChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonEDPPolicyChanged", value)
+	return instance.SetProperty("ReasonEDPPolicyChanged", (value))
 }
 
 // GetReasonEDPPolicyChanged gets the value of ReasonEDPPolicyChanged for the instance
@@ -352,16 +462,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonIPSecPropertiesChanged sets the value of ReasonIPSecPropertiesChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonIPSecPropertiesChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonIPSecPropertiesChanged", value)
+	return instance.SetProperty("ReasonIPSecPropertiesChanged", (value))
 }
 
 // GetReasonIPSecPropertiesChanged gets the value of ReasonIPSecPropertiesChanged for the instance
@@ -370,16 +489,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonMidStreamInspection sets the value of ReasonMidStreamInspection for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonMidStreamInspection(value uint64) (err error) {
-	return instance.SetProperty("ReasonMidStreamInspection", value)
+	return instance.SetProperty("ReasonMidStreamInspection", (value))
 }
 
 // GetReasonMidStreamInspection gets the value of ReasonMidStreamInspection for the instance
@@ -388,16 +516,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonNewArrivalInterface sets the value of ReasonNewArrivalInterface for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonNewArrivalInterface(value uint64) (err error) {
-	return instance.SetProperty("ReasonNewArrivalInterface", value)
+	return instance.SetProperty("ReasonNewArrivalInterface", (value))
 }
 
 // GetReasonNewArrivalInterface gets the value of ReasonNewArrivalInterface for the instance
@@ -406,16 +543,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonNewInboundMCastBCastPacket sets the value of ReasonNewInboundMCastBCastPacket for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonNewInboundMCastBCastPacket(value uint64) (err error) {
-	return instance.SetProperty("ReasonNewInboundMCastBCastPacket", value)
+	return instance.SetProperty("ReasonNewInboundMCastBCastPacket", (value))
 }
 
 // GetReasonNewInboundMCastBCastPacket gets the value of ReasonNewInboundMCastBCastPacket for the instance
@@ -424,16 +570,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonNewNextHopInterface sets the value of ReasonNewNextHopInterface for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonNewNextHopInterface(value uint64) (err error) {
-	return instance.SetProperty("ReasonNewNextHopInterface", value)
+	return instance.SetProperty("ReasonNewNextHopInterface", (value))
 }
 
 // GetReasonNewNextHopInterface gets the value of ReasonNewNextHopInterface for the instance
@@ -442,16 +597,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonPolicyChange sets the value of ReasonPolicyChange for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonPolicyChange(value uint64) (err error) {
-	return instance.SetProperty("ReasonPolicyChange", value)
+	return instance.SetProperty("ReasonPolicyChange", (value))
 }
 
 // GetReasonPolicyChange gets the value of ReasonPolicyChange for the instance
@@ -460,16 +624,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonPreclassifyLocalAddressDimensionPolicyChanged sets the value of ReasonPreclassifyLocalAddressDimensionPolicyChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyLocalAddressDimensionPolicyChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonPreclassifyLocalAddressDimensionPolicyChanged", value)
+	return instance.SetProperty("ReasonPreclassifyLocalAddressDimensionPolicyChanged", (value))
 }
 
 // GetReasonPreclassifyLocalAddressDimensionPolicyChanged gets the value of ReasonPreclassifyLocalAddressDimensionPolicyChanged for the instance
@@ -478,16 +651,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonPreclassifyLocalPortDimensionPolicyChanged sets the value of ReasonPreclassifyLocalPortDimensionPolicyChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyLocalPortDimensionPolicyChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonPreclassifyLocalPortDimensionPolicyChanged", value)
+	return instance.SetProperty("ReasonPreclassifyLocalPortDimensionPolicyChanged", (value))
 }
 
 // GetReasonPreclassifyLocalPortDimensionPolicyChanged gets the value of ReasonPreclassifyLocalPortDimensionPolicyChanged for the instance
@@ -496,16 +678,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonPreclassifyRemoteAddressDimensionPolicyChanged sets the value of ReasonPreclassifyRemoteAddressDimensionPolicyChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyRemoteAddressDimensionPolicyChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonPreclassifyRemoteAddressDimensionPolicyChanged", value)
+	return instance.SetProperty("ReasonPreclassifyRemoteAddressDimensionPolicyChanged", (value))
 }
 
 // GetReasonPreclassifyRemoteAddressDimensionPolicyChanged gets the value of ReasonPreclassifyRemoteAddressDimensionPolicyChanged for the instance
@@ -514,16 +705,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonPreclassifyRemotePortDimensionPolicyChanged sets the value of ReasonPreclassifyRemotePortDimensionPolicyChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonPreclassifyRemotePortDimensionPolicyChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonPreclassifyRemotePortDimensionPolicyChanged", value)
+	return instance.SetProperty("ReasonPreclassifyRemotePortDimensionPolicyChanged", (value))
 }
 
 // GetReasonPreclassifyRemotePortDimensionPolicyChanged gets the value of ReasonPreclassifyRemotePortDimensionPolicyChanged for the instance
@@ -532,16 +732,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonProfileCrossing sets the value of ReasonProfileCrossing for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonProfileCrossing(value uint64) (err error) {
-	return instance.SetProperty("ReasonProfileCrossing", value)
+	return instance.SetProperty("ReasonProfileCrossing", (value))
 }
 
 // GetReasonProfileCrossing gets the value of ReasonProfileCrossing for the instance
@@ -550,16 +759,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonProxyHandleChanged sets the value of ReasonProxyHandleChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonProxyHandleChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonProxyHandleChanged", value)
+	return instance.SetProperty("ReasonProxyHandleChanged", (value))
 }
 
 // GetReasonProxyHandleChanged gets the value of ReasonProxyHandleChanged for the instance
@@ -568,16 +786,25 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReasonSocketPropertyChanged sets the value of ReasonSocketPropertyChanged for the instance
 func (instance *Win32_PerfRawData_Counters_WFPReauthorization) SetPropertyReasonSocketPropertyChanged(value uint64) (err error) {
-	return instance.SetProperty("ReasonSocketPropertyChanged", value)
+	return instance.SetProperty("ReasonSocketPropertyChanged", (value))
 }
 
 // GetReasonSocketPropertyChanged gets the value of ReasonSocketPropertyChanged for the instance
@@ -586,9 +813,18 @@ func (instance *Win32_PerfRawData_Counters_WFPReauthorization) GetPropertyReason
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

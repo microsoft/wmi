@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEConnectionDialUpCredentialsLink struct
@@ -56,7 +58,7 @@ func NewRSOP_IEConnectionDialUpCredentialsLinkEx6(hostName string,
 
 // SetdialUpCredentials sets the value of dialUpCredentials for the instance
 func (instance *RSOP_IEConnectionDialUpCredentialsLink) SetPropertydialUpCredentials(value RSOP_IEConnectionDialUpCredentials) (err error) {
-	return instance.SetProperty("dialUpCredentials", value)
+	return instance.SetProperty("dialUpCredentials", (value))
 }
 
 // GetdialUpCredentials gets the value of dialUpCredentials for the instance
@@ -65,16 +67,25 @@ func (instance *RSOP_IEConnectionDialUpCredentialsLink) GetPropertydialUpCredent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_IEConnectionDialUpCredentials)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_IEConnectionDialUpCredentials)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_IEConnectionDialUpCredentials is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_IEConnectionDialUpCredentials(valuetmp)
+
 	return
 }
 
 // SetpolicySetting sets the value of policySetting for the instance
 func (instance *RSOP_IEConnectionDialUpCredentialsLink) SetPropertypolicySetting(value RSOP_IEAKPolicySetting) (err error) {
-	return instance.SetProperty("policySetting", value)
+	return instance.SetProperty("policySetting", (value))
 }
 
 // GetpolicySetting gets the value of policySetting for the instance
@@ -83,9 +94,18 @@ func (instance *RSOP_IEConnectionDialUpCredentialsLink) GetPropertypolicySetting
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_IEAKPolicySetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_IEAKPolicySetting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_IEAKPolicySetting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_IEAKPolicySetting(valuetmp)
+
 	return
 }

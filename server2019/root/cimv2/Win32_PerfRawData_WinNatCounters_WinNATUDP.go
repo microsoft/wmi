@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_WinNatCounters_WinNATUDP struct
@@ -67,7 +69,7 @@ func NewWin32_PerfRawData_WinNatCounters_WinNATUDPEx6(hostName string,
 
 // SetNumberOfBindings sets the value of NumberOfBindings for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) SetPropertyNumberOfBindings(value uint32) (err error) {
-	return instance.SetProperty("NumberOfBindings", value)
+	return instance.SetProperty("NumberOfBindings", (value))
 }
 
 // GetNumberOfBindings gets the value of NumberOfBindings for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) GetPropertyNumberOfB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfSessions sets the value of NumberOfSessions for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) SetPropertyNumberOfSessions(value uint32) (err error) {
-	return instance.SetProperty("NumberOfSessions", value)
+	return instance.SetProperty("NumberOfSessions", (value))
 }
 
 // GetNumberOfSessions gets the value of NumberOfSessions for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) GetPropertyNumberOfS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumExtToIntTranslations sets the value of NumExtToIntTranslations for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) SetPropertyNumExtToIntTranslations(value uint32) (err error) {
-	return instance.SetProperty("NumExtToIntTranslations", value)
+	return instance.SetProperty("NumExtToIntTranslations", (value))
 }
 
 // GetNumExtToIntTranslations gets the value of NumExtToIntTranslations for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) GetPropertyNumExtToI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumIntToExtTranslations sets the value of NumIntToExtTranslations for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) SetPropertyNumIntToExtTranslations(value uint32) (err error) {
-	return instance.SetProperty("NumIntToExtTranslations", value)
+	return instance.SetProperty("NumIntToExtTranslations", (value))
 }
 
 // GetNumIntToExtTranslations gets the value of NumIntToExtTranslations for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) GetPropertyNumIntToE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumPacketsDropped sets the value of NumPacketsDropped for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) SetPropertyNumPacketsDropped(value uint32) (err error) {
-	return instance.SetProperty("NumPacketsDropped", value)
+	return instance.SetProperty("NumPacketsDropped", (value))
 }
 
 // GetNumPacketsDropped gets the value of NumPacketsDropped for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) GetPropertyNumPacket
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumSessionsTimedOut sets the value of NumSessionsTimedOut for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) SetPropertyNumSessionsTimedOut(value uint32) (err error) {
-	return instance.SetProperty("NumSessionsTimedOut", value)
+	return instance.SetProperty("NumSessionsTimedOut", (value))
 }
 
 // GetNumSessionsTimedOut gets the value of NumSessionsTimedOut for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATUDP) GetPropertyNumSessio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

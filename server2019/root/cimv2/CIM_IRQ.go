@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_IRQ struct
@@ -73,7 +75,7 @@ func NewCIM_IRQEx6(hostName string,
 
 // SetAvailability sets the value of Availability for the instance
 func (instance *CIM_IRQ) SetPropertyAvailability(value uint16) (err error) {
-	return instance.SetProperty("Availability", value)
+	return instance.SetProperty("Availability", (value))
 }
 
 // GetAvailability gets the value of Availability for the instance
@@ -82,16 +84,25 @@ func (instance *CIM_IRQ) GetPropertyAvailability() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_IRQ) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -100,16 +111,25 @@ func (instance *CIM_IRQ) GetPropertyCreationClassName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCSCreationClassName sets the value of CSCreationClassName for the instance
 func (instance *CIM_IRQ) SetPropertyCSCreationClassName(value string) (err error) {
-	return instance.SetProperty("CSCreationClassName", value)
+	return instance.SetProperty("CSCreationClassName", (value))
 }
 
 // GetCSCreationClassName gets the value of CSCreationClassName for the instance
@@ -118,16 +138,25 @@ func (instance *CIM_IRQ) GetPropertyCSCreationClassName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCSName sets the value of CSName for the instance
 func (instance *CIM_IRQ) SetPropertyCSName(value string) (err error) {
-	return instance.SetProperty("CSName", value)
+	return instance.SetProperty("CSName", (value))
 }
 
 // GetCSName gets the value of CSName for the instance
@@ -136,16 +165,25 @@ func (instance *CIM_IRQ) GetPropertyCSName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIRQNumber sets the value of IRQNumber for the instance
 func (instance *CIM_IRQ) SetPropertyIRQNumber(value uint32) (err error) {
-	return instance.SetProperty("IRQNumber", value)
+	return instance.SetProperty("IRQNumber", (value))
 }
 
 // GetIRQNumber gets the value of IRQNumber for the instance
@@ -154,16 +192,25 @@ func (instance *CIM_IRQ) GetPropertyIRQNumber() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetShareable sets the value of Shareable for the instance
 func (instance *CIM_IRQ) SetPropertyShareable(value bool) (err error) {
-	return instance.SetProperty("Shareable", value)
+	return instance.SetProperty("Shareable", (value))
 }
 
 // GetShareable gets the value of Shareable for the instance
@@ -172,16 +219,25 @@ func (instance *CIM_IRQ) GetPropertyShareable() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTriggerLevel sets the value of TriggerLevel for the instance
 func (instance *CIM_IRQ) SetPropertyTriggerLevel(value uint16) (err error) {
-	return instance.SetProperty("TriggerLevel", value)
+	return instance.SetProperty("TriggerLevel", (value))
 }
 
 // GetTriggerLevel gets the value of TriggerLevel for the instance
@@ -190,16 +246,25 @@ func (instance *CIM_IRQ) GetPropertyTriggerLevel() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTriggerType sets the value of TriggerType for the instance
 func (instance *CIM_IRQ) SetPropertyTriggerType(value uint16) (err error) {
-	return instance.SetProperty("TriggerType", value)
+	return instance.SetProperty("TriggerType", (value))
 }
 
 // GetTriggerType gets the value of TriggerType for the instance
@@ -208,9 +273,18 @@ func (instance *CIM_IRQ) GetPropertyTriggerType() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

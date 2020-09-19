@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
@@ -11,7 +11,9 @@ package mscluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_HealthMetric struct
@@ -56,7 +58,7 @@ func NewMSCluster_HealthMetricEx6(hostName string,
 
 // SetMetricId sets the value of MetricId for the instance
 func (instance *MSCluster_HealthMetric) SetPropertyMetricId(value string) (err error) {
-	return instance.SetProperty("MetricId", value)
+	return instance.SetProperty("MetricId", (value))
 }
 
 // GetMetricId gets the value of MetricId for the instance
@@ -65,16 +67,25 @@ func (instance *MSCluster_HealthMetric) GetPropertyMetricId() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecords sets the value of Records for the instance
 func (instance *MSCluster_HealthMetric) SetPropertyRecords(value []MSCluster_MetricRecord) (err error) {
-	return instance.SetProperty("Records", value)
+	return instance.SetProperty("Records", (value))
 }
 
 // GetRecords gets the value of Records for the instance
@@ -83,9 +94,19 @@ func (instance *MSCluster_HealthMetric) GetPropertyRecords() (value []MSCluster_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSCluster_MetricRecord)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSCluster_MetricRecord)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSCluster_MetricRecord is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSCluster_MetricRecord(valuetmp))
+	}
+
 	return
 }

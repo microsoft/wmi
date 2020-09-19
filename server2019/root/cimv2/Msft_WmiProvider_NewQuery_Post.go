@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_WmiProvider_NewQuery_Post struct
@@ -61,7 +63,7 @@ func NewMsft_WmiProvider_NewQuery_PostEx6(hostName string,
 
 // SetQuery sets the value of Query for the instance
 func (instance *Msft_WmiProvider_NewQuery_Post) SetPropertyQuery(value string) (err error) {
-	return instance.SetProperty("Query", value)
+	return instance.SetProperty("Query", (value))
 }
 
 // GetQuery gets the value of Query for the instance
@@ -70,16 +72,25 @@ func (instance *Msft_WmiProvider_NewQuery_Post) GetPropertyQuery() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQueryId sets the value of QueryId for the instance
 func (instance *Msft_WmiProvider_NewQuery_Post) SetPropertyQueryId(value uint32) (err error) {
-	return instance.SetProperty("QueryId", value)
+	return instance.SetProperty("QueryId", (value))
 }
 
 // GetQueryId gets the value of QueryId for the instance
@@ -88,16 +99,25 @@ func (instance *Msft_WmiProvider_NewQuery_Post) GetPropertyQueryId() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQueryLanguage sets the value of QueryLanguage for the instance
 func (instance *Msft_WmiProvider_NewQuery_Post) SetPropertyQueryLanguage(value string) (err error) {
-	return instance.SetProperty("QueryLanguage", value)
+	return instance.SetProperty("QueryLanguage", (value))
 }
 
 // GetQueryLanguage gets the value of QueryLanguage for the instance
@@ -106,16 +126,25 @@ func (instance *Msft_WmiProvider_NewQuery_Post) GetPropertyQueryLanguage() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResult sets the value of Result for the instance
 func (instance *Msft_WmiProvider_NewQuery_Post) SetPropertyResult(value uint32) (err error) {
-	return instance.SetProperty("Result", value)
+	return instance.SetProperty("Result", (value))
 }
 
 // GetResult gets the value of Result for the instance
@@ -124,9 +153,18 @@ func (instance *Msft_WmiProvider_NewQuery_Post) GetPropertyResult() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

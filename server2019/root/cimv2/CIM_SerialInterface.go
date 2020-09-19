@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SerialInterface struct
@@ -58,7 +60,7 @@ func NewCIM_SerialInterfaceEx6(hostName string,
 
 // SetFlowControlInfo sets the value of FlowControlInfo for the instance
 func (instance *CIM_SerialInterface) SetPropertyFlowControlInfo(value uint16) (err error) {
-	return instance.SetProperty("FlowControlInfo", value)
+	return instance.SetProperty("FlowControlInfo", (value))
 }
 
 // GetFlowControlInfo gets the value of FlowControlInfo for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_SerialInterface) GetPropertyFlowControlInfo() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfStopBits sets the value of NumberOfStopBits for the instance
 func (instance *CIM_SerialInterface) SetPropertyNumberOfStopBits(value uint16) (err error) {
-	return instance.SetProperty("NumberOfStopBits", value)
+	return instance.SetProperty("NumberOfStopBits", (value))
 }
 
 // GetNumberOfStopBits gets the value of NumberOfStopBits for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_SerialInterface) GetPropertyNumberOfStopBits() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetParityInfo sets the value of ParityInfo for the instance
 func (instance *CIM_SerialInterface) SetPropertyParityInfo(value uint16) (err error) {
-	return instance.SetProperty("ParityInfo", value)
+	return instance.SetProperty("ParityInfo", (value))
 }
 
 // GetParityInfo gets the value of ParityInfo for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_SerialInterface) GetPropertyParityInfo() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

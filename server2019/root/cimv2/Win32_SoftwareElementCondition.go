@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SoftwareElementCondition struct
@@ -52,7 +54,7 @@ func NewWin32_SoftwareElementConditionEx6(hostName string,
 
 // SetCondition sets the value of Condition for the instance
 func (instance *Win32_SoftwareElementCondition) SetPropertyCondition(value string) (err error) {
-	return instance.SetProperty("Condition", value)
+	return instance.SetProperty("Condition", (value))
 }
 
 // GetCondition gets the value of Condition for the instance
@@ -61,9 +63,18 @@ func (instance *Win32_SoftwareElementCondition) GetPropertyCondition() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

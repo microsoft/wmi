@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IPSECPolicySetting struct
@@ -91,7 +93,7 @@ func NewRSOP_IPSECPolicySettingEx6(hostName string,
 
 // SetClassName sets the value of ClassName for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyClassName(value string) (err error) {
-	return instance.SetProperty("ClassName", value)
+	return instance.SetProperty("ClassName", (value))
 }
 
 // GetClassName gets the value of ClassName for the instance
@@ -100,16 +102,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyClassName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setdescription sets the value of description for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertydescription(value string) (err error) {
-	return instance.SetProperty("description", value)
+	return instance.SetProperty("description", (value))
 }
 
 // Getdescription gets the value of description for the instance
@@ -118,16 +129,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertydescription() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetipsecData sets the value of ipsecData for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecData(value []uint8) (err error) {
-	return instance.SetProperty("ipsecData", value)
+	return instance.SetProperty("ipsecData", (value))
 }
 
 // GetipsecData gets the value of ipsecData for the instance
@@ -136,16 +156,26 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecData() (value []uint8, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetipsecDataType sets the value of ipsecDataType for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecDataType(value uint32) (err error) {
-	return instance.SetProperty("ipsecDataType", value)
+	return instance.SetProperty("ipsecDataType", (value))
 }
 
 // GetipsecDataType gets the value of ipsecDataType for the instance
@@ -154,16 +184,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecDataType() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetipsecFilterReference sets the value of ipsecFilterReference for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecFilterReference(value []string) (err error) {
-	return instance.SetProperty("ipsecFilterReference", value)
+	return instance.SetProperty("ipsecFilterReference", (value))
 }
 
 // GetipsecFilterReference gets the value of ipsecFilterReference for the instance
@@ -172,16 +211,26 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecFilterReference() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetipsecID sets the value of ipsecID for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecID(value string) (err error) {
-	return instance.SetProperty("ipsecID", value)
+	return instance.SetProperty("ipsecID", (value))
 }
 
 // GetipsecID gets the value of ipsecID for the instance
@@ -190,16 +239,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecID() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetipsecISAKMPReference sets the value of ipsecISAKMPReference for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecISAKMPReference(value string) (err error) {
-	return instance.SetProperty("ipsecISAKMPReference", value)
+	return instance.SetProperty("ipsecISAKMPReference", (value))
 }
 
 // GetipsecISAKMPReference gets the value of ipsecISAKMPReference for the instance
@@ -208,16 +266,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecISAKMPReference() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetipsecName sets the value of ipsecName for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecName(value string) (err error) {
-	return instance.SetProperty("ipsecName", value)
+	return instance.SetProperty("ipsecName", (value))
 }
 
 // GetipsecName gets the value of ipsecName for the instance
@@ -226,16 +293,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetipsecNegotiationPolicyAction sets the value of ipsecNegotiationPolicyAction for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecNegotiationPolicyAction(value string) (err error) {
-	return instance.SetProperty("ipsecNegotiationPolicyAction", value)
+	return instance.SetProperty("ipsecNegotiationPolicyAction", (value))
 }
 
 // GetipsecNegotiationPolicyAction gets the value of ipsecNegotiationPolicyAction for the instance
@@ -244,16 +320,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecNegotiationPolicyAction
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetipsecNegotiationPolicyReference sets the value of ipsecNegotiationPolicyReference for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecNegotiationPolicyReference(value string) (err error) {
-	return instance.SetProperty("ipsecNegotiationPolicyReference", value)
+	return instance.SetProperty("ipsecNegotiationPolicyReference", (value))
 }
 
 // GetipsecNegotiationPolicyReference gets the value of ipsecNegotiationPolicyReference for the instance
@@ -262,16 +347,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecNegotiationPolicyRefere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetipsecNegotiationPolicyType sets the value of ipsecNegotiationPolicyType for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecNegotiationPolicyType(value string) (err error) {
-	return instance.SetProperty("ipsecNegotiationPolicyType", value)
+	return instance.SetProperty("ipsecNegotiationPolicyType", (value))
 }
 
 // GetipsecNegotiationPolicyType gets the value of ipsecNegotiationPolicyType for the instance
@@ -280,16 +374,25 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecNegotiationPolicyType()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetipsecNFAReference sets the value of ipsecNFAReference for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecNFAReference(value []string) (err error) {
-	return instance.SetProperty("ipsecNFAReference", value)
+	return instance.SetProperty("ipsecNFAReference", (value))
 }
 
 // GetipsecNFAReference gets the value of ipsecNFAReference for the instance
@@ -298,16 +401,26 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecNFAReference() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetipsecOwnersReference sets the value of ipsecOwnersReference for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertyipsecOwnersReference(value []string) (err error) {
-	return instance.SetProperty("ipsecOwnersReference", value)
+	return instance.SetProperty("ipsecOwnersReference", (value))
 }
 
 // GetipsecOwnersReference gets the value of ipsecOwnersReference for the instance
@@ -316,16 +429,26 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertyipsecOwnersReference() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetwhenChanged sets the value of whenChanged for the instance
 func (instance *RSOP_IPSECPolicySetting) SetPropertywhenChanged(value uint32) (err error) {
-	return instance.SetProperty("whenChanged", value)
+	return instance.SetProperty("whenChanged", (value))
 }
 
 // GetwhenChanged gets the value of whenChanged for the instance
@@ -334,9 +457,18 @@ func (instance *RSOP_IPSECPolicySetting) GetPropertywhenChanged() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

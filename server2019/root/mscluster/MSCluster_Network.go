@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_Network struct
@@ -85,7 +87,7 @@ func NewMSCluster_NetworkEx6(hostName string,
 
 // SetAddress sets the value of Address for the instance
 func (instance *MSCluster_Network) SetPropertyAddress(value string) (err error) {
-	return instance.SetProperty("Address", value)
+	return instance.SetProperty("Address", (value))
 }
 
 // GetAddress gets the value of Address for the instance
@@ -94,16 +96,25 @@ func (instance *MSCluster_Network) GetPropertyAddress() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAddressMask sets the value of AddressMask for the instance
 func (instance *MSCluster_Network) SetPropertyAddressMask(value string) (err error) {
-	return instance.SetProperty("AddressMask", value)
+	return instance.SetProperty("AddressMask", (value))
 }
 
 // GetAddressMask gets the value of AddressMask for the instance
@@ -112,16 +123,25 @@ func (instance *MSCluster_Network) GetPropertyAddressMask() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutoMetric sets the value of AutoMetric for the instance
 func (instance *MSCluster_Network) SetPropertyAutoMetric(value bool) (err error) {
-	return instance.SetProperty("AutoMetric", value)
+	return instance.SetProperty("AutoMetric", (value))
 }
 
 // GetAutoMetric gets the value of AutoMetric for the instance
@@ -130,16 +150,25 @@ func (instance *MSCluster_Network) GetPropertyAutoMetric() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSCluster_Network) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -148,16 +177,25 @@ func (instance *MSCluster_Network) GetPropertyId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv4Addresses sets the value of IPv4Addresses for the instance
 func (instance *MSCluster_Network) SetPropertyIPv4Addresses(value []string) (err error) {
-	return instance.SetProperty("IPv4Addresses", value)
+	return instance.SetProperty("IPv4Addresses", (value))
 }
 
 // GetIPv4Addresses gets the value of IPv4Addresses for the instance
@@ -166,16 +204,26 @@ func (instance *MSCluster_Network) GetPropertyIPv4Addresses() (value []string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPv4PrefixLengths sets the value of IPv4PrefixLengths for the instance
 func (instance *MSCluster_Network) SetPropertyIPv4PrefixLengths(value []string) (err error) {
-	return instance.SetProperty("IPv4PrefixLengths", value)
+	return instance.SetProperty("IPv4PrefixLengths", (value))
 }
 
 // GetIPv4PrefixLengths gets the value of IPv4PrefixLengths for the instance
@@ -184,16 +232,26 @@ func (instance *MSCluster_Network) GetPropertyIPv4PrefixLengths() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPv6Addresses sets the value of IPv6Addresses for the instance
 func (instance *MSCluster_Network) SetPropertyIPv6Addresses(value []string) (err error) {
-	return instance.SetProperty("IPv6Addresses", value)
+	return instance.SetProperty("IPv6Addresses", (value))
 }
 
 // GetIPv6Addresses gets the value of IPv6Addresses for the instance
@@ -202,16 +260,26 @@ func (instance *MSCluster_Network) GetPropertyIPv6Addresses() (value []string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPv6PrefixLengths sets the value of IPv6PrefixLengths for the instance
 func (instance *MSCluster_Network) SetPropertyIPv6PrefixLengths(value []string) (err error) {
-	return instance.SetProperty("IPv6PrefixLengths", value)
+	return instance.SetProperty("IPv6PrefixLengths", (value))
 }
 
 // GetIPv6PrefixLengths gets the value of IPv6PrefixLengths for the instance
@@ -220,16 +288,26 @@ func (instance *MSCluster_Network) GetPropertyIPv6PrefixLengths() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMetric sets the value of Metric for the instance
 func (instance *MSCluster_Network) SetPropertyMetric(value uint32) (err error) {
-	return instance.SetProperty("Metric", value)
+	return instance.SetProperty("Metric", (value))
 }
 
 // GetMetric gets the value of Metric for the instance
@@ -238,16 +316,25 @@ func (instance *MSCluster_Network) GetPropertyMetric() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrivateProperties sets the value of PrivateProperties for the instance
 func (instance *MSCluster_Network) SetPropertyPrivateProperties(value MSCluster_Property) (err error) {
-	return instance.SetProperty("PrivateProperties", value)
+	return instance.SetProperty("PrivateProperties", (value))
 }
 
 // GetPrivateProperties gets the value of PrivateProperties for the instance
@@ -256,16 +343,25 @@ func (instance *MSCluster_Network) GetPropertyPrivateProperties() (value MSClust
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSCluster_Property)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSCluster_Property)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSCluster_Property is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSCluster_Property(valuetmp)
+
 	return
 }
 
 // SetRole sets the value of Role for the instance
 func (instance *MSCluster_Network) SetPropertyRole(value uint32) (err error) {
-	return instance.SetProperty("Role", value)
+	return instance.SetProperty("Role", (value))
 }
 
 // GetRole gets the value of Role for the instance
@@ -274,16 +370,25 @@ func (instance *MSCluster_Network) GetPropertyRole() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSCluster_Network) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -292,10 +397,19 @@ func (instance *MSCluster_Network) GetPropertyState() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_WebApplication struct
@@ -62,7 +64,7 @@ func NewMDM_WebApplicationEx6(hostName string,
 
 // SetPackageName sets the value of PackageName for the instance
 func (instance *MDM_WebApplication) SetPropertyPackageName(value string) (err error) {
-	return instance.SetProperty("PackageName", value)
+	return instance.SetProperty("PackageName", (value))
 }
 
 // GetPackageName gets the value of PackageName for the instance
@@ -71,16 +73,25 @@ func (instance *MDM_WebApplication) GetPropertyPackageName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageUrl sets the value of PackageUrl for the instance
 func (instance *MDM_WebApplication) SetPropertyPackageUrl(value string) (err error) {
-	return instance.SetProperty("PackageUrl", value)
+	return instance.SetProperty("PackageUrl", (value))
 }
 
 // GetPackageUrl gets the value of PackageUrl for the instance
@@ -89,16 +100,25 @@ func (instance *MDM_WebApplication) GetPropertyPackageUrl() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShortcutFilename sets the value of ShortcutFilename for the instance
 func (instance *MDM_WebApplication) SetPropertyShortcutFilename(value string) (err error) {
-	return instance.SetProperty("ShortcutFilename", value)
+	return instance.SetProperty("ShortcutFilename", (value))
 }
 
 // GetShortcutFilename gets the value of ShortcutFilename for the instance
@@ -107,16 +127,25 @@ func (instance *MDM_WebApplication) GetPropertyShortcutFilename() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShortcutFolder sets the value of ShortcutFolder for the instance
 func (instance *MDM_WebApplication) SetPropertyShortcutFolder(value string) (err error) {
-	return instance.SetProperty("ShortcutFolder", value)
+	return instance.SetProperty("ShortcutFolder", (value))
 }
 
 // GetShortcutFolder gets the value of ShortcutFolder for the instance
@@ -125,9 +154,18 @@ func (instance *MDM_WebApplication) GetPropertyShortcutFolder() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

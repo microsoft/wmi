@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SystemEnclosure struct
@@ -55,7 +57,7 @@ func NewWin32_SystemEnclosureEx6(hostName string,
 
 // SetSecurityStatus sets the value of SecurityStatus for the instance
 func (instance *Win32_SystemEnclosure) SetPropertySecurityStatus(value uint16) (err error) {
-	return instance.SetProperty("SecurityStatus", value)
+	return instance.SetProperty("SecurityStatus", (value))
 }
 
 // GetSecurityStatus gets the value of SecurityStatus for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_SystemEnclosure) GetPropertySecurityStatus() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSMBIOSAssetTag sets the value of SMBIOSAssetTag for the instance
 func (instance *Win32_SystemEnclosure) SetPropertySMBIOSAssetTag(value string) (err error) {
-	return instance.SetProperty("SMBIOSAssetTag", value)
+	return instance.SetProperty("SMBIOSAssetTag", (value))
 }
 
 // GetSMBIOSAssetTag gets the value of SMBIOSAssetTag for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_SystemEnclosure) GetPropertySMBIOSAssetTag() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemSettingData struct
@@ -54,12 +56,6 @@ type Msvm_VirtualSystemSettingData struct {
 	BootOrder []uint16
 
 	//
-	BootPciExpress bool
-
-	//
-	BootPciExpressInstanceFilter string
-
-	//
 	BootSourceOrder []string
 
 	//
@@ -96,9 +92,6 @@ type Msvm_VirtualSystemSettingData struct {
 	GuestStateFile string
 
 	//
-	GuestStateIsolationEnabled bool
-
-	//
 	HighMmioGapBase uint64
 
 	//
@@ -121,9 +114,6 @@ type Msvm_VirtualSystemSettingData struct {
 
 	//
 	NetworkBootPreferredProtocol VirtualSystemSettingData_NetworkBootPreferredProtocol
-
-	//
-	NumaNodeTopologyArray []string
 
 	//
 	Parent string
@@ -184,7 +174,7 @@ func NewMsvm_VirtualSystemSettingDataEx6(hostName string,
 
 // SetAdditionalRecoveryInformation sets the value of AdditionalRecoveryInformation for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyAdditionalRecoveryInformation(value string) (err error) {
-	return instance.SetProperty("AdditionalRecoveryInformation", value)
+	return instance.SetProperty("AdditionalRecoveryInformation", (value))
 }
 
 // GetAdditionalRecoveryInformation gets the value of AdditionalRecoveryInformation for the instance
@@ -193,16 +183,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyAdditionalRecoveryInfo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowFullSCSICommandSet sets the value of AllowFullSCSICommandSet for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyAllowFullSCSICommandSet(value bool) (err error) {
-	return instance.SetProperty("AllowFullSCSICommandSet", value)
+	return instance.SetProperty("AllowFullSCSICommandSet", (value))
 }
 
 // GetAllowFullSCSICommandSet gets the value of AllowFullSCSICommandSet for the instance
@@ -211,16 +210,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyAllowFullSCSICommandSe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowReducedFcRedundancy sets the value of AllowReducedFcRedundancy for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyAllowReducedFcRedundancy(value bool) (err error) {
-	return instance.SetProperty("AllowReducedFcRedundancy", value)
+	return instance.SetProperty("AllowReducedFcRedundancy", (value))
 }
 
 // GetAllowReducedFcRedundancy gets the value of AllowReducedFcRedundancy for the instance
@@ -229,16 +237,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyAllowReducedFcRedundan
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetArchitecture sets the value of Architecture for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyArchitecture(value VirtualSystemSettingData_Architecture) (err error) {
-	return instance.SetProperty("Architecture", value)
+	return instance.SetProperty("Architecture", (value))
 }
 
 // GetArchitecture gets the value of Architecture for the instance
@@ -247,16 +264,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyArchitecture() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSettingData_Architecture)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemSettingData_Architecture(valuetmp)
+
 	return
 }
 
 // SetAutomaticCriticalErrorAction sets the value of AutomaticCriticalErrorAction for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyAutomaticCriticalErrorAction(value VirtualSystemSettingData_AutomaticCriticalErrorAction) (err error) {
-	return instance.SetProperty("AutomaticCriticalErrorAction", value)
+	return instance.SetProperty("AutomaticCriticalErrorAction", (value))
 }
 
 // GetAutomaticCriticalErrorAction gets the value of AutomaticCriticalErrorAction for the instance
@@ -265,16 +291,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyAutomaticCriticalError
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSettingData_AutomaticCriticalErrorAction)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemSettingData_AutomaticCriticalErrorAction(valuetmp)
+
 	return
 }
 
 // SetAutomaticCriticalErrorActionTimeout sets the value of AutomaticCriticalErrorActionTimeout for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyAutomaticCriticalErrorActionTimeout(value string) (err error) {
-	return instance.SetProperty("AutomaticCriticalErrorActionTimeout", value)
+	return instance.SetProperty("AutomaticCriticalErrorActionTimeout", (value))
 }
 
 // GetAutomaticCriticalErrorActionTimeout gets the value of AutomaticCriticalErrorActionTimeout for the instance
@@ -283,16 +318,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyAutomaticCriticalError
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutomaticSnapshotsEnabled sets the value of AutomaticSnapshotsEnabled for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyAutomaticSnapshotsEnabled(value bool) (err error) {
-	return instance.SetProperty("AutomaticSnapshotsEnabled", value)
+	return instance.SetProperty("AutomaticSnapshotsEnabled", (value))
 }
 
 // GetAutomaticSnapshotsEnabled gets the value of AutomaticSnapshotsEnabled for the instance
@@ -301,16 +345,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyAutomaticSnapshotsEnab
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBaseBoardSerialNumber sets the value of BaseBoardSerialNumber for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyBaseBoardSerialNumber(value string) (err error) {
-	return instance.SetProperty("BaseBoardSerialNumber", value)
+	return instance.SetProperty("BaseBoardSerialNumber", (value))
 }
 
 // GetBaseBoardSerialNumber gets the value of BaseBoardSerialNumber for the instance
@@ -319,16 +372,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyBaseBoardSerialNumber(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBIOSGUID sets the value of BIOSGUID for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyBIOSGUID(value string) (err error) {
-	return instance.SetProperty("BIOSGUID", value)
+	return instance.SetProperty("BIOSGUID", (value))
 }
 
 // GetBIOSGUID gets the value of BIOSGUID for the instance
@@ -337,16 +399,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyBIOSGUID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBIOSNumLock sets the value of BIOSNumLock for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyBIOSNumLock(value bool) (err error) {
-	return instance.SetProperty("BIOSNumLock", value)
+	return instance.SetProperty("BIOSNumLock", (value))
 }
 
 // GetBIOSNumLock gets the value of BIOSNumLock for the instance
@@ -355,16 +426,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyBIOSNumLock() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBIOSSerialNumber sets the value of BIOSSerialNumber for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyBIOSSerialNumber(value string) (err error) {
-	return instance.SetProperty("BIOSSerialNumber", value)
+	return instance.SetProperty("BIOSSerialNumber", (value))
 }
 
 // GetBIOSSerialNumber gets the value of BIOSSerialNumber for the instance
@@ -373,16 +453,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyBIOSSerialNumber() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBootOrder sets the value of BootOrder for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyBootOrder(value []uint16) (err error) {
-	return instance.SetProperty("BootOrder", value)
+	return instance.SetProperty("BootOrder", (value))
 }
 
 // GetBootOrder gets the value of BootOrder for the instance
@@ -391,52 +480,26 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyBootOrder() (value []u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetBootPciExpress sets the value of BootPciExpress for the instance
-func (instance *Msvm_VirtualSystemSettingData) SetPropertyBootPciExpress(value bool) (err error) {
-	return instance.SetProperty("BootPciExpress", value)
-}
-
-// GetBootPciExpress gets the value of BootPciExpress for the instance
-func (instance *Msvm_VirtualSystemSettingData) GetPropertyBootPciExpress() (value bool, err error) {
-	retValue, err := instance.GetProperty("BootPciExpress")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
 
-// SetBootPciExpressInstanceFilter sets the value of BootPciExpressInstanceFilter for the instance
-func (instance *Msvm_VirtualSystemSettingData) SetPropertyBootPciExpressInstanceFilter(value string) (err error) {
-	return instance.SetProperty("BootPciExpressInstanceFilter", value)
-}
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
 
-// GetBootPciExpressInstanceFilter gets the value of BootPciExpressInstanceFilter for the instance
-func (instance *Msvm_VirtualSystemSettingData) GetPropertyBootPciExpressInstanceFilter() (value string, err error) {
-	retValue, err := instance.GetProperty("BootPciExpressInstanceFilter")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
 	return
 }
 
 // SetBootSourceOrder sets the value of BootSourceOrder for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyBootSourceOrder(value []string) (err error) {
-	return instance.SetProperty("BootSourceOrder", value)
+	return instance.SetProperty("BootSourceOrder", (value))
 }
 
 // GetBootSourceOrder gets the value of BootSourceOrder for the instance
@@ -445,16 +508,26 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyBootSourceOrder() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetChassisAssetTag sets the value of ChassisAssetTag for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyChassisAssetTag(value string) (err error) {
-	return instance.SetProperty("ChassisAssetTag", value)
+	return instance.SetProperty("ChassisAssetTag", (value))
 }
 
 // GetChassisAssetTag gets the value of ChassisAssetTag for the instance
@@ -463,16 +536,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyChassisAssetTag() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetChassisSerialNumber sets the value of ChassisSerialNumber for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyChassisSerialNumber(value string) (err error) {
-	return instance.SetProperty("ChassisSerialNumber", value)
+	return instance.SetProperty("ChassisSerialNumber", (value))
 }
 
 // GetChassisSerialNumber gets the value of ChassisSerialNumber for the instance
@@ -481,16 +563,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyChassisSerialNumber() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConsoleMode sets the value of ConsoleMode for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyConsoleMode(value VirtualSystemSettingData_ConsoleMode) (err error) {
-	return instance.SetProperty("ConsoleMode", value)
+	return instance.SetProperty("ConsoleMode", (value))
 }
 
 // GetConsoleMode gets the value of ConsoleMode for the instance
@@ -499,16 +590,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyConsoleMode() (value V
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSettingData_ConsoleMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemSettingData_ConsoleMode(valuetmp)
+
 	return
 }
 
 // SetDebugChannelId sets the value of DebugChannelId for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyDebugChannelId(value uint32) (err error) {
-	return instance.SetProperty("DebugChannelId", value)
+	return instance.SetProperty("DebugChannelId", (value))
 }
 
 // GetDebugChannelId gets the value of DebugChannelId for the instance
@@ -517,16 +617,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyDebugChannelId() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDebugPort sets the value of DebugPort for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyDebugPort(value uint32) (err error) {
-	return instance.SetProperty("DebugPort", value)
+	return instance.SetProperty("DebugPort", (value))
 }
 
 // GetDebugPort gets the value of DebugPort for the instance
@@ -535,16 +644,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyDebugPort() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDebugPortEnabled sets the value of DebugPortEnabled for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyDebugPortEnabled(value VirtualSystemSettingData_DebugPortEnabled) (err error) {
-	return instance.SetProperty("DebugPortEnabled", value)
+	return instance.SetProperty("DebugPortEnabled", (value))
 }
 
 // GetDebugPortEnabled gets the value of DebugPortEnabled for the instance
@@ -553,16 +671,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyDebugPortEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSettingData_DebugPortEnabled)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemSettingData_DebugPortEnabled(valuetmp)
+
 	return
 }
 
 // SetEnableHibernation sets the value of EnableHibernation for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyEnableHibernation(value bool) (err error) {
-	return instance.SetProperty("EnableHibernation", value)
+	return instance.SetProperty("EnableHibernation", (value))
 }
 
 // GetEnableHibernation gets the value of EnableHibernation for the instance
@@ -571,16 +698,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyEnableHibernation() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnhancedSessionTransportType sets the value of EnhancedSessionTransportType for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyEnhancedSessionTransportType(value uint16) (err error) {
-	return instance.SetProperty("EnhancedSessionTransportType", value)
+	return instance.SetProperty("EnhancedSessionTransportType", (value))
 }
 
 // GetEnhancedSessionTransportType gets the value of EnhancedSessionTransportType for the instance
@@ -589,16 +725,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyEnhancedSessionTranspo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetGuestControlledCacheTypes sets the value of GuestControlledCacheTypes for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyGuestControlledCacheTypes(value bool) (err error) {
-	return instance.SetProperty("GuestControlledCacheTypes", value)
+	return instance.SetProperty("GuestControlledCacheTypes", (value))
 }
 
 // GetGuestControlledCacheTypes gets the value of GuestControlledCacheTypes for the instance
@@ -607,16 +752,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyGuestControlledCacheTy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGuestStateDataRoot sets the value of GuestStateDataRoot for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyGuestStateDataRoot(value string) (err error) {
-	return instance.SetProperty("GuestStateDataRoot", value)
+	return instance.SetProperty("GuestStateDataRoot", (value))
 }
 
 // GetGuestStateDataRoot gets the value of GuestStateDataRoot for the instance
@@ -625,16 +779,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyGuestStateDataRoot() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGuestStateFile sets the value of GuestStateFile for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyGuestStateFile(value string) (err error) {
-	return instance.SetProperty("GuestStateFile", value)
+	return instance.SetProperty("GuestStateFile", (value))
 }
 
 // GetGuestStateFile gets the value of GuestStateFile for the instance
@@ -643,34 +806,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyGuestStateFile() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetGuestStateIsolationEnabled sets the value of GuestStateIsolationEnabled for the instance
-func (instance *Msvm_VirtualSystemSettingData) SetPropertyGuestStateIsolationEnabled(value bool) (err error) {
-	return instance.SetProperty("GuestStateIsolationEnabled", value)
-}
-
-// GetGuestStateIsolationEnabled gets the value of GuestStateIsolationEnabled for the instance
-func (instance *Msvm_VirtualSystemSettingData) GetPropertyGuestStateIsolationEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("GuestStateIsolationEnabled")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHighMmioGapBase sets the value of HighMmioGapBase for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyHighMmioGapBase(value uint64) (err error) {
-	return instance.SetProperty("HighMmioGapBase", value)
+	return instance.SetProperty("HighMmioGapBase", (value))
 }
 
 // GetHighMmioGapBase gets the value of HighMmioGapBase for the instance
@@ -679,16 +833,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyHighMmioGapBase() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetHighMmioGapSize sets the value of HighMmioGapSize for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyHighMmioGapSize(value uint64) (err error) {
-	return instance.SetProperty("HighMmioGapSize", value)
+	return instance.SetProperty("HighMmioGapSize", (value))
 }
 
 // GetHighMmioGapSize gets the value of HighMmioGapSize for the instance
@@ -697,16 +860,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyHighMmioGapSize() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncrementalBackupEnabled sets the value of IncrementalBackupEnabled for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyIncrementalBackupEnabled(value bool) (err error) {
-	return instance.SetProperty("IncrementalBackupEnabled", value)
+	return instance.SetProperty("IncrementalBackupEnabled", (value))
 }
 
 // GetIncrementalBackupEnabled gets the value of IncrementalBackupEnabled for the instance
@@ -715,16 +887,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyIncrementalBackupEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsAutomaticSnapshot sets the value of IsAutomaticSnapshot for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyIsAutomaticSnapshot(value bool) (err error) {
-	return instance.SetProperty("IsAutomaticSnapshot", value)
+	return instance.SetProperty("IsAutomaticSnapshot", (value))
 }
 
 // GetIsAutomaticSnapshot gets the value of IsAutomaticSnapshot for the instance
@@ -733,16 +914,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyIsAutomaticSnapshot() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsSaved sets the value of IsSaved for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyIsSaved(value bool) (err error) {
-	return instance.SetProperty("IsSaved", value)
+	return instance.SetProperty("IsSaved", (value))
 }
 
 // GetIsSaved gets the value of IsSaved for the instance
@@ -751,16 +941,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyIsSaved() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLockOnDisconnect sets the value of LockOnDisconnect for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyLockOnDisconnect(value bool) (err error) {
-	return instance.SetProperty("LockOnDisconnect", value)
+	return instance.SetProperty("LockOnDisconnect", (value))
 }
 
 // GetLockOnDisconnect gets the value of LockOnDisconnect for the instance
@@ -769,16 +968,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyLockOnDisconnect() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLowMmioGapSize sets the value of LowMmioGapSize for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyLowMmioGapSize(value uint64) (err error) {
-	return instance.SetProperty("LowMmioGapSize", value)
+	return instance.SetProperty("LowMmioGapSize", (value))
 }
 
 // GetLowMmioGapSize gets the value of LowMmioGapSize for the instance
@@ -787,16 +995,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyLowMmioGapSize() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkBootPreferredProtocol sets the value of NetworkBootPreferredProtocol for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyNetworkBootPreferredProtocol(value VirtualSystemSettingData_NetworkBootPreferredProtocol) (err error) {
-	return instance.SetProperty("NetworkBootPreferredProtocol", value)
+	return instance.SetProperty("NetworkBootPreferredProtocol", (value))
 }
 
 // GetNetworkBootPreferredProtocol gets the value of NetworkBootPreferredProtocol for the instance
@@ -805,34 +1022,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyNetworkBootPreferredPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSettingData_NetworkBootPreferredProtocol)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetNumaNodeTopologyArray sets the value of NumaNodeTopologyArray for the instance
-func (instance *Msvm_VirtualSystemSettingData) SetPropertyNumaNodeTopologyArray(value []string) (err error) {
-	return instance.SetProperty("NumaNodeTopologyArray", value)
-}
-
-// GetNumaNodeTopologyArray gets the value of NumaNodeTopologyArray for the instance
-func (instance *Msvm_VirtualSystemSettingData) GetPropertyNumaNodeTopologyArray() (value []string, err error) {
-	retValue, err := instance.GetProperty("NumaNodeTopologyArray")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.([]string)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = VirtualSystemSettingData_NetworkBootPreferredProtocol(valuetmp)
+
 	return
 }
 
 // SetParent sets the value of Parent for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyParent(value string) (err error) {
-	return instance.SetProperty("Parent", value)
+	return instance.SetProperty("Parent", (value))
 }
 
 // GetParent gets the value of Parent for the instance
@@ -841,16 +1049,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyParent() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPauseAfterBootFailure sets the value of PauseAfterBootFailure for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyPauseAfterBootFailure(value bool) (err error) {
-	return instance.SetProperty("PauseAfterBootFailure", value)
+	return instance.SetProperty("PauseAfterBootFailure", (value))
 }
 
 // GetPauseAfterBootFailure gets the value of PauseAfterBootFailure for the instance
@@ -859,16 +1076,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyPauseAfterBootFailure(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSecureBootEnabled sets the value of SecureBootEnabled for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertySecureBootEnabled(value bool) (err error) {
-	return instance.SetProperty("SecureBootEnabled", value)
+	return instance.SetProperty("SecureBootEnabled", (value))
 }
 
 // GetSecureBootEnabled gets the value of SecureBootEnabled for the instance
@@ -877,16 +1103,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertySecureBootEnabled() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSecureBootTemplateId sets the value of SecureBootTemplateId for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertySecureBootTemplateId(value string) (err error) {
-	return instance.SetProperty("SecureBootTemplateId", value)
+	return instance.SetProperty("SecureBootTemplateId", (value))
 }
 
 // GetSecureBootTemplateId gets the value of SecureBootTemplateId for the instance
@@ -895,16 +1130,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertySecureBootTemplateId()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTurnOffOnGuestRestart sets the value of TurnOffOnGuestRestart for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyTurnOffOnGuestRestart(value bool) (err error) {
-	return instance.SetProperty("TurnOffOnGuestRestart", value)
+	return instance.SetProperty("TurnOffOnGuestRestart", (value))
 }
 
 // GetTurnOffOnGuestRestart gets the value of TurnOffOnGuestRestart for the instance
@@ -913,16 +1157,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyTurnOffOnGuestRestart(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUserSnapshotType sets the value of UserSnapshotType for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyUserSnapshotType(value uint16) (err error) {
-	return instance.SetProperty("UserSnapshotType", value)
+	return instance.SetProperty("UserSnapshotType", (value))
 }
 
 // GetUserSnapshotType gets the value of UserSnapshotType for the instance
@@ -931,16 +1184,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyUserSnapshotType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -949,16 +1211,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyVersion() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualNumaEnabled sets the value of VirtualNumaEnabled for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyVirtualNumaEnabled(value bool) (err error) {
-	return instance.SetProperty("VirtualNumaEnabled", value)
+	return instance.SetProperty("VirtualNumaEnabled", (value))
 }
 
 // GetVirtualNumaEnabled gets the value of VirtualNumaEnabled for the instance
@@ -967,16 +1238,25 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyVirtualNumaEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVirtualSystemSubType sets the value of VirtualSystemSubType for the instance
 func (instance *Msvm_VirtualSystemSettingData) SetPropertyVirtualSystemSubType(value VirtualSystemSettingData_VirtualSystemSubType) (err error) {
-	return instance.SetProperty("VirtualSystemSubType", value)
+	return instance.SetProperty("VirtualSystemSubType", (value))
 }
 
 // GetVirtualSystemSubType gets the value of VirtualSystemSubType for the instance
@@ -985,9 +1265,18 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyVirtualSystemSubType()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSettingData_VirtualSystemSubType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemSettingData_VirtualSystemSubType(valuetmp)
+
 	return
 }

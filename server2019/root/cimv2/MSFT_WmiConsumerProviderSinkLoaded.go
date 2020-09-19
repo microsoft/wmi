@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_WmiConsumerProviderSinkLoaded struct
@@ -52,7 +54,7 @@ func NewMSFT_WmiConsumerProviderSinkLoadedEx6(hostName string,
 
 // SetConsumer sets the value of Consumer for the instance
 func (instance *MSFT_WmiConsumerProviderSinkLoaded) SetPropertyConsumer(value __EventConsumer) (err error) {
-	return instance.SetProperty("Consumer", value)
+	return instance.SetProperty("Consumer", (value))
 }
 
 // GetConsumer gets the value of Consumer for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_WmiConsumerProviderSinkLoaded) GetPropertyConsumer() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(__EventConsumer)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(__EventConsumer)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " __EventConsumer is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = __EventConsumer(valuetmp)
+
 	return
 }

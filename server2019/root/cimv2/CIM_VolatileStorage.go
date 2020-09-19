@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VolatileStorage struct
@@ -55,7 +57,7 @@ func NewCIM_VolatileStorageEx6(hostName string,
 
 // SetCacheable sets the value of Cacheable for the instance
 func (instance *CIM_VolatileStorage) SetPropertyCacheable(value bool) (err error) {
-	return instance.SetProperty("Cacheable", value)
+	return instance.SetProperty("Cacheable", (value))
 }
 
 // GetCacheable gets the value of Cacheable for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_VolatileStorage) GetPropertyCacheable() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCacheType sets the value of CacheType for the instance
 func (instance *CIM_VolatileStorage) SetPropertyCacheType(value uint16) (err error) {
-	return instance.SetProperty("CacheType", value)
+	return instance.SetProperty("CacheType", (value))
 }
 
 // GetCacheType gets the value of CacheType for the instance
@@ -82,9 +93,18 @@ func (instance *CIM_VolatileStorage) GetPropertyCacheType() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_PhysicalExtent struct
@@ -86,7 +88,7 @@ func NewMSFT_PhysicalExtentEx6(hostName string,
 
 // SetColumnNumber sets the value of ColumnNumber for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyColumnNumber(value uint16) (err error) {
-	return instance.SetProperty("ColumnNumber", value)
+	return instance.SetProperty("ColumnNumber", (value))
 }
 
 // GetColumnNumber gets the value of ColumnNumber for the instance
@@ -95,16 +97,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyColumnNumber() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCopyNumber sets the value of CopyNumber for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyCopyNumber(value uint16) (err error) {
-	return instance.SetProperty("CopyNumber", value)
+	return instance.SetProperty("CopyNumber", (value))
 }
 
 // GetCopyNumber gets the value of CopyNumber for the instance
@@ -113,16 +124,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyCopyNumber() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetFlags sets the value of Flags for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyFlags(value uint64) (err error) {
-	return instance.SetProperty("Flags", value)
+	return instance.SetProperty("Flags", (value))
 }
 
 // GetFlags gets the value of Flags for the instance
@@ -131,16 +151,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyFlags() (value uint64, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOperationalDetails sets the value of OperationalDetails for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyOperationalDetails(value []string) (err error) {
-	return instance.SetProperty("OperationalDetails", value)
+	return instance.SetProperty("OperationalDetails", (value))
 }
 
 // GetOperationalDetails gets the value of OperationalDetails for the instance
@@ -149,16 +178,26 @@ func (instance *MSFT_PhysicalExtent) GetPropertyOperationalDetails() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -167,16 +206,26 @@ func (instance *MSFT_PhysicalExtent) GetPropertyOperationalStatus() (value []uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetPhysicalDiskOffset sets the value of PhysicalDiskOffset for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyPhysicalDiskOffset(value uint64) (err error) {
-	return instance.SetProperty("PhysicalDiskOffset", value)
+	return instance.SetProperty("PhysicalDiskOffset", (value))
 }
 
 // GetPhysicalDiskOffset gets the value of PhysicalDiskOffset for the instance
@@ -185,16 +234,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyPhysicalDiskOffset() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPhysicalDiskUniqueId sets the value of PhysicalDiskUniqueId for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyPhysicalDiskUniqueId(value string) (err error) {
-	return instance.SetProperty("PhysicalDiskUniqueId", value)
+	return instance.SetProperty("PhysicalDiskUniqueId", (value))
 }
 
 // GetPhysicalDiskUniqueId gets the value of PhysicalDiskUniqueId for the instance
@@ -203,16 +261,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyPhysicalDiskUniqueId() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReplacementCopyNumber sets the value of ReplacementCopyNumber for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyReplacementCopyNumber(value uint16) (err error) {
-	return instance.SetProperty("ReplacementCopyNumber", value)
+	return instance.SetProperty("ReplacementCopyNumber", (value))
 }
 
 // GetReplacementCopyNumber gets the value of ReplacementCopyNumber for the instance
@@ -221,16 +288,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyReplacementCopyNumber() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -239,16 +315,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertySize() (value uint64, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStorageTierUniqueId sets the value of StorageTierUniqueId for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyStorageTierUniqueId(value string) (err error) {
-	return instance.SetProperty("StorageTierUniqueId", value)
+	return instance.SetProperty("StorageTierUniqueId", (value))
 }
 
 // GetStorageTierUniqueId gets the value of StorageTierUniqueId for the instance
@@ -257,16 +342,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyStorageTierUniqueId() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualDiskOffset sets the value of VirtualDiskOffset for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyVirtualDiskOffset(value uint64) (err error) {
-	return instance.SetProperty("VirtualDiskOffset", value)
+	return instance.SetProperty("VirtualDiskOffset", (value))
 }
 
 // GetVirtualDiskOffset gets the value of VirtualDiskOffset for the instance
@@ -275,16 +369,25 @@ func (instance *MSFT_PhysicalExtent) GetPropertyVirtualDiskOffset() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVirtualDiskUniqueId sets the value of VirtualDiskUniqueId for the instance
 func (instance *MSFT_PhysicalExtent) SetPropertyVirtualDiskUniqueId(value string) (err error) {
-	return instance.SetProperty("VirtualDiskUniqueId", value)
+	return instance.SetProperty("VirtualDiskUniqueId", (value))
 }
 
 // GetVirtualDiskUniqueId gets the value of VirtualDiskUniqueId for the instance
@@ -293,9 +396,18 @@ func (instance *MSFT_PhysicalExtent) GetPropertyVirtualDiskUniqueId() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

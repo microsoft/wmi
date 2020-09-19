@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RoamingUserHealthConfiguration struct
@@ -65,7 +67,7 @@ func NewWin32_RoamingUserHealthConfigurationEx6(hostName string,
 
 // SetHealthStatusForTempProfiles sets the value of HealthStatusForTempProfiles for the instance
 func (instance *Win32_RoamingUserHealthConfiguration) SetPropertyHealthStatusForTempProfiles(value RoamingUserHealthConfiguration_HealthStatusForTempProfiles) (err error) {
-	return instance.SetProperty("HealthStatusForTempProfiles", value)
+	return instance.SetProperty("HealthStatusForTempProfiles", (value))
 }
 
 // GetHealthStatusForTempProfiles gets the value of HealthStatusForTempProfiles for the instance
@@ -74,16 +76,25 @@ func (instance *Win32_RoamingUserHealthConfiguration) GetPropertyHealthStatusFor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RoamingUserHealthConfiguration_HealthStatusForTempProfiles)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RoamingUserHealthConfiguration_HealthStatusForTempProfiles(valuetmp)
+
 	return
 }
 
 // SetLastProfileDownloadIntervalCautionInHours sets the value of LastProfileDownloadIntervalCautionInHours for the instance
 func (instance *Win32_RoamingUserHealthConfiguration) SetPropertyLastProfileDownloadIntervalCautionInHours(value uint16) (err error) {
-	return instance.SetProperty("LastProfileDownloadIntervalCautionInHours", value)
+	return instance.SetProperty("LastProfileDownloadIntervalCautionInHours", (value))
 }
 
 // GetLastProfileDownloadIntervalCautionInHours gets the value of LastProfileDownloadIntervalCautionInHours for the instance
@@ -92,16 +103,25 @@ func (instance *Win32_RoamingUserHealthConfiguration) GetPropertyLastProfileDown
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLastProfileDownloadIntervalUnhealthyInHours sets the value of LastProfileDownloadIntervalUnhealthyInHours for the instance
 func (instance *Win32_RoamingUserHealthConfiguration) SetPropertyLastProfileDownloadIntervalUnhealthyInHours(value uint16) (err error) {
-	return instance.SetProperty("LastProfileDownloadIntervalUnhealthyInHours", value)
+	return instance.SetProperty("LastProfileDownloadIntervalUnhealthyInHours", (value))
 }
 
 // GetLastProfileDownloadIntervalUnhealthyInHours gets the value of LastProfileDownloadIntervalUnhealthyInHours for the instance
@@ -110,16 +130,25 @@ func (instance *Win32_RoamingUserHealthConfiguration) GetPropertyLastProfileDown
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLastProfileUploadIntervalCautionInHours sets the value of LastProfileUploadIntervalCautionInHours for the instance
 func (instance *Win32_RoamingUserHealthConfiguration) SetPropertyLastProfileUploadIntervalCautionInHours(value uint16) (err error) {
-	return instance.SetProperty("LastProfileUploadIntervalCautionInHours", value)
+	return instance.SetProperty("LastProfileUploadIntervalCautionInHours", (value))
 }
 
 // GetLastProfileUploadIntervalCautionInHours gets the value of LastProfileUploadIntervalCautionInHours for the instance
@@ -128,16 +157,25 @@ func (instance *Win32_RoamingUserHealthConfiguration) GetPropertyLastProfileUplo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLastProfileUploadIntervalUnhealthyInHours sets the value of LastProfileUploadIntervalUnhealthyInHours for the instance
 func (instance *Win32_RoamingUserHealthConfiguration) SetPropertyLastProfileUploadIntervalUnhealthyInHours(value uint16) (err error) {
-	return instance.SetProperty("LastProfileUploadIntervalUnhealthyInHours", value)
+	return instance.SetProperty("LastProfileUploadIntervalUnhealthyInHours", (value))
 }
 
 // GetLastProfileUploadIntervalUnhealthyInHours gets the value of LastProfileUploadIntervalUnhealthyInHours for the instance
@@ -146,9 +184,18 @@ func (instance *Win32_RoamingUserHealthConfiguration) GetPropertyLastProfileUplo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

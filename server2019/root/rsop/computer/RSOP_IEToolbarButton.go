@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEToolbarButton struct
@@ -74,7 +76,7 @@ func NewRSOP_IEToolbarButtonEx6(hostName string,
 
 // SetactionPath sets the value of actionPath for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertyactionPath(value string) (err error) {
-	return instance.SetProperty("actionPath", value)
+	return instance.SetProperty("actionPath", (value))
 }
 
 // GetactionPath gets the value of actionPath for the instance
@@ -83,16 +85,25 @@ func (instance *RSOP_IEToolbarButton) GetPropertyactionPath() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetbuttonOrder sets the value of buttonOrder for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertybuttonOrder(value int32) (err error) {
-	return instance.SetProperty("buttonOrder", value)
+	return instance.SetProperty("buttonOrder", (value))
 }
 
 // GetbuttonOrder gets the value of buttonOrder for the instance
@@ -101,16 +112,25 @@ func (instance *RSOP_IEToolbarButton) GetPropertybuttonOrder() (value int32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // Setcaption sets the value of caption for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertycaption(value string) (err error) {
-	return instance.SetProperty("caption", value)
+	return instance.SetProperty("caption", (value))
 }
 
 // Getcaption gets the value of caption for the instance
@@ -119,16 +139,25 @@ func (instance *RSOP_IEToolbarButton) GetPropertycaption() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SethotIconPath sets the value of hotIconPath for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertyhotIconPath(value string) (err error) {
-	return instance.SetProperty("hotIconPath", value)
+	return instance.SetProperty("hotIconPath", (value))
 }
 
 // GethotIconPath gets the value of hotIconPath for the instance
@@ -137,16 +166,25 @@ func (instance *RSOP_IEToolbarButton) GetPropertyhotIconPath() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SeticonPath sets the value of iconPath for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertyiconPath(value string) (err error) {
-	return instance.SetProperty("iconPath", value)
+	return instance.SetProperty("iconPath", (value))
 }
 
 // GeticonPath gets the value of iconPath for the instance
@@ -155,16 +193,25 @@ func (instance *RSOP_IEToolbarButton) GetPropertyiconPath() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -173,16 +220,25 @@ func (instance *RSOP_IEToolbarButton) GetPropertyrsopID() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertyrsopPrecedence(value uint32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -191,16 +247,25 @@ func (instance *RSOP_IEToolbarButton) GetPropertyrsopPrecedence() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetshowOnToolbarByDefault sets the value of showOnToolbarByDefault for the instance
 func (instance *RSOP_IEToolbarButton) SetPropertyshowOnToolbarByDefault(value bool) (err error) {
-	return instance.SetProperty("showOnToolbarByDefault", value)
+	return instance.SetProperty("showOnToolbarByDefault", (value))
 }
 
 // GetshowOnToolbarByDefault gets the value of showOnToolbarByDefault for the instance
@@ -209,9 +274,18 @@ func (instance *RSOP_IEToolbarButton) GetPropertyshowOnToolbarByDefault() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

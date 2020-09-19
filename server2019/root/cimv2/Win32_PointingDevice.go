@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PointingDevice struct
@@ -76,7 +78,7 @@ func NewWin32_PointingDeviceEx6(hostName string,
 
 // SetDeviceInterface sets the value of DeviceInterface for the instance
 func (instance *Win32_PointingDevice) SetPropertyDeviceInterface(value uint16) (err error) {
-	return instance.SetProperty("DeviceInterface", value)
+	return instance.SetProperty("DeviceInterface", (value))
 }
 
 // GetDeviceInterface gets the value of DeviceInterface for the instance
@@ -85,16 +87,25 @@ func (instance *Win32_PointingDevice) GetPropertyDeviceInterface() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDoubleSpeedThreshold sets the value of DoubleSpeedThreshold for the instance
 func (instance *Win32_PointingDevice) SetPropertyDoubleSpeedThreshold(value uint32) (err error) {
-	return instance.SetProperty("DoubleSpeedThreshold", value)
+	return instance.SetProperty("DoubleSpeedThreshold", (value))
 }
 
 // GetDoubleSpeedThreshold gets the value of DoubleSpeedThreshold for the instance
@@ -103,16 +114,25 @@ func (instance *Win32_PointingDevice) GetPropertyDoubleSpeedThreshold() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHardwareType sets the value of HardwareType for the instance
 func (instance *Win32_PointingDevice) SetPropertyHardwareType(value string) (err error) {
-	return instance.SetProperty("HardwareType", value)
+	return instance.SetProperty("HardwareType", (value))
 }
 
 // GetHardwareType gets the value of HardwareType for the instance
@@ -121,16 +141,25 @@ func (instance *Win32_PointingDevice) GetPropertyHardwareType() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInfFileName sets the value of InfFileName for the instance
 func (instance *Win32_PointingDevice) SetPropertyInfFileName(value string) (err error) {
-	return instance.SetProperty("InfFileName", value)
+	return instance.SetProperty("InfFileName", (value))
 }
 
 // GetInfFileName gets the value of InfFileName for the instance
@@ -139,16 +168,25 @@ func (instance *Win32_PointingDevice) GetPropertyInfFileName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInfSection sets the value of InfSection for the instance
 func (instance *Win32_PointingDevice) SetPropertyInfSection(value string) (err error) {
-	return instance.SetProperty("InfSection", value)
+	return instance.SetProperty("InfSection", (value))
 }
 
 // GetInfSection gets the value of InfSection for the instance
@@ -157,16 +195,25 @@ func (instance *Win32_PointingDevice) GetPropertyInfSection() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *Win32_PointingDevice) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -175,16 +222,25 @@ func (instance *Win32_PointingDevice) GetPropertyManufacturer() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQuadSpeedThreshold sets the value of QuadSpeedThreshold for the instance
 func (instance *Win32_PointingDevice) SetPropertyQuadSpeedThreshold(value uint32) (err error) {
-	return instance.SetProperty("QuadSpeedThreshold", value)
+	return instance.SetProperty("QuadSpeedThreshold", (value))
 }
 
 // GetQuadSpeedThreshold gets the value of QuadSpeedThreshold for the instance
@@ -193,16 +249,25 @@ func (instance *Win32_PointingDevice) GetPropertyQuadSpeedThreshold() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSampleRate sets the value of SampleRate for the instance
 func (instance *Win32_PointingDevice) SetPropertySampleRate(value uint32) (err error) {
-	return instance.SetProperty("SampleRate", value)
+	return instance.SetProperty("SampleRate", (value))
 }
 
 // GetSampleRate gets the value of SampleRate for the instance
@@ -211,16 +276,25 @@ func (instance *Win32_PointingDevice) GetPropertySampleRate() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSynch sets the value of Synch for the instance
 func (instance *Win32_PointingDevice) SetPropertySynch(value uint32) (err error) {
-	return instance.SetProperty("Synch", value)
+	return instance.SetProperty("Synch", (value))
 }
 
 // GetSynch gets the value of Synch for the instance
@@ -229,9 +303,18 @@ func (instance *Win32_PointingDevice) GetPropertySynch() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

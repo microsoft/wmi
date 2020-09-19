@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PingStatus struct
@@ -122,7 +124,7 @@ func NewWin32_PingStatusEx6(hostName string,
 
 // SetAddress sets the value of Address for the instance
 func (instance *Win32_PingStatus) SetPropertyAddress(value string) (err error) {
-	return instance.SetProperty("Address", value)
+	return instance.SetProperty("Address", (value))
 }
 
 // GetAddress gets the value of Address for the instance
@@ -131,16 +133,25 @@ func (instance *Win32_PingStatus) GetPropertyAddress() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBufferSize sets the value of BufferSize for the instance
 func (instance *Win32_PingStatus) SetPropertyBufferSize(value uint32) (err error) {
-	return instance.SetProperty("BufferSize", value)
+	return instance.SetProperty("BufferSize", (value))
 }
 
 // GetBufferSize gets the value of BufferSize for the instance
@@ -149,16 +160,25 @@ func (instance *Win32_PingStatus) GetPropertyBufferSize() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNoFragmentation sets the value of NoFragmentation for the instance
 func (instance *Win32_PingStatus) SetPropertyNoFragmentation(value bool) (err error) {
-	return instance.SetProperty("NoFragmentation", value)
+	return instance.SetProperty("NoFragmentation", (value))
 }
 
 // GetNoFragmentation gets the value of NoFragmentation for the instance
@@ -167,16 +187,25 @@ func (instance *Win32_PingStatus) GetPropertyNoFragmentation() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPrimaryAddressResolutionStatus sets the value of PrimaryAddressResolutionStatus for the instance
 func (instance *Win32_PingStatus) SetPropertyPrimaryAddressResolutionStatus(value uint32) (err error) {
-	return instance.SetProperty("PrimaryAddressResolutionStatus", value)
+	return instance.SetProperty("PrimaryAddressResolutionStatus", (value))
 }
 
 // GetPrimaryAddressResolutionStatus gets the value of PrimaryAddressResolutionStatus for the instance
@@ -185,16 +214,25 @@ func (instance *Win32_PingStatus) GetPropertyPrimaryAddressResolutionStatus() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProtocolAddress sets the value of ProtocolAddress for the instance
 func (instance *Win32_PingStatus) SetPropertyProtocolAddress(value string) (err error) {
-	return instance.SetProperty("ProtocolAddress", value)
+	return instance.SetProperty("ProtocolAddress", (value))
 }
 
 // GetProtocolAddress gets the value of ProtocolAddress for the instance
@@ -203,16 +241,25 @@ func (instance *Win32_PingStatus) GetPropertyProtocolAddress() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProtocolAddressResolved sets the value of ProtocolAddressResolved for the instance
 func (instance *Win32_PingStatus) SetPropertyProtocolAddressResolved(value string) (err error) {
-	return instance.SetProperty("ProtocolAddressResolved", value)
+	return instance.SetProperty("ProtocolAddressResolved", (value))
 }
 
 // GetProtocolAddressResolved gets the value of ProtocolAddressResolved for the instance
@@ -221,16 +268,25 @@ func (instance *Win32_PingStatus) GetPropertyProtocolAddressResolved() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecordRoute sets the value of RecordRoute for the instance
 func (instance *Win32_PingStatus) SetPropertyRecordRoute(value uint32) (err error) {
-	return instance.SetProperty("RecordRoute", value)
+	return instance.SetProperty("RecordRoute", (value))
 }
 
 // GetRecordRoute gets the value of RecordRoute for the instance
@@ -239,16 +295,25 @@ func (instance *Win32_PingStatus) GetPropertyRecordRoute() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReplyInconsistency sets the value of ReplyInconsistency for the instance
 func (instance *Win32_PingStatus) SetPropertyReplyInconsistency(value bool) (err error) {
-	return instance.SetProperty("ReplyInconsistency", value)
+	return instance.SetProperty("ReplyInconsistency", (value))
 }
 
 // GetReplyInconsistency gets the value of ReplyInconsistency for the instance
@@ -257,16 +322,25 @@ func (instance *Win32_PingStatus) GetPropertyReplyInconsistency() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetReplySize sets the value of ReplySize for the instance
 func (instance *Win32_PingStatus) SetPropertyReplySize(value uint32) (err error) {
-	return instance.SetProperty("ReplySize", value)
+	return instance.SetProperty("ReplySize", (value))
 }
 
 // GetReplySize gets the value of ReplySize for the instance
@@ -275,16 +349,25 @@ func (instance *Win32_PingStatus) GetPropertyReplySize() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResolveAddressNames sets the value of ResolveAddressNames for the instance
 func (instance *Win32_PingStatus) SetPropertyResolveAddressNames(value bool) (err error) {
-	return instance.SetProperty("ResolveAddressNames", value)
+	return instance.SetProperty("ResolveAddressNames", (value))
 }
 
 // GetResolveAddressNames gets the value of ResolveAddressNames for the instance
@@ -293,16 +376,25 @@ func (instance *Win32_PingStatus) GetPropertyResolveAddressNames() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetResponseTime sets the value of ResponseTime for the instance
 func (instance *Win32_PingStatus) SetPropertyResponseTime(value uint32) (err error) {
-	return instance.SetProperty("ResponseTime", value)
+	return instance.SetProperty("ResponseTime", (value))
 }
 
 // GetResponseTime gets the value of ResponseTime for the instance
@@ -311,16 +403,25 @@ func (instance *Win32_PingStatus) GetPropertyResponseTime() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResponseTimeToLive sets the value of ResponseTimeToLive for the instance
 func (instance *Win32_PingStatus) SetPropertyResponseTimeToLive(value uint32) (err error) {
-	return instance.SetProperty("ResponseTimeToLive", value)
+	return instance.SetProperty("ResponseTimeToLive", (value))
 }
 
 // GetResponseTimeToLive gets the value of ResponseTimeToLive for the instance
@@ -329,16 +430,25 @@ func (instance *Win32_PingStatus) GetPropertyResponseTimeToLive() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRouteRecord sets the value of RouteRecord for the instance
 func (instance *Win32_PingStatus) SetPropertyRouteRecord(value []string) (err error) {
-	return instance.SetProperty("RouteRecord", value)
+	return instance.SetProperty("RouteRecord", (value))
 }
 
 // GetRouteRecord gets the value of RouteRecord for the instance
@@ -347,16 +457,26 @@ func (instance *Win32_PingStatus) GetPropertyRouteRecord() (value []string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRouteRecordResolved sets the value of RouteRecordResolved for the instance
 func (instance *Win32_PingStatus) SetPropertyRouteRecordResolved(value []string) (err error) {
-	return instance.SetProperty("RouteRecordResolved", value)
+	return instance.SetProperty("RouteRecordResolved", (value))
 }
 
 // GetRouteRecordResolved gets the value of RouteRecordResolved for the instance
@@ -365,16 +485,26 @@ func (instance *Win32_PingStatus) GetPropertyRouteRecordResolved() (value []stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSourceRoute sets the value of SourceRoute for the instance
 func (instance *Win32_PingStatus) SetPropertySourceRoute(value string) (err error) {
-	return instance.SetProperty("SourceRoute", value)
+	return instance.SetProperty("SourceRoute", (value))
 }
 
 // GetSourceRoute gets the value of SourceRoute for the instance
@@ -383,16 +513,25 @@ func (instance *Win32_PingStatus) GetPropertySourceRoute() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSourceRouteType sets the value of SourceRouteType for the instance
 func (instance *Win32_PingStatus) SetPropertySourceRouteType(value uint32) (err error) {
-	return instance.SetProperty("SourceRouteType", value)
+	return instance.SetProperty("SourceRouteType", (value))
 }
 
 // GetSourceRouteType gets the value of SourceRouteType for the instance
@@ -401,16 +540,25 @@ func (instance *Win32_PingStatus) GetPropertySourceRouteType() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStatusCode sets the value of StatusCode for the instance
 func (instance *Win32_PingStatus) SetPropertyStatusCode(value uint32) (err error) {
-	return instance.SetProperty("StatusCode", value)
+	return instance.SetProperty("StatusCode", (value))
 }
 
 // GetStatusCode gets the value of StatusCode for the instance
@@ -419,16 +567,25 @@ func (instance *Win32_PingStatus) GetPropertyStatusCode() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeout sets the value of Timeout for the instance
 func (instance *Win32_PingStatus) SetPropertyTimeout(value uint32) (err error) {
-	return instance.SetProperty("Timeout", value)
+	return instance.SetProperty("Timeout", (value))
 }
 
 // GetTimeout gets the value of Timeout for the instance
@@ -437,16 +594,25 @@ func (instance *Win32_PingStatus) GetPropertyTimeout() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeStampRecord sets the value of TimeStampRecord for the instance
 func (instance *Win32_PingStatus) SetPropertyTimeStampRecord(value []uint32) (err error) {
-	return instance.SetProperty("TimeStampRecord", value)
+	return instance.SetProperty("TimeStampRecord", (value))
 }
 
 // GetTimeStampRecord gets the value of TimeStampRecord for the instance
@@ -455,16 +621,26 @@ func (instance *Win32_PingStatus) GetPropertyTimeStampRecord() (value []uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetTimeStampRecordAddress sets the value of TimeStampRecordAddress for the instance
 func (instance *Win32_PingStatus) SetPropertyTimeStampRecordAddress(value []string) (err error) {
-	return instance.SetProperty("TimeStampRecordAddress", value)
+	return instance.SetProperty("TimeStampRecordAddress", (value))
 }
 
 // GetTimeStampRecordAddress gets the value of TimeStampRecordAddress for the instance
@@ -473,16 +649,26 @@ func (instance *Win32_PingStatus) GetPropertyTimeStampRecordAddress() (value []s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTimeStampRecordAddressResolved sets the value of TimeStampRecordAddressResolved for the instance
 func (instance *Win32_PingStatus) SetPropertyTimeStampRecordAddressResolved(value []string) (err error) {
-	return instance.SetProperty("TimeStampRecordAddressResolved", value)
+	return instance.SetProperty("TimeStampRecordAddressResolved", (value))
 }
 
 // GetTimeStampRecordAddressResolved gets the value of TimeStampRecordAddressResolved for the instance
@@ -491,16 +677,26 @@ func (instance *Win32_PingStatus) GetPropertyTimeStampRecordAddressResolved() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTimestampRoute sets the value of TimestampRoute for the instance
 func (instance *Win32_PingStatus) SetPropertyTimestampRoute(value uint32) (err error) {
-	return instance.SetProperty("TimestampRoute", value)
+	return instance.SetProperty("TimestampRoute", (value))
 }
 
 // GetTimestampRoute gets the value of TimestampRoute for the instance
@@ -509,16 +705,25 @@ func (instance *Win32_PingStatus) GetPropertyTimestampRoute() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeToLive sets the value of TimeToLive for the instance
 func (instance *Win32_PingStatus) SetPropertyTimeToLive(value uint32) (err error) {
-	return instance.SetProperty("TimeToLive", value)
+	return instance.SetProperty("TimeToLive", (value))
 }
 
 // GetTimeToLive gets the value of TimeToLive for the instance
@@ -527,16 +732,25 @@ func (instance *Win32_PingStatus) GetPropertyTimeToLive() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTypeofService sets the value of TypeofService for the instance
 func (instance *Win32_PingStatus) SetPropertyTypeofService(value uint32) (err error) {
-	return instance.SetProperty("TypeofService", value)
+	return instance.SetProperty("TypeofService", (value))
 }
 
 // GetTypeofService gets the value of TypeofService for the instance
@@ -545,9 +759,18 @@ func (instance *Win32_PingStatus) GetPropertyTypeofService() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

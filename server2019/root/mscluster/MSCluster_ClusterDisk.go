@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ClusterDisk struct
@@ -82,7 +84,7 @@ func NewMSCluster_ClusterDiskEx6(hostName string,
 
 // SetGptGuid sets the value of GptGuid for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyGptGuid(value string) (err error) {
-	return instance.SetProperty("GptGuid", value)
+	return instance.SetProperty("GptGuid", (value))
 }
 
 // GetGptGuid gets the value of GptGuid for the instance
@@ -91,16 +93,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyGptGuid() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -109,16 +120,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyId() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumber sets the value of Number for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyNumber(value uint32) (err error) {
-	return instance.SetProperty("Number", value)
+	return instance.SetProperty("Number", (value))
 }
 
 // GetNumber gets the value of Number for the instance
@@ -127,16 +147,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyNumber() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetScsiBus sets the value of ScsiBus for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyScsiBus(value uint32) (err error) {
-	return instance.SetProperty("ScsiBus", value)
+	return instance.SetProperty("ScsiBus", (value))
 }
 
 // GetScsiBus gets the value of ScsiBus for the instance
@@ -145,16 +174,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyScsiBus() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetScsiLun sets the value of ScsiLun for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyScsiLun(value uint32) (err error) {
-	return instance.SetProperty("ScsiLun", value)
+	return instance.SetProperty("ScsiLun", (value))
 }
 
 // GetScsiLun gets the value of ScsiLun for the instance
@@ -163,16 +201,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyScsiLun() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetScsiPort sets the value of ScsiPort for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyScsiPort(value uint32) (err error) {
-	return instance.SetProperty("ScsiPort", value)
+	return instance.SetProperty("ScsiPort", (value))
 }
 
 // GetScsiPort gets the value of ScsiPort for the instance
@@ -181,16 +228,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyScsiPort() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetScsiTargetId sets the value of ScsiTargetId for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyScsiTargetId(value uint32) (err error) {
-	return instance.SetProperty("ScsiTargetId", value)
+	return instance.SetProperty("ScsiTargetId", (value))
 }
 
 // GetScsiTargetId gets the value of ScsiTargetId for the instance
@@ -199,16 +255,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyScsiTargetId() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSignature sets the value of Signature for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertySignature(value uint32) (err error) {
-	return instance.SetProperty("Signature", value)
+	return instance.SetProperty("Signature", (value))
 }
 
 // GetSignature gets the value of Signature for the instance
@@ -217,16 +282,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertySignature() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -235,16 +309,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertySize() (value uint64, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStoragePoolId sets the value of StoragePoolId for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyStoragePoolId(value string) (err error) {
-	return instance.SetProperty("StoragePoolId", value)
+	return instance.SetProperty("StoragePoolId", (value))
 }
 
 // GetStoragePoolId gets the value of StoragePoolId for the instance
@@ -253,16 +336,25 @@ func (instance *MSCluster_ClusterDisk) GetPropertyStoragePoolId() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualDiskId sets the value of VirtualDiskId for the instance
 func (instance *MSCluster_ClusterDisk) SetPropertyVirtualDiskId(value string) (err error) {
-	return instance.SetProperty("VirtualDiskId", value)
+	return instance.SetProperty("VirtualDiskId", (value))
 }
 
 // GetVirtualDiskId gets the value of VirtualDiskId for the instance
@@ -271,9 +363,18 @@ func (instance *MSCluster_ClusterDisk) GetPropertyVirtualDiskId() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

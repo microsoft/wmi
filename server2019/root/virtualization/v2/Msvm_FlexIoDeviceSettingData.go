@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_FlexIoDeviceSettingData struct
@@ -22,9 +24,6 @@ type Msvm_FlexIoDeviceSettingData struct {
 
 	//
 	EmulatorId string
-
-	//
-	PhysicalNumaNode uint16
 
 	//
 	VirtualSystemIdentifiers []string
@@ -61,7 +60,7 @@ func NewMsvm_FlexIoDeviceSettingDataEx6(hostName string,
 
 // SetEmulatorConfiguration sets the value of EmulatorConfiguration for the instance
 func (instance *Msvm_FlexIoDeviceSettingData) SetPropertyEmulatorConfiguration(value []string) (err error) {
-	return instance.SetProperty("EmulatorConfiguration", value)
+	return instance.SetProperty("EmulatorConfiguration", (value))
 }
 
 // GetEmulatorConfiguration gets the value of EmulatorConfiguration for the instance
@@ -70,16 +69,26 @@ func (instance *Msvm_FlexIoDeviceSettingData) GetPropertyEmulatorConfiguration()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetEmulatorId sets the value of EmulatorId for the instance
 func (instance *Msvm_FlexIoDeviceSettingData) SetPropertyEmulatorId(value string) (err error) {
-	return instance.SetProperty("EmulatorId", value)
+	return instance.SetProperty("EmulatorId", (value))
 }
 
 // GetEmulatorId gets the value of EmulatorId for the instance
@@ -88,34 +97,25 @@ func (instance *Msvm_FlexIoDeviceSettingData) GetPropertyEmulatorId() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetPhysicalNumaNode sets the value of PhysicalNumaNode for the instance
-func (instance *Msvm_FlexIoDeviceSettingData) SetPropertyPhysicalNumaNode(value uint16) (err error) {
-	return instance.SetProperty("PhysicalNumaNode", value)
-}
-
-// GetPhysicalNumaNode gets the value of PhysicalNumaNode for the instance
-func (instance *Msvm_FlexIoDeviceSettingData) GetPropertyPhysicalNumaNode() (value uint16, err error) {
-	retValue, err := instance.GetProperty("PhysicalNumaNode")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint16)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualSystemIdentifiers sets the value of VirtualSystemIdentifiers for the instance
 func (instance *Msvm_FlexIoDeviceSettingData) SetPropertyVirtualSystemIdentifiers(value []string) (err error) {
-	return instance.SetProperty("VirtualSystemIdentifiers", value)
+	return instance.SetProperty("VirtualSystemIdentifiers", (value))
 }
 
 // GetVirtualSystemIdentifiers gets the value of VirtualSystemIdentifiers for the instance
@@ -124,10 +124,20 @@ func (instance *Msvm_FlexIoDeviceSettingData) GetPropertyVirtualSystemIdentifier
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_FlexIoDeviceSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

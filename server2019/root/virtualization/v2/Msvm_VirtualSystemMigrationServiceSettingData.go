@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemMigrationServiceSettingData struct
@@ -67,7 +69,7 @@ func NewMsvm_VirtualSystemMigrationServiceSettingDataEx6(hostName string,
 
 // SetAuthenticationType sets the value of AuthenticationType for the instance
 func (instance *Msvm_VirtualSystemMigrationServiceSettingData) SetPropertyAuthenticationType(value VirtualSystemMigrationServiceSettingData_AuthenticationType) (err error) {
-	return instance.SetProperty("AuthenticationType", value)
+	return instance.SetProperty("AuthenticationType", (value))
 }
 
 // GetAuthenticationType gets the value of AuthenticationType for the instance
@@ -76,16 +78,25 @@ func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetPropertyAuthen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemMigrationServiceSettingData_AuthenticationType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemMigrationServiceSettingData_AuthenticationType(valuetmp)
+
 	return
 }
 
 // SetEnableCompression sets the value of EnableCompression for the instance
 func (instance *Msvm_VirtualSystemMigrationServiceSettingData) SetPropertyEnableCompression(value bool) (err error) {
-	return instance.SetProperty("EnableCompression", value)
+	return instance.SetProperty("EnableCompression", (value))
 }
 
 // GetEnableCompression gets the value of EnableCompression for the instance
@@ -94,16 +105,25 @@ func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetPropertyEnable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableSmbTransport sets the value of EnableSmbTransport for the instance
 func (instance *Msvm_VirtualSystemMigrationServiceSettingData) SetPropertyEnableSmbTransport(value bool) (err error) {
-	return instance.SetProperty("EnableSmbTransport", value)
+	return instance.SetProperty("EnableSmbTransport", (value))
 }
 
 // GetEnableSmbTransport gets the value of EnableSmbTransport for the instance
@@ -112,16 +132,25 @@ func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetPropertyEnable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableVirtualSystemMigration sets the value of EnableVirtualSystemMigration for the instance
 func (instance *Msvm_VirtualSystemMigrationServiceSettingData) SetPropertyEnableVirtualSystemMigration(value bool) (err error) {
-	return instance.SetProperty("EnableVirtualSystemMigration", value)
+	return instance.SetProperty("EnableVirtualSystemMigration", (value))
 }
 
 // GetEnableVirtualSystemMigration gets the value of EnableVirtualSystemMigration for the instance
@@ -130,16 +159,25 @@ func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetPropertyEnable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaximumActiveStorageMigration sets the value of MaximumActiveStorageMigration for the instance
 func (instance *Msvm_VirtualSystemMigrationServiceSettingData) SetPropertyMaximumActiveStorageMigration(value uint32) (err error) {
-	return instance.SetProperty("MaximumActiveStorageMigration", value)
+	return instance.SetProperty("MaximumActiveStorageMigration", (value))
 }
 
 // GetMaximumActiveStorageMigration gets the value of MaximumActiveStorageMigration for the instance
@@ -148,16 +186,25 @@ func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetPropertyMaximu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumActiveVirtualSystemMigration sets the value of MaximumActiveVirtualSystemMigration for the instance
 func (instance *Msvm_VirtualSystemMigrationServiceSettingData) SetPropertyMaximumActiveVirtualSystemMigration(value uint32) (err error) {
-	return instance.SetProperty("MaximumActiveVirtualSystemMigration", value)
+	return instance.SetProperty("MaximumActiveVirtualSystemMigration", (value))
 }
 
 // GetMaximumActiveVirtualSystemMigration gets the value of MaximumActiveVirtualSystemMigration for the instance
@@ -166,16 +213,21 @@ func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetPropertyMaximu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
-func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetRelatedVirtualSystemMigrationNetworkSettingData() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_VirtualSystemMigrationNetworkSettingData")
-}
-
 func (instance *Msvm_VirtualSystemMigrationServiceSettingData) GetRelatedVirtualSystemMigrationService() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_VirtualSystemMigrationService")
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageSubSystemToOffloadDataTransferSetting struct
@@ -56,7 +58,7 @@ func NewMSFT_StorageSubSystemToOffloadDataTransferSettingEx6(hostName string,
 
 // SetOffloadDataTransferSetting sets the value of OffloadDataTransferSetting for the instance
 func (instance *MSFT_StorageSubSystemToOffloadDataTransferSetting) SetPropertyOffloadDataTransferSetting(value MSFT_OffloadDataTransferSetting) (err error) {
-	return instance.SetProperty("OffloadDataTransferSetting", value)
+	return instance.SetProperty("OffloadDataTransferSetting", (value))
 }
 
 // GetOffloadDataTransferSetting gets the value of OffloadDataTransferSetting for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_StorageSubSystemToOffloadDataTransferSetting) GetPropertyOf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_OffloadDataTransferSetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_OffloadDataTransferSetting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_OffloadDataTransferSetting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_OffloadDataTransferSetting(valuetmp)
+
 	return
 }
 
 // SetStorageSubSystem sets the value of StorageSubSystem for the instance
 func (instance *MSFT_StorageSubSystemToOffloadDataTransferSetting) SetPropertyStorageSubSystem(value MSFT_StorageSubSystem) (err error) {
-	return instance.SetProperty("StorageSubSystem", value)
+	return instance.SetProperty("StorageSubSystem", (value))
 }
 
 // GetStorageSubSystem gets the value of StorageSubSystem for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_StorageSubSystemToOffloadDataTransferSetting) GetPropertySt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageSubSystem)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageSubSystem)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageSubSystem is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageSubSystem(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000 struct
@@ -106,7 +108,7 @@ func NewWin32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000Ex6(hostName 
 
 // SetCalls sets the value of Calls for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCalls(value uint32) (err error) {
-	return instance.SetProperty("Calls", value)
+	return instance.SetProperty("Calls", (value))
 }
 
 // GetCalls gets the value of Calls for the instance
@@ -115,16 +117,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsDuration sets the value of CallsDuration for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsDuration(value uint32) (err error) {
-	return instance.SetProperty("CallsDuration", value)
+	return instance.SetProperty("CallsDuration", (value))
 }
 
 // GetCallsDuration gets the value of CallsDuration for the instance
@@ -133,16 +144,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsDuration_Base sets the value of CallsDuration_Base for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsDuration_Base(value uint32) (err error) {
-	return instance.SetProperty("CallsDuration_Base", value)
+	return instance.SetProperty("CallsDuration_Base", (value))
 }
 
 // GetCallsDuration_Base gets the value of CallsDuration_Base for the instance
@@ -151,16 +171,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsFailed sets the value of CallsFailed for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsFailed(value uint32) (err error) {
-	return instance.SetProperty("CallsFailed", value)
+	return instance.SetProperty("CallsFailed", (value))
 }
 
 // GetCallsFailed gets the value of CallsFailed for the instance
@@ -169,16 +198,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsFailedPerSecond sets the value of CallsFailedPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsFailedPerSecond(value uint32) (err error) {
-	return instance.SetProperty("CallsFailedPerSecond", value)
+	return instance.SetProperty("CallsFailedPerSecond", (value))
 }
 
 // GetCallsFailedPerSecond gets the value of CallsFailedPerSecond for the instance
@@ -187,16 +225,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsFaulted sets the value of CallsFaulted for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsFaulted(value uint32) (err error) {
-	return instance.SetProperty("CallsFaulted", value)
+	return instance.SetProperty("CallsFaulted", (value))
 }
 
 // GetCallsFaulted gets the value of CallsFaulted for the instance
@@ -205,16 +252,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsFaultedPerSecond sets the value of CallsFaultedPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsFaultedPerSecond(value uint32) (err error) {
-	return instance.SetProperty("CallsFaultedPerSecond", value)
+	return instance.SetProperty("CallsFaultedPerSecond", (value))
 }
 
 // GetCallsFaultedPerSecond gets the value of CallsFaultedPerSecond for the instance
@@ -223,16 +279,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsOutstanding sets the value of CallsOutstanding for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsOutstanding(value uint32) (err error) {
-	return instance.SetProperty("CallsOutstanding", value)
+	return instance.SetProperty("CallsOutstanding", (value))
 }
 
 // GetCallsOutstanding gets the value of CallsOutstanding for the instance
@@ -241,16 +306,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCallsPerSecond sets the value of CallsPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyCallsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("CallsPerSecond", value)
+	return instance.SetProperty("CallsPerSecond", (value))
 }
 
 // GetCallsPerSecond gets the value of CallsPerSecond for the instance
@@ -259,16 +333,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReliableMessagingMessagesDropped sets the value of ReliableMessagingMessagesDropped for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyReliableMessagingMessagesDropped(value uint32) (err error) {
-	return instance.SetProperty("ReliableMessagingMessagesDropped", value)
+	return instance.SetProperty("ReliableMessagingMessagesDropped", (value))
 }
 
 // GetReliableMessagingMessagesDropped gets the value of ReliableMessagingMessagesDropped for the instance
@@ -277,16 +360,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReliableMessagingMessagesDroppedPerSecond sets the value of ReliableMessagingMessagesDroppedPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyReliableMessagingMessagesDroppedPerSecond(value uint32) (err error) {
-	return instance.SetProperty("ReliableMessagingMessagesDroppedPerSecond", value)
+	return instance.SetProperty("ReliableMessagingMessagesDroppedPerSecond", (value))
 }
 
 // GetReliableMessagingMessagesDroppedPerSecond gets the value of ReliableMessagingMessagesDroppedPerSecond for the instance
@@ -295,16 +387,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReliableMessagingSessionsFaulted sets the value of ReliableMessagingSessionsFaulted for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyReliableMessagingSessionsFaulted(value uint32) (err error) {
-	return instance.SetProperty("ReliableMessagingSessionsFaulted", value)
+	return instance.SetProperty("ReliableMessagingSessionsFaulted", (value))
 }
 
 // GetReliableMessagingSessionsFaulted gets the value of ReliableMessagingSessionsFaulted for the instance
@@ -313,16 +414,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReliableMessagingSessionsFaultedPerSecond sets the value of ReliableMessagingSessionsFaultedPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyReliableMessagingSessionsFaultedPerSecond(value uint32) (err error) {
-	return instance.SetProperty("ReliableMessagingSessionsFaultedPerSecond", value)
+	return instance.SetProperty("ReliableMessagingSessionsFaultedPerSecond", (value))
 }
 
 // GetReliableMessagingSessionsFaultedPerSecond gets the value of ReliableMessagingSessionsFaultedPerSecond for the instance
@@ -331,16 +441,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurityCallsNotAuthorized sets the value of SecurityCallsNotAuthorized for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertySecurityCallsNotAuthorized(value uint32) (err error) {
-	return instance.SetProperty("SecurityCallsNotAuthorized", value)
+	return instance.SetProperty("SecurityCallsNotAuthorized", (value))
 }
 
 // GetSecurityCallsNotAuthorized gets the value of SecurityCallsNotAuthorized for the instance
@@ -349,16 +468,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurityCallsNotAuthorizedPerSecond sets the value of SecurityCallsNotAuthorizedPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertySecurityCallsNotAuthorizedPerSecond(value uint32) (err error) {
-	return instance.SetProperty("SecurityCallsNotAuthorizedPerSecond", value)
+	return instance.SetProperty("SecurityCallsNotAuthorizedPerSecond", (value))
 }
 
 // GetSecurityCallsNotAuthorizedPerSecond gets the value of SecurityCallsNotAuthorizedPerSecond for the instance
@@ -367,16 +495,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurityValidationandAuthenticationFailures sets the value of SecurityValidationandAuthenticationFailures for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertySecurityValidationandAuthenticationFailures(value uint32) (err error) {
-	return instance.SetProperty("SecurityValidationandAuthenticationFailures", value)
+	return instance.SetProperty("SecurityValidationandAuthenticationFailures", (value))
 }
 
 // GetSecurityValidationandAuthenticationFailures gets the value of SecurityValidationandAuthenticationFailures for the instance
@@ -385,16 +522,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurityValidationandAuthenticationFailuresPerSecond sets the value of SecurityValidationandAuthenticationFailuresPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertySecurityValidationandAuthenticationFailuresPerSecond(value uint32) (err error) {
-	return instance.SetProperty("SecurityValidationandAuthenticationFailuresPerSecond", value)
+	return instance.SetProperty("SecurityValidationandAuthenticationFailuresPerSecond", (value))
 }
 
 // GetSecurityValidationandAuthenticationFailuresPerSecond gets the value of SecurityValidationandAuthenticationFailuresPerSecond for the instance
@@ -403,16 +549,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransactionsFlowed sets the value of TransactionsFlowed for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyTransactionsFlowed(value uint32) (err error) {
-	return instance.SetProperty("TransactionsFlowed", value)
+	return instance.SetProperty("TransactionsFlowed", (value))
 }
 
 // GetTransactionsFlowed gets the value of TransactionsFlowed for the instance
@@ -421,16 +576,25 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransactionsFlowedPerSecond sets the value of TransactionsFlowedPerSecond for the instance
 func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) SetPropertyTransactionsFlowedPerSecond(value uint32) (err error) {
-	return instance.SetProperty("TransactionsFlowedPerSecond", value)
+	return instance.SetProperty("TransactionsFlowedPerSecond", (value))
 }
 
 // GetTransactionsFlowedPerSecond gets the value of TransactionsFlowedPerSecond for the instance
@@ -439,9 +603,18 @@ func (instance *Win32_PerfRawData_ServiceModel4000_ServiceModelEndpoint4000) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

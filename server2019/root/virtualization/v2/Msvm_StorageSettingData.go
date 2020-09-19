@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_StorageSettingData struct
@@ -58,7 +60,7 @@ func NewMsvm_StorageSettingDataEx6(hostName string,
 
 // SetDisableInterruptBatching sets the value of DisableInterruptBatching for the instance
 func (instance *Msvm_StorageSettingData) SetPropertyDisableInterruptBatching(value bool) (err error) {
-	return instance.SetProperty("DisableInterruptBatching", value)
+	return instance.SetProperty("DisableInterruptBatching", (value))
 }
 
 // GetDisableInterruptBatching gets the value of DisableInterruptBatching for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_StorageSettingData) GetPropertyDisableInterruptBatching() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetThreadCountPerChannel sets the value of ThreadCountPerChannel for the instance
 func (instance *Msvm_StorageSettingData) SetPropertyThreadCountPerChannel(value StorageSettingData_ThreadCountPerChannel) (err error) {
-	return instance.SetProperty("ThreadCountPerChannel", value)
+	return instance.SetProperty("ThreadCountPerChannel", (value))
 }
 
 // GetThreadCountPerChannel gets the value of ThreadCountPerChannel for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_StorageSettingData) GetPropertyThreadCountPerChannel() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageSettingData_ThreadCountPerChannel)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageSettingData_ThreadCountPerChannel(valuetmp)
+
 	return
 }
 
 // SetVirtualProcessorsPerChannel sets the value of VirtualProcessorsPerChannel for the instance
 func (instance *Msvm_StorageSettingData) SetPropertyVirtualProcessorsPerChannel(value uint16) (err error) {
-	return instance.SetProperty("VirtualProcessorsPerChannel", value)
+	return instance.SetProperty("VirtualProcessorsPerChannel", (value))
 }
 
 // GetVirtualProcessorsPerChannel gets the value of VirtualProcessorsPerChannel for the instance
@@ -103,10 +123,19 @@ func (instance *Msvm_StorageSettingData) GetPropertyVirtualProcessorsPerChannel(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 func (instance *Msvm_StorageSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {

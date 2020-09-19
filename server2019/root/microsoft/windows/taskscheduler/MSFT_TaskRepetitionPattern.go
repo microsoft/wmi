@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
@@ -11,7 +11,9 @@ package taskscheduler
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskRepetitionPattern struct
@@ -59,7 +61,7 @@ func NewMSFT_TaskRepetitionPatternEx6(hostName string,
 
 // SetDuration sets the value of Duration for the instance
 func (instance *MSFT_TaskRepetitionPattern) SetPropertyDuration(value string) (err error) {
-	return instance.SetProperty("Duration", value)
+	return instance.SetProperty("Duration", (value))
 }
 
 // GetDuration gets the value of Duration for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_TaskRepetitionPattern) GetPropertyDuration() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterval sets the value of Interval for the instance
 func (instance *MSFT_TaskRepetitionPattern) SetPropertyInterval(value string) (err error) {
-	return instance.SetProperty("Interval", value)
+	return instance.SetProperty("Interval", (value))
 }
 
 // GetInterval gets the value of Interval for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_TaskRepetitionPattern) GetPropertyInterval() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStopAtDurationEnd sets the value of StopAtDurationEnd for the instance
 func (instance *MSFT_TaskRepetitionPattern) SetPropertyStopAtDurationEnd(value bool) (err error) {
-	return instance.SetProperty("StopAtDurationEnd", value)
+	return instance.SetProperty("StopAtDurationEnd", (value))
 }
 
 // GetStopAtDurationEnd gets the value of StopAtDurationEnd for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_TaskRepetitionPattern) GetPropertyStopAtDurationEnd() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

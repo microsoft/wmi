@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
@@ -11,7 +11,9 @@ package management
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SDDC_Alert struct
@@ -74,7 +76,7 @@ func NewSDDC_AlertEx6(hostName string,
 
 // SetActions sets the value of Actions for the instance
 func (instance *SDDC_Alert) SetPropertyActions(value string) (err error) {
-	return instance.SetProperty("Actions", value)
+	return instance.SetProperty("Actions", (value))
 }
 
 // GetActions gets the value of Actions for the instance
@@ -83,16 +85,25 @@ func (instance *SDDC_Alert) GetPropertyActions() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *SDDC_Alert) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -101,16 +112,25 @@ func (instance *SDDC_Alert) GetPropertyDescription() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultingObjectDescription sets the value of FaultingObjectDescription for the instance
 func (instance *SDDC_Alert) SetPropertyFaultingObjectDescription(value string) (err error) {
-	return instance.SetProperty("FaultingObjectDescription", value)
+	return instance.SetProperty("FaultingObjectDescription", (value))
 }
 
 // GetFaultingObjectDescription gets the value of FaultingObjectDescription for the instance
@@ -119,16 +139,25 @@ func (instance *SDDC_Alert) GetPropertyFaultingObjectDescription() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultingObjectLocation sets the value of FaultingObjectLocation for the instance
 func (instance *SDDC_Alert) SetPropertyFaultingObjectLocation(value string) (err error) {
-	return instance.SetProperty("FaultingObjectLocation", value)
+	return instance.SetProperty("FaultingObjectLocation", (value))
 }
 
 // GetFaultingObjectLocation gets the value of FaultingObjectLocation for the instance
@@ -137,16 +166,25 @@ func (instance *SDDC_Alert) GetPropertyFaultingObjectLocation() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *SDDC_Alert) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -155,16 +193,25 @@ func (instance *SDDC_Alert) GetPropertyId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSeverity sets the value of Severity for the instance
 func (instance *SDDC_Alert) SetPropertySeverity(value uint16) (err error) {
-	return instance.SetProperty("Severity", value)
+	return instance.SetProperty("Severity", (value))
 }
 
 // GetSeverity gets the value of Severity for the instance
@@ -173,16 +220,25 @@ func (instance *SDDC_Alert) GetPropertySeverity() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTime sets the value of Time for the instance
 func (instance *SDDC_Alert) SetPropertyTime(value string) (err error) {
-	return instance.SetProperty("Time", value)
+	return instance.SetProperty("Time", (value))
 }
 
 // GetTime gets the value of Time for the instance
@@ -191,16 +247,25 @@ func (instance *SDDC_Alert) GetPropertyTime() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTitle sets the value of Title for the instance
 func (instance *SDDC_Alert) SetPropertyTitle(value string) (err error) {
-	return instance.SetProperty("Title", value)
+	return instance.SetProperty("Title", (value))
 }
 
 // GetTitle gets the value of Title for the instance
@@ -209,9 +274,18 @@ func (instance *SDDC_Alert) GetPropertyTitle() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

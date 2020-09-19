@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_OSVersionCheck struct
@@ -55,7 +57,7 @@ func NewCIM_OSVersionCheckEx6(hostName string,
 
 // SetMaximumVersion sets the value of MaximumVersion for the instance
 func (instance *CIM_OSVersionCheck) SetPropertyMaximumVersion(value string) (err error) {
-	return instance.SetProperty("MaximumVersion", value)
+	return instance.SetProperty("MaximumVersion", (value))
 }
 
 // GetMaximumVersion gets the value of MaximumVersion for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_OSVersionCheck) GetPropertyMaximumVersion() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMinimumVersion sets the value of MinimumVersion for the instance
 func (instance *CIM_OSVersionCheck) SetPropertyMinimumVersion(value string) (err error) {
-	return instance.SetProperty("MinimumVersion", value)
+	return instance.SetProperty("MinimumVersion", (value))
 }
 
 // GetMinimumVersion gets the value of MinimumVersion for the instance
@@ -82,9 +93,18 @@ func (instance *CIM_OSVersionCheck) GetPropertyMinimumVersion() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

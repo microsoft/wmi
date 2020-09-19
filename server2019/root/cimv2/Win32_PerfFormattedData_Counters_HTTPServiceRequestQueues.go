@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_Counters_HTTPServiceRequestQueuesEx6(hostName st
 
 // SetArrivalRate sets the value of ArrivalRate for the instance
 func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) SetPropertyArrivalRate(value uint64) (err error) {
-	return instance.SetProperty("ArrivalRate", value)
+	return instance.SetProperty("ArrivalRate", (value))
 }
 
 // GetArrivalRate gets the value of ArrivalRate for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheHitRate sets the value of CacheHitRate for the instance
 func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) SetPropertyCacheHitRate(value uint64) (err error) {
-	return instance.SetProperty("CacheHitRate", value)
+	return instance.SetProperty("CacheHitRate", (value))
 }
 
 // GetCacheHitRate gets the value of CacheHitRate for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCurrentQueueSize sets the value of CurrentQueueSize for the instance
 func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) SetPropertyCurrentQueueSize(value uint32) (err error) {
-	return instance.SetProperty("CurrentQueueSize", value)
+	return instance.SetProperty("CurrentQueueSize", (value))
 }
 
 // GetCurrentQueueSize gets the value of CurrentQueueSize for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxQueueItemAge sets the value of MaxQueueItemAge for the instance
 func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) SetPropertyMaxQueueItemAge(value uint64) (err error) {
-	return instance.SetProperty("MaxQueueItemAge", value)
+	return instance.SetProperty("MaxQueueItemAge", (value))
 }
 
 // GetMaxQueueItemAge gets the value of MaxQueueItemAge for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRejectedRequests sets the value of RejectedRequests for the instance
 func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) SetPropertyRejectedRequests(value uint64) (err error) {
-	return instance.SetProperty("RejectedRequests", value)
+	return instance.SetProperty("RejectedRequests", (value))
 }
 
 // GetRejectedRequests gets the value of RejectedRequests for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRejectionRate sets the value of RejectionRate for the instance
 func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) SetPropertyRejectionRate(value uint64) (err error) {
-	return instance.SetProperty("RejectionRate", value)
+	return instance.SetProperty("RejectionRate", (value))
 }
 
 // GetRejectionRate gets the value of RejectionRate for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_WinNatCounters_WinNATInstance struct
@@ -61,7 +63,7 @@ func NewWin32_PerfRawData_WinNatCounters_WinNATInstanceEx6(hostName string,
 
 // SetTCPPortsAvailable sets the value of TCPPortsAvailable for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) SetPropertyTCPPortsAvailable(value uint32) (err error) {
-	return instance.SetProperty("TCPPortsAvailable", value)
+	return instance.SetProperty("TCPPortsAvailable", (value))
 }
 
 // GetTCPPortsAvailable gets the value of TCPPortsAvailable for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) GetPropertyTCPP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTCPPortsInUse sets the value of TCPPortsInUse for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) SetPropertyTCPPortsInUse(value uint32) (err error) {
-	return instance.SetProperty("TCPPortsInUse", value)
+	return instance.SetProperty("TCPPortsInUse", (value))
 }
 
 // GetTCPPortsInUse gets the value of TCPPortsInUse for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) GetPropertyTCPP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUDPPortsAvailable sets the value of UDPPortsAvailable for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) SetPropertyUDPPortsAvailable(value uint32) (err error) {
-	return instance.SetProperty("UDPPortsAvailable", value)
+	return instance.SetProperty("UDPPortsAvailable", (value))
 }
 
 // GetUDPPortsAvailable gets the value of UDPPortsAvailable for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) GetPropertyUDPP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUDPPortsInUse sets the value of UDPPortsInUse for the instance
 func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) SetPropertyUDPPortsInUse(value uint32) (err error) {
-	return instance.SetProperty("UDPPortsInUse", value)
+	return instance.SetProperty("UDPPortsInUse", (value))
 }
 
 // GetUDPPortsInUse gets the value of UDPPortsInUse for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfRawData_WinNatCounters_WinNATInstance) GetPropertyUDPP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

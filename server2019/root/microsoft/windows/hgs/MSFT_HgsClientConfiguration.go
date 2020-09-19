@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Hgs
 //////////////////////////////////////////////
 package hgs
@@ -11,7 +11,9 @@ package hgs
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_HgsClientConfiguration struct
@@ -83,7 +85,7 @@ func NewMSFT_HgsClientConfigurationEx6(hostName string,
 
 // SetAttestationOperationMode sets the value of AttestationOperationMode for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyAttestationOperationMode(value uint16) (err error) {
-	return instance.SetProperty("AttestationOperationMode", value)
+	return instance.SetProperty("AttestationOperationMode", (value))
 }
 
 // GetAttestationOperationMode gets the value of AttestationOperationMode for the instance
@@ -92,16 +94,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyAttestationOperationMode
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAttestationServerUrl sets the value of AttestationServerUrl for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyAttestationServerUrl(value string) (err error) {
-	return instance.SetProperty("AttestationServerUrl", value)
+	return instance.SetProperty("AttestationServerUrl", (value))
 }
 
 // GetAttestationServerUrl gets the value of AttestationServerUrl for the instance
@@ -110,16 +121,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyAttestationServerUrl() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAttestationStatus sets the value of AttestationStatus for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyAttestationStatus(value uint16) (err error) {
-	return instance.SetProperty("AttestationStatus", value)
+	return instance.SetProperty("AttestationStatus", (value))
 }
 
 // GetAttestationStatus gets the value of AttestationStatus for the instance
@@ -128,16 +148,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyAttestationStatus() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAttestationSubstatus sets the value of AttestationSubstatus for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyAttestationSubstatus(value uint64) (err error) {
-	return instance.SetProperty("AttestationSubstatus", value)
+	return instance.SetProperty("AttestationSubstatus", (value))
 }
 
 // GetAttestationSubstatus gets the value of AttestationSubstatus for the instance
@@ -146,16 +175,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyAttestationSubstatus() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFallbackAttestationServerUrl sets the value of FallbackAttestationServerUrl for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyFallbackAttestationServerUrl(value []string) (err error) {
-	return instance.SetProperty("FallbackAttestationServerUrl", value)
+	return instance.SetProperty("FallbackAttestationServerUrl", (value))
 }
 
 // GetFallbackAttestationServerUrl gets the value of FallbackAttestationServerUrl for the instance
@@ -164,16 +202,26 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyFallbackAttestationServe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetFallbackKeyProtectionServerUrl sets the value of FallbackKeyProtectionServerUrl for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyFallbackKeyProtectionServerUrl(value []string) (err error) {
-	return instance.SetProperty("FallbackKeyProtectionServerUrl", value)
+	return instance.SetProperty("FallbackKeyProtectionServerUrl", (value))
 }
 
 // GetFallbackKeyProtectionServerUrl gets the value of FallbackKeyProtectionServerUrl for the instance
@@ -182,16 +230,26 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyFallbackKeyProtectionSer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIsHostGuarded sets the value of IsHostGuarded for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyIsHostGuarded(value bool) (err error) {
-	return instance.SetProperty("IsHostGuarded", value)
+	return instance.SetProperty("IsHostGuarded", (value))
 }
 
 // GetIsHostGuarded gets the value of IsHostGuarded for the instance
@@ -200,16 +258,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyIsHostGuarded() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetKeyProtectionServerUrl sets the value of KeyProtectionServerUrl for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyKeyProtectionServerUrl(value string) (err error) {
-	return instance.SetProperty("KeyProtectionServerUrl", value)
+	return instance.SetProperty("KeyProtectionServerUrl", (value))
 }
 
 // GetKeyProtectionServerUrl gets the value of KeyProtectionServerUrl for the instance
@@ -218,16 +285,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyKeyProtectionServerUrl()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastAttestationServerUrl sets the value of LastAttestationServerUrl for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyLastAttestationServerUrl(value string) (err error) {
-	return instance.SetProperty("LastAttestationServerUrl", value)
+	return instance.SetProperty("LastAttestationServerUrl", (value))
 }
 
 // GetLastAttestationServerUrl gets the value of LastAttestationServerUrl for the instance
@@ -236,16 +312,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyLastAttestationServerUrl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastKeyProtectionServerUrl sets the value of LastKeyProtectionServerUrl for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyLastKeyProtectionServerUrl(value string) (err error) {
-	return instance.SetProperty("LastKeyProtectionServerUrl", value)
+	return instance.SetProperty("LastKeyProtectionServerUrl", (value))
 }
 
 // GetLastKeyProtectionServerUrl gets the value of LastKeyProtectionServerUrl for the instance
@@ -254,16 +339,25 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyLastKeyProtectionServerU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMode sets the value of Mode for the instance
 func (instance *MSFT_HgsClientConfiguration) SetPropertyMode(value uint16) (err error) {
-	return instance.SetProperty("Mode", value)
+	return instance.SetProperty("Mode", (value))
 }
 
 // GetMode gets the value of Mode for the instance
@@ -272,10 +366,19 @@ func (instance *MSFT_HgsClientConfiguration) GetPropertyMode() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

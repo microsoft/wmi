@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TokenGroups struct
@@ -56,7 +58,7 @@ func NewWin32_TokenGroupsEx6(hostName string,
 
 // SetGroupCount sets the value of GroupCount for the instance
 func (instance *Win32_TokenGroups) SetPropertyGroupCount(value uint32) (err error) {
-	return instance.SetProperty("GroupCount", value)
+	return instance.SetProperty("GroupCount", (value))
 }
 
 // GetGroupCount gets the value of GroupCount for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_TokenGroups) GetPropertyGroupCount() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGroups sets the value of Groups for the instance
 func (instance *Win32_TokenGroups) SetPropertyGroups(value []Win32_SIDandAttributes) (err error) {
-	return instance.SetProperty("Groups", value)
+	return instance.SetProperty("Groups", (value))
 }
 
 // GetGroups gets the value of Groups for the instance
@@ -83,9 +94,19 @@ func (instance *Win32_TokenGroups) GetPropertyGroups() (value []Win32_SIDandAttr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]Win32_SIDandAttributes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(Win32_SIDandAttributes)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " Win32_SIDandAttributes is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, Win32_SIDandAttributes(valuetmp))
+	}
+
 	return
 }

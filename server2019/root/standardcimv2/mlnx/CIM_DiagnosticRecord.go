@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DiagnosticRecord struct
@@ -67,7 +69,7 @@ func NewCIM_DiagnosticRecordEx6(hostName string,
 
 // SetCreationTimeStamp sets the value of CreationTimeStamp for the instance
 func (instance *CIM_DiagnosticRecord) SetPropertyCreationTimeStamp(value string) (err error) {
-	return instance.SetProperty("CreationTimeStamp", value)
+	return instance.SetProperty("CreationTimeStamp", (value))
 }
 
 // GetCreationTimeStamp gets the value of CreationTimeStamp for the instance
@@ -76,16 +78,25 @@ func (instance *CIM_DiagnosticRecord) GetPropertyCreationTimeStamp() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExpirationDate sets the value of ExpirationDate for the instance
 func (instance *CIM_DiagnosticRecord) SetPropertyExpirationDate(value string) (err error) {
-	return instance.SetProperty("ExpirationDate", value)
+	return instance.SetProperty("ExpirationDate", (value))
 }
 
 // GetExpirationDate gets the value of ExpirationDate for the instance
@@ -94,16 +105,25 @@ func (instance *CIM_DiagnosticRecord) GetPropertyExpirationDate() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManagedElementName sets the value of ManagedElementName for the instance
 func (instance *CIM_DiagnosticRecord) SetPropertyManagedElementName(value string) (err error) {
-	return instance.SetProperty("ManagedElementName", value)
+	return instance.SetProperty("ManagedElementName", (value))
 }
 
 // GetManagedElementName gets the value of ManagedElementName for the instance
@@ -112,16 +132,25 @@ func (instance *CIM_DiagnosticRecord) GetPropertyManagedElementName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherRecordTypeDescription sets the value of OtherRecordTypeDescription for the instance
 func (instance *CIM_DiagnosticRecord) SetPropertyOtherRecordTypeDescription(value string) (err error) {
-	return instance.SetProperty("OtherRecordTypeDescription", value)
+	return instance.SetProperty("OtherRecordTypeDescription", (value))
 }
 
 // GetOtherRecordTypeDescription gets the value of OtherRecordTypeDescription for the instance
@@ -130,16 +159,25 @@ func (instance *CIM_DiagnosticRecord) GetPropertyOtherRecordTypeDescription() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecordType sets the value of RecordType for the instance
 func (instance *CIM_DiagnosticRecord) SetPropertyRecordType(value DiagnosticRecord_RecordType) (err error) {
-	return instance.SetProperty("RecordType", value)
+	return instance.SetProperty("RecordType", (value))
 }
 
 // GetRecordType gets the value of RecordType for the instance
@@ -148,16 +186,25 @@ func (instance *CIM_DiagnosticRecord) GetPropertyRecordType() (value DiagnosticR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(DiagnosticRecord_RecordType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = DiagnosticRecord_RecordType(valuetmp)
+
 	return
 }
 
 // SetServiceName sets the value of ServiceName for the instance
 func (instance *CIM_DiagnosticRecord) SetPropertyServiceName(value string) (err error) {
-	return instance.SetProperty("ServiceName", value)
+	return instance.SetProperty("ServiceName", (value))
 }
 
 // GetServiceName gets the value of ServiceName for the instance
@@ -166,9 +213,18 @@ func (instance *CIM_DiagnosticRecord) GetPropertyServiceName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

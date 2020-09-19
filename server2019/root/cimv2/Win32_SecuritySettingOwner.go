@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SecuritySettingOwner struct
@@ -56,7 +58,7 @@ func NewWin32_SecuritySettingOwnerEx6(hostName string,
 
 // SetOwner sets the value of Owner for the instance
 func (instance *Win32_SecuritySettingOwner) SetPropertyOwner(value Win32_SID) (err error) {
-	return instance.SetProperty("Owner", value)
+	return instance.SetProperty("Owner", (value))
 }
 
 // GetOwner gets the value of Owner for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_SecuritySettingOwner) GetPropertyOwner() (value Win32_SID,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_SID)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_SID)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_SID is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_SID(valuetmp)
+
 	return
 }
 
 // SetSecuritySetting sets the value of SecuritySetting for the instance
 func (instance *Win32_SecuritySettingOwner) SetPropertySecuritySetting(value Win32_SecuritySetting) (err error) {
-	return instance.SetProperty("SecuritySetting", value)
+	return instance.SetProperty("SecuritySetting", (value))
 }
 
 // GetSecuritySetting gets the value of SecuritySetting for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_SecuritySettingOwner) GetPropertySecuritySetting() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_SecuritySetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_SecuritySetting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_SecuritySetting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_SecuritySetting(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExpressionCall struct
@@ -58,7 +60,7 @@ func NewMSFT_ExpressionCallEx6(hostName string,
 
 // Setarguments sets the value of arguments for the instance
 func (instance *MSFT_ExpressionCall) SetPropertyarguments(value []MSFT_Expression) (err error) {
-	return instance.SetProperty("arguments", value)
+	return instance.SetProperty("arguments", (value))
 }
 
 // Getarguments gets the value of arguments for the instance
@@ -67,16 +69,26 @@ func (instance *MSFT_ExpressionCall) GetPropertyarguments() (value []MSFT_Expres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_Expression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_Expression)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_Expression is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_Expression(valuetmp))
+	}
+
 	return
 }
 
 // Setfunction sets the value of function for the instance
 func (instance *MSFT_ExpressionCall) SetPropertyfunction(value MSFT_Expression) (err error) {
-	return instance.SetProperty("function", value)
+	return instance.SetProperty("function", (value))
 }
 
 // Getfunction gets the value of function for the instance
@@ -85,16 +97,25 @@ func (instance *MSFT_ExpressionCall) GetPropertyfunction() (value MSFT_Expressio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Expression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Expression)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Expression is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Expression(valuetmp)
+
 	return
 }
 
 // Setpipeline sets the value of pipeline for the instance
 func (instance *MSFT_ExpressionCall) SetPropertypipeline(value MSFT_Expression) (err error) {
-	return instance.SetProperty("pipeline", value)
+	return instance.SetProperty("pipeline", (value))
 }
 
 // Getpipeline gets the value of pipeline for the instance
@@ -103,9 +124,18 @@ func (instance *MSFT_ExpressionCall) GetPropertypipeline() (value MSFT_Expressio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Expression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Expression)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Expression is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Expression(valuetmp)
+
 	return
 }

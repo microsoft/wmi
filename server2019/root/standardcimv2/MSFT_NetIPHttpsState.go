@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIPHttpsState struct
@@ -55,7 +57,7 @@ func NewMSFT_NetIPHttpsStateEx6(hostName string,
 
 // SetInterfaceStatus sets the value of InterfaceStatus for the instance
 func (instance *MSFT_NetIPHttpsState) SetPropertyInterfaceStatus(value string) (err error) {
-	return instance.SetProperty("InterfaceStatus", value)
+	return instance.SetProperty("InterfaceStatus", (value))
 }
 
 // GetInterfaceStatus gets the value of InterfaceStatus for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_NetIPHttpsState) GetPropertyInterfaceStatus() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastErrorCode sets the value of LastErrorCode for the instance
 func (instance *MSFT_NetIPHttpsState) SetPropertyLastErrorCode(value uint32) (err error) {
-	return instance.SetProperty("LastErrorCode", value)
+	return instance.SetProperty("LastErrorCode", (value))
 }
 
 // GetLastErrorCode gets the value of LastErrorCode for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_NetIPHttpsState) GetPropertyLastErrorCode() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Cluster struct
@@ -52,7 +54,7 @@ func NewCIM_ClusterEx6(hostName string,
 
 // SetMaxNumberOfNodes sets the value of MaxNumberOfNodes for the instance
 func (instance *CIM_Cluster) SetPropertyMaxNumberOfNodes(value uint32) (err error) {
-	return instance.SetProperty("MaxNumberOfNodes", value)
+	return instance.SetProperty("MaxNumberOfNodes", (value))
 }
 
 // GetMaxNumberOfNodes gets the value of MaxNumberOfNodes for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_Cluster) GetPropertyMaxNumberOfNodes() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

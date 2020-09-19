@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_Privacy02 struct
@@ -50,18 +52,6 @@ type MDM_Policy_Config01_Privacy02 struct {
 
 	//
 	LetAppsAccessAccountInfo_UserInControlOfTheseApps string
-
-	//
-	LetAppsAccessBackgroundSpatialPerception int32
-
-	//
-	LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps string
-
-	//
-	LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps string
-
-	//
-	LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps string
 
 	//
 	LetAppsAccessCalendar int32
@@ -244,12 +234,6 @@ type MDM_Policy_Config01_Privacy02 struct {
 	LetAppsAccessTrustedDevices_UserInControlOfTheseApps string
 
 	//
-	LetAppsActivateWithVoice int32
-
-	//
-	LetAppsActivateWithVoiceAboveLock int32
-
-	//
 	LetAppsGetDiagnosticInfo int32
 
 	//
@@ -326,7 +310,7 @@ func NewMDM_Policy_Config01_Privacy02Ex6(hostName string,
 
 // SetAllowAutoAcceptPairingAndPrivacyConsentPrompts sets the value of AllowAutoAcceptPairingAndPrivacyConsentPrompts for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyAllowAutoAcceptPairingAndPrivacyConsentPrompts(value int32) (err error) {
-	return instance.SetProperty("AllowAutoAcceptPairingAndPrivacyConsentPrompts", value)
+	return instance.SetProperty("AllowAutoAcceptPairingAndPrivacyConsentPrompts", (value))
 }
 
 // GetAllowAutoAcceptPairingAndPrivacyConsentPrompts gets the value of AllowAutoAcceptPairingAndPrivacyConsentPrompts for the instance
@@ -335,16 +319,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyAllowAutoAcceptPairing
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowCrossDeviceClipboard sets the value of AllowCrossDeviceClipboard for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyAllowCrossDeviceClipboard(value int32) (err error) {
-	return instance.SetProperty("AllowCrossDeviceClipboard", value)
+	return instance.SetProperty("AllowCrossDeviceClipboard", (value))
 }
 
 // GetAllowCrossDeviceClipboard gets the value of AllowCrossDeviceClipboard for the instance
@@ -353,16 +346,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyAllowCrossDeviceClipbo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowInputPersonalization sets the value of AllowInputPersonalization for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyAllowInputPersonalization(value int32) (err error) {
-	return instance.SetProperty("AllowInputPersonalization", value)
+	return instance.SetProperty("AllowInputPersonalization", (value))
 }
 
 // GetAllowInputPersonalization gets the value of AllowInputPersonalization for the instance
@@ -371,16 +373,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyAllowInputPersonalizat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableAdvertisingId sets the value of DisableAdvertisingId for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyDisableAdvertisingId(value int32) (err error) {
-	return instance.SetProperty("DisableAdvertisingId", value)
+	return instance.SetProperty("DisableAdvertisingId", (value))
 }
 
 // GetDisableAdvertisingId gets the value of DisableAdvertisingId for the instance
@@ -389,16 +400,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyDisableAdvertisingId()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisablePrivacyExperience sets the value of DisablePrivacyExperience for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyDisablePrivacyExperience(value int32) (err error) {
-	return instance.SetProperty("DisablePrivacyExperience", value)
+	return instance.SetProperty("DisablePrivacyExperience", (value))
 }
 
 // GetDisablePrivacyExperience gets the value of DisablePrivacyExperience for the instance
@@ -407,16 +427,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyDisablePrivacyExperien
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnableActivityFeed sets the value of EnableActivityFeed for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyEnableActivityFeed(value int32) (err error) {
-	return instance.SetProperty("EnableActivityFeed", value)
+	return instance.SetProperty("EnableActivityFeed", (value))
 }
 
 // GetEnableActivityFeed gets the value of EnableActivityFeed for the instance
@@ -425,16 +454,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyEnableActivityFeed() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -443,16 +481,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyInstanceID() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessAccountInfo sets the value of LetAppsAccessAccountInfo for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessAccountInfo(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessAccountInfo", value)
+	return instance.SetProperty("LetAppsAccessAccountInfo", (value))
 }
 
 // GetLetAppsAccessAccountInfo gets the value of LetAppsAccessAccountInfo for the instance
@@ -461,16 +508,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessAccountIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessAccountInfo_ForceAllowTheseApps sets the value of LetAppsAccessAccountInfo_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessAccountInfo_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessAccountInfo_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessAccountInfo_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessAccountInfo_ForceAllowTheseApps gets the value of LetAppsAccessAccountInfo_ForceAllowTheseApps for the instance
@@ -479,16 +535,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessAccountIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessAccountInfo_ForceDenyTheseApps sets the value of LetAppsAccessAccountInfo_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessAccountInfo_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessAccountInfo_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessAccountInfo_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessAccountInfo_ForceDenyTheseApps gets the value of LetAppsAccessAccountInfo_ForceDenyTheseApps for the instance
@@ -497,16 +562,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessAccountIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessAccountInfo_UserInControlOfTheseApps sets the value of LetAppsAccessAccountInfo_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessAccountInfo_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessAccountInfo_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessAccountInfo_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessAccountInfo_UserInControlOfTheseApps gets the value of LetAppsAccessAccountInfo_UserInControlOfTheseApps for the instance
@@ -515,88 +589,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessAccountIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetLetAppsAccessBackgroundSpatialPerception sets the value of LetAppsAccessBackgroundSpatialPerception for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception", value)
-}
-
-// GetLetAppsAccessBackgroundSpatialPerception gets the value of LetAppsAccessBackgroundSpatialPerception for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps sets the value of LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps", value)
-}
-
-// GetLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps gets the value of LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception_ForceAllowTheseApps")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
 
-// SetLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps sets the value of LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps", value)
-}
+	value = string(valuetmp)
 
-// GetLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps gets the value of LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception_ForceDenyTheseApps")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps sets the value of LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps", value)
-}
-
-// GetLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps gets the value of LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps() (value string, err error) {
-	retValue, err := instance.GetProperty("LetAppsAccessBackgroundSpatialPerception_UserInControlOfTheseApps")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
 	return
 }
 
 // SetLetAppsAccessCalendar sets the value of LetAppsAccessCalendar for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCalendar(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessCalendar", value)
+	return instance.SetProperty("LetAppsAccessCalendar", (value))
 }
 
 // GetLetAppsAccessCalendar gets the value of LetAppsAccessCalendar for the instance
@@ -605,16 +616,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCalendar(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCalendar_ForceAllowTheseApps sets the value of LetAppsAccessCalendar_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCalendar_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCalendar_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCalendar_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessCalendar_ForceAllowTheseApps gets the value of LetAppsAccessCalendar_ForceAllowTheseApps for the instance
@@ -623,16 +643,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCalendar_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCalendar_ForceDenyTheseApps sets the value of LetAppsAccessCalendar_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCalendar_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCalendar_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCalendar_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessCalendar_ForceDenyTheseApps gets the value of LetAppsAccessCalendar_ForceDenyTheseApps for the instance
@@ -641,16 +670,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCalendar_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCalendar_UserInControlOfTheseApps sets the value of LetAppsAccessCalendar_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCalendar_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCalendar_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCalendar_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessCalendar_UserInControlOfTheseApps gets the value of LetAppsAccessCalendar_UserInControlOfTheseApps for the instance
@@ -659,16 +697,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCalendar_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCallHistory sets the value of LetAppsAccessCallHistory for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCallHistory(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessCallHistory", value)
+	return instance.SetProperty("LetAppsAccessCallHistory", (value))
 }
 
 // GetLetAppsAccessCallHistory gets the value of LetAppsAccessCallHistory for the instance
@@ -677,16 +724,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCallHisto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCallHistory_ForceAllowTheseApps sets the value of LetAppsAccessCallHistory_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCallHistory_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCallHistory_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCallHistory_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessCallHistory_ForceAllowTheseApps gets the value of LetAppsAccessCallHistory_ForceAllowTheseApps for the instance
@@ -695,16 +751,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCallHisto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCallHistory_ForceDenyTheseApps sets the value of LetAppsAccessCallHistory_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCallHistory_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCallHistory_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCallHistory_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessCallHistory_ForceDenyTheseApps gets the value of LetAppsAccessCallHistory_ForceDenyTheseApps for the instance
@@ -713,16 +778,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCallHisto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCallHistory_UserInControlOfTheseApps sets the value of LetAppsAccessCallHistory_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCallHistory_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCallHistory_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCallHistory_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessCallHistory_UserInControlOfTheseApps gets the value of LetAppsAccessCallHistory_UserInControlOfTheseApps for the instance
@@ -731,16 +805,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCallHisto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCamera sets the value of LetAppsAccessCamera for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCamera(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessCamera", value)
+	return instance.SetProperty("LetAppsAccessCamera", (value))
 }
 
 // GetLetAppsAccessCamera gets the value of LetAppsAccessCamera for the instance
@@ -749,16 +832,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCamera() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCamera_ForceAllowTheseApps sets the value of LetAppsAccessCamera_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCamera_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCamera_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCamera_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessCamera_ForceAllowTheseApps gets the value of LetAppsAccessCamera_ForceAllowTheseApps for the instance
@@ -767,16 +859,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCamera_Fo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCamera_ForceDenyTheseApps sets the value of LetAppsAccessCamera_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCamera_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCamera_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCamera_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessCamera_ForceDenyTheseApps gets the value of LetAppsAccessCamera_ForceDenyTheseApps for the instance
@@ -785,16 +886,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCamera_Fo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCamera_UserInControlOfTheseApps sets the value of LetAppsAccessCamera_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessCamera_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCamera_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCamera_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessCamera_UserInControlOfTheseApps gets the value of LetAppsAccessCamera_UserInControlOfTheseApps for the instance
@@ -803,16 +913,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessCamera_Us
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessContacts sets the value of LetAppsAccessContacts for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessContacts(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessContacts", value)
+	return instance.SetProperty("LetAppsAccessContacts", (value))
 }
 
 // GetLetAppsAccessContacts gets the value of LetAppsAccessContacts for the instance
@@ -821,16 +940,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessContacts(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessContacts_ForceAllowTheseApps sets the value of LetAppsAccessContacts_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessContacts_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessContacts_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessContacts_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessContacts_ForceAllowTheseApps gets the value of LetAppsAccessContacts_ForceAllowTheseApps for the instance
@@ -839,16 +967,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessContacts_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessContacts_ForceDenyTheseApps sets the value of LetAppsAccessContacts_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessContacts_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessContacts_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessContacts_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessContacts_ForceDenyTheseApps gets the value of LetAppsAccessContacts_ForceDenyTheseApps for the instance
@@ -857,16 +994,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessContacts_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessContacts_UserInControlOfTheseApps sets the value of LetAppsAccessContacts_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessContacts_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessContacts_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessContacts_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessContacts_UserInControlOfTheseApps gets the value of LetAppsAccessContacts_UserInControlOfTheseApps for the instance
@@ -875,16 +1021,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessContacts_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessEmail sets the value of LetAppsAccessEmail for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessEmail(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessEmail", value)
+	return instance.SetProperty("LetAppsAccessEmail", (value))
 }
 
 // GetLetAppsAccessEmail gets the value of LetAppsAccessEmail for the instance
@@ -893,16 +1048,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessEmail() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessEmail_ForceAllowTheseApps sets the value of LetAppsAccessEmail_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessEmail_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessEmail_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessEmail_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessEmail_ForceAllowTheseApps gets the value of LetAppsAccessEmail_ForceAllowTheseApps for the instance
@@ -911,16 +1075,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessEmail_For
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessEmail_ForceDenyTheseApps sets the value of LetAppsAccessEmail_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessEmail_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessEmail_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessEmail_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessEmail_ForceDenyTheseApps gets the value of LetAppsAccessEmail_ForceDenyTheseApps for the instance
@@ -929,16 +1102,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessEmail_For
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessEmail_UserInControlOfTheseApps sets the value of LetAppsAccessEmail_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessEmail_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessEmail_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessEmail_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessEmail_UserInControlOfTheseApps gets the value of LetAppsAccessEmail_UserInControlOfTheseApps for the instance
@@ -947,16 +1129,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessEmail_Use
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessGazeInput sets the value of LetAppsAccessGazeInput for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGazeInput(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessGazeInput", value)
+	return instance.SetProperty("LetAppsAccessGazeInput", (value))
 }
 
 // GetLetAppsAccessGazeInput gets the value of LetAppsAccessGazeInput for the instance
@@ -965,16 +1156,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGazeInput
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessGazeInput_ForceAllowTheseApps sets the value of LetAppsAccessGazeInput_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGazeInput_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGazeInput_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessGazeInput_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessGazeInput_ForceAllowTheseApps gets the value of LetAppsAccessGazeInput_ForceAllowTheseApps for the instance
@@ -983,16 +1183,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGazeInput
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessGazeInput_ForceDenyTheseApps sets the value of LetAppsAccessGazeInput_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGazeInput_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGazeInput_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessGazeInput_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessGazeInput_ForceDenyTheseApps gets the value of LetAppsAccessGazeInput_ForceDenyTheseApps for the instance
@@ -1001,16 +1210,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGazeInput
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessGazeInput_UserInControlOfTheseApps sets the value of LetAppsAccessGazeInput_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessGazeInput_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessGazeInput_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessGazeInput_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessGazeInput_UserInControlOfTheseApps gets the value of LetAppsAccessGazeInput_UserInControlOfTheseApps for the instance
@@ -1019,16 +1237,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessGazeInput
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessLocation sets the value of LetAppsAccessLocation for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessLocation(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessLocation", value)
+	return instance.SetProperty("LetAppsAccessLocation", (value))
 }
 
 // GetLetAppsAccessLocation gets the value of LetAppsAccessLocation for the instance
@@ -1037,16 +1264,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessLocation(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessLocation_ForceAllowTheseApps sets the value of LetAppsAccessLocation_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessLocation_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessLocation_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessLocation_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessLocation_ForceAllowTheseApps gets the value of LetAppsAccessLocation_ForceAllowTheseApps for the instance
@@ -1055,16 +1291,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessLocation_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessLocation_ForceDenyTheseApps sets the value of LetAppsAccessLocation_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessLocation_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessLocation_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessLocation_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessLocation_ForceDenyTheseApps gets the value of LetAppsAccessLocation_ForceDenyTheseApps for the instance
@@ -1073,16 +1318,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessLocation_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessLocation_UserInControlOfTheseApps sets the value of LetAppsAccessLocation_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessLocation_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessLocation_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessLocation_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessLocation_UserInControlOfTheseApps gets the value of LetAppsAccessLocation_UserInControlOfTheseApps for the instance
@@ -1091,16 +1345,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessLocation_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMessaging sets the value of LetAppsAccessMessaging for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMessaging(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessMessaging", value)
+	return instance.SetProperty("LetAppsAccessMessaging", (value))
 }
 
 // GetLetAppsAccessMessaging gets the value of LetAppsAccessMessaging for the instance
@@ -1109,16 +1372,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMessaging
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMessaging_ForceAllowTheseApps sets the value of LetAppsAccessMessaging_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMessaging_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMessaging_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMessaging_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessMessaging_ForceAllowTheseApps gets the value of LetAppsAccessMessaging_ForceAllowTheseApps for the instance
@@ -1127,16 +1399,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMessaging
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMessaging_ForceDenyTheseApps sets the value of LetAppsAccessMessaging_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMessaging_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMessaging_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMessaging_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessMessaging_ForceDenyTheseApps gets the value of LetAppsAccessMessaging_ForceDenyTheseApps for the instance
@@ -1145,16 +1426,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMessaging
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMessaging_UserInControlOfTheseApps sets the value of LetAppsAccessMessaging_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMessaging_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMessaging_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMessaging_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessMessaging_UserInControlOfTheseApps gets the value of LetAppsAccessMessaging_UserInControlOfTheseApps for the instance
@@ -1163,16 +1453,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMessaging
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMicrophone sets the value of LetAppsAccessMicrophone for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMicrophone(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessMicrophone", value)
+	return instance.SetProperty("LetAppsAccessMicrophone", (value))
 }
 
 // GetLetAppsAccessMicrophone gets the value of LetAppsAccessMicrophone for the instance
@@ -1181,16 +1480,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMicrophon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMicrophone_ForceAllowTheseApps sets the value of LetAppsAccessMicrophone_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMicrophone_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMicrophone_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMicrophone_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessMicrophone_ForceAllowTheseApps gets the value of LetAppsAccessMicrophone_ForceAllowTheseApps for the instance
@@ -1199,16 +1507,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMicrophon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMicrophone_ForceDenyTheseApps sets the value of LetAppsAccessMicrophone_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMicrophone_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMicrophone_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMicrophone_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessMicrophone_ForceDenyTheseApps gets the value of LetAppsAccessMicrophone_ForceDenyTheseApps for the instance
@@ -1217,16 +1534,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMicrophon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMicrophone_UserInControlOfTheseApps sets the value of LetAppsAccessMicrophone_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMicrophone_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMicrophone_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMicrophone_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessMicrophone_UserInControlOfTheseApps gets the value of LetAppsAccessMicrophone_UserInControlOfTheseApps for the instance
@@ -1235,16 +1561,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMicrophon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMotion sets the value of LetAppsAccessMotion for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMotion(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessMotion", value)
+	return instance.SetProperty("LetAppsAccessMotion", (value))
 }
 
 // GetLetAppsAccessMotion gets the value of LetAppsAccessMotion for the instance
@@ -1253,16 +1588,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMotion() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMotion_ForceAllowTheseApps sets the value of LetAppsAccessMotion_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMotion_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMotion_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMotion_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessMotion_ForceAllowTheseApps gets the value of LetAppsAccessMotion_ForceAllowTheseApps for the instance
@@ -1271,16 +1615,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMotion_Fo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMotion_ForceDenyTheseApps sets the value of LetAppsAccessMotion_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMotion_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMotion_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMotion_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessMotion_ForceDenyTheseApps gets the value of LetAppsAccessMotion_ForceDenyTheseApps for the instance
@@ -1289,16 +1642,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMotion_Fo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessMotion_UserInControlOfTheseApps sets the value of LetAppsAccessMotion_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessMotion_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessMotion_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessMotion_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessMotion_UserInControlOfTheseApps gets the value of LetAppsAccessMotion_UserInControlOfTheseApps for the instance
@@ -1307,16 +1669,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessMotion_Us
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessNotifications sets the value of LetAppsAccessNotifications for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessNotifications(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessNotifications", value)
+	return instance.SetProperty("LetAppsAccessNotifications", (value))
 }
 
 // GetLetAppsAccessNotifications gets the value of LetAppsAccessNotifications for the instance
@@ -1325,16 +1696,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessNotificat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessNotifications_ForceAllowTheseApps sets the value of LetAppsAccessNotifications_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessNotifications_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessNotifications_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessNotifications_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessNotifications_ForceAllowTheseApps gets the value of LetAppsAccessNotifications_ForceAllowTheseApps for the instance
@@ -1343,16 +1723,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessNotificat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessNotifications_ForceDenyTheseApps sets the value of LetAppsAccessNotifications_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessNotifications_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessNotifications_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessNotifications_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessNotifications_ForceDenyTheseApps gets the value of LetAppsAccessNotifications_ForceDenyTheseApps for the instance
@@ -1361,16 +1750,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessNotificat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessNotifications_UserInControlOfTheseApps sets the value of LetAppsAccessNotifications_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessNotifications_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessNotifications_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessNotifications_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessNotifications_UserInControlOfTheseApps gets the value of LetAppsAccessNotifications_UserInControlOfTheseApps for the instance
@@ -1379,16 +1777,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessNotificat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessPhone sets the value of LetAppsAccessPhone for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessPhone(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessPhone", value)
+	return instance.SetProperty("LetAppsAccessPhone", (value))
 }
 
 // GetLetAppsAccessPhone gets the value of LetAppsAccessPhone for the instance
@@ -1397,16 +1804,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessPhone() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessPhone_ForceAllowTheseApps sets the value of LetAppsAccessPhone_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessPhone_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessPhone_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessPhone_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessPhone_ForceAllowTheseApps gets the value of LetAppsAccessPhone_ForceAllowTheseApps for the instance
@@ -1415,16 +1831,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessPhone_For
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessPhone_ForceDenyTheseApps sets the value of LetAppsAccessPhone_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessPhone_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessPhone_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessPhone_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessPhone_ForceDenyTheseApps gets the value of LetAppsAccessPhone_ForceDenyTheseApps for the instance
@@ -1433,16 +1858,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessPhone_For
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessPhone_UserInControlOfTheseApps sets the value of LetAppsAccessPhone_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessPhone_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessPhone_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessPhone_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessPhone_UserInControlOfTheseApps gets the value of LetAppsAccessPhone_UserInControlOfTheseApps for the instance
@@ -1451,16 +1885,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessPhone_Use
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessRadios sets the value of LetAppsAccessRadios for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessRadios(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessRadios", value)
+	return instance.SetProperty("LetAppsAccessRadios", (value))
 }
 
 // GetLetAppsAccessRadios gets the value of LetAppsAccessRadios for the instance
@@ -1469,16 +1912,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessRadios() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessRadios_ForceAllowTheseApps sets the value of LetAppsAccessRadios_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessRadios_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessRadios_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessRadios_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessRadios_ForceAllowTheseApps gets the value of LetAppsAccessRadios_ForceAllowTheseApps for the instance
@@ -1487,16 +1939,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessRadios_Fo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessRadios_ForceDenyTheseApps sets the value of LetAppsAccessRadios_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessRadios_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessRadios_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessRadios_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessRadios_ForceDenyTheseApps gets the value of LetAppsAccessRadios_ForceDenyTheseApps for the instance
@@ -1505,16 +1966,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessRadios_Fo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessRadios_UserInControlOfTheseApps sets the value of LetAppsAccessRadios_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessRadios_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessRadios_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessRadios_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessRadios_UserInControlOfTheseApps gets the value of LetAppsAccessRadios_UserInControlOfTheseApps for the instance
@@ -1523,16 +1993,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessRadios_Us
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTasks sets the value of LetAppsAccessTasks for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTasks(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessTasks", value)
+	return instance.SetProperty("LetAppsAccessTasks", (value))
 }
 
 // GetLetAppsAccessTasks gets the value of LetAppsAccessTasks for the instance
@@ -1541,16 +2020,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTasks() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTasks_ForceAllowTheseApps sets the value of LetAppsAccessTasks_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTasks_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessTasks_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessTasks_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessTasks_ForceAllowTheseApps gets the value of LetAppsAccessTasks_ForceAllowTheseApps for the instance
@@ -1559,16 +2047,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTasks_For
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTasks_ForceDenyTheseApps sets the value of LetAppsAccessTasks_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTasks_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessTasks_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessTasks_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessTasks_ForceDenyTheseApps gets the value of LetAppsAccessTasks_ForceDenyTheseApps for the instance
@@ -1577,16 +2074,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTasks_For
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTasks_UserInControlOfTheseApps sets the value of LetAppsAccessTasks_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTasks_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessTasks_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessTasks_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessTasks_UserInControlOfTheseApps gets the value of LetAppsAccessTasks_UserInControlOfTheseApps for the instance
@@ -1595,16 +2101,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTasks_Use
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTrustedDevices sets the value of LetAppsAccessTrustedDevices for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTrustedDevices(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessTrustedDevices", value)
+	return instance.SetProperty("LetAppsAccessTrustedDevices", (value))
 }
 
 // GetLetAppsAccessTrustedDevices gets the value of LetAppsAccessTrustedDevices for the instance
@@ -1613,16 +2128,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTrustedDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTrustedDevices_ForceAllowTheseApps sets the value of LetAppsAccessTrustedDevices_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTrustedDevices_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessTrustedDevices_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessTrustedDevices_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessTrustedDevices_ForceAllowTheseApps gets the value of LetAppsAccessTrustedDevices_ForceAllowTheseApps for the instance
@@ -1631,16 +2155,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTrustedDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTrustedDevices_ForceDenyTheseApps sets the value of LetAppsAccessTrustedDevices_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTrustedDevices_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessTrustedDevices_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessTrustedDevices_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessTrustedDevices_ForceDenyTheseApps gets the value of LetAppsAccessTrustedDevices_ForceDenyTheseApps for the instance
@@ -1649,16 +2182,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTrustedDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessTrustedDevices_UserInControlOfTheseApps sets the value of LetAppsAccessTrustedDevices_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsAccessTrustedDevices_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessTrustedDevices_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessTrustedDevices_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessTrustedDevices_UserInControlOfTheseApps gets the value of LetAppsAccessTrustedDevices_UserInControlOfTheseApps for the instance
@@ -1667,52 +2209,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsAccessTrustedDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetLetAppsActivateWithVoice sets the value of LetAppsActivateWithVoice for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsActivateWithVoice(value int32) (err error) {
-	return instance.SetProperty("LetAppsActivateWithVoice", value)
-}
-
-// GetLetAppsActivateWithVoice gets the value of LetAppsActivateWithVoice for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsActivateWithVoice() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsActivateWithVoice")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetLetAppsActivateWithVoiceAboveLock sets the value of LetAppsActivateWithVoiceAboveLock for the instance
-func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsActivateWithVoiceAboveLock(value int32) (err error) {
-	return instance.SetProperty("LetAppsActivateWithVoiceAboveLock", value)
-}
-
-// GetLetAppsActivateWithVoiceAboveLock gets the value of LetAppsActivateWithVoiceAboveLock for the instance
-func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsActivateWithVoiceAboveLock() (value int32, err error) {
-	retValue, err := instance.GetProperty("LetAppsActivateWithVoiceAboveLock")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsGetDiagnosticInfo sets the value of LetAppsGetDiagnosticInfo for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsGetDiagnosticInfo(value int32) (err error) {
-	return instance.SetProperty("LetAppsGetDiagnosticInfo", value)
+	return instance.SetProperty("LetAppsGetDiagnosticInfo", (value))
 }
 
 // GetLetAppsGetDiagnosticInfo gets the value of LetAppsGetDiagnosticInfo for the instance
@@ -1721,16 +2236,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsGetDiagnosticIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsGetDiagnosticInfo_ForceAllowTheseApps sets the value of LetAppsGetDiagnosticInfo_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsGetDiagnosticInfo_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsGetDiagnosticInfo_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsGetDiagnosticInfo_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsGetDiagnosticInfo_ForceAllowTheseApps gets the value of LetAppsGetDiagnosticInfo_ForceAllowTheseApps for the instance
@@ -1739,16 +2263,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsGetDiagnosticIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsGetDiagnosticInfo_ForceDenyTheseApps sets the value of LetAppsGetDiagnosticInfo_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsGetDiagnosticInfo_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsGetDiagnosticInfo_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsGetDiagnosticInfo_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsGetDiagnosticInfo_ForceDenyTheseApps gets the value of LetAppsGetDiagnosticInfo_ForceDenyTheseApps for the instance
@@ -1757,16 +2290,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsGetDiagnosticIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsGetDiagnosticInfo_UserInControlOfTheseApps sets the value of LetAppsGetDiagnosticInfo_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsGetDiagnosticInfo_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsGetDiagnosticInfo_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsGetDiagnosticInfo_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsGetDiagnosticInfo_UserInControlOfTheseApps gets the value of LetAppsGetDiagnosticInfo_UserInControlOfTheseApps for the instance
@@ -1775,16 +2317,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsGetDiagnosticIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsRunInBackground sets the value of LetAppsRunInBackground for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsRunInBackground(value int32) (err error) {
-	return instance.SetProperty("LetAppsRunInBackground", value)
+	return instance.SetProperty("LetAppsRunInBackground", (value))
 }
 
 // GetLetAppsRunInBackground gets the value of LetAppsRunInBackground for the instance
@@ -1793,16 +2344,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsRunInBackground
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsRunInBackground_ForceAllowTheseApps sets the value of LetAppsRunInBackground_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsRunInBackground_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsRunInBackground_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsRunInBackground_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsRunInBackground_ForceAllowTheseApps gets the value of LetAppsRunInBackground_ForceAllowTheseApps for the instance
@@ -1811,16 +2371,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsRunInBackground
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsRunInBackground_ForceDenyTheseApps sets the value of LetAppsRunInBackground_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsRunInBackground_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsRunInBackground_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsRunInBackground_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsRunInBackground_ForceDenyTheseApps gets the value of LetAppsRunInBackground_ForceDenyTheseApps for the instance
@@ -1829,16 +2398,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsRunInBackground
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsRunInBackground_UserInControlOfTheseApps sets the value of LetAppsRunInBackground_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsRunInBackground_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsRunInBackground_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsRunInBackground_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsRunInBackground_UserInControlOfTheseApps gets the value of LetAppsRunInBackground_UserInControlOfTheseApps for the instance
@@ -1847,16 +2425,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsRunInBackground
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsSyncWithDevices sets the value of LetAppsSyncWithDevices for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsSyncWithDevices(value int32) (err error) {
-	return instance.SetProperty("LetAppsSyncWithDevices", value)
+	return instance.SetProperty("LetAppsSyncWithDevices", (value))
 }
 
 // GetLetAppsSyncWithDevices gets the value of LetAppsSyncWithDevices for the instance
@@ -1865,16 +2452,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsSyncWithDevices
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsSyncWithDevices_ForceAllowTheseApps sets the value of LetAppsSyncWithDevices_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsSyncWithDevices_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsSyncWithDevices_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsSyncWithDevices_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsSyncWithDevices_ForceAllowTheseApps gets the value of LetAppsSyncWithDevices_ForceAllowTheseApps for the instance
@@ -1883,16 +2479,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsSyncWithDevices
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsSyncWithDevices_ForceDenyTheseApps sets the value of LetAppsSyncWithDevices_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsSyncWithDevices_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsSyncWithDevices_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsSyncWithDevices_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsSyncWithDevices_ForceDenyTheseApps gets the value of LetAppsSyncWithDevices_ForceDenyTheseApps for the instance
@@ -1901,16 +2506,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsSyncWithDevices
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsSyncWithDevices_UserInControlOfTheseApps sets the value of LetAppsSyncWithDevices_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyLetAppsSyncWithDevices_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsSyncWithDevices_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsSyncWithDevices_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsSyncWithDevices_UserInControlOfTheseApps gets the value of LetAppsSyncWithDevices_UserInControlOfTheseApps for the instance
@@ -1919,16 +2533,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyLetAppsSyncWithDevices
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -1937,16 +2560,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyParentID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPublishUserActivities sets the value of PublishUserActivities for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyPublishUserActivities(value int32) (err error) {
-	return instance.SetProperty("PublishUserActivities", value)
+	return instance.SetProperty("PublishUserActivities", (value))
 }
 
 // GetPublishUserActivities gets the value of PublishUserActivities for the instance
@@ -1955,16 +2587,25 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyPublishUserActivities(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUploadUserActivities sets the value of UploadUserActivities for the instance
 func (instance *MDM_Policy_Config01_Privacy02) SetPropertyUploadUserActivities(value int32) (err error) {
-	return instance.SetProperty("UploadUserActivities", value)
+	return instance.SetProperty("UploadUserActivities", (value))
 }
 
 // GetUploadUserActivities gets the value of UploadUserActivities for the instance
@@ -1973,9 +2614,18 @@ func (instance *MDM_Policy_Config01_Privacy02) GetPropertyUploadUserActivities()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SettingCheck struct
@@ -56,7 +58,7 @@ func NewWin32_SettingCheckEx6(hostName string,
 
 // SetCheck sets the value of Check for the instance
 func (instance *Win32_SettingCheck) SetPropertyCheck(value CIM_Check) (err error) {
-	return instance.SetProperty("Check", value)
+	return instance.SetProperty("Check", (value))
 }
 
 // GetCheck gets the value of Check for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_SettingCheck) GetPropertyCheck() (value CIM_Check, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Check)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Check)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Check is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Check(valuetmp)
+
 	return
 }
 
 // SetSetting sets the value of Setting for the instance
 func (instance *Win32_SettingCheck) SetPropertySetting(value CIM_Setting) (err error) {
-	return instance.SetProperty("Setting", value)
+	return instance.SetProperty("Setting", (value))
 }
 
 // GetSetting gets the value of Setting for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_SettingCheck) GetPropertySetting() (value CIM_Setting, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Setting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Setting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Setting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Setting(valuetmp)
+
 	return
 }

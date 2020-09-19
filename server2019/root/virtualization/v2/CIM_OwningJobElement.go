@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_OwningJobElement struct
@@ -56,7 +58,7 @@ func NewCIM_OwningJobElementEx6(hostName string,
 
 // SetOwnedElement sets the value of OwnedElement for the instance
 func (instance *CIM_OwningJobElement) SetPropertyOwnedElement(value CIM_Job) (err error) {
-	return instance.SetProperty("OwnedElement", value)
+	return instance.SetProperty("OwnedElement", (value))
 }
 
 // GetOwnedElement gets the value of OwnedElement for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_OwningJobElement) GetPropertyOwnedElement() (value CIM_Job, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Job)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Job)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Job is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Job(valuetmp)
+
 	return
 }
 
 // SetOwningElement sets the value of OwningElement for the instance
 func (instance *CIM_OwningJobElement) SetPropertyOwningElement(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("OwningElement", value)
+	return instance.SetProperty("OwningElement", (value))
 }
 
 // GetOwningElement gets the value of OwningElement for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_OwningJobElement) GetPropertyOwningElement() (value CIM_Mana
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }

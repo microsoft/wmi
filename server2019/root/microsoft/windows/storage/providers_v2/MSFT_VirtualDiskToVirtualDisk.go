@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_VirtualDiskToVirtualDisk struct
@@ -165,7 +167,7 @@ func NewMSFT_VirtualDiskToVirtualDiskEx6(hostName string,
 
 // SetCopyMethodology sets the value of CopyMethodology for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyCopyMethodology(value VirtualDiskToVirtualDisk_CopyMethodology) (err error) {
-	return instance.SetProperty("CopyMethodology", value)
+	return instance.SetProperty("CopyMethodology", (value))
 }
 
 // GetCopyMethodology gets the value of CopyMethodology for the instance
@@ -174,16 +176,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyCopyMethodology() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_CopyMethodology)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_CopyMethodology(valuetmp)
+
 	return
 }
 
 // SetCopyPriority sets the value of CopyPriority for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyCopyPriority(value VirtualDiskToVirtualDisk_CopyPriority) (err error) {
-	return instance.SetProperty("CopyPriority", value)
+	return instance.SetProperty("CopyPriority", (value))
 }
 
 // GetCopyPriority gets the value of CopyPriority for the instance
@@ -192,16 +203,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyCopyPriority() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_CopyPriority)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_CopyPriority(valuetmp)
+
 	return
 }
 
 // SetCopyState sets the value of CopyState for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyCopyState(value VirtualDiskToVirtualDisk_CopyState) (err error) {
-	return instance.SetProperty("CopyState", value)
+	return instance.SetProperty("CopyState", (value))
 }
 
 // GetCopyState gets the value of CopyState for the instance
@@ -210,16 +230,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyCopyState() (value Vir
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_CopyState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_CopyState(valuetmp)
+
 	return
 }
 
 // SetCopyType sets the value of CopyType for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyCopyType(value VirtualDiskToVirtualDisk_CopyType) (err error) {
-	return instance.SetProperty("CopyType", value)
+	return instance.SetProperty("CopyType", (value))
 }
 
 // GetCopyType gets the value of CopyType for the instance
@@ -228,16 +257,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyCopyType() (value Virt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_CopyType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_CopyType(valuetmp)
+
 	return
 }
 
 // SetPercentSynced sets the value of PercentSynced for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyPercentSynced(value uint16) (err error) {
-	return instance.SetProperty("PercentSynced", value)
+	return instance.SetProperty("PercentSynced", (value))
 }
 
 // GetPercentSynced gets the value of PercentSynced for the instance
@@ -246,16 +284,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyPercentSynced() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProgressStatus sets the value of ProgressStatus for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyProgressStatus(value VirtualDiskToVirtualDisk_ProgressStatus) (err error) {
-	return instance.SetProperty("ProgressStatus", value)
+	return instance.SetProperty("ProgressStatus", (value))
 }
 
 // GetProgressStatus gets the value of ProgressStatus for the instance
@@ -264,16 +311,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyProgressStatus() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_ProgressStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_ProgressStatus(valuetmp)
+
 	return
 }
 
 // SetReplicaType sets the value of ReplicaType for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyReplicaType(value VirtualDiskToVirtualDisk_ReplicaType) (err error) {
-	return instance.SetProperty("ReplicaType", value)
+	return instance.SetProperty("ReplicaType", (value))
 }
 
 // GetReplicaType gets the value of ReplicaType for the instance
@@ -282,16 +338,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyReplicaType() (value V
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_ReplicaType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_ReplicaType(valuetmp)
+
 	return
 }
 
 // SetRequestedCopyState sets the value of RequestedCopyState for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyRequestedCopyState(value uint16) (err error) {
-	return instance.SetProperty("RequestedCopyState", value)
+	return instance.SetProperty("RequestedCopyState", (value))
 }
 
 // GetRequestedCopyState gets the value of RequestedCopyState for the instance
@@ -300,16 +365,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyRequestedCopyState() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSourceVirtualDisk sets the value of SourceVirtualDisk for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertySourceVirtualDisk(value MSFT_VirtualDisk) (err error) {
-	return instance.SetProperty("SourceVirtualDisk", value)
+	return instance.SetProperty("SourceVirtualDisk", (value))
 }
 
 // GetSourceVirtualDisk gets the value of SourceVirtualDisk for the instance
@@ -318,16 +392,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertySourceVirtualDisk() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_VirtualDisk)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_VirtualDisk)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_VirtualDisk is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_VirtualDisk(valuetmp)
+
 	return
 }
 
 // SetSyncMaintained sets the value of SyncMaintained for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertySyncMaintained(value bool) (err error) {
-	return instance.SetProperty("SyncMaintained", value)
+	return instance.SetProperty("SyncMaintained", (value))
 }
 
 // GetSyncMaintained gets the value of SyncMaintained for the instance
@@ -336,16 +419,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertySyncMaintained() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSyncMode sets the value of SyncMode for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertySyncMode(value VirtualDiskToVirtualDisk_SyncMode) (err error) {
-	return instance.SetProperty("SyncMode", value)
+	return instance.SetProperty("SyncMode", (value))
 }
 
 // GetSyncMode gets the value of SyncMode for the instance
@@ -354,16 +446,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertySyncMode() (value Virt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_SyncMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_SyncMode(valuetmp)
+
 	return
 }
 
 // SetSyncState sets the value of SyncState for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertySyncState(value VirtualDiskToVirtualDisk_SyncState) (err error) {
-	return instance.SetProperty("SyncState", value)
+	return instance.SetProperty("SyncState", (value))
 }
 
 // GetSyncState gets the value of SyncState for the instance
@@ -372,16 +473,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertySyncState() (value Vir
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_SyncState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_SyncState(valuetmp)
+
 	return
 }
 
 // SetSyncTime sets the value of SyncTime for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertySyncTime(value string) (err error) {
-	return instance.SetProperty("SyncTime", value)
+	return instance.SetProperty("SyncTime", (value))
 }
 
 // GetSyncTime gets the value of SyncTime for the instance
@@ -390,16 +500,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertySyncTime() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSyncType sets the value of SyncType for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertySyncType(value VirtualDiskToVirtualDisk_SyncType) (err error) {
-	return instance.SetProperty("SyncType", value)
+	return instance.SetProperty("SyncType", (value))
 }
 
 // GetSyncType gets the value of SyncType for the instance
@@ -408,16 +527,25 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertySyncType() (value Virt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualDiskToVirtualDisk_SyncType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualDiskToVirtualDisk_SyncType(valuetmp)
+
 	return
 }
 
 // SetTargetVirtualDisk sets the value of TargetVirtualDisk for the instance
 func (instance *MSFT_VirtualDiskToVirtualDisk) SetPropertyTargetVirtualDisk(value MSFT_VirtualDisk) (err error) {
-	return instance.SetProperty("TargetVirtualDisk", value)
+	return instance.SetProperty("TargetVirtualDisk", (value))
 }
 
 // GetTargetVirtualDisk gets the value of TargetVirtualDisk for the instance
@@ -426,9 +554,18 @@ func (instance *MSFT_VirtualDiskToVirtualDisk) GetPropertyTargetVirtualDisk() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_VirtualDisk)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_VirtualDisk)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_VirtualDisk is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_VirtualDisk(valuetmp)
+
 	return
 }

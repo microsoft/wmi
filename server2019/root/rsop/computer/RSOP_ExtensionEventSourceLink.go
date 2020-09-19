@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_ExtensionEventSourceLink struct
@@ -56,7 +58,7 @@ func NewRSOP_ExtensionEventSourceLinkEx6(hostName string,
 
 // SeteventSource sets the value of eventSource for the instance
 func (instance *RSOP_ExtensionEventSourceLink) SetPropertyeventSource(value RSOP_ExtensionEventSource) (err error) {
-	return instance.SetProperty("eventSource", value)
+	return instance.SetProperty("eventSource", (value))
 }
 
 // GeteventSource gets the value of eventSource for the instance
@@ -65,16 +67,25 @@ func (instance *RSOP_ExtensionEventSourceLink) GetPropertyeventSource() (value R
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_ExtensionEventSource)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_ExtensionEventSource)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_ExtensionEventSource is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_ExtensionEventSource(valuetmp)
+
 	return
 }
 
 // SetextensionStatus sets the value of extensionStatus for the instance
 func (instance *RSOP_ExtensionEventSourceLink) SetPropertyextensionStatus(value RSOP_ExtensionStatus) (err error) {
-	return instance.SetProperty("extensionStatus", value)
+	return instance.SetProperty("extensionStatus", (value))
 }
 
 // GetextensionStatus gets the value of extensionStatus for the instance
@@ -83,9 +94,18 @@ func (instance *RSOP_ExtensionEventSourceLink) GetPropertyextensionStatus() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_ExtensionStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_ExtensionStatus)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_ExtensionStatus is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_ExtensionStatus(valuetmp)
+
 	return
 }

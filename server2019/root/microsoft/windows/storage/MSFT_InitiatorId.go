@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_InitiatorId struct
@@ -61,7 +63,7 @@ func NewMSFT_InitiatorIdEx6(hostName string,
 
 // SetHostType sets the value of HostType for the instance
 func (instance *MSFT_InitiatorId) SetPropertyHostType(value []uint16) (err error) {
-	return instance.SetProperty("HostType", value)
+	return instance.SetProperty("HostType", (value))
 }
 
 // GetHostType gets the value of HostType for the instance
@@ -70,16 +72,26 @@ func (instance *MSFT_InitiatorId) GetPropertyHostType() (value []uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetInitiatorAddress sets the value of InitiatorAddress for the instance
 func (instance *MSFT_InitiatorId) SetPropertyInitiatorAddress(value string) (err error) {
-	return instance.SetProperty("InitiatorAddress", value)
+	return instance.SetProperty("InitiatorAddress", (value))
 }
 
 // GetInitiatorAddress gets the value of InitiatorAddress for the instance
@@ -88,16 +100,25 @@ func (instance *MSFT_InitiatorId) GetPropertyInitiatorAddress() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherHostTypeDescription sets the value of OtherHostTypeDescription for the instance
 func (instance *MSFT_InitiatorId) SetPropertyOtherHostTypeDescription(value []string) (err error) {
-	return instance.SetProperty("OtherHostTypeDescription", value)
+	return instance.SetProperty("OtherHostTypeDescription", (value))
 }
 
 // GetOtherHostTypeDescription gets the value of OtherHostTypeDescription for the instance
@@ -106,16 +127,26 @@ func (instance *MSFT_InitiatorId) GetPropertyOtherHostTypeDescription() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_InitiatorId) SetPropertyType(value uint16) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -124,10 +155,19 @@ func (instance *MSFT_InitiatorId) GetPropertyType() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

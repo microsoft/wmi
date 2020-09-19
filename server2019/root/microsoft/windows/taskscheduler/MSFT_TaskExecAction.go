@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskExecAction struct
@@ -58,7 +60,7 @@ func NewMSFT_TaskExecActionEx6(hostName string,
 
 // SetArguments sets the value of Arguments for the instance
 func (instance *MSFT_TaskExecAction) SetPropertyArguments(value string) (err error) {
-	return instance.SetProperty("Arguments", value)
+	return instance.SetProperty("Arguments", (value))
 }
 
 // GetArguments gets the value of Arguments for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_TaskExecAction) GetPropertyArguments() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExecute sets the value of Execute for the instance
 func (instance *MSFT_TaskExecAction) SetPropertyExecute(value string) (err error) {
-	return instance.SetProperty("Execute", value)
+	return instance.SetProperty("Execute", (value))
 }
 
 // GetExecute gets the value of Execute for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_TaskExecAction) GetPropertyExecute() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWorkingDirectory sets the value of WorkingDirectory for the instance
 func (instance *MSFT_TaskExecAction) SetPropertyWorkingDirectory(value string) (err error) {
-	return instance.SetProperty("WorkingDirectory", value)
+	return instance.SetProperty("WorkingDirectory", (value))
 }
 
 // GetWorkingDirectory gets the value of WorkingDirectory for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_TaskExecAction) GetPropertyWorkingDirectory() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

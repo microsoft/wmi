@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_LogicalDevice struct
@@ -91,7 +93,7 @@ func NewCIM_LogicalDeviceEx6(hostName string,
 
 // SetAvailability sets the value of Availability for the instance
 func (instance *CIM_LogicalDevice) SetPropertyAvailability(value uint16) (err error) {
-	return instance.SetProperty("Availability", value)
+	return instance.SetProperty("Availability", (value))
 }
 
 // GetAvailability gets the value of Availability for the instance
@@ -100,16 +102,25 @@ func (instance *CIM_LogicalDevice) GetPropertyAvailability() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetConfigManagerErrorCode sets the value of ConfigManagerErrorCode for the instance
 func (instance *CIM_LogicalDevice) SetPropertyConfigManagerErrorCode(value uint32) (err error) {
-	return instance.SetProperty("ConfigManagerErrorCode", value)
+	return instance.SetProperty("ConfigManagerErrorCode", (value))
 }
 
 // GetConfigManagerErrorCode gets the value of ConfigManagerErrorCode for the instance
@@ -118,16 +129,25 @@ func (instance *CIM_LogicalDevice) GetPropertyConfigManagerErrorCode() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConfigManagerUserConfig sets the value of ConfigManagerUserConfig for the instance
 func (instance *CIM_LogicalDevice) SetPropertyConfigManagerUserConfig(value bool) (err error) {
-	return instance.SetProperty("ConfigManagerUserConfig", value)
+	return instance.SetProperty("ConfigManagerUserConfig", (value))
 }
 
 // GetConfigManagerUserConfig gets the value of ConfigManagerUserConfig for the instance
@@ -136,16 +156,25 @@ func (instance *CIM_LogicalDevice) GetPropertyConfigManagerUserConfig() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_LogicalDevice) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -154,16 +183,25 @@ func (instance *CIM_LogicalDevice) GetPropertyCreationClassName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDeviceID sets the value of DeviceID for the instance
 func (instance *CIM_LogicalDevice) SetPropertyDeviceID(value string) (err error) {
-	return instance.SetProperty("DeviceID", value)
+	return instance.SetProperty("DeviceID", (value))
 }
 
 // GetDeviceID gets the value of DeviceID for the instance
@@ -172,16 +210,25 @@ func (instance *CIM_LogicalDevice) GetPropertyDeviceID() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorCleared sets the value of ErrorCleared for the instance
 func (instance *CIM_LogicalDevice) SetPropertyErrorCleared(value bool) (err error) {
-	return instance.SetProperty("ErrorCleared", value)
+	return instance.SetProperty("ErrorCleared", (value))
 }
 
 // GetErrorCleared gets the value of ErrorCleared for the instance
@@ -190,16 +237,25 @@ func (instance *CIM_LogicalDevice) GetPropertyErrorCleared() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetErrorDescription sets the value of ErrorDescription for the instance
 func (instance *CIM_LogicalDevice) SetPropertyErrorDescription(value string) (err error) {
-	return instance.SetProperty("ErrorDescription", value)
+	return instance.SetProperty("ErrorDescription", (value))
 }
 
 // GetErrorDescription gets the value of ErrorDescription for the instance
@@ -208,16 +264,25 @@ func (instance *CIM_LogicalDevice) GetPropertyErrorDescription() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastErrorCode sets the value of LastErrorCode for the instance
 func (instance *CIM_LogicalDevice) SetPropertyLastErrorCode(value uint32) (err error) {
-	return instance.SetProperty("LastErrorCode", value)
+	return instance.SetProperty("LastErrorCode", (value))
 }
 
 // GetLastErrorCode gets the value of LastErrorCode for the instance
@@ -226,16 +291,25 @@ func (instance *CIM_LogicalDevice) GetPropertyLastErrorCode() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPNPDeviceID sets the value of PNPDeviceID for the instance
 func (instance *CIM_LogicalDevice) SetPropertyPNPDeviceID(value string) (err error) {
-	return instance.SetProperty("PNPDeviceID", value)
+	return instance.SetProperty("PNPDeviceID", (value))
 }
 
 // GetPNPDeviceID gets the value of PNPDeviceID for the instance
@@ -244,16 +318,25 @@ func (instance *CIM_LogicalDevice) GetPropertyPNPDeviceID() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPowerManagementCapabilities sets the value of PowerManagementCapabilities for the instance
 func (instance *CIM_LogicalDevice) SetPropertyPowerManagementCapabilities(value []uint16) (err error) {
-	return instance.SetProperty("PowerManagementCapabilities", value)
+	return instance.SetProperty("PowerManagementCapabilities", (value))
 }
 
 // GetPowerManagementCapabilities gets the value of PowerManagementCapabilities for the instance
@@ -262,16 +345,26 @@ func (instance *CIM_LogicalDevice) GetPropertyPowerManagementCapabilities() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetPowerManagementSupported sets the value of PowerManagementSupported for the instance
 func (instance *CIM_LogicalDevice) SetPropertyPowerManagementSupported(value bool) (err error) {
-	return instance.SetProperty("PowerManagementSupported", value)
+	return instance.SetProperty("PowerManagementSupported", (value))
 }
 
 // GetPowerManagementSupported gets the value of PowerManagementSupported for the instance
@@ -280,16 +373,25 @@ func (instance *CIM_LogicalDevice) GetPropertyPowerManagementSupported() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStatusInfo sets the value of StatusInfo for the instance
 func (instance *CIM_LogicalDevice) SetPropertyStatusInfo(value uint16) (err error) {
-	return instance.SetProperty("StatusInfo", value)
+	return instance.SetProperty("StatusInfo", (value))
 }
 
 // GetStatusInfo gets the value of StatusInfo for the instance
@@ -298,16 +400,25 @@ func (instance *CIM_LogicalDevice) GetPropertyStatusInfo() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *CIM_LogicalDevice) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -316,16 +427,25 @@ func (instance *CIM_LogicalDevice) GetPropertySystemCreationClassName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *CIM_LogicalDevice) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -334,10 +454,19 @@ func (instance *CIM_LogicalDevice) GetPropertySystemName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

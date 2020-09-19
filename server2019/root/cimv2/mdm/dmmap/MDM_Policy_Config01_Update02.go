@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_Update02 struct
@@ -43,9 +45,6 @@ type MDM_Policy_Config01_Update02 struct {
 	AllowUpdateService int32
 
 	//
-	AutomaticMaintenanceWakeUp int32
-
-	//
 	AutoRestartDeadlinePeriodInDays int32
 
 	//
@@ -59,18 +58,6 @@ type MDM_Policy_Config01_Update02 struct {
 
 	//
 	BranchReadinessLevel int32
-
-	//
-	ConfigureDeadlineForFeatureUpdates int32
-
-	//
-	ConfigureDeadlineForQualityUpdates int32
-
-	//
-	ConfigureDeadlineGracePeriod int32
-
-	//
-	ConfigureDeadlineNoAutoReboot int32
 
 	//
 	ConfigureFeatureUpdateUninstallPeriod int32
@@ -196,9 +183,6 @@ type MDM_Policy_Config01_Update02 struct {
 	SetEDURestart int32
 
 	//
-	TargetReleaseVersion string
-
-	//
 	UpdateNotificationLevel int32
 
 	//
@@ -239,7 +223,7 @@ func NewMDM_Policy_Config01_Update02Ex6(hostName string,
 
 // SetActiveHoursEnd sets the value of ActiveHoursEnd for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyActiveHoursEnd(value int32) (err error) {
-	return instance.SetProperty("ActiveHoursEnd", value)
+	return instance.SetProperty("ActiveHoursEnd", (value))
 }
 
 // GetActiveHoursEnd gets the value of ActiveHoursEnd for the instance
@@ -248,16 +232,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyActiveHoursEnd() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetActiveHoursMaxRange sets the value of ActiveHoursMaxRange for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyActiveHoursMaxRange(value int32) (err error) {
-	return instance.SetProperty("ActiveHoursMaxRange", value)
+	return instance.SetProperty("ActiveHoursMaxRange", (value))
 }
 
 // GetActiveHoursMaxRange gets the value of ActiveHoursMaxRange for the instance
@@ -266,16 +259,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyActiveHoursMaxRange() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetActiveHoursStart sets the value of ActiveHoursStart for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyActiveHoursStart(value int32) (err error) {
-	return instance.SetProperty("ActiveHoursStart", value)
+	return instance.SetProperty("ActiveHoursStart", (value))
 }
 
 // GetActiveHoursStart gets the value of ActiveHoursStart for the instance
@@ -284,16 +286,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyActiveHoursStart() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowAutoUpdate sets the value of AllowAutoUpdate for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowAutoUpdate(value int32) (err error) {
-	return instance.SetProperty("AllowAutoUpdate", value)
+	return instance.SetProperty("AllowAutoUpdate", (value))
 }
 
 // GetAllowAutoUpdate gets the value of AllowAutoUpdate for the instance
@@ -302,16 +313,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowAutoUpdate() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowAutoWindowsUpdateDownloadOverMeteredNetwork sets the value of AllowAutoWindowsUpdateDownloadOverMeteredNetwork for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowAutoWindowsUpdateDownloadOverMeteredNetwork(value int32) (err error) {
-	return instance.SetProperty("AllowAutoWindowsUpdateDownloadOverMeteredNetwork", value)
+	return instance.SetProperty("AllowAutoWindowsUpdateDownloadOverMeteredNetwork", (value))
 }
 
 // GetAllowAutoWindowsUpdateDownloadOverMeteredNetwork gets the value of AllowAutoWindowsUpdateDownloadOverMeteredNetwork for the instance
@@ -320,16 +340,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowAutoWindowsUpdateD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowMUUpdateService sets the value of AllowMUUpdateService for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowMUUpdateService(value int32) (err error) {
-	return instance.SetProperty("AllowMUUpdateService", value)
+	return instance.SetProperty("AllowMUUpdateService", (value))
 }
 
 // GetAllowMUUpdateService gets the value of AllowMUUpdateService for the instance
@@ -338,16 +367,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowMUUpdateService() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowNonMicrosoftSignedUpdate sets the value of AllowNonMicrosoftSignedUpdate for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowNonMicrosoftSignedUpdate(value int32) (err error) {
-	return instance.SetProperty("AllowNonMicrosoftSignedUpdate", value)
+	return instance.SetProperty("AllowNonMicrosoftSignedUpdate", (value))
 }
 
 // GetAllowNonMicrosoftSignedUpdate gets the value of AllowNonMicrosoftSignedUpdate for the instance
@@ -356,16 +394,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowNonMicrosoftSigned
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowUpdateService sets the value of AllowUpdateService for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAllowUpdateService(value int32) (err error) {
-	return instance.SetProperty("AllowUpdateService", value)
+	return instance.SetProperty("AllowUpdateService", (value))
 }
 
 // GetAllowUpdateService gets the value of AllowUpdateService for the instance
@@ -374,34 +421,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAllowUpdateService() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetAutomaticMaintenanceWakeUp sets the value of AutomaticMaintenanceWakeUp for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyAutomaticMaintenanceWakeUp(value int32) (err error) {
-	return instance.SetProperty("AutomaticMaintenanceWakeUp", value)
-}
-
-// GetAutomaticMaintenanceWakeUp gets the value of AutomaticMaintenanceWakeUp for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyAutomaticMaintenanceWakeUp() (value int32, err error) {
-	retValue, err := instance.GetProperty("AutomaticMaintenanceWakeUp")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAutoRestartDeadlinePeriodInDays sets the value of AutoRestartDeadlinePeriodInDays for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAutoRestartDeadlinePeriodInDays(value int32) (err error) {
-	return instance.SetProperty("AutoRestartDeadlinePeriodInDays", value)
+	return instance.SetProperty("AutoRestartDeadlinePeriodInDays", (value))
 }
 
 // GetAutoRestartDeadlinePeriodInDays gets the value of AutoRestartDeadlinePeriodInDays for the instance
@@ -410,16 +448,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAutoRestartDeadlinePeri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAutoRestartDeadlinePeriodInDaysForFeatureUpdates sets the value of AutoRestartDeadlinePeriodInDaysForFeatureUpdates for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAutoRestartDeadlinePeriodInDaysForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("AutoRestartDeadlinePeriodInDaysForFeatureUpdates", value)
+	return instance.SetProperty("AutoRestartDeadlinePeriodInDaysForFeatureUpdates", (value))
 }
 
 // GetAutoRestartDeadlinePeriodInDaysForFeatureUpdates gets the value of AutoRestartDeadlinePeriodInDaysForFeatureUpdates for the instance
@@ -428,16 +475,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAutoRestartDeadlinePeri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAutoRestartNotificationSchedule sets the value of AutoRestartNotificationSchedule for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAutoRestartNotificationSchedule(value int32) (err error) {
-	return instance.SetProperty("AutoRestartNotificationSchedule", value)
+	return instance.SetProperty("AutoRestartNotificationSchedule", (value))
 }
 
 // GetAutoRestartNotificationSchedule gets the value of AutoRestartNotificationSchedule for the instance
@@ -446,16 +502,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAutoRestartNotification
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAutoRestartRequiredNotificationDismissal sets the value of AutoRestartRequiredNotificationDismissal for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyAutoRestartRequiredNotificationDismissal(value int32) (err error) {
-	return instance.SetProperty("AutoRestartRequiredNotificationDismissal", value)
+	return instance.SetProperty("AutoRestartRequiredNotificationDismissal", (value))
 }
 
 // GetAutoRestartRequiredNotificationDismissal gets the value of AutoRestartRequiredNotificationDismissal for the instance
@@ -464,16 +529,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyAutoRestartRequiredNoti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetBranchReadinessLevel sets the value of BranchReadinessLevel for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyBranchReadinessLevel(value int32) (err error) {
-	return instance.SetProperty("BranchReadinessLevel", value)
+	return instance.SetProperty("BranchReadinessLevel", (value))
 }
 
 // GetBranchReadinessLevel gets the value of BranchReadinessLevel for the instance
@@ -482,88 +556,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyBranchReadinessLevel() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureDeadlineForFeatureUpdates sets the value of ConfigureDeadlineForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineForFeatureUpdates", value)
-}
-
-// GetConfigureDeadlineForFeatureUpdates gets the value of ConfigureDeadlineForFeatureUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineForFeatureUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineForFeatureUpdates")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureDeadlineForQualityUpdates sets the value of ConfigureDeadlineForQualityUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineForQualityUpdates(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineForQualityUpdates", value)
-}
-
-// GetConfigureDeadlineForQualityUpdates gets the value of ConfigureDeadlineForQualityUpdates for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineForQualityUpdates() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineForQualityUpdates")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
 
-// SetConfigureDeadlineGracePeriod sets the value of ConfigureDeadlineGracePeriod for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineGracePeriod(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineGracePeriod", value)
-}
+	value = int32(valuetmp)
 
-// GetConfigureDeadlineGracePeriod gets the value of ConfigureDeadlineGracePeriod for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineGracePeriod() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineGracePeriod")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureDeadlineNoAutoReboot sets the value of ConfigureDeadlineNoAutoReboot for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureDeadlineNoAutoReboot(value int32) (err error) {
-	return instance.SetProperty("ConfigureDeadlineNoAutoReboot", value)
-}
-
-// GetConfigureDeadlineNoAutoReboot gets the value of ConfigureDeadlineNoAutoReboot for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureDeadlineNoAutoReboot() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureDeadlineNoAutoReboot")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
 	return
 }
 
 // SetConfigureFeatureUpdateUninstallPeriod sets the value of ConfigureFeatureUpdateUninstallPeriod for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyConfigureFeatureUpdateUninstallPeriod(value int32) (err error) {
-	return instance.SetProperty("ConfigureFeatureUpdateUninstallPeriod", value)
+	return instance.SetProperty("ConfigureFeatureUpdateUninstallPeriod", (value))
 }
 
 // GetConfigureFeatureUpdateUninstallPeriod gets the value of ConfigureFeatureUpdateUninstallPeriod for the instance
@@ -572,16 +583,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyConfigureFeatureUpdateU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDeferFeatureUpdatesPeriodInDays sets the value of DeferFeatureUpdatesPeriodInDays for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyDeferFeatureUpdatesPeriodInDays(value int32) (err error) {
-	return instance.SetProperty("DeferFeatureUpdatesPeriodInDays", value)
+	return instance.SetProperty("DeferFeatureUpdatesPeriodInDays", (value))
 }
 
 // GetDeferFeatureUpdatesPeriodInDays gets the value of DeferFeatureUpdatesPeriodInDays for the instance
@@ -590,16 +610,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyDeferFeatureUpdatesPeri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDeferQualityUpdatesPeriodInDays sets the value of DeferQualityUpdatesPeriodInDays for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyDeferQualityUpdatesPeriodInDays(value int32) (err error) {
-	return instance.SetProperty("DeferQualityUpdatesPeriodInDays", value)
+	return instance.SetProperty("DeferQualityUpdatesPeriodInDays", (value))
 }
 
 // GetDeferQualityUpdatesPeriodInDays gets the value of DeferQualityUpdatesPeriodInDays for the instance
@@ -608,16 +637,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyDeferQualityUpdatesPeri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDeferUpdatePeriod sets the value of DeferUpdatePeriod for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyDeferUpdatePeriod(value int32) (err error) {
-	return instance.SetProperty("DeferUpdatePeriod", value)
+	return instance.SetProperty("DeferUpdatePeriod", (value))
 }
 
 // GetDeferUpdatePeriod gets the value of DeferUpdatePeriod for the instance
@@ -626,16 +664,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyDeferUpdatePeriod() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDeferUpgradePeriod sets the value of DeferUpgradePeriod for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyDeferUpgradePeriod(value int32) (err error) {
-	return instance.SetProperty("DeferUpgradePeriod", value)
+	return instance.SetProperty("DeferUpgradePeriod", (value))
 }
 
 // GetDeferUpgradePeriod gets the value of DeferUpgradePeriod for the instance
@@ -644,16 +691,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyDeferUpgradePeriod() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDetectionFrequency sets the value of DetectionFrequency for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyDetectionFrequency(value int32) (err error) {
-	return instance.SetProperty("DetectionFrequency", value)
+	return instance.SetProperty("DetectionFrequency", (value))
 }
 
 // GetDetectionFrequency gets the value of DetectionFrequency for the instance
@@ -662,16 +718,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyDetectionFrequency() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableDualScan sets the value of DisableDualScan for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyDisableDualScan(value int32) (err error) {
-	return instance.SetProperty("DisableDualScan", value)
+	return instance.SetProperty("DisableDualScan", (value))
 }
 
 // GetDisableDualScan gets the value of DisableDualScan for the instance
@@ -680,16 +745,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyDisableDualScan() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEngagedRestartDeadline sets the value of EngagedRestartDeadline for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyEngagedRestartDeadline(value int32) (err error) {
-	return instance.SetProperty("EngagedRestartDeadline", value)
+	return instance.SetProperty("EngagedRestartDeadline", (value))
 }
 
 // GetEngagedRestartDeadline gets the value of EngagedRestartDeadline for the instance
@@ -698,16 +772,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyEngagedRestartDeadline(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEngagedRestartDeadlineForFeatureUpdates sets the value of EngagedRestartDeadlineForFeatureUpdates for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyEngagedRestartDeadlineForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("EngagedRestartDeadlineForFeatureUpdates", value)
+	return instance.SetProperty("EngagedRestartDeadlineForFeatureUpdates", (value))
 }
 
 // GetEngagedRestartDeadlineForFeatureUpdates gets the value of EngagedRestartDeadlineForFeatureUpdates for the instance
@@ -716,16 +799,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyEngagedRestartDeadlineF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEngagedRestartSnoozeSchedule sets the value of EngagedRestartSnoozeSchedule for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyEngagedRestartSnoozeSchedule(value int32) (err error) {
-	return instance.SetProperty("EngagedRestartSnoozeSchedule", value)
+	return instance.SetProperty("EngagedRestartSnoozeSchedule", (value))
 }
 
 // GetEngagedRestartSnoozeSchedule gets the value of EngagedRestartSnoozeSchedule for the instance
@@ -734,16 +826,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyEngagedRestartSnoozeSch
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEngagedRestartSnoozeScheduleForFeatureUpdates sets the value of EngagedRestartSnoozeScheduleForFeatureUpdates for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyEngagedRestartSnoozeScheduleForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("EngagedRestartSnoozeScheduleForFeatureUpdates", value)
+	return instance.SetProperty("EngagedRestartSnoozeScheduleForFeatureUpdates", (value))
 }
 
 // GetEngagedRestartSnoozeScheduleForFeatureUpdates gets the value of EngagedRestartSnoozeScheduleForFeatureUpdates for the instance
@@ -752,16 +853,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyEngagedRestartSnoozeSch
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEngagedRestartTransitionSchedule sets the value of EngagedRestartTransitionSchedule for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyEngagedRestartTransitionSchedule(value int32) (err error) {
-	return instance.SetProperty("EngagedRestartTransitionSchedule", value)
+	return instance.SetProperty("EngagedRestartTransitionSchedule", (value))
 }
 
 // GetEngagedRestartTransitionSchedule gets the value of EngagedRestartTransitionSchedule for the instance
@@ -770,16 +880,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyEngagedRestartTransitio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEngagedRestartTransitionScheduleForFeatureUpdates sets the value of EngagedRestartTransitionScheduleForFeatureUpdates for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyEngagedRestartTransitionScheduleForFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("EngagedRestartTransitionScheduleForFeatureUpdates", value)
+	return instance.SetProperty("EngagedRestartTransitionScheduleForFeatureUpdates", (value))
 }
 
 // GetEngagedRestartTransitionScheduleForFeatureUpdates gets the value of EngagedRestartTransitionScheduleForFeatureUpdates for the instance
@@ -788,16 +907,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyEngagedRestartTransitio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetExcludeWUDriversInQualityUpdate sets the value of ExcludeWUDriversInQualityUpdate for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyExcludeWUDriversInQualityUpdate(value int32) (err error) {
-	return instance.SetProperty("ExcludeWUDriversInQualityUpdate", value)
+	return instance.SetProperty("ExcludeWUDriversInQualityUpdate", (value))
 }
 
 // GetExcludeWUDriversInQualityUpdate gets the value of ExcludeWUDriversInQualityUpdate for the instance
@@ -806,16 +934,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyExcludeWUDriversInQuali
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetFillEmptyContentUrls sets the value of FillEmptyContentUrls for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyFillEmptyContentUrls(value int32) (err error) {
-	return instance.SetProperty("FillEmptyContentUrls", value)
+	return instance.SetProperty("FillEmptyContentUrls", (value))
 }
 
 // GetFillEmptyContentUrls gets the value of FillEmptyContentUrls for the instance
@@ -824,16 +961,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyFillEmptyContentUrls() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetIgnoreMOAppDownloadLimit sets the value of IgnoreMOAppDownloadLimit for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyIgnoreMOAppDownloadLimit(value int32) (err error) {
-	return instance.SetProperty("IgnoreMOAppDownloadLimit", value)
+	return instance.SetProperty("IgnoreMOAppDownloadLimit", (value))
 }
 
 // GetIgnoreMOAppDownloadLimit gets the value of IgnoreMOAppDownloadLimit for the instance
@@ -842,16 +988,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyIgnoreMOAppDownloadLimi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetIgnoreMOUpdateDownloadLimit sets the value of IgnoreMOUpdateDownloadLimit for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyIgnoreMOUpdateDownloadLimit(value int32) (err error) {
-	return instance.SetProperty("IgnoreMOUpdateDownloadLimit", value)
+	return instance.SetProperty("IgnoreMOUpdateDownloadLimit", (value))
 }
 
 // GetIgnoreMOUpdateDownloadLimit gets the value of IgnoreMOUpdateDownloadLimit for the instance
@@ -860,16 +1015,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyIgnoreMOUpdateDownloadL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -878,16 +1042,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyInstanceID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManagePreviewBuilds sets the value of ManagePreviewBuilds for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyManagePreviewBuilds(value int32) (err error) {
-	return instance.SetProperty("ManagePreviewBuilds", value)
+	return instance.SetProperty("ManagePreviewBuilds", (value))
 }
 
 // GetManagePreviewBuilds gets the value of ManagePreviewBuilds for the instance
@@ -896,16 +1069,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyManagePreviewBuilds() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -914,16 +1096,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyParentID() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPauseDeferrals sets the value of PauseDeferrals for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyPauseDeferrals(value int32) (err error) {
-	return instance.SetProperty("PauseDeferrals", value)
+	return instance.SetProperty("PauseDeferrals", (value))
 }
 
 // GetPauseDeferrals gets the value of PauseDeferrals for the instance
@@ -932,16 +1123,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyPauseDeferrals() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetPauseFeatureUpdates sets the value of PauseFeatureUpdates for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyPauseFeatureUpdates(value int32) (err error) {
-	return instance.SetProperty("PauseFeatureUpdates", value)
+	return instance.SetProperty("PauseFeatureUpdates", (value))
 }
 
 // GetPauseFeatureUpdates gets the value of PauseFeatureUpdates for the instance
@@ -950,16 +1150,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyPauseFeatureUpdates() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetPauseFeatureUpdatesStartTime sets the value of PauseFeatureUpdatesStartTime for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyPauseFeatureUpdatesStartTime(value string) (err error) {
-	return instance.SetProperty("PauseFeatureUpdatesStartTime", value)
+	return instance.SetProperty("PauseFeatureUpdatesStartTime", (value))
 }
 
 // GetPauseFeatureUpdatesStartTime gets the value of PauseFeatureUpdatesStartTime for the instance
@@ -968,16 +1177,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyPauseFeatureUpdatesStar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPauseQualityUpdates sets the value of PauseQualityUpdates for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyPauseQualityUpdates(value int32) (err error) {
-	return instance.SetProperty("PauseQualityUpdates", value)
+	return instance.SetProperty("PauseQualityUpdates", (value))
 }
 
 // GetPauseQualityUpdates gets the value of PauseQualityUpdates for the instance
@@ -986,16 +1204,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyPauseQualityUpdates() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetPauseQualityUpdatesStartTime sets the value of PauseQualityUpdatesStartTime for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyPauseQualityUpdatesStartTime(value string) (err error) {
-	return instance.SetProperty("PauseQualityUpdatesStartTime", value)
+	return instance.SetProperty("PauseQualityUpdatesStartTime", (value))
 }
 
 // GetPauseQualityUpdatesStartTime gets the value of PauseQualityUpdatesStartTime for the instance
@@ -1004,16 +1231,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyPauseQualityUpdatesStar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPhoneUpdateRestrictions sets the value of PhoneUpdateRestrictions for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyPhoneUpdateRestrictions(value int32) (err error) {
-	return instance.SetProperty("PhoneUpdateRestrictions", value)
+	return instance.SetProperty("PhoneUpdateRestrictions", (value))
 }
 
 // GetPhoneUpdateRestrictions gets the value of PhoneUpdateRestrictions for the instance
@@ -1022,16 +1258,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyPhoneUpdateRestrictions
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRequireDeferUpgrade sets the value of RequireDeferUpgrade for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyRequireDeferUpgrade(value int32) (err error) {
-	return instance.SetProperty("RequireDeferUpgrade", value)
+	return instance.SetProperty("RequireDeferUpgrade", (value))
 }
 
 // GetRequireDeferUpgrade gets the value of RequireDeferUpgrade for the instance
@@ -1040,16 +1285,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyRequireDeferUpgrade() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRequireUpdateApproval sets the value of RequireUpdateApproval for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyRequireUpdateApproval(value int32) (err error) {
-	return instance.SetProperty("RequireUpdateApproval", value)
+	return instance.SetProperty("RequireUpdateApproval", (value))
 }
 
 // GetRequireUpdateApproval gets the value of RequireUpdateApproval for the instance
@@ -1058,16 +1312,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyRequireUpdateApproval()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduledInstallDay sets the value of ScheduledInstallDay for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduledInstallDay(value int32) (err error) {
-	return instance.SetProperty("ScheduledInstallDay", value)
+	return instance.SetProperty("ScheduledInstallDay", (value))
 }
 
 // GetScheduledInstallDay gets the value of ScheduledInstallDay for the instance
@@ -1076,16 +1339,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduledInstallDay() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduledInstallEveryWeek sets the value of ScheduledInstallEveryWeek for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduledInstallEveryWeek(value int32) (err error) {
-	return instance.SetProperty("ScheduledInstallEveryWeek", value)
+	return instance.SetProperty("ScheduledInstallEveryWeek", (value))
 }
 
 // GetScheduledInstallEveryWeek gets the value of ScheduledInstallEveryWeek for the instance
@@ -1094,16 +1366,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduledInstallEveryWe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduledInstallFirstWeek sets the value of ScheduledInstallFirstWeek for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduledInstallFirstWeek(value int32) (err error) {
-	return instance.SetProperty("ScheduledInstallFirstWeek", value)
+	return instance.SetProperty("ScheduledInstallFirstWeek", (value))
 }
 
 // GetScheduledInstallFirstWeek gets the value of ScheduledInstallFirstWeek for the instance
@@ -1112,16 +1393,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduledInstallFirstWe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduledInstallFourthWeek sets the value of ScheduledInstallFourthWeek for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduledInstallFourthWeek(value int32) (err error) {
-	return instance.SetProperty("ScheduledInstallFourthWeek", value)
+	return instance.SetProperty("ScheduledInstallFourthWeek", (value))
 }
 
 // GetScheduledInstallFourthWeek gets the value of ScheduledInstallFourthWeek for the instance
@@ -1130,16 +1420,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduledInstallFourthW
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduledInstallSecondWeek sets the value of ScheduledInstallSecondWeek for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduledInstallSecondWeek(value int32) (err error) {
-	return instance.SetProperty("ScheduledInstallSecondWeek", value)
+	return instance.SetProperty("ScheduledInstallSecondWeek", (value))
 }
 
 // GetScheduledInstallSecondWeek gets the value of ScheduledInstallSecondWeek for the instance
@@ -1148,16 +1447,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduledInstallSecondW
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduledInstallThirdWeek sets the value of ScheduledInstallThirdWeek for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduledInstallThirdWeek(value int32) (err error) {
-	return instance.SetProperty("ScheduledInstallThirdWeek", value)
+	return instance.SetProperty("ScheduledInstallThirdWeek", (value))
 }
 
 // GetScheduledInstallThirdWeek gets the value of ScheduledInstallThirdWeek for the instance
@@ -1166,16 +1474,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduledInstallThirdWe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduledInstallTime sets the value of ScheduledInstallTime for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduledInstallTime(value int32) (err error) {
-	return instance.SetProperty("ScheduledInstallTime", value)
+	return instance.SetProperty("ScheduledInstallTime", (value))
 }
 
 // GetScheduledInstallTime gets the value of ScheduledInstallTime for the instance
@@ -1184,16 +1501,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduledInstallTime() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduleImminentRestartWarning sets the value of ScheduleImminentRestartWarning for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduleImminentRestartWarning(value int32) (err error) {
-	return instance.SetProperty("ScheduleImminentRestartWarning", value)
+	return instance.SetProperty("ScheduleImminentRestartWarning", (value))
 }
 
 // GetScheduleImminentRestartWarning gets the value of ScheduleImminentRestartWarning for the instance
@@ -1202,16 +1528,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduleImminentRestart
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduleRestartWarning sets the value of ScheduleRestartWarning for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyScheduleRestartWarning(value int32) (err error) {
-	return instance.SetProperty("ScheduleRestartWarning", value)
+	return instance.SetProperty("ScheduleRestartWarning", (value))
 }
 
 // GetScheduleRestartWarning gets the value of ScheduleRestartWarning for the instance
@@ -1220,16 +1555,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyScheduleRestartWarning(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSetAutoRestartNotificationDisable sets the value of SetAutoRestartNotificationDisable for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertySetAutoRestartNotificationDisable(value int32) (err error) {
-	return instance.SetProperty("SetAutoRestartNotificationDisable", value)
+	return instance.SetProperty("SetAutoRestartNotificationDisable", (value))
 }
 
 // GetSetAutoRestartNotificationDisable gets the value of SetAutoRestartNotificationDisable for the instance
@@ -1238,16 +1582,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertySetAutoRestartNotificat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSetDisablePauseUXAccess sets the value of SetDisablePauseUXAccess for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertySetDisablePauseUXAccess(value int32) (err error) {
-	return instance.SetProperty("SetDisablePauseUXAccess", value)
+	return instance.SetProperty("SetDisablePauseUXAccess", (value))
 }
 
 // GetSetDisablePauseUXAccess gets the value of SetDisablePauseUXAccess for the instance
@@ -1256,16 +1609,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertySetDisablePauseUXAccess
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSetDisableUXWUAccess sets the value of SetDisableUXWUAccess for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertySetDisableUXWUAccess(value int32) (err error) {
-	return instance.SetProperty("SetDisableUXWUAccess", value)
+	return instance.SetProperty("SetDisableUXWUAccess", (value))
 }
 
 // GetSetDisableUXWUAccess gets the value of SetDisableUXWUAccess for the instance
@@ -1274,16 +1636,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertySetDisableUXWUAccess() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSetEDURestart sets the value of SetEDURestart for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertySetEDURestart(value int32) (err error) {
-	return instance.SetProperty("SetEDURestart", value)
+	return instance.SetProperty("SetEDURestart", (value))
 }
 
 // GetSetEDURestart gets the value of SetEDURestart for the instance
@@ -1292,34 +1663,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertySetEDURestart() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetTargetReleaseVersion sets the value of TargetReleaseVersion for the instance
-func (instance *MDM_Policy_Config01_Update02) SetPropertyTargetReleaseVersion(value string) (err error) {
-	return instance.SetProperty("TargetReleaseVersion", value)
-}
-
-// GetTargetReleaseVersion gets the value of TargetReleaseVersion for the instance
-func (instance *MDM_Policy_Config01_Update02) GetPropertyTargetReleaseVersion() (value string, err error) {
-	retValue, err := instance.GetProperty("TargetReleaseVersion")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUpdateNotificationLevel sets the value of UpdateNotificationLevel for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyUpdateNotificationLevel(value int32) (err error) {
-	return instance.SetProperty("UpdateNotificationLevel", value)
+	return instance.SetProperty("UpdateNotificationLevel", (value))
 }
 
 // GetUpdateNotificationLevel gets the value of UpdateNotificationLevel for the instance
@@ -1328,16 +1690,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyUpdateNotificationLevel
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUpdateServiceUrl sets the value of UpdateServiceUrl for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyUpdateServiceUrl(value string) (err error) {
-	return instance.SetProperty("UpdateServiceUrl", value)
+	return instance.SetProperty("UpdateServiceUrl", (value))
 }
 
 // GetUpdateServiceUrl gets the value of UpdateServiceUrl for the instance
@@ -1346,16 +1717,25 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyUpdateServiceUrl() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUpdateServiceUrlAlternate sets the value of UpdateServiceUrlAlternate for the instance
 func (instance *MDM_Policy_Config01_Update02) SetPropertyUpdateServiceUrlAlternate(value string) (err error) {
-	return instance.SetProperty("UpdateServiceUrlAlternate", value)
+	return instance.SetProperty("UpdateServiceUrlAlternate", (value))
 }
 
 // GetUpdateServiceUrlAlternate gets the value of UpdateServiceUrlAlternate for the instance
@@ -1364,9 +1744,18 @@ func (instance *MDM_Policy_Config01_Update02) GetPropertyUpdateServiceUrlAlterna
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

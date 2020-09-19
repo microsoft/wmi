@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_MetricServiceCapabilities struct
@@ -64,7 +66,7 @@ func NewCIM_MetricServiceCapabilitiesEx6(hostName string,
 
 // SetControllableManagedElements sets the value of ControllableManagedElements for the instance
 func (instance *CIM_MetricServiceCapabilities) SetPropertyControllableManagedElements(value []string) (err error) {
-	return instance.SetProperty("ControllableManagedElements", value)
+	return instance.SetProperty("ControllableManagedElements", (value))
 }
 
 // GetControllableManagedElements gets the value of ControllableManagedElements for the instance
@@ -73,16 +75,26 @@ func (instance *CIM_MetricServiceCapabilities) GetPropertyControllableManagedEle
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetControllableMetrics sets the value of ControllableMetrics for the instance
 func (instance *CIM_MetricServiceCapabilities) SetPropertyControllableMetrics(value []string) (err error) {
-	return instance.SetProperty("ControllableMetrics", value)
+	return instance.SetProperty("ControllableMetrics", (value))
 }
 
 // GetControllableMetrics gets the value of ControllableMetrics for the instance
@@ -91,16 +103,26 @@ func (instance *CIM_MetricServiceCapabilities) GetPropertyControllableMetrics() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetManagedElementControlTypes sets the value of ManagedElementControlTypes for the instance
 func (instance *CIM_MetricServiceCapabilities) SetPropertyManagedElementControlTypes(value []MetricServiceCapabilities_ManagedElementControlTypes) (err error) {
-	return instance.SetProperty("ManagedElementControlTypes", value)
+	return instance.SetProperty("ManagedElementControlTypes", (value))
 }
 
 // GetManagedElementControlTypes gets the value of ManagedElementControlTypes for the instance
@@ -109,16 +131,26 @@ func (instance *CIM_MetricServiceCapabilities) GetPropertyManagedElementControlT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MetricServiceCapabilities_ManagedElementControlTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MetricServiceCapabilities_ManagedElementControlTypes(valuetmp))
+	}
+
 	return
 }
 
 // SetMetricsControlTypes sets the value of MetricsControlTypes for the instance
 func (instance *CIM_MetricServiceCapabilities) SetPropertyMetricsControlTypes(value []MetricServiceCapabilities_MetricsControlTypes) (err error) {
-	return instance.SetProperty("MetricsControlTypes", value)
+	return instance.SetProperty("MetricsControlTypes", (value))
 }
 
 // GetMetricsControlTypes gets the value of MetricsControlTypes for the instance
@@ -127,16 +159,26 @@ func (instance *CIM_MetricServiceCapabilities) GetPropertyMetricsControlTypes() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MetricServiceCapabilities_MetricsControlTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MetricServiceCapabilities_MetricsControlTypes(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedMethods sets the value of SupportedMethods for the instance
 func (instance *CIM_MetricServiceCapabilities) SetPropertySupportedMethods(value []MetricServiceCapabilities_SupportedMethods) (err error) {
-	return instance.SetProperty("SupportedMethods", value)
+	return instance.SetProperty("SupportedMethods", (value))
 }
 
 // GetSupportedMethods gets the value of SupportedMethods for the instance
@@ -145,9 +187,19 @@ func (instance *CIM_MetricServiceCapabilities) GetPropertySupportedMethods() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MetricServiceCapabilities_SupportedMethods)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MetricServiceCapabilities_SupportedMethods(valuetmp))
+	}
+
 	return
 }

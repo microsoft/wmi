@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageJob struct
@@ -112,7 +114,7 @@ func NewMSFT_StorageJobEx6(hostName string,
 
 // SetBytesProcessed sets the value of BytesProcessed for the instance
 func (instance *MSFT_StorageJob) SetPropertyBytesProcessed(value uint64) (err error) {
-	return instance.SetProperty("BytesProcessed", value)
+	return instance.SetProperty("BytesProcessed", (value))
 }
 
 // GetBytesProcessed gets the value of BytesProcessed for the instance
@@ -121,16 +123,25 @@ func (instance *MSFT_StorageJob) GetPropertyBytesProcessed() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTotal sets the value of BytesTotal for the instance
 func (instance *MSFT_StorageJob) SetPropertyBytesTotal(value uint64) (err error) {
-	return instance.SetProperty("BytesTotal", value)
+	return instance.SetProperty("BytesTotal", (value))
 }
 
 // GetBytesTotal gets the value of BytesTotal for the instance
@@ -139,16 +150,25 @@ func (instance *MSFT_StorageJob) GetPropertyBytesTotal() (value uint64, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDeleteOnCompletion sets the value of DeleteOnCompletion for the instance
 func (instance *MSFT_StorageJob) SetPropertyDeleteOnCompletion(value bool) (err error) {
-	return instance.SetProperty("DeleteOnCompletion", value)
+	return instance.SetProperty("DeleteOnCompletion", (value))
 }
 
 // GetDeleteOnCompletion gets the value of DeleteOnCompletion for the instance
@@ -157,16 +177,25 @@ func (instance *MSFT_StorageJob) GetPropertyDeleteOnCompletion() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_StorageJob) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -175,16 +204,25 @@ func (instance *MSFT_StorageJob) GetPropertyDescription() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetElapsedTime sets the value of ElapsedTime for the instance
 func (instance *MSFT_StorageJob) SetPropertyElapsedTime(value string) (err error) {
-	return instance.SetProperty("ElapsedTime", value)
+	return instance.SetProperty("ElapsedTime", (value))
 }
 
 // GetElapsedTime gets the value of ElapsedTime for the instance
@@ -193,16 +231,25 @@ func (instance *MSFT_StorageJob) GetPropertyElapsedTime() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorCode sets the value of ErrorCode for the instance
 func (instance *MSFT_StorageJob) SetPropertyErrorCode(value uint16) (err error) {
-	return instance.SetProperty("ErrorCode", value)
+	return instance.SetProperty("ErrorCode", (value))
 }
 
 // GetErrorCode gets the value of ErrorCode for the instance
@@ -211,16 +258,25 @@ func (instance *MSFT_StorageJob) GetPropertyErrorCode() (value uint16, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetErrorDescription sets the value of ErrorDescription for the instance
 func (instance *MSFT_StorageJob) SetPropertyErrorDescription(value string) (err error) {
-	return instance.SetProperty("ErrorDescription", value)
+	return instance.SetProperty("ErrorDescription", (value))
 }
 
 // GetErrorDescription gets the value of ErrorDescription for the instance
@@ -229,16 +285,25 @@ func (instance *MSFT_StorageJob) GetPropertyErrorDescription() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsBackgroundTask sets the value of IsBackgroundTask for the instance
 func (instance *MSFT_StorageJob) SetPropertyIsBackgroundTask(value bool) (err error) {
-	return instance.SetProperty("IsBackgroundTask", value)
+	return instance.SetProperty("IsBackgroundTask", (value))
 }
 
 // GetIsBackgroundTask gets the value of IsBackgroundTask for the instance
@@ -247,16 +312,25 @@ func (instance *MSFT_StorageJob) GetPropertyIsBackgroundTask() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetJobState sets the value of JobState for the instance
 func (instance *MSFT_StorageJob) SetPropertyJobState(value uint16) (err error) {
-	return instance.SetProperty("JobState", value)
+	return instance.SetProperty("JobState", (value))
 }
 
 // GetJobState gets the value of JobState for the instance
@@ -265,16 +339,25 @@ func (instance *MSFT_StorageJob) GetPropertyJobState() (value uint16, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetJobStatus sets the value of JobStatus for the instance
 func (instance *MSFT_StorageJob) SetPropertyJobStatus(value string) (err error) {
-	return instance.SetProperty("JobStatus", value)
+	return instance.SetProperty("JobStatus", (value))
 }
 
 // GetJobStatus gets the value of JobStatus for the instance
@@ -283,16 +366,25 @@ func (instance *MSFT_StorageJob) GetPropertyJobStatus() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalOrUtcTime sets the value of LocalOrUtcTime for the instance
 func (instance *MSFT_StorageJob) SetPropertyLocalOrUtcTime(value uint16) (err error) {
-	return instance.SetProperty("LocalOrUtcTime", value)
+	return instance.SetProperty("LocalOrUtcTime", (value))
 }
 
 // GetLocalOrUtcTime gets the value of LocalOrUtcTime for the instance
@@ -301,16 +393,25 @@ func (instance *MSFT_StorageJob) GetPropertyLocalOrUtcTime() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_StorageJob) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -319,16 +420,25 @@ func (instance *MSFT_StorageJob) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_StorageJob) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -337,16 +447,26 @@ func (instance *MSFT_StorageJob) GetPropertyOperationalStatus() (value []uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherRecoveryAction sets the value of OtherRecoveryAction for the instance
 func (instance *MSFT_StorageJob) SetPropertyOtherRecoveryAction(value string) (err error) {
-	return instance.SetProperty("OtherRecoveryAction", value)
+	return instance.SetProperty("OtherRecoveryAction", (value))
 }
 
 // GetOtherRecoveryAction gets the value of OtherRecoveryAction for the instance
@@ -355,16 +475,25 @@ func (instance *MSFT_StorageJob) GetPropertyOtherRecoveryAction() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPercentComplete sets the value of PercentComplete for the instance
 func (instance *MSFT_StorageJob) SetPropertyPercentComplete(value uint16) (err error) {
-	return instance.SetProperty("PercentComplete", value)
+	return instance.SetProperty("PercentComplete", (value))
 }
 
 // GetPercentComplete gets the value of PercentComplete for the instance
@@ -373,16 +502,25 @@ func (instance *MSFT_StorageJob) GetPropertyPercentComplete() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRecoveryAction sets the value of RecoveryAction for the instance
 func (instance *MSFT_StorageJob) SetPropertyRecoveryAction(value uint16) (err error) {
-	return instance.SetProperty("RecoveryAction", value)
+	return instance.SetProperty("RecoveryAction", (value))
 }
 
 // GetRecoveryAction gets the value of RecoveryAction for the instance
@@ -391,16 +529,25 @@ func (instance *MSFT_StorageJob) GetPropertyRecoveryAction() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetStartTime sets the value of StartTime for the instance
 func (instance *MSFT_StorageJob) SetPropertyStartTime(value string) (err error) {
-	return instance.SetProperty("StartTime", value)
+	return instance.SetProperty("StartTime", (value))
 }
 
 // GetStartTime gets the value of StartTime for the instance
@@ -409,16 +556,25 @@ func (instance *MSFT_StorageJob) GetPropertyStartTime() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatusDescriptions sets the value of StatusDescriptions for the instance
 func (instance *MSFT_StorageJob) SetPropertyStatusDescriptions(value []string) (err error) {
-	return instance.SetProperty("StatusDescriptions", value)
+	return instance.SetProperty("StatusDescriptions", (value))
 }
 
 // GetStatusDescriptions gets the value of StatusDescriptions for the instance
@@ -427,16 +583,26 @@ func (instance *MSFT_StorageJob) GetPropertyStatusDescriptions() (value []string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTimeBeforeRemoval sets the value of TimeBeforeRemoval for the instance
 func (instance *MSFT_StorageJob) SetPropertyTimeBeforeRemoval(value string) (err error) {
-	return instance.SetProperty("TimeBeforeRemoval", value)
+	return instance.SetProperty("TimeBeforeRemoval", (value))
 }
 
 // GetTimeBeforeRemoval gets the value of TimeBeforeRemoval for the instance
@@ -445,16 +611,25 @@ func (instance *MSFT_StorageJob) GetPropertyTimeBeforeRemoval() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTimeOfLastStateChange sets the value of TimeOfLastStateChange for the instance
 func (instance *MSFT_StorageJob) SetPropertyTimeOfLastStateChange(value string) (err error) {
-	return instance.SetProperty("TimeOfLastStateChange", value)
+	return instance.SetProperty("TimeOfLastStateChange", (value))
 }
 
 // GetTimeOfLastStateChange gets the value of TimeOfLastStateChange for the instance
@@ -463,16 +638,25 @@ func (instance *MSFT_StorageJob) GetPropertyTimeOfLastStateChange() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTimeSubmitted sets the value of TimeSubmitted for the instance
 func (instance *MSFT_StorageJob) SetPropertyTimeSubmitted(value string) (err error) {
-	return instance.SetProperty("TimeSubmitted", value)
+	return instance.SetProperty("TimeSubmitted", (value))
 }
 
 // GetTimeSubmitted gets the value of TimeSubmitted for the instance
@@ -481,10 +665,19 @@ func (instance *MSFT_StorageJob) GetPropertyTimeSubmitted() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

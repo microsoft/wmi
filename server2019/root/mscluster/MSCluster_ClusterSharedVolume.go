@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ClusterSharedVolume struct
@@ -61,7 +63,7 @@ func NewMSCluster_ClusterSharedVolumeEx6(hostName string,
 
 // SetBackupState sets the value of BackupState for the instance
 func (instance *MSCluster_ClusterSharedVolume) SetPropertyBackupState(value uint32) (err error) {
-	return instance.SetProperty("BackupState", value)
+	return instance.SetProperty("BackupState", (value))
 }
 
 // GetBackupState gets the value of BackupState for the instance
@@ -70,16 +72,25 @@ func (instance *MSCluster_ClusterSharedVolume) GetPropertyBackupState() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFaultState sets the value of FaultState for the instance
 func (instance *MSCluster_ClusterSharedVolume) SetPropertyFaultState(value uint32) (err error) {
-	return instance.SetProperty("FaultState", value)
+	return instance.SetProperty("FaultState", (value))
 }
 
 // GetFaultState gets the value of FaultState for the instance
@@ -88,16 +99,25 @@ func (instance *MSCluster_ClusterSharedVolume) GetPropertyFaultState() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVolumeName sets the value of VolumeName for the instance
 func (instance *MSCluster_ClusterSharedVolume) SetPropertyVolumeName(value string) (err error) {
-	return instance.SetProperty("VolumeName", value)
+	return instance.SetProperty("VolumeName", (value))
 }
 
 // GetVolumeName gets the value of VolumeName for the instance
@@ -106,16 +126,25 @@ func (instance *MSCluster_ClusterSharedVolume) GetPropertyVolumeName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVolumeOffset sets the value of VolumeOffset for the instance
 func (instance *MSCluster_ClusterSharedVolume) SetPropertyVolumeOffset(value uint64) (err error) {
-	return instance.SetProperty("VolumeOffset", value)
+	return instance.SetProperty("VolumeOffset", (value))
 }
 
 // GetVolumeOffset gets the value of VolumeOffset for the instance
@@ -124,10 +153,19 @@ func (instance *MSCluster_ClusterSharedVolume) GetPropertyVolumeOffset() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

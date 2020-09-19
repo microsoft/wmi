@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RegistryValueChangeEvent struct
@@ -58,7 +60,7 @@ func NewRegistryValueChangeEventEx6(hostName string,
 
 // SetHive sets the value of Hive for the instance
 func (instance *RegistryValueChangeEvent) SetPropertyHive(value string) (err error) {
-	return instance.SetProperty("Hive", value)
+	return instance.SetProperty("Hive", (value))
 }
 
 // GetHive gets the value of Hive for the instance
@@ -67,16 +69,25 @@ func (instance *RegistryValueChangeEvent) GetPropertyHive() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeyPath sets the value of KeyPath for the instance
 func (instance *RegistryValueChangeEvent) SetPropertyKeyPath(value string) (err error) {
-	return instance.SetProperty("KeyPath", value)
+	return instance.SetProperty("KeyPath", (value))
 }
 
 // GetKeyPath gets the value of KeyPath for the instance
@@ -85,16 +96,25 @@ func (instance *RegistryValueChangeEvent) GetPropertyKeyPath() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValueName sets the value of ValueName for the instance
 func (instance *RegistryValueChangeEvent) SetPropertyValueName(value string) (err error) {
-	return instance.SetProperty("ValueName", value)
+	return instance.SetProperty("ValueName", (value))
 }
 
 // GetValueName gets the value of ValueName for the instance
@@ -103,9 +123,18 @@ func (instance *RegistryValueChangeEvent) GetPropertyValueName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

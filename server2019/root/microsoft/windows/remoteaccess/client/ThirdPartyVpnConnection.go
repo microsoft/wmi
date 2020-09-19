@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.RemoteAccess.Client
 //////////////////////////////////////////////
 package client
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // ThirdPartyVpnConnection struct
@@ -58,7 +60,7 @@ func NewThirdPartyVpnConnectionEx6(hostName string,
 
 // SetCustomConfiguration sets the value of CustomConfiguration for the instance
 func (instance *ThirdPartyVpnConnection) SetPropertyCustomConfiguration(value string) (err error) {
-	return instance.SetProperty("CustomConfiguration", value)
+	return instance.SetProperty("CustomConfiguration", (value))
 }
 
 // GetCustomConfiguration gets the value of CustomConfiguration for the instance
@@ -67,16 +69,25 @@ func (instance *ThirdPartyVpnConnection) GetPropertyCustomConfiguration() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPlugInApplicationID sets the value of PlugInApplicationID for the instance
 func (instance *ThirdPartyVpnConnection) SetPropertyPlugInApplicationID(value string) (err error) {
-	return instance.SetProperty("PlugInApplicationID", value)
+	return instance.SetProperty("PlugInApplicationID", (value))
 }
 
 // GetPlugInApplicationID gets the value of PlugInApplicationID for the instance
@@ -85,16 +96,25 @@ func (instance *ThirdPartyVpnConnection) GetPropertyPlugInApplicationID() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVpnConfigurationXml sets the value of VpnConfigurationXml for the instance
 func (instance *ThirdPartyVpnConnection) SetPropertyVpnConfigurationXml(value string) (err error) {
-	return instance.SetProperty("VpnConfigurationXml", value)
+	return instance.SetProperty("VpnConfigurationXml", (value))
 }
 
 // GetVpnConfigurationXml gets the value of VpnConfigurationXml for the instance
@@ -103,9 +123,18 @@ func (instance *ThirdPartyVpnConnection) GetPropertyVpnConfigurationXml() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

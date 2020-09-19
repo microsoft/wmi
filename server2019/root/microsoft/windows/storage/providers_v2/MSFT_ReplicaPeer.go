@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ReplicaPeer struct
@@ -73,7 +75,7 @@ func NewMSFT_ReplicaPeerEx6(hostName string,
 
 // SetIsPrimary sets the value of IsPrimary for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyIsPrimary(value bool) (err error) {
-	return instance.SetProperty("IsPrimary", value)
+	return instance.SetProperty("IsPrimary", (value))
 }
 
 // GetIsPrimary gets the value of IsPrimary for the instance
@@ -82,16 +84,25 @@ func (instance *MSFT_ReplicaPeer) GetPropertyIsPrimary() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPeerObject sets the value of PeerObject for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyPeerObject(value MSFT_StorageObject) (err error) {
-	return instance.SetProperty("PeerObject", value)
+	return instance.SetProperty("PeerObject", (value))
 }
 
 // GetPeerObject gets the value of PeerObject for the instance
@@ -100,16 +111,25 @@ func (instance *MSFT_ReplicaPeer) GetPropertyPeerObject() (value MSFT_StorageObj
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageObject)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageObject)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageObject is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageObject(valuetmp)
+
 	return
 }
 
 // SetPeerObjectId sets the value of PeerObjectId for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyPeerObjectId(value string) (err error) {
-	return instance.SetProperty("PeerObjectId", value)
+	return instance.SetProperty("PeerObjectId", (value))
 }
 
 // GetPeerObjectId gets the value of PeerObjectId for the instance
@@ -118,16 +138,25 @@ func (instance *MSFT_ReplicaPeer) GetPropertyPeerObjectId() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPeerObjectName sets the value of PeerObjectName for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyPeerObjectName(value string) (err error) {
-	return instance.SetProperty("PeerObjectName", value)
+	return instance.SetProperty("PeerObjectName", (value))
 }
 
 // GetPeerObjectName gets the value of PeerObjectName for the instance
@@ -136,16 +165,25 @@ func (instance *MSFT_ReplicaPeer) GetPropertyPeerObjectName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPeerObjectType sets the value of PeerObjectType for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyPeerObjectType(value ReplicaPeer_PeerObjectType) (err error) {
-	return instance.SetProperty("PeerObjectType", value)
+	return instance.SetProperty("PeerObjectType", (value))
 }
 
 // GetPeerObjectType gets the value of PeerObjectType for the instance
@@ -154,16 +192,25 @@ func (instance *MSFT_ReplicaPeer) GetPropertyPeerObjectType() (value ReplicaPeer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ReplicaPeer_PeerObjectType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ReplicaPeer_PeerObjectType(valuetmp)
+
 	return
 }
 
 // SetPeerProviderURI sets the value of PeerProviderURI for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyPeerProviderURI(value string) (err error) {
-	return instance.SetProperty("PeerProviderURI", value)
+	return instance.SetProperty("PeerProviderURI", (value))
 }
 
 // GetPeerProviderURI gets the value of PeerProviderURI for the instance
@@ -172,16 +219,25 @@ func (instance *MSFT_ReplicaPeer) GetPropertyPeerProviderURI() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPeerSubsystemName sets the value of PeerSubsystemName for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyPeerSubsystemName(value string) (err error) {
-	return instance.SetProperty("PeerSubsystemName", value)
+	return instance.SetProperty("PeerSubsystemName", (value))
 }
 
 // GetPeerSubsystemName gets the value of PeerSubsystemName for the instance
@@ -190,16 +246,25 @@ func (instance *MSFT_ReplicaPeer) GetPropertyPeerSubsystemName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPeerUniqueId sets the value of PeerUniqueId for the instance
 func (instance *MSFT_ReplicaPeer) SetPropertyPeerUniqueId(value string) (err error) {
-	return instance.SetProperty("PeerUniqueId", value)
+	return instance.SetProperty("PeerUniqueId", (value))
 }
 
 // GetPeerUniqueId gets the value of PeerUniqueId for the instance
@@ -208,9 +273,18 @@ func (instance *MSFT_ReplicaPeer) GetPropertyPeerUniqueId() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

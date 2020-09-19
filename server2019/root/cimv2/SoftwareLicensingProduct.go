@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SoftwareLicensingProduct struct
@@ -233,7 +235,7 @@ func NewSoftwareLicensingProductEx6(hostName string,
 
 // SetADActivationCsvlkPid sets the value of ADActivationCsvlkPid for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyADActivationCsvlkPid(value string) (err error) {
-	return instance.SetProperty("ADActivationCsvlkPid", value)
+	return instance.SetProperty("ADActivationCsvlkPid", (value))
 }
 
 // GetADActivationCsvlkPid gets the value of ADActivationCsvlkPid for the instance
@@ -242,16 +244,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyADActivationCsvlkPid() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetADActivationCsvlkSkuId sets the value of ADActivationCsvlkSkuId for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyADActivationCsvlkSkuId(value string) (err error) {
-	return instance.SetProperty("ADActivationCsvlkSkuId", value)
+	return instance.SetProperty("ADActivationCsvlkSkuId", (value))
 }
 
 // GetADActivationCsvlkSkuId gets the value of ADActivationCsvlkSkuId for the instance
@@ -260,16 +271,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyADActivationCsvlkSkuId() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetADActivationObjectDN sets the value of ADActivationObjectDN for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyADActivationObjectDN(value string) (err error) {
-	return instance.SetProperty("ADActivationObjectDN", value)
+	return instance.SetProperty("ADActivationObjectDN", (value))
 }
 
 // GetADActivationObjectDN gets the value of ADActivationObjectDN for the instance
@@ -278,16 +298,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyADActivationObjectDN() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetADActivationObjectName sets the value of ADActivationObjectName for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyADActivationObjectName(value string) (err error) {
-	return instance.SetProperty("ADActivationObjectName", value)
+	return instance.SetProperty("ADActivationObjectName", (value))
 }
 
 // GetADActivationObjectName gets the value of ADActivationObjectName for the instance
@@ -296,16 +325,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyADActivationObjectName() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetApplicationID sets the value of ApplicationID for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyApplicationID(value string) (err error) {
-	return instance.SetProperty("ApplicationID", value)
+	return instance.SetProperty("ApplicationID", (value))
 }
 
 // GetApplicationID gets the value of ApplicationID for the instance
@@ -314,16 +352,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyApplicationID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutomaticVMActivationHostDigitalPid2 sets the value of AutomaticVMActivationHostDigitalPid2 for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyAutomaticVMActivationHostDigitalPid2(value string) (err error) {
-	return instance.SetProperty("AutomaticVMActivationHostDigitalPid2", value)
+	return instance.SetProperty("AutomaticVMActivationHostDigitalPid2", (value))
 }
 
 // GetAutomaticVMActivationHostDigitalPid2 gets the value of AutomaticVMActivationHostDigitalPid2 for the instance
@@ -332,16 +379,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyAutomaticVMActivationHostDi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutomaticVMActivationHostMachineName sets the value of AutomaticVMActivationHostMachineName for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyAutomaticVMActivationHostMachineName(value string) (err error) {
-	return instance.SetProperty("AutomaticVMActivationHostMachineName", value)
+	return instance.SetProperty("AutomaticVMActivationHostMachineName", (value))
 }
 
 // GetAutomaticVMActivationHostMachineName gets the value of AutomaticVMActivationHostMachineName for the instance
@@ -350,16 +406,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyAutomaticVMActivationHostMa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutomaticVMActivationLastActivationTime sets the value of AutomaticVMActivationLastActivationTime for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyAutomaticVMActivationLastActivationTime(value string) (err error) {
-	return instance.SetProperty("AutomaticVMActivationLastActivationTime", value)
+	return instance.SetProperty("AutomaticVMActivationLastActivationTime", (value))
 }
 
 // GetAutomaticVMActivationLastActivationTime gets the value of AutomaticVMActivationLastActivationTime for the instance
@@ -368,16 +433,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyAutomaticVMActivationLastAc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -386,16 +460,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyDescription() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDiscoveredKeyManagementServiceMachineIpAddress sets the value of DiscoveredKeyManagementServiceMachineIpAddress for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyDiscoveredKeyManagementServiceMachineIpAddress(value string) (err error) {
-	return instance.SetProperty("DiscoveredKeyManagementServiceMachineIpAddress", value)
+	return instance.SetProperty("DiscoveredKeyManagementServiceMachineIpAddress", (value))
 }
 
 // GetDiscoveredKeyManagementServiceMachineIpAddress gets the value of DiscoveredKeyManagementServiceMachineIpAddress for the instance
@@ -404,16 +487,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyDiscoveredKeyManagementServ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDiscoveredKeyManagementServiceMachineName sets the value of DiscoveredKeyManagementServiceMachineName for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyDiscoveredKeyManagementServiceMachineName(value string) (err error) {
-	return instance.SetProperty("DiscoveredKeyManagementServiceMachineName", value)
+	return instance.SetProperty("DiscoveredKeyManagementServiceMachineName", (value))
 }
 
 // GetDiscoveredKeyManagementServiceMachineName gets the value of DiscoveredKeyManagementServiceMachineName for the instance
@@ -422,16 +514,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyDiscoveredKeyManagementServ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDiscoveredKeyManagementServiceMachinePort sets the value of DiscoveredKeyManagementServiceMachinePort for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyDiscoveredKeyManagementServiceMachinePort(value uint32) (err error) {
-	return instance.SetProperty("DiscoveredKeyManagementServiceMachinePort", value)
+	return instance.SetProperty("DiscoveredKeyManagementServiceMachinePort", (value))
 }
 
 // GetDiscoveredKeyManagementServiceMachinePort gets the value of DiscoveredKeyManagementServiceMachinePort for the instance
@@ -440,16 +541,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyDiscoveredKeyManagementServ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEvaluationEndDate sets the value of EvaluationEndDate for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyEvaluationEndDate(value string) (err error) {
-	return instance.SetProperty("EvaluationEndDate", value)
+	return instance.SetProperty("EvaluationEndDate", (value))
 }
 
 // GetEvaluationEndDate gets the value of EvaluationEndDate for the instance
@@ -458,16 +568,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyEvaluationEndDate() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExtendedGrace sets the value of ExtendedGrace for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyExtendedGrace(value uint32) (err error) {
-	return instance.SetProperty("ExtendedGrace", value)
+	return instance.SetProperty("ExtendedGrace", (value))
 }
 
 // GetExtendedGrace gets the value of ExtendedGrace for the instance
@@ -476,16 +595,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyExtendedGrace() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGenuineStatus sets the value of GenuineStatus for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyGenuineStatus(value uint32) (err error) {
-	return instance.SetProperty("GenuineStatus", value)
+	return instance.SetProperty("GenuineStatus", (value))
 }
 
 // GetGenuineStatus gets the value of GenuineStatus for the instance
@@ -494,16 +622,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyGenuineStatus() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGracePeriodRemaining sets the value of GracePeriodRemaining for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyGracePeriodRemaining(value uint32) (err error) {
-	return instance.SetProperty("GracePeriodRemaining", value)
+	return instance.SetProperty("GracePeriodRemaining", (value))
 }
 
 // GetGracePeriodRemaining gets the value of GracePeriodRemaining for the instance
@@ -512,16 +649,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyGracePeriodRemaining() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIAID sets the value of IAID for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyIAID(value string) (err error) {
-	return instance.SetProperty("IAID", value)
+	return instance.SetProperty("IAID", (value))
 }
 
 // GetIAID gets the value of IAID for the instance
@@ -530,16 +676,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyIAID() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetID sets the value of ID for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyID(value string) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -548,16 +703,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyID() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsKeyManagementServiceMachine sets the value of IsKeyManagementServiceMachine for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyIsKeyManagementServiceMachine(value uint32) (err error) {
-	return instance.SetProperty("IsKeyManagementServiceMachine", value)
+	return instance.SetProperty("IsKeyManagementServiceMachine", (value))
 }
 
 // GetIsKeyManagementServiceMachine gets the value of IsKeyManagementServiceMachine for the instance
@@ -566,16 +730,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyIsKeyManagementServiceMachi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceCurrentCount sets the value of KeyManagementServiceCurrentCount for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceCurrentCount(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceCurrentCount", value)
+	return instance.SetProperty("KeyManagementServiceCurrentCount", (value))
 }
 
 // GetKeyManagementServiceCurrentCount gets the value of KeyManagementServiceCurrentCount for the instance
@@ -584,16 +757,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceCurrent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceFailedRequests sets the value of KeyManagementServiceFailedRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceFailedRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceFailedRequests", value)
+	return instance.SetProperty("KeyManagementServiceFailedRequests", (value))
 }
 
 // GetKeyManagementServiceFailedRequests gets the value of KeyManagementServiceFailedRequests for the instance
@@ -602,16 +784,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceFailedR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceLicensedRequests sets the value of KeyManagementServiceLicensedRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceLicensedRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceLicensedRequests", value)
+	return instance.SetProperty("KeyManagementServiceLicensedRequests", (value))
 }
 
 // GetKeyManagementServiceLicensedRequests gets the value of KeyManagementServiceLicensedRequests for the instance
@@ -620,16 +811,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceLicense
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceLookupDomain sets the value of KeyManagementServiceLookupDomain for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceLookupDomain(value string) (err error) {
-	return instance.SetProperty("KeyManagementServiceLookupDomain", value)
+	return instance.SetProperty("KeyManagementServiceLookupDomain", (value))
 }
 
 // GetKeyManagementServiceLookupDomain gets the value of KeyManagementServiceLookupDomain for the instance
@@ -638,16 +838,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceLookupD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceMachine sets the value of KeyManagementServiceMachine for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceMachine(value string) (err error) {
-	return instance.SetProperty("KeyManagementServiceMachine", value)
+	return instance.SetProperty("KeyManagementServiceMachine", (value))
 }
 
 // GetKeyManagementServiceMachine gets the value of KeyManagementServiceMachine for the instance
@@ -656,16 +865,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceMachine
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceNonGenuineGraceRequests sets the value of KeyManagementServiceNonGenuineGraceRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceNonGenuineGraceRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceNonGenuineGraceRequests", value)
+	return instance.SetProperty("KeyManagementServiceNonGenuineGraceRequests", (value))
 }
 
 // GetKeyManagementServiceNonGenuineGraceRequests gets the value of KeyManagementServiceNonGenuineGraceRequests for the instance
@@ -674,16 +892,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceNonGenu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceNotificationRequests sets the value of KeyManagementServiceNotificationRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceNotificationRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceNotificationRequests", value)
+	return instance.SetProperty("KeyManagementServiceNotificationRequests", (value))
 }
 
 // GetKeyManagementServiceNotificationRequests gets the value of KeyManagementServiceNotificationRequests for the instance
@@ -692,16 +919,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceNotific
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceOOBGraceRequests sets the value of KeyManagementServiceOOBGraceRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceOOBGraceRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceOOBGraceRequests", value)
+	return instance.SetProperty("KeyManagementServiceOOBGraceRequests", (value))
 }
 
 // GetKeyManagementServiceOOBGraceRequests gets the value of KeyManagementServiceOOBGraceRequests for the instance
@@ -710,16 +946,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceOOBGrac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceOOTGraceRequests sets the value of KeyManagementServiceOOTGraceRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceOOTGraceRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceOOTGraceRequests", value)
+	return instance.SetProperty("KeyManagementServiceOOTGraceRequests", (value))
 }
 
 // GetKeyManagementServiceOOTGraceRequests gets the value of KeyManagementServiceOOTGraceRequests for the instance
@@ -728,16 +973,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceOOTGrac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServicePort sets the value of KeyManagementServicePort for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServicePort(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServicePort", value)
+	return instance.SetProperty("KeyManagementServicePort", (value))
 }
 
 // GetKeyManagementServicePort gets the value of KeyManagementServicePort for the instance
@@ -746,16 +1000,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServicePort() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceProductKeyID sets the value of KeyManagementServiceProductKeyID for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceProductKeyID(value string) (err error) {
-	return instance.SetProperty("KeyManagementServiceProductKeyID", value)
+	return instance.SetProperty("KeyManagementServiceProductKeyID", (value))
 }
 
 // GetKeyManagementServiceProductKeyID gets the value of KeyManagementServiceProductKeyID for the instance
@@ -764,16 +1027,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceProduct
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceTotalRequests sets the value of KeyManagementServiceTotalRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceTotalRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceTotalRequests", value)
+	return instance.SetProperty("KeyManagementServiceTotalRequests", (value))
 }
 
 // GetKeyManagementServiceTotalRequests gets the value of KeyManagementServiceTotalRequests for the instance
@@ -782,16 +1054,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceTotalRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyManagementServiceUnlicensedRequests sets the value of KeyManagementServiceUnlicensedRequests for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyKeyManagementServiceUnlicensedRequests(value uint32) (err error) {
-	return instance.SetProperty("KeyManagementServiceUnlicensedRequests", value)
+	return instance.SetProperty("KeyManagementServiceUnlicensedRequests", (value))
 }
 
 // GetKeyManagementServiceUnlicensedRequests gets the value of KeyManagementServiceUnlicensedRequests for the instance
@@ -800,16 +1081,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyKeyManagementServiceUnlicen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLicenseDependsOn sets the value of LicenseDependsOn for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyLicenseDependsOn(value string) (err error) {
-	return instance.SetProperty("LicenseDependsOn", value)
+	return instance.SetProperty("LicenseDependsOn", (value))
 }
 
 // GetLicenseDependsOn gets the value of LicenseDependsOn for the instance
@@ -818,16 +1108,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyLicenseDependsOn() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLicenseFamily sets the value of LicenseFamily for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyLicenseFamily(value string) (err error) {
-	return instance.SetProperty("LicenseFamily", value)
+	return instance.SetProperty("LicenseFamily", (value))
 }
 
 // GetLicenseFamily gets the value of LicenseFamily for the instance
@@ -836,16 +1135,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyLicenseFamily() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLicenseIsAddon sets the value of LicenseIsAddon for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyLicenseIsAddon(value bool) (err error) {
-	return instance.SetProperty("LicenseIsAddon", value)
+	return instance.SetProperty("LicenseIsAddon", (value))
 }
 
 // GetLicenseIsAddon gets the value of LicenseIsAddon for the instance
@@ -854,16 +1162,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyLicenseIsAddon() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLicenseStatus sets the value of LicenseStatus for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyLicenseStatus(value uint32) (err error) {
-	return instance.SetProperty("LicenseStatus", value)
+	return instance.SetProperty("LicenseStatus", (value))
 }
 
 // GetLicenseStatus gets the value of LicenseStatus for the instance
@@ -872,16 +1189,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyLicenseStatus() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLicenseStatusReason sets the value of LicenseStatusReason for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyLicenseStatusReason(value uint32) (err error) {
-	return instance.SetProperty("LicenseStatusReason", value)
+	return instance.SetProperty("LicenseStatusReason", (value))
 }
 
 // GetLicenseStatusReason gets the value of LicenseStatusReason for the instance
@@ -890,16 +1216,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyLicenseStatusReason() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMachineURL sets the value of MachineURL for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyMachineURL(value string) (err error) {
-	return instance.SetProperty("MachineURL", value)
+	return instance.SetProperty("MachineURL", (value))
 }
 
 // GetMachineURL gets the value of MachineURL for the instance
@@ -908,16 +1243,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyMachineURL() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -926,16 +1270,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOfflineInstallationId sets the value of OfflineInstallationId for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyOfflineInstallationId(value string) (err error) {
-	return instance.SetProperty("OfflineInstallationId", value)
+	return instance.SetProperty("OfflineInstallationId", (value))
 }
 
 // GetOfflineInstallationId gets the value of OfflineInstallationId for the instance
@@ -944,16 +1297,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyOfflineInstallationId() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPartialProductKey sets the value of PartialProductKey for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyPartialProductKey(value string) (err error) {
-	return instance.SetProperty("PartialProductKey", value)
+	return instance.SetProperty("PartialProductKey", (value))
 }
 
 // GetPartialProductKey gets the value of PartialProductKey for the instance
@@ -962,16 +1324,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyPartialProductKey() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProcessorURL sets the value of ProcessorURL for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyProcessorURL(value string) (err error) {
-	return instance.SetProperty("ProcessorURL", value)
+	return instance.SetProperty("ProcessorURL", (value))
 }
 
 // GetProcessorURL gets the value of ProcessorURL for the instance
@@ -980,16 +1351,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyProcessorURL() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductKeyChannel sets the value of ProductKeyChannel for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyProductKeyChannel(value string) (err error) {
-	return instance.SetProperty("ProductKeyChannel", value)
+	return instance.SetProperty("ProductKeyChannel", (value))
 }
 
 // GetProductKeyChannel gets the value of ProductKeyChannel for the instance
@@ -998,16 +1378,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyProductKeyChannel() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductKeyID sets the value of ProductKeyID for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyProductKeyID(value string) (err error) {
-	return instance.SetProperty("ProductKeyID", value)
+	return instance.SetProperty("ProductKeyID", (value))
 }
 
 // GetProductKeyID gets the value of ProductKeyID for the instance
@@ -1016,16 +1405,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyProductKeyID() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductKeyID2 sets the value of ProductKeyID2 for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyProductKeyID2(value string) (err error) {
-	return instance.SetProperty("ProductKeyID2", value)
+	return instance.SetProperty("ProductKeyID2", (value))
 }
 
 // GetProductKeyID2 gets the value of ProductKeyID2 for the instance
@@ -1034,16 +1432,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyProductKeyID2() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductKeyURL sets the value of ProductKeyURL for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyProductKeyURL(value string) (err error) {
-	return instance.SetProperty("ProductKeyURL", value)
+	return instance.SetProperty("ProductKeyURL", (value))
 }
 
 // GetProductKeyURL gets the value of ProductKeyURL for the instance
@@ -1052,16 +1459,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyProductKeyURL() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemainingAppReArmCount sets the value of RemainingAppReArmCount for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyRemainingAppReArmCount(value uint32) (err error) {
-	return instance.SetProperty("RemainingAppReArmCount", value)
+	return instance.SetProperty("RemainingAppReArmCount", (value))
 }
 
 // GetRemainingAppReArmCount gets the value of RemainingAppReArmCount for the instance
@@ -1070,16 +1486,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyRemainingAppReArmCount() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemainingSkuReArmCount sets the value of RemainingSkuReArmCount for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyRemainingSkuReArmCount(value uint32) (err error) {
-	return instance.SetProperty("RemainingSkuReArmCount", value)
+	return instance.SetProperty("RemainingSkuReArmCount", (value))
 }
 
 // GetRemainingSkuReArmCount gets the value of RemainingSkuReArmCount for the instance
@@ -1088,16 +1513,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyRemainingSkuReArmCount() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRequiredClientCount sets the value of RequiredClientCount for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyRequiredClientCount(value uint32) (err error) {
-	return instance.SetProperty("RequiredClientCount", value)
+	return instance.SetProperty("RequiredClientCount", (value))
 }
 
 // GetRequiredClientCount gets the value of RequiredClientCount for the instance
@@ -1106,16 +1540,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyRequiredClientCount() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTokenActivationAdditionalInfo sets the value of TokenActivationAdditionalInfo for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyTokenActivationAdditionalInfo(value string) (err error) {
-	return instance.SetProperty("TokenActivationAdditionalInfo", value)
+	return instance.SetProperty("TokenActivationAdditionalInfo", (value))
 }
 
 // GetTokenActivationAdditionalInfo gets the value of TokenActivationAdditionalInfo for the instance
@@ -1124,16 +1567,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyTokenActivationAdditionalIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTokenActivationCertificateThumbprint sets the value of TokenActivationCertificateThumbprint for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyTokenActivationCertificateThumbprint(value string) (err error) {
-	return instance.SetProperty("TokenActivationCertificateThumbprint", value)
+	return instance.SetProperty("TokenActivationCertificateThumbprint", (value))
 }
 
 // GetTokenActivationCertificateThumbprint gets the value of TokenActivationCertificateThumbprint for the instance
@@ -1142,16 +1594,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyTokenActivationCertificateT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTokenActivationGrantNumber sets the value of TokenActivationGrantNumber for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyTokenActivationGrantNumber(value uint32) (err error) {
-	return instance.SetProperty("TokenActivationGrantNumber", value)
+	return instance.SetProperty("TokenActivationGrantNumber", (value))
 }
 
 // GetTokenActivationGrantNumber gets the value of TokenActivationGrantNumber for the instance
@@ -1160,16 +1621,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyTokenActivationGrantNumber(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTokenActivationILID sets the value of TokenActivationILID for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyTokenActivationILID(value string) (err error) {
-	return instance.SetProperty("TokenActivationILID", value)
+	return instance.SetProperty("TokenActivationILID", (value))
 }
 
 // GetTokenActivationILID gets the value of TokenActivationILID for the instance
@@ -1178,16 +1648,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyTokenActivationILID() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTokenActivationILVID sets the value of TokenActivationILVID for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyTokenActivationILVID(value uint32) (err error) {
-	return instance.SetProperty("TokenActivationILVID", value)
+	return instance.SetProperty("TokenActivationILVID", (value))
 }
 
 // GetTokenActivationILVID gets the value of TokenActivationILVID for the instance
@@ -1196,16 +1675,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyTokenActivationILVID() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTrustedTime sets the value of TrustedTime for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyTrustedTime(value string) (err error) {
-	return instance.SetProperty("TrustedTime", value)
+	return instance.SetProperty("TrustedTime", (value))
 }
 
 // GetTrustedTime gets the value of TrustedTime for the instance
@@ -1214,16 +1702,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyTrustedTime() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUseLicenseURL sets the value of UseLicenseURL for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyUseLicenseURL(value string) (err error) {
-	return instance.SetProperty("UseLicenseURL", value)
+	return instance.SetProperty("UseLicenseURL", (value))
 }
 
 // GetUseLicenseURL gets the value of UseLicenseURL for the instance
@@ -1232,16 +1729,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyUseLicenseURL() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValidationURL sets the value of ValidationURL for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyValidationURL(value string) (err error) {
-	return instance.SetProperty("ValidationURL", value)
+	return instance.SetProperty("ValidationURL", (value))
 }
 
 // GetValidationURL gets the value of ValidationURL for the instance
@@ -1250,16 +1756,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyValidationURL() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVLActivationInterval sets the value of VLActivationInterval for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyVLActivationInterval(value uint32) (err error) {
-	return instance.SetProperty("VLActivationInterval", value)
+	return instance.SetProperty("VLActivationInterval", (value))
 }
 
 // GetVLActivationInterval gets the value of VLActivationInterval for the instance
@@ -1268,16 +1783,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyVLActivationInterval() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVLActivationType sets the value of VLActivationType for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyVLActivationType(value uint32) (err error) {
-	return instance.SetProperty("VLActivationType", value)
+	return instance.SetProperty("VLActivationType", (value))
 }
 
 // GetVLActivationType gets the value of VLActivationType for the instance
@@ -1286,16 +1810,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyVLActivationType() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVLActivationTypeEnabled sets the value of VLActivationTypeEnabled for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyVLActivationTypeEnabled(value uint32) (err error) {
-	return instance.SetProperty("VLActivationTypeEnabled", value)
+	return instance.SetProperty("VLActivationTypeEnabled", (value))
 }
 
 // GetVLActivationTypeEnabled gets the value of VLActivationTypeEnabled for the instance
@@ -1304,16 +1837,25 @@ func (instance *SoftwareLicensingProduct) GetPropertyVLActivationTypeEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVLRenewalInterval sets the value of VLRenewalInterval for the instance
 func (instance *SoftwareLicensingProduct) SetPropertyVLRenewalInterval(value uint32) (err error) {
-	return instance.SetProperty("VLRenewalInterval", value)
+	return instance.SetProperty("VLRenewalInterval", (value))
 }
 
 // GetVLRenewalInterval gets the value of VLRenewalInterval for the instance
@@ -1322,10 +1864,19 @@ func (instance *SoftwareLicensingProduct) GetPropertyVLRenewalInterval() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

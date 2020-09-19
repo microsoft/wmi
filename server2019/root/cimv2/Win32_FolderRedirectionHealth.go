@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_FolderRedirectionHealth struct
@@ -71,7 +73,7 @@ func NewWin32_FolderRedirectionHealthEx6(hostName string,
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *Win32_FolderRedirectionHealth) SetPropertyHealthStatus(value FolderRedirectionHealth_HealthStatus) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -80,16 +82,25 @@ func (instance *Win32_FolderRedirectionHealth) GetPropertyHealthStatus() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(FolderRedirectionHealth_HealthStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = FolderRedirectionHealth_HealthStatus(valuetmp)
+
 	return
 }
 
 // SetLastSuccessfulSyncTime sets the value of LastSuccessfulSyncTime for the instance
 func (instance *Win32_FolderRedirectionHealth) SetPropertyLastSuccessfulSyncTime(value string) (err error) {
-	return instance.SetProperty("LastSuccessfulSyncTime", value)
+	return instance.SetProperty("LastSuccessfulSyncTime", (value))
 }
 
 // GetLastSuccessfulSyncTime gets the value of LastSuccessfulSyncTime for the instance
@@ -98,16 +109,25 @@ func (instance *Win32_FolderRedirectionHealth) GetPropertyLastSuccessfulSyncTime
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastSyncStatus sets the value of LastSyncStatus for the instance
 func (instance *Win32_FolderRedirectionHealth) SetPropertyLastSyncStatus(value FolderRedirectionHealth_LastSyncStatus) (err error) {
-	return instance.SetProperty("LastSyncStatus", value)
+	return instance.SetProperty("LastSyncStatus", (value))
 }
 
 // GetLastSyncStatus gets the value of LastSyncStatus for the instance
@@ -116,16 +136,25 @@ func (instance *Win32_FolderRedirectionHealth) GetPropertyLastSyncStatus() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(FolderRedirectionHealth_LastSyncStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = FolderRedirectionHealth_LastSyncStatus(valuetmp)
+
 	return
 }
 
 // SetLastSyncTime sets the value of LastSyncTime for the instance
 func (instance *Win32_FolderRedirectionHealth) SetPropertyLastSyncTime(value string) (err error) {
-	return instance.SetProperty("LastSyncTime", value)
+	return instance.SetProperty("LastSyncTime", (value))
 }
 
 // GetLastSyncTime gets the value of LastSyncTime for the instance
@@ -134,16 +163,25 @@ func (instance *Win32_FolderRedirectionHealth) GetPropertyLastSyncTime() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOfflineAccessEnabled sets the value of OfflineAccessEnabled for the instance
 func (instance *Win32_FolderRedirectionHealth) SetPropertyOfflineAccessEnabled(value bool) (err error) {
-	return instance.SetProperty("OfflineAccessEnabled", value)
+	return instance.SetProperty("OfflineAccessEnabled", (value))
 }
 
 // GetOfflineAccessEnabled gets the value of OfflineAccessEnabled for the instance
@@ -152,16 +190,25 @@ func (instance *Win32_FolderRedirectionHealth) GetPropertyOfflineAccessEnabled()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOfflineFileNameFolderGUID sets the value of OfflineFileNameFolderGUID for the instance
 func (instance *Win32_FolderRedirectionHealth) SetPropertyOfflineFileNameFolderGUID(value string) (err error) {
-	return instance.SetProperty("OfflineFileNameFolderGUID", value)
+	return instance.SetProperty("OfflineFileNameFolderGUID", (value))
 }
 
 // GetOfflineFileNameFolderGUID gets the value of OfflineFileNameFolderGUID for the instance
@@ -170,16 +217,25 @@ func (instance *Win32_FolderRedirectionHealth) GetPropertyOfflineFileNameFolderG
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRedirected sets the value of Redirected for the instance
 func (instance *Win32_FolderRedirectionHealth) SetPropertyRedirected(value bool) (err error) {
-	return instance.SetProperty("Redirected", value)
+	return instance.SetProperty("Redirected", (value))
 }
 
 // GetRedirected gets the value of Redirected for the instance
@@ -188,9 +244,18 @@ func (instance *Win32_FolderRedirectionHealth) GetPropertyRedirected() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

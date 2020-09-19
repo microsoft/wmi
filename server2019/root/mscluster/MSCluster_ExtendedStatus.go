@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ExtendedStatus struct
@@ -52,7 +54,7 @@ func NewMSCluster_ExtendedStatusEx6(hostName string,
 
 // SetErrorType sets the value of ErrorType for the instance
 func (instance *MSCluster_ExtendedStatus) SetPropertyErrorType(value uint32) (err error) {
-	return instance.SetProperty("ErrorType", value)
+	return instance.SetProperty("ErrorType", (value))
 }
 
 // GetErrorType gets the value of ErrorType for the instance
@@ -61,9 +63,18 @@ func (instance *MSCluster_ExtendedStatus) GetPropertyErrorType() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

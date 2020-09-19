@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ActionCheck struct
@@ -56,7 +58,7 @@ func NewWin32_ActionCheckEx6(hostName string,
 
 // SetAction sets the value of Action for the instance
 func (instance *Win32_ActionCheck) SetPropertyAction(value CIM_Action) (err error) {
-	return instance.SetProperty("Action", value)
+	return instance.SetProperty("Action", (value))
 }
 
 // GetAction gets the value of Action for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_ActionCheck) GetPropertyAction() (value CIM_Action, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Action)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Action)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Action is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Action(valuetmp)
+
 	return
 }
 
 // SetCheck sets the value of Check for the instance
 func (instance *Win32_ActionCheck) SetPropertyCheck(value CIM_Check) (err error) {
-	return instance.SetProperty("Check", value)
+	return instance.SetProperty("Check", (value))
 }
 
 // GetCheck gets the value of Check for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_ActionCheck) GetPropertyCheck() (value CIM_Check, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Check)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Check)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Check is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Check(valuetmp)
+
 	return
 }

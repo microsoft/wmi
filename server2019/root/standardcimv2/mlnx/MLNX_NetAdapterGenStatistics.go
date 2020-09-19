@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_NetAdapterGenStatistics struct
@@ -109,7 +111,7 @@ func NewMLNX_NetAdapterGenStatisticsEx6(hostName string,
 
 // SetifHCInBroadcastOctets sets the value of ifHCInBroadcastOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCInBroadcastOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCInBroadcastOctets", value)
+	return instance.SetProperty("ifHCInBroadcastOctets", (value))
 }
 
 // GetifHCInBroadcastOctets gets the value of ifHCInBroadcastOctets for the instance
@@ -118,16 +120,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCInBroadcastOctets()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCInBroadcastPkts sets the value of ifHCInBroadcastPkts for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCInBroadcastPkts(value uint64) (err error) {
-	return instance.SetProperty("ifHCInBroadcastPkts", value)
+	return instance.SetProperty("ifHCInBroadcastPkts", (value))
 }
 
 // GetifHCInBroadcastPkts gets the value of ifHCInBroadcastPkts for the instance
@@ -136,16 +147,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCInBroadcastPkts() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCInMulticastOctets sets the value of ifHCInMulticastOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCInMulticastOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCInMulticastOctets", value)
+	return instance.SetProperty("ifHCInMulticastOctets", (value))
 }
 
 // GetifHCInMulticastOctets gets the value of ifHCInMulticastOctets for the instance
@@ -154,16 +174,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCInMulticastOctets()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCInMulticastPkts sets the value of ifHCInMulticastPkts for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCInMulticastPkts(value uint64) (err error) {
-	return instance.SetProperty("ifHCInMulticastPkts", value)
+	return instance.SetProperty("ifHCInMulticastPkts", (value))
 }
 
 // GetifHCInMulticastPkts gets the value of ifHCInMulticastPkts for the instance
@@ -172,16 +201,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCInMulticastPkts() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCInOctets sets the value of ifHCInOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCInOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCInOctets", value)
+	return instance.SetProperty("ifHCInOctets", (value))
 }
 
 // GetifHCInOctets gets the value of ifHCInOctets for the instance
@@ -190,16 +228,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCInOctets() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCInUcastOctets sets the value of ifHCInUcastOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCInUcastOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCInUcastOctets", value)
+	return instance.SetProperty("ifHCInUcastOctets", (value))
 }
 
 // GetifHCInUcastOctets gets the value of ifHCInUcastOctets for the instance
@@ -208,16 +255,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCInUcastOctets() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCInUcastPkts sets the value of ifHCInUcastPkts for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCInUcastPkts(value uint64) (err error) {
-	return instance.SetProperty("ifHCInUcastPkts", value)
+	return instance.SetProperty("ifHCInUcastPkts", (value))
 }
 
 // GetifHCInUcastPkts gets the value of ifHCInUcastPkts for the instance
@@ -226,16 +282,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCInUcastPkts() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCOutBroadcastOctets sets the value of ifHCOutBroadcastOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCOutBroadcastOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCOutBroadcastOctets", value)
+	return instance.SetProperty("ifHCOutBroadcastOctets", (value))
 }
 
 // GetifHCOutBroadcastOctets gets the value of ifHCOutBroadcastOctets for the instance
@@ -244,16 +309,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCOutBroadcastOctets(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCOutBroadcastPkts sets the value of ifHCOutBroadcastPkts for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCOutBroadcastPkts(value uint64) (err error) {
-	return instance.SetProperty("ifHCOutBroadcastPkts", value)
+	return instance.SetProperty("ifHCOutBroadcastPkts", (value))
 }
 
 // GetifHCOutBroadcastPkts gets the value of ifHCOutBroadcastPkts for the instance
@@ -262,16 +336,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCOutBroadcastPkts() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCOutMulticastOctets sets the value of ifHCOutMulticastOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCOutMulticastOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCOutMulticastOctets", value)
+	return instance.SetProperty("ifHCOutMulticastOctets", (value))
 }
 
 // GetifHCOutMulticastOctets gets the value of ifHCOutMulticastOctets for the instance
@@ -280,16 +363,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCOutMulticastOctets(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCOutMulticastPkts sets the value of ifHCOutMulticastPkts for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCOutMulticastPkts(value uint64) (err error) {
-	return instance.SetProperty("ifHCOutMulticastPkts", value)
+	return instance.SetProperty("ifHCOutMulticastPkts", (value))
 }
 
 // GetifHCOutMulticastPkts gets the value of ifHCOutMulticastPkts for the instance
@@ -298,16 +390,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCOutMulticastPkts() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCOutOctets sets the value of ifHCOutOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCOutOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCOutOctets", value)
+	return instance.SetProperty("ifHCOutOctets", (value))
 }
 
 // GetifHCOutOctets gets the value of ifHCOutOctets for the instance
@@ -316,16 +417,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCOutOctets() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCOutUcastOctets sets the value of ifHCOutUcastOctets for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCOutUcastOctets(value uint64) (err error) {
-	return instance.SetProperty("ifHCOutUcastOctets", value)
+	return instance.SetProperty("ifHCOutUcastOctets", (value))
 }
 
 // GetifHCOutUcastOctets gets the value of ifHCOutUcastOctets for the instance
@@ -334,16 +444,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCOutUcastOctets() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHCOutUcastPkts sets the value of ifHCOutUcastPkts for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHCOutUcastPkts(value uint64) (err error) {
-	return instance.SetProperty("ifHCOutUcastPkts", value)
+	return instance.SetProperty("ifHCOutUcastPkts", (value))
 }
 
 // GetifHCOutUcastPkts gets the value of ifHCOutUcastPkts for the instance
@@ -352,16 +471,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHCOutUcastPkts() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHInCrcError sets the value of ifHInCrcError for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHInCrcError(value uint64) (err error) {
-	return instance.SetProperty("ifHInCrcError", value)
+	return instance.SetProperty("ifHInCrcError", (value))
 }
 
 // GetifHInCrcError gets the value of ifHInCrcError for the instance
@@ -370,16 +498,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHInCrcError() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifHInCrcOverRun sets the value of ifHInCrcOverRun for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifHInCrcOverRun(value uint64) (err error) {
-	return instance.SetProperty("ifHInCrcOverRun", value)
+	return instance.SetProperty("ifHInCrcOverRun", (value))
 }
 
 // GetifHInCrcOverRun gets the value of ifHInCrcOverRun for the instance
@@ -388,16 +525,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifHInCrcOverRun() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifInDiscards sets the value of ifInDiscards for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifInDiscards(value uint64) (err error) {
-	return instance.SetProperty("ifInDiscards", value)
+	return instance.SetProperty("ifInDiscards", (value))
 }
 
 // GetifInDiscards gets the value of ifInDiscards for the instance
@@ -406,16 +552,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifInDiscards() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifInErrors sets the value of ifInErrors for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifInErrors(value uint64) (err error) {
-	return instance.SetProperty("ifInErrors", value)
+	return instance.SetProperty("ifInErrors", (value))
 }
 
 // GetifInErrors gets the value of ifInErrors for the instance
@@ -424,16 +579,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifInErrors() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifOutDiscards sets the value of ifOutDiscards for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifOutDiscards(value uint64) (err error) {
-	return instance.SetProperty("ifOutDiscards", value)
+	return instance.SetProperty("ifOutDiscards", (value))
 }
 
 // GetifOutDiscards gets the value of ifOutDiscards for the instance
@@ -442,16 +606,25 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifOutDiscards() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetifOutErrors sets the value of ifOutErrors for the instance
 func (instance *MLNX_NetAdapterGenStatistics) SetPropertyifOutErrors(value uint64) (err error) {
-	return instance.SetProperty("ifOutErrors", value)
+	return instance.SetProperty("ifOutErrors", (value))
 }
 
 // GetifOutErrors gets the value of ifOutErrors for the instance
@@ -460,9 +633,18 @@ func (instance *MLNX_NetAdapterGenStatistics) GetPropertyifOutErrors() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

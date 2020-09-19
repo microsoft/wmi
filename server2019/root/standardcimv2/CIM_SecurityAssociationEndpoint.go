@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SecurityAssociationEndpoint struct
@@ -67,7 +69,7 @@ func NewCIM_SecurityAssociationEndpointEx6(hostName string,
 
 // SetIdleDurationSeconds sets the value of IdleDurationSeconds for the instance
 func (instance *CIM_SecurityAssociationEndpoint) SetPropertyIdleDurationSeconds(value uint64) (err error) {
-	return instance.SetProperty("IdleDurationSeconds", value)
+	return instance.SetProperty("IdleDurationSeconds", (value))
 }
 
 // GetIdleDurationSeconds gets the value of IdleDurationSeconds for the instance
@@ -76,16 +78,25 @@ func (instance *CIM_SecurityAssociationEndpoint) GetPropertyIdleDurationSeconds(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLifetimeKilobytes sets the value of LifetimeKilobytes for the instance
 func (instance *CIM_SecurityAssociationEndpoint) SetPropertyLifetimeKilobytes(value uint64) (err error) {
-	return instance.SetProperty("LifetimeKilobytes", value)
+	return instance.SetProperty("LifetimeKilobytes", (value))
 }
 
 // GetLifetimeKilobytes gets the value of LifetimeKilobytes for the instance
@@ -94,16 +105,25 @@ func (instance *CIM_SecurityAssociationEndpoint) GetPropertyLifetimeKilobytes() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLifetimeSeconds sets the value of LifetimeSeconds for the instance
 func (instance *CIM_SecurityAssociationEndpoint) SetPropertyLifetimeSeconds(value uint64) (err error) {
-	return instance.SetProperty("LifetimeSeconds", value)
+	return instance.SetProperty("LifetimeSeconds", (value))
 }
 
 // GetLifetimeSeconds gets the value of LifetimeSeconds for the instance
@@ -112,16 +132,25 @@ func (instance *CIM_SecurityAssociationEndpoint) GetPropertyLifetimeSeconds() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketLoggingActive sets the value of PacketLoggingActive for the instance
 func (instance *CIM_SecurityAssociationEndpoint) SetPropertyPacketLoggingActive(value bool) (err error) {
-	return instance.SetProperty("PacketLoggingActive", value)
+	return instance.SetProperty("PacketLoggingActive", (value))
 }
 
 // GetPacketLoggingActive gets the value of PacketLoggingActive for the instance
@@ -130,16 +159,25 @@ func (instance *CIM_SecurityAssociationEndpoint) GetPropertyPacketLoggingActive(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRefreshThresholdKbytesPercentage sets the value of RefreshThresholdKbytesPercentage for the instance
 func (instance *CIM_SecurityAssociationEndpoint) SetPropertyRefreshThresholdKbytesPercentage(value uint8) (err error) {
-	return instance.SetProperty("RefreshThresholdKbytesPercentage", value)
+	return instance.SetProperty("RefreshThresholdKbytesPercentage", (value))
 }
 
 // GetRefreshThresholdKbytesPercentage gets the value of RefreshThresholdKbytesPercentage for the instance
@@ -148,16 +186,25 @@ func (instance *CIM_SecurityAssociationEndpoint) GetPropertyRefreshThresholdKbyt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRefreshThresholdSecondsPercentage sets the value of RefreshThresholdSecondsPercentage for the instance
 func (instance *CIM_SecurityAssociationEndpoint) SetPropertyRefreshThresholdSecondsPercentage(value uint8) (err error) {
-	return instance.SetProperty("RefreshThresholdSecondsPercentage", value)
+	return instance.SetProperty("RefreshThresholdSecondsPercentage", (value))
 }
 
 // GetRefreshThresholdSecondsPercentage gets the value of RefreshThresholdSecondsPercentage for the instance
@@ -166,9 +213,18 @@ func (instance *CIM_SecurityAssociationEndpoint) GetPropertyRefreshThresholdSeco
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

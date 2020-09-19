@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ResourceAllocationSettingData struct
@@ -130,7 +132,7 @@ func NewCIM_ResourceAllocationSettingDataEx6(hostName string,
 
 // SetAddress sets the value of Address for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyAddress(value string) (err error) {
-	return instance.SetProperty("Address", value)
+	return instance.SetProperty("Address", (value))
 }
 
 // GetAddress gets the value of Address for the instance
@@ -139,16 +141,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyAddress() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAddressOnParent sets the value of AddressOnParent for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyAddressOnParent(value string) (err error) {
-	return instance.SetProperty("AddressOnParent", value)
+	return instance.SetProperty("AddressOnParent", (value))
 }
 
 // GetAddressOnParent gets the value of AddressOnParent for the instance
@@ -157,16 +168,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyAddressOnParent() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllocationUnits sets the value of AllocationUnits for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyAllocationUnits(value string) (err error) {
-	return instance.SetProperty("AllocationUnits", value)
+	return instance.SetProperty("AllocationUnits", (value))
 }
 
 // GetAllocationUnits gets the value of AllocationUnits for the instance
@@ -175,16 +195,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyAllocationUnits() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutomaticAllocation sets the value of AutomaticAllocation for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyAutomaticAllocation(value bool) (err error) {
-	return instance.SetProperty("AutomaticAllocation", value)
+	return instance.SetProperty("AutomaticAllocation", (value))
 }
 
 // GetAutomaticAllocation gets the value of AutomaticAllocation for the instance
@@ -193,16 +222,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyAutomaticAllocatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAutomaticDeallocation sets the value of AutomaticDeallocation for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyAutomaticDeallocation(value bool) (err error) {
-	return instance.SetProperty("AutomaticDeallocation", value)
+	return instance.SetProperty("AutomaticDeallocation", (value))
 }
 
 // GetAutomaticDeallocation gets the value of AutomaticDeallocation for the instance
@@ -211,16 +249,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyAutomaticDeallocat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetConnection sets the value of Connection for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyConnection(value []string) (err error) {
-	return instance.SetProperty("Connection", value)
+	return instance.SetProperty("Connection", (value))
 }
 
 // GetConnection gets the value of Connection for the instance
@@ -229,16 +276,26 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyConnection() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetConsumerVisibility sets the value of ConsumerVisibility for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyConsumerVisibility(value ResourceAllocationSettingData_ConsumerVisibility) (err error) {
-	return instance.SetProperty("ConsumerVisibility", value)
+	return instance.SetProperty("ConsumerVisibility", (value))
 }
 
 // GetConsumerVisibility gets the value of ConsumerVisibility for the instance
@@ -247,16 +304,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyConsumerVisibility
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ResourceAllocationSettingData_ConsumerVisibility)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ResourceAllocationSettingData_ConsumerVisibility(valuetmp)
+
 	return
 }
 
 // SetHostResource sets the value of HostResource for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyHostResource(value []string) (err error) {
-	return instance.SetProperty("HostResource", value)
+	return instance.SetProperty("HostResource", (value))
 }
 
 // GetHostResource gets the value of HostResource for the instance
@@ -265,16 +331,26 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyHostResource() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLimit sets the value of Limit for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyLimit(value uint64) (err error) {
-	return instance.SetProperty("Limit", value)
+	return instance.SetProperty("Limit", (value))
 }
 
 // GetLimit gets the value of Limit for the instance
@@ -283,16 +359,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyLimit() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMappingBehavior sets the value of MappingBehavior for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyMappingBehavior(value ResourceAllocationSettingData_MappingBehavior) (err error) {
-	return instance.SetProperty("MappingBehavior", value)
+	return instance.SetProperty("MappingBehavior", (value))
 }
 
 // GetMappingBehavior gets the value of MappingBehavior for the instance
@@ -301,16 +386,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyMappingBehavior() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ResourceAllocationSettingData_MappingBehavior)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ResourceAllocationSettingData_MappingBehavior(valuetmp)
+
 	return
 }
 
 // SetOtherResourceType sets the value of OtherResourceType for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyOtherResourceType(value string) (err error) {
-	return instance.SetProperty("OtherResourceType", value)
+	return instance.SetProperty("OtherResourceType", (value))
 }
 
 // GetOtherResourceType gets the value of OtherResourceType for the instance
@@ -319,16 +413,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyOtherResourceType(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParent sets the value of Parent for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyParent(value string) (err error) {
-	return instance.SetProperty("Parent", value)
+	return instance.SetProperty("Parent", (value))
 }
 
 // GetParent gets the value of Parent for the instance
@@ -337,16 +440,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyParent() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPoolID sets the value of PoolID for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyPoolID(value string) (err error) {
-	return instance.SetProperty("PoolID", value)
+	return instance.SetProperty("PoolID", (value))
 }
 
 // GetPoolID gets the value of PoolID for the instance
@@ -355,16 +467,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyPoolID() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReservation sets the value of Reservation for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyReservation(value uint64) (err error) {
-	return instance.SetProperty("Reservation", value)
+	return instance.SetProperty("Reservation", (value))
 }
 
 // GetReservation gets the value of Reservation for the instance
@@ -373,16 +494,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyReservation() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceSubType sets the value of ResourceSubType for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyResourceSubType(value string) (err error) {
-	return instance.SetProperty("ResourceSubType", value)
+	return instance.SetProperty("ResourceSubType", (value))
 }
 
 // GetResourceSubType gets the value of ResourceSubType for the instance
@@ -391,16 +521,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyResourceSubType() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResourceType sets the value of ResourceType for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyResourceType(value ResourceAllocationSettingData_ResourceType) (err error) {
-	return instance.SetProperty("ResourceType", value)
+	return instance.SetProperty("ResourceType", (value))
 }
 
 // GetResourceType gets the value of ResourceType for the instance
@@ -409,16 +548,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyResourceType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ResourceAllocationSettingData_ResourceType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ResourceAllocationSettingData_ResourceType(valuetmp)
+
 	return
 }
 
 // SetVirtualQuantity sets the value of VirtualQuantity for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyVirtualQuantity(value uint64) (err error) {
-	return instance.SetProperty("VirtualQuantity", value)
+	return instance.SetProperty("VirtualQuantity", (value))
 }
 
 // GetVirtualQuantity gets the value of VirtualQuantity for the instance
@@ -427,16 +575,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyVirtualQuantity() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVirtualQuantityUnits sets the value of VirtualQuantityUnits for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyVirtualQuantityUnits(value string) (err error) {
-	return instance.SetProperty("VirtualQuantityUnits", value)
+	return instance.SetProperty("VirtualQuantityUnits", (value))
 }
 
 // GetVirtualQuantityUnits gets the value of VirtualQuantityUnits for the instance
@@ -445,16 +602,25 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyVirtualQuantityUni
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWeight sets the value of Weight for the instance
 func (instance *CIM_ResourceAllocationSettingData) SetPropertyWeight(value uint32) (err error) {
-	return instance.SetProperty("Weight", value)
+	return instance.SetProperty("Weight", (value))
 }
 
 // GetWeight gets the value of Weight for the instance
@@ -463,9 +629,18 @@ func (instance *CIM_ResourceAllocationSettingData) GetPropertyWeight() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

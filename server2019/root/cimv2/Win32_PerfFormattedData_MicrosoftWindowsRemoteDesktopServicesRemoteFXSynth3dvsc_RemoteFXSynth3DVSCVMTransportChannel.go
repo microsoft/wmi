@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel struct
@@ -85,7 +87,7 @@ func NewWin32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSyn
 
 // SetNumberofdataavailableeventwasreset sets the value of Numberofdataavailableeventwasreset for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofdataavailableeventwasreset(value uint32) (err error) {
-	return instance.SetProperty("Numberofdataavailableeventwasreset", value)
+	return instance.SetProperty("Numberofdataavailableeventwasreset", (value))
 }
 
 // GetNumberofdataavailableeventwasreset gets the value of Numberofdataavailableeventwasreset for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofdataavailableeventwasresetpersecond sets the value of Numberofdataavailableeventwasresetpersecond for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofdataavailableeventwasresetpersecond(value uint64) (err error) {
-	return instance.SetProperty("Numberofdataavailableeventwasresetpersecond", value)
+	return instance.SetProperty("Numberofdataavailableeventwasresetpersecond", (value))
 }
 
 // GetNumberofdataavailableeventwasresetpersecond gets the value of Numberofdataavailableeventwasresetpersecond for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNumberofdataavailablesignalsreceived sets the value of Numberofdataavailablesignalsreceived for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofdataavailablesignalsreceived(value uint32) (err error) {
-	return instance.SetProperty("Numberofdataavailablesignalsreceived", value)
+	return instance.SetProperty("Numberofdataavailablesignalsreceived", (value))
 }
 
 // GetNumberofdataavailablesignalsreceived gets the value of Numberofdataavailablesignalsreceived for the instance
@@ -130,16 +150,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofdataavailablesignalsreceivedpersecond sets the value of Numberofdataavailablesignalsreceivedpersecond for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofdataavailablesignalsreceivedpersecond(value uint64) (err error) {
-	return instance.SetProperty("Numberofdataavailablesignalsreceivedpersecond", value)
+	return instance.SetProperty("Numberofdataavailablesignalsreceivedpersecond", (value))
 }
 
 // GetNumberofdataavailablesignalsreceivedpersecond gets the value of Numberofdataavailablesignalsreceivedpersecond for the instance
@@ -148,16 +177,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNumberofdataavailablesignalssent sets the value of Numberofdataavailablesignalssent for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofdataavailablesignalssent(value uint32) (err error) {
-	return instance.SetProperty("Numberofdataavailablesignalssent", value)
+	return instance.SetProperty("Numberofdataavailablesignalssent", (value))
 }
 
 // GetNumberofdataavailablesignalssent gets the value of Numberofdataavailablesignalssent for the instance
@@ -166,16 +204,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofdataavailablesignalssentpersecond sets the value of Numberofdataavailablesignalssentpersecond for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofdataavailablesignalssentpersecond(value uint64) (err error) {
-	return instance.SetProperty("Numberofdataavailablesignalssentpersecond", value)
+	return instance.SetProperty("Numberofdataavailablesignalssentpersecond", (value))
 }
 
 // GetNumberofdataavailablesignalssentpersecond gets the value of Numberofdataavailablesignalssentpersecond for the instance
@@ -184,16 +231,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNumberofspaceavailableeventwasreset sets the value of Numberofspaceavailableeventwasreset for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofspaceavailableeventwasreset(value uint32) (err error) {
-	return instance.SetProperty("Numberofspaceavailableeventwasreset", value)
+	return instance.SetProperty("Numberofspaceavailableeventwasreset", (value))
 }
 
 // GetNumberofspaceavailableeventwasreset gets the value of Numberofspaceavailableeventwasreset for the instance
@@ -202,16 +258,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofspaceavailableeventwasresetpersecond sets the value of Numberofspaceavailableeventwasresetpersecond for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofspaceavailableeventwasresetpersecond(value uint64) (err error) {
-	return instance.SetProperty("Numberofspaceavailableeventwasresetpersecond", value)
+	return instance.SetProperty("Numberofspaceavailableeventwasresetpersecond", (value))
 }
 
 // GetNumberofspaceavailableeventwasresetpersecond gets the value of Numberofspaceavailableeventwasresetpersecond for the instance
@@ -220,16 +285,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNumberofspaceavailablesignalsreceived sets the value of Numberofspaceavailablesignalsreceived for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofspaceavailablesignalsreceived(value uint32) (err error) {
-	return instance.SetProperty("Numberofspaceavailablesignalsreceived", value)
+	return instance.SetProperty("Numberofspaceavailablesignalsreceived", (value))
 }
 
 // GetNumberofspaceavailablesignalsreceived gets the value of Numberofspaceavailablesignalsreceived for the instance
@@ -238,16 +312,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofspaceavailablesignalsreceivedpersecond sets the value of Numberofspaceavailablesignalsreceivedpersecond for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofspaceavailablesignalsreceivedpersecond(value uint64) (err error) {
-	return instance.SetProperty("Numberofspaceavailablesignalsreceivedpersecond", value)
+	return instance.SetProperty("Numberofspaceavailablesignalsreceivedpersecond", (value))
 }
 
 // GetNumberofspaceavailablesignalsreceivedpersecond gets the value of Numberofspaceavailablesignalsreceivedpersecond for the instance
@@ -256,16 +339,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNumberofspaceavailablesignalssent sets the value of Numberofspaceavailablesignalssent for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofspaceavailablesignalssent(value uint32) (err error) {
-	return instance.SetProperty("Numberofspaceavailablesignalssent", value)
+	return instance.SetProperty("Numberofspaceavailablesignalssent", (value))
 }
 
 // GetNumberofspaceavailablesignalssent gets the value of Numberofspaceavailablesignalssent for the instance
@@ -274,16 +366,25 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofspaceavailablesignalssentpersecond sets the value of Numberofspaceavailablesignalssentpersecond for the instance
 func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMTransportChannel) SetPropertyNumberofspaceavailablesignalssentpersecond(value uint64) (err error) {
-	return instance.SetProperty("Numberofspaceavailablesignalssentpersecond", value)
+	return instance.SetProperty("Numberofspaceavailablesignalssentpersecond", (value))
 }
 
 // GetNumberofspaceavailablesignalssentpersecond gets the value of Numberofspaceavailablesignalssentpersecond for the instance
@@ -292,9 +393,18 @@ func (instance *Win32_PerfFormattedData_MicrosoftWindowsRemoteDesktopServicesRem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

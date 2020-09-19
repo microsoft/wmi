@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_FRUIncludesProduct struct
@@ -56,7 +58,7 @@ func NewCIM_FRUIncludesProductEx6(hostName string,
 
 // SetComponent sets the value of Component for the instance
 func (instance *CIM_FRUIncludesProduct) SetPropertyComponent(value CIM_Product) (err error) {
-	return instance.SetProperty("Component", value)
+	return instance.SetProperty("Component", (value))
 }
 
 // GetComponent gets the value of Component for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_FRUIncludesProduct) GetPropertyComponent() (value CIM_Produc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }
 
 // SetFRU sets the value of FRU for the instance
 func (instance *CIM_FRUIncludesProduct) SetPropertyFRU(value CIM_FRU) (err error) {
-	return instance.SetProperty("FRU", value)
+	return instance.SetProperty("FRU", (value))
 }
 
 // GetFRU gets the value of FRU for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_FRUIncludesProduct) GetPropertyFRU() (value CIM_FRU, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_FRU)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_FRU)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_FRU is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_FRU(valuetmp)
+
 	return
 }

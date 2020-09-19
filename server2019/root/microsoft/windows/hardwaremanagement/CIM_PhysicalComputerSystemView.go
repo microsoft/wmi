@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.HardwareManagement
 //////////////////////////////////////////////
 package hardwaremanagement
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PhysicalComputerSystemView struct
@@ -253,7 +255,7 @@ func NewCIM_PhysicalComputerSystemViewEx6(hostName string,
 
 // SetCurrentBIOSBuildNumber sets the value of CurrentBIOSBuildNumber for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentBIOSBuildNumber(value uint16) (err error) {
-	return instance.SetProperty("CurrentBIOSBuildNumber", value)
+	return instance.SetProperty("CurrentBIOSBuildNumber", (value))
 }
 
 // GetCurrentBIOSBuildNumber gets the value of CurrentBIOSBuildNumber for the instance
@@ -262,16 +264,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentBIOSBuildNumbe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentBIOSMajorVersion sets the value of CurrentBIOSMajorVersion for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentBIOSMajorVersion(value uint16) (err error) {
-	return instance.SetProperty("CurrentBIOSMajorVersion", value)
+	return instance.SetProperty("CurrentBIOSMajorVersion", (value))
 }
 
 // GetCurrentBIOSMajorVersion gets the value of CurrentBIOSMajorVersion for the instance
@@ -280,16 +291,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentBIOSMajorVersi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentBIOSMinorVersion sets the value of CurrentBIOSMinorVersion for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentBIOSMinorVersion(value uint16) (err error) {
-	return instance.SetProperty("CurrentBIOSMinorVersion", value)
+	return instance.SetProperty("CurrentBIOSMinorVersion", (value))
 }
 
 // GetCurrentBIOSMinorVersion gets the value of CurrentBIOSMinorVersion for the instance
@@ -298,16 +318,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentBIOSMinorVersi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentBIOSRevisionNumber sets the value of CurrentBIOSRevisionNumber for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentBIOSRevisionNumber(value uint16) (err error) {
-	return instance.SetProperty("CurrentBIOSRevisionNumber", value)
+	return instance.SetProperty("CurrentBIOSRevisionNumber", (value))
 }
 
 // GetCurrentBIOSRevisionNumber gets the value of CurrentBIOSRevisionNumber for the instance
@@ -316,16 +345,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentBIOSRevisionNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentBIOSVersionString sets the value of CurrentBIOSVersionString for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentBIOSVersionString(value string) (err error) {
-	return instance.SetProperty("CurrentBIOSVersionString", value)
+	return instance.SetProperty("CurrentBIOSVersionString", (value))
 }
 
 // GetCurrentBIOSVersionString gets the value of CurrentBIOSVersionString for the instance
@@ -334,16 +372,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentBIOSVersionStr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCurrentManagementFirmwareBuildNumber sets the value of CurrentManagementFirmwareBuildNumber for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentManagementFirmwareBuildNumber(value uint16) (err error) {
-	return instance.SetProperty("CurrentManagementFirmwareBuildNumber", value)
+	return instance.SetProperty("CurrentManagementFirmwareBuildNumber", (value))
 }
 
 // GetCurrentManagementFirmwareBuildNumber gets the value of CurrentManagementFirmwareBuildNumber for the instance
@@ -352,16 +399,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentManagementFirm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentManagementFirmwareElementName sets the value of CurrentManagementFirmwareElementName for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentManagementFirmwareElementName(value string) (err error) {
-	return instance.SetProperty("CurrentManagementFirmwareElementName", value)
+	return instance.SetProperty("CurrentManagementFirmwareElementName", (value))
 }
 
 // GetCurrentManagementFirmwareElementName gets the value of CurrentManagementFirmwareElementName for the instance
@@ -370,16 +426,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentManagementFirm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCurrentManagementFirmwareMajorVersion sets the value of CurrentManagementFirmwareMajorVersion for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentManagementFirmwareMajorVersion(value uint16) (err error) {
-	return instance.SetProperty("CurrentManagementFirmwareMajorVersion", value)
+	return instance.SetProperty("CurrentManagementFirmwareMajorVersion", (value))
 }
 
 // GetCurrentManagementFirmwareMajorVersion gets the value of CurrentManagementFirmwareMajorVersion for the instance
@@ -388,16 +453,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentManagementFirm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentManagementFirmwareMinorVersion sets the value of CurrentManagementFirmwareMinorVersion for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentManagementFirmwareMinorVersion(value uint16) (err error) {
-	return instance.SetProperty("CurrentManagementFirmwareMinorVersion", value)
+	return instance.SetProperty("CurrentManagementFirmwareMinorVersion", (value))
 }
 
 // GetCurrentManagementFirmwareMinorVersion gets the value of CurrentManagementFirmwareMinorVersion for the instance
@@ -406,16 +480,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentManagementFirm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentManagementFirmwareRevisionNumber sets the value of CurrentManagementFirmwareRevisionNumber for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentManagementFirmwareRevisionNumber(value uint16) (err error) {
-	return instance.SetProperty("CurrentManagementFirmwareRevisionNumber", value)
+	return instance.SetProperty("CurrentManagementFirmwareRevisionNumber", (value))
 }
 
 // GetCurrentManagementFirmwareRevisionNumber gets the value of CurrentManagementFirmwareRevisionNumber for the instance
@@ -424,16 +507,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentManagementFirm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentManagementFirmwareVersionString sets the value of CurrentManagementFirmwareVersionString for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyCurrentManagementFirmwareVersionString(value string) (err error) {
-	return instance.SetProperty("CurrentManagementFirmwareVersionString", value)
+	return instance.SetProperty("CurrentManagementFirmwareVersionString", (value))
 }
 
 // GetCurrentManagementFirmwareVersionString gets the value of CurrentManagementFirmwareVersionString for the instance
@@ -442,16 +534,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyCurrentManagementFirm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDedicated sets the value of Dedicated for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyDedicated(value []uint16) (err error) {
-	return instance.SetProperty("Dedicated", value)
+	return instance.SetProperty("Dedicated", (value))
 }
 
 // GetDedicated gets the value of Dedicated for the instance
@@ -460,16 +561,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyDedicated() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetEnabledState sets the value of EnabledState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyEnabledState(value uint16) (err error) {
-	return instance.SetProperty("EnabledState", value)
+	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
@@ -478,16 +589,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyEnabledState() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetFRUInfoSupported sets the value of FRUInfoSupported for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyFRUInfoSupported(value bool) (err error) {
-	return instance.SetProperty("FRUInfoSupported", value)
+	return instance.SetProperty("FRUInfoSupported", (value))
 }
 
 // GetFRUInfoSupported gets the value of FRUInfoSupported for the instance
@@ -496,16 +616,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyFRUInfoSupported() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHealthState sets the value of HealthState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyHealthState(value uint16) (err error) {
-	return instance.SetProperty("HealthState", value)
+	return instance.SetProperty("HealthState", (value))
 }
 
 // GetHealthState gets the value of HealthState for the instance
@@ -514,16 +643,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyHealthState() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIdentifyingDescriptions sets the value of IdentifyingDescriptions for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyIdentifyingDescriptions(value []string) (err error) {
-	return instance.SetProperty("IdentifyingDescriptions", value)
+	return instance.SetProperty("IdentifyingDescriptions", (value))
 }
 
 // GetIdentifyingDescriptions gets the value of IdentifyingDescriptions for the instance
@@ -532,16 +670,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyIdentifyingDescriptio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLogCurrentNumberOfRecords sets the value of LogCurrentNumberOfRecords for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyLogCurrentNumberOfRecords(value []uint64) (err error) {
-	return instance.SetProperty("LogCurrentNumberOfRecords", value)
+	return instance.SetProperty("LogCurrentNumberOfRecords", (value))
 }
 
 // GetLogCurrentNumberOfRecords gets the value of LogCurrentNumberOfRecords for the instance
@@ -550,16 +698,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyLogCurrentNumberOfRec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint64)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint64(valuetmp))
+	}
+
 	return
 }
 
 // SetLogInstanceID sets the value of LogInstanceID for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyLogInstanceID(value []string) (err error) {
-	return instance.SetProperty("LogInstanceID", value)
+	return instance.SetProperty("LogInstanceID", (value))
 }
 
 // GetLogInstanceID gets the value of LogInstanceID for the instance
@@ -568,16 +726,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyLogInstanceID() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLogMaxNumberOfRecords sets the value of LogMaxNumberOfRecords for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyLogMaxNumberOfRecords(value []uint64) (err error) {
-	return instance.SetProperty("LogMaxNumberOfRecords", value)
+	return instance.SetProperty("LogMaxNumberOfRecords", (value))
 }
 
 // GetLogMaxNumberOfRecords gets the value of LogMaxNumberOfRecords for the instance
@@ -586,16 +754,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyLogMaxNumberOfRecords
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint64)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint64(valuetmp))
+	}
+
 	return
 }
 
 // SetLogOverwritePolicy sets the value of LogOverwritePolicy for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyLogOverwritePolicy(value []uint16) (err error) {
-	return instance.SetProperty("LogOverwritePolicy", value)
+	return instance.SetProperty("LogOverwritePolicy", (value))
 }
 
 // GetLogOverwritePolicy gets the value of LogOverwritePolicy for the instance
@@ -604,16 +782,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyLogOverwritePolicy() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetLogState sets the value of LogState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyLogState(value []uint16) (err error) {
-	return instance.SetProperty("LogState", value)
+	return instance.SetProperty("LogState", (value))
 }
 
 // GetLogState gets the value of LogState for the instance
@@ -622,16 +810,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyLogState() (value []u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -640,16 +838,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyManufacturer() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMemoryBlockSize sets the value of MemoryBlockSize for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyMemoryBlockSize(value uint64) (err error) {
-	return instance.SetProperty("MemoryBlockSize", value)
+	return instance.SetProperty("MemoryBlockSize", (value))
 }
 
 // GetMemoryBlockSize gets the value of MemoryBlockSize for the instance
@@ -658,16 +865,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyMemoryBlockSize() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryConsumableBlocks sets the value of MemoryConsumableBlocks for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyMemoryConsumableBlocks(value uint64) (err error) {
-	return instance.SetProperty("MemoryConsumableBlocks", value)
+	return instance.SetProperty("MemoryConsumableBlocks", (value))
 }
 
 // GetMemoryConsumableBlocks gets the value of MemoryConsumableBlocks for the instance
@@ -676,16 +892,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyMemoryConsumableBlock
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryNumberOfBlocks sets the value of MemoryNumberOfBlocks for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyMemoryNumberOfBlocks(value uint64) (err error) {
-	return instance.SetProperty("MemoryNumberOfBlocks", value)
+	return instance.SetProperty("MemoryNumberOfBlocks", (value))
 }
 
 // GetMemoryNumberOfBlocks gets the value of MemoryNumberOfBlocks for the instance
@@ -694,16 +919,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyMemoryNumberOfBlocks(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -712,16 +946,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyModel() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfProcessorCores sets the value of NumberOfProcessorCores for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumberOfProcessorCores(value uint16) (err error) {
-	return instance.SetProperty("NumberOfProcessorCores", value)
+	return instance.SetProperty("NumberOfProcessorCores", (value))
 }
 
 // GetNumberOfProcessorCores gets the value of NumberOfProcessorCores for the instance
@@ -730,16 +973,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumberOfProcessorCore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfProcessors sets the value of NumberOfProcessors for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumberOfProcessors(value uint16) (err error) {
-	return instance.SetProperty("NumberOfProcessors", value)
+	return instance.SetProperty("NumberOfProcessors", (value))
 }
 
 // GetNumberOfProcessors gets the value of NumberOfProcessors for the instance
@@ -748,16 +1000,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumberOfProcessors() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfProcessorThreads sets the value of NumberOfProcessorThreads for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumberOfProcessorThreads(value uint16) (err error) {
-	return instance.SetProperty("NumberOfProcessorThreads", value)
+	return instance.SetProperty("NumberOfProcessorThreads", (value))
 }
 
 // GetNumberOfProcessorThreads gets the value of NumberOfProcessorThreads for the instance
@@ -766,16 +1027,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumberOfProcessorThre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumericSensorBaseUnits sets the value of NumericSensorBaseUnits for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorBaseUnits(value []uint16) (err error) {
-	return instance.SetProperty("NumericSensorBaseUnits", value)
+	return instance.SetProperty("NumericSensorBaseUnits", (value))
 }
 
 // GetNumericSensorBaseUnits gets the value of NumericSensorBaseUnits for the instance
@@ -784,16 +1054,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorBaseUnit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorContext sets the value of NumericSensorContext for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorContext(value []string) (err error) {
-	return instance.SetProperty("NumericSensorContext", value)
+	return instance.SetProperty("NumericSensorContext", (value))
 }
 
 // GetNumericSensorContext gets the value of NumericSensorContext for the instance
@@ -802,16 +1082,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorContext(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorCurrentReading sets the value of NumericSensorCurrentReading for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorCurrentReading(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorCurrentReading", value)
+	return instance.SetProperty("NumericSensorCurrentReading", (value))
 }
 
 // GetNumericSensorCurrentReading gets the value of NumericSensorCurrentReading for the instance
@@ -820,16 +1110,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorCurrentR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorCurrentState sets the value of NumericSensorCurrentState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorCurrentState(value []string) (err error) {
-	return instance.SetProperty("NumericSensorCurrentState", value)
+	return instance.SetProperty("NumericSensorCurrentState", (value))
 }
 
 // GetNumericSensorCurrentState gets the value of NumericSensorCurrentState for the instance
@@ -838,16 +1138,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorCurrentS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorElementName sets the value of NumericSensorElementName for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorElementName(value []string) (err error) {
-	return instance.SetProperty("NumericSensorElementName", value)
+	return instance.SetProperty("NumericSensorElementName", (value))
 }
 
 // GetNumericSensorElementName gets the value of NumericSensorElementName for the instance
@@ -856,16 +1166,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorElementN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorEnabledState sets the value of NumericSensorEnabledState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorEnabledState(value []uint16) (err error) {
-	return instance.SetProperty("NumericSensorEnabledState", value)
+	return instance.SetProperty("NumericSensorEnabledState", (value))
 }
 
 // GetNumericSensorEnabledState gets the value of NumericSensorEnabledState for the instance
@@ -874,16 +1194,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorEnabledS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorHealthState sets the value of NumericSensorHealthState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorHealthState(value []uint16) (err error) {
-	return instance.SetProperty("NumericSensorHealthState", value)
+	return instance.SetProperty("NumericSensorHealthState", (value))
 }
 
 // GetNumericSensorHealthState gets the value of NumericSensorHealthState for the instance
@@ -892,16 +1222,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorHealthSt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorLowerThresholdCritical sets the value of NumericSensorLowerThresholdCritical for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorLowerThresholdCritical(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorLowerThresholdCritical", value)
+	return instance.SetProperty("NumericSensorLowerThresholdCritical", (value))
 }
 
 // GetNumericSensorLowerThresholdCritical gets the value of NumericSensorLowerThresholdCritical for the instance
@@ -910,16 +1250,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorLowerThr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorLowerThresholdFatal sets the value of NumericSensorLowerThresholdFatal for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorLowerThresholdFatal(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorLowerThresholdFatal", value)
+	return instance.SetProperty("NumericSensorLowerThresholdFatal", (value))
 }
 
 // GetNumericSensorLowerThresholdFatal gets the value of NumericSensorLowerThresholdFatal for the instance
@@ -928,16 +1278,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorLowerThr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorLowerThresholdNonCritical sets the value of NumericSensorLowerThresholdNonCritical for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorLowerThresholdNonCritical(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorLowerThresholdNonCritical", value)
+	return instance.SetProperty("NumericSensorLowerThresholdNonCritical", (value))
 }
 
 // GetNumericSensorLowerThresholdNonCritical gets the value of NumericSensorLowerThresholdNonCritical for the instance
@@ -946,16 +1306,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorLowerThr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorOtherSensorTypeDescription sets the value of NumericSensorOtherSensorTypeDescription for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorOtherSensorTypeDescription(value []string) (err error) {
-	return instance.SetProperty("NumericSensorOtherSensorTypeDescription", value)
+	return instance.SetProperty("NumericSensorOtherSensorTypeDescription", (value))
 }
 
 // GetNumericSensorOtherSensorTypeDescription gets the value of NumericSensorOtherSensorTypeDescription for the instance
@@ -964,16 +1334,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorOtherSen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorPrimaryStatus sets the value of NumericSensorPrimaryStatus for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorPrimaryStatus(value []uint16) (err error) {
-	return instance.SetProperty("NumericSensorPrimaryStatus", value)
+	return instance.SetProperty("NumericSensorPrimaryStatus", (value))
 }
 
 // GetNumericSensorPrimaryStatus gets the value of NumericSensorPrimaryStatus for the instance
@@ -982,16 +1362,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorPrimaryS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorRateUnits sets the value of NumericSensorRateUnits for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorRateUnits(value []uint16) (err error) {
-	return instance.SetProperty("NumericSensorRateUnits", value)
+	return instance.SetProperty("NumericSensorRateUnits", (value))
 }
 
 // GetNumericSensorRateUnits gets the value of NumericSensorRateUnits for the instance
@@ -1000,16 +1390,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorRateUnit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorSensorType sets the value of NumericSensorSensorType for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorSensorType(value []uint16) (err error) {
-	return instance.SetProperty("NumericSensorSensorType", value)
+	return instance.SetProperty("NumericSensorSensorType", (value))
 }
 
 // GetNumericSensorSensorType gets the value of NumericSensorSensorType for the instance
@@ -1018,16 +1418,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorSensorTy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorUnitModifier sets the value of NumericSensorUnitModifier for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorUnitModifier(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorUnitModifier", value)
+	return instance.SetProperty("NumericSensorUnitModifier", (value))
 }
 
 // GetNumericSensorUnitModifier gets the value of NumericSensorUnitModifier for the instance
@@ -1036,16 +1446,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorUnitModi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorUpperThresholdCritical sets the value of NumericSensorUpperThresholdCritical for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorUpperThresholdCritical(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorUpperThresholdCritical", value)
+	return instance.SetProperty("NumericSensorUpperThresholdCritical", (value))
 }
 
 // GetNumericSensorUpperThresholdCritical gets the value of NumericSensorUpperThresholdCritical for the instance
@@ -1054,16 +1474,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorUpperThr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorUpperThresholdFatal sets the value of NumericSensorUpperThresholdFatal for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorUpperThresholdFatal(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorUpperThresholdFatal", value)
+	return instance.SetProperty("NumericSensorUpperThresholdFatal", (value))
 }
 
 // GetNumericSensorUpperThresholdFatal gets the value of NumericSensorUpperThresholdFatal for the instance
@@ -1072,16 +1502,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorUpperThr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetNumericSensorUpperThresholdNonCritical sets the value of NumericSensorUpperThresholdNonCritical for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyNumericSensorUpperThresholdNonCritical(value []int32) (err error) {
-	return instance.SetProperty("NumericSensorUpperThresholdNonCritical", value)
+	return instance.SetProperty("NumericSensorUpperThresholdNonCritical", (value))
 }
 
 // GetNumericSensorUpperThresholdNonCritical gets the value of NumericSensorUpperThresholdNonCritical for the instance
@@ -1090,16 +1530,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyNumericSensorUpperThr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, int32(valuetmp))
+	}
+
 	return
 }
 
 // SetOneTimeBootSource sets the value of OneTimeBootSource for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyOneTimeBootSource(value uint8) (err error) {
-	return instance.SetProperty("OneTimeBootSource", value)
+	return instance.SetProperty("OneTimeBootSource", (value))
 }
 
 // GetOneTimeBootSource gets the value of OneTimeBootSource for the instance
@@ -1108,16 +1558,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyOneTimeBootSource() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -1126,16 +1585,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyOperationalStatus() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetOSEnabledState sets the value of OSEnabledState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyOSEnabledState(value uint16) (err error) {
-	return instance.SetProperty("OSEnabledState", value)
+	return instance.SetProperty("OSEnabledState", (value))
 }
 
 // GetOSEnabledState gets the value of OSEnabledState for the instance
@@ -1144,16 +1613,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyOSEnabledState() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOSType sets the value of OSType for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyOSType(value uint16) (err error) {
-	return instance.SetProperty("OSType", value)
+	return instance.SetProperty("OSType", (value))
 }
 
 // GetOSType gets the value of OSType for the instance
@@ -1162,16 +1640,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyOSType() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOSVersion sets the value of OSVersion for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyOSVersion(value string) (err error) {
-	return instance.SetProperty("OSVersion", value)
+	return instance.SetProperty("OSVersion", (value))
 }
 
 // GetOSVersion gets the value of OSVersion for the instance
@@ -1180,16 +1667,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyOSVersion() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherDedicatedDescriptions sets the value of OtherDedicatedDescriptions for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyOtherDedicatedDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherDedicatedDescriptions", value)
+	return instance.SetProperty("OtherDedicatedDescriptions", (value))
 }
 
 // GetOtherDedicatedDescriptions gets the value of OtherDedicatedDescriptions for the instance
@@ -1198,16 +1694,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyOtherDedicatedDescrip
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherIdentifyingInfo sets the value of OtherIdentifyingInfo for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyOtherIdentifyingInfo(value []string) (err error) {
-	return instance.SetProperty("OtherIdentifyingInfo", value)
+	return instance.SetProperty("OtherIdentifyingInfo", (value))
 }
 
 // GetOtherIdentifyingInfo gets the value of OtherIdentifyingInfo for the instance
@@ -1216,16 +1722,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyOtherIdentifyingInfo(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPartNumber sets the value of PartNumber for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyPartNumber(value string) (err error) {
-	return instance.SetProperty("PartNumber", value)
+	return instance.SetProperty("PartNumber", (value))
 }
 
 // GetPartNumber gets the value of PartNumber for the instance
@@ -1234,16 +1750,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyPartNumber() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPersistentBootConfigOrder sets the value of PersistentBootConfigOrder for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyPersistentBootConfigOrder(value []uint8) (err error) {
-	return instance.SetProperty("PersistentBootConfigOrder", value)
+	return instance.SetProperty("PersistentBootConfigOrder", (value))
 }
 
 // GetPersistentBootConfigOrder gets the value of PersistentBootConfigOrder for the instance
@@ -1252,16 +1777,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyPersistentBootConfigO
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetPowerAllocationLimit sets the value of PowerAllocationLimit for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyPowerAllocationLimit(value uint64) (err error) {
-	return instance.SetProperty("PowerAllocationLimit", value)
+	return instance.SetProperty("PowerAllocationLimit", (value))
 }
 
 // GetPowerAllocationLimit gets the value of PowerAllocationLimit for the instance
@@ -1270,16 +1805,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyPowerAllocationLimit(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPowerUtilizationMode sets the value of PowerUtilizationMode for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyPowerUtilizationMode(value uint16) (err error) {
-	return instance.SetProperty("PowerUtilizationMode", value)
+	return instance.SetProperty("PowerUtilizationMode", (value))
 }
 
 // GetPowerUtilizationMode gets the value of PowerUtilizationMode for the instance
@@ -1288,16 +1832,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyPowerUtilizationMode(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPowerUtilizationModesSupported sets the value of PowerUtilizationModesSupported for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyPowerUtilizationModesSupported(value []uint16) (err error) {
-	return instance.SetProperty("PowerUtilizationModesSupported", value)
+	return instance.SetProperty("PowerUtilizationModesSupported", (value))
 }
 
 // GetPowerUtilizationModesSupported gets the value of PowerUtilizationModesSupported for the instance
@@ -1306,16 +1859,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyPowerUtilizationModes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetProcessorCurrentClockSpeed sets the value of ProcessorCurrentClockSpeed for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyProcessorCurrentClockSpeed(value uint32) (err error) {
-	return instance.SetProperty("ProcessorCurrentClockSpeed", value)
+	return instance.SetProperty("ProcessorCurrentClockSpeed", (value))
 }
 
 // GetProcessorCurrentClockSpeed gets the value of ProcessorCurrentClockSpeed for the instance
@@ -1324,16 +1887,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyProcessorCurrentClock
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessorFamily sets the value of ProcessorFamily for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyProcessorFamily(value uint16) (err error) {
-	return instance.SetProperty("ProcessorFamily", value)
+	return instance.SetProperty("ProcessorFamily", (value))
 }
 
 // GetProcessorFamily gets the value of ProcessorFamily for the instance
@@ -1342,16 +1914,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyProcessorFamily() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProcessorMaxClockSpeed sets the value of ProcessorMaxClockSpeed for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyProcessorMaxClockSpeed(value uint32) (err error) {
-	return instance.SetProperty("ProcessorMaxClockSpeed", value)
+	return instance.SetProperty("ProcessorMaxClockSpeed", (value))
 }
 
 // GetProcessorMaxClockSpeed gets the value of ProcessorMaxClockSpeed for the instance
@@ -1360,16 +1941,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyProcessorMaxClockSpee
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRequestedState sets the value of RequestedState for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyRequestedState(value uint16) (err error) {
-	return instance.SetProperty("RequestedState", value)
+	return instance.SetProperty("RequestedState", (value))
 }
 
 // GetRequestedState gets the value of RequestedState for the instance
@@ -1378,16 +1968,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyRequestedState() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -1396,16 +1995,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertySerialNumber() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSKU sets the value of SKU for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertySKU(value string) (err error) {
-	return instance.SetProperty("SKU", value)
+	return instance.SetProperty("SKU", (value))
 }
 
 // GetSKU gets the value of SKU for the instance
@@ -1414,16 +2022,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertySKU() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStructuredBootString sets the value of StructuredBootString for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyStructuredBootString(value []string) (err error) {
-	return instance.SetProperty("StructuredBootString", value)
+	return instance.SetProperty("StructuredBootString", (value))
 }
 
 // GetStructuredBootString gets the value of StructuredBootString for the instance
@@ -1432,16 +2049,26 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyStructuredBootString(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTag sets the value of Tag for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyTag(value string) (err error) {
-	return instance.SetProperty("Tag", value)
+	return instance.SetProperty("Tag", (value))
 }
 
 // GetTag gets the value of Tag for the instance
@@ -1450,16 +2077,25 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyTag() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *CIM_PhysicalComputerSystemView) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -1468,10 +2104,19 @@ func (instance *CIM_PhysicalComputerSystemView) GetPropertyVersion() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

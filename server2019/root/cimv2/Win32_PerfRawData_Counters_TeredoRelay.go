@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_TeredoRelay struct
@@ -115,7 +117,7 @@ func NewWin32_PerfRawData_Counters_TeredoRelayEx6(hostName string,
 
 // SetInTeredoRelayErrorPacketsDestinationError sets the value of InTeredoRelayErrorPacketsDestinationError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelayErrorPacketsDestinationError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRelayErrorPacketsDestinationError", value)
+	return instance.SetProperty("InTeredoRelayErrorPacketsDestinationError", (value))
 }
 
 // GetInTeredoRelayErrorPacketsDestinationError gets the value of InTeredoRelayErrorPacketsDestinationError for the instance
@@ -124,16 +126,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelayErrorPacketsHeaderError sets the value of InTeredoRelayErrorPacketsHeaderError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelayErrorPacketsHeaderError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRelayErrorPacketsHeaderError", value)
+	return instance.SetProperty("InTeredoRelayErrorPacketsHeaderError", (value))
 }
 
 // GetInTeredoRelayErrorPacketsHeaderError gets the value of InTeredoRelayErrorPacketsHeaderError for the instance
@@ -142,16 +153,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelayErrorPacketsSourceError sets the value of InTeredoRelayErrorPacketsSourceError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelayErrorPacketsSourceError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRelayErrorPacketsSourceError", value)
+	return instance.SetProperty("InTeredoRelayErrorPacketsSourceError", (value))
 }
 
 // GetInTeredoRelayErrorPacketsSourceError gets the value of InTeredoRelayErrorPacketsSourceError for the instance
@@ -160,16 +180,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelayErrorPacketsTotal sets the value of InTeredoRelayErrorPacketsTotal for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelayErrorPacketsTotal(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRelayErrorPacketsTotal", value)
+	return instance.SetProperty("InTeredoRelayErrorPacketsTotal", (value))
 }
 
 // GetInTeredoRelayErrorPacketsTotal gets the value of InTeredoRelayErrorPacketsTotal for the instance
@@ -178,16 +207,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelaySuccessPacketsBubbles sets the value of InTeredoRelaySuccessPacketsBubbles for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelaySuccessPacketsBubbles(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRelaySuccessPacketsBubbles", value)
+	return instance.SetProperty("InTeredoRelaySuccessPacketsBubbles", (value))
 }
 
 // GetInTeredoRelaySuccessPacketsBubbles gets the value of InTeredoRelaySuccessPacketsBubbles for the instance
@@ -196,16 +234,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelaySuccessPacketsDataPackets sets the value of InTeredoRelaySuccessPacketsDataPackets for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelaySuccessPacketsDataPackets(value uint64) (err error) {
-	return instance.SetProperty("InTeredoRelaySuccessPacketsDataPackets", value)
+	return instance.SetProperty("InTeredoRelaySuccessPacketsDataPackets", (value))
 }
 
 // GetInTeredoRelaySuccessPacketsDataPackets gets the value of InTeredoRelaySuccessPacketsDataPackets for the instance
@@ -214,16 +261,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelaySuccessPacketsDataPacketsKernelMode sets the value of InTeredoRelaySuccessPacketsDataPacketsKernelMode for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelaySuccessPacketsDataPacketsKernelMode(value uint64) (err error) {
-	return instance.SetProperty("InTeredoRelaySuccessPacketsDataPacketsKernelMode", value)
+	return instance.SetProperty("InTeredoRelaySuccessPacketsDataPacketsKernelMode", (value))
 }
 
 // GetInTeredoRelaySuccessPacketsDataPacketsKernelMode gets the value of InTeredoRelaySuccessPacketsDataPacketsKernelMode for the instance
@@ -232,16 +288,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelaySuccessPacketsDataPacketsUserMode sets the value of InTeredoRelaySuccessPacketsDataPacketsUserMode for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelaySuccessPacketsDataPacketsUserMode(value uint64) (err error) {
-	return instance.SetProperty("InTeredoRelaySuccessPacketsDataPacketsUserMode", value)
+	return instance.SetProperty("InTeredoRelaySuccessPacketsDataPacketsUserMode", (value))
 }
 
 // GetInTeredoRelaySuccessPacketsDataPacketsUserMode gets the value of InTeredoRelaySuccessPacketsDataPacketsUserMode for the instance
@@ -250,16 +315,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelaySuccessPacketsTotal sets the value of InTeredoRelaySuccessPacketsTotal for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelaySuccessPacketsTotal(value uint64) (err error) {
-	return instance.SetProperty("InTeredoRelaySuccessPacketsTotal", value)
+	return instance.SetProperty("InTeredoRelaySuccessPacketsTotal", (value))
 }
 
 // GetInTeredoRelaySuccessPacketsTotal gets the value of InTeredoRelaySuccessPacketsTotal for the instance
@@ -268,16 +342,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelayTotalPacketsSuccessError sets the value of InTeredoRelayTotalPacketsSuccessError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelayTotalPacketsSuccessError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRelayTotalPacketsSuccessError", value)
+	return instance.SetProperty("InTeredoRelayTotalPacketsSuccessError", (value))
 }
 
 // GetInTeredoRelayTotalPacketsSuccessError gets the value of InTeredoRelayTotalPacketsSuccessError for the instance
@@ -286,16 +369,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoRelayTotalPacketsSuccessErrorPersec sets the value of InTeredoRelayTotalPacketsSuccessErrorPersec for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyInTeredoRelayTotalPacketsSuccessErrorPersec(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRelayTotalPacketsSuccessErrorPersec", value)
+	return instance.SetProperty("InTeredoRelayTotalPacketsSuccessErrorPersec", (value))
 }
 
 // GetInTeredoRelayTotalPacketsSuccessErrorPersec gets the value of InTeredoRelayTotalPacketsSuccessErrorPersec for the instance
@@ -304,16 +396,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyInTeredoRelay
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelayErrorPackets sets the value of OutTeredoRelayErrorPackets for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelayErrorPackets(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRelayErrorPackets", value)
+	return instance.SetProperty("OutTeredoRelayErrorPackets", (value))
 }
 
 // GetOutTeredoRelayErrorPackets gets the value of OutTeredoRelayErrorPackets for the instance
@@ -322,16 +423,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelayErrorPacketsDestinationError sets the value of OutTeredoRelayErrorPacketsDestinationError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelayErrorPacketsDestinationError(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRelayErrorPacketsDestinationError", value)
+	return instance.SetProperty("OutTeredoRelayErrorPacketsDestinationError", (value))
 }
 
 // GetOutTeredoRelayErrorPacketsDestinationError gets the value of OutTeredoRelayErrorPacketsDestinationError for the instance
@@ -340,16 +450,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelayErrorPacketsHeaderError sets the value of OutTeredoRelayErrorPacketsHeaderError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelayErrorPacketsHeaderError(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRelayErrorPacketsHeaderError", value)
+	return instance.SetProperty("OutTeredoRelayErrorPacketsHeaderError", (value))
 }
 
 // GetOutTeredoRelayErrorPacketsHeaderError gets the value of OutTeredoRelayErrorPacketsHeaderError for the instance
@@ -358,16 +477,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelayErrorPacketsSourceError sets the value of OutTeredoRelayErrorPacketsSourceError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelayErrorPacketsSourceError(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRelayErrorPacketsSourceError", value)
+	return instance.SetProperty("OutTeredoRelayErrorPacketsSourceError", (value))
 }
 
 // GetOutTeredoRelayErrorPacketsSourceError gets the value of OutTeredoRelayErrorPacketsSourceError for the instance
@@ -376,16 +504,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelaySuccessPackets sets the value of OutTeredoRelaySuccessPackets for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelaySuccessPackets(value uint64) (err error) {
-	return instance.SetProperty("OutTeredoRelaySuccessPackets", value)
+	return instance.SetProperty("OutTeredoRelaySuccessPackets", (value))
 }
 
 // GetOutTeredoRelaySuccessPackets gets the value of OutTeredoRelaySuccessPackets for the instance
@@ -394,16 +531,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelaySuccessPacketsBubbles sets the value of OutTeredoRelaySuccessPacketsBubbles for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelaySuccessPacketsBubbles(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRelaySuccessPacketsBubbles", value)
+	return instance.SetProperty("OutTeredoRelaySuccessPacketsBubbles", (value))
 }
 
 // GetOutTeredoRelaySuccessPacketsBubbles gets the value of OutTeredoRelaySuccessPacketsBubbles for the instance
@@ -412,16 +558,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelaySuccessPacketsDataPackets sets the value of OutTeredoRelaySuccessPacketsDataPackets for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelaySuccessPacketsDataPackets(value uint64) (err error) {
-	return instance.SetProperty("OutTeredoRelaySuccessPacketsDataPackets", value)
+	return instance.SetProperty("OutTeredoRelaySuccessPacketsDataPackets", (value))
 }
 
 // GetOutTeredoRelaySuccessPacketsDataPackets gets the value of OutTeredoRelaySuccessPacketsDataPackets for the instance
@@ -430,16 +585,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelaySuccessPacketsDataPacketsKernelMode sets the value of OutTeredoRelaySuccessPacketsDataPacketsKernelMode for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelaySuccessPacketsDataPacketsKernelMode(value uint64) (err error) {
-	return instance.SetProperty("OutTeredoRelaySuccessPacketsDataPacketsKernelMode", value)
+	return instance.SetProperty("OutTeredoRelaySuccessPacketsDataPacketsKernelMode", (value))
 }
 
 // GetOutTeredoRelaySuccessPacketsDataPacketsKernelMode gets the value of OutTeredoRelaySuccessPacketsDataPacketsKernelMode for the instance
@@ -448,16 +612,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelaySuccessPacketsDataPacketsUserMode sets the value of OutTeredoRelaySuccessPacketsDataPacketsUserMode for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelaySuccessPacketsDataPacketsUserMode(value uint64) (err error) {
-	return instance.SetProperty("OutTeredoRelaySuccessPacketsDataPacketsUserMode", value)
+	return instance.SetProperty("OutTeredoRelaySuccessPacketsDataPacketsUserMode", (value))
 }
 
 // GetOutTeredoRelaySuccessPacketsDataPacketsUserMode gets the value of OutTeredoRelaySuccessPacketsDataPacketsUserMode for the instance
@@ -466,16 +639,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelayTotalPacketsSuccessError sets the value of OutTeredoRelayTotalPacketsSuccessError for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelayTotalPacketsSuccessError(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRelayTotalPacketsSuccessError", value)
+	return instance.SetProperty("OutTeredoRelayTotalPacketsSuccessError", (value))
 }
 
 // GetOutTeredoRelayTotalPacketsSuccessError gets the value of OutTeredoRelayTotalPacketsSuccessError for the instance
@@ -484,16 +666,25 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRelayTotalPacketsSuccessErrorPersec sets the value of OutTeredoRelayTotalPacketsSuccessErrorPersec for the instance
 func (instance *Win32_PerfRawData_Counters_TeredoRelay) SetPropertyOutTeredoRelayTotalPacketsSuccessErrorPersec(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRelayTotalPacketsSuccessErrorPersec", value)
+	return instance.SetProperty("OutTeredoRelayTotalPacketsSuccessErrorPersec", (value))
 }
 
 // GetOutTeredoRelayTotalPacketsSuccessErrorPersec gets the value of OutTeredoRelayTotalPacketsSuccessErrorPersec for the instance
@@ -502,9 +693,18 @@ func (instance *Win32_PerfRawData_Counters_TeredoRelay) GetPropertyOutTeredoRela
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

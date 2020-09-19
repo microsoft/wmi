@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MTRegistryKey struct
@@ -58,7 +60,7 @@ func NewMSFT_MTRegistryKeyEx6(hostName string,
 
 // SetModified sets the value of Modified for the instance
 func (instance *MSFT_MTRegistryKey) SetPropertyModified(value string) (err error) {
-	return instance.SetProperty("Modified", value)
+	return instance.SetProperty("Modified", (value))
 }
 
 // GetModified gets the value of Modified for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_MTRegistryKey) GetPropertyModified() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSubKeyCount sets the value of SubKeyCount for the instance
 func (instance *MSFT_MTRegistryKey) SetPropertySubKeyCount(value uint32) (err error) {
-	return instance.SetProperty("SubKeyCount", value)
+	return instance.SetProperty("SubKeyCount", (value))
 }
 
 // GetSubKeyCount gets the value of SubKeyCount for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_MTRegistryKey) GetPropertySubKeyCount() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetValueCount sets the value of ValueCount for the instance
 func (instance *MSFT_MTRegistryKey) SetPropertyValueCount(value uint32) (err error) {
-	return instance.SetProperty("ValueCount", value)
+	return instance.SetProperty("ValueCount", (value))
 }
 
 // GetValueCount gets the value of ValueCount for the instance
@@ -103,10 +123,19 @@ func (instance *MSFT_MTRegistryKey) GetPropertyValueCount() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

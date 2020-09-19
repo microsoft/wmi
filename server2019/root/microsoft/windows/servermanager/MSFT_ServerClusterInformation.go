@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerClusterInformation struct
@@ -59,7 +61,7 @@ func NewMSFT_ServerClusterInformationEx6(hostName string,
 
 // SetGroupType sets the value of GroupType for the instance
 func (instance *MSFT_ServerClusterInformation) SetPropertyGroupType(value int32) (err error) {
-	return instance.SetProperty("GroupType", value)
+	return instance.SetProperty("GroupType", (value))
 }
 
 // GetGroupType gets the value of GroupType for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_ServerClusterInformation) GetPropertyGroupType() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_ServerClusterInformation) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_ServerClusterInformation) GetPropertyName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetObjectType sets the value of ObjectType for the instance
 func (instance *MSFT_ServerClusterInformation) SetPropertyObjectType(value uint8) (err error) {
-	return instance.SetProperty("ObjectType", value)
+	return instance.SetProperty("ObjectType", (value))
 }
 
 // GetObjectType gets the value of ObjectType for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_ServerClusterInformation) GetPropertyObjectType() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

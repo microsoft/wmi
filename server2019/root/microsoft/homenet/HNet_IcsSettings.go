@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_IcsSettings struct
@@ -59,7 +61,7 @@ func NewHNet_IcsSettingsEx6(hostName string,
 
 // SetDhcpEnabled sets the value of DhcpEnabled for the instance
 func (instance *HNet_IcsSettings) SetPropertyDhcpEnabled(value bool) (err error) {
-	return instance.SetProperty("DhcpEnabled", value)
+	return instance.SetProperty("DhcpEnabled", (value))
 }
 
 // GetDhcpEnabled gets the value of DhcpEnabled for the instance
@@ -68,16 +70,25 @@ func (instance *HNet_IcsSettings) GetPropertyDhcpEnabled() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDnsEnabled sets the value of DnsEnabled for the instance
 func (instance *HNet_IcsSettings) SetPropertyDnsEnabled(value bool) (err error) {
-	return instance.SetProperty("DnsEnabled", value)
+	return instance.SetProperty("DnsEnabled", (value))
 }
 
 // GetDnsEnabled gets the value of DnsEnabled for the instance
@@ -86,16 +97,25 @@ func (instance *HNet_IcsSettings) GetPropertyDnsEnabled() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *HNet_IcsSettings) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -104,9 +124,18 @@ func (instance *HNet_IcsSettings) GetPropertyId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

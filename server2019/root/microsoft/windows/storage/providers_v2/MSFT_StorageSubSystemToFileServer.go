@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageSubSystemToFileServer struct
@@ -56,7 +58,7 @@ func NewMSFT_StorageSubSystemToFileServerEx6(hostName string,
 
 // SetFileServer sets the value of FileServer for the instance
 func (instance *MSFT_StorageSubSystemToFileServer) SetPropertyFileServer(value MSFT_FileServer) (err error) {
-	return instance.SetProperty("FileServer", value)
+	return instance.SetProperty("FileServer", (value))
 }
 
 // GetFileServer gets the value of FileServer for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_StorageSubSystemToFileServer) GetPropertyFileServer() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_FileServer)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_FileServer)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_FileServer is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_FileServer(valuetmp)
+
 	return
 }
 
 // SetStorageSubSystem sets the value of StorageSubSystem for the instance
 func (instance *MSFT_StorageSubSystemToFileServer) SetPropertyStorageSubSystem(value MSFT_StorageSubSystem) (err error) {
-	return instance.SetProperty("StorageSubSystem", value)
+	return instance.SetProperty("StorageSubSystem", (value))
 }
 
 // GetStorageSubSystem gets the value of StorageSubSystem for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_StorageSubSystemToFileServer) GetPropertyStorageSubSystem()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageSubSystem)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageSubSystem)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageSubSystem is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageSubSystem(valuetmp)
+
 	return
 }

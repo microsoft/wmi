@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemCollection struct
@@ -67,7 +69,7 @@ func NewMsvm_VirtualSystemCollectionEx6(hostName string,
 
 // SetFailedOverReplicationType sets the value of FailedOverReplicationType for the instance
 func (instance *Msvm_VirtualSystemCollection) SetPropertyFailedOverReplicationType(value uint16) (err error) {
-	return instance.SetProperty("FailedOverReplicationType", value)
+	return instance.SetProperty("FailedOverReplicationType", (value))
 }
 
 // GetFailedOverReplicationType gets the value of FailedOverReplicationType for the instance
@@ -76,16 +78,25 @@ func (instance *Msvm_VirtualSystemCollection) GetPropertyFailedOverReplicationTy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLastApplyConsistencyLevel sets the value of LastApplyConsistencyLevel for the instance
 func (instance *Msvm_VirtualSystemCollection) SetPropertyLastApplyConsistencyLevel(value uint16) (err error) {
-	return instance.SetProperty("LastApplyConsistencyLevel", value)
+	return instance.SetProperty("LastApplyConsistencyLevel", (value))
 }
 
 // GetLastApplyConsistencyLevel gets the value of LastApplyConsistencyLevel for the instance
@@ -94,16 +105,25 @@ func (instance *Msvm_VirtualSystemCollection) GetPropertyLastApplyConsistencyLev
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLastApplyTime sets the value of LastApplyTime for the instance
 func (instance *Msvm_VirtualSystemCollection) SetPropertyLastApplyTime(value string) (err error) {
-	return instance.SetProperty("LastApplyTime", value)
+	return instance.SetProperty("LastApplyTime", (value))
 }
 
 // GetLastApplyTime gets the value of LastApplyTime for the instance
@@ -112,16 +132,25 @@ func (instance *Msvm_VirtualSystemCollection) GetPropertyLastApplyTime() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastApplyVirtualMachineIds sets the value of LastApplyVirtualMachineIds for the instance
 func (instance *Msvm_VirtualSystemCollection) SetPropertyLastApplyVirtualMachineIds(value []string) (err error) {
-	return instance.SetProperty("LastApplyVirtualMachineIds", value)
+	return instance.SetProperty("LastApplyVirtualMachineIds", (value))
 }
 
 // GetLastApplyVirtualMachineIds gets the value of LastApplyVirtualMachineIds for the instance
@@ -130,16 +159,26 @@ func (instance *Msvm_VirtualSystemCollection) GetPropertyLastApplyVirtualMachine
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetReplicationMode sets the value of ReplicationMode for the instance
 func (instance *Msvm_VirtualSystemCollection) SetPropertyReplicationMode(value uint16) (err error) {
-	return instance.SetProperty("ReplicationMode", value)
+	return instance.SetProperty("ReplicationMode", (value))
 }
 
 // GetReplicationMode gets the value of ReplicationMode for the instance
@@ -148,16 +187,25 @@ func (instance *Msvm_VirtualSystemCollection) GetPropertyReplicationMode() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicationState sets the value of ReplicationState for the instance
 func (instance *Msvm_VirtualSystemCollection) SetPropertyReplicationState(value uint16) (err error) {
-	return instance.SetProperty("ReplicationState", value)
+	return instance.SetProperty("ReplicationState", (value))
 }
 
 // GetReplicationState gets the value of ReplicationState for the instance
@@ -166,9 +214,18 @@ func (instance *Msvm_VirtualSystemCollection) GetPropertyReplicationState() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

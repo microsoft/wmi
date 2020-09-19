@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_PerfProc_Process struct
@@ -133,7 +135,7 @@ func NewWin32_PerfRawData_PerfProc_ProcessEx6(hostName string,
 
 // SetCreatingProcessID sets the value of CreatingProcessID for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyCreatingProcessID(value uint32) (err error) {
-	return instance.SetProperty("CreatingProcessID", value)
+	return instance.SetProperty("CreatingProcessID", (value))
 }
 
 // GetCreatingProcessID gets the value of CreatingProcessID for the instance
@@ -142,16 +144,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyCreatingProcessID
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetElapsedTime sets the value of ElapsedTime for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyElapsedTime(value uint64) (err error) {
-	return instance.SetProperty("ElapsedTime", value)
+	return instance.SetProperty("ElapsedTime", (value))
 }
 
 // GetElapsedTime gets the value of ElapsedTime for the instance
@@ -160,16 +171,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyElapsedTime() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetHandleCount sets the value of HandleCount for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyHandleCount(value uint32) (err error) {
-	return instance.SetProperty("HandleCount", value)
+	return instance.SetProperty("HandleCount", (value))
 }
 
 // GetHandleCount gets the value of HandleCount for the instance
@@ -178,16 +198,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyHandleCount() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIDProcess sets the value of IDProcess for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIDProcess(value uint32) (err error) {
-	return instance.SetProperty("IDProcess", value)
+	return instance.SetProperty("IDProcess", (value))
 }
 
 // GetIDProcess gets the value of IDProcess for the instance
@@ -196,16 +225,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIDProcess() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIODataBytesPersec sets the value of IODataBytesPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIODataBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IODataBytesPersec", value)
+	return instance.SetProperty("IODataBytesPersec", (value))
 }
 
 // GetIODataBytesPersec gets the value of IODataBytesPersec for the instance
@@ -214,16 +252,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIODataBytesPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIODataOperationsPersec sets the value of IODataOperationsPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIODataOperationsPersec(value uint64) (err error) {
-	return instance.SetProperty("IODataOperationsPersec", value)
+	return instance.SetProperty("IODataOperationsPersec", (value))
 }
 
 // GetIODataOperationsPersec gets the value of IODataOperationsPersec for the instance
@@ -232,16 +279,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIODataOperationsP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOOtherBytesPersec sets the value of IOOtherBytesPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIOOtherBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOOtherBytesPersec", value)
+	return instance.SetProperty("IOOtherBytesPersec", (value))
 }
 
 // GetIOOtherBytesPersec gets the value of IOOtherBytesPersec for the instance
@@ -250,16 +306,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIOOtherBytesPerse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOOtherOperationsPersec sets the value of IOOtherOperationsPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIOOtherOperationsPersec(value uint64) (err error) {
-	return instance.SetProperty("IOOtherOperationsPersec", value)
+	return instance.SetProperty("IOOtherOperationsPersec", (value))
 }
 
 // GetIOOtherOperationsPersec gets the value of IOOtherOperationsPersec for the instance
@@ -268,16 +333,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIOOtherOperations
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadBytesPersec sets the value of IOReadBytesPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIOReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOReadBytesPersec", value)
+	return instance.SetProperty("IOReadBytesPersec", (value))
 }
 
 // GetIOReadBytesPersec gets the value of IOReadBytesPersec for the instance
@@ -286,16 +360,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIOReadBytesPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadOperationsPersec sets the value of IOReadOperationsPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIOReadOperationsPersec(value uint64) (err error) {
-	return instance.SetProperty("IOReadOperationsPersec", value)
+	return instance.SetProperty("IOReadOperationsPersec", (value))
 }
 
 // GetIOReadOperationsPersec gets the value of IOReadOperationsPersec for the instance
@@ -304,16 +387,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIOReadOperationsP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWriteBytesPersec sets the value of IOWriteBytesPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIOWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOWriteBytesPersec", value)
+	return instance.SetProperty("IOWriteBytesPersec", (value))
 }
 
 // GetIOWriteBytesPersec gets the value of IOWriteBytesPersec for the instance
@@ -322,16 +414,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIOWriteBytesPerse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWriteOperationsPersec sets the value of IOWriteOperationsPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyIOWriteOperationsPersec(value uint64) (err error) {
-	return instance.SetProperty("IOWriteOperationsPersec", value)
+	return instance.SetProperty("IOWriteOperationsPersec", (value))
 }
 
 // GetIOWriteOperationsPersec gets the value of IOWriteOperationsPersec for the instance
@@ -340,16 +441,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyIOWriteOperations
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPageFaultsPersec sets the value of PageFaultsPersec for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPageFaultsPersec(value uint32) (err error) {
-	return instance.SetProperty("PageFaultsPersec", value)
+	return instance.SetProperty("PageFaultsPersec", (value))
 }
 
 // GetPageFaultsPersec gets the value of PageFaultsPersec for the instance
@@ -358,16 +468,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPageFaultsPersec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPageFileBytes sets the value of PageFileBytes for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPageFileBytes(value uint64) (err error) {
-	return instance.SetProperty("PageFileBytes", value)
+	return instance.SetProperty("PageFileBytes", (value))
 }
 
 // GetPageFileBytes gets the value of PageFileBytes for the instance
@@ -376,16 +495,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPageFileBytes() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPageFileBytesPeak sets the value of PageFileBytesPeak for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPageFileBytesPeak(value uint64) (err error) {
-	return instance.SetProperty("PageFileBytesPeak", value)
+	return instance.SetProperty("PageFileBytesPeak", (value))
 }
 
 // GetPageFileBytesPeak gets the value of PageFileBytesPeak for the instance
@@ -394,16 +522,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPageFileBytesPeak
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentPrivilegedTime sets the value of PercentPrivilegedTime for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPercentPrivilegedTime(value uint64) (err error) {
-	return instance.SetProperty("PercentPrivilegedTime", value)
+	return instance.SetProperty("PercentPrivilegedTime", (value))
 }
 
 // GetPercentPrivilegedTime gets the value of PercentPrivilegedTime for the instance
@@ -412,16 +549,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPercentPrivileged
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentProcessorTime sets the value of PercentProcessorTime for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPercentProcessorTime(value uint64) (err error) {
-	return instance.SetProperty("PercentProcessorTime", value)
+	return instance.SetProperty("PercentProcessorTime", (value))
 }
 
 // GetPercentProcessorTime gets the value of PercentProcessorTime for the instance
@@ -430,16 +576,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPercentProcessorT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentUserTime sets the value of PercentUserTime for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPercentUserTime(value uint64) (err error) {
-	return instance.SetProperty("PercentUserTime", value)
+	return instance.SetProperty("PercentUserTime", (value))
 }
 
 // GetPercentUserTime gets the value of PercentUserTime for the instance
@@ -448,16 +603,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPercentUserTime()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPoolNonpagedBytes sets the value of PoolNonpagedBytes for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPoolNonpagedBytes(value uint32) (err error) {
-	return instance.SetProperty("PoolNonpagedBytes", value)
+	return instance.SetProperty("PoolNonpagedBytes", (value))
 }
 
 // GetPoolNonpagedBytes gets the value of PoolNonpagedBytes for the instance
@@ -466,16 +630,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPoolNonpagedBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPoolPagedBytes sets the value of PoolPagedBytes for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPoolPagedBytes(value uint32) (err error) {
-	return instance.SetProperty("PoolPagedBytes", value)
+	return instance.SetProperty("PoolPagedBytes", (value))
 }
 
 // GetPoolPagedBytes gets the value of PoolPagedBytes for the instance
@@ -484,16 +657,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPoolPagedBytes() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPriorityBase sets the value of PriorityBase for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPriorityBase(value uint32) (err error) {
-	return instance.SetProperty("PriorityBase", value)
+	return instance.SetProperty("PriorityBase", (value))
 }
 
 // GetPriorityBase gets the value of PriorityBase for the instance
@@ -502,16 +684,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPriorityBase() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrivateBytes sets the value of PrivateBytes for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyPrivateBytes(value uint64) (err error) {
-	return instance.SetProperty("PrivateBytes", value)
+	return instance.SetProperty("PrivateBytes", (value))
 }
 
 // GetPrivateBytes gets the value of PrivateBytes for the instance
@@ -520,16 +711,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyPrivateBytes() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetThreadCount sets the value of ThreadCount for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyThreadCount(value uint32) (err error) {
-	return instance.SetProperty("ThreadCount", value)
+	return instance.SetProperty("ThreadCount", (value))
 }
 
 // GetThreadCount gets the value of ThreadCount for the instance
@@ -538,16 +738,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyThreadCount() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVirtualBytes sets the value of VirtualBytes for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyVirtualBytes(value uint64) (err error) {
-	return instance.SetProperty("VirtualBytes", value)
+	return instance.SetProperty("VirtualBytes", (value))
 }
 
 // GetVirtualBytes gets the value of VirtualBytes for the instance
@@ -556,16 +765,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyVirtualBytes() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVirtualBytesPeak sets the value of VirtualBytesPeak for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyVirtualBytesPeak(value uint64) (err error) {
-	return instance.SetProperty("VirtualBytesPeak", value)
+	return instance.SetProperty("VirtualBytesPeak", (value))
 }
 
 // GetVirtualBytesPeak gets the value of VirtualBytesPeak for the instance
@@ -574,16 +792,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyVirtualBytesPeak(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWorkingSet sets the value of WorkingSet for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyWorkingSet(value uint64) (err error) {
-	return instance.SetProperty("WorkingSet", value)
+	return instance.SetProperty("WorkingSet", (value))
 }
 
 // GetWorkingSet gets the value of WorkingSet for the instance
@@ -592,16 +819,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyWorkingSet() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWorkingSetPeak sets the value of WorkingSetPeak for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyWorkingSetPeak(value uint64) (err error) {
-	return instance.SetProperty("WorkingSetPeak", value)
+	return instance.SetProperty("WorkingSetPeak", (value))
 }
 
 // GetWorkingSetPeak gets the value of WorkingSetPeak for the instance
@@ -610,16 +846,25 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyWorkingSetPeak() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWorkingSetPrivate sets the value of WorkingSetPrivate for the instance
 func (instance *Win32_PerfRawData_PerfProc_Process) SetPropertyWorkingSetPrivate(value uint64) (err error) {
-	return instance.SetProperty("WorkingSetPrivate", value)
+	return instance.SetProperty("WorkingSetPrivate", (value))
 }
 
 // GetWorkingSetPrivate gets the value of WorkingSetPrivate for the instance
@@ -628,9 +873,18 @@ func (instance *Win32_PerfRawData_PerfProc_Process) GetPropertyWorkingSetPrivate
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

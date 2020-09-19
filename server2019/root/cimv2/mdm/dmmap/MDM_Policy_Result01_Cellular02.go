@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_Cellular02 struct
@@ -71,7 +73,7 @@ func NewMDM_Policy_Result01_Cellular02Ex6(hostName string,
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_Cellular02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -80,16 +82,25 @@ func (instance *MDM_Policy_Result01_Cellular02) GetPropertyInstanceID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCellularData sets the value of LetAppsAccessCellularData for the instance
 func (instance *MDM_Policy_Result01_Cellular02) SetPropertyLetAppsAccessCellularData(value int32) (err error) {
-	return instance.SetProperty("LetAppsAccessCellularData", value)
+	return instance.SetProperty("LetAppsAccessCellularData", (value))
 }
 
 // GetLetAppsAccessCellularData gets the value of LetAppsAccessCellularData for the instance
@@ -98,16 +109,25 @@ func (instance *MDM_Policy_Result01_Cellular02) GetPropertyLetAppsAccessCellular
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCellularData_ForceAllowTheseApps sets the value of LetAppsAccessCellularData_ForceAllowTheseApps for the instance
 func (instance *MDM_Policy_Result01_Cellular02) SetPropertyLetAppsAccessCellularData_ForceAllowTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCellularData_ForceAllowTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCellularData_ForceAllowTheseApps", (value))
 }
 
 // GetLetAppsAccessCellularData_ForceAllowTheseApps gets the value of LetAppsAccessCellularData_ForceAllowTheseApps for the instance
@@ -116,16 +136,25 @@ func (instance *MDM_Policy_Result01_Cellular02) GetPropertyLetAppsAccessCellular
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCellularData_ForceDenyTheseApps sets the value of LetAppsAccessCellularData_ForceDenyTheseApps for the instance
 func (instance *MDM_Policy_Result01_Cellular02) SetPropertyLetAppsAccessCellularData_ForceDenyTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCellularData_ForceDenyTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCellularData_ForceDenyTheseApps", (value))
 }
 
 // GetLetAppsAccessCellularData_ForceDenyTheseApps gets the value of LetAppsAccessCellularData_ForceDenyTheseApps for the instance
@@ -134,16 +163,25 @@ func (instance *MDM_Policy_Result01_Cellular02) GetPropertyLetAppsAccessCellular
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLetAppsAccessCellularData_UserInControlOfTheseApps sets the value of LetAppsAccessCellularData_UserInControlOfTheseApps for the instance
 func (instance *MDM_Policy_Result01_Cellular02) SetPropertyLetAppsAccessCellularData_UserInControlOfTheseApps(value string) (err error) {
-	return instance.SetProperty("LetAppsAccessCellularData_UserInControlOfTheseApps", value)
+	return instance.SetProperty("LetAppsAccessCellularData_UserInControlOfTheseApps", (value))
 }
 
 // GetLetAppsAccessCellularData_UserInControlOfTheseApps gets the value of LetAppsAccessCellularData_UserInControlOfTheseApps for the instance
@@ -152,16 +190,25 @@ func (instance *MDM_Policy_Result01_Cellular02) GetPropertyLetAppsAccessCellular
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_Cellular02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -170,16 +217,25 @@ func (instance *MDM_Policy_Result01_Cellular02) GetPropertyParentID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShowAppCellularAccessUI sets the value of ShowAppCellularAccessUI for the instance
 func (instance *MDM_Policy_Result01_Cellular02) SetPropertyShowAppCellularAccessUI(value string) (err error) {
-	return instance.SetProperty("ShowAppCellularAccessUI", value)
+	return instance.SetProperty("ShowAppCellularAccessUI", (value))
 }
 
 // GetShowAppCellularAccessUI gets the value of ShowAppCellularAccessUI for the instance
@@ -188,9 +244,18 @@ func (instance *MDM_Policy_Result01_Cellular02) GetPropertyShowAppCellularAccess
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_PhysicalGPUInfo struct
@@ -61,7 +63,7 @@ func NewMsvm_PhysicalGPUInfoEx6(hostName string,
 
 // SetAvailableVideoMemory sets the value of AvailableVideoMemory for the instance
 func (instance *Msvm_PhysicalGPUInfo) SetPropertyAvailableVideoMemory(value uint64) (err error) {
-	return instance.SetProperty("AvailableVideoMemory", value)
+	return instance.SetProperty("AvailableVideoMemory", (value))
 }
 
 // GetAvailableVideoMemory gets the value of AvailableVideoMemory for the instance
@@ -70,16 +72,25 @@ func (instance *Msvm_PhysicalGPUInfo) GetPropertyAvailableVideoMemory() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetID sets the value of ID for the instance
 func (instance *Msvm_PhysicalGPUInfo) SetPropertyID(value string) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -88,16 +99,25 @@ func (instance *Msvm_PhysicalGPUInfo) GetPropertyID() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Msvm_PhysicalGPUInfo) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -106,16 +126,25 @@ func (instance *Msvm_PhysicalGPUInfo) GetPropertyName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTotalVideoMemory sets the value of TotalVideoMemory for the instance
 func (instance *Msvm_PhysicalGPUInfo) SetPropertyTotalVideoMemory(value uint64) (err error) {
-	return instance.SetProperty("TotalVideoMemory", value)
+	return instance.SetProperty("TotalVideoMemory", (value))
 }
 
 // GetTotalVideoMemory gets the value of TotalVideoMemory for the instance
@@ -124,9 +153,18 @@ func (instance *Msvm_PhysicalGPUInfo) GetPropertyTotalVideoMemory() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

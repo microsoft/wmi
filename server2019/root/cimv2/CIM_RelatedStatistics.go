@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_RelatedStatistics struct
@@ -56,7 +58,7 @@ func NewCIM_RelatedStatisticsEx6(hostName string,
 
 // SetRelatedStats sets the value of RelatedStats for the instance
 func (instance *CIM_RelatedStatistics) SetPropertyRelatedStats(value CIM_StatisticalInformation) (err error) {
-	return instance.SetProperty("RelatedStats", value)
+	return instance.SetProperty("RelatedStats", (value))
 }
 
 // GetRelatedStats gets the value of RelatedStats for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_RelatedStatistics) GetPropertyRelatedStats() (value CIM_Stat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_StatisticalInformation)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_StatisticalInformation)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_StatisticalInformation is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_StatisticalInformation(valuetmp)
+
 	return
 }
 
 // SetStats sets the value of Stats for the instance
 func (instance *CIM_RelatedStatistics) SetPropertyStats(value CIM_StatisticalInformation) (err error) {
-	return instance.SetProperty("Stats", value)
+	return instance.SetProperty("Stats", (value))
 }
 
 // GetStats gets the value of Stats for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_RelatedStatistics) GetPropertyStats() (value CIM_Statistical
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_StatisticalInformation)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_StatisticalInformation)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_StatisticalInformation is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_StatisticalInformation(valuetmp)
+
 	return
 }

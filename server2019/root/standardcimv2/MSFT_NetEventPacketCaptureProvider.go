@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventPacketCaptureProvider struct
@@ -73,7 +75,7 @@ func NewMSFT_NetEventPacketCaptureProviderEx6(hostName string,
 
 // SetCaptureType sets the value of CaptureType for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyCaptureType(value uint8) (err error) {
-	return instance.SetProperty("CaptureType", value)
+	return instance.SetProperty("CaptureType", (value))
 }
 
 // GetCaptureType gets the value of CaptureType for the instance
@@ -82,16 +84,25 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyCaptureType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetEtherType sets the value of EtherType for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyEtherType(value []uint16) (err error) {
-	return instance.SetProperty("EtherType", value)
+	return instance.SetProperty("EtherType", (value))
 }
 
 // GetEtherType gets the value of EtherType for the instance
@@ -100,16 +111,26 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyEtherType() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetIPAddresses sets the value of IPAddresses for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyIPAddresses(value []string) (err error) {
-	return instance.SetProperty("IPAddresses", value)
+	return instance.SetProperty("IPAddresses", (value))
 }
 
 // GetIPAddresses gets the value of IPAddresses for the instance
@@ -118,16 +139,26 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyIPAddresses() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPProtocols sets the value of IPProtocols for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyIPProtocols(value []uint8) (err error) {
-	return instance.SetProperty("IPProtocols", value)
+	return instance.SetProperty("IPProtocols", (value))
 }
 
 // GetIPProtocols gets the value of IPProtocols for the instance
@@ -136,16 +167,26 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyIPProtocols() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetLinkLayerAddress sets the value of LinkLayerAddress for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyLinkLayerAddress(value []string) (err error) {
-	return instance.SetProperty("LinkLayerAddress", value)
+	return instance.SetProperty("LinkLayerAddress", (value))
 }
 
 // GetLinkLayerAddress gets the value of LinkLayerAddress for the instance
@@ -154,16 +195,26 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyLinkLayerAddress(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMultiLayer sets the value of MultiLayer for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyMultiLayer(value bool) (err error) {
-	return instance.SetProperty("MultiLayer", value)
+	return instance.SetProperty("MultiLayer", (value))
 }
 
 // GetMultiLayer gets the value of MultiLayer for the instance
@@ -172,16 +223,25 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyMultiLayer() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTruncationLength sets the value of TruncationLength for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyTruncationLength(value uint16) (err error) {
-	return instance.SetProperty("TruncationLength", value)
+	return instance.SetProperty("TruncationLength", (value))
 }
 
 // GetTruncationLength gets the value of TruncationLength for the instance
@@ -190,16 +250,25 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyTruncationLength(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVmCaptureDirection sets the value of VmCaptureDirection for the instance
 func (instance *MSFT_NetEventPacketCaptureProvider) SetPropertyVmCaptureDirection(value uint8) (err error) {
-	return instance.SetProperty("VmCaptureDirection", value)
+	return instance.SetProperty("VmCaptureDirection", (value))
 }
 
 // GetVmCaptureDirection gets the value of VmCaptureDirection for the instance
@@ -208,9 +277,18 @@ func (instance *MSFT_NetEventPacketCaptureProvider) GetPropertyVmCaptureDirectio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

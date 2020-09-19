@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualHardDiskState struct
@@ -71,7 +73,7 @@ func NewMsvm_VirtualHardDiskStateEx6(hostName string,
 
 // SetAlignment sets the value of Alignment for the instance
 func (instance *Msvm_VirtualHardDiskState) SetPropertyAlignment(value uint32) (err error) {
-	return instance.SetProperty("Alignment", value)
+	return instance.SetProperty("Alignment", (value))
 }
 
 // GetAlignment gets the value of Alignment for the instance
@@ -80,16 +82,25 @@ func (instance *Msvm_VirtualHardDiskState) GetPropertyAlignment() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileSize sets the value of FileSize for the instance
 func (instance *Msvm_VirtualHardDiskState) SetPropertyFileSize(value uint64) (err error) {
-	return instance.SetProperty("FileSize", value)
+	return instance.SetProperty("FileSize", (value))
 }
 
 // GetFileSize gets the value of FileSize for the instance
@@ -98,16 +109,25 @@ func (instance *Msvm_VirtualHardDiskState) GetPropertyFileSize() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFragmentationPercentage sets the value of FragmentationPercentage for the instance
 func (instance *Msvm_VirtualHardDiskState) SetPropertyFragmentationPercentage(value uint32) (err error) {
-	return instance.SetProperty("FragmentationPercentage", value)
+	return instance.SetProperty("FragmentationPercentage", (value))
 }
 
 // GetFragmentationPercentage gets the value of FragmentationPercentage for the instance
@@ -116,16 +136,25 @@ func (instance *Msvm_VirtualHardDiskState) GetPropertyFragmentationPercentage() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInUse sets the value of InUse for the instance
 func (instance *Msvm_VirtualHardDiskState) SetPropertyInUse(value bool) (err error) {
-	return instance.SetProperty("InUse", value)
+	return instance.SetProperty("InUse", (value))
 }
 
 // GetInUse gets the value of InUse for the instance
@@ -134,16 +163,25 @@ func (instance *Msvm_VirtualHardDiskState) GetPropertyInUse() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMinInternalSize sets the value of MinInternalSize for the instance
 func (instance *Msvm_VirtualHardDiskState) SetPropertyMinInternalSize(value uint64) (err error) {
-	return instance.SetProperty("MinInternalSize", value)
+	return instance.SetProperty("MinInternalSize", (value))
 }
 
 // GetMinInternalSize gets the value of MinInternalSize for the instance
@@ -152,16 +190,25 @@ func (instance *Msvm_VirtualHardDiskState) GetPropertyMinInternalSize() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPhysicalSectorSize sets the value of PhysicalSectorSize for the instance
 func (instance *Msvm_VirtualHardDiskState) SetPropertyPhysicalSectorSize(value uint32) (err error) {
-	return instance.SetProperty("PhysicalSectorSize", value)
+	return instance.SetProperty("PhysicalSectorSize", (value))
 }
 
 // GetPhysicalSectorSize gets the value of PhysicalSectorSize for the instance
@@ -170,16 +217,25 @@ func (instance *Msvm_VirtualHardDiskState) GetPropertyPhysicalSectorSize() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimestamp sets the value of Timestamp for the instance
 func (instance *Msvm_VirtualHardDiskState) SetPropertyTimestamp(value string) (err error) {
-	return instance.SetProperty("Timestamp", value)
+	return instance.SetProperty("Timestamp", (value))
 }
 
 // GetTimestamp gets the value of Timestamp for the instance
@@ -188,9 +244,18 @@ func (instance *Msvm_VirtualHardDiskState) GetPropertyTimestamp() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

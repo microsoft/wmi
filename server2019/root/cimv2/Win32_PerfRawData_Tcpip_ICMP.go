@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Tcpip_ICMP struct
@@ -130,7 +132,7 @@ func NewWin32_PerfRawData_Tcpip_ICMPEx6(hostName string,
 
 // SetMessagesOutboundErrors sets the value of MessagesOutboundErrors for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyMessagesOutboundErrors(value uint32) (err error) {
-	return instance.SetProperty("MessagesOutboundErrors", value)
+	return instance.SetProperty("MessagesOutboundErrors", (value))
 }
 
 // GetMessagesOutboundErrors gets the value of MessagesOutboundErrors for the instance
@@ -139,16 +141,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyMessagesOutboundErrors(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMessagesPersec sets the value of MessagesPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyMessagesPersec(value uint32) (err error) {
-	return instance.SetProperty("MessagesPersec", value)
+	return instance.SetProperty("MessagesPersec", (value))
 }
 
 // GetMessagesPersec gets the value of MessagesPersec for the instance
@@ -157,16 +168,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyMessagesPersec() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMessagesReceivedErrors sets the value of MessagesReceivedErrors for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyMessagesReceivedErrors(value uint32) (err error) {
-	return instance.SetProperty("MessagesReceivedErrors", value)
+	return instance.SetProperty("MessagesReceivedErrors", (value))
 }
 
 // GetMessagesReceivedErrors gets the value of MessagesReceivedErrors for the instance
@@ -175,16 +195,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyMessagesReceivedErrors(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMessagesReceivedPersec sets the value of MessagesReceivedPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyMessagesReceivedPersec(value uint32) (err error) {
-	return instance.SetProperty("MessagesReceivedPersec", value)
+	return instance.SetProperty("MessagesReceivedPersec", (value))
 }
 
 // GetMessagesReceivedPersec gets the value of MessagesReceivedPersec for the instance
@@ -193,16 +222,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyMessagesReceivedPersec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMessagesSentPersec sets the value of MessagesSentPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyMessagesSentPersec(value uint32) (err error) {
-	return instance.SetProperty("MessagesSentPersec", value)
+	return instance.SetProperty("MessagesSentPersec", (value))
 }
 
 // GetMessagesSentPersec gets the value of MessagesSentPersec for the instance
@@ -211,16 +249,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyMessagesSentPersec() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedAddressMask sets the value of ReceivedAddressMask for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedAddressMask(value uint32) (err error) {
-	return instance.SetProperty("ReceivedAddressMask", value)
+	return instance.SetProperty("ReceivedAddressMask", (value))
 }
 
 // GetReceivedAddressMask gets the value of ReceivedAddressMask for the instance
@@ -229,16 +276,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedAddressMask() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedAddressMaskReply sets the value of ReceivedAddressMaskReply for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedAddressMaskReply(value uint32) (err error) {
-	return instance.SetProperty("ReceivedAddressMaskReply", value)
+	return instance.SetProperty("ReceivedAddressMaskReply", (value))
 }
 
 // GetReceivedAddressMaskReply gets the value of ReceivedAddressMaskReply for the instance
@@ -247,16 +303,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedAddressMaskRepl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedDestUnreachable sets the value of ReceivedDestUnreachable for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedDestUnreachable(value uint32) (err error) {
-	return instance.SetProperty("ReceivedDestUnreachable", value)
+	return instance.SetProperty("ReceivedDestUnreachable", (value))
 }
 
 // GetReceivedDestUnreachable gets the value of ReceivedDestUnreachable for the instance
@@ -265,16 +330,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedDestUnreachable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedEchoPersec sets the value of ReceivedEchoPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedEchoPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceivedEchoPersec", value)
+	return instance.SetProperty("ReceivedEchoPersec", (value))
 }
 
 // GetReceivedEchoPersec gets the value of ReceivedEchoPersec for the instance
@@ -283,16 +357,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedEchoPersec() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedEchoReplyPersec sets the value of ReceivedEchoReplyPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedEchoReplyPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceivedEchoReplyPersec", value)
+	return instance.SetProperty("ReceivedEchoReplyPersec", (value))
 }
 
 // GetReceivedEchoReplyPersec gets the value of ReceivedEchoReplyPersec for the instance
@@ -301,16 +384,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedEchoReplyPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedParameterProblem sets the value of ReceivedParameterProblem for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedParameterProblem(value uint32) (err error) {
-	return instance.SetProperty("ReceivedParameterProblem", value)
+	return instance.SetProperty("ReceivedParameterProblem", (value))
 }
 
 // GetReceivedParameterProblem gets the value of ReceivedParameterProblem for the instance
@@ -319,16 +411,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedParameterProble
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedRedirectPersec sets the value of ReceivedRedirectPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedRedirectPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceivedRedirectPersec", value)
+	return instance.SetProperty("ReceivedRedirectPersec", (value))
 }
 
 // GetReceivedRedirectPersec gets the value of ReceivedRedirectPersec for the instance
@@ -337,16 +438,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedRedirectPersec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedSourceQuench sets the value of ReceivedSourceQuench for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedSourceQuench(value uint32) (err error) {
-	return instance.SetProperty("ReceivedSourceQuench", value)
+	return instance.SetProperty("ReceivedSourceQuench", (value))
 }
 
 // GetReceivedSourceQuench gets the value of ReceivedSourceQuench for the instance
@@ -355,16 +465,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedSourceQuench() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedTimeExceeded sets the value of ReceivedTimeExceeded for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedTimeExceeded(value uint32) (err error) {
-	return instance.SetProperty("ReceivedTimeExceeded", value)
+	return instance.SetProperty("ReceivedTimeExceeded", (value))
 }
 
 // GetReceivedTimeExceeded gets the value of ReceivedTimeExceeded for the instance
@@ -373,16 +492,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedTimeExceeded() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedTimestampPersec sets the value of ReceivedTimestampPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedTimestampPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceivedTimestampPersec", value)
+	return instance.SetProperty("ReceivedTimestampPersec", (value))
 }
 
 // GetReceivedTimestampPersec gets the value of ReceivedTimestampPersec for the instance
@@ -391,16 +519,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedTimestampPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedTimestampReplyPersec sets the value of ReceivedTimestampReplyPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertyReceivedTimestampReplyPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceivedTimestampReplyPersec", value)
+	return instance.SetProperty("ReceivedTimestampReplyPersec", (value))
 }
 
 // GetReceivedTimestampReplyPersec gets the value of ReceivedTimestampReplyPersec for the instance
@@ -409,16 +546,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertyReceivedTimestampReplyP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentAddressMask sets the value of SentAddressMask for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentAddressMask(value uint32) (err error) {
-	return instance.SetProperty("SentAddressMask", value)
+	return instance.SetProperty("SentAddressMask", (value))
 }
 
 // GetSentAddressMask gets the value of SentAddressMask for the instance
@@ -427,16 +573,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentAddressMask() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentAddressMaskReply sets the value of SentAddressMaskReply for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentAddressMaskReply(value uint32) (err error) {
-	return instance.SetProperty("SentAddressMaskReply", value)
+	return instance.SetProperty("SentAddressMaskReply", (value))
 }
 
 // GetSentAddressMaskReply gets the value of SentAddressMaskReply for the instance
@@ -445,16 +600,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentAddressMaskReply() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentDestinationUnreachable sets the value of SentDestinationUnreachable for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentDestinationUnreachable(value uint32) (err error) {
-	return instance.SetProperty("SentDestinationUnreachable", value)
+	return instance.SetProperty("SentDestinationUnreachable", (value))
 }
 
 // GetSentDestinationUnreachable gets the value of SentDestinationUnreachable for the instance
@@ -463,16 +627,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentDestinationUnreacha
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentEchoPersec sets the value of SentEchoPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentEchoPersec(value uint32) (err error) {
-	return instance.SetProperty("SentEchoPersec", value)
+	return instance.SetProperty("SentEchoPersec", (value))
 }
 
 // GetSentEchoPersec gets the value of SentEchoPersec for the instance
@@ -481,16 +654,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentEchoPersec() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentEchoReplyPersec sets the value of SentEchoReplyPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentEchoReplyPersec(value uint32) (err error) {
-	return instance.SetProperty("SentEchoReplyPersec", value)
+	return instance.SetProperty("SentEchoReplyPersec", (value))
 }
 
 // GetSentEchoReplyPersec gets the value of SentEchoReplyPersec for the instance
@@ -499,16 +681,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentEchoReplyPersec() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentParameterProblem sets the value of SentParameterProblem for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentParameterProblem(value uint32) (err error) {
-	return instance.SetProperty("SentParameterProblem", value)
+	return instance.SetProperty("SentParameterProblem", (value))
 }
 
 // GetSentParameterProblem gets the value of SentParameterProblem for the instance
@@ -517,16 +708,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentParameterProblem() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentRedirectPersec sets the value of SentRedirectPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentRedirectPersec(value uint32) (err error) {
-	return instance.SetProperty("SentRedirectPersec", value)
+	return instance.SetProperty("SentRedirectPersec", (value))
 }
 
 // GetSentRedirectPersec gets the value of SentRedirectPersec for the instance
@@ -535,16 +735,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentRedirectPersec() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentSourceQuench sets the value of SentSourceQuench for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentSourceQuench(value uint32) (err error) {
-	return instance.SetProperty("SentSourceQuench", value)
+	return instance.SetProperty("SentSourceQuench", (value))
 }
 
 // GetSentSourceQuench gets the value of SentSourceQuench for the instance
@@ -553,16 +762,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentSourceQuench() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentTimeExceeded sets the value of SentTimeExceeded for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentTimeExceeded(value uint32) (err error) {
-	return instance.SetProperty("SentTimeExceeded", value)
+	return instance.SetProperty("SentTimeExceeded", (value))
 }
 
 // GetSentTimeExceeded gets the value of SentTimeExceeded for the instance
@@ -571,16 +789,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentTimeExceeded() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentTimestampPersec sets the value of SentTimestampPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentTimestampPersec(value uint32) (err error) {
-	return instance.SetProperty("SentTimestampPersec", value)
+	return instance.SetProperty("SentTimestampPersec", (value))
 }
 
 // GetSentTimestampPersec gets the value of SentTimestampPersec for the instance
@@ -589,16 +816,25 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentTimestampPersec() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentTimestampReplyPersec sets the value of SentTimestampReplyPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_ICMP) SetPropertySentTimestampReplyPersec(value uint32) (err error) {
-	return instance.SetProperty("SentTimestampReplyPersec", value)
+	return instance.SetProperty("SentTimestampReplyPersec", (value))
 }
 
 // GetSentTimestampReplyPersec gets the value of SentTimestampReplyPersec for the instance
@@ -607,9 +843,18 @@ func (instance *Win32_PerfRawData_Tcpip_ICMP) GetPropertySentTimestampReplyPerse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

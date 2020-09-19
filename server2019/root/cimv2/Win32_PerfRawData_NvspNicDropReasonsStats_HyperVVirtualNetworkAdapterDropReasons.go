@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons struct
@@ -132,6 +134,9 @@ type Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropRe
 	IncomingVirtualSubnetId uint64
 
 	//
+	IncomingWnv uint64
+
+	//
 	OutgoingBridgeReserved uint64
 
 	//
@@ -244,6 +249,9 @@ type Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropRe
 
 	//
 	OutgoingVirtualSubnetId uint64
+
+	//
+	OutgoingWnv uint64
 }
 
 func NewWin32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasonsEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons, err error) {
@@ -277,7 +285,7 @@ func NewWin32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDro
 
 // SetIncomingBridgeReserved sets the value of IncomingBridgeReserved for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingBridgeReserved(value uint64) (err error) {
-	return instance.SetProperty("IncomingBridgeReserved", value)
+	return instance.SetProperty("IncomingBridgeReserved", (value))
 }
 
 // GetIncomingBridgeReserved gets the value of IncomingBridgeReserved for the instance
@@ -286,16 +294,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingBusy sets the value of IncomingBusy for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingBusy(value uint64) (err error) {
-	return instance.SetProperty("IncomingBusy", value)
+	return instance.SetProperty("IncomingBusy", (value))
 }
 
 // GetIncomingBusy gets the value of IncomingBusy for the instance
@@ -304,16 +321,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingDhcpGuard sets the value of IncomingDhcpGuard for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingDhcpGuard(value uint64) (err error) {
-	return instance.SetProperty("IncomingDhcpGuard", value)
+	return instance.SetProperty("IncomingDhcpGuard", (value))
 }
 
 // GetIncomingDhcpGuard gets the value of IncomingDhcpGuard for the instance
@@ -322,16 +348,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingDisconnected sets the value of IncomingDisconnected for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingDisconnected(value uint64) (err error) {
-	return instance.SetProperty("IncomingDisconnected", value)
+	return instance.SetProperty("IncomingDisconnected", (value))
 }
 
 // GetIncomingDisconnected gets the value of IncomingDisconnected for the instance
@@ -340,16 +375,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingFailedDestinationListUpdate sets the value of IncomingFailedDestinationListUpdate for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingFailedDestinationListUpdate(value uint64) (err error) {
-	return instance.SetProperty("IncomingFailedDestinationListUpdate", value)
+	return instance.SetProperty("IncomingFailedDestinationListUpdate", (value))
 }
 
 // GetIncomingFailedDestinationListUpdate gets the value of IncomingFailedDestinationListUpdate for the instance
@@ -358,16 +402,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingFailedPacketFilter sets the value of IncomingFailedPacketFilter for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingFailedPacketFilter(value uint64) (err error) {
-	return instance.SetProperty("IncomingFailedPacketFilter", value)
+	return instance.SetProperty("IncomingFailedPacketFilter", (value))
 }
 
 // GetIncomingFailedPacketFilter gets the value of IncomingFailedPacketFilter for the instance
@@ -376,16 +429,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingFailedPvlanSetting sets the value of IncomingFailedPvlanSetting for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingFailedPvlanSetting(value uint64) (err error) {
-	return instance.SetProperty("IncomingFailedPvlanSetting", value)
+	return instance.SetProperty("IncomingFailedPvlanSetting", (value))
 }
 
 // GetIncomingFailedPvlanSetting gets the value of IncomingFailedPvlanSetting for the instance
@@ -394,16 +456,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingFailedSecurityPolicy sets the value of IncomingFailedSecurityPolicy for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingFailedSecurityPolicy(value uint64) (err error) {
-	return instance.SetProperty("IncomingFailedSecurityPolicy", value)
+	return instance.SetProperty("IncomingFailedSecurityPolicy", (value))
 }
 
 // GetIncomingFailedSecurityPolicy gets the value of IncomingFailedSecurityPolicy for the instance
@@ -412,16 +483,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingFiltered sets the value of IncomingFiltered for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingFiltered(value uint64) (err error) {
-	return instance.SetProperty("IncomingFiltered", value)
+	return instance.SetProperty("IncomingFiltered", (value))
 }
 
 // GetIncomingFiltered gets the value of IncomingFiltered for the instance
@@ -430,16 +510,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingFilteredIsolationUntagged sets the value of IncomingFilteredIsolationUntagged for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingFilteredIsolationUntagged(value uint64) (err error) {
-	return instance.SetProperty("IncomingFilteredIsolationUntagged", value)
+	return instance.SetProperty("IncomingFilteredIsolationUntagged", (value))
 }
 
 // GetIncomingFilteredIsolationUntagged gets the value of IncomingFilteredIsolationUntagged for the instance
@@ -448,16 +537,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingFilteredVLAN sets the value of IncomingFilteredVLAN for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingFilteredVLAN(value uint64) (err error) {
-	return instance.SetProperty("IncomingFilteredVLAN", value)
+	return instance.SetProperty("IncomingFilteredVLAN", (value))
 }
 
 // GetIncomingFilteredVLAN gets the value of IncomingFilteredVLAN for the instance
@@ -466,16 +564,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInjectedIcmp sets the value of IncomingInjectedIcmp for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInjectedIcmp(value uint64) (err error) {
-	return instance.SetProperty("IncomingInjectedIcmp", value)
+	return instance.SetProperty("IncomingInjectedIcmp", (value))
 }
 
 // GetIncomingInjectedIcmp gets the value of IncomingInjectedIcmp for the instance
@@ -484,16 +591,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidConfig sets the value of IncomingInvalidConfig for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidConfig(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidConfig", value)
+	return instance.SetProperty("IncomingInvalidConfig", (value))
 }
 
 // GetIncomingInvalidConfig gets the value of IncomingInvalidConfig for the instance
@@ -502,16 +618,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidData sets the value of IncomingInvalidData for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidData(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidData", value)
+	return instance.SetProperty("IncomingInvalidData", (value))
 }
 
 // GetIncomingInvalidData gets the value of IncomingInvalidData for the instance
@@ -520,16 +645,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidDestMac sets the value of IncomingInvalidDestMac for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidDestMac(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidDestMac", value)
+	return instance.SetProperty("IncomingInvalidDestMac", (value))
 }
 
 // GetIncomingInvalidDestMac gets the value of IncomingInvalidDestMac for the instance
@@ -538,16 +672,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidFirstNBTooSmall sets the value of IncomingInvalidFirstNBTooSmall for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidFirstNBTooSmall(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidFirstNBTooSmall", value)
+	return instance.SetProperty("IncomingInvalidFirstNBTooSmall", (value))
 }
 
 // GetIncomingInvalidFirstNBTooSmall gets the value of IncomingInvalidFirstNBTooSmall for the instance
@@ -556,16 +699,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidPacket sets the value of IncomingInvalidPacket for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidPacket(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidPacket", value)
+	return instance.SetProperty("IncomingInvalidPacket", (value))
 }
 
 // GetIncomingInvalidPacket gets the value of IncomingInvalidPacket for the instance
@@ -574,16 +726,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidPDQueue sets the value of IncomingInvalidPDQueue for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidPDQueue(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidPDQueue", value)
+	return instance.SetProperty("IncomingInvalidPDQueue", (value))
 }
 
 // GetIncomingInvalidPDQueue gets the value of IncomingInvalidPDQueue for the instance
@@ -592,16 +753,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidSourceMac sets the value of IncomingInvalidSourceMac for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidSourceMac(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidSourceMac", value)
+	return instance.SetProperty("IncomingInvalidSourceMac", (value))
 }
 
 // GetIncomingInvalidSourceMac gets the value of IncomingInvalidSourceMac for the instance
@@ -610,16 +780,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingInvalidVlanFormat sets the value of IncomingInvalidVlanFormat for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingInvalidVlanFormat(value uint64) (err error) {
-	return instance.SetProperty("IncomingInvalidVlanFormat", value)
+	return instance.SetProperty("IncomingInvalidVlanFormat", (value))
 }
 
 // GetIncomingInvalidVlanFormat gets the value of IncomingInvalidVlanFormat for the instance
@@ -628,16 +807,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingIpsec sets the value of IncomingIpsec for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingIpsec(value uint64) (err error) {
-	return instance.SetProperty("IncomingIpsec", value)
+	return instance.SetProperty("IncomingIpsec", (value))
 }
 
 // GetIncomingIpsec gets the value of IncomingIpsec for the instance
@@ -646,16 +834,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingLowPowerPacketFilter sets the value of IncomingLowPowerPacketFilter for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingLowPowerPacketFilter(value uint64) (err error) {
-	return instance.SetProperty("IncomingLowPowerPacketFilter", value)
+	return instance.SetProperty("IncomingLowPowerPacketFilter", (value))
 }
 
 // GetIncomingLowPowerPacketFilter gets the value of IncomingLowPowerPacketFilter for the instance
@@ -664,16 +861,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingMacSpoofing sets the value of IncomingMacSpoofing for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingMacSpoofing(value uint64) (err error) {
-	return instance.SetProperty("IncomingMacSpoofing", value)
+	return instance.SetProperty("IncomingMacSpoofing", (value))
 }
 
 // GetIncomingMacSpoofing gets the value of IncomingMacSpoofing for the instance
@@ -682,16 +888,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingMTUMismatch sets the value of IncomingMTUMismatch for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingMTUMismatch(value uint64) (err error) {
-	return instance.SetProperty("IncomingMTUMismatch", value)
+	return instance.SetProperty("IncomingMTUMismatch", (value))
 }
 
 // GetIncomingMTUMismatch gets the value of IncomingMTUMismatch for the instance
@@ -700,16 +915,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingNativeFwdingReq sets the value of IncomingNativeFwdingReq for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingNativeFwdingReq(value uint64) (err error) {
-	return instance.SetProperty("IncomingNativeFwdingReq", value)
+	return instance.SetProperty("IncomingNativeFwdingReq", (value))
 }
 
 // GetIncomingNativeFwdingReq gets the value of IncomingNativeFwdingReq for the instance
@@ -718,16 +942,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingNicDisabled sets the value of IncomingNicDisabled for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingNicDisabled(value uint64) (err error) {
-	return instance.SetProperty("IncomingNicDisabled", value)
+	return instance.SetProperty("IncomingNicDisabled", (value))
 }
 
 // GetIncomingNicDisabled gets the value of IncomingNicDisabled for the instance
@@ -736,16 +969,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingNotAccepted sets the value of IncomingNotAccepted for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingNotAccepted(value uint64) (err error) {
-	return instance.SetProperty("IncomingNotAccepted", value)
+	return instance.SetProperty("IncomingNotAccepted", (value))
 }
 
 // GetIncomingNotAccepted gets the value of IncomingNotAccepted for the instance
@@ -754,16 +996,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingNotReady sets the value of IncomingNotReady for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingNotReady(value uint64) (err error) {
-	return instance.SetProperty("IncomingNotReady", value)
+	return instance.SetProperty("IncomingNotReady", (value))
 }
 
 // GetIncomingNotReady gets the value of IncomingNotReady for the instance
@@ -772,16 +1023,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingQos sets the value of IncomingQos for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingQos(value uint64) (err error) {
-	return instance.SetProperty("IncomingQos", value)
+	return instance.SetProperty("IncomingQos", (value))
 }
 
 // GetIncomingQos gets the value of IncomingQos for the instance
@@ -790,16 +1050,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingRequiredExtensionMissing sets the value of IncomingRequiredExtensionMissing for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingRequiredExtensionMissing(value uint64) (err error) {
-	return instance.SetProperty("IncomingRequiredExtensionMissing", value)
+	return instance.SetProperty("IncomingRequiredExtensionMissing", (value))
 }
 
 // GetIncomingRequiredExtensionMissing gets the value of IncomingRequiredExtensionMissing for the instance
@@ -808,16 +1077,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingResources sets the value of IncomingResources for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingResources(value uint64) (err error) {
-	return instance.SetProperty("IncomingResources", value)
+	return instance.SetProperty("IncomingResources", (value))
 }
 
 // GetIncomingResources gets the value of IncomingResources for the instance
@@ -826,16 +1104,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingRouterGuard sets the value of IncomingRouterGuard for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingRouterGuard(value uint64) (err error) {
-	return instance.SetProperty("IncomingRouterGuard", value)
+	return instance.SetProperty("IncomingRouterGuard", (value))
 }
 
 // GetIncomingRouterGuard gets the value of IncomingRouterGuard for the instance
@@ -844,16 +1131,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingStormLimit sets the value of IncomingStormLimit for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingStormLimit(value uint64) (err error) {
-	return instance.SetProperty("IncomingStormLimit", value)
+	return instance.SetProperty("IncomingStormLimit", (value))
 }
 
 // GetIncomingStormLimit gets the value of IncomingStormLimit for the instance
@@ -862,16 +1158,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingSwitchDataFlowDisabled sets the value of IncomingSwitchDataFlowDisabled for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingSwitchDataFlowDisabled(value uint64) (err error) {
-	return instance.SetProperty("IncomingSwitchDataFlowDisabled", value)
+	return instance.SetProperty("IncomingSwitchDataFlowDisabled", (value))
 }
 
 // GetIncomingSwitchDataFlowDisabled gets the value of IncomingSwitchDataFlowDisabled for the instance
@@ -880,16 +1185,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingUnauthorizedMAC sets the value of IncomingUnauthorizedMAC for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingUnauthorizedMAC(value uint64) (err error) {
-	return instance.SetProperty("IncomingUnauthorizedMAC", value)
+	return instance.SetProperty("IncomingUnauthorizedMAC", (value))
 }
 
 // GetIncomingUnauthorizedMAC gets the value of IncomingUnauthorizedMAC for the instance
@@ -898,16 +1212,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingUnauthorizedVLAN sets the value of IncomingUnauthorizedVLAN for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingUnauthorizedVLAN(value uint64) (err error) {
-	return instance.SetProperty("IncomingUnauthorizedVLAN", value)
+	return instance.SetProperty("IncomingUnauthorizedVLAN", (value))
 }
 
 // GetIncomingUnauthorizedVLAN gets the value of IncomingUnauthorizedVLAN for the instance
@@ -916,16 +1239,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingUnknown sets the value of IncomingUnknown for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingUnknown(value uint64) (err error) {
-	return instance.SetProperty("IncomingUnknown", value)
+	return instance.SetProperty("IncomingUnknown", (value))
 }
 
 // GetIncomingUnknown gets the value of IncomingUnknown for the instance
@@ -934,16 +1266,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIncomingVirtualSubnetId sets the value of IncomingVirtualSubnetId for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingVirtualSubnetId(value uint64) (err error) {
-	return instance.SetProperty("IncomingVirtualSubnetId", value)
+	return instance.SetProperty("IncomingVirtualSubnetId", (value))
 }
 
 // GetIncomingVirtualSubnetId gets the value of IncomingVirtualSubnetId for the instance
@@ -952,16 +1293,52 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetIncomingWnv sets the value of IncomingWnv for the instance
+func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyIncomingWnv(value uint64) (err error) {
+	return instance.SetProperty("IncomingWnv", (value))
+}
+
+// GetIncomingWnv gets the value of IncomingWnv for the instance
+func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) GetPropertyIncomingWnv() (value uint64, err error) {
+	retValue, err := instance.GetProperty("IncomingWnv")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingBridgeReserved sets the value of OutgoingBridgeReserved for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingBridgeReserved(value uint64) (err error) {
-	return instance.SetProperty("OutgoingBridgeReserved", value)
+	return instance.SetProperty("OutgoingBridgeReserved", (value))
 }
 
 // GetOutgoingBridgeReserved gets the value of OutgoingBridgeReserved for the instance
@@ -970,16 +1347,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingBusy sets the value of OutgoingBusy for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingBusy(value uint64) (err error) {
-	return instance.SetProperty("OutgoingBusy", value)
+	return instance.SetProperty("OutgoingBusy", (value))
 }
 
 // GetOutgoingBusy gets the value of OutgoingBusy for the instance
@@ -988,16 +1374,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingDhcpGuard sets the value of OutgoingDhcpGuard for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingDhcpGuard(value uint64) (err error) {
-	return instance.SetProperty("OutgoingDhcpGuard", value)
+	return instance.SetProperty("OutgoingDhcpGuard", (value))
 }
 
 // GetOutgoingDhcpGuard gets the value of OutgoingDhcpGuard for the instance
@@ -1006,16 +1401,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingDisconnected sets the value of OutgoingDisconnected for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingDisconnected(value uint64) (err error) {
-	return instance.SetProperty("OutgoingDisconnected", value)
+	return instance.SetProperty("OutgoingDisconnected", (value))
 }
 
 // GetOutgoingDisconnected gets the value of OutgoingDisconnected for the instance
@@ -1024,16 +1428,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingFailedDestinationListUpdate sets the value of OutgoingFailedDestinationListUpdate for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingFailedDestinationListUpdate(value uint64) (err error) {
-	return instance.SetProperty("OutgoingFailedDestinationListUpdate", value)
+	return instance.SetProperty("OutgoingFailedDestinationListUpdate", (value))
 }
 
 // GetOutgoingFailedDestinationListUpdate gets the value of OutgoingFailedDestinationListUpdate for the instance
@@ -1042,16 +1455,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingFailedPacketFilter sets the value of OutgoingFailedPacketFilter for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingFailedPacketFilter(value uint64) (err error) {
-	return instance.SetProperty("OutgoingFailedPacketFilter", value)
+	return instance.SetProperty("OutgoingFailedPacketFilter", (value))
 }
 
 // GetOutgoingFailedPacketFilter gets the value of OutgoingFailedPacketFilter for the instance
@@ -1060,16 +1482,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingFailedPvlanSetting sets the value of OutgoingFailedPvlanSetting for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingFailedPvlanSetting(value uint64) (err error) {
-	return instance.SetProperty("OutgoingFailedPvlanSetting", value)
+	return instance.SetProperty("OutgoingFailedPvlanSetting", (value))
 }
 
 // GetOutgoingFailedPvlanSetting gets the value of OutgoingFailedPvlanSetting for the instance
@@ -1078,16 +1509,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingFailedSecurityPolicy sets the value of OutgoingFailedSecurityPolicy for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingFailedSecurityPolicy(value uint64) (err error) {
-	return instance.SetProperty("OutgoingFailedSecurityPolicy", value)
+	return instance.SetProperty("OutgoingFailedSecurityPolicy", (value))
 }
 
 // GetOutgoingFailedSecurityPolicy gets the value of OutgoingFailedSecurityPolicy for the instance
@@ -1096,16 +1536,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingFiltered sets the value of OutgoingFiltered for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingFiltered(value uint64) (err error) {
-	return instance.SetProperty("OutgoingFiltered", value)
+	return instance.SetProperty("OutgoingFiltered", (value))
 }
 
 // GetOutgoingFiltered gets the value of OutgoingFiltered for the instance
@@ -1114,16 +1563,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingFilteredIsolationUntagged sets the value of OutgoingFilteredIsolationUntagged for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingFilteredIsolationUntagged(value uint64) (err error) {
-	return instance.SetProperty("OutgoingFilteredIsolationUntagged", value)
+	return instance.SetProperty("OutgoingFilteredIsolationUntagged", (value))
 }
 
 // GetOutgoingFilteredIsolationUntagged gets the value of OutgoingFilteredIsolationUntagged for the instance
@@ -1132,16 +1590,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingFilteredVLAN sets the value of OutgoingFilteredVLAN for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingFilteredVLAN(value uint64) (err error) {
-	return instance.SetProperty("OutgoingFilteredVLAN", value)
+	return instance.SetProperty("OutgoingFilteredVLAN", (value))
 }
 
 // GetOutgoingFilteredVLAN gets the value of OutgoingFilteredVLAN for the instance
@@ -1150,16 +1617,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInjectedIcmp sets the value of OutgoingInjectedIcmp for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInjectedIcmp(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInjectedIcmp", value)
+	return instance.SetProperty("OutgoingInjectedIcmp", (value))
 }
 
 // GetOutgoingInjectedIcmp gets the value of OutgoingInjectedIcmp for the instance
@@ -1168,16 +1644,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidConfig sets the value of OutgoingInvalidConfig for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidConfig(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidConfig", value)
+	return instance.SetProperty("OutgoingInvalidConfig", (value))
 }
 
 // GetOutgoingInvalidConfig gets the value of OutgoingInvalidConfig for the instance
@@ -1186,16 +1671,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidData sets the value of OutgoingInvalidData for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidData(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidData", value)
+	return instance.SetProperty("OutgoingInvalidData", (value))
 }
 
 // GetOutgoingInvalidData gets the value of OutgoingInvalidData for the instance
@@ -1204,16 +1698,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidDestMac sets the value of OutgoingInvalidDestMac for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidDestMac(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidDestMac", value)
+	return instance.SetProperty("OutgoingInvalidDestMac", (value))
 }
 
 // GetOutgoingInvalidDestMac gets the value of OutgoingInvalidDestMac for the instance
@@ -1222,16 +1725,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidFirstNBTooSmall sets the value of OutgoingInvalidFirstNBTooSmall for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidFirstNBTooSmall(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidFirstNBTooSmall", value)
+	return instance.SetProperty("OutgoingInvalidFirstNBTooSmall", (value))
 }
 
 // GetOutgoingInvalidFirstNBTooSmall gets the value of OutgoingInvalidFirstNBTooSmall for the instance
@@ -1240,16 +1752,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidPacket sets the value of OutgoingInvalidPacket for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidPacket(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidPacket", value)
+	return instance.SetProperty("OutgoingInvalidPacket", (value))
 }
 
 // GetOutgoingInvalidPacket gets the value of OutgoingInvalidPacket for the instance
@@ -1258,16 +1779,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidPDQueue sets the value of OutgoingInvalidPDQueue for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidPDQueue(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidPDQueue", value)
+	return instance.SetProperty("OutgoingInvalidPDQueue", (value))
 }
 
 // GetOutgoingInvalidPDQueue gets the value of OutgoingInvalidPDQueue for the instance
@@ -1276,16 +1806,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidSourceMac sets the value of OutgoingInvalidSourceMac for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidSourceMac(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidSourceMac", value)
+	return instance.SetProperty("OutgoingInvalidSourceMac", (value))
 }
 
 // GetOutgoingInvalidSourceMac gets the value of OutgoingInvalidSourceMac for the instance
@@ -1294,16 +1833,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingInvalidVlanFormat sets the value of OutgoingInvalidVlanFormat for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingInvalidVlanFormat(value uint64) (err error) {
-	return instance.SetProperty("OutgoingInvalidVlanFormat", value)
+	return instance.SetProperty("OutgoingInvalidVlanFormat", (value))
 }
 
 // GetOutgoingInvalidVlanFormat gets the value of OutgoingInvalidVlanFormat for the instance
@@ -1312,16 +1860,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingIpsec sets the value of OutgoingIpsec for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingIpsec(value uint64) (err error) {
-	return instance.SetProperty("OutgoingIpsec", value)
+	return instance.SetProperty("OutgoingIpsec", (value))
 }
 
 // GetOutgoingIpsec gets the value of OutgoingIpsec for the instance
@@ -1330,16 +1887,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingLowPowerPacketFilter sets the value of OutgoingLowPowerPacketFilter for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingLowPowerPacketFilter(value uint64) (err error) {
-	return instance.SetProperty("OutgoingLowPowerPacketFilter", value)
+	return instance.SetProperty("OutgoingLowPowerPacketFilter", (value))
 }
 
 // GetOutgoingLowPowerPacketFilter gets the value of OutgoingLowPowerPacketFilter for the instance
@@ -1348,16 +1914,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingMacSpoofing sets the value of OutgoingMacSpoofing for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingMacSpoofing(value uint64) (err error) {
-	return instance.SetProperty("OutgoingMacSpoofing", value)
+	return instance.SetProperty("OutgoingMacSpoofing", (value))
 }
 
 // GetOutgoingMacSpoofing gets the value of OutgoingMacSpoofing for the instance
@@ -1366,16 +1941,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingMTUMismatch sets the value of OutgoingMTUMismatch for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingMTUMismatch(value uint64) (err error) {
-	return instance.SetProperty("OutgoingMTUMismatch", value)
+	return instance.SetProperty("OutgoingMTUMismatch", (value))
 }
 
 // GetOutgoingMTUMismatch gets the value of OutgoingMTUMismatch for the instance
@@ -1384,16 +1968,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingNativeFwdingReq sets the value of OutgoingNativeFwdingReq for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingNativeFwdingReq(value uint64) (err error) {
-	return instance.SetProperty("OutgoingNativeFwdingReq", value)
+	return instance.SetProperty("OutgoingNativeFwdingReq", (value))
 }
 
 // GetOutgoingNativeFwdingReq gets the value of OutgoingNativeFwdingReq for the instance
@@ -1402,16 +1995,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingNicDisabled sets the value of OutgoingNicDisabled for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingNicDisabled(value uint64) (err error) {
-	return instance.SetProperty("OutgoingNicDisabled", value)
+	return instance.SetProperty("OutgoingNicDisabled", (value))
 }
 
 // GetOutgoingNicDisabled gets the value of OutgoingNicDisabled for the instance
@@ -1420,16 +2022,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingNotAccepted sets the value of OutgoingNotAccepted for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingNotAccepted(value uint64) (err error) {
-	return instance.SetProperty("OutgoingNotAccepted", value)
+	return instance.SetProperty("OutgoingNotAccepted", (value))
 }
 
 // GetOutgoingNotAccepted gets the value of OutgoingNotAccepted for the instance
@@ -1438,16 +2049,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingNotReady sets the value of OutgoingNotReady for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingNotReady(value uint64) (err error) {
-	return instance.SetProperty("OutgoingNotReady", value)
+	return instance.SetProperty("OutgoingNotReady", (value))
 }
 
 // GetOutgoingNotReady gets the value of OutgoingNotReady for the instance
@@ -1456,16 +2076,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingQos sets the value of OutgoingQos for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingQos(value uint64) (err error) {
-	return instance.SetProperty("OutgoingQos", value)
+	return instance.SetProperty("OutgoingQos", (value))
 }
 
 // GetOutgoingQos gets the value of OutgoingQos for the instance
@@ -1474,16 +2103,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingRequiredExtensionMissing sets the value of OutgoingRequiredExtensionMissing for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingRequiredExtensionMissing(value uint64) (err error) {
-	return instance.SetProperty("OutgoingRequiredExtensionMissing", value)
+	return instance.SetProperty("OutgoingRequiredExtensionMissing", (value))
 }
 
 // GetOutgoingRequiredExtensionMissing gets the value of OutgoingRequiredExtensionMissing for the instance
@@ -1492,16 +2130,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingResources sets the value of OutgoingResources for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingResources(value uint64) (err error) {
-	return instance.SetProperty("OutgoingResources", value)
+	return instance.SetProperty("OutgoingResources", (value))
 }
 
 // GetOutgoingResources gets the value of OutgoingResources for the instance
@@ -1510,16 +2157,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingRouterGuard sets the value of OutgoingRouterGuard for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingRouterGuard(value uint64) (err error) {
-	return instance.SetProperty("OutgoingRouterGuard", value)
+	return instance.SetProperty("OutgoingRouterGuard", (value))
 }
 
 // GetOutgoingRouterGuard gets the value of OutgoingRouterGuard for the instance
@@ -1528,16 +2184,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingStormLimit sets the value of OutgoingStormLimit for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingStormLimit(value uint64) (err error) {
-	return instance.SetProperty("OutgoingStormLimit", value)
+	return instance.SetProperty("OutgoingStormLimit", (value))
 }
 
 // GetOutgoingStormLimit gets the value of OutgoingStormLimit for the instance
@@ -1546,16 +2211,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingSwitchDataFlowDisabled sets the value of OutgoingSwitchDataFlowDisabled for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingSwitchDataFlowDisabled(value uint64) (err error) {
-	return instance.SetProperty("OutgoingSwitchDataFlowDisabled", value)
+	return instance.SetProperty("OutgoingSwitchDataFlowDisabled", (value))
 }
 
 // GetOutgoingSwitchDataFlowDisabled gets the value of OutgoingSwitchDataFlowDisabled for the instance
@@ -1564,16 +2238,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingUnauthorizedMAC sets the value of OutgoingUnauthorizedMAC for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingUnauthorizedMAC(value uint64) (err error) {
-	return instance.SetProperty("OutgoingUnauthorizedMAC", value)
+	return instance.SetProperty("OutgoingUnauthorizedMAC", (value))
 }
 
 // GetOutgoingUnauthorizedMAC gets the value of OutgoingUnauthorizedMAC for the instance
@@ -1582,16 +2265,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingUnauthorizedVLAN sets the value of OutgoingUnauthorizedVLAN for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingUnauthorizedVLAN(value uint64) (err error) {
-	return instance.SetProperty("OutgoingUnauthorizedVLAN", value)
+	return instance.SetProperty("OutgoingUnauthorizedVLAN", (value))
 }
 
 // GetOutgoingUnauthorizedVLAN gets the value of OutgoingUnauthorizedVLAN for the instance
@@ -1600,16 +2292,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingUnknown sets the value of OutgoingUnknown for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingUnknown(value uint64) (err error) {
-	return instance.SetProperty("OutgoingUnknown", value)
+	return instance.SetProperty("OutgoingUnknown", (value))
 }
 
 // GetOutgoingUnknown gets the value of OutgoingUnknown for the instance
@@ -1618,16 +2319,25 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutgoingVirtualSubnetId sets the value of OutgoingVirtualSubnetId for the instance
 func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingVirtualSubnetId(value uint64) (err error) {
-	return instance.SetProperty("OutgoingVirtualSubnetId", value)
+	return instance.SetProperty("OutgoingVirtualSubnetId", (value))
 }
 
 // GetOutgoingVirtualSubnetId gets the value of OutgoingVirtualSubnetId for the instance
@@ -1636,9 +2346,45 @@ func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
+	return
+}
+
+// SetOutgoingWnv sets the value of OutgoingWnv for the instance
+func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) SetPropertyOutgoingWnv(value uint64) (err error) {
+	return instance.SetProperty("OutgoingWnv", (value))
+}
+
+// GetOutgoingWnv gets the value of OutgoingWnv for the instance
+func (instance *Win32_PerfRawData_NvspNicDropReasonsStats_HyperVVirtualNetworkAdapterDropReasons) GetPropertyOutgoingWnv() (value uint64, err error) {
+	retValue, err := instance.GetProperty("OutgoingWnv")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

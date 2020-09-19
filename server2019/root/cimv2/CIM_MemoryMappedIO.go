@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_MemoryMappedIO struct
@@ -64,7 +66,7 @@ func NewCIM_MemoryMappedIOEx6(hostName string,
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_MemoryMappedIO) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -73,16 +75,25 @@ func (instance *CIM_MemoryMappedIO) GetPropertyCreationClassName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCSCreationClassName sets the value of CSCreationClassName for the instance
 func (instance *CIM_MemoryMappedIO) SetPropertyCSCreationClassName(value string) (err error) {
-	return instance.SetProperty("CSCreationClassName", value)
+	return instance.SetProperty("CSCreationClassName", (value))
 }
 
 // GetCSCreationClassName gets the value of CSCreationClassName for the instance
@@ -91,16 +102,25 @@ func (instance *CIM_MemoryMappedIO) GetPropertyCSCreationClassName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCSName sets the value of CSName for the instance
 func (instance *CIM_MemoryMappedIO) SetPropertyCSName(value string) (err error) {
-	return instance.SetProperty("CSName", value)
+	return instance.SetProperty("CSName", (value))
 }
 
 // GetCSName gets the value of CSName for the instance
@@ -109,16 +129,25 @@ func (instance *CIM_MemoryMappedIO) GetPropertyCSName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEndingAddress sets the value of EndingAddress for the instance
 func (instance *CIM_MemoryMappedIO) SetPropertyEndingAddress(value uint64) (err error) {
-	return instance.SetProperty("EndingAddress", value)
+	return instance.SetProperty("EndingAddress", (value))
 }
 
 // GetEndingAddress gets the value of EndingAddress for the instance
@@ -127,16 +156,25 @@ func (instance *CIM_MemoryMappedIO) GetPropertyEndingAddress() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStartingAddress sets the value of StartingAddress for the instance
 func (instance *CIM_MemoryMappedIO) SetPropertyStartingAddress(value uint64) (err error) {
-	return instance.SetProperty("StartingAddress", value)
+	return instance.SetProperty("StartingAddress", (value))
 }
 
 // GetStartingAddress gets the value of StartingAddress for the instance
@@ -145,9 +183,18 @@ func (instance *CIM_MemoryMappedIO) GetPropertyStartingAddress() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

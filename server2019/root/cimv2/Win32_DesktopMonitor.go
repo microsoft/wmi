@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_DesktopMonitor struct
@@ -61,7 +63,7 @@ func NewWin32_DesktopMonitorEx6(hostName string,
 
 // SetMonitorManufacturer sets the value of MonitorManufacturer for the instance
 func (instance *Win32_DesktopMonitor) SetPropertyMonitorManufacturer(value string) (err error) {
-	return instance.SetProperty("MonitorManufacturer", value)
+	return instance.SetProperty("MonitorManufacturer", (value))
 }
 
 // GetMonitorManufacturer gets the value of MonitorManufacturer for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_DesktopMonitor) GetPropertyMonitorManufacturer() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMonitorType sets the value of MonitorType for the instance
 func (instance *Win32_DesktopMonitor) SetPropertyMonitorType(value string) (err error) {
-	return instance.SetProperty("MonitorType", value)
+	return instance.SetProperty("MonitorType", (value))
 }
 
 // GetMonitorType gets the value of MonitorType for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_DesktopMonitor) GetPropertyMonitorType() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPixelsPerXLogicalInch sets the value of PixelsPerXLogicalInch for the instance
 func (instance *Win32_DesktopMonitor) SetPropertyPixelsPerXLogicalInch(value uint32) (err error) {
-	return instance.SetProperty("PixelsPerXLogicalInch", value)
+	return instance.SetProperty("PixelsPerXLogicalInch", (value))
 }
 
 // GetPixelsPerXLogicalInch gets the value of PixelsPerXLogicalInch for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_DesktopMonitor) GetPropertyPixelsPerXLogicalInch() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPixelsPerYLogicalInch sets the value of PixelsPerYLogicalInch for the instance
 func (instance *Win32_DesktopMonitor) SetPropertyPixelsPerYLogicalInch(value uint32) (err error) {
-	return instance.SetProperty("PixelsPerYLogicalInch", value)
+	return instance.SetProperty("PixelsPerYLogicalInch", (value))
 }
 
 // GetPixelsPerYLogicalInch gets the value of PixelsPerYLogicalInch for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_DesktopMonitor) GetPropertyPixelsPerYLogicalInch() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

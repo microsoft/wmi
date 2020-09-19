@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PnPDevice struct
@@ -56,7 +58,7 @@ func NewWin32_PnPDeviceEx6(hostName string,
 
 // SetSameElement sets the value of SameElement for the instance
 func (instance *Win32_PnPDevice) SetPropertySameElement(value CIM_LogicalDevice) (err error) {
-	return instance.SetProperty("SameElement", value)
+	return instance.SetProperty("SameElement", (value))
 }
 
 // GetSameElement gets the value of SameElement for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_PnPDevice) GetPropertySameElement() (value CIM_LogicalDevi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_LogicalDevice)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_LogicalDevice)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_LogicalDevice is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_LogicalDevice(valuetmp)
+
 	return
 }
 
 // SetSystemElement sets the value of SystemElement for the instance
 func (instance *Win32_PnPDevice) SetPropertySystemElement(value Win32_PnPEntity) (err error) {
-	return instance.SetProperty("SystemElement", value)
+	return instance.SetProperty("SystemElement", (value))
 }
 
 // GetSystemElement gets the value of SystemElement for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_PnPDevice) GetPropertySystemElement() (value Win32_PnPEnti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_PnPEntity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_PnPEntity)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_PnPEntity is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_PnPEntity(valuetmp)
+
 	return
 }

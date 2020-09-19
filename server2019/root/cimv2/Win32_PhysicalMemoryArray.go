@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PhysicalMemoryArray struct
@@ -67,7 +69,7 @@ func NewWin32_PhysicalMemoryArrayEx6(hostName string,
 
 // SetLocation sets the value of Location for the instance
 func (instance *Win32_PhysicalMemoryArray) SetPropertyLocation(value uint16) (err error) {
-	return instance.SetProperty("Location", value)
+	return instance.SetProperty("Location", (value))
 }
 
 // GetLocation gets the value of Location for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PhysicalMemoryArray) GetPropertyLocation() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxCapacity sets the value of MaxCapacity for the instance
 func (instance *Win32_PhysicalMemoryArray) SetPropertyMaxCapacity(value uint32) (err error) {
-	return instance.SetProperty("MaxCapacity", value)
+	return instance.SetProperty("MaxCapacity", (value))
 }
 
 // GetMaxCapacity gets the value of MaxCapacity for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PhysicalMemoryArray) GetPropertyMaxCapacity() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxCapacityEx sets the value of MaxCapacityEx for the instance
 func (instance *Win32_PhysicalMemoryArray) SetPropertyMaxCapacityEx(value uint64) (err error) {
-	return instance.SetProperty("MaxCapacityEx", value)
+	return instance.SetProperty("MaxCapacityEx", (value))
 }
 
 // GetMaxCapacityEx gets the value of MaxCapacityEx for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PhysicalMemoryArray) GetPropertyMaxCapacityEx() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryDevices sets the value of MemoryDevices for the instance
 func (instance *Win32_PhysicalMemoryArray) SetPropertyMemoryDevices(value uint16) (err error) {
-	return instance.SetProperty("MemoryDevices", value)
+	return instance.SetProperty("MemoryDevices", (value))
 }
 
 // GetMemoryDevices gets the value of MemoryDevices for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PhysicalMemoryArray) GetPropertyMemoryDevices() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMemoryErrorCorrection sets the value of MemoryErrorCorrection for the instance
 func (instance *Win32_PhysicalMemoryArray) SetPropertyMemoryErrorCorrection(value uint16) (err error) {
-	return instance.SetProperty("MemoryErrorCorrection", value)
+	return instance.SetProperty("MemoryErrorCorrection", (value))
 }
 
 // GetMemoryErrorCorrection gets the value of MemoryErrorCorrection for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PhysicalMemoryArray) GetPropertyMemoryErrorCorrection() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetUse sets the value of Use for the instance
 func (instance *Win32_PhysicalMemoryArray) SetPropertyUse(value uint16) (err error) {
-	return instance.SetProperty("Use", value)
+	return instance.SetProperty("Use", (value))
 }
 
 // GetUse gets the value of Use for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PhysicalMemoryArray) GetPropertyUse() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_FwIcmpSettings struct
@@ -80,7 +82,7 @@ func NewHNet_FwIcmpSettingsEx6(hostName string,
 
 // SetAllowInboundEchoRequest sets the value of AllowInboundEchoRequest for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowInboundEchoRequest(value bool) (err error) {
-	return instance.SetProperty("AllowInboundEchoRequest", value)
+	return instance.SetProperty("AllowInboundEchoRequest", (value))
 }
 
 // GetAllowInboundEchoRequest gets the value of AllowInboundEchoRequest for the instance
@@ -89,16 +91,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowInboundEchoRequest() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowInboundMaskRequest sets the value of AllowInboundMaskRequest for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowInboundMaskRequest(value bool) (err error) {
-	return instance.SetProperty("AllowInboundMaskRequest", value)
+	return instance.SetProperty("AllowInboundMaskRequest", (value))
 }
 
 // GetAllowInboundMaskRequest gets the value of AllowInboundMaskRequest for the instance
@@ -107,16 +118,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowInboundMaskRequest() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowInboundRouterRequest sets the value of AllowInboundRouterRequest for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowInboundRouterRequest(value bool) (err error) {
-	return instance.SetProperty("AllowInboundRouterRequest", value)
+	return instance.SetProperty("AllowInboundRouterRequest", (value))
 }
 
 // GetAllowInboundRouterRequest gets the value of AllowInboundRouterRequest for the instance
@@ -125,16 +145,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowInboundRouterRequest() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowInboundTimestampRequest sets the value of AllowInboundTimestampRequest for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowInboundTimestampRequest(value bool) (err error) {
-	return instance.SetProperty("AllowInboundTimestampRequest", value)
+	return instance.SetProperty("AllowInboundTimestampRequest", (value))
 }
 
 // GetAllowInboundTimestampRequest gets the value of AllowInboundTimestampRequest for the instance
@@ -143,16 +172,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowInboundTimestampRequest() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowOutboundDestinationUnreachable sets the value of AllowOutboundDestinationUnreachable for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowOutboundDestinationUnreachable(value bool) (err error) {
-	return instance.SetProperty("AllowOutboundDestinationUnreachable", value)
+	return instance.SetProperty("AllowOutboundDestinationUnreachable", (value))
 }
 
 // GetAllowOutboundDestinationUnreachable gets the value of AllowOutboundDestinationUnreachable for the instance
@@ -161,16 +199,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowOutboundDestinationUnreacha
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowOutboundParameterProblem sets the value of AllowOutboundParameterProblem for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowOutboundParameterProblem(value bool) (err error) {
-	return instance.SetProperty("AllowOutboundParameterProblem", value)
+	return instance.SetProperty("AllowOutboundParameterProblem", (value))
 }
 
 // GetAllowOutboundParameterProblem gets the value of AllowOutboundParameterProblem for the instance
@@ -179,16 +226,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowOutboundParameterProblem() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowOutboundSourceQuench sets the value of AllowOutboundSourceQuench for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowOutboundSourceQuench(value bool) (err error) {
-	return instance.SetProperty("AllowOutboundSourceQuench", value)
+	return instance.SetProperty("AllowOutboundSourceQuench", (value))
 }
 
 // GetAllowOutboundSourceQuench gets the value of AllowOutboundSourceQuench for the instance
@@ -197,16 +253,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowOutboundSourceQuench() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowOutboundTimeExceeded sets the value of AllowOutboundTimeExceeded for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowOutboundTimeExceeded(value bool) (err error) {
-	return instance.SetProperty("AllowOutboundTimeExceeded", value)
+	return instance.SetProperty("AllowOutboundTimeExceeded", (value))
 }
 
 // GetAllowOutboundTimeExceeded gets the value of AllowOutboundTimeExceeded for the instance
@@ -215,16 +280,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowOutboundTimeExceeded() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowRedirect sets the value of AllowRedirect for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyAllowRedirect(value bool) (err error) {
-	return instance.SetProperty("AllowRedirect", value)
+	return instance.SetProperty("AllowRedirect", (value))
 }
 
 // GetAllowRedirect gets the value of AllowRedirect for the instance
@@ -233,16 +307,25 @@ func (instance *HNet_FwIcmpSettings) GetPropertyAllowRedirect() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *HNet_FwIcmpSettings) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -251,9 +334,18 @@ func (instance *HNet_FwIcmpSettings) GetPropertyName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

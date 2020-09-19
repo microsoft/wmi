@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters struct
@@ -61,7 +63,7 @@ func NewWin32_PerfFormattedData_Counters_PacketDirectReceiveFiltersEx6(hostName 
 
 // SetBytesMatched sets the value of BytesMatched for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) SetPropertyBytesMatched(value uint64) (err error) {
-	return instance.SetProperty("BytesMatched", value)
+	return instance.SetProperty("BytesMatched", (value))
 }
 
 // GetBytesMatched gets the value of BytesMatched for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesMatchedPersec sets the value of BytesMatchedPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) SetPropertyBytesMatchedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesMatchedPersec", value)
+	return instance.SetProperty("BytesMatchedPersec", (value))
 }
 
 // GetBytesMatchedPersec gets the value of BytesMatchedPersec for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsMatched sets the value of PacketsMatched for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) SetPropertyPacketsMatched(value uint64) (err error) {
-	return instance.SetProperty("PacketsMatched", value)
+	return instance.SetProperty("PacketsMatched", (value))
 }
 
 // GetPacketsMatched gets the value of PacketsMatched for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsMatchedPersec sets the value of PacketsMatchedPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) SetPropertyPacketsMatchedPersec(value uint64) (err error) {
-	return instance.SetProperty("PacketsMatchedPersec", value)
+	return instance.SetProperty("PacketsMatchedPersec", (value))
 }
 
 // GetPacketsMatchedPersec gets the value of PacketsMatchedPersec for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfFormattedData_Counters_PacketDirectReceiveFilters) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

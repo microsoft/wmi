@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_Experience02 struct
@@ -68,9 +70,6 @@ type MDM_Policy_Result01_Experience02 struct {
 
 	//
 	PreventUsersFromTurningOnBrowserSyncing int32
-
-	//
-	ShowLockOnUserTile int32
 }
 
 func NewMDM_Policy_Result01_Experience02Ex1(instance *cim.WmiInstance) (newInstance *MDM_Policy_Result01_Experience02, err error) {
@@ -104,7 +103,7 @@ func NewMDM_Policy_Result01_Experience02Ex6(hostName string,
 
 // SetAllowClipboardHistory sets the value of AllowClipboardHistory for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowClipboardHistory(value int32) (err error) {
-	return instance.SetProperty("AllowClipboardHistory", value)
+	return instance.SetProperty("AllowClipboardHistory", (value))
 }
 
 // GetAllowClipboardHistory gets the value of AllowClipboardHistory for the instance
@@ -113,16 +112,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowClipboardHisto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowCortana sets the value of AllowCortana for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowCortana(value int32) (err error) {
-	return instance.SetProperty("AllowCortana", value)
+	return instance.SetProperty("AllowCortana", (value))
 }
 
 // GetAllowCortana gets the value of AllowCortana for the instance
@@ -131,16 +139,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowCortana() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowDeviceDiscovery sets the value of AllowDeviceDiscovery for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowDeviceDiscovery(value int32) (err error) {
-	return instance.SetProperty("AllowDeviceDiscovery", value)
+	return instance.SetProperty("AllowDeviceDiscovery", (value))
 }
 
 // GetAllowDeviceDiscovery gets the value of AllowDeviceDiscovery for the instance
@@ -149,16 +166,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowDeviceDiscover
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowFindMyDevice sets the value of AllowFindMyDevice for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowFindMyDevice(value int32) (err error) {
-	return instance.SetProperty("AllowFindMyDevice", value)
+	return instance.SetProperty("AllowFindMyDevice", (value))
 }
 
 // GetAllowFindMyDevice gets the value of AllowFindMyDevice for the instance
@@ -167,16 +193,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowFindMyDevice()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowManualMDMUnenrollment sets the value of AllowManualMDMUnenrollment for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowManualMDMUnenrollment(value int32) (err error) {
-	return instance.SetProperty("AllowManualMDMUnenrollment", value)
+	return instance.SetProperty("AllowManualMDMUnenrollment", (value))
 }
 
 // GetAllowManualMDMUnenrollment gets the value of AllowManualMDMUnenrollment for the instance
@@ -185,16 +220,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowManualMDMUnenr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowSaveAsOfOfficeFiles sets the value of AllowSaveAsOfOfficeFiles for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowSaveAsOfOfficeFiles(value int32) (err error) {
-	return instance.SetProperty("AllowSaveAsOfOfficeFiles", value)
+	return instance.SetProperty("AllowSaveAsOfOfficeFiles", (value))
 }
 
 // GetAllowSaveAsOfOfficeFiles gets the value of AllowSaveAsOfOfficeFiles for the instance
@@ -203,16 +247,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowSaveAsOfOffice
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowScreenCapture sets the value of AllowScreenCapture for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowScreenCapture(value int32) (err error) {
-	return instance.SetProperty("AllowScreenCapture", value)
+	return instance.SetProperty("AllowScreenCapture", (value))
 }
 
 // GetAllowScreenCapture gets the value of AllowScreenCapture for the instance
@@ -221,16 +274,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowScreenCapture(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowSharingOfOfficeFiles sets the value of AllowSharingOfOfficeFiles for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowSharingOfOfficeFiles(value int32) (err error) {
-	return instance.SetProperty("AllowSharingOfOfficeFiles", value)
+	return instance.SetProperty("AllowSharingOfOfficeFiles", (value))
 }
 
 // GetAllowSharingOfOfficeFiles gets the value of AllowSharingOfOfficeFiles for the instance
@@ -239,16 +301,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowSharingOfOffic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowSIMErrorDialogPromptWhenNoSIM sets the value of AllowSIMErrorDialogPromptWhenNoSIM for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowSIMErrorDialogPromptWhenNoSIM(value int32) (err error) {
-	return instance.SetProperty("AllowSIMErrorDialogPromptWhenNoSIM", value)
+	return instance.SetProperty("AllowSIMErrorDialogPromptWhenNoSIM", (value))
 }
 
 // GetAllowSIMErrorDialogPromptWhenNoSIM gets the value of AllowSIMErrorDialogPromptWhenNoSIM for the instance
@@ -257,16 +328,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowSIMErrorDialog
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowSyncMySettings sets the value of AllowSyncMySettings for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowSyncMySettings(value int32) (err error) {
-	return instance.SetProperty("AllowSyncMySettings", value)
+	return instance.SetProperty("AllowSyncMySettings", (value))
 }
 
 // GetAllowSyncMySettings gets the value of AllowSyncMySettings for the instance
@@ -275,16 +355,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowSyncMySettings
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowWindowsConsumerFeatures sets the value of AllowWindowsConsumerFeatures for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowWindowsConsumerFeatures(value int32) (err error) {
-	return instance.SetProperty("AllowWindowsConsumerFeatures", value)
+	return instance.SetProperty("AllowWindowsConsumerFeatures", (value))
 }
 
 // GetAllowWindowsConsumerFeatures gets the value of AllowWindowsConsumerFeatures for the instance
@@ -293,16 +382,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowWindowsConsume
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowWindowsTips sets the value of AllowWindowsTips for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyAllowWindowsTips(value int32) (err error) {
-	return instance.SetProperty("AllowWindowsTips", value)
+	return instance.SetProperty("AllowWindowsTips", (value))
 }
 
 // GetAllowWindowsTips gets the value of AllowWindowsTips for the instance
@@ -311,16 +409,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyAllowWindowsTips() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDoNotShowFeedbackNotifications sets the value of DoNotShowFeedbackNotifications for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyDoNotShowFeedbackNotifications(value int32) (err error) {
-	return instance.SetProperty("DoNotShowFeedbackNotifications", value)
+	return instance.SetProperty("DoNotShowFeedbackNotifications", (value))
 }
 
 // GetDoNotShowFeedbackNotifications gets the value of DoNotShowFeedbackNotifications for the instance
@@ -329,16 +436,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyDoNotShowFeedbackNo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDoNotSyncBrowserSettings sets the value of DoNotSyncBrowserSettings for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyDoNotSyncBrowserSettings(value int32) (err error) {
-	return instance.SetProperty("DoNotSyncBrowserSettings", value)
+	return instance.SetProperty("DoNotSyncBrowserSettings", (value))
 }
 
 // GetDoNotSyncBrowserSettings gets the value of DoNotSyncBrowserSettings for the instance
@@ -347,16 +463,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyDoNotSyncBrowserSet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -365,16 +490,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyInstanceID() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -383,16 +517,25 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyParentID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreventUsersFromTurningOnBrowserSyncing sets the value of PreventUsersFromTurningOnBrowserSyncing for the instance
 func (instance *MDM_Policy_Result01_Experience02) SetPropertyPreventUsersFromTurningOnBrowserSyncing(value int32) (err error) {
-	return instance.SetProperty("PreventUsersFromTurningOnBrowserSyncing", value)
+	return instance.SetProperty("PreventUsersFromTurningOnBrowserSyncing", (value))
 }
 
 // GetPreventUsersFromTurningOnBrowserSyncing gets the value of PreventUsersFromTurningOnBrowserSyncing for the instance
@@ -401,27 +544,18 @@ func (instance *MDM_Policy_Result01_Experience02) GetPropertyPreventUsersFromTur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetShowLockOnUserTile sets the value of ShowLockOnUserTile for the instance
-func (instance *MDM_Policy_Result01_Experience02) SetPropertyShowLockOnUserTile(value int32) (err error) {
-	return instance.SetProperty("ShowLockOnUserTile", value)
-}
-
-// GetShowLockOnUserTile gets the value of ShowLockOnUserTile for the instance
-func (instance *MDM_Policy_Result01_Experience02) GetPropertyShowLockOnUserTile() (value int32, err error) {
-	retValue, err := instance.GetProperty("ShowLockOnUserTile")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = int32(valuetmp)
+
 	return
 }

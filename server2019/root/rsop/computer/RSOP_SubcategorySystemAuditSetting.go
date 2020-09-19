@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_SubcategorySystemAuditSetting struct
@@ -58,7 +60,7 @@ func NewRSOP_SubcategorySystemAuditSettingEx6(hostName string,
 
 // SetSettingValue sets the value of SettingValue for the instance
 func (instance *RSOP_SubcategorySystemAuditSetting) SetPropertySettingValue(value uint32) (err error) {
-	return instance.SetProperty("SettingValue", value)
+	return instance.SetProperty("SettingValue", (value))
 }
 
 // GetSettingValue gets the value of SettingValue for the instance
@@ -67,16 +69,25 @@ func (instance *RSOP_SubcategorySystemAuditSetting) GetPropertySettingValue() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSubcategoryGuid sets the value of SubcategoryGuid for the instance
 func (instance *RSOP_SubcategorySystemAuditSetting) SetPropertySubcategoryGuid(value string) (err error) {
-	return instance.SetProperty("SubcategoryGuid", value)
+	return instance.SetProperty("SubcategoryGuid", (value))
 }
 
 // GetSubcategoryGuid gets the value of SubcategoryGuid for the instance
@@ -85,16 +96,25 @@ func (instance *RSOP_SubcategorySystemAuditSetting) GetPropertySubcategoryGuid()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSubcategoryName sets the value of SubcategoryName for the instance
 func (instance *RSOP_SubcategorySystemAuditSetting) SetPropertySubcategoryName(value string) (err error) {
-	return instance.SetProperty("SubcategoryName", value)
+	return instance.SetProperty("SubcategoryName", (value))
 }
 
 // GetSubcategoryName gets the value of SubcategoryName for the instance
@@ -103,9 +123,18 @@ func (instance *RSOP_SubcategorySystemAuditSetting) GetPropertySubcategoryName()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

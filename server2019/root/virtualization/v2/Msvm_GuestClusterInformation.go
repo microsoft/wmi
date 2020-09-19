@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_GuestClusterInformation struct
@@ -77,7 +79,7 @@ func NewMsvm_GuestClusterInformationEx6(hostName string,
 
 // SetClusterId sets the value of ClusterId for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertyClusterId(value string) (err error) {
-	return instance.SetProperty("ClusterId", value)
+	return instance.SetProperty("ClusterId", (value))
 }
 
 // GetClusterId gets the value of ClusterId for the instance
@@ -86,16 +88,25 @@ func (instance *Msvm_GuestClusterInformation) GetPropertyClusterId() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetClusterSize sets the value of ClusterSize for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertyClusterSize(value uint16) (err error) {
-	return instance.SetProperty("ClusterSize", value)
+	return instance.SetProperty("ClusterSize", (value))
 }
 
 // GetClusterSize gets the value of ClusterSize for the instance
@@ -104,16 +115,25 @@ func (instance *Msvm_GuestClusterInformation) GetPropertyClusterSize() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIsActiveActive sets the value of IsActiveActive for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertyIsActiveActive(value []bool) (err error) {
-	return instance.SetProperty("IsActiveActive", value)
+	return instance.SetProperty("IsActiveActive", (value))
 }
 
 // GetIsActiveActive gets the value of IsActiveActive for the instance
@@ -122,16 +142,26 @@ func (instance *Msvm_GuestClusterInformation) GetPropertyIsActiveActive() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(bool)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, bool(valuetmp))
+	}
+
 	return
 }
 
 // SetIsClustered sets the value of IsClustered for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertyIsClustered(value []bool) (err error) {
-	return instance.SetProperty("IsClustered", value)
+	return instance.SetProperty("IsClustered", (value))
 }
 
 // GetIsClustered gets the value of IsClustered for the instance
@@ -140,16 +170,26 @@ func (instance *Msvm_GuestClusterInformation) GetPropertyIsClustered() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(bool)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, bool(valuetmp))
+	}
+
 	return
 }
 
 // SetIsOnline sets the value of IsOnline for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertyIsOnline(value []bool) (err error) {
-	return instance.SetProperty("IsOnline", value)
+	return instance.SetProperty("IsOnline", (value))
 }
 
 // GetIsOnline gets the value of IsOnline for the instance
@@ -158,16 +198,26 @@ func (instance *Msvm_GuestClusterInformation) GetPropertyIsOnline() (value []boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(bool)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, bool(valuetmp))
+	}
+
 	return
 }
 
 // SetIsOwned sets the value of IsOwned for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertyIsOwned(value []bool) (err error) {
-	return instance.SetProperty("IsOwned", value)
+	return instance.SetProperty("IsOwned", (value))
 }
 
 // GetIsOwned gets the value of IsOwned for the instance
@@ -176,16 +226,26 @@ func (instance *Msvm_GuestClusterInformation) GetPropertyIsOwned() (value []bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(bool)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, bool(valuetmp))
+	}
+
 	return
 }
 
 // SetLastResourceMoveTime sets the value of LastResourceMoveTime for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertyLastResourceMoveTime(value uint64) (err error) {
-	return instance.SetProperty("LastResourceMoveTime", value)
+	return instance.SetProperty("LastResourceMoveTime", (value))
 }
 
 // GetLastResourceMoveTime gets the value of LastResourceMoveTime for the instance
@@ -194,16 +254,25 @@ func (instance *Msvm_GuestClusterInformation) GetPropertyLastResourceMoveTime() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSharedVirtualHardDiskPaths sets the value of SharedVirtualHardDiskPaths for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertySharedVirtualHardDiskPaths(value []string) (err error) {
-	return instance.SetProperty("SharedVirtualHardDiskPaths", value)
+	return instance.SetProperty("SharedVirtualHardDiskPaths", (value))
 }
 
 // GetSharedVirtualHardDiskPaths gets the value of SharedVirtualHardDiskPaths for the instance
@@ -212,16 +281,26 @@ func (instance *Msvm_GuestClusterInformation) GetPropertySharedVirtualHardDiskPa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSharedVirtualHardDisks sets the value of SharedVirtualHardDisks for the instance
 func (instance *Msvm_GuestClusterInformation) SetPropertySharedVirtualHardDisks(value []string) (err error) {
-	return instance.SetProperty("SharedVirtualHardDisks", value)
+	return instance.SetProperty("SharedVirtualHardDisks", (value))
 }
 
 // GetSharedVirtualHardDisks gets the value of SharedVirtualHardDisks for the instance
@@ -230,9 +309,19 @@ func (instance *Msvm_GuestClusterInformation) GetPropertySharedVirtualHardDisks(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

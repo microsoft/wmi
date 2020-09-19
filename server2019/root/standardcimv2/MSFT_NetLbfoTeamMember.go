@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetLbfoTeamMember struct
@@ -55,7 +57,7 @@ func NewMSFT_NetLbfoTeamMemberEx6(hostName string,
 
 // SetAdministrativeMode sets the value of AdministrativeMode for the instance
 func (instance *MSFT_NetLbfoTeamMember) SetPropertyAdministrativeMode(value uint32) (err error) {
-	return instance.SetProperty("AdministrativeMode", value)
+	return instance.SetProperty("AdministrativeMode", (value))
 }
 
 // GetAdministrativeMode gets the value of AdministrativeMode for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_NetLbfoTeamMember) GetPropertyAdministrativeMode() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOperationalMode sets the value of OperationalMode for the instance
 func (instance *MSFT_NetLbfoTeamMember) SetPropertyOperationalMode(value uint32) (err error) {
-	return instance.SetProperty("OperationalMode", value)
+	return instance.SetProperty("OperationalMode", (value))
 }
 
 // GetOperationalMode gets the value of OperationalMode for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_NetLbfoTeamMember) GetPropertyOperationalMode() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

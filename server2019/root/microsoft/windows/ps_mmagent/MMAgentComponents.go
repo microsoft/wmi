@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.PS_MMAgent
 //////////////////////////////////////////////
 package ps_mmagent
@@ -11,7 +11,9 @@ package ps_mmagent
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MMAgentComponents struct
@@ -68,7 +70,7 @@ func NewMMAgentComponentsEx6(hostName string,
 
 // SetApplicationLaunchPrefetching sets the value of ApplicationLaunchPrefetching for the instance
 func (instance *MMAgentComponents) SetPropertyApplicationLaunchPrefetching(value bool) (err error) {
-	return instance.SetProperty("ApplicationLaunchPrefetching", value)
+	return instance.SetProperty("ApplicationLaunchPrefetching", (value))
 }
 
 // GetApplicationLaunchPrefetching gets the value of ApplicationLaunchPrefetching for the instance
@@ -77,16 +79,25 @@ func (instance *MMAgentComponents) GetPropertyApplicationLaunchPrefetching() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetApplicationPreLaunch sets the value of ApplicationPreLaunch for the instance
 func (instance *MMAgentComponents) SetPropertyApplicationPreLaunch(value bool) (err error) {
-	return instance.SetProperty("ApplicationPreLaunch", value)
+	return instance.SetProperty("ApplicationPreLaunch", (value))
 }
 
 // GetApplicationPreLaunch gets the value of ApplicationPreLaunch for the instance
@@ -95,16 +106,25 @@ func (instance *MMAgentComponents) GetPropertyApplicationPreLaunch() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaxOperationAPIFiles sets the value of MaxOperationAPIFiles for the instance
 func (instance *MMAgentComponents) SetPropertyMaxOperationAPIFiles(value uint32) (err error) {
-	return instance.SetProperty("MaxOperationAPIFiles", value)
+	return instance.SetProperty("MaxOperationAPIFiles", (value))
 }
 
 // GetMaxOperationAPIFiles gets the value of MaxOperationAPIFiles for the instance
@@ -113,16 +133,25 @@ func (instance *MMAgentComponents) GetPropertyMaxOperationAPIFiles() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMemoryCompression sets the value of MemoryCompression for the instance
 func (instance *MMAgentComponents) SetPropertyMemoryCompression(value bool) (err error) {
-	return instance.SetProperty("MemoryCompression", value)
+	return instance.SetProperty("MemoryCompression", (value))
 }
 
 // GetMemoryCompression gets the value of MemoryCompression for the instance
@@ -131,16 +160,25 @@ func (instance *MMAgentComponents) GetPropertyMemoryCompression() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOperationAPI sets the value of OperationAPI for the instance
 func (instance *MMAgentComponents) SetPropertyOperationAPI(value bool) (err error) {
-	return instance.SetProperty("OperationAPI", value)
+	return instance.SetProperty("OperationAPI", (value))
 }
 
 // GetOperationAPI gets the value of OperationAPI for the instance
@@ -149,16 +187,25 @@ func (instance *MMAgentComponents) GetPropertyOperationAPI() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPageCombining sets the value of PageCombining for the instance
 func (instance *MMAgentComponents) SetPropertyPageCombining(value bool) (err error) {
-	return instance.SetProperty("PageCombining", value)
+	return instance.SetProperty("PageCombining", (value))
 }
 
 // GetPageCombining gets the value of PageCombining for the instance
@@ -167,9 +214,18 @@ func (instance *MMAgentComponents) GetPropertyPageCombining() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX struct
@@ -148,7 +150,7 @@ func NewWin32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDXEx6(hostName stri
 
 // SetAveragebytesperread sets the value of Averagebytesperread for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragebytesperread(value uint64) (err error) {
-	return instance.SetProperty("Averagebytesperread", value)
+	return instance.SetProperty("Averagebytesperread", (value))
 }
 
 // GetAveragebytesperread gets the value of Averagebytesperread for the instance
@@ -157,16 +159,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAveragebytesperread_Base sets the value of Averagebytesperread_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragebytesperread_Base(value uint32) (err error) {
-	return instance.SetProperty("Averagebytesperread_Base", value)
+	return instance.SetProperty("Averagebytesperread_Base", (value))
 }
 
 // GetAveragebytesperread_Base gets the value of Averagebytesperread_Base for the instance
@@ -175,16 +186,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragebytesperrequest sets the value of Averagebytesperrequest for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragebytesperrequest(value uint64) (err error) {
-	return instance.SetProperty("Averagebytesperrequest", value)
+	return instance.SetProperty("Averagebytesperrequest", (value))
 }
 
 // GetAveragebytesperrequest gets the value of Averagebytesperrequest for the instance
@@ -193,16 +213,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAveragebytesperrequest_Base sets the value of Averagebytesperrequest_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragebytesperrequest_Base(value uint32) (err error) {
-	return instance.SetProperty("Averagebytesperrequest_Base", value)
+	return instance.SetProperty("Averagebytesperrequest_Base", (value))
 }
 
 // GetAveragebytesperrequest_Base gets the value of Averagebytesperrequest_Base for the instance
@@ -211,16 +240,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragebytesperwrite sets the value of Averagebytesperwrite for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragebytesperwrite(value uint64) (err error) {
-	return instance.SetProperty("Averagebytesperwrite", value)
+	return instance.SetProperty("Averagebytesperwrite", (value))
 }
 
 // GetAveragebytesperwrite gets the value of Averagebytesperwrite for the instance
@@ -229,16 +267,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAveragebytesperwrite_Base sets the value of Averagebytesperwrite_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragebytesperwrite_Base(value uint32) (err error) {
-	return instance.SetProperty("Averagebytesperwrite_Base", value)
+	return instance.SetProperty("Averagebytesperwrite_Base", (value))
 }
 
 // GetAveragebytesperwrite_Base gets the value of Averagebytesperwrite_Base for the instance
@@ -247,16 +294,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragequeuelength sets the value of Averagequeuelength for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragequeuelength(value uint64) (err error) {
-	return instance.SetProperty("Averagequeuelength", value)
+	return instance.SetProperty("Averagequeuelength", (value))
 }
 
 // GetAveragequeuelength gets the value of Averagequeuelength for the instance
@@ -265,16 +321,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAveragereadqueuelength sets the value of Averagereadqueuelength for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragereadqueuelength(value uint64) (err error) {
-	return instance.SetProperty("Averagereadqueuelength", value)
+	return instance.SetProperty("Averagereadqueuelength", (value))
 }
 
 // GetAveragereadqueuelength gets the value of Averagereadqueuelength for the instance
@@ -283,16 +348,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageSharedVHDXdisklogsize sets the value of AverageSharedVHDXdisklogsize for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAverageSharedVHDXdisklogsize(value uint64) (err error) {
-	return instance.SetProperty("AverageSharedVHDXdisklogsize", value)
+	return instance.SetProperty("AverageSharedVHDXdisklogsize", (value))
 }
 
 // GetAverageSharedVHDXdisklogsize gets the value of AverageSharedVHDXdisklogsize for the instance
@@ -301,16 +375,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageSharedVHDXdisklogsize_Base sets the value of AverageSharedVHDXdisklogsize_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAverageSharedVHDXdisklogsize_Base(value uint32) (err error) {
-	return instance.SetProperty("AverageSharedVHDXdisklogsize_Base", value)
+	return instance.SetProperty("AverageSharedVHDXdisklogsize_Base", (value))
 }
 
 // GetAverageSharedVHDXdisklogsize_Base gets the value of AverageSharedVHDXdisklogsize_Base for the instance
@@ -319,16 +402,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAverageSharedVHDXdisktotalsize sets the value of AverageSharedVHDXdisktotalsize for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAverageSharedVHDXdisktotalsize(value uint64) (err error) {
-	return instance.SetProperty("AverageSharedVHDXdisktotalsize", value)
+	return instance.SetProperty("AverageSharedVHDXdisktotalsize", (value))
 }
 
 // GetAverageSharedVHDXdisktotalsize gets the value of AverageSharedVHDXdisktotalsize for the instance
@@ -337,16 +429,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageSharedVHDXdisktotalsize_Base sets the value of AverageSharedVHDXdisktotalsize_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAverageSharedVHDXdisktotalsize_Base(value uint32) (err error) {
-	return instance.SetProperty("AverageSharedVHDXdisktotalsize_Base", value)
+	return instance.SetProperty("AverageSharedVHDXdisktotalsize_Base", (value))
 }
 
 // GetAverageSharedVHDXdisktotalsize_Base gets the value of AverageSharedVHDXdisktotalsize_Base for the instance
@@ -355,16 +456,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAverageSharedVHDXmounttime sets the value of AverageSharedVHDXmounttime for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAverageSharedVHDXmounttime(value uint32) (err error) {
-	return instance.SetProperty("AverageSharedVHDXmounttime", value)
+	return instance.SetProperty("AverageSharedVHDXmounttime", (value))
 }
 
 // GetAverageSharedVHDXmounttime gets the value of AverageSharedVHDXmounttime for the instance
@@ -373,16 +483,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAverageSharedVHDXmounttime_Base sets the value of AverageSharedVHDXmounttime_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAverageSharedVHDXmounttime_Base(value uint32) (err error) {
-	return instance.SetProperty("AverageSharedVHDXmounttime_Base", value)
+	return instance.SetProperty("AverageSharedVHDXmounttime_Base", (value))
 }
 
 // GetAverageSharedVHDXmounttime_Base gets the value of AverageSharedVHDXmounttime_Base for the instance
@@ -391,16 +510,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragetimeperread sets the value of Averagetimeperread for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragetimeperread(value uint32) (err error) {
-	return instance.SetProperty("Averagetimeperread", value)
+	return instance.SetProperty("Averagetimeperread", (value))
 }
 
 // GetAveragetimeperread gets the value of Averagetimeperread for the instance
@@ -409,16 +537,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragetimeperread_Base sets the value of Averagetimeperread_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragetimeperread_Base(value uint32) (err error) {
-	return instance.SetProperty("Averagetimeperread_Base", value)
+	return instance.SetProperty("Averagetimeperread_Base", (value))
 }
 
 // GetAveragetimeperread_Base gets the value of Averagetimeperread_Base for the instance
@@ -427,16 +564,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragetimeperrequest sets the value of Averagetimeperrequest for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragetimeperrequest(value uint32) (err error) {
-	return instance.SetProperty("Averagetimeperrequest", value)
+	return instance.SetProperty("Averagetimeperrequest", (value))
 }
 
 // GetAveragetimeperrequest gets the value of Averagetimeperrequest for the instance
@@ -445,16 +591,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragetimeperrequest_Base sets the value of Averagetimeperrequest_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragetimeperrequest_Base(value uint32) (err error) {
-	return instance.SetProperty("Averagetimeperrequest_Base", value)
+	return instance.SetProperty("Averagetimeperrequest_Base", (value))
 }
 
 // GetAveragetimeperrequest_Base gets the value of Averagetimeperrequest_Base for the instance
@@ -463,16 +618,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragetimeperwrite sets the value of Averagetimeperwrite for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragetimeperwrite(value uint32) (err error) {
-	return instance.SetProperty("Averagetimeperwrite", value)
+	return instance.SetProperty("Averagetimeperwrite", (value))
 }
 
 // GetAveragetimeperwrite gets the value of Averagetimeperwrite for the instance
@@ -481,16 +645,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragetimeperwrite_Base sets the value of Averagetimeperwrite_Base for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragetimeperwrite_Base(value uint32) (err error) {
-	return instance.SetProperty("Averagetimeperwrite_Base", value)
+	return instance.SetProperty("Averagetimeperwrite_Base", (value))
 }
 
 // GetAveragetimeperwrite_Base gets the value of Averagetimeperwrite_Base for the instance
@@ -499,16 +672,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragewritequeuelength sets the value of Averagewritequeuelength for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyAveragewritequeuelength(value uint64) (err error) {
-	return instance.SetProperty("Averagewritequeuelength", value)
+	return instance.SetProperty("Averagewritequeuelength", (value))
 }
 
 // GetAveragewritequeuelength gets the value of Averagewritequeuelength for the instance
@@ -517,16 +699,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCurrentqueuelength sets the value of Currentqueuelength for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyCurrentqueuelength(value uint32) (err error) {
-	return instance.SetProperty("Currentqueuelength", value)
+	return instance.SetProperty("Currentqueuelength", (value))
 }
 
 // GetCurrentqueuelength gets the value of Currentqueuelength for the instance
@@ -535,16 +726,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentreadqueuelength sets the value of Currentreadqueuelength for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyCurrentreadqueuelength(value uint32) (err error) {
-	return instance.SetProperty("Currentreadqueuelength", value)
+	return instance.SetProperty("Currentreadqueuelength", (value))
 }
 
 // GetCurrentreadqueuelength gets the value of Currentreadqueuelength for the instance
@@ -553,16 +753,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentwritequeuelength sets the value of Currentwritequeuelength for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyCurrentwritequeuelength(value uint32) (err error) {
-	return instance.SetProperty("Currentwritequeuelength", value)
+	return instance.SetProperty("Currentwritequeuelength", (value))
 }
 
 // GetCurrentwritequeuelength gets the value of Currentwritequeuelength for the instance
@@ -571,16 +780,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetErrorspersecond sets the value of Errorspersecond for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyErrorspersecond(value uint64) (err error) {
-	return instance.SetProperty("Errorspersecond", value)
+	return instance.SetProperty("Errorspersecond", (value))
 }
 
 // GetErrorspersecond gets the value of Errorspersecond for the instance
@@ -589,16 +807,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInitiatorHandleOpenspersecond sets the value of InitiatorHandleOpenspersecond for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyInitiatorHandleOpenspersecond(value uint32) (err error) {
-	return instance.SetProperty("InitiatorHandleOpenspersecond", value)
+	return instance.SetProperty("InitiatorHandleOpenspersecond", (value))
 }
 
 // GetInitiatorHandleOpenspersecond gets the value of InitiatorHandleOpenspersecond for the instance
@@ -607,16 +834,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadBytesPersec sets the value of ReadBytesPersec for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersec", value)
+	return instance.SetProperty("ReadBytesPersec", (value))
 }
 
 // GetReadBytesPersec gets the value of ReadBytesPersec for the instance
@@ -625,16 +861,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadRequestsPersec sets the value of ReadRequestsPersec for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyReadRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("ReadRequestsPersec", value)
+	return instance.SetProperty("ReadRequestsPersec", (value))
 }
 
 // GetReadRequestsPersec gets the value of ReadRequestsPersec for the instance
@@ -643,16 +888,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSharedVHDXMountspersecond sets the value of SharedVHDXMountspersecond for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertySharedVHDXMountspersecond(value uint32) (err error) {
-	return instance.SetProperty("SharedVHDXMountspersecond", value)
+	return instance.SetProperty("SharedVHDXMountspersecond", (value))
 }
 
 // GetSharedVHDXMountspersecond gets the value of SharedVHDXMountspersecond for the instance
@@ -661,16 +915,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalBytesPersec sets the value of TotalBytesPersec for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyTotalBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("TotalBytesPersec", value)
+	return instance.SetProperty("TotalBytesPersec", (value))
 }
 
 // GetTotalBytesPersec gets the value of TotalBytesPersec for the instance
@@ -679,16 +942,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalRequestsPersec sets the value of TotalRequestsPersec for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyTotalRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("TotalRequestsPersec", value)
+	return instance.SetProperty("TotalRequestsPersec", (value))
 }
 
 // GetTotalRequestsPersec gets the value of TotalRequestsPersec for the instance
@@ -697,16 +969,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteRequestsPersec sets the value of WriteRequestsPersec for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyWriteRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("WriteRequestsPersec", value)
+	return instance.SetProperty("WriteRequestsPersec", (value))
 }
 
 // GetWriteRequestsPersec gets the value of WriteRequestsPersec for the instance
@@ -715,16 +996,25 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWrittenBytesPersec sets the value of WrittenBytesPersec for the instance
 func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) SetPropertyWrittenBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WrittenBytesPersec", value)
+	return instance.SetProperty("WrittenBytesPersec", (value))
 }
 
 // GetWrittenBytesPersec gets the value of WrittenBytesPersec for the instance
@@ -733,9 +1023,18 @@ func (instance *Win32_PerfRawData_SvhdxFltPerfProvider_HyperVSharedVHDX) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

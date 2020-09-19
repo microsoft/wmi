@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_EnabledLogicalElementCapabilities struct
@@ -62,7 +64,7 @@ func NewCIM_EnabledLogicalElementCapabilitiesEx6(hostName string,
 
 // SetElementNameEditSupported sets the value of ElementNameEditSupported for the instance
 func (instance *CIM_EnabledLogicalElementCapabilities) SetPropertyElementNameEditSupported(value bool) (err error) {
-	return instance.SetProperty("ElementNameEditSupported", value)
+	return instance.SetProperty("ElementNameEditSupported", (value))
 }
 
 // GetElementNameEditSupported gets the value of ElementNameEditSupported for the instance
@@ -71,16 +73,25 @@ func (instance *CIM_EnabledLogicalElementCapabilities) GetPropertyElementNameEdi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetElementNameMask sets the value of ElementNameMask for the instance
 func (instance *CIM_EnabledLogicalElementCapabilities) SetPropertyElementNameMask(value string) (err error) {
-	return instance.SetProperty("ElementNameMask", value)
+	return instance.SetProperty("ElementNameMask", (value))
 }
 
 // GetElementNameMask gets the value of ElementNameMask for the instance
@@ -89,16 +100,25 @@ func (instance *CIM_EnabledLogicalElementCapabilities) GetPropertyElementNameMas
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxElementNameLen sets the value of MaxElementNameLen for the instance
 func (instance *CIM_EnabledLogicalElementCapabilities) SetPropertyMaxElementNameLen(value uint16) (err error) {
-	return instance.SetProperty("MaxElementNameLen", value)
+	return instance.SetProperty("MaxElementNameLen", (value))
 }
 
 // GetMaxElementNameLen gets the value of MaxElementNameLen for the instance
@@ -107,16 +127,25 @@ func (instance *CIM_EnabledLogicalElementCapabilities) GetPropertyMaxElementName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRequestedStatesSupported sets the value of RequestedStatesSupported for the instance
 func (instance *CIM_EnabledLogicalElementCapabilities) SetPropertyRequestedStatesSupported(value []EnabledLogicalElementCapabilities_RequestedStatesSupported) (err error) {
-	return instance.SetProperty("RequestedStatesSupported", value)
+	return instance.SetProperty("RequestedStatesSupported", (value))
 }
 
 // GetRequestedStatesSupported gets the value of RequestedStatesSupported for the instance
@@ -125,9 +154,19 @@ func (instance *CIM_EnabledLogicalElementCapabilities) GetPropertyRequestedState
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]EnabledLogicalElementCapabilities_RequestedStatesSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, EnabledLogicalElementCapabilities_RequestedStatesSupported(valuetmp))
+	}
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Bus struct
@@ -55,7 +57,7 @@ func NewWin32_BusEx6(hostName string,
 
 // SetBusNum sets the value of BusNum for the instance
 func (instance *Win32_Bus) SetPropertyBusNum(value uint32) (err error) {
-	return instance.SetProperty("BusNum", value)
+	return instance.SetProperty("BusNum", (value))
 }
 
 // GetBusNum gets the value of BusNum for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_Bus) GetPropertyBusNum() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBusType sets the value of BusType for the instance
 func (instance *Win32_Bus) SetPropertyBusType(value uint32) (err error) {
-	return instance.SetProperty("BusType", value)
+	return instance.SetProperty("BusType", (value))
 }
 
 // GetBusType gets the value of BusType for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_Bus) GetPropertyBusType() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

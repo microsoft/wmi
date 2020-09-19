@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_ApplicationFramework struct
@@ -71,7 +73,7 @@ func NewMDM_ApplicationFrameworkEx6(hostName string,
 
 // SetMinimumPackageVersion sets the value of MinimumPackageVersion for the instance
 func (instance *MDM_ApplicationFramework) SetPropertyMinimumPackageVersion(value string) (err error) {
-	return instance.SetProperty("MinimumPackageVersion", value)
+	return instance.SetProperty("MinimumPackageVersion", (value))
 }
 
 // GetMinimumPackageVersion gets the value of MinimumPackageVersion for the instance
@@ -80,16 +82,25 @@ func (instance *MDM_ApplicationFramework) GetPropertyMinimumPackageVersion() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageArchitecture sets the value of PackageArchitecture for the instance
 func (instance *MDM_ApplicationFramework) SetPropertyPackageArchitecture(value string) (err error) {
-	return instance.SetProperty("PackageArchitecture", value)
+	return instance.SetProperty("PackageArchitecture", (value))
 }
 
 // GetPackageArchitecture gets the value of PackageArchitecture for the instance
@@ -98,16 +109,25 @@ func (instance *MDM_ApplicationFramework) GetPropertyPackageArchitecture() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageFullName sets the value of PackageFullName for the instance
 func (instance *MDM_ApplicationFramework) SetPropertyPackageFullName(value string) (err error) {
-	return instance.SetProperty("PackageFullName", value)
+	return instance.SetProperty("PackageFullName", (value))
 }
 
 // GetPackageFullName gets the value of PackageFullName for the instance
@@ -116,16 +136,25 @@ func (instance *MDM_ApplicationFramework) GetPropertyPackageFullName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageName sets the value of PackageName for the instance
 func (instance *MDM_ApplicationFramework) SetPropertyPackageName(value string) (err error) {
-	return instance.SetProperty("PackageName", value)
+	return instance.SetProperty("PackageName", (value))
 }
 
 // GetPackageName gets the value of PackageName for the instance
@@ -134,16 +163,25 @@ func (instance *MDM_ApplicationFramework) GetPropertyPackageName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackagePublisher sets the value of PackagePublisher for the instance
 func (instance *MDM_ApplicationFramework) SetPropertyPackagePublisher(value string) (err error) {
-	return instance.SetProperty("PackagePublisher", value)
+	return instance.SetProperty("PackagePublisher", (value))
 }
 
 // GetPackagePublisher gets the value of PackagePublisher for the instance
@@ -152,16 +190,25 @@ func (instance *MDM_ApplicationFramework) GetPropertyPackagePublisher() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageVersion sets the value of PackageVersion for the instance
 func (instance *MDM_ApplicationFramework) SetPropertyPackageVersion(value string) (err error) {
-	return instance.SetProperty("PackageVersion", value)
+	return instance.SetProperty("PackageVersion", (value))
 }
 
 // GetPackageVersion gets the value of PackageVersion for the instance
@@ -170,16 +217,25 @@ func (instance *MDM_ApplicationFramework) GetPropertyPackageVersion() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserSID sets the value of UserSID for the instance
 func (instance *MDM_ApplicationFramework) SetPropertyUserSID(value string) (err error) {
-	return instance.SetProperty("UserSID", value)
+	return instance.SetProperty("UserSID", (value))
 }
 
 // GetUserSID gets the value of UserSID for the instance
@@ -188,9 +244,18 @@ func (instance *MDM_ApplicationFramework) GetPropertyUserSID() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

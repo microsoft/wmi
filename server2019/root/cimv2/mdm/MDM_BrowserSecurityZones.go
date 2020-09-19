@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_BrowserSecurityZones struct
@@ -59,7 +61,7 @@ func NewMDM_BrowserSecurityZonesEx6(hostName string,
 
 // SetExists sets the value of Exists for the instance
 func (instance *MDM_BrowserSecurityZones) SetPropertyExists(value bool) (err error) {
-	return instance.SetProperty("Exists", value)
+	return instance.SetProperty("Exists", (value))
 }
 
 // GetExists gets the value of Exists for the instance
@@ -68,16 +70,25 @@ func (instance *MDM_BrowserSecurityZones) GetPropertyExists() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNamespace sets the value of Namespace for the instance
 func (instance *MDM_BrowserSecurityZones) SetPropertyNamespace(value string) (err error) {
-	return instance.SetProperty("Namespace", value)
+	return instance.SetProperty("Namespace", (value))
 }
 
 // GetNamespace gets the value of Namespace for the instance
@@ -86,16 +97,25 @@ func (instance *MDM_BrowserSecurityZones) GetPropertyNamespace() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetZone sets the value of Zone for the instance
 func (instance *MDM_BrowserSecurityZones) SetPropertyZone(value uint32) (err error) {
-	return instance.SetProperty("Zone", value)
+	return instance.SetProperty("Zone", (value))
 }
 
 // GetZone gets the value of Zone for the instance
@@ -104,9 +124,18 @@ func (instance *MDM_BrowserSecurityZones) GetPropertyZone() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

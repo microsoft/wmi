@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft
 //////////////////////////////////////////////
 package microsoft
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExtendedStatus struct
@@ -52,7 +54,7 @@ func NewMSFT_ExtendedStatusEx6(hostName string,
 
 // Setoriginal_error sets the value of original_error for the instance
 func (instance *MSFT_ExtendedStatus) SetPropertyoriginal_error(value interface{}) (err error) {
-	return instance.SetProperty("original_error", value)
+	return instance.SetProperty("original_error", (value))
 }
 
 // Getoriginal_error gets the value of original_error for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_ExtendedStatus) GetPropertyoriginal_error() (value interfac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

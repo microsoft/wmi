@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_DefragAnalysis struct
@@ -131,7 +133,7 @@ func NewWin32_DefragAnalysisEx6(hostName string,
 
 // SetAverageFileSize sets the value of AverageFileSize for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyAverageFileSize(value uint64) (err error) {
-	return instance.SetProperty("AverageFileSize", value)
+	return instance.SetProperty("AverageFileSize", (value))
 }
 
 // GetAverageFileSize gets the value of AverageFileSize for the instance
@@ -140,16 +142,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyAverageFileSize() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAverageFragmentsPerFile sets the value of AverageFragmentsPerFile for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyAverageFragmentsPerFile(value float64) (err error) {
-	return instance.SetProperty("AverageFragmentsPerFile", value)
+	return instance.SetProperty("AverageFragmentsPerFile", (value))
 }
 
 // GetAverageFragmentsPerFile gets the value of AverageFragmentsPerFile for the instance
@@ -158,16 +169,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyAverageFragmentsPerFile() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float64(valuetmp)
+
 	return
 }
 
 // SetAverageFreeSpacePerExtent sets the value of AverageFreeSpacePerExtent for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyAverageFreeSpacePerExtent(value uint64) (err error) {
-	return instance.SetProperty("AverageFreeSpacePerExtent", value)
+	return instance.SetProperty("AverageFreeSpacePerExtent", (value))
 }
 
 // GetAverageFreeSpacePerExtent gets the value of AverageFreeSpacePerExtent for the instance
@@ -176,16 +196,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyAverageFreeSpacePerExtent() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetClusterSize sets the value of ClusterSize for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyClusterSize(value uint64) (err error) {
-	return instance.SetProperty("ClusterSize", value)
+	return instance.SetProperty("ClusterSize", (value))
 }
 
 // GetClusterSize gets the value of ClusterSize for the instance
@@ -194,16 +223,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyClusterSize() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetExcessFolderFragments sets the value of ExcessFolderFragments for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyExcessFolderFragments(value uint64) (err error) {
-	return instance.SetProperty("ExcessFolderFragments", value)
+	return instance.SetProperty("ExcessFolderFragments", (value))
 }
 
 // GetExcessFolderFragments gets the value of ExcessFolderFragments for the instance
@@ -212,16 +250,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyExcessFolderFragments() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFilePercentFragmentation sets the value of FilePercentFragmentation for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyFilePercentFragmentation(value uint32) (err error) {
-	return instance.SetProperty("FilePercentFragmentation", value)
+	return instance.SetProperty("FilePercentFragmentation", (value))
 }
 
 // GetFilePercentFragmentation gets the value of FilePercentFragmentation for the instance
@@ -230,16 +277,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyFilePercentFragmentation() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFragmentedFolders sets the value of FragmentedFolders for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyFragmentedFolders(value uint64) (err error) {
-	return instance.SetProperty("FragmentedFolders", value)
+	return instance.SetProperty("FragmentedFolders", (value))
 }
 
 // GetFragmentedFolders gets the value of FragmentedFolders for the instance
@@ -248,16 +304,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyFragmentedFolders() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFreeSpace sets the value of FreeSpace for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyFreeSpace(value uint64) (err error) {
-	return instance.SetProperty("FreeSpace", value)
+	return instance.SetProperty("FreeSpace", (value))
 }
 
 // GetFreeSpace gets the value of FreeSpace for the instance
@@ -266,16 +331,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyFreeSpace() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFreeSpacePercent sets the value of FreeSpacePercent for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyFreeSpacePercent(value uint32) (err error) {
-	return instance.SetProperty("FreeSpacePercent", value)
+	return instance.SetProperty("FreeSpacePercent", (value))
 }
 
 // GetFreeSpacePercent gets the value of FreeSpacePercent for the instance
@@ -284,16 +358,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyFreeSpacePercent() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFreeSpacePercentFragmentation sets the value of FreeSpacePercentFragmentation for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyFreeSpacePercentFragmentation(value uint32) (err error) {
-	return instance.SetProperty("FreeSpacePercentFragmentation", value)
+	return instance.SetProperty("FreeSpacePercentFragmentation", (value))
 }
 
 // GetFreeSpacePercentFragmentation gets the value of FreeSpacePercentFragmentation for the instance
@@ -302,16 +385,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyFreeSpacePercentFragmentation()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLargestFreeSpaceExtent sets the value of LargestFreeSpaceExtent for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyLargestFreeSpaceExtent(value uint64) (err error) {
-	return instance.SetProperty("LargestFreeSpaceExtent", value)
+	return instance.SetProperty("LargestFreeSpaceExtent", (value))
 }
 
 // GetLargestFreeSpaceExtent gets the value of LargestFreeSpaceExtent for the instance
@@ -320,16 +412,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyLargestFreeSpaceExtent() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMFTPercentInUse sets the value of MFTPercentInUse for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyMFTPercentInUse(value uint32) (err error) {
-	return instance.SetProperty("MFTPercentInUse", value)
+	return instance.SetProperty("MFTPercentInUse", (value))
 }
 
 // GetMFTPercentInUse gets the value of MFTPercentInUse for the instance
@@ -338,16 +439,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyMFTPercentInUse() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMFTRecordCount sets the value of MFTRecordCount for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyMFTRecordCount(value uint64) (err error) {
-	return instance.SetProperty("MFTRecordCount", value)
+	return instance.SetProperty("MFTRecordCount", (value))
 }
 
 // GetMFTRecordCount gets the value of MFTRecordCount for the instance
@@ -356,16 +466,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyMFTRecordCount() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPageFileSize sets the value of PageFileSize for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyPageFileSize(value uint64) (err error) {
-	return instance.SetProperty("PageFileSize", value)
+	return instance.SetProperty("PageFileSize", (value))
 }
 
 // GetPageFileSize gets the value of PageFileSize for the instance
@@ -374,16 +493,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyPageFileSize() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalExcessFragments sets the value of TotalExcessFragments for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalExcessFragments(value uint64) (err error) {
-	return instance.SetProperty("TotalExcessFragments", value)
+	return instance.SetProperty("TotalExcessFragments", (value))
 }
 
 // GetTotalExcessFragments gets the value of TotalExcessFragments for the instance
@@ -392,16 +520,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalExcessFragments() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalFiles sets the value of TotalFiles for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalFiles(value uint64) (err error) {
-	return instance.SetProperty("TotalFiles", value)
+	return instance.SetProperty("TotalFiles", (value))
 }
 
 // GetTotalFiles gets the value of TotalFiles for the instance
@@ -410,16 +547,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalFiles() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalFolders sets the value of TotalFolders for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalFolders(value uint64) (err error) {
-	return instance.SetProperty("TotalFolders", value)
+	return instance.SetProperty("TotalFolders", (value))
 }
 
 // GetTotalFolders gets the value of TotalFolders for the instance
@@ -428,16 +574,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalFolders() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalFragmentedFiles sets the value of TotalFragmentedFiles for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalFragmentedFiles(value uint64) (err error) {
-	return instance.SetProperty("TotalFragmentedFiles", value)
+	return instance.SetProperty("TotalFragmentedFiles", (value))
 }
 
 // GetTotalFragmentedFiles gets the value of TotalFragmentedFiles for the instance
@@ -446,16 +601,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalFragmentedFiles() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalFreeSpaceExtents sets the value of TotalFreeSpaceExtents for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalFreeSpaceExtents(value uint64) (err error) {
-	return instance.SetProperty("TotalFreeSpaceExtents", value)
+	return instance.SetProperty("TotalFreeSpaceExtents", (value))
 }
 
 // GetTotalFreeSpaceExtents gets the value of TotalFreeSpaceExtents for the instance
@@ -464,16 +628,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalFreeSpaceExtents() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalMFTFragments sets the value of TotalMFTFragments for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalMFTFragments(value uint64) (err error) {
-	return instance.SetProperty("TotalMFTFragments", value)
+	return instance.SetProperty("TotalMFTFragments", (value))
 }
 
 // GetTotalMFTFragments gets the value of TotalMFTFragments for the instance
@@ -482,16 +655,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalMFTFragments() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalMFTSize sets the value of TotalMFTSize for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalMFTSize(value uint64) (err error) {
-	return instance.SetProperty("TotalMFTSize", value)
+	return instance.SetProperty("TotalMFTSize", (value))
 }
 
 // GetTotalMFTSize gets the value of TotalMFTSize for the instance
@@ -500,16 +682,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalMFTSize() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalPageFileFragments sets the value of TotalPageFileFragments for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalPageFileFragments(value uint64) (err error) {
-	return instance.SetProperty("TotalPageFileFragments", value)
+	return instance.SetProperty("TotalPageFileFragments", (value))
 }
 
 // GetTotalPageFileFragments gets the value of TotalPageFileFragments for the instance
@@ -518,16 +709,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalPageFileFragments() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalPercentFragmentation sets the value of TotalPercentFragmentation for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalPercentFragmentation(value uint32) (err error) {
-	return instance.SetProperty("TotalPercentFragmentation", value)
+	return instance.SetProperty("TotalPercentFragmentation", (value))
 }
 
 // GetTotalPercentFragmentation gets the value of TotalPercentFragmentation for the instance
@@ -536,16 +736,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalPercentFragmentation() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalUnmovableFiles sets the value of TotalUnmovableFiles for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyTotalUnmovableFiles(value uint64) (err error) {
-	return instance.SetProperty("TotalUnmovableFiles", value)
+	return instance.SetProperty("TotalUnmovableFiles", (value))
 }
 
 // GetTotalUnmovableFiles gets the value of TotalUnmovableFiles for the instance
@@ -554,16 +763,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyTotalUnmovableFiles() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUsedSpace sets the value of UsedSpace for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyUsedSpace(value uint64) (err error) {
-	return instance.SetProperty("UsedSpace", value)
+	return instance.SetProperty("UsedSpace", (value))
 }
 
 // GetUsedSpace gets the value of UsedSpace for the instance
@@ -572,16 +790,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyUsedSpace() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVolumeName sets the value of VolumeName for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyVolumeName(value string) (err error) {
-	return instance.SetProperty("VolumeName", value)
+	return instance.SetProperty("VolumeName", (value))
 }
 
 // GetVolumeName gets the value of VolumeName for the instance
@@ -590,16 +817,25 @@ func (instance *Win32_DefragAnalysis) GetPropertyVolumeName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVolumeSize sets the value of VolumeSize for the instance
 func (instance *Win32_DefragAnalysis) SetPropertyVolumeSize(value uint64) (err error) {
-	return instance.SetProperty("VolumeSize", value)
+	return instance.SetProperty("VolumeSize", (value))
 }
 
 // GetVolumeSize gets the value of VolumeSize for the instance
@@ -608,9 +844,18 @@ func (instance *Win32_DefragAnalysis) GetPropertyVolumeSize() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

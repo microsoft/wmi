@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_SyntheticMouse struct
@@ -61,7 +63,7 @@ func NewMsvm_SyntheticMouseEx6(hostName string,
 
 // SetAbsoluteCoordinates sets the value of AbsoluteCoordinates for the instance
 func (instance *Msvm_SyntheticMouse) SetPropertyAbsoluteCoordinates(value bool) (err error) {
-	return instance.SetProperty("AbsoluteCoordinates", value)
+	return instance.SetProperty("AbsoluteCoordinates", (value))
 }
 
 // GetAbsoluteCoordinates gets the value of AbsoluteCoordinates for the instance
@@ -70,16 +72,25 @@ func (instance *Msvm_SyntheticMouse) GetPropertyAbsoluteCoordinates() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHorizontalPosition sets the value of HorizontalPosition for the instance
 func (instance *Msvm_SyntheticMouse) SetPropertyHorizontalPosition(value int32) (err error) {
-	return instance.SetProperty("HorizontalPosition", value)
+	return instance.SetProperty("HorizontalPosition", (value))
 }
 
 // GetHorizontalPosition gets the value of HorizontalPosition for the instance
@@ -88,16 +99,25 @@ func (instance *Msvm_SyntheticMouse) GetPropertyHorizontalPosition() (value int3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScrollPosition sets the value of ScrollPosition for the instance
 func (instance *Msvm_SyntheticMouse) SetPropertyScrollPosition(value int32) (err error) {
-	return instance.SetProperty("ScrollPosition", value)
+	return instance.SetProperty("ScrollPosition", (value))
 }
 
 // GetScrollPosition gets the value of ScrollPosition for the instance
@@ -106,16 +126,25 @@ func (instance *Msvm_SyntheticMouse) GetPropertyScrollPosition() (value int32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetVerticalPosition sets the value of VerticalPosition for the instance
 func (instance *Msvm_SyntheticMouse) SetPropertyVerticalPosition(value int32) (err error) {
-	return instance.SetProperty("VerticalPosition", value)
+	return instance.SetProperty("VerticalPosition", (value))
 }
 
 // GetVerticalPosition gets the value of VerticalPosition for the instance
@@ -124,10 +153,19 @@ func (instance *Msvm_SyntheticMouse) GetPropertyVerticalPosition() (value int32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 

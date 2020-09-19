@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources struct
@@ -73,7 +75,7 @@ func NewWin32_PerfFormattedData_ClussvcPerfProvider_ClusterResourcesEx6(hostName
 
 // SetResourceControls sets the value of ResourceControls for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourceControls(value uint64) (err error) {
-	return instance.SetProperty("ResourceControls", value)
+	return instance.SetProperty("ResourceControls", (value))
 }
 
 // GetResourceControls gets the value of ResourceControls for the instance
@@ -82,16 +84,25 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceControlsPersec sets the value of ResourceControlsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourceControlsPersec(value uint64) (err error) {
-	return instance.SetProperty("ResourceControlsPersec", value)
+	return instance.SetProperty("ResourceControlsPersec", (value))
 }
 
 // GetResourceControlsPersec gets the value of ResourceControlsPersec for the instance
@@ -100,16 +111,25 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceFailure sets the value of ResourceFailure for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourceFailure(value uint64) (err error) {
-	return instance.SetProperty("ResourceFailure", value)
+	return instance.SetProperty("ResourceFailure", (value))
 }
 
 // GetResourceFailure gets the value of ResourceFailure for the instance
@@ -118,16 +138,25 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceFailureAccessViolation sets the value of ResourceFailureAccessViolation for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourceFailureAccessViolation(value uint64) (err error) {
-	return instance.SetProperty("ResourceFailureAccessViolation", value)
+	return instance.SetProperty("ResourceFailureAccessViolation", (value))
 }
 
 // GetResourceFailureAccessViolation gets the value of ResourceFailureAccessViolation for the instance
@@ -136,16 +165,25 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceFailureDeadlock sets the value of ResourceFailureDeadlock for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourceFailureDeadlock(value uint64) (err error) {
-	return instance.SetProperty("ResourceFailureDeadlock", value)
+	return instance.SetProperty("ResourceFailureDeadlock", (value))
 }
 
 // GetResourceFailureDeadlock gets the value of ResourceFailureDeadlock for the instance
@@ -154,16 +192,25 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourcesOnline sets the value of ResourcesOnline for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourcesOnline(value uint64) (err error) {
-	return instance.SetProperty("ResourcesOnline", value)
+	return instance.SetProperty("ResourcesOnline", (value))
 }
 
 // GetResourcesOnline gets the value of ResourcesOnline for the instance
@@ -172,16 +219,25 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceTypeControls sets the value of ResourceTypeControls for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourceTypeControls(value uint64) (err error) {
-	return instance.SetProperty("ResourceTypeControls", value)
+	return instance.SetProperty("ResourceTypeControls", (value))
 }
 
 // GetResourceTypeControls gets the value of ResourceTypeControls for the instance
@@ -190,16 +246,25 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceTypeControlsPersec sets the value of ResourceTypeControlsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) SetPropertyResourceTypeControlsPersec(value uint64) (err error) {
-	return instance.SetProperty("ResourceTypeControlsPersec", value)
+	return instance.SetProperty("ResourceTypeControlsPersec", (value))
 }
 
 // GetResourceTypeControlsPersec gets the value of ResourceTypeControlsPersec for the instance
@@ -208,9 +273,18 @@ func (instance *Win32_PerfFormattedData_ClussvcPerfProvider_ClusterResources) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

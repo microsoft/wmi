@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_SMBClientShares struct
@@ -43,15 +45,6 @@ type Win32_PerfFormattedData_Counters_SMBClientShares struct {
 
 	//
 	AvgWriteQueueLength uint64
-
-	//
-	CompressedBytesSentPersec uint32
-
-	//
-	CompressedRequestsPersec uint32
-
-	//
-	CompressedResponsesPersec uint32
 
 	//
 	CreditStallsPersec uint32
@@ -130,7 +123,7 @@ func NewWin32_PerfFormattedData_Counters_SMBClientSharesEx6(hostName string,
 
 // SetAvgBytesPerRead sets the value of AvgBytesPerRead for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgBytesPerRead(value uint64) (err error) {
-	return instance.SetProperty("AvgBytesPerRead", value)
+	return instance.SetProperty("AvgBytesPerRead", (value))
 }
 
 // GetAvgBytesPerRead gets the value of AvgBytesPerRead for the instance
@@ -139,16 +132,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgBytesPerWrite sets the value of AvgBytesPerWrite for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgBytesPerWrite(value uint64) (err error) {
-	return instance.SetProperty("AvgBytesPerWrite", value)
+	return instance.SetProperty("AvgBytesPerWrite", (value))
 }
 
 // GetAvgBytesPerWrite gets the value of AvgBytesPerWrite for the instance
@@ -157,16 +159,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDataBytesPerRequest sets the value of AvgDataBytesPerRequest for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgDataBytesPerRequest(value uint64) (err error) {
-	return instance.SetProperty("AvgDataBytesPerRequest", value)
+	return instance.SetProperty("AvgDataBytesPerRequest", (value))
 }
 
 // GetAvgDataBytesPerRequest gets the value of AvgDataBytesPerRequest for the instance
@@ -175,16 +186,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDataQueueLength sets the value of AvgDataQueueLength for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgDataQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgDataQueueLength", value)
+	return instance.SetProperty("AvgDataQueueLength", (value))
 }
 
 // GetAvgDataQueueLength gets the value of AvgDataQueueLength for the instance
@@ -193,16 +213,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgReadQueueLength sets the value of AvgReadQueueLength for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgReadQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgReadQueueLength", value)
+	return instance.SetProperty("AvgReadQueueLength", (value))
 }
 
 // GetAvgReadQueueLength gets the value of AvgReadQueueLength for the instance
@@ -211,16 +240,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgsecPerDataRequest sets the value of AvgsecPerDataRequest for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgsecPerDataRequest(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerDataRequest", value)
+	return instance.SetProperty("AvgsecPerDataRequest", (value))
 }
 
 // GetAvgsecPerDataRequest gets the value of AvgsecPerDataRequest for the instance
@@ -229,16 +267,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgsecPerRead sets the value of AvgsecPerRead for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgsecPerRead(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerRead", value)
+	return instance.SetProperty("AvgsecPerRead", (value))
 }
 
 // GetAvgsecPerRead gets the value of AvgsecPerRead for the instance
@@ -247,16 +294,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgsecPerWrite sets the value of AvgsecPerWrite for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgsecPerWrite(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerWrite", value)
+	return instance.SetProperty("AvgsecPerWrite", (value))
 }
 
 // GetAvgsecPerWrite gets the value of AvgsecPerWrite for the instance
@@ -265,16 +321,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgWriteQueueLength sets the value of AvgWriteQueueLength for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyAvgWriteQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgWriteQueueLength", value)
+	return instance.SetProperty("AvgWriteQueueLength", (value))
 }
 
 // GetAvgWriteQueueLength gets the value of AvgWriteQueueLength for the instance
@@ -283,70 +348,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyAvg
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetCompressedBytesSentPersec sets the value of CompressedBytesSentPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyCompressedBytesSentPersec(value uint32) (err error) {
-	return instance.SetProperty("CompressedBytesSentPersec", value)
-}
-
-// GetCompressedBytesSentPersec gets the value of CompressedBytesSentPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyCompressedBytesSentPersec() (value uint32, err error) {
-	retValue, err := instance.GetProperty("CompressedBytesSentPersec")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint32)
+
+	valuetmp, ok := retValue.(uint64)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetCompressedRequestsPersec sets the value of CompressedRequestsPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyCompressedRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("CompressedRequestsPersec", value)
-}
-
-// GetCompressedRequestsPersec gets the value of CompressedRequestsPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyCompressedRequestsPersec() (value uint32, err error) {
-	retValue, err := instance.GetProperty("CompressedRequestsPersec")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
 
-// SetCompressedResponsesPersec sets the value of CompressedResponsesPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyCompressedResponsesPersec(value uint32) (err error) {
-	return instance.SetProperty("CompressedResponsesPersec", value)
-}
+	value = uint64(valuetmp)
 
-// GetCompressedResponsesPersec gets the value of CompressedResponsesPersec for the instance
-func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyCompressedResponsesPersec() (value uint32, err error) {
-	retValue, err := instance.GetProperty("CompressedResponsesPersec")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
 	return
 }
 
 // SetCreditStallsPersec sets the value of CreditStallsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyCreditStallsPersec(value uint32) (err error) {
-	return instance.SetProperty("CreditStallsPersec", value)
+	return instance.SetProperty("CreditStallsPersec", (value))
 }
 
 // GetCreditStallsPersec gets the value of CreditStallsPersec for the instance
@@ -355,16 +375,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyCre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentDataQueueLength sets the value of CurrentDataQueueLength for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyCurrentDataQueueLength(value uint32) (err error) {
-	return instance.SetProperty("CurrentDataQueueLength", value)
+	return instance.SetProperty("CurrentDataQueueLength", (value))
 }
 
 // GetCurrentDataQueueLength gets the value of CurrentDataQueueLength for the instance
@@ -373,16 +402,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyCur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataBytesPersec sets the value of DataBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyDataBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DataBytesPersec", value)
+	return instance.SetProperty("DataBytesPersec", (value))
 }
 
 // GetDataBytesPersec gets the value of DataBytesPersec for the instance
@@ -391,16 +429,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyDat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDataRequestsPersec sets the value of DataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyDataRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("DataRequestsPersec", value)
+	return instance.SetProperty("DataRequestsPersec", (value))
 }
 
 // GetDataRequestsPersec gets the value of DataRequestsPersec for the instance
@@ -409,16 +456,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyDat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMetadataRequestsPersec sets the value of MetadataRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyMetadataRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("MetadataRequestsPersec", value)
+	return instance.SetProperty("MetadataRequestsPersec", (value))
 }
 
 // GetMetadataRequestsPersec gets the value of MetadataRequestsPersec for the instance
@@ -427,16 +483,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyMet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadBytesPersec sets the value of ReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersec", value)
+	return instance.SetProperty("ReadBytesPersec", (value))
 }
 
 // GetReadBytesPersec gets the value of ReadBytesPersec for the instance
@@ -445,16 +510,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadBytestransmittedviaSMBDirectPersec sets the value of ReadBytestransmittedviaSMBDirectPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyReadBytestransmittedviaSMBDirectPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytestransmittedviaSMBDirectPersec", value)
+	return instance.SetProperty("ReadBytestransmittedviaSMBDirectPersec", (value))
 }
 
 // GetReadBytestransmittedviaSMBDirectPersec gets the value of ReadBytestransmittedviaSMBDirectPersec for the instance
@@ -463,16 +537,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadRequestsPersec sets the value of ReadRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyReadRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("ReadRequestsPersec", value)
+	return instance.SetProperty("ReadRequestsPersec", (value))
 }
 
 // GetReadRequestsPersec gets the value of ReadRequestsPersec for the instance
@@ -481,16 +564,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadRequeststransmittedviaSMBDirectPersec sets the value of ReadRequeststransmittedviaSMBDirectPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyReadRequeststransmittedviaSMBDirectPersec(value uint32) (err error) {
-	return instance.SetProperty("ReadRequeststransmittedviaSMBDirectPersec", value)
+	return instance.SetProperty("ReadRequeststransmittedviaSMBDirectPersec", (value))
 }
 
 // GetReadRequeststransmittedviaSMBDirectPersec gets the value of ReadRequeststransmittedviaSMBDirectPersec for the instance
@@ -499,16 +591,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTurboIOReadsPersec sets the value of TurboIOReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyTurboIOReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("TurboIOReadsPersec", value)
+	return instance.SetProperty("TurboIOReadsPersec", (value))
 }
 
 // GetTurboIOReadsPersec gets the value of TurboIOReadsPersec for the instance
@@ -517,16 +618,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyTur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTurboIOWritesPersec sets the value of TurboIOWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyTurboIOWritesPersec(value uint32) (err error) {
-	return instance.SetProperty("TurboIOWritesPersec", value)
+	return instance.SetProperty("TurboIOWritesPersec", (value))
 }
 
 // GetTurboIOWritesPersec gets the value of TurboIOWritesPersec for the instance
@@ -535,16 +645,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyTur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteBytesPersec sets the value of WriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBytesPersec", value)
+	return instance.SetProperty("WriteBytesPersec", (value))
 }
 
 // GetWriteBytesPersec gets the value of WriteBytesPersec for the instance
@@ -553,16 +672,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBytestransmittedviaSMBDirectPersec sets the value of WriteBytestransmittedviaSMBDirectPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyWriteBytestransmittedviaSMBDirectPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBytestransmittedviaSMBDirectPersec", value)
+	return instance.SetProperty("WriteBytestransmittedviaSMBDirectPersec", (value))
 }
 
 // GetWriteBytestransmittedviaSMBDirectPersec gets the value of WriteBytestransmittedviaSMBDirectPersec for the instance
@@ -571,16 +699,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteRequestsPersec sets the value of WriteRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyWriteRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("WriteRequestsPersec", value)
+	return instance.SetProperty("WriteRequestsPersec", (value))
 }
 
 // GetWriteRequestsPersec gets the value of WriteRequestsPersec for the instance
@@ -589,16 +726,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteRequeststransmittedviaSMBDirectPersec sets the value of WriteRequeststransmittedviaSMBDirectPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) SetPropertyWriteRequeststransmittedviaSMBDirectPersec(value uint32) (err error) {
-	return instance.SetProperty("WriteRequeststransmittedviaSMBDirectPersec", value)
+	return instance.SetProperty("WriteRequeststransmittedviaSMBDirectPersec", (value))
 }
 
 // GetWriteRequeststransmittedviaSMBDirectPersec gets the value of WriteRequeststransmittedviaSMBDirectPersec for the instance
@@ -607,9 +753,18 @@ func (instance *Win32_PerfFormattedData_Counters_SMBClientShares) GetPropertyWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

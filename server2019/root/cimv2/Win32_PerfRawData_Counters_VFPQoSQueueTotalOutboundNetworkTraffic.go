@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_VFPQoSQueueTotalOutboundNetworkTraffic struct
@@ -55,7 +57,7 @@ func NewWin32_PerfRawData_Counters_VFPQoSQueueTotalOutboundNetworkTrafficEx6(hos
 
 // SetTotalOutboundBytesDropped sets the value of TotalOutboundBytesDropped for the instance
 func (instance *Win32_PerfRawData_Counters_VFPQoSQueueTotalOutboundNetworkTraffic) SetPropertyTotalOutboundBytesDropped(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundBytesDropped", value)
+	return instance.SetProperty("TotalOutboundBytesDropped", (value))
 }
 
 // GetTotalOutboundBytesDropped gets the value of TotalOutboundBytesDropped for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PerfRawData_Counters_VFPQoSQueueTotalOutboundNetworkTraffi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundPacketsDropped sets the value of TotalOutboundPacketsDropped for the instance
 func (instance *Win32_PerfRawData_Counters_VFPQoSQueueTotalOutboundNetworkTraffic) SetPropertyTotalOutboundPacketsDropped(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundPacketsDropped", value)
+	return instance.SetProperty("TotalOutboundPacketsDropped", (value))
 }
 
 // GetTotalOutboundPacketsDropped gets the value of TotalOutboundPacketsDropped for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PerfRawData_Counters_VFPQoSQueueTotalOutboundNetworkTraffi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

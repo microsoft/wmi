@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft
 //////////////////////////////////////////////
 package microsoft
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ClassIndication struct
@@ -52,7 +54,7 @@ func NewCIM_ClassIndicationEx6(hostName string,
 
 // SetClassDefinition sets the value of ClassDefinition for the instance
 func (instance *CIM_ClassIndication) SetPropertyClassDefinition(value interface{}) (err error) {
-	return instance.SetProperty("ClassDefinition", value)
+	return instance.SetProperty("ClassDefinition", (value))
 }
 
 // GetClassDefinition gets the value of ClassDefinition for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_ClassIndication) GetPropertyClassDefinition() (value interfa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

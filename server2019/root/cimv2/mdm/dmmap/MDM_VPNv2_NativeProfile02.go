@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,15 +11,14 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_VPNv2_NativeProfile02 struct
 type MDM_VPNv2_NativeProfile02 struct {
 	*cim.WmiInstance
-
-	//
-	DisableClassBasedDefaultRoute bool
 
 	//
 	InstanceID string
@@ -69,27 +68,9 @@ func NewMDM_VPNv2_NativeProfile02Ex6(hostName string,
 	return
 }
 
-// SetDisableClassBasedDefaultRoute sets the value of DisableClassBasedDefaultRoute for the instance
-func (instance *MDM_VPNv2_NativeProfile02) SetPropertyDisableClassBasedDefaultRoute(value bool) (err error) {
-	return instance.SetProperty("DisableClassBasedDefaultRoute", value)
-}
-
-// GetDisableClassBasedDefaultRoute gets the value of DisableClassBasedDefaultRoute for the instance
-func (instance *MDM_VPNv2_NativeProfile02) GetPropertyDisableClassBasedDefaultRoute() (value bool, err error) {
-	retValue, err := instance.GetProperty("DisableClassBasedDefaultRoute")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_VPNv2_NativeProfile02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -98,16 +79,25 @@ func (instance *MDM_VPNv2_NativeProfile02) GetPropertyInstanceID() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetL2tpPsk sets the value of L2tpPsk for the instance
 func (instance *MDM_VPNv2_NativeProfile02) SetPropertyL2tpPsk(value string) (err error) {
-	return instance.SetProperty("L2tpPsk", value)
+	return instance.SetProperty("L2tpPsk", (value))
 }
 
 // GetL2tpPsk gets the value of L2tpPsk for the instance
@@ -116,16 +106,25 @@ func (instance *MDM_VPNv2_NativeProfile02) GetPropertyL2tpPsk() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNativeProtocolType sets the value of NativeProtocolType for the instance
 func (instance *MDM_VPNv2_NativeProfile02) SetPropertyNativeProtocolType(value string) (err error) {
-	return instance.SetProperty("NativeProtocolType", value)
+	return instance.SetProperty("NativeProtocolType", (value))
 }
 
 // GetNativeProtocolType gets the value of NativeProtocolType for the instance
@@ -134,16 +133,25 @@ func (instance *MDM_VPNv2_NativeProfile02) GetPropertyNativeProtocolType() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_VPNv2_NativeProfile02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -152,16 +160,25 @@ func (instance *MDM_VPNv2_NativeProfile02) GetPropertyParentID() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoutingPolicyType sets the value of RoutingPolicyType for the instance
 func (instance *MDM_VPNv2_NativeProfile02) SetPropertyRoutingPolicyType(value string) (err error) {
-	return instance.SetProperty("RoutingPolicyType", value)
+	return instance.SetProperty("RoutingPolicyType", (value))
 }
 
 // GetRoutingPolicyType gets the value of RoutingPolicyType for the instance
@@ -170,16 +187,25 @@ func (instance *MDM_VPNv2_NativeProfile02) GetPropertyRoutingPolicyType() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServers sets the value of Servers for the instance
 func (instance *MDM_VPNv2_NativeProfile02) SetPropertyServers(value string) (err error) {
-	return instance.SetProperty("Servers", value)
+	return instance.SetProperty("Servers", (value))
 }
 
 // GetServers gets the value of Servers for the instance
@@ -188,9 +214,18 @@ func (instance *MDM_VPNv2_NativeProfile02) GetPropertyServers() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

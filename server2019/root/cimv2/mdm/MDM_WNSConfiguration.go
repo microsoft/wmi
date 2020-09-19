@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_WNSConfiguration struct
@@ -56,7 +58,7 @@ func NewMDM_WNSConfigurationEx6(hostName string,
 
 // SetAppId sets the value of AppId for the instance
 func (instance *MDM_WNSConfiguration) SetPropertyAppId(value string) (err error) {
-	return instance.SetProperty("AppId", value)
+	return instance.SetProperty("AppId", (value))
 }
 
 // GetAppId gets the value of AppId for the instance
@@ -65,16 +67,25 @@ func (instance *MDM_WNSConfiguration) GetPropertyAppId() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConfigurationStatus sets the value of ConfigurationStatus for the instance
 func (instance *MDM_WNSConfiguration) SetPropertyConfigurationStatus(value uint32) (err error) {
-	return instance.SetProperty("ConfigurationStatus", value)
+	return instance.SetProperty("ConfigurationStatus", (value))
 }
 
 // GetConfigurationStatus gets the value of ConfigurationStatus for the instance
@@ -83,10 +94,19 @@ func (instance *MDM_WNSConfiguration) GetPropertyConfigurationStatus() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

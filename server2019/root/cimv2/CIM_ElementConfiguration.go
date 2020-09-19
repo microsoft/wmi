@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ElementConfiguration struct
@@ -56,7 +58,7 @@ func NewCIM_ElementConfigurationEx6(hostName string,
 
 // SetConfiguration sets the value of Configuration for the instance
 func (instance *CIM_ElementConfiguration) SetPropertyConfiguration(value CIM_Configuration) (err error) {
-	return instance.SetProperty("Configuration", value)
+	return instance.SetProperty("Configuration", (value))
 }
 
 // GetConfiguration gets the value of Configuration for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ElementConfiguration) GetPropertyConfiguration() (value CIM_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Configuration)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Configuration)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Configuration is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Configuration(valuetmp)
+
 	return
 }
 
 // SetElement sets the value of Element for the instance
 func (instance *CIM_ElementConfiguration) SetPropertyElement(value CIM_ManagedSystemElement) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ElementConfiguration) GetPropertyElement() (value CIM_Manage
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedSystemElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedSystemElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedSystemElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedSystemElement(valuetmp)
+
 	return
 }

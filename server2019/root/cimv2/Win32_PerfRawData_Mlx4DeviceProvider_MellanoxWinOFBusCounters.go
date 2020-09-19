@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters struct
@@ -196,7 +198,7 @@ func NewWin32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCountersEx6(hostNam
 
 // SetArrivedRDMACNPs sets the value of ArrivedRDMACNPs for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyArrivedRDMACNPs(value uint64) (err error) {
-	return instance.SetProperty("ArrivedRDMACNPs", value)
+	return instance.SetProperty("ArrivedRDMACNPs", (value))
 }
 
 // GetArrivedRDMACNPs gets the value of ArrivedRDMACNPs for the instance
@@ -205,16 +207,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCPUMEMpages4KmappedbyTPTforCQ sets the value of CPUMEMpages4KmappedbyTPTforCQ for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyCPUMEMpages4KmappedbyTPTforCQ(value uint32) (err error) {
-	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforCQ", value)
+	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforCQ", (value))
 }
 
 // GetCPUMEMpages4KmappedbyTPTforCQ gets the value of CPUMEMpages4KmappedbyTPTforCQ for the instance
@@ -223,16 +234,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCPUMEMpages4KmappedbyTPTforEQ sets the value of CPUMEMpages4KmappedbyTPTforEQ for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyCPUMEMpages4KmappedbyTPTforEQ(value uint32) (err error) {
-	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforEQ", value)
+	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforEQ", (value))
 }
 
 // GetCPUMEMpages4KmappedbyTPTforEQ gets the value of CPUMEMpages4KmappedbyTPTforEQ for the instance
@@ -241,16 +261,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCPUMEMpages4KmappedbyTPTforMR sets the value of CPUMEMpages4KmappedbyTPTforMR for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyCPUMEMpages4KmappedbyTPTforMR(value uint32) (err error) {
-	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforMR", value)
+	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforMR", (value))
 }
 
 // GetCPUMEMpages4KmappedbyTPTforMR gets the value of CPUMEMpages4KmappedbyTPTforMR for the instance
@@ -259,16 +288,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCPUMEMpages4KmappedbyTPTforQP sets the value of CPUMEMpages4KmappedbyTPTforQP for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyCPUMEMpages4KmappedbyTPTforQP(value uint32) (err error) {
-	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforQP", value)
+	return instance.SetProperty("CPUMEMpages4KmappedbyTPTforQP", (value))
 }
 
 // GetCPUMEMpages4KmappedbyTPTforQP gets the value of CPUMEMpages4KmappedbyTPTforQP for the instance
@@ -277,16 +315,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCQMissPersec sets the value of CQMissPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyCQMissPersec(value uint32) (err error) {
-	return instance.SetProperty("CQMissPersec", value)
+	return instance.SetProperty("CQMissPersec", (value))
 }
 
 // GetCQMissPersec gets the value of CQMissPersec for the instance
@@ -295,16 +342,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentqpsinerrorstate sets the value of Currentqpsinerrorstate for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyCurrentqpsinerrorstate(value uint32) (err error) {
-	return instance.SetProperty("Currentqpsinerrorstate", value)
+	return instance.SetProperty("Currentqpsinerrorstate", (value))
 }
 
 // GetCurrentqpsinerrorstate gets the value of Currentqpsinerrorstate for the instance
@@ -313,16 +369,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentqpsinlimitedstate sets the value of Currentqpsinlimitedstate for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyCurrentqpsinlimitedstate(value uint32) (err error) {
-	return instance.SetProperty("Currentqpsinlimitedstate", value)
+	return instance.SetProperty("Currentqpsinlimitedstate", (value))
 }
 
 // GetCurrentqpsinlimitedstate gets the value of Currentqpsinlimitedstate for the instance
@@ -331,16 +396,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDcqcnreactionpointnewqprejectevents sets the value of Dcqcnreactionpointnewqprejectevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyDcqcnreactionpointnewqprejectevents(value uint32) (err error) {
-	return instance.SetProperty("Dcqcnreactionpointnewqprejectevents", value)
+	return instance.SetProperty("Dcqcnreactionpointnewqprejectevents", (value))
 }
 
 // GetDcqcnreactionpointnewqprejectevents gets the value of Dcqcnreactionpointnewqprejectevents for the instance
@@ -349,16 +423,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDcqcnreactionpointnewqpshapedevents sets the value of Dcqcnreactionpointnewqpshapedevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyDcqcnreactionpointnewqpshapedevents(value uint32) (err error) {
-	return instance.SetProperty("Dcqcnreactionpointnewqpshapedevents", value)
+	return instance.SetProperty("Dcqcnreactionpointnewqpshapedevents", (value))
 }
 
 // GetDcqcnreactionpointnewqpshapedevents gets the value of Dcqcnreactionpointnewqpshapedevents for the instance
@@ -367,16 +450,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDcqcnreactionpointqprateupdateevents sets the value of Dcqcnreactionpointqprateupdateevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyDcqcnreactionpointqprateupdateevents(value uint32) (err error) {
-	return instance.SetProperty("Dcqcnreactionpointqprateupdateevents", value)
+	return instance.SetProperty("Dcqcnreactionpointqprateupdateevents", (value))
 }
 
 // GetDcqcnreactionpointqprateupdateevents gets the value of Dcqcnreactionpointqprateupdateevents for the instance
@@ -385,16 +477,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDcqcnreactionpointqpscheduleddelayedevents sets the value of Dcqcnreactionpointqpscheduleddelayedevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyDcqcnreactionpointqpscheduleddelayedevents(value uint32) (err error) {
-	return instance.SetProperty("Dcqcnreactionpointqpscheduleddelayedevents", value)
+	return instance.SetProperty("Dcqcnreactionpointqpscheduleddelayedevents", (value))
 }
 
 // GetDcqcnreactionpointqpscheduleddelayedevents gets the value of Dcqcnreactionpointqpscheduleddelayedevents for the instance
@@ -403,16 +504,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDcqcnreactionpointqpschedulednotshapedevents sets the value of Dcqcnreactionpointqpschedulednotshapedevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyDcqcnreactionpointqpschedulednotshapedevents(value uint32) (err error) {
-	return instance.SetProperty("Dcqcnreactionpointqpschedulednotshapedevents", value)
+	return instance.SetProperty("Dcqcnreactionpointqpschedulednotshapedevents", (value))
 }
 
 // GetDcqcnreactionpointqpschedulednotshapedevents gets the value of Dcqcnreactionpointqpschedulednotshapedevents for the instance
@@ -421,16 +531,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDcqcnreactionpointqpscheduledpermitedevents sets the value of Dcqcnreactionpointqpscheduledpermitedevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyDcqcnreactionpointqpscheduledpermitedevents(value uint32) (err error) {
-	return instance.SetProperty("Dcqcnreactionpointqpscheduledpermitedevents", value)
+	return instance.SetProperty("Dcqcnreactionpointqpscheduledpermitedevents", (value))
 }
 
 // GetDcqcnreactionpointqpscheduledpermitedevents gets the value of Dcqcnreactionpointqpscheduledpermitedevents for the instance
@@ -439,16 +558,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEQMissPersec sets the value of EQMissPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyEQMissPersec(value uint32) (err error) {
-	return instance.SetProperty("EQMissPersec", value)
+	return instance.SetProperty("EQMissPersec", (value))
 }
 
 // GetEQMissPersec gets the value of EQMissPersec for the instance
@@ -457,16 +585,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExternalBlueflamehitPersec sets the value of ExternalBlueflamehitPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyExternalBlueflamehitPersec(value uint32) (err error) {
-	return instance.SetProperty("ExternalBlueflamehitPersec", value)
+	return instance.SetProperty("ExternalBlueflamehitPersec", (value))
 }
 
 // GetExternalBlueflamehitPersec gets the value of ExternalBlueflamehitPersec for the instance
@@ -475,16 +612,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExternalBlueflameReplacePersec sets the value of ExternalBlueflameReplacePersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyExternalBlueflameReplacePersec(value uint32) (err error) {
-	return instance.SetProperty("ExternalBlueflameReplacePersec", value)
+	return instance.SetProperty("ExternalBlueflameReplacePersec", (value))
 }
 
 // GetExternalBlueflameReplacePersec gets the value of ExternalBlueflameReplacePersec for the instance
@@ -493,16 +639,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExternalDoorbellDropPersec sets the value of ExternalDoorbellDropPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyExternalDoorbellDropPersec(value uint32) (err error) {
-	return instance.SetProperty("ExternalDoorbellDropPersec", value)
+	return instance.SetProperty("ExternalDoorbellDropPersec", (value))
 }
 
 // GetExternalDoorbellDropPersec gets the value of ExternalDoorbellDropPersec for the instance
@@ -511,16 +666,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExternalDoorbellPushPersec sets the value of ExternalDoorbellPushPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyExternalDoorbellPushPersec(value uint32) (err error) {
-	return instance.SetProperty("ExternalDoorbellPushPersec", value)
+	return instance.SetProperty("ExternalDoorbellPushPersec", (value))
 }
 
 // GetExternalDoorbellPushPersec gets the value of ExternalDoorbellPushPersec for the instance
@@ -529,16 +693,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInternalProcessor0MaximumLatency sets the value of InternalProcessor0MaximumLatency for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyInternalProcessor0MaximumLatency(value uint32) (err error) {
-	return instance.SetProperty("InternalProcessor0MaximumLatency", value)
+	return instance.SetProperty("InternalProcessor0MaximumLatency", (value))
 }
 
 // GetInternalProcessor0MaximumLatency gets the value of InternalProcessor0MaximumLatency for the instance
@@ -547,16 +720,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInternalProcessor1MaximumLatency sets the value of InternalProcessor1MaximumLatency for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyInternalProcessor1MaximumLatency(value uint32) (err error) {
-	return instance.SetProperty("InternalProcessor1MaximumLatency", value)
+	return instance.SetProperty("InternalProcessor1MaximumLatency", (value))
 }
 
 // GetInternalProcessor1MaximumLatency gets the value of InternalProcessor1MaximumLatency for the instance
@@ -565,16 +747,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInternalProcessor2MaximumLatency sets the value of InternalProcessor2MaximumLatency for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyInternalProcessor2MaximumLatency(value uint32) (err error) {
-	return instance.SetProperty("InternalProcessor2MaximumLatency", value)
+	return instance.SetProperty("InternalProcessor2MaximumLatency", (value))
 }
 
 // GetInternalProcessor2MaximumLatency gets the value of InternalProcessor2MaximumLatency for the instance
@@ -583,16 +774,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInternalProcessor3MaximumLatency sets the value of InternalProcessor3MaximumLatency for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyInternalProcessor3MaximumLatency(value uint32) (err error) {
-	return instance.SetProperty("InternalProcessor3MaximumLatency", value)
+	return instance.SetProperty("InternalProcessor3MaximumLatency", (value))
 }
 
 // GetInternalProcessor3MaximumLatency gets the value of InternalProcessor3MaximumLatency for the instance
@@ -601,16 +801,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInternalprocessorexecutedcommands sets the value of Internalprocessorexecutedcommands for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyInternalprocessorexecutedcommands(value uint32) (err error) {
-	return instance.SetProperty("Internalprocessorexecutedcommands", value)
+	return instance.SetProperty("Internalprocessorexecutedcommands", (value))
 }
 
 // GetInternalprocessorexecutedcommands gets the value of Internalprocessorexecutedcommands for the instance
@@ -619,16 +828,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLastRestransmittedQP sets the value of LastRestransmittedQP for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyLastRestransmittedQP(value uint32) (err error) {
-	return instance.SetProperty("LastRestransmittedQP", value)
+	return instance.SetProperty("LastRestransmittedQP", (value))
 }
 
 // GetLastRestransmittedQP gets the value of LastRestransmittedQP for the instance
@@ -637,16 +855,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumqpsinlimitedstate sets the value of Maximumqpsinlimitedstate for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMaximumqpsinlimitedstate(value uint32) (err error) {
-	return instance.SetProperty("Maximumqpsinlimitedstate", value)
+	return instance.SetProperty("Maximumqpsinlimitedstate", (value))
 }
 
 // GetMaximumqpsinlimitedstate gets the value of Maximumqpsinlimitedstate for the instance
@@ -655,16 +882,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMPTentriesusedforCQ sets the value of MPTentriesusedforCQ for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMPTentriesusedforCQ(value uint32) (err error) {
-	return instance.SetProperty("MPTentriesusedforCQ", value)
+	return instance.SetProperty("MPTentriesusedforCQ", (value))
 }
 
 // GetMPTentriesusedforCQ gets the value of MPTentriesusedforCQ for the instance
@@ -673,16 +909,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMPTentriesusedforEQ sets the value of MPTentriesusedforEQ for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMPTentriesusedforEQ(value uint32) (err error) {
-	return instance.SetProperty("MPTentriesusedforEQ", value)
+	return instance.SetProperty("MPTentriesusedforEQ", (value))
 }
 
 // GetMPTentriesusedforEQ gets the value of MPTentriesusedforEQ for the instance
@@ -691,16 +936,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMPTentriesusedforMR sets the value of MPTentriesusedforMR for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMPTentriesusedforMR(value uint32) (err error) {
-	return instance.SetProperty("MPTentriesusedforMR", value)
+	return instance.SetProperty("MPTentriesusedforMR", (value))
 }
 
 // GetMPTentriesusedforMR gets the value of MPTentriesusedforMR for the instance
@@ -709,16 +963,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMPTentriesusedforQP sets the value of MPTentriesusedforQP for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMPTentriesusedforQP(value uint32) (err error) {
-	return instance.SetProperty("MPTentriesusedforQP", value)
+	return instance.SetProperty("MPTentriesusedforQP", (value))
 }
 
 // GetMPTentriesusedforQP gets the value of MPTentriesusedforQP for the instance
@@ -727,16 +990,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMPTMissPersec sets the value of MPTMissPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMPTMissPersec(value uint32) (err error) {
-	return instance.SetProperty("MPTMissPersec", value)
+	return instance.SetProperty("MPTMissPersec", (value))
 }
 
 // GetMPTMissPersec gets the value of MPTMissPersec for the instance
@@ -745,16 +1017,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMTTentriesusedforCQ sets the value of MTTentriesusedforCQ for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMTTentriesusedforCQ(value uint32) (err error) {
-	return instance.SetProperty("MTTentriesusedforCQ", value)
+	return instance.SetProperty("MTTentriesusedforCQ", (value))
 }
 
 // GetMTTentriesusedforCQ gets the value of MTTentriesusedforCQ for the instance
@@ -763,16 +1044,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMTTentriesusedforEQ sets the value of MTTentriesusedforEQ for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMTTentriesusedforEQ(value uint32) (err error) {
-	return instance.SetProperty("MTTentriesusedforEQ", value)
+	return instance.SetProperty("MTTentriesusedforEQ", (value))
 }
 
 // GetMTTentriesusedforEQ gets the value of MTTentriesusedforEQ for the instance
@@ -781,16 +1071,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMTTentriesusedforMR sets the value of MTTentriesusedforMR for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMTTentriesusedforMR(value uint32) (err error) {
-	return instance.SetProperty("MTTentriesusedforMR", value)
+	return instance.SetProperty("MTTentriesusedforMR", (value))
 }
 
 // GetMTTentriesusedforMR gets the value of MTTentriesusedforMR for the instance
@@ -799,16 +1098,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMTTentriesusedforQP sets the value of MTTentriesusedforQP for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMTTentriesusedforQP(value uint32) (err error) {
-	return instance.SetProperty("MTTentriesusedforQP", value)
+	return instance.SetProperty("MTTentriesusedforQP", (value))
 }
 
 // GetMTTentriesusedforQP gets the value of MTTentriesusedforQP for the instance
@@ -817,16 +1125,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMTTMissPersec sets the value of MTTMissPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyMTTMissPersec(value uint32) (err error) {
-	return instance.SetProperty("MTTMissPersec", value)
+	return instance.SetProperty("MTTMissPersec", (value))
 }
 
 // GetMTTMissPersec gets the value of MTTMissPersec for the instance
@@ -835,16 +1152,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNoWQEDropsPersec sets the value of NoWQEDropsPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyNoWQEDropsPersec(value uint32) (err error) {
-	return instance.SetProperty("NoWQEDropsPersec", value)
+	return instance.SetProperty("NoWQEDropsPersec", (value))
 }
 
 // GetNoWQEDropsPersec gets the value of NoWQEDropsPersec for the instance
@@ -853,16 +1179,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPacketsdiscardedduetoinvalidqp sets the value of Packetsdiscardedduetoinvalidqp for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyPacketsdiscardedduetoinvalidqp(value uint64) (err error) {
-	return instance.SetProperty("Packetsdiscardedduetoinvalidqp", value)
+	return instance.SetProperty("Packetsdiscardedduetoinvalidqp", (value))
 }
 
 // GetPacketsdiscardedduetoinvalidqp gets the value of Packetsdiscardedduetoinvalidqp for the instance
@@ -871,16 +1206,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPCIBackpressurePersec sets the value of PCIBackpressurePersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyPCIBackpressurePersec(value uint32) (err error) {
-	return instance.SetProperty("PCIBackpressurePersec", value)
+	return instance.SetProperty("PCIBackpressurePersec", (value))
 }
 
 // GetPCIBackpressurePersec gets the value of PCIBackpressurePersec for the instance
@@ -889,16 +1233,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQppriorityupdateflowevents sets the value of Qppriorityupdateflowevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyQppriorityupdateflowevents(value uint32) (err error) {
-	return instance.SetProperty("Qppriorityupdateflowevents", value)
+	return instance.SetProperty("Qppriorityupdateflowevents", (value))
 }
 
 // GetQppriorityupdateflowevents gets the value of Qppriorityupdateflowevents for the instance
@@ -907,16 +1260,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceiveWQEcachehitPersec sets the value of ReceiveWQEcachehitPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyReceiveWQEcachehitPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceiveWQEcachehitPersec", value)
+	return instance.SetProperty("ReceiveWQEcachehitPersec", (value))
 }
 
 // GetReceiveWQEcachehitPersec gets the value of ReceiveWQEcachehitPersec for the instance
@@ -925,16 +1287,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceiveWQEcachelookupPersec sets the value of ReceiveWQEcachelookupPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyReceiveWQEcachelookupPersec(value uint32) (err error) {
-	return instance.SetProperty("ReceiveWQEcachelookupPersec", value)
+	return instance.SetProperty("ReceiveWQEcachelookupPersec", (value))
 }
 
 // GetReceiveWQEcachelookupPersec gets the value of ReceiveWQEcachelookupPersec for the instance
@@ -943,16 +1314,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRQMissPersec sets the value of RQMissPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyRQMissPersec(value uint32) (err error) {
-	return instance.SetProperty("RQMissPersec", value)
+	return instance.SetProperty("RQMissPersec", (value))
 }
 
 // GetRQMissPersec gets the value of RQMissPersec for the instance
@@ -961,16 +1341,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetScatterBackpressurePersec sets the value of ScatterBackpressurePersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyScatterBackpressurePersec(value uint32) (err error) {
-	return instance.SetProperty("ScatterBackpressurePersec", value)
+	return instance.SetProperty("ScatterBackpressurePersec", (value))
 }
 
 // GetScatterBackpressurePersec gets the value of ScatterBackpressurePersec for the instance
@@ -979,16 +1368,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSQMissPersec sets the value of SQMissPersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertySQMissPersec(value uint32) (err error) {
-	return instance.SetProperty("SQMissPersec", value)
+	return instance.SetProperty("SQMissPersec", (value))
 }
 
 // GetSQMissPersec gets the value of SQMissPersec for the instance
@@ -997,16 +1395,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSteeringQPCBackpressurePersec sets the value of SteeringQPCBackpressurePersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertySteeringQPCBackpressurePersec(value uint32) (err error) {
-	return instance.SetProperty("SteeringQPCBackpressurePersec", value)
+	return instance.SetProperty("SteeringQPCBackpressurePersec", (value))
 }
 
 // GetSteeringQPCBackpressurePersec gets the value of SteeringQPCBackpressurePersec for the instance
@@ -1015,16 +1422,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalqpsinlimitedstate sets the value of Totalqpsinlimitedstate for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyTotalqpsinlimitedstate(value uint32) (err error) {
-	return instance.SetProperty("Totalqpsinlimitedstate", value)
+	return instance.SetProperty("Totalqpsinlimitedstate", (value))
 }
 
 // GetTotalqpsinlimitedstate gets the value of Totalqpsinlimitedstate for the instance
@@ -1033,16 +1449,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransmissionenginehangevents sets the value of Transmissionenginehangevents for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyTransmissionenginehangevents(value uint32) (err error) {
-	return instance.SetProperty("Transmissionenginehangevents", value)
+	return instance.SetProperty("Transmissionenginehangevents", (value))
 }
 
 // GetTransmissionenginehangevents gets the value of Transmissionenginehangevents for the instance
@@ -1051,16 +1476,25 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWQEfetchPerAtomicBackpressurePersec sets the value of WQEfetchPerAtomicBackpressurePersec for the instance
 func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) SetPropertyWQEfetchPerAtomicBackpressurePersec(value uint32) (err error) {
-	return instance.SetProperty("WQEfetchPerAtomicBackpressurePersec", value)
+	return instance.SetProperty("WQEfetchPerAtomicBackpressurePersec", (value))
 }
 
 // GetWQEfetchPerAtomicBackpressurePersec gets the value of WQEfetchPerAtomicBackpressurePersec for the instance
@@ -1069,9 +1503,18 @@ func (instance *Win32_PerfRawData_Mlx4DeviceProvider_MellanoxWinOFBusCounters) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

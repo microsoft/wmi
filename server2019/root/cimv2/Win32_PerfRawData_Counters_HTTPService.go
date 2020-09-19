@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_HTTPService struct
@@ -67,7 +69,7 @@ func NewWin32_PerfRawData_Counters_HTTPServiceEx6(hostName string,
 
 // SetCurrentUrisCached sets the value of CurrentUrisCached for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPService) SetPropertyCurrentUrisCached(value uint32) (err error) {
-	return instance.SetProperty("CurrentUrisCached", value)
+	return instance.SetProperty("CurrentUrisCached", (value))
 }
 
 // GetCurrentUrisCached gets the value of CurrentUrisCached for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPService) GetPropertyCurrentUrisCa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalFlushedUris sets the value of TotalFlushedUris for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPService) SetPropertyTotalFlushedUris(value uint32) (err error) {
-	return instance.SetProperty("TotalFlushedUris", value)
+	return instance.SetProperty("TotalFlushedUris", (value))
 }
 
 // GetTotalFlushedUris gets the value of TotalFlushedUris for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPService) GetPropertyTotalFlushedU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalUrisCached sets the value of TotalUrisCached for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPService) SetPropertyTotalUrisCached(value uint32) (err error) {
-	return instance.SetProperty("TotalUrisCached", value)
+	return instance.SetProperty("TotalUrisCached", (value))
 }
 
 // GetTotalUrisCached gets the value of TotalUrisCached for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPService) GetPropertyTotalUrisCach
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUriCacheFlushes sets the value of UriCacheFlushes for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPService) SetPropertyUriCacheFlushes(value uint32) (err error) {
-	return instance.SetProperty("UriCacheFlushes", value)
+	return instance.SetProperty("UriCacheFlushes", (value))
 }
 
 // GetUriCacheFlushes gets the value of UriCacheFlushes for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPService) GetPropertyUriCacheFlush
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUriCacheHits sets the value of UriCacheHits for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPService) SetPropertyUriCacheHits(value uint32) (err error) {
-	return instance.SetProperty("UriCacheHits", value)
+	return instance.SetProperty("UriCacheHits", (value))
 }
 
 // GetUriCacheHits gets the value of UriCacheHits for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPService) GetPropertyUriCacheHits(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUriCacheMisses sets the value of UriCacheMisses for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPService) SetPropertyUriCacheMisses(value uint32) (err error) {
-	return instance.SetProperty("UriCacheMisses", value)
+	return instance.SetProperty("UriCacheMisses", (value))
 }
 
 // GetUriCacheMisses gets the value of UriCacheMisses for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfRawData_Counters_HTTPService) GetPropertyUriCacheMisse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

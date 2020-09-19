@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ResourceType struct
@@ -106,7 +108,7 @@ func NewMSCluster_ResourceTypeEx6(hostName string,
 
 // SetAdminExtensions sets the value of AdminExtensions for the instance
 func (instance *MSCluster_ResourceType) SetPropertyAdminExtensions(value []string) (err error) {
-	return instance.SetProperty("AdminExtensions", value)
+	return instance.SetProperty("AdminExtensions", (value))
 }
 
 // GetAdminExtensions gets the value of AdminExtensions for the instance
@@ -115,16 +117,26 @@ func (instance *MSCluster_ResourceType) GetPropertyAdminExtensions() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDeadlockTimeout sets the value of DeadlockTimeout for the instance
 func (instance *MSCluster_ResourceType) SetPropertyDeadlockTimeout(value uint32) (err error) {
-	return instance.SetProperty("DeadlockTimeout", value)
+	return instance.SetProperty("DeadlockTimeout", (value))
 }
 
 // GetDeadlockTimeout gets the value of DeadlockTimeout for the instance
@@ -133,16 +145,25 @@ func (instance *MSCluster_ResourceType) GetPropertyDeadlockTimeout() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDeleteRequiresAllNodes sets the value of DeleteRequiresAllNodes for the instance
 func (instance *MSCluster_ResourceType) SetPropertyDeleteRequiresAllNodes(value bool) (err error) {
-	return instance.SetProperty("DeleteRequiresAllNodes", value)
+	return instance.SetProperty("DeleteRequiresAllNodes", (value))
 }
 
 // GetDeleteRequiresAllNodes gets the value of DeleteRequiresAllNodes for the instance
@@ -151,16 +172,25 @@ func (instance *MSCluster_ResourceType) GetPropertyDeleteRequiresAllNodes() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDisplayName sets the value of DisplayName for the instance
 func (instance *MSCluster_ResourceType) SetPropertyDisplayName(value string) (err error) {
-	return instance.SetProperty("DisplayName", value)
+	return instance.SetProperty("DisplayName", (value))
 }
 
 // GetDisplayName gets the value of DisplayName for the instance
@@ -169,16 +199,25 @@ func (instance *MSCluster_ResourceType) GetPropertyDisplayName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDllName sets the value of DllName for the instance
 func (instance *MSCluster_ResourceType) SetPropertyDllName(value string) (err error) {
-	return instance.SetProperty("DllName", value)
+	return instance.SetProperty("DllName", (value))
 }
 
 // GetDllName gets the value of DllName for the instance
@@ -187,16 +226,25 @@ func (instance *MSCluster_ResourceType) GetPropertyDllName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDumpLogQuery sets the value of DumpLogQuery for the instance
 func (instance *MSCluster_ResourceType) SetPropertyDumpLogQuery(value []string) (err error) {
-	return instance.SetProperty("DumpLogQuery", value)
+	return instance.SetProperty("DumpLogQuery", (value))
 }
 
 // GetDumpLogQuery gets the value of DumpLogQuery for the instance
@@ -205,16 +253,26 @@ func (instance *MSCluster_ResourceType) GetPropertyDumpLogQuery() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDumpPolicy sets the value of DumpPolicy for the instance
 func (instance *MSCluster_ResourceType) SetPropertyDumpPolicy(value uint64) (err error) {
-	return instance.SetProperty("DumpPolicy", value)
+	return instance.SetProperty("DumpPolicy", (value))
 }
 
 // GetDumpPolicy gets the value of DumpPolicy for the instance
@@ -223,16 +281,25 @@ func (instance *MSCluster_ResourceType) GetPropertyDumpPolicy() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDumpServices sets the value of DumpServices for the instance
 func (instance *MSCluster_ResourceType) SetPropertyDumpServices(value []string) (err error) {
-	return instance.SetProperty("DumpServices", value)
+	return instance.SetProperty("DumpServices", (value))
 }
 
 // GetDumpServices gets the value of DumpServices for the instance
@@ -241,16 +308,26 @@ func (instance *MSCluster_ResourceType) GetPropertyDumpServices() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetEnabledEventLogs sets the value of EnabledEventLogs for the instance
 func (instance *MSCluster_ResourceType) SetPropertyEnabledEventLogs(value []string) (err error) {
-	return instance.SetProperty("EnabledEventLogs", value)
+	return instance.SetProperty("EnabledEventLogs", (value))
 }
 
 // GetEnabledEventLogs gets the value of EnabledEventLogs for the instance
@@ -259,16 +336,26 @@ func (instance *MSCluster_ResourceType) GetPropertyEnabledEventLogs() (value []s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIsAlivePollInterval sets the value of IsAlivePollInterval for the instance
 func (instance *MSCluster_ResourceType) SetPropertyIsAlivePollInterval(value uint32) (err error) {
-	return instance.SetProperty("IsAlivePollInterval", value)
+	return instance.SetProperty("IsAlivePollInterval", (value))
 }
 
 // GetIsAlivePollInterval gets the value of IsAlivePollInterval for the instance
@@ -277,16 +364,25 @@ func (instance *MSCluster_ResourceType) GetPropertyIsAlivePollInterval() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLocalQuorumCapable sets the value of LocalQuorumCapable for the instance
 func (instance *MSCluster_ResourceType) SetPropertyLocalQuorumCapable(value bool) (err error) {
-	return instance.SetProperty("LocalQuorumCapable", value)
+	return instance.SetProperty("LocalQuorumCapable", (value))
 }
 
 // GetLocalQuorumCapable gets the value of LocalQuorumCapable for the instance
@@ -295,16 +391,25 @@ func (instance *MSCluster_ResourceType) GetPropertyLocalQuorumCapable() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLooksAlivePollInterval sets the value of LooksAlivePollInterval for the instance
 func (instance *MSCluster_ResourceType) SetPropertyLooksAlivePollInterval(value uint32) (err error) {
-	return instance.SetProperty("LooksAlivePollInterval", value)
+	return instance.SetProperty("LooksAlivePollInterval", (value))
 }
 
 // GetLooksAlivePollInterval gets the value of LooksAlivePollInterval for the instance
@@ -313,16 +418,25 @@ func (instance *MSCluster_ResourceType) GetPropertyLooksAlivePollInterval() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumMonitors sets the value of MaximumMonitors for the instance
 func (instance *MSCluster_ResourceType) SetPropertyMaximumMonitors(value uint32) (err error) {
-	return instance.SetProperty("MaximumMonitors", value)
+	return instance.SetProperty("MaximumMonitors", (value))
 }
 
 // GetMaximumMonitors gets the value of MaximumMonitors for the instance
@@ -331,16 +445,25 @@ func (instance *MSCluster_ResourceType) GetPropertyMaximumMonitors() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPendingTimeout sets the value of PendingTimeout for the instance
 func (instance *MSCluster_ResourceType) SetPropertyPendingTimeout(value uint32) (err error) {
-	return instance.SetProperty("PendingTimeout", value)
+	return instance.SetProperty("PendingTimeout", (value))
 }
 
 // GetPendingTimeout gets the value of PendingTimeout for the instance
@@ -349,16 +472,25 @@ func (instance *MSCluster_ResourceType) GetPropertyPendingTimeout() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrivateProperties sets the value of PrivateProperties for the instance
 func (instance *MSCluster_ResourceType) SetPropertyPrivateProperties(value MSCluster_Property) (err error) {
-	return instance.SetProperty("PrivateProperties", value)
+	return instance.SetProperty("PrivateProperties", (value))
 }
 
 // GetPrivateProperties gets the value of PrivateProperties for the instance
@@ -367,16 +499,25 @@ func (instance *MSCluster_ResourceType) GetPropertyPrivateProperties() (value MS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSCluster_Property)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSCluster_Property)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSCluster_Property is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSCluster_Property(valuetmp)
+
 	return
 }
 
 // SetQuorumCapable sets the value of QuorumCapable for the instance
 func (instance *MSCluster_ResourceType) SetPropertyQuorumCapable(value bool) (err error) {
-	return instance.SetProperty("QuorumCapable", value)
+	return instance.SetProperty("QuorumCapable", (value))
 }
 
 // GetQuorumCapable gets the value of QuorumCapable for the instance
@@ -385,16 +526,25 @@ func (instance *MSCluster_ResourceType) GetPropertyQuorumCapable() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRequiredDependencyClasses sets the value of RequiredDependencyClasses for the instance
 func (instance *MSCluster_ResourceType) SetPropertyRequiredDependencyClasses(value []uint32) (err error) {
-	return instance.SetProperty("RequiredDependencyClasses", value)
+	return instance.SetProperty("RequiredDependencyClasses", (value))
 }
 
 // GetRequiredDependencyClasses gets the value of RequiredDependencyClasses for the instance
@@ -403,16 +553,26 @@ func (instance *MSCluster_ResourceType) GetPropertyRequiredDependencyClasses() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetRequiredDependencyTypes sets the value of RequiredDependencyTypes for the instance
 func (instance *MSCluster_ResourceType) SetPropertyRequiredDependencyTypes(value []string) (err error) {
-	return instance.SetProperty("RequiredDependencyTypes", value)
+	return instance.SetProperty("RequiredDependencyTypes", (value))
 }
 
 // GetRequiredDependencyTypes gets the value of RequiredDependencyTypes for the instance
@@ -421,16 +581,26 @@ func (instance *MSCluster_ResourceType) GetPropertyRequiredDependencyTypes() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetResourceClass sets the value of ResourceClass for the instance
 func (instance *MSCluster_ResourceType) SetPropertyResourceClass(value uint32) (err error) {
-	return instance.SetProperty("ResourceClass", value)
+	return instance.SetProperty("ResourceClass", (value))
 }
 
 // GetResourceClass gets the value of ResourceClass for the instance
@@ -439,10 +609,19 @@ func (instance *MSCluster_ResourceType) GetPropertyResourceClass() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

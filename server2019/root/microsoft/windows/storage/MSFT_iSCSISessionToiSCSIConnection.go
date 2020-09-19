@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_iSCSISessionToiSCSIConnection struct
@@ -56,7 +58,7 @@ func NewMSFT_iSCSISessionToiSCSIConnectionEx6(hostName string,
 
 // SetiSCSIConnection sets the value of iSCSIConnection for the instance
 func (instance *MSFT_iSCSISessionToiSCSIConnection) SetPropertyiSCSIConnection(value MSFT_iSCSIConnection) (err error) {
-	return instance.SetProperty("iSCSIConnection", value)
+	return instance.SetProperty("iSCSIConnection", (value))
 }
 
 // GetiSCSIConnection gets the value of iSCSIConnection for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_iSCSISessionToiSCSIConnection) GetPropertyiSCSIConnection()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_iSCSIConnection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_iSCSIConnection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_iSCSIConnection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_iSCSIConnection(valuetmp)
+
 	return
 }
 
 // SetiSCSISession sets the value of iSCSISession for the instance
 func (instance *MSFT_iSCSISessionToiSCSIConnection) SetPropertyiSCSISession(value MSFT_iSCSISession) (err error) {
-	return instance.SetProperty("iSCSISession", value)
+	return instance.SetProperty("iSCSISession", (value))
 }
 
 // GetiSCSISession gets the value of iSCSISession for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_iSCSISessionToiSCSIConnection) GetPropertyiSCSISession() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_iSCSISession)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_iSCSISession)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_iSCSISession is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_iSCSISession(valuetmp)
+
 	return
 }

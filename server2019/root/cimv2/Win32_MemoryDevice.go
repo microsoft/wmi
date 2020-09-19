@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_MemoryDevice struct
@@ -52,7 +54,7 @@ func NewWin32_MemoryDeviceEx6(hostName string,
 
 // SetErrorGranularity sets the value of ErrorGranularity for the instance
 func (instance *Win32_MemoryDevice) SetPropertyErrorGranularity(value uint16) (err error) {
-	return instance.SetProperty("ErrorGranularity", value)
+	return instance.SetProperty("ErrorGranularity", (value))
 }
 
 // GetErrorGranularity gets the value of ErrorGranularity for the instance
@@ -61,9 +63,18 @@ func (instance *Win32_MemoryDevice) GetPropertyErrorGranularity() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

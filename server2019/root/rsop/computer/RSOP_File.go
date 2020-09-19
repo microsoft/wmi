@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_File struct
@@ -61,7 +63,7 @@ func NewRSOP_FileEx6(hostName string,
 
 // SetMode sets the value of Mode for the instance
 func (instance *RSOP_File) SetPropertyMode(value File_Mode) (err error) {
-	return instance.SetProperty("Mode", value)
+	return instance.SetProperty("Mode", (value))
 }
 
 // GetMode gets the value of Mode for the instance
@@ -70,16 +72,25 @@ func (instance *RSOP_File) GetPropertyMode() (value File_Mode, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(File_Mode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = File_Mode(valuetmp)
+
 	return
 }
 
 // SetOriginalPath sets the value of OriginalPath for the instance
 func (instance *RSOP_File) SetPropertyOriginalPath(value string) (err error) {
-	return instance.SetProperty("OriginalPath", value)
+	return instance.SetProperty("OriginalPath", (value))
 }
 
 // GetOriginalPath gets the value of OriginalPath for the instance
@@ -88,16 +99,25 @@ func (instance *RSOP_File) GetPropertyOriginalPath() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *RSOP_File) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -106,16 +126,25 @@ func (instance *RSOP_File) GetPropertyPath() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSDDLString sets the value of SDDLString for the instance
 func (instance *RSOP_File) SetPropertySDDLString(value string) (err error) {
-	return instance.SetProperty("SDDLString", value)
+	return instance.SetProperty("SDDLString", (value))
 }
 
 // GetSDDLString gets the value of SDDLString for the instance
@@ -124,9 +153,18 @@ func (instance *RSOP_File) GetPropertySDDLString() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

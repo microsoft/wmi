@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageQoSPolicyToFlow struct
@@ -56,7 +58,7 @@ func NewMSFT_StorageQoSPolicyToFlowEx6(hostName string,
 
 // SetFlow sets the value of Flow for the instance
 func (instance *MSFT_StorageQoSPolicyToFlow) SetPropertyFlow(value MSFT_StorageQoSFlow) (err error) {
-	return instance.SetProperty("Flow", value)
+	return instance.SetProperty("Flow", (value))
 }
 
 // GetFlow gets the value of Flow for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_StorageQoSPolicyToFlow) GetPropertyFlow() (value MSFT_Stora
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageQoSFlow)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageQoSFlow)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageQoSFlow is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageQoSFlow(valuetmp)
+
 	return
 }
 
 // SetPolicy sets the value of Policy for the instance
 func (instance *MSFT_StorageQoSPolicyToFlow) SetPropertyPolicy(value MSFT_StorageQoSPolicy) (err error) {
-	return instance.SetProperty("Policy", value)
+	return instance.SetProperty("Policy", (value))
 }
 
 // GetPolicy gets the value of Policy for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_StorageQoSPolicyToFlow) GetPropertyPolicy() (value MSFT_Sto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageQoSPolicy)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageQoSPolicy)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageQoSPolicy is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageQoSPolicy(valuetmp)
+
 	return
 }

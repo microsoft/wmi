@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_TextInput02 struct
@@ -50,18 +52,6 @@ type MDM_Policy_Config01_TextInput02 struct {
 
 	//
 	AllowLinguisticDataCollection int32
-
-	//
-	ConfigureJapaneseIMEVersion int32
-
-	//
-	ConfigureKoreanIMEVersion int32
-
-	//
-	ConfigureSimplifiedChineseIMEVersion int32
-
-	//
-	ConfigureTraditionalChineseIMEVersion int32
 
 	//
 	EnableTouchKeyboardAutoInvokeInDesktopMode int32
@@ -137,7 +127,7 @@ func NewMDM_Policy_Config01_TextInput02Ex6(hostName string,
 
 // SetAllowHardwareKeyboardTextSuggestions sets the value of AllowHardwareKeyboardTextSuggestions for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowHardwareKeyboardTextSuggestions(value int32) (err error) {
-	return instance.SetProperty("AllowHardwareKeyboardTextSuggestions", value)
+	return instance.SetProperty("AllowHardwareKeyboardTextSuggestions", (value))
 }
 
 // GetAllowHardwareKeyboardTextSuggestions gets the value of AllowHardwareKeyboardTextSuggestions for the instance
@@ -146,16 +136,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowHardwareKeyboar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowIMELogging sets the value of AllowIMELogging for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowIMELogging(value int32) (err error) {
-	return instance.SetProperty("AllowIMELogging", value)
+	return instance.SetProperty("AllowIMELogging", (value))
 }
 
 // GetAllowIMELogging gets the value of AllowIMELogging for the instance
@@ -164,16 +163,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowIMELogging() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowIMENetworkAccess sets the value of AllowIMENetworkAccess for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowIMENetworkAccess(value int32) (err error) {
-	return instance.SetProperty("AllowIMENetworkAccess", value)
+	return instance.SetProperty("AllowIMENetworkAccess", (value))
 }
 
 // GetAllowIMENetworkAccess gets the value of AllowIMENetworkAccess for the instance
@@ -182,16 +190,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowIMENetworkAcces
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowInputPanel sets the value of AllowInputPanel for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowInputPanel(value int32) (err error) {
-	return instance.SetProperty("AllowInputPanel", value)
+	return instance.SetProperty("AllowInputPanel", (value))
 }
 
 // GetAllowInputPanel gets the value of AllowInputPanel for the instance
@@ -200,16 +217,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowInputPanel() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowJapaneseIMESurrogatePairCharacters sets the value of AllowJapaneseIMESurrogatePairCharacters for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowJapaneseIMESurrogatePairCharacters(value int32) (err error) {
-	return instance.SetProperty("AllowJapaneseIMESurrogatePairCharacters", value)
+	return instance.SetProperty("AllowJapaneseIMESurrogatePairCharacters", (value))
 }
 
 // GetAllowJapaneseIMESurrogatePairCharacters gets the value of AllowJapaneseIMESurrogatePairCharacters for the instance
@@ -218,16 +244,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowJapaneseIMESurr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowJapaneseIVSCharacters sets the value of AllowJapaneseIVSCharacters for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowJapaneseIVSCharacters(value int32) (err error) {
-	return instance.SetProperty("AllowJapaneseIVSCharacters", value)
+	return instance.SetProperty("AllowJapaneseIVSCharacters", (value))
 }
 
 // GetAllowJapaneseIVSCharacters gets the value of AllowJapaneseIVSCharacters for the instance
@@ -236,16 +271,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowJapaneseIVSChar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowJapaneseNonPublishingStandardGlyph sets the value of AllowJapaneseNonPublishingStandardGlyph for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowJapaneseNonPublishingStandardGlyph(value int32) (err error) {
-	return instance.SetProperty("AllowJapaneseNonPublishingStandardGlyph", value)
+	return instance.SetProperty("AllowJapaneseNonPublishingStandardGlyph", (value))
 }
 
 // GetAllowJapaneseNonPublishingStandardGlyph gets the value of AllowJapaneseNonPublishingStandardGlyph for the instance
@@ -254,16 +298,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowJapaneseNonPubl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowJapaneseUserDictionary sets the value of AllowJapaneseUserDictionary for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowJapaneseUserDictionary(value int32) (err error) {
-	return instance.SetProperty("AllowJapaneseUserDictionary", value)
+	return instance.SetProperty("AllowJapaneseUserDictionary", (value))
 }
 
 // GetAllowJapaneseUserDictionary gets the value of AllowJapaneseUserDictionary for the instance
@@ -272,16 +325,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowJapaneseUserDic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowKeyboardTextSuggestions sets the value of AllowKeyboardTextSuggestions for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowKeyboardTextSuggestions(value int32) (err error) {
-	return instance.SetProperty("AllowKeyboardTextSuggestions", value)
+	return instance.SetProperty("AllowKeyboardTextSuggestions", (value))
 }
 
 // GetAllowKeyboardTextSuggestions gets the value of AllowKeyboardTextSuggestions for the instance
@@ -290,16 +352,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowKeyboardTextSug
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowLanguageFeaturesUninstall sets the value of AllowLanguageFeaturesUninstall for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowLanguageFeaturesUninstall(value int32) (err error) {
-	return instance.SetProperty("AllowLanguageFeaturesUninstall", value)
+	return instance.SetProperty("AllowLanguageFeaturesUninstall", (value))
 }
 
 // GetAllowLanguageFeaturesUninstall gets the value of AllowLanguageFeaturesUninstall for the instance
@@ -308,16 +379,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowLanguageFeature
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowLinguisticDataCollection sets the value of AllowLinguisticDataCollection for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyAllowLinguisticDataCollection(value int32) (err error) {
-	return instance.SetProperty("AllowLinguisticDataCollection", value)
+	return instance.SetProperty("AllowLinguisticDataCollection", (value))
 }
 
 // GetAllowLinguisticDataCollection gets the value of AllowLinguisticDataCollection for the instance
@@ -326,88 +406,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyAllowLinguisticDataC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureJapaneseIMEVersion sets the value of ConfigureJapaneseIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) SetPropertyConfigureJapaneseIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureJapaneseIMEVersion", value)
-}
-
-// GetConfigureJapaneseIMEVersion gets the value of ConfigureJapaneseIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) GetPropertyConfigureJapaneseIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureJapaneseIMEVersion")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureKoreanIMEVersion sets the value of ConfigureKoreanIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) SetPropertyConfigureKoreanIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureKoreanIMEVersion", value)
-}
-
-// GetConfigureKoreanIMEVersion gets the value of ConfigureKoreanIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) GetPropertyConfigureKoreanIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureKoreanIMEVersion")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
 
-// SetConfigureSimplifiedChineseIMEVersion sets the value of ConfigureSimplifiedChineseIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) SetPropertyConfigureSimplifiedChineseIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureSimplifiedChineseIMEVersion", value)
-}
+	value = int32(valuetmp)
 
-// GetConfigureSimplifiedChineseIMEVersion gets the value of ConfigureSimplifiedChineseIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) GetPropertyConfigureSimplifiedChineseIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureSimplifiedChineseIMEVersion")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureTraditionalChineseIMEVersion sets the value of ConfigureTraditionalChineseIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) SetPropertyConfigureTraditionalChineseIMEVersion(value int32) (err error) {
-	return instance.SetProperty("ConfigureTraditionalChineseIMEVersion", value)
-}
-
-// GetConfigureTraditionalChineseIMEVersion gets the value of ConfigureTraditionalChineseIMEVersion for the instance
-func (instance *MDM_Policy_Config01_TextInput02) GetPropertyConfigureTraditionalChineseIMEVersion() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureTraditionalChineseIMEVersion")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
 	return
 }
 
 // SetEnableTouchKeyboardAutoInvokeInDesktopMode sets the value of EnableTouchKeyboardAutoInvokeInDesktopMode for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyEnableTouchKeyboardAutoInvokeInDesktopMode(value int32) (err error) {
-	return instance.SetProperty("EnableTouchKeyboardAutoInvokeInDesktopMode", value)
+	return instance.SetProperty("EnableTouchKeyboardAutoInvokeInDesktopMode", (value))
 }
 
 // GetEnableTouchKeyboardAutoInvokeInDesktopMode gets the value of EnableTouchKeyboardAutoInvokeInDesktopMode for the instance
@@ -416,16 +433,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyEnableTouchKeyboardA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetExcludeJapaneseIMEExceptJIS0208 sets the value of ExcludeJapaneseIMEExceptJIS0208 for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyExcludeJapaneseIMEExceptJIS0208(value int32) (err error) {
-	return instance.SetProperty("ExcludeJapaneseIMEExceptJIS0208", value)
+	return instance.SetProperty("ExcludeJapaneseIMEExceptJIS0208", (value))
 }
 
 // GetExcludeJapaneseIMEExceptJIS0208 gets the value of ExcludeJapaneseIMEExceptJIS0208 for the instance
@@ -434,16 +460,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyExcludeJapaneseIMEEx
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetExcludeJapaneseIMEExceptJIS0208andEUDC sets the value of ExcludeJapaneseIMEExceptJIS0208andEUDC for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyExcludeJapaneseIMEExceptJIS0208andEUDC(value int32) (err error) {
-	return instance.SetProperty("ExcludeJapaneseIMEExceptJIS0208andEUDC", value)
+	return instance.SetProperty("ExcludeJapaneseIMEExceptJIS0208andEUDC", (value))
 }
 
 // GetExcludeJapaneseIMEExceptJIS0208andEUDC gets the value of ExcludeJapaneseIMEExceptJIS0208andEUDC for the instance
@@ -452,16 +487,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyExcludeJapaneseIMEEx
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetExcludeJapaneseIMEExceptShiftJIS sets the value of ExcludeJapaneseIMEExceptShiftJIS for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyExcludeJapaneseIMEExceptShiftJIS(value int32) (err error) {
-	return instance.SetProperty("ExcludeJapaneseIMEExceptShiftJIS", value)
+	return instance.SetProperty("ExcludeJapaneseIMEExceptShiftJIS", (value))
 }
 
 // GetExcludeJapaneseIMEExceptShiftJIS gets the value of ExcludeJapaneseIMEExceptShiftJIS for the instance
@@ -470,16 +514,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyExcludeJapaneseIMEEx
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetForceTouchKeyboardDockedState sets the value of ForceTouchKeyboardDockedState for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyForceTouchKeyboardDockedState(value int32) (err error) {
-	return instance.SetProperty("ForceTouchKeyboardDockedState", value)
+	return instance.SetProperty("ForceTouchKeyboardDockedState", (value))
 }
 
 // GetForceTouchKeyboardDockedState gets the value of ForceTouchKeyboardDockedState for the instance
@@ -488,16 +541,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyForceTouchKeyboardDo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -506,16 +568,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyInstanceID() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -524,16 +595,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyParentID() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTouchKeyboardDictationButtonAvailability sets the value of TouchKeyboardDictationButtonAvailability for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyTouchKeyboardDictationButtonAvailability(value int32) (err error) {
-	return instance.SetProperty("TouchKeyboardDictationButtonAvailability", value)
+	return instance.SetProperty("TouchKeyboardDictationButtonAvailability", (value))
 }
 
 // GetTouchKeyboardDictationButtonAvailability gets the value of TouchKeyboardDictationButtonAvailability for the instance
@@ -542,16 +622,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyTouchKeyboardDictati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetTouchKeyboardEmojiButtonAvailability sets the value of TouchKeyboardEmojiButtonAvailability for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyTouchKeyboardEmojiButtonAvailability(value int32) (err error) {
-	return instance.SetProperty("TouchKeyboardEmojiButtonAvailability", value)
+	return instance.SetProperty("TouchKeyboardEmojiButtonAvailability", (value))
 }
 
 // GetTouchKeyboardEmojiButtonAvailability gets the value of TouchKeyboardEmojiButtonAvailability for the instance
@@ -560,16 +649,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyTouchKeyboardEmojiBu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetTouchKeyboardFullModeAvailability sets the value of TouchKeyboardFullModeAvailability for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyTouchKeyboardFullModeAvailability(value int32) (err error) {
-	return instance.SetProperty("TouchKeyboardFullModeAvailability", value)
+	return instance.SetProperty("TouchKeyboardFullModeAvailability", (value))
 }
 
 // GetTouchKeyboardFullModeAvailability gets the value of TouchKeyboardFullModeAvailability for the instance
@@ -578,16 +676,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyTouchKeyboardFullMod
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetTouchKeyboardHandwritingModeAvailability sets the value of TouchKeyboardHandwritingModeAvailability for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyTouchKeyboardHandwritingModeAvailability(value int32) (err error) {
-	return instance.SetProperty("TouchKeyboardHandwritingModeAvailability", value)
+	return instance.SetProperty("TouchKeyboardHandwritingModeAvailability", (value))
 }
 
 // GetTouchKeyboardHandwritingModeAvailability gets the value of TouchKeyboardHandwritingModeAvailability for the instance
@@ -596,16 +703,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyTouchKeyboardHandwri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetTouchKeyboardNarrowModeAvailability sets the value of TouchKeyboardNarrowModeAvailability for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyTouchKeyboardNarrowModeAvailability(value int32) (err error) {
-	return instance.SetProperty("TouchKeyboardNarrowModeAvailability", value)
+	return instance.SetProperty("TouchKeyboardNarrowModeAvailability", (value))
 }
 
 // GetTouchKeyboardNarrowModeAvailability gets the value of TouchKeyboardNarrowModeAvailability for the instance
@@ -614,16 +730,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyTouchKeyboardNarrowM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetTouchKeyboardSplitModeAvailability sets the value of TouchKeyboardSplitModeAvailability for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyTouchKeyboardSplitModeAvailability(value int32) (err error) {
-	return instance.SetProperty("TouchKeyboardSplitModeAvailability", value)
+	return instance.SetProperty("TouchKeyboardSplitModeAvailability", (value))
 }
 
 // GetTouchKeyboardSplitModeAvailability gets the value of TouchKeyboardSplitModeAvailability for the instance
@@ -632,16 +757,25 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyTouchKeyboardSplitMo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetTouchKeyboardWideModeAvailability sets the value of TouchKeyboardWideModeAvailability for the instance
 func (instance *MDM_Policy_Config01_TextInput02) SetPropertyTouchKeyboardWideModeAvailability(value int32) (err error) {
-	return instance.SetProperty("TouchKeyboardWideModeAvailability", value)
+	return instance.SetProperty("TouchKeyboardWideModeAvailability", (value))
 }
 
 // GetTouchKeyboardWideModeAvailability gets the value of TouchKeyboardWideModeAvailability for the instance
@@ -650,9 +784,18 @@ func (instance *MDM_Policy_Config01_TextInput02) GetPropertyTouchKeyboardWideMod
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

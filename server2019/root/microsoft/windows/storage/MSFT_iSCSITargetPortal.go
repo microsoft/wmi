@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_iSCSITargetPortal struct
@@ -68,7 +70,7 @@ func NewMSFT_iSCSITargetPortalEx6(hostName string,
 
 // SetInitiatorInstanceName sets the value of InitiatorInstanceName for the instance
 func (instance *MSFT_iSCSITargetPortal) SetPropertyInitiatorInstanceName(value string) (err error) {
-	return instance.SetProperty("InitiatorInstanceName", value)
+	return instance.SetProperty("InitiatorInstanceName", (value))
 }
 
 // GetInitiatorInstanceName gets the value of InitiatorInstanceName for the instance
@@ -77,16 +79,25 @@ func (instance *MSFT_iSCSITargetPortal) GetPropertyInitiatorInstanceName() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInitiatorPortalAddress sets the value of InitiatorPortalAddress for the instance
 func (instance *MSFT_iSCSITargetPortal) SetPropertyInitiatorPortalAddress(value string) (err error) {
-	return instance.SetProperty("InitiatorPortalAddress", value)
+	return instance.SetProperty("InitiatorPortalAddress", (value))
 }
 
 // GetInitiatorPortalAddress gets the value of InitiatorPortalAddress for the instance
@@ -95,16 +106,25 @@ func (instance *MSFT_iSCSITargetPortal) GetPropertyInitiatorPortalAddress() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsDataDigest sets the value of IsDataDigest for the instance
 func (instance *MSFT_iSCSITargetPortal) SetPropertyIsDataDigest(value bool) (err error) {
-	return instance.SetProperty("IsDataDigest", value)
+	return instance.SetProperty("IsDataDigest", (value))
 }
 
 // GetIsDataDigest gets the value of IsDataDigest for the instance
@@ -113,16 +133,25 @@ func (instance *MSFT_iSCSITargetPortal) GetPropertyIsDataDigest() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsHeaderDigest sets the value of IsHeaderDigest for the instance
 func (instance *MSFT_iSCSITargetPortal) SetPropertyIsHeaderDigest(value bool) (err error) {
-	return instance.SetProperty("IsHeaderDigest", value)
+	return instance.SetProperty("IsHeaderDigest", (value))
 }
 
 // GetIsHeaderDigest gets the value of IsHeaderDigest for the instance
@@ -131,16 +160,25 @@ func (instance *MSFT_iSCSITargetPortal) GetPropertyIsHeaderDigest() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTargetPortalAddress sets the value of TargetPortalAddress for the instance
 func (instance *MSFT_iSCSITargetPortal) SetPropertyTargetPortalAddress(value string) (err error) {
-	return instance.SetProperty("TargetPortalAddress", value)
+	return instance.SetProperty("TargetPortalAddress", (value))
 }
 
 // GetTargetPortalAddress gets the value of TargetPortalAddress for the instance
@@ -149,16 +187,25 @@ func (instance *MSFT_iSCSITargetPortal) GetPropertyTargetPortalAddress() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetPortalPortNumber sets the value of TargetPortalPortNumber for the instance
 func (instance *MSFT_iSCSITargetPortal) SetPropertyTargetPortalPortNumber(value uint16) (err error) {
-	return instance.SetProperty("TargetPortalPortNumber", value)
+	return instance.SetProperty("TargetPortalPortNumber", (value))
 }
 
 // GetTargetPortalPortNumber gets the value of TargetPortalPortNumber for the instance
@@ -167,10 +214,19 @@ func (instance *MSFT_iSCSITargetPortal) GetPropertyTargetPortalPortNumber() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

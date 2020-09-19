@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PrinterConfiguration struct
@@ -158,7 +160,7 @@ func NewWin32_PrinterConfigurationEx6(hostName string,
 
 // SetBitsPerPel sets the value of BitsPerPel for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyBitsPerPel(value uint32) (err error) {
-	return instance.SetProperty("BitsPerPel", value)
+	return instance.SetProperty("BitsPerPel", (value))
 }
 
 // GetBitsPerPel gets the value of BitsPerPel for the instance
@@ -167,16 +169,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyBitsPerPel() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCollate sets the value of Collate for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyCollate(value bool) (err error) {
-	return instance.SetProperty("Collate", value)
+	return instance.SetProperty("Collate", (value))
 }
 
 // GetCollate gets the value of Collate for the instance
@@ -185,16 +196,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyCollate() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetColor sets the value of Color for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyColor(value PrinterConfiguration_Color) (err error) {
-	return instance.SetProperty("Color", value)
+	return instance.SetProperty("Color", (value))
 }
 
 // GetColor gets the value of Color for the instance
@@ -203,16 +223,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyColor() (value PrinterCon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_Color)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_Color(valuetmp)
+
 	return
 }
 
 // SetCopies sets the value of Copies for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyCopies(value uint32) (err error) {
-	return instance.SetProperty("Copies", value)
+	return instance.SetProperty("Copies", (value))
 }
 
 // GetCopies gets the value of Copies for the instance
@@ -221,16 +250,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyCopies() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDeviceName sets the value of DeviceName for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyDeviceName(value string) (err error) {
-	return instance.SetProperty("DeviceName", value)
+	return instance.SetProperty("DeviceName", (value))
 }
 
 // GetDeviceName gets the value of DeviceName for the instance
@@ -239,16 +277,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyDeviceName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisplayFlags sets the value of DisplayFlags for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyDisplayFlags(value uint32) (err error) {
-	return instance.SetProperty("DisplayFlags", value)
+	return instance.SetProperty("DisplayFlags", (value))
 }
 
 // GetDisplayFlags gets the value of DisplayFlags for the instance
@@ -257,16 +304,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyDisplayFlags() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDisplayFrequency sets the value of DisplayFrequency for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyDisplayFrequency(value uint32) (err error) {
-	return instance.SetProperty("DisplayFrequency", value)
+	return instance.SetProperty("DisplayFrequency", (value))
 }
 
 // GetDisplayFrequency gets the value of DisplayFrequency for the instance
@@ -275,16 +331,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyDisplayFrequency() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDitherType sets the value of DitherType for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyDitherType(value PrinterConfiguration_DitherType) (err error) {
-	return instance.SetProperty("DitherType", value)
+	return instance.SetProperty("DitherType", (value))
 }
 
 // GetDitherType gets the value of DitherType for the instance
@@ -293,16 +358,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyDitherType() (value Print
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_DitherType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_DitherType(valuetmp)
+
 	return
 }
 
 // SetDriverVersion sets the value of DriverVersion for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyDriverVersion(value uint32) (err error) {
-	return instance.SetProperty("DriverVersion", value)
+	return instance.SetProperty("DriverVersion", (value))
 }
 
 // GetDriverVersion gets the value of DriverVersion for the instance
@@ -311,16 +385,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyDriverVersion() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDuplex sets the value of Duplex for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyDuplex(value bool) (err error) {
-	return instance.SetProperty("Duplex", value)
+	return instance.SetProperty("Duplex", (value))
 }
 
 // GetDuplex gets the value of Duplex for the instance
@@ -329,16 +412,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyDuplex() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFormName sets the value of FormName for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyFormName(value string) (err error) {
-	return instance.SetProperty("FormName", value)
+	return instance.SetProperty("FormName", (value))
 }
 
 // GetFormName gets the value of FormName for the instance
@@ -347,16 +439,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyFormName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHorizontalResolution sets the value of HorizontalResolution for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyHorizontalResolution(value uint32) (err error) {
-	return instance.SetProperty("HorizontalResolution", value)
+	return instance.SetProperty("HorizontalResolution", (value))
 }
 
 // GetHorizontalResolution gets the value of HorizontalResolution for the instance
@@ -365,16 +466,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyHorizontalResolution() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetICMIntent sets the value of ICMIntent for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyICMIntent(value PrinterConfiguration_ICMIntent) (err error) {
-	return instance.SetProperty("ICMIntent", value)
+	return instance.SetProperty("ICMIntent", (value))
 }
 
 // GetICMIntent gets the value of ICMIntent for the instance
@@ -383,16 +493,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyICMIntent() (value Printe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_ICMIntent)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_ICMIntent(valuetmp)
+
 	return
 }
 
 // SetICMMethod sets the value of ICMMethod for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyICMMethod(value PrinterConfiguration_ICMMethod) (err error) {
-	return instance.SetProperty("ICMMethod", value)
+	return instance.SetProperty("ICMMethod", (value))
 }
 
 // GetICMMethod gets the value of ICMMethod for the instance
@@ -401,16 +520,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyICMMethod() (value Printe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_ICMMethod)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_ICMMethod(valuetmp)
+
 	return
 }
 
 // SetLogPixels sets the value of LogPixels for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyLogPixels(value uint32) (err error) {
-	return instance.SetProperty("LogPixels", value)
+	return instance.SetProperty("LogPixels", (value))
 }
 
 // GetLogPixels gets the value of LogPixels for the instance
@@ -419,16 +547,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyLogPixels() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMediaType sets the value of MediaType for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyMediaType(value PrinterConfiguration_MediaType) (err error) {
-	return instance.SetProperty("MediaType", value)
+	return instance.SetProperty("MediaType", (value))
 }
 
 // GetMediaType gets the value of MediaType for the instance
@@ -437,16 +574,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyMediaType() (value Printe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_MediaType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_MediaType(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -455,16 +601,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOrientation sets the value of Orientation for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyOrientation(value PrinterConfiguration_Orientation) (err error) {
-	return instance.SetProperty("Orientation", value)
+	return instance.SetProperty("Orientation", (value))
 }
 
 // GetOrientation gets the value of Orientation for the instance
@@ -473,16 +628,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyOrientation() (value Prin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_Orientation)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_Orientation(valuetmp)
+
 	return
 }
 
 // SetPaperLength sets the value of PaperLength for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyPaperLength(value uint32) (err error) {
-	return instance.SetProperty("PaperLength", value)
+	return instance.SetProperty("PaperLength", (value))
 }
 
 // GetPaperLength gets the value of PaperLength for the instance
@@ -491,16 +655,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyPaperLength() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPaperSize sets the value of PaperSize for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyPaperSize(value string) (err error) {
-	return instance.SetProperty("PaperSize", value)
+	return instance.SetProperty("PaperSize", (value))
 }
 
 // GetPaperSize gets the value of PaperSize for the instance
@@ -509,16 +682,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyPaperSize() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPaperWidth sets the value of PaperWidth for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyPaperWidth(value uint32) (err error) {
-	return instance.SetProperty("PaperWidth", value)
+	return instance.SetProperty("PaperWidth", (value))
 }
 
 // GetPaperWidth gets the value of PaperWidth for the instance
@@ -527,16 +709,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyPaperWidth() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPelsHeight sets the value of PelsHeight for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyPelsHeight(value uint32) (err error) {
-	return instance.SetProperty("PelsHeight", value)
+	return instance.SetProperty("PelsHeight", (value))
 }
 
 // GetPelsHeight gets the value of PelsHeight for the instance
@@ -545,16 +736,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyPelsHeight() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPelsWidth sets the value of PelsWidth for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyPelsWidth(value uint32) (err error) {
-	return instance.SetProperty("PelsWidth", value)
+	return instance.SetProperty("PelsWidth", (value))
 }
 
 // GetPelsWidth gets the value of PelsWidth for the instance
@@ -563,16 +763,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyPelsWidth() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrintQuality sets the value of PrintQuality for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyPrintQuality(value PrinterConfiguration_PrintQuality) (err error) {
-	return instance.SetProperty("PrintQuality", value)
+	return instance.SetProperty("PrintQuality", (value))
 }
 
 // GetPrintQuality gets the value of PrintQuality for the instance
@@ -581,16 +790,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyPrintQuality() (value Pri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_PrintQuality)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_PrintQuality(valuetmp)
+
 	return
 }
 
 // SetScale sets the value of Scale for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyScale(value uint32) (err error) {
-	return instance.SetProperty("Scale", value)
+	return instance.SetProperty("Scale", (value))
 }
 
 // GetScale gets the value of Scale for the instance
@@ -599,16 +817,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyScale() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSpecificationVersion sets the value of SpecificationVersion for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertySpecificationVersion(value uint32) (err error) {
-	return instance.SetProperty("SpecificationVersion", value)
+	return instance.SetProperty("SpecificationVersion", (value))
 }
 
 // GetSpecificationVersion gets the value of SpecificationVersion for the instance
@@ -617,16 +844,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertySpecificationVersion() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTTOption sets the value of TTOption for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyTTOption(value PrinterConfiguration_TTOption) (err error) {
-	return instance.SetProperty("TTOption", value)
+	return instance.SetProperty("TTOption", (value))
 }
 
 // GetTTOption gets the value of TTOption for the instance
@@ -635,16 +871,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyTTOption() (value Printer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterConfiguration_TTOption)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterConfiguration_TTOption(valuetmp)
+
 	return
 }
 
 // SetVerticalResolution sets the value of VerticalResolution for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyVerticalResolution(value uint32) (err error) {
-	return instance.SetProperty("VerticalResolution", value)
+	return instance.SetProperty("VerticalResolution", (value))
 }
 
 // GetVerticalResolution gets the value of VerticalResolution for the instance
@@ -653,16 +898,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyVerticalResolution() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetXResolution sets the value of XResolution for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyXResolution(value uint32) (err error) {
-	return instance.SetProperty("XResolution", value)
+	return instance.SetProperty("XResolution", (value))
 }
 
 // GetXResolution gets the value of XResolution for the instance
@@ -671,16 +925,25 @@ func (instance *Win32_PrinterConfiguration) GetPropertyXResolution() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetYResolution sets the value of YResolution for the instance
 func (instance *Win32_PrinterConfiguration) SetPropertyYResolution(value uint32) (err error) {
-	return instance.SetProperty("YResolution", value)
+	return instance.SetProperty("YResolution", (value))
 }
 
 // GetYResolution gets the value of YResolution for the instance
@@ -689,9 +952,18 @@ func (instance *Win32_PrinterConfiguration) GetPropertyYResolution() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

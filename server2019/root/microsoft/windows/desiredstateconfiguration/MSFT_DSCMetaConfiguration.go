@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
@@ -11,7 +11,9 @@ package desiredstateconfiguration
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DSCMetaConfiguration struct
@@ -128,7 +130,7 @@ func NewMSFT_DSCMetaConfigurationEx6(hostName string,
 
 // SetActionAfterReboot sets the value of ActionAfterReboot for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyActionAfterReboot(value string) (err error) {
-	return instance.SetProperty("ActionAfterReboot", value)
+	return instance.SetProperty("ActionAfterReboot", (value))
 }
 
 // GetActionAfterReboot gets the value of ActionAfterReboot for the instance
@@ -137,16 +139,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyActionAfterReboot() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAgentId sets the value of AgentId for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyAgentId(value string) (err error) {
-	return instance.SetProperty("AgentId", value)
+	return instance.SetProperty("AgentId", (value))
 }
 
 // GetAgentId gets the value of AgentId for the instance
@@ -155,16 +166,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyAgentId() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowModuleOverwrite sets the value of AllowModuleOverwrite for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyAllowModuleOverwrite(value bool) (err error) {
-	return instance.SetProperty("AllowModuleOverwrite", value)
+	return instance.SetProperty("AllowModuleOverwrite", (value))
 }
 
 // GetAllowModuleOverwrite gets the value of AllowModuleOverwrite for the instance
@@ -173,16 +193,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyAllowModuleOverwrite() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCertificateID sets the value of CertificateID for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyCertificateID(value string) (err error) {
-	return instance.SetProperty("CertificateID", value)
+	return instance.SetProperty("CertificateID", (value))
 }
 
 // GetCertificateID gets the value of CertificateID for the instance
@@ -191,16 +220,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyCertificateID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConfigurationDownloadManagers sets the value of ConfigurationDownloadManagers for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyConfigurationDownloadManagers(value []OMI_ConfigurationDownloadManager) (err error) {
-	return instance.SetProperty("ConfigurationDownloadManagers", value)
+	return instance.SetProperty("ConfigurationDownloadManagers", (value))
 }
 
 // GetConfigurationDownloadManagers gets the value of ConfigurationDownloadManagers for the instance
@@ -209,16 +247,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyConfigurationDownloadManag
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]OMI_ConfigurationDownloadManager)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(OMI_ConfigurationDownloadManager)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " OMI_ConfigurationDownloadManager is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, OMI_ConfigurationDownloadManager(valuetmp))
+	}
+
 	return
 }
 
 // SetConfigurationID sets the value of ConfigurationID for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyConfigurationID(value string) (err error) {
-	return instance.SetProperty("ConfigurationID", value)
+	return instance.SetProperty("ConfigurationID", (value))
 }
 
 // GetConfigurationID gets the value of ConfigurationID for the instance
@@ -227,16 +275,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyConfigurationID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConfigurationMode sets the value of ConfigurationMode for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyConfigurationMode(value string) (err error) {
-	return instance.SetProperty("ConfigurationMode", value)
+	return instance.SetProperty("ConfigurationMode", (value))
 }
 
 // GetConfigurationMode gets the value of ConfigurationMode for the instance
@@ -245,16 +302,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyConfigurationMode() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConfigurationModeFrequencyMins sets the value of ConfigurationModeFrequencyMins for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyConfigurationModeFrequencyMins(value uint32) (err error) {
-	return instance.SetProperty("ConfigurationModeFrequencyMins", value)
+	return instance.SetProperty("ConfigurationModeFrequencyMins", (value))
 }
 
 // GetConfigurationModeFrequencyMins gets the value of ConfigurationModeFrequencyMins for the instance
@@ -263,16 +329,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyConfigurationModeFrequency
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCredential sets the value of Credential for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyCredential(value MSFT_Credential) (err error) {
-	return instance.SetProperty("Credential", value)
+	return instance.SetProperty("Credential", (value))
 }
 
 // GetCredential gets the value of Credential for the instance
@@ -281,16 +356,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyCredential() (value MSFT_C
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Credential)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Credential)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Credential is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Credential(valuetmp)
+
 	return
 }
 
 // SetDebugMode sets the value of DebugMode for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyDebugMode(value []string) (err error) {
-	return instance.SetProperty("DebugMode", value)
+	return instance.SetProperty("DebugMode", (value))
 }
 
 // GetDebugMode gets the value of DebugMode for the instance
@@ -299,16 +383,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyDebugMode() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDownloadManagerCustomData sets the value of DownloadManagerCustomData for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyDownloadManagerCustomData(value []MSFT_KeyValuePair) (err error) {
-	return instance.SetProperty("DownloadManagerCustomData", value)
+	return instance.SetProperty("DownloadManagerCustomData", (value))
 }
 
 // GetDownloadManagerCustomData gets the value of DownloadManagerCustomData for the instance
@@ -317,16 +411,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyDownloadManagerCustomData(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_KeyValuePair)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_KeyValuePair)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_KeyValuePair is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_KeyValuePair(valuetmp))
+	}
+
 	return
 }
 
 // SetDownloadManagerName sets the value of DownloadManagerName for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyDownloadManagerName(value string) (err error) {
-	return instance.SetProperty("DownloadManagerName", value)
+	return instance.SetProperty("DownloadManagerName", (value))
 }
 
 // GetDownloadManagerName gets the value of DownloadManagerName for the instance
@@ -335,16 +439,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyDownloadManagerName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLCMCompatibleVersions sets the value of LCMCompatibleVersions for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyLCMCompatibleVersions(value []string) (err error) {
-	return instance.SetProperty("LCMCompatibleVersions", value)
+	return instance.SetProperty("LCMCompatibleVersions", (value))
 }
 
 // GetLCMCompatibleVersions gets the value of LCMCompatibleVersions for the instance
@@ -353,16 +466,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyLCMCompatibleVersions() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLCMState sets the value of LCMState for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyLCMState(value string) (err error) {
-	return instance.SetProperty("LCMState", value)
+	return instance.SetProperty("LCMState", (value))
 }
 
 // GetLCMState gets the value of LCMState for the instance
@@ -371,16 +494,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyLCMState() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLCMStateDetail sets the value of LCMStateDetail for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyLCMStateDetail(value string) (err error) {
-	return instance.SetProperty("LCMStateDetail", value)
+	return instance.SetProperty("LCMStateDetail", (value))
 }
 
 // GetLCMStateDetail gets the value of LCMStateDetail for the instance
@@ -389,16 +521,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyLCMStateDetail() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLCMVersion sets the value of LCMVersion for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyLCMVersion(value string) (err error) {
-	return instance.SetProperty("LCMVersion", value)
+	return instance.SetProperty("LCMVersion", (value))
 }
 
 // GetLCMVersion gets the value of LCMVersion for the instance
@@ -407,16 +548,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyLCMVersion() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaximumDownloadSizeMB sets the value of MaximumDownloadSizeMB for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyMaximumDownloadSizeMB(value uint32) (err error) {
-	return instance.SetProperty("MaximumDownloadSizeMB", value)
+	return instance.SetProperty("MaximumDownloadSizeMB", (value))
 }
 
 // GetMaximumDownloadSizeMB gets the value of MaximumDownloadSizeMB for the instance
@@ -425,16 +575,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyMaximumDownloadSizeMB() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPartialConfigurations sets the value of PartialConfigurations for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyPartialConfigurations(value []MSFT_PartialConfiguration) (err error) {
-	return instance.SetProperty("PartialConfigurations", value)
+	return instance.SetProperty("PartialConfigurations", (value))
 }
 
 // GetPartialConfigurations gets the value of PartialConfigurations for the instance
@@ -443,16 +602,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyPartialConfigurations() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_PartialConfiguration)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_PartialConfiguration)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_PartialConfiguration is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_PartialConfiguration(valuetmp))
+	}
+
 	return
 }
 
 // SetRebootNodeIfNeeded sets the value of RebootNodeIfNeeded for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyRebootNodeIfNeeded(value bool) (err error) {
-	return instance.SetProperty("RebootNodeIfNeeded", value)
+	return instance.SetProperty("RebootNodeIfNeeded", (value))
 }
 
 // GetRebootNodeIfNeeded gets the value of RebootNodeIfNeeded for the instance
@@ -461,16 +630,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyRebootNodeIfNeeded() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRefreshFrequencyMins sets the value of RefreshFrequencyMins for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyRefreshFrequencyMins(value uint32) (err error) {
-	return instance.SetProperty("RefreshFrequencyMins", value)
+	return instance.SetProperty("RefreshFrequencyMins", (value))
 }
 
 // GetRefreshFrequencyMins gets the value of RefreshFrequencyMins for the instance
@@ -479,16 +657,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyRefreshFrequencyMins() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRefreshMode sets the value of RefreshMode for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyRefreshMode(value string) (err error) {
-	return instance.SetProperty("RefreshMode", value)
+	return instance.SetProperty("RefreshMode", (value))
 }
 
 // GetRefreshMode gets the value of RefreshMode for the instance
@@ -497,16 +684,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyRefreshMode() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReportManagers sets the value of ReportManagers for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyReportManagers(value []OMI_ReportManager) (err error) {
-	return instance.SetProperty("ReportManagers", value)
+	return instance.SetProperty("ReportManagers", (value))
 }
 
 // GetReportManagers gets the value of ReportManagers for the instance
@@ -515,16 +711,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyReportManagers() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]OMI_ReportManager)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(OMI_ReportManager)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " OMI_ReportManager is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, OMI_ReportManager(valuetmp))
+	}
+
 	return
 }
 
 // SetResourceModuleManagers sets the value of ResourceModuleManagers for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyResourceModuleManagers(value []OMI_ResourceModuleManager) (err error) {
-	return instance.SetProperty("ResourceModuleManagers", value)
+	return instance.SetProperty("ResourceModuleManagers", (value))
 }
 
 // GetResourceModuleManagers gets the value of ResourceModuleManagers for the instance
@@ -533,16 +739,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyResourceModuleManagers() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]OMI_ResourceModuleManager)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(OMI_ResourceModuleManager)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " OMI_ResourceModuleManager is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, OMI_ResourceModuleManager(valuetmp))
+	}
+
 	return
 }
 
 // SetSignatureValidationPolicy sets the value of SignatureValidationPolicy for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertySignatureValidationPolicy(value string) (err error) {
-	return instance.SetProperty("SignatureValidationPolicy", value)
+	return instance.SetProperty("SignatureValidationPolicy", (value))
 }
 
 // GetSignatureValidationPolicy gets the value of SignatureValidationPolicy for the instance
@@ -551,16 +767,25 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertySignatureValidationPolicy(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSignatureValidations sets the value of SignatureValidations for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertySignatureValidations(value []MSFT_SignatureValidation) (err error) {
-	return instance.SetProperty("SignatureValidations", value)
+	return instance.SetProperty("SignatureValidations", (value))
 }
 
 // GetSignatureValidations gets the value of SignatureValidations for the instance
@@ -569,16 +794,26 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertySignatureValidations() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_SignatureValidation)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_SignatureValidation)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_SignatureValidation is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_SignatureValidation(valuetmp))
+	}
+
 	return
 }
 
 // SetStatusRetentionTimeInDays sets the value of StatusRetentionTimeInDays for the instance
 func (instance *MSFT_DSCMetaConfiguration) SetPropertyStatusRetentionTimeInDays(value uint32) (err error) {
-	return instance.SetProperty("StatusRetentionTimeInDays", value)
+	return instance.SetProperty("StatusRetentionTimeInDays", (value))
 }
 
 // GetStatusRetentionTimeInDays gets the value of StatusRetentionTimeInDays for the instance
@@ -587,9 +822,18 @@ func (instance *MSFT_DSCMetaConfiguration) GetPropertyStatusRetentionTimeInDays(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

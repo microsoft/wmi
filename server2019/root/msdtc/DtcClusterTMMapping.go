@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
@@ -11,7 +11,9 @@ package msdtc
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DtcClusterTMMapping struct
@@ -65,7 +67,7 @@ func NewDtcClusterTMMappingEx6(hostName string,
 
 // SetApplication sets the value of Application for the instance
 func (instance *DtcClusterTMMapping) SetPropertyApplication(value string) (err error) {
-	return instance.SetProperty("Application", value)
+	return instance.SetProperty("Application", (value))
 }
 
 // GetApplication gets the value of Application for the instance
@@ -74,16 +76,25 @@ func (instance *DtcClusterTMMapping) GetPropertyApplication() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetApplicationType sets the value of ApplicationType for the instance
 func (instance *DtcClusterTMMapping) SetPropertyApplicationType(value string) (err error) {
-	return instance.SetProperty("ApplicationType", value)
+	return instance.SetProperty("ApplicationType", (value))
 }
 
 // GetApplicationType gets the value of ApplicationType for the instance
@@ -92,16 +103,25 @@ func (instance *DtcClusterTMMapping) GetPropertyApplicationType() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetClusterResourceName sets the value of ClusterResourceName for the instance
 func (instance *DtcClusterTMMapping) SetPropertyClusterResourceName(value string) (err error) {
-	return instance.SetProperty("ClusterResourceName", value)
+	return instance.SetProperty("ClusterResourceName", (value))
 }
 
 // GetClusterResourceName gets the value of ClusterResourceName for the instance
@@ -110,16 +130,25 @@ func (instance *DtcClusterTMMapping) GetPropertyClusterResourceName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocal sets the value of Local for the instance
 func (instance *DtcClusterTMMapping) SetPropertyLocal(value bool) (err error) {
-	return instance.SetProperty("Local", value)
+	return instance.SetProperty("Local", (value))
 }
 
 // GetLocal gets the value of Local for the instance
@@ -128,16 +157,25 @@ func (instance *DtcClusterTMMapping) GetPropertyLocal() (value bool, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *DtcClusterTMMapping) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -146,9 +184,18 @@ func (instance *DtcClusterTMMapping) GetPropertyName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

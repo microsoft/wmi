@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
@@ -11,7 +11,9 @@ package taskscheduler
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskIdleSettings struct
@@ -62,7 +64,7 @@ func NewMSFT_TaskIdleSettingsEx6(hostName string,
 
 // SetIdleDuration sets the value of IdleDuration for the instance
 func (instance *MSFT_TaskIdleSettings) SetPropertyIdleDuration(value string) (err error) {
-	return instance.SetProperty("IdleDuration", value)
+	return instance.SetProperty("IdleDuration", (value))
 }
 
 // GetIdleDuration gets the value of IdleDuration for the instance
@@ -71,16 +73,25 @@ func (instance *MSFT_TaskIdleSettings) GetPropertyIdleDuration() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRestartOnIdle sets the value of RestartOnIdle for the instance
 func (instance *MSFT_TaskIdleSettings) SetPropertyRestartOnIdle(value bool) (err error) {
-	return instance.SetProperty("RestartOnIdle", value)
+	return instance.SetProperty("RestartOnIdle", (value))
 }
 
 // GetRestartOnIdle gets the value of RestartOnIdle for the instance
@@ -89,16 +100,25 @@ func (instance *MSFT_TaskIdleSettings) GetPropertyRestartOnIdle() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStopOnIdleEnd sets the value of StopOnIdleEnd for the instance
 func (instance *MSFT_TaskIdleSettings) SetPropertyStopOnIdleEnd(value bool) (err error) {
-	return instance.SetProperty("StopOnIdleEnd", value)
+	return instance.SetProperty("StopOnIdleEnd", (value))
 }
 
 // GetStopOnIdleEnd gets the value of StopOnIdleEnd for the instance
@@ -107,16 +127,25 @@ func (instance *MSFT_TaskIdleSettings) GetPropertyStopOnIdleEnd() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetWaitTimeout sets the value of WaitTimeout for the instance
 func (instance *MSFT_TaskIdleSettings) SetPropertyWaitTimeout(value string) (err error) {
-	return instance.SetProperty("WaitTimeout", value)
+	return instance.SetProperty("WaitTimeout", (value))
 }
 
 // GetWaitTimeout gets the value of WaitTimeout for the instance
@@ -125,9 +154,18 @@ func (instance *MSFT_TaskIdleSettings) GetPropertyWaitTimeout() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

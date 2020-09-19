@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VirtualSystemMigrationSettingData struct
@@ -84,7 +86,7 @@ func NewCIM_VirtualSystemMigrationSettingDataEx6(hostName string,
 
 // SetBandwidth sets the value of Bandwidth for the instance
 func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyBandwidth(value uint16) (err error) {
-	return instance.SetProperty("Bandwidth", value)
+	return instance.SetProperty("Bandwidth", (value))
 }
 
 // GetBandwidth gets the value of Bandwidth for the instance
@@ -93,16 +95,25 @@ func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyBandwidth() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetBandwidthUnit sets the value of BandwidthUnit for the instance
 func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyBandwidthUnit(value string) (err error) {
-	return instance.SetProperty("BandwidthUnit", value)
+	return instance.SetProperty("BandwidthUnit", (value))
 }
 
 // GetBandwidthUnit gets the value of BandwidthUnit for the instance
@@ -111,16 +122,25 @@ func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyBandwidthUnit(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMigrationType sets the value of MigrationType for the instance
 func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyMigrationType(value VirtualSystemMigrationSettingData_MigrationType) (err error) {
-	return instance.SetProperty("MigrationType", value)
+	return instance.SetProperty("MigrationType", (value))
 }
 
 // GetMigrationType gets the value of MigrationType for the instance
@@ -129,16 +149,25 @@ func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyMigrationType(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemMigrationSettingData_MigrationType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemMigrationSettingData_MigrationType(valuetmp)
+
 	return
 }
 
 // SetOtherTransportType sets the value of OtherTransportType for the instance
 func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyOtherTransportType(value string) (err error) {
-	return instance.SetProperty("OtherTransportType", value)
+	return instance.SetProperty("OtherTransportType", (value))
 }
 
 // GetOtherTransportType gets the value of OtherTransportType for the instance
@@ -147,16 +176,25 @@ func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyOtherTransport
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPriority sets the value of Priority for the instance
 func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyPriority(value uint16) (err error) {
-	return instance.SetProperty("Priority", value)
+	return instance.SetProperty("Priority", (value))
 }
 
 // GetPriority gets the value of Priority for the instance
@@ -165,16 +203,25 @@ func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyPriority() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTransportType sets the value of TransportType for the instance
 func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyTransportType(value VirtualSystemMigrationSettingData_TransportType) (err error) {
-	return instance.SetProperty("TransportType", value)
+	return instance.SetProperty("TransportType", (value))
 }
 
 // GetTransportType gets the value of TransportType for the instance
@@ -183,9 +230,18 @@ func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyTransportType(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemMigrationSettingData_TransportType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemMigrationSettingData_TransportType(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchPortBandwidthSettingData struct
@@ -64,7 +66,7 @@ func NewMsvm_EthernetSwitchPortBandwidthSettingDataEx6(hostName string,
 
 // SetBurstLimit sets the value of BurstLimit for the instance
 func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) SetPropertyBurstLimit(value uint64) (err error) {
-	return instance.SetProperty("BurstLimit", value)
+	return instance.SetProperty("BurstLimit", (value))
 }
 
 // GetBurstLimit gets the value of BurstLimit for the instance
@@ -73,16 +75,25 @@ func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) GetPropertyBurstLim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBurstSize sets the value of BurstSize for the instance
 func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) SetPropertyBurstSize(value uint64) (err error) {
-	return instance.SetProperty("BurstSize", value)
+	return instance.SetProperty("BurstSize", (value))
 }
 
 // GetBurstSize gets the value of BurstSize for the instance
@@ -91,16 +102,25 @@ func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) GetPropertyBurstSiz
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLimit sets the value of Limit for the instance
 func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) SetPropertyLimit(value uint64) (err error) {
-	return instance.SetProperty("Limit", value)
+	return instance.SetProperty("Limit", (value))
 }
 
 // GetLimit gets the value of Limit for the instance
@@ -109,16 +129,25 @@ func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) GetPropertyLimit() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReservation sets the value of Reservation for the instance
 func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) SetPropertyReservation(value uint64) (err error) {
-	return instance.SetProperty("Reservation", value)
+	return instance.SetProperty("Reservation", (value))
 }
 
 // GetReservation gets the value of Reservation for the instance
@@ -127,16 +156,25 @@ func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) GetPropertyReservat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWeight sets the value of Weight for the instance
 func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) SetPropertyWeight(value uint64) (err error) {
-	return instance.SetProperty("Weight", value)
+	return instance.SetProperty("Weight", (value))
 }
 
 // GetWeight gets the value of Weight for the instance
@@ -145,10 +183,19 @@ func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) GetPropertyWeight()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 func (instance *Msvm_EthernetSwitchPortBandwidthSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {

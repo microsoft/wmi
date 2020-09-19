@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
@@ -11,7 +11,9 @@ package cli
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CliProperty struct
@@ -62,7 +64,7 @@ func NewMSFT_CliPropertyEx6(hostName string,
 
 // SetDerivation sets the value of Derivation for the instance
 func (instance *MSFT_CliProperty) SetPropertyDerivation(value string) (err error) {
-	return instance.SetProperty("Derivation", value)
+	return instance.SetProperty("Derivation", (value))
 }
 
 // GetDerivation gets the value of Derivation for the instance
@@ -71,16 +73,25 @@ func (instance *MSFT_CliProperty) GetPropertyDerivation() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_CliProperty) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -89,16 +100,25 @@ func (instance *MSFT_CliProperty) GetPropertyDescription() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_CliProperty) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -107,16 +127,25 @@ func (instance *MSFT_CliProperty) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQualifiers sets the value of Qualifiers for the instance
 func (instance *MSFT_CliProperty) SetPropertyQualifiers(value []MSFT_CliQualifier) (err error) {
-	return instance.SetProperty("Qualifiers", value)
+	return instance.SetProperty("Qualifiers", (value))
 }
 
 // GetQualifiers gets the value of Qualifiers for the instance
@@ -125,9 +154,19 @@ func (instance *MSFT_CliProperty) GetPropertyQualifiers() (value []MSFT_CliQuali
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_CliQualifier)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_CliQualifier)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_CliQualifier is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_CliQualifier(valuetmp))
+	}
+
 	return
 }

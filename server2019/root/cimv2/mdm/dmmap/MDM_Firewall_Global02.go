@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Firewall_Global02 struct
@@ -89,7 +91,7 @@ func NewMDM_Firewall_Global02Ex6(hostName string,
 
 // SetBinaryVersionSupported sets the value of BinaryVersionSupported for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyBinaryVersionSupported(value string) (err error) {
-	return instance.SetProperty("BinaryVersionSupported", value)
+	return instance.SetProperty("BinaryVersionSupported", (value))
 }
 
 // GetBinaryVersionSupported gets the value of BinaryVersionSupported for the instance
@@ -98,16 +100,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyBinaryVersionSupported() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCRLcheck sets the value of CRLcheck for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyCRLcheck(value int32) (err error) {
-	return instance.SetProperty("CRLcheck", value)
+	return instance.SetProperty("CRLcheck", (value))
 }
 
 // GetCRLcheck gets the value of CRLcheck for the instance
@@ -116,16 +127,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyCRLcheck() (value int32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetCurrentProfiles sets the value of CurrentProfiles for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyCurrentProfiles(value int32) (err error) {
-	return instance.SetProperty("CurrentProfiles", value)
+	return instance.SetProperty("CurrentProfiles", (value))
 }
 
 // GetCurrentProfiles gets the value of CurrentProfiles for the instance
@@ -134,16 +154,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyCurrentProfiles() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableStatefulFtp sets the value of DisableStatefulFtp for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyDisableStatefulFtp(value bool) (err error) {
-	return instance.SetProperty("DisableStatefulFtp", value)
+	return instance.SetProperty("DisableStatefulFtp", (value))
 }
 
 // GetDisableStatefulFtp gets the value of DisableStatefulFtp for the instance
@@ -152,16 +181,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyDisableStatefulFtp() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnablePacketQueue sets the value of EnablePacketQueue for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyEnablePacketQueue(value int32) (err error) {
-	return instance.SetProperty("EnablePacketQueue", value)
+	return instance.SetProperty("EnablePacketQueue", (value))
 }
 
 // GetEnablePacketQueue gets the value of EnablePacketQueue for the instance
@@ -170,16 +208,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyEnablePacketQueue() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -188,16 +235,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyInstanceID() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPsecExempt sets the value of IPsecExempt for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyIPsecExempt(value int32) (err error) {
-	return instance.SetProperty("IPsecExempt", value)
+	return instance.SetProperty("IPsecExempt", (value))
 }
 
 // GetIPsecExempt gets the value of IPsecExempt for the instance
@@ -206,16 +262,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyIPsecExempt() (value int32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetOpportunisticallyMatchAuthSetPerKM sets the value of OpportunisticallyMatchAuthSetPerKM for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyOpportunisticallyMatchAuthSetPerKM(value bool) (err error) {
-	return instance.SetProperty("OpportunisticallyMatchAuthSetPerKM", value)
+	return instance.SetProperty("OpportunisticallyMatchAuthSetPerKM", (value))
 }
 
 // GetOpportunisticallyMatchAuthSetPerKM gets the value of OpportunisticallyMatchAuthSetPerKM for the instance
@@ -224,16 +289,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyOpportunisticallyMatchAuthSetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -242,16 +316,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyParentID() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicyVersion sets the value of PolicyVersion for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyPolicyVersion(value string) (err error) {
-	return instance.SetProperty("PolicyVersion", value)
+	return instance.SetProperty("PolicyVersion", (value))
 }
 
 // GetPolicyVersion gets the value of PolicyVersion for the instance
@@ -260,16 +343,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyPolicyVersion() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicyVersionSupported sets the value of PolicyVersionSupported for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyPolicyVersionSupported(value int32) (err error) {
-	return instance.SetProperty("PolicyVersionSupported", value)
+	return instance.SetProperty("PolicyVersionSupported", (value))
 }
 
 // GetPolicyVersionSupported gets the value of PolicyVersionSupported for the instance
@@ -278,16 +370,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyPolicyVersionSupported() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetPresharedKeyEncoding sets the value of PresharedKeyEncoding for the instance
 func (instance *MDM_Firewall_Global02) SetPropertyPresharedKeyEncoding(value int32) (err error) {
-	return instance.SetProperty("PresharedKeyEncoding", value)
+	return instance.SetProperty("PresharedKeyEncoding", (value))
 }
 
 // GetPresharedKeyEncoding gets the value of PresharedKeyEncoding for the instance
@@ -296,16 +397,25 @@ func (instance *MDM_Firewall_Global02) GetPropertyPresharedKeyEncoding() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSaIdleTime sets the value of SaIdleTime for the instance
 func (instance *MDM_Firewall_Global02) SetPropertySaIdleTime(value int32) (err error) {
-	return instance.SetProperty("SaIdleTime", value)
+	return instance.SetProperty("SaIdleTime", (value))
 }
 
 // GetSaIdleTime gets the value of SaIdleTime for the instance
@@ -314,9 +424,18 @@ func (instance *MDM_Firewall_Global02) GetPropertySaIdleTime() (value int32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

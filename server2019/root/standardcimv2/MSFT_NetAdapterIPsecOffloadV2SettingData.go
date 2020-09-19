@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterIPsecOffloadV2SettingData struct
@@ -130,7 +132,7 @@ func NewMSFT_NetAdapterIPsecOffloadV2SettingDataEx6(hostName string,
 
 // SetAhEnabled sets the value of AhEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyAhEnabled(value bool) (err error) {
-	return instance.SetProperty("AhEnabled", value)
+	return instance.SetProperty("AhEnabled", (value))
 }
 
 // GetAhEnabled gets the value of AhEnabled for the instance
@@ -139,16 +141,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyAhEnabled()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAhEspCombinedEnabled sets the value of AhEspCombinedEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyAhEspCombinedEnabled(value bool) (err error) {
-	return instance.SetProperty("AhEspCombinedEnabled", value)
+	return instance.SetProperty("AhEspCombinedEnabled", (value))
 }
 
 // GetAhEspCombinedEnabled gets the value of AhEspCombinedEnabled for the instance
@@ -157,16 +168,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyAhEspCombin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAhEspCombinedSupported sets the value of AhEspCombinedSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyAhEspCombinedSupported(value bool) (err error) {
-	return instance.SetProperty("AhEspCombinedSupported", value)
+	return instance.SetProperty("AhEspCombinedSupported", (value))
 }
 
 // GetAhEspCombinedSupported gets the value of AhEspCombinedSupported for the instance
@@ -175,16 +195,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyAhEspCombin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAhSupported sets the value of AhSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyAhSupported(value bool) (err error) {
-	return instance.SetProperty("AhSupported", value)
+	return instance.SetProperty("AhSupported", (value))
 }
 
 // GetAhSupported gets the value of AhSupported for the instance
@@ -193,16 +222,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyAhSupported
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAuthenticationAlgorithmsEnabled sets the value of AuthenticationAlgorithmsEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyAuthenticationAlgorithmsEnabled(value uint32) (err error) {
-	return instance.SetProperty("AuthenticationAlgorithmsEnabled", value)
+	return instance.SetProperty("AuthenticationAlgorithmsEnabled", (value))
 }
 
 // GetAuthenticationAlgorithmsEnabled gets the value of AuthenticationAlgorithmsEnabled for the instance
@@ -211,16 +249,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyAuthenticat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAuthenticationAlgorithmsSupported sets the value of AuthenticationAlgorithmsSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyAuthenticationAlgorithmsSupported(value uint32) (err error) {
-	return instance.SetProperty("AuthenticationAlgorithmsSupported", value)
+	return instance.SetProperty("AuthenticationAlgorithmsSupported", (value))
 }
 
 // GetAuthenticationAlgorithmsSupported gets the value of AuthenticationAlgorithmsSupported for the instance
@@ -229,16 +276,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyAuthenticat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -247,16 +303,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEncryptionAlgorithmsEnabled sets the value of EncryptionAlgorithmsEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyEncryptionAlgorithmsEnabled(value uint32) (err error) {
-	return instance.SetProperty("EncryptionAlgorithmsEnabled", value)
+	return instance.SetProperty("EncryptionAlgorithmsEnabled", (value))
 }
 
 // GetEncryptionAlgorithmsEnabled gets the value of EncryptionAlgorithmsEnabled for the instance
@@ -265,16 +330,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyEncryptionA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncryptionAlgorithmsSupported sets the value of EncryptionAlgorithmsSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyEncryptionAlgorithmsSupported(value uint32) (err error) {
-	return instance.SetProperty("EncryptionAlgorithmsSupported", value)
+	return instance.SetProperty("EncryptionAlgorithmsSupported", (value))
 }
 
 // GetEncryptionAlgorithmsSupported gets the value of EncryptionAlgorithmsSupported for the instance
@@ -283,16 +357,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyEncryptionA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEspEnabled sets the value of EspEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyEspEnabled(value bool) (err error) {
-	return instance.SetProperty("EspEnabled", value)
+	return instance.SetProperty("EspEnabled", (value))
 }
 
 // GetEspEnabled gets the value of EspEnabled for the instance
@@ -301,16 +384,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyEspEnabled(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEspSupported sets the value of EspSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyEspSupported(value bool) (err error) {
-	return instance.SetProperty("EspSupported", value)
+	return instance.SetProperty("EspSupported", (value))
 }
 
 // GetEspSupported gets the value of EspSupported for the instance
@@ -319,16 +411,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyEspSupporte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4OptionsEnabled sets the value of IPv4OptionsEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyIPv4OptionsEnabled(value bool) (err error) {
-	return instance.SetProperty("IPv4OptionsEnabled", value)
+	return instance.SetProperty("IPv4OptionsEnabled", (value))
 }
 
 // GetIPv4OptionsEnabled gets the value of IPv4OptionsEnabled for the instance
@@ -337,16 +438,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyIPv4Options
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4OptionsSupported sets the value of IPv4OptionsSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyIPv4OptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4OptionsSupported", value)
+	return instance.SetProperty("IPv4OptionsSupported", (value))
 }
 
 // GetIPv4OptionsSupported gets the value of IPv4OptionsSupported for the instance
@@ -355,16 +465,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyIPv4Options
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6Enabled sets the value of IPv6Enabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyIPv6Enabled(value bool) (err error) {
-	return instance.SetProperty("IPv6Enabled", value)
+	return instance.SetProperty("IPv6Enabled", (value))
 }
 
 // GetIPv6Enabled gets the value of IPv6Enabled for the instance
@@ -373,16 +492,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyIPv6Enabled
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6NonIPsecExtensionHeadersEnabled sets the value of IPv6NonIPsecExtensionHeadersEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyIPv6NonIPsecExtensionHeadersEnabled(value bool) (err error) {
-	return instance.SetProperty("IPv6NonIPsecExtensionHeadersEnabled", value)
+	return instance.SetProperty("IPv6NonIPsecExtensionHeadersEnabled", (value))
 }
 
 // GetIPv6NonIPsecExtensionHeadersEnabled gets the value of IPv6NonIPsecExtensionHeadersEnabled for the instance
@@ -391,16 +519,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyIPv6NonIPse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6NonIPsecExtensionHeadersSupported sets the value of IPv6NonIPsecExtensionHeadersSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyIPv6NonIPsecExtensionHeadersSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6NonIPsecExtensionHeadersSupported", value)
+	return instance.SetProperty("IPv6NonIPsecExtensionHeadersSupported", (value))
 }
 
 // GetIPv6NonIPsecExtensionHeadersSupported gets the value of IPv6NonIPsecExtensionHeadersSupported for the instance
@@ -409,16 +546,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyIPv6NonIPse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6Supported sets the value of IPv6Supported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyIPv6Supported(value bool) (err error) {
-	return instance.SetProperty("IPv6Supported", value)
+	return instance.SetProperty("IPv6Supported", (value))
 }
 
 // GetIPv6Supported gets the value of IPv6Supported for the instance
@@ -427,16 +573,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyIPv6Support
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLsoEnabled sets the value of LsoEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyLsoEnabled(value bool) (err error) {
-	return instance.SetProperty("LsoEnabled", value)
+	return instance.SetProperty("LsoEnabled", (value))
 }
 
 // GetLsoEnabled gets the value of LsoEnabled for the instance
@@ -445,16 +600,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyLsoEnabled(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLsoSupported sets the value of LsoSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyLsoSupported(value bool) (err error) {
-	return instance.SetProperty("LsoSupported", value)
+	return instance.SetProperty("LsoSupported", (value))
 }
 
 // GetLsoSupported gets the value of LsoSupported for the instance
@@ -463,16 +627,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyLsoSupporte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSaOffloadCapacityEnabled sets the value of SaOffloadCapacityEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertySaOffloadCapacityEnabled(value uint32) (err error) {
-	return instance.SetProperty("SaOffloadCapacityEnabled", value)
+	return instance.SetProperty("SaOffloadCapacityEnabled", (value))
 }
 
 // GetSaOffloadCapacityEnabled gets the value of SaOffloadCapacityEnabled for the instance
@@ -481,16 +654,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertySaOffloadCa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSaOffloadCapacitySupported sets the value of SaOffloadCapacitySupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertySaOffloadCapacitySupported(value uint32) (err error) {
-	return instance.SetProperty("SaOffloadCapacitySupported", value)
+	return instance.SetProperty("SaOffloadCapacitySupported", (value))
 }
 
 // GetSaOffloadCapacitySupported gets the value of SaOffloadCapacitySupported for the instance
@@ -499,16 +681,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertySaOffloadCa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransportEnabled sets the value of TransportEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyTransportEnabled(value bool) (err error) {
-	return instance.SetProperty("TransportEnabled", value)
+	return instance.SetProperty("TransportEnabled", (value))
 }
 
 // GetTransportEnabled gets the value of TransportEnabled for the instance
@@ -517,16 +708,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyTransportEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTransportSupported sets the value of TransportSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyTransportSupported(value bool) (err error) {
-	return instance.SetProperty("TransportSupported", value)
+	return instance.SetProperty("TransportSupported", (value))
 }
 
 // GetTransportSupported gets the value of TransportSupported for the instance
@@ -535,16 +735,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyTransportSu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTunnelEnabled sets the value of TunnelEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyTunnelEnabled(value bool) (err error) {
-	return instance.SetProperty("TunnelEnabled", value)
+	return instance.SetProperty("TunnelEnabled", (value))
 }
 
 // GetTunnelEnabled gets the value of TunnelEnabled for the instance
@@ -553,16 +762,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyTunnelEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTunnelSupported sets the value of TunnelSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyTunnelSupported(value bool) (err error) {
-	return instance.SetProperty("TunnelSupported", value)
+	return instance.SetProperty("TunnelSupported", (value))
 }
 
 // GetTunnelSupported gets the value of TunnelSupported for the instance
@@ -571,16 +789,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyTunnelSuppo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUdpEspEnabled sets the value of UdpEspEnabled for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyUdpEspEnabled(value uint32) (err error) {
-	return instance.SetProperty("UdpEspEnabled", value)
+	return instance.SetProperty("UdpEspEnabled", (value))
 }
 
 // GetUdpEspEnabled gets the value of UdpEspEnabled for the instance
@@ -589,16 +816,25 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyUdpEspEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUdpEspSupported sets the value of UdpEspSupported for the instance
 func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) SetPropertyUdpEspSupported(value uint32) (err error) {
-	return instance.SetProperty("UdpEspSupported", value)
+	return instance.SetProperty("UdpEspSupported", (value))
 }
 
 // GetUdpEspSupported gets the value of UdpEspSupported for the instance
@@ -607,10 +843,19 @@ func (instance *MSFT_NetAdapterIPsecOffloadV2SettingData) GetPropertyUdpEspSuppo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Privilege struct
@@ -64,7 +66,7 @@ func NewCIM_PrivilegeEx6(hostName string,
 
 // SetActivities sets the value of Activities for the instance
 func (instance *CIM_Privilege) SetPropertyActivities(value []uint16) (err error) {
-	return instance.SetProperty("Activities", value)
+	return instance.SetProperty("Activities", (value))
 }
 
 // GetActivities gets the value of Activities for the instance
@@ -73,16 +75,26 @@ func (instance *CIM_Privilege) GetPropertyActivities() (value []uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetActivityQualifiers sets the value of ActivityQualifiers for the instance
 func (instance *CIM_Privilege) SetPropertyActivityQualifiers(value []string) (err error) {
-	return instance.SetProperty("ActivityQualifiers", value)
+	return instance.SetProperty("ActivityQualifiers", (value))
 }
 
 // GetActivityQualifiers gets the value of ActivityQualifiers for the instance
@@ -91,16 +103,26 @@ func (instance *CIM_Privilege) GetPropertyActivityQualifiers() (value []string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *CIM_Privilege) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -109,16 +131,25 @@ func (instance *CIM_Privilege) GetPropertyInstanceID() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrivilegeGranted sets the value of PrivilegeGranted for the instance
 func (instance *CIM_Privilege) SetPropertyPrivilegeGranted(value bool) (err error) {
-	return instance.SetProperty("PrivilegeGranted", value)
+	return instance.SetProperty("PrivilegeGranted", (value))
 }
 
 // GetPrivilegeGranted gets the value of PrivilegeGranted for the instance
@@ -127,16 +158,25 @@ func (instance *CIM_Privilege) GetPropertyPrivilegeGranted() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetQualifierFormats sets the value of QualifierFormats for the instance
 func (instance *CIM_Privilege) SetPropertyQualifierFormats(value []uint16) (err error) {
-	return instance.SetProperty("QualifierFormats", value)
+	return instance.SetProperty("QualifierFormats", (value))
 }
 
 // GetQualifierFormats gets the value of QualifierFormats for the instance
@@ -145,9 +185,19 @@ func (instance *CIM_Privilege) GetPropertyQualifierFormats() (value []uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }

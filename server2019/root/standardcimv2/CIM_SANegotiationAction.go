@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SANegotiationAction struct
@@ -58,7 +60,7 @@ func NewCIM_SANegotiationActionEx6(hostName string,
 
 // SetIdleDurationSeconds sets the value of IdleDurationSeconds for the instance
 func (instance *CIM_SANegotiationAction) SetPropertyIdleDurationSeconds(value uint64) (err error) {
-	return instance.SetProperty("IdleDurationSeconds", value)
+	return instance.SetProperty("IdleDurationSeconds", (value))
 }
 
 // GetIdleDurationSeconds gets the value of IdleDurationSeconds for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_SANegotiationAction) GetPropertyIdleDurationSeconds() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinLifetimeKilobytes sets the value of MinLifetimeKilobytes for the instance
 func (instance *CIM_SANegotiationAction) SetPropertyMinLifetimeKilobytes(value uint64) (err error) {
-	return instance.SetProperty("MinLifetimeKilobytes", value)
+	return instance.SetProperty("MinLifetimeKilobytes", (value))
 }
 
 // GetMinLifetimeKilobytes gets the value of MinLifetimeKilobytes for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_SANegotiationAction) GetPropertyMinLifetimeKilobytes() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinLifetimeSeconds sets the value of MinLifetimeSeconds for the instance
 func (instance *CIM_SANegotiationAction) SetPropertyMinLifetimeSeconds(value uint64) (err error) {
-	return instance.SetProperty("MinLifetimeSeconds", value)
+	return instance.SetProperty("MinLifetimeSeconds", (value))
 }
 
 // GetMinLifetimeSeconds gets the value of MinLifetimeSeconds for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_SANegotiationAction) GetPropertyMinLifetimeSeconds() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

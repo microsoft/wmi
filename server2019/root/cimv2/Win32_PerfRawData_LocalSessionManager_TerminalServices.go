@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_LocalSessionManager_TerminalServices struct
@@ -58,7 +60,7 @@ func NewWin32_PerfRawData_LocalSessionManager_TerminalServicesEx6(hostName strin
 
 // SetActiveSessions sets the value of ActiveSessions for the instance
 func (instance *Win32_PerfRawData_LocalSessionManager_TerminalServices) SetPropertyActiveSessions(value uint32) (err error) {
-	return instance.SetProperty("ActiveSessions", value)
+	return instance.SetProperty("ActiveSessions", (value))
 }
 
 // GetActiveSessions gets the value of ActiveSessions for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_PerfRawData_LocalSessionManager_TerminalServices) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInactiveSessions sets the value of InactiveSessions for the instance
 func (instance *Win32_PerfRawData_LocalSessionManager_TerminalServices) SetPropertyInactiveSessions(value uint32) (err error) {
-	return instance.SetProperty("InactiveSessions", value)
+	return instance.SetProperty("InactiveSessions", (value))
 }
 
 // GetInactiveSessions gets the value of InactiveSessions for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_PerfRawData_LocalSessionManager_TerminalServices) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalSessions sets the value of TotalSessions for the instance
 func (instance *Win32_PerfRawData_LocalSessionManager_TerminalServices) SetPropertyTotalSessions(value uint32) (err error) {
-	return instance.SetProperty("TotalSessions", value)
+	return instance.SetProperty("TotalSessions", (value))
 }
 
 // GetTotalSessions gets the value of TotalSessions for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_PerfRawData_LocalSessionManager_TerminalServices) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

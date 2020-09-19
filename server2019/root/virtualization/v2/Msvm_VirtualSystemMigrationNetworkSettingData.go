@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemMigrationNetworkSettingData struct
@@ -61,7 +63,7 @@ func NewMsvm_VirtualSystemMigrationNetworkSettingDataEx6(hostName string,
 
 // SetMetric sets the value of Metric for the instance
 func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) SetPropertyMetric(value uint32) (err error) {
-	return instance.SetProperty("Metric", value)
+	return instance.SetProperty("Metric", (value))
 }
 
 // GetMetric gets the value of Metric for the instance
@@ -70,16 +72,25 @@ func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) GetPropertyMetric
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrefixLength sets the value of PrefixLength for the instance
 func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) SetPropertyPrefixLength(value uint8) (err error) {
-	return instance.SetProperty("PrefixLength", value)
+	return instance.SetProperty("PrefixLength", (value))
 }
 
 // GetPrefixLength gets the value of PrefixLength for the instance
@@ -88,16 +99,25 @@ func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) GetPropertyPrefix
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSubnetNumber sets the value of SubnetNumber for the instance
 func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) SetPropertySubnetNumber(value string) (err error) {
-	return instance.SetProperty("SubnetNumber", value)
+	return instance.SetProperty("SubnetNumber", (value))
 }
 
 // GetSubnetNumber gets the value of SubnetNumber for the instance
@@ -106,16 +126,25 @@ func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) GetPropertySubnet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTags sets the value of Tags for the instance
 func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) SetPropertyTags(value []string) (err error) {
-	return instance.SetProperty("Tags", value)
+	return instance.SetProperty("Tags", (value))
 }
 
 // GetTags gets the value of Tags for the instance
@@ -124,12 +153,19 @@ func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) GetPropertyTags()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
-}
-func (instance *Msvm_VirtualSystemMigrationNetworkSettingData) GetRelatedVirtualSystemMigrationServiceSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_VirtualSystemMigrationServiceSettingData")
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_VPNv2_TrafficFilterList02_01 struct
@@ -77,7 +79,7 @@ func NewMDM_VPNv2_TrafficFilterList02_01Ex6(hostName string,
 
 // SetClaims sets the value of Claims for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyClaims(value string) (err error) {
-	return instance.SetProperty("Claims", value)
+	return instance.SetProperty("Claims", (value))
 }
 
 // GetClaims gets the value of Claims for the instance
@@ -86,16 +88,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyClaims() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -104,16 +115,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyInstanceID() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalAddressRanges sets the value of LocalAddressRanges for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyLocalAddressRanges(value string) (err error) {
-	return instance.SetProperty("LocalAddressRanges", value)
+	return instance.SetProperty("LocalAddressRanges", (value))
 }
 
 // GetLocalAddressRanges gets the value of LocalAddressRanges for the instance
@@ -122,16 +142,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyLocalAddressRanges(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalPortRanges sets the value of LocalPortRanges for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyLocalPortRanges(value string) (err error) {
-	return instance.SetProperty("LocalPortRanges", value)
+	return instance.SetProperty("LocalPortRanges", (value))
 }
 
 // GetLocalPortRanges gets the value of LocalPortRanges for the instance
@@ -140,16 +169,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyLocalPortRanges() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -158,16 +196,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyParentID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProtocol sets the value of Protocol for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyProtocol(value int32) (err error) {
-	return instance.SetProperty("Protocol", value)
+	return instance.SetProperty("Protocol", (value))
 }
 
 // GetProtocol gets the value of Protocol for the instance
@@ -176,16 +223,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyProtocol() (value i
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRemoteAddressRanges sets the value of RemoteAddressRanges for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyRemoteAddressRanges(value string) (err error) {
-	return instance.SetProperty("RemoteAddressRanges", value)
+	return instance.SetProperty("RemoteAddressRanges", (value))
 }
 
 // GetRemoteAddressRanges gets the value of RemoteAddressRanges for the instance
@@ -194,16 +250,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyRemoteAddressRanges
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemotePortRanges sets the value of RemotePortRanges for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyRemotePortRanges(value string) (err error) {
-	return instance.SetProperty("RemotePortRanges", value)
+	return instance.SetProperty("RemotePortRanges", (value))
 }
 
 // GetRemotePortRanges gets the value of RemotePortRanges for the instance
@@ -212,16 +277,25 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyRemotePortRanges() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoutingPolicyType sets the value of RoutingPolicyType for the instance
 func (instance *MDM_VPNv2_TrafficFilterList02_01) SetPropertyRoutingPolicyType(value string) (err error) {
-	return instance.SetProperty("RoutingPolicyType", value)
+	return instance.SetProperty("RoutingPolicyType", (value))
 }
 
 // GetRoutingPolicyType gets the value of RoutingPolicyType for the instance
@@ -230,9 +304,18 @@ func (instance *MDM_VPNv2_TrafficFilterList02_01) GetPropertyRoutingPolicyType()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

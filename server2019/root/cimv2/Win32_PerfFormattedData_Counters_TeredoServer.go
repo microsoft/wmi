@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_TeredoServer struct
@@ -91,7 +93,7 @@ func NewWin32_PerfFormattedData_Counters_TeredoServerEx6(hostName string,
 
 // SetInTeredoServerErrorPacketsAuthenticationError sets the value of InTeredoServerErrorPacketsAuthenticationError for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerErrorPacketsAuthenticationError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerErrorPacketsAuthenticationError", value)
+	return instance.SetProperty("InTeredoServerErrorPacketsAuthenticationError", (value))
 }
 
 // GetInTeredoServerErrorPacketsAuthenticationError gets the value of InTeredoServerErrorPacketsAuthenticationError for the instance
@@ -100,16 +102,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerErrorPacketsDestinationError sets the value of InTeredoServerErrorPacketsDestinationError for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerErrorPacketsDestinationError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerErrorPacketsDestinationError", value)
+	return instance.SetProperty("InTeredoServerErrorPacketsDestinationError", (value))
 }
 
 // GetInTeredoServerErrorPacketsDestinationError gets the value of InTeredoServerErrorPacketsDestinationError for the instance
@@ -118,16 +129,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerErrorPacketsHeaderError sets the value of InTeredoServerErrorPacketsHeaderError for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerErrorPacketsHeaderError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerErrorPacketsHeaderError", value)
+	return instance.SetProperty("InTeredoServerErrorPacketsHeaderError", (value))
 }
 
 // GetInTeredoServerErrorPacketsHeaderError gets the value of InTeredoServerErrorPacketsHeaderError for the instance
@@ -136,16 +156,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerErrorPacketsSourceError sets the value of InTeredoServerErrorPacketsSourceError for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerErrorPacketsSourceError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerErrorPacketsSourceError", value)
+	return instance.SetProperty("InTeredoServerErrorPacketsSourceError", (value))
 }
 
 // GetInTeredoServerErrorPacketsSourceError gets the value of InTeredoServerErrorPacketsSourceError for the instance
@@ -154,16 +183,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerErrorPacketsTotal sets the value of InTeredoServerErrorPacketsTotal for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerErrorPacketsTotal(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerErrorPacketsTotal", value)
+	return instance.SetProperty("InTeredoServerErrorPacketsTotal", (value))
 }
 
 // GetInTeredoServerErrorPacketsTotal gets the value of InTeredoServerErrorPacketsTotal for the instance
@@ -172,16 +210,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerSuccessPacketsBubbles sets the value of InTeredoServerSuccessPacketsBubbles for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerSuccessPacketsBubbles(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerSuccessPacketsBubbles", value)
+	return instance.SetProperty("InTeredoServerSuccessPacketsBubbles", (value))
 }
 
 // GetInTeredoServerSuccessPacketsBubbles gets the value of InTeredoServerSuccessPacketsBubbles for the instance
@@ -190,16 +237,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerSuccessPacketsEcho sets the value of InTeredoServerSuccessPacketsEcho for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerSuccessPacketsEcho(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerSuccessPacketsEcho", value)
+	return instance.SetProperty("InTeredoServerSuccessPacketsEcho", (value))
 }
 
 // GetInTeredoServerSuccessPacketsEcho gets the value of InTeredoServerSuccessPacketsEcho for the instance
@@ -208,16 +264,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerSuccessPacketsRSPrimary sets the value of InTeredoServerSuccessPacketsRSPrimary for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerSuccessPacketsRSPrimary(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerSuccessPacketsRSPrimary", value)
+	return instance.SetProperty("InTeredoServerSuccessPacketsRSPrimary", (value))
 }
 
 // GetInTeredoServerSuccessPacketsRSPrimary gets the value of InTeredoServerSuccessPacketsRSPrimary for the instance
@@ -226,16 +291,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerSuccessPacketsRSSecondary sets the value of InTeredoServerSuccessPacketsRSSecondary for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerSuccessPacketsRSSecondary(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerSuccessPacketsRSSecondary", value)
+	return instance.SetProperty("InTeredoServerSuccessPacketsRSSecondary", (value))
 }
 
 // GetInTeredoServerSuccessPacketsRSSecondary gets the value of InTeredoServerSuccessPacketsRSSecondary for the instance
@@ -244,16 +318,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerSuccessPacketsTotal sets the value of InTeredoServerSuccessPacketsTotal for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerSuccessPacketsTotal(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerSuccessPacketsTotal", value)
+	return instance.SetProperty("InTeredoServerSuccessPacketsTotal", (value))
 }
 
 // GetInTeredoServerSuccessPacketsTotal gets the value of InTeredoServerSuccessPacketsTotal for the instance
@@ -262,16 +345,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerTotalPacketsSuccessError sets the value of InTeredoServerTotalPacketsSuccessError for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerTotalPacketsSuccessError(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerTotalPacketsSuccessError", value)
+	return instance.SetProperty("InTeredoServerTotalPacketsSuccessError", (value))
 }
 
 // GetInTeredoServerTotalPacketsSuccessError gets the value of InTeredoServerTotalPacketsSuccessError for the instance
@@ -280,16 +372,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoServerTotalPacketsSuccessErrorPersec sets the value of InTeredoServerTotalPacketsSuccessErrorPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyInTeredoServerTotalPacketsSuccessErrorPersec(value uint32) (err error) {
-	return instance.SetProperty("InTeredoServerTotalPacketsSuccessErrorPersec", value)
+	return instance.SetProperty("InTeredoServerTotalPacketsSuccessErrorPersec", (value))
 }
 
 // GetInTeredoServerTotalPacketsSuccessErrorPersec gets the value of InTeredoServerTotalPacketsSuccessErrorPersec for the instance
@@ -298,16 +399,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoServerRAPrimary sets the value of OutTeredoServerRAPrimary for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyOutTeredoServerRAPrimary(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoServerRAPrimary", value)
+	return instance.SetProperty("OutTeredoServerRAPrimary", (value))
 }
 
 // GetOutTeredoServerRAPrimary gets the value of OutTeredoServerRAPrimary for the instance
@@ -316,16 +426,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyOutTer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoServerRASecondary sets the value of OutTeredoServerRASecondary for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoServer) SetPropertyOutTeredoServerRASecondary(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoServerRASecondary", value)
+	return instance.SetProperty("OutTeredoServerRASecondary", (value))
 }
 
 // GetOutTeredoServerRASecondary gets the value of OutTeredoServerRASecondary for the instance
@@ -334,9 +453,18 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoServer) GetPropertyOutTer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_Connectivity02 struct
@@ -95,7 +97,7 @@ func NewMDM_Policy_Config01_Connectivity02Ex6(hostName string,
 
 // SetAllowBluetooth sets the value of AllowBluetooth for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyAllowBluetooth(value int32) (err error) {
-	return instance.SetProperty("AllowBluetooth", value)
+	return instance.SetProperty("AllowBluetooth", (value))
 }
 
 // GetAllowBluetooth gets the value of AllowBluetooth for the instance
@@ -104,16 +106,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyAllowBluetooth() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowCellularData sets the value of AllowCellularData for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyAllowCellularData(value int32) (err error) {
-	return instance.SetProperty("AllowCellularData", value)
+	return instance.SetProperty("AllowCellularData", (value))
 }
 
 // GetAllowCellularData gets the value of AllowCellularData for the instance
@@ -122,16 +133,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyAllowCellularData
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowCellularDataRoaming sets the value of AllowCellularDataRoaming for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyAllowCellularDataRoaming(value int32) (err error) {
-	return instance.SetProperty("AllowCellularDataRoaming", value)
+	return instance.SetProperty("AllowCellularDataRoaming", (value))
 }
 
 // GetAllowCellularDataRoaming gets the value of AllowCellularDataRoaming for the instance
@@ -140,16 +160,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyAllowCellularData
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowConnectedDevices sets the value of AllowConnectedDevices for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyAllowConnectedDevices(value int32) (err error) {
-	return instance.SetProperty("AllowConnectedDevices", value)
+	return instance.SetProperty("AllowConnectedDevices", (value))
 }
 
 // GetAllowConnectedDevices gets the value of AllowConnectedDevices for the instance
@@ -158,16 +187,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyAllowConnectedDev
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPhonePCLinking sets the value of AllowPhonePCLinking for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyAllowPhonePCLinking(value int32) (err error) {
-	return instance.SetProperty("AllowPhonePCLinking", value)
+	return instance.SetProperty("AllowPhonePCLinking", (value))
 }
 
 // GetAllowPhonePCLinking gets the value of AllowPhonePCLinking for the instance
@@ -176,16 +214,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyAllowPhonePCLinki
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowVPNOverCellular sets the value of AllowVPNOverCellular for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyAllowVPNOverCellular(value int32) (err error) {
-	return instance.SetProperty("AllowVPNOverCellular", value)
+	return instance.SetProperty("AllowVPNOverCellular", (value))
 }
 
 // GetAllowVPNOverCellular gets the value of AllowVPNOverCellular for the instance
@@ -194,16 +241,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyAllowVPNOverCellu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowVPNRoamingOverCellular sets the value of AllowVPNRoamingOverCellular for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyAllowVPNRoamingOverCellular(value int32) (err error) {
-	return instance.SetProperty("AllowVPNRoamingOverCellular", value)
+	return instance.SetProperty("AllowVPNRoamingOverCellular", (value))
 }
 
 // GetAllowVPNRoamingOverCellular gets the value of AllowVPNRoamingOverCellular for the instance
@@ -212,16 +268,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyAllowVPNRoamingOv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDiablePrintingOverHTTP sets the value of DiablePrintingOverHTTP for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyDiablePrintingOverHTTP(value string) (err error) {
-	return instance.SetProperty("DiablePrintingOverHTTP", value)
+	return instance.SetProperty("DiablePrintingOverHTTP", (value))
 }
 
 // GetDiablePrintingOverHTTP gets the value of DiablePrintingOverHTTP for the instance
@@ -230,16 +295,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyDiablePrintingOve
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableDownloadingOfPrintDriversOverHTTP sets the value of DisableDownloadingOfPrintDriversOverHTTP for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyDisableDownloadingOfPrintDriversOverHTTP(value string) (err error) {
-	return instance.SetProperty("DisableDownloadingOfPrintDriversOverHTTP", value)
+	return instance.SetProperty("DisableDownloadingOfPrintDriversOverHTTP", (value))
 }
 
 // GetDisableDownloadingOfPrintDriversOverHTTP gets the value of DisableDownloadingOfPrintDriversOverHTTP for the instance
@@ -248,16 +322,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyDisableDownloadin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableInternetDownloadForWebPublishingAndOnlineOrderingWizards sets the value of DisableInternetDownloadForWebPublishingAndOnlineOrderingWizards for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyDisableInternetDownloadForWebPublishingAndOnlineOrderingWizards(value string) (err error) {
-	return instance.SetProperty("DisableInternetDownloadForWebPublishingAndOnlineOrderingWizards", value)
+	return instance.SetProperty("DisableInternetDownloadForWebPublishingAndOnlineOrderingWizards", (value))
 }
 
 // GetDisableInternetDownloadForWebPublishingAndOnlineOrderingWizards gets the value of DisableInternetDownloadForWebPublishingAndOnlineOrderingWizards for the instance
@@ -266,16 +349,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyDisableInternetDo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisallowNetworkConnectivityActiveTests sets the value of DisallowNetworkConnectivityActiveTests for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyDisallowNetworkConnectivityActiveTests(value int32) (err error) {
-	return instance.SetProperty("DisallowNetworkConnectivityActiveTests", value)
+	return instance.SetProperty("DisallowNetworkConnectivityActiveTests", (value))
 }
 
 // GetDisallowNetworkConnectivityActiveTests gets the value of DisallowNetworkConnectivityActiveTests for the instance
@@ -284,16 +376,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyDisallowNetworkCo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHardenedUNCPaths sets the value of HardenedUNCPaths for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyHardenedUNCPaths(value string) (err error) {
-	return instance.SetProperty("HardenedUNCPaths", value)
+	return instance.SetProperty("HardenedUNCPaths", (value))
 }
 
 // GetHardenedUNCPaths gets the value of HardenedUNCPaths for the instance
@@ -302,16 +403,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyHardenedUNCPaths(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -320,16 +430,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyInstanceID() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -338,16 +457,25 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyParentID() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProhibitInstallationAndConfigurationOfNetworkBridge sets the value of ProhibitInstallationAndConfigurationOfNetworkBridge for the instance
 func (instance *MDM_Policy_Config01_Connectivity02) SetPropertyProhibitInstallationAndConfigurationOfNetworkBridge(value string) (err error) {
-	return instance.SetProperty("ProhibitInstallationAndConfigurationOfNetworkBridge", value)
+	return instance.SetProperty("ProhibitInstallationAndConfigurationOfNetworkBridge", (value))
 }
 
 // GetProhibitInstallationAndConfigurationOfNetworkBridge gets the value of ProhibitInstallationAndConfigurationOfNetworkBridge for the instance
@@ -356,9 +484,18 @@ func (instance *MDM_Policy_Config01_Connectivity02) GetPropertyProhibitInstallat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VLANEndpoint struct
@@ -79,7 +81,7 @@ func NewCIM_VLANEndpointEx6(hostName string,
 
 // SetDesiredEndpointMode sets the value of DesiredEndpointMode for the instance
 func (instance *CIM_VLANEndpoint) SetPropertyDesiredEndpointMode(value VLANEndpoint_DesiredEndpointMode) (err error) {
-	return instance.SetProperty("DesiredEndpointMode", value)
+	return instance.SetProperty("DesiredEndpointMode", (value))
 }
 
 // GetDesiredEndpointMode gets the value of DesiredEndpointMode for the instance
@@ -88,16 +90,25 @@ func (instance *CIM_VLANEndpoint) GetPropertyDesiredEndpointMode() (value VLANEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VLANEndpoint_DesiredEndpointMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VLANEndpoint_DesiredEndpointMode(valuetmp)
+
 	return
 }
 
 // SetDesiredVLANTrunkEncapsulation sets the value of DesiredVLANTrunkEncapsulation for the instance
 func (instance *CIM_VLANEndpoint) SetPropertyDesiredVLANTrunkEncapsulation(value VLANEndpoint_DesiredVLANTrunkEncapsulation) (err error) {
-	return instance.SetProperty("DesiredVLANTrunkEncapsulation", value)
+	return instance.SetProperty("DesiredVLANTrunkEncapsulation", (value))
 }
 
 // GetDesiredVLANTrunkEncapsulation gets the value of DesiredVLANTrunkEncapsulation for the instance
@@ -106,16 +117,25 @@ func (instance *CIM_VLANEndpoint) GetPropertyDesiredVLANTrunkEncapsulation() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VLANEndpoint_DesiredVLANTrunkEncapsulation)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VLANEndpoint_DesiredVLANTrunkEncapsulation(valuetmp)
+
 	return
 }
 
 // SetGVRPStatus sets the value of GVRPStatus for the instance
 func (instance *CIM_VLANEndpoint) SetPropertyGVRPStatus(value VLANEndpoint_GVRPStatus) (err error) {
-	return instance.SetProperty("GVRPStatus", value)
+	return instance.SetProperty("GVRPStatus", (value))
 }
 
 // GetGVRPStatus gets the value of GVRPStatus for the instance
@@ -124,16 +144,25 @@ func (instance *CIM_VLANEndpoint) GetPropertyGVRPStatus() (value VLANEndpoint_GV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VLANEndpoint_GVRPStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VLANEndpoint_GVRPStatus(valuetmp)
+
 	return
 }
 
 // SetOperationalEndpointMode sets the value of OperationalEndpointMode for the instance
 func (instance *CIM_VLANEndpoint) SetPropertyOperationalEndpointMode(value VLANEndpoint_OperationalEndpointMode) (err error) {
-	return instance.SetProperty("OperationalEndpointMode", value)
+	return instance.SetProperty("OperationalEndpointMode", (value))
 }
 
 // GetOperationalEndpointMode gets the value of OperationalEndpointMode for the instance
@@ -142,16 +171,25 @@ func (instance *CIM_VLANEndpoint) GetPropertyOperationalEndpointMode() (value VL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VLANEndpoint_OperationalEndpointMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VLANEndpoint_OperationalEndpointMode(valuetmp)
+
 	return
 }
 
 // SetOperationalVLANTrunkEncapsulation sets the value of OperationalVLANTrunkEncapsulation for the instance
 func (instance *CIM_VLANEndpoint) SetPropertyOperationalVLANTrunkEncapsulation(value VLANEndpoint_OperationalVLANTrunkEncapsulation) (err error) {
-	return instance.SetProperty("OperationalVLANTrunkEncapsulation", value)
+	return instance.SetProperty("OperationalVLANTrunkEncapsulation", (value))
 }
 
 // GetOperationalVLANTrunkEncapsulation gets the value of OperationalVLANTrunkEncapsulation for the instance
@@ -160,16 +198,25 @@ func (instance *CIM_VLANEndpoint) GetPropertyOperationalVLANTrunkEncapsulation()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VLANEndpoint_OperationalVLANTrunkEncapsulation)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VLANEndpoint_OperationalVLANTrunkEncapsulation(valuetmp)
+
 	return
 }
 
 // SetOtherEndpointMode sets the value of OtherEndpointMode for the instance
 func (instance *CIM_VLANEndpoint) SetPropertyOtherEndpointMode(value string) (err error) {
-	return instance.SetProperty("OtherEndpointMode", value)
+	return instance.SetProperty("OtherEndpointMode", (value))
 }
 
 // GetOtherEndpointMode gets the value of OtherEndpointMode for the instance
@@ -178,16 +225,25 @@ func (instance *CIM_VLANEndpoint) GetPropertyOtherEndpointMode() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherTrunkEncapsulation sets the value of OtherTrunkEncapsulation for the instance
 func (instance *CIM_VLANEndpoint) SetPropertyOtherTrunkEncapsulation(value string) (err error) {
-	return instance.SetProperty("OtherTrunkEncapsulation", value)
+	return instance.SetProperty("OtherTrunkEncapsulation", (value))
 }
 
 // GetOtherTrunkEncapsulation gets the value of OtherTrunkEncapsulation for the instance
@@ -196,9 +252,18 @@ func (instance *CIM_VLANEndpoint) GetPropertyOtherTrunkEncapsulation() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

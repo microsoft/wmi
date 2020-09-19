@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_eUICCs_Profiles02_01 struct
@@ -77,7 +79,7 @@ func NewMDM_eUICCs_Profiles02_01Ex6(hostName string,
 
 // SetErrorDetail sets the value of ErrorDetail for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyErrorDetail(value int32) (err error) {
-	return instance.SetProperty("ErrorDetail", value)
+	return instance.SetProperty("ErrorDetail", (value))
 }
 
 // GetErrorDetail gets the value of ErrorDetail for the instance
@@ -86,16 +88,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyErrorDetail() (value int32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -104,16 +115,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyInstanceID() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsEnabled sets the value of IsEnabled for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyIsEnabled(value bool) (err error) {
-	return instance.SetProperty("IsEnabled", value)
+	return instance.SetProperty("IsEnabled", (value))
 }
 
 // GetIsEnabled gets the value of IsEnabled for the instance
@@ -122,16 +142,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyIsEnabled() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMatchingID sets the value of MatchingID for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyMatchingID(value string) (err error) {
-	return instance.SetProperty("MatchingID", value)
+	return instance.SetProperty("MatchingID", (value))
 }
 
 // GetMatchingID gets the value of MatchingID for the instance
@@ -140,16 +169,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyMatchingID() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -158,16 +196,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyParentID() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPPR1Set sets the value of PPR1Set for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyPPR1Set(value bool) (err error) {
-	return instance.SetProperty("PPR1Set", value)
+	return instance.SetProperty("PPR1Set", (value))
 }
 
 // GetPPR1Set gets the value of PPR1Set for the instance
@@ -176,16 +223,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyPPR1Set() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPPR2Set sets the value of PPR2Set for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyPPR2Set(value bool) (err error) {
-	return instance.SetProperty("PPR2Set", value)
+	return instance.SetProperty("PPR2Set", (value))
 }
 
 // GetPPR2Set gets the value of PPR2Set for the instance
@@ -194,16 +250,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyPPR2Set() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetServerName sets the value of ServerName for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyServerName(value string) (err error) {
-	return instance.SetProperty("ServerName", value)
+	return instance.SetProperty("ServerName", (value))
 }
 
 // GetServerName gets the value of ServerName for the instance
@@ -212,16 +277,25 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyServerName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MDM_eUICCs_Profiles02_01) SetPropertyState(value int32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -230,9 +304,18 @@ func (instance *MDM_eUICCs_Profiles02_01) GetPropertyState() (value int32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

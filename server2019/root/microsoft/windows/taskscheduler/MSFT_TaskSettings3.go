@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskSettings3 struct
@@ -55,7 +57,7 @@ func NewMSFT_TaskSettings3Ex6(hostName string,
 
 // SetMaintenanceSettings sets the value of MaintenanceSettings for the instance
 func (instance *MSFT_TaskSettings3) SetPropertyMaintenanceSettings(value MSFT_TaskMaintenanceSettings) (err error) {
-	return instance.SetProperty("MaintenanceSettings", value)
+	return instance.SetProperty("MaintenanceSettings", (value))
 }
 
 // GetMaintenanceSettings gets the value of MaintenanceSettings for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_TaskSettings3) GetPropertyMaintenanceSettings() (value MSFT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_TaskMaintenanceSettings)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_TaskMaintenanceSettings)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_TaskMaintenanceSettings is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_TaskMaintenanceSettings(valuetmp)
+
 	return
 }
 
 // Setvolatile sets the value of volatile for the instance
 func (instance *MSFT_TaskSettings3) SetPropertyvolatile(value bool) (err error) {
-	return instance.SetProperty("volatile", value)
+	return instance.SetProperty("volatile", (value))
 }
 
 // Getvolatile gets the value of volatile for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_TaskSettings3) GetPropertyvolatile() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

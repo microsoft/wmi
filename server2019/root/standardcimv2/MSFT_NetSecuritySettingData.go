@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetSecuritySettingData struct
@@ -91,7 +93,7 @@ func NewMSFT_NetSecuritySettingDataEx6(hostName string,
 
 // SetAllowIPsecThroughNAT sets the value of AllowIPsecThroughNAT for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyAllowIPsecThroughNAT(value uint16) (err error) {
-	return instance.SetProperty("AllowIPsecThroughNAT", value)
+	return instance.SetProperty("AllowIPsecThroughNAT", (value))
 }
 
 // GetAllowIPsecThroughNAT gets the value of AllowIPsecThroughNAT for the instance
@@ -100,16 +102,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyAllowIPsecThroughNAT() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCertValidationLevel sets the value of CertValidationLevel for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyCertValidationLevel(value uint16) (err error) {
-	return instance.SetProperty("CertValidationLevel", value)
+	return instance.SetProperty("CertValidationLevel", (value))
 }
 
 // GetCertValidationLevel gets the value of CertValidationLevel for the instance
@@ -118,16 +129,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyCertValidationLevel() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEnablePacketQueuing sets the value of EnablePacketQueuing for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyEnablePacketQueuing(value uint16) (err error) {
-	return instance.SetProperty("EnablePacketQueuing", value)
+	return instance.SetProperty("EnablePacketQueuing", (value))
 }
 
 // GetEnablePacketQueuing gets the value of EnablePacketQueuing for the instance
@@ -136,16 +156,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyEnablePacketQueuing() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEnableStatefulFtp sets the value of EnableStatefulFtp for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyEnableStatefulFtp(value uint16) (err error) {
-	return instance.SetProperty("EnableStatefulFtp", value)
+	return instance.SetProperty("EnableStatefulFtp", (value))
 }
 
 // GetEnableStatefulFtp gets the value of EnableStatefulFtp for the instance
@@ -154,16 +183,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyEnableStatefulFtp() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEnableStatefulPptp sets the value of EnableStatefulPptp for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyEnableStatefulPptp(value uint16) (err error) {
-	return instance.SetProperty("EnableStatefulPptp", value)
+	return instance.SetProperty("EnableStatefulPptp", (value))
 }
 
 // GetEnableStatefulPptp gets the value of EnableStatefulPptp for the instance
@@ -172,16 +210,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyEnableStatefulPptp() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetExemptions sets the value of Exemptions for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyExemptions(value uint32) (err error) {
-	return instance.SetProperty("Exemptions", value)
+	return instance.SetProperty("Exemptions", (value))
 }
 
 // GetExemptions gets the value of Exemptions for the instance
@@ -190,16 +237,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyExemptions() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetKeyEncoding sets the value of KeyEncoding for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyKeyEncoding(value uint16) (err error) {
-	return instance.SetProperty("KeyEncoding", value)
+	return instance.SetProperty("KeyEncoding", (value))
 }
 
 // GetKeyEncoding gets the value of KeyEncoding for the instance
@@ -208,16 +264,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyKeyEncoding() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxSAIdleTimeSeconds sets the value of MaxSAIdleTimeSeconds for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyMaxSAIdleTimeSeconds(value uint32) (err error) {
-	return instance.SetProperty("MaxSAIdleTimeSeconds", value)
+	return instance.SetProperty("MaxSAIdleTimeSeconds", (value))
 }
 
 // GetMaxSAIdleTimeSeconds gets the value of MaxSAIdleTimeSeconds for the instance
@@ -226,16 +291,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyMaxSAIdleTimeSeconds() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProfile sets the value of Profile for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyProfile(value uint16) (err error) {
-	return instance.SetProperty("Profile", value)
+	return instance.SetProperty("Profile", (value))
 }
 
 // GetProfile gets the value of Profile for the instance
@@ -244,16 +318,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyProfile() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRemoteMachineTransportAuthorizationList sets the value of RemoteMachineTransportAuthorizationList for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyRemoteMachineTransportAuthorizationList(value string) (err error) {
-	return instance.SetProperty("RemoteMachineTransportAuthorizationList", value)
+	return instance.SetProperty("RemoteMachineTransportAuthorizationList", (value))
 }
 
 // GetRemoteMachineTransportAuthorizationList gets the value of RemoteMachineTransportAuthorizationList for the instance
@@ -262,16 +345,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyRemoteMachineTransportAu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteMachineTunnelAuthorizationList sets the value of RemoteMachineTunnelAuthorizationList for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyRemoteMachineTunnelAuthorizationList(value string) (err error) {
-	return instance.SetProperty("RemoteMachineTunnelAuthorizationList", value)
+	return instance.SetProperty("RemoteMachineTunnelAuthorizationList", (value))
 }
 
 // GetRemoteMachineTunnelAuthorizationList gets the value of RemoteMachineTunnelAuthorizationList for the instance
@@ -280,16 +372,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyRemoteMachineTunnelAutho
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteUserTransportAuthorizationList sets the value of RemoteUserTransportAuthorizationList for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyRemoteUserTransportAuthorizationList(value string) (err error) {
-	return instance.SetProperty("RemoteUserTransportAuthorizationList", value)
+	return instance.SetProperty("RemoteUserTransportAuthorizationList", (value))
 }
 
 // GetRemoteUserTransportAuthorizationList gets the value of RemoteUserTransportAuthorizationList for the instance
@@ -298,16 +399,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyRemoteUserTransportAutho
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteUserTunnelAuthorizationList sets the value of RemoteUserTunnelAuthorizationList for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyRemoteUserTunnelAuthorizationList(value string) (err error) {
-	return instance.SetProperty("RemoteUserTunnelAuthorizationList", value)
+	return instance.SetProperty("RemoteUserTunnelAuthorizationList", (value))
 }
 
 // GetRemoteUserTunnelAuthorizationList gets the value of RemoteUserTunnelAuthorizationList for the instance
@@ -316,16 +426,25 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyRemoteUserTunnelAuthoriz
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequireFullAuthSupport sets the value of RequireFullAuthSupport for the instance
 func (instance *MSFT_NetSecuritySettingData) SetPropertyRequireFullAuthSupport(value uint16) (err error) {
-	return instance.SetProperty("RequireFullAuthSupport", value)
+	return instance.SetProperty("RequireFullAuthSupport", (value))
 }
 
 // GetRequireFullAuthSupport gets the value of RequireFullAuthSupport for the instance
@@ -334,9 +453,18 @@ func (instance *MSFT_NetSecuritySettingData) GetPropertyRequireFullAuthSupport()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Scaleout
 //////////////////////////////////////////////
 package scaleout
@@ -11,7 +11,9 @@ package scaleout
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ClusterSetFaultDomain struct
@@ -65,7 +67,7 @@ func NewMSFT_ClusterSetFaultDomainEx6(hostName string,
 
 // SetClusterName sets the value of ClusterName for the instance
 func (instance *MSFT_ClusterSetFaultDomain) SetPropertyClusterName(value []string) (err error) {
-	return instance.SetProperty("ClusterName", value)
+	return instance.SetProperty("ClusterName", (value))
 }
 
 // GetClusterName gets the value of ClusterName for the instance
@@ -74,16 +76,26 @@ func (instance *MSFT_ClusterSetFaultDomain) GetPropertyClusterName() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_ClusterSetFaultDomain) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -92,16 +104,25 @@ func (instance *MSFT_ClusterSetFaultDomain) GetPropertyDescription() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultDomainType sets the value of FaultDomainType for the instance
 func (instance *MSFT_ClusterSetFaultDomain) SetPropertyFaultDomainType(value uint32) (err error) {
-	return instance.SetProperty("FaultDomainType", value)
+	return instance.SetProperty("FaultDomainType", (value))
 }
 
 // GetFaultDomainType gets the value of FaultDomainType for the instance
@@ -110,16 +131,25 @@ func (instance *MSFT_ClusterSetFaultDomain) GetPropertyFaultDomainType() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFDName sets the value of FDName for the instance
 func (instance *MSFT_ClusterSetFaultDomain) SetPropertyFDName(value string) (err error) {
-	return instance.SetProperty("FDName", value)
+	return instance.SetProperty("FDName", (value))
 }
 
 // GetFDName gets the value of FDName for the instance
@@ -128,16 +158,25 @@ func (instance *MSFT_ClusterSetFaultDomain) GetPropertyFDName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_ClusterSetFaultDomain) SetPropertyId(value uint64) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -146,10 +185,19 @@ func (instance *MSFT_ClusterSetFaultDomain) GetPropertyId() (value uint64, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

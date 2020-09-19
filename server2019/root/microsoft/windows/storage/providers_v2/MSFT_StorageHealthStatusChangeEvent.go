@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageHealthStatusChangeEvent struct
@@ -67,7 +69,7 @@ func NewMSFT_StorageHealthStatusChangeEventEx6(hostName string,
 
 // SetCurrentHealthStatus sets the value of CurrentHealthStatus for the instance
 func (instance *MSFT_StorageHealthStatusChangeEvent) SetPropertyCurrentHealthStatus(value StorageHealthStatusChangeEvent_CurrentHealthStatus) (err error) {
-	return instance.SetProperty("CurrentHealthStatus", value)
+	return instance.SetProperty("CurrentHealthStatus", (value))
 }
 
 // GetCurrentHealthStatus gets the value of CurrentHealthStatus for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_StorageHealthStatusChangeEvent) GetPropertyCurrentHealthSta
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageHealthStatusChangeEvent_CurrentHealthStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageHealthStatusChangeEvent_CurrentHealthStatus(valuetmp)
+
 	return
 }
 
 // SetPreviousHealthStatus sets the value of PreviousHealthStatus for the instance
 func (instance *MSFT_StorageHealthStatusChangeEvent) SetPropertyPreviousHealthStatus(value StorageHealthStatusChangeEvent_PreviousHealthStatus) (err error) {
-	return instance.SetProperty("PreviousHealthStatus", value)
+	return instance.SetProperty("PreviousHealthStatus", (value))
 }
 
 // GetPreviousHealthStatus gets the value of PreviousHealthStatus for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_StorageHealthStatusChangeEvent) GetPropertyPreviousHealthSt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageHealthStatusChangeEvent_PreviousHealthStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageHealthStatusChangeEvent_PreviousHealthStatus(valuetmp)
+
 	return
 }
 
 // SetSourceUniqueId sets the value of SourceUniqueId for the instance
 func (instance *MSFT_StorageHealthStatusChangeEvent) SetPropertySourceUniqueId(value string) (err error) {
-	return instance.SetProperty("SourceUniqueId", value)
+	return instance.SetProperty("SourceUniqueId", (value))
 }
 
 // GetSourceUniqueId gets the value of SourceUniqueId for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_StorageHealthStatusChangeEvent) GetPropertySourceUniqueId()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStorageSubsystemUniqueId sets the value of StorageSubsystemUniqueId for the instance
 func (instance *MSFT_StorageHealthStatusChangeEvent) SetPropertyStorageSubsystemUniqueId(value string) (err error) {
-	return instance.SetProperty("StorageSubsystemUniqueId", value)
+	return instance.SetProperty("StorageSubsystemUniqueId", (value))
 }
 
 // GetStorageSubsystemUniqueId gets the value of StorageSubsystemUniqueId for the instance
@@ -130,9 +159,18 @@ func (instance *MSFT_StorageHealthStatusChangeEvent) GetPropertyStorageSubsystem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

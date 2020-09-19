@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProtocolEndpoint struct
@@ -62,7 +64,7 @@ func NewCIM_ProtocolEndpointEx6(hostName string,
 
 // SetNameFormat sets the value of NameFormat for the instance
 func (instance *CIM_ProtocolEndpoint) SetPropertyNameFormat(value string) (err error) {
-	return instance.SetProperty("NameFormat", value)
+	return instance.SetProperty("NameFormat", (value))
 }
 
 // GetNameFormat gets the value of NameFormat for the instance
@@ -71,16 +73,25 @@ func (instance *CIM_ProtocolEndpoint) GetPropertyNameFormat() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherTypeDescription sets the value of OtherTypeDescription for the instance
 func (instance *CIM_ProtocolEndpoint) SetPropertyOtherTypeDescription(value string) (err error) {
-	return instance.SetProperty("OtherTypeDescription", value)
+	return instance.SetProperty("OtherTypeDescription", (value))
 }
 
 // GetOtherTypeDescription gets the value of OtherTypeDescription for the instance
@@ -89,16 +100,25 @@ func (instance *CIM_ProtocolEndpoint) GetPropertyOtherTypeDescription() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProtocolIFType sets the value of ProtocolIFType for the instance
 func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolIFType(value ProtocolEndpoint_ProtocolIFType) (err error) {
-	return instance.SetProperty("ProtocolIFType", value)
+	return instance.SetProperty("ProtocolIFType", (value))
 }
 
 // GetProtocolIFType gets the value of ProtocolIFType for the instance
@@ -107,16 +127,25 @@ func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolIFType() (value Protoco
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ProtocolEndpoint_ProtocolIFType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ProtocolEndpoint_ProtocolIFType(valuetmp)
+
 	return
 }
 
 // SetProtocolType sets the value of ProtocolType for the instance
 func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolType(value ProtocolEndpoint_ProtocolType) (err error) {
-	return instance.SetProperty("ProtocolType", value)
+	return instance.SetProperty("ProtocolType", (value))
 }
 
 // GetProtocolType gets the value of ProtocolType for the instance
@@ -125,9 +154,18 @@ func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolType() (value ProtocolE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ProtocolEndpoint_ProtocolType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ProtocolEndpoint_ProtocolType(valuetmp)
+
 	return
 }

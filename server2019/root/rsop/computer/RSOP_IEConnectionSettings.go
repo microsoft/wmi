@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEConnectionSettings struct
@@ -82,7 +84,7 @@ func NewRSOP_IEConnectionSettingsEx6(hostName string,
 
 // SetautoConfigEnable sets the value of autoConfigEnable for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertyautoConfigEnable(value bool) (err error) {
-	return instance.SetProperty("autoConfigEnable", value)
+	return instance.SetProperty("autoConfigEnable", (value))
 }
 
 // GetautoConfigEnable gets the value of autoConfigEnable for the instance
@@ -91,16 +93,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertyautoConfigEnable() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetautoConfigTime sets the value of autoConfigTime for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertyautoConfigTime(value int32) (err error) {
-	return instance.SetProperty("autoConfigTime", value)
+	return instance.SetProperty("autoConfigTime", (value))
 }
 
 // GetautoConfigTime gets the value of autoConfigTime for the instance
@@ -109,16 +120,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertyautoConfigTime() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetautoConfigURL sets the value of autoConfigURL for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertyautoConfigURL(value string) (err error) {
-	return instance.SetProperty("autoConfigURL", value)
+	return instance.SetProperty("autoConfigURL", (value))
 }
 
 // GetautoConfigURL gets the value of autoConfigURL for the instance
@@ -127,16 +147,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertyautoConfigURL() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetautoConfigUseLocal sets the value of autoConfigUseLocal for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertyautoConfigUseLocal(value bool) (err error) {
-	return instance.SetProperty("autoConfigUseLocal", value)
+	return instance.SetProperty("autoConfigUseLocal", (value))
 }
 
 // GetautoConfigUseLocal gets the value of autoConfigUseLocal for the instance
@@ -145,16 +174,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertyautoConfigUseLocal() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetautoDetectConfigSettings sets the value of autoDetectConfigSettings for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertyautoDetectConfigSettings(value bool) (err error) {
-	return instance.SetProperty("autoDetectConfigSettings", value)
+	return instance.SetProperty("autoDetectConfigSettings", (value))
 }
 
 // GetautoDetectConfigSettings gets the value of autoDetectConfigSettings for the instance
@@ -163,16 +201,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertyautoDetectConfigSettings()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetautoProxyURL sets the value of autoProxyURL for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertyautoProxyURL(value string) (err error) {
-	return instance.SetProperty("autoProxyURL", value)
+	return instance.SetProperty("autoProxyURL", (value))
 }
 
 // GetautoProxyURL gets the value of autoProxyURL for the instance
@@ -181,16 +228,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertyautoProxyURL() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetdefaultDialUpConnection sets the value of defaultDialUpConnection for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertydefaultDialUpConnection(value string) (err error) {
-	return instance.SetProperty("defaultDialUpConnection", value)
+	return instance.SetProperty("defaultDialUpConnection", (value))
 }
 
 // GetdefaultDialUpConnection gets the value of defaultDialUpConnection for the instance
@@ -199,16 +255,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertydefaultDialUpConnection() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetdeleteExistingConnSettings sets the value of deleteExistingConnSettings for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertydeleteExistingConnSettings(value bool) (err error) {
-	return instance.SetProperty("deleteExistingConnSettings", value)
+	return instance.SetProperty("deleteExistingConnSettings", (value))
 }
 
 // GetdeleteExistingConnSettings gets the value of deleteExistingConnSettings for the instance
@@ -217,16 +282,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertydeleteExistingConnSettings
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetdialUpConnections sets the value of dialUpConnections for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertydialUpConnections(value []string) (err error) {
-	return instance.SetProperty("dialUpConnections", value)
+	return instance.SetProperty("dialUpConnections", (value))
 }
 
 // GetdialUpConnections gets the value of dialUpConnections for the instance
@@ -235,16 +309,26 @@ func (instance *RSOP_IEConnectionSettings) GetPropertydialUpConnections() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetdialUpState sets the value of dialUpState for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertydialUpState(value uint8) (err error) {
-	return instance.SetProperty("dialUpState", value)
+	return instance.SetProperty("dialUpState", (value))
 }
 
 // GetdialUpState gets the value of dialUpState for the instance
@@ -253,16 +337,25 @@ func (instance *RSOP_IEConnectionSettings) GetPropertydialUpState() (value uint8
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetimportCurrentConnSettings sets the value of importCurrentConnSettings for the instance
 func (instance *RSOP_IEConnectionSettings) SetPropertyimportCurrentConnSettings(value bool) (err error) {
-	return instance.SetProperty("importCurrentConnSettings", value)
+	return instance.SetProperty("importCurrentConnSettings", (value))
 }
 
 // GetimportCurrentConnSettings gets the value of importCurrentConnSettings for the instance
@@ -271,9 +364,18 @@ func (instance *RSOP_IEConnectionSettings) GetPropertyimportCurrentConnSettings(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

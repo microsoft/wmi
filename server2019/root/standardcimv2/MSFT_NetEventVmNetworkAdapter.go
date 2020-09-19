@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventVmNetworkAdapter struct
@@ -64,7 +66,7 @@ func NewMSFT_NetEventVmNetworkAdapterEx6(hostName string,
 
 // SetMacAddress sets the value of MacAddress for the instance
 func (instance *MSFT_NetEventVmNetworkAdapter) SetPropertyMacAddress(value string) (err error) {
-	return instance.SetProperty("MacAddress", value)
+	return instance.SetProperty("MacAddress", (value))
 }
 
 // GetMacAddress gets the value of MacAddress for the instance
@@ -73,16 +75,25 @@ func (instance *MSFT_NetEventVmNetworkAdapter) GetPropertyMacAddress() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPortName sets the value of PortName for the instance
 func (instance *MSFT_NetEventVmNetworkAdapter) SetPropertyPortName(value string) (err error) {
-	return instance.SetProperty("PortName", value)
+	return instance.SetProperty("PortName", (value))
 }
 
 // GetPortName gets the value of PortName for the instance
@@ -91,16 +102,25 @@ func (instance *MSFT_NetEventVmNetworkAdapter) GetPropertyPortName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSwitchName sets the value of SwitchName for the instance
 func (instance *MSFT_NetEventVmNetworkAdapter) SetPropertySwitchName(value string) (err error) {
-	return instance.SetProperty("SwitchName", value)
+	return instance.SetProperty("SwitchName", (value))
 }
 
 // GetSwitchName gets the value of SwitchName for the instance
@@ -109,16 +129,25 @@ func (instance *MSFT_NetEventVmNetworkAdapter) GetPropertySwitchName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVMId sets the value of VMId for the instance
 func (instance *MSFT_NetEventVmNetworkAdapter) SetPropertyVMId(value string) (err error) {
-	return instance.SetProperty("VMId", value)
+	return instance.SetProperty("VMId", (value))
 }
 
 // GetVMId gets the value of VMId for the instance
@@ -127,16 +156,25 @@ func (instance *MSFT_NetEventVmNetworkAdapter) GetPropertyVMId() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVMName sets the value of VMName for the instance
 func (instance *MSFT_NetEventVmNetworkAdapter) SetPropertyVMName(value string) (err error) {
-	return instance.SetProperty("VMName", value)
+	return instance.SetProperty("VMName", (value))
 }
 
 // GetVMName gets the value of VMName for the instance
@@ -145,9 +183,18 @@ func (instance *MSFT_NetEventVmNetworkAdapter) GetPropertyVMName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

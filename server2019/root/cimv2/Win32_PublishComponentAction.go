@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PublishComponentAction struct
@@ -58,7 +60,7 @@ func NewWin32_PublishComponentActionEx6(hostName string,
 
 // SetAppData sets the value of AppData for the instance
 func (instance *Win32_PublishComponentAction) SetPropertyAppData(value string) (err error) {
-	return instance.SetProperty("AppData", value)
+	return instance.SetProperty("AppData", (value))
 }
 
 // GetAppData gets the value of AppData for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_PublishComponentAction) GetPropertyAppData() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetComponentID sets the value of ComponentID for the instance
 func (instance *Win32_PublishComponentAction) SetPropertyComponentID(value string) (err error) {
-	return instance.SetProperty("ComponentID", value)
+	return instance.SetProperty("ComponentID", (value))
 }
 
 // GetComponentID gets the value of ComponentID for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_PublishComponentAction) GetPropertyComponentID() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQual sets the value of Qual for the instance
 func (instance *Win32_PublishComponentAction) SetPropertyQual(value string) (err error) {
-	return instance.SetProperty("Qual", value)
+	return instance.SetProperty("Qual", (value))
 }
 
 // GetQual gets the value of Qual for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_PublishComponentAction) GetPropertyQual() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DeviceErrorCounts struct
@@ -76,7 +78,7 @@ func NewCIM_DeviceErrorCountsEx6(hostName string,
 
 // SetCriticalErrorCount sets the value of CriticalErrorCount for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertyCriticalErrorCount(value uint64) (err error) {
-	return instance.SetProperty("CriticalErrorCount", value)
+	return instance.SetProperty("CriticalErrorCount", (value))
 }
 
 // GetCriticalErrorCount gets the value of CriticalErrorCount for the instance
@@ -85,16 +87,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertyCriticalErrorCount() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDeviceCreationClassName sets the value of DeviceCreationClassName for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertyDeviceCreationClassName(value string) (err error) {
-	return instance.SetProperty("DeviceCreationClassName", value)
+	return instance.SetProperty("DeviceCreationClassName", (value))
 }
 
 // GetDeviceCreationClassName gets the value of DeviceCreationClassName for the instance
@@ -103,16 +114,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertyDeviceCreationClassName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDeviceID sets the value of DeviceID for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertyDeviceID(value string) (err error) {
-	return instance.SetProperty("DeviceID", value)
+	return instance.SetProperty("DeviceID", (value))
 }
 
 // GetDeviceID gets the value of DeviceID for the instance
@@ -121,16 +141,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertyDeviceID() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIndeterminateErrorCount sets the value of IndeterminateErrorCount for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertyIndeterminateErrorCount(value uint64) (err error) {
-	return instance.SetProperty("IndeterminateErrorCount", value)
+	return instance.SetProperty("IndeterminateErrorCount", (value))
 }
 
 // GetIndeterminateErrorCount gets the value of IndeterminateErrorCount for the instance
@@ -139,16 +168,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertyIndeterminateErrorCount() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMajorErrorCount sets the value of MajorErrorCount for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertyMajorErrorCount(value uint64) (err error) {
-	return instance.SetProperty("MajorErrorCount", value)
+	return instance.SetProperty("MajorErrorCount", (value))
 }
 
 // GetMajorErrorCount gets the value of MajorErrorCount for the instance
@@ -157,16 +195,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertyMajorErrorCount() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinorErrorCount sets the value of MinorErrorCount for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertyMinorErrorCount(value uint64) (err error) {
-	return instance.SetProperty("MinorErrorCount", value)
+	return instance.SetProperty("MinorErrorCount", (value))
 }
 
 // GetMinorErrorCount gets the value of MinorErrorCount for the instance
@@ -175,16 +222,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertyMinorErrorCount() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -193,16 +249,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertySystemCreationClassName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -211,16 +276,25 @@ func (instance *CIM_DeviceErrorCounts) GetPropertySystemName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWarningCount sets the value of WarningCount for the instance
 func (instance *CIM_DeviceErrorCounts) SetPropertyWarningCount(value uint64) (err error) {
-	return instance.SetProperty("WarningCount", value)
+	return instance.SetProperty("WarningCount", (value))
 }
 
 // GetWarningCount gets the value of WarningCount for the instance
@@ -229,10 +303,19 @@ func (instance *CIM_DeviceErrorCounts) GetPropertyWarningCount() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

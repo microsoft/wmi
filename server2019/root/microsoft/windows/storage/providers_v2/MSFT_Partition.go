@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_Partition struct
@@ -112,7 +114,7 @@ func NewMSFT_PartitionEx6(hostName string,
 
 // SetAccessPaths sets the value of AccessPaths for the instance
 func (instance *MSFT_Partition) SetPropertyAccessPaths(value []string) (err error) {
-	return instance.SetProperty("AccessPaths", value)
+	return instance.SetProperty("AccessPaths", (value))
 }
 
 // GetAccessPaths gets the value of AccessPaths for the instance
@@ -121,16 +123,26 @@ func (instance *MSFT_Partition) GetPropertyAccessPaths() (value []string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDiskId sets the value of DiskId for the instance
 func (instance *MSFT_Partition) SetPropertyDiskId(value string) (err error) {
-	return instance.SetProperty("DiskId", value)
+	return instance.SetProperty("DiskId", (value))
 }
 
 // GetDiskId gets the value of DiskId for the instance
@@ -139,16 +151,25 @@ func (instance *MSFT_Partition) GetPropertyDiskId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDiskNumber sets the value of DiskNumber for the instance
 func (instance *MSFT_Partition) SetPropertyDiskNumber(value uint32) (err error) {
-	return instance.SetProperty("DiskNumber", value)
+	return instance.SetProperty("DiskNumber", (value))
 }
 
 // GetDiskNumber gets the value of DiskNumber for the instance
@@ -157,16 +178,25 @@ func (instance *MSFT_Partition) GetPropertyDiskNumber() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDriveLetter sets the value of DriveLetter for the instance
 func (instance *MSFT_Partition) SetPropertyDriveLetter(value byte) (err error) {
-	return instance.SetProperty("DriveLetter", value)
+	return instance.SetProperty("DriveLetter", (value))
 }
 
 // GetDriveLetter gets the value of DriveLetter for the instance
@@ -175,16 +205,25 @@ func (instance *MSFT_Partition) GetPropertyDriveLetter() (value byte, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(byte)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(byte)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " byte is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = byte(valuetmp)
+
 	return
 }
 
 // SetGptType sets the value of GptType for the instance
 func (instance *MSFT_Partition) SetPropertyGptType(value Partition_GptType) (err error) {
-	return instance.SetProperty("GptType", value)
+	return instance.SetProperty("GptType", (value))
 }
 
 // GetGptType gets the value of GptType for the instance
@@ -193,16 +232,25 @@ func (instance *MSFT_Partition) GetPropertyGptType() (value Partition_GptType, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Partition_GptType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Partition_GptType(valuetmp)
+
 	return
 }
 
 // SetGuid sets the value of Guid for the instance
 func (instance *MSFT_Partition) SetPropertyGuid(value string) (err error) {
-	return instance.SetProperty("Guid", value)
+	return instance.SetProperty("Guid", (value))
 }
 
 // GetGuid gets the value of Guid for the instance
@@ -211,16 +259,25 @@ func (instance *MSFT_Partition) GetPropertyGuid() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsActive sets the value of IsActive for the instance
 func (instance *MSFT_Partition) SetPropertyIsActive(value bool) (err error) {
-	return instance.SetProperty("IsActive", value)
+	return instance.SetProperty("IsActive", (value))
 }
 
 // GetIsActive gets the value of IsActive for the instance
@@ -229,16 +286,25 @@ func (instance *MSFT_Partition) GetPropertyIsActive() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsBoot sets the value of IsBoot for the instance
 func (instance *MSFT_Partition) SetPropertyIsBoot(value bool) (err error) {
-	return instance.SetProperty("IsBoot", value)
+	return instance.SetProperty("IsBoot", (value))
 }
 
 // GetIsBoot gets the value of IsBoot for the instance
@@ -247,16 +313,25 @@ func (instance *MSFT_Partition) GetPropertyIsBoot() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsDAX sets the value of IsDAX for the instance
 func (instance *MSFT_Partition) SetPropertyIsDAX(value bool) (err error) {
-	return instance.SetProperty("IsDAX", value)
+	return instance.SetProperty("IsDAX", (value))
 }
 
 // GetIsDAX gets the value of IsDAX for the instance
@@ -265,16 +340,25 @@ func (instance *MSFT_Partition) GetPropertyIsDAX() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsHidden sets the value of IsHidden for the instance
 func (instance *MSFT_Partition) SetPropertyIsHidden(value bool) (err error) {
-	return instance.SetProperty("IsHidden", value)
+	return instance.SetProperty("IsHidden", (value))
 }
 
 // GetIsHidden gets the value of IsHidden for the instance
@@ -283,16 +367,25 @@ func (instance *MSFT_Partition) GetPropertyIsHidden() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsOffline sets the value of IsOffline for the instance
 func (instance *MSFT_Partition) SetPropertyIsOffline(value bool) (err error) {
-	return instance.SetProperty("IsOffline", value)
+	return instance.SetProperty("IsOffline", (value))
 }
 
 // GetIsOffline gets the value of IsOffline for the instance
@@ -301,16 +394,25 @@ func (instance *MSFT_Partition) GetPropertyIsOffline() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsReadOnly sets the value of IsReadOnly for the instance
 func (instance *MSFT_Partition) SetPropertyIsReadOnly(value bool) (err error) {
-	return instance.SetProperty("IsReadOnly", value)
+	return instance.SetProperty("IsReadOnly", (value))
 }
 
 // GetIsReadOnly gets the value of IsReadOnly for the instance
@@ -319,16 +421,25 @@ func (instance *MSFT_Partition) GetPropertyIsReadOnly() (value bool, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsShadowCopy sets the value of IsShadowCopy for the instance
 func (instance *MSFT_Partition) SetPropertyIsShadowCopy(value bool) (err error) {
-	return instance.SetProperty("IsShadowCopy", value)
+	return instance.SetProperty("IsShadowCopy", (value))
 }
 
 // GetIsShadowCopy gets the value of IsShadowCopy for the instance
@@ -337,16 +448,25 @@ func (instance *MSFT_Partition) GetPropertyIsShadowCopy() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsSystem sets the value of IsSystem for the instance
 func (instance *MSFT_Partition) SetPropertyIsSystem(value bool) (err error) {
-	return instance.SetProperty("IsSystem", value)
+	return instance.SetProperty("IsSystem", (value))
 }
 
 // GetIsSystem gets the value of IsSystem for the instance
@@ -355,16 +475,25 @@ func (instance *MSFT_Partition) GetPropertyIsSystem() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMbrType sets the value of MbrType for the instance
 func (instance *MSFT_Partition) SetPropertyMbrType(value Partition_MbrType) (err error) {
-	return instance.SetProperty("MbrType", value)
+	return instance.SetProperty("MbrType", (value))
 }
 
 // GetMbrType gets the value of MbrType for the instance
@@ -373,16 +502,25 @@ func (instance *MSFT_Partition) GetPropertyMbrType() (value Partition_MbrType, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Partition_MbrType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Partition_MbrType(valuetmp)
+
 	return
 }
 
 // SetNoDefaultDriveLetter sets the value of NoDefaultDriveLetter for the instance
 func (instance *MSFT_Partition) SetPropertyNoDefaultDriveLetter(value bool) (err error) {
-	return instance.SetProperty("NoDefaultDriveLetter", value)
+	return instance.SetProperty("NoDefaultDriveLetter", (value))
 }
 
 // GetNoDefaultDriveLetter gets the value of NoDefaultDriveLetter for the instance
@@ -391,16 +529,25 @@ func (instance *MSFT_Partition) GetPropertyNoDefaultDriveLetter() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOffset sets the value of Offset for the instance
 func (instance *MSFT_Partition) SetPropertyOffset(value uint64) (err error) {
-	return instance.SetProperty("Offset", value)
+	return instance.SetProperty("Offset", (value))
 }
 
 // GetOffset gets the value of Offset for the instance
@@ -409,16 +556,25 @@ func (instance *MSFT_Partition) GetPropertyOffset() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_Partition) SetPropertyOperationalStatus(value Partition_OperationalStatus) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -427,16 +583,25 @@ func (instance *MSFT_Partition) GetPropertyOperationalStatus() (value Partition_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Partition_OperationalStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Partition_OperationalStatus(valuetmp)
+
 	return
 }
 
 // SetPartitionNumber sets the value of PartitionNumber for the instance
 func (instance *MSFT_Partition) SetPropertyPartitionNumber(value uint32) (err error) {
-	return instance.SetProperty("PartitionNumber", value)
+	return instance.SetProperty("PartitionNumber", (value))
 }
 
 // GetPartitionNumber gets the value of PartitionNumber for the instance
@@ -445,16 +610,25 @@ func (instance *MSFT_Partition) GetPropertyPartitionNumber() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_Partition) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -463,16 +637,25 @@ func (instance *MSFT_Partition) GetPropertySize() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTransitionState sets the value of TransitionState for the instance
 func (instance *MSFT_Partition) SetPropertyTransitionState(value uint16) (err error) {
-	return instance.SetProperty("TransitionState", value)
+	return instance.SetProperty("TransitionState", (value))
 }
 
 // GetTransitionState gets the value of TransitionState for the instance
@@ -481,10 +664,19 @@ func (instance *MSFT_Partition) GetPropertyTransitionState() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

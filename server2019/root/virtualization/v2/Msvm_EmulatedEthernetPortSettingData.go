@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EmulatedEthernetPortSettingData struct
@@ -55,7 +57,7 @@ func NewMsvm_EmulatedEthernetPortSettingDataEx6(hostName string,
 
 // SetClusterMonitored sets the value of ClusterMonitored for the instance
 func (instance *Msvm_EmulatedEthernetPortSettingData) SetPropertyClusterMonitored(value bool) (err error) {
-	return instance.SetProperty("ClusterMonitored", value)
+	return instance.SetProperty("ClusterMonitored", (value))
 }
 
 // GetClusterMonitored gets the value of ClusterMonitored for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_EmulatedEthernetPortSettingData) GetPropertyClusterMonitore
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStaticMacAddress sets the value of StaticMacAddress for the instance
 func (instance *Msvm_EmulatedEthernetPortSettingData) SetPropertyStaticMacAddress(value bool) (err error) {
-	return instance.SetProperty("StaticMacAddress", value)
+	return instance.SetProperty("StaticMacAddress", (value))
 }
 
 // GetStaticMacAddress gets the value of StaticMacAddress for the instance
@@ -82,10 +93,19 @@ func (instance *Msvm_EmulatedEthernetPortSettingData) GetPropertyStaticMacAddres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 func (instance *Msvm_EmulatedEthernetPortSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

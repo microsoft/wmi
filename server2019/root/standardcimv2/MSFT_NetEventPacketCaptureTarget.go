@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventPacketCaptureTarget struct
@@ -58,7 +60,7 @@ func NewMSFT_NetEventPacketCaptureTargetEx6(hostName string,
 
 // SetCaptureStatus sets the value of CaptureStatus for the instance
 func (instance *MSFT_NetEventPacketCaptureTarget) SetPropertyCaptureStatus(value uint32) (err error) {
-	return instance.SetProperty("CaptureStatus", value)
+	return instance.SetProperty("CaptureStatus", (value))
 }
 
 // GetCaptureStatus gets the value of CaptureStatus for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_NetEventPacketCaptureTarget) GetPropertyCaptureStatus() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_NetEventPacketCaptureTarget) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_NetEventPacketCaptureTarget) GetPropertyId() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProviderName sets the value of ProviderName for the instance
 func (instance *MSFT_NetEventPacketCaptureTarget) SetPropertyProviderName(value string) (err error) {
-	return instance.SetProperty("ProviderName", value)
+	return instance.SetProperty("ProviderName", (value))
 }
 
 // GetProviderName gets the value of ProviderName for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_NetEventPacketCaptureTarget) GetPropertyProviderName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

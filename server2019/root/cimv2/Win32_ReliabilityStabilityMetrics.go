@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ReliabilityStabilityMetrics struct
@@ -64,7 +66,7 @@ func NewWin32_ReliabilityStabilityMetricsEx6(hostName string,
 
 // SetEndMeasurementDate sets the value of EndMeasurementDate for the instance
 func (instance *Win32_ReliabilityStabilityMetrics) SetPropertyEndMeasurementDate(value string) (err error) {
-	return instance.SetProperty("EndMeasurementDate", value)
+	return instance.SetProperty("EndMeasurementDate", (value))
 }
 
 // GetEndMeasurementDate gets the value of EndMeasurementDate for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_ReliabilityStabilityMetrics) GetPropertyEndMeasurementDate
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRelID sets the value of RelID for the instance
 func (instance *Win32_ReliabilityStabilityMetrics) SetPropertyRelID(value string) (err error) {
-	return instance.SetProperty("RelID", value)
+	return instance.SetProperty("RelID", (value))
 }
 
 // GetRelID gets the value of RelID for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_ReliabilityStabilityMetrics) GetPropertyRelID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartMeasurementDate sets the value of StartMeasurementDate for the instance
 func (instance *Win32_ReliabilityStabilityMetrics) SetPropertyStartMeasurementDate(value string) (err error) {
-	return instance.SetProperty("StartMeasurementDate", value)
+	return instance.SetProperty("StartMeasurementDate", (value))
 }
 
 // GetStartMeasurementDate gets the value of StartMeasurementDate for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_ReliabilityStabilityMetrics) GetPropertyStartMeasurementDa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemStabilityIndex sets the value of SystemStabilityIndex for the instance
 func (instance *Win32_ReliabilityStabilityMetrics) SetPropertySystemStabilityIndex(value float64) (err error) {
-	return instance.SetProperty("SystemStabilityIndex", value)
+	return instance.SetProperty("SystemStabilityIndex", (value))
 }
 
 // GetSystemStabilityIndex gets the value of SystemStabilityIndex for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_ReliabilityStabilityMetrics) GetPropertySystemStabilityInd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float64(valuetmp)
+
 	return
 }
 
 // SetTimeGenerated sets the value of TimeGenerated for the instance
 func (instance *Win32_ReliabilityStabilityMetrics) SetPropertyTimeGenerated(value string) (err error) {
-	return instance.SetProperty("TimeGenerated", value)
+	return instance.SetProperty("TimeGenerated", (value))
 }
 
 // GetTimeGenerated gets the value of TimeGenerated for the instance
@@ -145,10 +183,19 @@ func (instance *Win32_ReliabilityStabilityMetrics) GetPropertyTimeGenerated() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

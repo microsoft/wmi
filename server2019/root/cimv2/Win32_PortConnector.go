@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PortConnector struct
@@ -58,7 +60,7 @@ func NewWin32_PortConnectorEx6(hostName string,
 
 // SetExternalReferenceDesignator sets the value of ExternalReferenceDesignator for the instance
 func (instance *Win32_PortConnector) SetPropertyExternalReferenceDesignator(value string) (err error) {
-	return instance.SetProperty("ExternalReferenceDesignator", value)
+	return instance.SetProperty("ExternalReferenceDesignator", (value))
 }
 
 // GetExternalReferenceDesignator gets the value of ExternalReferenceDesignator for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_PortConnector) GetPropertyExternalReferenceDesignator() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInternalReferenceDesignator sets the value of InternalReferenceDesignator for the instance
 func (instance *Win32_PortConnector) SetPropertyInternalReferenceDesignator(value string) (err error) {
-	return instance.SetProperty("InternalReferenceDesignator", value)
+	return instance.SetProperty("InternalReferenceDesignator", (value))
 }
 
 // GetInternalReferenceDesignator gets the value of InternalReferenceDesignator for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_PortConnector) GetPropertyInternalReferenceDesignator() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPortType sets the value of PortType for the instance
 func (instance *Win32_PortConnector) SetPropertyPortType(value uint16) (err error) {
-	return instance.SetProperty("PortType", value)
+	return instance.SetProperty("PortType", (value))
 }
 
 // GetPortType gets the value of PortType for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_PortConnector) GetPropertyPortType() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

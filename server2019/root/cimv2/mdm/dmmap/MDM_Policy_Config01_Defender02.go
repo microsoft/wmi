@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_Defender02 struct
@@ -133,9 +135,6 @@ type MDM_Policy_Config01_Defender02 struct {
 	ScheduleScanTime int32
 
 	//
-	SecurityIntelligenceLocation string
-
-	//
 	SignatureUpdateFallbackOrder string
 
 	//
@@ -182,7 +181,7 @@ func NewMDM_Policy_Config01_Defender02Ex6(hostName string,
 
 // SetAllowArchiveScanning sets the value of AllowArchiveScanning for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowArchiveScanning(value int32) (err error) {
-	return instance.SetProperty("AllowArchiveScanning", value)
+	return instance.SetProperty("AllowArchiveScanning", (value))
 }
 
 // GetAllowArchiveScanning gets the value of AllowArchiveScanning for the instance
@@ -191,16 +190,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowArchiveScanning(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowBehaviorMonitoring sets the value of AllowBehaviorMonitoring for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowBehaviorMonitoring(value int32) (err error) {
-	return instance.SetProperty("AllowBehaviorMonitoring", value)
+	return instance.SetProperty("AllowBehaviorMonitoring", (value))
 }
 
 // GetAllowBehaviorMonitoring gets the value of AllowBehaviorMonitoring for the instance
@@ -209,16 +217,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowBehaviorMonitori
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowCloudProtection sets the value of AllowCloudProtection for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowCloudProtection(value int32) (err error) {
-	return instance.SetProperty("AllowCloudProtection", value)
+	return instance.SetProperty("AllowCloudProtection", (value))
 }
 
 // GetAllowCloudProtection gets the value of AllowCloudProtection for the instance
@@ -227,16 +244,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowCloudProtection(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowEmailScanning sets the value of AllowEmailScanning for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowEmailScanning(value int32) (err error) {
-	return instance.SetProperty("AllowEmailScanning", value)
+	return instance.SetProperty("AllowEmailScanning", (value))
 }
 
 // GetAllowEmailScanning gets the value of AllowEmailScanning for the instance
@@ -245,16 +271,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowEmailScanning() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowFullScanOnMappedNetworkDrives sets the value of AllowFullScanOnMappedNetworkDrives for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowFullScanOnMappedNetworkDrives(value int32) (err error) {
-	return instance.SetProperty("AllowFullScanOnMappedNetworkDrives", value)
+	return instance.SetProperty("AllowFullScanOnMappedNetworkDrives", (value))
 }
 
 // GetAllowFullScanOnMappedNetworkDrives gets the value of AllowFullScanOnMappedNetworkDrives for the instance
@@ -263,16 +298,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowFullScanOnMapped
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowFullScanRemovableDriveScanning sets the value of AllowFullScanRemovableDriveScanning for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowFullScanRemovableDriveScanning(value int32) (err error) {
-	return instance.SetProperty("AllowFullScanRemovableDriveScanning", value)
+	return instance.SetProperty("AllowFullScanRemovableDriveScanning", (value))
 }
 
 // GetAllowFullScanRemovableDriveScanning gets the value of AllowFullScanRemovableDriveScanning for the instance
@@ -281,16 +325,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowFullScanRemovabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowIntrusionPreventionSystem sets the value of AllowIntrusionPreventionSystem for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowIntrusionPreventionSystem(value int32) (err error) {
-	return instance.SetProperty("AllowIntrusionPreventionSystem", value)
+	return instance.SetProperty("AllowIntrusionPreventionSystem", (value))
 }
 
 // GetAllowIntrusionPreventionSystem gets the value of AllowIntrusionPreventionSystem for the instance
@@ -299,16 +352,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowIntrusionPrevent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowIOAVProtection sets the value of AllowIOAVProtection for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowIOAVProtection(value int32) (err error) {
-	return instance.SetProperty("AllowIOAVProtection", value)
+	return instance.SetProperty("AllowIOAVProtection", (value))
 }
 
 // GetAllowIOAVProtection gets the value of AllowIOAVProtection for the instance
@@ -317,16 +379,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowIOAVProtection()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowOnAccessProtection sets the value of AllowOnAccessProtection for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowOnAccessProtection(value int32) (err error) {
-	return instance.SetProperty("AllowOnAccessProtection", value)
+	return instance.SetProperty("AllowOnAccessProtection", (value))
 }
 
 // GetAllowOnAccessProtection gets the value of AllowOnAccessProtection for the instance
@@ -335,16 +406,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowOnAccessProtecti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowRealtimeMonitoring sets the value of AllowRealtimeMonitoring for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowRealtimeMonitoring(value int32) (err error) {
-	return instance.SetProperty("AllowRealtimeMonitoring", value)
+	return instance.SetProperty("AllowRealtimeMonitoring", (value))
 }
 
 // GetAllowRealtimeMonitoring gets the value of AllowRealtimeMonitoring for the instance
@@ -353,16 +433,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowRealtimeMonitori
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowScanningNetworkFiles sets the value of AllowScanningNetworkFiles for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowScanningNetworkFiles(value int32) (err error) {
-	return instance.SetProperty("AllowScanningNetworkFiles", value)
+	return instance.SetProperty("AllowScanningNetworkFiles", (value))
 }
 
 // GetAllowScanningNetworkFiles gets the value of AllowScanningNetworkFiles for the instance
@@ -371,16 +460,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowScanningNetworkF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowScriptScanning sets the value of AllowScriptScanning for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowScriptScanning(value int32) (err error) {
-	return instance.SetProperty("AllowScriptScanning", value)
+	return instance.SetProperty("AllowScriptScanning", (value))
 }
 
 // GetAllowScriptScanning gets the value of AllowScriptScanning for the instance
@@ -389,16 +487,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowScriptScanning()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowUserUIAccess sets the value of AllowUserUIAccess for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAllowUserUIAccess(value int32) (err error) {
-	return instance.SetProperty("AllowUserUIAccess", value)
+	return instance.SetProperty("AllowUserUIAccess", (value))
 }
 
 // GetAllowUserUIAccess gets the value of AllowUserUIAccess for the instance
@@ -407,16 +514,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAllowUserUIAccess() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAttackSurfaceReductionOnlyExclusions sets the value of AttackSurfaceReductionOnlyExclusions for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAttackSurfaceReductionOnlyExclusions(value string) (err error) {
-	return instance.SetProperty("AttackSurfaceReductionOnlyExclusions", value)
+	return instance.SetProperty("AttackSurfaceReductionOnlyExclusions", (value))
 }
 
 // GetAttackSurfaceReductionOnlyExclusions gets the value of AttackSurfaceReductionOnlyExclusions for the instance
@@ -425,16 +541,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAttackSurfaceReductio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAttackSurfaceReductionRules sets the value of AttackSurfaceReductionRules for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAttackSurfaceReductionRules(value string) (err error) {
-	return instance.SetProperty("AttackSurfaceReductionRules", value)
+	return instance.SetProperty("AttackSurfaceReductionRules", (value))
 }
 
 // GetAttackSurfaceReductionRules gets the value of AttackSurfaceReductionRules for the instance
@@ -443,16 +568,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAttackSurfaceReductio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAvgCPULoadFactor sets the value of AvgCPULoadFactor for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyAvgCPULoadFactor(value int32) (err error) {
-	return instance.SetProperty("AvgCPULoadFactor", value)
+	return instance.SetProperty("AvgCPULoadFactor", (value))
 }
 
 // GetAvgCPULoadFactor gets the value of AvgCPULoadFactor for the instance
@@ -461,16 +595,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyAvgCPULoadFactor() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetCheckForSignaturesBeforeRunningScan sets the value of CheckForSignaturesBeforeRunningScan for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyCheckForSignaturesBeforeRunningScan(value int32) (err error) {
-	return instance.SetProperty("CheckForSignaturesBeforeRunningScan", value)
+	return instance.SetProperty("CheckForSignaturesBeforeRunningScan", (value))
 }
 
 // GetCheckForSignaturesBeforeRunningScan gets the value of CheckForSignaturesBeforeRunningScan for the instance
@@ -479,16 +622,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyCheckForSignaturesBef
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetCloudBlockLevel sets the value of CloudBlockLevel for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyCloudBlockLevel(value int32) (err error) {
-	return instance.SetProperty("CloudBlockLevel", value)
+	return instance.SetProperty("CloudBlockLevel", (value))
 }
 
 // GetCloudBlockLevel gets the value of CloudBlockLevel for the instance
@@ -497,16 +649,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyCloudBlockLevel() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetCloudExtendedTimeout sets the value of CloudExtendedTimeout for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyCloudExtendedTimeout(value int32) (err error) {
-	return instance.SetProperty("CloudExtendedTimeout", value)
+	return instance.SetProperty("CloudExtendedTimeout", (value))
 }
 
 // GetCloudExtendedTimeout gets the value of CloudExtendedTimeout for the instance
@@ -515,16 +676,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyCloudExtendedTimeout(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetControlledFolderAccessAllowedApplications sets the value of ControlledFolderAccessAllowedApplications for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyControlledFolderAccessAllowedApplications(value string) (err error) {
-	return instance.SetProperty("ControlledFolderAccessAllowedApplications", value)
+	return instance.SetProperty("ControlledFolderAccessAllowedApplications", (value))
 }
 
 // GetControlledFolderAccessAllowedApplications gets the value of ControlledFolderAccessAllowedApplications for the instance
@@ -533,16 +703,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyControlledFolderAcces
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetControlledFolderAccessProtectedFolders sets the value of ControlledFolderAccessProtectedFolders for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyControlledFolderAccessProtectedFolders(value string) (err error) {
-	return instance.SetProperty("ControlledFolderAccessProtectedFolders", value)
+	return instance.SetProperty("ControlledFolderAccessProtectedFolders", (value))
 }
 
 // GetControlledFolderAccessProtectedFolders gets the value of ControlledFolderAccessProtectedFolders for the instance
@@ -551,16 +730,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyControlledFolderAcces
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDaysToRetainCleanedMalware sets the value of DaysToRetainCleanedMalware for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyDaysToRetainCleanedMalware(value int32) (err error) {
-	return instance.SetProperty("DaysToRetainCleanedMalware", value)
+	return instance.SetProperty("DaysToRetainCleanedMalware", (value))
 }
 
 // GetDaysToRetainCleanedMalware gets the value of DaysToRetainCleanedMalware for the instance
@@ -569,16 +757,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyDaysToRetainCleanedMa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableCatchupFullScan sets the value of DisableCatchupFullScan for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyDisableCatchupFullScan(value int32) (err error) {
-	return instance.SetProperty("DisableCatchupFullScan", value)
+	return instance.SetProperty("DisableCatchupFullScan", (value))
 }
 
 // GetDisableCatchupFullScan gets the value of DisableCatchupFullScan for the instance
@@ -587,16 +784,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyDisableCatchupFullSca
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableCatchupQuickScan sets the value of DisableCatchupQuickScan for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyDisableCatchupQuickScan(value int32) (err error) {
-	return instance.SetProperty("DisableCatchupQuickScan", value)
+	return instance.SetProperty("DisableCatchupQuickScan", (value))
 }
 
 // GetDisableCatchupQuickScan gets the value of DisableCatchupQuickScan for the instance
@@ -605,16 +811,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyDisableCatchupQuickSc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnableControlledFolderAccess sets the value of EnableControlledFolderAccess for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyEnableControlledFolderAccess(value int32) (err error) {
-	return instance.SetProperty("EnableControlledFolderAccess", value)
+	return instance.SetProperty("EnableControlledFolderAccess", (value))
 }
 
 // GetEnableControlledFolderAccess gets the value of EnableControlledFolderAccess for the instance
@@ -623,16 +838,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyEnableControlledFolde
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnableLowCPUPriority sets the value of EnableLowCPUPriority for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyEnableLowCPUPriority(value int32) (err error) {
-	return instance.SetProperty("EnableLowCPUPriority", value)
+	return instance.SetProperty("EnableLowCPUPriority", (value))
 }
 
 // GetEnableLowCPUPriority gets the value of EnableLowCPUPriority for the instance
@@ -641,16 +865,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyEnableLowCPUPriority(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnableNetworkProtection sets the value of EnableNetworkProtection for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyEnableNetworkProtection(value int32) (err error) {
-	return instance.SetProperty("EnableNetworkProtection", value)
+	return instance.SetProperty("EnableNetworkProtection", (value))
 }
 
 // GetEnableNetworkProtection gets the value of EnableNetworkProtection for the instance
@@ -659,16 +892,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyEnableNetworkProtecti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetExcludedExtensions sets the value of ExcludedExtensions for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyExcludedExtensions(value string) (err error) {
-	return instance.SetProperty("ExcludedExtensions", value)
+	return instance.SetProperty("ExcludedExtensions", (value))
 }
 
 // GetExcludedExtensions gets the value of ExcludedExtensions for the instance
@@ -677,16 +919,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyExcludedExtensions() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExcludedPaths sets the value of ExcludedPaths for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyExcludedPaths(value string) (err error) {
-	return instance.SetProperty("ExcludedPaths", value)
+	return instance.SetProperty("ExcludedPaths", (value))
 }
 
 // GetExcludedPaths gets the value of ExcludedPaths for the instance
@@ -695,16 +946,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyExcludedPaths() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExcludedProcesses sets the value of ExcludedProcesses for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyExcludedProcesses(value string) (err error) {
-	return instance.SetProperty("ExcludedProcesses", value)
+	return instance.SetProperty("ExcludedProcesses", (value))
 }
 
 // GetExcludedProcesses gets the value of ExcludedProcesses for the instance
@@ -713,16 +973,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyExcludedProcesses() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -731,16 +1000,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyInstanceID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -749,16 +1027,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyParentID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPUAProtection sets the value of PUAProtection for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyPUAProtection(value int32) (err error) {
-	return instance.SetProperty("PUAProtection", value)
+	return instance.SetProperty("PUAProtection", (value))
 }
 
 // GetPUAProtection gets the value of PUAProtection for the instance
@@ -767,16 +1054,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyPUAProtection() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRealTimeScanDirection sets the value of RealTimeScanDirection for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyRealTimeScanDirection(value int32) (err error) {
-	return instance.SetProperty("RealTimeScanDirection", value)
+	return instance.SetProperty("RealTimeScanDirection", (value))
 }
 
 // GetRealTimeScanDirection gets the value of RealTimeScanDirection for the instance
@@ -785,16 +1081,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyRealTimeScanDirection
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScanParameter sets the value of ScanParameter for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyScanParameter(value int32) (err error) {
-	return instance.SetProperty("ScanParameter", value)
+	return instance.SetProperty("ScanParameter", (value))
 }
 
 // GetScanParameter gets the value of ScanParameter for the instance
@@ -803,16 +1108,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyScanParameter() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduleQuickScanTime sets the value of ScheduleQuickScanTime for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyScheduleQuickScanTime(value int32) (err error) {
-	return instance.SetProperty("ScheduleQuickScanTime", value)
+	return instance.SetProperty("ScheduleQuickScanTime", (value))
 }
 
 // GetScheduleQuickScanTime gets the value of ScheduleQuickScanTime for the instance
@@ -821,16 +1135,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyScheduleQuickScanTime
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduleScanDay sets the value of ScheduleScanDay for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyScheduleScanDay(value int32) (err error) {
-	return instance.SetProperty("ScheduleScanDay", value)
+	return instance.SetProperty("ScheduleScanDay", (value))
 }
 
 // GetScheduleScanDay gets the value of ScheduleScanDay for the instance
@@ -839,16 +1162,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyScheduleScanDay() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetScheduleScanTime sets the value of ScheduleScanTime for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyScheduleScanTime(value int32) (err error) {
-	return instance.SetProperty("ScheduleScanTime", value)
+	return instance.SetProperty("ScheduleScanTime", (value))
 }
 
 // GetScheduleScanTime gets the value of ScheduleScanTime for the instance
@@ -857,34 +1189,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyScheduleScanTime() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetSecurityIntelligenceLocation sets the value of SecurityIntelligenceLocation for the instance
-func (instance *MDM_Policy_Config01_Defender02) SetPropertySecurityIntelligenceLocation(value string) (err error) {
-	return instance.SetProperty("SecurityIntelligenceLocation", value)
-}
-
-// GetSecurityIntelligenceLocation gets the value of SecurityIntelligenceLocation for the instance
-func (instance *MDM_Policy_Config01_Defender02) GetPropertySecurityIntelligenceLocation() (value string, err error) {
-	retValue, err := instance.GetProperty("SecurityIntelligenceLocation")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSignatureUpdateFallbackOrder sets the value of SignatureUpdateFallbackOrder for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertySignatureUpdateFallbackOrder(value string) (err error) {
-	return instance.SetProperty("SignatureUpdateFallbackOrder", value)
+	return instance.SetProperty("SignatureUpdateFallbackOrder", (value))
 }
 
 // GetSignatureUpdateFallbackOrder gets the value of SignatureUpdateFallbackOrder for the instance
@@ -893,16 +1216,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertySignatureUpdateFallba
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSignatureUpdateFileSharesSources sets the value of SignatureUpdateFileSharesSources for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertySignatureUpdateFileSharesSources(value string) (err error) {
-	return instance.SetProperty("SignatureUpdateFileSharesSources", value)
+	return instance.SetProperty("SignatureUpdateFileSharesSources", (value))
 }
 
 // GetSignatureUpdateFileSharesSources gets the value of SignatureUpdateFileSharesSources for the instance
@@ -911,16 +1243,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertySignatureUpdateFileSh
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSignatureUpdateInterval sets the value of SignatureUpdateInterval for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertySignatureUpdateInterval(value int32) (err error) {
-	return instance.SetProperty("SignatureUpdateInterval", value)
+	return instance.SetProperty("SignatureUpdateInterval", (value))
 }
 
 // GetSignatureUpdateInterval gets the value of SignatureUpdateInterval for the instance
@@ -929,16 +1270,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertySignatureUpdateInterv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSubmitSamplesConsent sets the value of SubmitSamplesConsent for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertySubmitSamplesConsent(value int32) (err error) {
-	return instance.SetProperty("SubmitSamplesConsent", value)
+	return instance.SetProperty("SubmitSamplesConsent", (value))
 }
 
 // GetSubmitSamplesConsent gets the value of SubmitSamplesConsent for the instance
@@ -947,16 +1297,25 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertySubmitSamplesConsent(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetThreatSeverityDefaultAction sets the value of ThreatSeverityDefaultAction for the instance
 func (instance *MDM_Policy_Config01_Defender02) SetPropertyThreatSeverityDefaultAction(value string) (err error) {
-	return instance.SetProperty("ThreatSeverityDefaultAction", value)
+	return instance.SetProperty("ThreatSeverityDefaultAction", (value))
 }
 
 // GetThreatSeverityDefaultAction gets the value of ThreatSeverityDefaultAction for the instance
@@ -965,9 +1324,18 @@ func (instance *MDM_Policy_Config01_Defender02) GetPropertyThreatSeverityDefault
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

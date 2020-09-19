@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PhysicalConnector struct
@@ -76,7 +78,7 @@ func NewCIM_PhysicalConnectorEx6(hostName string,
 
 // SetConnectorDescription sets the value of ConnectorDescription for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyConnectorDescription(value string) (err error) {
-	return instance.SetProperty("ConnectorDescription", value)
+	return instance.SetProperty("ConnectorDescription", (value))
 }
 
 // GetConnectorDescription gets the value of ConnectorDescription for the instance
@@ -85,16 +87,25 @@ func (instance *CIM_PhysicalConnector) GetPropertyConnectorDescription() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConnectorElectricalCharacteristics sets the value of ConnectorElectricalCharacteristics for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyConnectorElectricalCharacteristics(value []PhysicalConnector_ConnectorElectricalCharacteristics) (err error) {
-	return instance.SetProperty("ConnectorElectricalCharacteristics", value)
+	return instance.SetProperty("ConnectorElectricalCharacteristics", (value))
 }
 
 // GetConnectorElectricalCharacteristics gets the value of ConnectorElectricalCharacteristics for the instance
@@ -103,16 +114,26 @@ func (instance *CIM_PhysicalConnector) GetPropertyConnectorElectricalCharacteris
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]PhysicalConnector_ConnectorElectricalCharacteristics)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, PhysicalConnector_ConnectorElectricalCharacteristics(valuetmp))
+	}
+
 	return
 }
 
 // SetConnectorGender sets the value of ConnectorGender for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyConnectorGender(value PhysicalConnector_ConnectorGender) (err error) {
-	return instance.SetProperty("ConnectorGender", value)
+	return instance.SetProperty("ConnectorGender", (value))
 }
 
 // GetConnectorGender gets the value of ConnectorGender for the instance
@@ -121,16 +142,25 @@ func (instance *CIM_PhysicalConnector) GetPropertyConnectorGender() (value Physi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PhysicalConnector_ConnectorGender)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PhysicalConnector_ConnectorGender(valuetmp)
+
 	return
 }
 
 // SetConnectorLayout sets the value of ConnectorLayout for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyConnectorLayout(value PhysicalConnector_ConnectorLayout) (err error) {
-	return instance.SetProperty("ConnectorLayout", value)
+	return instance.SetProperty("ConnectorLayout", (value))
 }
 
 // GetConnectorLayout gets the value of ConnectorLayout for the instance
@@ -139,16 +169,25 @@ func (instance *CIM_PhysicalConnector) GetPropertyConnectorLayout() (value Physi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PhysicalConnector_ConnectorLayout)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PhysicalConnector_ConnectorLayout(valuetmp)
+
 	return
 }
 
 // SetConnectorPinout sets the value of ConnectorPinout for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyConnectorPinout(value string) (err error) {
-	return instance.SetProperty("ConnectorPinout", value)
+	return instance.SetProperty("ConnectorPinout", (value))
 }
 
 // GetConnectorPinout gets the value of ConnectorPinout for the instance
@@ -157,16 +196,25 @@ func (instance *CIM_PhysicalConnector) GetPropertyConnectorPinout() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConnectorType sets the value of ConnectorType for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyConnectorType(value []PhysicalConnector_ConnectorType) (err error) {
-	return instance.SetProperty("ConnectorType", value)
+	return instance.SetProperty("ConnectorType", (value))
 }
 
 // GetConnectorType gets the value of ConnectorType for the instance
@@ -175,16 +223,26 @@ func (instance *CIM_PhysicalConnector) GetPropertyConnectorType() (value []Physi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]PhysicalConnector_ConnectorType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, PhysicalConnector_ConnectorType(valuetmp))
+	}
+
 	return
 }
 
 // SetNumPhysicalPins sets the value of NumPhysicalPins for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyNumPhysicalPins(value uint32) (err error) {
-	return instance.SetProperty("NumPhysicalPins", value)
+	return instance.SetProperty("NumPhysicalPins", (value))
 }
 
 // GetNumPhysicalPins gets the value of NumPhysicalPins for the instance
@@ -193,16 +251,25 @@ func (instance *CIM_PhysicalConnector) GetPropertyNumPhysicalPins() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherElectricalCharacteristics sets the value of OtherElectricalCharacteristics for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyOtherElectricalCharacteristics(value []string) (err error) {
-	return instance.SetProperty("OtherElectricalCharacteristics", value)
+	return instance.SetProperty("OtherElectricalCharacteristics", (value))
 }
 
 // GetOtherElectricalCharacteristics gets the value of OtherElectricalCharacteristics for the instance
@@ -211,16 +278,26 @@ func (instance *CIM_PhysicalConnector) GetPropertyOtherElectricalCharacteristics
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherTypeDescription sets the value of OtherTypeDescription for the instance
 func (instance *CIM_PhysicalConnector) SetPropertyOtherTypeDescription(value string) (err error) {
-	return instance.SetProperty("OtherTypeDescription", value)
+	return instance.SetProperty("OtherTypeDescription", (value))
 }
 
 // GetOtherTypeDescription gets the value of OtherTypeDescription for the instance
@@ -229,9 +306,18 @@ func (instance *CIM_PhysicalConnector) GetPropertyOtherTypeDescription() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

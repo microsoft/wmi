@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.protectionManagement
 //////////////////////////////////////////////
 package protectionmanagement
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MpComputerStatus struct
@@ -22,6 +24,9 @@ type MSFT_MpComputerStatus struct {
 
 	//
 	AMProductVersion string
+
+	//
+	AMRunningMode string
 
 	//
 	AMServiceEnabled bool
@@ -151,7 +156,7 @@ func NewMSFT_MpComputerStatusEx6(hostName string,
 
 // SetAMEngineVersion sets the value of AMEngineVersion for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAMEngineVersion(value string) (err error) {
-	return instance.SetProperty("AMEngineVersion", value)
+	return instance.SetProperty("AMEngineVersion", (value))
 }
 
 // GetAMEngineVersion gets the value of AMEngineVersion for the instance
@@ -160,16 +165,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAMEngineVersion() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAMProductVersion sets the value of AMProductVersion for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAMProductVersion(value string) (err error) {
-	return instance.SetProperty("AMProductVersion", value)
+	return instance.SetProperty("AMProductVersion", (value))
 }
 
 // GetAMProductVersion gets the value of AMProductVersion for the instance
@@ -178,16 +192,52 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAMProductVersion() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
+	return
+}
+
+// SetAMRunningMode sets the value of AMRunningMode for the instance
+func (instance *MSFT_MpComputerStatus) SetPropertyAMRunningMode(value string) (err error) {
+	return instance.SetProperty("AMRunningMode", (value))
+}
+
+// GetAMRunningMode gets the value of AMRunningMode for the instance
+func (instance *MSFT_MpComputerStatus) GetPropertyAMRunningMode() (value string, err error) {
+	retValue, err := instance.GetProperty("AMRunningMode")
+	if err != nil {
+		return
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
+	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAMServiceEnabled sets the value of AMServiceEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAMServiceEnabled(value bool) (err error) {
-	return instance.SetProperty("AMServiceEnabled", value)
+	return instance.SetProperty("AMServiceEnabled", (value))
 }
 
 // GetAMServiceEnabled gets the value of AMServiceEnabled for the instance
@@ -196,16 +246,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAMServiceEnabled() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAMServiceVersion sets the value of AMServiceVersion for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAMServiceVersion(value string) (err error) {
-	return instance.SetProperty("AMServiceVersion", value)
+	return instance.SetProperty("AMServiceVersion", (value))
 }
 
 // GetAMServiceVersion gets the value of AMServiceVersion for the instance
@@ -214,16 +273,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAMServiceVersion() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAntispywareEnabled sets the value of AntispywareEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntispywareEnabled(value bool) (err error) {
-	return instance.SetProperty("AntispywareEnabled", value)
+	return instance.SetProperty("AntispywareEnabled", (value))
 }
 
 // GetAntispywareEnabled gets the value of AntispywareEnabled for the instance
@@ -232,16 +300,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntispywareEnabled() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAntispywareSignatureAge sets the value of AntispywareSignatureAge for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntispywareSignatureAge(value uint32) (err error) {
-	return instance.SetProperty("AntispywareSignatureAge", value)
+	return instance.SetProperty("AntispywareSignatureAge", (value))
 }
 
 // GetAntispywareSignatureAge gets the value of AntispywareSignatureAge for the instance
@@ -250,16 +327,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntispywareSignatureAge() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAntispywareSignatureLastUpdated sets the value of AntispywareSignatureLastUpdated for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntispywareSignatureLastUpdated(value string) (err error) {
-	return instance.SetProperty("AntispywareSignatureLastUpdated", value)
+	return instance.SetProperty("AntispywareSignatureLastUpdated", (value))
 }
 
 // GetAntispywareSignatureLastUpdated gets the value of AntispywareSignatureLastUpdated for the instance
@@ -268,16 +354,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntispywareSignatureLastUpdate
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAntispywareSignatureVersion sets the value of AntispywareSignatureVersion for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntispywareSignatureVersion(value string) (err error) {
-	return instance.SetProperty("AntispywareSignatureVersion", value)
+	return instance.SetProperty("AntispywareSignatureVersion", (value))
 }
 
 // GetAntispywareSignatureVersion gets the value of AntispywareSignatureVersion for the instance
@@ -286,16 +381,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntispywareSignatureVersion() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAntivirusEnabled sets the value of AntivirusEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntivirusEnabled(value bool) (err error) {
-	return instance.SetProperty("AntivirusEnabled", value)
+	return instance.SetProperty("AntivirusEnabled", (value))
 }
 
 // GetAntivirusEnabled gets the value of AntivirusEnabled for the instance
@@ -304,16 +408,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntivirusEnabled() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAntivirusSignatureAge sets the value of AntivirusSignatureAge for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntivirusSignatureAge(value uint32) (err error) {
-	return instance.SetProperty("AntivirusSignatureAge", value)
+	return instance.SetProperty("AntivirusSignatureAge", (value))
 }
 
 // GetAntivirusSignatureAge gets the value of AntivirusSignatureAge for the instance
@@ -322,16 +435,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntivirusSignatureAge() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAntivirusSignatureLastUpdated sets the value of AntivirusSignatureLastUpdated for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntivirusSignatureLastUpdated(value string) (err error) {
-	return instance.SetProperty("AntivirusSignatureLastUpdated", value)
+	return instance.SetProperty("AntivirusSignatureLastUpdated", (value))
 }
 
 // GetAntivirusSignatureLastUpdated gets the value of AntivirusSignatureLastUpdated for the instance
@@ -340,16 +462,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntivirusSignatureLastUpdated(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAntivirusSignatureVersion sets the value of AntivirusSignatureVersion for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyAntivirusSignatureVersion(value string) (err error) {
-	return instance.SetProperty("AntivirusSignatureVersion", value)
+	return instance.SetProperty("AntivirusSignatureVersion", (value))
 }
 
 // GetAntivirusSignatureVersion gets the value of AntivirusSignatureVersion for the instance
@@ -358,16 +489,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyAntivirusSignatureVersion() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBehaviorMonitorEnabled sets the value of BehaviorMonitorEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyBehaviorMonitorEnabled(value bool) (err error) {
-	return instance.SetProperty("BehaviorMonitorEnabled", value)
+	return instance.SetProperty("BehaviorMonitorEnabled", (value))
 }
 
 // GetBehaviorMonitorEnabled gets the value of BehaviorMonitorEnabled for the instance
@@ -376,16 +516,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyBehaviorMonitorEnabled() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetComputerID sets the value of ComputerID for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyComputerID(value string) (err error) {
-	return instance.SetProperty("ComputerID", value)
+	return instance.SetProperty("ComputerID", (value))
 }
 
 // GetComputerID gets the value of ComputerID for the instance
@@ -394,16 +543,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyComputerID() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetComputerState sets the value of ComputerState for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyComputerState(value uint32) (err error) {
-	return instance.SetProperty("ComputerState", value)
+	return instance.SetProperty("ComputerState", (value))
 }
 
 // GetComputerState gets the value of ComputerState for the instance
@@ -412,16 +570,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyComputerState() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFullScanAge sets the value of FullScanAge for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyFullScanAge(value uint32) (err error) {
-	return instance.SetProperty("FullScanAge", value)
+	return instance.SetProperty("FullScanAge", (value))
 }
 
 // GetFullScanAge gets the value of FullScanAge for the instance
@@ -430,16 +597,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyFullScanAge() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFullScanEndTime sets the value of FullScanEndTime for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyFullScanEndTime(value string) (err error) {
-	return instance.SetProperty("FullScanEndTime", value)
+	return instance.SetProperty("FullScanEndTime", (value))
 }
 
 // GetFullScanEndTime gets the value of FullScanEndTime for the instance
@@ -448,16 +624,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyFullScanEndTime() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFullScanStartTime sets the value of FullScanStartTime for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyFullScanStartTime(value string) (err error) {
-	return instance.SetProperty("FullScanStartTime", value)
+	return instance.SetProperty("FullScanStartTime", (value))
 }
 
 // GetFullScanStartTime gets the value of FullScanStartTime for the instance
@@ -466,16 +651,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyFullScanStartTime() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIoavProtectionEnabled sets the value of IoavProtectionEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyIoavProtectionEnabled(value bool) (err error) {
-	return instance.SetProperty("IoavProtectionEnabled", value)
+	return instance.SetProperty("IoavProtectionEnabled", (value))
 }
 
 // GetIoavProtectionEnabled gets the value of IoavProtectionEnabled for the instance
@@ -484,16 +678,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyIoavProtectionEnabled() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsTamperProtected sets the value of IsTamperProtected for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyIsTamperProtected(value bool) (err error) {
-	return instance.SetProperty("IsTamperProtected", value)
+	return instance.SetProperty("IsTamperProtected", (value))
 }
 
 // GetIsTamperProtected gets the value of IsTamperProtected for the instance
@@ -502,16 +705,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyIsTamperProtected() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsVirtualMachine sets the value of IsVirtualMachine for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyIsVirtualMachine(value bool) (err error) {
-	return instance.SetProperty("IsVirtualMachine", value)
+	return instance.SetProperty("IsVirtualMachine", (value))
 }
 
 // GetIsVirtualMachine gets the value of IsVirtualMachine for the instance
@@ -520,16 +732,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyIsVirtualMachine() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLastFullScanSource sets the value of LastFullScanSource for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyLastFullScanSource(value uint8) (err error) {
-	return instance.SetProperty("LastFullScanSource", value)
+	return instance.SetProperty("LastFullScanSource", (value))
 }
 
 // GetLastFullScanSource gets the value of LastFullScanSource for the instance
@@ -538,16 +759,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyLastFullScanSource() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetLastQuickScanSource sets the value of LastQuickScanSource for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyLastQuickScanSource(value uint8) (err error) {
-	return instance.SetProperty("LastQuickScanSource", value)
+	return instance.SetProperty("LastQuickScanSource", (value))
 }
 
 // GetLastQuickScanSource gets the value of LastQuickScanSource for the instance
@@ -556,16 +786,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyLastQuickScanSource() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNISEnabled sets the value of NISEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyNISEnabled(value bool) (err error) {
-	return instance.SetProperty("NISEnabled", value)
+	return instance.SetProperty("NISEnabled", (value))
 }
 
 // GetNISEnabled gets the value of NISEnabled for the instance
@@ -574,16 +813,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyNISEnabled() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNISEngineVersion sets the value of NISEngineVersion for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyNISEngineVersion(value string) (err error) {
-	return instance.SetProperty("NISEngineVersion", value)
+	return instance.SetProperty("NISEngineVersion", (value))
 }
 
 // GetNISEngineVersion gets the value of NISEngineVersion for the instance
@@ -592,16 +840,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyNISEngineVersion() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNISSignatureAge sets the value of NISSignatureAge for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyNISSignatureAge(value uint32) (err error) {
-	return instance.SetProperty("NISSignatureAge", value)
+	return instance.SetProperty("NISSignatureAge", (value))
 }
 
 // GetNISSignatureAge gets the value of NISSignatureAge for the instance
@@ -610,16 +867,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyNISSignatureAge() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNISSignatureLastUpdated sets the value of NISSignatureLastUpdated for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyNISSignatureLastUpdated(value string) (err error) {
-	return instance.SetProperty("NISSignatureLastUpdated", value)
+	return instance.SetProperty("NISSignatureLastUpdated", (value))
 }
 
 // GetNISSignatureLastUpdated gets the value of NISSignatureLastUpdated for the instance
@@ -628,16 +894,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyNISSignatureLastUpdated() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNISSignatureVersion sets the value of NISSignatureVersion for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyNISSignatureVersion(value string) (err error) {
-	return instance.SetProperty("NISSignatureVersion", value)
+	return instance.SetProperty("NISSignatureVersion", (value))
 }
 
 // GetNISSignatureVersion gets the value of NISSignatureVersion for the instance
@@ -646,16 +921,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyNISSignatureVersion() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOnAccessProtectionEnabled sets the value of OnAccessProtectionEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyOnAccessProtectionEnabled(value bool) (err error) {
-	return instance.SetProperty("OnAccessProtectionEnabled", value)
+	return instance.SetProperty("OnAccessProtectionEnabled", (value))
 }
 
 // GetOnAccessProtectionEnabled gets the value of OnAccessProtectionEnabled for the instance
@@ -664,16 +948,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyOnAccessProtectionEnabled() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetQuickScanAge sets the value of QuickScanAge for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyQuickScanAge(value uint32) (err error) {
-	return instance.SetProperty("QuickScanAge", value)
+	return instance.SetProperty("QuickScanAge", (value))
 }
 
 // GetQuickScanAge gets the value of QuickScanAge for the instance
@@ -682,16 +975,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyQuickScanAge() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuickScanEndTime sets the value of QuickScanEndTime for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyQuickScanEndTime(value string) (err error) {
-	return instance.SetProperty("QuickScanEndTime", value)
+	return instance.SetProperty("QuickScanEndTime", (value))
 }
 
 // GetQuickScanEndTime gets the value of QuickScanEndTime for the instance
@@ -700,16 +1002,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyQuickScanEndTime() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQuickScanStartTime sets the value of QuickScanStartTime for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyQuickScanStartTime(value string) (err error) {
-	return instance.SetProperty("QuickScanStartTime", value)
+	return instance.SetProperty("QuickScanStartTime", (value))
 }
 
 // GetQuickScanStartTime gets the value of QuickScanStartTime for the instance
@@ -718,16 +1029,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyQuickScanStartTime() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRealTimeProtectionEnabled sets the value of RealTimeProtectionEnabled for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyRealTimeProtectionEnabled(value bool) (err error) {
-	return instance.SetProperty("RealTimeProtectionEnabled", value)
+	return instance.SetProperty("RealTimeProtectionEnabled", (value))
 }
 
 // GetRealTimeProtectionEnabled gets the value of RealTimeProtectionEnabled for the instance
@@ -736,16 +1056,25 @@ func (instance *MSFT_MpComputerStatus) GetPropertyRealTimeProtectionEnabled() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRealTimeScanDirection sets the value of RealTimeScanDirection for the instance
 func (instance *MSFT_MpComputerStatus) SetPropertyRealTimeScanDirection(value uint8) (err error) {
-	return instance.SetProperty("RealTimeScanDirection", value)
+	return instance.SetProperty("RealTimeScanDirection", (value))
 }
 
 // GetRealTimeScanDirection gets the value of RealTimeScanDirection for the instance
@@ -754,9 +1083,18 @@ func (instance *MSFT_MpComputerStatus) GetPropertyRealTimeScanDirection() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

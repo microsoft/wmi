@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Defender
 //////////////////////////////////////////////
 package defender
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MpThreat struct
@@ -79,7 +81,7 @@ func NewMSFT_MpThreatEx6(hostName string,
 
 // SetCategoryID sets the value of CategoryID for the instance
 func (instance *MSFT_MpThreat) SetPropertyCategoryID(value uint8) (err error) {
-	return instance.SetProperty("CategoryID", value)
+	return instance.SetProperty("CategoryID", (value))
 }
 
 // GetCategoryID gets the value of CategoryID for the instance
@@ -88,16 +90,25 @@ func (instance *MSFT_MpThreat) GetPropertyCategoryID() (value uint8, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDidThreatExecute sets the value of DidThreatExecute for the instance
 func (instance *MSFT_MpThreat) SetPropertyDidThreatExecute(value bool) (err error) {
-	return instance.SetProperty("DidThreatExecute", value)
+	return instance.SetProperty("DidThreatExecute", (value))
 }
 
 // GetDidThreatExecute gets the value of DidThreatExecute for the instance
@@ -106,16 +117,25 @@ func (instance *MSFT_MpThreat) GetPropertyDidThreatExecute() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsActive sets the value of IsActive for the instance
 func (instance *MSFT_MpThreat) SetPropertyIsActive(value bool) (err error) {
-	return instance.SetProperty("IsActive", value)
+	return instance.SetProperty("IsActive", (value))
 }
 
 // GetIsActive gets the value of IsActive for the instance
@@ -124,16 +144,25 @@ func (instance *MSFT_MpThreat) GetPropertyIsActive() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetResources sets the value of Resources for the instance
 func (instance *MSFT_MpThreat) SetPropertyResources(value []string) (err error) {
-	return instance.SetProperty("Resources", value)
+	return instance.SetProperty("Resources", (value))
 }
 
 // GetResources gets the value of Resources for the instance
@@ -142,16 +171,26 @@ func (instance *MSFT_MpThreat) GetPropertyResources() (value []string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRollupStatus sets the value of RollupStatus for the instance
 func (instance *MSFT_MpThreat) SetPropertyRollupStatus(value uint32) (err error) {
-	return instance.SetProperty("RollupStatus", value)
+	return instance.SetProperty("RollupStatus", (value))
 }
 
 // GetRollupStatus gets the value of RollupStatus for the instance
@@ -160,16 +199,25 @@ func (instance *MSFT_MpThreat) GetPropertyRollupStatus() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSchemaVersion sets the value of SchemaVersion for the instance
 func (instance *MSFT_MpThreat) SetPropertySchemaVersion(value string) (err error) {
-	return instance.SetProperty("SchemaVersion", value)
+	return instance.SetProperty("SchemaVersion", (value))
 }
 
 // GetSchemaVersion gets the value of SchemaVersion for the instance
@@ -178,16 +226,25 @@ func (instance *MSFT_MpThreat) GetPropertySchemaVersion() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSeverityID sets the value of SeverityID for the instance
 func (instance *MSFT_MpThreat) SetPropertySeverityID(value uint8) (err error) {
-	return instance.SetProperty("SeverityID", value)
+	return instance.SetProperty("SeverityID", (value))
 }
 
 // GetSeverityID gets the value of SeverityID for the instance
@@ -196,16 +253,25 @@ func (instance *MSFT_MpThreat) GetPropertySeverityID() (value uint8, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetThreatID sets the value of ThreatID for the instance
 func (instance *MSFT_MpThreat) SetPropertyThreatID(value int64) (err error) {
-	return instance.SetProperty("ThreatID", value)
+	return instance.SetProperty("ThreatID", (value))
 }
 
 // GetThreatID gets the value of ThreatID for the instance
@@ -214,16 +280,25 @@ func (instance *MSFT_MpThreat) GetPropertyThreatID() (value int64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int64(valuetmp)
+
 	return
 }
 
 // SetThreatName sets the value of ThreatName for the instance
 func (instance *MSFT_MpThreat) SetPropertyThreatName(value string) (err error) {
-	return instance.SetProperty("ThreatName", value)
+	return instance.SetProperty("ThreatName", (value))
 }
 
 // GetThreatName gets the value of ThreatName for the instance
@@ -232,16 +307,25 @@ func (instance *MSFT_MpThreat) GetPropertyThreatName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTypeID sets the value of TypeID for the instance
 func (instance *MSFT_MpThreat) SetPropertyTypeID(value uint8) (err error) {
-	return instance.SetProperty("TypeID", value)
+	return instance.SetProperty("TypeID", (value))
 }
 
 // GetTypeID gets the value of TypeID for the instance
@@ -250,10 +334,19 @@ func (instance *MSFT_MpThreat) GetPropertyTypeID() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 

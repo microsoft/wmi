@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_SyntheticFcPortSettingData struct
@@ -67,7 +69,7 @@ func NewMsvm_SyntheticFcPortSettingDataEx6(hostName string,
 
 // SetChapEnabled sets the value of ChapEnabled for the instance
 func (instance *Msvm_SyntheticFcPortSettingData) SetPropertyChapEnabled(value bool) (err error) {
-	return instance.SetProperty("ChapEnabled", value)
+	return instance.SetProperty("ChapEnabled", (value))
 }
 
 // GetChapEnabled gets the value of ChapEnabled for the instance
@@ -76,16 +78,25 @@ func (instance *Msvm_SyntheticFcPortSettingData) GetPropertyChapEnabled() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSecondaryWWNN sets the value of SecondaryWWNN for the instance
 func (instance *Msvm_SyntheticFcPortSettingData) SetPropertySecondaryWWNN(value string) (err error) {
-	return instance.SetProperty("SecondaryWWNN", value)
+	return instance.SetProperty("SecondaryWWNN", (value))
 }
 
 // GetSecondaryWWNN gets the value of SecondaryWWNN for the instance
@@ -94,16 +105,25 @@ func (instance *Msvm_SyntheticFcPortSettingData) GetPropertySecondaryWWNN() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSecondaryWWPN sets the value of SecondaryWWPN for the instance
 func (instance *Msvm_SyntheticFcPortSettingData) SetPropertySecondaryWWPN(value string) (err error) {
-	return instance.SetProperty("SecondaryWWPN", value)
+	return instance.SetProperty("SecondaryWWPN", (value))
 }
 
 // GetSecondaryWWPN gets the value of SecondaryWWPN for the instance
@@ -112,16 +132,25 @@ func (instance *Msvm_SyntheticFcPortSettingData) GetPropertySecondaryWWPN() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualPortWWNN sets the value of VirtualPortWWNN for the instance
 func (instance *Msvm_SyntheticFcPortSettingData) SetPropertyVirtualPortWWNN(value string) (err error) {
-	return instance.SetProperty("VirtualPortWWNN", value)
+	return instance.SetProperty("VirtualPortWWNN", (value))
 }
 
 // GetVirtualPortWWNN gets the value of VirtualPortWWNN for the instance
@@ -130,16 +159,25 @@ func (instance *Msvm_SyntheticFcPortSettingData) GetPropertyVirtualPortWWNN() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualPortWWPN sets the value of VirtualPortWWPN for the instance
 func (instance *Msvm_SyntheticFcPortSettingData) SetPropertyVirtualPortWWPN(value string) (err error) {
-	return instance.SetProperty("VirtualPortWWPN", value)
+	return instance.SetProperty("VirtualPortWWPN", (value))
 }
 
 // GetVirtualPortWWPN gets the value of VirtualPortWWPN for the instance
@@ -148,16 +186,25 @@ func (instance *Msvm_SyntheticFcPortSettingData) GetPropertyVirtualPortWWPN() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualSystemIdentifiers sets the value of VirtualSystemIdentifiers for the instance
 func (instance *Msvm_SyntheticFcPortSettingData) SetPropertyVirtualSystemIdentifiers(value []string) (err error) {
-	return instance.SetProperty("VirtualSystemIdentifiers", value)
+	return instance.SetProperty("VirtualSystemIdentifiers", (value))
 }
 
 // GetVirtualSystemIdentifiers gets the value of VirtualSystemIdentifiers for the instance
@@ -166,10 +213,20 @@ func (instance *Msvm_SyntheticFcPortSettingData) GetPropertyVirtualSystemIdentif
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_SyntheticFcPortSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_CompatibilityVector struct
@@ -59,7 +61,7 @@ func NewMsvm_CompatibilityVectorEx6(hostName string,
 
 // SetCompareOperation sets the value of CompareOperation for the instance
 func (instance *Msvm_CompatibilityVector) SetPropertyCompareOperation(value uint32) (err error) {
-	return instance.SetProperty("CompareOperation", value)
+	return instance.SetProperty("CompareOperation", (value))
 }
 
 // GetCompareOperation gets the value of CompareOperation for the instance
@@ -68,16 +70,25 @@ func (instance *Msvm_CompatibilityVector) GetPropertyCompareOperation() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompatibilityInfo sets the value of CompatibilityInfo for the instance
 func (instance *Msvm_CompatibilityVector) SetPropertyCompatibilityInfo(value uint64) (err error) {
-	return instance.SetProperty("CompatibilityInfo", value)
+	return instance.SetProperty("CompatibilityInfo", (value))
 }
 
 // GetCompatibilityInfo gets the value of CompatibilityInfo for the instance
@@ -86,16 +97,25 @@ func (instance *Msvm_CompatibilityVector) GetPropertyCompatibilityInfo() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVectorId sets the value of VectorId for the instance
 func (instance *Msvm_CompatibilityVector) SetPropertyVectorId(value uint32) (err error) {
-	return instance.SetProperty("VectorId", value)
+	return instance.SetProperty("VectorId", (value))
 }
 
 // GetVectorId gets the value of VectorId for the instance
@@ -104,9 +124,18 @@ func (instance *Msvm_CompatibilityVector) GetPropertyVectorId() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

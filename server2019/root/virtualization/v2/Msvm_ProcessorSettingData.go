@@ -3,25 +3,21 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_ProcessorSettingData struct
 type Msvm_ProcessorSettingData struct {
 	*CIM_ResourceAllocationSettingData
-
-	//
-	AllowACountMCount bool
-
-	//
-	CpuBrandString string
 
 	//
 	CpuGroupId string
@@ -30,16 +26,7 @@ type Msvm_ProcessorSettingData struct {
 	DisableSpeculationControls bool
 
 	//
-	EnableAlternateMode uint8
-
-	//
 	EnableHostResourceProtection bool
-
-	//
-	EnableLegacyApicMode bool
-
-	//
-	EnablePerfmonIpt bool
 
 	//
 	EnablePerfmonLbr bool
@@ -70,9 +57,6 @@ type Msvm_ProcessorSettingData struct {
 
 	//
 	MaxProcessorsPerNumaNode uint64
-
-	//
-	PerfCpuFreqCapMhz uint32
 }
 
 func NewMsvm_ProcessorSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_ProcessorSettingData, err error) {
@@ -104,45 +88,9 @@ func NewMsvm_ProcessorSettingDataEx6(hostName string,
 	return
 }
 
-// SetAllowACountMCount sets the value of AllowACountMCount for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyAllowACountMCount(value bool) (err error) {
-	return instance.SetProperty("AllowACountMCount", value)
-}
-
-// GetAllowACountMCount gets the value of AllowACountMCount for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyAllowACountMCount() (value bool, err error) {
-	retValue, err := instance.GetProperty("AllowACountMCount")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetCpuBrandString sets the value of CpuBrandString for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyCpuBrandString(value string) (err error) {
-	return instance.SetProperty("CpuBrandString", value)
-}
-
-// GetCpuBrandString gets the value of CpuBrandString for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyCpuBrandString() (value string, err error) {
-	retValue, err := instance.GetProperty("CpuBrandString")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
 // SetCpuGroupId sets the value of CpuGroupId for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyCpuGroupId(value string) (err error) {
-	return instance.SetProperty("CpuGroupId", value)
+	return instance.SetProperty("CpuGroupId", (value))
 }
 
 // GetCpuGroupId gets the value of CpuGroupId for the instance
@@ -151,16 +99,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyCpuGroupId() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableSpeculationControls sets the value of DisableSpeculationControls for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyDisableSpeculationControls(value bool) (err error) {
-	return instance.SetProperty("DisableSpeculationControls", value)
+	return instance.SetProperty("DisableSpeculationControls", (value))
 }
 
 // GetDisableSpeculationControls gets the value of DisableSpeculationControls for the instance
@@ -169,34 +126,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyDisableSpeculationControls
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetEnableAlternateMode sets the value of EnableAlternateMode for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnableAlternateMode(value uint8) (err error) {
-	return instance.SetProperty("EnableAlternateMode", value)
-}
-
-// GetEnableAlternateMode gets the value of EnableAlternateMode for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnableAlternateMode() (value uint8, err error) {
-	retValue, err := instance.GetProperty("EnableAlternateMode")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint8)
+
+	valuetmp, ok := retValue.(bool)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableHostResourceProtection sets the value of EnableHostResourceProtection for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyEnableHostResourceProtection(value bool) (err error) {
-	return instance.SetProperty("EnableHostResourceProtection", value)
+	return instance.SetProperty("EnableHostResourceProtection", (value))
 }
 
 // GetEnableHostResourceProtection gets the value of EnableHostResourceProtection for the instance
@@ -205,52 +153,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyEnableHostResourceProtecti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetEnableLegacyApicMode sets the value of EnableLegacyApicMode for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnableLegacyApicMode(value bool) (err error) {
-	return instance.SetProperty("EnableLegacyApicMode", value)
-}
-
-// GetEnableLegacyApicMode gets the value of EnableLegacyApicMode for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnableLegacyApicMode() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnableLegacyApicMode")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(bool)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetEnablePerfmonIpt sets the value of EnablePerfmonIpt for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyEnablePerfmonIpt(value bool) (err error) {
-	return instance.SetProperty("EnablePerfmonIpt", value)
-}
-
-// GetEnablePerfmonIpt gets the value of EnablePerfmonIpt for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePerfmonIpt() (value bool, err error) {
-	retValue, err := instance.GetProperty("EnablePerfmonIpt")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnablePerfmonLbr sets the value of EnablePerfmonLbr for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyEnablePerfmonLbr(value bool) (err error) {
-	return instance.SetProperty("EnablePerfmonLbr", value)
+	return instance.SetProperty("EnablePerfmonLbr", (value))
 }
 
 // GetEnablePerfmonLbr gets the value of EnablePerfmonLbr for the instance
@@ -259,16 +180,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePerfmonLbr() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnablePerfmonPebs sets the value of EnablePerfmonPebs for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyEnablePerfmonPebs(value bool) (err error) {
-	return instance.SetProperty("EnablePerfmonPebs", value)
+	return instance.SetProperty("EnablePerfmonPebs", (value))
 }
 
 // GetEnablePerfmonPebs gets the value of EnablePerfmonPebs for the instance
@@ -277,16 +207,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePerfmonPebs() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnablePerfmonPmu sets the value of EnablePerfmonPmu for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyEnablePerfmonPmu(value bool) (err error) {
-	return instance.SetProperty("EnablePerfmonPmu", value)
+	return instance.SetProperty("EnablePerfmonPmu", (value))
 }
 
 // GetEnablePerfmonPmu gets the value of EnablePerfmonPmu for the instance
@@ -295,16 +234,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyEnablePerfmonPmu() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetExposeVirtualizationExtensions sets the value of ExposeVirtualizationExtensions for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyExposeVirtualizationExtensions(value bool) (err error) {
-	return instance.SetProperty("ExposeVirtualizationExtensions", value)
+	return instance.SetProperty("ExposeVirtualizationExtensions", (value))
 }
 
 // GetExposeVirtualizationExtensions gets the value of ExposeVirtualizationExtensions for the instance
@@ -313,16 +261,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyExposeVirtualizationExtens
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHideHypervisorPresent sets the value of HideHypervisorPresent for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyHideHypervisorPresent(value bool) (err error) {
-	return instance.SetProperty("HideHypervisorPresent", value)
+	return instance.SetProperty("HideHypervisorPresent", (value))
 }
 
 // GetHideHypervisorPresent gets the value of HideHypervisorPresent for the instance
@@ -331,16 +288,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyHideHypervisorPresent() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHwThreadsPerCore sets the value of HwThreadsPerCore for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyHwThreadsPerCore(value uint64) (err error) {
-	return instance.SetProperty("HwThreadsPerCore", value)
+	return instance.SetProperty("HwThreadsPerCore", (value))
 }
 
 // GetHwThreadsPerCore gets the value of HwThreadsPerCore for the instance
@@ -349,16 +315,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyHwThreadsPerCore() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLimitCPUID sets the value of LimitCPUID for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyLimitCPUID(value bool) (err error) {
-	return instance.SetProperty("LimitCPUID", value)
+	return instance.SetProperty("LimitCPUID", (value))
 }
 
 // GetLimitCPUID gets the value of LimitCPUID for the instance
@@ -367,16 +342,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyLimitCPUID() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLimitProcessorFeatures sets the value of LimitProcessorFeatures for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyLimitProcessorFeatures(value bool) (err error) {
-	return instance.SetProperty("LimitProcessorFeatures", value)
+	return instance.SetProperty("LimitProcessorFeatures", (value))
 }
 
 // GetLimitProcessorFeatures gets the value of LimitProcessorFeatures for the instance
@@ -385,16 +369,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyLimitProcessorFeatures() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaxNumaNodesPerSocket sets the value of MaxNumaNodesPerSocket for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyMaxNumaNodesPerSocket(value uint64) (err error) {
-	return instance.SetProperty("MaxNumaNodesPerSocket", value)
+	return instance.SetProperty("MaxNumaNodesPerSocket", (value))
 }
 
 // GetMaxNumaNodesPerSocket gets the value of MaxNumaNodesPerSocket for the instance
@@ -403,16 +396,25 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyMaxNumaNodesPerSocket() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxProcessorsPerNumaNode sets the value of MaxProcessorsPerNumaNode for the instance
 func (instance *Msvm_ProcessorSettingData) SetPropertyMaxProcessorsPerNumaNode(value uint64) (err error) {
-	return instance.SetProperty("MaxProcessorsPerNumaNode", value)
+	return instance.SetProperty("MaxProcessorsPerNumaNode", (value))
 }
 
 // GetMaxProcessorsPerNumaNode gets the value of MaxProcessorsPerNumaNode for the instance
@@ -421,28 +423,19 @@ func (instance *Msvm_ProcessorSettingData) GetPropertyMaxProcessorsPerNumaNode()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetPerfCpuFreqCapMhz sets the value of PerfCpuFreqCapMhz for the instance
-func (instance *Msvm_ProcessorSettingData) SetPropertyPerfCpuFreqCapMhz(value uint32) (err error) {
-	return instance.SetProperty("PerfCpuFreqCapMhz", value)
-}
-
-// GetPerfCpuFreqCapMhz gets the value of PerfCpuFreqCapMhz for the instance
-func (instance *Msvm_ProcessorSettingData) GetPropertyPerfCpuFreqCapMhz() (value uint32, err error) {
-	retValue, err := instance.GetProperty("PerfCpuFreqCapMhz")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint32)
+
+	valuetmp, ok := retValue.(uint64)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 func (instance *Msvm_ProcessorSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

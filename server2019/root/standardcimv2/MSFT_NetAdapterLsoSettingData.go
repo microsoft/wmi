@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterLsoSettingData struct
@@ -67,7 +69,7 @@ func NewMSFT_NetAdapterLsoSettingDataEx6(hostName string,
 
 // SetIPv4Enabled sets the value of IPv4Enabled for the instance
 func (instance *MSFT_NetAdapterLsoSettingData) SetPropertyIPv4Enabled(value bool) (err error) {
-	return instance.SetProperty("IPv4Enabled", value)
+	return instance.SetProperty("IPv4Enabled", (value))
 }
 
 // GetIPv4Enabled gets the value of IPv4Enabled for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NetAdapterLsoSettingData) GetPropertyIPv4Enabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6Enabled sets the value of IPv6Enabled for the instance
 func (instance *MSFT_NetAdapterLsoSettingData) SetPropertyIPv6Enabled(value bool) (err error) {
-	return instance.SetProperty("IPv6Enabled", value)
+	return instance.SetProperty("IPv6Enabled", (value))
 }
 
 // GetIPv6Enabled gets the value of IPv6Enabled for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NetAdapterLsoSettingData) GetPropertyIPv6Enabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLargeSendOffloadV1HardwareCapabilities sets the value of LargeSendOffloadV1HardwareCapabilities for the instance
 func (instance *MSFT_NetAdapterLsoSettingData) SetPropertyLargeSendOffloadV1HardwareCapabilities(value MSFT_NetAdapterLargeSendOffloadV1Capabilities) (err error) {
-	return instance.SetProperty("LargeSendOffloadV1HardwareCapabilities", value)
+	return instance.SetProperty("LargeSendOffloadV1HardwareCapabilities", (value))
 }
 
 // GetLargeSendOffloadV1HardwareCapabilities gets the value of LargeSendOffloadV1HardwareCapabilities for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_NetAdapterLsoSettingData) GetPropertyLargeSendOffloadV1Hard
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterLargeSendOffloadV1Capabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterLargeSendOffloadV1Capabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterLargeSendOffloadV1Capabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterLargeSendOffloadV1Capabilities(valuetmp)
+
 	return
 }
 
 // SetLargeSendOffloadV2HardwareCapabilities sets the value of LargeSendOffloadV2HardwareCapabilities for the instance
 func (instance *MSFT_NetAdapterLsoSettingData) SetPropertyLargeSendOffloadV2HardwareCapabilities(value MSFT_NetAdapterLargeSendOffloadV2Capabilities) (err error) {
-	return instance.SetProperty("LargeSendOffloadV2HardwareCapabilities", value)
+	return instance.SetProperty("LargeSendOffloadV2HardwareCapabilities", (value))
 }
 
 // GetLargeSendOffloadV2HardwareCapabilities gets the value of LargeSendOffloadV2HardwareCapabilities for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_NetAdapterLsoSettingData) GetPropertyLargeSendOffloadV2Hard
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterLargeSendOffloadV2Capabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterLargeSendOffloadV2Capabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterLargeSendOffloadV2Capabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterLargeSendOffloadV2Capabilities(valuetmp)
+
 	return
 }
 
 // SetMaximumLsoVersionSupported sets the value of MaximumLsoVersionSupported for the instance
 func (instance *MSFT_NetAdapterLsoSettingData) SetPropertyMaximumLsoVersionSupported(value uint32) (err error) {
-	return instance.SetProperty("MaximumLsoVersionSupported", value)
+	return instance.SetProperty("MaximumLsoVersionSupported", (value))
 }
 
 // GetMaximumLsoVersionSupported gets the value of MaximumLsoVersionSupported for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_NetAdapterLsoSettingData) GetPropertyMaximumLsoVersionSuppo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetV1IPv4Enabled sets the value of V1IPv4Enabled for the instance
 func (instance *MSFT_NetAdapterLsoSettingData) SetPropertyV1IPv4Enabled(value bool) (err error) {
-	return instance.SetProperty("V1IPv4Enabled", value)
+	return instance.SetProperty("V1IPv4Enabled", (value))
 }
 
 // GetV1IPv4Enabled gets the value of V1IPv4Enabled for the instance
@@ -166,10 +213,19 @@ func (instance *MSFT_NetAdapterLsoSettingData) GetPropertyV1IPv4Enabled() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

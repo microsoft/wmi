@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks struct
@@ -235,7 +237,7 @@ func NewWin32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisksEx
 
 // SetBindingAttributes sets the value of BindingAttributes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyBindingAttributes(value uint64) (err error) {
-	return instance.SetProperty("BindingAttributes", value)
+	return instance.SetProperty("BindingAttributes", (value))
 }
 
 // GetBindingAttributes gets the value of BindingAttributes for the instance
@@ -244,16 +246,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheFirstHitPopulatedBytes sets the value of CacheFirstHitPopulatedBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheFirstHitPopulatedBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheFirstHitPopulatedBytes", value)
+	return instance.SetProperty("CacheFirstHitPopulatedBytes", (value))
 }
 
 // GetCacheFirstHitPopulatedBytes gets the value of CacheFirstHitPopulatedBytes for the instance
@@ -262,16 +273,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheFirstHitPopulatedBytesPersec sets the value of CacheFirstHitPopulatedBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheFirstHitPopulatedBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheFirstHitPopulatedBytesPersec", value)
+	return instance.SetProperty("CacheFirstHitPopulatedBytesPersec", (value))
 }
 
 // GetCacheFirstHitPopulatedBytesPersec gets the value of CacheFirstHitPopulatedBytesPersec for the instance
@@ -280,16 +300,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheFirstHitWrittenBytes sets the value of CacheFirstHitWrittenBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheFirstHitWrittenBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheFirstHitWrittenBytes", value)
+	return instance.SetProperty("CacheFirstHitWrittenBytes", (value))
 }
 
 // GetCacheFirstHitWrittenBytes gets the value of CacheFirstHitWrittenBytes for the instance
@@ -298,16 +327,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheFirstHitWrittenBytesPersec sets the value of CacheFirstHitWrittenBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheFirstHitWrittenBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheFirstHitWrittenBytesPersec", value)
+	return instance.SetProperty("CacheFirstHitWrittenBytesPersec", (value))
 }
 
 // GetCacheFirstHitWrittenBytesPersec gets the value of CacheFirstHitWrittenBytesPersec for the instance
@@ -316,16 +354,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheHitReadBytes sets the value of CacheHitReadBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheHitReadBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheHitReadBytes", value)
+	return instance.SetProperty("CacheHitReadBytes", (value))
 }
 
 // GetCacheHitReadBytes gets the value of CacheHitReadBytes for the instance
@@ -334,16 +381,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheHitReadBytesPersec sets the value of CacheHitReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheHitReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheHitReadBytesPersec", value)
+	return instance.SetProperty("CacheHitReadBytesPersec", (value))
 }
 
 // GetCacheHitReadBytesPersec gets the value of CacheHitReadBytesPersec for the instance
@@ -352,16 +408,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheHitReads sets the value of CacheHitReads for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheHitReads(value uint64) (err error) {
-	return instance.SetProperty("CacheHitReads", value)
+	return instance.SetProperty("CacheHitReads", (value))
 }
 
 // GetCacheHitReads gets the value of CacheHitReads for the instance
@@ -370,16 +435,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheHitReadsPersec sets the value of CacheHitReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheHitReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheHitReadsPersec", value)
+	return instance.SetProperty("CacheHitReadsPersec", (value))
 }
 
 // GetCacheHitReadsPersec gets the value of CacheHitReadsPersec for the instance
@@ -388,16 +462,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheMissReadBytes sets the value of CacheMissReadBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheMissReadBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheMissReadBytes", value)
+	return instance.SetProperty("CacheMissReadBytes", (value))
 }
 
 // GetCacheMissReadBytes gets the value of CacheMissReadBytes for the instance
@@ -406,16 +489,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheMissReadBytesPersec sets the value of CacheMissReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheMissReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheMissReadBytesPersec", value)
+	return instance.SetProperty("CacheMissReadBytesPersec", (value))
 }
 
 // GetCacheMissReadBytesPersec gets the value of CacheMissReadBytesPersec for the instance
@@ -424,16 +516,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheMissReads sets the value of CacheMissReads for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheMissReads(value uint64) (err error) {
-	return instance.SetProperty("CacheMissReads", value)
+	return instance.SetProperty("CacheMissReads", (value))
 }
 
 // GetCacheMissReads gets the value of CacheMissReads for the instance
@@ -442,16 +543,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheMissReadsPersec sets the value of CacheMissReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheMissReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheMissReadsPersec", value)
+	return instance.SetProperty("CacheMissReadsPersec", (value))
 }
 
 // GetCacheMissReadsPersec gets the value of CacheMissReadsPersec for the instance
@@ -460,16 +570,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePages sets the value of CachePages for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCachePages(value uint64) (err error) {
-	return instance.SetProperty("CachePages", value)
+	return instance.SetProperty("CachePages", (value))
 }
 
 // GetCachePages gets the value of CachePages for the instance
@@ -478,16 +597,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePagesDirty sets the value of CachePagesDirty for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCachePagesDirty(value uint64) (err error) {
-	return instance.SetProperty("CachePagesDirty", value)
+	return instance.SetProperty("CachePagesDirty", (value))
 }
 
 // GetCachePagesDirty gets the value of CachePagesDirty for the instance
@@ -496,16 +624,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePagesDirtyHot sets the value of CachePagesDirtyHot for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCachePagesDirtyHot(value uint64) (err error) {
-	return instance.SetProperty("CachePagesDirtyHot", value)
+	return instance.SetProperty("CachePagesDirtyHot", (value))
 }
 
 // GetCachePagesDirtyHot gets the value of CachePagesDirtyHot for the instance
@@ -514,16 +651,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePagesDiscardIgnored sets the value of CachePagesDiscardIgnored for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCachePagesDiscardIgnored(value uint64) (err error) {
-	return instance.SetProperty("CachePagesDiscardIgnored", value)
+	return instance.SetProperty("CachePagesDiscardIgnored", (value))
 }
 
 // GetCachePagesDiscardIgnored gets the value of CachePagesDiscardIgnored for the instance
@@ -532,16 +678,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePagesL2 sets the value of CachePagesL2 for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCachePagesL2(value uint64) (err error) {
-	return instance.SetProperty("CachePagesL2", value)
+	return instance.SetProperty("CachePagesL2", (value))
 }
 
 // GetCachePagesL2 gets the value of CachePagesL2 for the instance
@@ -550,16 +705,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePopulateBytes sets the value of CachePopulateBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCachePopulateBytes(value uint64) (err error) {
-	return instance.SetProperty("CachePopulateBytes", value)
+	return instance.SetProperty("CachePopulateBytes", (value))
 }
 
 // GetCachePopulateBytes gets the value of CachePopulateBytes for the instance
@@ -568,16 +732,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCachePopulateBytesPersec sets the value of CachePopulateBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCachePopulateBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CachePopulateBytesPersec", value)
+	return instance.SetProperty("CachePopulateBytesPersec", (value))
 }
 
 // GetCachePopulateBytesPersec gets the value of CachePopulateBytesPersec for the instance
@@ -586,16 +759,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheWriteBytes sets the value of CacheWriteBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheWriteBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheWriteBytes", value)
+	return instance.SetProperty("CacheWriteBytes", (value))
 }
 
 // GetCacheWriteBytes gets the value of CacheWriteBytes for the instance
@@ -604,16 +786,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheWriteBytesPersec sets the value of CacheWriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheWriteBytesPersec", value)
+	return instance.SetProperty("CacheWriteBytesPersec", (value))
 }
 
 // GetCacheWriteBytesPersec gets the value of CacheWriteBytesPersec for the instance
@@ -622,16 +813,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheWrites sets the value of CacheWrites for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheWrites(value uint64) (err error) {
-	return instance.SetProperty("CacheWrites", value)
+	return instance.SetProperty("CacheWrites", (value))
 }
 
 // GetCacheWrites gets the value of CacheWrites for the instance
@@ -640,16 +840,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheWritesPersec sets the value of CacheWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyCacheWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("CacheWritesPersec", value)
+	return instance.SetProperty("CacheWritesPersec", (value))
 }
 
 // GetCacheWritesPersec gets the value of CacheWritesPersec for the instance
@@ -658,16 +867,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDestageBytes sets the value of DestageBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDestageBytes(value uint64) (err error) {
-	return instance.SetProperty("DestageBytes", value)
+	return instance.SetProperty("DestageBytes", (value))
 }
 
 // GetDestageBytes gets the value of DestageBytes for the instance
@@ -676,16 +894,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDestageBytesPersec sets the value of DestageBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDestageBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DestageBytesPersec", value)
+	return instance.SetProperty("DestageBytesPersec", (value))
 }
 
 // GetDestageBytesPersec gets the value of DestageBytesPersec for the instance
@@ -694,16 +921,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDestageTransfers sets the value of DestageTransfers for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDestageTransfers(value uint64) (err error) {
-	return instance.SetProperty("DestageTransfers", value)
+	return instance.SetProperty("DestageTransfers", (value))
 }
 
 // GetDestageTransfers gets the value of DestageTransfers for the instance
@@ -712,16 +948,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDestageTransfersPersec sets the value of DestageTransfersPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDestageTransfersPersec(value uint64) (err error) {
-	return instance.SetProperty("DestageTransfersPersec", value)
+	return instance.SetProperty("DestageTransfersPersec", (value))
 }
 
 // GetDestageTransfersPersec gets the value of DestageTransfersPersec for the instance
@@ -730,16 +975,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectReadBytes sets the value of DirectReadBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectReadBytes(value uint64) (err error) {
-	return instance.SetProperty("DirectReadBytes", value)
+	return instance.SetProperty("DirectReadBytes", (value))
 }
 
 // GetDirectReadBytes gets the value of DirectReadBytes for the instance
@@ -748,16 +1002,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectReadBytesPersec sets the value of DirectReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DirectReadBytesPersec", value)
+	return instance.SetProperty("DirectReadBytesPersec", (value))
 }
 
 // GetDirectReadBytesPersec gets the value of DirectReadBytesPersec for the instance
@@ -766,16 +1029,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectReads sets the value of DirectReads for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectReads(value uint64) (err error) {
-	return instance.SetProperty("DirectReads", value)
+	return instance.SetProperty("DirectReads", (value))
 }
 
 // GetDirectReads gets the value of DirectReads for the instance
@@ -784,16 +1056,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectReadsPersec sets the value of DirectReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("DirectReadsPersec", value)
+	return instance.SetProperty("DirectReadsPersec", (value))
 }
 
 // GetDirectReadsPersec gets the value of DirectReadsPersec for the instance
@@ -802,16 +1083,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectWriteBytes sets the value of DirectWriteBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectWriteBytes(value uint64) (err error) {
-	return instance.SetProperty("DirectWriteBytes", value)
+	return instance.SetProperty("DirectWriteBytes", (value))
 }
 
 // GetDirectWriteBytes gets the value of DirectWriteBytes for the instance
@@ -820,16 +1110,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectWriteBytesPersec sets the value of DirectWriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DirectWriteBytesPersec", value)
+	return instance.SetProperty("DirectWriteBytesPersec", (value))
 }
 
 // GetDirectWriteBytesPersec gets the value of DirectWriteBytesPersec for the instance
@@ -838,16 +1137,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectWrites sets the value of DirectWrites for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectWrites(value uint64) (err error) {
-	return instance.SetProperty("DirectWrites", value)
+	return instance.SetProperty("DirectWrites", (value))
 }
 
 // GetDirectWrites gets the value of DirectWrites for the instance
@@ -856,16 +1164,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectWritesPersec sets the value of DirectWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirectWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("DirectWritesPersec", value)
+	return instance.SetProperty("DirectWritesPersec", (value))
 }
 
 // GetDirectWritesPersec gets the value of DirectWritesPersec for the instance
@@ -874,16 +1191,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirtyReadBytes sets the value of DirtyReadBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirtyReadBytes(value uint64) (err error) {
-	return instance.SetProperty("DirtyReadBytes", value)
+	return instance.SetProperty("DirtyReadBytes", (value))
 }
 
 // GetDirtyReadBytes gets the value of DirtyReadBytes for the instance
@@ -892,16 +1218,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirtyReadBytesPersec sets the value of DirtyReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirtyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DirtyReadBytesPersec", value)
+	return instance.SetProperty("DirtyReadBytesPersec", (value))
 }
 
 // GetDirtyReadBytesPersec gets the value of DirtyReadBytesPersec for the instance
@@ -910,16 +1245,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirtySlots sets the value of DirtySlots for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirtySlots(value uint64) (err error) {
-	return instance.SetProperty("DirtySlots", value)
+	return instance.SetProperty("DirtySlots", (value))
 }
 
 // GetDirtySlots gets the value of DirtySlots for the instance
@@ -928,16 +1272,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirtySlotsExpands sets the value of DirtySlotsExpands for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirtySlotsExpands(value uint64) (err error) {
-	return instance.SetProperty("DirtySlotsExpands", value)
+	return instance.SetProperty("DirtySlotsExpands", (value))
 }
 
 // GetDirtySlotsExpands gets the value of DirtySlotsExpands for the instance
@@ -946,16 +1299,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirtySlotsExpandsPersec sets the value of DirtySlotsExpandsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDirtySlotsExpandsPersec(value uint64) (err error) {
-	return instance.SetProperty("DirtySlotsExpandsPersec", value)
+	return instance.SetProperty("DirtySlotsExpandsPersec", (value))
 }
 
 // GetDirtySlotsExpandsPersec gets the value of DirtySlotsExpandsPersec for the instance
@@ -964,16 +1326,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskBytes sets the value of DiskBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskBytes(value uint64) (err error) {
-	return instance.SetProperty("DiskBytes", value)
+	return instance.SetProperty("DiskBytes", (value))
 }
 
 // GetDiskBytes gets the value of DiskBytes for the instance
@@ -982,16 +1353,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskBytesPersec sets the value of DiskBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskBytesPersec", value)
+	return instance.SetProperty("DiskBytesPersec", (value))
 }
 
 // GetDiskBytesPersec gets the value of DiskBytesPersec for the instance
@@ -1000,16 +1380,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskReadBytes sets the value of DiskReadBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskReadBytes(value uint64) (err error) {
-	return instance.SetProperty("DiskReadBytes", value)
+	return instance.SetProperty("DiskReadBytes", (value))
 }
 
 // GetDiskReadBytes gets the value of DiskReadBytes for the instance
@@ -1018,16 +1407,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskReadBytesPersec sets the value of DiskReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskReadBytesPersec", value)
+	return instance.SetProperty("DiskReadBytesPersec", (value))
 }
 
 // GetDiskReadBytesPersec gets the value of DiskReadBytesPersec for the instance
@@ -1036,16 +1434,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskReads sets the value of DiskReads for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskReads(value uint64) (err error) {
-	return instance.SetProperty("DiskReads", value)
+	return instance.SetProperty("DiskReads", (value))
 }
 
 // GetDiskReads gets the value of DiskReads for the instance
@@ -1054,16 +1461,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskReadsPersec sets the value of DiskReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskReadsPersec", value)
+	return instance.SetProperty("DiskReadsPersec", (value))
 }
 
 // GetDiskReadsPersec gets the value of DiskReadsPersec for the instance
@@ -1072,16 +1488,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskTransfers sets the value of DiskTransfers for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskTransfers(value uint64) (err error) {
-	return instance.SetProperty("DiskTransfers", value)
+	return instance.SetProperty("DiskTransfers", (value))
 }
 
 // GetDiskTransfers gets the value of DiskTransfers for the instance
@@ -1090,16 +1515,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskTransfersPersec sets the value of DiskTransfersPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskTransfersPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskTransfersPersec", value)
+	return instance.SetProperty("DiskTransfersPersec", (value))
 }
 
 // GetDiskTransfersPersec gets the value of DiskTransfersPersec for the instance
@@ -1108,16 +1542,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskWriteBytes sets the value of DiskWriteBytes for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskWriteBytes(value uint64) (err error) {
-	return instance.SetProperty("DiskWriteBytes", value)
+	return instance.SetProperty("DiskWriteBytes", (value))
 }
 
 // GetDiskWriteBytes gets the value of DiskWriteBytes for the instance
@@ -1126,16 +1569,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskWriteBytesPersec sets the value of DiskWriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskWriteBytesPersec", value)
+	return instance.SetProperty("DiskWriteBytesPersec", (value))
 }
 
 // GetDiskWriteBytesPersec gets the value of DiskWriteBytesPersec for the instance
@@ -1144,16 +1596,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskWrites sets the value of DiskWrites for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskWrites(value uint64) (err error) {
-	return instance.SetProperty("DiskWrites", value)
+	return instance.SetProperty("DiskWrites", (value))
 }
 
 // GetDiskWrites gets the value of DiskWrites for the instance
@@ -1162,16 +1623,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskWritesPersec sets the value of DiskWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyDiskWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskWritesPersec", value)
+	return instance.SetProperty("DiskWritesPersec", (value))
 }
 
 // GetDiskWritesPersec gets the value of DiskWritesPersec for the instance
@@ -1180,16 +1650,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMissingSlots sets the value of MissingSlots for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyMissingSlots(value uint64) (err error) {
-	return instance.SetProperty("MissingSlots", value)
+	return instance.SetProperty("MissingSlots", (value))
 }
 
 // GetMissingSlots gets the value of MissingSlots for the instance
@@ -1198,16 +1677,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRateDiskCacheReads sets the value of RateDiskCacheReads for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyRateDiskCacheReads(value uint64) (err error) {
-	return instance.SetProperty("RateDiskCacheReads", value)
+	return instance.SetProperty("RateDiskCacheReads", (value))
 }
 
 // GetRateDiskCacheReads gets the value of RateDiskCacheReads for the instance
@@ -1216,16 +1704,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRateDiskCacheWrites sets the value of RateDiskCacheWrites for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyRateDiskCacheWrites(value uint64) (err error) {
-	return instance.SetProperty("RateDiskCacheWrites", value)
+	return instance.SetProperty("RateDiskCacheWrites", (value))
 }
 
 // GetRateDiskCacheWrites gets the value of RateDiskCacheWrites for the instance
@@ -1234,16 +1731,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadErrorsMedia sets the value of ReadErrorsMedia for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyReadErrorsMedia(value uint64) (err error) {
-	return instance.SetProperty("ReadErrorsMedia", value)
+	return instance.SetProperty("ReadErrorsMedia", (value))
 }
 
 // GetReadErrorsMedia gets the value of ReadErrorsMedia for the instance
@@ -1252,16 +1758,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadErrorsTimeout sets the value of ReadErrorsTimeout for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyReadErrorsTimeout(value uint64) (err error) {
-	return instance.SetProperty("ReadErrorsTimeout", value)
+	return instance.SetProperty("ReadErrorsTimeout", (value))
 }
 
 // GetReadErrorsTimeout gets the value of ReadErrorsTimeout for the instance
@@ -1270,16 +1785,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadErrorsTotal sets the value of ReadErrorsTotal for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyReadErrorsTotal(value uint64) (err error) {
-	return instance.SetProperty("ReadErrorsTotal", value)
+	return instance.SetProperty("ReadErrorsTotal", (value))
 }
 
 // GetReadErrorsTotal gets the value of ReadErrorsTotal for the instance
@@ -1288,16 +1812,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteErrorsMedia sets the value of WriteErrorsMedia for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyWriteErrorsMedia(value uint64) (err error) {
-	return instance.SetProperty("WriteErrorsMedia", value)
+	return instance.SetProperty("WriteErrorsMedia", (value))
 }
 
 // GetWriteErrorsMedia gets the value of WriteErrorsMedia for the instance
@@ -1306,16 +1839,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteErrorsTimeout sets the value of WriteErrorsTimeout for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyWriteErrorsTimeout(value uint64) (err error) {
-	return instance.SetProperty("WriteErrorsTimeout", value)
+	return instance.SetProperty("WriteErrorsTimeout", (value))
 }
 
 // GetWriteErrorsTimeout gets the value of WriteErrorsTimeout for the instance
@@ -1324,16 +1866,25 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteErrorsTotal sets the value of WriteErrorsTotal for the instance
 func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybridDisks) SetPropertyWriteErrorsTotal(value uint64) (err error) {
-	return instance.SetProperty("WriteErrorsTotal", value)
+	return instance.SetProperty("WriteErrorsTotal", (value))
 }
 
 // GetWriteErrorsTotal gets the value of WriteErrorsTotal for the instance
@@ -1342,9 +1893,18 @@ func (instance *Win32_PerfFormattedData_ClusBfltPerfProvider_ClusterStorageHybri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

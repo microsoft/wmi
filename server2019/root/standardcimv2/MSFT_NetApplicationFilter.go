@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetApplicationFilter struct
@@ -55,7 +57,7 @@ func NewMSFT_NetApplicationFilterEx6(hostName string,
 
 // SetAppPath sets the value of AppPath for the instance
 func (instance *MSFT_NetApplicationFilter) SetPropertyAppPath(value string) (err error) {
-	return instance.SetProperty("AppPath", value)
+	return instance.SetProperty("AppPath", (value))
 }
 
 // GetAppPath gets the value of AppPath for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_NetApplicationFilter) GetPropertyAppPath() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackage sets the value of Package for the instance
 func (instance *MSFT_NetApplicationFilter) SetPropertyPackage(value string) (err error) {
-	return instance.SetProperty("Package", value)
+	return instance.SetProperty("Package", (value))
 }
 
 // GetPackage gets the value of Package for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_NetApplicationFilter) GetPropertyPackage() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

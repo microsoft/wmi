@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source ReplicationCapabilities_SupportedReplicatedPartitionFeatures
 //////////////////////////////////////////////
 package providers_v2

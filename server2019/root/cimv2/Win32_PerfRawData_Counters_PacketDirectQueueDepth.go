@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_PacketDirectQueueDepth struct
@@ -55,7 +57,7 @@ func NewWin32_PerfRawData_Counters_PacketDirectQueueDepthEx6(hostName string,
 
 // SetAverageQueueDepth sets the value of AverageQueueDepth for the instance
 func (instance *Win32_PerfRawData_Counters_PacketDirectQueueDepth) SetPropertyAverageQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("AverageQueueDepth", value)
+	return instance.SetProperty("AverageQueueDepth", (value))
 }
 
 // GetAverageQueueDepth gets the value of AverageQueueDepth for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PerfRawData_Counters_PacketDirectQueueDepth) GetPropertyAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentAverageQueueUtilization sets the value of PercentAverageQueueUtilization for the instance
 func (instance *Win32_PerfRawData_Counters_PacketDirectQueueDepth) SetPropertyPercentAverageQueueUtilization(value uint32) (err error) {
-	return instance.SetProperty("PercentAverageQueueUtilization", value)
+	return instance.SetProperty("PercentAverageQueueUtilization", (value))
 }
 
 // GetPercentAverageQueueUtilization gets the value of PercentAverageQueueUtilization for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PerfRawData_Counters_PacketDirectQueueDepth) GetPropertyPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

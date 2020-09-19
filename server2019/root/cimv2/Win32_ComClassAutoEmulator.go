@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ComClassAutoEmulator struct
@@ -56,7 +58,7 @@ func NewWin32_ComClassAutoEmulatorEx6(hostName string,
 
 // SetNewVersion sets the value of NewVersion for the instance
 func (instance *Win32_ComClassAutoEmulator) SetPropertyNewVersion(value Win32_ClassicCOMClass) (err error) {
-	return instance.SetProperty("NewVersion", value)
+	return instance.SetProperty("NewVersion", (value))
 }
 
 // GetNewVersion gets the value of NewVersion for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_ComClassAutoEmulator) GetPropertyNewVersion() (value Win32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_ClassicCOMClass)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_ClassicCOMClass)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_ClassicCOMClass is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_ClassicCOMClass(valuetmp)
+
 	return
 }
 
 // SetOldVersion sets the value of OldVersion for the instance
 func (instance *Win32_ComClassAutoEmulator) SetPropertyOldVersion(value Win32_ClassicCOMClass) (err error) {
-	return instance.SetProperty("OldVersion", value)
+	return instance.SetProperty("OldVersion", (value))
 }
 
 // GetOldVersion gets the value of OldVersion for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_ComClassAutoEmulator) GetPropertyOldVersion() (value Win32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_ClassicCOMClass)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_ClassicCOMClass)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_ClassicCOMClass is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_ClassicCOMClass(valuetmp)
+
 	return
 }

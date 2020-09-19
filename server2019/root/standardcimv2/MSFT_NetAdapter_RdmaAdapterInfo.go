@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_RdmaAdapterInfo struct
@@ -134,7 +136,7 @@ func NewMSFT_NetAdapter_RdmaAdapterInfoEx6(hostName string,
 
 // SetDeviceId sets the value of DeviceId for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyDeviceId(value uint32) (err error) {
-	return instance.SetProperty("DeviceId", value)
+	return instance.SetProperty("DeviceId", (value))
 }
 
 // GetDeviceId gets the value of DeviceId for the instance
@@ -143,16 +145,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyDeviceId() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFRMRPageCount sets the value of FRMRPageCount for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyFRMRPageCount(value uint32) (err error) {
-	return instance.SetProperty("FRMRPageCount", value)
+	return instance.SetProperty("FRMRPageCount", (value))
 }
 
 // GetFRMRPageCount gets the value of FRMRPageCount for the instance
@@ -161,16 +172,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyFRMRPageCount() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInOrderDMA sets the value of InOrderDMA for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyInOrderDMA(value bool) (err error) {
-	return instance.SetProperty("InOrderDMA", value)
+	return instance.SetProperty("InOrderDMA", (value))
 }
 
 // GetInOrderDMA gets the value of InOrderDMA for the instance
@@ -179,16 +199,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyInOrderDMA() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLargeRequestThreshold sets the value of LargeRequestThreshold for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyLargeRequestThreshold(value uint32) (err error) {
-	return instance.SetProperty("LargeRequestThreshold", value)
+	return instance.SetProperty("LargeRequestThreshold", (value))
 }
 
 // GetLargeRequestThreshold gets the value of LargeRequestThreshold for the instance
@@ -197,16 +226,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyLargeRequestThreshol
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMajorVersionNumber sets the value of MajorVersionNumber for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMajorVersionNumber(value uint16) (err error) {
-	return instance.SetProperty("MajorVersionNumber", value)
+	return instance.SetProperty("MajorVersionNumber", (value))
 }
 
 // GetMajorVersionNumber gets the value of MajorVersionNumber for the instance
@@ -215,16 +253,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMajorVersionNumber()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxCalleeData sets the value of MaxCalleeData for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxCalleeData(value uint32) (err error) {
-	return instance.SetProperty("MaxCalleeData", value)
+	return instance.SetProperty("MaxCalleeData", (value))
 }
 
 // GetMaxCalleeData gets the value of MaxCalleeData for the instance
@@ -233,16 +280,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxCalleeData() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxCallerData sets the value of MaxCallerData for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxCallerData(value uint32) (err error) {
-	return instance.SetProperty("MaxCallerData", value)
+	return instance.SetProperty("MaxCallerData", (value))
 }
 
 // GetMaxCallerData gets the value of MaxCallerData for the instance
@@ -251,16 +307,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxCallerData() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxCompletionQueueDepth sets the value of MaxCompletionQueueDepth for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxCompletionQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("MaxCompletionQueueDepth", value)
+	return instance.SetProperty("MaxCompletionQueueDepth", (value))
 }
 
 // GetMaxCompletionQueueDepth gets the value of MaxCompletionQueueDepth for the instance
@@ -269,16 +334,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxCompletionQueueDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxInboundReadLimit sets the value of MaxInboundReadLimit for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxInboundReadLimit(value uint32) (err error) {
-	return instance.SetProperty("MaxInboundReadLimit", value)
+	return instance.SetProperty("MaxInboundReadLimit", (value))
 }
 
 // GetMaxInboundReadLimit gets the value of MaxInboundReadLimit for the instance
@@ -287,16 +361,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxInboundReadLimit(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxInitiatorQueueDepth sets the value of MaxInitiatorQueueDepth for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxInitiatorQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("MaxInitiatorQueueDepth", value)
+	return instance.SetProperty("MaxInitiatorQueueDepth", (value))
 }
 
 // GetMaxInitiatorQueueDepth gets the value of MaxInitiatorQueueDepth for the instance
@@ -305,16 +388,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxInitiatorQueueDep
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxInitiatorRequestSge sets the value of MaxInitiatorRequestSge for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxInitiatorRequestSge(value uint32) (err error) {
-	return instance.SetProperty("MaxInitiatorRequestSge", value)
+	return instance.SetProperty("MaxInitiatorRequestSge", (value))
 }
 
 // GetMaxInitiatorRequestSge gets the value of MaxInitiatorRequestSge for the instance
@@ -323,16 +415,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxInitiatorRequestS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxInlineDataSize sets the value of MaxInlineDataSize for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxInlineDataSize(value uint32) (err error) {
-	return instance.SetProperty("MaxInlineDataSize", value)
+	return instance.SetProperty("MaxInlineDataSize", (value))
 }
 
 // GetMaxInlineDataSize gets the value of MaxInlineDataSize for the instance
@@ -341,16 +442,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxInlineDataSize() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxOutboundReadLimit sets the value of MaxOutboundReadLimit for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxOutboundReadLimit(value uint32) (err error) {
-	return instance.SetProperty("MaxOutboundReadLimit", value)
+	return instance.SetProperty("MaxOutboundReadLimit", (value))
 }
 
 // GetMaxOutboundReadLimit gets the value of MaxOutboundReadLimit for the instance
@@ -359,16 +469,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxOutboundReadLimit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxReadRequestSge sets the value of MaxReadRequestSge for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxReadRequestSge(value uint32) (err error) {
-	return instance.SetProperty("MaxReadRequestSge", value)
+	return instance.SetProperty("MaxReadRequestSge", (value))
 }
 
 // GetMaxReadRequestSge gets the value of MaxReadRequestSge for the instance
@@ -377,16 +496,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxReadRequestSge() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxReceiveQueueDepth sets the value of MaxReceiveQueueDepth for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxReceiveQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("MaxReceiveQueueDepth", value)
+	return instance.SetProperty("MaxReceiveQueueDepth", (value))
 }
 
 // GetMaxReceiveQueueDepth gets the value of MaxReceiveQueueDepth for the instance
@@ -395,16 +523,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxReceiveQueueDepth
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxReceiveRequestSge sets the value of MaxReceiveRequestSge for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxReceiveRequestSge(value uint32) (err error) {
-	return instance.SetProperty("MaxReceiveRequestSge", value)
+	return instance.SetProperty("MaxReceiveRequestSge", (value))
 }
 
 // GetMaxReceiveRequestSge gets the value of MaxReceiveRequestSge for the instance
@@ -413,16 +550,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxReceiveRequestSge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxRegistrationSize sets the value of MaxRegistrationSize for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxRegistrationSize(value uint64) (err error) {
-	return instance.SetProperty("MaxRegistrationSize", value)
+	return instance.SetProperty("MaxRegistrationSize", (value))
 }
 
 // GetMaxRegistrationSize gets the value of MaxRegistrationSize for the instance
@@ -431,16 +577,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxRegistrationSize(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxSharedReceiveQueueDepth sets the value of MaxSharedReceiveQueueDepth for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxSharedReceiveQueueDepth(value uint32) (err error) {
-	return instance.SetProperty("MaxSharedReceiveQueueDepth", value)
+	return instance.SetProperty("MaxSharedReceiveQueueDepth", (value))
 }
 
 // GetMaxSharedReceiveQueueDepth gets the value of MaxSharedReceiveQueueDepth for the instance
@@ -449,16 +604,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxSharedReceiveQueu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxTransferLength sets the value of MaxTransferLength for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxTransferLength(value uint32) (err error) {
-	return instance.SetProperty("MaxTransferLength", value)
+	return instance.SetProperty("MaxTransferLength", (value))
 }
 
 // GetMaxTransferLength gets the value of MaxTransferLength for the instance
@@ -467,16 +631,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxTransferLength() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxWindowSize sets the value of MaxWindowSize for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMaxWindowSize(value uint64) (err error) {
-	return instance.SetProperty("MaxWindowSize", value)
+	return instance.SetProperty("MaxWindowSize", (value))
 }
 
 // GetMaxWindowSize gets the value of MaxWindowSize for the instance
@@ -485,16 +658,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMaxWindowSize() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinorVersionNumber sets the value of MinorVersionNumber for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyMinorVersionNumber(value uint16) (err error) {
-	return instance.SetProperty("MinorVersionNumber", value)
+	return instance.SetProperty("MinorVersionNumber", (value))
 }
 
 // GetMinorVersionNumber gets the value of MinorVersionNumber for the instance
@@ -503,16 +685,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyMinorVersionNumber()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRdmaReadSinkFlagNotRequired sets the value of RdmaReadSinkFlagNotRequired for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyRdmaReadSinkFlagNotRequired(value bool) (err error) {
-	return instance.SetProperty("RdmaReadSinkFlagNotRequired", value)
+	return instance.SetProperty("RdmaReadSinkFlagNotRequired", (value))
 }
 
 // GetRdmaReadSinkFlagNotRequired gets the value of RdmaReadSinkFlagNotRequired for the instance
@@ -521,16 +712,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyRdmaReadSinkFlagNotR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRdmaTechnology sets the value of RdmaTechnology for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyRdmaTechnology(value uint32) (err error) {
-	return instance.SetProperty("RdmaTechnology", value)
+	return instance.SetProperty("RdmaTechnology", (value))
 }
 
 // GetRdmaTechnology gets the value of RdmaTechnology for the instance
@@ -539,16 +739,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyRdmaTechnology() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSupportsCompletionQueueInterruptModeration sets the value of SupportsCompletionQueueInterruptModeration for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertySupportsCompletionQueueInterruptModeration(value bool) (err error) {
-	return instance.SetProperty("SupportsCompletionQueueInterruptModeration", value)
+	return instance.SetProperty("SupportsCompletionQueueInterruptModeration", (value))
 }
 
 // GetSupportsCompletionQueueInterruptModeration gets the value of SupportsCompletionQueueInterruptModeration for the instance
@@ -557,16 +766,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertySupportsCompletionQu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsCompletionQueueResize sets the value of SupportsCompletionQueueResize for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertySupportsCompletionQueueResize(value bool) (err error) {
-	return instance.SetProperty("SupportsCompletionQueueResize", value)
+	return instance.SetProperty("SupportsCompletionQueueResize", (value))
 }
 
 // GetSupportsCompletionQueueResize gets the value of SupportsCompletionQueueResize for the instance
@@ -575,16 +793,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertySupportsCompletionQu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsLoopbackConnections sets the value of SupportsLoopbackConnections for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertySupportsLoopbackConnections(value bool) (err error) {
-	return instance.SetProperty("SupportsLoopbackConnections", value)
+	return instance.SetProperty("SupportsLoopbackConnections", (value))
 }
 
 // GetSupportsLoopbackConnections gets the value of SupportsLoopbackConnections for the instance
@@ -593,16 +820,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertySupportsLoopbackConn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsMultiEngine sets the value of SupportsMultiEngine for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertySupportsMultiEngine(value bool) (err error) {
-	return instance.SetProperty("SupportsMultiEngine", value)
+	return instance.SetProperty("SupportsMultiEngine", (value))
 }
 
 // GetSupportsMultiEngine gets the value of SupportsMultiEngine for the instance
@@ -611,16 +847,25 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertySupportsMultiEngine(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVendorId sets the value of VendorId for the instance
 func (instance *MSFT_NetAdapter_RdmaAdapterInfo) SetPropertyVendorId(value uint32) (err error) {
-	return instance.SetProperty("VendorId", value)
+	return instance.SetProperty("VendorId", (value))
 }
 
 // GetVendorId gets the value of VendorId for the instance
@@ -629,9 +874,18 @@ func (instance *MSFT_NetAdapter_RdmaAdapterInfo) GetPropertyVendorId() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

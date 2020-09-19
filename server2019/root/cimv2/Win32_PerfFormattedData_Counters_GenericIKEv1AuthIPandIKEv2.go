@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2 struct
@@ -88,7 +90,7 @@ func NewWin32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2Ex6(hostName 
 
 // SetAuthIPMainModeNegotiationTime sets the value of AuthIPMainModeNegotiationTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyAuthIPMainModeNegotiationTime(value uint32) (err error) {
-	return instance.SetProperty("AuthIPMainModeNegotiationTime", value)
+	return instance.SetProperty("AuthIPMainModeNegotiationTime", (value))
 }
 
 // GetAuthIPMainModeNegotiationTime gets the value of AuthIPMainModeNegotiationTime for the instance
@@ -97,16 +99,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAuthIPQuickModeNegotiationTime sets the value of AuthIPQuickModeNegotiationTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyAuthIPQuickModeNegotiationTime(value uint32) (err error) {
-	return instance.SetProperty("AuthIPQuickModeNegotiationTime", value)
+	return instance.SetProperty("AuthIPQuickModeNegotiationTime", (value))
 }
 
 // GetAuthIPQuickModeNegotiationTime gets the value of AuthIPQuickModeNegotiationTime for the instance
@@ -115,16 +126,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExtendedModeNegotiationTime sets the value of ExtendedModeNegotiationTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyExtendedModeNegotiationTime(value uint32) (err error) {
-	return instance.SetProperty("ExtendedModeNegotiationTime", value)
+	return instance.SetProperty("ExtendedModeNegotiationTime", (value))
 }
 
 // GetExtendedModeNegotiationTime gets the value of ExtendedModeNegotiationTime for the instance
@@ -133,16 +153,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailedNegotiations sets the value of FailedNegotiations for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyFailedNegotiations(value uint32) (err error) {
-	return instance.SetProperty("FailedNegotiations", value)
+	return instance.SetProperty("FailedNegotiations", (value))
 }
 
 // GetFailedNegotiations gets the value of FailedNegotiations for the instance
@@ -151,16 +180,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailedNegotiationsPersec sets the value of FailedNegotiationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyFailedNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("FailedNegotiationsPersec", value)
+	return instance.SetProperty("FailedNegotiationsPersec", (value))
 }
 
 // GetFailedNegotiationsPersec gets the value of FailedNegotiationsPersec for the instance
@@ -169,16 +207,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIKEv1MainModeNegotiationTime sets the value of IKEv1MainModeNegotiationTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyIKEv1MainModeNegotiationTime(value uint32) (err error) {
-	return instance.SetProperty("IKEv1MainModeNegotiationTime", value)
+	return instance.SetProperty("IKEv1MainModeNegotiationTime", (value))
 }
 
 // GetIKEv1MainModeNegotiationTime gets the value of IKEv1MainModeNegotiationTime for the instance
@@ -187,16 +234,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIKEv1QuickModeNegotiationTime sets the value of IKEv1QuickModeNegotiationTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyIKEv1QuickModeNegotiationTime(value uint32) (err error) {
-	return instance.SetProperty("IKEv1QuickModeNegotiationTime", value)
+	return instance.SetProperty("IKEv1QuickModeNegotiationTime", (value))
 }
 
 // GetIKEv1QuickModeNegotiationTime gets the value of IKEv1QuickModeNegotiationTime for the instance
@@ -205,16 +261,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIKEv2MainModeNegotiationTime sets the value of IKEv2MainModeNegotiationTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyIKEv2MainModeNegotiationTime(value uint32) (err error) {
-	return instance.SetProperty("IKEv2MainModeNegotiationTime", value)
+	return instance.SetProperty("IKEv2MainModeNegotiationTime", (value))
 }
 
 // GetIKEv2MainModeNegotiationTime gets the value of IKEv2MainModeNegotiationTime for the instance
@@ -223,16 +288,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIKEv2QuickModeNegotiationTime sets the value of IKEv2QuickModeNegotiationTime for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyIKEv2QuickModeNegotiationTime(value uint32) (err error) {
-	return instance.SetProperty("IKEv2QuickModeNegotiationTime", value)
+	return instance.SetProperty("IKEv2QuickModeNegotiationTime", (value))
 }
 
 // GetIKEv2QuickModeNegotiationTime gets the value of IKEv2QuickModeNegotiationTime for the instance
@@ -241,16 +315,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInvalidPacketsReceivedPersec sets the value of InvalidPacketsReceivedPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyInvalidPacketsReceivedPersec(value uint32) (err error) {
-	return instance.SetProperty("InvalidPacketsReceivedPersec", value)
+	return instance.SetProperty("InvalidPacketsReceivedPersec", (value))
 }
 
 // GetInvalidPacketsReceivedPersec gets the value of InvalidPacketsReceivedPersec for the instance
@@ -259,16 +342,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPacketsReceivedPersec sets the value of PacketsReceivedPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertyPacketsReceivedPersec(value uint32) (err error) {
-	return instance.SetProperty("PacketsReceivedPersec", value)
+	return instance.SetProperty("PacketsReceivedPersec", (value))
 }
 
 // GetPacketsReceivedPersec gets the value of PacketsReceivedPersec for the instance
@@ -277,16 +369,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSuccessfulNegotiations sets the value of SuccessfulNegotiations for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertySuccessfulNegotiations(value uint32) (err error) {
-	return instance.SetProperty("SuccessfulNegotiations", value)
+	return instance.SetProperty("SuccessfulNegotiations", (value))
 }
 
 // GetSuccessfulNegotiations gets the value of SuccessfulNegotiations for the instance
@@ -295,16 +396,25 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSuccessfulNegotiationsPersec sets the value of SuccessfulNegotiationsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) SetPropertySuccessfulNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("SuccessfulNegotiationsPersec", value)
+	return instance.SetProperty("SuccessfulNegotiationsPersec", (value))
 }
 
 // GetSuccessfulNegotiationsPersec gets the value of SuccessfulNegotiationsPersec for the instance
@@ -313,9 +423,18 @@ func (instance *Win32_PerfFormattedData_Counters_GenericIKEv1AuthIPandIKEv2) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

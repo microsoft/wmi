@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_FileDirectoryConfiguration struct
@@ -94,7 +96,7 @@ func NewMSFT_FileDirectoryConfigurationEx6(hostName string,
 
 // SetAttributes sets the value of Attributes for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyAttributes(value []string) (err error) {
-	return instance.SetProperty("Attributes", value)
+	return instance.SetProperty("Attributes", (value))
 }
 
 // GetAttributes gets the value of Attributes for the instance
@@ -103,16 +105,26 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyAttributes() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetChecksum sets the value of Checksum for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyChecksum(value string) (err error) {
-	return instance.SetProperty("Checksum", value)
+	return instance.SetProperty("Checksum", (value))
 }
 
 // GetChecksum gets the value of Checksum for the instance
@@ -121,16 +133,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyChecksum() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetContents sets the value of Contents for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyContents(value string) (err error) {
-	return instance.SetProperty("Contents", value)
+	return instance.SetProperty("Contents", (value))
 }
 
 // GetContents gets the value of Contents for the instance
@@ -139,16 +160,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyContents() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCreatedDate sets the value of CreatedDate for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyCreatedDate(value string) (err error) {
-	return instance.SetProperty("CreatedDate", value)
+	return instance.SetProperty("CreatedDate", (value))
 }
 
 // GetCreatedDate gets the value of CreatedDate for the instance
@@ -157,16 +187,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyCreatedDate() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCredential sets the value of Credential for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyCredential(value MSFT_Credential) (err error) {
-	return instance.SetProperty("Credential", value)
+	return instance.SetProperty("Credential", (value))
 }
 
 // GetCredential gets the value of Credential for the instance
@@ -175,16 +214,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyCredential() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Credential)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Credential)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Credential is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Credential(valuetmp)
+
 	return
 }
 
 // SetDestinationPath sets the value of DestinationPath for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyDestinationPath(value string) (err error) {
-	return instance.SetProperty("DestinationPath", value)
+	return instance.SetProperty("DestinationPath", (value))
 }
 
 // GetDestinationPath gets the value of DestinationPath for the instance
@@ -193,16 +241,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyDestinationPath() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnsure sets the value of Ensure for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyEnsure(value string) (err error) {
-	return instance.SetProperty("Ensure", value)
+	return instance.SetProperty("Ensure", (value))
 }
 
 // GetEnsure gets the value of Ensure for the instance
@@ -211,16 +268,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyEnsure() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetForce sets the value of Force for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyForce(value bool) (err error) {
-	return instance.SetProperty("Force", value)
+	return instance.SetProperty("Force", (value))
 }
 
 // GetForce gets the value of Force for the instance
@@ -229,16 +295,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyForce() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMatchSource sets the value of MatchSource for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyMatchSource(value bool) (err error) {
-	return instance.SetProperty("MatchSource", value)
+	return instance.SetProperty("MatchSource", (value))
 }
 
 // GetMatchSource gets the value of MatchSource for the instance
@@ -247,16 +322,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyMatchSource() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetModifiedDate sets the value of ModifiedDate for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyModifiedDate(value string) (err error) {
-	return instance.SetProperty("ModifiedDate", value)
+	return instance.SetProperty("ModifiedDate", (value))
 }
 
 // GetModifiedDate gets the value of ModifiedDate for the instance
@@ -265,16 +349,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyModifiedDate() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecurse sets the value of Recurse for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyRecurse(value bool) (err error) {
-	return instance.SetProperty("Recurse", value)
+	return instance.SetProperty("Recurse", (value))
 }
 
 // GetRecurse gets the value of Recurse for the instance
@@ -283,16 +376,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyRecurse() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -301,16 +403,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertySize() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSourcePath sets the value of SourcePath for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertySourcePath(value string) (err error) {
-	return instance.SetProperty("SourcePath", value)
+	return instance.SetProperty("SourcePath", (value))
 }
 
 // GetSourcePath gets the value of SourcePath for the instance
@@ -319,16 +430,25 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertySourcePath() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSubItems sets the value of SubItems for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertySubItems(value []MSFT_FileDirectoryConfiguration) (err error) {
-	return instance.SetProperty("SubItems", value)
+	return instance.SetProperty("SubItems", (value))
 }
 
 // GetSubItems gets the value of SubItems for the instance
@@ -337,16 +457,26 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertySubItems() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_FileDirectoryConfiguration)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_FileDirectoryConfiguration)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_FileDirectoryConfiguration is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_FileDirectoryConfiguration(valuetmp))
+	}
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_FileDirectoryConfiguration) SetPropertyType(value string) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -355,10 +485,19 @@ func (instance *MSFT_FileDirectoryConfiguration) GetPropertyType() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

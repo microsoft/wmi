@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_UnitaryComputerSystem struct
@@ -67,7 +69,7 @@ func NewCIM_UnitaryComputerSystemEx6(hostName string,
 
 // SetInitialLoadInfo sets the value of InitialLoadInfo for the instance
 func (instance *CIM_UnitaryComputerSystem) SetPropertyInitialLoadInfo(value []string) (err error) {
-	return instance.SetProperty("InitialLoadInfo", value)
+	return instance.SetProperty("InitialLoadInfo", (value))
 }
 
 // GetInitialLoadInfo gets the value of InitialLoadInfo for the instance
@@ -76,16 +78,26 @@ func (instance *CIM_UnitaryComputerSystem) GetPropertyInitialLoadInfo() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLastLoadInfo sets the value of LastLoadInfo for the instance
 func (instance *CIM_UnitaryComputerSystem) SetPropertyLastLoadInfo(value string) (err error) {
-	return instance.SetProperty("LastLoadInfo", value)
+	return instance.SetProperty("LastLoadInfo", (value))
 }
 
 // GetLastLoadInfo gets the value of LastLoadInfo for the instance
@@ -94,16 +106,25 @@ func (instance *CIM_UnitaryComputerSystem) GetPropertyLastLoadInfo() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPowerManagementCapabilities sets the value of PowerManagementCapabilities for the instance
 func (instance *CIM_UnitaryComputerSystem) SetPropertyPowerManagementCapabilities(value []uint16) (err error) {
-	return instance.SetProperty("PowerManagementCapabilities", value)
+	return instance.SetProperty("PowerManagementCapabilities", (value))
 }
 
 // GetPowerManagementCapabilities gets the value of PowerManagementCapabilities for the instance
@@ -112,16 +133,26 @@ func (instance *CIM_UnitaryComputerSystem) GetPropertyPowerManagementCapabilitie
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetPowerManagementSupported sets the value of PowerManagementSupported for the instance
 func (instance *CIM_UnitaryComputerSystem) SetPropertyPowerManagementSupported(value bool) (err error) {
-	return instance.SetProperty("PowerManagementSupported", value)
+	return instance.SetProperty("PowerManagementSupported", (value))
 }
 
 // GetPowerManagementSupported gets the value of PowerManagementSupported for the instance
@@ -130,16 +161,25 @@ func (instance *CIM_UnitaryComputerSystem) GetPropertyPowerManagementSupported()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPowerState sets the value of PowerState for the instance
 func (instance *CIM_UnitaryComputerSystem) SetPropertyPowerState(value uint16) (err error) {
-	return instance.SetProperty("PowerState", value)
+	return instance.SetProperty("PowerState", (value))
 }
 
 // GetPowerState gets the value of PowerState for the instance
@@ -148,16 +188,25 @@ func (instance *CIM_UnitaryComputerSystem) GetPropertyPowerState() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetResetCapability sets the value of ResetCapability for the instance
 func (instance *CIM_UnitaryComputerSystem) SetPropertyResetCapability(value uint16) (err error) {
-	return instance.SetProperty("ResetCapability", value)
+	return instance.SetProperty("ResetCapability", (value))
 }
 
 // GetResetCapability gets the value of ResetCapability for the instance
@@ -166,10 +215,19 @@ func (instance *CIM_UnitaryComputerSystem) GetPropertyResetCapability() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

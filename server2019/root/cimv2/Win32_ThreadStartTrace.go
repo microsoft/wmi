@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ThreadStartTrace struct
@@ -70,7 +72,7 @@ func NewWin32_ThreadStartTraceEx6(hostName string,
 
 // SetStackBase sets the value of StackBase for the instance
 func (instance *Win32_ThreadStartTrace) SetPropertyStackBase(value uint64) (err error) {
-	return instance.SetProperty("StackBase", value)
+	return instance.SetProperty("StackBase", (value))
 }
 
 // GetStackBase gets the value of StackBase for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_ThreadStartTrace) GetPropertyStackBase() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStackLimit sets the value of StackLimit for the instance
 func (instance *Win32_ThreadStartTrace) SetPropertyStackLimit(value uint64) (err error) {
-	return instance.SetProperty("StackLimit", value)
+	return instance.SetProperty("StackLimit", (value))
 }
 
 // GetStackLimit gets the value of StackLimit for the instance
@@ -97,16 +108,25 @@ func (instance *Win32_ThreadStartTrace) GetPropertyStackLimit() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStartAddr sets the value of StartAddr for the instance
 func (instance *Win32_ThreadStartTrace) SetPropertyStartAddr(value uint64) (err error) {
-	return instance.SetProperty("StartAddr", value)
+	return instance.SetProperty("StartAddr", (value))
 }
 
 // GetStartAddr gets the value of StartAddr for the instance
@@ -115,16 +135,25 @@ func (instance *Win32_ThreadStartTrace) GetPropertyStartAddr() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUserStackBase sets the value of UserStackBase for the instance
 func (instance *Win32_ThreadStartTrace) SetPropertyUserStackBase(value uint64) (err error) {
-	return instance.SetProperty("UserStackBase", value)
+	return instance.SetProperty("UserStackBase", (value))
 }
 
 // GetUserStackBase gets the value of UserStackBase for the instance
@@ -133,16 +162,25 @@ func (instance *Win32_ThreadStartTrace) GetPropertyUserStackBase() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUserStackLimit sets the value of UserStackLimit for the instance
 func (instance *Win32_ThreadStartTrace) SetPropertyUserStackLimit(value uint64) (err error) {
-	return instance.SetProperty("UserStackLimit", value)
+	return instance.SetProperty("UserStackLimit", (value))
 }
 
 // GetUserStackLimit gets the value of UserStackLimit for the instance
@@ -151,16 +189,25 @@ func (instance *Win32_ThreadStartTrace) GetPropertyUserStackLimit() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWaitMode sets the value of WaitMode for the instance
 func (instance *Win32_ThreadStartTrace) SetPropertyWaitMode(value uint32) (err error) {
-	return instance.SetProperty("WaitMode", value)
+	return instance.SetProperty("WaitMode", (value))
 }
 
 // GetWaitMode gets the value of WaitMode for the instance
@@ -169,16 +216,25 @@ func (instance *Win32_ThreadStartTrace) GetPropertyWaitMode() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWin32StartAddr sets the value of Win32StartAddr for the instance
 func (instance *Win32_ThreadStartTrace) SetPropertyWin32StartAddr(value uint64) (err error) {
-	return instance.SetProperty("Win32StartAddr", value)
+	return instance.SetProperty("Win32StartAddr", (value))
 }
 
 // GetWin32StartAddr gets the value of Win32StartAddr for the instance
@@ -187,9 +243,18 @@ func (instance *Win32_ThreadStartTrace) GetPropertyWin32StartAddr() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

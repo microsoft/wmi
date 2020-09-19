@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -47,10 +47,10 @@ func NewMsvm_VideoHeadEx6(hostName string,
 	return
 }
 
-func (instance *Msvm_VideoHead) GetRelatedSyntheticDisplayController() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_SyntheticDisplayController")
-}
-
 func (instance *Msvm_VideoHead) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ComputerSystem")
+}
+
+func (instance *Msvm_VideoHead) GetRelatedSyntheticDisplayController() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_SyntheticDisplayController")
 }

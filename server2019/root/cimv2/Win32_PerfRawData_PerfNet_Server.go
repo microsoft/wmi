@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_PerfNet_Server struct
@@ -172,7 +174,7 @@ func NewWin32_PerfRawData_PerfNet_ServerEx6(hostName string,
 
 // SetBlockingRequestsRejected sets the value of BlockingRequestsRejected for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyBlockingRequestsRejected(value uint32) (err error) {
-	return instance.SetProperty("BlockingRequestsRejected", value)
+	return instance.SetProperty("BlockingRequestsRejected", (value))
 }
 
 // GetBlockingRequestsRejected gets the value of BlockingRequestsRejected for the instance
@@ -181,16 +183,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyBlockingRequestsRej
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBytesReceivedPersec sets the value of BytesReceivedPersec for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyBytesReceivedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesReceivedPersec", value)
+	return instance.SetProperty("BytesReceivedPersec", (value))
 }
 
 // GetBytesReceivedPersec gets the value of BytesReceivedPersec for the instance
@@ -199,16 +210,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyBytesReceivedPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTotalPersec sets the value of BytesTotalPersec for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyBytesTotalPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesTotalPersec", value)
+	return instance.SetProperty("BytesTotalPersec", (value))
 }
 
 // GetBytesTotalPersec gets the value of BytesTotalPersec for the instance
@@ -217,16 +237,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyBytesTotalPersec() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTransmittedPersec sets the value of BytesTransmittedPersec for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyBytesTransmittedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesTransmittedPersec", value)
+	return instance.SetProperty("BytesTransmittedPersec", (value))
 }
 
 // GetBytesTransmittedPersec gets the value of BytesTransmittedPersec for the instance
@@ -235,16 +264,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyBytesTransmittedPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetContextBlocksQueuedPersec sets the value of ContextBlocksQueuedPersec for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyContextBlocksQueuedPersec(value uint32) (err error) {
-	return instance.SetProperty("ContextBlocksQueuedPersec", value)
+	return instance.SetProperty("ContextBlocksQueuedPersec", (value))
 }
 
 // GetContextBlocksQueuedPersec gets the value of ContextBlocksQueuedPersec for the instance
@@ -253,16 +291,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyContextBlocksQueued
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetErrorsAccessPermissions sets the value of ErrorsAccessPermissions for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyErrorsAccessPermissions(value uint32) (err error) {
-	return instance.SetProperty("ErrorsAccessPermissions", value)
+	return instance.SetProperty("ErrorsAccessPermissions", (value))
 }
 
 // GetErrorsAccessPermissions gets the value of ErrorsAccessPermissions for the instance
@@ -271,16 +318,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyErrorsAccessPermiss
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetErrorsGrantedAccess sets the value of ErrorsGrantedAccess for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyErrorsGrantedAccess(value uint32) (err error) {
-	return instance.SetProperty("ErrorsGrantedAccess", value)
+	return instance.SetProperty("ErrorsGrantedAccess", (value))
 }
 
 // GetErrorsGrantedAccess gets the value of ErrorsGrantedAccess for the instance
@@ -289,16 +345,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyErrorsGrantedAccess
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetErrorsLogon sets the value of ErrorsLogon for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyErrorsLogon(value uint32) (err error) {
-	return instance.SetProperty("ErrorsLogon", value)
+	return instance.SetProperty("ErrorsLogon", (value))
 }
 
 // GetErrorsLogon gets the value of ErrorsLogon for the instance
@@ -307,16 +372,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyErrorsLogon() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetErrorsSystem sets the value of ErrorsSystem for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyErrorsSystem(value uint32) (err error) {
-	return instance.SetProperty("ErrorsSystem", value)
+	return instance.SetProperty("ErrorsSystem", (value))
 }
 
 // GetErrorsSystem gets the value of ErrorsSystem for the instance
@@ -325,16 +399,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyErrorsSystem() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileDirectorySearches sets the value of FileDirectorySearches for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyFileDirectorySearches(value uint32) (err error) {
-	return instance.SetProperty("FileDirectorySearches", value)
+	return instance.SetProperty("FileDirectorySearches", (value))
 }
 
 // GetFileDirectorySearches gets the value of FileDirectorySearches for the instance
@@ -343,16 +426,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyFileDirectorySearch
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFilesOpen sets the value of FilesOpen for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyFilesOpen(value uint32) (err error) {
-	return instance.SetProperty("FilesOpen", value)
+	return instance.SetProperty("FilesOpen", (value))
 }
 
 // GetFilesOpen gets the value of FilesOpen for the instance
@@ -361,16 +453,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyFilesOpen() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFilesOpenedTotal sets the value of FilesOpenedTotal for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyFilesOpenedTotal(value uint32) (err error) {
-	return instance.SetProperty("FilesOpenedTotal", value)
+	return instance.SetProperty("FilesOpenedTotal", (value))
 }
 
 // GetFilesOpenedTotal gets the value of FilesOpenedTotal for the instance
@@ -379,16 +480,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyFilesOpenedTotal() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogonPersec sets the value of LogonPersec for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyLogonPersec(value uint32) (err error) {
-	return instance.SetProperty("LogonPersec", value)
+	return instance.SetProperty("LogonPersec", (value))
 }
 
 // GetLogonPersec gets the value of LogonPersec for the instance
@@ -397,16 +507,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyLogonPersec() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogonTotal sets the value of LogonTotal for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyLogonTotal(value uint32) (err error) {
-	return instance.SetProperty("LogonTotal", value)
+	return instance.SetProperty("LogonTotal", (value))
 }
 
 // GetLogonTotal gets the value of LogonTotal for the instance
@@ -415,16 +534,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyLogonTotal() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPoolNonpagedBytes sets the value of PoolNonpagedBytes for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyPoolNonpagedBytes(value uint32) (err error) {
-	return instance.SetProperty("PoolNonpagedBytes", value)
+	return instance.SetProperty("PoolNonpagedBytes", (value))
 }
 
 // GetPoolNonpagedBytes gets the value of PoolNonpagedBytes for the instance
@@ -433,16 +561,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyPoolNonpagedBytes()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPoolNonpagedFailures sets the value of PoolNonpagedFailures for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyPoolNonpagedFailures(value uint32) (err error) {
-	return instance.SetProperty("PoolNonpagedFailures", value)
+	return instance.SetProperty("PoolNonpagedFailures", (value))
 }
 
 // GetPoolNonpagedFailures gets the value of PoolNonpagedFailures for the instance
@@ -451,16 +588,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyPoolNonpagedFailure
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPoolNonpagedPeak sets the value of PoolNonpagedPeak for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyPoolNonpagedPeak(value uint32) (err error) {
-	return instance.SetProperty("PoolNonpagedPeak", value)
+	return instance.SetProperty("PoolNonpagedPeak", (value))
 }
 
 // GetPoolNonpagedPeak gets the value of PoolNonpagedPeak for the instance
@@ -469,16 +615,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyPoolNonpagedPeak() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPoolPagedBytes sets the value of PoolPagedBytes for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyPoolPagedBytes(value uint32) (err error) {
-	return instance.SetProperty("PoolPagedBytes", value)
+	return instance.SetProperty("PoolPagedBytes", (value))
 }
 
 // GetPoolPagedBytes gets the value of PoolPagedBytes for the instance
@@ -487,16 +642,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyPoolPagedBytes() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPoolPagedFailures sets the value of PoolPagedFailures for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyPoolPagedFailures(value uint32) (err error) {
-	return instance.SetProperty("PoolPagedFailures", value)
+	return instance.SetProperty("PoolPagedFailures", (value))
 }
 
 // GetPoolPagedFailures gets the value of PoolPagedFailures for the instance
@@ -505,16 +669,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyPoolPagedFailures()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPoolPagedPeak sets the value of PoolPagedPeak for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyPoolPagedPeak(value uint32) (err error) {
-	return instance.SetProperty("PoolPagedPeak", value)
+	return instance.SetProperty("PoolPagedPeak", (value))
 }
 
 // GetPoolPagedPeak gets the value of PoolPagedPeak for the instance
@@ -523,16 +696,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyPoolPagedPeak() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReconnectedDurableHandles sets the value of ReconnectedDurableHandles for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyReconnectedDurableHandles(value uint32) (err error) {
-	return instance.SetProperty("ReconnectedDurableHandles", value)
+	return instance.SetProperty("ReconnectedDurableHandles", (value))
 }
 
 // GetReconnectedDurableHandles gets the value of ReconnectedDurableHandles for the instance
@@ -541,16 +723,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyReconnectedDurableH
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReconnectedResilientHandles sets the value of ReconnectedResilientHandles for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyReconnectedResilientHandles(value uint32) (err error) {
-	return instance.SetProperty("ReconnectedResilientHandles", value)
+	return instance.SetProperty("ReconnectedResilientHandles", (value))
 }
 
 // GetReconnectedResilientHandles gets the value of ReconnectedResilientHandles for the instance
@@ -559,16 +750,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyReconnectedResilien
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServerSessions sets the value of ServerSessions for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyServerSessions(value uint32) (err error) {
-	return instance.SetProperty("ServerSessions", value)
+	return instance.SetProperty("ServerSessions", (value))
 }
 
 // GetServerSessions gets the value of ServerSessions for the instance
@@ -577,16 +777,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyServerSessions() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionsErroredOut sets the value of SessionsErroredOut for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySessionsErroredOut(value uint32) (err error) {
-	return instance.SetProperty("SessionsErroredOut", value)
+	return instance.SetProperty("SessionsErroredOut", (value))
 }
 
 // GetSessionsErroredOut gets the value of SessionsErroredOut for the instance
@@ -595,16 +804,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySessionsErroredOut(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionsForcedOff sets the value of SessionsForcedOff for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySessionsForcedOff(value uint32) (err error) {
-	return instance.SetProperty("SessionsForcedOff", value)
+	return instance.SetProperty("SessionsForcedOff", (value))
 }
 
 // GetSessionsForcedOff gets the value of SessionsForcedOff for the instance
@@ -613,16 +831,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySessionsForcedOff()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionsLoggedOff sets the value of SessionsLoggedOff for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySessionsLoggedOff(value uint32) (err error) {
-	return instance.SetProperty("SessionsLoggedOff", value)
+	return instance.SetProperty("SessionsLoggedOff", (value))
 }
 
 // GetSessionsLoggedOff gets the value of SessionsLoggedOff for the instance
@@ -631,16 +858,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySessionsLoggedOff()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionsTimedOut sets the value of SessionsTimedOut for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySessionsTimedOut(value uint32) (err error) {
-	return instance.SetProperty("SessionsTimedOut", value)
+	return instance.SetProperty("SessionsTimedOut", (value))
 }
 
 // GetSessionsTimedOut gets the value of SessionsTimedOut for the instance
@@ -649,16 +885,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySessionsTimedOut() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashBytesSent sets the value of SMBBranchCacheHashBytesSent for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashBytesSent(value uint64) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashBytesSent", value)
+	return instance.SetProperty("SMBBranchCacheHashBytesSent", (value))
 }
 
 // GetSMBBranchCacheHashBytesSent gets the value of SMBBranchCacheHashBytesSent for the instance
@@ -667,16 +912,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashGenerationRequests sets the value of SMBBranchCacheHashGenerationRequests for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashGenerationRequests(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashGenerationRequests", value)
+	return instance.SetProperty("SMBBranchCacheHashGenerationRequests", (value))
 }
 
 // GetSMBBranchCacheHashGenerationRequests gets the value of SMBBranchCacheHashGenerationRequests for the instance
@@ -685,16 +939,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashG
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashHeaderRequests sets the value of SMBBranchCacheHashHeaderRequests for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashHeaderRequests(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashHeaderRequests", value)
+	return instance.SetProperty("SMBBranchCacheHashHeaderRequests", (value))
 }
 
 // GetSMBBranchCacheHashHeaderRequests gets the value of SMBBranchCacheHashHeaderRequests for the instance
@@ -703,16 +966,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashH
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashRequestsReceived sets the value of SMBBranchCacheHashRequestsReceived for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashRequestsReceived(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashRequestsReceived", value)
+	return instance.SetProperty("SMBBranchCacheHashRequestsReceived", (value))
 }
 
 // GetSMBBranchCacheHashRequestsReceived gets the value of SMBBranchCacheHashRequestsReceived for the instance
@@ -721,16 +993,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashResponsesSent sets the value of SMBBranchCacheHashResponsesSent for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashResponsesSent(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashResponsesSent", value)
+	return instance.SetProperty("SMBBranchCacheHashResponsesSent", (value))
 }
 
 // GetSMBBranchCacheHashResponsesSent gets the value of SMBBranchCacheHashResponsesSent for the instance
@@ -739,16 +1020,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashV2BytesSent sets the value of SMBBranchCacheHashV2BytesSent for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashV2BytesSent(value uint64) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashV2BytesSent", value)
+	return instance.SetProperty("SMBBranchCacheHashV2BytesSent", (value))
 }
 
 // GetSMBBranchCacheHashV2BytesSent gets the value of SMBBranchCacheHashV2BytesSent for the instance
@@ -757,16 +1047,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashV2GenerationRequests sets the value of SMBBranchCacheHashV2GenerationRequests for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashV2GenerationRequests(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashV2GenerationRequests", value)
+	return instance.SetProperty("SMBBranchCacheHashV2GenerationRequests", (value))
 }
 
 // GetSMBBranchCacheHashV2GenerationRequests gets the value of SMBBranchCacheHashV2GenerationRequests for the instance
@@ -775,16 +1074,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashV2HeaderRequests sets the value of SMBBranchCacheHashV2HeaderRequests for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashV2HeaderRequests(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashV2HeaderRequests", value)
+	return instance.SetProperty("SMBBranchCacheHashV2HeaderRequests", (value))
 }
 
 // GetSMBBranchCacheHashV2HeaderRequests gets the value of SMBBranchCacheHashV2HeaderRequests for the instance
@@ -793,16 +1101,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashV2RequestsReceived sets the value of SMBBranchCacheHashV2RequestsReceived for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashV2RequestsReceived(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashV2RequestsReceived", value)
+	return instance.SetProperty("SMBBranchCacheHashV2RequestsReceived", (value))
 }
 
 // GetSMBBranchCacheHashV2RequestsReceived gets the value of SMBBranchCacheHashV2RequestsReceived for the instance
@@ -811,16 +1128,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashV2RequestsServedFromDedup sets the value of SMBBranchCacheHashV2RequestsServedFromDedup for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashV2RequestsServedFromDedup(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashV2RequestsServedFromDedup", value)
+	return instance.SetProperty("SMBBranchCacheHashV2RequestsServedFromDedup", (value))
 }
 
 // GetSMBBranchCacheHashV2RequestsServedFromDedup gets the value of SMBBranchCacheHashV2RequestsServedFromDedup for the instance
@@ -829,16 +1155,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashV2ResponsesSent sets the value of SMBBranchCacheHashV2ResponsesSent for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertySMBBranchCacheHashV2ResponsesSent(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashV2ResponsesSent", value)
+	return instance.SetProperty("SMBBranchCacheHashV2ResponsesSent", (value))
 }
 
 // GetSMBBranchCacheHashV2ResponsesSent gets the value of SMBBranchCacheHashV2ResponsesSent for the instance
@@ -847,16 +1182,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertySMBBranchCacheHashV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalDurableHandles sets the value of TotalDurableHandles for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyTotalDurableHandles(value uint32) (err error) {
-	return instance.SetProperty("TotalDurableHandles", value)
+	return instance.SetProperty("TotalDurableHandles", (value))
 }
 
 // GetTotalDurableHandles gets the value of TotalDurableHandles for the instance
@@ -865,16 +1209,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyTotalDurableHandles
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalResilientHandles sets the value of TotalResilientHandles for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyTotalResilientHandles(value uint32) (err error) {
-	return instance.SetProperty("TotalResilientHandles", value)
+	return instance.SetProperty("TotalResilientHandles", (value))
 }
 
 // GetTotalResilientHandles gets the value of TotalResilientHandles for the instance
@@ -883,16 +1236,25 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyTotalResilientHandl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkItemShortages sets the value of WorkItemShortages for the instance
 func (instance *Win32_PerfRawData_PerfNet_Server) SetPropertyWorkItemShortages(value uint32) (err error) {
-	return instance.SetProperty("WorkItemShortages", value)
+	return instance.SetProperty("WorkItemShortages", (value))
 }
 
 // GetWorkItemShortages gets the value of WorkItemShortages for the instance
@@ -901,9 +1263,18 @@ func (instance *Win32_PerfRawData_PerfNet_Server) GetPropertyWorkItemShortages()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

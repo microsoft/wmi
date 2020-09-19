@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterPowerManagement_Offload_NS struct
@@ -61,7 +63,7 @@ func NewMSFT_NetAdapterPowerManagement_Offload_NSEx6(hostName string,
 
 // SetMacAddress sets the value of MacAddress for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) SetPropertyMacAddress(value string) (err error) {
-	return instance.SetProperty("MacAddress", value)
+	return instance.SetProperty("MacAddress", (value))
 }
 
 // GetMacAddress gets the value of MacAddress for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) GetPropertyMacAddress
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteIPv6Address sets the value of RemoteIPv6Address for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) SetPropertyRemoteIPv6Address(value string) (err error) {
-	return instance.SetProperty("RemoteIPv6Address", value)
+	return instance.SetProperty("RemoteIPv6Address", (value))
 }
 
 // GetRemoteIPv6Address gets the value of RemoteIPv6Address for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) GetPropertyRemoteIPv6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSolicitedNodeIPv6Address sets the value of SolicitedNodeIPv6Address for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) SetPropertySolicitedNodeIPv6Address(value string) (err error) {
-	return instance.SetProperty("SolicitedNodeIPv6Address", value)
+	return instance.SetProperty("SolicitedNodeIPv6Address", (value))
 }
 
 // GetSolicitedNodeIPv6Address gets the value of SolicitedNodeIPv6Address for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) GetPropertySolicitedN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetIPv6Addresses sets the value of TargetIPv6Addresses for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) SetPropertyTargetIPv6Addresses(value []string) (err error) {
-	return instance.SetProperty("TargetIPv6Addresses", value)
+	return instance.SetProperty("TargetIPv6Addresses", (value))
 }
 
 // GetTargetIPv6Addresses gets the value of TargetIPv6Addresses for the instance
@@ -124,9 +153,19 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_NS) GetPropertyTargetIPv6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

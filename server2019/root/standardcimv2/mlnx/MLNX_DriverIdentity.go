@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_DriverIdentity struct
@@ -52,7 +54,7 @@ func NewMLNX_DriverIdentityEx6(hostName string,
 
 // SetInstallLocation sets the value of InstallLocation for the instance
 func (instance *MLNX_DriverIdentity) SetPropertyInstallLocation(value string) (err error) {
-	return instance.SetProperty("InstallLocation", value)
+	return instance.SetProperty("InstallLocation", (value))
 }
 
 // GetInstallLocation gets the value of InstallLocation for the instance
@@ -61,9 +63,18 @@ func (instance *MLNX_DriverIdentity) GetPropertyInstallLocation() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

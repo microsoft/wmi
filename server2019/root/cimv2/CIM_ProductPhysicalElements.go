@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProductPhysicalElements struct
@@ -56,7 +58,7 @@ func NewCIM_ProductPhysicalElementsEx6(hostName string,
 
 // SetComponent sets the value of Component for the instance
 func (instance *CIM_ProductPhysicalElements) SetPropertyComponent(value CIM_PhysicalElement) (err error) {
-	return instance.SetProperty("Component", value)
+	return instance.SetProperty("Component", (value))
 }
 
 // GetComponent gets the value of Component for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ProductPhysicalElements) GetPropertyComponent() (value CIM_P
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_PhysicalElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_PhysicalElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_PhysicalElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_PhysicalElement(valuetmp)
+
 	return
 }
 
 // SetProduct sets the value of Product for the instance
 func (instance *CIM_ProductPhysicalElements) SetPropertyProduct(value CIM_Product) (err error) {
-	return instance.SetProperty("Product", value)
+	return instance.SetProperty("Product", (value))
 }
 
 // GetProduct gets the value of Product for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ProductPhysicalElements) GetPropertyProduct() (value CIM_Pro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }

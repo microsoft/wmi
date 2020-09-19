@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_NetAdapterFlowControlSettingData struct
@@ -85,7 +87,7 @@ func NewMLNX_NetAdapterFlowControlSettingDataEx6(hostName string,
 
 // SetPFCRx sets the value of PFCRx for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyPFCRx(value string) (err error) {
-	return instance.SetProperty("PFCRx", value)
+	return instance.SetProperty("PFCRx", (value))
 }
 
 // GetPFCRx gets the value of PFCRx for the instance
@@ -94,16 +96,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyPFCRx() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPFCTx sets the value of PFCTx for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyPFCTx(value string) (err error) {
-	return instance.SetProperty("PFCTx", value)
+	return instance.SetProperty("PFCTx", (value))
 }
 
 // GetPFCTx gets the value of PFCTx for the instance
@@ -112,16 +123,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyPFCTx() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_0 sets the value of RroceDscpMarkPriorityFlowControl_0 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_0(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_0", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_0", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_0 gets the value of RroceDscpMarkPriorityFlowControl_0 for the instance
@@ -130,16 +150,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_1 sets the value of RroceDscpMarkPriorityFlowControl_1 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_1(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_1", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_1", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_1 gets the value of RroceDscpMarkPriorityFlowControl_1 for the instance
@@ -148,16 +177,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_2 sets the value of RroceDscpMarkPriorityFlowControl_2 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_2(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_2", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_2", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_2 gets the value of RroceDscpMarkPriorityFlowControl_2 for the instance
@@ -166,16 +204,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_3 sets the value of RroceDscpMarkPriorityFlowControl_3 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_3(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_3", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_3", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_3 gets the value of RroceDscpMarkPriorityFlowControl_3 for the instance
@@ -184,16 +231,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_4 sets the value of RroceDscpMarkPriorityFlowControl_4 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_4(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_4", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_4", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_4 gets the value of RroceDscpMarkPriorityFlowControl_4 for the instance
@@ -202,16 +258,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_5 sets the value of RroceDscpMarkPriorityFlowControl_5 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_5(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_5", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_5", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_5 gets the value of RroceDscpMarkPriorityFlowControl_5 for the instance
@@ -220,16 +285,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_6 sets the value of RroceDscpMarkPriorityFlowControl_6 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_6(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_6", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_6", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_6 gets the value of RroceDscpMarkPriorityFlowControl_6 for the instance
@@ -238,16 +312,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRroceDscpMarkPriorityFlowControl_7 sets the value of RroceDscpMarkPriorityFlowControl_7 for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRroceDscpMarkPriorityFlowControl_7(value uint8) (err error) {
-	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_7", value)
+	return instance.SetProperty("RroceDscpMarkPriorityFlowControl_7", (value))
 }
 
 // GetRroceDscpMarkPriorityFlowControl_7 gets the value of RroceDscpMarkPriorityFlowControl_7 for the instance
@@ -256,16 +339,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRroceDscpMarkP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRxUntaggedMapToLossless sets the value of RxUntaggedMapToLossless for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyRxUntaggedMapToLossless(value uint8) (err error) {
-	return instance.SetProperty("RxUntaggedMapToLossless", value)
+	return instance.SetProperty("RxUntaggedMapToLossless", (value))
 }
 
 // GetRxUntaggedMapToLossless gets the value of RxUntaggedMapToLossless for the instance
@@ -274,16 +366,25 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyRxUntaggedMapT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetTxUntagPriorityTag sets the value of TxUntagPriorityTag for the instance
 func (instance *MLNX_NetAdapterFlowControlSettingData) SetPropertyTxUntagPriorityTag(value uint8) (err error) {
-	return instance.SetProperty("TxUntagPriorityTag", value)
+	return instance.SetProperty("TxUntagPriorityTag", (value))
 }
 
 // GetTxUntagPriorityTag gets the value of TxUntagPriorityTag for the instance
@@ -292,9 +393,18 @@ func (instance *MLNX_NetAdapterFlowControlSettingData) GetPropertyTxUntagPriorit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_FCPort struct
@@ -61,7 +63,7 @@ func NewCIM_FCPortEx6(hostName string,
 
 // SetActiveCOS sets the value of ActiveCOS for the instance
 func (instance *CIM_FCPort) SetPropertyActiveCOS(value []FCPort_ActiveCOS) (err error) {
-	return instance.SetProperty("ActiveCOS", value)
+	return instance.SetProperty("ActiveCOS", (value))
 }
 
 // GetActiveCOS gets the value of ActiveCOS for the instance
@@ -70,16 +72,26 @@ func (instance *CIM_FCPort) GetPropertyActiveCOS() (value []FCPort_ActiveCOS, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]FCPort_ActiveCOS)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, FCPort_ActiveCOS(valuetmp))
+	}
+
 	return
 }
 
 // SetActiveFC4Types sets the value of ActiveFC4Types for the instance
 func (instance *CIM_FCPort) SetPropertyActiveFC4Types(value []FCPort_ActiveFC4Types) (err error) {
-	return instance.SetProperty("ActiveFC4Types", value)
+	return instance.SetProperty("ActiveFC4Types", (value))
 }
 
 // GetActiveFC4Types gets the value of ActiveFC4Types for the instance
@@ -88,16 +100,26 @@ func (instance *CIM_FCPort) GetPropertyActiveFC4Types() (value []FCPort_ActiveFC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]FCPort_ActiveFC4Types)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, FCPort_ActiveFC4Types(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedCOS sets the value of SupportedCOS for the instance
 func (instance *CIM_FCPort) SetPropertySupportedCOS(value []FCPort_SupportedCOS) (err error) {
-	return instance.SetProperty("SupportedCOS", value)
+	return instance.SetProperty("SupportedCOS", (value))
 }
 
 // GetSupportedCOS gets the value of SupportedCOS for the instance
@@ -106,16 +128,26 @@ func (instance *CIM_FCPort) GetPropertySupportedCOS() (value []FCPort_SupportedC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]FCPort_SupportedCOS)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, FCPort_SupportedCOS(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportedFC4Types sets the value of SupportedFC4Types for the instance
 func (instance *CIM_FCPort) SetPropertySupportedFC4Types(value []FCPort_SupportedFC4Types) (err error) {
-	return instance.SetProperty("SupportedFC4Types", value)
+	return instance.SetProperty("SupportedFC4Types", (value))
 }
 
 // GetSupportedFC4Types gets the value of SupportedFC4Types for the instance
@@ -124,9 +156,19 @@ func (instance *CIM_FCPort) GetPropertySupportedFC4Types() (value []FCPort_Suppo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]FCPort_SupportedFC4Types)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, FCPort_SupportedFC4Types(valuetmp))
+	}
+
 	return
 }

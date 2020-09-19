@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_MappedLogicalDisk struct
@@ -85,7 +87,7 @@ func NewWin32_MappedLogicalDiskEx6(hostName string,
 
 // SetCompressed sets the value of Compressed for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyCompressed(value bool) (err error) {
-	return instance.SetProperty("Compressed", value)
+	return instance.SetProperty("Compressed", (value))
 }
 
 // GetCompressed gets the value of Compressed for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyCompressed() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFileSystem sets the value of FileSystem for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyFileSystem(value string) (err error) {
-	return instance.SetProperty("FileSystem", value)
+	return instance.SetProperty("FileSystem", (value))
 }
 
 // GetFileSystem gets the value of FileSystem for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyFileSystem() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaximumComponentLength sets the value of MaximumComponentLength for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyMaximumComponentLength(value uint32) (err error) {
-	return instance.SetProperty("MaximumComponentLength", value)
+	return instance.SetProperty("MaximumComponentLength", (value))
 }
 
 // GetMaximumComponentLength gets the value of MaximumComponentLength for the instance
@@ -130,16 +150,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyMaximumComponentLength() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProviderName sets the value of ProviderName for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyProviderName(value string) (err error) {
-	return instance.SetProperty("ProviderName", value)
+	return instance.SetProperty("ProviderName", (value))
 }
 
 // GetProviderName gets the value of ProviderName for the instance
@@ -148,16 +177,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyProviderName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQuotasDisabled sets the value of QuotasDisabled for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyQuotasDisabled(value bool) (err error) {
-	return instance.SetProperty("QuotasDisabled", value)
+	return instance.SetProperty("QuotasDisabled", (value))
 }
 
 // GetQuotasDisabled gets the value of QuotasDisabled for the instance
@@ -166,16 +204,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyQuotasDisabled() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetQuotasIncomplete sets the value of QuotasIncomplete for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyQuotasIncomplete(value bool) (err error) {
-	return instance.SetProperty("QuotasIncomplete", value)
+	return instance.SetProperty("QuotasIncomplete", (value))
 }
 
 // GetQuotasIncomplete gets the value of QuotasIncomplete for the instance
@@ -184,16 +231,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyQuotasIncomplete() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetQuotasRebuilding sets the value of QuotasRebuilding for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyQuotasRebuilding(value bool) (err error) {
-	return instance.SetProperty("QuotasRebuilding", value)
+	return instance.SetProperty("QuotasRebuilding", (value))
 }
 
 // GetQuotasRebuilding gets the value of QuotasRebuilding for the instance
@@ -202,16 +258,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyQuotasRebuilding() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSessionID sets the value of SessionID for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertySessionID(value string) (err error) {
-	return instance.SetProperty("SessionID", value)
+	return instance.SetProperty("SessionID", (value))
 }
 
 // GetSessionID gets the value of SessionID for the instance
@@ -220,16 +285,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertySessionID() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSupportsDiskQuotas sets the value of SupportsDiskQuotas for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertySupportsDiskQuotas(value bool) (err error) {
-	return instance.SetProperty("SupportsDiskQuotas", value)
+	return instance.SetProperty("SupportsDiskQuotas", (value))
 }
 
 // GetSupportsDiskQuotas gets the value of SupportsDiskQuotas for the instance
@@ -238,16 +312,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertySupportsDiskQuotas() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsFileBasedCompression sets the value of SupportsFileBasedCompression for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertySupportsFileBasedCompression(value bool) (err error) {
-	return instance.SetProperty("SupportsFileBasedCompression", value)
+	return instance.SetProperty("SupportsFileBasedCompression", (value))
 }
 
 // GetSupportsFileBasedCompression gets the value of SupportsFileBasedCompression for the instance
@@ -256,16 +339,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertySupportsFileBasedCompression
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVolumeName sets the value of VolumeName for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyVolumeName(value string) (err error) {
-	return instance.SetProperty("VolumeName", value)
+	return instance.SetProperty("VolumeName", (value))
 }
 
 // GetVolumeName gets the value of VolumeName for the instance
@@ -274,16 +366,25 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyVolumeName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVolumeSerialNumber sets the value of VolumeSerialNumber for the instance
 func (instance *Win32_MappedLogicalDisk) SetPropertyVolumeSerialNumber(value string) (err error) {
-	return instance.SetProperty("VolumeSerialNumber", value)
+	return instance.SetProperty("VolumeSerialNumber", (value))
 }
 
 // GetVolumeSerialNumber gets the value of VolumeSerialNumber for the instance
@@ -292,9 +393,18 @@ func (instance *Win32_MappedLogicalDisk) GetPropertyVolumeSerialNumber() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

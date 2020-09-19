@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_CompatibleProduct struct
@@ -59,7 +61,7 @@ func NewCIM_CompatibleProductEx6(hostName string,
 
 // SetCompatibilityDescription sets the value of CompatibilityDescription for the instance
 func (instance *CIM_CompatibleProduct) SetPropertyCompatibilityDescription(value string) (err error) {
-	return instance.SetProperty("CompatibilityDescription", value)
+	return instance.SetProperty("CompatibilityDescription", (value))
 }
 
 // GetCompatibilityDescription gets the value of CompatibilityDescription for the instance
@@ -68,16 +70,25 @@ func (instance *CIM_CompatibleProduct) GetPropertyCompatibilityDescription() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCompatibleProduct sets the value of CompatibleProduct for the instance
 func (instance *CIM_CompatibleProduct) SetPropertyCompatibleProduct(value CIM_Product) (err error) {
-	return instance.SetProperty("CompatibleProduct", value)
+	return instance.SetProperty("CompatibleProduct", (value))
 }
 
 // GetCompatibleProduct gets the value of CompatibleProduct for the instance
@@ -86,16 +97,25 @@ func (instance *CIM_CompatibleProduct) GetPropertyCompatibleProduct() (value CIM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }
 
 // SetProduct sets the value of Product for the instance
 func (instance *CIM_CompatibleProduct) SetPropertyProduct(value CIM_Product) (err error) {
-	return instance.SetProperty("Product", value)
+	return instance.SetProperty("Product", (value))
 }
 
 // GetProduct gets the value of Product for the instance
@@ -104,9 +124,18 @@ func (instance *CIM_CompatibleProduct) GetPropertyProduct() (value CIM_Product, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }

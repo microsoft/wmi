@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ActionSequence struct
@@ -56,7 +58,7 @@ func NewCIM_ActionSequenceEx6(hostName string,
 
 // SetNext sets the value of Next for the instance
 func (instance *CIM_ActionSequence) SetPropertyNext(value CIM_Action) (err error) {
-	return instance.SetProperty("Next", value)
+	return instance.SetProperty("Next", (value))
 }
 
 // GetNext gets the value of Next for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ActionSequence) GetPropertyNext() (value CIM_Action, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Action)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Action)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Action is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Action(valuetmp)
+
 	return
 }
 
 // SetPrior sets the value of Prior for the instance
 func (instance *CIM_ActionSequence) SetPropertyPrior(value CIM_Action) (err error) {
-	return instance.SetProperty("Prior", value)
+	return instance.SetProperty("Prior", (value))
 }
 
 // GetPrior gets the value of Prior for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ActionSequence) GetPropertyPrior() (value CIM_Action, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Action)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Action)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Action is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Action(valuetmp)
+
 	return
 }

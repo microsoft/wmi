@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __EventConsumerProviderRegistration struct
@@ -52,7 +54,7 @@ func New__EventConsumerProviderRegistrationEx6(hostName string,
 
 // SetConsumerClassNames sets the value of ConsumerClassNames for the instance
 func (instance *__EventConsumerProviderRegistration) SetPropertyConsumerClassNames(value []string) (err error) {
-	return instance.SetProperty("ConsumerClassNames", value)
+	return instance.SetProperty("ConsumerClassNames", (value))
 }
 
 // GetConsumerClassNames gets the value of ConsumerClassNames for the instance
@@ -61,9 +63,19 @@ func (instance *__EventConsumerProviderRegistration) GetPropertyConsumerClassNam
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

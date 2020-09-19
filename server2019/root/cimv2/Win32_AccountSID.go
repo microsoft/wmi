@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_AccountSID struct
@@ -56,7 +58,7 @@ func NewWin32_AccountSIDEx6(hostName string,
 
 // SetElement sets the value of Element for the instance
 func (instance *Win32_AccountSID) SetPropertyElement(value Win32_Account) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_AccountSID) GetPropertyElement() (value Win32_Account, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_Account)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_Account)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_Account is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_Account(valuetmp)
+
 	return
 }
 
 // SetSetting sets the value of Setting for the instance
 func (instance *Win32_AccountSID) SetPropertySetting(value Win32_SID) (err error) {
-	return instance.SetProperty("Setting", value)
+	return instance.SetProperty("Setting", (value))
 }
 
 // GetSetting gets the value of Setting for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_AccountSID) GetPropertySetting() (value Win32_SID, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_SID)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_SID)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_SID is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_SID(valuetmp)
+
 	return
 }

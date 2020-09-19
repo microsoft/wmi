@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_ReplicationAuthorizationSettingData struct
@@ -58,7 +60,7 @@ func NewMsvm_ReplicationAuthorizationSettingDataEx6(hostName string,
 
 // SetAllowedPrimaryHostSystem sets the value of AllowedPrimaryHostSystem for the instance
 func (instance *Msvm_ReplicationAuthorizationSettingData) SetPropertyAllowedPrimaryHostSystem(value string) (err error) {
-	return instance.SetProperty("AllowedPrimaryHostSystem", value)
+	return instance.SetProperty("AllowedPrimaryHostSystem", (value))
 }
 
 // GetAllowedPrimaryHostSystem gets the value of AllowedPrimaryHostSystem for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_ReplicationAuthorizationSettingData) GetPropertyAllowedPrim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReplicaStorageLocation sets the value of ReplicaStorageLocation for the instance
 func (instance *Msvm_ReplicationAuthorizationSettingData) SetPropertyReplicaStorageLocation(value string) (err error) {
-	return instance.SetProperty("ReplicaStorageLocation", value)
+	return instance.SetProperty("ReplicaStorageLocation", (value))
 }
 
 // GetReplicaStorageLocation gets the value of ReplicaStorageLocation for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_ReplicationAuthorizationSettingData) GetPropertyReplicaStor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustGroup sets the value of TrustGroup for the instance
 func (instance *Msvm_ReplicationAuthorizationSettingData) SetPropertyTrustGroup(value string) (err error) {
-	return instance.SetProperty("TrustGroup", value)
+	return instance.SetProperty("TrustGroup", (value))
 }
 
 // GetTrustGroup gets the value of TrustGroup for the instance
@@ -103,9 +123,18 @@ func (instance *Msvm_ReplicationAuthorizationSettingData) GetPropertyTrustGroup(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

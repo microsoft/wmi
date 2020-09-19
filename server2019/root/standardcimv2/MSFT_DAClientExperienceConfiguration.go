@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DAClientExperienceConfiguration struct
@@ -85,7 +87,7 @@ func NewMSFT_DAClientExperienceConfigurationEx6(hostName string,
 
 // SetCorporateResources sets the value of CorporateResources for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyCorporateResources(value []string) (err error) {
-	return instance.SetProperty("CorporateResources", value)
+	return instance.SetProperty("CorporateResources", (value))
 }
 
 // GetCorporateResources gets the value of CorporateResources for the instance
@@ -94,16 +96,26 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyCorporateResour
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetCustomCommands sets the value of CustomCommands for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyCustomCommands(value []string) (err error) {
-	return instance.SetProperty("CustomCommands", value)
+	return instance.SetProperty("CustomCommands", (value))
 }
 
 // GetCustomCommands gets the value of CustomCommands for the instance
@@ -112,16 +124,26 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyCustomCommands(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetForceTunneling sets the value of ForceTunneling for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyForceTunneling(value uint32) (err error) {
-	return instance.SetProperty("ForceTunneling", value)
+	return instance.SetProperty("ForceTunneling", (value))
 }
 
 // GetForceTunneling gets the value of ForceTunneling for the instance
@@ -130,16 +152,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyForceTunneling(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -148,16 +179,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyFriendlyName() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGslbFqdn sets the value of GslbFqdn for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyGslbFqdn(value string) (err error) {
-	return instance.SetProperty("GslbFqdn", value)
+	return instance.SetProperty("GslbFqdn", (value))
 }
 
 // GetGslbFqdn gets the value of GslbFqdn for the instance
@@ -166,16 +206,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyGslbFqdn() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPsecTunnelEndpoints sets the value of IPsecTunnelEndpoints for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyIPsecTunnelEndpoints(value []string) (err error) {
-	return instance.SetProperty("IPsecTunnelEndpoints", value)
+	return instance.SetProperty("IPsecTunnelEndpoints", (value))
 }
 
 // GetIPsecTunnelEndpoints gets the value of IPsecTunnelEndpoints for the instance
@@ -184,16 +233,26 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyIPsecTunnelEndp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetManualEntryPointSelectionAllowed sets the value of ManualEntryPointSelectionAllowed for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyManualEntryPointSelectionAllowed(value bool) (err error) {
-	return instance.SetProperty("ManualEntryPointSelectionAllowed", value)
+	return instance.SetProperty("ManualEntryPointSelectionAllowed", (value))
 }
 
 // GetManualEntryPointSelectionAllowed gets the value of ManualEntryPointSelectionAllowed for the instance
@@ -202,16 +261,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyManualEntryPoin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPassiveMode sets the value of PassiveMode for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyPassiveMode(value bool) (err error) {
-	return instance.SetProperty("PassiveMode", value)
+	return instance.SetProperty("PassiveMode", (value))
 }
 
 // GetPassiveMode gets the value of PassiveMode for the instance
@@ -220,16 +288,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyPassiveMode() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyPolicyStore(value string) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -238,16 +315,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyPolicyStore() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreferLocalNamesAllowed sets the value of PreferLocalNamesAllowed for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyPreferLocalNamesAllowed(value bool) (err error) {
-	return instance.SetProperty("PreferLocalNamesAllowed", value)
+	return instance.SetProperty("PreferLocalNamesAllowed", (value))
 }
 
 // GetPreferLocalNamesAllowed gets the value of PreferLocalNamesAllowed for the instance
@@ -256,16 +342,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyPreferLocalName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportEmail sets the value of SupportEmail for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertySupportEmail(value string) (err error) {
-	return instance.SetProperty("SupportEmail", value)
+	return instance.SetProperty("SupportEmail", (value))
 }
 
 // GetSupportEmail gets the value of SupportEmail for the instance
@@ -274,16 +369,25 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertySupportEmail() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserInterface sets the value of UserInterface for the instance
 func (instance *MSFT_DAClientExperienceConfiguration) SetPropertyUserInterface(value bool) (err error) {
-	return instance.SetProperty("UserInterface", value)
+	return instance.SetProperty("UserInterface", (value))
 }
 
 // GetUserInterface gets the value of UserInterface for the instance
@@ -292,10 +396,19 @@ func (instance *MSFT_DAClientExperienceConfiguration) GetPropertyUserInterface()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

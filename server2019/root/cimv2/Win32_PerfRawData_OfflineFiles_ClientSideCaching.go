@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_OfflineFiles_ClientSideCaching struct
@@ -88,7 +90,7 @@ func NewWin32_PerfRawData_OfflineFiles_ClientSideCachingEx6(hostName string,
 
 // SetApplicationBytesReadFromCache sets the value of ApplicationBytesReadFromCache for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertyApplicationBytesReadFromCache(value uint64) (err error) {
-	return instance.SetProperty("ApplicationBytesReadFromCache", value)
+	return instance.SetProperty("ApplicationBytesReadFromCache", (value))
 }
 
 // GetApplicationBytesReadFromCache gets the value of ApplicationBytesReadFromCache for the instance
@@ -97,16 +99,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertyApp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetApplicationBytesReadFromServer sets the value of ApplicationBytesReadFromServer for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertyApplicationBytesReadFromServer(value uint64) (err error) {
-	return instance.SetProperty("ApplicationBytesReadFromServer", value)
+	return instance.SetProperty("ApplicationBytesReadFromServer", (value))
 }
 
 // GetApplicationBytesReadFromServer gets the value of ApplicationBytesReadFromServer for the instance
@@ -115,16 +126,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertyApp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetApplicationBytesReadFromServerNotCached sets the value of ApplicationBytesReadFromServerNotCached for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertyApplicationBytesReadFromServerNotCached(value uint64) (err error) {
-	return instance.SetProperty("ApplicationBytesReadFromServerNotCached", value)
+	return instance.SetProperty("ApplicationBytesReadFromServerNotCached", (value))
 }
 
 // GetApplicationBytesReadFromServerNotCached gets the value of ApplicationBytesReadFromServerNotCached for the instance
@@ -133,16 +153,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertyApp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPrefetchBytesReadFromCache sets the value of PrefetchBytesReadFromCache for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertyPrefetchBytesReadFromCache(value uint64) (err error) {
-	return instance.SetProperty("PrefetchBytesReadFromCache", value)
+	return instance.SetProperty("PrefetchBytesReadFromCache", (value))
 }
 
 // GetPrefetchBytesReadFromCache gets the value of PrefetchBytesReadFromCache for the instance
@@ -151,16 +180,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertyPre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPrefetchBytesReadFromServer sets the value of PrefetchBytesReadFromServer for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertyPrefetchBytesReadFromServer(value uint64) (err error) {
-	return instance.SetProperty("PrefetchBytesReadFromServer", value)
+	return instance.SetProperty("PrefetchBytesReadFromServer", (value))
 }
 
 // GetPrefetchBytesReadFromServer gets the value of PrefetchBytesReadFromServer for the instance
@@ -169,16 +207,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertyPre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPrefetchOperationsQueued sets the value of PrefetchOperationsQueued for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertyPrefetchOperationsQueued(value uint32) (err error) {
-	return instance.SetProperty("PrefetchOperationsQueued", value)
+	return instance.SetProperty("PrefetchOperationsQueued", (value))
 }
 
 // GetPrefetchOperationsQueued gets the value of PrefetchOperationsQueued for the instance
@@ -187,16 +234,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertyPre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheBytesPublished sets the value of SMBBranchCacheBytesPublished for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertySMBBranchCacheBytesPublished(value uint64) (err error) {
-	return instance.SetProperty("SMBBranchCacheBytesPublished", value)
+	return instance.SetProperty("SMBBranchCacheBytesPublished", (value))
 }
 
 // GetSMBBranchCacheBytesPublished gets the value of SMBBranchCacheBytesPublished for the instance
@@ -205,16 +261,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertySMB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheBytesReceived sets the value of SMBBranchCacheBytesReceived for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertySMBBranchCacheBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("SMBBranchCacheBytesReceived", value)
+	return instance.SetProperty("SMBBranchCacheBytesReceived", (value))
 }
 
 // GetSMBBranchCacheBytesReceived gets the value of SMBBranchCacheBytesReceived for the instance
@@ -223,16 +288,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertySMB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheBytesRequested sets the value of SMBBranchCacheBytesRequested for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertySMBBranchCacheBytesRequested(value uint64) (err error) {
-	return instance.SetProperty("SMBBranchCacheBytesRequested", value)
+	return instance.SetProperty("SMBBranchCacheBytesRequested", (value))
 }
 
 // GetSMBBranchCacheBytesRequested gets the value of SMBBranchCacheBytesRequested for the instance
@@ -241,16 +315,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertySMB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheBytesRequestedFromServer sets the value of SMBBranchCacheBytesRequestedFromServer for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertySMBBranchCacheBytesRequestedFromServer(value uint64) (err error) {
-	return instance.SetProperty("SMBBranchCacheBytesRequestedFromServer", value)
+	return instance.SetProperty("SMBBranchCacheBytesRequestedFromServer", (value))
 }
 
 // GetSMBBranchCacheBytesRequestedFromServer gets the value of SMBBranchCacheBytesRequestedFromServer for the instance
@@ -259,16 +342,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertySMB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashBytesReceived sets the value of SMBBranchCacheHashBytesReceived for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertySMBBranchCacheHashBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashBytesReceived", value)
+	return instance.SetProperty("SMBBranchCacheHashBytesReceived", (value))
 }
 
 // GetSMBBranchCacheHashBytesReceived gets the value of SMBBranchCacheHashBytesReceived for the instance
@@ -277,16 +369,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertySMB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashesReceived sets the value of SMBBranchCacheHashesReceived for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertySMBBranchCacheHashesReceived(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashesReceived", value)
+	return instance.SetProperty("SMBBranchCacheHashesReceived", (value))
 }
 
 // GetSMBBranchCacheHashesReceived gets the value of SMBBranchCacheHashesReceived for the instance
@@ -295,16 +396,25 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertySMB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSMBBranchCacheHashesRequested sets the value of SMBBranchCacheHashesRequested for the instance
 func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) SetPropertySMBBranchCacheHashesRequested(value uint32) (err error) {
-	return instance.SetProperty("SMBBranchCacheHashesRequested", value)
+	return instance.SetProperty("SMBBranchCacheHashesRequested", (value))
 }
 
 // GetSMBBranchCacheHashesRequested gets the value of SMBBranchCacheHashesRequested for the instance
@@ -313,9 +423,18 @@ func (instance *Win32_PerfRawData_OfflineFiles_ClientSideCaching) GetPropertySMB
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

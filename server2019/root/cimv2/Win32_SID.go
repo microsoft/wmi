@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SID struct
@@ -65,7 +67,7 @@ func NewWin32_SIDEx6(hostName string,
 
 // SetAccountName sets the value of AccountName for the instance
 func (instance *Win32_SID) SetPropertyAccountName(value string) (err error) {
-	return instance.SetProperty("AccountName", value)
+	return instance.SetProperty("AccountName", (value))
 }
 
 // GetAccountName gets the value of AccountName for the instance
@@ -74,16 +76,25 @@ func (instance *Win32_SID) GetPropertyAccountName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBinaryRepresentation sets the value of BinaryRepresentation for the instance
 func (instance *Win32_SID) SetPropertyBinaryRepresentation(value []uint8) (err error) {
-	return instance.SetProperty("BinaryRepresentation", value)
+	return instance.SetProperty("BinaryRepresentation", (value))
 }
 
 // GetBinaryRepresentation gets the value of BinaryRepresentation for the instance
@@ -92,16 +103,26 @@ func (instance *Win32_SID) GetPropertyBinaryRepresentation() (value []uint8, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetReferencedDomainName sets the value of ReferencedDomainName for the instance
 func (instance *Win32_SID) SetPropertyReferencedDomainName(value string) (err error) {
-	return instance.SetProperty("ReferencedDomainName", value)
+	return instance.SetProperty("ReferencedDomainName", (value))
 }
 
 // GetReferencedDomainName gets the value of ReferencedDomainName for the instance
@@ -110,16 +131,25 @@ func (instance *Win32_SID) GetPropertyReferencedDomainName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSID sets the value of SID for the instance
 func (instance *Win32_SID) SetPropertySID(value string) (err error) {
-	return instance.SetProperty("SID", value)
+	return instance.SetProperty("SID", (value))
 }
 
 // GetSID gets the value of SID for the instance
@@ -128,16 +158,25 @@ func (instance *Win32_SID) GetPropertySID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSidLength sets the value of SidLength for the instance
 func (instance *Win32_SID) SetPropertySidLength(value uint32) (err error) {
-	return instance.SetProperty("SidLength", value)
+	return instance.SetProperty("SidLength", (value))
 }
 
 // GetSidLength gets the value of SidLength for the instance
@@ -146,9 +185,18 @@ func (instance *Win32_SID) GetPropertySidLength() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

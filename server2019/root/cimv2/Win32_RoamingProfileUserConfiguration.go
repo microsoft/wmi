@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RoamingProfileUserConfiguration struct
@@ -59,7 +61,7 @@ func NewWin32_RoamingProfileUserConfigurationEx6(hostName string,
 
 // SetDirectoriesToSyncAtLogonLogoff sets the value of DirectoriesToSyncAtLogonLogoff for the instance
 func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyDirectoriesToSyncAtLogonLogoff(value []string) (err error) {
-	return instance.SetProperty("DirectoriesToSyncAtLogonLogoff", value)
+	return instance.SetProperty("DirectoriesToSyncAtLogonLogoff", (value))
 }
 
 // GetDirectoriesToSyncAtLogonLogoff gets the value of DirectoriesToSyncAtLogonLogoff for the instance
@@ -68,16 +70,26 @@ func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyDirectoriesToS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetExcludedProfileDirs sets the value of ExcludedProfileDirs for the instance
 func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyExcludedProfileDirs(value []string) (err error) {
-	return instance.SetProperty("ExcludedProfileDirs", value)
+	return instance.SetProperty("ExcludedProfileDirs", (value))
 }
 
 // GetExcludedProfileDirs gets the value of ExcludedProfileDirs for the instance
@@ -86,16 +98,26 @@ func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyExcludedProfil
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIsConfiguredByWMI sets the value of IsConfiguredByWMI for the instance
 func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyIsConfiguredByWMI(value bool) (err error) {
-	return instance.SetProperty("IsConfiguredByWMI", value)
+	return instance.SetProperty("IsConfiguredByWMI", (value))
 }
 
 // GetIsConfiguredByWMI gets the value of IsConfiguredByWMI for the instance
@@ -104,9 +126,18 @@ func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyIsConfiguredBy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

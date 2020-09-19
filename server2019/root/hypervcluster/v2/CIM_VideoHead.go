@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VideoHead struct
@@ -82,7 +84,7 @@ func NewCIM_VideoHeadEx6(hostName string,
 
 // SetCurrentBitsPerPixel sets the value of CurrentBitsPerPixel for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentBitsPerPixel(value uint32) (err error) {
-	return instance.SetProperty("CurrentBitsPerPixel", value)
+	return instance.SetProperty("CurrentBitsPerPixel", (value))
 }
 
 // GetCurrentBitsPerPixel gets the value of CurrentBitsPerPixel for the instance
@@ -91,16 +93,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentBitsPerPixel() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentHorizontalResolution sets the value of CurrentHorizontalResolution for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentHorizontalResolution(value uint32) (err error) {
-	return instance.SetProperty("CurrentHorizontalResolution", value)
+	return instance.SetProperty("CurrentHorizontalResolution", (value))
 }
 
 // GetCurrentHorizontalResolution gets the value of CurrentHorizontalResolution for the instance
@@ -109,16 +120,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentHorizontalResolution() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentNumberOfColors sets the value of CurrentNumberOfColors for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentNumberOfColors(value uint64) (err error) {
-	return instance.SetProperty("CurrentNumberOfColors", value)
+	return instance.SetProperty("CurrentNumberOfColors", (value))
 }
 
 // GetCurrentNumberOfColors gets the value of CurrentNumberOfColors for the instance
@@ -127,16 +147,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentNumberOfColors() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCurrentNumberOfColumns sets the value of CurrentNumberOfColumns for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentNumberOfColumns(value uint32) (err error) {
-	return instance.SetProperty("CurrentNumberOfColumns", value)
+	return instance.SetProperty("CurrentNumberOfColumns", (value))
 }
 
 // GetCurrentNumberOfColumns gets the value of CurrentNumberOfColumns for the instance
@@ -145,16 +174,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentNumberOfColumns() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentNumberOfRows sets the value of CurrentNumberOfRows for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentNumberOfRows(value uint32) (err error) {
-	return instance.SetProperty("CurrentNumberOfRows", value)
+	return instance.SetProperty("CurrentNumberOfRows", (value))
 }
 
 // GetCurrentNumberOfRows gets the value of CurrentNumberOfRows for the instance
@@ -163,16 +201,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentNumberOfRows() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentRefreshRate sets the value of CurrentRefreshRate for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentRefreshRate(value uint32) (err error) {
-	return instance.SetProperty("CurrentRefreshRate", value)
+	return instance.SetProperty("CurrentRefreshRate", (value))
 }
 
 // GetCurrentRefreshRate gets the value of CurrentRefreshRate for the instance
@@ -181,16 +228,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentRefreshRate() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentScanMode sets the value of CurrentScanMode for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentScanMode(value VideoHead_CurrentScanMode) (err error) {
-	return instance.SetProperty("CurrentScanMode", value)
+	return instance.SetProperty("CurrentScanMode", (value))
 }
 
 // GetCurrentScanMode gets the value of CurrentScanMode for the instance
@@ -199,16 +255,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentScanMode() (value VideoHead_Cur
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VideoHead_CurrentScanMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VideoHead_CurrentScanMode(valuetmp)
+
 	return
 }
 
 // SetCurrentVerticalResolution sets the value of CurrentVerticalResolution for the instance
 func (instance *CIM_VideoHead) SetPropertyCurrentVerticalResolution(value uint32) (err error) {
-	return instance.SetProperty("CurrentVerticalResolution", value)
+	return instance.SetProperty("CurrentVerticalResolution", (value))
 }
 
 // GetCurrentVerticalResolution gets the value of CurrentVerticalResolution for the instance
@@ -217,16 +282,25 @@ func (instance *CIM_VideoHead) GetPropertyCurrentVerticalResolution() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxRefreshRate sets the value of MaxRefreshRate for the instance
 func (instance *CIM_VideoHead) SetPropertyMaxRefreshRate(value uint32) (err error) {
-	return instance.SetProperty("MaxRefreshRate", value)
+	return instance.SetProperty("MaxRefreshRate", (value))
 }
 
 // GetMaxRefreshRate gets the value of MaxRefreshRate for the instance
@@ -235,16 +309,25 @@ func (instance *CIM_VideoHead) GetPropertyMaxRefreshRate() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinRefreshRate sets the value of MinRefreshRate for the instance
 func (instance *CIM_VideoHead) SetPropertyMinRefreshRate(value uint32) (err error) {
-	return instance.SetProperty("MinRefreshRate", value)
+	return instance.SetProperty("MinRefreshRate", (value))
 }
 
 // GetMinRefreshRate gets the value of MinRefreshRate for the instance
@@ -253,16 +336,25 @@ func (instance *CIM_VideoHead) GetPropertyMinRefreshRate() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherCurrentScanMode sets the value of OtherCurrentScanMode for the instance
 func (instance *CIM_VideoHead) SetPropertyOtherCurrentScanMode(value string) (err error) {
-	return instance.SetProperty("OtherCurrentScanMode", value)
+	return instance.SetProperty("OtherCurrentScanMode", (value))
 }
 
 // GetOtherCurrentScanMode gets the value of OtherCurrentScanMode for the instance
@@ -271,9 +363,18 @@ func (instance *CIM_VideoHead) GetPropertyOtherCurrentScanMode() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

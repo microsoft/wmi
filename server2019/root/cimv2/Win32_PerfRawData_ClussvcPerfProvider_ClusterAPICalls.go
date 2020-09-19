@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls struct
@@ -76,7 +78,7 @@ func NewWin32_PerfRawData_ClussvcPerfProvider_ClusterAPICallsEx6(hostName string
 
 // SetClusterAPICallsPersec sets the value of ClusterAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyClusterAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("ClusterAPICallsPersec", value)
+	return instance.SetProperty("ClusterAPICallsPersec", (value))
 }
 
 // GetClusterAPICallsPersec gets the value of ClusterAPICallsPersec for the instance
@@ -85,16 +87,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetGroupAPICallsPersec sets the value of GroupAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyGroupAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("GroupAPICallsPersec", value)
+	return instance.SetProperty("GroupAPICallsPersec", (value))
 }
 
 // GetGroupAPICallsPersec gets the value of GroupAPICallsPersec for the instance
@@ -103,16 +114,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetKeyAPICallsPersec sets the value of KeyAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyKeyAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("KeyAPICallsPersec", value)
+	return instance.SetProperty("KeyAPICallsPersec", (value))
 }
 
 // GetKeyAPICallsPersec gets the value of KeyAPICallsPersec for the instance
@@ -121,16 +141,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkAPICallsPersec sets the value of NetworkAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyNetworkAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("NetworkAPICallsPersec", value)
+	return instance.SetProperty("NetworkAPICallsPersec", (value))
 }
 
 // GetNetworkAPICallsPersec gets the value of NetworkAPICallsPersec for the instance
@@ -139,16 +168,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkInterfaceAPICallsPersec sets the value of NetworkInterfaceAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyNetworkInterfaceAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("NetworkInterfaceAPICallsPersec", value)
+	return instance.SetProperty("NetworkInterfaceAPICallsPersec", (value))
 }
 
 // GetNetworkInterfaceAPICallsPersec gets the value of NetworkInterfaceAPICallsPersec for the instance
@@ -157,16 +195,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNodeAPICallsPersec sets the value of NodeAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyNodeAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("NodeAPICallsPersec", value)
+	return instance.SetProperty("NodeAPICallsPersec", (value))
 }
 
 // GetNodeAPICallsPersec gets the value of NodeAPICallsPersec for the instance
@@ -175,16 +222,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNotificationAPICallsPersec sets the value of NotificationAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyNotificationAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("NotificationAPICallsPersec", value)
+	return instance.SetProperty("NotificationAPICallsPersec", (value))
 }
 
 // GetNotificationAPICallsPersec gets the value of NotificationAPICallsPersec for the instance
@@ -193,16 +249,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNotificationBatchAPICallsPersec sets the value of NotificationBatchAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyNotificationBatchAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("NotificationBatchAPICallsPersec", value)
+	return instance.SetProperty("NotificationBatchAPICallsPersec", (value))
 }
 
 // GetNotificationBatchAPICallsPersec gets the value of NotificationBatchAPICallsPersec for the instance
@@ -211,16 +276,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceAPICallsPersec sets the value of ResourceAPICallsPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) SetPropertyResourceAPICallsPersec(value uint64) (err error) {
-	return instance.SetProperty("ResourceAPICallsPersec", value)
+	return instance.SetProperty("ResourceAPICallsPersec", (value))
 }
 
 // GetResourceAPICallsPersec gets the value of ResourceAPICallsPersec for the instance
@@ -229,9 +303,18 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPICalls) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

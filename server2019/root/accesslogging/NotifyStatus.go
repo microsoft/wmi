@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
@@ -11,7 +11,9 @@ package accesslogging
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __NotifyStatus struct
@@ -53,7 +55,7 @@ func New__NotifyStatusEx6(hostName string,
 
 // SetStatusCode sets the value of StatusCode for the instance
 func (instance *__NotifyStatus) SetPropertyStatusCode(value uint32) (err error) {
-	return instance.SetProperty("StatusCode", value)
+	return instance.SetProperty("StatusCode", (value))
 }
 
 // GetStatusCode gets the value of StatusCode for the instance
@@ -62,9 +64,18 @@ func (instance *__NotifyStatus) GetPropertyStatusCode() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
@@ -11,7 +11,9 @@ package mlnx
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ServiceAvailableToElement struct
@@ -56,7 +58,7 @@ func NewCIM_ServiceAvailableToElementEx6(hostName string,
 
 // SetServiceProvided sets the value of ServiceProvided for the instance
 func (instance *CIM_ServiceAvailableToElement) SetPropertyServiceProvided(value CIM_Service) (err error) {
-	return instance.SetProperty("ServiceProvided", value)
+	return instance.SetProperty("ServiceProvided", (value))
 }
 
 // GetServiceProvided gets the value of ServiceProvided for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ServiceAvailableToElement) GetPropertyServiceProvided() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Service)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Service)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Service is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Service(valuetmp)
+
 	return
 }
 
 // SetUserOfService sets the value of UserOfService for the instance
 func (instance *CIM_ServiceAvailableToElement) SetPropertyUserOfService(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("UserOfService", value)
+	return instance.SetProperty("UserOfService", (value))
 }
 
 // GetUserOfService gets the value of UserOfService for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ServiceAvailableToElement) GetPropertyUserOfService() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }

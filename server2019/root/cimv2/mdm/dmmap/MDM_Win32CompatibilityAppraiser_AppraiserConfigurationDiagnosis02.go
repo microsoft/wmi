@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02 struct
@@ -74,7 +76,7 @@ func NewMDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02Ex6(hos
 
 // SetAllTargetOsVersionsRequested sets the value of AllTargetOsVersionsRequested for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyAllTargetOsVersionsRequested(value bool) (err error) {
-	return instance.SetProperty("AllTargetOsVersionsRequested", value)
+	return instance.SetProperty("AllTargetOsVersionsRequested", (value))
 }
 
 // GetAllTargetOsVersionsRequested gets the value of AllTargetOsVersionsRequested for the instance
@@ -83,16 +85,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAppraiserCodeAndDataVersionsAboveMinimum sets the value of AppraiserCodeAndDataVersionsAboveMinimum for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyAppraiserCodeAndDataVersionsAboveMinimum(value int32) (err error) {
-	return instance.SetProperty("AppraiserCodeAndDataVersionsAboveMinimum", value)
+	return instance.SetProperty("AppraiserCodeAndDataVersionsAboveMinimum", (value))
 }
 
 // GetAppraiserCodeAndDataVersionsAboveMinimum gets the value of AppraiserCodeAndDataVersionsAboveMinimum for the instance
@@ -101,16 +112,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetCommercialId sets the value of CommercialId for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyCommercialId(value string) (err error) {
-	return instance.SetProperty("CommercialId", value)
+	return instance.SetProperty("CommercialId", (value))
 }
 
 // GetCommercialId gets the value of CommercialId for the instance
@@ -119,16 +139,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCommercialIdSetAndValid sets the value of CommercialIdSetAndValid for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyCommercialIdSetAndValid(value bool) (err error) {
-	return instance.SetProperty("CommercialIdSetAndValid", value)
+	return instance.SetProperty("CommercialIdSetAndValid", (value))
 }
 
 // GetCommercialIdSetAndValid gets the value of CommercialIdSetAndValid for the instance
@@ -137,16 +166,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -155,16 +193,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOsSkuIsValidForAppraiser sets the value of OsSkuIsValidForAppraiser for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyOsSkuIsValidForAppraiser(value bool) (err error) {
-	return instance.SetProperty("OsSkuIsValidForAppraiser", value)
+	return instance.SetProperty("OsSkuIsValidForAppraiser", (value))
 }
 
 // GetOsSkuIsValidForAppraiser gets the value of OsSkuIsValidForAppraiser for the instance
@@ -173,16 +220,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -191,16 +247,25 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRebootPending sets the value of RebootPending for the instance
 func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis02) SetPropertyRebootPending(value bool) (err error) {
-	return instance.SetProperty("RebootPending", value)
+	return instance.SetProperty("RebootPending", (value))
 }
 
 // GetRebootPending gets the value of RebootPending for the instance
@@ -209,9 +274,18 @@ func (instance *MDM_Win32CompatibilityAppraiser_AppraiserConfigurationDiagnosis0
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterPowerManagement_Offload_Arp struct
@@ -58,7 +60,7 @@ func NewMSFT_NetAdapterPowerManagement_Offload_ArpEx6(hostName string,
 
 // SetHostIPv4Address sets the value of HostIPv4Address for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_Arp) SetPropertyHostIPv4Address(value string) (err error) {
-	return instance.SetProperty("HostIPv4Address", value)
+	return instance.SetProperty("HostIPv4Address", (value))
 }
 
 // GetHostIPv4Address gets the value of HostIPv4Address for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_Arp) GetPropertyHostIPv4A
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMACAddress sets the value of MACAddress for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_Arp) SetPropertyMACAddress(value string) (err error) {
-	return instance.SetProperty("MACAddress", value)
+	return instance.SetProperty("MACAddress", (value))
 }
 
 // GetMACAddress gets the value of MACAddress for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_Arp) GetPropertyMACAddres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteIPv4Address sets the value of RemoteIPv4Address for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_Arp) SetPropertyRemoteIPv4Address(value string) (err error) {
-	return instance.SetProperty("RemoteIPv4Address", value)
+	return instance.SetProperty("RemoteIPv4Address", (value))
 }
 
 // GetRemoteIPv4Address gets the value of RemoteIPv4Address for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_Arp) GetPropertyRemoteIPv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

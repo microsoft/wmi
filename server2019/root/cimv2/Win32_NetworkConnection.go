@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NetworkConnection struct
@@ -85,7 +87,7 @@ func NewWin32_NetworkConnectionEx6(hostName string,
 
 // SetAccessMask sets the value of AccessMask for the instance
 func (instance *Win32_NetworkConnection) SetPropertyAccessMask(value uint32) (err error) {
-	return instance.SetProperty("AccessMask", value)
+	return instance.SetProperty("AccessMask", (value))
 }
 
 // GetAccessMask gets the value of AccessMask for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_NetworkConnection) GetPropertyAccessMask() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetComment sets the value of Comment for the instance
 func (instance *Win32_NetworkConnection) SetPropertyComment(value string) (err error) {
-	return instance.SetProperty("Comment", value)
+	return instance.SetProperty("Comment", (value))
 }
 
 // GetComment gets the value of Comment for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_NetworkConnection) GetPropertyComment() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConnectionState sets the value of ConnectionState for the instance
 func (instance *Win32_NetworkConnection) SetPropertyConnectionState(value string) (err error) {
-	return instance.SetProperty("ConnectionState", value)
+	return instance.SetProperty("ConnectionState", (value))
 }
 
 // GetConnectionState gets the value of ConnectionState for the instance
@@ -130,16 +150,25 @@ func (instance *Win32_NetworkConnection) GetPropertyConnectionState() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConnectionType sets the value of ConnectionType for the instance
 func (instance *Win32_NetworkConnection) SetPropertyConnectionType(value string) (err error) {
-	return instance.SetProperty("ConnectionType", value)
+	return instance.SetProperty("ConnectionType", (value))
 }
 
 // GetConnectionType gets the value of ConnectionType for the instance
@@ -148,16 +177,25 @@ func (instance *Win32_NetworkConnection) GetPropertyConnectionType() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisplayType sets the value of DisplayType for the instance
 func (instance *Win32_NetworkConnection) SetPropertyDisplayType(value string) (err error) {
-	return instance.SetProperty("DisplayType", value)
+	return instance.SetProperty("DisplayType", (value))
 }
 
 // GetDisplayType gets the value of DisplayType for the instance
@@ -166,16 +204,25 @@ func (instance *Win32_NetworkConnection) GetPropertyDisplayType() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalName sets the value of LocalName for the instance
 func (instance *Win32_NetworkConnection) SetPropertyLocalName(value string) (err error) {
-	return instance.SetProperty("LocalName", value)
+	return instance.SetProperty("LocalName", (value))
 }
 
 // GetLocalName gets the value of LocalName for the instance
@@ -184,16 +231,25 @@ func (instance *Win32_NetworkConnection) GetPropertyLocalName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPersistent sets the value of Persistent for the instance
 func (instance *Win32_NetworkConnection) SetPropertyPersistent(value bool) (err error) {
-	return instance.SetProperty("Persistent", value)
+	return instance.SetProperty("Persistent", (value))
 }
 
 // GetPersistent gets the value of Persistent for the instance
@@ -202,16 +258,25 @@ func (instance *Win32_NetworkConnection) GetPropertyPersistent() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetProviderName sets the value of ProviderName for the instance
 func (instance *Win32_NetworkConnection) SetPropertyProviderName(value string) (err error) {
-	return instance.SetProperty("ProviderName", value)
+	return instance.SetProperty("ProviderName", (value))
 }
 
 // GetProviderName gets the value of ProviderName for the instance
@@ -220,16 +285,25 @@ func (instance *Win32_NetworkConnection) GetPropertyProviderName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteName sets the value of RemoteName for the instance
 func (instance *Win32_NetworkConnection) SetPropertyRemoteName(value string) (err error) {
-	return instance.SetProperty("RemoteName", value)
+	return instance.SetProperty("RemoteName", (value))
 }
 
 // GetRemoteName gets the value of RemoteName for the instance
@@ -238,16 +312,25 @@ func (instance *Win32_NetworkConnection) GetPropertyRemoteName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemotePath sets the value of RemotePath for the instance
 func (instance *Win32_NetworkConnection) SetPropertyRemotePath(value string) (err error) {
-	return instance.SetProperty("RemotePath", value)
+	return instance.SetProperty("RemotePath", (value))
 }
 
 // GetRemotePath gets the value of RemotePath for the instance
@@ -256,16 +339,25 @@ func (instance *Win32_NetworkConnection) GetPropertyRemotePath() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResourceType sets the value of ResourceType for the instance
 func (instance *Win32_NetworkConnection) SetPropertyResourceType(value string) (err error) {
-	return instance.SetProperty("ResourceType", value)
+	return instance.SetProperty("ResourceType", (value))
 }
 
 // GetResourceType gets the value of ResourceType for the instance
@@ -274,16 +366,25 @@ func (instance *Win32_NetworkConnection) GetPropertyResourceType() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserName sets the value of UserName for the instance
 func (instance *Win32_NetworkConnection) SetPropertyUserName(value string) (err error) {
-	return instance.SetProperty("UserName", value)
+	return instance.SetProperty("UserName", (value))
 }
 
 // GetUserName gets the value of UserName for the instance
@@ -292,9 +393,18 @@ func (instance *Win32_NetworkConnection) GetPropertyUserName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

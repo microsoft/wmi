@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_GuestServiceInterfaceComponentSettingData struct
@@ -55,7 +57,7 @@ func NewMsvm_GuestServiceInterfaceComponentSettingDataEx6(hostName string,
 
 // SetDefaultEnabledStatePolicy sets the value of DefaultEnabledStatePolicy for the instance
 func (instance *Msvm_GuestServiceInterfaceComponentSettingData) SetPropertyDefaultEnabledStatePolicy(value GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy) (err error) {
-	return instance.SetProperty("DefaultEnabledStatePolicy", value)
+	return instance.SetProperty("DefaultEnabledStatePolicy", (value))
 }
 
 // GetDefaultEnabledStatePolicy gets the value of DefaultEnabledStatePolicy for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_GuestServiceInterfaceComponentSettingData) GetPropertyDefau
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy(valuetmp)
+
 	return
 }
 
 // SetEnabledState sets the value of EnabledState for the instance
 func (instance *Msvm_GuestServiceInterfaceComponentSettingData) SetPropertyEnabledState(value GuestServiceInterfaceComponentSettingData_EnabledState) (err error) {
-	return instance.SetProperty("EnabledState", value)
+	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
@@ -82,10 +93,19 @@ func (instance *Msvm_GuestServiceInterfaceComponentSettingData) GetPropertyEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(GuestServiceInterfaceComponentSettingData_EnabledState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = GuestServiceInterfaceComponentSettingData_EnabledState(valuetmp)
+
 	return
 }
 func (instance *Msvm_GuestServiceInterfaceComponentSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {

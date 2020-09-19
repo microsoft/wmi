@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_CollectedCollections struct
@@ -56,7 +58,7 @@ func NewCIM_CollectedCollectionsEx6(hostName string,
 
 // SetCollection sets the value of Collection for the instance
 func (instance *CIM_CollectedCollections) SetPropertyCollection(value CIM_CollectionOfMSEs) (err error) {
-	return instance.SetProperty("Collection", value)
+	return instance.SetProperty("Collection", (value))
 }
 
 // GetCollection gets the value of Collection for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_CollectedCollections) GetPropertyCollection() (value CIM_Col
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_CollectionOfMSEs)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_CollectionOfMSEs)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_CollectionOfMSEs is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_CollectionOfMSEs(valuetmp)
+
 	return
 }
 
 // SetCollectionInCollection sets the value of CollectionInCollection for the instance
 func (instance *CIM_CollectedCollections) SetPropertyCollectionInCollection(value CIM_CollectionOfMSEs) (err error) {
-	return instance.SetProperty("CollectionInCollection", value)
+	return instance.SetProperty("CollectionInCollection", (value))
 }
 
 // GetCollectionInCollection gets the value of CollectionInCollection for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_CollectedCollections) GetPropertyCollectionInCollection() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_CollectionOfMSEs)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_CollectionOfMSEs)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_CollectionOfMSEs is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_CollectionOfMSEs(valuetmp)
+
 	return
 }

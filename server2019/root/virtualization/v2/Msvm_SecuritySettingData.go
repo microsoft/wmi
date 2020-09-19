@@ -3,22 +3,21 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_SecuritySettingData struct
 type Msvm_SecuritySettingData struct {
 	*CIM_SettingData
-
-	//
-	AppContainerLaunchOptOut bool
 
 	//
 	BindToHostTpm bool
@@ -71,27 +70,9 @@ func NewMsvm_SecuritySettingDataEx6(hostName string,
 	return
 }
 
-// SetAppContainerLaunchOptOut sets the value of AppContainerLaunchOptOut for the instance
-func (instance *Msvm_SecuritySettingData) SetPropertyAppContainerLaunchOptOut(value bool) (err error) {
-	return instance.SetProperty("AppContainerLaunchOptOut", value)
-}
-
-// GetAppContainerLaunchOptOut gets the value of AppContainerLaunchOptOut for the instance
-func (instance *Msvm_SecuritySettingData) GetPropertyAppContainerLaunchOptOut() (value bool, err error) {
-	retValue, err := instance.GetProperty("AppContainerLaunchOptOut")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
 // SetBindToHostTpm sets the value of BindToHostTpm for the instance
 func (instance *Msvm_SecuritySettingData) SetPropertyBindToHostTpm(value bool) (err error) {
-	return instance.SetProperty("BindToHostTpm", value)
+	return instance.SetProperty("BindToHostTpm", (value))
 }
 
 // GetBindToHostTpm gets the value of BindToHostTpm for the instance
@@ -100,16 +81,25 @@ func (instance *Msvm_SecuritySettingData) GetPropertyBindToHostTpm() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDataProtectionRequested sets the value of DataProtectionRequested for the instance
 func (instance *Msvm_SecuritySettingData) SetPropertyDataProtectionRequested(value bool) (err error) {
-	return instance.SetProperty("DataProtectionRequested", value)
+	return instance.SetProperty("DataProtectionRequested", (value))
 }
 
 // GetDataProtectionRequested gets the value of DataProtectionRequested for the instance
@@ -118,16 +108,25 @@ func (instance *Msvm_SecuritySettingData) GetPropertyDataProtectionRequested() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEncryptStateAndVmMigrationTraffic sets the value of EncryptStateAndVmMigrationTraffic for the instance
 func (instance *Msvm_SecuritySettingData) SetPropertyEncryptStateAndVmMigrationTraffic(value bool) (err error) {
-	return instance.SetProperty("EncryptStateAndVmMigrationTraffic", value)
+	return instance.SetProperty("EncryptStateAndVmMigrationTraffic", (value))
 }
 
 // GetEncryptStateAndVmMigrationTraffic gets the value of EncryptStateAndVmMigrationTraffic for the instance
@@ -136,16 +135,25 @@ func (instance *Msvm_SecuritySettingData) GetPropertyEncryptStateAndVmMigrationT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetKsdEnabled sets the value of KsdEnabled for the instance
 func (instance *Msvm_SecuritySettingData) SetPropertyKsdEnabled(value bool) (err error) {
-	return instance.SetProperty("KsdEnabled", value)
+	return instance.SetProperty("KsdEnabled", (value))
 }
 
 // GetKsdEnabled gets the value of KsdEnabled for the instance
@@ -154,16 +162,25 @@ func (instance *Msvm_SecuritySettingData) GetPropertyKsdEnabled() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetShieldingRequested sets the value of ShieldingRequested for the instance
 func (instance *Msvm_SecuritySettingData) SetPropertyShieldingRequested(value bool) (err error) {
-	return instance.SetProperty("ShieldingRequested", value)
+	return instance.SetProperty("ShieldingRequested", (value))
 }
 
 // GetShieldingRequested gets the value of ShieldingRequested for the instance
@@ -172,16 +189,25 @@ func (instance *Msvm_SecuritySettingData) GetPropertyShieldingRequested() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTpmEnabled sets the value of TpmEnabled for the instance
 func (instance *Msvm_SecuritySettingData) SetPropertyTpmEnabled(value bool) (err error) {
-	return instance.SetProperty("TpmEnabled", value)
+	return instance.SetProperty("TpmEnabled", (value))
 }
 
 // GetTpmEnabled gets the value of TpmEnabled for the instance
@@ -190,16 +216,25 @@ func (instance *Msvm_SecuritySettingData) GetPropertyTpmEnabled() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVirtualizationBasedSecurityOptOut sets the value of VirtualizationBasedSecurityOptOut for the instance
 func (instance *Msvm_SecuritySettingData) SetPropertyVirtualizationBasedSecurityOptOut(value bool) (err error) {
-	return instance.SetProperty("VirtualizationBasedSecurityOptOut", value)
+	return instance.SetProperty("VirtualizationBasedSecurityOptOut", (value))
 }
 
 // GetVirtualizationBasedSecurityOptOut gets the value of VirtualizationBasedSecurityOptOut for the instance
@@ -208,10 +243,19 @@ func (instance *Msvm_SecuritySettingData) GetPropertyVirtualizationBasedSecurity
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 func (instance *Msvm_SecuritySettingData) GetRelatedSecurityElement() (value *cim.WmiInstance, err error) {

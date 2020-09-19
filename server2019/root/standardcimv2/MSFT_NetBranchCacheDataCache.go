@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetBranchCacheDataCache struct
@@ -52,7 +54,7 @@ func NewMSFT_NetBranchCacheDataCacheEx6(hostName string,
 
 // SetDataCacheExtensions sets the value of DataCacheExtensions for the instance
 func (instance *MSFT_NetBranchCacheDataCache) SetPropertyDataCacheExtensions(value []MSFT_NetBranchCacheDataCacheExtension) (err error) {
-	return instance.SetProperty("DataCacheExtensions", value)
+	return instance.SetProperty("DataCacheExtensions", (value))
 }
 
 // GetDataCacheExtensions gets the value of DataCacheExtensions for the instance
@@ -61,9 +63,19 @@ func (instance *MSFT_NetBranchCacheDataCache) GetPropertyDataCacheExtensions() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetBranchCacheDataCacheExtension)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetBranchCacheDataCacheExtension)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetBranchCacheDataCacheExtension is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetBranchCacheDataCacheExtension(valuetmp))
+	}
+
 	return
 }

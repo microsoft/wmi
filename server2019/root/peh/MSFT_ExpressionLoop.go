@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExpressionLoop struct
@@ -55,7 +57,7 @@ func NewMSFT_ExpressionLoopEx6(hostName string,
 
 // Setbody sets the value of body for the instance
 func (instance *MSFT_ExpressionLoop) SetPropertybody(value MSFT_Expression) (err error) {
-	return instance.SetProperty("body", value)
+	return instance.SetProperty("body", (value))
 }
 
 // Getbody gets the value of body for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_ExpressionLoop) GetPropertybody() (value MSFT_Expression, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Expression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Expression)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Expression is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Expression(valuetmp)
+
 	return
 }
 
 // Setcondition sets the value of condition for the instance
 func (instance *MSFT_ExpressionLoop) SetPropertycondition(value MSFT_Expression) (err error) {
-	return instance.SetProperty("condition", value)
+	return instance.SetProperty("condition", (value))
 }
 
 // Getcondition gets the value of condition for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_ExpressionLoop) GetPropertycondition() (value MSFT_Expressi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Expression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Expression)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Expression is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Expression(valuetmp)
+
 	return
 }

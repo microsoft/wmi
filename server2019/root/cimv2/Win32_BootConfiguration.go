@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_BootConfiguration struct
@@ -67,7 +69,7 @@ func NewWin32_BootConfigurationEx6(hostName string,
 
 // SetBootDirectory sets the value of BootDirectory for the instance
 func (instance *Win32_BootConfiguration) SetPropertyBootDirectory(value string) (err error) {
-	return instance.SetProperty("BootDirectory", value)
+	return instance.SetProperty("BootDirectory", (value))
 }
 
 // GetBootDirectory gets the value of BootDirectory for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_BootConfiguration) GetPropertyBootDirectory() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConfigurationPath sets the value of ConfigurationPath for the instance
 func (instance *Win32_BootConfiguration) SetPropertyConfigurationPath(value string) (err error) {
-	return instance.SetProperty("ConfigurationPath", value)
+	return instance.SetProperty("ConfigurationPath", (value))
 }
 
 // GetConfigurationPath gets the value of ConfigurationPath for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_BootConfiguration) GetPropertyConfigurationPath() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastDrive sets the value of LastDrive for the instance
 func (instance *Win32_BootConfiguration) SetPropertyLastDrive(value string) (err error) {
-	return instance.SetProperty("LastDrive", value)
+	return instance.SetProperty("LastDrive", (value))
 }
 
 // GetLastDrive gets the value of LastDrive for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_BootConfiguration) GetPropertyLastDrive() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_BootConfiguration) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_BootConfiguration) GetPropertyName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScratchDirectory sets the value of ScratchDirectory for the instance
 func (instance *Win32_BootConfiguration) SetPropertyScratchDirectory(value string) (err error) {
-	return instance.SetProperty("ScratchDirectory", value)
+	return instance.SetProperty("ScratchDirectory", (value))
 }
 
 // GetScratchDirectory gets the value of ScratchDirectory for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_BootConfiguration) GetPropertyScratchDirectory() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTempDirectory sets the value of TempDirectory for the instance
 func (instance *Win32_BootConfiguration) SetPropertyTempDirectory(value string) (err error) {
-	return instance.SetProperty("TempDirectory", value)
+	return instance.SetProperty("TempDirectory", (value))
 }
 
 // GetTempDirectory gets the value of TempDirectory for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_BootConfiguration) GetPropertyTempDirectory() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

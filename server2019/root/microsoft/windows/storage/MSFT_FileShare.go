@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_FileShare struct
@@ -76,7 +78,7 @@ func NewMSFT_FileShareEx6(hostName string,
 
 // SetContinuouslyAvailable sets the value of ContinuouslyAvailable for the instance
 func (instance *MSFT_FileShare) SetPropertyContinuouslyAvailable(value bool) (err error) {
-	return instance.SetProperty("ContinuouslyAvailable", value)
+	return instance.SetProperty("ContinuouslyAvailable", (value))
 }
 
 // GetContinuouslyAvailable gets the value of ContinuouslyAvailable for the instance
@@ -85,16 +87,25 @@ func (instance *MSFT_FileShare) GetPropertyContinuouslyAvailable() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_FileShare) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -103,16 +114,25 @@ func (instance *MSFT_FileShare) GetPropertyDescription() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEncryptData sets the value of EncryptData for the instance
 func (instance *MSFT_FileShare) SetPropertyEncryptData(value bool) (err error) {
-	return instance.SetProperty("EncryptData", value)
+	return instance.SetProperty("EncryptData", (value))
 }
 
 // GetEncryptData gets the value of EncryptData for the instance
@@ -121,16 +141,25 @@ func (instance *MSFT_FileShare) GetPropertyEncryptData() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFileSharingProtocol sets the value of FileSharingProtocol for the instance
 func (instance *MSFT_FileShare) SetPropertyFileSharingProtocol(value uint16) (err error) {
-	return instance.SetProperty("FileSharingProtocol", value)
+	return instance.SetProperty("FileSharingProtocol", (value))
 }
 
 // GetFileSharingProtocol gets the value of FileSharingProtocol for the instance
@@ -139,16 +168,25 @@ func (instance *MSFT_FileShare) GetPropertyFileSharingProtocol() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_FileShare) SetPropertyHealthStatus(value uint16) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -157,16 +195,25 @@ func (instance *MSFT_FileShare) GetPropertyHealthStatus() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_FileShare) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -175,16 +222,25 @@ func (instance *MSFT_FileShare) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_FileShare) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -193,16 +249,26 @@ func (instance *MSFT_FileShare) GetPropertyOperationalStatus() (value []uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetShareState sets the value of ShareState for the instance
 func (instance *MSFT_FileShare) SetPropertyShareState(value uint16) (err error) {
-	return instance.SetProperty("ShareState", value)
+	return instance.SetProperty("ShareState", (value))
 }
 
 // GetShareState gets the value of ShareState for the instance
@@ -211,16 +277,25 @@ func (instance *MSFT_FileShare) GetPropertyShareState() (value uint16, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVolumeRelativePath sets the value of VolumeRelativePath for the instance
 func (instance *MSFT_FileShare) SetPropertyVolumeRelativePath(value string) (err error) {
-	return instance.SetProperty("VolumeRelativePath", value)
+	return instance.SetProperty("VolumeRelativePath", (value))
 }
 
 // GetVolumeRelativePath gets the value of VolumeRelativePath for the instance
@@ -229,10 +304,19 @@ func (instance *MSFT_FileShare) GetPropertyVolumeRelativePath() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

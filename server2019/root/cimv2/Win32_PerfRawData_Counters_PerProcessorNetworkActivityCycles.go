@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles struct
@@ -88,7 +90,7 @@ func NewWin32_PerfRawData_Counters_PerProcessorNetworkActivityCyclesEx6(hostName
 
 // SetBuildScatterGatherCyclesPersec sets the value of BuildScatterGatherCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyBuildScatterGatherCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("BuildScatterGatherCyclesPersec", value)
+	return instance.SetProperty("BuildScatterGatherCyclesPersec", (value))
 }
 
 // GetBuildScatterGatherCyclesPersec gets the value of BuildScatterGatherCyclesPersec for the instance
@@ -97,16 +99,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterruptCyclesPersec sets the value of InterruptCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyInterruptCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("InterruptCyclesPersec", value)
+	return instance.SetProperty("InterruptCyclesPersec", (value))
 }
 
 // GetInterruptCyclesPersec gets the value of InterruptCyclesPersec for the instance
@@ -115,16 +126,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterruptDPCCyclesPersec sets the value of InterruptDPCCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyInterruptDPCCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("InterruptDPCCyclesPersec", value)
+	return instance.SetProperty("InterruptDPCCyclesPersec", (value))
 }
 
 // GetInterruptDPCCyclesPersec gets the value of InterruptDPCCyclesPersec for the instance
@@ -133,16 +153,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterruptDPCLatencyCyclesPersec sets the value of InterruptDPCLatencyCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyInterruptDPCLatencyCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("InterruptDPCLatencyCyclesPersec", value)
+	return instance.SetProperty("InterruptDPCLatencyCyclesPersec", (value))
 }
 
 // GetInterruptDPCLatencyCyclesPersec gets the value of InterruptDPCLatencyCyclesPersec for the instance
@@ -151,16 +180,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMiniportReturnPacketCyclesPersec sets the value of MiniportReturnPacketCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyMiniportReturnPacketCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("MiniportReturnPacketCyclesPersec", value)
+	return instance.SetProperty("MiniportReturnPacketCyclesPersec", (value))
 }
 
 // GetMiniportReturnPacketCyclesPersec gets the value of MiniportReturnPacketCyclesPersec for the instance
@@ -169,16 +207,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMiniportRSSIndirectionTableChangeCycles sets the value of MiniportRSSIndirectionTableChangeCycles for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyMiniportRSSIndirectionTableChangeCycles(value uint64) (err error) {
-	return instance.SetProperty("MiniportRSSIndirectionTableChangeCycles", value)
+	return instance.SetProperty("MiniportRSSIndirectionTableChangeCycles", (value))
 }
 
 // GetMiniportRSSIndirectionTableChangeCycles gets the value of MiniportRSSIndirectionTableChangeCycles for the instance
@@ -187,16 +234,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMiniportSendCyclesPersec sets the value of MiniportSendCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyMiniportSendCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("MiniportSendCyclesPersec", value)
+	return instance.SetProperty("MiniportSendCyclesPersec", (value))
 }
 
 // GetMiniportSendCyclesPersec gets the value of MiniportSendCyclesPersec for the instance
@@ -205,16 +261,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNDISReceiveIndicationCyclesPersec sets the value of NDISReceiveIndicationCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyNDISReceiveIndicationCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("NDISReceiveIndicationCyclesPersec", value)
+	return instance.SetProperty("NDISReceiveIndicationCyclesPersec", (value))
 }
 
 // GetNDISReceiveIndicationCyclesPersec gets the value of NDISReceiveIndicationCyclesPersec for the instance
@@ -223,16 +288,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNDISReturnPacketCyclesPersec sets the value of NDISReturnPacketCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyNDISReturnPacketCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("NDISReturnPacketCyclesPersec", value)
+	return instance.SetProperty("NDISReturnPacketCyclesPersec", (value))
 }
 
 // GetNDISReturnPacketCyclesPersec gets the value of NDISReturnPacketCyclesPersec for the instance
@@ -241,16 +315,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNDISSendCompleteCyclesPersec sets the value of NDISSendCompleteCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyNDISSendCompleteCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("NDISSendCompleteCyclesPersec", value)
+	return instance.SetProperty("NDISSendCompleteCyclesPersec", (value))
 }
 
 // GetNDISSendCompleteCyclesPersec gets the value of NDISSendCompleteCyclesPersec for the instance
@@ -259,16 +342,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNDISSendCyclesPersec sets the value of NDISSendCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyNDISSendCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("NDISSendCyclesPersec", value)
+	return instance.SetProperty("NDISSendCyclesPersec", (value))
 }
 
 // GetNDISSendCyclesPersec gets the value of NDISSendCyclesPersec for the instance
@@ -277,16 +369,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStackReceiveIndicationCyclesPersec sets the value of StackReceiveIndicationCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyStackReceiveIndicationCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("StackReceiveIndicationCyclesPersec", value)
+	return instance.SetProperty("StackReceiveIndicationCyclesPersec", (value))
 }
 
 // GetStackReceiveIndicationCyclesPersec gets the value of StackReceiveIndicationCyclesPersec for the instance
@@ -295,16 +396,25 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStackSendCompleteCyclesPersec sets the value of StackSendCompleteCyclesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) SetPropertyStackSendCompleteCyclesPersec(value uint64) (err error) {
-	return instance.SetProperty("StackSendCompleteCyclesPersec", value)
+	return instance.SetProperty("StackSendCompleteCyclesPersec", (value))
 }
 
 // GetStackSendCompleteCyclesPersec gets the value of StackSendCompleteCyclesPersec for the instance
@@ -313,9 +423,18 @@ func (instance *Win32_PerfRawData_Counters_PerProcessorNetworkActivityCycles) Ge
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

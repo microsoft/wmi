@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_UserPrivilegeRightBlocked struct
@@ -55,7 +57,7 @@ func NewRSOP_UserPrivilegeRightBlockedEx6(hostName string,
 
 // SetAccountList sets the value of AccountList for the instance
 func (instance *RSOP_UserPrivilegeRightBlocked) SetPropertyAccountList(value []string) (err error) {
-	return instance.SetProperty("AccountList", value)
+	return instance.SetProperty("AccountList", (value))
 }
 
 // GetAccountList gets the value of AccountList for the instance
@@ -64,16 +66,26 @@ func (instance *RSOP_UserPrivilegeRightBlocked) GetPropertyAccountList() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetUserRight sets the value of UserRight for the instance
 func (instance *RSOP_UserPrivilegeRightBlocked) SetPropertyUserRight(value string) (err error) {
-	return instance.SetProperty("UserRight", value)
+	return instance.SetProperty("UserRight", (value))
 }
 
 // GetUserRight gets the value of UserRight for the instance
@@ -82,9 +94,18 @@ func (instance *RSOP_UserPrivilegeRightBlocked) GetPropertyUserRight() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
@@ -11,7 +11,9 @@ package mscluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_NodeSupportedVersion struct
@@ -56,7 +58,7 @@ func NewMSCluster_NodeSupportedVersionEx6(hostName string,
 
 // SetClusterFunctionalLevel sets the value of ClusterFunctionalLevel for the instance
 func (instance *MSCluster_NodeSupportedVersion) SetPropertyClusterFunctionalLevel(value uint32) (err error) {
-	return instance.SetProperty("ClusterFunctionalLevel", value)
+	return instance.SetProperty("ClusterFunctionalLevel", (value))
 }
 
 // GetClusterFunctionalLevel gets the value of ClusterFunctionalLevel for the instance
@@ -65,16 +67,25 @@ func (instance *MSCluster_NodeSupportedVersion) GetPropertyClusterFunctionalLeve
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClusterUpgradeVersion sets the value of ClusterUpgradeVersion for the instance
 func (instance *MSCluster_NodeSupportedVersion) SetPropertyClusterUpgradeVersion(value uint32) (err error) {
-	return instance.SetProperty("ClusterUpgradeVersion", value)
+	return instance.SetProperty("ClusterUpgradeVersion", (value))
 }
 
 // GetClusterUpgradeVersion gets the value of ClusterUpgradeVersion for the instance
@@ -83,9 +94,18 @@ func (instance *MSCluster_NodeSupportedVersion) GetPropertyClusterUpgradeVersion
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
