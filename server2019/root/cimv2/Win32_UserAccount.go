@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_UserAccount struct
@@ -70,7 +72,7 @@ func NewWin32_UserAccountEx6(hostName string,
 
 // SetAccountType sets the value of AccountType for the instance
 func (instance *Win32_UserAccount) SetPropertyAccountType(value uint32) (err error) {
-	return instance.SetProperty("AccountType", value)
+	return instance.SetProperty("AccountType", (value))
 }
 
 // GetAccountType gets the value of AccountType for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_UserAccount) GetPropertyAccountType() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDisabled sets the value of Disabled for the instance
 func (instance *Win32_UserAccount) SetPropertyDisabled(value bool) (err error) {
-	return instance.SetProperty("Disabled", value)
+	return instance.SetProperty("Disabled", (value))
 }
 
 // GetDisabled gets the value of Disabled for the instance
@@ -97,16 +108,25 @@ func (instance *Win32_UserAccount) GetPropertyDisabled() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFullName sets the value of FullName for the instance
 func (instance *Win32_UserAccount) SetPropertyFullName(value string) (err error) {
-	return instance.SetProperty("FullName", value)
+	return instance.SetProperty("FullName", (value))
 }
 
 // GetFullName gets the value of FullName for the instance
@@ -115,16 +135,25 @@ func (instance *Win32_UserAccount) GetPropertyFullName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockout sets the value of Lockout for the instance
 func (instance *Win32_UserAccount) SetPropertyLockout(value bool) (err error) {
-	return instance.SetProperty("Lockout", value)
+	return instance.SetProperty("Lockout", (value))
 }
 
 // GetLockout gets the value of Lockout for the instance
@@ -133,16 +162,25 @@ func (instance *Win32_UserAccount) GetPropertyLockout() (value bool, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPasswordChangeable sets the value of PasswordChangeable for the instance
 func (instance *Win32_UserAccount) SetPropertyPasswordChangeable(value bool) (err error) {
-	return instance.SetProperty("PasswordChangeable", value)
+	return instance.SetProperty("PasswordChangeable", (value))
 }
 
 // GetPasswordChangeable gets the value of PasswordChangeable for the instance
@@ -151,16 +189,25 @@ func (instance *Win32_UserAccount) GetPropertyPasswordChangeable() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPasswordExpires sets the value of PasswordExpires for the instance
 func (instance *Win32_UserAccount) SetPropertyPasswordExpires(value bool) (err error) {
-	return instance.SetProperty("PasswordExpires", value)
+	return instance.SetProperty("PasswordExpires", (value))
 }
 
 // GetPasswordExpires gets the value of PasswordExpires for the instance
@@ -169,16 +216,25 @@ func (instance *Win32_UserAccount) GetPropertyPasswordExpires() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPasswordRequired sets the value of PasswordRequired for the instance
 func (instance *Win32_UserAccount) SetPropertyPasswordRequired(value bool) (err error) {
-	return instance.SetProperty("PasswordRequired", value)
+	return instance.SetProperty("PasswordRequired", (value))
 }
 
 // GetPasswordRequired gets the value of PasswordRequired for the instance
@@ -187,10 +243,19 @@ func (instance *Win32_UserAccount) GetPropertyPasswordRequired() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

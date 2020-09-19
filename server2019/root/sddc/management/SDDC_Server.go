@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
@@ -11,7 +11,9 @@ package management
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SDDC_Server struct
@@ -37,13 +39,7 @@ type SDDC_Server struct {
 	Id string
 
 	//
-	IsBitlockerFeatureInstalled bool
-
-	//
 	IsDataDedupFeatureInstalled bool
-
-	//
-	IsStorageReplicaFeatureInstalled bool
 
 	//
 	Location string
@@ -122,7 +118,7 @@ func NewSDDC_ServerEx6(hostName string,
 
 // SetAlerts sets the value of Alerts for the instance
 func (instance *SDDC_Server) SetPropertyAlerts(value []SDDC_Alert) (err error) {
-	return instance.SetProperty("Alerts", value)
+	return instance.SetProperty("Alerts", (value))
 }
 
 // GetAlerts gets the value of Alerts for the instance
@@ -131,16 +127,26 @@ func (instance *SDDC_Server) GetPropertyAlerts() (value []SDDC_Alert, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]SDDC_Alert)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(SDDC_Alert)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " SDDC_Alert is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, SDDC_Alert(valuetmp))
+	}
+
 	return
 }
 
 // SetBuildNumber sets the value of BuildNumber for the instance
 func (instance *SDDC_Server) SetPropertyBuildNumber(value string) (err error) {
-	return instance.SetProperty("BuildNumber", value)
+	return instance.SetProperty("BuildNumber", (value))
 }
 
 // GetBuildNumber gets the value of BuildNumber for the instance
@@ -149,16 +155,25 @@ func (instance *SDDC_Server) GetPropertyBuildNumber() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCluster sets the value of Cluster for the instance
 func (instance *SDDC_Server) SetPropertyCluster(value string) (err error) {
-	return instance.SetProperty("Cluster", value)
+	return instance.SetProperty("Cluster", (value))
 }
 
 // GetCluster gets the value of Cluster for the instance
@@ -167,16 +182,25 @@ func (instance *SDDC_Server) GetPropertyCluster() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomain sets the value of Domain for the instance
 func (instance *SDDC_Server) SetPropertyDomain(value string) (err error) {
-	return instance.SetProperty("Domain", value)
+	return instance.SetProperty("Domain", (value))
 }
 
 // GetDomain gets the value of Domain for the instance
@@ -185,16 +209,25 @@ func (instance *SDDC_Server) GetPropertyDomain() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFreePhysicalMemoryInBytes sets the value of FreePhysicalMemoryInBytes for the instance
 func (instance *SDDC_Server) SetPropertyFreePhysicalMemoryInBytes(value uint64) (err error) {
-	return instance.SetProperty("FreePhysicalMemoryInBytes", value)
+	return instance.SetProperty("FreePhysicalMemoryInBytes", (value))
 }
 
 // GetFreePhysicalMemoryInBytes gets the value of FreePhysicalMemoryInBytes for the instance
@@ -203,16 +236,25 @@ func (instance *SDDC_Server) GetPropertyFreePhysicalMemoryInBytes() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *SDDC_Server) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -221,34 +263,25 @@ func (instance *SDDC_Server) GetPropertyId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetIsBitlockerFeatureInstalled sets the value of IsBitlockerFeatureInstalled for the instance
-func (instance *SDDC_Server) SetPropertyIsBitlockerFeatureInstalled(value bool) (err error) {
-	return instance.SetProperty("IsBitlockerFeatureInstalled", value)
-}
-
-// GetIsBitlockerFeatureInstalled gets the value of IsBitlockerFeatureInstalled for the instance
-func (instance *SDDC_Server) GetPropertyIsBitlockerFeatureInstalled() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsBitlockerFeatureInstalled")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsDataDedupFeatureInstalled sets the value of IsDataDedupFeatureInstalled for the instance
 func (instance *SDDC_Server) SetPropertyIsDataDedupFeatureInstalled(value bool) (err error) {
-	return instance.SetProperty("IsDataDedupFeatureInstalled", value)
+	return instance.SetProperty("IsDataDedupFeatureInstalled", (value))
 }
 
 // GetIsDataDedupFeatureInstalled gets the value of IsDataDedupFeatureInstalled for the instance
@@ -257,34 +290,25 @@ func (instance *SDDC_Server) GetPropertyIsDataDedupFeatureInstalled() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetIsStorageReplicaFeatureInstalled sets the value of IsStorageReplicaFeatureInstalled for the instance
-func (instance *SDDC_Server) SetPropertyIsStorageReplicaFeatureInstalled(value bool) (err error) {
-	return instance.SetProperty("IsStorageReplicaFeatureInstalled", value)
-}
-
-// GetIsStorageReplicaFeatureInstalled gets the value of IsStorageReplicaFeatureInstalled for the instance
-func (instance *SDDC_Server) GetPropertyIsStorageReplicaFeatureInstalled() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsStorageReplicaFeatureInstalled")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(bool)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLocation sets the value of Location for the instance
 func (instance *SDDC_Server) SetPropertyLocation(value string) (err error) {
-	return instance.SetProperty("Location", value)
+	return instance.SetProperty("Location", (value))
 }
 
 // GetLocation gets the value of Location for the instance
@@ -293,16 +317,25 @@ func (instance *SDDC_Server) GetPropertyLocation() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *SDDC_Server) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -311,16 +344,25 @@ func (instance *SDDC_Server) GetPropertyManufacturer() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMemoryDIMMs sets the value of MemoryDIMMs for the instance
 func (instance *SDDC_Server) SetPropertyMemoryDIMMs(value []SDDC_Memory) (err error) {
-	return instance.SetProperty("MemoryDIMMs", value)
+	return instance.SetProperty("MemoryDIMMs", (value))
 }
 
 // GetMemoryDIMMs gets the value of MemoryDIMMs for the instance
@@ -329,16 +371,26 @@ func (instance *SDDC_Server) GetPropertyMemoryDIMMs() (value []SDDC_Memory, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]SDDC_Memory)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(SDDC_Memory)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " SDDC_Memory is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, SDDC_Memory(valuetmp))
+	}
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *SDDC_Server) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -347,16 +399,25 @@ func (instance *SDDC_Server) GetPropertyModel() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *SDDC_Server) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -365,16 +426,25 @@ func (instance *SDDC_Server) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOSName sets the value of OSName for the instance
 func (instance *SDDC_Server) SetPropertyOSName(value string) (err error) {
-	return instance.SetProperty("OSName", value)
+	return instance.SetProperty("OSName", (value))
 }
 
 // GetOSName gets the value of OSName for the instance
@@ -383,16 +453,25 @@ func (instance *SDDC_Server) GetPropertyOSName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOSVersion sets the value of OSVersion for the instance
 func (instance *SDDC_Server) SetPropertyOSVersion(value string) (err error) {
-	return instance.SetProperty("OSVersion", value)
+	return instance.SetProperty("OSVersion", (value))
 }
 
 // GetOSVersion gets the value of OSVersion for the instance
@@ -401,16 +480,25 @@ func (instance *SDDC_Server) GetPropertyOSVersion() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProcessors sets the value of Processors for the instance
 func (instance *SDDC_Server) SetPropertyProcessors(value []SDDC_Processor) (err error) {
-	return instance.SetProperty("Processors", value)
+	return instance.SetProperty("Processors", (value))
 }
 
 // GetProcessors gets the value of Processors for the instance
@@ -419,16 +507,26 @@ func (instance *SDDC_Server) GetPropertyProcessors() (value []SDDC_Processor, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]SDDC_Processor)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(SDDC_Processor)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " SDDC_Processor is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, SDDC_Processor(valuetmp))
+	}
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *SDDC_Server) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -437,16 +535,25 @@ func (instance *SDDC_Server) GetPropertySerialNumber() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *SDDC_Server) SetPropertyStatus(value []uint16) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -455,16 +562,26 @@ func (instance *SDDC_Server) GetPropertyStatus() (value []uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetStatusCategory sets the value of StatusCategory for the instance
 func (instance *SDDC_Server) SetPropertyStatusCategory(value uint16) (err error) {
-	return instance.SetProperty("StatusCategory", value)
+	return instance.SetProperty("StatusCategory", (value))
 }
 
 // GetStatusCategory gets the value of StatusCategory for the instance
@@ -473,16 +590,25 @@ func (instance *SDDC_Server) GetPropertyStatusCategory() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTotalNetworkUsageInBytesPerSecond sets the value of TotalNetworkUsageInBytesPerSecond for the instance
 func (instance *SDDC_Server) SetPropertyTotalNetworkUsageInBytesPerSecond(value float64) (err error) {
-	return instance.SetProperty("TotalNetworkUsageInBytesPerSecond", value)
+	return instance.SetProperty("TotalNetworkUsageInBytesPerSecond", (value))
 }
 
 // GetTotalNetworkUsageInBytesPerSecond gets the value of TotalNetworkUsageInBytesPerSecond for the instance
@@ -491,16 +617,25 @@ func (instance *SDDC_Server) GetPropertyTotalNetworkUsageInBytesPerSecond() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float64(valuetmp)
+
 	return
 }
 
 // SetTotalProcessorsIdlePercentage sets the value of TotalProcessorsIdlePercentage for the instance
 func (instance *SDDC_Server) SetPropertyTotalProcessorsIdlePercentage(value uint64) (err error) {
-	return instance.SetProperty("TotalProcessorsIdlePercentage", value)
+	return instance.SetProperty("TotalProcessorsIdlePercentage", (value))
 }
 
 // GetTotalProcessorsIdlePercentage gets the value of TotalProcessorsIdlePercentage for the instance
@@ -509,16 +644,25 @@ func (instance *SDDC_Server) GetPropertyTotalProcessorsIdlePercentage() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalRdmaUsageInBytesPerSecond sets the value of TotalRdmaUsageInBytesPerSecond for the instance
 func (instance *SDDC_Server) SetPropertyTotalRdmaUsageInBytesPerSecond(value float64) (err error) {
-	return instance.SetProperty("TotalRdmaUsageInBytesPerSecond", value)
+	return instance.SetProperty("TotalRdmaUsageInBytesPerSecond", (value))
 }
 
 // GetTotalRdmaUsageInBytesPerSecond gets the value of TotalRdmaUsageInBytesPerSecond for the instance
@@ -527,16 +671,25 @@ func (instance *SDDC_Server) GetPropertyTotalRdmaUsageInBytesPerSecond() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float64(valuetmp)
+
 	return
 }
 
 // SetUptime sets the value of Uptime for the instance
 func (instance *SDDC_Server) SetPropertyUptime(value string) (err error) {
-	return instance.SetProperty("Uptime", value)
+	return instance.SetProperty("Uptime", (value))
 }
 
 // GetUptime gets the value of Uptime for the instance
@@ -545,10 +698,19 @@ func (instance *SDDC_Server) GetPropertyUptime() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

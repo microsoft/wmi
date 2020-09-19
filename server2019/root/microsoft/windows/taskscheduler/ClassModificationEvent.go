@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __ClassModificationEvent struct
@@ -52,7 +54,7 @@ func New__ClassModificationEventEx6(hostName string,
 
 // SetPreviousClass sets the value of PreviousClass for the instance
 func (instance *__ClassModificationEvent) SetPropertyPreviousClass(value interface{}) (err error) {
-	return instance.SetProperty("PreviousClass", value)
+	return instance.SetProperty("PreviousClass", (value))
 }
 
 // GetPreviousClass gets the value of PreviousClass for the instance
@@ -61,9 +63,18 @@ func (instance *__ClassModificationEvent) GetPropertyPreviousClass() (value inte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

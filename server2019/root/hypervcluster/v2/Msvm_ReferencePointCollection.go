@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_ReferencePointCollection struct
@@ -64,7 +66,7 @@ func NewMsvm_ReferencePointCollectionEx6(hostName string,
 
 // SetCollectionID sets the value of CollectionID for the instance
 func (instance *Msvm_ReferencePointCollection) SetPropertyCollectionID(value string) (err error) {
-	return instance.SetProperty("CollectionID", value)
+	return instance.SetProperty("CollectionID", (value))
 }
 
 // GetCollectionID gets the value of CollectionID for the instance
@@ -73,16 +75,25 @@ func (instance *Msvm_ReferencePointCollection) GetPropertyCollectionID() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConsistencyLevel sets the value of ConsistencyLevel for the instance
 func (instance *Msvm_ReferencePointCollection) SetPropertyConsistencyLevel(value uint16) (err error) {
-	return instance.SetProperty("ConsistencyLevel", value)
+	return instance.SetProperty("ConsistencyLevel", (value))
 }
 
 // GetConsistencyLevel gets the value of ConsistencyLevel for the instance
@@ -91,16 +102,25 @@ func (instance *Msvm_ReferencePointCollection) GetPropertyConsistencyLevel() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHasAssociatedLog sets the value of HasAssociatedLog for the instance
 func (instance *Msvm_ReferencePointCollection) SetPropertyHasAssociatedLog(value bool) (err error) {
-	return instance.SetProperty("HasAssociatedLog", value)
+	return instance.SetProperty("HasAssociatedLog", (value))
 }
 
 // GetHasAssociatedLog gets the value of HasAssociatedLog for the instance
@@ -109,16 +129,25 @@ func (instance *Msvm_ReferencePointCollection) GetPropertyHasAssociatedLog() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetReferencePointType sets the value of ReferencePointType for the instance
 func (instance *Msvm_ReferencePointCollection) SetPropertyReferencePointType(value ReferencePointCollection_ReferencePointType) (err error) {
-	return instance.SetProperty("ReferencePointType", value)
+	return instance.SetProperty("ReferencePointType", (value))
 }
 
 // GetReferencePointType gets the value of ReferencePointType for the instance
@@ -127,16 +156,25 @@ func (instance *Msvm_ReferencePointCollection) GetPropertyReferencePointType() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ReferencePointCollection_ReferencePointType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ReferencePointCollection_ReferencePointType(valuetmp)
+
 	return
 }
 
 // SetVirtualSystemCollectionId sets the value of VirtualSystemCollectionId for the instance
 func (instance *Msvm_ReferencePointCollection) SetPropertyVirtualSystemCollectionId(value string) (err error) {
-	return instance.SetProperty("VirtualSystemCollectionId", value)
+	return instance.SetProperty("VirtualSystemCollectionId", (value))
 }
 
 // GetVirtualSystemCollectionId gets the value of VirtualSystemCollectionId for the instance
@@ -145,9 +183,18 @@ func (instance *Msvm_ReferencePointCollection) GetPropertyVirtualSystemCollectio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

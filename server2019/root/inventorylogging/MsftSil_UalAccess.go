@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftSil_UalAccess struct
@@ -67,7 +69,7 @@ func NewMsftSil_UalAccessEx6(hostName string,
 
 // SetProductName sets the value of ProductName for the instance
 func (instance *MsftSil_UalAccess) SetPropertyProductName(value string) (err error) {
-	return instance.SetProperty("ProductName", value)
+	return instance.SetProperty("ProductName", (value))
 }
 
 // GetProductName gets the value of ProductName for the instance
@@ -76,16 +78,25 @@ func (instance *MsftSil_UalAccess) GetPropertyProductName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleGuid sets the value of RoleGuid for the instance
 func (instance *MsftSil_UalAccess) SetPropertyRoleGuid(value string) (err error) {
-	return instance.SetProperty("RoleGuid", value)
+	return instance.SetProperty("RoleGuid", (value))
 }
 
 // GetRoleGuid gets the value of RoleGuid for the instance
@@ -94,16 +105,25 @@ func (instance *MsftSil_UalAccess) GetPropertyRoleGuid() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleName sets the value of RoleName for the instance
 func (instance *MsftSil_UalAccess) SetPropertyRoleName(value string) (err error) {
-	return instance.SetProperty("RoleName", value)
+	return instance.SetProperty("RoleName", (value))
 }
 
 // GetRoleName gets the value of RoleName for the instance
@@ -112,16 +132,25 @@ func (instance *MsftSil_UalAccess) GetPropertyRoleName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSampleDate sets the value of SampleDate for the instance
 func (instance *MsftSil_UalAccess) SetPropertySampleDate(value string) (err error) {
-	return instance.SetProperty("SampleDate", value)
+	return instance.SetProperty("SampleDate", (value))
 }
 
 // GetSampleDate gets the value of SampleDate for the instance
@@ -130,16 +159,25 @@ func (instance *MsftSil_UalAccess) GetPropertySampleDate() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUniqueDeviceAccessCount sets the value of UniqueDeviceAccessCount for the instance
 func (instance *MsftSil_UalAccess) SetPropertyUniqueDeviceAccessCount(value uint32) (err error) {
-	return instance.SetProperty("UniqueDeviceAccessCount", value)
+	return instance.SetProperty("UniqueDeviceAccessCount", (value))
 }
 
 // GetUniqueDeviceAccessCount gets the value of UniqueDeviceAccessCount for the instance
@@ -148,16 +186,25 @@ func (instance *MsftSil_UalAccess) GetPropertyUniqueDeviceAccessCount() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUniqueUserAccessCount sets the value of UniqueUserAccessCount for the instance
 func (instance *MsftSil_UalAccess) SetPropertyUniqueUserAccessCount(value uint32) (err error) {
-	return instance.SetProperty("UniqueUserAccessCount", value)
+	return instance.SetProperty("UniqueUserAccessCount", (value))
 }
 
 // GetUniqueUserAccessCount gets the value of UniqueUserAccessCount for the instance
@@ -166,9 +213,18 @@ func (instance *MsftSil_UalAccess) GetPropertyUniqueUserAccessCount() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

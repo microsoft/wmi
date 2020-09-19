@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
@@ -11,7 +11,9 @@ package dns
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DnsClientNrptRule struct
@@ -104,7 +106,7 @@ func NewDnsClientNrptRuleEx6(hostName string,
 
 // SetComment sets the value of Comment for the instance
 func (instance *DnsClientNrptRule) SetPropertyComment(value string) (err error) {
-	return instance.SetProperty("Comment", value)
+	return instance.SetProperty("Comment", (value))
 }
 
 // GetComment gets the value of Comment for the instance
@@ -113,16 +115,25 @@ func (instance *DnsClientNrptRule) GetPropertyComment() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessDnsServers sets the value of DirectAccessDnsServers for the instance
 func (instance *DnsClientNrptRule) SetPropertyDirectAccessDnsServers(value []string) (err error) {
-	return instance.SetProperty("DirectAccessDnsServers", value)
+	return instance.SetProperty("DirectAccessDnsServers", (value))
 }
 
 // GetDirectAccessDnsServers gets the value of DirectAccessDnsServers for the instance
@@ -131,16 +142,26 @@ func (instance *DnsClientNrptRule) GetPropertyDirectAccessDnsServers() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDirectAccessEnabled sets the value of DirectAccessEnabled for the instance
 func (instance *DnsClientNrptRule) SetPropertyDirectAccessEnabled(value bool) (err error) {
-	return instance.SetProperty("DirectAccessEnabled", value)
+	return instance.SetProperty("DirectAccessEnabled", (value))
 }
 
 // GetDirectAccessEnabled gets the value of DirectAccessEnabled for the instance
@@ -149,16 +170,25 @@ func (instance *DnsClientNrptRule) GetPropertyDirectAccessEnabled() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDirectAccessProxyName sets the value of DirectAccessProxyName for the instance
 func (instance *DnsClientNrptRule) SetPropertyDirectAccessProxyName(value string) (err error) {
-	return instance.SetProperty("DirectAccessProxyName", value)
+	return instance.SetProperty("DirectAccessProxyName", (value))
 }
 
 // GetDirectAccessProxyName gets the value of DirectAccessProxyName for the instance
@@ -167,16 +197,25 @@ func (instance *DnsClientNrptRule) GetPropertyDirectAccessProxyName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessProxyType sets the value of DirectAccessProxyType for the instance
 func (instance *DnsClientNrptRule) SetPropertyDirectAccessProxyType(value string) (err error) {
-	return instance.SetProperty("DirectAccessProxyType", value)
+	return instance.SetProperty("DirectAccessProxyType", (value))
 }
 
 // GetDirectAccessProxyType gets the value of DirectAccessProxyType for the instance
@@ -185,16 +224,25 @@ func (instance *DnsClientNrptRule) GetPropertyDirectAccessProxyType() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessQueryIPsecEncryption sets the value of DirectAccessQueryIPsecEncryption for the instance
 func (instance *DnsClientNrptRule) SetPropertyDirectAccessQueryIPsecEncryption(value string) (err error) {
-	return instance.SetProperty("DirectAccessQueryIPsecEncryption", value)
+	return instance.SetProperty("DirectAccessQueryIPsecEncryption", (value))
 }
 
 // GetDirectAccessQueryIPsecEncryption gets the value of DirectAccessQueryIPsecEncryption for the instance
@@ -203,16 +251,25 @@ func (instance *DnsClientNrptRule) GetPropertyDirectAccessQueryIPsecEncryption()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDirectAccessQueryIPsecRequired sets the value of DirectAccessQueryIPsecRequired for the instance
 func (instance *DnsClientNrptRule) SetPropertyDirectAccessQueryIPsecRequired(value bool) (err error) {
-	return instance.SetProperty("DirectAccessQueryIPsecRequired", value)
+	return instance.SetProperty("DirectAccessQueryIPsecRequired", (value))
 }
 
 // GetDirectAccessQueryIPsecRequired gets the value of DirectAccessQueryIPsecRequired for the instance
@@ -221,16 +278,25 @@ func (instance *DnsClientNrptRule) GetPropertyDirectAccessQueryIPsecRequired() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDisplayName sets the value of DisplayName for the instance
 func (instance *DnsClientNrptRule) SetPropertyDisplayName(value string) (err error) {
-	return instance.SetProperty("DisplayName", value)
+	return instance.SetProperty("DisplayName", (value))
 }
 
 // GetDisplayName gets the value of DisplayName for the instance
@@ -239,16 +305,25 @@ func (instance *DnsClientNrptRule) GetPropertyDisplayName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDnsSecEnabled sets the value of DnsSecEnabled for the instance
 func (instance *DnsClientNrptRule) SetPropertyDnsSecEnabled(value bool) (err error) {
-	return instance.SetProperty("DnsSecEnabled", value)
+	return instance.SetProperty("DnsSecEnabled", (value))
 }
 
 // GetDnsSecEnabled gets the value of DnsSecEnabled for the instance
@@ -257,16 +332,25 @@ func (instance *DnsClientNrptRule) GetPropertyDnsSecEnabled() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDnsSecQueryIPsecEncryption sets the value of DnsSecQueryIPsecEncryption for the instance
 func (instance *DnsClientNrptRule) SetPropertyDnsSecQueryIPsecEncryption(value string) (err error) {
-	return instance.SetProperty("DnsSecQueryIPsecEncryption", value)
+	return instance.SetProperty("DnsSecQueryIPsecEncryption", (value))
 }
 
 // GetDnsSecQueryIPsecEncryption gets the value of DnsSecQueryIPsecEncryption for the instance
@@ -275,16 +359,25 @@ func (instance *DnsClientNrptRule) GetPropertyDnsSecQueryIPsecEncryption() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDnsSecQueryIPsecRequired sets the value of DnsSecQueryIPsecRequired for the instance
 func (instance *DnsClientNrptRule) SetPropertyDnsSecQueryIPsecRequired(value bool) (err error) {
-	return instance.SetProperty("DnsSecQueryIPsecRequired", value)
+	return instance.SetProperty("DnsSecQueryIPsecRequired", (value))
 }
 
 // GetDnsSecQueryIPsecRequired gets the value of DnsSecQueryIPsecRequired for the instance
@@ -293,16 +386,25 @@ func (instance *DnsClientNrptRule) GetPropertyDnsSecQueryIPsecRequired() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDnsSecValidationRequired sets the value of DnsSecValidationRequired for the instance
 func (instance *DnsClientNrptRule) SetPropertyDnsSecValidationRequired(value bool) (err error) {
-	return instance.SetProperty("DnsSecValidationRequired", value)
+	return instance.SetProperty("DnsSecValidationRequired", (value))
 }
 
 // GetDnsSecValidationRequired gets the value of DnsSecValidationRequired for the instance
@@ -311,16 +413,25 @@ func (instance *DnsClientNrptRule) GetPropertyDnsSecValidationRequired() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPsecCARestriction sets the value of IPsecCARestriction for the instance
 func (instance *DnsClientNrptRule) SetPropertyIPsecCARestriction(value string) (err error) {
-	return instance.SetProperty("IPsecCARestriction", value)
+	return instance.SetProperty("IPsecCARestriction", (value))
 }
 
 // GetIPsecCARestriction gets the value of IPsecCARestriction for the instance
@@ -329,16 +440,25 @@ func (instance *DnsClientNrptRule) GetPropertyIPsecCARestriction() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *DnsClientNrptRule) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -347,16 +467,25 @@ func (instance *DnsClientNrptRule) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameEncoding sets the value of NameEncoding for the instance
 func (instance *DnsClientNrptRule) SetPropertyNameEncoding(value string) (err error) {
-	return instance.SetProperty("NameEncoding", value)
+	return instance.SetProperty("NameEncoding", (value))
 }
 
 // GetNameEncoding gets the value of NameEncoding for the instance
@@ -365,16 +494,25 @@ func (instance *DnsClientNrptRule) GetPropertyNameEncoding() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameServers sets the value of NameServers for the instance
 func (instance *DnsClientNrptRule) SetPropertyNameServers(value []string) (err error) {
-	return instance.SetProperty("NameServers", value)
+	return instance.SetProperty("NameServers", (value))
 }
 
 // GetNameServers gets the value of NameServers for the instance
@@ -383,16 +521,26 @@ func (instance *DnsClientNrptRule) GetPropertyNameServers() (value []string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNamespace sets the value of Namespace for the instance
 func (instance *DnsClientNrptRule) SetPropertyNamespace(value []string) (err error) {
-	return instance.SetProperty("Namespace", value)
+	return instance.SetProperty("Namespace", (value))
 }
 
 // GetNamespace gets the value of Namespace for the instance
@@ -401,16 +549,26 @@ func (instance *DnsClientNrptRule) GetPropertyNamespace() (value []string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *DnsClientNrptRule) SetPropertyVersion(value uint32) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -419,9 +577,18 @@ func (instance *DnsClientNrptRule) GetPropertyVersion() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

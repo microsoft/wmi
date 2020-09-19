@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ServerFeature struct
@@ -59,7 +61,7 @@ func NewWin32_ServerFeatureEx6(hostName string,
 
 // SetID sets the value of ID for the instance
 func (instance *Win32_ServerFeature) SetPropertyID(value uint32) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -68,16 +70,25 @@ func (instance *Win32_ServerFeature) GetPropertyID() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_ServerFeature) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -86,16 +97,25 @@ func (instance *Win32_ServerFeature) GetPropertyName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *Win32_ServerFeature) SetPropertyParentID(value uint32) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -104,9 +124,18 @@ func (instance *Win32_ServerFeature) GetPropertyParentID() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

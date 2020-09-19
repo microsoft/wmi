@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_BootSourceSettingData struct
@@ -64,7 +66,7 @@ func NewMsvm_BootSourceSettingDataEx6(hostName string,
 
 // SetBootSourceDescription sets the value of BootSourceDescription for the instance
 func (instance *Msvm_BootSourceSettingData) SetPropertyBootSourceDescription(value string) (err error) {
-	return instance.SetProperty("BootSourceDescription", value)
+	return instance.SetProperty("BootSourceDescription", (value))
 }
 
 // GetBootSourceDescription gets the value of BootSourceDescription for the instance
@@ -73,16 +75,25 @@ func (instance *Msvm_BootSourceSettingData) GetPropertyBootSourceDescription() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBootSourceType sets the value of BootSourceType for the instance
 func (instance *Msvm_BootSourceSettingData) SetPropertyBootSourceType(value uint32) (err error) {
-	return instance.SetProperty("BootSourceType", value)
+	return instance.SetProperty("BootSourceType", (value))
 }
 
 // GetBootSourceType gets the value of BootSourceType for the instance
@@ -91,16 +102,25 @@ func (instance *Msvm_BootSourceSettingData) GetPropertyBootSourceType() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFirmwareDevicePath sets the value of FirmwareDevicePath for the instance
 func (instance *Msvm_BootSourceSettingData) SetPropertyFirmwareDevicePath(value string) (err error) {
-	return instance.SetProperty("FirmwareDevicePath", value)
+	return instance.SetProperty("FirmwareDevicePath", (value))
 }
 
 // GetFirmwareDevicePath gets the value of FirmwareDevicePath for the instance
@@ -109,16 +129,25 @@ func (instance *Msvm_BootSourceSettingData) GetPropertyFirmwareDevicePath() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOptionalData sets the value of OptionalData for the instance
 func (instance *Msvm_BootSourceSettingData) SetPropertyOptionalData(value []uint8) (err error) {
-	return instance.SetProperty("OptionalData", value)
+	return instance.SetProperty("OptionalData", (value))
 }
 
 // GetOptionalData gets the value of OptionalData for the instance
@@ -127,16 +156,26 @@ func (instance *Msvm_BootSourceSettingData) GetPropertyOptionalData() (value []u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherLocation sets the value of OtherLocation for the instance
 func (instance *Msvm_BootSourceSettingData) SetPropertyOtherLocation(value string) (err error) {
-	return instance.SetProperty("OtherLocation", value)
+	return instance.SetProperty("OtherLocation", (value))
 }
 
 // GetOtherLocation gets the value of OtherLocation for the instance
@@ -145,10 +184,19 @@ func (instance *Msvm_BootSourceSettingData) GetPropertyOtherLocation() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_BootSourceSettingData) GetRelatedSyntheticEthernetPortSettingData() (value *cim.WmiInstance, err error) {

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_RemoteServiceAccessPoint struct
@@ -64,7 +66,7 @@ func NewCIM_RemoteServiceAccessPointEx6(hostName string,
 
 // SetAccessContext sets the value of AccessContext for the instance
 func (instance *CIM_RemoteServiceAccessPoint) SetPropertyAccessContext(value RemoteServiceAccessPoint_AccessContext) (err error) {
-	return instance.SetProperty("AccessContext", value)
+	return instance.SetProperty("AccessContext", (value))
 }
 
 // GetAccessContext gets the value of AccessContext for the instance
@@ -73,16 +75,25 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyAccessContext() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RemoteServiceAccessPoint_AccessContext)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RemoteServiceAccessPoint_AccessContext(valuetmp)
+
 	return
 }
 
 // SetAccessInfo sets the value of AccessInfo for the instance
 func (instance *CIM_RemoteServiceAccessPoint) SetPropertyAccessInfo(value string) (err error) {
-	return instance.SetProperty("AccessInfo", value)
+	return instance.SetProperty("AccessInfo", (value))
 }
 
 // GetAccessInfo gets the value of AccessInfo for the instance
@@ -91,16 +102,25 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyAccessInfo() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInfoFormat sets the value of InfoFormat for the instance
 func (instance *CIM_RemoteServiceAccessPoint) SetPropertyInfoFormat(value RemoteServiceAccessPoint_InfoFormat) (err error) {
-	return instance.SetProperty("InfoFormat", value)
+	return instance.SetProperty("InfoFormat", (value))
 }
 
 // GetInfoFormat gets the value of InfoFormat for the instance
@@ -109,16 +129,25 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyInfoFormat() (value Rem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RemoteServiceAccessPoint_InfoFormat)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RemoteServiceAccessPoint_InfoFormat(valuetmp)
+
 	return
 }
 
 // SetOtherAccessContext sets the value of OtherAccessContext for the instance
 func (instance *CIM_RemoteServiceAccessPoint) SetPropertyOtherAccessContext(value string) (err error) {
-	return instance.SetProperty("OtherAccessContext", value)
+	return instance.SetProperty("OtherAccessContext", (value))
 }
 
 // GetOtherAccessContext gets the value of OtherAccessContext for the instance
@@ -127,16 +156,25 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyOtherAccessContext() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherInfoFormatDescription sets the value of OtherInfoFormatDescription for the instance
 func (instance *CIM_RemoteServiceAccessPoint) SetPropertyOtherInfoFormatDescription(value string) (err error) {
-	return instance.SetProperty("OtherInfoFormatDescription", value)
+	return instance.SetProperty("OtherInfoFormatDescription", (value))
 }
 
 // GetOtherInfoFormatDescription gets the value of OtherInfoFormatDescription for the instance
@@ -145,9 +183,18 @@ func (instance *CIM_RemoteServiceAccessPoint) GetPropertyOtherInfoFormatDescript
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

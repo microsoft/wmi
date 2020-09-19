@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ReplicationGroupToReplicaPeer struct
@@ -55,7 +57,7 @@ func NewMSFT_ReplicationGroupToReplicaPeerEx6(hostName string,
 
 // SetReplicaPeer sets the value of ReplicaPeer for the instance
 func (instance *MSFT_ReplicationGroupToReplicaPeer) SetPropertyReplicaPeer(value MSFT_ReplicaPeer) (err error) {
-	return instance.SetProperty("ReplicaPeer", value)
+	return instance.SetProperty("ReplicaPeer", (value))
 }
 
 // GetReplicaPeer gets the value of ReplicaPeer for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_ReplicationGroupToReplicaPeer) GetPropertyReplicaPeer() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_ReplicaPeer)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_ReplicaPeer)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_ReplicaPeer is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_ReplicaPeer(valuetmp)
+
 	return
 }
 
 // SetReplicationGroup sets the value of ReplicationGroup for the instance
 func (instance *MSFT_ReplicationGroupToReplicaPeer) SetPropertyReplicationGroup(value MSFT_ReplicationGroup) (err error) {
-	return instance.SetProperty("ReplicationGroup", value)
+	return instance.SetProperty("ReplicationGroup", (value))
 }
 
 // GetReplicationGroup gets the value of ReplicationGroup for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_ReplicationGroupToReplicaPeer) GetPropertyReplicationGroup(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_ReplicationGroup)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_ReplicationGroup)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_ReplicationGroup is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_ReplicationGroup(valuetmp)
+
 	return
 }

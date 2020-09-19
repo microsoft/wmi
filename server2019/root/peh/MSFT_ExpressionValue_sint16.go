@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExpressionValue_sint16 struct
@@ -52,7 +54,7 @@ func NewMSFT_ExpressionValue_sint16Ex6(hostName string,
 
 // Setvalue sets the value of value for the instance
 func (instance *MSFT_ExpressionValue_sint16) SetPropertyvalue(value int16) (err error) {
-	return instance.SetProperty("value", value)
+	return instance.SetProperty("value", (value))
 }
 
 // Getvalue gets the value of value for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_ExpressionValue_sint16) GetPropertyvalue() (value int16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int16(valuetmp)
+
 	return
 }

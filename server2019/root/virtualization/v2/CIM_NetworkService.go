@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_NetworkService struct
@@ -61,7 +63,7 @@ func NewCIM_NetworkServiceEx6(hostName string,
 
 // SetKeywords sets the value of Keywords for the instance
 func (instance *CIM_NetworkService) SetPropertyKeywords(value []string) (err error) {
-	return instance.SetProperty("Keywords", value)
+	return instance.SetProperty("Keywords", (value))
 }
 
 // GetKeywords gets the value of Keywords for the instance
@@ -70,16 +72,26 @@ func (instance *CIM_NetworkService) GetPropertyKeywords() (value []string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetServiceURL sets the value of ServiceURL for the instance
 func (instance *CIM_NetworkService) SetPropertyServiceURL(value string) (err error) {
-	return instance.SetProperty("ServiceURL", value)
+	return instance.SetProperty("ServiceURL", (value))
 }
 
 // GetServiceURL gets the value of ServiceURL for the instance
@@ -88,16 +100,25 @@ func (instance *CIM_NetworkService) GetPropertyServiceURL() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartupConditions sets the value of StartupConditions for the instance
 func (instance *CIM_NetworkService) SetPropertyStartupConditions(value []string) (err error) {
-	return instance.SetProperty("StartupConditions", value)
+	return instance.SetProperty("StartupConditions", (value))
 }
 
 // GetStartupConditions gets the value of StartupConditions for the instance
@@ -106,16 +127,26 @@ func (instance *CIM_NetworkService) GetPropertyStartupConditions() (value []stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetStartupParameters sets the value of StartupParameters for the instance
 func (instance *CIM_NetworkService) SetPropertyStartupParameters(value []string) (err error) {
-	return instance.SetProperty("StartupParameters", value)
+	return instance.SetProperty("StartupParameters", (value))
 }
 
 // GetStartupParameters gets the value of StartupParameters for the instance
@@ -124,9 +155,19 @@ func (instance *CIM_NetworkService) GetPropertyStartupParameters() (value []stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

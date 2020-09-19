@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_PacerPipe struct
@@ -100,7 +102,7 @@ func NewWin32_PerfRawData_Counters_PacerPipeEx6(hostName string,
 
 // SetAveragepacketsinnetcard sets the value of Averagepacketsinnetcard for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyAveragepacketsinnetcard(value uint32) (err error) {
-	return instance.SetProperty("Averagepacketsinnetcard", value)
+	return instance.SetProperty("Averagepacketsinnetcard", (value))
 }
 
 // GetAveragepacketsinnetcard gets the value of Averagepacketsinnetcard for the instance
@@ -109,16 +111,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyAveragepacketsi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragepacketsinsequencer sets the value of Averagepacketsinsequencer for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyAveragepacketsinsequencer(value uint32) (err error) {
-	return instance.SetProperty("Averagepacketsinsequencer", value)
+	return instance.SetProperty("Averagepacketsinsequencer", (value))
 }
 
 // GetAveragepacketsinsequencer gets the value of Averagepacketsinsequencer for the instance
@@ -127,16 +138,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyAveragepacketsi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAveragepacketsinshaper sets the value of Averagepacketsinshaper for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyAveragepacketsinshaper(value uint32) (err error) {
-	return instance.SetProperty("Averagepacketsinshaper", value)
+	return instance.SetProperty("Averagepacketsinshaper", (value))
 }
 
 // GetAveragepacketsinshaper gets the value of Averagepacketsinshaper for the instance
@@ -145,16 +165,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyAveragepacketsi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlowmodsrejected sets the value of Flowmodsrejected for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyFlowmodsrejected(value uint32) (err error) {
-	return instance.SetProperty("Flowmodsrejected", value)
+	return instance.SetProperty("Flowmodsrejected", (value))
 }
 
 // GetFlowmodsrejected gets the value of Flowmodsrejected for the instance
@@ -163,16 +192,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyFlowmodsrejecte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlowsclosed sets the value of Flowsclosed for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyFlowsclosed(value uint32) (err error) {
-	return instance.SetProperty("Flowsclosed", value)
+	return instance.SetProperty("Flowsclosed", (value))
 }
 
 // GetFlowsclosed gets the value of Flowsclosed for the instance
@@ -181,16 +219,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyFlowsclosed() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlowsmodified sets the value of Flowsmodified for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyFlowsmodified(value uint32) (err error) {
-	return instance.SetProperty("Flowsmodified", value)
+	return instance.SetProperty("Flowsmodified", (value))
 }
 
 // GetFlowsmodified gets the value of Flowsmodified for the instance
@@ -199,16 +246,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyFlowsmodified()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlowsopened sets the value of Flowsopened for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyFlowsopened(value uint32) (err error) {
-	return instance.SetProperty("Flowsopened", value)
+	return instance.SetProperty("Flowsopened", (value))
 }
 
 // GetFlowsopened gets the value of Flowsopened for the instance
@@ -217,16 +273,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyFlowsopened() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlowsrejected sets the value of Flowsrejected for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyFlowsrejected(value uint32) (err error) {
-	return instance.SetProperty("Flowsrejected", value)
+	return instance.SetProperty("Flowsrejected", (value))
 }
 
 // GetFlowsrejected gets the value of Flowsrejected for the instance
@@ -235,16 +300,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyFlowsrejected()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxpacketsinnetcard sets the value of Maxpacketsinnetcard for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyMaxpacketsinnetcard(value uint32) (err error) {
-	return instance.SetProperty("Maxpacketsinnetcard", value)
+	return instance.SetProperty("Maxpacketsinnetcard", (value))
 }
 
 // GetMaxpacketsinnetcard gets the value of Maxpacketsinnetcard for the instance
@@ -253,16 +327,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyMaxpacketsinnet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxpacketsinsequencer sets the value of Maxpacketsinsequencer for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyMaxpacketsinsequencer(value uint32) (err error) {
-	return instance.SetProperty("Maxpacketsinsequencer", value)
+	return instance.SetProperty("Maxpacketsinsequencer", (value))
 }
 
 // GetMaxpacketsinsequencer gets the value of Maxpacketsinsequencer for the instance
@@ -271,16 +354,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyMaxpacketsinseq
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxpacketsinshaper sets the value of Maxpacketsinshaper for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyMaxpacketsinshaper(value uint32) (err error) {
-	return instance.SetProperty("Maxpacketsinshaper", value)
+	return instance.SetProperty("Maxpacketsinshaper", (value))
 }
 
 // GetMaxpacketsinshaper gets the value of Maxpacketsinshaper for the instance
@@ -289,16 +381,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyMaxpacketsinsha
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxsimultaneousflows sets the value of Maxsimultaneousflows for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyMaxsimultaneousflows(value uint32) (err error) {
-	return instance.SetProperty("Maxsimultaneousflows", value)
+	return instance.SetProperty("Maxsimultaneousflows", (value))
 }
 
 // GetMaxsimultaneousflows gets the value of Maxsimultaneousflows for the instance
@@ -307,16 +408,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyMaxsimultaneous
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonconformingpacketsscheduled sets the value of Nonconformingpacketsscheduled for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyNonconformingpacketsscheduled(value uint32) (err error) {
-	return instance.SetProperty("Nonconformingpacketsscheduled", value)
+	return instance.SetProperty("Nonconformingpacketsscheduled", (value))
 }
 
 // GetNonconformingpacketsscheduled gets the value of Nonconformingpacketsscheduled for the instance
@@ -325,16 +435,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyNonconformingpa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonconformingpacketsscheduledPersec sets the value of NonconformingpacketsscheduledPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyNonconformingpacketsscheduledPersec(value uint32) (err error) {
-	return instance.SetProperty("NonconformingpacketsscheduledPersec", value)
+	return instance.SetProperty("NonconformingpacketsscheduledPersec", (value))
 }
 
 // GetNonconformingpacketsscheduledPersec gets the value of NonconformingpacketsscheduledPersec for the instance
@@ -343,16 +462,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyNonconformingpa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonconformingpacketstransmitted sets the value of Nonconformingpacketstransmitted for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyNonconformingpacketstransmitted(value uint32) (err error) {
-	return instance.SetProperty("Nonconformingpacketstransmitted", value)
+	return instance.SetProperty("Nonconformingpacketstransmitted", (value))
 }
 
 // GetNonconformingpacketstransmitted gets the value of Nonconformingpacketstransmitted for the instance
@@ -361,16 +489,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyNonconformingpa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonconformingpacketstransmittedPersec sets the value of NonconformingpacketstransmittedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyNonconformingpacketstransmittedPersec(value uint32) (err error) {
-	return instance.SetProperty("NonconformingpacketstransmittedPersec", value)
+	return instance.SetProperty("NonconformingpacketstransmittedPersec", (value))
 }
 
 // GetNonconformingpacketstransmittedPersec gets the value of NonconformingpacketstransmittedPersec for the instance
@@ -379,16 +516,25 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyNonconformingpa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutofpackets sets the value of Outofpackets for the instance
 func (instance *Win32_PerfRawData_Counters_PacerPipe) SetPropertyOutofpackets(value uint32) (err error) {
-	return instance.SetProperty("Outofpackets", value)
+	return instance.SetProperty("Outofpackets", (value))
 }
 
 // GetOutofpackets gets the value of Outofpackets for the instance
@@ -397,9 +543,18 @@ func (instance *Win32_PerfRawData_Counters_PacerPipe) GetPropertyOutofpackets() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

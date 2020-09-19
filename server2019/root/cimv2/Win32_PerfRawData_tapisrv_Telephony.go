@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_tapisrv_Telephony struct
@@ -76,7 +78,7 @@ func NewWin32_PerfRawData_tapisrv_TelephonyEx6(hostName string,
 
 // SetActiveLines sets the value of ActiveLines for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyActiveLines(value uint32) (err error) {
-	return instance.SetProperty("ActiveLines", value)
+	return instance.SetProperty("ActiveLines", (value))
 }
 
 // GetActiveLines gets the value of ActiveLines for the instance
@@ -85,16 +87,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyActiveLines() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActiveTelephones sets the value of ActiveTelephones for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyActiveTelephones(value uint32) (err error) {
-	return instance.SetProperty("ActiveTelephones", value)
+	return instance.SetProperty("ActiveTelephones", (value))
 }
 
 // GetActiveTelephones gets the value of ActiveTelephones for the instance
@@ -103,16 +114,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyActiveTelephones
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClientApps sets the value of ClientApps for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyClientApps(value uint32) (err error) {
-	return instance.SetProperty("ClientApps", value)
+	return instance.SetProperty("ClientApps", (value))
 }
 
 // GetClientApps gets the value of ClientApps for the instance
@@ -121,16 +141,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyClientApps() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentIncomingCalls sets the value of CurrentIncomingCalls for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyCurrentIncomingCalls(value uint32) (err error) {
-	return instance.SetProperty("CurrentIncomingCalls", value)
+	return instance.SetProperty("CurrentIncomingCalls", (value))
 }
 
 // GetCurrentIncomingCalls gets the value of CurrentIncomingCalls for the instance
@@ -139,16 +168,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyCurrentIncomingC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentOutgoingCalls sets the value of CurrentOutgoingCalls for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyCurrentOutgoingCalls(value uint32) (err error) {
-	return instance.SetProperty("CurrentOutgoingCalls", value)
+	return instance.SetProperty("CurrentOutgoingCalls", (value))
 }
 
 // GetCurrentOutgoingCalls gets the value of CurrentOutgoingCalls for the instance
@@ -157,16 +195,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyCurrentOutgoingC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIncomingCallsPersec sets the value of IncomingCallsPersec for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyIncomingCallsPersec(value uint32) (err error) {
-	return instance.SetProperty("IncomingCallsPersec", value)
+	return instance.SetProperty("IncomingCallsPersec", (value))
 }
 
 // GetIncomingCallsPersec gets the value of IncomingCallsPersec for the instance
@@ -175,16 +222,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyIncomingCallsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLines sets the value of Lines for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyLines(value uint32) (err error) {
-	return instance.SetProperty("Lines", value)
+	return instance.SetProperty("Lines", (value))
 }
 
 // GetLines gets the value of Lines for the instance
@@ -193,16 +249,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyLines() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutgoingCallsPersec sets the value of OutgoingCallsPersec for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyOutgoingCallsPersec(value uint32) (err error) {
-	return instance.SetProperty("OutgoingCallsPersec", value)
+	return instance.SetProperty("OutgoingCallsPersec", (value))
 }
 
 // GetOutgoingCallsPersec gets the value of OutgoingCallsPersec for the instance
@@ -211,16 +276,25 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyOutgoingCallsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTelephoneDevices sets the value of TelephoneDevices for the instance
 func (instance *Win32_PerfRawData_tapisrv_Telephony) SetPropertyTelephoneDevices(value uint32) (err error) {
-	return instance.SetProperty("TelephoneDevices", value)
+	return instance.SetProperty("TelephoneDevices", (value))
 }
 
 // GetTelephoneDevices gets the value of TelephoneDevices for the instance
@@ -229,9 +303,18 @@ func (instance *Win32_PerfRawData_tapisrv_Telephony) GetPropertyTelephoneDevices
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

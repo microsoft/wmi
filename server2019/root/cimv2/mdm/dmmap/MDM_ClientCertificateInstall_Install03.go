@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_ClientCertificateInstall_Install03 struct
@@ -110,7 +112,7 @@ func NewMDM_ClientCertificateInstall_Install03Ex6(hostName string,
 
 // SetAADKeyIdentifierList sets the value of AADKeyIdentifierList for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyAADKeyIdentifierList(value string) (err error) {
-	return instance.SetProperty("AADKeyIdentifierList", value)
+	return instance.SetProperty("AADKeyIdentifierList", (value))
 }
 
 // GetAADKeyIdentifierList gets the value of AADKeyIdentifierList for the instance
@@ -119,16 +121,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyAADKeyIdentif
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCAThumbprint sets the value of CAThumbprint for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyCAThumbprint(value string) (err error) {
-	return instance.SetProperty("CAThumbprint", value)
+	return instance.SetProperty("CAThumbprint", (value))
 }
 
 // GetCAThumbprint gets the value of CAThumbprint for the instance
@@ -137,16 +148,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyCAThumbprint(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetChallenge sets the value of Challenge for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyChallenge(value string) (err error) {
-	return instance.SetProperty("Challenge", value)
+	return instance.SetProperty("Challenge", (value))
 }
 
 // GetChallenge gets the value of Challenge for the instance
@@ -155,16 +175,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyChallenge() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetContainerName sets the value of ContainerName for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyContainerName(value string) (err error) {
-	return instance.SetProperty("ContainerName", value)
+	return instance.SetProperty("ContainerName", (value))
 }
 
 // GetContainerName gets the value of ContainerName for the instance
@@ -173,16 +202,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyContainerName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCustomTextToShowInPrompt sets the value of CustomTextToShowInPrompt for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyCustomTextToShowInPrompt(value string) (err error) {
-	return instance.SetProperty("CustomTextToShowInPrompt", value)
+	return instance.SetProperty("CustomTextToShowInPrompt", (value))
 }
 
 // GetCustomTextToShowInPrompt gets the value of CustomTextToShowInPrompt for the instance
@@ -191,16 +229,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyCustomTextToS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEKUMapping sets the value of EKUMapping for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyEKUMapping(value string) (err error) {
-	return instance.SetProperty("EKUMapping", value)
+	return instance.SetProperty("EKUMapping", (value))
 }
 
 // GetEKUMapping gets the value of EKUMapping for the instance
@@ -209,16 +256,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyEKUMapping() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHashAlgorithm sets the value of HashAlgorithm for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyHashAlgorithm(value string) (err error) {
-	return instance.SetProperty("HashAlgorithm", value)
+	return instance.SetProperty("HashAlgorithm", (value))
 }
 
 // GetHashAlgorithm gets the value of HashAlgorithm for the instance
@@ -227,16 +283,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyHashAlgorithm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -245,16 +310,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyInstanceID() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeyLength sets the value of KeyLength for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyKeyLength(value int32) (err error) {
-	return instance.SetProperty("KeyLength", value)
+	return instance.SetProperty("KeyLength", (value))
 }
 
 // GetKeyLength gets the value of KeyLength for the instance
@@ -263,16 +337,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyKeyLength() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetKeyProtection sets the value of KeyProtection for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyKeyProtection(value int32) (err error) {
-	return instance.SetProperty("KeyProtection", value)
+	return instance.SetProperty("KeyProtection", (value))
 }
 
 // GetKeyProtection gets the value of KeyProtection for the instance
@@ -281,16 +364,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyKeyProtection
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetKeyUsage sets the value of KeyUsage for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyKeyUsage(value int32) (err error) {
-	return instance.SetProperty("KeyUsage", value)
+	return instance.SetProperty("KeyUsage", (value))
 }
 
 // GetKeyUsage gets the value of KeyUsage for the instance
@@ -299,16 +391,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyKeyUsage() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -317,16 +418,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyParentID() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRetryCount sets the value of RetryCount for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyRetryCount(value int32) (err error) {
-	return instance.SetProperty("RetryCount", value)
+	return instance.SetProperty("RetryCount", (value))
 }
 
 // GetRetryCount gets the value of RetryCount for the instance
@@ -335,16 +445,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyRetryCount() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRetryDelay sets the value of RetryDelay for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyRetryDelay(value int32) (err error) {
-	return instance.SetProperty("RetryDelay", value)
+	return instance.SetProperty("RetryDelay", (value))
 }
 
 // GetRetryDelay gets the value of RetryDelay for the instance
@@ -353,16 +472,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyRetryDelay() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetServerURL sets the value of ServerURL for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyServerURL(value string) (err error) {
-	return instance.SetProperty("ServerURL", value)
+	return instance.SetProperty("ServerURL", (value))
 }
 
 // GetServerURL gets the value of ServerURL for the instance
@@ -371,16 +499,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyServerURL() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSubjectAlternativeNames sets the value of SubjectAlternativeNames for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertySubjectAlternativeNames(value string) (err error) {
-	return instance.SetProperty("SubjectAlternativeNames", value)
+	return instance.SetProperty("SubjectAlternativeNames", (value))
 }
 
 // GetSubjectAlternativeNames gets the value of SubjectAlternativeNames for the instance
@@ -389,16 +526,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertySubjectAltern
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSubjectName sets the value of SubjectName for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertySubjectName(value string) (err error) {
-	return instance.SetProperty("SubjectName", value)
+	return instance.SetProperty("SubjectName", (value))
 }
 
 // GetSubjectName gets the value of SubjectName for the instance
@@ -407,16 +553,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertySubjectName()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTemplateName sets the value of TemplateName for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyTemplateName(value string) (err error) {
-	return instance.SetProperty("TemplateName", value)
+	return instance.SetProperty("TemplateName", (value))
 }
 
 // GetTemplateName gets the value of TemplateName for the instance
@@ -425,16 +580,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyTemplateName(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValidPeriod sets the value of ValidPeriod for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyValidPeriod(value string) (err error) {
-	return instance.SetProperty("ValidPeriod", value)
+	return instance.SetProperty("ValidPeriod", (value))
 }
 
 // GetValidPeriod gets the value of ValidPeriod for the instance
@@ -443,16 +607,25 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyValidPeriod()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValidPeriodUnits sets the value of ValidPeriodUnits for the instance
 func (instance *MDM_ClientCertificateInstall_Install03) SetPropertyValidPeriodUnits(value int32) (err error) {
-	return instance.SetProperty("ValidPeriodUnits", value)
+	return instance.SetProperty("ValidPeriodUnits", (value))
 }
 
 // GetValidPeriodUnits gets the value of ValidPeriodUnits for the instance
@@ -461,10 +634,19 @@ func (instance *MDM_ClientCertificateInstall_Install03) GetPropertyValidPeriodUn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 

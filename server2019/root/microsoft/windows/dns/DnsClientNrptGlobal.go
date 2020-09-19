@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Dns
 //////////////////////////////////////////////
 package dns
@@ -11,7 +11,9 @@ package dns
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DnsClientNrptGlobal struct
@@ -59,7 +61,7 @@ func NewDnsClientNrptGlobalEx6(hostName string,
 
 // SetEnableDAForAllNetworks sets the value of EnableDAForAllNetworks for the instance
 func (instance *DnsClientNrptGlobal) SetPropertyEnableDAForAllNetworks(value string) (err error) {
-	return instance.SetProperty("EnableDAForAllNetworks", value)
+	return instance.SetProperty("EnableDAForAllNetworks", (value))
 }
 
 // GetEnableDAForAllNetworks gets the value of EnableDAForAllNetworks for the instance
@@ -68,16 +70,25 @@ func (instance *DnsClientNrptGlobal) GetPropertyEnableDAForAllNetworks() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQueryPolicy sets the value of QueryPolicy for the instance
 func (instance *DnsClientNrptGlobal) SetPropertyQueryPolicy(value string) (err error) {
-	return instance.SetProperty("QueryPolicy", value)
+	return instance.SetProperty("QueryPolicy", (value))
 }
 
 // GetQueryPolicy gets the value of QueryPolicy for the instance
@@ -86,16 +97,25 @@ func (instance *DnsClientNrptGlobal) GetPropertyQueryPolicy() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSecureNameQueryFallback sets the value of SecureNameQueryFallback for the instance
 func (instance *DnsClientNrptGlobal) SetPropertySecureNameQueryFallback(value string) (err error) {
-	return instance.SetProperty("SecureNameQueryFallback", value)
+	return instance.SetProperty("SecureNameQueryFallback", (value))
 }
 
 // GetSecureNameQueryFallback gets the value of SecureNameQueryFallback for the instance
@@ -104,9 +124,18 @@ func (instance *DnsClientNrptGlobal) GetPropertySecureNameQueryFallback() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

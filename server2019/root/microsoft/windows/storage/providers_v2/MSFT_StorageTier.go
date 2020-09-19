@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageTier struct
@@ -106,7 +108,7 @@ func NewMSFT_StorageTierEx6(hostName string,
 
 // SetAllocatedSize sets the value of AllocatedSize for the instance
 func (instance *MSFT_StorageTier) SetPropertyAllocatedSize(value uint64) (err error) {
-	return instance.SetProperty("AllocatedSize", value)
+	return instance.SetProperty("AllocatedSize", (value))
 }
 
 // GetAllocatedSize gets the value of AllocatedSize for the instance
@@ -115,16 +117,25 @@ func (instance *MSFT_StorageTier) GetPropertyAllocatedSize() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAllocationUnitSize sets the value of AllocationUnitSize for the instance
 func (instance *MSFT_StorageTier) SetPropertyAllocationUnitSize(value uint64) (err error) {
-	return instance.SetProperty("AllocationUnitSize", value)
+	return instance.SetProperty("AllocationUnitSize", (value))
 }
 
 // GetAllocationUnitSize gets the value of AllocationUnitSize for the instance
@@ -133,16 +144,25 @@ func (instance *MSFT_StorageTier) GetPropertyAllocationUnitSize() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetColumnIsolation sets the value of ColumnIsolation for the instance
 func (instance *MSFT_StorageTier) SetPropertyColumnIsolation(value uint16) (err error) {
-	return instance.SetProperty("ColumnIsolation", value)
+	return instance.SetProperty("ColumnIsolation", (value))
 }
 
 // GetColumnIsolation gets the value of ColumnIsolation for the instance
@@ -151,16 +171,25 @@ func (instance *MSFT_StorageTier) GetPropertyColumnIsolation() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_StorageTier) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -169,16 +198,25 @@ func (instance *MSFT_StorageTier) GetPropertyDescription() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultDomainAwareness sets the value of FaultDomainAwareness for the instance
 func (instance *MSFT_StorageTier) SetPropertyFaultDomainAwareness(value uint16) (err error) {
-	return instance.SetProperty("FaultDomainAwareness", value)
+	return instance.SetProperty("FaultDomainAwareness", (value))
 }
 
 // GetFaultDomainAwareness gets the value of FaultDomainAwareness for the instance
@@ -187,16 +225,25 @@ func (instance *MSFT_StorageTier) GetPropertyFaultDomainAwareness() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetFootprintOnPool sets the value of FootprintOnPool for the instance
 func (instance *MSFT_StorageTier) SetPropertyFootprintOnPool(value uint64) (err error) {
-	return instance.SetProperty("FootprintOnPool", value)
+	return instance.SetProperty("FootprintOnPool", (value))
 }
 
 // GetFootprintOnPool gets the value of FootprintOnPool for the instance
@@ -205,16 +252,25 @@ func (instance *MSFT_StorageTier) GetPropertyFootprintOnPool() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_StorageTier) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -223,16 +279,25 @@ func (instance *MSFT_StorageTier) GetPropertyFriendlyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterleave sets the value of Interleave for the instance
 func (instance *MSFT_StorageTier) SetPropertyInterleave(value uint64) (err error) {
-	return instance.SetProperty("Interleave", value)
+	return instance.SetProperty("Interleave", (value))
 }
 
 // GetInterleave gets the value of Interleave for the instance
@@ -241,16 +306,25 @@ func (instance *MSFT_StorageTier) GetPropertyInterleave() (value uint64, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMediaType sets the value of MediaType for the instance
 func (instance *MSFT_StorageTier) SetPropertyMediaType(value StorageTier_MediaType) (err error) {
-	return instance.SetProperty("MediaType", value)
+	return instance.SetProperty("MediaType", (value))
 }
 
 // GetMediaType gets the value of MediaType for the instance
@@ -259,16 +333,25 @@ func (instance *MSFT_StorageTier) GetPropertyMediaType() (value StorageTier_Medi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageTier_MediaType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageTier_MediaType(valuetmp)
+
 	return
 }
 
 // SetNumberOfColumns sets the value of NumberOfColumns for the instance
 func (instance *MSFT_StorageTier) SetPropertyNumberOfColumns(value uint16) (err error) {
-	return instance.SetProperty("NumberOfColumns", value)
+	return instance.SetProperty("NumberOfColumns", (value))
 }
 
 // GetNumberOfColumns gets the value of NumberOfColumns for the instance
@@ -277,16 +360,25 @@ func (instance *MSFT_StorageTier) GetPropertyNumberOfColumns() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfDataCopies sets the value of NumberOfDataCopies for the instance
 func (instance *MSFT_StorageTier) SetPropertyNumberOfDataCopies(value uint16) (err error) {
-	return instance.SetProperty("NumberOfDataCopies", value)
+	return instance.SetProperty("NumberOfDataCopies", (value))
 }
 
 // GetNumberOfDataCopies gets the value of NumberOfDataCopies for the instance
@@ -295,16 +387,25 @@ func (instance *MSFT_StorageTier) GetPropertyNumberOfDataCopies() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfGroups sets the value of NumberOfGroups for the instance
 func (instance *MSFT_StorageTier) SetPropertyNumberOfGroups(value uint16) (err error) {
-	return instance.SetProperty("NumberOfGroups", value)
+	return instance.SetProperty("NumberOfGroups", (value))
 }
 
 // GetNumberOfGroups gets the value of NumberOfGroups for the instance
@@ -313,16 +414,25 @@ func (instance *MSFT_StorageTier) GetPropertyNumberOfGroups() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetParityLayout sets the value of ParityLayout for the instance
 func (instance *MSFT_StorageTier) SetPropertyParityLayout(value uint16) (err error) {
-	return instance.SetProperty("ParityLayout", value)
+	return instance.SetProperty("ParityLayout", (value))
 }
 
 // GetParityLayout gets the value of ParityLayout for the instance
@@ -331,16 +441,25 @@ func (instance *MSFT_StorageTier) GetPropertyParityLayout() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPhysicalDiskRedundancy sets the value of PhysicalDiskRedundancy for the instance
 func (instance *MSFT_StorageTier) SetPropertyPhysicalDiskRedundancy(value uint16) (err error) {
-	return instance.SetProperty("PhysicalDiskRedundancy", value)
+	return instance.SetProperty("PhysicalDiskRedundancy", (value))
 }
 
 // GetPhysicalDiskRedundancy gets the value of PhysicalDiskRedundancy for the instance
@@ -349,16 +468,25 @@ func (instance *MSFT_StorageTier) GetPropertyPhysicalDiskRedundancy() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProvisioningType sets the value of ProvisioningType for the instance
 func (instance *MSFT_StorageTier) SetPropertyProvisioningType(value uint16) (err error) {
-	return instance.SetProperty("ProvisioningType", value)
+	return instance.SetProperty("ProvisioningType", (value))
 }
 
 // GetProvisioningType gets the value of ProvisioningType for the instance
@@ -367,16 +495,25 @@ func (instance *MSFT_StorageTier) GetPropertyProvisioningType() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetResiliencySettingName sets the value of ResiliencySettingName for the instance
 func (instance *MSFT_StorageTier) SetPropertyResiliencySettingName(value string) (err error) {
-	return instance.SetProperty("ResiliencySettingName", value)
+	return instance.SetProperty("ResiliencySettingName", (value))
 }
 
 // GetResiliencySettingName gets the value of ResiliencySettingName for the instance
@@ -385,16 +522,25 @@ func (instance *MSFT_StorageTier) GetPropertyResiliencySettingName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_StorageTier) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -403,16 +549,25 @@ func (instance *MSFT_StorageTier) GetPropertySize() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTierClass sets the value of TierClass for the instance
 func (instance *MSFT_StorageTier) SetPropertyTierClass(value uint16) (err error) {
-	return instance.SetProperty("TierClass", value)
+	return instance.SetProperty("TierClass", (value))
 }
 
 // GetTierClass gets the value of TierClass for the instance
@@ -421,16 +576,25 @@ func (instance *MSFT_StorageTier) GetPropertyTierClass() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetUsage sets the value of Usage for the instance
 func (instance *MSFT_StorageTier) SetPropertyUsage(value uint16) (err error) {
-	return instance.SetProperty("Usage", value)
+	return instance.SetProperty("Usage", (value))
 }
 
 // GetUsage gets the value of Usage for the instance
@@ -439,10 +603,19 @@ func (instance *MSFT_StorageTier) GetPropertyUsage() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

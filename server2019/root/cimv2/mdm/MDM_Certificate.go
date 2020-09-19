@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Certificate struct
@@ -65,7 +67,7 @@ func NewMDM_CertificateEx6(hostName string,
 
 // SetBlob sets the value of Blob for the instance
 func (instance *MDM_Certificate) SetPropertyBlob(value string) (err error) {
-	return instance.SetProperty("Blob", value)
+	return instance.SetProperty("Blob", (value))
 }
 
 // GetBlob gets the value of Blob for the instance
@@ -74,16 +76,25 @@ func (instance *MDM_Certificate) GetPropertyBlob() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsInstalled sets the value of IsInstalled for the instance
 func (instance *MDM_Certificate) SetPropertyIsInstalled(value bool) (err error) {
-	return instance.SetProperty("IsInstalled", value)
+	return instance.SetProperty("IsInstalled", (value))
 }
 
 // GetIsInstalled gets the value of IsInstalled for the instance
@@ -92,16 +103,25 @@ func (instance *MDM_Certificate) GetPropertyIsInstalled() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStoreLocation sets the value of StoreLocation for the instance
 func (instance *MDM_Certificate) SetPropertyStoreLocation(value uint8) (err error) {
-	return instance.SetProperty("StoreLocation", value)
+	return instance.SetProperty("StoreLocation", (value))
 }
 
 // GetStoreLocation gets the value of StoreLocation for the instance
@@ -110,16 +130,25 @@ func (instance *MDM_Certificate) GetPropertyStoreLocation() (value uint8, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetStoreName sets the value of StoreName for the instance
 func (instance *MDM_Certificate) SetPropertyStoreName(value string) (err error) {
-	return instance.SetProperty("StoreName", value)
+	return instance.SetProperty("StoreName", (value))
 }
 
 // GetStoreName gets the value of StoreName for the instance
@@ -128,16 +157,25 @@ func (instance *MDM_Certificate) GetPropertyStoreName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetThumbprint sets the value of Thumbprint for the instance
 func (instance *MDM_Certificate) SetPropertyThumbprint(value string) (err error) {
-	return instance.SetProperty("Thumbprint", value)
+	return instance.SetProperty("Thumbprint", (value))
 }
 
 // GetThumbprint gets the value of Thumbprint for the instance
@@ -146,9 +184,18 @@ func (instance *MDM_Certificate) GetPropertyThumbprint() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

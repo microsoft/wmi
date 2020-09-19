@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_iSCSISession struct
@@ -92,7 +94,7 @@ func NewMSFT_iSCSISessionEx6(hostName string,
 
 // SetAuthenticationType sets the value of AuthenticationType for the instance
 func (instance *MSFT_iSCSISession) SetPropertyAuthenticationType(value string) (err error) {
-	return instance.SetProperty("AuthenticationType", value)
+	return instance.SetProperty("AuthenticationType", (value))
 }
 
 // GetAuthenticationType gets the value of AuthenticationType for the instance
@@ -101,16 +103,25 @@ func (instance *MSFT_iSCSISession) GetPropertyAuthenticationType() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInitiatorInstanceName sets the value of InitiatorInstanceName for the instance
 func (instance *MSFT_iSCSISession) SetPropertyInitiatorInstanceName(value string) (err error) {
-	return instance.SetProperty("InitiatorInstanceName", value)
+	return instance.SetProperty("InitiatorInstanceName", (value))
 }
 
 // GetInitiatorInstanceName gets the value of InitiatorInstanceName for the instance
@@ -119,16 +130,25 @@ func (instance *MSFT_iSCSISession) GetPropertyInitiatorInstanceName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInitiatorNodeAddress sets the value of InitiatorNodeAddress for the instance
 func (instance *MSFT_iSCSISession) SetPropertyInitiatorNodeAddress(value string) (err error) {
-	return instance.SetProperty("InitiatorNodeAddress", value)
+	return instance.SetProperty("InitiatorNodeAddress", (value))
 }
 
 // GetInitiatorNodeAddress gets the value of InitiatorNodeAddress for the instance
@@ -137,16 +157,25 @@ func (instance *MSFT_iSCSISession) GetPropertyInitiatorNodeAddress() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInitiatorPortalAddress sets the value of InitiatorPortalAddress for the instance
 func (instance *MSFT_iSCSISession) SetPropertyInitiatorPortalAddress(value string) (err error) {
-	return instance.SetProperty("InitiatorPortalAddress", value)
+	return instance.SetProperty("InitiatorPortalAddress", (value))
 }
 
 // GetInitiatorPortalAddress gets the value of InitiatorPortalAddress for the instance
@@ -155,16 +184,25 @@ func (instance *MSFT_iSCSISession) GetPropertyInitiatorPortalAddress() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInitiatorSideIdentifier sets the value of InitiatorSideIdentifier for the instance
 func (instance *MSFT_iSCSISession) SetPropertyInitiatorSideIdentifier(value string) (err error) {
-	return instance.SetProperty("InitiatorSideIdentifier", value)
+	return instance.SetProperty("InitiatorSideIdentifier", (value))
 }
 
 // GetInitiatorSideIdentifier gets the value of InitiatorSideIdentifier for the instance
@@ -173,16 +211,25 @@ func (instance *MSFT_iSCSISession) GetPropertyInitiatorSideIdentifier() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsConnected sets the value of IsConnected for the instance
 func (instance *MSFT_iSCSISession) SetPropertyIsConnected(value bool) (err error) {
-	return instance.SetProperty("IsConnected", value)
+	return instance.SetProperty("IsConnected", (value))
 }
 
 // GetIsConnected gets the value of IsConnected for the instance
@@ -191,16 +238,25 @@ func (instance *MSFT_iSCSISession) GetPropertyIsConnected() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsDataDigest sets the value of IsDataDigest for the instance
 func (instance *MSFT_iSCSISession) SetPropertyIsDataDigest(value bool) (err error) {
-	return instance.SetProperty("IsDataDigest", value)
+	return instance.SetProperty("IsDataDigest", (value))
 }
 
 // GetIsDataDigest gets the value of IsDataDigest for the instance
@@ -209,16 +265,25 @@ func (instance *MSFT_iSCSISession) GetPropertyIsDataDigest() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsDiscovered sets the value of IsDiscovered for the instance
 func (instance *MSFT_iSCSISession) SetPropertyIsDiscovered(value bool) (err error) {
-	return instance.SetProperty("IsDiscovered", value)
+	return instance.SetProperty("IsDiscovered", (value))
 }
 
 // GetIsDiscovered gets the value of IsDiscovered for the instance
@@ -227,16 +292,25 @@ func (instance *MSFT_iSCSISession) GetPropertyIsDiscovered() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsHeaderDigest sets the value of IsHeaderDigest for the instance
 func (instance *MSFT_iSCSISession) SetPropertyIsHeaderDigest(value bool) (err error) {
-	return instance.SetProperty("IsHeaderDigest", value)
+	return instance.SetProperty("IsHeaderDigest", (value))
 }
 
 // GetIsHeaderDigest gets the value of IsHeaderDigest for the instance
@@ -245,16 +319,25 @@ func (instance *MSFT_iSCSISession) GetPropertyIsHeaderDigest() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsPersistent sets the value of IsPersistent for the instance
 func (instance *MSFT_iSCSISession) SetPropertyIsPersistent(value bool) (err error) {
-	return instance.SetProperty("IsPersistent", value)
+	return instance.SetProperty("IsPersistent", (value))
 }
 
 // GetIsPersistent gets the value of IsPersistent for the instance
@@ -263,16 +346,25 @@ func (instance *MSFT_iSCSISession) GetPropertyIsPersistent() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNumberOfConnections sets the value of NumberOfConnections for the instance
 func (instance *MSFT_iSCSISession) SetPropertyNumberOfConnections(value uint32) (err error) {
-	return instance.SetProperty("NumberOfConnections", value)
+	return instance.SetProperty("NumberOfConnections", (value))
 }
 
 // GetNumberOfConnections gets the value of NumberOfConnections for the instance
@@ -281,16 +373,25 @@ func (instance *MSFT_iSCSISession) GetPropertyNumberOfConnections() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionIdentifier sets the value of SessionIdentifier for the instance
 func (instance *MSFT_iSCSISession) SetPropertySessionIdentifier(value string) (err error) {
-	return instance.SetProperty("SessionIdentifier", value)
+	return instance.SetProperty("SessionIdentifier", (value))
 }
 
 // GetSessionIdentifier gets the value of SessionIdentifier for the instance
@@ -299,16 +400,25 @@ func (instance *MSFT_iSCSISession) GetPropertySessionIdentifier() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetNodeAddress sets the value of TargetNodeAddress for the instance
 func (instance *MSFT_iSCSISession) SetPropertyTargetNodeAddress(value string) (err error) {
-	return instance.SetProperty("TargetNodeAddress", value)
+	return instance.SetProperty("TargetNodeAddress", (value))
 }
 
 // GetTargetNodeAddress gets the value of TargetNodeAddress for the instance
@@ -317,16 +427,25 @@ func (instance *MSFT_iSCSISession) GetPropertyTargetNodeAddress() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetSideIdentifier sets the value of TargetSideIdentifier for the instance
 func (instance *MSFT_iSCSISession) SetPropertyTargetSideIdentifier(value string) (err error) {
-	return instance.SetProperty("TargetSideIdentifier", value)
+	return instance.SetProperty("TargetSideIdentifier", (value))
 }
 
 // GetTargetSideIdentifier gets the value of TargetSideIdentifier for the instance
@@ -335,10 +454,19 @@ func (instance *MSFT_iSCSISession) GetPropertyTargetSideIdentifier() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

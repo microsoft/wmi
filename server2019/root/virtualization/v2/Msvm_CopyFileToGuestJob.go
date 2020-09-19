@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_CopyFileToGuestJob struct
@@ -61,7 +63,7 @@ func NewMsvm_CopyFileToGuestJobEx6(hostName string,
 
 // SetCancellable sets the value of Cancellable for the instance
 func (instance *Msvm_CopyFileToGuestJob) SetPropertyCancellable(value bool) (err error) {
-	return instance.SetProperty("Cancellable", value)
+	return instance.SetProperty("Cancellable", (value))
 }
 
 // GetCancellable gets the value of Cancellable for the instance
@@ -70,16 +72,25 @@ func (instance *Msvm_CopyFileToGuestJob) GetPropertyCancellable() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCopyFileToGuestSettingData sets the value of CopyFileToGuestSettingData for the instance
 func (instance *Msvm_CopyFileToGuestJob) SetPropertyCopyFileToGuestSettingData(value []string) (err error) {
-	return instance.SetProperty("CopyFileToGuestSettingData", value)
+	return instance.SetProperty("CopyFileToGuestSettingData", (value))
 }
 
 // GetCopyFileToGuestSettingData gets the value of CopyFileToGuestSettingData for the instance
@@ -88,16 +99,26 @@ func (instance *Msvm_CopyFileToGuestJob) GetPropertyCopyFileToGuestSettingData()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetErrorSummaryDescription sets the value of ErrorSummaryDescription for the instance
 func (instance *Msvm_CopyFileToGuestJob) SetPropertyErrorSummaryDescription(value string) (err error) {
-	return instance.SetProperty("ErrorSummaryDescription", value)
+	return instance.SetProperty("ErrorSummaryDescription", (value))
 }
 
 // GetErrorSummaryDescription gets the value of ErrorSummaryDescription for the instance
@@ -106,16 +127,25 @@ func (instance *Msvm_CopyFileToGuestJob) GetPropertyErrorSummaryDescription() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualSystemName sets the value of VirtualSystemName for the instance
 func (instance *Msvm_CopyFileToGuestJob) SetPropertyVirtualSystemName(value string) (err error) {
-	return instance.SetProperty("VirtualSystemName", value)
+	return instance.SetProperty("VirtualSystemName", (value))
 }
 
 // GetVirtualSystemName gets the value of VirtualSystemName for the instance
@@ -124,10 +154,19 @@ func (instance *Msvm_CopyFileToGuestJob) GetPropertyVirtualSystemName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

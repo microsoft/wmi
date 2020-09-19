@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetCompartment struct
@@ -61,7 +63,7 @@ func NewMSFT_NetCompartmentEx6(hostName string,
 
 // SetCompartmentDescription sets the value of CompartmentDescription for the instance
 func (instance *MSFT_NetCompartment) SetPropertyCompartmentDescription(value string) (err error) {
-	return instance.SetProperty("CompartmentDescription", value)
+	return instance.SetProperty("CompartmentDescription", (value))
 }
 
 // GetCompartmentDescription gets the value of CompartmentDescription for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetCompartment) GetPropertyCompartmentDescription() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCompartmentGuid sets the value of CompartmentGuid for the instance
 func (instance *MSFT_NetCompartment) SetPropertyCompartmentGuid(value string) (err error) {
-	return instance.SetProperty("CompartmentGuid", value)
+	return instance.SetProperty("CompartmentGuid", (value))
 }
 
 // GetCompartmentGuid gets the value of CompartmentGuid for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetCompartment) GetPropertyCompartmentGuid() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCompartmentId sets the value of CompartmentId for the instance
 func (instance *MSFT_NetCompartment) SetPropertyCompartmentId(value uint32) (err error) {
-	return instance.SetProperty("CompartmentId", value)
+	return instance.SetProperty("CompartmentId", (value))
 }
 
 // GetCompartmentId gets the value of CompartmentId for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetCompartment) GetPropertyCompartmentId() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompartmentType sets the value of CompartmentType for the instance
 func (instance *MSFT_NetCompartment) SetPropertyCompartmentType(value uint32) (err error) {
-	return instance.SetProperty("CompartmentType", value)
+	return instance.SetProperty("CompartmentType", (value))
 }
 
 // GetCompartmentType gets the value of CompartmentType for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_NetCompartment) GetPropertyCompartmentType() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

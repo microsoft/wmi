@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageFaultEvent struct
@@ -82,7 +84,7 @@ func NewMSFT_StorageFaultEventEx6(hostName string,
 
 // SetChangeType sets the value of ChangeType for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyChangeType(value StorageFaultEvent_ChangeType) (err error) {
-	return instance.SetProperty("ChangeType", value)
+	return instance.SetProperty("ChangeType", (value))
 }
 
 // GetChangeType gets the value of ChangeType for the instance
@@ -91,16 +93,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyChangeType() (value StorageFa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageFaultEvent_ChangeType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageFaultEvent_ChangeType(valuetmp)
+
 	return
 }
 
 // SetFaultId sets the value of FaultId for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyFaultId(value string) (err error) {
-	return instance.SetProperty("FaultId", value)
+	return instance.SetProperty("FaultId", (value))
 }
 
 // GetFaultId gets the value of FaultId for the instance
@@ -109,16 +120,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyFaultId() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultingObjectDescription sets the value of FaultingObjectDescription for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyFaultingObjectDescription(value string) (err error) {
-	return instance.SetProperty("FaultingObjectDescription", value)
+	return instance.SetProperty("FaultingObjectDescription", (value))
 }
 
 // GetFaultingObjectDescription gets the value of FaultingObjectDescription for the instance
@@ -127,16 +147,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyFaultingObjectDescription() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultingObjectLocation sets the value of FaultingObjectLocation for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyFaultingObjectLocation(value string) (err error) {
-	return instance.SetProperty("FaultingObjectLocation", value)
+	return instance.SetProperty("FaultingObjectLocation", (value))
 }
 
 // GetFaultingObjectLocation gets the value of FaultingObjectLocation for the instance
@@ -145,16 +174,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyFaultingObjectLocation() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultingObjectType sets the value of FaultingObjectType for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyFaultingObjectType(value string) (err error) {
-	return instance.SetProperty("FaultingObjectType", value)
+	return instance.SetProperty("FaultingObjectType", (value))
 }
 
 // GetFaultingObjectType gets the value of FaultingObjectType for the instance
@@ -163,16 +201,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyFaultingObjectType() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultingObjectUniqueId sets the value of FaultingObjectUniqueId for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyFaultingObjectUniqueId(value string) (err error) {
-	return instance.SetProperty("FaultingObjectUniqueId", value)
+	return instance.SetProperty("FaultingObjectUniqueId", (value))
 }
 
 // GetFaultingObjectUniqueId gets the value of FaultingObjectUniqueId for the instance
@@ -181,16 +228,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyFaultingObjectUniqueId() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultType sets the value of FaultType for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyFaultType(value string) (err error) {
-	return instance.SetProperty("FaultType", value)
+	return instance.SetProperty("FaultType", (value))
 }
 
 // GetFaultType gets the value of FaultType for the instance
@@ -199,16 +255,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyFaultType() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReason sets the value of Reason for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyReason(value string) (err error) {
-	return instance.SetProperty("Reason", value)
+	return instance.SetProperty("Reason", (value))
 }
 
 // GetReason gets the value of Reason for the instance
@@ -217,16 +282,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyReason() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecommendedActions sets the value of RecommendedActions for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyRecommendedActions(value []string) (err error) {
-	return instance.SetProperty("RecommendedActions", value)
+	return instance.SetProperty("RecommendedActions", (value))
 }
 
 // GetRecommendedActions gets the value of RecommendedActions for the instance
@@ -235,16 +309,26 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyRecommendedActions() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSourceUniqueId sets the value of SourceUniqueId for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertySourceUniqueId(value string) (err error) {
-	return instance.SetProperty("SourceUniqueId", value)
+	return instance.SetProperty("SourceUniqueId", (value))
 }
 
 // GetSourceUniqueId gets the value of SourceUniqueId for the instance
@@ -253,16 +337,25 @@ func (instance *MSFT_StorageFaultEvent) GetPropertySourceUniqueId() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStorageSubsystemUniqueId sets the value of StorageSubsystemUniqueId for the instance
 func (instance *MSFT_StorageFaultEvent) SetPropertyStorageSubsystemUniqueId(value string) (err error) {
-	return instance.SetProperty("StorageSubsystemUniqueId", value)
+	return instance.SetProperty("StorageSubsystemUniqueId", (value))
 }
 
 // GetStorageSubsystemUniqueId gets the value of StorageSubsystemUniqueId for the instance
@@ -271,9 +364,18 @@ func (instance *MSFT_StorageFaultEvent) GetPropertyStorageSubsystemUniqueId() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

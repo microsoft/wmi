@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIKEKerbAuthProposal struct
@@ -52,7 +54,7 @@ func NewMSFT_NetIKEKerbAuthProposalEx6(hostName string,
 
 // SetKerbProxy sets the value of KerbProxy for the instance
 func (instance *MSFT_NetIKEKerbAuthProposal) SetPropertyKerbProxy(value string) (err error) {
-	return instance.SetProperty("KerbProxy", value)
+	return instance.SetProperty("KerbProxy", (value))
 }
 
 // GetKerbProxy gets the value of KerbProxy for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_NetIKEKerbAuthProposal) GetPropertyKerbProxy() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

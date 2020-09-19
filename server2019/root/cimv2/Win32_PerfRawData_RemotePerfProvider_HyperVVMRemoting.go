@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_RemotePerfProvider_HyperVVMRemoting struct
@@ -55,7 +57,7 @@ func NewWin32_PerfRawData_RemotePerfProvider_HyperVVMRemotingEx6(hostName string
 
 // SetConnectedClients sets the value of ConnectedClients for the instance
 func (instance *Win32_PerfRawData_RemotePerfProvider_HyperVVMRemoting) SetPropertyConnectedClients(value uint32) (err error) {
-	return instance.SetProperty("ConnectedClients", value)
+	return instance.SetProperty("ConnectedClients", (value))
 }
 
 // GetConnectedClients gets the value of ConnectedClients for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PerfRawData_RemotePerfProvider_HyperVVMRemoting) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUpdatedPixelsPersec sets the value of UpdatedPixelsPersec for the instance
 func (instance *Win32_PerfRawData_RemotePerfProvider_HyperVVMRemoting) SetPropertyUpdatedPixelsPersec(value uint32) (err error) {
-	return instance.SetProperty("UpdatedPixelsPersec", value)
+	return instance.SetProperty("UpdatedPixelsPersec", (value))
 }
 
 // GetUpdatedPixelsPersec gets the value of UpdatedPixelsPersec for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PerfRawData_RemotePerfProvider_HyperVVMRemoting) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

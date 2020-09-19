@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ModifySettingAction struct
@@ -64,7 +66,7 @@ func NewCIM_ModifySettingActionEx6(hostName string,
 
 // SetActionType sets the value of ActionType for the instance
 func (instance *CIM_ModifySettingAction) SetPropertyActionType(value uint16) (err error) {
-	return instance.SetProperty("ActionType", value)
+	return instance.SetProperty("ActionType", (value))
 }
 
 // GetActionType gets the value of ActionType for the instance
@@ -73,16 +75,25 @@ func (instance *CIM_ModifySettingAction) GetPropertyActionType() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEntryName sets the value of EntryName for the instance
 func (instance *CIM_ModifySettingAction) SetPropertyEntryName(value string) (err error) {
-	return instance.SetProperty("EntryName", value)
+	return instance.SetProperty("EntryName", (value))
 }
 
 // GetEntryName gets the value of EntryName for the instance
@@ -91,16 +102,25 @@ func (instance *CIM_ModifySettingAction) GetPropertyEntryName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEntryValue sets the value of EntryValue for the instance
 func (instance *CIM_ModifySettingAction) SetPropertyEntryValue(value string) (err error) {
-	return instance.SetProperty("EntryValue", value)
+	return instance.SetProperty("EntryValue", (value))
 }
 
 // GetEntryValue gets the value of EntryValue for the instance
@@ -109,16 +129,25 @@ func (instance *CIM_ModifySettingAction) GetPropertyEntryValue() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileName sets the value of FileName for the instance
 func (instance *CIM_ModifySettingAction) SetPropertyFileName(value string) (err error) {
-	return instance.SetProperty("FileName", value)
+	return instance.SetProperty("FileName", (value))
 }
 
 // GetFileName gets the value of FileName for the instance
@@ -127,16 +156,25 @@ func (instance *CIM_ModifySettingAction) GetPropertyFileName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSectionKey sets the value of SectionKey for the instance
 func (instance *CIM_ModifySettingAction) SetPropertySectionKey(value string) (err error) {
-	return instance.SetProperty("SectionKey", value)
+	return instance.SetProperty("SectionKey", (value))
 }
 
 // GetSectionKey gets the value of SectionKey for the instance
@@ -145,9 +183,18 @@ func (instance *CIM_ModifySettingAction) GetPropertySectionKey() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

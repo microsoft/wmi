@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Thread struct
@@ -64,7 +66,7 @@ func NewWin32_ThreadEx6(hostName string,
 
 // SetElapsedTime sets the value of ElapsedTime for the instance
 func (instance *Win32_Thread) SetPropertyElapsedTime(value uint64) (err error) {
-	return instance.SetProperty("ElapsedTime", value)
+	return instance.SetProperty("ElapsedTime", (value))
 }
 
 // GetElapsedTime gets the value of ElapsedTime for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_Thread) GetPropertyElapsedTime() (value uint64, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPriorityBase sets the value of PriorityBase for the instance
 func (instance *Win32_Thread) SetPropertyPriorityBase(value uint32) (err error) {
-	return instance.SetProperty("PriorityBase", value)
+	return instance.SetProperty("PriorityBase", (value))
 }
 
 // GetPriorityBase gets the value of PriorityBase for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_Thread) GetPropertyPriorityBase() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStartAddress sets the value of StartAddress for the instance
 func (instance *Win32_Thread) SetPropertyStartAddress(value uint32) (err error) {
-	return instance.SetProperty("StartAddress", value)
+	return instance.SetProperty("StartAddress", (value))
 }
 
 // GetStartAddress gets the value of StartAddress for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_Thread) GetPropertyStartAddress() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThreadState sets the value of ThreadState for the instance
 func (instance *Win32_Thread) SetPropertyThreadState(value uint32) (err error) {
-	return instance.SetProperty("ThreadState", value)
+	return instance.SetProperty("ThreadState", (value))
 }
 
 // GetThreadState gets the value of ThreadState for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_Thread) GetPropertyThreadState() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThreadWaitReason sets the value of ThreadWaitReason for the instance
 func (instance *Win32_Thread) SetPropertyThreadWaitReason(value uint32) (err error) {
-	return instance.SetProperty("ThreadWaitReason", value)
+	return instance.SetProperty("ThreadWaitReason", (value))
 }
 
 // GetThreadWaitReason gets the value of ThreadWaitReason for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_Thread) GetPropertyThreadWaitReason() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

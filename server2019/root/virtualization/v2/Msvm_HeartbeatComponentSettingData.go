@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_HeartbeatComponentSettingData struct
@@ -61,7 +63,7 @@ func NewMsvm_HeartbeatComponentSettingDataEx6(hostName string,
 
 // SetEnabledState sets the value of EnabledState for the instance
 func (instance *Msvm_HeartbeatComponentSettingData) SetPropertyEnabledState(value uint16) (err error) {
-	return instance.SetProperty("EnabledState", value)
+	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
@@ -70,16 +72,25 @@ func (instance *Msvm_HeartbeatComponentSettingData) GetPropertyEnabledState() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetErrorThreshold sets the value of ErrorThreshold for the instance
 func (instance *Msvm_HeartbeatComponentSettingData) SetPropertyErrorThreshold(value uint32) (err error) {
-	return instance.SetProperty("ErrorThreshold", value)
+	return instance.SetProperty("ErrorThreshold", (value))
 }
 
 // GetErrorThreshold gets the value of ErrorThreshold for the instance
@@ -88,16 +99,25 @@ func (instance *Msvm_HeartbeatComponentSettingData) GetPropertyErrorThreshold() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInterval sets the value of Interval for the instance
 func (instance *Msvm_HeartbeatComponentSettingData) SetPropertyInterval(value uint32) (err error) {
-	return instance.SetProperty("Interval", value)
+	return instance.SetProperty("Interval", (value))
 }
 
 // GetInterval gets the value of Interval for the instance
@@ -106,16 +126,25 @@ func (instance *Msvm_HeartbeatComponentSettingData) GetPropertyInterval() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLatency sets the value of Latency for the instance
 func (instance *Msvm_HeartbeatComponentSettingData) SetPropertyLatency(value uint32) (err error) {
-	return instance.SetProperty("Latency", value)
+	return instance.SetProperty("Latency", (value))
 }
 
 // GetLatency gets the value of Latency for the instance
@@ -124,10 +153,19 @@ func (instance *Msvm_HeartbeatComponentSettingData) GetPropertyLatency() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 func (instance *Msvm_HeartbeatComponentSettingData) GetRelatedVirtualSystemSettingData() (value *cim.WmiInstance, err error) {

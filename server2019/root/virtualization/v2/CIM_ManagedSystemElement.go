@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ManagedSystemElement struct
@@ -135,7 +137,7 @@ func NewCIM_ManagedSystemElementEx6(hostName string,
 
 // SetCommunicationStatus sets the value of CommunicationStatus for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyCommunicationStatus(value ManagedSystemElement_CommunicationStatus) (err error) {
-	return instance.SetProperty("CommunicationStatus", value)
+	return instance.SetProperty("CommunicationStatus", (value))
 }
 
 // GetCommunicationStatus gets the value of CommunicationStatus for the instance
@@ -144,16 +146,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyCommunicationStatus() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ManagedSystemElement_CommunicationStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ManagedSystemElement_CommunicationStatus(valuetmp)
+
 	return
 }
 
 // SetDetailedStatus sets the value of DetailedStatus for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyDetailedStatus(value ManagedSystemElement_DetailedStatus) (err error) {
-	return instance.SetProperty("DetailedStatus", value)
+	return instance.SetProperty("DetailedStatus", (value))
 }
 
 // GetDetailedStatus gets the value of DetailedStatus for the instance
@@ -162,16 +173,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyDetailedStatus() (value Man
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ManagedSystemElement_DetailedStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ManagedSystemElement_DetailedStatus(valuetmp)
+
 	return
 }
 
 // SetHealthState sets the value of HealthState for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyHealthState(value ManagedSystemElement_HealthState) (err error) {
-	return instance.SetProperty("HealthState", value)
+	return instance.SetProperty("HealthState", (value))
 }
 
 // GetHealthState gets the value of HealthState for the instance
@@ -180,16 +200,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyHealthState() (value Manage
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ManagedSystemElement_HealthState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ManagedSystemElement_HealthState(valuetmp)
+
 	return
 }
 
 // SetInstallDate sets the value of InstallDate for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyInstallDate(value string) (err error) {
-	return instance.SetProperty("InstallDate", value)
+	return instance.SetProperty("InstallDate", (value))
 }
 
 // GetInstallDate gets the value of InstallDate for the instance
@@ -198,16 +227,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyInstallDate() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -216,16 +254,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOperatingStatus sets the value of OperatingStatus for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyOperatingStatus(value ManagedSystemElement_OperatingStatus) (err error) {
-	return instance.SetProperty("OperatingStatus", value)
+	return instance.SetProperty("OperatingStatus", (value))
 }
 
 // GetOperatingStatus gets the value of OperatingStatus for the instance
@@ -234,16 +281,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyOperatingStatus() (value Ma
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ManagedSystemElement_OperatingStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ManagedSystemElement_OperatingStatus(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyOperationalStatus(value []ManagedSystemElement_OperationalStatus) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -252,16 +308,26 @@ func (instance *CIM_ManagedSystemElement) GetPropertyOperationalStatus() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]ManagedSystemElement_OperationalStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, ManagedSystemElement_OperationalStatus(valuetmp))
+	}
+
 	return
 }
 
 // SetPrimaryStatus sets the value of PrimaryStatus for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyPrimaryStatus(value ManagedSystemElement_PrimaryStatus) (err error) {
-	return instance.SetProperty("PrimaryStatus", value)
+	return instance.SetProperty("PrimaryStatus", (value))
 }
 
 // GetPrimaryStatus gets the value of PrimaryStatus for the instance
@@ -270,16 +336,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyPrimaryStatus() (value Mana
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ManagedSystemElement_PrimaryStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ManagedSystemElement_PrimaryStatus(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyStatus(value string) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -288,16 +363,25 @@ func (instance *CIM_ManagedSystemElement) GetPropertyStatus() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatusDescriptions sets the value of StatusDescriptions for the instance
 func (instance *CIM_ManagedSystemElement) SetPropertyStatusDescriptions(value []string) (err error) {
-	return instance.SetProperty("StatusDescriptions", value)
+	return instance.SetProperty("StatusDescriptions", (value))
 }
 
 // GetStatusDescriptions gets the value of StatusDescriptions for the instance
@@ -306,9 +390,19 @@ func (instance *CIM_ManagedSystemElement) GetPropertyStatusDescriptions() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

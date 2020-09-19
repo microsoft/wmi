@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_SecureAssessment struct
@@ -71,7 +73,7 @@ func NewMDM_SecureAssessmentEx6(hostName string,
 
 // SetAllowScreenMonitoring sets the value of AllowScreenMonitoring for the instance
 func (instance *MDM_SecureAssessment) SetPropertyAllowScreenMonitoring(value bool) (err error) {
-	return instance.SetProperty("AllowScreenMonitoring", value)
+	return instance.SetProperty("AllowScreenMonitoring", (value))
 }
 
 // GetAllowScreenMonitoring gets the value of AllowScreenMonitoring for the instance
@@ -80,16 +82,25 @@ func (instance *MDM_SecureAssessment) GetPropertyAllowScreenMonitoring() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllowTextSuggestions sets the value of AllowTextSuggestions for the instance
 func (instance *MDM_SecureAssessment) SetPropertyAllowTextSuggestions(value bool) (err error) {
-	return instance.SetProperty("AllowTextSuggestions", value)
+	return instance.SetProperty("AllowTextSuggestions", (value))
 }
 
 // GetAllowTextSuggestions gets the value of AllowTextSuggestions for the instance
@@ -98,16 +109,25 @@ func (instance *MDM_SecureAssessment) GetPropertyAllowTextSuggestions() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_SecureAssessment) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -116,16 +136,25 @@ func (instance *MDM_SecureAssessment) GetPropertyInstanceID() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLaunchURI sets the value of LaunchURI for the instance
 func (instance *MDM_SecureAssessment) SetPropertyLaunchURI(value string) (err error) {
-	return instance.SetProperty("LaunchURI", value)
+	return instance.SetProperty("LaunchURI", (value))
 }
 
 // GetLaunchURI gets the value of LaunchURI for the instance
@@ -134,16 +163,25 @@ func (instance *MDM_SecureAssessment) GetPropertyLaunchURI() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_SecureAssessment) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -152,16 +190,25 @@ func (instance *MDM_SecureAssessment) GetPropertyParentID() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequirePrinting sets the value of RequirePrinting for the instance
 func (instance *MDM_SecureAssessment) SetPropertyRequirePrinting(value bool) (err error) {
-	return instance.SetProperty("RequirePrinting", value)
+	return instance.SetProperty("RequirePrinting", (value))
 }
 
 // GetRequirePrinting gets the value of RequirePrinting for the instance
@@ -170,16 +217,25 @@ func (instance *MDM_SecureAssessment) GetPropertyRequirePrinting() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTesterAccount sets the value of TesterAccount for the instance
 func (instance *MDM_SecureAssessment) SetPropertyTesterAccount(value string) (err error) {
-	return instance.SetProperty("TesterAccount", value)
+	return instance.SetProperty("TesterAccount", (value))
 }
 
 // GetTesterAccount gets the value of TesterAccount for the instance
@@ -188,9 +244,18 @@ func (instance *MDM_SecureAssessment) GetPropertyTesterAccount() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_ResourcePoolConfigurationCapabilities struct
@@ -55,7 +57,7 @@ func NewMsvm_ResourcePoolConfigurationCapabilitiesEx6(hostName string,
 
 // SetAsynchronousMethodsSupported sets the value of AsynchronousMethodsSupported for the instance
 func (instance *Msvm_ResourcePoolConfigurationCapabilities) SetPropertyAsynchronousMethodsSupported(value []ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("AsynchronousMethodsSupported", value)
+	return instance.SetProperty("AsynchronousMethodsSupported", (value))
 }
 
 // GetAsynchronousMethodsSupported gets the value of AsynchronousMethodsSupported for the instance
@@ -64,16 +66,26 @@ func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertyAsynchron
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported(valuetmp))
+	}
+
 	return
 }
 
 // SetSynchronousMethodsSupported sets the value of SynchronousMethodsSupported for the instance
 func (instance *Msvm_ResourcePoolConfigurationCapabilities) SetPropertySynchronousMethodsSupported(value []ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("SynchronousMethodsSupported", value)
+	return instance.SetProperty("SynchronousMethodsSupported", (value))
 }
 
 // GetSynchronousMethodsSupported gets the value of SynchronousMethodsSupported for the instance
@@ -82,10 +94,20 @@ func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetPropertySynchrono
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, ResourcePoolConfigurationCapabilities_SynchronousMethodsSupported(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_ResourcePoolConfigurationCapabilities) GetRelatedResourcePoolConfigurationService() (value *cim.WmiInstance, err error) {

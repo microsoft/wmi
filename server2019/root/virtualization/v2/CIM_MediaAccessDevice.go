@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_MediaAccessDevice struct
@@ -119,7 +121,7 @@ func NewCIM_MediaAccessDeviceEx6(hostName string,
 
 // SetCapabilities sets the value of Capabilities for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyCapabilities(value []MediaAccessDevice_Capabilities) (err error) {
-	return instance.SetProperty("Capabilities", value)
+	return instance.SetProperty("Capabilities", (value))
 }
 
 // GetCapabilities gets the value of Capabilities for the instance
@@ -128,16 +130,26 @@ func (instance *CIM_MediaAccessDevice) GetPropertyCapabilities() (value []MediaA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MediaAccessDevice_Capabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MediaAccessDevice_Capabilities(valuetmp))
+	}
+
 	return
 }
 
 // SetCapabilityDescriptions sets the value of CapabilityDescriptions for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyCapabilityDescriptions(value []string) (err error) {
-	return instance.SetProperty("CapabilityDescriptions", value)
+	return instance.SetProperty("CapabilityDescriptions", (value))
 }
 
 // GetCapabilityDescriptions gets the value of CapabilityDescriptions for the instance
@@ -146,16 +158,26 @@ func (instance *CIM_MediaAccessDevice) GetPropertyCapabilityDescriptions() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetCompressionMethod sets the value of CompressionMethod for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyCompressionMethod(value string) (err error) {
-	return instance.SetProperty("CompressionMethod", value)
+	return instance.SetProperty("CompressionMethod", (value))
 }
 
 // GetCompressionMethod gets the value of CompressionMethod for the instance
@@ -164,16 +186,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyCompressionMethod() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDefaultBlockSize sets the value of DefaultBlockSize for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyDefaultBlockSize(value uint64) (err error) {
-	return instance.SetProperty("DefaultBlockSize", value)
+	return instance.SetProperty("DefaultBlockSize", (value))
 }
 
 // GetDefaultBlockSize gets the value of DefaultBlockSize for the instance
@@ -182,16 +213,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyDefaultBlockSize() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetErrorMethodology sets the value of ErrorMethodology for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyErrorMethodology(value string) (err error) {
-	return instance.SetProperty("ErrorMethodology", value)
+	return instance.SetProperty("ErrorMethodology", (value))
 }
 
 // GetErrorMethodology gets the value of ErrorMethodology for the instance
@@ -200,16 +240,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyErrorMethodology() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastCleaned sets the value of LastCleaned for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyLastCleaned(value string) (err error) {
-	return instance.SetProperty("LastCleaned", value)
+	return instance.SetProperty("LastCleaned", (value))
 }
 
 // GetLastCleaned gets the value of LastCleaned for the instance
@@ -218,16 +267,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyLastCleaned() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLoadTime sets the value of LoadTime for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyLoadTime(value uint64) (err error) {
-	return instance.SetProperty("LoadTime", value)
+	return instance.SetProperty("LoadTime", (value))
 }
 
 // GetLoadTime gets the value of LoadTime for the instance
@@ -236,16 +294,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyLoadTime() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxAccessTime sets the value of MaxAccessTime for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyMaxAccessTime(value uint64) (err error) {
-	return instance.SetProperty("MaxAccessTime", value)
+	return instance.SetProperty("MaxAccessTime", (value))
 }
 
 // GetMaxAccessTime gets the value of MaxAccessTime for the instance
@@ -254,16 +321,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyMaxAccessTime() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxBlockSize sets the value of MaxBlockSize for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyMaxBlockSize(value uint64) (err error) {
-	return instance.SetProperty("MaxBlockSize", value)
+	return instance.SetProperty("MaxBlockSize", (value))
 }
 
 // GetMaxBlockSize gets the value of MaxBlockSize for the instance
@@ -272,16 +348,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyMaxBlockSize() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxMediaSize sets the value of MaxMediaSize for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyMaxMediaSize(value uint64) (err error) {
-	return instance.SetProperty("MaxMediaSize", value)
+	return instance.SetProperty("MaxMediaSize", (value))
 }
 
 // GetMaxMediaSize gets the value of MaxMediaSize for the instance
@@ -290,16 +375,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyMaxMediaSize() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxUnitsBeforeCleaning sets the value of MaxUnitsBeforeCleaning for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyMaxUnitsBeforeCleaning(value uint64) (err error) {
-	return instance.SetProperty("MaxUnitsBeforeCleaning", value)
+	return instance.SetProperty("MaxUnitsBeforeCleaning", (value))
 }
 
 // GetMaxUnitsBeforeCleaning gets the value of MaxUnitsBeforeCleaning for the instance
@@ -308,16 +402,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyMaxUnitsBeforeCleaning() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMediaIsLocked sets the value of MediaIsLocked for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyMediaIsLocked(value bool) (err error) {
-	return instance.SetProperty("MediaIsLocked", value)
+	return instance.SetProperty("MediaIsLocked", (value))
 }
 
 // GetMediaIsLocked gets the value of MediaIsLocked for the instance
@@ -326,16 +429,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyMediaIsLocked() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMinBlockSize sets the value of MinBlockSize for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyMinBlockSize(value uint64) (err error) {
-	return instance.SetProperty("MinBlockSize", value)
+	return instance.SetProperty("MinBlockSize", (value))
 }
 
 // GetMinBlockSize gets the value of MinBlockSize for the instance
@@ -344,16 +456,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyMinBlockSize() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMountCount sets the value of MountCount for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyMountCount(value uint64) (err error) {
-	return instance.SetProperty("MountCount", value)
+	return instance.SetProperty("MountCount", (value))
 }
 
 // GetMountCount gets the value of MountCount for the instance
@@ -362,16 +483,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyMountCount() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNeedsCleaning sets the value of NeedsCleaning for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyNeedsCleaning(value bool) (err error) {
-	return instance.SetProperty("NeedsCleaning", value)
+	return instance.SetProperty("NeedsCleaning", (value))
 }
 
 // GetNeedsCleaning gets the value of NeedsCleaning for the instance
@@ -380,16 +510,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyNeedsCleaning() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNumberOfMediaSupported sets the value of NumberOfMediaSupported for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyNumberOfMediaSupported(value uint32) (err error) {
-	return instance.SetProperty("NumberOfMediaSupported", value)
+	return instance.SetProperty("NumberOfMediaSupported", (value))
 }
 
 // GetNumberOfMediaSupported gets the value of NumberOfMediaSupported for the instance
@@ -398,16 +537,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyNumberOfMediaSupported() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurity sets the value of Security for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertySecurity(value MediaAccessDevice_Security) (err error) {
-	return instance.SetProperty("Security", value)
+	return instance.SetProperty("Security", (value))
 }
 
 // GetSecurity gets the value of Security for the instance
@@ -416,16 +564,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertySecurity() (value MediaAccessD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MediaAccessDevice_Security)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MediaAccessDevice_Security(valuetmp)
+
 	return
 }
 
 // SetTimeOfLastMount sets the value of TimeOfLastMount for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyTimeOfLastMount(value string) (err error) {
-	return instance.SetProperty("TimeOfLastMount", value)
+	return instance.SetProperty("TimeOfLastMount", (value))
 }
 
 // GetTimeOfLastMount gets the value of TimeOfLastMount for the instance
@@ -434,16 +591,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyTimeOfLastMount() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTotalMountTime sets the value of TotalMountTime for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyTotalMountTime(value uint64) (err error) {
-	return instance.SetProperty("TotalMountTime", value)
+	return instance.SetProperty("TotalMountTime", (value))
 }
 
 // GetTotalMountTime gets the value of TotalMountTime for the instance
@@ -452,16 +618,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyTotalMountTime() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUncompressedDataRate sets the value of UncompressedDataRate for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyUncompressedDataRate(value uint32) (err error) {
-	return instance.SetProperty("UncompressedDataRate", value)
+	return instance.SetProperty("UncompressedDataRate", (value))
 }
 
 // GetUncompressedDataRate gets the value of UncompressedDataRate for the instance
@@ -470,16 +645,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyUncompressedDataRate() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUnitsDescription sets the value of UnitsDescription for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyUnitsDescription(value string) (err error) {
-	return instance.SetProperty("UnitsDescription", value)
+	return instance.SetProperty("UnitsDescription", (value))
 }
 
 // GetUnitsDescription gets the value of UnitsDescription for the instance
@@ -488,16 +672,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyUnitsDescription() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUnitsUsed sets the value of UnitsUsed for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyUnitsUsed(value uint64) (err error) {
-	return instance.SetProperty("UnitsUsed", value)
+	return instance.SetProperty("UnitsUsed", (value))
 }
 
 // GetUnitsUsed gets the value of UnitsUsed for the instance
@@ -506,16 +699,25 @@ func (instance *CIM_MediaAccessDevice) GetPropertyUnitsUsed() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUnloadTime sets the value of UnloadTime for the instance
 func (instance *CIM_MediaAccessDevice) SetPropertyUnloadTime(value uint64) (err error) {
-	return instance.SetProperty("UnloadTime", value)
+	return instance.SetProperty("UnloadTime", (value))
 }
 
 // GetUnloadTime gets the value of UnloadTime for the instance
@@ -524,10 +726,19 @@ func (instance *CIM_MediaAccessDevice) GetPropertyUnloadTime() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

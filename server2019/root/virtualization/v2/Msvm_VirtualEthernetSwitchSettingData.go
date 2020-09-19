@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualEthernetSwitchSettingData struct
@@ -64,7 +66,7 @@ func NewMsvm_VirtualEthernetSwitchSettingDataEx6(hostName string,
 
 // SetBandwidthReservationMode sets the value of BandwidthReservationMode for the instance
 func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyBandwidthReservationMode(value uint32) (err error) {
-	return instance.SetProperty("BandwidthReservationMode", value)
+	return instance.SetProperty("BandwidthReservationMode", (value))
 }
 
 // GetBandwidthReservationMode gets the value of BandwidthReservationMode for the instance
@@ -73,16 +75,25 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyBandwidthReser
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExtensionOrder sets the value of ExtensionOrder for the instance
 func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyExtensionOrder(value []string) (err error) {
-	return instance.SetProperty("ExtensionOrder", value)
+	return instance.SetProperty("ExtensionOrder", (value))
 }
 
 // GetExtensionOrder gets the value of ExtensionOrder for the instance
@@ -91,16 +102,26 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyExtensionOrder
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIOVPreferred sets the value of IOVPreferred for the instance
 func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyIOVPreferred(value bool) (err error) {
-	return instance.SetProperty("IOVPreferred", value)
+	return instance.SetProperty("IOVPreferred", (value))
 }
 
 // GetIOVPreferred gets the value of IOVPreferred for the instance
@@ -109,16 +130,25 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyIOVPreferred()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPacketDirectEnabled sets the value of PacketDirectEnabled for the instance
 func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyPacketDirectEnabled(value bool) (err error) {
-	return instance.SetProperty("PacketDirectEnabled", value)
+	return instance.SetProperty("PacketDirectEnabled", (value))
 }
 
 // GetPacketDirectEnabled gets the value of PacketDirectEnabled for the instance
@@ -127,16 +157,25 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyPacketDirectEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTeamingEnabled sets the value of TeamingEnabled for the instance
 func (instance *Msvm_VirtualEthernetSwitchSettingData) SetPropertyTeamingEnabled(value bool) (err error) {
-	return instance.SetProperty("TeamingEnabled", value)
+	return instance.SetProperty("TeamingEnabled", (value))
 }
 
 // GetTeamingEnabled gets the value of TeamingEnabled for the instance
@@ -145,14 +184,23 @@ func (instance *Msvm_VirtualEthernetSwitchSettingData) GetPropertyTeamingEnabled
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
-func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedEthernetPortAllocationSettingData() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_EthernetPortAllocationSettingData")
+func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedEthernetPortAllocationSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetPortAllocationSettingData")
 }
 
 func (instance *Msvm_VirtualEthernetSwitchSettingData) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_XHCIInterrupter struct
@@ -64,7 +66,7 @@ func NewWin32_PerfFormattedData_Counters_XHCIInterrupterEx6(hostName string,
 
 // SetDpcRequeueCount sets the value of DpcRequeueCount for the instance
 func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) SetPropertyDpcRequeueCount(value uint32) (err error) {
-	return instance.SetProperty("DpcRequeueCount", value)
+	return instance.SetProperty("DpcRequeueCount", (value))
 }
 
 // GetDpcRequeueCount gets the value of DpcRequeueCount for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) GetPropertyDpc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDPCsPersec sets the value of DPCsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) SetPropertyDPCsPersec(value uint32) (err error) {
-	return instance.SetProperty("DPCsPersec", value)
+	return instance.SetProperty("DPCsPersec", (value))
 }
 
 // GetDPCsPersec gets the value of DPCsPersec for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) GetPropertyDPC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEventRingFullCount sets the value of EventRingFullCount for the instance
 func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) SetPropertyEventRingFullCount(value uint32) (err error) {
-	return instance.SetProperty("EventRingFullCount", value)
+	return instance.SetProperty("EventRingFullCount", (value))
 }
 
 // GetEventRingFullCount gets the value of EventRingFullCount for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) GetPropertyEve
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEventsprocessedDPC sets the value of EventsprocessedDPC for the instance
 func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) SetPropertyEventsprocessedDPC(value uint64) (err error) {
-	return instance.SetProperty("EventsprocessedDPC", value)
+	return instance.SetProperty("EventsprocessedDPC", (value))
 }
 
 // GetEventsprocessedDPC gets the value of EventsprocessedDPC for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) GetPropertyEve
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterruptsPersec sets the value of InterruptsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) SetPropertyInterruptsPersec(value uint32) (err error) {
-	return instance.SetProperty("InterruptsPersec", value)
+	return instance.SetProperty("InterruptsPersec", (value))
 }
 
 // GetInterruptsPersec gets the value of InterruptsPersec for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_PerfFormattedData_Counters_XHCIInterrupter) GetPropertyInt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
@@ -11,7 +11,9 @@ package cli
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CliConnection struct
@@ -68,7 +70,7 @@ func NewMSFT_CliConnectionEx6(hostName string,
 
 // SetAuthority sets the value of Authority for the instance
 func (instance *MSFT_CliConnection) SetPropertyAuthority(value string) (err error) {
-	return instance.SetProperty("Authority", value)
+	return instance.SetProperty("Authority", (value))
 }
 
 // GetAuthority gets the value of Authority for the instance
@@ -77,16 +79,25 @@ func (instance *MSFT_CliConnection) GetPropertyAuthority() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocale sets the value of Locale for the instance
 func (instance *MSFT_CliConnection) SetPropertyLocale(value string) (err error) {
-	return instance.SetProperty("Locale", value)
+	return instance.SetProperty("Locale", (value))
 }
 
 // GetLocale gets the value of Locale for the instance
@@ -95,16 +106,25 @@ func (instance *MSFT_CliConnection) GetPropertyLocale() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameSpace sets the value of NameSpace for the instance
 func (instance *MSFT_CliConnection) SetPropertyNameSpace(value string) (err error) {
-	return instance.SetProperty("NameSpace", value)
+	return instance.SetProperty("NameSpace", (value))
 }
 
 // GetNameSpace gets the value of NameSpace for the instance
@@ -113,16 +133,25 @@ func (instance *MSFT_CliConnection) GetPropertyNameSpace() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPassword sets the value of Password for the instance
 func (instance *MSFT_CliConnection) SetPropertyPassword(value string) (err error) {
-	return instance.SetProperty("Password", value)
+	return instance.SetProperty("Password", (value))
 }
 
 // GetPassword gets the value of Password for the instance
@@ -131,16 +160,25 @@ func (instance *MSFT_CliConnection) GetPropertyPassword() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServer sets the value of Server for the instance
 func (instance *MSFT_CliConnection) SetPropertyServer(value string) (err error) {
-	return instance.SetProperty("Server", value)
+	return instance.SetProperty("Server", (value))
 }
 
 // GetServer gets the value of Server for the instance
@@ -149,16 +187,25 @@ func (instance *MSFT_CliConnection) GetPropertyServer() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUser sets the value of User for the instance
 func (instance *MSFT_CliConnection) SetPropertyUser(value string) (err error) {
-	return instance.SetProperty("User", value)
+	return instance.SetProperty("User", (value))
 }
 
 // GetUser gets the value of User for the instance
@@ -167,9 +214,18 @@ func (instance *MSFT_CliConnection) GetPropertyUser() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

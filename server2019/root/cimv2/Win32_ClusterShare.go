@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ClusterShare struct
@@ -52,7 +54,7 @@ func NewWin32_ClusterShareEx6(hostName string,
 
 // SetServerName sets the value of ServerName for the instance
 func (instance *Win32_ClusterShare) SetPropertyServerName(value string) (err error) {
-	return instance.SetProperty("ServerName", value)
+	return instance.SetProperty("ServerName", (value))
 }
 
 // GetServerName gets the value of ServerName for the instance
@@ -61,9 +63,18 @@ func (instance *Win32_ClusterShare) GetPropertyServerName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_DNS64Global struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_Counters_DNS64GlobalEx6(hostName string,
 
 // SetAAAAqueriesFailed sets the value of AAAAqueriesFailed for the instance
 func (instance *Win32_PerfFormattedData_Counters_DNS64Global) SetPropertyAAAAqueriesFailed(value uint64) (err error) {
-	return instance.SetProperty("AAAAqueriesFailed", value)
+	return instance.SetProperty("AAAAqueriesFailed", (value))
 }
 
 // GetAAAAqueriesFailed gets the value of AAAAqueriesFailed for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_Counters_DNS64Global) GetPropertyAAAAque
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAAAAqueriesSuccessful sets the value of AAAAqueriesSuccessful for the instance
 func (instance *Win32_PerfFormattedData_Counters_DNS64Global) SetPropertyAAAAqueriesSuccessful(value uint64) (err error) {
-	return instance.SetProperty("AAAAqueriesSuccessful", value)
+	return instance.SetProperty("AAAAqueriesSuccessful", (value))
 }
 
 // GetAAAAqueriesSuccessful gets the value of AAAAqueriesSuccessful for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_Counters_DNS64Global) GetPropertyAAAAque
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAAAASynthesizedrecords sets the value of AAAASynthesizedrecords for the instance
 func (instance *Win32_PerfFormattedData_Counters_DNS64Global) SetPropertyAAAASynthesizedrecords(value uint64) (err error) {
-	return instance.SetProperty("AAAASynthesizedrecords", value)
+	return instance.SetProperty("AAAASynthesizedrecords", (value))
 }
 
 // GetAAAASynthesizedrecords gets the value of AAAASynthesizedrecords for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_Counters_DNS64Global) GetPropertyAAAASyn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIP6ARPAqueriesMatched sets the value of IP6ARPAqueriesMatched for the instance
 func (instance *Win32_PerfFormattedData_Counters_DNS64Global) SetPropertyIP6ARPAqueriesMatched(value uint64) (err error) {
-	return instance.SetProperty("IP6ARPAqueriesMatched", value)
+	return instance.SetProperty("IP6ARPAqueriesMatched", (value))
 }
 
 // GetIP6ARPAqueriesMatched gets the value of IP6ARPAqueriesMatched for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_Counters_DNS64Global) GetPropertyIP6ARPA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOtherqueriesFailed sets the value of OtherqueriesFailed for the instance
 func (instance *Win32_PerfFormattedData_Counters_DNS64Global) SetPropertyOtherqueriesFailed(value uint64) (err error) {
-	return instance.SetProperty("OtherqueriesFailed", value)
+	return instance.SetProperty("OtherqueriesFailed", (value))
 }
 
 // GetOtherqueriesFailed gets the value of OtherqueriesFailed for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_Counters_DNS64Global) GetPropertyOtherqu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOtherqueriesSuccessful sets the value of OtherqueriesSuccessful for the instance
 func (instance *Win32_PerfFormattedData_Counters_DNS64Global) SetPropertyOtherqueriesSuccessful(value uint64) (err error) {
-	return instance.SetProperty("OtherqueriesSuccessful", value)
+	return instance.SetProperty("OtherqueriesSuccessful", (value))
 }
 
 // GetOtherqueriesSuccessful gets the value of OtherqueriesSuccessful for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_Counters_DNS64Global) GetPropertyOtherqu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

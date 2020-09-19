@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_KvpExchangeDataItem struct
@@ -58,7 +60,7 @@ func NewMsvm_KvpExchangeDataItemEx6(hostName string,
 
 // SetData sets the value of Data for the instance
 func (instance *Msvm_KvpExchangeDataItem) SetPropertyData(value string) (err error) {
-	return instance.SetProperty("Data", value)
+	return instance.SetProperty("Data", (value))
 }
 
 // GetData gets the value of Data for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_KvpExchangeDataItem) GetPropertyData() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Msvm_KvpExchangeDataItem) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_KvpExchangeDataItem) GetPropertyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSource sets the value of Source for the instance
 func (instance *Msvm_KvpExchangeDataItem) SetPropertySource(value uint16) (err error) {
-	return instance.SetProperty("Source", value)
+	return instance.SetProperty("Source", (value))
 }
 
 // GetSource gets the value of Source for the instance
@@ -103,9 +123,18 @@ func (instance *Msvm_KvpExchangeDataItem) GetPropertySource() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

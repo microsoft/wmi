@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSVirtualIP struct
@@ -85,7 +87,7 @@ func NewWin32_TSVirtualIPEx6(hostName string,
 
 // SetNetworkAdapterDescription sets the value of NetworkAdapterDescription for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyNetworkAdapterDescription(value string) (err error) {
-	return instance.SetProperty("NetworkAdapterDescription", value)
+	return instance.SetProperty("NetworkAdapterDescription", (value))
 }
 
 // GetNetworkAdapterDescription gets the value of NetworkAdapterDescription for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyNetworkAdapterDescription() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNetworkAdapterDescriptionList sets the value of NetworkAdapterDescriptionList for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyNetworkAdapterDescriptionList(value []string) (err error) {
-	return instance.SetProperty("NetworkAdapterDescriptionList", value)
+	return instance.SetProperty("NetworkAdapterDescriptionList", (value))
 }
 
 // GetNetworkAdapterDescriptionList gets the value of NetworkAdapterDescriptionList for the instance
@@ -112,16 +123,26 @@ func (instance *Win32_TSVirtualIP) GetPropertyNetworkAdapterDescriptionList() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNetworkAdapterMacAddress sets the value of NetworkAdapterMacAddress for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyNetworkAdapterMacAddress(value string) (err error) {
-	return instance.SetProperty("NetworkAdapterMacAddress", value)
+	return instance.SetProperty("NetworkAdapterMacAddress", (value))
 }
 
 // GetNetworkAdapterMacAddress gets the value of NetworkAdapterMacAddress for the instance
@@ -130,16 +151,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyNetworkAdapterMacAddress() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNetworkAdapterMacList sets the value of NetworkAdapterMacList for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyNetworkAdapterMacList(value []string) (err error) {
-	return instance.SetProperty("NetworkAdapterMacList", value)
+	return instance.SetProperty("NetworkAdapterMacList", (value))
 }
 
 // GetNetworkAdapterMacList gets the value of NetworkAdapterMacList for the instance
@@ -148,16 +178,26 @@ func (instance *Win32_TSVirtualIP) GetPropertyNetworkAdapterMacList() (value []s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPolicySourceNetworkAdapter sets the value of PolicySourceNetworkAdapter for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyPolicySourceNetworkAdapter(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceNetworkAdapter", value)
+	return instance.SetProperty("PolicySourceNetworkAdapter", (value))
 }
 
 // GetPolicySourceNetworkAdapter gets the value of PolicySourceNetworkAdapter for the instance
@@ -166,16 +206,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyPolicySourceNetworkAdapter() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceProgramList sets the value of PolicySourceProgramList for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyPolicySourceProgramList(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceProgramList", value)
+	return instance.SetProperty("PolicySourceProgramList", (value))
 }
 
 // GetPolicySourceProgramList gets the value of PolicySourceProgramList for the instance
@@ -184,16 +233,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyPolicySourceProgramList() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceVirtualIPActive sets the value of PolicySourceVirtualIPActive for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyPolicySourceVirtualIPActive(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceVirtualIPActive", value)
+	return instance.SetProperty("PolicySourceVirtualIPActive", (value))
 }
 
 // GetPolicySourceVirtualIPActive gets the value of PolicySourceVirtualIPActive for the instance
@@ -202,16 +260,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyPolicySourceVirtualIPActive() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceVirtualIPMode sets the value of PolicySourceVirtualIPMode for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyPolicySourceVirtualIPMode(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceVirtualIPMode", value)
+	return instance.SetProperty("PolicySourceVirtualIPMode", (value))
 }
 
 // GetPolicySourceVirtualIPMode gets the value of PolicySourceVirtualIPMode for the instance
@@ -220,16 +287,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyPolicySourceVirtualIPMode() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProgramList sets the value of ProgramList for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyProgramList(value []string) (err error) {
-	return instance.SetProperty("ProgramList", value)
+	return instance.SetProperty("ProgramList", (value))
 }
 
 // GetProgramList gets the value of ProgramList for the instance
@@ -238,16 +314,26 @@ func (instance *Win32_TSVirtualIP) GetPropertyProgramList() (value []string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetVirtualIPActive sets the value of VirtualIPActive for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyVirtualIPActive(value uint32) (err error) {
-	return instance.SetProperty("VirtualIPActive", value)
+	return instance.SetProperty("VirtualIPActive", (value))
 }
 
 // GetVirtualIPActive gets the value of VirtualIPActive for the instance
@@ -256,16 +342,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyVirtualIPActive() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVirtualIPMode sets the value of VirtualIPMode for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyVirtualIPMode(value uint32) (err error) {
-	return instance.SetProperty("VirtualIPMode", value)
+	return instance.SetProperty("VirtualIPMode", (value))
 }
 
 // GetVirtualIPMode gets the value of VirtualIPMode for the instance
@@ -274,16 +369,25 @@ func (instance *Win32_TSVirtualIP) GetPropertyVirtualIPMode() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVirtualizeLoopbackAddressesEnabled sets the value of VirtualizeLoopbackAddressesEnabled for the instance
 func (instance *Win32_TSVirtualIP) SetPropertyVirtualizeLoopbackAddressesEnabled(value uint32) (err error) {
-	return instance.SetProperty("VirtualizeLoopbackAddressesEnabled", value)
+	return instance.SetProperty("VirtualizeLoopbackAddressesEnabled", (value))
 }
 
 // GetVirtualizeLoopbackAddressesEnabled gets the value of VirtualizeLoopbackAddressesEnabled for the instance
@@ -292,10 +396,19 @@ func (instance *Win32_TSVirtualIP) GetPropertyVirtualizeLoopbackAddressesEnabled
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

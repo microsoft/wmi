@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetNetworkLayerSecurityFilter struct
@@ -67,7 +69,7 @@ func NewMSFT_NetNetworkLayerSecurityFilterEx6(hostName string,
 
 // SetAuthentication sets the value of Authentication for the instance
 func (instance *MSFT_NetNetworkLayerSecurityFilter) SetPropertyAuthentication(value uint16) (err error) {
-	return instance.SetProperty("Authentication", value)
+	return instance.SetProperty("Authentication", (value))
 }
 
 // GetAuthentication gets the value of Authentication for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NetNetworkLayerSecurityFilter) GetPropertyAuthentication() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEncryption sets the value of Encryption for the instance
 func (instance *MSFT_NetNetworkLayerSecurityFilter) SetPropertyEncryption(value uint16) (err error) {
-	return instance.SetProperty("Encryption", value)
+	return instance.SetProperty("Encryption", (value))
 }
 
 // GetEncryption gets the value of Encryption for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NetNetworkLayerSecurityFilter) GetPropertyEncryption() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLocalUsers sets the value of LocalUsers for the instance
 func (instance *MSFT_NetNetworkLayerSecurityFilter) SetPropertyLocalUsers(value string) (err error) {
-	return instance.SetProperty("LocalUsers", value)
+	return instance.SetProperty("LocalUsers", (value))
 }
 
 // GetLocalUsers gets the value of LocalUsers for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_NetNetworkLayerSecurityFilter) GetPropertyLocalUsers() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOverrideBlockRules sets the value of OverrideBlockRules for the instance
 func (instance *MSFT_NetNetworkLayerSecurityFilter) SetPropertyOverrideBlockRules(value bool) (err error) {
-	return instance.SetProperty("OverrideBlockRules", value)
+	return instance.SetProperty("OverrideBlockRules", (value))
 }
 
 // GetOverrideBlockRules gets the value of OverrideBlockRules for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_NetNetworkLayerSecurityFilter) GetPropertyOverrideBlockRule
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRemoteMachines sets the value of RemoteMachines for the instance
 func (instance *MSFT_NetNetworkLayerSecurityFilter) SetPropertyRemoteMachines(value string) (err error) {
-	return instance.SetProperty("RemoteMachines", value)
+	return instance.SetProperty("RemoteMachines", (value))
 }
 
 // GetRemoteMachines gets the value of RemoteMachines for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_NetNetworkLayerSecurityFilter) GetPropertyRemoteMachines() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteUsers sets the value of RemoteUsers for the instance
 func (instance *MSFT_NetNetworkLayerSecurityFilter) SetPropertyRemoteUsers(value string) (err error) {
-	return instance.SetProperty("RemoteUsers", value)
+	return instance.SetProperty("RemoteUsers", (value))
 }
 
 // GetRemoteUsers gets the value of RemoteUsers for the instance
@@ -166,9 +213,18 @@ func (instance *MSFT_NetNetworkLayerSecurityFilter) GetPropertyRemoteUsers() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

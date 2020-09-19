@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIPsecDoSPSetting struct
@@ -115,7 +117,7 @@ func NewMSFT_NetIPsecDoSPSettingEx6(hostName string,
 
 // SetDefBlockExemptDscp sets the value of DefBlockExemptDscp for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyDefBlockExemptDscp(value uint16) (err error) {
-	return instance.SetProperty("DefBlockExemptDscp", value)
+	return instance.SetProperty("DefBlockExemptDscp", (value))
 }
 
 // GetDefBlockExemptDscp gets the value of DefBlockExemptDscp for the instance
@@ -124,16 +126,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyDefBlockExemptDscp() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDefBlockExemptRateLimitBytesPerSec sets the value of DefBlockExemptRateLimitBytesPerSec for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyDefBlockExemptRateLimitBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("DefBlockExemptRateLimitBytesPerSec", value)
+	return instance.SetProperty("DefBlockExemptRateLimitBytesPerSec", (value))
 }
 
 // GetDefBlockExemptRateLimitBytesPerSec gets the value of DefBlockExemptRateLimitBytesPerSec for the instance
@@ -142,16 +153,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyDefBlockExemptRateLimitByte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEffectiveAddressFamily sets the value of EffectiveAddressFamily for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyEffectiveAddressFamily(value uint16) (err error) {
-	return instance.SetProperty("EffectiveAddressFamily", value)
+	return instance.SetProperty("EffectiveAddressFamily", (value))
 }
 
 // GetEffectiveAddressFamily gets the value of EffectiveAddressFamily for the instance
@@ -160,16 +180,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyEffectiveAddressFamily() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEnabledKeyingModules sets the value of EnabledKeyingModules for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyEnabledKeyingModules(value uint32) (err error) {
-	return instance.SetProperty("EnabledKeyingModules", value)
+	return instance.SetProperty("EnabledKeyingModules", (value))
 }
 
 // GetEnabledKeyingModules gets the value of EnabledKeyingModules for the instance
@@ -178,16 +207,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyEnabledKeyingModules() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFilteringFlags sets the value of FilteringFlags for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyFilteringFlags(value uint32) (err error) {
-	return instance.SetProperty("FilteringFlags", value)
+	return instance.SetProperty("FilteringFlags", (value))
 }
 
 // GetFilteringFlags gets the value of FilteringFlags for the instance
@@ -196,16 +234,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyFilteringFlags() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIcmpV6Dscp sets the value of IcmpV6Dscp for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIcmpV6Dscp(value uint16) (err error) {
-	return instance.SetProperty("IcmpV6Dscp", value)
+	return instance.SetProperty("IcmpV6Dscp", (value))
 }
 
 // GetIcmpV6Dscp gets the value of IcmpV6Dscp for the instance
@@ -214,16 +261,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIcmpV6Dscp() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIcmpV6RateLimitBytesPerSec sets the value of IcmpV6RateLimitBytesPerSec for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIcmpV6RateLimitBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("IcmpV6RateLimitBytesPerSec", value)
+	return instance.SetProperty("IcmpV6RateLimitBytesPerSec", (value))
 }
 
 // GetIcmpV6RateLimitBytesPerSec gets the value of IcmpV6RateLimitBytesPerSec for the instance
@@ -232,16 +288,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIcmpV6RateLimitBytesPerSec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIpV6FilterExemptDscp sets the value of IpV6FilterExemptDscp for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIpV6FilterExemptDscp(value uint32) (err error) {
-	return instance.SetProperty("IpV6FilterExemptDscp", value)
+	return instance.SetProperty("IpV6FilterExemptDscp", (value))
 }
 
 // GetIpV6FilterExemptDscp gets the value of IpV6FilterExemptDscp for the instance
@@ -250,16 +315,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIpV6FilterExemptDscp() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIpV6FilterExemptRateLimitBytesPerSec sets the value of IpV6FilterExemptRateLimitBytesPerSec for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIpV6FilterExemptRateLimitBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("IpV6FilterExemptRateLimitBytesPerSec", value)
+	return instance.SetProperty("IpV6FilterExemptRateLimitBytesPerSec", (value))
 }
 
 // GetIpV6FilterExemptRateLimitBytesPerSec gets the value of IpV6FilterExemptRateLimitBytesPerSec for the instance
@@ -268,16 +342,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIpV6FilterExemptRateLimitBy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIpV6IPsecAuthDscp sets the value of IpV6IPsecAuthDscp for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIpV6IPsecAuthDscp(value uint16) (err error) {
-	return instance.SetProperty("IpV6IPsecAuthDscp", value)
+	return instance.SetProperty("IpV6IPsecAuthDscp", (value))
 }
 
 // GetIpV6IPsecAuthDscp gets the value of IpV6IPsecAuthDscp for the instance
@@ -286,16 +369,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIpV6IPsecAuthDscp() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIpV6IPsecAuthRateLimitBytesPerSec sets the value of IpV6IPsecAuthRateLimitBytesPerSec for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIpV6IPsecAuthRateLimitBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("IpV6IPsecAuthRateLimitBytesPerSec", value)
+	return instance.SetProperty("IpV6IPsecAuthRateLimitBytesPerSec", (value))
 }
 
 // GetIpV6IPsecAuthRateLimitBytesPerSec gets the value of IpV6IPsecAuthRateLimitBytesPerSec for the instance
@@ -304,16 +396,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIpV6IPsecAuthRateLimitBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIpV6IPsecUnauthDscp sets the value of IpV6IPsecUnauthDscp for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIpV6IPsecUnauthDscp(value uint32) (err error) {
-	return instance.SetProperty("IpV6IPsecUnauthDscp", value)
+	return instance.SetProperty("IpV6IPsecUnauthDscp", (value))
 }
 
 // GetIpV6IPsecUnauthDscp gets the value of IpV6IPsecUnauthDscp for the instance
@@ -322,16 +423,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIpV6IPsecUnauthDscp() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIpV6IPsecUnauthPerIPRateLimitBytesPerSec sets the value of IpV6IPsecUnauthPerIPRateLimitBytesPerSec for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIpV6IPsecUnauthPerIPRateLimitBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("IpV6IPsecUnauthPerIPRateLimitBytesPerSec", value)
+	return instance.SetProperty("IpV6IPsecUnauthPerIPRateLimitBytesPerSec", (value))
 }
 
 // GetIpV6IPsecUnauthPerIPRateLimitBytesPerSec gets the value of IpV6IPsecUnauthPerIPRateLimitBytesPerSec for the instance
@@ -340,16 +450,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIpV6IPsecUnauthPerIPRateLim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIpV6IPsecUnauthRateLimitBytesPerSec sets the value of IpV6IPsecUnauthRateLimitBytesPerSec for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyIpV6IPsecUnauthRateLimitBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("IpV6IPsecUnauthRateLimitBytesPerSec", value)
+	return instance.SetProperty("IpV6IPsecUnauthRateLimitBytesPerSec", (value))
 }
 
 // GetIpV6IPsecUnauthRateLimitBytesPerSec gets the value of IpV6IPsecUnauthRateLimitBytesPerSec for the instance
@@ -358,16 +477,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyIpV6IPsecUnauthRateLimitByt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxPerIPRateLimitQueues sets the value of MaxPerIPRateLimitQueues for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyMaxPerIPRateLimitQueues(value uint32) (err error) {
-	return instance.SetProperty("MaxPerIPRateLimitQueues", value)
+	return instance.SetProperty("MaxPerIPRateLimitQueues", (value))
 }
 
 // GetMaxPerIPRateLimitQueues gets the value of MaxPerIPRateLimitQueues for the instance
@@ -376,16 +504,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyMaxPerIPRateLimitQueues() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxStateEntries sets the value of MaxStateEntries for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyMaxStateEntries(value uint32) (err error) {
-	return instance.SetProperty("MaxStateEntries", value)
+	return instance.SetProperty("MaxStateEntries", (value))
 }
 
 // GetMaxStateEntries gets the value of MaxStateEntries for the instance
@@ -394,16 +531,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyMaxStateEntries() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPerIPRateLimitQueueIdleTimeoutSeconds sets the value of PerIPRateLimitQueueIdleTimeoutSeconds for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyPerIPRateLimitQueueIdleTimeoutSeconds(value uint32) (err error) {
-	return instance.SetProperty("PerIPRateLimitQueueIdleTimeoutSeconds", value)
+	return instance.SetProperty("PerIPRateLimitQueueIdleTimeoutSeconds", (value))
 }
 
 // GetPerIPRateLimitQueueIdleTimeoutSeconds gets the value of PerIPRateLimitQueueIdleTimeoutSeconds for the instance
@@ -412,16 +558,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyPerIPRateLimitQueueIdleTime
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrivateInterfaceAliases sets the value of PrivateInterfaceAliases for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyPrivateInterfaceAliases(value []string) (err error) {
-	return instance.SetProperty("PrivateInterfaceAliases", value)
+	return instance.SetProperty("PrivateInterfaceAliases", (value))
 }
 
 // GetPrivateInterfaceAliases gets the value of PrivateInterfaceAliases for the instance
@@ -430,16 +585,26 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyPrivateInterfaceAliases() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPrivateV6Address sets the value of PrivateV6Address for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyPrivateV6Address(value string) (err error) {
-	return instance.SetProperty("PrivateV6Address", value)
+	return instance.SetProperty("PrivateV6Address", (value))
 }
 
 // GetPrivateV6Address gets the value of PrivateV6Address for the instance
@@ -448,16 +613,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyPrivateV6Address() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPublicInterfaceAliases sets the value of PublicInterfaceAliases for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyPublicInterfaceAliases(value []string) (err error) {
-	return instance.SetProperty("PublicInterfaceAliases", value)
+	return instance.SetProperty("PublicInterfaceAliases", (value))
 }
 
 // GetPublicInterfaceAliases gets the value of PublicInterfaceAliases for the instance
@@ -466,16 +640,26 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyPublicInterfaceAliases() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPublicV6Address sets the value of PublicV6Address for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyPublicV6Address(value string) (err error) {
-	return instance.SetProperty("PublicV6Address", value)
+	return instance.SetProperty("PublicV6Address", (value))
 }
 
 // GetPublicV6Address gets the value of PublicV6Address for the instance
@@ -484,16 +668,25 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyPublicV6Address() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStateIdleTimeoutSeconds sets the value of StateIdleTimeoutSeconds for the instance
 func (instance *MSFT_NetIPsecDoSPSetting) SetPropertyStateIdleTimeoutSeconds(value uint32) (err error) {
-	return instance.SetProperty("StateIdleTimeoutSeconds", value)
+	return instance.SetProperty("StateIdleTimeoutSeconds", (value))
 }
 
 // GetStateIdleTimeoutSeconds gets the value of StateIdleTimeoutSeconds for the instance
@@ -502,9 +695,18 @@ func (instance *MSFT_NetIPsecDoSPSetting) GetPropertyStateIdleTimeoutSeconds() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

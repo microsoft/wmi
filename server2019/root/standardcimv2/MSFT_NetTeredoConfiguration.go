@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetTeredoConfiguration struct
@@ -73,7 +75,7 @@ func NewMSFT_NetTeredoConfigurationEx6(hostName string,
 
 // SetClientPort sets the value of ClientPort for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyClientPort(value uint32) (err error) {
-	return instance.SetProperty("ClientPort", value)
+	return instance.SetProperty("ClientPort", (value))
 }
 
 // GetClientPort gets the value of ClientPort for the instance
@@ -82,16 +84,25 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyClientPort() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDefaultQualified sets the value of DefaultQualified for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyDefaultQualified(value bool) (err error) {
-	return instance.SetProperty("DefaultQualified", value)
+	return instance.SetProperty("DefaultQualified", (value))
 }
 
 // GetDefaultQualified gets the value of DefaultQualified for the instance
@@ -100,16 +111,25 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyDefaultQualified() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyPolicyStore(value string) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -118,16 +138,25 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyPolicyStore() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRefreshInterval sets the value of RefreshInterval for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyRefreshInterval(value uint32) (err error) {
-	return instance.SetProperty("RefreshInterval", value)
+	return instance.SetProperty("RefreshInterval", (value))
 }
 
 // GetRefreshInterval gets the value of RefreshInterval for the instance
@@ -136,16 +165,25 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyRefreshInterval() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServerName sets the value of ServerName for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyServerName(value string) (err error) {
-	return instance.SetProperty("ServerName", value)
+	return instance.SetProperty("ServerName", (value))
 }
 
 // GetServerName gets the value of ServerName for the instance
@@ -154,16 +192,25 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyServerName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerShunt sets the value of ServerShunt for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyServerShunt(value bool) (err error) {
-	return instance.SetProperty("ServerShunt", value)
+	return instance.SetProperty("ServerShunt", (value))
 }
 
 // GetServerShunt gets the value of ServerShunt for the instance
@@ -172,16 +219,25 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyServerShunt() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetServerVirtualIP sets the value of ServerVirtualIP for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyServerVirtualIP(value string) (err error) {
-	return instance.SetProperty("ServerVirtualIP", value)
+	return instance.SetProperty("ServerVirtualIP", (value))
 }
 
 // GetServerVirtualIP gets the value of ServerVirtualIP for the instance
@@ -190,16 +246,25 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyServerVirtualIP() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_NetTeredoConfiguration) SetPropertyType(value uint32) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -208,10 +273,19 @@ func (instance *MSFT_NetTeredoConfiguration) GetPropertyType() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_Wifi02 struct
@@ -74,7 +76,7 @@ func NewMDM_Policy_Result01_Wifi02Ex6(hostName string,
 
 // SetAllowAutoConnectToWiFiSenseHotspots sets the value of AllowAutoConnectToWiFiSenseHotspots for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyAllowAutoConnectToWiFiSenseHotspots(value int32) (err error) {
-	return instance.SetProperty("AllowAutoConnectToWiFiSenseHotspots", value)
+	return instance.SetProperty("AllowAutoConnectToWiFiSenseHotspots", (value))
 }
 
 // GetAllowAutoConnectToWiFiSenseHotspots gets the value of AllowAutoConnectToWiFiSenseHotspots for the instance
@@ -83,16 +85,25 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyAllowAutoConnectToWiFiSen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowInternetSharing sets the value of AllowInternetSharing for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyAllowInternetSharing(value int32) (err error) {
-	return instance.SetProperty("AllowInternetSharing", value)
+	return instance.SetProperty("AllowInternetSharing", (value))
 }
 
 // GetAllowInternetSharing gets the value of AllowInternetSharing for the instance
@@ -101,16 +112,25 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyAllowInternetSharing() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowManualWiFiConfiguration sets the value of AllowManualWiFiConfiguration for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyAllowManualWiFiConfiguration(value int32) (err error) {
-	return instance.SetProperty("AllowManualWiFiConfiguration", value)
+	return instance.SetProperty("AllowManualWiFiConfiguration", (value))
 }
 
 // GetAllowManualWiFiConfiguration gets the value of AllowManualWiFiConfiguration for the instance
@@ -119,16 +139,25 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyAllowManualWiFiConfigurat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowWiFi sets the value of AllowWiFi for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyAllowWiFi(value int32) (err error) {
-	return instance.SetProperty("AllowWiFi", value)
+	return instance.SetProperty("AllowWiFi", (value))
 }
 
 // GetAllowWiFi gets the value of AllowWiFi for the instance
@@ -137,16 +166,25 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyAllowWiFi() (value int32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowWiFiDirect sets the value of AllowWiFiDirect for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyAllowWiFiDirect(value int32) (err error) {
-	return instance.SetProperty("AllowWiFiDirect", value)
+	return instance.SetProperty("AllowWiFiDirect", (value))
 }
 
 // GetAllowWiFiDirect gets the value of AllowWiFiDirect for the instance
@@ -155,16 +193,25 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyAllowWiFiDirect() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -173,16 +220,25 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyInstanceID() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -191,16 +247,25 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyParentID() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWLANScanMode sets the value of WLANScanMode for the instance
 func (instance *MDM_Policy_Result01_Wifi02) SetPropertyWLANScanMode(value int32) (err error) {
-	return instance.SetProperty("WLANScanMode", value)
+	return instance.SetProperty("WLANScanMode", (value))
 }
 
 // GetWLANScanMode gets the value of WLANScanMode for the instance
@@ -209,9 +274,18 @@ func (instance *MDM_Policy_Result01_Wifi02) GetPropertyWLANScanMode() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

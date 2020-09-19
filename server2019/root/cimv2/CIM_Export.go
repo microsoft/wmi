@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Export struct
@@ -59,7 +61,7 @@ func NewCIM_ExportEx6(hostName string,
 
 // SetDirectory sets the value of Directory for the instance
 func (instance *CIM_Export) SetPropertyDirectory(value CIM_Directory) (err error) {
-	return instance.SetProperty("Directory", value)
+	return instance.SetProperty("Directory", (value))
 }
 
 // GetDirectory gets the value of Directory for the instance
@@ -68,16 +70,25 @@ func (instance *CIM_Export) GetPropertyDirectory() (value CIM_Directory, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Directory)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Directory)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Directory is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Directory(valuetmp)
+
 	return
 }
 
 // SetExportedDirectoryName sets the value of ExportedDirectoryName for the instance
 func (instance *CIM_Export) SetPropertyExportedDirectoryName(value string) (err error) {
-	return instance.SetProperty("ExportedDirectoryName", value)
+	return instance.SetProperty("ExportedDirectoryName", (value))
 }
 
 // GetExportedDirectoryName gets the value of ExportedDirectoryName for the instance
@@ -86,16 +97,25 @@ func (instance *CIM_Export) GetPropertyExportedDirectoryName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalFS sets the value of LocalFS for the instance
 func (instance *CIM_Export) SetPropertyLocalFS(value CIM_LocalFileSystem) (err error) {
-	return instance.SetProperty("LocalFS", value)
+	return instance.SetProperty("LocalFS", (value))
 }
 
 // GetLocalFS gets the value of LocalFS for the instance
@@ -104,9 +124,18 @@ func (instance *CIM_Export) GetPropertyLocalFS() (value CIM_LocalFileSystem, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_LocalFileSystem)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_LocalFileSystem)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_LocalFileSystem is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_LocalFileSystem(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_AlertIndication struct
@@ -117,7 +119,7 @@ func NewCIM_AlertIndicationEx6(hostName string,
 
 // SetAlertingElementFormat sets the value of AlertingElementFormat for the instance
 func (instance *CIM_AlertIndication) SetPropertyAlertingElementFormat(value AlertIndication_AlertingElementFormat) (err error) {
-	return instance.SetProperty("AlertingElementFormat", value)
+	return instance.SetProperty("AlertingElementFormat", (value))
 }
 
 // GetAlertingElementFormat gets the value of AlertingElementFormat for the instance
@@ -126,16 +128,25 @@ func (instance *CIM_AlertIndication) GetPropertyAlertingElementFormat() (value A
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(AlertIndication_AlertingElementFormat)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = AlertIndication_AlertingElementFormat(valuetmp)
+
 	return
 }
 
 // SetAlertingManagedElement sets the value of AlertingManagedElement for the instance
 func (instance *CIM_AlertIndication) SetPropertyAlertingManagedElement(value string) (err error) {
-	return instance.SetProperty("AlertingManagedElement", value)
+	return instance.SetProperty("AlertingManagedElement", (value))
 }
 
 // GetAlertingManagedElement gets the value of AlertingManagedElement for the instance
@@ -144,16 +155,25 @@ func (instance *CIM_AlertIndication) GetPropertyAlertingManagedElement() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAlertType sets the value of AlertType for the instance
 func (instance *CIM_AlertIndication) SetPropertyAlertType(value AlertIndication_AlertType) (err error) {
-	return instance.SetProperty("AlertType", value)
+	return instance.SetProperty("AlertType", (value))
 }
 
 // GetAlertType gets the value of AlertType for the instance
@@ -162,16 +182,25 @@ func (instance *CIM_AlertIndication) GetPropertyAlertType() (value AlertIndicati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(AlertIndication_AlertType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = AlertIndication_AlertType(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *CIM_AlertIndication) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -180,16 +209,25 @@ func (instance *CIM_AlertIndication) GetPropertyDescription() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEventID sets the value of EventID for the instance
 func (instance *CIM_AlertIndication) SetPropertyEventID(value string) (err error) {
-	return instance.SetProperty("EventID", value)
+	return instance.SetProperty("EventID", (value))
 }
 
 // GetEventID gets the value of EventID for the instance
@@ -198,16 +236,25 @@ func (instance *CIM_AlertIndication) GetPropertyEventID() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEventTime sets the value of EventTime for the instance
 func (instance *CIM_AlertIndication) SetPropertyEventTime(value string) (err error) {
-	return instance.SetProperty("EventTime", value)
+	return instance.SetProperty("EventTime", (value))
 }
 
 // GetEventTime gets the value of EventTime for the instance
@@ -216,16 +263,25 @@ func (instance *CIM_AlertIndication) GetPropertyEventTime() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMessage sets the value of Message for the instance
 func (instance *CIM_AlertIndication) SetPropertyMessage(value string) (err error) {
-	return instance.SetProperty("Message", value)
+	return instance.SetProperty("Message", (value))
 }
 
 // GetMessage gets the value of Message for the instance
@@ -234,16 +290,25 @@ func (instance *CIM_AlertIndication) GetPropertyMessage() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMessageArguments sets the value of MessageArguments for the instance
 func (instance *CIM_AlertIndication) SetPropertyMessageArguments(value []string) (err error) {
-	return instance.SetProperty("MessageArguments", value)
+	return instance.SetProperty("MessageArguments", (value))
 }
 
 // GetMessageArguments gets the value of MessageArguments for the instance
@@ -252,16 +317,26 @@ func (instance *CIM_AlertIndication) GetPropertyMessageArguments() (value []stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMessageID sets the value of MessageID for the instance
 func (instance *CIM_AlertIndication) SetPropertyMessageID(value string) (err error) {
-	return instance.SetProperty("MessageID", value)
+	return instance.SetProperty("MessageID", (value))
 }
 
 // GetMessageID gets the value of MessageID for the instance
@@ -270,16 +345,25 @@ func (instance *CIM_AlertIndication) GetPropertyMessageID() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherAlertingElementFormat sets the value of OtherAlertingElementFormat for the instance
 func (instance *CIM_AlertIndication) SetPropertyOtherAlertingElementFormat(value string) (err error) {
-	return instance.SetProperty("OtherAlertingElementFormat", value)
+	return instance.SetProperty("OtherAlertingElementFormat", (value))
 }
 
 // GetOtherAlertingElementFormat gets the value of OtherAlertingElementFormat for the instance
@@ -288,16 +372,25 @@ func (instance *CIM_AlertIndication) GetPropertyOtherAlertingElementFormat() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherAlertType sets the value of OtherAlertType for the instance
 func (instance *CIM_AlertIndication) SetPropertyOtherAlertType(value string) (err error) {
-	return instance.SetProperty("OtherAlertType", value)
+	return instance.SetProperty("OtherAlertType", (value))
 }
 
 // GetOtherAlertType gets the value of OtherAlertType for the instance
@@ -306,16 +399,25 @@ func (instance *CIM_AlertIndication) GetPropertyOtherAlertType() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOwningEntity sets the value of OwningEntity for the instance
 func (instance *CIM_AlertIndication) SetPropertyOwningEntity(value string) (err error) {
-	return instance.SetProperty("OwningEntity", value)
+	return instance.SetProperty("OwningEntity", (value))
 }
 
 // GetOwningEntity gets the value of OwningEntity for the instance
@@ -324,16 +426,25 @@ func (instance *CIM_AlertIndication) GetPropertyOwningEntity() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProbableCause sets the value of ProbableCause for the instance
 func (instance *CIM_AlertIndication) SetPropertyProbableCause(value AlertIndication_ProbableCause) (err error) {
-	return instance.SetProperty("ProbableCause", value)
+	return instance.SetProperty("ProbableCause", (value))
 }
 
 // GetProbableCause gets the value of ProbableCause for the instance
@@ -342,16 +453,25 @@ func (instance *CIM_AlertIndication) GetPropertyProbableCause() (value AlertIndi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(AlertIndication_ProbableCause)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = AlertIndication_ProbableCause(valuetmp)
+
 	return
 }
 
 // SetProbableCauseDescription sets the value of ProbableCauseDescription for the instance
 func (instance *CIM_AlertIndication) SetPropertyProbableCauseDescription(value string) (err error) {
-	return instance.SetProperty("ProbableCauseDescription", value)
+	return instance.SetProperty("ProbableCauseDescription", (value))
 }
 
 // GetProbableCauseDescription gets the value of ProbableCauseDescription for the instance
@@ -360,16 +480,25 @@ func (instance *CIM_AlertIndication) GetPropertyProbableCauseDescription() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProviderName sets the value of ProviderName for the instance
 func (instance *CIM_AlertIndication) SetPropertyProviderName(value string) (err error) {
-	return instance.SetProperty("ProviderName", value)
+	return instance.SetProperty("ProviderName", (value))
 }
 
 // GetProviderName gets the value of ProviderName for the instance
@@ -378,16 +507,25 @@ func (instance *CIM_AlertIndication) GetPropertyProviderName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecommendedActions sets the value of RecommendedActions for the instance
 func (instance *CIM_AlertIndication) SetPropertyRecommendedActions(value []string) (err error) {
-	return instance.SetProperty("RecommendedActions", value)
+	return instance.SetProperty("RecommendedActions", (value))
 }
 
 // GetRecommendedActions gets the value of RecommendedActions for the instance
@@ -396,16 +534,26 @@ func (instance *CIM_AlertIndication) GetPropertyRecommendedActions() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *CIM_AlertIndication) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -414,16 +562,25 @@ func (instance *CIM_AlertIndication) GetPropertySystemCreationClassName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *CIM_AlertIndication) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -432,16 +589,25 @@ func (instance *CIM_AlertIndication) GetPropertySystemName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrending sets the value of Trending for the instance
 func (instance *CIM_AlertIndication) SetPropertyTrending(value AlertIndication_Trending) (err error) {
-	return instance.SetProperty("Trending", value)
+	return instance.SetProperty("Trending", (value))
 }
 
 // GetTrending gets the value of Trending for the instance
@@ -450,9 +616,18 @@ func (instance *CIM_AlertIndication) GetPropertyTrending() (value AlertIndicatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(AlertIndication_Trending)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = AlertIndication_Trending(valuetmp)
+
 	return
 }

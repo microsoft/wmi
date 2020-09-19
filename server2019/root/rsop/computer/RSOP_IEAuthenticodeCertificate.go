@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEAuthenticodeCertificate struct
@@ -77,7 +79,7 @@ func NewRSOP_IEAuthenticodeCertificateEx6(hostName string,
 
 // SetcertIndex sets the value of certIndex for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertycertIndex(value int32) (err error) {
-	return instance.SetProperty("certIndex", value)
+	return instance.SetProperty("certIndex", (value))
 }
 
 // GetcertIndex gets the value of certIndex for the instance
@@ -86,16 +88,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertycertIndex() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetexpirationDate sets the value of expirationDate for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertyexpirationDate(value string) (err error) {
-	return instance.SetProperty("expirationDate", value)
+	return instance.SetProperty("expirationDate", (value))
 }
 
 // GetexpirationDate gets the value of expirationDate for the instance
@@ -104,16 +115,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertyexpirationDate() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetfriendlyName sets the value of friendlyName for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertyfriendlyName(value string) (err error) {
-	return instance.SetProperty("friendlyName", value)
+	return instance.SetProperty("friendlyName", (value))
 }
 
 // GetfriendlyName gets the value of friendlyName for the instance
@@ -122,16 +142,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertyfriendlyName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetintendedPurposes sets the value of intendedPurposes for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertyintendedPurposes(value string) (err error) {
-	return instance.SetProperty("intendedPurposes", value)
+	return instance.SetProperty("intendedPurposes", (value))
 }
 
 // GetintendedPurposes gets the value of intendedPurposes for the instance
@@ -140,16 +169,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertyintendedPurposes() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetissuerName sets the value of issuerName for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertyissuerName(value string) (err error) {
-	return instance.SetProperty("issuerName", value)
+	return instance.SetProperty("issuerName", (value))
 }
 
 // GetissuerName gets the value of issuerName for the instance
@@ -158,16 +196,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertyissuerName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -176,16 +223,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertyrsopID() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertyrsopPrecedence(value int32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -194,16 +250,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertyrsopPrecedence() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetsubjectName sets the value of subjectName for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertysubjectName(value string) (err error) {
-	return instance.SetProperty("subjectName", value)
+	return instance.SetProperty("subjectName", (value))
 }
 
 // GetsubjectName gets the value of subjectName for the instance
@@ -212,16 +277,25 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertysubjectName() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SettabIndex sets the value of tabIndex for the instance
 func (instance *RSOP_IEAuthenticodeCertificate) SetPropertytabIndex(value int32) (err error) {
-	return instance.SetProperty("tabIndex", value)
+	return instance.SetProperty("tabIndex", (value))
 }
 
 // GettabIndex gets the value of tabIndex for the instance
@@ -230,9 +304,18 @@ func (instance *RSOP_IEAuthenticodeCertificate) GetPropertytabIndex() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

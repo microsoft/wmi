@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SoundDevice struct
@@ -61,7 +63,7 @@ func NewWin32_SoundDeviceEx6(hostName string,
 
 // SetDMABufferSize sets the value of DMABufferSize for the instance
 func (instance *Win32_SoundDevice) SetPropertyDMABufferSize(value uint16) (err error) {
-	return instance.SetProperty("DMABufferSize", value)
+	return instance.SetProperty("DMABufferSize", (value))
 }
 
 // GetDMABufferSize gets the value of DMABufferSize for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_SoundDevice) GetPropertyDMABufferSize() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *Win32_SoundDevice) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_SoundDevice) GetPropertyManufacturer() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMPU401Address sets the value of MPU401Address for the instance
 func (instance *Win32_SoundDevice) SetPropertyMPU401Address(value uint32) (err error) {
-	return instance.SetProperty("MPU401Address", value)
+	return instance.SetProperty("MPU401Address", (value))
 }
 
 // GetMPU401Address gets the value of MPU401Address for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_SoundDevice) GetPropertyMPU401Address() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProductName sets the value of ProductName for the instance
 func (instance *Win32_SoundDevice) SetPropertyProductName(value string) (err error) {
-	return instance.SetProperty("ProductName", value)
+	return instance.SetProperty("ProductName", (value))
 }
 
 // GetProductName gets the value of ProductName for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_SoundDevice) GetPropertyProductName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

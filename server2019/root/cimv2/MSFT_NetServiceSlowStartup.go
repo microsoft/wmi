@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetServiceSlowStartup struct
@@ -55,7 +57,7 @@ func NewMSFT_NetServiceSlowStartupEx6(hostName string,
 
 // SetService sets the value of Service for the instance
 func (instance *MSFT_NetServiceSlowStartup) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_NetServiceSlowStartup) GetPropertyService() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartupTime sets the value of StartupTime for the instance
 func (instance *MSFT_NetServiceSlowStartup) SetPropertyStartupTime(value uint32) (err error) {
-	return instance.SetProperty("StartupTime", value)
+	return instance.SetProperty("StartupTime", (value))
 }
 
 // GetStartupTime gets the value of StartupTime for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_NetServiceSlowStartup) GetPropertyStartupTime() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

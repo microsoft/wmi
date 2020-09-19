@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetNatTransitionMonitoring struct
@@ -61,7 +63,7 @@ func NewMSFT_NetNatTransitionMonitoringEx6(hostName string,
 
 // SetInboundAddress sets the value of InboundAddress for the instance
 func (instance *MSFT_NetNatTransitionMonitoring) SetPropertyInboundAddress(value string) (err error) {
-	return instance.SetProperty("InboundAddress", value)
+	return instance.SetProperty("InboundAddress", (value))
 }
 
 // GetInboundAddress gets the value of InboundAddress for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetNatTransitionMonitoring) GetPropertyInboundAddress() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNatOutboundAddress sets the value of NatOutboundAddress for the instance
 func (instance *MSFT_NetNatTransitionMonitoring) SetPropertyNatOutboundAddress(value string) (err error) {
-	return instance.SetProperty("NatOutboundAddress", value)
+	return instance.SetProperty("NatOutboundAddress", (value))
 }
 
 // GetNatOutboundAddress gets the value of NatOutboundAddress for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetNatTransitionMonitoring) GetPropertyNatOutboundAddress()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOutboundAddress sets the value of OutboundAddress for the instance
 func (instance *MSFT_NetNatTransitionMonitoring) SetPropertyOutboundAddress(value string) (err error) {
-	return instance.SetProperty("OutboundAddress", value)
+	return instance.SetProperty("OutboundAddress", (value))
 }
 
 // GetOutboundAddress gets the value of OutboundAddress for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetNatTransitionMonitoring) GetPropertyOutboundAddress() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTransportProtocol sets the value of TransportProtocol for the instance
 func (instance *MSFT_NetNatTransitionMonitoring) SetPropertyTransportProtocol(value uint32) (err error) {
-	return instance.SetProperty("TransportProtocol", value)
+	return instance.SetProperty("TransportProtocol", (value))
 }
 
 // GetTransportProtocol gets the value of TransportProtocol for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_NetNatTransitionMonitoring) GetPropertyTransportProtocol() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

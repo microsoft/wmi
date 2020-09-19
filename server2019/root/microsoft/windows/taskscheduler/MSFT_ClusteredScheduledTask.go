@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
@@ -11,7 +11,9 @@ package taskscheduler
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ClusteredScheduledTask struct
@@ -68,7 +70,7 @@ func NewMSFT_ClusteredScheduledTaskEx6(hostName string,
 
 // SetClusterName sets the value of ClusterName for the instance
 func (instance *MSFT_ClusteredScheduledTask) SetPropertyClusterName(value string) (err error) {
-	return instance.SetProperty("ClusterName", value)
+	return instance.SetProperty("ClusterName", (value))
 }
 
 // GetClusterName gets the value of ClusterName for the instance
@@ -77,16 +79,25 @@ func (instance *MSFT_ClusteredScheduledTask) GetPropertyClusterName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCurrentOwner sets the value of CurrentOwner for the instance
 func (instance *MSFT_ClusteredScheduledTask) SetPropertyCurrentOwner(value string) (err error) {
-	return instance.SetProperty("CurrentOwner", value)
+	return instance.SetProperty("CurrentOwner", (value))
 }
 
 // GetCurrentOwner gets the value of CurrentOwner for the instance
@@ -95,16 +106,25 @@ func (instance *MSFT_ClusteredScheduledTask) GetPropertyCurrentOwner() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResource sets the value of Resource for the instance
 func (instance *MSFT_ClusteredScheduledTask) SetPropertyResource(value string) (err error) {
-	return instance.SetProperty("Resource", value)
+	return instance.SetProperty("Resource", (value))
 }
 
 // GetResource gets the value of Resource for the instance
@@ -113,16 +133,25 @@ func (instance *MSFT_ClusteredScheduledTask) GetPropertyResource() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTaskDefinition sets the value of TaskDefinition for the instance
 func (instance *MSFT_ClusteredScheduledTask) SetPropertyTaskDefinition(value MSFT_ScheduledTask) (err error) {
-	return instance.SetProperty("TaskDefinition", value)
+	return instance.SetProperty("TaskDefinition", (value))
 }
 
 // GetTaskDefinition gets the value of TaskDefinition for the instance
@@ -131,16 +160,25 @@ func (instance *MSFT_ClusteredScheduledTask) GetPropertyTaskDefinition() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_ScheduledTask)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_ScheduledTask)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_ScheduledTask is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_ScheduledTask(valuetmp)
+
 	return
 }
 
 // SetTaskName sets the value of TaskName for the instance
 func (instance *MSFT_ClusteredScheduledTask) SetPropertyTaskName(value string) (err error) {
-	return instance.SetProperty("TaskName", value)
+	return instance.SetProperty("TaskName", (value))
 }
 
 // GetTaskName gets the value of TaskName for the instance
@@ -149,16 +187,25 @@ func (instance *MSFT_ClusteredScheduledTask) GetPropertyTaskName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTaskType sets the value of TaskType for the instance
 func (instance *MSFT_ClusteredScheduledTask) SetPropertyTaskType(value uint32) (err error) {
-	return instance.SetProperty("TaskType", value)
+	return instance.SetProperty("TaskType", (value))
 }
 
 // GetTaskType gets the value of TaskType for the instance
@@ -167,9 +214,18 @@ func (instance *MSFT_ClusteredScheduledTask) GetPropertyTaskType() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

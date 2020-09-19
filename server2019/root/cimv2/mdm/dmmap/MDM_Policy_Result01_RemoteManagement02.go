@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_RemoteManagement02 struct
@@ -101,7 +103,7 @@ func NewMDM_Policy_Result01_RemoteManagement02Ex6(hostName string,
 
 // SetAllowBasicAuthentication_Client sets the value of AllowBasicAuthentication_Client for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyAllowBasicAuthentication_Client(value string) (err error) {
-	return instance.SetProperty("AllowBasicAuthentication_Client", value)
+	return instance.SetProperty("AllowBasicAuthentication_Client", (value))
 }
 
 // GetAllowBasicAuthentication_Client gets the value of AllowBasicAuthentication_Client for the instance
@@ -110,16 +112,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyAllowBasicAut
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowBasicAuthentication_Service sets the value of AllowBasicAuthentication_Service for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyAllowBasicAuthentication_Service(value string) (err error) {
-	return instance.SetProperty("AllowBasicAuthentication_Service", value)
+	return instance.SetProperty("AllowBasicAuthentication_Service", (value))
 }
 
 // GetAllowBasicAuthentication_Service gets the value of AllowBasicAuthentication_Service for the instance
@@ -128,16 +139,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyAllowBasicAut
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowCredSSPAuthenticationClient sets the value of AllowCredSSPAuthenticationClient for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyAllowCredSSPAuthenticationClient(value string) (err error) {
-	return instance.SetProperty("AllowCredSSPAuthenticationClient", value)
+	return instance.SetProperty("AllowCredSSPAuthenticationClient", (value))
 }
 
 // GetAllowCredSSPAuthenticationClient gets the value of AllowCredSSPAuthenticationClient for the instance
@@ -146,16 +166,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyAllowCredSSPA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowCredSSPAuthenticationService sets the value of AllowCredSSPAuthenticationService for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyAllowCredSSPAuthenticationService(value string) (err error) {
-	return instance.SetProperty("AllowCredSSPAuthenticationService", value)
+	return instance.SetProperty("AllowCredSSPAuthenticationService", (value))
 }
 
 // GetAllowCredSSPAuthenticationService gets the value of AllowCredSSPAuthenticationService for the instance
@@ -164,16 +193,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyAllowCredSSPA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowRemoteServerManagement sets the value of AllowRemoteServerManagement for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyAllowRemoteServerManagement(value string) (err error) {
-	return instance.SetProperty("AllowRemoteServerManagement", value)
+	return instance.SetProperty("AllowRemoteServerManagement", (value))
 }
 
 // GetAllowRemoteServerManagement gets the value of AllowRemoteServerManagement for the instance
@@ -182,16 +220,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyAllowRemoteSe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowUnencryptedTraffic_Client sets the value of AllowUnencryptedTraffic_Client for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyAllowUnencryptedTraffic_Client(value string) (err error) {
-	return instance.SetProperty("AllowUnencryptedTraffic_Client", value)
+	return instance.SetProperty("AllowUnencryptedTraffic_Client", (value))
 }
 
 // GetAllowUnencryptedTraffic_Client gets the value of AllowUnencryptedTraffic_Client for the instance
@@ -200,16 +247,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyAllowUnencryp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAllowUnencryptedTraffic_Service sets the value of AllowUnencryptedTraffic_Service for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyAllowUnencryptedTraffic_Service(value string) (err error) {
-	return instance.SetProperty("AllowUnencryptedTraffic_Service", value)
+	return instance.SetProperty("AllowUnencryptedTraffic_Service", (value))
 }
 
 // GetAllowUnencryptedTraffic_Service gets the value of AllowUnencryptedTraffic_Service for the instance
@@ -218,16 +274,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyAllowUnencryp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisallowDigestAuthentication sets the value of DisallowDigestAuthentication for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyDisallowDigestAuthentication(value string) (err error) {
-	return instance.SetProperty("DisallowDigestAuthentication", value)
+	return instance.SetProperty("DisallowDigestAuthentication", (value))
 }
 
 // GetDisallowDigestAuthentication gets the value of DisallowDigestAuthentication for the instance
@@ -236,16 +301,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyDisallowDiges
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisallowNegotiateAuthenticationClient sets the value of DisallowNegotiateAuthenticationClient for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyDisallowNegotiateAuthenticationClient(value string) (err error) {
-	return instance.SetProperty("DisallowNegotiateAuthenticationClient", value)
+	return instance.SetProperty("DisallowNegotiateAuthenticationClient", (value))
 }
 
 // GetDisallowNegotiateAuthenticationClient gets the value of DisallowNegotiateAuthenticationClient for the instance
@@ -254,16 +328,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyDisallowNegot
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisallowNegotiateAuthenticationService sets the value of DisallowNegotiateAuthenticationService for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyDisallowNegotiateAuthenticationService(value string) (err error) {
-	return instance.SetProperty("DisallowNegotiateAuthenticationService", value)
+	return instance.SetProperty("DisallowNegotiateAuthenticationService", (value))
 }
 
 // GetDisallowNegotiateAuthenticationService gets the value of DisallowNegotiateAuthenticationService for the instance
@@ -272,16 +355,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyDisallowNegot
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisallowStoringOfRunAsCredentials sets the value of DisallowStoringOfRunAsCredentials for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyDisallowStoringOfRunAsCredentials(value string) (err error) {
-	return instance.SetProperty("DisallowStoringOfRunAsCredentials", value)
+	return instance.SetProperty("DisallowStoringOfRunAsCredentials", (value))
 }
 
 // GetDisallowStoringOfRunAsCredentials gets the value of DisallowStoringOfRunAsCredentials for the instance
@@ -290,16 +382,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyDisallowStori
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -308,16 +409,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyInstanceID() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -326,16 +436,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyParentID() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSpecifyChannelBindingTokenHardeningLevel sets the value of SpecifyChannelBindingTokenHardeningLevel for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertySpecifyChannelBindingTokenHardeningLevel(value string) (err error) {
-	return instance.SetProperty("SpecifyChannelBindingTokenHardeningLevel", value)
+	return instance.SetProperty("SpecifyChannelBindingTokenHardeningLevel", (value))
 }
 
 // GetSpecifyChannelBindingTokenHardeningLevel gets the value of SpecifyChannelBindingTokenHardeningLevel for the instance
@@ -344,16 +463,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertySpecifyChanne
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedHosts sets the value of TrustedHosts for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyTrustedHosts(value string) (err error) {
-	return instance.SetProperty("TrustedHosts", value)
+	return instance.SetProperty("TrustedHosts", (value))
 }
 
 // GetTrustedHosts gets the value of TrustedHosts for the instance
@@ -362,16 +490,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyTrustedHosts(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTurnOnCompatibilityHTTPListener sets the value of TurnOnCompatibilityHTTPListener for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyTurnOnCompatibilityHTTPListener(value string) (err error) {
-	return instance.SetProperty("TurnOnCompatibilityHTTPListener", value)
+	return instance.SetProperty("TurnOnCompatibilityHTTPListener", (value))
 }
 
 // GetTurnOnCompatibilityHTTPListener gets the value of TurnOnCompatibilityHTTPListener for the instance
@@ -380,16 +517,25 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyTurnOnCompati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTurnOnCompatibilityHTTPSListener sets the value of TurnOnCompatibilityHTTPSListener for the instance
 func (instance *MDM_Policy_Result01_RemoteManagement02) SetPropertyTurnOnCompatibilityHTTPSListener(value string) (err error) {
-	return instance.SetProperty("TurnOnCompatibilityHTTPSListener", value)
+	return instance.SetProperty("TurnOnCompatibilityHTTPSListener", (value))
 }
 
 // GetTurnOnCompatibilityHTTPSListener gets the value of TurnOnCompatibilityHTTPSListener for the instance
@@ -398,9 +544,18 @@ func (instance *MDM_Policy_Result01_RemoteManagement02) GetPropertyTurnOnCompati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemReferencePointExportJob struct
@@ -82,7 +84,7 @@ func NewMsvm_VirtualSystemReferencePointExportJobEx6(hostName string,
 
 // SetBaseReferencePointId sets the value of BaseReferencePointId for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyBaseReferencePointId(value string) (err error) {
-	return instance.SetProperty("BaseReferencePointId", value)
+	return instance.SetProperty("BaseReferencePointId", (value))
 }
 
 // GetBaseReferencePointId gets the value of BaseReferencePointId for the instance
@@ -91,16 +93,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyBaseRefere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCancellable sets the value of Cancellable for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyCancellable(value bool) (err error) {
-	return instance.SetProperty("Cancellable", value)
+	return instance.SetProperty("Cancellable", (value))
 }
 
 // GetCancellable gets the value of Cancellable for the instance
@@ -109,16 +120,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyCancellabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetErrorSummaryDescription sets the value of ErrorSummaryDescription for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyErrorSummaryDescription(value string) (err error) {
-	return instance.SetProperty("ErrorSummaryDescription", value)
+	return instance.SetProperty("ErrorSummaryDescription", (value))
 }
 
 // GetErrorSummaryDescription gets the value of ErrorSummaryDescription for the instance
@@ -127,16 +147,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyErrorSumma
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExportDirectory sets the value of ExportDirectory for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyExportDirectory(value string) (err error) {
-	return instance.SetProperty("ExportDirectory", value)
+	return instance.SetProperty("ExportDirectory", (value))
 }
 
 // GetExportDirectory gets the value of ExportDirectory for the instance
@@ -145,16 +174,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyExportDire
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExportedConfigFilePath sets the value of ExportedConfigFilePath for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyExportedConfigFilePath(value string) (err error) {
-	return instance.SetProperty("ExportedConfigFilePath", value)
+	return instance.SetProperty("ExportedConfigFilePath", (value))
 }
 
 // GetExportedConfigFilePath gets the value of ExportedConfigFilePath for the instance
@@ -163,16 +201,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyExportedCo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExportedDisks sets the value of ExportedDisks for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyExportedDisks(value []string) (err error) {
-	return instance.SetProperty("ExportedDisks", value)
+	return instance.SetProperty("ExportedDisks", (value))
 }
 
 // GetExportedDisks gets the value of ExportedDisks for the instance
@@ -181,16 +228,26 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyExportedDi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetExportedGuestStateFilePath sets the value of ExportedGuestStateFilePath for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyExportedGuestStateFilePath(value string) (err error) {
-	return instance.SetProperty("ExportedGuestStateFilePath", value)
+	return instance.SetProperty("ExportedGuestStateFilePath", (value))
 }
 
 // GetExportedGuestStateFilePath gets the value of ExportedGuestStateFilePath for the instance
@@ -199,16 +256,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyExportedGu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExportedLogFilePaths sets the value of ExportedLogFilePaths for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyExportedLogFilePaths(value []string) (err error) {
-	return instance.SetProperty("ExportedLogFilePaths", value)
+	return instance.SetProperty("ExportedLogFilePaths", (value))
 }
 
 // GetExportedLogFilePaths gets the value of ExportedLogFilePaths for the instance
@@ -217,16 +283,26 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyExportedLo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetExportedRuntimeFilePath sets the value of ExportedRuntimeFilePath for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyExportedRuntimeFilePath(value string) (err error) {
-	return instance.SetProperty("ExportedRuntimeFilePath", value)
+	return instance.SetProperty("ExportedRuntimeFilePath", (value))
 }
 
 // GetExportedRuntimeFilePath gets the value of ExportedRuntimeFilePath for the instance
@@ -235,16 +311,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyExportedRu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReferencePointId sets the value of ReferencePointId for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyReferencePointId(value string) (err error) {
-	return instance.SetProperty("ReferencePointId", value)
+	return instance.SetProperty("ReferencePointId", (value))
 }
 
 // GetReferencePointId gets the value of ReferencePointId for the instance
@@ -253,16 +338,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyReferenceP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualMachineId sets the value of VirtualMachineId for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportJob) SetPropertyVirtualMachineId(value string) (err error) {
-	return instance.SetProperty("VirtualMachineId", value)
+	return instance.SetProperty("VirtualMachineId", (value))
 }
 
 // GetVirtualMachineId gets the value of VirtualMachineId for the instance
@@ -271,10 +365,19 @@ func (instance *Msvm_VirtualSystemReferencePointExportJob) GetPropertyVirtualMac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

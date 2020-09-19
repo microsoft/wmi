@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_System struct
@@ -64,7 +66,7 @@ func NewCIM_SystemEx6(hostName string,
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_System) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -73,16 +75,25 @@ func (instance *CIM_System) GetPropertyCreationClassName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameFormat sets the value of NameFormat for the instance
 func (instance *CIM_System) SetPropertyNameFormat(value string) (err error) {
-	return instance.SetProperty("NameFormat", value)
+	return instance.SetProperty("NameFormat", (value))
 }
 
 // GetNameFormat gets the value of NameFormat for the instance
@@ -91,16 +102,25 @@ func (instance *CIM_System) GetPropertyNameFormat() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrimaryOwnerContact sets the value of PrimaryOwnerContact for the instance
 func (instance *CIM_System) SetPropertyPrimaryOwnerContact(value string) (err error) {
-	return instance.SetProperty("PrimaryOwnerContact", value)
+	return instance.SetProperty("PrimaryOwnerContact", (value))
 }
 
 // GetPrimaryOwnerContact gets the value of PrimaryOwnerContact for the instance
@@ -109,16 +129,25 @@ func (instance *CIM_System) GetPropertyPrimaryOwnerContact() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrimaryOwnerName sets the value of PrimaryOwnerName for the instance
 func (instance *CIM_System) SetPropertyPrimaryOwnerName(value string) (err error) {
-	return instance.SetProperty("PrimaryOwnerName", value)
+	return instance.SetProperty("PrimaryOwnerName", (value))
 }
 
 // GetPrimaryOwnerName gets the value of PrimaryOwnerName for the instance
@@ -127,16 +156,25 @@ func (instance *CIM_System) GetPropertyPrimaryOwnerName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoles sets the value of Roles for the instance
 func (instance *CIM_System) SetPropertyRoles(value []string) (err error) {
-	return instance.SetProperty("Roles", value)
+	return instance.SetProperty("Roles", (value))
 }
 
 // GetRoles gets the value of Roles for the instance
@@ -145,9 +183,19 @@ func (instance *CIM_System) GetPropertyRoles() (value []string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

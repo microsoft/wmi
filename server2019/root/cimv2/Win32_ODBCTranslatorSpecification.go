@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ODBCTranslatorSpecification struct
@@ -58,7 +60,7 @@ func NewWin32_ODBCTranslatorSpecificationEx6(hostName string,
 
 // SetFile sets the value of File for the instance
 func (instance *Win32_ODBCTranslatorSpecification) SetPropertyFile(value string) (err error) {
-	return instance.SetProperty("File", value)
+	return instance.SetProperty("File", (value))
 }
 
 // GetFile gets the value of File for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_ODBCTranslatorSpecification) GetPropertyFile() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSetupFile sets the value of SetupFile for the instance
 func (instance *Win32_ODBCTranslatorSpecification) SetPropertySetupFile(value string) (err error) {
-	return instance.SetProperty("SetupFile", value)
+	return instance.SetProperty("SetupFile", (value))
 }
 
 // GetSetupFile gets the value of SetupFile for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_ODBCTranslatorSpecification) GetPropertySetupFile() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTranslator sets the value of Translator for the instance
 func (instance *Win32_ODBCTranslatorSpecification) SetPropertyTranslator(value string) (err error) {
-	return instance.SetProperty("Translator", value)
+	return instance.SetProperty("Translator", (value))
 }
 
 // GetTranslator gets the value of Translator for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_ODBCTranslatorSpecification) GetPropertyTranslator() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

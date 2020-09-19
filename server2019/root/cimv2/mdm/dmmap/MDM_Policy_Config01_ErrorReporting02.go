@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_ErrorReporting02 struct
@@ -71,7 +73,7 @@ func NewMDM_Policy_Config01_ErrorReporting02Ex6(hostName string,
 
 // SetCustomizeConsentSettings sets the value of CustomizeConsentSettings for the instance
 func (instance *MDM_Policy_Config01_ErrorReporting02) SetPropertyCustomizeConsentSettings(value string) (err error) {
-	return instance.SetProperty("CustomizeConsentSettings", value)
+	return instance.SetProperty("CustomizeConsentSettings", (value))
 }
 
 // GetCustomizeConsentSettings gets the value of CustomizeConsentSettings for the instance
@@ -80,16 +82,25 @@ func (instance *MDM_Policy_Config01_ErrorReporting02) GetPropertyCustomizeConsen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableWindowsErrorReporting sets the value of DisableWindowsErrorReporting for the instance
 func (instance *MDM_Policy_Config01_ErrorReporting02) SetPropertyDisableWindowsErrorReporting(value string) (err error) {
-	return instance.SetProperty("DisableWindowsErrorReporting", value)
+	return instance.SetProperty("DisableWindowsErrorReporting", (value))
 }
 
 // GetDisableWindowsErrorReporting gets the value of DisableWindowsErrorReporting for the instance
@@ -98,16 +109,25 @@ func (instance *MDM_Policy_Config01_ErrorReporting02) GetPropertyDisableWindowsE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisplayErrorNotification sets the value of DisplayErrorNotification for the instance
 func (instance *MDM_Policy_Config01_ErrorReporting02) SetPropertyDisplayErrorNotification(value string) (err error) {
-	return instance.SetProperty("DisplayErrorNotification", value)
+	return instance.SetProperty("DisplayErrorNotification", (value))
 }
 
 // GetDisplayErrorNotification gets the value of DisplayErrorNotification for the instance
@@ -116,16 +136,25 @@ func (instance *MDM_Policy_Config01_ErrorReporting02) GetPropertyDisplayErrorNot
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDoNotSendAdditionalData sets the value of DoNotSendAdditionalData for the instance
 func (instance *MDM_Policy_Config01_ErrorReporting02) SetPropertyDoNotSendAdditionalData(value string) (err error) {
-	return instance.SetProperty("DoNotSendAdditionalData", value)
+	return instance.SetProperty("DoNotSendAdditionalData", (value))
 }
 
 // GetDoNotSendAdditionalData gets the value of DoNotSendAdditionalData for the instance
@@ -134,16 +163,25 @@ func (instance *MDM_Policy_Config01_ErrorReporting02) GetPropertyDoNotSendAdditi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_ErrorReporting02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -152,16 +190,25 @@ func (instance *MDM_Policy_Config01_ErrorReporting02) GetPropertyInstanceID() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_ErrorReporting02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -170,16 +217,25 @@ func (instance *MDM_Policy_Config01_ErrorReporting02) GetPropertyParentID() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreventCriticalErrorDisplay sets the value of PreventCriticalErrorDisplay for the instance
 func (instance *MDM_Policy_Config01_ErrorReporting02) SetPropertyPreventCriticalErrorDisplay(value string) (err error) {
-	return instance.SetProperty("PreventCriticalErrorDisplay", value)
+	return instance.SetProperty("PreventCriticalErrorDisplay", (value))
 }
 
 // GetPreventCriticalErrorDisplay gets the value of PreventCriticalErrorDisplay for the instance
@@ -188,9 +244,18 @@ func (instance *MDM_Policy_Config01_ErrorReporting02) GetPropertyPreventCritical
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

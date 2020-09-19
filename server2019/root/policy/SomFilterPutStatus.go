@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Policy
 //////////////////////////////////////////////
 package policy
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SomFilterPutStatus struct
@@ -52,7 +54,7 @@ func NewSomFilterPutStatusEx6(hostName string,
 
 // SetRuleValidationResults sets the value of RuleValidationResults for the instance
 func (instance *SomFilterPutStatus) SetPropertyRuleValidationResults(value []uint32) (err error) {
-	return instance.SetProperty("RuleValidationResults", value)
+	return instance.SetProperty("RuleValidationResults", (value))
 }
 
 // GetRuleValidationResults gets the value of RuleValidationResults for the instance
@@ -61,9 +63,19 @@ func (instance *SomFilterPutStatus) GetPropertyRuleValidationResults() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }

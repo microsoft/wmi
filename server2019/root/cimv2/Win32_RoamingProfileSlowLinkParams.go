@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RoamingProfileSlowLinkParams struct
@@ -56,7 +58,7 @@ func NewWin32_RoamingProfileSlowLinkParamsEx6(hostName string,
 
 // SetConnectionTransferRate sets the value of ConnectionTransferRate for the instance
 func (instance *Win32_RoamingProfileSlowLinkParams) SetPropertyConnectionTransferRate(value uint32) (err error) {
-	return instance.SetProperty("ConnectionTransferRate", value)
+	return instance.SetProperty("ConnectionTransferRate", (value))
 }
 
 // GetConnectionTransferRate gets the value of ConnectionTransferRate for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_RoamingProfileSlowLinkParams) GetPropertyConnectionTransfe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeOut sets the value of TimeOut for the instance
 func (instance *Win32_RoamingProfileSlowLinkParams) SetPropertyTimeOut(value uint16) (err error) {
-	return instance.SetProperty("TimeOut", value)
+	return instance.SetProperty("TimeOut", (value))
 }
 
 // GetTimeOut gets the value of TimeOut for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_RoamingProfileSlowLinkParams) GetPropertyTimeOut() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

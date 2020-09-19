@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskSettings2 struct
@@ -55,7 +57,7 @@ func NewMSFT_TaskSettings2Ex6(hostName string,
 
 // SetDisallowStartOnRemoteAppSession sets the value of DisallowStartOnRemoteAppSession for the instance
 func (instance *MSFT_TaskSettings2) SetPropertyDisallowStartOnRemoteAppSession(value bool) (err error) {
-	return instance.SetProperty("DisallowStartOnRemoteAppSession", value)
+	return instance.SetProperty("DisallowStartOnRemoteAppSession", (value))
 }
 
 // GetDisallowStartOnRemoteAppSession gets the value of DisallowStartOnRemoteAppSession for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_TaskSettings2) GetPropertyDisallowStartOnRemoteAppSession()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUseUnifiedSchedulingEngine sets the value of UseUnifiedSchedulingEngine for the instance
 func (instance *MSFT_TaskSettings2) SetPropertyUseUnifiedSchedulingEngine(value bool) (err error) {
-	return instance.SetProperty("UseUnifiedSchedulingEngine", value)
+	return instance.SetProperty("UseUnifiedSchedulingEngine", (value))
 }
 
 // GetUseUnifiedSchedulingEngine gets the value of UseUnifiedSchedulingEngine for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_TaskSettings2) GetPropertyUseUnifiedSchedulingEngine() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

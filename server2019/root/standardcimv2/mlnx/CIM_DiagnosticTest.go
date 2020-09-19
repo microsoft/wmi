@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DiagnosticTest struct
@@ -70,7 +72,7 @@ func NewCIM_DiagnosticTestEx6(hostName string,
 
 // SetCharacteristics sets the value of Characteristics for the instance
 func (instance *CIM_DiagnosticTest) SetPropertyCharacteristics(value []DiagnosticTest_Characteristics) (err error) {
-	return instance.SetProperty("Characteristics", value)
+	return instance.SetProperty("Characteristics", (value))
 }
 
 // GetCharacteristics gets the value of Characteristics for the instance
@@ -79,16 +81,26 @@ func (instance *CIM_DiagnosticTest) GetPropertyCharacteristics() (value []Diagno
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DiagnosticTest_Characteristics)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DiagnosticTest_Characteristics(valuetmp))
+	}
+
 	return
 }
 
 // SetIsInUse sets the value of IsInUse for the instance
 func (instance *CIM_DiagnosticTest) SetPropertyIsInUse(value bool) (err error) {
-	return instance.SetProperty("IsInUse", value)
+	return instance.SetProperty("IsInUse", (value))
 }
 
 // GetIsInUse gets the value of IsInUse for the instance
@@ -97,16 +109,25 @@ func (instance *CIM_DiagnosticTest) GetPropertyIsInUse() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOtherCharacteristicDescription sets the value of OtherCharacteristicDescription for the instance
 func (instance *CIM_DiagnosticTest) SetPropertyOtherCharacteristicDescription(value string) (err error) {
-	return instance.SetProperty("OtherCharacteristicDescription", value)
+	return instance.SetProperty("OtherCharacteristicDescription", (value))
 }
 
 // GetOtherCharacteristicDescription gets the value of OtherCharacteristicDescription for the instance
@@ -115,16 +136,25 @@ func (instance *CIM_DiagnosticTest) GetPropertyOtherCharacteristicDescription() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherCharacteristicsDescriptions sets the value of OtherCharacteristicsDescriptions for the instance
 func (instance *CIM_DiagnosticTest) SetPropertyOtherCharacteristicsDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherCharacteristicsDescriptions", value)
+	return instance.SetProperty("OtherCharacteristicsDescriptions", (value))
 }
 
 // GetOtherCharacteristicsDescriptions gets the value of OtherCharacteristicsDescriptions for the instance
@@ -133,16 +163,26 @@ func (instance *CIM_DiagnosticTest) GetPropertyOtherCharacteristicsDescriptions(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherTestTypesDescriptions sets the value of OtherTestTypesDescriptions for the instance
 func (instance *CIM_DiagnosticTest) SetPropertyOtherTestTypesDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherTestTypesDescriptions", value)
+	return instance.SetProperty("OtherTestTypesDescriptions", (value))
 }
 
 // GetOtherTestTypesDescriptions gets the value of OtherTestTypesDescriptions for the instance
@@ -151,16 +191,26 @@ func (instance *CIM_DiagnosticTest) GetPropertyOtherTestTypesDescriptions() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetResourcesUsed sets the value of ResourcesUsed for the instance
 func (instance *CIM_DiagnosticTest) SetPropertyResourcesUsed(value []DiagnosticTest_ResourcesUsed) (err error) {
-	return instance.SetProperty("ResourcesUsed", value)
+	return instance.SetProperty("ResourcesUsed", (value))
 }
 
 // GetResourcesUsed gets the value of ResourcesUsed for the instance
@@ -169,16 +219,26 @@ func (instance *CIM_DiagnosticTest) GetPropertyResourcesUsed() (value []Diagnost
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DiagnosticTest_ResourcesUsed)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DiagnosticTest_ResourcesUsed(valuetmp))
+	}
+
 	return
 }
 
 // SetTestTypes sets the value of TestTypes for the instance
 func (instance *CIM_DiagnosticTest) SetPropertyTestTypes(value []DiagnosticTest_TestTypes) (err error) {
-	return instance.SetProperty("TestTypes", value)
+	return instance.SetProperty("TestTypes", (value))
 }
 
 // GetTestTypes gets the value of TestTypes for the instance
@@ -187,10 +247,20 @@ func (instance *CIM_DiagnosticTest) GetPropertyTestTypes() (value []DiagnosticTe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DiagnosticTest_TestTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DiagnosticTest_TestTypes(valuetmp))
+	}
+
 	return
 }
 

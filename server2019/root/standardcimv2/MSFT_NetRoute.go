@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetRoute struct
@@ -88,7 +90,7 @@ func NewMSFT_NetRouteEx6(hostName string,
 
 // SetAddressFamily sets the value of AddressFamily for the instance
 func (instance *MSFT_NetRoute) SetPropertyAddressFamily(value uint16) (err error) {
-	return instance.SetProperty("AddressFamily", value)
+	return instance.SetProperty("AddressFamily", (value))
 }
 
 // GetAddressFamily gets the value of AddressFamily for the instance
@@ -97,16 +99,25 @@ func (instance *MSFT_NetRoute) GetPropertyAddressFamily() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCompartmentId sets the value of CompartmentId for the instance
 func (instance *MSFT_NetRoute) SetPropertyCompartmentId(value uint32) (err error) {
-	return instance.SetProperty("CompartmentId", value)
+	return instance.SetProperty("CompartmentId", (value))
 }
 
 // GetCompartmentId gets the value of CompartmentId for the instance
@@ -115,16 +126,25 @@ func (instance *MSFT_NetRoute) GetPropertyCompartmentId() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDestinationPrefix sets the value of DestinationPrefix for the instance
 func (instance *MSFT_NetRoute) SetPropertyDestinationPrefix(value string) (err error) {
-	return instance.SetProperty("DestinationPrefix", value)
+	return instance.SetProperty("DestinationPrefix", (value))
 }
 
 // GetDestinationPrefix gets the value of DestinationPrefix for the instance
@@ -133,16 +153,25 @@ func (instance *MSFT_NetRoute) GetPropertyDestinationPrefix() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceAlias sets the value of InterfaceAlias for the instance
 func (instance *MSFT_NetRoute) SetPropertyInterfaceAlias(value string) (err error) {
-	return instance.SetProperty("InterfaceAlias", value)
+	return instance.SetProperty("InterfaceAlias", (value))
 }
 
 // GetInterfaceAlias gets the value of InterfaceAlias for the instance
@@ -151,16 +180,25 @@ func (instance *MSFT_NetRoute) GetPropertyInterfaceAlias() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceIndex sets the value of InterfaceIndex for the instance
 func (instance *MSFT_NetRoute) SetPropertyInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("InterfaceIndex", value)
+	return instance.SetProperty("InterfaceIndex", (value))
 }
 
 // GetInterfaceIndex gets the value of InterfaceIndex for the instance
@@ -169,16 +207,25 @@ func (instance *MSFT_NetRoute) GetPropertyInterfaceIndex() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInterfaceMetric sets the value of InterfaceMetric for the instance
 func (instance *MSFT_NetRoute) SetPropertyInterfaceMetric(value uint32) (err error) {
-	return instance.SetProperty("InterfaceMetric", value)
+	return instance.SetProperty("InterfaceMetric", (value))
 }
 
 // GetInterfaceMetric gets the value of InterfaceMetric for the instance
@@ -187,16 +234,25 @@ func (instance *MSFT_NetRoute) GetPropertyInterfaceMetric() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNextHop sets the value of NextHop for the instance
 func (instance *MSFT_NetRoute) SetPropertyNextHop(value string) (err error) {
-	return instance.SetProperty("NextHop", value)
+	return instance.SetProperty("NextHop", (value))
 }
 
 // GetNextHop gets the value of NextHop for the instance
@@ -205,16 +261,25 @@ func (instance *MSFT_NetRoute) GetPropertyNextHop() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreferredLifetime sets the value of PreferredLifetime for the instance
 func (instance *MSFT_NetRoute) SetPropertyPreferredLifetime(value string) (err error) {
-	return instance.SetProperty("PreferredLifetime", value)
+	return instance.SetProperty("PreferredLifetime", (value))
 }
 
 // GetPreferredLifetime gets the value of PreferredLifetime for the instance
@@ -223,16 +288,25 @@ func (instance *MSFT_NetRoute) GetPropertyPreferredLifetime() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProtocol sets the value of Protocol for the instance
 func (instance *MSFT_NetRoute) SetPropertyProtocol(value uint16) (err error) {
-	return instance.SetProperty("Protocol", value)
+	return instance.SetProperty("Protocol", (value))
 }
 
 // GetProtocol gets the value of Protocol for the instance
@@ -241,16 +315,25 @@ func (instance *MSFT_NetRoute) GetPropertyProtocol() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPublish sets the value of Publish for the instance
 func (instance *MSFT_NetRoute) SetPropertyPublish(value uint8) (err error) {
-	return instance.SetProperty("Publish", value)
+	return instance.SetProperty("Publish", (value))
 }
 
 // GetPublish gets the value of Publish for the instance
@@ -259,16 +342,25 @@ func (instance *MSFT_NetRoute) GetPropertyPublish() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_NetRoute) SetPropertyState(value uint8) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -277,16 +369,25 @@ func (instance *MSFT_NetRoute) GetPropertyState() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetStore sets the value of Store for the instance
 func (instance *MSFT_NetRoute) SetPropertyStore(value uint8) (err error) {
-	return instance.SetProperty("Store", value)
+	return instance.SetProperty("Store", (value))
 }
 
 // GetStore gets the value of Store for the instance
@@ -295,16 +396,25 @@ func (instance *MSFT_NetRoute) GetPropertyStore() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetValidLifetime sets the value of ValidLifetime for the instance
 func (instance *MSFT_NetRoute) SetPropertyValidLifetime(value string) (err error) {
-	return instance.SetProperty("ValidLifetime", value)
+	return instance.SetProperty("ValidLifetime", (value))
 }
 
 // GetValidLifetime gets the value of ValidLifetime for the instance
@@ -313,10 +423,19 @@ func (instance *MSFT_NetRoute) GetPropertyValidLifetime() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

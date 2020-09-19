@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DiscreteSensor struct
@@ -58,7 +60,7 @@ func NewCIM_DiscreteSensorEx6(hostName string,
 
 // SetAcceptableValues sets the value of AcceptableValues for the instance
 func (instance *CIM_DiscreteSensor) SetPropertyAcceptableValues(value []string) (err error) {
-	return instance.SetProperty("AcceptableValues", value)
+	return instance.SetProperty("AcceptableValues", (value))
 }
 
 // GetAcceptableValues gets the value of AcceptableValues for the instance
@@ -67,16 +69,26 @@ func (instance *CIM_DiscreteSensor) GetPropertyAcceptableValues() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetCurrentReading sets the value of CurrentReading for the instance
 func (instance *CIM_DiscreteSensor) SetPropertyCurrentReading(value string) (err error) {
-	return instance.SetProperty("CurrentReading", value)
+	return instance.SetProperty("CurrentReading", (value))
 }
 
 // GetCurrentReading gets the value of CurrentReading for the instance
@@ -85,16 +97,25 @@ func (instance *CIM_DiscreteSensor) GetPropertyCurrentReading() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPossibleValues sets the value of PossibleValues for the instance
 func (instance *CIM_DiscreteSensor) SetPropertyPossibleValues(value []string) (err error) {
-	return instance.SetProperty("PossibleValues", value)
+	return instance.SetProperty("PossibleValues", (value))
 }
 
 // GetPossibleValues gets the value of PossibleValues for the instance
@@ -103,9 +124,19 @@ func (instance *CIM_DiscreteSensor) GetPropertyPossibleValues() (value []string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

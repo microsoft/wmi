@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterRscSettingData struct
@@ -70,7 +72,7 @@ func NewMSFT_NetAdapterRscSettingDataEx6(hostName string,
 
 // SetIPv4Enabled sets the value of IPv4Enabled for the instance
 func (instance *MSFT_NetAdapterRscSettingData) SetPropertyIPv4Enabled(value bool) (err error) {
-	return instance.SetProperty("IPv4Enabled", value)
+	return instance.SetProperty("IPv4Enabled", (value))
 }
 
 // GetIPv4Enabled gets the value of IPv4Enabled for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_NetAdapterRscSettingData) GetPropertyIPv4Enabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4FailureReason sets the value of IPv4FailureReason for the instance
 func (instance *MSFT_NetAdapterRscSettingData) SetPropertyIPv4FailureReason(value uint32) (err error) {
-	return instance.SetProperty("IPv4FailureReason", value)
+	return instance.SetProperty("IPv4FailureReason", (value))
 }
 
 // GetIPv4FailureReason gets the value of IPv4FailureReason for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_NetAdapterRscSettingData) GetPropertyIPv4FailureReason() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4OperationalState sets the value of IPv4OperationalState for the instance
 func (instance *MSFT_NetAdapterRscSettingData) SetPropertyIPv4OperationalState(value bool) (err error) {
-	return instance.SetProperty("IPv4OperationalState", value)
+	return instance.SetProperty("IPv4OperationalState", (value))
 }
 
 // GetIPv4OperationalState gets the value of IPv4OperationalState for the instance
@@ -115,16 +135,25 @@ func (instance *MSFT_NetAdapterRscSettingData) GetPropertyIPv4OperationalState()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6Enabled sets the value of IPv6Enabled for the instance
 func (instance *MSFT_NetAdapterRscSettingData) SetPropertyIPv6Enabled(value bool) (err error) {
-	return instance.SetProperty("IPv6Enabled", value)
+	return instance.SetProperty("IPv6Enabled", (value))
 }
 
 // GetIPv6Enabled gets the value of IPv6Enabled for the instance
@@ -133,16 +162,25 @@ func (instance *MSFT_NetAdapterRscSettingData) GetPropertyIPv6Enabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6FailureReason sets the value of IPv6FailureReason for the instance
 func (instance *MSFT_NetAdapterRscSettingData) SetPropertyIPv6FailureReason(value uint32) (err error) {
-	return instance.SetProperty("IPv6FailureReason", value)
+	return instance.SetProperty("IPv6FailureReason", (value))
 }
 
 // GetIPv6FailureReason gets the value of IPv6FailureReason for the instance
@@ -151,16 +189,25 @@ func (instance *MSFT_NetAdapterRscSettingData) GetPropertyIPv6FailureReason() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6OperationalState sets the value of IPv6OperationalState for the instance
 func (instance *MSFT_NetAdapterRscSettingData) SetPropertyIPv6OperationalState(value bool) (err error) {
-	return instance.SetProperty("IPv6OperationalState", value)
+	return instance.SetProperty("IPv6OperationalState", (value))
 }
 
 // GetIPv6OperationalState gets the value of IPv6OperationalState for the instance
@@ -169,16 +216,25 @@ func (instance *MSFT_NetAdapterRscSettingData) GetPropertyIPv6OperationalState()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRscHardwareCapabilities sets the value of RscHardwareCapabilities for the instance
 func (instance *MSFT_NetAdapterRscSettingData) SetPropertyRscHardwareCapabilities(value MSFT_NetAdapterRscCapabilities) (err error) {
-	return instance.SetProperty("RscHardwareCapabilities", value)
+	return instance.SetProperty("RscHardwareCapabilities", (value))
 }
 
 // GetRscHardwareCapabilities gets the value of RscHardwareCapabilities for the instance
@@ -187,10 +243,19 @@ func (instance *MSFT_NetAdapterRscSettingData) GetPropertyRscHardwareCapabilitie
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterRscCapabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterRscCapabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterRscCapabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterRscCapabilities(valuetmp)
+
 	return
 }
 

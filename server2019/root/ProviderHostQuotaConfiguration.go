@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root
 //////////////////////////////////////////////
 package root
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __ProviderHostQuotaConfiguration struct
@@ -64,7 +66,7 @@ func New__ProviderHostQuotaConfigurationEx6(hostName string,
 
 // SetHandlesPerHost sets the value of HandlesPerHost for the instance
 func (instance *__ProviderHostQuotaConfiguration) SetPropertyHandlesPerHost(value uint32) (err error) {
-	return instance.SetProperty("HandlesPerHost", value)
+	return instance.SetProperty("HandlesPerHost", (value))
 }
 
 // GetHandlesPerHost gets the value of HandlesPerHost for the instance
@@ -73,16 +75,25 @@ func (instance *__ProviderHostQuotaConfiguration) GetPropertyHandlesPerHost() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMemoryAllHosts sets the value of MemoryAllHosts for the instance
 func (instance *__ProviderHostQuotaConfiguration) SetPropertyMemoryAllHosts(value uint64) (err error) {
-	return instance.SetProperty("MemoryAllHosts", value)
+	return instance.SetProperty("MemoryAllHosts", (value))
 }
 
 // GetMemoryAllHosts gets the value of MemoryAllHosts for the instance
@@ -91,16 +102,25 @@ func (instance *__ProviderHostQuotaConfiguration) GetPropertyMemoryAllHosts() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryPerHost sets the value of MemoryPerHost for the instance
 func (instance *__ProviderHostQuotaConfiguration) SetPropertyMemoryPerHost(value uint64) (err error) {
-	return instance.SetProperty("MemoryPerHost", value)
+	return instance.SetProperty("MemoryPerHost", (value))
 }
 
 // GetMemoryPerHost gets the value of MemoryPerHost for the instance
@@ -109,16 +129,25 @@ func (instance *__ProviderHostQuotaConfiguration) GetPropertyMemoryPerHost() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProcessLimitAllHosts sets the value of ProcessLimitAllHosts for the instance
 func (instance *__ProviderHostQuotaConfiguration) SetPropertyProcessLimitAllHosts(value uint32) (err error) {
-	return instance.SetProperty("ProcessLimitAllHosts", value)
+	return instance.SetProperty("ProcessLimitAllHosts", (value))
 }
 
 // GetProcessLimitAllHosts gets the value of ProcessLimitAllHosts for the instance
@@ -127,16 +156,25 @@ func (instance *__ProviderHostQuotaConfiguration) GetPropertyProcessLimitAllHost
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThreadsPerHost sets the value of ThreadsPerHost for the instance
 func (instance *__ProviderHostQuotaConfiguration) SetPropertyThreadsPerHost(value uint32) (err error) {
-	return instance.SetProperty("ThreadsPerHost", value)
+	return instance.SetProperty("ThreadsPerHost", (value))
 }
 
 // GetThreadsPerHost gets the value of ThreadsPerHost for the instance
@@ -145,9 +183,18 @@ func (instance *__ProviderHostQuotaConfiguration) GetPropertyThreadsPerHost() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

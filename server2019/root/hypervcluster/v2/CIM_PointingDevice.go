@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PointingDevice struct
@@ -61,7 +63,7 @@ func NewCIM_PointingDeviceEx6(hostName string,
 
 // SetHandedness sets the value of Handedness for the instance
 func (instance *CIM_PointingDevice) SetPropertyHandedness(value PointingDevice_Handedness) (err error) {
-	return instance.SetProperty("Handedness", value)
+	return instance.SetProperty("Handedness", (value))
 }
 
 // GetHandedness gets the value of Handedness for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_PointingDevice) GetPropertyHandedness() (value PointingDevic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PointingDevice_Handedness)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PointingDevice_Handedness(valuetmp)
+
 	return
 }
 
 // SetNumberOfButtons sets the value of NumberOfButtons for the instance
 func (instance *CIM_PointingDevice) SetPropertyNumberOfButtons(value uint8) (err error) {
-	return instance.SetProperty("NumberOfButtons", value)
+	return instance.SetProperty("NumberOfButtons", (value))
 }
 
 // GetNumberOfButtons gets the value of NumberOfButtons for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_PointingDevice) GetPropertyNumberOfButtons() (value uint8, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetPointingType sets the value of PointingType for the instance
 func (instance *CIM_PointingDevice) SetPropertyPointingType(value PointingDevice_PointingType) (err error) {
-	return instance.SetProperty("PointingType", value)
+	return instance.SetProperty("PointingType", (value))
 }
 
 // GetPointingType gets the value of PointingType for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_PointingDevice) GetPropertyPointingType() (value PointingDev
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PointingDevice_PointingType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PointingDevice_PointingType(valuetmp)
+
 	return
 }
 
 // SetResolution sets the value of Resolution for the instance
 func (instance *CIM_PointingDevice) SetPropertyResolution(value uint32) (err error) {
-	return instance.SetProperty("Resolution", value)
+	return instance.SetProperty("Resolution", (value))
 }
 
 // GetResolution gets the value of Resolution for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_PointingDevice) GetPropertyResolution() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SerialPort struct
@@ -115,7 +117,7 @@ func NewWin32_SerialPortEx6(hostName string,
 
 // SetBinary sets the value of Binary for the instance
 func (instance *Win32_SerialPort) SetPropertyBinary(value bool) (err error) {
-	return instance.SetProperty("Binary", value)
+	return instance.SetProperty("Binary", (value))
 }
 
 // GetBinary gets the value of Binary for the instance
@@ -124,16 +126,25 @@ func (instance *Win32_SerialPort) GetPropertyBinary() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaximumInputBufferSize sets the value of MaximumInputBufferSize for the instance
 func (instance *Win32_SerialPort) SetPropertyMaximumInputBufferSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumInputBufferSize", value)
+	return instance.SetProperty("MaximumInputBufferSize", (value))
 }
 
 // GetMaximumInputBufferSize gets the value of MaximumInputBufferSize for the instance
@@ -142,16 +153,25 @@ func (instance *Win32_SerialPort) GetPropertyMaximumInputBufferSize() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumOutputBufferSize sets the value of MaximumOutputBufferSize for the instance
 func (instance *Win32_SerialPort) SetPropertyMaximumOutputBufferSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumOutputBufferSize", value)
+	return instance.SetProperty("MaximumOutputBufferSize", (value))
 }
 
 // GetMaximumOutputBufferSize gets the value of MaximumOutputBufferSize for the instance
@@ -160,16 +180,25 @@ func (instance *Win32_SerialPort) GetPropertyMaximumOutputBufferSize() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSAutoDiscovered sets the value of OSAutoDiscovered for the instance
 func (instance *Win32_SerialPort) SetPropertyOSAutoDiscovered(value bool) (err error) {
-	return instance.SetProperty("OSAutoDiscovered", value)
+	return instance.SetProperty("OSAutoDiscovered", (value))
 }
 
 // GetOSAutoDiscovered gets the value of OSAutoDiscovered for the instance
@@ -178,16 +207,25 @@ func (instance *Win32_SerialPort) GetPropertyOSAutoDiscovered() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetProviderType sets the value of ProviderType for the instance
 func (instance *Win32_SerialPort) SetPropertyProviderType(value string) (err error) {
-	return instance.SetProperty("ProviderType", value)
+	return instance.SetProperty("ProviderType", (value))
 }
 
 // GetProviderType gets the value of ProviderType for the instance
@@ -196,16 +234,25 @@ func (instance *Win32_SerialPort) GetPropertyProviderType() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSettableBaudRate sets the value of SettableBaudRate for the instance
 func (instance *Win32_SerialPort) SetPropertySettableBaudRate(value bool) (err error) {
-	return instance.SetProperty("SettableBaudRate", value)
+	return instance.SetProperty("SettableBaudRate", (value))
 }
 
 // GetSettableBaudRate gets the value of SettableBaudRate for the instance
@@ -214,16 +261,25 @@ func (instance *Win32_SerialPort) GetPropertySettableBaudRate() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSettableDataBits sets the value of SettableDataBits for the instance
 func (instance *Win32_SerialPort) SetPropertySettableDataBits(value bool) (err error) {
-	return instance.SetProperty("SettableDataBits", value)
+	return instance.SetProperty("SettableDataBits", (value))
 }
 
 // GetSettableDataBits gets the value of SettableDataBits for the instance
@@ -232,16 +288,25 @@ func (instance *Win32_SerialPort) GetPropertySettableDataBits() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSettableFlowControl sets the value of SettableFlowControl for the instance
 func (instance *Win32_SerialPort) SetPropertySettableFlowControl(value bool) (err error) {
-	return instance.SetProperty("SettableFlowControl", value)
+	return instance.SetProperty("SettableFlowControl", (value))
 }
 
 // GetSettableFlowControl gets the value of SettableFlowControl for the instance
@@ -250,16 +315,25 @@ func (instance *Win32_SerialPort) GetPropertySettableFlowControl() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSettableParity sets the value of SettableParity for the instance
 func (instance *Win32_SerialPort) SetPropertySettableParity(value bool) (err error) {
-	return instance.SetProperty("SettableParity", value)
+	return instance.SetProperty("SettableParity", (value))
 }
 
 // GetSettableParity gets the value of SettableParity for the instance
@@ -268,16 +342,25 @@ func (instance *Win32_SerialPort) GetPropertySettableParity() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSettableParityCheck sets the value of SettableParityCheck for the instance
 func (instance *Win32_SerialPort) SetPropertySettableParityCheck(value bool) (err error) {
-	return instance.SetProperty("SettableParityCheck", value)
+	return instance.SetProperty("SettableParityCheck", (value))
 }
 
 // GetSettableParityCheck gets the value of SettableParityCheck for the instance
@@ -286,16 +369,25 @@ func (instance *Win32_SerialPort) GetPropertySettableParityCheck() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSettableRLSD sets the value of SettableRLSD for the instance
 func (instance *Win32_SerialPort) SetPropertySettableRLSD(value bool) (err error) {
-	return instance.SetProperty("SettableRLSD", value)
+	return instance.SetProperty("SettableRLSD", (value))
 }
 
 // GetSettableRLSD gets the value of SettableRLSD for the instance
@@ -304,16 +396,25 @@ func (instance *Win32_SerialPort) GetPropertySettableRLSD() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSettableStopBits sets the value of SettableStopBits for the instance
 func (instance *Win32_SerialPort) SetPropertySettableStopBits(value bool) (err error) {
-	return instance.SetProperty("SettableStopBits", value)
+	return instance.SetProperty("SettableStopBits", (value))
 }
 
 // GetSettableStopBits gets the value of SettableStopBits for the instance
@@ -322,16 +423,25 @@ func (instance *Win32_SerialPort) GetPropertySettableStopBits() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupports16BitMode sets the value of Supports16BitMode for the instance
 func (instance *Win32_SerialPort) SetPropertySupports16BitMode(value bool) (err error) {
-	return instance.SetProperty("Supports16BitMode", value)
+	return instance.SetProperty("Supports16BitMode", (value))
 }
 
 // GetSupports16BitMode gets the value of Supports16BitMode for the instance
@@ -340,16 +450,25 @@ func (instance *Win32_SerialPort) GetPropertySupports16BitMode() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsDTRDSR sets the value of SupportsDTRDSR for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsDTRDSR(value bool) (err error) {
-	return instance.SetProperty("SupportsDTRDSR", value)
+	return instance.SetProperty("SupportsDTRDSR", (value))
 }
 
 // GetSupportsDTRDSR gets the value of SupportsDTRDSR for the instance
@@ -358,16 +477,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsDTRDSR() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsElapsedTimeouts sets the value of SupportsElapsedTimeouts for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsElapsedTimeouts(value bool) (err error) {
-	return instance.SetProperty("SupportsElapsedTimeouts", value)
+	return instance.SetProperty("SupportsElapsedTimeouts", (value))
 }
 
 // GetSupportsElapsedTimeouts gets the value of SupportsElapsedTimeouts for the instance
@@ -376,16 +504,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsElapsedTimeouts() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsIntTimeouts sets the value of SupportsIntTimeouts for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsIntTimeouts(value bool) (err error) {
-	return instance.SetProperty("SupportsIntTimeouts", value)
+	return instance.SetProperty("SupportsIntTimeouts", (value))
 }
 
 // GetSupportsIntTimeouts gets the value of SupportsIntTimeouts for the instance
@@ -394,16 +531,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsIntTimeouts() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsParityCheck sets the value of SupportsParityCheck for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsParityCheck(value bool) (err error) {
-	return instance.SetProperty("SupportsParityCheck", value)
+	return instance.SetProperty("SupportsParityCheck", (value))
 }
 
 // GetSupportsParityCheck gets the value of SupportsParityCheck for the instance
@@ -412,16 +558,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsParityCheck() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsRLSD sets the value of SupportsRLSD for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsRLSD(value bool) (err error) {
-	return instance.SetProperty("SupportsRLSD", value)
+	return instance.SetProperty("SupportsRLSD", (value))
 }
 
 // GetSupportsRLSD gets the value of SupportsRLSD for the instance
@@ -430,16 +585,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsRLSD() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsRTSCTS sets the value of SupportsRTSCTS for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsRTSCTS(value bool) (err error) {
-	return instance.SetProperty("SupportsRTSCTS", value)
+	return instance.SetProperty("SupportsRTSCTS", (value))
 }
 
 // GetSupportsRTSCTS gets the value of SupportsRTSCTS for the instance
@@ -448,16 +612,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsRTSCTS() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsSpecialCharacters sets the value of SupportsSpecialCharacters for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsSpecialCharacters(value bool) (err error) {
-	return instance.SetProperty("SupportsSpecialCharacters", value)
+	return instance.SetProperty("SupportsSpecialCharacters", (value))
 }
 
 // GetSupportsSpecialCharacters gets the value of SupportsSpecialCharacters for the instance
@@ -466,16 +639,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsSpecialCharacters() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsXOnXOff sets the value of SupportsXOnXOff for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsXOnXOff(value bool) (err error) {
-	return instance.SetProperty("SupportsXOnXOff", value)
+	return instance.SetProperty("SupportsXOnXOff", (value))
 }
 
 // GetSupportsXOnXOff gets the value of SupportsXOnXOff for the instance
@@ -484,16 +666,25 @@ func (instance *Win32_SerialPort) GetPropertySupportsXOnXOff() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsXOnXOffSet sets the value of SupportsXOnXOffSet for the instance
 func (instance *Win32_SerialPort) SetPropertySupportsXOnXOffSet(value bool) (err error) {
-	return instance.SetProperty("SupportsXOnXOffSet", value)
+	return instance.SetProperty("SupportsXOnXOffSet", (value))
 }
 
 // GetSupportsXOnXOffSet gets the value of SupportsXOnXOffSet for the instance
@@ -502,9 +693,18 @@ func (instance *Win32_SerialPort) GetPropertySupportsXOnXOffSet() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

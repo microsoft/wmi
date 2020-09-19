@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetPortAllocationSettingData struct
@@ -70,7 +72,7 @@ func NewMsvm_EthernetPortAllocationSettingDataEx6(hostName string,
 
 // SetCompartmentGuid sets the value of CompartmentGuid for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyCompartmentGuid(value string) (err error) {
-	return instance.SetProperty("CompartmentGuid", value)
+	return instance.SetProperty("CompartmentGuid", (value))
 }
 
 // GetCompartmentGuid gets the value of CompartmentGuid for the instance
@@ -79,16 +81,25 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyCompartmentGu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnabledState sets the value of EnabledState for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyEnabledState(value EthernetPortAllocationSettingData_EnabledState) (err error) {
-	return instance.SetProperty("EnabledState", value)
+	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
@@ -97,16 +108,25 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyEnabledState(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(EthernetPortAllocationSettingData_EnabledState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = EthernetPortAllocationSettingData_EnabledState(valuetmp)
+
 	return
 }
 
 // SetLastKnownSwitchName sets the value of LastKnownSwitchName for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyLastKnownSwitchName(value string) (err error) {
-	return instance.SetProperty("LastKnownSwitchName", value)
+	return instance.SetProperty("LastKnownSwitchName", (value))
 }
 
 // GetLastKnownSwitchName gets the value of LastKnownSwitchName for the instance
@@ -115,16 +135,25 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyLastKnownSwit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequiredFeatureHints sets the value of RequiredFeatureHints for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyRequiredFeatureHints(value []string) (err error) {
-	return instance.SetProperty("RequiredFeatureHints", value)
+	return instance.SetProperty("RequiredFeatureHints", (value))
 }
 
 // GetRequiredFeatureHints gets the value of RequiredFeatureHints for the instance
@@ -133,16 +162,26 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyRequiredFeatu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRequiredFeatures sets the value of RequiredFeatures for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyRequiredFeatures(value []string) (err error) {
-	return instance.SetProperty("RequiredFeatures", value)
+	return instance.SetProperty("RequiredFeatures", (value))
 }
 
 // GetRequiredFeatures gets the value of RequiredFeatures for the instance
@@ -151,16 +190,26 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyRequiredFeatu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTestReplicaPoolID sets the value of TestReplicaPoolID for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyTestReplicaPoolID(value string) (err error) {
-	return instance.SetProperty("TestReplicaPoolID", value)
+	return instance.SetProperty("TestReplicaPoolID", (value))
 }
 
 // GetTestReplicaPoolID gets the value of TestReplicaPoolID for the instance
@@ -169,16 +218,25 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyTestReplicaPo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTestReplicaSwitchName sets the value of TestReplicaSwitchName for the instance
 func (instance *Msvm_EthernetPortAllocationSettingData) SetPropertyTestReplicaSwitchName(value string) (err error) {
-	return instance.SetProperty("TestReplicaSwitchName", value)
+	return instance.SetProperty("TestReplicaSwitchName", (value))
 }
 
 // GetTestReplicaSwitchName gets the value of TestReplicaSwitchName for the instance
@@ -187,10 +245,19 @@ func (instance *Msvm_EthernetPortAllocationSettingData) GetPropertyTestReplicaSw
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_EthernetPortAllocationSettingData) GetRelatedVirtualEthernetSwitchSettingData() (value *cim.WmiInstance, err error) {

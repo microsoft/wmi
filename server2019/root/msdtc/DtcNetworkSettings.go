@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
@@ -11,7 +11,9 @@ package msdtc
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DtcNetworkSettings struct
@@ -71,7 +73,7 @@ func NewDtcNetworkSettingsEx6(hostName string,
 
 // SetAuthenticationLevel sets the value of AuthenticationLevel for the instance
 func (instance *DtcNetworkSettings) SetPropertyAuthenticationLevel(value string) (err error) {
-	return instance.SetProperty("AuthenticationLevel", value)
+	return instance.SetProperty("AuthenticationLevel", (value))
 }
 
 // GetAuthenticationLevel gets the value of AuthenticationLevel for the instance
@@ -80,16 +82,25 @@ func (instance *DtcNetworkSettings) GetPropertyAuthenticationLevel() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInboundTransactionsEnabled sets the value of InboundTransactionsEnabled for the instance
 func (instance *DtcNetworkSettings) SetPropertyInboundTransactionsEnabled(value bool) (err error) {
-	return instance.SetProperty("InboundTransactionsEnabled", value)
+	return instance.SetProperty("InboundTransactionsEnabled", (value))
 }
 
 // GetInboundTransactionsEnabled gets the value of InboundTransactionsEnabled for the instance
@@ -98,16 +109,25 @@ func (instance *DtcNetworkSettings) GetPropertyInboundTransactionsEnabled() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLUTransactionsEnabled sets the value of LUTransactionsEnabled for the instance
 func (instance *DtcNetworkSettings) SetPropertyLUTransactionsEnabled(value bool) (err error) {
-	return instance.SetProperty("LUTransactionsEnabled", value)
+	return instance.SetProperty("LUTransactionsEnabled", (value))
 }
 
 // GetLUTransactionsEnabled gets the value of LUTransactionsEnabled for the instance
@@ -116,16 +136,25 @@ func (instance *DtcNetworkSettings) GetPropertyLUTransactionsEnabled() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOutboundTransactionsEnabled sets the value of OutboundTransactionsEnabled for the instance
 func (instance *DtcNetworkSettings) SetPropertyOutboundTransactionsEnabled(value bool) (err error) {
-	return instance.SetProperty("OutboundTransactionsEnabled", value)
+	return instance.SetProperty("OutboundTransactionsEnabled", (value))
 }
 
 // GetOutboundTransactionsEnabled gets the value of OutboundTransactionsEnabled for the instance
@@ -134,16 +163,25 @@ func (instance *DtcNetworkSettings) GetPropertyOutboundTransactionsEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRemoteAdministrationAccessEnabled sets the value of RemoteAdministrationAccessEnabled for the instance
 func (instance *DtcNetworkSettings) SetPropertyRemoteAdministrationAccessEnabled(value bool) (err error) {
-	return instance.SetProperty("RemoteAdministrationAccessEnabled", value)
+	return instance.SetProperty("RemoteAdministrationAccessEnabled", (value))
 }
 
 // GetRemoteAdministrationAccessEnabled gets the value of RemoteAdministrationAccessEnabled for the instance
@@ -152,16 +190,25 @@ func (instance *DtcNetworkSettings) GetPropertyRemoteAdministrationAccessEnabled
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRemoteClientAccessEnabled sets the value of RemoteClientAccessEnabled for the instance
 func (instance *DtcNetworkSettings) SetPropertyRemoteClientAccessEnabled(value bool) (err error) {
-	return instance.SetProperty("RemoteClientAccessEnabled", value)
+	return instance.SetProperty("RemoteClientAccessEnabled", (value))
 }
 
 // GetRemoteClientAccessEnabled gets the value of RemoteClientAccessEnabled for the instance
@@ -170,16 +217,25 @@ func (instance *DtcNetworkSettings) GetPropertyRemoteClientAccessEnabled() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetXATransactionsEnabled sets the value of XATransactionsEnabled for the instance
 func (instance *DtcNetworkSettings) SetPropertyXATransactionsEnabled(value bool) (err error) {
-	return instance.SetProperty("XATransactionsEnabled", value)
+	return instance.SetProperty("XATransactionsEnabled", (value))
 }
 
 // GetXATransactionsEnabled gets the value of XATransactionsEnabled for the instance
@@ -188,9 +244,18 @@ func (instance *DtcNetworkSettings) GetPropertyXATransactionsEnabled() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

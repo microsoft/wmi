@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB struct
@@ -103,7 +105,7 @@ func NewWin32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMBEx6(hostName st
 
 // SetAvgsecPerRequest sets the value of AvgsecPerRequest for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyAvgsecPerRequest(value uint32) (err error) {
-	return instance.SetProperty("AvgsecPerRequest", value)
+	return instance.SetProperty("AvgsecPerRequest", (value))
 }
 
 // GetAvgsecPerRequest gets the value of AvgsecPerRequest for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentOpenFileCount sets the value of CurrentOpenFileCount for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyCurrentOpenFileCount(value uint32) (err error) {
-	return instance.SetProperty("CurrentOpenFileCount", value)
+	return instance.SetProperty("CurrentOpenFileCount", (value))
 }
 
 // GetCurrentOpenFileCount gets the value of CurrentOpenFileCount for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentPendingRequests sets the value of CurrentPendingRequests for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyCurrentPendingRequests(value uint32) (err error) {
-	return instance.SetProperty("CurrentPendingRequests", value)
+	return instance.SetProperty("CurrentPendingRequests", (value))
 }
 
 // GetCurrentPendingRequests gets the value of CurrentPendingRequests for the instance
@@ -148,16 +168,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDirectMappedPages sets the value of DirectMappedPages for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyDirectMappedPages(value uint64) (err error) {
-	return instance.SetProperty("DirectMappedPages", value)
+	return instance.SetProperty("DirectMappedPages", (value))
 }
 
 // GetDirectMappedPages gets the value of DirectMappedPages for the instance
@@ -166,16 +195,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectMappedSections sets the value of DirectMappedSections for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyDirectMappedSections(value uint32) (err error) {
-	return instance.SetProperty("DirectMappedSections", value)
+	return instance.SetProperty("DirectMappedSections", (value))
 }
 
 // GetDirectMappedSections gets the value of DirectMappedSections for the instance
@@ -184,16 +222,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlushRequestsPersec sets the value of FlushRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyFlushRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("FlushRequestsPersec", value)
+	return instance.SetProperty("FlushRequestsPersec", (value))
 }
 
 // GetFlushRequestsPersec gets the value of FlushRequestsPersec for the instance
@@ -202,16 +249,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadBytesPersec sets the value of ReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersec", value)
+	return instance.SetProperty("ReadBytesPersec", (value))
 }
 
 // GetReadBytesPersec gets the value of ReadBytesPersec for the instance
@@ -220,16 +276,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadBytesPersecRDMA sets the value of ReadBytesPersecRDMA for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyReadBytesPersecRDMA(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersecRDMA", value)
+	return instance.SetProperty("ReadBytesPersecRDMA", (value))
 }
 
 // GetReadBytesPersecRDMA gets the value of ReadBytesPersecRDMA for the instance
@@ -238,16 +303,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadRequestsPersec sets the value of ReadRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyReadRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("ReadRequestsPersec", value)
+	return instance.SetProperty("ReadRequestsPersec", (value))
 }
 
 // GetReadRequestsPersec gets the value of ReadRequestsPersec for the instance
@@ -256,16 +330,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadRequestsPersecRDMA sets the value of ReadRequestsPersecRDMA for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyReadRequestsPersecRDMA(value uint32) (err error) {
-	return instance.SetProperty("ReadRequestsPersecRDMA", value)
+	return instance.SetProperty("ReadRequestsPersecRDMA", (value))
 }
 
 // GetReadRequestsPersecRDMA gets the value of ReadRequestsPersecRDMA for the instance
@@ -274,16 +357,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceivedBytesPersec sets the value of ReceivedBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyReceivedBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceivedBytesPersec", value)
+	return instance.SetProperty("ReceivedBytesPersec", (value))
 }
 
 // GetReceivedBytesPersec gets the value of ReceivedBytesPersec for the instance
@@ -292,16 +384,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRequestsPersec sets the value of RequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("RequestsPersec", value)
+	return instance.SetProperty("RequestsPersec", (value))
 }
 
 // GetRequestsPersec gets the value of RequestsPersec for the instance
@@ -310,16 +411,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSentBytesPersec sets the value of SentBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertySentBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("SentBytesPersec", value)
+	return instance.SetProperty("SentBytesPersec", (value))
 }
 
 // GetSentBytesPersec gets the value of SentBytesPersec for the instance
@@ -328,16 +438,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTreeConnectCount sets the value of TreeConnectCount for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyTreeConnectCount(value uint32) (err error) {
-	return instance.SetProperty("TreeConnectCount", value)
+	return instance.SetProperty("TreeConnectCount", (value))
 }
 
 // GetTreeConnectCount gets the value of TreeConnectCount for the instance
@@ -346,16 +465,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteBytesPersec sets the value of WriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBytesPersec", value)
+	return instance.SetProperty("WriteBytesPersec", (value))
 }
 
 // GetWriteBytesPersec gets the value of WriteBytesPersec for the instance
@@ -364,16 +492,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBytesPersecRDMA sets the value of WriteBytesPersecRDMA for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyWriteBytesPersecRDMA(value uint64) (err error) {
-	return instance.SetProperty("WriteBytesPersecRDMA", value)
+	return instance.SetProperty("WriteBytesPersecRDMA", (value))
 }
 
 // GetWriteBytesPersecRDMA gets the value of WriteBytesPersecRDMA for the instance
@@ -382,16 +519,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteRequestsPersec sets the value of WriteRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyWriteRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("WriteRequestsPersec", value)
+	return instance.SetProperty("WriteRequestsPersec", (value))
 }
 
 // GetWriteRequestsPersec gets the value of WriteRequestsPersec for the instance
@@ -400,16 +546,25 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteRequestsPersecRDMA sets the value of WriteRequestsPersecRDMA for the instance
 func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) SetPropertyWriteRequestsPersecRDMA(value uint32) (err error) {
-	return instance.SetProperty("WriteRequestsPersecRDMA", value)
+	return instance.SetProperty("WriteRequestsPersecRDMA", (value))
 }
 
 // GetWriteRequestsPersecRDMA gets the value of WriteRequestsPersecRDMA for the instance
@@ -418,9 +573,18 @@ func (instance *Win32_PerfFormattedData_VSmbPerfProvider_HyperVVirtualSMB) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

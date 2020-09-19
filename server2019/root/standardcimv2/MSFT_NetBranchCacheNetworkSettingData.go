@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetBranchCacheNetworkSettingData struct
@@ -88,7 +90,7 @@ func NewMSFT_NetBranchCacheNetworkSettingDataEx6(hostName string,
 
 // SetContentDownloadConnectPort sets the value of ContentDownloadConnectPort for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyContentDownloadConnectPort(value uint16) (err error) {
-	return instance.SetProperty("ContentDownloadConnectPort", value)
+	return instance.SetProperty("ContentDownloadConnectPort", (value))
 }
 
 // GetContentDownloadConnectPort gets the value of ContentDownloadConnectPort for the instance
@@ -97,16 +99,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyContentDownloa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetContentDownloadListenPort sets the value of ContentDownloadListenPort for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyContentDownloadListenPort(value uint16) (err error) {
-	return instance.SetProperty("ContentDownloadListenPort", value)
+	return instance.SetProperty("ContentDownloadListenPort", (value))
 }
 
 // GetContentDownloadListenPort gets the value of ContentDownloadListenPort for the instance
@@ -115,16 +126,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyContentDownloa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetContentRetrievalFirewallRulesEnabled sets the value of ContentRetrievalFirewallRulesEnabled for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyContentRetrievalFirewallRulesEnabled(value bool) (err error) {
-	return instance.SetProperty("ContentRetrievalFirewallRulesEnabled", value)
+	return instance.SetProperty("ContentRetrievalFirewallRulesEnabled", (value))
 }
 
 // GetContentRetrievalFirewallRulesEnabled gets the value of ContentRetrievalFirewallRulesEnabled for the instance
@@ -133,16 +153,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyContentRetriev
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetContentRetrievalUrlReservationEnabled sets the value of ContentRetrievalUrlReservationEnabled for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyContentRetrievalUrlReservationEnabled(value bool) (err error) {
-	return instance.SetProperty("ContentRetrievalUrlReservationEnabled", value)
+	return instance.SetProperty("ContentRetrievalUrlReservationEnabled", (value))
 }
 
 // GetContentRetrievalUrlReservationEnabled gets the value of ContentRetrievalUrlReservationEnabled for the instance
@@ -151,16 +180,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyContentRetriev
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostedCacheClientFirewallRulesEnabled sets the value of HostedCacheClientFirewallRulesEnabled for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheClientFirewallRulesEnabled(value bool) (err error) {
-	return instance.SetProperty("HostedCacheClientFirewallRulesEnabled", value)
+	return instance.SetProperty("HostedCacheClientFirewallRulesEnabled", (value))
 }
 
 // GetHostedCacheClientFirewallRulesEnabled gets the value of HostedCacheClientFirewallRulesEnabled for the instance
@@ -169,16 +207,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheCli
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostedCacheHttpConnectPort sets the value of HostedCacheHttpConnectPort for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheHttpConnectPort(value uint16) (err error) {
-	return instance.SetProperty("HostedCacheHttpConnectPort", value)
+	return instance.SetProperty("HostedCacheHttpConnectPort", (value))
 }
 
 // GetHostedCacheHttpConnectPort gets the value of HostedCacheHttpConnectPort for the instance
@@ -187,16 +234,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheHtt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHostedCacheHttpListenPort sets the value of HostedCacheHttpListenPort for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheHttpListenPort(value uint16) (err error) {
-	return instance.SetProperty("HostedCacheHttpListenPort", value)
+	return instance.SetProperty("HostedCacheHttpListenPort", (value))
 }
 
 // GetHostedCacheHttpListenPort gets the value of HostedCacheHttpListenPort for the instance
@@ -205,16 +261,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheHtt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHostedCacheHttpsConnectPort sets the value of HostedCacheHttpsConnectPort for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheHttpsConnectPort(value uint16) (err error) {
-	return instance.SetProperty("HostedCacheHttpsConnectPort", value)
+	return instance.SetProperty("HostedCacheHttpsConnectPort", (value))
 }
 
 // GetHostedCacheHttpsConnectPort gets the value of HostedCacheHttpsConnectPort for the instance
@@ -223,16 +288,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheHtt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHostedCacheHttpsListenPort sets the value of HostedCacheHttpsListenPort for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheHttpsListenPort(value uint16) (err error) {
-	return instance.SetProperty("HostedCacheHttpsListenPort", value)
+	return instance.SetProperty("HostedCacheHttpsListenPort", (value))
 }
 
 // GetHostedCacheHttpsListenPort gets the value of HostedCacheHttpsListenPort for the instance
@@ -241,16 +315,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheHtt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHostedCacheHttpsUrlReservationEnabled sets the value of HostedCacheHttpsUrlReservationEnabled for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheHttpsUrlReservationEnabled(value bool) (err error) {
-	return instance.SetProperty("HostedCacheHttpsUrlReservationEnabled", value)
+	return instance.SetProperty("HostedCacheHttpsUrlReservationEnabled", (value))
 }
 
 // GetHostedCacheHttpsUrlReservationEnabled gets the value of HostedCacheHttpsUrlReservationEnabled for the instance
@@ -259,16 +342,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheHtt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostedCacheHttpUrlReservationEnabled sets the value of HostedCacheHttpUrlReservationEnabled for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheHttpUrlReservationEnabled(value bool) (err error) {
-	return instance.SetProperty("HostedCacheHttpUrlReservationEnabled", value)
+	return instance.SetProperty("HostedCacheHttpUrlReservationEnabled", (value))
 }
 
 // GetHostedCacheHttpUrlReservationEnabled gets the value of HostedCacheHttpUrlReservationEnabled for the instance
@@ -277,16 +369,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheHtt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostedCacheServerFirewallRulesEnabled sets the value of HostedCacheServerFirewallRulesEnabled for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyHostedCacheServerFirewallRulesEnabled(value bool) (err error) {
-	return instance.SetProperty("HostedCacheServerFirewallRulesEnabled", value)
+	return instance.SetProperty("HostedCacheServerFirewallRulesEnabled", (value))
 }
 
 // GetHostedCacheServerFirewallRulesEnabled gets the value of HostedCacheServerFirewallRulesEnabled for the instance
@@ -295,16 +396,25 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyHostedCacheSer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPeerDiscoveryFirewallRulesEnabled sets the value of PeerDiscoveryFirewallRulesEnabled for the instance
 func (instance *MSFT_NetBranchCacheNetworkSettingData) SetPropertyPeerDiscoveryFirewallRulesEnabled(value bool) (err error) {
-	return instance.SetProperty("PeerDiscoveryFirewallRulesEnabled", value)
+	return instance.SetProperty("PeerDiscoveryFirewallRulesEnabled", (value))
 }
 
 // GetPeerDiscoveryFirewallRulesEnabled gets the value of PeerDiscoveryFirewallRulesEnabled for the instance
@@ -313,9 +423,18 @@ func (instance *MSFT_NetBranchCacheNetworkSettingData) GetPropertyPeerDiscoveryF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

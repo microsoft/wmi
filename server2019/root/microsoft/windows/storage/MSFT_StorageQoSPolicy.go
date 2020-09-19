@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageQoSPolicy struct
@@ -74,7 +76,7 @@ func NewMSFT_StorageQoSPolicyEx6(hostName string,
 
 // SetBandwidthLimit sets the value of BandwidthLimit for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyBandwidthLimit(value uint64) (err error) {
-	return instance.SetProperty("BandwidthLimit", value)
+	return instance.SetProperty("BandwidthLimit", (value))
 }
 
 // GetBandwidthLimit gets the value of BandwidthLimit for the instance
@@ -83,16 +85,25 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyBandwidthLimit() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -101,16 +112,25 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentPolicy sets the value of ParentPolicy for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyParentPolicy(value string) (err error) {
-	return instance.SetProperty("ParentPolicy", value)
+	return instance.SetProperty("ParentPolicy", (value))
 }
 
 // GetParentPolicy gets the value of ParentPolicy for the instance
@@ -119,16 +139,25 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyParentPolicy() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicyId sets the value of PolicyId for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyPolicyId(value string) (err error) {
-	return instance.SetProperty("PolicyId", value)
+	return instance.SetProperty("PolicyId", (value))
 }
 
 // GetPolicyId gets the value of PolicyId for the instance
@@ -137,16 +166,25 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyPolicyId() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicyType sets the value of PolicyType for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyPolicyType(value uint16) (err error) {
-	return instance.SetProperty("PolicyType", value)
+	return instance.SetProperty("PolicyType", (value))
 }
 
 // GetPolicyType gets the value of PolicyType for the instance
@@ -155,16 +193,25 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyPolicyType() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyStatus(value uint16) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -173,16 +220,25 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyStatus() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetThroughputLimit sets the value of ThroughputLimit for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyThroughputLimit(value uint64) (err error) {
-	return instance.SetProperty("ThroughputLimit", value)
+	return instance.SetProperty("ThroughputLimit", (value))
 }
 
 // GetThroughputLimit gets the value of ThroughputLimit for the instance
@@ -191,16 +247,25 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyThroughputLimit() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetThroughputReservation sets the value of ThroughputReservation for the instance
 func (instance *MSFT_StorageQoSPolicy) SetPropertyThroughputReservation(value uint64) (err error) {
-	return instance.SetProperty("ThroughputReservation", value)
+	return instance.SetProperty("ThroughputReservation", (value))
 }
 
 // GetThroughputReservation gets the value of ThroughputReservation for the instance
@@ -209,10 +274,19 @@ func (instance *MSFT_StorageQoSPolicy) GetPropertyThroughputReservation() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

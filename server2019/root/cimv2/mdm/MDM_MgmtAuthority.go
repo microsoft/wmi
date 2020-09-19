@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_MgmtAuthority struct
@@ -65,7 +67,7 @@ func NewMDM_MgmtAuthorityEx6(hostName string,
 
 // SetAuthorityName sets the value of AuthorityName for the instance
 func (instance *MDM_MgmtAuthority) SetPropertyAuthorityName(value string) (err error) {
-	return instance.SetProperty("AuthorityName", value)
+	return instance.SetProperty("AuthorityName", (value))
 }
 
 // GetAuthorityName gets the value of AuthorityName for the instance
@@ -74,16 +76,25 @@ func (instance *MDM_MgmtAuthority) GetPropertyAuthorityName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetClientSearchCriteria sets the value of ClientSearchCriteria for the instance
 func (instance *MDM_MgmtAuthority) SetPropertyClientSearchCriteria(value string) (err error) {
-	return instance.SetProperty("ClientSearchCriteria", value)
+	return instance.SetProperty("ClientSearchCriteria", (value))
 }
 
 // GetClientSearchCriteria gets the value of ClientSearchCriteria for the instance
@@ -92,16 +103,25 @@ func (instance *MDM_MgmtAuthority) GetPropertyClientSearchCriteria() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProvisionedCertThumbprint sets the value of ProvisionedCertThumbprint for the instance
 func (instance *MDM_MgmtAuthority) SetPropertyProvisionedCertThumbprint(value string) (err error) {
-	return instance.SetProperty("ProvisionedCertThumbprint", value)
+	return instance.SetProperty("ProvisionedCertThumbprint", (value))
 }
 
 // GetProvisionedCertThumbprint gets the value of ProvisionedCertThumbprint for the instance
@@ -110,16 +130,25 @@ func (instance *MDM_MgmtAuthority) GetPropertyProvisionedCertThumbprint() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRootThumbprint sets the value of RootThumbprint for the instance
 func (instance *MDM_MgmtAuthority) SetPropertyRootThumbprint(value string) (err error) {
-	return instance.SetProperty("RootThumbprint", value)
+	return instance.SetProperty("RootThumbprint", (value))
 }
 
 // GetRootThumbprint gets the value of RootThumbprint for the instance
@@ -128,16 +157,25 @@ func (instance *MDM_MgmtAuthority) GetPropertyRootThumbprint() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerList sets the value of ServerList for the instance
 func (instance *MDM_MgmtAuthority) SetPropertyServerList(value string) (err error) {
-	return instance.SetProperty("ServerList", value)
+	return instance.SetProperty("ServerList", (value))
 }
 
 // GetServerList gets the value of ServerList for the instance
@@ -146,10 +184,19 @@ func (instance *MDM_MgmtAuthority) GetPropertyServerList() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

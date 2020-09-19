@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.HardwareManagement
 //////////////////////////////////////////////
 package hardwaremanagement
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Job struct
@@ -112,7 +114,7 @@ func NewCIM_JobEx6(hostName string,
 
 // SetDeleteOnCompletion sets the value of DeleteOnCompletion for the instance
 func (instance *CIM_Job) SetPropertyDeleteOnCompletion(value bool) (err error) {
-	return instance.SetProperty("DeleteOnCompletion", value)
+	return instance.SetProperty("DeleteOnCompletion", (value))
 }
 
 // GetDeleteOnCompletion gets the value of DeleteOnCompletion for the instance
@@ -121,16 +123,25 @@ func (instance *CIM_Job) GetPropertyDeleteOnCompletion() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetElapsedTime sets the value of ElapsedTime for the instance
 func (instance *CIM_Job) SetPropertyElapsedTime(value string) (err error) {
-	return instance.SetProperty("ElapsedTime", value)
+	return instance.SetProperty("ElapsedTime", (value))
 }
 
 // GetElapsedTime gets the value of ElapsedTime for the instance
@@ -139,16 +150,25 @@ func (instance *CIM_Job) GetPropertyElapsedTime() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorCode sets the value of ErrorCode for the instance
 func (instance *CIM_Job) SetPropertyErrorCode(value uint16) (err error) {
-	return instance.SetProperty("ErrorCode", value)
+	return instance.SetProperty("ErrorCode", (value))
 }
 
 // GetErrorCode gets the value of ErrorCode for the instance
@@ -157,16 +177,25 @@ func (instance *CIM_Job) GetPropertyErrorCode() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetErrorDescription sets the value of ErrorDescription for the instance
 func (instance *CIM_Job) SetPropertyErrorDescription(value string) (err error) {
-	return instance.SetProperty("ErrorDescription", value)
+	return instance.SetProperty("ErrorDescription", (value))
 }
 
 // GetErrorDescription gets the value of ErrorDescription for the instance
@@ -175,16 +204,25 @@ func (instance *CIM_Job) GetPropertyErrorDescription() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetJobRunTimes sets the value of JobRunTimes for the instance
 func (instance *CIM_Job) SetPropertyJobRunTimes(value uint32) (err error) {
-	return instance.SetProperty("JobRunTimes", value)
+	return instance.SetProperty("JobRunTimes", (value))
 }
 
 // GetJobRunTimes gets the value of JobRunTimes for the instance
@@ -193,16 +231,25 @@ func (instance *CIM_Job) GetPropertyJobRunTimes() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetJobStatus sets the value of JobStatus for the instance
 func (instance *CIM_Job) SetPropertyJobStatus(value string) (err error) {
-	return instance.SetProperty("JobStatus", value)
+	return instance.SetProperty("JobStatus", (value))
 }
 
 // GetJobStatus gets the value of JobStatus for the instance
@@ -211,16 +258,25 @@ func (instance *CIM_Job) GetPropertyJobStatus() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalOrUtcTime sets the value of LocalOrUtcTime for the instance
 func (instance *CIM_Job) SetPropertyLocalOrUtcTime(value uint16) (err error) {
-	return instance.SetProperty("LocalOrUtcTime", value)
+	return instance.SetProperty("LocalOrUtcTime", (value))
 }
 
 // GetLocalOrUtcTime gets the value of LocalOrUtcTime for the instance
@@ -229,16 +285,25 @@ func (instance *CIM_Job) GetPropertyLocalOrUtcTime() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNotify sets the value of Notify for the instance
 func (instance *CIM_Job) SetPropertyNotify(value string) (err error) {
-	return instance.SetProperty("Notify", value)
+	return instance.SetProperty("Notify", (value))
 }
 
 // GetNotify gets the value of Notify for the instance
@@ -247,16 +312,25 @@ func (instance *CIM_Job) GetPropertyNotify() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherRecoveryAction sets the value of OtherRecoveryAction for the instance
 func (instance *CIM_Job) SetPropertyOtherRecoveryAction(value string) (err error) {
-	return instance.SetProperty("OtherRecoveryAction", value)
+	return instance.SetProperty("OtherRecoveryAction", (value))
 }
 
 // GetOtherRecoveryAction gets the value of OtherRecoveryAction for the instance
@@ -265,16 +339,25 @@ func (instance *CIM_Job) GetPropertyOtherRecoveryAction() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOwner sets the value of Owner for the instance
 func (instance *CIM_Job) SetPropertyOwner(value string) (err error) {
-	return instance.SetProperty("Owner", value)
+	return instance.SetProperty("Owner", (value))
 }
 
 // GetOwner gets the value of Owner for the instance
@@ -283,16 +366,25 @@ func (instance *CIM_Job) GetPropertyOwner() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPercentComplete sets the value of PercentComplete for the instance
 func (instance *CIM_Job) SetPropertyPercentComplete(value uint16) (err error) {
-	return instance.SetProperty("PercentComplete", value)
+	return instance.SetProperty("PercentComplete", (value))
 }
 
 // GetPercentComplete gets the value of PercentComplete for the instance
@@ -301,16 +393,25 @@ func (instance *CIM_Job) GetPropertyPercentComplete() (value uint16, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPriority sets the value of Priority for the instance
 func (instance *CIM_Job) SetPropertyPriority(value uint32) (err error) {
-	return instance.SetProperty("Priority", value)
+	return instance.SetProperty("Priority", (value))
 }
 
 // GetPriority gets the value of Priority for the instance
@@ -319,16 +420,25 @@ func (instance *CIM_Job) GetPropertyPriority() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRecoveryAction sets the value of RecoveryAction for the instance
 func (instance *CIM_Job) SetPropertyRecoveryAction(value uint16) (err error) {
-	return instance.SetProperty("RecoveryAction", value)
+	return instance.SetProperty("RecoveryAction", (value))
 }
 
 // GetRecoveryAction gets the value of RecoveryAction for the instance
@@ -337,16 +447,25 @@ func (instance *CIM_Job) GetPropertyRecoveryAction() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRunDay sets the value of RunDay for the instance
 func (instance *CIM_Job) SetPropertyRunDay(value int8) (err error) {
-	return instance.SetProperty("RunDay", value)
+	return instance.SetProperty("RunDay", (value))
 }
 
 // GetRunDay gets the value of RunDay for the instance
@@ -355,16 +474,25 @@ func (instance *CIM_Job) GetPropertyRunDay() (value int8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int8(valuetmp)
+
 	return
 }
 
 // SetRunDayOfWeek sets the value of RunDayOfWeek for the instance
 func (instance *CIM_Job) SetPropertyRunDayOfWeek(value int8) (err error) {
-	return instance.SetProperty("RunDayOfWeek", value)
+	return instance.SetProperty("RunDayOfWeek", (value))
 }
 
 // GetRunDayOfWeek gets the value of RunDayOfWeek for the instance
@@ -373,16 +501,25 @@ func (instance *CIM_Job) GetPropertyRunDayOfWeek() (value int8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int8(valuetmp)
+
 	return
 }
 
 // SetRunMonth sets the value of RunMonth for the instance
 func (instance *CIM_Job) SetPropertyRunMonth(value uint8) (err error) {
-	return instance.SetProperty("RunMonth", value)
+	return instance.SetProperty("RunMonth", (value))
 }
 
 // GetRunMonth gets the value of RunMonth for the instance
@@ -391,16 +528,25 @@ func (instance *CIM_Job) GetPropertyRunMonth() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRunStartInterval sets the value of RunStartInterval for the instance
 func (instance *CIM_Job) SetPropertyRunStartInterval(value string) (err error) {
-	return instance.SetProperty("RunStartInterval", value)
+	return instance.SetProperty("RunStartInterval", (value))
 }
 
 // GetRunStartInterval gets the value of RunStartInterval for the instance
@@ -409,16 +555,25 @@ func (instance *CIM_Job) GetPropertyRunStartInterval() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScheduledStartTime sets the value of ScheduledStartTime for the instance
 func (instance *CIM_Job) SetPropertyScheduledStartTime(value string) (err error) {
-	return instance.SetProperty("ScheduledStartTime", value)
+	return instance.SetProperty("ScheduledStartTime", (value))
 }
 
 // GetScheduledStartTime gets the value of ScheduledStartTime for the instance
@@ -427,16 +582,25 @@ func (instance *CIM_Job) GetPropertyScheduledStartTime() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartTime sets the value of StartTime for the instance
 func (instance *CIM_Job) SetPropertyStartTime(value string) (err error) {
-	return instance.SetProperty("StartTime", value)
+	return instance.SetProperty("StartTime", (value))
 }
 
 // GetStartTime gets the value of StartTime for the instance
@@ -445,16 +609,25 @@ func (instance *CIM_Job) GetPropertyStartTime() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTimeSubmitted sets the value of TimeSubmitted for the instance
 func (instance *CIM_Job) SetPropertyTimeSubmitted(value string) (err error) {
-	return instance.SetProperty("TimeSubmitted", value)
+	return instance.SetProperty("TimeSubmitted", (value))
 }
 
 // GetTimeSubmitted gets the value of TimeSubmitted for the instance
@@ -463,16 +636,25 @@ func (instance *CIM_Job) GetPropertyTimeSubmitted() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUntilTime sets the value of UntilTime for the instance
 func (instance *CIM_Job) SetPropertyUntilTime(value string) (err error) {
-	return instance.SetProperty("UntilTime", value)
+	return instance.SetProperty("UntilTime", (value))
 }
 
 // GetUntilTime gets the value of UntilTime for the instance
@@ -481,10 +663,19 @@ func (instance *CIM_Job) GetPropertyUntilTime() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MTRegistryString struct
@@ -52,7 +54,7 @@ func NewMSFT_MTRegistryStringEx6(hostName string,
 
 // SetData sets the value of Data for the instance
 func (instance *MSFT_MTRegistryString) SetPropertyData(value string) (err error) {
-	return instance.SetProperty("Data", value)
+	return instance.SetProperty("Data", (value))
 }
 
 // GetData gets the value of Data for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_MTRegistryString) GetPropertyData() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

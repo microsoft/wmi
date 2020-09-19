@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Tcpip_NBTConnection struct
@@ -58,7 +60,7 @@ func NewWin32_PerfRawData_Tcpip_NBTConnectionEx6(hostName string,
 
 // SetBytesReceivedPersec sets the value of BytesReceivedPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_NBTConnection) SetPropertyBytesReceivedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesReceivedPersec", value)
+	return instance.SetProperty("BytesReceivedPersec", (value))
 }
 
 // GetBytesReceivedPersec gets the value of BytesReceivedPersec for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_PerfRawData_Tcpip_NBTConnection) GetPropertyBytesReceivedP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesSentPersec sets the value of BytesSentPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_NBTConnection) SetPropertyBytesSentPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesSentPersec", value)
+	return instance.SetProperty("BytesSentPersec", (value))
 }
 
 // GetBytesSentPersec gets the value of BytesSentPersec for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_PerfRawData_Tcpip_NBTConnection) GetPropertyBytesSentPerse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTotalPersec sets the value of BytesTotalPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_NBTConnection) SetPropertyBytesTotalPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesTotalPersec", value)
+	return instance.SetProperty("BytesTotalPersec", (value))
 }
 
 // GetBytesTotalPersec gets the value of BytesTotalPersec for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_PerfRawData_Tcpip_NBTConnection) GetPropertyBytesTotalPers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

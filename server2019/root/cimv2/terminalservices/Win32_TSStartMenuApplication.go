@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSStartMenuApplication struct
@@ -64,7 +66,7 @@ func NewWin32_TSStartMenuApplicationEx6(hostName string,
 
 // SetCommandLineArguments sets the value of CommandLineArguments for the instance
 func (instance *Win32_TSStartMenuApplication) SetPropertyCommandLineArguments(value string) (err error) {
-	return instance.SetProperty("CommandLineArguments", value)
+	return instance.SetProperty("CommandLineArguments", (value))
 }
 
 // GetCommandLineArguments gets the value of CommandLineArguments for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_TSStartMenuApplication) GetPropertyCommandLineArguments() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIconIndex sets the value of IconIndex for the instance
 func (instance *Win32_TSStartMenuApplication) SetPropertyIconIndex(value int32) (err error) {
-	return instance.SetProperty("IconIndex", value)
+	return instance.SetProperty("IconIndex", (value))
 }
 
 // GetIconIndex gets the value of IconIndex for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_TSStartMenuApplication) GetPropertyIconIndex() (value int3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetIconPath sets the value of IconPath for the instance
 func (instance *Win32_TSStartMenuApplication) SetPropertyIconPath(value string) (err error) {
-	return instance.SetProperty("IconPath", value)
+	return instance.SetProperty("IconPath", (value))
 }
 
 // GetIconPath gets the value of IconPath for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_TSStartMenuApplication) GetPropertyIconPath() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *Win32_TSStartMenuApplication) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_TSStartMenuApplication) GetPropertyPath() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVPath sets the value of VPath for the instance
 func (instance *Win32_TSStartMenuApplication) SetPropertyVPath(value string) (err error) {
-	return instance.SetProperty("VPath", value)
+	return instance.SetProperty("VPath", (value))
 }
 
 // GetVPath gets the value of VPath for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_TSStartMenuApplication) GetPropertyVPath() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

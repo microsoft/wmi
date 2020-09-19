@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ClusterDiskPartition struct
@@ -82,7 +84,7 @@ func NewMSCluster_ClusterDiskPartitionEx6(hostName string,
 
 // SetFileSystem sets the value of FileSystem for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyFileSystem(value string) (err error) {
-	return instance.SetProperty("FileSystem", value)
+	return instance.SetProperty("FileSystem", (value))
 }
 
 // GetFileSystem gets the value of FileSystem for the instance
@@ -91,16 +93,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyFileSystem() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileSystemFlags sets the value of FileSystemFlags for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyFileSystemFlags(value uint32) (err error) {
-	return instance.SetProperty("FileSystemFlags", value)
+	return instance.SetProperty("FileSystemFlags", (value))
 }
 
 // GetFileSystemFlags gets the value of FileSystemFlags for the instance
@@ -109,16 +120,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyFileSystemFlags() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFreeSpace sets the value of FreeSpace for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyFreeSpace(value uint32) (err error) {
-	return instance.SetProperty("FreeSpace", value)
+	return instance.SetProperty("FreeSpace", (value))
 }
 
 // GetFreeSpace gets the value of FreeSpace for the instance
@@ -127,16 +147,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyFreeSpace() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumComponentLength sets the value of MaximumComponentLength for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyMaximumComponentLength(value uint32) (err error) {
-	return instance.SetProperty("MaximumComponentLength", value)
+	return instance.SetProperty("MaximumComponentLength", (value))
 }
 
 // GetMaximumComponentLength gets the value of MaximumComponentLength for the instance
@@ -145,16 +174,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyMaximumComponentLengt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMountPoints sets the value of MountPoints for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyMountPoints(value []string) (err error) {
-	return instance.SetProperty("MountPoints", value)
+	return instance.SetProperty("MountPoints", (value))
 }
 
 // GetMountPoints gets the value of MountPoints for the instance
@@ -163,16 +201,26 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyMountPoints() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPartitionNumber sets the value of PartitionNumber for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyPartitionNumber(value uint32) (err error) {
-	return instance.SetProperty("PartitionNumber", value)
+	return instance.SetProperty("PartitionNumber", (value))
 }
 
 // GetPartitionNumber gets the value of PartitionNumber for the instance
@@ -181,16 +229,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyPartitionNumber() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -199,16 +256,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyPath() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertySerialNumber(value uint32) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -217,16 +283,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertySerialNumber() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalSize sets the value of TotalSize for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyTotalSize(value uint32) (err error) {
-	return instance.SetProperty("TotalSize", value)
+	return instance.SetProperty("TotalSize", (value))
 }
 
 // GetTotalSize gets the value of TotalSize for the instance
@@ -235,16 +310,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyTotalSize() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVolumeGuid sets the value of VolumeGuid for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyVolumeGuid(value string) (err error) {
-	return instance.SetProperty("VolumeGuid", value)
+	return instance.SetProperty("VolumeGuid", (value))
 }
 
 // GetVolumeGuid gets the value of VolumeGuid for the instance
@@ -253,16 +337,25 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyVolumeGuid() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVolumeLabel sets the value of VolumeLabel for the instance
 func (instance *MSCluster_ClusterDiskPartition) SetPropertyVolumeLabel(value string) (err error) {
-	return instance.SetProperty("VolumeLabel", value)
+	return instance.SetProperty("VolumeLabel", (value))
 }
 
 // GetVolumeLabel gets the value of VolumeLabel for the instance
@@ -271,9 +364,18 @@ func (instance *MSCluster_ClusterDiskPartition) GetPropertyVolumeLabel() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

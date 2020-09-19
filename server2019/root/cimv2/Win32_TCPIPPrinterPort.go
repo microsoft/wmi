@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TCPIPPrinterPort struct
@@ -73,7 +75,7 @@ func NewWin32_TCPIPPrinterPortEx6(hostName string,
 
 // SetByteCount sets the value of ByteCount for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertyByteCount(value bool) (err error) {
-	return instance.SetProperty("ByteCount", value)
+	return instance.SetProperty("ByteCount", (value))
 }
 
 // GetByteCount gets the value of ByteCount for the instance
@@ -82,16 +84,25 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertyByteCount() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostAddress sets the value of HostAddress for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertyHostAddress(value string) (err error) {
-	return instance.SetProperty("HostAddress", value)
+	return instance.SetProperty("HostAddress", (value))
 }
 
 // GetHostAddress gets the value of HostAddress for the instance
@@ -100,16 +111,25 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertyHostAddress() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPortNumber sets the value of PortNumber for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertyPortNumber(value uint32) (err error) {
-	return instance.SetProperty("PortNumber", value)
+	return instance.SetProperty("PortNumber", (value))
 }
 
 // GetPortNumber gets the value of PortNumber for the instance
@@ -118,16 +138,25 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertyPortNumber() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProtocol sets the value of Protocol for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertyProtocol(value TCPIPPrinterPort_Protocol) (err error) {
-	return instance.SetProperty("Protocol", value)
+	return instance.SetProperty("Protocol", (value))
 }
 
 // GetProtocol gets the value of Protocol for the instance
@@ -136,16 +165,25 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertyProtocol() (value TCPIPPrinte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TCPIPPrinterPort_Protocol)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TCPIPPrinterPort_Protocol(valuetmp)
+
 	return
 }
 
 // SetQueue sets the value of Queue for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertyQueue(value string) (err error) {
-	return instance.SetProperty("Queue", value)
+	return instance.SetProperty("Queue", (value))
 }
 
 // GetQueue gets the value of Queue for the instance
@@ -154,16 +192,25 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertyQueue() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSNMPCommunity sets the value of SNMPCommunity for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertySNMPCommunity(value string) (err error) {
-	return instance.SetProperty("SNMPCommunity", value)
+	return instance.SetProperty("SNMPCommunity", (value))
 }
 
 // GetSNMPCommunity gets the value of SNMPCommunity for the instance
@@ -172,16 +219,25 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertySNMPCommunity() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSNMPDevIndex sets the value of SNMPDevIndex for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertySNMPDevIndex(value uint32) (err error) {
-	return instance.SetProperty("SNMPDevIndex", value)
+	return instance.SetProperty("SNMPDevIndex", (value))
 }
 
 // GetSNMPDevIndex gets the value of SNMPDevIndex for the instance
@@ -190,16 +246,25 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertySNMPDevIndex() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSNMPEnabled sets the value of SNMPEnabled for the instance
 func (instance *Win32_TCPIPPrinterPort) SetPropertySNMPEnabled(value bool) (err error) {
-	return instance.SetProperty("SNMPEnabled", value)
+	return instance.SetProperty("SNMPEnabled", (value))
 }
 
 // GetSNMPEnabled gets the value of SNMPEnabled for the instance
@@ -208,9 +273,18 @@ func (instance *Win32_TCPIPPrinterPort) GetPropertySNMPEnabled() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

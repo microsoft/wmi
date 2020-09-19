@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_MiQuery struct
@@ -58,7 +60,7 @@ func NewMsft_MiQueryEx6(hostName string,
 
 // SetDialect sets the value of Dialect for the instance
 func (instance *Msft_MiQuery) SetPropertyDialect(value string) (err error) {
-	return instance.SetProperty("Dialect", value)
+	return instance.SetProperty("Dialect", (value))
 }
 
 // GetDialect gets the value of Dialect for the instance
@@ -67,16 +69,25 @@ func (instance *Msft_MiQuery) GetPropertyDialect() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExpression sets the value of Expression for the instance
 func (instance *Msft_MiQuery) SetPropertyExpression(value string) (err error) {
-	return instance.SetProperty("Expression", value)
+	return instance.SetProperty("Expression", (value))
 }
 
 // GetExpression gets the value of Expression for the instance
@@ -85,16 +96,25 @@ func (instance *Msft_MiQuery) GetPropertyExpression() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNamespaceName sets the value of NamespaceName for the instance
 func (instance *Msft_MiQuery) SetPropertyNamespaceName(value string) (err error) {
-	return instance.SetProperty("NamespaceName", value)
+	return instance.SetProperty("NamespaceName", (value))
 }
 
 // GetNamespaceName gets the value of NamespaceName for the instance
@@ -103,9 +123,18 @@ func (instance *Msft_MiQuery) GetPropertyNamespaceName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

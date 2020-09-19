@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_CurrentTime struct
@@ -80,7 +82,7 @@ func NewWin32_CurrentTimeEx6(hostName string,
 
 // SetDay sets the value of Day for the instance
 func (instance *Win32_CurrentTime) SetPropertyDay(value uint32) (err error) {
-	return instance.SetProperty("Day", value)
+	return instance.SetProperty("Day", (value))
 }
 
 // GetDay gets the value of Day for the instance
@@ -89,16 +91,25 @@ func (instance *Win32_CurrentTime) GetPropertyDay() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDayOfWeek sets the value of DayOfWeek for the instance
 func (instance *Win32_CurrentTime) SetPropertyDayOfWeek(value uint32) (err error) {
-	return instance.SetProperty("DayOfWeek", value)
+	return instance.SetProperty("DayOfWeek", (value))
 }
 
 // GetDayOfWeek gets the value of DayOfWeek for the instance
@@ -107,16 +118,25 @@ func (instance *Win32_CurrentTime) GetPropertyDayOfWeek() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHour sets the value of Hour for the instance
 func (instance *Win32_CurrentTime) SetPropertyHour(value uint32) (err error) {
-	return instance.SetProperty("Hour", value)
+	return instance.SetProperty("Hour", (value))
 }
 
 // GetHour gets the value of Hour for the instance
@@ -125,16 +145,25 @@ func (instance *Win32_CurrentTime) GetPropertyHour() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMilliseconds sets the value of Milliseconds for the instance
 func (instance *Win32_CurrentTime) SetPropertyMilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Milliseconds", value)
+	return instance.SetProperty("Milliseconds", (value))
 }
 
 // GetMilliseconds gets the value of Milliseconds for the instance
@@ -143,16 +172,25 @@ func (instance *Win32_CurrentTime) GetPropertyMilliseconds() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinute sets the value of Minute for the instance
 func (instance *Win32_CurrentTime) SetPropertyMinute(value uint32) (err error) {
-	return instance.SetProperty("Minute", value)
+	return instance.SetProperty("Minute", (value))
 }
 
 // GetMinute gets the value of Minute for the instance
@@ -161,16 +199,25 @@ func (instance *Win32_CurrentTime) GetPropertyMinute() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMonth sets the value of Month for the instance
 func (instance *Win32_CurrentTime) SetPropertyMonth(value uint32) (err error) {
-	return instance.SetProperty("Month", value)
+	return instance.SetProperty("Month", (value))
 }
 
 // GetMonth gets the value of Month for the instance
@@ -179,16 +226,25 @@ func (instance *Win32_CurrentTime) GetPropertyMonth() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuarter sets the value of Quarter for the instance
 func (instance *Win32_CurrentTime) SetPropertyQuarter(value uint32) (err error) {
-	return instance.SetProperty("Quarter", value)
+	return instance.SetProperty("Quarter", (value))
 }
 
 // GetQuarter gets the value of Quarter for the instance
@@ -197,16 +253,25 @@ func (instance *Win32_CurrentTime) GetPropertyQuarter() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecond sets the value of Second for the instance
 func (instance *Win32_CurrentTime) SetPropertySecond(value uint32) (err error) {
-	return instance.SetProperty("Second", value)
+	return instance.SetProperty("Second", (value))
 }
 
 // GetSecond gets the value of Second for the instance
@@ -215,16 +280,25 @@ func (instance *Win32_CurrentTime) GetPropertySecond() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWeekInMonth sets the value of WeekInMonth for the instance
 func (instance *Win32_CurrentTime) SetPropertyWeekInMonth(value uint32) (err error) {
-	return instance.SetProperty("WeekInMonth", value)
+	return instance.SetProperty("WeekInMonth", (value))
 }
 
 // GetWeekInMonth gets the value of WeekInMonth for the instance
@@ -233,16 +307,25 @@ func (instance *Win32_CurrentTime) GetPropertyWeekInMonth() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetYear sets the value of Year for the instance
 func (instance *Win32_CurrentTime) SetPropertyYear(value uint32) (err error) {
-	return instance.SetProperty("Year", value)
+	return instance.SetProperty("Year", (value))
 }
 
 // GetYear gets the value of Year for the instance
@@ -251,9 +334,18 @@ func (instance *Win32_CurrentTime) GetPropertyYear() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

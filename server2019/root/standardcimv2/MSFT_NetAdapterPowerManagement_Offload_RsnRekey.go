@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterPowerManagement_Offload_RsnRekey struct
@@ -58,7 +60,7 @@ func NewMSFT_NetAdapterPowerManagement_Offload_RsnRekeyEx6(hostName string,
 
 // SetKCK sets the value of KCK for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey) SetPropertyKCK(value []uint8) (err error) {
-	return instance.SetProperty("KCK", value)
+	return instance.SetProperty("KCK", (value))
 }
 
 // GetKCK gets the value of KCK for the instance
@@ -67,16 +69,26 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey) GetPropertyKCK(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetKEK sets the value of KEK for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey) SetPropertyKEK(value []uint8) (err error) {
-	return instance.SetProperty("KEK", value)
+	return instance.SetProperty("KEK", (value))
 }
 
 // GetKEK gets the value of KEK for the instance
@@ -85,16 +97,26 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey) GetPropertyKEK(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetReplayCounter sets the value of ReplayCounter for the instance
 func (instance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey) SetPropertyReplayCounter(value uint64) (err error) {
-	return instance.SetProperty("ReplayCounter", value)
+	return instance.SetProperty("ReplayCounter", (value))
 }
 
 // GetReplayCounter gets the value of ReplayCounter for the instance
@@ -103,9 +125,18 @@ func (instance *MSFT_NetAdapterPowerManagement_Offload_RsnRekey) GetPropertyRepl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

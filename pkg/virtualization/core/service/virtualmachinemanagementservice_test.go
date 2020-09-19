@@ -27,25 +27,25 @@ func init() {
 func TestGetVirtualMachineManagementService(t *testing.T) {
 	_, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 }
 
 func TestCreateVirtualMachines(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "test")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
 	vm, err := vmms.CreateVirtualMachine(setting)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Created VM [%s]", "test")
 	defer func() {
@@ -59,12 +59,12 @@ func TestCreateVirtualMachines(t *testing.T) {
 func TestModifyVirtualMachine(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Found [%s] VMs", "test")
 	defer vm.Close()
@@ -84,18 +84,18 @@ func TestModifyVirtualMachine(t *testing.T) {
 func TestGetVirtualMachines(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 
 	vms, err := vmms.GetVirtualMachines()
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Found [%d] VMs", len(vms))
 	defer vms.Close()
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Found [%s] VMs", "test")
 	defer vm.Close()
@@ -104,7 +104,7 @@ func TestGetVirtualMachines(t *testing.T) {
 func TestVirtualMachineAdapterScenario(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 
 	vs, err := virtualswitch.GetVirtualSwitch(whost, "test")
@@ -116,7 +116,7 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Found [%s] VMs", "test")
 	defer vm.Close()
@@ -126,19 +126,19 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 		t.Logf("Adding VmNic to [%s]", "test")
 		na, err := vmms.AddVirtualNetworkAdapter(vm, "Network Adapter")
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		defer na.Close()
 
 		err = vmms.RenameVirtualNetworkAdapter(vm, "Network Adapter", adapterName)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Renamed Adapter [%s]", adapterName)
 
 		testna, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		defer testna.Close()
 		t.Logf("Found Renamed Adapter [%s]", adapterName)
@@ -174,18 +174,18 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 		adapterName := fmt.Sprintf("testadapter-%d", i)
 		err = vmms.DisconnectAdapterFromVirtualSwitch(vm, adapterName)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Disconnect VM[%s] from VirtualSwitch[%s]", "test", "test")
 		testna, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		defer testna.Close()
 		t.Logf("Removing VmNic [%s] from VM[%s] ", adapterName, "test")
 		err = vmms.RemoveVirtualNetworkAdapter(testna)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 
 		}
 	}
@@ -194,7 +194,7 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 
 	vs, err := virtualswitch.GetVirtualSwitch(whost, "test")
@@ -206,7 +206,7 @@ func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
 
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Found [%s] VMs", "test")
 	defer vm.Close()
@@ -216,13 +216,13 @@ func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
 	t.Logf("Adding VmNic with MAC to [%s]", "test")
 	na, err := vmms.AddVirtualNetworkAdapterWithMac(vm, adapterName, macAddress)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	defer na.Close()
 
 	testna, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	defer testna.Close()
 	t.Logf("Found Adapter [%s]", adapterName)
@@ -230,18 +230,18 @@ func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
 	t.Logf("Removing VmNic [%s] from VM[%s] ", adapterName, "test")
 	err = vmms.RemoveVirtualNetworkAdapter(testna)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 }
 
 func TestAddRemoveVirtualHardDisk(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	defer vm.Close()
 	t.Logf("Found [%s] VMs", "test")
@@ -253,7 +253,7 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 
 	ims, err := service.GetImageManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Got ImageManagementService ")
 
@@ -261,30 +261,30 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
 		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		defer setting.Close()
 		err = ims.CreateDisk(setting)
 		if err != nil {
-			t.Fatal("Create Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		defer os.RemoveAll(path)
 		t.Logf("Created vhd [%s]", path)
 
 		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		defer vhd.Close()
 		defer vhddrive.Close()
 		t.Logf("Attached vhd [%s] to [%s]", path, "test")
 		controllerlocation, err := vhddrive.GetControllerLocation()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		controllerNumber, err := vhddrive.GetControllerNumber()
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
 	}
@@ -293,12 +293,12 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
 		vhd, err := vm.GetVirtualHardDiskByLocation(0, i-1)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		defer vhd.Close()
 		err = vmms.DetachVirtualHardDisk(vhd)
 		if err != nil {
-			t.Fatal("Failed " + err.Error())
+			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Detached vhd [%s] from [%s]", path, "test")
 	}
@@ -307,7 +307,7 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 func TestAddRemoveTPM(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
@@ -334,11 +334,11 @@ func TestAddRemoveTPM(t *testing.T) {
 func TestVirtualMachineDelete(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 	vm, err := vmms.GetVirtualMachineByName("test")
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 
 	defer vm.Close()
@@ -353,6 +353,6 @@ func TestVirtualMachineDelete(t *testing.T) {
 	}
 	err = vmms.DeleteVirtualMachine(vm)
 	if err != nil {
-		t.Fatal("Failed " + err.Error())
+		t.Fatalf("Failed [%+v]", err)
 	}
 }

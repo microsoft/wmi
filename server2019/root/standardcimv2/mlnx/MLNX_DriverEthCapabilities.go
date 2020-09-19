@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_DriverEthCapabilities struct
@@ -67,7 +69,7 @@ func NewMLNX_DriverEthCapabilitiesEx6(hostName string,
 
 // SetModeFlags_Max sets the value of ModeFlags_Max for the instance
 func (instance *MLNX_DriverEthCapabilities) SetPropertyModeFlags_Max(value uint32) (err error) {
-	return instance.SetProperty("ModeFlags_Max", value)
+	return instance.SetProperty("ModeFlags_Max", (value))
 }
 
 // GetModeFlags_Max gets the value of ModeFlags_Max for the instance
@@ -76,16 +78,25 @@ func (instance *MLNX_DriverEthCapabilities) GetPropertyModeFlags_Max() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetModeFlags_Min sets the value of ModeFlags_Min for the instance
 func (instance *MLNX_DriverEthCapabilities) SetPropertyModeFlags_Min(value uint32) (err error) {
-	return instance.SetProperty("ModeFlags_Min", value)
+	return instance.SetProperty("ModeFlags_Min", (value))
 }
 
 // GetModeFlags_Min gets the value of ModeFlags_Min for the instance
@@ -94,16 +105,25 @@ func (instance *MLNX_DriverEthCapabilities) GetPropertyModeFlags_Min() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNdkDebugFlags_Max sets the value of NdkDebugFlags_Max for the instance
 func (instance *MLNX_DriverEthCapabilities) SetPropertyNdkDebugFlags_Max(value uint32) (err error) {
-	return instance.SetProperty("NdkDebugFlags_Max", value)
+	return instance.SetProperty("NdkDebugFlags_Max", (value))
 }
 
 // GetNdkDebugFlags_Max gets the value of NdkDebugFlags_Max for the instance
@@ -112,16 +132,25 @@ func (instance *MLNX_DriverEthCapabilities) GetPropertyNdkDebugFlags_Max() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNdkDebugFlags_Min sets the value of NdkDebugFlags_Min for the instance
 func (instance *MLNX_DriverEthCapabilities) SetPropertyNdkDebugFlags_Min(value uint32) (err error) {
-	return instance.SetProperty("NdkDebugFlags_Min", value)
+	return instance.SetProperty("NdkDebugFlags_Min", (value))
 }
 
 // GetNdkDebugFlags_Min gets the value of NdkDebugFlags_Min for the instance
@@ -130,16 +159,25 @@ func (instance *MLNX_DriverEthCapabilities) GetPropertyNdkDebugFlags_Min() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNdkDebugLevel_Max sets the value of NdkDebugLevel_Max for the instance
 func (instance *MLNX_DriverEthCapabilities) SetPropertyNdkDebugLevel_Max(value uint32) (err error) {
-	return instance.SetProperty("NdkDebugLevel_Max", value)
+	return instance.SetProperty("NdkDebugLevel_Max", (value))
 }
 
 // GetNdkDebugLevel_Max gets the value of NdkDebugLevel_Max for the instance
@@ -148,16 +186,25 @@ func (instance *MLNX_DriverEthCapabilities) GetPropertyNdkDebugLevel_Max() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNdkDebugLevel_Min sets the value of NdkDebugLevel_Min for the instance
 func (instance *MLNX_DriverEthCapabilities) SetPropertyNdkDebugLevel_Min(value uint32) (err error) {
-	return instance.SetProperty("NdkDebugLevel_Min", value)
+	return instance.SetProperty("NdkDebugLevel_Min", (value))
 }
 
 // GetNdkDebugLevel_Min gets the value of NdkDebugLevel_Min for the instance
@@ -166,9 +213,18 @@ func (instance *MLNX_DriverEthCapabilities) GetPropertyNdkDebugLevel_Min() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

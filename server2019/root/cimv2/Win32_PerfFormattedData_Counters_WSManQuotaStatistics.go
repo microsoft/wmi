@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_WSManQuotaStatistics struct
@@ -70,7 +72,7 @@ func NewWin32_PerfFormattedData_Counters_WSManQuotaStatisticsEx6(hostName string
 
 // SetActiveOperations sets the value of ActiveOperations for the instance
 func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) SetPropertyActiveOperations(value uint32) (err error) {
-	return instance.SetProperty("ActiveOperations", value)
+	return instance.SetProperty("ActiveOperations", (value))
 }
 
 // GetActiveOperations gets the value of ActiveOperations for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActiveShells sets the value of ActiveShells for the instance
 func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) SetPropertyActiveShells(value uint32) (err error) {
-	return instance.SetProperty("ActiveShells", value)
+	return instance.SetProperty("ActiveShells", (value))
 }
 
 // GetActiveShells gets the value of ActiveShells for the instance
@@ -97,16 +108,25 @@ func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActiveUsers sets the value of ActiveUsers for the instance
 func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) SetPropertyActiveUsers(value uint32) (err error) {
-	return instance.SetProperty("ActiveUsers", value)
+	return instance.SetProperty("ActiveUsers", (value))
 }
 
 // GetActiveUsers gets the value of ActiveUsers for the instance
@@ -115,16 +135,25 @@ func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessID sets the value of ProcessID for the instance
 func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) SetPropertyProcessID(value uint32) (err error) {
-	return instance.SetProperty("ProcessID", value)
+	return instance.SetProperty("ProcessID", (value))
 }
 
 // GetProcessID gets the value of ProcessID for the instance
@@ -133,16 +162,25 @@ func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSystemQuotaViolationsPerSecond sets the value of SystemQuotaViolationsPerSecond for the instance
 func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) SetPropertySystemQuotaViolationsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("SystemQuotaViolationsPerSecond", value)
+	return instance.SetProperty("SystemQuotaViolationsPerSecond", (value))
 }
 
 // GetSystemQuotaViolationsPerSecond gets the value of SystemQuotaViolationsPerSecond for the instance
@@ -151,16 +189,25 @@ func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalRequestsPerSecond sets the value of TotalRequestsPerSecond for the instance
 func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) SetPropertyTotalRequestsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("TotalRequestsPerSecond", value)
+	return instance.SetProperty("TotalRequestsPerSecond", (value))
 }
 
 // GetTotalRequestsPerSecond gets the value of TotalRequestsPerSecond for the instance
@@ -169,16 +216,25 @@ func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUserQuotaViolationsPerSecond sets the value of UserQuotaViolationsPerSecond for the instance
 func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) SetPropertyUserQuotaViolationsPerSecond(value uint32) (err error) {
-	return instance.SetProperty("UserQuotaViolationsPerSecond", value)
+	return instance.SetProperty("UserQuotaViolationsPerSecond", (value))
 }
 
 // GetUserQuotaViolationsPerSecond gets the value of UserQuotaViolationsPerSecond for the instance
@@ -187,9 +243,18 @@ func (instance *Win32_PerfFormattedData_Counters_WSManQuotaStatistics) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

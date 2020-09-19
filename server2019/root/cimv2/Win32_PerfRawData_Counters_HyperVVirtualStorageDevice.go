@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_HyperVVirtualStorageDevice struct
@@ -118,7 +120,7 @@ func NewWin32_PerfRawData_Counters_HyperVVirtualStorageDeviceEx6(hostName string
 
 // SetAdapterOpenChannelCount sets the value of AdapterOpenChannelCount for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyAdapterOpenChannelCount(value uint32) (err error) {
-	return instance.SetProperty("AdapterOpenChannelCount", value)
+	return instance.SetProperty("AdapterOpenChannelCount", (value))
 }
 
 // GetAdapterOpenChannelCount gets the value of AdapterOpenChannelCount for the instance
@@ -127,16 +129,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetByteQuotaReplenishmentRate sets the value of ByteQuotaReplenishmentRate for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyByteQuotaReplenishmentRate(value uint64) (err error) {
-	return instance.SetProperty("ByteQuotaReplenishmentRate", value)
+	return instance.SetProperty("ByteQuotaReplenishmentRate", (value))
 }
 
 // GetByteQuotaReplenishmentRate gets the value of ByteQuotaReplenishmentRate for the instance
@@ -145,16 +156,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetErrorCount sets the value of ErrorCount for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyErrorCount(value uint32) (err error) {
-	return instance.SetProperty("ErrorCount", value)
+	return instance.SetProperty("ErrorCount", (value))
 }
 
 // GetErrorCount gets the value of ErrorCount for the instance
@@ -163,16 +183,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFlushCount sets the value of FlushCount for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyFlushCount(value uint32) (err error) {
-	return instance.SetProperty("FlushCount", value)
+	return instance.SetProperty("FlushCount", (value))
 }
 
 // GetFlushCount gets the value of FlushCount for the instance
@@ -181,16 +210,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIoQuotaReplenishmentRate sets the value of IoQuotaReplenishmentRate for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyIoQuotaReplenishmentRate(value uint64) (err error) {
-	return instance.SetProperty("IoQuotaReplenishmentRate", value)
+	return instance.SetProperty("IoQuotaReplenishmentRate", (value))
 }
 
 // GetIoQuotaReplenishmentRate gets the value of IoQuotaReplenishmentRate for the instance
@@ -199,16 +237,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLatency sets the value of Latency for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyLatency(value uint32) (err error) {
-	return instance.SetProperty("Latency", value)
+	return instance.SetProperty("Latency", (value))
 }
 
 // GetLatency gets the value of Latency for the instance
@@ -217,16 +264,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLatency_Base sets the value of Latency_Base for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyLatency_Base(value uint32) (err error) {
-	return instance.SetProperty("Latency_Base", value)
+	return instance.SetProperty("Latency_Base", (value))
 }
 
 // GetLatency_Base gets the value of Latency_Base for the instance
@@ -235,16 +291,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLowerLatency sets the value of LowerLatency for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyLowerLatency(value uint32) (err error) {
-	return instance.SetProperty("LowerLatency", value)
+	return instance.SetProperty("LowerLatency", (value))
 }
 
 // GetLowerLatency gets the value of LowerLatency for the instance
@@ -253,16 +318,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLowerLatency_Base sets the value of LowerLatency_Base for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyLowerLatency_Base(value uint32) (err error) {
-	return instance.SetProperty("LowerLatency_Base", value)
+	return instance.SetProperty("LowerLatency_Base", (value))
 }
 
 // GetLowerLatency_Base gets the value of LowerLatency_Base for the instance
@@ -271,16 +345,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLowerQueueLength sets the value of LowerQueueLength for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyLowerQueueLength(value uint64) (err error) {
-	return instance.SetProperty("LowerQueueLength", value)
+	return instance.SetProperty("LowerQueueLength", (value))
 }
 
 // GetLowerQueueLength gets the value of LowerQueueLength for the instance
@@ -289,16 +372,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaximumAdapterWorkerCount sets the value of MaximumAdapterWorkerCount for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyMaximumAdapterWorkerCount(value uint32) (err error) {
-	return instance.SetProperty("MaximumAdapterWorkerCount", value)
+	return instance.SetProperty("MaximumAdapterWorkerCount", (value))
 }
 
 // GetMaximumAdapterWorkerCount gets the value of MaximumAdapterWorkerCount for the instance
@@ -307,16 +399,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumBandwidth sets the value of MaximumBandwidth for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyMaximumBandwidth(value uint64) (err error) {
-	return instance.SetProperty("MaximumBandwidth", value)
+	return instance.SetProperty("MaximumBandwidth", (value))
 }
 
 // GetMaximumBandwidth gets the value of MaximumBandwidth for the instance
@@ -325,16 +426,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaximumIORate sets the value of MaximumIORate for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyMaximumIORate(value uint64) (err error) {
-	return instance.SetProperty("MaximumIORate", value)
+	return instance.SetProperty("MaximumIORate", (value))
 }
 
 // GetMaximumIORate gets the value of MaximumIORate for the instance
@@ -343,16 +453,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinimumIORate sets the value of MinimumIORate for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyMinimumIORate(value uint64) (err error) {
-	return instance.SetProperty("MinimumIORate", value)
+	return instance.SetProperty("MinimumIORate", (value))
 }
 
 // GetMinimumIORate gets the value of MinimumIORate for the instance
@@ -361,16 +480,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNormalizedThroughput sets the value of NormalizedThroughput for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyNormalizedThroughput(value uint64) (err error) {
-	return instance.SetProperty("NormalizedThroughput", value)
+	return instance.SetProperty("NormalizedThroughput", (value))
 }
 
 // GetNormalizedThroughput gets the value of NormalizedThroughput for the instance
@@ -379,16 +507,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetQueueLength sets the value of QueueLength for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyQueueLength(value uint64) (err error) {
-	return instance.SetProperty("QueueLength", value)
+	return instance.SetProperty("QueueLength", (value))
 }
 
 // GetQueueLength gets the value of QueueLength for the instance
@@ -397,16 +534,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadBytesPersec sets the value of ReadBytesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersec", value)
+	return instance.SetProperty("ReadBytesPersec", (value))
 }
 
 // GetReadBytesPersec gets the value of ReadBytesPersec for the instance
@@ -415,16 +561,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadCount sets the value of ReadCount for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyReadCount(value uint32) (err error) {
-	return instance.SetProperty("ReadCount", value)
+	return instance.SetProperty("ReadCount", (value))
 }
 
 // GetReadCount gets the value of ReadCount for the instance
@@ -433,16 +588,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadOperationsPerSec sets the value of ReadOperationsPerSec for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyReadOperationsPerSec(value uint32) (err error) {
-	return instance.SetProperty("ReadOperationsPerSec", value)
+	return instance.SetProperty("ReadOperationsPerSec", (value))
 }
 
 // GetReadOperationsPerSec gets the value of ReadOperationsPerSec for the instance
@@ -451,16 +615,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThroughput sets the value of Throughput for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyThroughput(value uint32) (err error) {
-	return instance.SetProperty("Throughput", value)
+	return instance.SetProperty("Throughput", (value))
 }
 
 // GetThroughput gets the value of Throughput for the instance
@@ -469,16 +642,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteBytesPersec sets the value of WriteBytesPersec for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBytesPersec", value)
+	return instance.SetProperty("WriteBytesPersec", (value))
 }
 
 // GetWriteBytesPersec gets the value of WriteBytesPersec for the instance
@@ -487,16 +669,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCount sets the value of WriteCount for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyWriteCount(value uint32) (err error) {
-	return instance.SetProperty("WriteCount", value)
+	return instance.SetProperty("WriteCount", (value))
 }
 
 // GetWriteCount gets the value of WriteCount for the instance
@@ -505,16 +696,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteOperationsPerSec sets the value of WriteOperationsPerSec for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) SetPropertyWriteOperationsPerSec(value uint32) (err error) {
-	return instance.SetProperty("WriteOperationsPerSec", value)
+	return instance.SetProperty("WriteOperationsPerSec", (value))
 }
 
 // GetWriteOperationsPerSec gets the value of WriteOperationsPerSec for the instance
@@ -523,9 +723,18 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualStorageDevice) GetProper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

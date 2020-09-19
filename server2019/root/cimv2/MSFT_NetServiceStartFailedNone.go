@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetServiceStartFailedNone struct
@@ -55,7 +57,7 @@ func NewMSFT_NetServiceStartFailedNoneEx6(hostName string,
 
 // SetNonExistingService sets the value of NonExistingService for the instance
 func (instance *MSFT_NetServiceStartFailedNone) SetPropertyNonExistingService(value string) (err error) {
-	return instance.SetProperty("NonExistingService", value)
+	return instance.SetProperty("NonExistingService", (value))
 }
 
 // GetNonExistingService gets the value of NonExistingService for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_NetServiceStartFailedNone) GetPropertyNonExistingService() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetService sets the value of Service for the instance
 func (instance *MSFT_NetServiceStartFailedNone) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_NetServiceStartFailedNone) GetPropertyService() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

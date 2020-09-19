@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData struct
@@ -70,7 +72,7 @@ func NewMSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingDataEx6(hostName stri
 
 // SetEncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre sets the value of EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre for the instance
 func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) SetPropertyEncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre(value MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities) (err error) {
-	return instance.SetProperty("EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre", value)
+	return instance.SetProperty("EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre", (value))
 }
 
 // GetEncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre gets the value of EncapsulatedPacketTaskOffloadHardwareCapabilitiesNvgre for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilities(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan sets the value of EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan for the instance
 func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) SetPropertyEncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan(value MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx) (err error) {
-	return instance.SetProperty("EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan", value)
+	return instance.SetProperty("EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan", (value))
 }
 
 // GetEncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan gets the value of EncapsulatedPacketTaskOffloadHardwareCapabilitiesVxlan for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterEncapsulatedPacketTaskOffloadCapabilitiesEx(valuetmp)
+
 	return
 }
 
 // SetEncapsulationType sets the value of EncapsulationType for the instance
 func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) SetPropertyEncapsulationType(value uint16) (err error) {
-	return instance.SetProperty("EncapsulationType", value)
+	return instance.SetProperty("EncapsulationType", (value))
 }
 
 // GetEncapsulationType gets the value of EncapsulationType for the instance
@@ -115,16 +135,25 @@ func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIsVxlanUDPPortConfigurable sets the value of IsVxlanUDPPortConfigurable for the instance
 func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) SetPropertyIsVxlanUDPPortConfigurable(value bool) (err error) {
-	return instance.SetProperty("IsVxlanUDPPortConfigurable", value)
+	return instance.SetProperty("IsVxlanUDPPortConfigurable", (value))
 }
 
 // GetIsVxlanUDPPortConfigurable gets the value of IsVxlanUDPPortConfigurable for the instance
@@ -133,16 +162,25 @@ func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNvgreEncapsulatedPacketTaskOffloadEnabled sets the value of NvgreEncapsulatedPacketTaskOffloadEnabled for the instance
 func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) SetPropertyNvgreEncapsulatedPacketTaskOffloadEnabled(value bool) (err error) {
-	return instance.SetProperty("NvgreEncapsulatedPacketTaskOffloadEnabled", value)
+	return instance.SetProperty("NvgreEncapsulatedPacketTaskOffloadEnabled", (value))
 }
 
 // GetNvgreEncapsulatedPacketTaskOffloadEnabled gets the value of NvgreEncapsulatedPacketTaskOffloadEnabled for the instance
@@ -151,16 +189,25 @@ func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVxlanEncapsulatedPacketTaskOffloadEnabled sets the value of VxlanEncapsulatedPacketTaskOffloadEnabled for the instance
 func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) SetPropertyVxlanEncapsulatedPacketTaskOffloadEnabled(value bool) (err error) {
-	return instance.SetProperty("VxlanEncapsulatedPacketTaskOffloadEnabled", value)
+	return instance.SetProperty("VxlanEncapsulatedPacketTaskOffloadEnabled", (value))
 }
 
 // GetVxlanEncapsulatedPacketTaskOffloadEnabled gets the value of VxlanEncapsulatedPacketTaskOffloadEnabled for the instance
@@ -169,16 +216,25 @@ func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVxlanUDPPortNumber sets the value of VxlanUDPPortNumber for the instance
 func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) SetPropertyVxlanUDPPortNumber(value uint16) (err error) {
-	return instance.SetProperty("VxlanUDPPortNumber", value)
+	return instance.SetProperty("VxlanUDPPortNumber", (value))
 }
 
 // GetVxlanUDPPortNumber gets the value of VxlanUDPPortNumber for the instance
@@ -187,10 +243,19 @@ func (instance *MSFT_NetAdapterEncapsulatedPacketTaskOffloadSettingData) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

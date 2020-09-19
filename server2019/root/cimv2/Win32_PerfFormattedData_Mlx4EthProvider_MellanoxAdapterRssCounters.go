@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters struct
@@ -133,7 +135,7 @@ func NewWin32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCountersEx6(ho
 
 // SetEncapsulatedNonRssIPv4Only sets the value of EncapsulatedNonRssIPv4Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedNonRssIPv4Only(value uint64) (err error) {
-	return instance.SetProperty("EncapsulatedNonRssIPv4Only", value)
+	return instance.SetProperty("EncapsulatedNonRssIPv4Only", (value))
 }
 
 // GetEncapsulatedNonRssIPv4Only gets the value of EncapsulatedNonRssIPv4Only for the instance
@@ -142,16 +144,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedNonRssIPv4PerTcp sets the value of EncapsulatedNonRssIPv4PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedNonRssIPv4PerTcp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedNonRssIPv4PerTcp", value)
+	return instance.SetProperty("EncapsulatedNonRssIPv4PerTcp", (value))
 }
 
 // GetEncapsulatedNonRssIPv4PerTcp gets the value of EncapsulatedNonRssIPv4PerTcp for the instance
@@ -160,16 +171,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedNonRssIPv4PerUdp sets the value of EncapsulatedNonRssIPv4PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedNonRssIPv4PerUdp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedNonRssIPv4PerUdp", value)
+	return instance.SetProperty("EncapsulatedNonRssIPv4PerUdp", (value))
 }
 
 // GetEncapsulatedNonRssIPv4PerUdp gets the value of EncapsulatedNonRssIPv4PerUdp for the instance
@@ -178,16 +198,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedNonRssIPv6Only sets the value of EncapsulatedNonRssIPv6Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedNonRssIPv6Only(value uint64) (err error) {
-	return instance.SetProperty("EncapsulatedNonRssIPv6Only", value)
+	return instance.SetProperty("EncapsulatedNonRssIPv6Only", (value))
 }
 
 // GetEncapsulatedNonRssIPv6Only gets the value of EncapsulatedNonRssIPv6Only for the instance
@@ -196,16 +225,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedNonRssIPv6PerTcp sets the value of EncapsulatedNonRssIPv6PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedNonRssIPv6PerTcp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedNonRssIPv6PerTcp", value)
+	return instance.SetProperty("EncapsulatedNonRssIPv6PerTcp", (value))
 }
 
 // GetEncapsulatedNonRssIPv6PerTcp gets the value of EncapsulatedNonRssIPv6PerTcp for the instance
@@ -214,16 +252,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedNonRssIPv6PerUdp sets the value of EncapsulatedNonRssIPv6PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedNonRssIPv6PerUdp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedNonRssIPv6PerUdp", value)
+	return instance.SetProperty("EncapsulatedNonRssIPv6PerUdp", (value))
 }
 
 // GetEncapsulatedNonRssIPv6PerUdp gets the value of EncapsulatedNonRssIPv6PerUdp for the instance
@@ -232,16 +279,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedNonRssMisc sets the value of EncapsulatedNonRssMisc for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedNonRssMisc(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedNonRssMisc", value)
+	return instance.SetProperty("EncapsulatedNonRssMisc", (value))
 }
 
 // GetEncapsulatedNonRssMisc gets the value of EncapsulatedNonRssMisc for the instance
@@ -250,16 +306,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedRssIPv4Only sets the value of EncapsulatedRssIPv4Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedRssIPv4Only(value uint64) (err error) {
-	return instance.SetProperty("EncapsulatedRssIPv4Only", value)
+	return instance.SetProperty("EncapsulatedRssIPv4Only", (value))
 }
 
 // GetEncapsulatedRssIPv4Only gets the value of EncapsulatedRssIPv4Only for the instance
@@ -268,16 +333,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedRssIPv4PerTcp sets the value of EncapsulatedRssIPv4PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedRssIPv4PerTcp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedRssIPv4PerTcp", value)
+	return instance.SetProperty("EncapsulatedRssIPv4PerTcp", (value))
 }
 
 // GetEncapsulatedRssIPv4PerTcp gets the value of EncapsulatedRssIPv4PerTcp for the instance
@@ -286,16 +360,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedRssIPv4PerUdp sets the value of EncapsulatedRssIPv4PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedRssIPv4PerUdp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedRssIPv4PerUdp", value)
+	return instance.SetProperty("EncapsulatedRssIPv4PerUdp", (value))
 }
 
 // GetEncapsulatedRssIPv4PerUdp gets the value of EncapsulatedRssIPv4PerUdp for the instance
@@ -304,16 +387,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedRssIPv6Only sets the value of EncapsulatedRssIPv6Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedRssIPv6Only(value uint64) (err error) {
-	return instance.SetProperty("EncapsulatedRssIPv6Only", value)
+	return instance.SetProperty("EncapsulatedRssIPv6Only", (value))
 }
 
 // GetEncapsulatedRssIPv6Only gets the value of EncapsulatedRssIPv6Only for the instance
@@ -322,16 +414,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedRssIPv6PerTcp sets the value of EncapsulatedRssIPv6PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedRssIPv6PerTcp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedRssIPv6PerTcp", value)
+	return instance.SetProperty("EncapsulatedRssIPv6PerTcp", (value))
 }
 
 // GetEncapsulatedRssIPv6PerTcp gets the value of EncapsulatedRssIPv6PerTcp for the instance
@@ -340,16 +441,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedRssIPv6PerUdp sets the value of EncapsulatedRssIPv6PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedRssIPv6PerUdp(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedRssIPv6PerUdp", value)
+	return instance.SetProperty("EncapsulatedRssIPv6PerUdp", (value))
 }
 
 // GetEncapsulatedRssIPv6PerUdp gets the value of EncapsulatedRssIPv6PerUdp for the instance
@@ -358,16 +468,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncapsulatedRssMisc sets the value of EncapsulatedRssMisc for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyEncapsulatedRssMisc(value uint32) (err error) {
-	return instance.SetProperty("EncapsulatedRssMisc", value)
+	return instance.SetProperty("EncapsulatedRssMisc", (value))
 }
 
 // GetEncapsulatedRssMisc gets the value of EncapsulatedRssMisc for the instance
@@ -376,16 +495,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonRssIPv4Only sets the value of NonRssIPv4Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyNonRssIPv4Only(value uint64) (err error) {
-	return instance.SetProperty("NonRssIPv4Only", value)
+	return instance.SetProperty("NonRssIPv4Only", (value))
 }
 
 // GetNonRssIPv4Only gets the value of NonRssIPv4Only for the instance
@@ -394,16 +522,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonRssIPv4PerTcp sets the value of NonRssIPv4PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyNonRssIPv4PerTcp(value uint32) (err error) {
-	return instance.SetProperty("NonRssIPv4PerTcp", value)
+	return instance.SetProperty("NonRssIPv4PerTcp", (value))
 }
 
 // GetNonRssIPv4PerTcp gets the value of NonRssIPv4PerTcp for the instance
@@ -412,16 +549,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonRssIPv4PerUdp sets the value of NonRssIPv4PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyNonRssIPv4PerUdp(value uint32) (err error) {
-	return instance.SetProperty("NonRssIPv4PerUdp", value)
+	return instance.SetProperty("NonRssIPv4PerUdp", (value))
 }
 
 // GetNonRssIPv4PerUdp gets the value of NonRssIPv4PerUdp for the instance
@@ -430,16 +576,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonRssIPv6Only sets the value of NonRssIPv6Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyNonRssIPv6Only(value uint64) (err error) {
-	return instance.SetProperty("NonRssIPv6Only", value)
+	return instance.SetProperty("NonRssIPv6Only", (value))
 }
 
 // GetNonRssIPv6Only gets the value of NonRssIPv6Only for the instance
@@ -448,16 +603,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNonRssIPv6PerTcp sets the value of NonRssIPv6PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyNonRssIPv6PerTcp(value uint32) (err error) {
-	return instance.SetProperty("NonRssIPv6PerTcp", value)
+	return instance.SetProperty("NonRssIPv6PerTcp", (value))
 }
 
 // GetNonRssIPv6PerTcp gets the value of NonRssIPv6PerTcp for the instance
@@ -466,16 +630,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonRssIPv6PerUdp sets the value of NonRssIPv6PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyNonRssIPv6PerUdp(value uint32) (err error) {
-	return instance.SetProperty("NonRssIPv6PerUdp", value)
+	return instance.SetProperty("NonRssIPv6PerUdp", (value))
 }
 
 // GetNonRssIPv6PerUdp gets the value of NonRssIPv6PerUdp for the instance
@@ -484,16 +657,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNonRssMisc sets the value of NonRssMisc for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyNonRssMisc(value uint32) (err error) {
-	return instance.SetProperty("NonRssMisc", value)
+	return instance.SetProperty("NonRssMisc", (value))
 }
 
 // GetNonRssMisc gets the value of NonRssMisc for the instance
@@ -502,16 +684,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRssIPv4Only sets the value of RssIPv4Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyRssIPv4Only(value uint64) (err error) {
-	return instance.SetProperty("RssIPv4Only", value)
+	return instance.SetProperty("RssIPv4Only", (value))
 }
 
 // GetRssIPv4Only gets the value of RssIPv4Only for the instance
@@ -520,16 +711,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRssIPv4PerTcp sets the value of RssIPv4PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyRssIPv4PerTcp(value uint32) (err error) {
-	return instance.SetProperty("RssIPv4PerTcp", value)
+	return instance.SetProperty("RssIPv4PerTcp", (value))
 }
 
 // GetRssIPv4PerTcp gets the value of RssIPv4PerTcp for the instance
@@ -538,16 +738,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRssIPv4PerUdp sets the value of RssIPv4PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyRssIPv4PerUdp(value uint32) (err error) {
-	return instance.SetProperty("RssIPv4PerUdp", value)
+	return instance.SetProperty("RssIPv4PerUdp", (value))
 }
 
 // GetRssIPv4PerUdp gets the value of RssIPv4PerUdp for the instance
@@ -556,16 +765,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRssIPv6Only sets the value of RssIPv6Only for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyRssIPv6Only(value uint64) (err error) {
-	return instance.SetProperty("RssIPv6Only", value)
+	return instance.SetProperty("RssIPv6Only", (value))
 }
 
 // GetRssIPv6Only gets the value of RssIPv6Only for the instance
@@ -574,16 +792,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRssIPv6PerTcp sets the value of RssIPv6PerTcp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyRssIPv6PerTcp(value uint32) (err error) {
-	return instance.SetProperty("RssIPv6PerTcp", value)
+	return instance.SetProperty("RssIPv6PerTcp", (value))
 }
 
 // GetRssIPv6PerTcp gets the value of RssIPv6PerTcp for the instance
@@ -592,16 +819,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRssIPv6PerUdp sets the value of RssIPv6PerUdp for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyRssIPv6PerUdp(value uint32) (err error) {
-	return instance.SetProperty("RssIPv6PerUdp", value)
+	return instance.SetProperty("RssIPv6PerUdp", (value))
 }
 
 // GetRssIPv6PerUdp gets the value of RssIPv6PerUdp for the instance
@@ -610,16 +846,25 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRssMisc sets the value of RssMisc for the instance
 func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounters) SetPropertyRssMisc(value uint32) (err error) {
-	return instance.SetProperty("RssMisc", value)
+	return instance.SetProperty("RssMisc", (value))
 }
 
 // GetRssMisc gets the value of RssMisc for the instance
@@ -628,9 +873,18 @@ func (instance *Win32_PerfFormattedData_Mlx4EthProvider_MellanoxAdapterRssCounte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

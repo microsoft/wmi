@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventSession struct
@@ -70,7 +72,7 @@ func NewMSFT_NetEventSessionEx6(hostName string,
 
 // SetCaptureMode sets the value of CaptureMode for the instance
 func (instance *MSFT_NetEventSession) SetPropertyCaptureMode(value uint8) (err error) {
-	return instance.SetProperty("CaptureMode", value)
+	return instance.SetProperty("CaptureMode", (value))
 }
 
 // GetCaptureMode gets the value of CaptureMode for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_NetEventSession) GetPropertyCaptureMode() (value uint8, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetGuid sets the value of Guid for the instance
 func (instance *MSFT_NetEventSession) SetPropertyGuid(value string) (err error) {
-	return instance.SetProperty("Guid", value)
+	return instance.SetProperty("Guid", (value))
 }
 
 // GetGuid gets the value of Guid for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_NetEventSession) GetPropertyGuid() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocalFilePath sets the value of LocalFilePath for the instance
 func (instance *MSFT_NetEventSession) SetPropertyLocalFilePath(value string) (err error) {
-	return instance.SetProperty("LocalFilePath", value)
+	return instance.SetProperty("LocalFilePath", (value))
 }
 
 // GetLocalFilePath gets the value of LocalFilePath for the instance
@@ -115,16 +135,25 @@ func (instance *MSFT_NetEventSession) GetPropertyLocalFilePath() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxFileSize sets the value of MaxFileSize for the instance
 func (instance *MSFT_NetEventSession) SetPropertyMaxFileSize(value uint32) (err error) {
-	return instance.SetProperty("MaxFileSize", value)
+	return instance.SetProperty("MaxFileSize", (value))
 }
 
 // GetMaxFileSize gets the value of MaxFileSize for the instance
@@ -133,16 +162,25 @@ func (instance *MSFT_NetEventSession) GetPropertyMaxFileSize() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxNumberOfBuffers sets the value of MaxNumberOfBuffers for the instance
 func (instance *MSFT_NetEventSession) SetPropertyMaxNumberOfBuffers(value uint8) (err error) {
-	return instance.SetProperty("MaxNumberOfBuffers", value)
+	return instance.SetProperty("MaxNumberOfBuffers", (value))
 }
 
 // GetMaxNumberOfBuffers gets the value of MaxNumberOfBuffers for the instance
@@ -151,16 +189,25 @@ func (instance *MSFT_NetEventSession) GetPropertyMaxNumberOfBuffers() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSessionStatus sets the value of SessionStatus for the instance
 func (instance *MSFT_NetEventSession) SetPropertySessionStatus(value uint8) (err error) {
-	return instance.SetProperty("SessionStatus", value)
+	return instance.SetProperty("SessionStatus", (value))
 }
 
 // GetSessionStatus gets the value of SessionStatus for the instance
@@ -169,16 +216,25 @@ func (instance *MSFT_NetEventSession) GetPropertySessionStatus() (value uint8, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetTraceBufferSize sets the value of TraceBufferSize for the instance
 func (instance *MSFT_NetEventSession) SetPropertyTraceBufferSize(value uint32) (err error) {
-	return instance.SetProperty("TraceBufferSize", value)
+	return instance.SetProperty("TraceBufferSize", (value))
 }
 
 // GetTraceBufferSize gets the value of TraceBufferSize for the instance
@@ -187,10 +243,19 @@ func (instance *MSFT_NetEventSession) GetPropertyTraceBufferSize() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

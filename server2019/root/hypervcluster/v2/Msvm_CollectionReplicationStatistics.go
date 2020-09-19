@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_CollectionReplicationStatistics struct
@@ -91,7 +93,7 @@ func NewMsvm_CollectionReplicationStatisticsEx6(hostName string,
 
 // SetApplicationConsistentSnapshotFailureCount sets the value of ApplicationConsistentSnapshotFailureCount for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyApplicationConsistentSnapshotFailureCount(value uint32) (err error) {
-	return instance.SetProperty("ApplicationConsistentSnapshotFailureCount", value)
+	return instance.SetProperty("ApplicationConsistentSnapshotFailureCount", (value))
 }
 
 // GetApplicationConsistentSnapshotFailureCount gets the value of ApplicationConsistentSnapshotFailureCount for the instance
@@ -100,16 +102,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyApplicationCons
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEndStatisticTime sets the value of EndStatisticTime for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyEndStatisticTime(value string) (err error) {
-	return instance.SetProperty("EndStatisticTime", value)
+	return instance.SetProperty("EndStatisticTime", (value))
 }
 
 // GetEndStatisticTime gets the value of EndStatisticTime for the instance
@@ -118,16 +129,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyEndStatisticTim
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastTestFailoverTime sets the value of LastTestFailoverTime for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyLastTestFailoverTime(value string) (err error) {
-	return instance.SetProperty("LastTestFailoverTime", value)
+	return instance.SetProperty("LastTestFailoverTime", (value))
 }
 
 // GetLastTestFailoverTime gets the value of LastTestFailoverTime for the instance
@@ -136,16 +156,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyLastTestFailove
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastWALReplicationTime sets the value of LastWALReplicationTime for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyLastWALReplicationTime(value string) (err error) {
-	return instance.SetProperty("LastWALReplicationTime", value)
+	return instance.SetProperty("LastWALReplicationTime", (value))
 }
 
 // GetLastWALReplicationTime gets the value of LastWALReplicationTime for the instance
@@ -154,16 +183,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyLastWALReplicat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxReplicationLatency sets the value of MaxReplicationLatency for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyMaxReplicationLatency(value uint32) (err error) {
-	return instance.SetProperty("MaxReplicationLatency", value)
+	return instance.SetProperty("MaxReplicationLatency", (value))
 }
 
 // GetMaxReplicationLatency gets the value of MaxReplicationLatency for the instance
@@ -172,16 +210,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyMaxReplicationL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxReplicationSize sets the value of MaxReplicationSize for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyMaxReplicationSize(value uint64) (err error) {
-	return instance.SetProperty("MaxReplicationSize", value)
+	return instance.SetProperty("MaxReplicationSize", (value))
 }
 
 // GetMaxReplicationSize gets the value of MaxReplicationSize for the instance
@@ -190,16 +237,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyMaxReplicationS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkFailureCount sets the value of NetworkFailureCount for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyNetworkFailureCount(value uint32) (err error) {
-	return instance.SetProperty("NetworkFailureCount", value)
+	return instance.SetProperty("NetworkFailureCount", (value))
 }
 
 // GetNetworkFailureCount gets the value of NetworkFailureCount for the instance
@@ -208,16 +264,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyNetworkFailureC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPendingReplicationSize sets the value of PendingReplicationSize for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyPendingReplicationSize(value uint64) (err error) {
-	return instance.SetProperty("PendingReplicationSize", value)
+	return instance.SetProperty("PendingReplicationSize", (value))
 }
 
 // GetPendingReplicationSize gets the value of PendingReplicationSize for the instance
@@ -226,16 +291,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyPendingReplicat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReplicationFailureCount sets the value of ReplicationFailureCount for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyReplicationFailureCount(value uint32) (err error) {
-	return instance.SetProperty("ReplicationFailureCount", value)
+	return instance.SetProperty("ReplicationFailureCount", (value))
 }
 
 // GetReplicationFailureCount gets the value of ReplicationFailureCount for the instance
@@ -244,16 +318,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyReplicationFail
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReplicationHealth sets the value of ReplicationHealth for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyReplicationHealth(value uint32) (err error) {
-	return instance.SetProperty("ReplicationHealth", value)
+	return instance.SetProperty("ReplicationHealth", (value))
 }
 
 // GetReplicationHealth gets the value of ReplicationHealth for the instance
@@ -262,16 +345,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyReplicationHeal
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReplicationSize sets the value of ReplicationSize for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyReplicationSize(value uint64) (err error) {
-	return instance.SetProperty("ReplicationSize", value)
+	return instance.SetProperty("ReplicationSize", (value))
 }
 
 // GetReplicationSize gets the value of ReplicationSize for the instance
@@ -280,16 +372,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyReplicationSize
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReplicationWALMissCount sets the value of ReplicationWALMissCount for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyReplicationWALMissCount(value uint32) (err error) {
-	return instance.SetProperty("ReplicationWALMissCount", value)
+	return instance.SetProperty("ReplicationWALMissCount", (value))
 }
 
 // GetReplicationWALMissCount gets the value of ReplicationWALMissCount for the instance
@@ -298,16 +399,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyReplicationWALM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReplicationWALSuccessCount sets the value of ReplicationWALSuccessCount for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyReplicationWALSuccessCount(value uint32) (err error) {
-	return instance.SetProperty("ReplicationWALSuccessCount", value)
+	return instance.SetProperty("ReplicationWALSuccessCount", (value))
 }
 
 // GetReplicationWALSuccessCount gets the value of ReplicationWALSuccessCount for the instance
@@ -316,16 +426,25 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyReplicationWALS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStartStatisticTime sets the value of StartStatisticTime for the instance
 func (instance *Msvm_CollectionReplicationStatistics) SetPropertyStartStatisticTime(value string) (err error) {
-	return instance.SetProperty("StartStatisticTime", value)
+	return instance.SetProperty("StartStatisticTime", (value))
 }
 
 // GetStartStatisticTime gets the value of StartStatisticTime for the instance
@@ -334,9 +453,18 @@ func (instance *Msvm_CollectionReplicationStatistics) GetPropertyStartStatisticT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_RssProcessor struct
@@ -59,7 +61,7 @@ func NewMSFT_NetAdapter_RssProcessorEx6(hostName string,
 
 // SetPreferenceIndex sets the value of PreferenceIndex for the instance
 func (instance *MSFT_NetAdapter_RssProcessor) SetPropertyPreferenceIndex(value uint16) (err error) {
-	return instance.SetProperty("PreferenceIndex", value)
+	return instance.SetProperty("PreferenceIndex", (value))
 }
 
 // GetPreferenceIndex gets the value of PreferenceIndex for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_NetAdapter_RssProcessor) GetPropertyPreferenceIndex() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProcessorGroup sets the value of ProcessorGroup for the instance
 func (instance *MSFT_NetAdapter_RssProcessor) SetPropertyProcessorGroup(value uint16) (err error) {
-	return instance.SetProperty("ProcessorGroup", value)
+	return instance.SetProperty("ProcessorGroup", (value))
 }
 
 // GetProcessorGroup gets the value of ProcessorGroup for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_NetAdapter_RssProcessor) GetPropertyProcessorGroup() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProcessorNumber sets the value of ProcessorNumber for the instance
 func (instance *MSFT_NetAdapter_RssProcessor) SetPropertyProcessorNumber(value uint8) (err error) {
-	return instance.SetProperty("ProcessorNumber", value)
+	return instance.SetProperty("ProcessorNumber", (value))
 }
 
 // GetProcessorNumber gets the value of ProcessorNumber for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_NetAdapter_RssProcessor) GetPropertyProcessorNumber() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

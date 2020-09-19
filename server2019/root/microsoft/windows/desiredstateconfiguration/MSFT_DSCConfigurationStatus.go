@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
@@ -11,7 +11,9 @@ package desiredstateconfiguration
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DSCConfigurationStatus struct
@@ -110,7 +112,7 @@ func NewMSFT_DSCConfigurationStatusEx6(hostName string,
 
 // SetDurationInSeconds sets the value of DurationInSeconds for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyDurationInSeconds(value uint32) (err error) {
-	return instance.SetProperty("DurationInSeconds", value)
+	return instance.SetProperty("DurationInSeconds", (value))
 }
 
 // GetDurationInSeconds gets the value of DurationInSeconds for the instance
@@ -119,16 +121,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyDurationInSeconds() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetError sets the value of Error for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyError(value string) (err error) {
-	return instance.SetProperty("Error", value)
+	return instance.SetProperty("Error", (value))
 }
 
 // GetError gets the value of Error for the instance
@@ -137,16 +148,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyError() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHostName sets the value of HostName for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyHostName(value string) (err error) {
-	return instance.SetProperty("HostName", value)
+	return instance.SetProperty("HostName", (value))
 }
 
 // GetHostName gets the value of HostName for the instance
@@ -155,16 +175,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyHostName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPV4Addresses sets the value of IPV4Addresses for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyIPV4Addresses(value []string) (err error) {
-	return instance.SetProperty("IPV4Addresses", value)
+	return instance.SetProperty("IPV4Addresses", (value))
 }
 
 // GetIPV4Addresses gets the value of IPV4Addresses for the instance
@@ -173,16 +202,26 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyIPV4Addresses() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPV6Addresses sets the value of IPV6Addresses for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyIPV6Addresses(value []string) (err error) {
-	return instance.SetProperty("IPV6Addresses", value)
+	return instance.SetProperty("IPV6Addresses", (value))
 }
 
 // GetIPV6Addresses gets the value of IPV6Addresses for the instance
@@ -191,16 +230,26 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyIPV6Addresses() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetJobID sets the value of JobID for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyJobID(value string) (err error) {
-	return instance.SetProperty("JobID", value)
+	return instance.SetProperty("JobID", (value))
 }
 
 // GetJobID gets the value of JobID for the instance
@@ -209,16 +258,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyJobID() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLCMVersion sets the value of LCMVersion for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyLCMVersion(value string) (err error) {
-	return instance.SetProperty("LCMVersion", value)
+	return instance.SetProperty("LCMVersion", (value))
 }
 
 // GetLCMVersion gets the value of LCMVersion for the instance
@@ -227,16 +285,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyLCMVersion() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLocale sets the value of Locale for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyLocale(value string) (err error) {
-	return instance.SetProperty("Locale", value)
+	return instance.SetProperty("Locale", (value))
 }
 
 // GetLocale gets the value of Locale for the instance
@@ -245,16 +312,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyLocale() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMACAddresses sets the value of MACAddresses for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyMACAddresses(value []string) (err error) {
-	return instance.SetProperty("MACAddresses", value)
+	return instance.SetProperty("MACAddresses", (value))
 }
 
 // GetMACAddresses gets the value of MACAddresses for the instance
@@ -263,16 +339,26 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyMACAddresses() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMetaConfiguration sets the value of MetaConfiguration for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyMetaConfiguration(value MSFT_DSCMetaConfiguration) (err error) {
-	return instance.SetProperty("MetaConfiguration", value)
+	return instance.SetProperty("MetaConfiguration", (value))
 }
 
 // GetMetaConfiguration gets the value of MetaConfiguration for the instance
@@ -281,16 +367,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyMetaConfiguration() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_DSCMetaConfiguration)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_DSCMetaConfiguration)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_DSCMetaConfiguration is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_DSCMetaConfiguration(valuetmp)
+
 	return
 }
 
 // SetMetaData sets the value of MetaData for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyMetaData(value string) (err error) {
-	return instance.SetProperty("MetaData", value)
+	return instance.SetProperty("MetaData", (value))
 }
 
 // GetMetaData gets the value of MetaData for the instance
@@ -299,16 +394,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyMetaData() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMode sets the value of Mode for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyMode(value string) (err error) {
-	return instance.SetProperty("Mode", value)
+	return instance.SetProperty("Mode", (value))
 }
 
 // GetMode gets the value of Mode for the instance
@@ -317,16 +421,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyMode() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfResources sets the value of NumberOfResources for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyNumberOfResources(value uint32) (err error) {
-	return instance.SetProperty("NumberOfResources", value)
+	return instance.SetProperty("NumberOfResources", (value))
 }
 
 // GetNumberOfResources gets the value of NumberOfResources for the instance
@@ -335,16 +448,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyNumberOfResources() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRebootRequested sets the value of RebootRequested for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyRebootRequested(value bool) (err error) {
-	return instance.SetProperty("RebootRequested", value)
+	return instance.SetProperty("RebootRequested", (value))
 }
 
 // GetRebootRequested gets the value of RebootRequested for the instance
@@ -353,16 +475,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyRebootRequested() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetResourcesChanged sets the value of ResourcesChanged for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyResourcesChanged(value []MSFT_ResourceChanged) (err error) {
-	return instance.SetProperty("ResourcesChanged", value)
+	return instance.SetProperty("ResourcesChanged", (value))
 }
 
 // GetResourcesChanged gets the value of ResourcesChanged for the instance
@@ -371,16 +502,26 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyResourcesChanged() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_ResourceChanged)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_ResourceChanged)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_ResourceChanged is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_ResourceChanged(valuetmp))
+	}
+
 	return
 }
 
 // SetResourcesInDesiredState sets the value of ResourcesInDesiredState for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyResourcesInDesiredState(value []MSFT_ResourceInDesiredState) (err error) {
-	return instance.SetProperty("ResourcesInDesiredState", value)
+	return instance.SetProperty("ResourcesInDesiredState", (value))
 }
 
 // GetResourcesInDesiredState gets the value of ResourcesInDesiredState for the instance
@@ -389,16 +530,26 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyResourcesInDesiredState(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_ResourceInDesiredState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_ResourceInDesiredState)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_ResourceInDesiredState is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_ResourceInDesiredState(valuetmp))
+	}
+
 	return
 }
 
 // SetResourcesNotInDesiredState sets the value of ResourcesNotInDesiredState for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyResourcesNotInDesiredState(value []MSFT_ResourceNotInDesiredState) (err error) {
-	return instance.SetProperty("ResourcesNotInDesiredState", value)
+	return instance.SetProperty("ResourcesNotInDesiredState", (value))
 }
 
 // GetResourcesNotInDesiredState gets the value of ResourcesNotInDesiredState for the instance
@@ -407,16 +558,26 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyResourcesNotInDesiredSta
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_ResourceNotInDesiredState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_ResourceNotInDesiredState)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_ResourceNotInDesiredState is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_ResourceNotInDesiredState(valuetmp))
+	}
+
 	return
 }
 
 // SetStartDate sets the value of StartDate for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyStartDate(value string) (err error) {
-	return instance.SetProperty("StartDate", value)
+	return instance.SetProperty("StartDate", (value))
 }
 
 // GetStartDate gets the value of StartDate for the instance
@@ -425,16 +586,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyStartDate() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyStatus(value string) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -443,16 +613,25 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyStatus() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_DSCConfigurationStatus) SetPropertyType(value string) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -461,9 +640,18 @@ func (instance *MSFT_DSCConfigurationStatus) GetPropertyType() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

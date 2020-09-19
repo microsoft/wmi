@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DSCConfigurationOutputWriteProgress struct
@@ -64,7 +66,7 @@ func NewMSFT_DSCConfigurationOutputWriteProgressEx6(hostName string,
 
 // SetActivity sets the value of Activity for the instance
 func (instance *MSFT_DSCConfigurationOutputWriteProgress) SetPropertyActivity(value string) (err error) {
-	return instance.SetProperty("Activity", value)
+	return instance.SetProperty("Activity", (value))
 }
 
 // GetActivity gets the value of Activity for the instance
@@ -73,16 +75,25 @@ func (instance *MSFT_DSCConfigurationOutputWriteProgress) GetPropertyActivity() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCurrentOperation sets the value of CurrentOperation for the instance
 func (instance *MSFT_DSCConfigurationOutputWriteProgress) SetPropertyCurrentOperation(value string) (err error) {
-	return instance.SetProperty("CurrentOperation", value)
+	return instance.SetProperty("CurrentOperation", (value))
 }
 
 // GetCurrentOperation gets the value of CurrentOperation for the instance
@@ -91,16 +102,25 @@ func (instance *MSFT_DSCConfigurationOutputWriteProgress) GetPropertyCurrentOper
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPercentComplete sets the value of PercentComplete for the instance
 func (instance *MSFT_DSCConfigurationOutputWriteProgress) SetPropertyPercentComplete(value uint32) (err error) {
-	return instance.SetProperty("PercentComplete", value)
+	return instance.SetProperty("PercentComplete", (value))
 }
 
 // GetPercentComplete gets the value of PercentComplete for the instance
@@ -109,16 +129,25 @@ func (instance *MSFT_DSCConfigurationOutputWriteProgress) GetPropertyPercentComp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecondsRemaining sets the value of SecondsRemaining for the instance
 func (instance *MSFT_DSCConfigurationOutputWriteProgress) SetPropertySecondsRemaining(value uint32) (err error) {
-	return instance.SetProperty("SecondsRemaining", value)
+	return instance.SetProperty("SecondsRemaining", (value))
 }
 
 // GetSecondsRemaining gets the value of SecondsRemaining for the instance
@@ -127,16 +156,25 @@ func (instance *MSFT_DSCConfigurationOutputWriteProgress) GetPropertySecondsRema
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStatusDescription sets the value of StatusDescription for the instance
 func (instance *MSFT_DSCConfigurationOutputWriteProgress) SetPropertyStatusDescription(value string) (err error) {
-	return instance.SetProperty("StatusDescription", value)
+	return instance.SetProperty("StatusDescription", (value))
 }
 
 // GetStatusDescription gets the value of StatusDescription for the instance
@@ -145,9 +183,18 @@ func (instance *MSFT_DSCConfigurationOutputWriteProgress) GetPropertyStatusDescr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

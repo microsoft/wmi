@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetTCPConnection struct
@@ -64,7 +66,7 @@ func NewMSFT_NetTCPConnectionEx6(hostName string,
 
 // SetAppliedSetting sets the value of AppliedSetting for the instance
 func (instance *MSFT_NetTCPConnection) SetPropertyAppliedSetting(value uint8) (err error) {
-	return instance.SetProperty("AppliedSetting", value)
+	return instance.SetProperty("AppliedSetting", (value))
 }
 
 // GetAppliedSetting gets the value of AppliedSetting for the instance
@@ -73,16 +75,25 @@ func (instance *MSFT_NetTCPConnection) GetPropertyAppliedSetting() (value uint8,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetOffloadState sets the value of OffloadState for the instance
 func (instance *MSFT_NetTCPConnection) SetPropertyOffloadState(value uint8) (err error) {
-	return instance.SetProperty("OffloadState", value)
+	return instance.SetProperty("OffloadState", (value))
 }
 
 // GetOffloadState gets the value of OffloadState for the instance
@@ -91,16 +102,25 @@ func (instance *MSFT_NetTCPConnection) GetPropertyOffloadState() (value uint8, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetRemoteAddress sets the value of RemoteAddress for the instance
 func (instance *MSFT_NetTCPConnection) SetPropertyRemoteAddress(value string) (err error) {
-	return instance.SetProperty("RemoteAddress", value)
+	return instance.SetProperty("RemoteAddress", (value))
 }
 
 // GetRemoteAddress gets the value of RemoteAddress for the instance
@@ -109,16 +129,25 @@ func (instance *MSFT_NetTCPConnection) GetPropertyRemoteAddress() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemotePort sets the value of RemotePort for the instance
 func (instance *MSFT_NetTCPConnection) SetPropertyRemotePort(value uint16) (err error) {
-	return instance.SetProperty("RemotePort", value)
+	return instance.SetProperty("RemotePort", (value))
 }
 
 // GetRemotePort gets the value of RemotePort for the instance
@@ -127,16 +156,25 @@ func (instance *MSFT_NetTCPConnection) GetPropertyRemotePort() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_NetTCPConnection) SetPropertyState(value uint8) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -145,9 +183,18 @@ func (instance *MSFT_NetTCPConnection) GetPropertyState() (value uint8, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

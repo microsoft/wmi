@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
@@ -11,7 +11,9 @@ package hardware
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ManagedElement struct
@@ -59,7 +61,7 @@ func NewCIM_ManagedElementEx6(hostName string,
 
 // SetCaption sets the value of Caption for the instance
 func (instance *CIM_ManagedElement) SetPropertyCaption(value string) (err error) {
-	return instance.SetProperty("Caption", value)
+	return instance.SetProperty("Caption", (value))
 }
 
 // GetCaption gets the value of Caption for the instance
@@ -68,16 +70,25 @@ func (instance *CIM_ManagedElement) GetPropertyCaption() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *CIM_ManagedElement) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -86,16 +97,25 @@ func (instance *CIM_ManagedElement) GetPropertyDescription() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetElementName sets the value of ElementName for the instance
 func (instance *CIM_ManagedElement) SetPropertyElementName(value string) (err error) {
-	return instance.SetProperty("ElementName", value)
+	return instance.SetProperty("ElementName", (value))
 }
 
 // GetElementName gets the value of ElementName for the instance
@@ -104,9 +124,18 @@ func (instance *CIM_ManagedElement) GetPropertyElementName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

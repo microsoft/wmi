@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster
 //////////////////////////////////////////////
 package hypervcluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __MethodInvocationEvent struct
@@ -58,7 +60,7 @@ func New__MethodInvocationEventEx6(hostName string,
 
 // SetMethod sets the value of Method for the instance
 func (instance *__MethodInvocationEvent) SetPropertyMethod(value string) (err error) {
-	return instance.SetProperty("Method", value)
+	return instance.SetProperty("Method", (value))
 }
 
 // GetMethod gets the value of Method for the instance
@@ -67,16 +69,25 @@ func (instance *__MethodInvocationEvent) GetPropertyMethod() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParameters sets the value of Parameters for the instance
 func (instance *__MethodInvocationEvent) SetPropertyParameters(value interface{}) (err error) {
-	return instance.SetProperty("Parameters", value)
+	return instance.SetProperty("Parameters", (value))
 }
 
 // GetParameters gets the value of Parameters for the instance
@@ -85,16 +96,25 @@ func (instance *__MethodInvocationEvent) GetPropertyParameters() (value interfac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }
 
 // SetPreCall sets the value of PreCall for the instance
 func (instance *__MethodInvocationEvent) SetPropertyPreCall(value bool) (err error) {
-	return instance.SetProperty("PreCall", value)
+	return instance.SetProperty("PreCall", (value))
 }
 
 // GetPreCall gets the value of PreCall for the instance
@@ -103,9 +123,18 @@ func (instance *__MethodInvocationEvent) GetPropertyPreCall() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

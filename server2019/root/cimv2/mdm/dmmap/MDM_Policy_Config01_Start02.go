@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_Start02 struct
@@ -143,7 +145,7 @@ func NewMDM_Policy_Config01_Start02Ex6(hostName string,
 
 // SetAllowPinnedFolderDocuments sets the value of AllowPinnedFolderDocuments for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderDocuments(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderDocuments", value)
+	return instance.SetProperty("AllowPinnedFolderDocuments", (value))
 }
 
 // GetAllowPinnedFolderDocuments gets the value of AllowPinnedFolderDocuments for the instance
@@ -152,16 +154,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderDocumen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderDownloads sets the value of AllowPinnedFolderDownloads for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderDownloads(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderDownloads", value)
+	return instance.SetProperty("AllowPinnedFolderDownloads", (value))
 }
 
 // GetAllowPinnedFolderDownloads gets the value of AllowPinnedFolderDownloads for the instance
@@ -170,16 +181,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderDownloa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderFileExplorer sets the value of AllowPinnedFolderFileExplorer for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderFileExplorer(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderFileExplorer", value)
+	return instance.SetProperty("AllowPinnedFolderFileExplorer", (value))
 }
 
 // GetAllowPinnedFolderFileExplorer gets the value of AllowPinnedFolderFileExplorer for the instance
@@ -188,16 +208,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderFileExp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderHomeGroup sets the value of AllowPinnedFolderHomeGroup for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderHomeGroup(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderHomeGroup", value)
+	return instance.SetProperty("AllowPinnedFolderHomeGroup", (value))
 }
 
 // GetAllowPinnedFolderHomeGroup gets the value of AllowPinnedFolderHomeGroup for the instance
@@ -206,16 +235,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderHomeGro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderMusic sets the value of AllowPinnedFolderMusic for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderMusic(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderMusic", value)
+	return instance.SetProperty("AllowPinnedFolderMusic", (value))
 }
 
 // GetAllowPinnedFolderMusic gets the value of AllowPinnedFolderMusic for the instance
@@ -224,16 +262,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderMusic()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderNetwork sets the value of AllowPinnedFolderNetwork for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderNetwork(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderNetwork", value)
+	return instance.SetProperty("AllowPinnedFolderNetwork", (value))
 }
 
 // GetAllowPinnedFolderNetwork gets the value of AllowPinnedFolderNetwork for the instance
@@ -242,16 +289,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderNetwork
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderPersonalFolder sets the value of AllowPinnedFolderPersonalFolder for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderPersonalFolder(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderPersonalFolder", value)
+	return instance.SetProperty("AllowPinnedFolderPersonalFolder", (value))
 }
 
 // GetAllowPinnedFolderPersonalFolder gets the value of AllowPinnedFolderPersonalFolder for the instance
@@ -260,16 +316,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderPersona
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderPictures sets the value of AllowPinnedFolderPictures for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderPictures(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderPictures", value)
+	return instance.SetProperty("AllowPinnedFolderPictures", (value))
 }
 
 // GetAllowPinnedFolderPictures gets the value of AllowPinnedFolderPictures for the instance
@@ -278,16 +343,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderPicture
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderSettings sets the value of AllowPinnedFolderSettings for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderSettings(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderSettings", value)
+	return instance.SetProperty("AllowPinnedFolderSettings", (value))
 }
 
 // GetAllowPinnedFolderSettings gets the value of AllowPinnedFolderSettings for the instance
@@ -296,16 +370,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderSetting
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowPinnedFolderVideos sets the value of AllowPinnedFolderVideos for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyAllowPinnedFolderVideos(value int32) (err error) {
-	return instance.SetProperty("AllowPinnedFolderVideos", value)
+	return instance.SetProperty("AllowPinnedFolderVideos", (value))
 }
 
 // GetAllowPinnedFolderVideos gets the value of AllowPinnedFolderVideos for the instance
@@ -314,16 +397,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyAllowPinnedFolderVideos(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableContextMenus sets the value of DisableContextMenus for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyDisableContextMenus(value int32) (err error) {
-	return instance.SetProperty("DisableContextMenus", value)
+	return instance.SetProperty("DisableContextMenus", (value))
 }
 
 // GetDisableContextMenus gets the value of DisableContextMenus for the instance
@@ -332,16 +424,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyDisableContextMenus() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetForceStartSize sets the value of ForceStartSize for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyForceStartSize(value int32) (err error) {
-	return instance.SetProperty("ForceStartSize", value)
+	return instance.SetProperty("ForceStartSize", (value))
 }
 
 // GetForceStartSize gets the value of ForceStartSize for the instance
@@ -350,16 +451,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyForceStartSize() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideAppList sets the value of HideAppList for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideAppList(value int32) (err error) {
-	return instance.SetProperty("HideAppList", value)
+	return instance.SetProperty("HideAppList", (value))
 }
 
 // GetHideAppList gets the value of HideAppList for the instance
@@ -368,16 +478,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideAppList() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideChangeAccountSettings sets the value of HideChangeAccountSettings for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideChangeAccountSettings(value int32) (err error) {
-	return instance.SetProperty("HideChangeAccountSettings", value)
+	return instance.SetProperty("HideChangeAccountSettings", (value))
 }
 
 // GetHideChangeAccountSettings gets the value of HideChangeAccountSettings for the instance
@@ -386,16 +505,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideChangeAccountSetting
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideFrequentlyUsedApps sets the value of HideFrequentlyUsedApps for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideFrequentlyUsedApps(value int32) (err error) {
-	return instance.SetProperty("HideFrequentlyUsedApps", value)
+	return instance.SetProperty("HideFrequentlyUsedApps", (value))
 }
 
 // GetHideFrequentlyUsedApps gets the value of HideFrequentlyUsedApps for the instance
@@ -404,16 +532,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideFrequentlyUsedApps()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideHibernate sets the value of HideHibernate for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideHibernate(value int32) (err error) {
-	return instance.SetProperty("HideHibernate", value)
+	return instance.SetProperty("HideHibernate", (value))
 }
 
 // GetHideHibernate gets the value of HideHibernate for the instance
@@ -422,16 +559,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideHibernate() (value i
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideLock sets the value of HideLock for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideLock(value int32) (err error) {
-	return instance.SetProperty("HideLock", value)
+	return instance.SetProperty("HideLock", (value))
 }
 
 // GetHideLock gets the value of HideLock for the instance
@@ -440,16 +586,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideLock() (value int32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHidePowerButton sets the value of HidePowerButton for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHidePowerButton(value int32) (err error) {
-	return instance.SetProperty("HidePowerButton", value)
+	return instance.SetProperty("HidePowerButton", (value))
 }
 
 // GetHidePowerButton gets the value of HidePowerButton for the instance
@@ -458,16 +613,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHidePowerButton() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideRecentJumplists sets the value of HideRecentJumplists for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideRecentJumplists(value int32) (err error) {
-	return instance.SetProperty("HideRecentJumplists", value)
+	return instance.SetProperty("HideRecentJumplists", (value))
 }
 
 // GetHideRecentJumplists gets the value of HideRecentJumplists for the instance
@@ -476,16 +640,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideRecentJumplists() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideRecentlyAddedApps sets the value of HideRecentlyAddedApps for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideRecentlyAddedApps(value int32) (err error) {
-	return instance.SetProperty("HideRecentlyAddedApps", value)
+	return instance.SetProperty("HideRecentlyAddedApps", (value))
 }
 
 // GetHideRecentlyAddedApps gets the value of HideRecentlyAddedApps for the instance
@@ -494,16 +667,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideRecentlyAddedApps() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideRestart sets the value of HideRestart for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideRestart(value int32) (err error) {
-	return instance.SetProperty("HideRestart", value)
+	return instance.SetProperty("HideRestart", (value))
 }
 
 // GetHideRestart gets the value of HideRestart for the instance
@@ -512,16 +694,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideRestart() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideShutDown sets the value of HideShutDown for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideShutDown(value int32) (err error) {
-	return instance.SetProperty("HideShutDown", value)
+	return instance.SetProperty("HideShutDown", (value))
 }
 
 // GetHideShutDown gets the value of HideShutDown for the instance
@@ -530,16 +721,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideShutDown() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideSignOut sets the value of HideSignOut for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideSignOut(value int32) (err error) {
-	return instance.SetProperty("HideSignOut", value)
+	return instance.SetProperty("HideSignOut", (value))
 }
 
 // GetHideSignOut gets the value of HideSignOut for the instance
@@ -548,16 +748,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideSignOut() (value int
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideSleep sets the value of HideSleep for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideSleep(value int32) (err error) {
-	return instance.SetProperty("HideSleep", value)
+	return instance.SetProperty("HideSleep", (value))
 }
 
 // GetHideSleep gets the value of HideSleep for the instance
@@ -566,16 +775,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideSleep() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideSwitchAccount sets the value of HideSwitchAccount for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideSwitchAccount(value int32) (err error) {
-	return instance.SetProperty("HideSwitchAccount", value)
+	return instance.SetProperty("HideSwitchAccount", (value))
 }
 
 // GetHideSwitchAccount gets the value of HideSwitchAccount for the instance
@@ -584,16 +802,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideSwitchAccount() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideUserTile sets the value of HideUserTile for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyHideUserTile(value int32) (err error) {
-	return instance.SetProperty("HideUserTile", value)
+	return instance.SetProperty("HideUserTile", (value))
 }
 
 // GetHideUserTile gets the value of HideUserTile for the instance
@@ -602,16 +829,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyHideUserTile() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetImportEdgeAssets sets the value of ImportEdgeAssets for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyImportEdgeAssets(value string) (err error) {
-	return instance.SetProperty("ImportEdgeAssets", value)
+	return instance.SetProperty("ImportEdgeAssets", (value))
 }
 
 // GetImportEdgeAssets gets the value of ImportEdgeAssets for the instance
@@ -620,16 +856,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyImportEdgeAssets() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -638,16 +883,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyInstanceID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNoPinningToTaskbar sets the value of NoPinningToTaskbar for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyNoPinningToTaskbar(value int32) (err error) {
-	return instance.SetProperty("NoPinningToTaskbar", value)
+	return instance.SetProperty("NoPinningToTaskbar", (value))
 }
 
 // GetNoPinningToTaskbar gets the value of NoPinningToTaskbar for the instance
@@ -656,16 +910,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyNoPinningToTaskbar() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -674,16 +937,25 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyParentID() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartLayout sets the value of StartLayout for the instance
 func (instance *MDM_Policy_Config01_Start02) SetPropertyStartLayout(value string) (err error) {
-	return instance.SetProperty("StartLayout", value)
+	return instance.SetProperty("StartLayout", (value))
 }
 
 // GetStartLayout gets the value of StartLayout for the instance
@@ -692,9 +964,18 @@ func (instance *MDM_Policy_Config01_Start02) GetPropertyStartLayout() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

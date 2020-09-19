@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetSecDeltaCollection struct
@@ -73,7 +75,7 @@ func NewMSFT_NetSecDeltaCollectionEx6(hostName string,
 
 // SetAction sets the value of Action for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyAction(value uint16) (err error) {
-	return instance.SetProperty("Action", value)
+	return instance.SetProperty("Action", (value))
 }
 
 // GetAction gets the value of Action for the instance
@@ -82,16 +84,25 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyAction() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEndpointType sets the value of EndpointType for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyEndpointType(value uint16) (err error) {
-	return instance.SetProperty("EndpointType", value)
+	return instance.SetProperty("EndpointType", (value))
 }
 
 // GetEndpointType gets the value of EndpointType for the instance
@@ -100,16 +111,25 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyEndpointType() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIPsecRuleDisplayName sets the value of IPsecRuleDisplayName for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyIPsecRuleDisplayName(value string) (err error) {
-	return instance.SetProperty("IPsecRuleDisplayName", value)
+	return instance.SetProperty("IPsecRuleDisplayName", (value))
 }
 
 // GetIPsecRuleDisplayName gets the value of IPsecRuleDisplayName for the instance
@@ -118,16 +138,25 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyIPsecRuleDisplayName() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPsecRuleName sets the value of IPsecRuleName for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyIPsecRuleName(value string) (err error) {
-	return instance.SetProperty("IPsecRuleName", value)
+	return instance.SetProperty("IPsecRuleName", (value))
 }
 
 // GetIPsecRuleName gets the value of IPsecRuleName for the instance
@@ -136,16 +165,25 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyIPsecRuleName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv4Addresses sets the value of IPv4Addresses for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyIPv4Addresses(value []string) (err error) {
-	return instance.SetProperty("IPv4Addresses", value)
+	return instance.SetProperty("IPv4Addresses", (value))
 }
 
 // GetIPv4Addresses gets the value of IPv4Addresses for the instance
@@ -154,16 +192,26 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyIPv4Addresses() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPv6Addresses sets the value of IPv6Addresses for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyIPv6Addresses(value []string) (err error) {
-	return instance.SetProperty("IPv6Addresses", value)
+	return instance.SetProperty("IPv6Addresses", (value))
 }
 
 // GetIPv6Addresses gets the value of IPv6Addresses for the instance
@@ -172,16 +220,26 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyIPv6Addresses() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNameResolutionFailures sets the value of NameResolutionFailures for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyNameResolutionFailures(value []string) (err error) {
-	return instance.SetProperty("NameResolutionFailures", value)
+	return instance.SetProperty("NameResolutionFailures", (value))
 }
 
 // GetNameResolutionFailures gets the value of NameResolutionFailures for the instance
@@ -190,16 +248,26 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyNameResolutionFailures() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_NetSecDeltaCollection) SetPropertyPolicyStore(value string) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -208,9 +276,18 @@ func (instance *MSFT_NetSecDeltaCollection) GetPropertyPolicyStore() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

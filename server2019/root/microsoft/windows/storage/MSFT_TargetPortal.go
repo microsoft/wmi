@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TargetPortal struct
@@ -61,7 +63,7 @@ func NewMSFT_TargetPortalEx6(hostName string,
 
 // SetIPv4Address sets the value of IPv4Address for the instance
 func (instance *MSFT_TargetPortal) SetPropertyIPv4Address(value string) (err error) {
-	return instance.SetProperty("IPv4Address", value)
+	return instance.SetProperty("IPv4Address", (value))
 }
 
 // GetIPv4Address gets the value of IPv4Address for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_TargetPortal) GetPropertyIPv4Address() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv6Address sets the value of IPv6Address for the instance
 func (instance *MSFT_TargetPortal) SetPropertyIPv6Address(value string) (err error) {
-	return instance.SetProperty("IPv6Address", value)
+	return instance.SetProperty("IPv6Address", (value))
 }
 
 // GetIPv6Address gets the value of IPv6Address for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_TargetPortal) GetPropertyIPv6Address() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPortNumber sets the value of PortNumber for the instance
 func (instance *MSFT_TargetPortal) SetPropertyPortNumber(value uint32) (err error) {
-	return instance.SetProperty("PortNumber", value)
+	return instance.SetProperty("PortNumber", (value))
 }
 
 // GetPortNumber gets the value of PortNumber for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_TargetPortal) GetPropertyPortNumber() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSubnetMask sets the value of SubnetMask for the instance
 func (instance *MSFT_TargetPortal) SetPropertySubnetMask(value string) (err error) {
-	return instance.SetProperty("SubnetMask", value)
+	return instance.SetProperty("SubnetMask", (value))
 }
 
 // GetSubnetMask gets the value of SubnetMask for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_TargetPortal) GetPropertySubnetMask() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

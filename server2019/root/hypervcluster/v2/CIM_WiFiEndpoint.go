@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_WiFiEndpoint struct
@@ -100,7 +102,7 @@ func NewCIM_WiFiEndpointEx6(hostName string,
 
 // SetAccessPointAddress sets the value of AccessPointAddress for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyAccessPointAddress(value string) (err error) {
-	return instance.SetProperty("AccessPointAddress", value)
+	return instance.SetProperty("AccessPointAddress", (value))
 }
 
 // GetAccessPointAddress gets the value of AccessPointAddress for the instance
@@ -109,16 +111,25 @@ func (instance *CIM_WiFiEndpoint) GetPropertyAccessPointAddress() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAssociated sets the value of Associated for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyAssociated(value bool) (err error) {
-	return instance.SetProperty("Associated", value)
+	return instance.SetProperty("Associated", (value))
 }
 
 // GetAssociated gets the value of Associated for the instance
@@ -127,16 +138,25 @@ func (instance *CIM_WiFiEndpoint) GetPropertyAssociated() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAuthenticationMethod sets the value of AuthenticationMethod for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyAuthenticationMethod(value WiFiEndpoint_AuthenticationMethod) (err error) {
-	return instance.SetProperty("AuthenticationMethod", value)
+	return instance.SetProperty("AuthenticationMethod", (value))
 }
 
 // GetAuthenticationMethod gets the value of AuthenticationMethod for the instance
@@ -145,16 +165,25 @@ func (instance *CIM_WiFiEndpoint) GetPropertyAuthenticationMethod() (value WiFiE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(WiFiEndpoint_AuthenticationMethod)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = WiFiEndpoint_AuthenticationMethod(valuetmp)
+
 	return
 }
 
 // SetBSSType sets the value of BSSType for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyBSSType(value WiFiEndpoint_BSSType) (err error) {
-	return instance.SetProperty("BSSType", value)
+	return instance.SetProperty("BSSType", (value))
 }
 
 // GetBSSType gets the value of BSSType for the instance
@@ -163,16 +192,25 @@ func (instance *CIM_WiFiEndpoint) GetPropertyBSSType() (value WiFiEndpoint_BSSTy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(WiFiEndpoint_BSSType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = WiFiEndpoint_BSSType(valuetmp)
+
 	return
 }
 
 // SetEncryptionMethod sets the value of EncryptionMethod for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyEncryptionMethod(value WiFiEndpoint_EncryptionMethod) (err error) {
-	return instance.SetProperty("EncryptionMethod", value)
+	return instance.SetProperty("EncryptionMethod", (value))
 }
 
 // GetEncryptionMethod gets the value of EncryptionMethod for the instance
@@ -181,16 +219,25 @@ func (instance *CIM_WiFiEndpoint) GetPropertyEncryptionMethod() (value WiFiEndpo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(WiFiEndpoint_EncryptionMethod)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = WiFiEndpoint_EncryptionMethod(valuetmp)
+
 	return
 }
 
 // SetIEEE8021xAuthenticationProtocol sets the value of IEEE8021xAuthenticationProtocol for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyIEEE8021xAuthenticationProtocol(value WiFiEndpoint_IEEE8021xAuthenticationProtocol) (err error) {
-	return instance.SetProperty("IEEE8021xAuthenticationProtocol", value)
+	return instance.SetProperty("IEEE8021xAuthenticationProtocol", (value))
 }
 
 // GetIEEE8021xAuthenticationProtocol gets the value of IEEE8021xAuthenticationProtocol for the instance
@@ -199,16 +246,25 @@ func (instance *CIM_WiFiEndpoint) GetPropertyIEEE8021xAuthenticationProtocol() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(WiFiEndpoint_IEEE8021xAuthenticationProtocol)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = WiFiEndpoint_IEEE8021xAuthenticationProtocol(valuetmp)
+
 	return
 }
 
 // SetOtherAuthenticationMethod sets the value of OtherAuthenticationMethod for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyOtherAuthenticationMethod(value string) (err error) {
-	return instance.SetProperty("OtherAuthenticationMethod", value)
+	return instance.SetProperty("OtherAuthenticationMethod", (value))
 }
 
 // GetOtherAuthenticationMethod gets the value of OtherAuthenticationMethod for the instance
@@ -217,16 +273,25 @@ func (instance *CIM_WiFiEndpoint) GetPropertyOtherAuthenticationMethod() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherEncryptionMethod sets the value of OtherEncryptionMethod for the instance
 func (instance *CIM_WiFiEndpoint) SetPropertyOtherEncryptionMethod(value string) (err error) {
-	return instance.SetProperty("OtherEncryptionMethod", value)
+	return instance.SetProperty("OtherEncryptionMethod", (value))
 }
 
 // GetOtherEncryptionMethod gets the value of OtherEncryptionMethod for the instance
@@ -235,9 +300,18 @@ func (instance *CIM_WiFiEndpoint) GetPropertyOtherEncryptionMethod() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

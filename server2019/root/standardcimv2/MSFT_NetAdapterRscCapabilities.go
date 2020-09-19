@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterRscCapabilities struct
@@ -56,7 +58,7 @@ func NewMSFT_NetAdapterRscCapabilitiesEx6(hostName string,
 
 // SetIPv4Supported sets the value of IPv4Supported for the instance
 func (instance *MSFT_NetAdapterRscCapabilities) SetPropertyIPv4Supported(value bool) (err error) {
-	return instance.SetProperty("IPv4Supported", value)
+	return instance.SetProperty("IPv4Supported", (value))
 }
 
 // GetIPv4Supported gets the value of IPv4Supported for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_NetAdapterRscCapabilities) GetPropertyIPv4Supported() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6Supported sets the value of IPv6Supported for the instance
 func (instance *MSFT_NetAdapterRscCapabilities) SetPropertyIPv6Supported(value bool) (err error) {
-	return instance.SetProperty("IPv6Supported", value)
+	return instance.SetProperty("IPv6Supported", (value))
 }
 
 // GetIPv6Supported gets the value of IPv6Supported for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_NetAdapterRscCapabilities) GetPropertyIPv6Supported() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

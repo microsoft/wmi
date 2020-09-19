@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
@@ -11,7 +11,9 @@ package msdtc
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DtcInstance struct
@@ -71,7 +73,7 @@ func NewDtcInstanceEx6(hostName string,
 
 // SetDtcName sets the value of DtcName for the instance
 func (instance *DtcInstance) SetPropertyDtcName(value string) (err error) {
-	return instance.SetProperty("DtcName", value)
+	return instance.SetProperty("DtcName", (value))
 }
 
 // GetDtcName gets the value of DtcName for the instance
@@ -80,16 +82,25 @@ func (instance *DtcInstance) GetPropertyDtcName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKtmRmEndpointCid sets the value of KtmRmEndpointCid for the instance
 func (instance *DtcInstance) SetPropertyKtmRmEndpointCid(value string) (err error) {
-	return instance.SetProperty("KtmRmEndpointCid", value)
+	return instance.SetProperty("KtmRmEndpointCid", (value))
 }
 
 // GetKtmRmEndpointCid gets the value of KtmRmEndpointCid for the instance
@@ -98,16 +109,25 @@ func (instance *DtcInstance) GetPropertyKtmRmEndpointCid() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOleTxEndpointCid sets the value of OleTxEndpointCid for the instance
 func (instance *DtcInstance) SetPropertyOleTxEndpointCid(value string) (err error) {
-	return instance.SetProperty("OleTxEndpointCid", value)
+	return instance.SetProperty("OleTxEndpointCid", (value))
 }
 
 // GetOleTxEndpointCid gets the value of OleTxEndpointCid for the instance
@@ -116,16 +136,25 @@ func (instance *DtcInstance) GetPropertyOleTxEndpointCid() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *DtcInstance) SetPropertyStatus(value string) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -134,16 +163,25 @@ func (instance *DtcInstance) GetPropertyStatus() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUisEndpointCid sets the value of UisEndpointCid for the instance
 func (instance *DtcInstance) SetPropertyUisEndpointCid(value string) (err error) {
-	return instance.SetProperty("UisEndpointCid", value)
+	return instance.SetProperty("UisEndpointCid", (value))
 }
 
 // GetUisEndpointCid gets the value of UisEndpointCid for the instance
@@ -152,16 +190,25 @@ func (instance *DtcInstance) GetPropertyUisEndpointCid() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualServerName sets the value of VirtualServerName for the instance
 func (instance *DtcInstance) SetPropertyVirtualServerName(value string) (err error) {
-	return instance.SetProperty("VirtualServerName", value)
+	return instance.SetProperty("VirtualServerName", (value))
 }
 
 // GetVirtualServerName gets the value of VirtualServerName for the instance
@@ -170,16 +217,25 @@ func (instance *DtcInstance) GetPropertyVirtualServerName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetXAEndpointCid sets the value of XAEndpointCid for the instance
 func (instance *DtcInstance) SetPropertyXAEndpointCid(value string) (err error) {
-	return instance.SetProperty("XAEndpointCid", value)
+	return instance.SetProperty("XAEndpointCid", (value))
 }
 
 // GetXAEndpointCid gets the value of XAEndpointCid for the instance
@@ -188,9 +244,18 @@ func (instance *DtcInstance) GetPropertyXAEndpointCid() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

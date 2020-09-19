@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
@@ -11,7 +11,9 @@ package desiredstateconfiguration
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // OMI_MetaConfigurationResource struct
@@ -56,7 +58,7 @@ func NewOMI_MetaConfigurationResourceEx6(hostName string,
 
 // SetResourceId sets the value of ResourceId for the instance
 func (instance *OMI_MetaConfigurationResource) SetPropertyResourceId(value string) (err error) {
-	return instance.SetProperty("ResourceId", value)
+	return instance.SetProperty("ResourceId", (value))
 }
 
 // GetResourceId gets the value of ResourceId for the instance
@@ -65,16 +67,25 @@ func (instance *OMI_MetaConfigurationResource) GetPropertyResourceId() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSourceInfo sets the value of SourceInfo for the instance
 func (instance *OMI_MetaConfigurationResource) SetPropertySourceInfo(value string) (err error) {
-	return instance.SetProperty("SourceInfo", value)
+	return instance.SetProperty("SourceInfo", (value))
 }
 
 // GetSourceInfo gets the value of SourceInfo for the instance
@@ -83,9 +94,18 @@ func (instance *OMI_MetaConfigurationResource) GetPropertySourceInfo() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

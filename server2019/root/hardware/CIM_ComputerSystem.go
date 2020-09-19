@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ComputerSystem struct
@@ -67,7 +69,7 @@ func NewCIM_ComputerSystemEx6(hostName string,
 
 // SetDedicated sets the value of Dedicated for the instance
 func (instance *CIM_ComputerSystem) SetPropertyDedicated(value []uint16) (err error) {
-	return instance.SetProperty("Dedicated", value)
+	return instance.SetProperty("Dedicated", (value))
 }
 
 // GetDedicated gets the value of Dedicated for the instance
@@ -76,16 +78,26 @@ func (instance *CIM_ComputerSystem) GetPropertyDedicated() (value []uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetIdentifyingDescriptions sets the value of IdentifyingDescriptions for the instance
 func (instance *CIM_ComputerSystem) SetPropertyIdentifyingDescriptions(value []string) (err error) {
-	return instance.SetProperty("IdentifyingDescriptions", value)
+	return instance.SetProperty("IdentifyingDescriptions", (value))
 }
 
 // GetIdentifyingDescriptions gets the value of IdentifyingDescriptions for the instance
@@ -94,16 +106,26 @@ func (instance *CIM_ComputerSystem) GetPropertyIdentifyingDescriptions() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherDedicatedDescriptions sets the value of OtherDedicatedDescriptions for the instance
 func (instance *CIM_ComputerSystem) SetPropertyOtherDedicatedDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherDedicatedDescriptions", value)
+	return instance.SetProperty("OtherDedicatedDescriptions", (value))
 }
 
 // GetOtherDedicatedDescriptions gets the value of OtherDedicatedDescriptions for the instance
@@ -112,16 +134,26 @@ func (instance *CIM_ComputerSystem) GetPropertyOtherDedicatedDescriptions() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherIdentifyingInfo sets the value of OtherIdentifyingInfo for the instance
 func (instance *CIM_ComputerSystem) SetPropertyOtherIdentifyingInfo(value []string) (err error) {
-	return instance.SetProperty("OtherIdentifyingInfo", value)
+	return instance.SetProperty("OtherIdentifyingInfo", (value))
 }
 
 // GetOtherIdentifyingInfo gets the value of OtherIdentifyingInfo for the instance
@@ -130,16 +162,26 @@ func (instance *CIM_ComputerSystem) GetPropertyOtherIdentifyingInfo() (value []s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPowerManagementCapabilities sets the value of PowerManagementCapabilities for the instance
 func (instance *CIM_ComputerSystem) SetPropertyPowerManagementCapabilities(value []uint16) (err error) {
-	return instance.SetProperty("PowerManagementCapabilities", value)
+	return instance.SetProperty("PowerManagementCapabilities", (value))
 }
 
 // GetPowerManagementCapabilities gets the value of PowerManagementCapabilities for the instance
@@ -148,16 +190,26 @@ func (instance *CIM_ComputerSystem) GetPropertyPowerManagementCapabilities() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetResetCapability sets the value of ResetCapability for the instance
 func (instance *CIM_ComputerSystem) SetPropertyResetCapability(value uint16) (err error) {
-	return instance.SetProperty("ResetCapability", value)
+	return instance.SetProperty("ResetCapability", (value))
 }
 
 // GetResetCapability gets the value of ResetCapability for the instance
@@ -166,10 +218,19 @@ func (instance *CIM_ComputerSystem) GetPropertyResetCapability() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

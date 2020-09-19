@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DiskToStorageReliabilityCounter struct
@@ -56,7 +58,7 @@ func NewMSFT_DiskToStorageReliabilityCounterEx6(hostName string,
 
 // SetDisk sets the value of Disk for the instance
 func (instance *MSFT_DiskToStorageReliabilityCounter) SetPropertyDisk(value MSFT_Disk) (err error) {
-	return instance.SetProperty("Disk", value)
+	return instance.SetProperty("Disk", (value))
 }
 
 // GetDisk gets the value of Disk for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_DiskToStorageReliabilityCounter) GetPropertyDisk() (value M
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Disk)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Disk)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Disk is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Disk(valuetmp)
+
 	return
 }
 
 // SetStorageReliabilityCounter sets the value of StorageReliabilityCounter for the instance
 func (instance *MSFT_DiskToStorageReliabilityCounter) SetPropertyStorageReliabilityCounter(value MSFT_StorageReliabilityCounter) (err error) {
-	return instance.SetProperty("StorageReliabilityCounter", value)
+	return instance.SetProperty("StorageReliabilityCounter", (value))
 }
 
 // GetStorageReliabilityCounter gets the value of StorageReliabilityCounter for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_DiskToStorageReliabilityCounter) GetPropertyStorageReliabil
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageReliabilityCounter)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageReliabilityCounter)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageReliabilityCounter is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageReliabilityCounter(valuetmp)
+
 	return
 }

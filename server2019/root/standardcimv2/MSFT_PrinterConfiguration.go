@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_PrinterConfiguration struct
@@ -74,7 +76,7 @@ func NewMSFT_PrinterConfigurationEx6(hostName string,
 
 // SetCollate sets the value of Collate for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyCollate(value bool) (err error) {
-	return instance.SetProperty("Collate", value)
+	return instance.SetProperty("Collate", (value))
 }
 
 // GetCollate gets the value of Collate for the instance
@@ -83,16 +85,25 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyCollate() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetColor sets the value of Color for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyColor(value bool) (err error) {
-	return instance.SetProperty("Color", value)
+	return instance.SetProperty("Color", (value))
 }
 
 // GetColor gets the value of Color for the instance
@@ -101,16 +112,25 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyColor() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetComputerName sets the value of ComputerName for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyComputerName(value string) (err error) {
-	return instance.SetProperty("ComputerName", value)
+	return instance.SetProperty("ComputerName", (value))
 }
 
 // GetComputerName gets the value of ComputerName for the instance
@@ -119,16 +139,25 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyComputerName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDuplexingMode sets the value of DuplexingMode for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyDuplexingMode(value uint32) (err error) {
-	return instance.SetProperty("DuplexingMode", value)
+	return instance.SetProperty("DuplexingMode", (value))
 }
 
 // GetDuplexingMode gets the value of DuplexingMode for the instance
@@ -137,16 +166,25 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyDuplexingMode() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPaperSize sets the value of PaperSize for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyPaperSize(value uint32) (err error) {
-	return instance.SetProperty("PaperSize", value)
+	return instance.SetProperty("PaperSize", (value))
 }
 
 // GetPaperSize gets the value of PaperSize for the instance
@@ -155,16 +193,25 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyPaperSize() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrintCapabilitiesXML sets the value of PrintCapabilitiesXML for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyPrintCapabilitiesXML(value string) (err error) {
-	return instance.SetProperty("PrintCapabilitiesXML", value)
+	return instance.SetProperty("PrintCapabilitiesXML", (value))
 }
 
 // GetPrintCapabilitiesXML gets the value of PrintCapabilitiesXML for the instance
@@ -173,16 +220,25 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyPrintCapabilitiesXML() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrinterName sets the value of PrinterName for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyPrinterName(value string) (err error) {
-	return instance.SetProperty("PrinterName", value)
+	return instance.SetProperty("PrinterName", (value))
 }
 
 // GetPrinterName gets the value of PrinterName for the instance
@@ -191,16 +247,25 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyPrinterName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrintTicketXML sets the value of PrintTicketXML for the instance
 func (instance *MSFT_PrinterConfiguration) SetPropertyPrintTicketXML(value string) (err error) {
-	return instance.SetProperty("PrintTicketXML", value)
+	return instance.SetProperty("PrintTicketXML", (value))
 }
 
 // GetPrintTicketXML gets the value of PrintTicketXML for the instance
@@ -209,10 +274,19 @@ func (instance *MSFT_PrinterConfiguration) GetPropertyPrintTicketXML() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Terminal struct
@@ -58,7 +60,7 @@ func NewWin32_TerminalEx6(hostName string,
 
 // SetfEnableTerminal sets the value of fEnableTerminal for the instance
 func (instance *Win32_Terminal) SetPropertyfEnableTerminal(value uint32) (err error) {
-	return instance.SetProperty("fEnableTerminal", value)
+	return instance.SetProperty("fEnableTerminal", (value))
 }
 
 // GetfEnableTerminal gets the value of fEnableTerminal for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_Terminal) GetPropertyfEnableTerminal() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLoggedOnUsers sets the value of LoggedOnUsers for the instance
 func (instance *Win32_Terminal) SetPropertyLoggedOnUsers(value uint32) (err error) {
-	return instance.SetProperty("LoggedOnUsers", value)
+	return instance.SetProperty("LoggedOnUsers", (value))
 }
 
 // GetLoggedOnUsers gets the value of LoggedOnUsers for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_Terminal) GetPropertyLoggedOnUsers() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTerminalName sets the value of TerminalName for the instance
 func (instance *Win32_Terminal) SetPropertyTerminalName(value string) (err error) {
-	return instance.SetProperty("TerminalName", value)
+	return instance.SetProperty("TerminalName", (value))
 }
 
 // GetTerminalName gets the value of TerminalName for the instance
@@ -103,10 +123,19 @@ func (instance *Win32_Terminal) GetPropertyTerminalName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

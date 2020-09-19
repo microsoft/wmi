@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_VPNv2_RouteList02_01 struct
@@ -22,13 +24,7 @@ type MDM_VPNv2_RouteList02_01 struct {
 	Address string
 
 	//
-	ExclusionRoute bool
-
-	//
 	InstanceID string
-
-	//
-	Metric int32
 
 	//
 	ParentID string
@@ -68,7 +64,7 @@ func NewMDM_VPNv2_RouteList02_01Ex6(hostName string,
 
 // SetAddress sets the value of Address for the instance
 func (instance *MDM_VPNv2_RouteList02_01) SetPropertyAddress(value string) (err error) {
-	return instance.SetProperty("Address", value)
+	return instance.SetProperty("Address", (value))
 }
 
 // GetAddress gets the value of Address for the instance
@@ -77,34 +73,25 @@ func (instance *MDM_VPNv2_RouteList02_01) GetPropertyAddress() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetExclusionRoute sets the value of ExclusionRoute for the instance
-func (instance *MDM_VPNv2_RouteList02_01) SetPropertyExclusionRoute(value bool) (err error) {
-	return instance.SetProperty("ExclusionRoute", value)
-}
-
-// GetExclusionRoute gets the value of ExclusionRoute for the instance
-func (instance *MDM_VPNv2_RouteList02_01) GetPropertyExclusionRoute() (value bool, err error) {
-	retValue, err := instance.GetProperty("ExclusionRoute")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_VPNv2_RouteList02_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -113,34 +100,25 @@ func (instance *MDM_VPNv2_RouteList02_01) GetPropertyInstanceID() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetMetric sets the value of Metric for the instance
-func (instance *MDM_VPNv2_RouteList02_01) SetPropertyMetric(value int32) (err error) {
-	return instance.SetProperty("Metric", value)
-}
-
-// GetMetric gets the value of Metric for the instance
-func (instance *MDM_VPNv2_RouteList02_01) GetPropertyMetric() (value int32, err error) {
-	retValue, err := instance.GetProperty("Metric")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_VPNv2_RouteList02_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -149,16 +127,25 @@ func (instance *MDM_VPNv2_RouteList02_01) GetPropertyParentID() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrefixSize sets the value of PrefixSize for the instance
 func (instance *MDM_VPNv2_RouteList02_01) SetPropertyPrefixSize(value int32) (err error) {
-	return instance.SetProperty("PrefixSize", value)
+	return instance.SetProperty("PrefixSize", (value))
 }
 
 // GetPrefixSize gets the value of PrefixSize for the instance
@@ -167,9 +154,18 @@ func (instance *MDM_VPNv2_RouteList02_01) GetPropertyPrefixSize() (value int32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

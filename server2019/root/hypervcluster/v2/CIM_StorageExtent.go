@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_StorageExtent struct
@@ -144,7 +146,7 @@ func NewCIM_StorageExtentEx6(hostName string,
 
 // SetAccess sets the value of Access for the instance
 func (instance *CIM_StorageExtent) SetPropertyAccess(value StorageExtent_Access) (err error) {
-	return instance.SetProperty("Access", value)
+	return instance.SetProperty("Access", (value))
 }
 
 // GetAccess gets the value of Access for the instance
@@ -153,16 +155,25 @@ func (instance *CIM_StorageExtent) GetPropertyAccess() (value StorageExtent_Acce
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageExtent_Access)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageExtent_Access(valuetmp)
+
 	return
 }
 
 // SetBlockSize sets the value of BlockSize for the instance
 func (instance *CIM_StorageExtent) SetPropertyBlockSize(value uint64) (err error) {
-	return instance.SetProperty("BlockSize", value)
+	return instance.SetProperty("BlockSize", (value))
 }
 
 // GetBlockSize gets the value of BlockSize for the instance
@@ -171,16 +182,25 @@ func (instance *CIM_StorageExtent) GetPropertyBlockSize() (value uint64, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetConsumableBlocks sets the value of ConsumableBlocks for the instance
 func (instance *CIM_StorageExtent) SetPropertyConsumableBlocks(value uint64) (err error) {
-	return instance.SetProperty("ConsumableBlocks", value)
+	return instance.SetProperty("ConsumableBlocks", (value))
 }
 
 // GetConsumableBlocks gets the value of ConsumableBlocks for the instance
@@ -189,16 +209,25 @@ func (instance *CIM_StorageExtent) GetPropertyConsumableBlocks() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDataOrganization sets the value of DataOrganization for the instance
 func (instance *CIM_StorageExtent) SetPropertyDataOrganization(value StorageExtent_DataOrganization) (err error) {
-	return instance.SetProperty("DataOrganization", value)
+	return instance.SetProperty("DataOrganization", (value))
 }
 
 // GetDataOrganization gets the value of DataOrganization for the instance
@@ -207,16 +236,25 @@ func (instance *CIM_StorageExtent) GetPropertyDataOrganization() (value StorageE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageExtent_DataOrganization)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageExtent_DataOrganization(valuetmp)
+
 	return
 }
 
 // SetDataRedundancy sets the value of DataRedundancy for the instance
 func (instance *CIM_StorageExtent) SetPropertyDataRedundancy(value uint16) (err error) {
-	return instance.SetProperty("DataRedundancy", value)
+	return instance.SetProperty("DataRedundancy", (value))
 }
 
 // GetDataRedundancy gets the value of DataRedundancy for the instance
@@ -225,16 +263,25 @@ func (instance *CIM_StorageExtent) GetPropertyDataRedundancy() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDeltaReservation sets the value of DeltaReservation for the instance
 func (instance *CIM_StorageExtent) SetPropertyDeltaReservation(value uint8) (err error) {
-	return instance.SetProperty("DeltaReservation", value)
+	return instance.SetProperty("DeltaReservation", (value))
 }
 
 // GetDeltaReservation gets the value of DeltaReservation for the instance
@@ -243,16 +290,25 @@ func (instance *CIM_StorageExtent) GetPropertyDeltaReservation() (value uint8, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetErrorMethodology sets the value of ErrorMethodology for the instance
 func (instance *CIM_StorageExtent) SetPropertyErrorMethodology(value string) (err error) {
-	return instance.SetProperty("ErrorMethodology", value)
+	return instance.SetProperty("ErrorMethodology", (value))
 }
 
 // GetErrorMethodology gets the value of ErrorMethodology for the instance
@@ -261,16 +317,25 @@ func (instance *CIM_StorageExtent) GetPropertyErrorMethodology() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExtentStatus sets the value of ExtentStatus for the instance
 func (instance *CIM_StorageExtent) SetPropertyExtentStatus(value []StorageExtent_ExtentStatus) (err error) {
-	return instance.SetProperty("ExtentStatus", value)
+	return instance.SetProperty("ExtentStatus", (value))
 }
 
 // GetExtentStatus gets the value of ExtentStatus for the instance
@@ -279,16 +344,26 @@ func (instance *CIM_StorageExtent) GetPropertyExtentStatus() (value []StorageExt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageExtent_ExtentStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageExtent_ExtentStatus(valuetmp))
+	}
+
 	return
 }
 
 // SetIsBasedOnUnderlyingRedundancy sets the value of IsBasedOnUnderlyingRedundancy for the instance
 func (instance *CIM_StorageExtent) SetPropertyIsBasedOnUnderlyingRedundancy(value bool) (err error) {
-	return instance.SetProperty("IsBasedOnUnderlyingRedundancy", value)
+	return instance.SetProperty("IsBasedOnUnderlyingRedundancy", (value))
 }
 
 // GetIsBasedOnUnderlyingRedundancy gets the value of IsBasedOnUnderlyingRedundancy for the instance
@@ -297,16 +372,25 @@ func (instance *CIM_StorageExtent) GetPropertyIsBasedOnUnderlyingRedundancy() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNameFormat sets the value of NameFormat for the instance
 func (instance *CIM_StorageExtent) SetPropertyNameFormat(value StorageExtent_NameFormat) (err error) {
-	return instance.SetProperty("NameFormat", value)
+	return instance.SetProperty("NameFormat", (value))
 }
 
 // GetNameFormat gets the value of NameFormat for the instance
@@ -315,16 +399,25 @@ func (instance *CIM_StorageExtent) GetPropertyNameFormat() (value StorageExtent_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageExtent_NameFormat)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageExtent_NameFormat(valuetmp)
+
 	return
 }
 
 // SetNameNamespace sets the value of NameNamespace for the instance
 func (instance *CIM_StorageExtent) SetPropertyNameNamespace(value StorageExtent_NameNamespace) (err error) {
-	return instance.SetProperty("NameNamespace", value)
+	return instance.SetProperty("NameNamespace", (value))
 }
 
 // GetNameNamespace gets the value of NameNamespace for the instance
@@ -333,16 +426,25 @@ func (instance *CIM_StorageExtent) GetPropertyNameNamespace() (value StorageExte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageExtent_NameNamespace)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageExtent_NameNamespace(valuetmp)
+
 	return
 }
 
 // SetNoSinglePointOfFailure sets the value of NoSinglePointOfFailure for the instance
 func (instance *CIM_StorageExtent) SetPropertyNoSinglePointOfFailure(value bool) (err error) {
-	return instance.SetProperty("NoSinglePointOfFailure", value)
+	return instance.SetProperty("NoSinglePointOfFailure", (value))
 }
 
 // GetNoSinglePointOfFailure gets the value of NoSinglePointOfFailure for the instance
@@ -351,16 +453,25 @@ func (instance *CIM_StorageExtent) GetPropertyNoSinglePointOfFailure() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNumberOfBlocks sets the value of NumberOfBlocks for the instance
 func (instance *CIM_StorageExtent) SetPropertyNumberOfBlocks(value uint64) (err error) {
-	return instance.SetProperty("NumberOfBlocks", value)
+	return instance.SetProperty("NumberOfBlocks", (value))
 }
 
 // GetNumberOfBlocks gets the value of NumberOfBlocks for the instance
@@ -369,16 +480,25 @@ func (instance *CIM_StorageExtent) GetPropertyNumberOfBlocks() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOtherNameFormat sets the value of OtherNameFormat for the instance
 func (instance *CIM_StorageExtent) SetPropertyOtherNameFormat(value string) (err error) {
-	return instance.SetProperty("OtherNameFormat", value)
+	return instance.SetProperty("OtherNameFormat", (value))
 }
 
 // GetOtherNameFormat gets the value of OtherNameFormat for the instance
@@ -387,16 +507,25 @@ func (instance *CIM_StorageExtent) GetPropertyOtherNameFormat() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherNameNamespace sets the value of OtherNameNamespace for the instance
 func (instance *CIM_StorageExtent) SetPropertyOtherNameNamespace(value string) (err error) {
-	return instance.SetProperty("OtherNameNamespace", value)
+	return instance.SetProperty("OtherNameNamespace", (value))
 }
 
 // GetOtherNameNamespace gets the value of OtherNameNamespace for the instance
@@ -405,16 +534,25 @@ func (instance *CIM_StorageExtent) GetPropertyOtherNameNamespace() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageRedundancy sets the value of PackageRedundancy for the instance
 func (instance *CIM_StorageExtent) SetPropertyPackageRedundancy(value uint16) (err error) {
-	return instance.SetProperty("PackageRedundancy", value)
+	return instance.SetProperty("PackageRedundancy", (value))
 }
 
 // GetPackageRedundancy gets the value of PackageRedundancy for the instance
@@ -423,16 +561,25 @@ func (instance *CIM_StorageExtent) GetPropertyPackageRedundancy() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPrimordial sets the value of Primordial for the instance
 func (instance *CIM_StorageExtent) SetPropertyPrimordial(value bool) (err error) {
-	return instance.SetProperty("Primordial", value)
+	return instance.SetProperty("Primordial", (value))
 }
 
 // GetPrimordial gets the value of Primordial for the instance
@@ -441,16 +588,25 @@ func (instance *CIM_StorageExtent) GetPropertyPrimordial() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPurpose sets the value of Purpose for the instance
 func (instance *CIM_StorageExtent) SetPropertyPurpose(value string) (err error) {
-	return instance.SetProperty("Purpose", value)
+	return instance.SetProperty("Purpose", (value))
 }
 
 // GetPurpose gets the value of Purpose for the instance
@@ -459,16 +615,25 @@ func (instance *CIM_StorageExtent) GetPropertyPurpose() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSequentialAccess sets the value of SequentialAccess for the instance
 func (instance *CIM_StorageExtent) SetPropertySequentialAccess(value bool) (err error) {
-	return instance.SetProperty("SequentialAccess", value)
+	return instance.SetProperty("SequentialAccess", (value))
 }
 
 // GetSequentialAccess gets the value of SequentialAccess for the instance
@@ -477,9 +642,18 @@ func (instance *CIM_StorageExtent) GetPropertySequentialAccess() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

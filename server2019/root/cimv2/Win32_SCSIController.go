@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SCSIController struct
@@ -64,7 +66,7 @@ func NewWin32_SCSIControllerEx6(hostName string,
 
 // SetDeviceMap sets the value of DeviceMap for the instance
 func (instance *Win32_SCSIController) SetPropertyDeviceMap(value string) (err error) {
-	return instance.SetProperty("DeviceMap", value)
+	return instance.SetProperty("DeviceMap", (value))
 }
 
 // GetDeviceMap gets the value of DeviceMap for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_SCSIController) GetPropertyDeviceMap() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverName sets the value of DriverName for the instance
 func (instance *Win32_SCSIController) SetPropertyDriverName(value string) (err error) {
-	return instance.SetProperty("DriverName", value)
+	return instance.SetProperty("DriverName", (value))
 }
 
 // GetDriverName gets the value of DriverName for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_SCSIController) GetPropertyDriverName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHardwareVersion sets the value of HardwareVersion for the instance
 func (instance *Win32_SCSIController) SetPropertyHardwareVersion(value string) (err error) {
-	return instance.SetProperty("HardwareVersion", value)
+	return instance.SetProperty("HardwareVersion", (value))
 }
 
 // GetHardwareVersion gets the value of HardwareVersion for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_SCSIController) GetPropertyHardwareVersion() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIndex sets the value of Index for the instance
 func (instance *Win32_SCSIController) SetPropertyIndex(value uint32) (err error) {
-	return instance.SetProperty("Index", value)
+	return instance.SetProperty("Index", (value))
 }
 
 // GetIndex gets the value of Index for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_SCSIController) GetPropertyIndex() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *Win32_SCSIController) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_SCSIController) GetPropertyManufacturer() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

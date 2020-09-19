@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_EnterpriseDataProtection_Settings01 struct
@@ -83,7 +85,7 @@ func NewMDM_EnterpriseDataProtection_Settings01Ex6(hostName string,
 
 // SetAllowAzureRMSForEDP sets the value of AllowAzureRMSForEDP for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyAllowAzureRMSForEDP(value int32) (err error) {
-	return instance.SetProperty("AllowAzureRMSForEDP", value)
+	return instance.SetProperty("AllowAzureRMSForEDP", (value))
 }
 
 // GetAllowAzureRMSForEDP gets the value of AllowAzureRMSForEDP for the instance
@@ -92,16 +94,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyAllowAzureRM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowUserDecryption sets the value of AllowUserDecryption for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyAllowUserDecryption(value int32) (err error) {
-	return instance.SetProperty("AllowUserDecryption", value)
+	return instance.SetProperty("AllowUserDecryption", (value))
 }
 
 // GetAllowUserDecryption gets the value of AllowUserDecryption for the instance
@@ -110,16 +121,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyAllowUserDec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDataRecoveryCertificate sets the value of DataRecoveryCertificate for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyDataRecoveryCertificate(value string) (err error) {
-	return instance.SetProperty("DataRecoveryCertificate", value)
+	return instance.SetProperty("DataRecoveryCertificate", (value))
 }
 
 // GetDataRecoveryCertificate gets the value of DataRecoveryCertificate for the instance
@@ -128,16 +148,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyDataRecovery
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEDPEnforcementLevel sets the value of EDPEnforcementLevel for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyEDPEnforcementLevel(value int32) (err error) {
-	return instance.SetProperty("EDPEnforcementLevel", value)
+	return instance.SetProperty("EDPEnforcementLevel", (value))
 }
 
 // GetEDPEnforcementLevel gets the value of EDPEnforcementLevel for the instance
@@ -146,16 +175,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyEDPEnforceme
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEDPShowIcons sets the value of EDPShowIcons for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyEDPShowIcons(value int32) (err error) {
-	return instance.SetProperty("EDPShowIcons", value)
+	return instance.SetProperty("EDPShowIcons", (value))
 }
 
 // GetEDPShowIcons gets the value of EDPShowIcons for the instance
@@ -164,16 +202,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyEDPShowIcons
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnterpriseProtectedDomainNames sets the value of EnterpriseProtectedDomainNames for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyEnterpriseProtectedDomainNames(value string) (err error) {
-	return instance.SetProperty("EnterpriseProtectedDomainNames", value)
+	return instance.SetProperty("EnterpriseProtectedDomainNames", (value))
 }
 
 // GetEnterpriseProtectedDomainNames gets the value of EnterpriseProtectedDomainNames for the instance
@@ -182,16 +229,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyEnterprisePr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -200,16 +256,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyInstanceID()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -218,16 +283,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyParentID() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRevokeOnUnenroll sets the value of RevokeOnUnenroll for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyRevokeOnUnenroll(value int32) (err error) {
-	return instance.SetProperty("RevokeOnUnenroll", value)
+	return instance.SetProperty("RevokeOnUnenroll", (value))
 }
 
 // GetRevokeOnUnenroll gets the value of RevokeOnUnenroll for the instance
@@ -236,16 +310,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyRevokeOnUnen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRMSTemplateIDForEDP sets the value of RMSTemplateIDForEDP for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertyRMSTemplateIDForEDP(value string) (err error) {
-	return instance.SetProperty("RMSTemplateIDForEDP", value)
+	return instance.SetProperty("RMSTemplateIDForEDP", (value))
 }
 
 // GetRMSTemplateIDForEDP gets the value of RMSTemplateIDForEDP for the instance
@@ -254,16 +337,25 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertyRMSTemplateI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSMBAutoEncryptedFileExtensions sets the value of SMBAutoEncryptedFileExtensions for the instance
 func (instance *MDM_EnterpriseDataProtection_Settings01) SetPropertySMBAutoEncryptedFileExtensions(value string) (err error) {
-	return instance.SetProperty("SMBAutoEncryptedFileExtensions", value)
+	return instance.SetProperty("SMBAutoEncryptedFileExtensions", (value))
 }
 
 // GetSMBAutoEncryptedFileExtensions gets the value of SMBAutoEncryptedFileExtensions for the instance
@@ -272,9 +364,18 @@ func (instance *MDM_EnterpriseDataProtection_Settings01) GetPropertySMBAutoEncry
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

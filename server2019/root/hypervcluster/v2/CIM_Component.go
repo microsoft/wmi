@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Component struct
@@ -56,7 +58,7 @@ func NewCIM_ComponentEx6(hostName string,
 
 // SetGroupComponent sets the value of GroupComponent for the instance
 func (instance *CIM_Component) SetPropertyGroupComponent(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("GroupComponent", value)
+	return instance.SetProperty("GroupComponent", (value))
 }
 
 // GetGroupComponent gets the value of GroupComponent for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_Component) GetPropertyGroupComponent() (value CIM_ManagedEle
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }
 
 // SetPartComponent sets the value of PartComponent for the instance
 func (instance *CIM_Component) SetPropertyPartComponent(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("PartComponent", value)
+	return instance.SetProperty("PartComponent", (value))
 }
 
 // GetPartComponent gets the value of PartComponent for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_Component) GetPropertyPartComponent() (value CIM_ManagedElem
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }

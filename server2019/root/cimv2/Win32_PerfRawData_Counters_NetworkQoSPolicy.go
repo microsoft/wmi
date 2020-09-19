@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_NetworkQoSPolicy struct
@@ -67,7 +69,7 @@ func NewWin32_PerfRawData_Counters_NetworkQoSPolicyEx6(hostName string,
 
 // SetBytestransmitted sets the value of Bytestransmitted for the instance
 func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) SetPropertyBytestransmitted(value uint64) (err error) {
-	return instance.SetProperty("Bytestransmitted", value)
+	return instance.SetProperty("Bytestransmitted", (value))
 }
 
 // GetBytestransmitted gets the value of Bytestransmitted for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) GetPropertyBytestra
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytestransmittedPersec sets the value of BytestransmittedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) SetPropertyBytestransmittedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytestransmittedPersec", value)
+	return instance.SetProperty("BytestransmittedPersec", (value))
 }
 
 // GetBytestransmittedPersec gets the value of BytestransmittedPersec for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) GetPropertyBytestra
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsdropped sets the value of Packetsdropped for the instance
 func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) SetPropertyPacketsdropped(value uint32) (err error) {
-	return instance.SetProperty("Packetsdropped", value)
+	return instance.SetProperty("Packetsdropped", (value))
 }
 
 // GetPacketsdropped gets the value of Packetsdropped for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) GetPropertyPacketsd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPacketsdroppedPersec sets the value of PacketsdroppedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) SetPropertyPacketsdroppedPersec(value uint32) (err error) {
-	return instance.SetProperty("PacketsdroppedPersec", value)
+	return instance.SetProperty("PacketsdroppedPersec", (value))
 }
 
 // GetPacketsdroppedPersec gets the value of PacketsdroppedPersec for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) GetPropertyPacketsd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPacketstransmitted sets the value of Packetstransmitted for the instance
 func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) SetPropertyPacketstransmitted(value uint32) (err error) {
-	return instance.SetProperty("Packetstransmitted", value)
+	return instance.SetProperty("Packetstransmitted", (value))
 }
 
 // GetPacketstransmitted gets the value of Packetstransmitted for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) GetPropertyPacketst
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPacketstransmittedPersec sets the value of PacketstransmittedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) SetPropertyPacketstransmittedPersec(value uint32) (err error) {
-	return instance.SetProperty("PacketstransmittedPersec", value)
+	return instance.SetProperty("PacketstransmittedPersec", (value))
 }
 
 // GetPacketstransmittedPersec gets the value of PacketstransmittedPersec for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfRawData_Counters_NetworkQoSPolicy) GetPropertyPacketst
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

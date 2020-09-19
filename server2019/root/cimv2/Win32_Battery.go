@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Battery struct
@@ -55,7 +57,7 @@ func NewWin32_BatteryEx6(hostName string,
 
 // SetBatteryRechargeTime sets the value of BatteryRechargeTime for the instance
 func (instance *Win32_Battery) SetPropertyBatteryRechargeTime(value uint32) (err error) {
-	return instance.SetProperty("BatteryRechargeTime", value)
+	return instance.SetProperty("BatteryRechargeTime", (value))
 }
 
 // GetBatteryRechargeTime gets the value of BatteryRechargeTime for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_Battery) GetPropertyBatteryRechargeTime() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExpectedBatteryLife sets the value of ExpectedBatteryLife for the instance
 func (instance *Win32_Battery) SetPropertyExpectedBatteryLife(value uint32) (err error) {
-	return instance.SetProperty("ExpectedBatteryLife", value)
+	return instance.SetProperty("ExpectedBatteryLife", (value))
 }
 
 // GetExpectedBatteryLife gets the value of ExpectedBatteryLife for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_Battery) GetPropertyExpectedBatteryLife() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

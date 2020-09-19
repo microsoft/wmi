@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ParticipatingCS struct
@@ -55,7 +57,7 @@ func NewCIM_ParticipatingCSEx6(hostName string,
 
 // SetRoleOfNode sets the value of RoleOfNode for the instance
 func (instance *CIM_ParticipatingCS) SetPropertyRoleOfNode(value uint16) (err error) {
-	return instance.SetProperty("RoleOfNode", value)
+	return instance.SetProperty("RoleOfNode", (value))
 }
 
 // GetRoleOfNode gets the value of RoleOfNode for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_ParticipatingCS) GetPropertyRoleOfNode() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetStateOfNode sets the value of StateOfNode for the instance
 func (instance *CIM_ParticipatingCS) SetPropertyStateOfNode(value uint16) (err error) {
-	return instance.SetProperty("StateOfNode", value)
+	return instance.SetProperty("StateOfNode", (value))
 }
 
 // GetStateOfNode gets the value of StateOfNode for the instance
@@ -82,9 +93,18 @@ func (instance *CIM_ParticipatingCS) GetPropertyStateOfNode() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

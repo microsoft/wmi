@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ShadowProvider struct
@@ -64,7 +66,7 @@ func NewWin32_ShadowProviderEx6(hostName string,
 
 // SetCLSID sets the value of CLSID for the instance
 func (instance *Win32_ShadowProvider) SetPropertyCLSID(value string) (err error) {
-	return instance.SetProperty("CLSID", value)
+	return instance.SetProperty("CLSID", (value))
 }
 
 // GetCLSID gets the value of CLSID for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_ShadowProvider) GetPropertyCLSID() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetID sets the value of ID for the instance
 func (instance *Win32_ShadowProvider) SetPropertyID(value string) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_ShadowProvider) GetPropertyID() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *Win32_ShadowProvider) SetPropertyType(value uint32) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_ShadowProvider) GetPropertyType() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Win32_ShadowProvider) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_ShadowProvider) GetPropertyVersion() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersionID sets the value of VersionID for the instance
 func (instance *Win32_ShadowProvider) SetPropertyVersionID(value string) (err error) {
-	return instance.SetProperty("VersionID", value)
+	return instance.SetProperty("VersionID", (value))
 }
 
 // GetVersionID gets the value of VersionID for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_ShadowProvider) GetPropertyVersionID() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PrintJob struct
@@ -102,7 +104,7 @@ func NewWin32_PrintJobEx6(hostName string,
 
 // SetColor sets the value of Color for the instance
 func (instance *Win32_PrintJob) SetPropertyColor(value string) (err error) {
-	return instance.SetProperty("Color", value)
+	return instance.SetProperty("Color", (value))
 }
 
 // GetColor gets the value of Color for the instance
@@ -111,16 +113,25 @@ func (instance *Win32_PrintJob) GetPropertyColor() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDataType sets the value of DataType for the instance
 func (instance *Win32_PrintJob) SetPropertyDataType(value string) (err error) {
-	return instance.SetProperty("DataType", value)
+	return instance.SetProperty("DataType", (value))
 }
 
 // GetDataType gets the value of DataType for the instance
@@ -129,16 +140,25 @@ func (instance *Win32_PrintJob) GetPropertyDataType() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDocument sets the value of Document for the instance
 func (instance *Win32_PrintJob) SetPropertyDocument(value string) (err error) {
-	return instance.SetProperty("Document", value)
+	return instance.SetProperty("Document", (value))
 }
 
 // GetDocument gets the value of Document for the instance
@@ -147,16 +167,25 @@ func (instance *Win32_PrintJob) GetPropertyDocument() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverName sets the value of DriverName for the instance
 func (instance *Win32_PrintJob) SetPropertyDriverName(value string) (err error) {
-	return instance.SetProperty("DriverName", value)
+	return instance.SetProperty("DriverName", (value))
 }
 
 // GetDriverName gets the value of DriverName for the instance
@@ -165,16 +194,25 @@ func (instance *Win32_PrintJob) GetPropertyDriverName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHostPrintQueue sets the value of HostPrintQueue for the instance
 func (instance *Win32_PrintJob) SetPropertyHostPrintQueue(value string) (err error) {
-	return instance.SetProperty("HostPrintQueue", value)
+	return instance.SetProperty("HostPrintQueue", (value))
 }
 
 // GetHostPrintQueue gets the value of HostPrintQueue for the instance
@@ -183,16 +221,25 @@ func (instance *Win32_PrintJob) GetPropertyHostPrintQueue() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetJobId sets the value of JobId for the instance
 func (instance *Win32_PrintJob) SetPropertyJobId(value uint32) (err error) {
-	return instance.SetProperty("JobId", value)
+	return instance.SetProperty("JobId", (value))
 }
 
 // GetJobId gets the value of JobId for the instance
@@ -201,16 +248,25 @@ func (instance *Win32_PrintJob) GetPropertyJobId() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPagesPrinted sets the value of PagesPrinted for the instance
 func (instance *Win32_PrintJob) SetPropertyPagesPrinted(value uint32) (err error) {
-	return instance.SetProperty("PagesPrinted", value)
+	return instance.SetProperty("PagesPrinted", (value))
 }
 
 // GetPagesPrinted gets the value of PagesPrinted for the instance
@@ -219,16 +275,25 @@ func (instance *Win32_PrintJob) GetPropertyPagesPrinted() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPaperLength sets the value of PaperLength for the instance
 func (instance *Win32_PrintJob) SetPropertyPaperLength(value uint32) (err error) {
-	return instance.SetProperty("PaperLength", value)
+	return instance.SetProperty("PaperLength", (value))
 }
 
 // GetPaperLength gets the value of PaperLength for the instance
@@ -237,16 +302,25 @@ func (instance *Win32_PrintJob) GetPropertyPaperLength() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPaperSize sets the value of PaperSize for the instance
 func (instance *Win32_PrintJob) SetPropertyPaperSize(value string) (err error) {
-	return instance.SetProperty("PaperSize", value)
+	return instance.SetProperty("PaperSize", (value))
 }
 
 // GetPaperSize gets the value of PaperSize for the instance
@@ -255,16 +329,25 @@ func (instance *Win32_PrintJob) GetPropertyPaperSize() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPaperWidth sets the value of PaperWidth for the instance
 func (instance *Win32_PrintJob) SetPropertyPaperWidth(value uint32) (err error) {
-	return instance.SetProperty("PaperWidth", value)
+	return instance.SetProperty("PaperWidth", (value))
 }
 
 // GetPaperWidth gets the value of PaperWidth for the instance
@@ -273,16 +356,25 @@ func (instance *Win32_PrintJob) GetPropertyPaperWidth() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetParameters sets the value of Parameters for the instance
 func (instance *Win32_PrintJob) SetPropertyParameters(value string) (err error) {
-	return instance.SetProperty("Parameters", value)
+	return instance.SetProperty("Parameters", (value))
 }
 
 // GetParameters gets the value of Parameters for the instance
@@ -291,16 +383,25 @@ func (instance *Win32_PrintJob) GetPropertyParameters() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrintProcessor sets the value of PrintProcessor for the instance
 func (instance *Win32_PrintJob) SetPropertyPrintProcessor(value string) (err error) {
-	return instance.SetProperty("PrintProcessor", value)
+	return instance.SetProperty("PrintProcessor", (value))
 }
 
 // GetPrintProcessor gets the value of PrintProcessor for the instance
@@ -309,16 +410,25 @@ func (instance *Win32_PrintJob) GetPropertyPrintProcessor() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *Win32_PrintJob) SetPropertySize(value uint32) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -327,16 +437,25 @@ func (instance *Win32_PrintJob) GetPropertySize() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSizeHigh sets the value of SizeHigh for the instance
 func (instance *Win32_PrintJob) SetPropertySizeHigh(value uint32) (err error) {
-	return instance.SetProperty("SizeHigh", value)
+	return instance.SetProperty("SizeHigh", (value))
 }
 
 // GetSizeHigh gets the value of SizeHigh for the instance
@@ -345,16 +464,25 @@ func (instance *Win32_PrintJob) GetPropertySizeHigh() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStatusMask sets the value of StatusMask for the instance
 func (instance *Win32_PrintJob) SetPropertyStatusMask(value uint32) (err error) {
-	return instance.SetProperty("StatusMask", value)
+	return instance.SetProperty("StatusMask", (value))
 }
 
 // GetStatusMask gets the value of StatusMask for the instance
@@ -363,16 +491,25 @@ func (instance *Win32_PrintJob) GetPropertyStatusMask() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalPages sets the value of TotalPages for the instance
 func (instance *Win32_PrintJob) SetPropertyTotalPages(value uint32) (err error) {
-	return instance.SetProperty("TotalPages", value)
+	return instance.SetProperty("TotalPages", (value))
 }
 
 // GetTotalPages gets the value of TotalPages for the instance
@@ -381,10 +518,19 @@ func (instance *Win32_PrintJob) GetPropertyTotalPages() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

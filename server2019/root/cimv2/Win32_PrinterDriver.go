@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PrinterDriver struct
@@ -85,7 +87,7 @@ func NewWin32_PrinterDriverEx6(hostName string,
 
 // SetConfigFile sets the value of ConfigFile for the instance
 func (instance *Win32_PrinterDriver) SetPropertyConfigFile(value string) (err error) {
-	return instance.SetProperty("ConfigFile", value)
+	return instance.SetProperty("ConfigFile", (value))
 }
 
 // GetConfigFile gets the value of ConfigFile for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_PrinterDriver) GetPropertyConfigFile() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDataFile sets the value of DataFile for the instance
 func (instance *Win32_PrinterDriver) SetPropertyDataFile(value string) (err error) {
-	return instance.SetProperty("DataFile", value)
+	return instance.SetProperty("DataFile", (value))
 }
 
 // GetDataFile gets the value of DataFile for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_PrinterDriver) GetPropertyDataFile() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDefaultDataType sets the value of DefaultDataType for the instance
 func (instance *Win32_PrinterDriver) SetPropertyDefaultDataType(value string) (err error) {
-	return instance.SetProperty("DefaultDataType", value)
+	return instance.SetProperty("DefaultDataType", (value))
 }
 
 // GetDefaultDataType gets the value of DefaultDataType for the instance
@@ -130,16 +150,25 @@ func (instance *Win32_PrinterDriver) GetPropertyDefaultDataType() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDependentFiles sets the value of DependentFiles for the instance
 func (instance *Win32_PrinterDriver) SetPropertyDependentFiles(value []string) (err error) {
-	return instance.SetProperty("DependentFiles", value)
+	return instance.SetProperty("DependentFiles", (value))
 }
 
 // GetDependentFiles gets the value of DependentFiles for the instance
@@ -148,16 +177,26 @@ func (instance *Win32_PrinterDriver) GetPropertyDependentFiles() (value []string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDriverPath sets the value of DriverPath for the instance
 func (instance *Win32_PrinterDriver) SetPropertyDriverPath(value string) (err error) {
-	return instance.SetProperty("DriverPath", value)
+	return instance.SetProperty("DriverPath", (value))
 }
 
 // GetDriverPath gets the value of DriverPath for the instance
@@ -166,16 +205,25 @@ func (instance *Win32_PrinterDriver) GetPropertyDriverPath() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFilePath sets the value of FilePath for the instance
 func (instance *Win32_PrinterDriver) SetPropertyFilePath(value string) (err error) {
-	return instance.SetProperty("FilePath", value)
+	return instance.SetProperty("FilePath", (value))
 }
 
 // GetFilePath gets the value of FilePath for the instance
@@ -184,16 +232,25 @@ func (instance *Win32_PrinterDriver) GetPropertyFilePath() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHelpFile sets the value of HelpFile for the instance
 func (instance *Win32_PrinterDriver) SetPropertyHelpFile(value string) (err error) {
-	return instance.SetProperty("HelpFile", value)
+	return instance.SetProperty("HelpFile", (value))
 }
 
 // GetHelpFile gets the value of HelpFile for the instance
@@ -202,16 +259,25 @@ func (instance *Win32_PrinterDriver) GetPropertyHelpFile() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInfName sets the value of InfName for the instance
 func (instance *Win32_PrinterDriver) SetPropertyInfName(value string) (err error) {
-	return instance.SetProperty("InfName", value)
+	return instance.SetProperty("InfName", (value))
 }
 
 // GetInfName gets the value of InfName for the instance
@@ -220,16 +286,25 @@ func (instance *Win32_PrinterDriver) GetPropertyInfName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMonitorName sets the value of MonitorName for the instance
 func (instance *Win32_PrinterDriver) SetPropertyMonitorName(value string) (err error) {
-	return instance.SetProperty("MonitorName", value)
+	return instance.SetProperty("MonitorName", (value))
 }
 
 // GetMonitorName gets the value of MonitorName for the instance
@@ -238,16 +313,25 @@ func (instance *Win32_PrinterDriver) GetPropertyMonitorName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOEMUrl sets the value of OEMUrl for the instance
 func (instance *Win32_PrinterDriver) SetPropertyOEMUrl(value string) (err error) {
-	return instance.SetProperty("OEMUrl", value)
+	return instance.SetProperty("OEMUrl", (value))
 }
 
 // GetOEMUrl gets the value of OEMUrl for the instance
@@ -256,16 +340,25 @@ func (instance *Win32_PrinterDriver) GetPropertyOEMUrl() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSupportedPlatform sets the value of SupportedPlatform for the instance
 func (instance *Win32_PrinterDriver) SetPropertySupportedPlatform(value string) (err error) {
-	return instance.SetProperty("SupportedPlatform", value)
+	return instance.SetProperty("SupportedPlatform", (value))
 }
 
 // GetSupportedPlatform gets the value of SupportedPlatform for the instance
@@ -274,16 +367,25 @@ func (instance *Win32_PrinterDriver) GetPropertySupportedPlatform() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Win32_PrinterDriver) SetPropertyVersion(value PrinterDriver_Version) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -292,10 +394,19 @@ func (instance *Win32_PrinterDriver) GetPropertyVersion() (value PrinterDriver_V
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(PrinterDriver_Version)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = PrinterDriver_Version(valuetmp)
+
 	return
 }
 

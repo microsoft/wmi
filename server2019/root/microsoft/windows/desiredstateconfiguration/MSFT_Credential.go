@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
@@ -11,7 +11,9 @@ package desiredstateconfiguration
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_Credential struct
@@ -56,7 +58,7 @@ func NewMSFT_CredentialEx6(hostName string,
 
 // SetPassword sets the value of Password for the instance
 func (instance *MSFT_Credential) SetPropertyPassword(value string) (err error) {
-	return instance.SetProperty("Password", value)
+	return instance.SetProperty("Password", (value))
 }
 
 // GetPassword gets the value of Password for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_Credential) GetPropertyPassword() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserName sets the value of UserName for the instance
 func (instance *MSFT_Credential) SetPropertyUserName(value string) (err error) {
-	return instance.SetProperty("UserName", value)
+	return instance.SetProperty("UserName", (value))
 }
 
 // GetUserName gets the value of UserName for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_Credential) GetPropertyUserName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

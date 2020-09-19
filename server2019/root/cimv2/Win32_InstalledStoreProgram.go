@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_InstalledStoreProgram struct
@@ -68,7 +70,7 @@ func NewWin32_InstalledStoreProgramEx6(hostName string,
 
 // SetArchitecture sets the value of Architecture for the instance
 func (instance *Win32_InstalledStoreProgram) SetPropertyArchitecture(value string) (err error) {
-	return instance.SetProperty("Architecture", value)
+	return instance.SetProperty("Architecture", (value))
 }
 
 // GetArchitecture gets the value of Architecture for the instance
@@ -77,16 +79,25 @@ func (instance *Win32_InstalledStoreProgram) GetPropertyArchitecture() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLanguage sets the value of Language for the instance
 func (instance *Win32_InstalledStoreProgram) SetPropertyLanguage(value string) (err error) {
-	return instance.SetProperty("Language", value)
+	return instance.SetProperty("Language", (value))
 }
 
 // GetLanguage gets the value of Language for the instance
@@ -95,16 +106,25 @@ func (instance *Win32_InstalledStoreProgram) GetPropertyLanguage() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_InstalledStoreProgram) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -113,16 +133,25 @@ func (instance *Win32_InstalledStoreProgram) GetPropertyName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProgramId sets the value of ProgramId for the instance
 func (instance *Win32_InstalledStoreProgram) SetPropertyProgramId(value string) (err error) {
-	return instance.SetProperty("ProgramId", value)
+	return instance.SetProperty("ProgramId", (value))
 }
 
 // GetProgramId gets the value of ProgramId for the instance
@@ -131,16 +160,25 @@ func (instance *Win32_InstalledStoreProgram) GetPropertyProgramId() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVendor sets the value of Vendor for the instance
 func (instance *Win32_InstalledStoreProgram) SetPropertyVendor(value string) (err error) {
-	return instance.SetProperty("Vendor", value)
+	return instance.SetProperty("Vendor", (value))
 }
 
 // GetVendor gets the value of Vendor for the instance
@@ -149,16 +187,25 @@ func (instance *Win32_InstalledStoreProgram) GetPropertyVendor() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Win32_InstalledStoreProgram) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -167,9 +214,18 @@ func (instance *Win32_InstalledStoreProgram) GetPropertyVersion() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

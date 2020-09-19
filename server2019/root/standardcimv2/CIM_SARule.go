@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SARule struct
@@ -52,7 +54,7 @@ func NewCIM_SARuleEx6(hostName string,
 
 // SetLimitNegotiation sets the value of LimitNegotiation for the instance
 func (instance *CIM_SARule) SetPropertyLimitNegotiation(value uint16) (err error) {
-	return instance.SetProperty("LimitNegotiation", value)
+	return instance.SetProperty("LimitNegotiation", (value))
 }
 
 // GetLimitNegotiation gets the value of LimitNegotiation for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_SARule) GetPropertyLimitNegotiation() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

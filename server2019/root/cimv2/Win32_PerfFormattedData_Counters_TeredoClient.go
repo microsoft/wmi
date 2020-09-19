@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_TeredoClient struct
@@ -82,7 +84,7 @@ func NewWin32_PerfFormattedData_Counters_TeredoClientEx6(hostName string,
 
 // SetInTeredoBubble sets the value of InTeredoBubble for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyInTeredoBubble(value uint32) (err error) {
-	return instance.SetProperty("InTeredoBubble", value)
+	return instance.SetProperty("InTeredoBubble", (value))
 }
 
 // GetInTeredoBubble gets the value of InTeredoBubble for the instance
@@ -91,16 +93,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoData sets the value of InTeredoData for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyInTeredoData(value uint64) (err error) {
-	return instance.SetProperty("InTeredoData", value)
+	return instance.SetProperty("InTeredoData", (value))
 }
 
 // GetInTeredoData gets the value of InTeredoData for the instance
@@ -109,16 +120,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInTeredoDataKernelMode sets the value of InTeredoDataKernelMode for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyInTeredoDataKernelMode(value uint64) (err error) {
-	return instance.SetProperty("InTeredoDataKernelMode", value)
+	return instance.SetProperty("InTeredoDataKernelMode", (value))
 }
 
 // GetInTeredoDataKernelMode gets the value of InTeredoDataKernelMode for the instance
@@ -127,16 +147,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInTeredoDataUserMode sets the value of InTeredoDataUserMode for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyInTeredoDataUserMode(value uint64) (err error) {
-	return instance.SetProperty("InTeredoDataUserMode", value)
+	return instance.SetProperty("InTeredoDataUserMode", (value))
 }
 
 // GetInTeredoDataUserMode gets the value of InTeredoDataUserMode for the instance
@@ -145,16 +174,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInTeredoInvalid sets the value of InTeredoInvalid for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyInTeredoInvalid(value uint32) (err error) {
-	return instance.SetProperty("InTeredoInvalid", value)
+	return instance.SetProperty("InTeredoInvalid", (value))
 }
 
 // GetInTeredoInvalid gets the value of InTeredoInvalid for the instance
@@ -163,16 +201,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInTeredoRouterAdvertisement sets the value of InTeredoRouterAdvertisement for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyInTeredoRouterAdvertisement(value uint32) (err error) {
-	return instance.SetProperty("InTeredoRouterAdvertisement", value)
+	return instance.SetProperty("InTeredoRouterAdvertisement", (value))
 }
 
 // GetInTeredoRouterAdvertisement gets the value of InTeredoRouterAdvertisement for the instance
@@ -181,16 +228,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyInTere
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoBubble sets the value of OutTeredoBubble for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyOutTeredoBubble(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoBubble", value)
+	return instance.SetProperty("OutTeredoBubble", (value))
 }
 
 // GetOutTeredoBubble gets the value of OutTeredoBubble for the instance
@@ -199,16 +255,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyOutTer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutTeredoData sets the value of OutTeredoData for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyOutTeredoData(value uint64) (err error) {
-	return instance.SetProperty("OutTeredoData", value)
+	return instance.SetProperty("OutTeredoData", (value))
 }
 
 // GetOutTeredoData gets the value of OutTeredoData for the instance
@@ -217,16 +282,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyOutTer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutTeredoDataKernelMode sets the value of OutTeredoDataKernelMode for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyOutTeredoDataKernelMode(value uint64) (err error) {
-	return instance.SetProperty("OutTeredoDataKernelMode", value)
+	return instance.SetProperty("OutTeredoDataKernelMode", (value))
 }
 
 // GetOutTeredoDataKernelMode gets the value of OutTeredoDataKernelMode for the instance
@@ -235,16 +309,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyOutTer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutTeredoDataUserMode sets the value of OutTeredoDataUserMode for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyOutTeredoDataUserMode(value uint64) (err error) {
-	return instance.SetProperty("OutTeredoDataUserMode", value)
+	return instance.SetProperty("OutTeredoDataUserMode", (value))
 }
 
 // GetOutTeredoDataUserMode gets the value of OutTeredoDataUserMode for the instance
@@ -253,16 +336,25 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyOutTer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOutTeredoRouterSolicitation sets the value of OutTeredoRouterSolicitation for the instance
 func (instance *Win32_PerfFormattedData_Counters_TeredoClient) SetPropertyOutTeredoRouterSolicitation(value uint32) (err error) {
-	return instance.SetProperty("OutTeredoRouterSolicitation", value)
+	return instance.SetProperty("OutTeredoRouterSolicitation", (value))
 }
 
 // GetOutTeredoRouterSolicitation gets the value of OutTeredoRouterSolicitation for the instance
@@ -271,9 +363,18 @@ func (instance *Win32_PerfFormattedData_Counters_TeredoClient) GetPropertyOutTer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterBindingSettingData struct
@@ -70,7 +72,7 @@ func NewMSFT_NetAdapterBindingSettingDataEx6(hostName string,
 
 // SetBindName sets the value of BindName for the instance
 func (instance *MSFT_NetAdapterBindingSettingData) SetPropertyBindName(value string) (err error) {
-	return instance.SetProperty("BindName", value)
+	return instance.SetProperty("BindName", (value))
 }
 
 // GetBindName gets the value of BindName for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_NetAdapterBindingSettingData) GetPropertyBindName() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCharacteristics sets the value of Characteristics for the instance
 func (instance *MSFT_NetAdapterBindingSettingData) SetPropertyCharacteristics(value uint32) (err error) {
-	return instance.SetProperty("Characteristics", value)
+	return instance.SetProperty("Characteristics", (value))
 }
 
 // GetCharacteristics gets the value of Characteristics for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_NetAdapterBindingSettingData) GetPropertyCharacteristics() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetComponentClassGuid sets the value of ComponentClassGuid for the instance
 func (instance *MSFT_NetAdapterBindingSettingData) SetPropertyComponentClassGuid(value string) (err error) {
-	return instance.SetProperty("ComponentClassGuid", value)
+	return instance.SetProperty("ComponentClassGuid", (value))
 }
 
 // GetComponentClassGuid gets the value of ComponentClassGuid for the instance
@@ -115,16 +135,25 @@ func (instance *MSFT_NetAdapterBindingSettingData) GetPropertyComponentClassGuid
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetComponentClassName sets the value of ComponentClassName for the instance
 func (instance *MSFT_NetAdapterBindingSettingData) SetPropertyComponentClassName(value string) (err error) {
-	return instance.SetProperty("ComponentClassName", value)
+	return instance.SetProperty("ComponentClassName", (value))
 }
 
 // GetComponentClassName gets the value of ComponentClassName for the instance
@@ -133,16 +162,25 @@ func (instance *MSFT_NetAdapterBindingSettingData) GetPropertyComponentClassName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetComponentID sets the value of ComponentID for the instance
 func (instance *MSFT_NetAdapterBindingSettingData) SetPropertyComponentID(value string) (err error) {
-	return instance.SetProperty("ComponentID", value)
+	return instance.SetProperty("ComponentID", (value))
 }
 
 // GetComponentID gets the value of ComponentID for the instance
@@ -151,16 +189,25 @@ func (instance *MSFT_NetAdapterBindingSettingData) GetPropertyComponentID() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisplayName sets the value of DisplayName for the instance
 func (instance *MSFT_NetAdapterBindingSettingData) SetPropertyDisplayName(value string) (err error) {
-	return instance.SetProperty("DisplayName", value)
+	return instance.SetProperty("DisplayName", (value))
 }
 
 // GetDisplayName gets the value of DisplayName for the instance
@@ -169,16 +216,25 @@ func (instance *MSFT_NetAdapterBindingSettingData) GetPropertyDisplayName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *MSFT_NetAdapterBindingSettingData) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -187,10 +243,19 @@ func (instance *MSFT_NetAdapterBindingSettingData) GetPropertyEnabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

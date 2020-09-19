@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PowerMeterEvent struct
@@ -55,7 +57,7 @@ func NewWin32_PowerMeterEventEx6(hostName string,
 
 // SetEventSource sets the value of EventSource for the instance
 func (instance *Win32_PowerMeterEvent) SetPropertyEventSource(value CIM_PowerMeter) (err error) {
-	return instance.SetProperty("EventSource", value)
+	return instance.SetProperty("EventSource", (value))
 }
 
 // GetEventSource gets the value of EventSource for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PowerMeterEvent) GetPropertyEventSource() (value CIM_Power
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_PowerMeter)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_PowerMeter)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_PowerMeter is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_PowerMeter(valuetmp)
+
 	return
 }
 
 // SetEventType sets the value of EventType for the instance
 func (instance *Win32_PowerMeterEvent) SetPropertyEventType(value uint32) (err error) {
-	return instance.SetProperty("EventType", value)
+	return instance.SetProperty("EventType", (value))
 }
 
 // GetEventType gets the value of EventType for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PowerMeterEvent) GetPropertyEventType() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_MIMEInfoAction struct
@@ -58,7 +60,7 @@ func NewWin32_MIMEInfoActionEx6(hostName string,
 
 // SetCLSID sets the value of CLSID for the instance
 func (instance *Win32_MIMEInfoAction) SetPropertyCLSID(value string) (err error) {
-	return instance.SetProperty("CLSID", value)
+	return instance.SetProperty("CLSID", (value))
 }
 
 // GetCLSID gets the value of CLSID for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_MIMEInfoAction) GetPropertyCLSID() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetContentType sets the value of ContentType for the instance
 func (instance *Win32_MIMEInfoAction) SetPropertyContentType(value string) (err error) {
-	return instance.SetProperty("ContentType", value)
+	return instance.SetProperty("ContentType", (value))
 }
 
 // GetContentType gets the value of ContentType for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_MIMEInfoAction) GetPropertyContentType() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExtension sets the value of Extension for the instance
 func (instance *Win32_MIMEInfoAction) SetPropertyExtension(value string) (err error) {
-	return instance.SetProperty("Extension", value)
+	return instance.SetProperty("Extension", (value))
 }
 
 // GetExtension gets the value of Extension for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_MIMEInfoAction) GetPropertyExtension() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

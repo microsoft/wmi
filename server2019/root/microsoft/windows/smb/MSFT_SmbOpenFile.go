@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbOpenFile struct
@@ -92,7 +94,7 @@ func NewMSFT_SmbOpenFileEx6(hostName string,
 
 // SetClientComputerName sets the value of ClientComputerName for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyClientComputerName(value string) (err error) {
-	return instance.SetProperty("ClientComputerName", value)
+	return instance.SetProperty("ClientComputerName", (value))
 }
 
 // GetClientComputerName gets the value of ClientComputerName for the instance
@@ -101,16 +103,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyClientComputerName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetClientUserName sets the value of ClientUserName for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyClientUserName(value string) (err error) {
-	return instance.SetProperty("ClientUserName", value)
+	return instance.SetProperty("ClientUserName", (value))
 }
 
 // GetClientUserName gets the value of ClientUserName for the instance
@@ -119,16 +130,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyClientUserName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetClusterNodeName sets the value of ClusterNodeName for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyClusterNodeName(value string) (err error) {
-	return instance.SetProperty("ClusterNodeName", value)
+	return instance.SetProperty("ClusterNodeName", (value))
 }
 
 // GetClusterNodeName gets the value of ClusterNodeName for the instance
@@ -137,16 +157,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyClusterNodeName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetContinuouslyAvailable sets the value of ContinuouslyAvailable for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyContinuouslyAvailable(value bool) (err error) {
-	return instance.SetProperty("ContinuouslyAvailable", value)
+	return instance.SetProperty("ContinuouslyAvailable", (value))
 }
 
 // GetContinuouslyAvailable gets the value of ContinuouslyAvailable for the instance
@@ -155,16 +184,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyContinuouslyAvailable() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEncrypted sets the value of Encrypted for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyEncrypted(value bool) (err error) {
-	return instance.SetProperty("Encrypted", value)
+	return instance.SetProperty("Encrypted", (value))
 }
 
 // GetEncrypted gets the value of Encrypted for the instance
@@ -173,16 +211,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyEncrypted() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFileId sets the value of FileId for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyFileId(value uint64) (err error) {
-	return instance.SetProperty("FileId", value)
+	return instance.SetProperty("FileId", (value))
 }
 
 // GetFileId gets the value of FileId for the instance
@@ -191,16 +238,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyFileId() (value uint64, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLocks sets the value of Locks for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyLocks(value uint32) (err error) {
-	return instance.SetProperty("Locks", value)
+	return instance.SetProperty("Locks", (value))
 }
 
 // GetLocks gets the value of Locks for the instance
@@ -209,16 +265,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyLocks() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -227,16 +292,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyPath() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPermissions sets the value of Permissions for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyPermissions(value uint32) (err error) {
-	return instance.SetProperty("Permissions", value)
+	return instance.SetProperty("Permissions", (value))
 }
 
 // GetPermissions gets the value of Permissions for the instance
@@ -245,16 +319,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyPermissions() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetScopeName sets the value of ScopeName for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyScopeName(value string) (err error) {
-	return instance.SetProperty("ScopeName", value)
+	return instance.SetProperty("ScopeName", (value))
 }
 
 // GetScopeName gets the value of ScopeName for the instance
@@ -263,16 +346,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyScopeName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSessionId sets the value of SessionId for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertySessionId(value uint64) (err error) {
-	return instance.SetProperty("SessionId", value)
+	return instance.SetProperty("SessionId", (value))
 }
 
 // GetSessionId gets the value of SessionId for the instance
@@ -281,16 +373,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertySessionId() (value uint64, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetShareRelativePath sets the value of ShareRelativePath for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertyShareRelativePath(value string) (err error) {
-	return instance.SetProperty("ShareRelativePath", value)
+	return instance.SetProperty("ShareRelativePath", (value))
 }
 
 // GetShareRelativePath gets the value of ShareRelativePath for the instance
@@ -299,16 +400,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertyShareRelativePath() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSigned sets the value of Signed for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertySigned(value bool) (err error) {
-	return instance.SetProperty("Signed", value)
+	return instance.SetProperty("Signed", (value))
 }
 
 // GetSigned gets the value of Signed for the instance
@@ -317,16 +427,25 @@ func (instance *MSFT_SmbOpenFile) GetPropertySigned() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSmbInstance sets the value of SmbInstance for the instance
 func (instance *MSFT_SmbOpenFile) SetPropertySmbInstance(value SmbOpenFile_SmbInstance) (err error) {
-	return instance.SetProperty("SmbInstance", value)
+	return instance.SetProperty("SmbInstance", (value))
 }
 
 // GetSmbInstance gets the value of SmbInstance for the instance
@@ -335,10 +454,19 @@ func (instance *MSFT_SmbOpenFile) GetPropertySmbInstance() (value SmbOpenFile_Sm
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbOpenFile_SmbInstance)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbOpenFile_SmbInstance(valuetmp)
+
 	return
 }
 

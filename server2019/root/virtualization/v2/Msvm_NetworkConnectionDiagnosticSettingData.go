@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_NetworkConnectionDiagnosticSettingData struct
@@ -70,7 +72,7 @@ func NewMsvm_NetworkConnectionDiagnosticSettingDataEx6(hostName string,
 
 // SetIsolationId sets the value of IsolationId for the instance
 func (instance *Msvm_NetworkConnectionDiagnosticSettingData) SetPropertyIsolationId(value uint32) (err error) {
-	return instance.SetProperty("IsolationId", value)
+	return instance.SetProperty("IsolationId", (value))
 }
 
 // GetIsolationId gets the value of IsolationId for the instance
@@ -79,16 +81,25 @@ func (instance *Msvm_NetworkConnectionDiagnosticSettingData) GetPropertyIsolatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsSender sets the value of IsSender for the instance
 func (instance *Msvm_NetworkConnectionDiagnosticSettingData) SetPropertyIsSender(value bool) (err error) {
-	return instance.SetProperty("IsSender", value)
+	return instance.SetProperty("IsSender", (value))
 }
 
 // GetIsSender gets the value of IsSender for the instance
@@ -97,16 +108,25 @@ func (instance *Msvm_NetworkConnectionDiagnosticSettingData) GetPropertyIsSender
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPayloadSize sets the value of PayloadSize for the instance
 func (instance *Msvm_NetworkConnectionDiagnosticSettingData) SetPropertyPayloadSize(value uint32) (err error) {
-	return instance.SetProperty("PayloadSize", value)
+	return instance.SetProperty("PayloadSize", (value))
 }
 
 // GetPayloadSize gets the value of PayloadSize for the instance
@@ -115,16 +135,25 @@ func (instance *Msvm_NetworkConnectionDiagnosticSettingData) GetPropertyPayloadS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceiverIP sets the value of ReceiverIP for the instance
 func (instance *Msvm_NetworkConnectionDiagnosticSettingData) SetPropertyReceiverIP(value string) (err error) {
-	return instance.SetProperty("ReceiverIP", value)
+	return instance.SetProperty("ReceiverIP", (value))
 }
 
 // GetReceiverIP gets the value of ReceiverIP for the instance
@@ -133,16 +162,25 @@ func (instance *Msvm_NetworkConnectionDiagnosticSettingData) GetPropertyReceiver
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReceiverMac sets the value of ReceiverMac for the instance
 func (instance *Msvm_NetworkConnectionDiagnosticSettingData) SetPropertyReceiverMac(value string) (err error) {
-	return instance.SetProperty("ReceiverMac", value)
+	return instance.SetProperty("ReceiverMac", (value))
 }
 
 // GetReceiverMac gets the value of ReceiverMac for the instance
@@ -151,16 +189,25 @@ func (instance *Msvm_NetworkConnectionDiagnosticSettingData) GetPropertyReceiver
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSenderIP sets the value of SenderIP for the instance
 func (instance *Msvm_NetworkConnectionDiagnosticSettingData) SetPropertySenderIP(value string) (err error) {
-	return instance.SetProperty("SenderIP", value)
+	return instance.SetProperty("SenderIP", (value))
 }
 
 // GetSenderIP gets the value of SenderIP for the instance
@@ -169,16 +216,25 @@ func (instance *Msvm_NetworkConnectionDiagnosticSettingData) GetPropertySenderIP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSequenceNumber sets the value of SequenceNumber for the instance
 func (instance *Msvm_NetworkConnectionDiagnosticSettingData) SetPropertySequenceNumber(value uint32) (err error) {
-	return instance.SetProperty("SequenceNumber", value)
+	return instance.SetProperty("SequenceNumber", (value))
 }
 
 // GetSequenceNumber gets the value of SequenceNumber for the instance
@@ -187,9 +243,18 @@ func (instance *Msvm_NetworkConnectionDiagnosticSettingData) GetPropertySequence
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice struct
@@ -67,7 +69,7 @@ func NewWin32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvs
 
 // SetNumberofconnectedVMTchannels sets the value of NumberofconnectedVMTchannels for the instance
 func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice) SetPropertyNumberofconnectedVMTchannels(value uint32) (err error) {
-	return instance.SetProperty("NumberofconnectedVMTchannels", value)
+	return instance.SetProperty("NumberofconnectedVMTchannels", (value))
 }
 
 // GetNumberofconnectedVMTchannels gets the value of NumberofconnectedVMTchannels for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofcreatedVMTchannels sets the value of NumberofcreatedVMTchannels for the instance
 func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice) SetPropertyNumberofcreatedVMTchannels(value uint32) (err error) {
-	return instance.SetProperty("NumberofcreatedVMTchannels", value)
+	return instance.SetProperty("NumberofcreatedVMTchannels", (value))
 }
 
 // GetNumberofcreatedVMTchannels gets the value of NumberofcreatedVMTchannels for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofdisconnectedVMTchannels sets the value of NumberofdisconnectedVMTchannels for the instance
 func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice) SetPropertyNumberofdisconnectedVMTchannels(value uint32) (err error) {
-	return instance.SetProperty("NumberofdisconnectedVMTchannels", value)
+	return instance.SetProperty("NumberofdisconnectedVMTchannels", (value))
 }
 
 // GetNumberofdisconnectedVMTchannels gets the value of NumberofdisconnectedVMTchannels for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofRDVGMrestartednotifications sets the value of NumberofRDVGMrestartednotifications for the instance
 func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice) SetPropertyNumberofRDVGMrestartednotifications(value uint32) (err error) {
-	return instance.SetProperty("NumberofRDVGMrestartednotifications", value)
+	return instance.SetProperty("NumberofRDVGMrestartednotifications", (value))
 }
 
 // GetNumberofRDVGMrestartednotifications gets the value of NumberofRDVGMrestartednotifications for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofwaitingVMTchannels sets the value of NumberofwaitingVMTchannels for the instance
 func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice) SetPropertyNumberofwaitingVMTchannels(value uint32) (err error) {
-	return instance.SetProperty("NumberofwaitingVMTchannels", value)
+	return instance.SetProperty("NumberofwaitingVMTchannels", (value))
 }
 
 // GetNumberofwaitingVMTchannels gets the value of NumberofwaitingVMTchannels for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalnumberofcreatedVMTchannels sets the value of TotalnumberofcreatedVMTchannels for the instance
 func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXSynth3dvsc_RemoteFXSynth3DVSCVMDevice) SetPropertyTotalnumberofcreatedVMTchannels(value uint32) (err error) {
-	return instance.SetProperty("TotalnumberofcreatedVMTchannels", value)
+	return instance.SetProperty("TotalnumberofcreatedVMTchannels", (value))
 }
 
 // GetTotalnumberofcreatedVMTchannels gets the value of TotalnumberofcreatedVMTchannels for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfRawData_MicrosoftWindowsRemoteDesktopServicesRemoteFXS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

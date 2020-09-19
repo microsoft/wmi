@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_SystemSlot struct
@@ -73,7 +75,7 @@ func NewWin32_SystemSlotEx6(hostName string,
 
 // SetBusNumber sets the value of BusNumber for the instance
 func (instance *Win32_SystemSlot) SetPropertyBusNumber(value uint32) (err error) {
-	return instance.SetProperty("BusNumber", value)
+	return instance.SetProperty("BusNumber", (value))
 }
 
 // GetBusNumber gets the value of BusNumber for the instance
@@ -82,16 +84,25 @@ func (instance *Win32_SystemSlot) GetPropertyBusNumber() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentUsage sets the value of CurrentUsage for the instance
 func (instance *Win32_SystemSlot) SetPropertyCurrentUsage(value uint16) (err error) {
-	return instance.SetProperty("CurrentUsage", value)
+	return instance.SetProperty("CurrentUsage", (value))
 }
 
 // GetCurrentUsage gets the value of CurrentUsage for the instance
@@ -100,16 +111,25 @@ func (instance *Win32_SystemSlot) GetPropertyCurrentUsage() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetDeviceNumber sets the value of DeviceNumber for the instance
 func (instance *Win32_SystemSlot) SetPropertyDeviceNumber(value uint32) (err error) {
-	return instance.SetProperty("DeviceNumber", value)
+	return instance.SetProperty("DeviceNumber", (value))
 }
 
 // GetDeviceNumber gets the value of DeviceNumber for the instance
@@ -118,16 +138,25 @@ func (instance *Win32_SystemSlot) GetPropertyDeviceNumber() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFunctionNumber sets the value of FunctionNumber for the instance
 func (instance *Win32_SystemSlot) SetPropertyFunctionNumber(value uint32) (err error) {
-	return instance.SetProperty("FunctionNumber", value)
+	return instance.SetProperty("FunctionNumber", (value))
 }
 
 // GetFunctionNumber gets the value of FunctionNumber for the instance
@@ -136,16 +165,25 @@ func (instance *Win32_SystemSlot) GetPropertyFunctionNumber() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPMESignal sets the value of PMESignal for the instance
 func (instance *Win32_SystemSlot) SetPropertyPMESignal(value bool) (err error) {
-	return instance.SetProperty("PMESignal", value)
+	return instance.SetProperty("PMESignal", (value))
 }
 
 // GetPMESignal gets the value of PMESignal for the instance
@@ -154,16 +192,25 @@ func (instance *Win32_SystemSlot) GetPropertyPMESignal() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSegmentGroupNumber sets the value of SegmentGroupNumber for the instance
 func (instance *Win32_SystemSlot) SetPropertySegmentGroupNumber(value uint32) (err error) {
-	return instance.SetProperty("SegmentGroupNumber", value)
+	return instance.SetProperty("SegmentGroupNumber", (value))
 }
 
 // GetSegmentGroupNumber gets the value of SegmentGroupNumber for the instance
@@ -172,16 +219,25 @@ func (instance *Win32_SystemSlot) GetPropertySegmentGroupNumber() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetShared sets the value of Shared for the instance
 func (instance *Win32_SystemSlot) SetPropertyShared(value bool) (err error) {
-	return instance.SetProperty("Shared", value)
+	return instance.SetProperty("Shared", (value))
 }
 
 // GetShared gets the value of Shared for the instance
@@ -190,16 +246,25 @@ func (instance *Win32_SystemSlot) GetPropertyShared() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSlotDesignation sets the value of SlotDesignation for the instance
 func (instance *Win32_SystemSlot) SetPropertySlotDesignation(value string) (err error) {
-	return instance.SetProperty("SlotDesignation", value)
+	return instance.SetProperty("SlotDesignation", (value))
 }
 
 // GetSlotDesignation gets the value of SlotDesignation for the instance
@@ -208,9 +273,18 @@ func (instance *Win32_SystemSlot) GetPropertySlotDesignation() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

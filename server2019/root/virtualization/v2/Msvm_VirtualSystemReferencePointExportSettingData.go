@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemReferencePointExportSettingData struct
@@ -55,7 +57,7 @@ func NewMsvm_VirtualSystemReferencePointExportSettingDataEx6(hostName string,
 
 // SetBaseReferencePoint sets the value of BaseReferencePoint for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportSettingData) SetPropertyBaseReferencePoint(value string) (err error) {
-	return instance.SetProperty("BaseReferencePoint", value)
+	return instance.SetProperty("BaseReferencePoint", (value))
 }
 
 // GetBaseReferencePoint gets the value of BaseReferencePoint for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_VirtualSystemReferencePointExportSettingData) GetPropertyBa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisksToExport sets the value of DisksToExport for the instance
 func (instance *Msvm_VirtualSystemReferencePointExportSettingData) SetPropertyDisksToExport(value []string) (err error) {
-	return instance.SetProperty("DisksToExport", value)
+	return instance.SetProperty("DisksToExport", (value))
 }
 
 // GetDisksToExport gets the value of DisksToExport for the instance
@@ -82,9 +93,19 @@ func (instance *Msvm_VirtualSystemReferencePointExportSettingData) GetPropertyDi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

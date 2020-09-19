@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_DeviceLock02 struct
@@ -104,7 +106,7 @@ func NewMDM_Policy_Config01_DeviceLock02Ex6(hostName string,
 
 // SetAllowScreenTimeoutWhileLockedUserConfig sets the value of AllowScreenTimeoutWhileLockedUserConfig for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyAllowScreenTimeoutWhileLockedUserConfig(value int32) (err error) {
-	return instance.SetProperty("AllowScreenTimeoutWhileLockedUserConfig", value)
+	return instance.SetProperty("AllowScreenTimeoutWhileLockedUserConfig", (value))
 }
 
 // GetAllowScreenTimeoutWhileLockedUserConfig gets the value of AllowScreenTimeoutWhileLockedUserConfig for the instance
@@ -113,16 +115,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyAllowScreenTimeoutW
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowSimpleDevicePassword sets the value of AllowSimpleDevicePassword for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyAllowSimpleDevicePassword(value int32) (err error) {
-	return instance.SetProperty("AllowSimpleDevicePassword", value)
+	return instance.SetProperty("AllowSimpleDevicePassword", (value))
 }
 
 // GetAllowSimpleDevicePassword gets the value of AllowSimpleDevicePassword for the instance
@@ -131,16 +142,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyAllowSimpleDevicePa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAlphanumericDevicePasswordRequired sets the value of AlphanumericDevicePasswordRequired for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyAlphanumericDevicePasswordRequired(value int32) (err error) {
-	return instance.SetProperty("AlphanumericDevicePasswordRequired", value)
+	return instance.SetProperty("AlphanumericDevicePasswordRequired", (value))
 }
 
 // GetAlphanumericDevicePasswordRequired gets the value of AlphanumericDevicePasswordRequired for the instance
@@ -149,16 +169,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyAlphanumericDeviceP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDevicePasswordEnabled sets the value of DevicePasswordEnabled for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyDevicePasswordEnabled(value int32) (err error) {
-	return instance.SetProperty("DevicePasswordEnabled", value)
+	return instance.SetProperty("DevicePasswordEnabled", (value))
 }
 
 // GetDevicePasswordEnabled gets the value of DevicePasswordEnabled for the instance
@@ -167,16 +196,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyDevicePasswordEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDevicePasswordExpiration sets the value of DevicePasswordExpiration for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyDevicePasswordExpiration(value int32) (err error) {
-	return instance.SetProperty("DevicePasswordExpiration", value)
+	return instance.SetProperty("DevicePasswordExpiration", (value))
 }
 
 // GetDevicePasswordExpiration gets the value of DevicePasswordExpiration for the instance
@@ -185,16 +223,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyDevicePasswordExpir
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDevicePasswordHistory sets the value of DevicePasswordHistory for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyDevicePasswordHistory(value int32) (err error) {
-	return instance.SetProperty("DevicePasswordHistory", value)
+	return instance.SetProperty("DevicePasswordHistory", (value))
 }
 
 // GetDevicePasswordHistory gets the value of DevicePasswordHistory for the instance
@@ -203,16 +250,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyDevicePasswordHisto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnforceLockScreenAndLogonImage sets the value of EnforceLockScreenAndLogonImage for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyEnforceLockScreenAndLogonImage(value string) (err error) {
-	return instance.SetProperty("EnforceLockScreenAndLogonImage", value)
+	return instance.SetProperty("EnforceLockScreenAndLogonImage", (value))
 }
 
 // GetEnforceLockScreenAndLogonImage gets the value of EnforceLockScreenAndLogonImage for the instance
@@ -221,16 +277,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyEnforceLockScreenAn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnforceLockScreenProvider sets the value of EnforceLockScreenProvider for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyEnforceLockScreenProvider(value string) (err error) {
-	return instance.SetProperty("EnforceLockScreenProvider", value)
+	return instance.SetProperty("EnforceLockScreenProvider", (value))
 }
 
 // GetEnforceLockScreenProvider gets the value of EnforceLockScreenProvider for the instance
@@ -239,16 +304,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyEnforceLockScreenPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -257,16 +331,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyInstanceID() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxDevicePasswordFailedAttempts sets the value of MaxDevicePasswordFailedAttempts for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyMaxDevicePasswordFailedAttempts(value int32) (err error) {
-	return instance.SetProperty("MaxDevicePasswordFailedAttempts", value)
+	return instance.SetProperty("MaxDevicePasswordFailedAttempts", (value))
 }
 
 // GetMaxDevicePasswordFailedAttempts gets the value of MaxDevicePasswordFailedAttempts for the instance
@@ -275,16 +358,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyMaxDevicePasswordFa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMaxInactivityTimeDeviceLock sets the value of MaxInactivityTimeDeviceLock for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyMaxInactivityTimeDeviceLock(value int32) (err error) {
-	return instance.SetProperty("MaxInactivityTimeDeviceLock", value)
+	return instance.SetProperty("MaxInactivityTimeDeviceLock", (value))
 }
 
 // GetMaxInactivityTimeDeviceLock gets the value of MaxInactivityTimeDeviceLock for the instance
@@ -293,16 +385,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyMaxInactivityTimeDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMinDevicePasswordComplexCharacters sets the value of MinDevicePasswordComplexCharacters for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyMinDevicePasswordComplexCharacters(value int32) (err error) {
-	return instance.SetProperty("MinDevicePasswordComplexCharacters", value)
+	return instance.SetProperty("MinDevicePasswordComplexCharacters", (value))
 }
 
 // GetMinDevicePasswordComplexCharacters gets the value of MinDevicePasswordComplexCharacters for the instance
@@ -311,16 +412,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyMinDevicePasswordCo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMinDevicePasswordLength sets the value of MinDevicePasswordLength for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyMinDevicePasswordLength(value int32) (err error) {
-	return instance.SetProperty("MinDevicePasswordLength", value)
+	return instance.SetProperty("MinDevicePasswordLength", (value))
 }
 
 // GetMinDevicePasswordLength gets the value of MinDevicePasswordLength for the instance
@@ -329,16 +439,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyMinDevicePasswordLe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetMinimumPasswordAge sets the value of MinimumPasswordAge for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyMinimumPasswordAge(value int32) (err error) {
-	return instance.SetProperty("MinimumPasswordAge", value)
+	return instance.SetProperty("MinimumPasswordAge", (value))
 }
 
 // GetMinimumPasswordAge gets the value of MinimumPasswordAge for the instance
@@ -347,16 +466,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyMinimumPasswordAge(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -365,16 +493,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyParentID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreventEnablingLockScreenCamera sets the value of PreventEnablingLockScreenCamera for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyPreventEnablingLockScreenCamera(value string) (err error) {
-	return instance.SetProperty("PreventEnablingLockScreenCamera", value)
+	return instance.SetProperty("PreventEnablingLockScreenCamera", (value))
 }
 
 // GetPreventEnablingLockScreenCamera gets the value of PreventEnablingLockScreenCamera for the instance
@@ -383,16 +520,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyPreventEnablingLock
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreventLockScreenSlideShow sets the value of PreventLockScreenSlideShow for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyPreventLockScreenSlideShow(value string) (err error) {
-	return instance.SetProperty("PreventLockScreenSlideShow", value)
+	return instance.SetProperty("PreventLockScreenSlideShow", (value))
 }
 
 // GetPreventLockScreenSlideShow gets the value of PreventLockScreenSlideShow for the instance
@@ -401,16 +547,25 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyPreventLockScreenSl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScreenTimeoutWhileLocked sets the value of ScreenTimeoutWhileLocked for the instance
 func (instance *MDM_Policy_Config01_DeviceLock02) SetPropertyScreenTimeoutWhileLocked(value int32) (err error) {
-	return instance.SetProperty("ScreenTimeoutWhileLocked", value)
+	return instance.SetProperty("ScreenTimeoutWhileLocked", (value))
 }
 
 // GetScreenTimeoutWhileLocked gets the value of ScreenTimeoutWhileLocked for the instance
@@ -419,9 +574,18 @@ func (instance *MDM_Policy_Config01_DeviceLock02) GetPropertyScreenTimeoutWhileL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

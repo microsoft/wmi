@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSClientSetting struct
@@ -187,7 +189,7 @@ func NewWin32_TSClientSettingEx6(hostName string,
 
 // SetAdvancedRemoteAppGraphics sets the value of AdvancedRemoteAppGraphics for the instance
 func (instance *Win32_TSClientSetting) SetPropertyAdvancedRemoteAppGraphics(value uint32) (err error) {
-	return instance.SetProperty("AdvancedRemoteAppGraphics", value)
+	return instance.SetProperty("AdvancedRemoteAppGraphics", (value))
 }
 
 // GetAdvancedRemoteAppGraphics gets the value of AdvancedRemoteAppGraphics for the instance
@@ -196,16 +198,25 @@ func (instance *Win32_TSClientSetting) GetPropertyAdvancedRemoteAppGraphics() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAudioCaptureRedir sets the value of AudioCaptureRedir for the instance
 func (instance *Win32_TSClientSetting) SetPropertyAudioCaptureRedir(value uint32) (err error) {
-	return instance.SetProperty("AudioCaptureRedir", value)
+	return instance.SetProperty("AudioCaptureRedir", (value))
 }
 
 // GetAudioCaptureRedir gets the value of AudioCaptureRedir for the instance
@@ -214,16 +225,25 @@ func (instance *Win32_TSClientSetting) GetPropertyAudioCaptureRedir() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAudioMapping sets the value of AudioMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyAudioMapping(value uint32) (err error) {
-	return instance.SetProperty("AudioMapping", value)
+	return instance.SetProperty("AudioMapping", (value))
 }
 
 // GetAudioMapping gets the value of AudioMapping for the instance
@@ -232,16 +252,25 @@ func (instance *Win32_TSClientSetting) GetPropertyAudioMapping() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAVC444ModePreferred sets the value of AVC444ModePreferred for the instance
 func (instance *Win32_TSClientSetting) SetPropertyAVC444ModePreferred(value uint32) (err error) {
-	return instance.SetProperty("AVC444ModePreferred", value)
+	return instance.SetProperty("AVC444ModePreferred", (value))
 }
 
 // GetAVC444ModePreferred gets the value of AVC444ModePreferred for the instance
@@ -250,16 +279,25 @@ func (instance *Win32_TSClientSetting) GetPropertyAVC444ModePreferred() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClipboardMapping sets the value of ClipboardMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyClipboardMapping(value uint32) (err error) {
-	return instance.SetProperty("ClipboardMapping", value)
+	return instance.SetProperty("ClipboardMapping", (value))
 }
 
 // GetClipboardMapping gets the value of ClipboardMapping for the instance
@@ -268,16 +306,25 @@ func (instance *Win32_TSClientSetting) GetPropertyClipboardMapping() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetColorDepth sets the value of ColorDepth for the instance
 func (instance *Win32_TSClientSetting) SetPropertyColorDepth(value uint32) (err error) {
-	return instance.SetProperty("ColorDepth", value)
+	return instance.SetProperty("ColorDepth", (value))
 }
 
 // GetColorDepth gets the value of ColorDepth for the instance
@@ -286,16 +333,25 @@ func (instance *Win32_TSClientSetting) GetPropertyColorDepth() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetColorDepthPolicy sets the value of ColorDepthPolicy for the instance
 func (instance *Win32_TSClientSetting) SetPropertyColorDepthPolicy(value uint32) (err error) {
-	return instance.SetProperty("ColorDepthPolicy", value)
+	return instance.SetProperty("ColorDepthPolicy", (value))
 }
 
 // GetColorDepthPolicy gets the value of ColorDepthPolicy for the instance
@@ -304,16 +360,25 @@ func (instance *Win32_TSClientSetting) GetPropertyColorDepthPolicy() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCOMPortMapping sets the value of COMPortMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyCOMPortMapping(value uint32) (err error) {
-	return instance.SetProperty("COMPortMapping", value)
+	return instance.SetProperty("COMPortMapping", (value))
 }
 
 // GetCOMPortMapping gets the value of COMPortMapping for the instance
@@ -322,16 +387,25 @@ func (instance *Win32_TSClientSetting) GetPropertyCOMPortMapping() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConnectClientDrivesAtLogon sets the value of ConnectClientDrivesAtLogon for the instance
 func (instance *Win32_TSClientSetting) SetPropertyConnectClientDrivesAtLogon(value uint32) (err error) {
-	return instance.SetProperty("ConnectClientDrivesAtLogon", value)
+	return instance.SetProperty("ConnectClientDrivesAtLogon", (value))
 }
 
 // GetConnectClientDrivesAtLogon gets the value of ConnectClientDrivesAtLogon for the instance
@@ -340,16 +414,25 @@ func (instance *Win32_TSClientSetting) GetPropertyConnectClientDrivesAtLogon() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConnectionPolicy sets the value of ConnectionPolicy for the instance
 func (instance *Win32_TSClientSetting) SetPropertyConnectionPolicy(value uint32) (err error) {
-	return instance.SetProperty("ConnectionPolicy", value)
+	return instance.SetProperty("ConnectionPolicy", (value))
 }
 
 // GetConnectionPolicy gets the value of ConnectionPolicy for the instance
@@ -358,16 +441,25 @@ func (instance *Win32_TSClientSetting) GetPropertyConnectionPolicy() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConnectPrinterAtLogon sets the value of ConnectPrinterAtLogon for the instance
 func (instance *Win32_TSClientSetting) SetPropertyConnectPrinterAtLogon(value uint32) (err error) {
-	return instance.SetProperty("ConnectPrinterAtLogon", value)
+	return instance.SetProperty("ConnectPrinterAtLogon", (value))
 }
 
 // GetConnectPrinterAtLogon gets the value of ConnectPrinterAtLogon for the instance
@@ -376,16 +468,25 @@ func (instance *Win32_TSClientSetting) GetPropertyConnectPrinterAtLogon() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDefaultToClientPrinter sets the value of DefaultToClientPrinter for the instance
 func (instance *Win32_TSClientSetting) SetPropertyDefaultToClientPrinter(value uint32) (err error) {
-	return instance.SetProperty("DefaultToClientPrinter", value)
+	return instance.SetProperty("DefaultToClientPrinter", (value))
 }
 
 // GetDefaultToClientPrinter gets the value of DefaultToClientPrinter for the instance
@@ -394,16 +495,25 @@ func (instance *Win32_TSClientSetting) GetPropertyDefaultToClientPrinter() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDriveMapping sets the value of DriveMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyDriveMapping(value uint32) (err error) {
-	return instance.SetProperty("DriveMapping", value)
+	return instance.SetProperty("DriveMapping", (value))
 }
 
 // GetDriveMapping gets the value of DriveMapping for the instance
@@ -412,16 +522,25 @@ func (instance *Win32_TSClientSetting) GetPropertyDriveMapping() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEncodeImageQuality sets the value of EncodeImageQuality for the instance
 func (instance *Win32_TSClientSetting) SetPropertyEncodeImageQuality(value uint32) (err error) {
-	return instance.SetProperty("EncodeImageQuality", value)
+	return instance.SetProperty("EncodeImageQuality", (value))
 }
 
 // GetEncodeImageQuality gets the value of EncodeImageQuality for the instance
@@ -430,16 +549,25 @@ func (instance *Win32_TSClientSetting) GetPropertyEncodeImageQuality() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHardwareGraphicsAdapter sets the value of HardwareGraphicsAdapter for the instance
 func (instance *Win32_TSClientSetting) SetPropertyHardwareGraphicsAdapter(value uint32) (err error) {
-	return instance.SetProperty("HardwareGraphicsAdapter", value)
+	return instance.SetProperty("HardwareGraphicsAdapter", (value))
 }
 
 // GetHardwareGraphicsAdapter gets the value of HardwareGraphicsAdapter for the instance
@@ -448,16 +576,25 @@ func (instance *Win32_TSClientSetting) GetPropertyHardwareGraphicsAdapter() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLPTPortMapping sets the value of LPTPortMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyLPTPortMapping(value uint32) (err error) {
-	return instance.SetProperty("LPTPortMapping", value)
+	return instance.SetProperty("LPTPortMapping", (value))
 }
 
 // GetLPTPortMapping gets the value of LPTPortMapping for the instance
@@ -466,16 +603,25 @@ func (instance *Win32_TSClientSetting) GetPropertyLPTPortMapping() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxMonitors sets the value of MaxMonitors for the instance
 func (instance *Win32_TSClientSetting) SetPropertyMaxMonitors(value uint32) (err error) {
-	return instance.SetProperty("MaxMonitors", value)
+	return instance.SetProperty("MaxMonitors", (value))
 }
 
 // GetMaxMonitors gets the value of MaxMonitors for the instance
@@ -484,16 +630,25 @@ func (instance *Win32_TSClientSetting) GetPropertyMaxMonitors() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxXResolution sets the value of MaxXResolution for the instance
 func (instance *Win32_TSClientSetting) SetPropertyMaxXResolution(value uint32) (err error) {
-	return instance.SetProperty("MaxXResolution", value)
+	return instance.SetProperty("MaxXResolution", (value))
 }
 
 // GetMaxXResolution gets the value of MaxXResolution for the instance
@@ -502,16 +657,25 @@ func (instance *Win32_TSClientSetting) GetPropertyMaxXResolution() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxYResolution sets the value of MaxYResolution for the instance
 func (instance *Win32_TSClientSetting) SetPropertyMaxYResolution(value uint32) (err error) {
-	return instance.SetProperty("MaxYResolution", value)
+	return instance.SetProperty("MaxYResolution", (value))
 }
 
 // GetMaxYResolution gets the value of MaxYResolution for the instance
@@ -520,16 +684,25 @@ func (instance *Win32_TSClientSetting) GetPropertyMaxYResolution() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPNPRedirection sets the value of PNPRedirection for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPNPRedirection(value uint32) (err error) {
-	return instance.SetProperty("PNPRedirection", value)
+	return instance.SetProperty("PNPRedirection", (value))
 }
 
 // GetPNPRedirection gets the value of PNPRedirection for the instance
@@ -538,16 +711,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPNPRedirection() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicyAdvancedRemoteAppGraphics sets the value of PolicyAdvancedRemoteAppGraphics for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicyAdvancedRemoteAppGraphics(value uint32) (err error) {
-	return instance.SetProperty("PolicyAdvancedRemoteAppGraphics", value)
+	return instance.SetProperty("PolicyAdvancedRemoteAppGraphics", (value))
 }
 
 // GetPolicyAdvancedRemoteAppGraphics gets the value of PolicyAdvancedRemoteAppGraphics for the instance
@@ -556,16 +738,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicyAdvancedRemoteAppGraphic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceAudioCaptureRedir sets the value of PolicySourceAudioCaptureRedir for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceAudioCaptureRedir(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceAudioCaptureRedir", value)
+	return instance.SetProperty("PolicySourceAudioCaptureRedir", (value))
 }
 
 // GetPolicySourceAudioCaptureRedir gets the value of PolicySourceAudioCaptureRedir for the instance
@@ -574,16 +765,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceAudioCaptureRedir(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceAudioMapping sets the value of PolicySourceAudioMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceAudioMapping(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceAudioMapping", value)
+	return instance.SetProperty("PolicySourceAudioMapping", (value))
 }
 
 // GetPolicySourceAudioMapping gets the value of PolicySourceAudioMapping for the instance
@@ -592,16 +792,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceAudioMapping() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceAvc444ModePreferred sets the value of PolicySourceAvc444ModePreferred for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceAvc444ModePreferred(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceAvc444ModePreferred", value)
+	return instance.SetProperty("PolicySourceAvc444ModePreferred", (value))
 }
 
 // GetPolicySourceAvc444ModePreferred gets the value of PolicySourceAvc444ModePreferred for the instance
@@ -610,16 +819,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceAvc444ModePreferre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceClipboardMapping sets the value of PolicySourceClipboardMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceClipboardMapping(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceClipboardMapping", value)
+	return instance.SetProperty("PolicySourceClipboardMapping", (value))
 }
 
 // GetPolicySourceClipboardMapping gets the value of PolicySourceClipboardMapping for the instance
@@ -628,16 +846,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceClipboardMapping()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceColorDepth sets the value of PolicySourceColorDepth for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceColorDepth(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceColorDepth", value)
+	return instance.SetProperty("PolicySourceColorDepth", (value))
 }
 
 // GetPolicySourceColorDepth gets the value of PolicySourceColorDepth for the instance
@@ -646,16 +873,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceColorDepth() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceColorDepthPolicy sets the value of PolicySourceColorDepthPolicy for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceColorDepthPolicy(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceColorDepthPolicy", value)
+	return instance.SetProperty("PolicySourceColorDepthPolicy", (value))
 }
 
 // GetPolicySourceColorDepthPolicy gets the value of PolicySourceColorDepthPolicy for the instance
@@ -664,16 +900,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceColorDepthPolicy()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceCOMPortMapping sets the value of PolicySourceCOMPortMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceCOMPortMapping(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceCOMPortMapping", value)
+	return instance.SetProperty("PolicySourceCOMPortMapping", (value))
 }
 
 // GetPolicySourceCOMPortMapping gets the value of PolicySourceCOMPortMapping for the instance
@@ -682,16 +927,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceCOMPortMapping() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceDefaultToClientPrinter sets the value of PolicySourceDefaultToClientPrinter for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceDefaultToClientPrinter(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceDefaultToClientPrinter", value)
+	return instance.SetProperty("PolicySourceDefaultToClientPrinter", (value))
 }
 
 // GetPolicySourceDefaultToClientPrinter gets the value of PolicySourceDefaultToClientPrinter for the instance
@@ -700,16 +954,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceDefaultToClientPri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceDriveMapping sets the value of PolicySourceDriveMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceDriveMapping(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceDriveMapping", value)
+	return instance.SetProperty("PolicySourceDriveMapping", (value))
 }
 
 // GetPolicySourceDriveMapping gets the value of PolicySourceDriveMapping for the instance
@@ -718,16 +981,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceDriveMapping() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceEncodeImageQuality sets the value of PolicySourceEncodeImageQuality for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceEncodeImageQuality(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceEncodeImageQuality", value)
+	return instance.SetProperty("PolicySourceEncodeImageQuality", (value))
 }
 
 // GetPolicySourceEncodeImageQuality gets the value of PolicySourceEncodeImageQuality for the instance
@@ -736,16 +1008,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceEncodeImageQuality
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceHardwareGraphicsAdapter sets the value of PolicySourceHardwareGraphicsAdapter for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceHardwareGraphicsAdapter(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceHardwareGraphicsAdapter", value)
+	return instance.SetProperty("PolicySourceHardwareGraphicsAdapter", (value))
 }
 
 // GetPolicySourceHardwareGraphicsAdapter gets the value of PolicySourceHardwareGraphicsAdapter for the instance
@@ -754,16 +1035,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceHardwareGraphicsAd
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceLPTPortMapping sets the value of PolicySourceLPTPortMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceLPTPortMapping(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceLPTPortMapping", value)
+	return instance.SetProperty("PolicySourceLPTPortMapping", (value))
 }
 
 // GetPolicySourceLPTPortMapping gets the value of PolicySourceLPTPortMapping for the instance
@@ -772,16 +1062,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceLPTPortMapping() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceMaxMonitors sets the value of PolicySourceMaxMonitors for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceMaxMonitors(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceMaxMonitors", value)
+	return instance.SetProperty("PolicySourceMaxMonitors", (value))
 }
 
 // GetPolicySourceMaxMonitors gets the value of PolicySourceMaxMonitors for the instance
@@ -790,16 +1089,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceMaxMonitors() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceMaxResolution sets the value of PolicySourceMaxResolution for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceMaxResolution(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceMaxResolution", value)
+	return instance.SetProperty("PolicySourceMaxResolution", (value))
 }
 
 // GetPolicySourceMaxResolution gets the value of PolicySourceMaxResolution for the instance
@@ -808,16 +1116,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceMaxResolution() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourcePNPRedirection sets the value of PolicySourcePNPRedirection for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourcePNPRedirection(value uint32) (err error) {
-	return instance.SetProperty("PolicySourcePNPRedirection", value)
+	return instance.SetProperty("PolicySourcePNPRedirection", (value))
 }
 
 // GetPolicySourcePNPRedirection gets the value of PolicySourcePNPRedirection for the instance
@@ -826,16 +1143,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourcePNPRedirection() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceRemoteSessionProfile sets the value of PolicySourceRemoteSessionProfile for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceRemoteSessionProfile(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceRemoteSessionProfile", value)
+	return instance.SetProperty("PolicySourceRemoteSessionProfile", (value))
 }
 
 // GetPolicySourceRemoteSessionProfile gets the value of PolicySourceRemoteSessionProfile for the instance
@@ -844,16 +1170,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceRemoteSessionProfi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceSelectNetworkDetect sets the value of PolicySourceSelectNetworkDetect for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceSelectNetworkDetect(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceSelectNetworkDetect", value)
+	return instance.SetProperty("PolicySourceSelectNetworkDetect", (value))
 }
 
 // GetPolicySourceSelectNetworkDetect gets the value of PolicySourceSelectNetworkDetect for the instance
@@ -862,16 +1197,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceSelectNetworkDetec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceSelectTransport sets the value of PolicySourceSelectTransport for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceSelectTransport(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceSelectTransport", value)
+	return instance.SetProperty("PolicySourceSelectTransport", (value))
 }
 
 // GetPolicySourceSelectTransport gets the value of PolicySourceSelectTransport for the instance
@@ -880,16 +1224,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceSelectTransport() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceVideoPlaybackRedir sets the value of PolicySourceVideoPlaybackRedir for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceVideoPlaybackRedir(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceVideoPlaybackRedir", value)
+	return instance.SetProperty("PolicySourceVideoPlaybackRedir", (value))
 }
 
 // GetPolicySourceVideoPlaybackRedir gets the value of PolicySourceVideoPlaybackRedir for the instance
@@ -898,16 +1251,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceVideoPlaybackRedir
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceWindowsPrinterMapping sets the value of PolicySourceWindowsPrinterMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyPolicySourceWindowsPrinterMapping(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceWindowsPrinterMapping", value)
+	return instance.SetProperty("PolicySourceWindowsPrinterMapping", (value))
 }
 
 // GetPolicySourceWindowsPrinterMapping gets the value of PolicySourceWindowsPrinterMapping for the instance
@@ -916,16 +1278,25 @@ func (instance *Win32_TSClientSetting) GetPropertyPolicySourceWindowsPrinterMapp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemoteSessionProfile sets the value of RemoteSessionProfile for the instance
 func (instance *Win32_TSClientSetting) SetPropertyRemoteSessionProfile(value uint32) (err error) {
-	return instance.SetProperty("RemoteSessionProfile", value)
+	return instance.SetProperty("RemoteSessionProfile", (value))
 }
 
 // GetRemoteSessionProfile gets the value of RemoteSessionProfile for the instance
@@ -934,16 +1305,25 @@ func (instance *Win32_TSClientSetting) GetPropertyRemoteSessionProfile() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSelectNetworkDetect sets the value of SelectNetworkDetect for the instance
 func (instance *Win32_TSClientSetting) SetPropertySelectNetworkDetect(value uint32) (err error) {
-	return instance.SetProperty("SelectNetworkDetect", value)
+	return instance.SetProperty("SelectNetworkDetect", (value))
 }
 
 // GetSelectNetworkDetect gets the value of SelectNetworkDetect for the instance
@@ -952,16 +1332,25 @@ func (instance *Win32_TSClientSetting) GetPropertySelectNetworkDetect() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSelectTransport sets the value of SelectTransport for the instance
 func (instance *Win32_TSClientSetting) SetPropertySelectTransport(value uint32) (err error) {
-	return instance.SetProperty("SelectTransport", value)
+	return instance.SetProperty("SelectTransport", (value))
 }
 
 // GetSelectTransport gets the value of SelectTransport for the instance
@@ -970,16 +1359,25 @@ func (instance *Win32_TSClientSetting) GetPropertySelectTransport() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVideoPlaybackRedir sets the value of VideoPlaybackRedir for the instance
 func (instance *Win32_TSClientSetting) SetPropertyVideoPlaybackRedir(value uint32) (err error) {
-	return instance.SetProperty("VideoPlaybackRedir", value)
+	return instance.SetProperty("VideoPlaybackRedir", (value))
 }
 
 // GetVideoPlaybackRedir gets the value of VideoPlaybackRedir for the instance
@@ -988,16 +1386,25 @@ func (instance *Win32_TSClientSetting) GetPropertyVideoPlaybackRedir() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWindowsPrinterMapping sets the value of WindowsPrinterMapping for the instance
 func (instance *Win32_TSClientSetting) SetPropertyWindowsPrinterMapping(value uint32) (err error) {
-	return instance.SetProperty("WindowsPrinterMapping", value)
+	return instance.SetProperty("WindowsPrinterMapping", (value))
 }
 
 // GetWindowsPrinterMapping gets the value of WindowsPrinterMapping for the instance
@@ -1006,10 +1413,19 @@ func (instance *Win32_TSClientSetting) GetPropertyWindowsPrinterMapping() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

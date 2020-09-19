@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VirtualEthernetSwitchSettingData struct
@@ -58,7 +60,7 @@ func NewCIM_VirtualEthernetSwitchSettingDataEx6(hostName string,
 
 // SetAssociatedResourcePool sets the value of AssociatedResourcePool for the instance
 func (instance *CIM_VirtualEthernetSwitchSettingData) SetPropertyAssociatedResourcePool(value []string) (err error) {
-	return instance.SetProperty("AssociatedResourcePool", value)
+	return instance.SetProperty("AssociatedResourcePool", (value))
 }
 
 // GetAssociatedResourcePool gets the value of AssociatedResourcePool for the instance
@@ -67,16 +69,26 @@ func (instance *CIM_VirtualEthernetSwitchSettingData) GetPropertyAssociatedResou
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetMaxNumMACAddress sets the value of MaxNumMACAddress for the instance
 func (instance *CIM_VirtualEthernetSwitchSettingData) SetPropertyMaxNumMACAddress(value uint32) (err error) {
-	return instance.SetProperty("MaxNumMACAddress", value)
+	return instance.SetProperty("MaxNumMACAddress", (value))
 }
 
 // GetMaxNumMACAddress gets the value of MaxNumMACAddress for the instance
@@ -85,16 +97,25 @@ func (instance *CIM_VirtualEthernetSwitchSettingData) GetPropertyMaxNumMACAddres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVLANConnection sets the value of VLANConnection for the instance
 func (instance *CIM_VirtualEthernetSwitchSettingData) SetPropertyVLANConnection(value []string) (err error) {
-	return instance.SetProperty("VLANConnection", value)
+	return instance.SetProperty("VLANConnection", (value))
 }
 
 // GetVLANConnection gets the value of VLANConnection for the instance
@@ -103,9 +124,19 @@ func (instance *CIM_VirtualEthernetSwitchSettingData) GetPropertyVLANConnection(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

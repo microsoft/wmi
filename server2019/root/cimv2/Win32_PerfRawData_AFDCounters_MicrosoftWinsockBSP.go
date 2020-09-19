@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP struct
@@ -61,7 +63,7 @@ func NewWin32_PerfRawData_AFDCounters_MicrosoftWinsockBSPEx6(hostName string,
 
 // SetDroppedDatagrams sets the value of DroppedDatagrams for the instance
 func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) SetPropertyDroppedDatagrams(value uint32) (err error) {
-	return instance.SetProperty("DroppedDatagrams", value)
+	return instance.SetProperty("DroppedDatagrams", (value))
 }
 
 // GetDroppedDatagrams gets the value of DroppedDatagrams for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) GetPropertyDr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDroppedDatagramsPersec sets the value of DroppedDatagramsPersec for the instance
 func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) SetPropertyDroppedDatagramsPersec(value uint32) (err error) {
-	return instance.SetProperty("DroppedDatagramsPersec", value)
+	return instance.SetProperty("DroppedDatagramsPersec", (value))
 }
 
 // GetDroppedDatagramsPersec gets the value of DroppedDatagramsPersec for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) GetPropertyDr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRejectedConnections sets the value of RejectedConnections for the instance
 func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) SetPropertyRejectedConnections(value uint32) (err error) {
-	return instance.SetProperty("RejectedConnections", value)
+	return instance.SetProperty("RejectedConnections", (value))
 }
 
 // GetRejectedConnections gets the value of RejectedConnections for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) GetPropertyRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRejectedConnectionsPersec sets the value of RejectedConnectionsPersec for the instance
 func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) SetPropertyRejectedConnectionsPersec(value uint32) (err error) {
-	return instance.SetProperty("RejectedConnectionsPersec", value)
+	return instance.SetProperty("RejectedConnectionsPersec", (value))
 }
 
 // GetRejectedConnectionsPersec gets the value of RejectedConnectionsPersec for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfRawData_AFDCounters_MicrosoftWinsockBSP) GetPropertyRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

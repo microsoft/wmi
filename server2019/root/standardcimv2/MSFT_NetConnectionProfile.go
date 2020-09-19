@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetConnectionProfile struct
@@ -67,7 +69,7 @@ func NewMSFT_NetConnectionProfileEx6(hostName string,
 
 // SetInterfaceAlias sets the value of InterfaceAlias for the instance
 func (instance *MSFT_NetConnectionProfile) SetPropertyInterfaceAlias(value string) (err error) {
-	return instance.SetProperty("InterfaceAlias", value)
+	return instance.SetProperty("InterfaceAlias", (value))
 }
 
 // GetInterfaceAlias gets the value of InterfaceAlias for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NetConnectionProfile) GetPropertyInterfaceAlias() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceIndex sets the value of InterfaceIndex for the instance
 func (instance *MSFT_NetConnectionProfile) SetPropertyInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("InterfaceIndex", value)
+	return instance.SetProperty("InterfaceIndex", (value))
 }
 
 // GetInterfaceIndex gets the value of InterfaceIndex for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NetConnectionProfile) GetPropertyInterfaceIndex() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4Connectivity sets the value of IPv4Connectivity for the instance
 func (instance *MSFT_NetConnectionProfile) SetPropertyIPv4Connectivity(value uint32) (err error) {
-	return instance.SetProperty("IPv4Connectivity", value)
+	return instance.SetProperty("IPv4Connectivity", (value))
 }
 
 // GetIPv4Connectivity gets the value of IPv4Connectivity for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_NetConnectionProfile) GetPropertyIPv4Connectivity() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6Connectivity sets the value of IPv6Connectivity for the instance
 func (instance *MSFT_NetConnectionProfile) SetPropertyIPv6Connectivity(value uint32) (err error) {
-	return instance.SetProperty("IPv6Connectivity", value)
+	return instance.SetProperty("IPv6Connectivity", (value))
 }
 
 // GetIPv6Connectivity gets the value of IPv6Connectivity for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_NetConnectionProfile) GetPropertyIPv6Connectivity() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_NetConnectionProfile) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_NetConnectionProfile) GetPropertyName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNetworkCategory sets the value of NetworkCategory for the instance
 func (instance *MSFT_NetConnectionProfile) SetPropertyNetworkCategory(value uint32) (err error) {
-	return instance.SetProperty("NetworkCategory", value)
+	return instance.SetProperty("NetworkCategory", (value))
 }
 
 // GetNetworkCategory gets the value of NetworkCategory for the instance
@@ -166,9 +213,18 @@ func (instance *MSFT_NetConnectionProfile) GetPropertyNetworkCategory() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

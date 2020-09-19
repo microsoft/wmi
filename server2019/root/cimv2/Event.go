@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __Event struct
@@ -55,7 +57,7 @@ func New__EventEx6(hostName string,
 
 // SetSECURITY_DESCRIPTOR sets the value of SECURITY_DESCRIPTOR for the instance
 func (instance *__Event) SetPropertySECURITY_DESCRIPTOR(value []uint8) (err error) {
-	return instance.SetProperty("SECURITY_DESCRIPTOR", value)
+	return instance.SetProperty("SECURITY_DESCRIPTOR", (value))
 }
 
 // GetSECURITY_DESCRIPTOR gets the value of SECURITY_DESCRIPTOR for the instance
@@ -64,16 +66,26 @@ func (instance *__Event) GetPropertySECURITY_DESCRIPTOR() (value []uint8, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetTIME_CREATED sets the value of TIME_CREATED for the instance
 func (instance *__Event) SetPropertyTIME_CREATED(value uint64) (err error) {
-	return instance.SetProperty("TIME_CREATED", value)
+	return instance.SetProperty("TIME_CREATED", (value))
 }
 
 // GetTIME_CREATED gets the value of TIME_CREATED for the instance
@@ -82,9 +94,18 @@ func (instance *__Event) GetPropertyTIME_CREATED() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

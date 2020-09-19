@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DVDDrive struct
@@ -52,7 +54,7 @@ func NewCIM_DVDDriveEx6(hostName string,
 
 // SetFormatsSupported sets the value of FormatsSupported for the instance
 func (instance *CIM_DVDDrive) SetPropertyFormatsSupported(value []DVDDrive_FormatsSupported) (err error) {
-	return instance.SetProperty("FormatsSupported", value)
+	return instance.SetProperty("FormatsSupported", (value))
 }
 
 // GetFormatsSupported gets the value of FormatsSupported for the instance
@@ -61,9 +63,19 @@ func (instance *CIM_DVDDrive) GetPropertyFormatsSupported() (value []DVDDrive_Fo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DVDDrive_FormatsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DVDDrive_FormatsSupported(valuetmp))
+	}
+
 	return
 }

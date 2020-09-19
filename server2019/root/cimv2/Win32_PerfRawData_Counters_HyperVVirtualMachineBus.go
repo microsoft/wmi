@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_HyperVVirtualMachineBus struct
@@ -58,7 +60,7 @@ func NewWin32_PerfRawData_Counters_HyperVVirtualMachineBusEx6(hostName string,
 
 // SetInterruptsReceivedPersec sets the value of InterruptsReceivedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualMachineBus) SetPropertyInterruptsReceivedPersec(value uint64) (err error) {
-	return instance.SetProperty("InterruptsReceivedPersec", value)
+	return instance.SetProperty("InterruptsReceivedPersec", (value))
 }
 
 // GetInterruptsReceivedPersec gets the value of InterruptsReceivedPersec for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualMachineBus) GetPropertyI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterruptsSentPersec sets the value of InterruptsSentPersec for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualMachineBus) SetPropertyInterruptsSentPersec(value uint64) (err error) {
-	return instance.SetProperty("InterruptsSentPersec", value)
+	return instance.SetProperty("InterruptsSentPersec", (value))
 }
 
 // GetInterruptsSentPersec gets the value of InterruptsSentPersec for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualMachineBus) GetPropertyI
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetThrottleEvents sets the value of ThrottleEvents for the instance
 func (instance *Win32_PerfRawData_Counters_HyperVVirtualMachineBus) SetPropertyThrottleEvents(value uint64) (err error) {
-	return instance.SetProperty("ThrottleEvents", value)
+	return instance.SetProperty("ThrottleEvents", (value))
 }
 
 // GetThrottleEvents gets the value of ThrottleEvents for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_PerfRawData_Counters_HyperVVirtualMachineBus) GetPropertyT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

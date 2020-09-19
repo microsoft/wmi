@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProtocolControllerForDevice struct
@@ -63,7 +65,7 @@ func NewCIM_ProtocolControllerForDeviceEx6(hostName string,
 
 // SetAccessPriority sets the value of AccessPriority for the instance
 func (instance *CIM_ProtocolControllerForDevice) SetPropertyAccessPriority(value uint16) (err error) {
-	return instance.SetProperty("AccessPriority", value)
+	return instance.SetProperty("AccessPriority", (value))
 }
 
 // GetAccessPriority gets the value of AccessPriority for the instance
@@ -72,16 +74,25 @@ func (instance *CIM_ProtocolControllerForDevice) GetPropertyAccessPriority() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAccessState sets the value of AccessState for the instance
 func (instance *CIM_ProtocolControllerForDevice) SetPropertyAccessState(value ProtocolControllerForDevice_AccessState) (err error) {
-	return instance.SetProperty("AccessState", value)
+	return instance.SetProperty("AccessState", (value))
 }
 
 // GetAccessState gets the value of AccessState for the instance
@@ -90,16 +101,25 @@ func (instance *CIM_ProtocolControllerForDevice) GetPropertyAccessState() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ProtocolControllerForDevice_AccessState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ProtocolControllerForDevice_AccessState(valuetmp)
+
 	return
 }
 
 // SetDeviceNumber sets the value of DeviceNumber for the instance
 func (instance *CIM_ProtocolControllerForDevice) SetPropertyDeviceNumber(value string) (err error) {
-	return instance.SetProperty("DeviceNumber", value)
+	return instance.SetProperty("DeviceNumber", (value))
 }
 
 // GetDeviceNumber gets the value of DeviceNumber for the instance
@@ -108,9 +128,18 @@ func (instance *CIM_ProtocolControllerForDevice) GetPropertyDeviceNumber() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.SecurityClient
 //////////////////////////////////////////////
 package securityclient
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // ProtectionTechnologyStatus struct
@@ -58,7 +60,7 @@ func NewProtectionTechnologyStatusEx6(hostName string,
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *ProtectionTechnologyStatus) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -67,16 +69,25 @@ func (instance *ProtectionTechnologyStatus) GetPropertyEnabled() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *ProtectionTechnologyStatus) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -85,16 +96,25 @@ func (instance *ProtectionTechnologyStatus) GetPropertyName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *ProtectionTechnologyStatus) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -103,9 +123,18 @@ func (instance *ProtectionTechnologyStatus) GetPropertyVersion() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

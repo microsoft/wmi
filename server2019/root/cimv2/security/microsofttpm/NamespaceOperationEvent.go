@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.Security.MicrosoftTpm
 //////////////////////////////////////////////
 package microsofttpm
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __NamespaceOperationEvent struct
@@ -52,7 +54,7 @@ func New__NamespaceOperationEventEx6(hostName string,
 
 // SetTargetNamespace sets the value of TargetNamespace for the instance
 func (instance *__NamespaceOperationEvent) SetPropertyTargetNamespace(value __Namespace) (err error) {
-	return instance.SetProperty("TargetNamespace", value)
+	return instance.SetProperty("TargetNamespace", (value))
 }
 
 // GetTargetNamespace gets the value of TargetNamespace for the instance
@@ -61,9 +63,18 @@ func (instance *__NamespaceOperationEvent) GetPropertyTargetNamespace() (value _
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(__Namespace)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(__Namespace)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " __Namespace is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = __Namespace(valuetmp)
+
 	return
 }

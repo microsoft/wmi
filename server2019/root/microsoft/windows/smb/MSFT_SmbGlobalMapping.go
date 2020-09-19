@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbGlobalMapping struct
@@ -68,7 +70,7 @@ func NewMSFT_SmbGlobalMappingEx6(hostName string,
 
 // SetLocalPath sets the value of LocalPath for the instance
 func (instance *MSFT_SmbGlobalMapping) SetPropertyLocalPath(value string) (err error) {
-	return instance.SetProperty("LocalPath", value)
+	return instance.SetProperty("LocalPath", (value))
 }
 
 // GetLocalPath gets the value of LocalPath for the instance
@@ -77,16 +79,25 @@ func (instance *MSFT_SmbGlobalMapping) GetPropertyLocalPath() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemotePath sets the value of RemotePath for the instance
 func (instance *MSFT_SmbGlobalMapping) SetPropertyRemotePath(value string) (err error) {
-	return instance.SetProperty("RemotePath", value)
+	return instance.SetProperty("RemotePath", (value))
 }
 
 // GetRemotePath gets the value of RemotePath for the instance
@@ -95,16 +106,25 @@ func (instance *MSFT_SmbGlobalMapping) GetPropertyRemotePath() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequireIntegrity sets the value of RequireIntegrity for the instance
 func (instance *MSFT_SmbGlobalMapping) SetPropertyRequireIntegrity(value bool) (err error) {
-	return instance.SetProperty("RequireIntegrity", value)
+	return instance.SetProperty("RequireIntegrity", (value))
 }
 
 // GetRequireIntegrity gets the value of RequireIntegrity for the instance
@@ -113,16 +133,25 @@ func (instance *MSFT_SmbGlobalMapping) GetPropertyRequireIntegrity() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRequirePrivacy sets the value of RequirePrivacy for the instance
 func (instance *MSFT_SmbGlobalMapping) SetPropertyRequirePrivacy(value bool) (err error) {
-	return instance.SetProperty("RequirePrivacy", value)
+	return instance.SetProperty("RequirePrivacy", (value))
 }
 
 // GetRequirePrivacy gets the value of RequirePrivacy for the instance
@@ -131,16 +160,25 @@ func (instance *MSFT_SmbGlobalMapping) GetPropertyRequirePrivacy() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_SmbGlobalMapping) SetPropertyStatus(value SmbGlobalMapping_Status) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -149,16 +187,25 @@ func (instance *MSFT_SmbGlobalMapping) GetPropertyStatus() (value SmbGlobalMappi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbGlobalMapping_Status)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbGlobalMapping_Status(valuetmp)
+
 	return
 }
 
 // SetUseWriteThrough sets the value of UseWriteThrough for the instance
 func (instance *MSFT_SmbGlobalMapping) SetPropertyUseWriteThrough(value bool) (err error) {
-	return instance.SetProperty("UseWriteThrough", value)
+	return instance.SetProperty("UseWriteThrough", (value))
 }
 
 // GetUseWriteThrough gets the value of UseWriteThrough for the instance
@@ -167,10 +214,19 @@ func (instance *MSFT_SmbGlobalMapping) GetPropertyUseWriteThrough() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

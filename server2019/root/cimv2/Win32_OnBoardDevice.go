@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_OnBoardDevice struct
@@ -55,7 +57,7 @@ func NewWin32_OnBoardDeviceEx6(hostName string,
 
 // SetDeviceType sets the value of DeviceType for the instance
 func (instance *Win32_OnBoardDevice) SetPropertyDeviceType(value uint16) (err error) {
-	return instance.SetProperty("DeviceType", value)
+	return instance.SetProperty("DeviceType", (value))
 }
 
 // GetDeviceType gets the value of DeviceType for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_OnBoardDevice) GetPropertyDeviceType() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *Win32_OnBoardDevice) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_OnBoardDevice) GetPropertyEnabled() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

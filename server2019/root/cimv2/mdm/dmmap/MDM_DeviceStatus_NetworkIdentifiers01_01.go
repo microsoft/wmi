@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_DeviceStatus_NetworkIdentifiers01_01 struct
@@ -68,7 +70,7 @@ func NewMDM_DeviceStatus_NetworkIdentifiers01_01Ex6(hostName string,
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -77,16 +79,25 @@ func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) GetPropertyInstanceID(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPAddressV4 sets the value of IPAddressV4 for the instance
 func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) SetPropertyIPAddressV4(value string) (err error) {
-	return instance.SetProperty("IPAddressV4", value)
+	return instance.SetProperty("IPAddressV4", (value))
 }
 
 // GetIPAddressV4 gets the value of IPAddressV4 for the instance
@@ -95,16 +106,25 @@ func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) GetPropertyIPAddressV4
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPAddressV6 sets the value of IPAddressV6 for the instance
 func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) SetPropertyIPAddressV6(value string) (err error) {
-	return instance.SetProperty("IPAddressV6", value)
+	return instance.SetProperty("IPAddressV6", (value))
 }
 
 // GetIPAddressV6 gets the value of IPAddressV6 for the instance
@@ -113,16 +133,25 @@ func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) GetPropertyIPAddressV6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsConnected sets the value of IsConnected for the instance
 func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) SetPropertyIsConnected(value bool) (err error) {
-	return instance.SetProperty("IsConnected", value)
+	return instance.SetProperty("IsConnected", (value))
 }
 
 // GetIsConnected gets the value of IsConnected for the instance
@@ -131,16 +160,25 @@ func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) GetPropertyIsConnected
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -149,16 +187,25 @@ func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) GetPropertyParentID() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) SetPropertyType(value int32) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -167,9 +214,18 @@ func (instance *MDM_DeviceStatus_NetworkIdentifiers01_01) GetPropertyType() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

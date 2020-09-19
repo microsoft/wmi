@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VirtualSystemMigrationCapabilities struct
@@ -62,7 +64,7 @@ func NewCIM_VirtualSystemMigrationCapabilitiesEx6(hostName string,
 
 // SetAsynchronousMethodsSupported sets the value of AsynchronousMethodsSupported for the instance
 func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertyAsynchronousMethodsSupported(value []VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("AsynchronousMethodsSupported", value)
+	return instance.SetProperty("AsynchronousMethodsSupported", (value))
 }
 
 // GetAsynchronousMethodsSupported gets the value of AsynchronousMethodsSupported for the instance
@@ -71,16 +73,26 @@ func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertyAsynchronousM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported(valuetmp))
+	}
+
 	return
 }
 
 // SetDestinationHostFormatsSupported sets the value of DestinationHostFormatsSupported for the instance
 func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertyDestinationHostFormatsSupported(value []VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported) (err error) {
-	return instance.SetProperty("DestinationHostFormatsSupported", value)
+	return instance.SetProperty("DestinationHostFormatsSupported", (value))
 }
 
 // GetDestinationHostFormatsSupported gets the value of DestinationHostFormatsSupported for the instance
@@ -89,16 +101,26 @@ func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertyDestinationHo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported(valuetmp))
+	}
+
 	return
 }
 
 // SetSynchronousMethodsSupported sets the value of SynchronousMethodsSupported for the instance
 func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertySynchronousMethodsSupported(value []VirtualSystemMigrationCapabilities_SynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("SynchronousMethodsSupported", value)
+	return instance.SetProperty("SynchronousMethodsSupported", (value))
 }
 
 // GetSynchronousMethodsSupported gets the value of SynchronousMethodsSupported for the instance
@@ -107,9 +129,19 @@ func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertySynchronousMe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]VirtualSystemMigrationCapabilities_SynchronousMethodsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VirtualSystemMigrationCapabilities_SynchronousMethodsSupported(valuetmp))
+	}
+
 	return
 }

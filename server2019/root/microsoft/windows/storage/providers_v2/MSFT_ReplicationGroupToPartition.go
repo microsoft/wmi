@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ReplicationGroupToPartition struct
@@ -56,7 +58,7 @@ func NewMSFT_ReplicationGroupToPartitionEx6(hostName string,
 
 // SetPartition sets the value of Partition for the instance
 func (instance *MSFT_ReplicationGroupToPartition) SetPropertyPartition(value MSFT_Partition) (err error) {
-	return instance.SetProperty("Partition", value)
+	return instance.SetProperty("Partition", (value))
 }
 
 // GetPartition gets the value of Partition for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_ReplicationGroupToPartition) GetPropertyPartition() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Partition)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Partition)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Partition is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Partition(valuetmp)
+
 	return
 }
 
 // SetReplicationGroup sets the value of ReplicationGroup for the instance
 func (instance *MSFT_ReplicationGroupToPartition) SetPropertyReplicationGroup(value MSFT_ReplicationGroup) (err error) {
-	return instance.SetProperty("ReplicationGroup", value)
+	return instance.SetProperty("ReplicationGroup", (value))
 }
 
 // GetReplicationGroup gets the value of ReplicationGroup for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_ReplicationGroupToPartition) GetPropertyReplicationGroup() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_ReplicationGroup)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_ReplicationGroup)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_ReplicationGroup is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_ReplicationGroup(valuetmp)
+
 	return
 }

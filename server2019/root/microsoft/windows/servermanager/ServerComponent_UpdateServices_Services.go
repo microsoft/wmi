@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // ServerComponent_UpdateServices_Services struct
@@ -55,7 +57,7 @@ func NewServerComponent_UpdateServices_ServicesEx6(hostName string,
 
 // SetContentDirectory sets the value of ContentDirectory for the instance
 func (instance *ServerComponent_UpdateServices_Services) SetPropertyContentDirectory(value string) (err error) {
-	return instance.SetProperty("ContentDirectory", value)
+	return instance.SetProperty("ContentDirectory", (value))
 }
 
 // GetContentDirectory gets the value of ContentDirectory for the instance
@@ -64,16 +66,25 @@ func (instance *ServerComponent_UpdateServices_Services) GetPropertyContentDirec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetContentLocal sets the value of ContentLocal for the instance
 func (instance *ServerComponent_UpdateServices_Services) SetPropertyContentLocal(value bool) (err error) {
-	return instance.SetProperty("ContentLocal", value)
+	return instance.SetProperty("ContentLocal", (value))
 }
 
 // GetContentLocal gets the value of ContentLocal for the instance
@@ -82,9 +93,18 @@ func (instance *ServerComponent_UpdateServices_Services) GetPropertyContentLocal
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

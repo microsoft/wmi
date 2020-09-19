@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_FailoverNetworkAdapterSettingData struct
@@ -67,7 +69,7 @@ func NewMsvm_FailoverNetworkAdapterSettingDataEx6(hostName string,
 
 // SetDefaultGateways sets the value of DefaultGateways for the instance
 func (instance *Msvm_FailoverNetworkAdapterSettingData) SetPropertyDefaultGateways(value []string) (err error) {
-	return instance.SetProperty("DefaultGateways", value)
+	return instance.SetProperty("DefaultGateways", (value))
 }
 
 // GetDefaultGateways gets the value of DefaultGateways for the instance
@@ -76,16 +78,26 @@ func (instance *Msvm_FailoverNetworkAdapterSettingData) GetPropertyDefaultGatewa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDHCPEnabled sets the value of DHCPEnabled for the instance
 func (instance *Msvm_FailoverNetworkAdapterSettingData) SetPropertyDHCPEnabled(value bool) (err error) {
-	return instance.SetProperty("DHCPEnabled", value)
+	return instance.SetProperty("DHCPEnabled", (value))
 }
 
 // GetDHCPEnabled gets the value of DHCPEnabled for the instance
@@ -94,16 +106,25 @@ func (instance *Msvm_FailoverNetworkAdapterSettingData) GetPropertyDHCPEnabled()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDNSServers sets the value of DNSServers for the instance
 func (instance *Msvm_FailoverNetworkAdapterSettingData) SetPropertyDNSServers(value []string) (err error) {
-	return instance.SetProperty("DNSServers", value)
+	return instance.SetProperty("DNSServers", (value))
 }
 
 // GetDNSServers gets the value of DNSServers for the instance
@@ -112,16 +133,26 @@ func (instance *Msvm_FailoverNetworkAdapterSettingData) GetPropertyDNSServers() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIPAddresses sets the value of IPAddresses for the instance
 func (instance *Msvm_FailoverNetworkAdapterSettingData) SetPropertyIPAddresses(value []string) (err error) {
-	return instance.SetProperty("IPAddresses", value)
+	return instance.SetProperty("IPAddresses", (value))
 }
 
 // GetIPAddresses gets the value of IPAddresses for the instance
@@ -130,16 +161,26 @@ func (instance *Msvm_FailoverNetworkAdapterSettingData) GetPropertyIPAddresses()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetProtocolIFType sets the value of ProtocolIFType for the instance
 func (instance *Msvm_FailoverNetworkAdapterSettingData) SetPropertyProtocolIFType(value FailoverNetworkAdapterSettingData_ProtocolIFType) (err error) {
-	return instance.SetProperty("ProtocolIFType", value)
+	return instance.SetProperty("ProtocolIFType", (value))
 }
 
 // GetProtocolIFType gets the value of ProtocolIFType for the instance
@@ -148,16 +189,25 @@ func (instance *Msvm_FailoverNetworkAdapterSettingData) GetPropertyProtocolIFTyp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(FailoverNetworkAdapterSettingData_ProtocolIFType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = FailoverNetworkAdapterSettingData_ProtocolIFType(valuetmp)
+
 	return
 }
 
 // SetSubnets sets the value of Subnets for the instance
 func (instance *Msvm_FailoverNetworkAdapterSettingData) SetPropertySubnets(value []string) (err error) {
-	return instance.SetProperty("Subnets", value)
+	return instance.SetProperty("Subnets", (value))
 }
 
 // GetSubnets gets the value of Subnets for the instance
@@ -166,9 +216,19 @@ func (instance *Msvm_FailoverNetworkAdapterSettingData) GetPropertySubnets() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

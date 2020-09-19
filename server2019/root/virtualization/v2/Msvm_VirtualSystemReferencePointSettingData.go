@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemReferencePointSettingData struct
@@ -52,7 +54,7 @@ func NewMsvm_VirtualSystemReferencePointSettingDataEx6(hostName string,
 
 // SetConsistencyLevel sets the value of ConsistencyLevel for the instance
 func (instance *Msvm_VirtualSystemReferencePointSettingData) SetPropertyConsistencyLevel(value uint8) (err error) {
-	return instance.SetProperty("ConsistencyLevel", value)
+	return instance.SetProperty("ConsistencyLevel", (value))
 }
 
 // GetConsistencyLevel gets the value of ConsistencyLevel for the instance
@@ -61,9 +63,18 @@ func (instance *Msvm_VirtualSystemReferencePointSettingData) GetPropertyConsiste
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

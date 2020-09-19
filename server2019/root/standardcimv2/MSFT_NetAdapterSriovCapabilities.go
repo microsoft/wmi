@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterSriovCapabilities struct
@@ -83,7 +85,7 @@ func NewMSFT_NetAdapterSriovCapabilitiesEx6(hostName string,
 
 // SetAsymmetricQueuePairsForNonDefaultVPortsSupported sets the value of AsymmetricQueuePairsForNonDefaultVPortsSupported for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyAsymmetricQueuePairsForNonDefaultVPortsSupported(value bool) (err error) {
-	return instance.SetProperty("AsymmetricQueuePairsForNonDefaultVPortsSupported", value)
+	return instance.SetProperty("AsymmetricQueuePairsForNonDefaultVPortsSupported", (value))
 }
 
 // GetAsymmetricQueuePairsForNonDefaultVPortsSupported gets the value of AsymmetricQueuePairsForNonDefaultVPortsSupported for the instance
@@ -92,16 +94,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyAsymmetricQueuePair
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaxNumMacAddresses sets the value of MaxNumMacAddresses for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyMaxNumMacAddresses(value uint32) (err error) {
-	return instance.SetProperty("MaxNumMacAddresses", value)
+	return instance.SetProperty("MaxNumMacAddresses", (value))
 }
 
 // GetMaxNumMacAddresses gets the value of MaxNumMacAddresses for the instance
@@ -110,16 +121,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyMaxNumMacAddresses(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxNumQueuePairs sets the value of MaxNumQueuePairs for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyMaxNumQueuePairs(value uint32) (err error) {
-	return instance.SetProperty("MaxNumQueuePairs", value)
+	return instance.SetProperty("MaxNumQueuePairs", (value))
 }
 
 // GetMaxNumQueuePairs gets the value of MaxNumQueuePairs for the instance
@@ -128,16 +148,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyMaxNumQueuePairs() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxNumQueuePairsPerNonDefaultVPort sets the value of MaxNumQueuePairsPerNonDefaultVPort for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyMaxNumQueuePairsPerNonDefaultVPort(value uint32) (err error) {
-	return instance.SetProperty("MaxNumQueuePairsPerNonDefaultVPort", value)
+	return instance.SetProperty("MaxNumQueuePairsPerNonDefaultVPort", (value))
 }
 
 // GetMaxNumQueuePairsPerNonDefaultVPort gets the value of MaxNumQueuePairsPerNonDefaultVPort for the instance
@@ -146,16 +175,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyMaxNumQueuePairsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxNumSwitches sets the value of MaxNumSwitches for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyMaxNumSwitches(value uint32) (err error) {
-	return instance.SetProperty("MaxNumSwitches", value)
+	return instance.SetProperty("MaxNumSwitches", (value))
 }
 
 // GetMaxNumSwitches gets the value of MaxNumSwitches for the instance
@@ -164,16 +202,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyMaxNumSwitches() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxNumVFs sets the value of MaxNumVFs for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyMaxNumVFs(value uint32) (err error) {
-	return instance.SetProperty("MaxNumVFs", value)
+	return instance.SetProperty("MaxNumVFs", (value))
 }
 
 // GetMaxNumVFs gets the value of MaxNumVFs for the instance
@@ -182,16 +229,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyMaxNumVFs() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxNumVPorts sets the value of MaxNumVPorts for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyMaxNumVPorts(value uint32) (err error) {
-	return instance.SetProperty("MaxNumVPorts", value)
+	return instance.SetProperty("MaxNumVPorts", (value))
 }
 
 // GetMaxNumVPorts gets the value of MaxNumVPorts for the instance
@@ -200,16 +256,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyMaxNumVPorts() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPerVportInterruptModerationSupported sets the value of PerVportInterruptModerationSupported for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyPerVportInterruptModerationSupported(value bool) (err error) {
-	return instance.SetProperty("PerVportInterruptModerationSupported", value)
+	return instance.SetProperty("PerVportInterruptModerationSupported", (value))
 }
 
 // GetPerVportInterruptModerationSupported gets the value of PerVportInterruptModerationSupported for the instance
@@ -218,16 +283,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyPerVportInterruptMo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSingleVportPoolSupported sets the value of SingleVportPoolSupported for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertySingleVportPoolSupported(value bool) (err error) {
-	return instance.SetProperty("SingleVportPoolSupported", value)
+	return instance.SetProperty("SingleVportPoolSupported", (value))
 }
 
 // GetSingleVportPoolSupported gets the value of SingleVportPoolSupported for the instance
@@ -236,16 +310,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertySingleVportPoolSupp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVfRssSupported sets the value of VfRssSupported for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyVfRssSupported(value bool) (err error) {
-	return instance.SetProperty("VfRssSupported", value)
+	return instance.SetProperty("VfRssSupported", (value))
 }
 
 // GetVfRssSupported gets the value of VfRssSupported for the instance
@@ -254,16 +337,25 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyVfRssSupported() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVlanSupported sets the value of VlanSupported for the instance
 func (instance *MSFT_NetAdapterSriovCapabilities) SetPropertyVlanSupported(value bool) (err error) {
-	return instance.SetProperty("VlanSupported", value)
+	return instance.SetProperty("VlanSupported", (value))
 }
 
 // GetVlanSupported gets the value of VlanSupported for the instance
@@ -272,9 +364,18 @@ func (instance *MSFT_NetAdapterSriovCapabilities) GetPropertyVlanSupported() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

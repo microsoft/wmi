@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_MetricDefForME struct
@@ -52,7 +54,7 @@ func NewCIM_MetricDefForMEEx6(hostName string,
 
 // SetMetricCollectionEnabled sets the value of MetricCollectionEnabled for the instance
 func (instance *CIM_MetricDefForME) SetPropertyMetricCollectionEnabled(value MetricDefForME_MetricCollectionEnabled) (err error) {
-	return instance.SetProperty("MetricCollectionEnabled", value)
+	return instance.SetProperty("MetricCollectionEnabled", (value))
 }
 
 // GetMetricCollectionEnabled gets the value of MetricCollectionEnabled for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_MetricDefForME) GetPropertyMetricCollectionEnabled() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MetricDefForME_MetricCollectionEnabled)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MetricDefForME_MetricCollectionEnabled(valuetmp)
+
 	return
 }

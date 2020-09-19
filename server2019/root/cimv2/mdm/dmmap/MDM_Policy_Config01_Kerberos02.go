@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_Kerberos02 struct
@@ -74,7 +76,7 @@ func NewMDM_Policy_Config01_Kerberos02Ex6(hostName string,
 
 // SetAllowForestSearchOrder sets the value of AllowForestSearchOrder for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyAllowForestSearchOrder(value string) (err error) {
-	return instance.SetProperty("AllowForestSearchOrder", value)
+	return instance.SetProperty("AllowForestSearchOrder", (value))
 }
 
 // GetAllowForestSearchOrder gets the value of AllowForestSearchOrder for the instance
@@ -83,16 +85,25 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyAllowForestSearchOrde
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -101,16 +112,25 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyInstanceID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKerberosClientSupportsClaimsCompoundArmor sets the value of KerberosClientSupportsClaimsCompoundArmor for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyKerberosClientSupportsClaimsCompoundArmor(value string) (err error) {
-	return instance.SetProperty("KerberosClientSupportsClaimsCompoundArmor", value)
+	return instance.SetProperty("KerberosClientSupportsClaimsCompoundArmor", (value))
 }
 
 // GetKerberosClientSupportsClaimsCompoundArmor gets the value of KerberosClientSupportsClaimsCompoundArmor for the instance
@@ -119,16 +139,25 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyKerberosClientSupport
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -137,16 +166,25 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyParentID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequireKerberosArmoring sets the value of RequireKerberosArmoring for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyRequireKerberosArmoring(value string) (err error) {
-	return instance.SetProperty("RequireKerberosArmoring", value)
+	return instance.SetProperty("RequireKerberosArmoring", (value))
 }
 
 // GetRequireKerberosArmoring gets the value of RequireKerberosArmoring for the instance
@@ -155,16 +193,25 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyRequireKerberosArmori
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequireStrictKDCValidation sets the value of RequireStrictKDCValidation for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyRequireStrictKDCValidation(value string) (err error) {
-	return instance.SetProperty("RequireStrictKDCValidation", value)
+	return instance.SetProperty("RequireStrictKDCValidation", (value))
 }
 
 // GetRequireStrictKDCValidation gets the value of RequireStrictKDCValidation for the instance
@@ -173,16 +220,25 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyRequireStrictKDCValid
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSetMaximumContextTokenSize sets the value of SetMaximumContextTokenSize for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertySetMaximumContextTokenSize(value string) (err error) {
-	return instance.SetProperty("SetMaximumContextTokenSize", value)
+	return instance.SetProperty("SetMaximumContextTokenSize", (value))
 }
 
 // GetSetMaximumContextTokenSize gets the value of SetMaximumContextTokenSize for the instance
@@ -191,16 +247,25 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertySetMaximumContextToke
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUPNNameHints sets the value of UPNNameHints for the instance
 func (instance *MDM_Policy_Config01_Kerberos02) SetPropertyUPNNameHints(value string) (err error) {
-	return instance.SetProperty("UPNNameHints", value)
+	return instance.SetProperty("UPNNameHints", (value))
 }
 
 // GetUPNNameHints gets the value of UPNNameHints for the instance
@@ -209,9 +274,18 @@ func (instance *MDM_Policy_Config01_Kerberos02) GetPropertyUPNNameHints() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

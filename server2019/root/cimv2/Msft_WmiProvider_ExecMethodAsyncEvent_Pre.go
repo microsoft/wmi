@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_WmiProvider_ExecMethodAsyncEvent_Pre struct
@@ -61,7 +63,7 @@ func NewMsft_WmiProvider_ExecMethodAsyncEvent_PreEx6(hostName string,
 
 // SetFlags sets the value of Flags for the instance
 func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) SetPropertyFlags(value uint32) (err error) {
-	return instance.SetProperty("Flags", value)
+	return instance.SetProperty("Flags", (value))
 }
 
 // GetFlags gets the value of Flags for the instance
@@ -70,16 +72,25 @@ func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) GetPropertyFlags() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInputParameters sets the value of InputParameters for the instance
 func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) SetPropertyInputParameters(value interface{}) (err error) {
-	return instance.SetProperty("InputParameters", value)
+	return instance.SetProperty("InputParameters", (value))
 }
 
 // GetInputParameters gets the value of InputParameters for the instance
@@ -88,16 +99,25 @@ func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) GetPropertyInputParam
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }
 
 // SetMethodName sets the value of MethodName for the instance
 func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) SetPropertyMethodName(value string) (err error) {
-	return instance.SetProperty("MethodName", value)
+	return instance.SetProperty("MethodName", (value))
 }
 
 // GetMethodName gets the value of MethodName for the instance
@@ -106,16 +126,25 @@ func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) GetPropertyMethodName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetObjectPath sets the value of ObjectPath for the instance
 func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) SetPropertyObjectPath(value string) (err error) {
-	return instance.SetProperty("ObjectPath", value)
+	return instance.SetProperty("ObjectPath", (value))
 }
 
 // GetObjectPath gets the value of ObjectPath for the instance
@@ -124,9 +153,18 @@ func (instance *Msft_WmiProvider_ExecMethodAsyncEvent_Pre) GetPropertyObjectPath
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_VPNv2_01 struct
@@ -23,9 +25,6 @@ type MDM_VPNv2_01 struct {
 
 	//
 	ByPassForLocal bool
-
-	//
-	DeviceTunnel bool
 
 	//
 	DnsSuffix string
@@ -44,9 +43,6 @@ type MDM_VPNv2_01 struct {
 
 	//
 	ProfileXML string
-
-	//
-	RegisterDNS bool
 
 	//
 	RememberCredentials bool
@@ -86,7 +82,7 @@ func NewMDM_VPNv2_01Ex6(hostName string,
 
 // SetAlwaysOn sets the value of AlwaysOn for the instance
 func (instance *MDM_VPNv2_01) SetPropertyAlwaysOn(value bool) (err error) {
-	return instance.SetProperty("AlwaysOn", value)
+	return instance.SetProperty("AlwaysOn", (value))
 }
 
 // GetAlwaysOn gets the value of AlwaysOn for the instance
@@ -95,16 +91,25 @@ func (instance *MDM_VPNv2_01) GetPropertyAlwaysOn() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetByPassForLocal sets the value of ByPassForLocal for the instance
 func (instance *MDM_VPNv2_01) SetPropertyByPassForLocal(value bool) (err error) {
-	return instance.SetProperty("ByPassForLocal", value)
+	return instance.SetProperty("ByPassForLocal", (value))
 }
 
 // GetByPassForLocal gets the value of ByPassForLocal for the instance
@@ -113,34 +118,25 @@ func (instance *MDM_VPNv2_01) GetPropertyByPassForLocal() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetDeviceTunnel sets the value of DeviceTunnel for the instance
-func (instance *MDM_VPNv2_01) SetPropertyDeviceTunnel(value bool) (err error) {
-	return instance.SetProperty("DeviceTunnel", value)
-}
-
-// GetDeviceTunnel gets the value of DeviceTunnel for the instance
-func (instance *MDM_VPNv2_01) GetPropertyDeviceTunnel() (value bool, err error) {
-	retValue, err := instance.GetProperty("DeviceTunnel")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(bool)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDnsSuffix sets the value of DnsSuffix for the instance
 func (instance *MDM_VPNv2_01) SetPropertyDnsSuffix(value string) (err error) {
-	return instance.SetProperty("DnsSuffix", value)
+	return instance.SetProperty("DnsSuffix", (value))
 }
 
 // GetDnsSuffix gets the value of DnsSuffix for the instance
@@ -149,16 +145,25 @@ func (instance *MDM_VPNv2_01) GetPropertyDnsSuffix() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEdpModeId sets the value of EdpModeId for the instance
 func (instance *MDM_VPNv2_01) SetPropertyEdpModeId(value string) (err error) {
-	return instance.SetProperty("EdpModeId", value)
+	return instance.SetProperty("EdpModeId", (value))
 }
 
 // GetEdpModeId gets the value of EdpModeId for the instance
@@ -167,16 +172,25 @@ func (instance *MDM_VPNv2_01) GetPropertyEdpModeId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_VPNv2_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -185,16 +199,25 @@ func (instance *MDM_VPNv2_01) GetPropertyInstanceID() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockDown sets the value of LockDown for the instance
 func (instance *MDM_VPNv2_01) SetPropertyLockDown(value bool) (err error) {
-	return instance.SetProperty("LockDown", value)
+	return instance.SetProperty("LockDown", (value))
 }
 
 // GetLockDown gets the value of LockDown for the instance
@@ -203,16 +226,25 @@ func (instance *MDM_VPNv2_01) GetPropertyLockDown() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_VPNv2_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -221,16 +253,25 @@ func (instance *MDM_VPNv2_01) GetPropertyParentID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProfileXML sets the value of ProfileXML for the instance
 func (instance *MDM_VPNv2_01) SetPropertyProfileXML(value string) (err error) {
-	return instance.SetProperty("ProfileXML", value)
+	return instance.SetProperty("ProfileXML", (value))
 }
 
 // GetProfileXML gets the value of ProfileXML for the instance
@@ -239,34 +280,25 @@ func (instance *MDM_VPNv2_01) GetPropertyProfileXML() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetRegisterDNS sets the value of RegisterDNS for the instance
-func (instance *MDM_VPNv2_01) SetPropertyRegisterDNS(value bool) (err error) {
-	return instance.SetProperty("RegisterDNS", value)
-}
-
-// GetRegisterDNS gets the value of RegisterDNS for the instance
-func (instance *MDM_VPNv2_01) GetPropertyRegisterDNS() (value bool, err error) {
-	retValue, err := instance.GetProperty("RegisterDNS")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(string)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRememberCredentials sets the value of RememberCredentials for the instance
 func (instance *MDM_VPNv2_01) SetPropertyRememberCredentials(value bool) (err error) {
-	return instance.SetProperty("RememberCredentials", value)
+	return instance.SetProperty("RememberCredentials", (value))
 }
 
 // GetRememberCredentials gets the value of RememberCredentials for the instance
@@ -275,16 +307,25 @@ func (instance *MDM_VPNv2_01) GetPropertyRememberCredentials() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTrustedNetworkDetection sets the value of TrustedNetworkDetection for the instance
 func (instance *MDM_VPNv2_01) SetPropertyTrustedNetworkDetection(value string) (err error) {
-	return instance.SetProperty("TrustedNetworkDetection", value)
+	return instance.SetProperty("TrustedNetworkDetection", (value))
 }
 
 // GetTrustedNetworkDetection gets the value of TrustedNetworkDetection for the instance
@@ -293,9 +334,18 @@ func (instance *MDM_VPNv2_01) GetPropertyTrustedNetworkDetection() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

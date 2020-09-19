@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Config01_Accounts02 struct
@@ -68,7 +70,7 @@ func NewMDM_Policy_Config01_Accounts02Ex6(hostName string,
 
 // SetAllowAddingNonMicrosoftAccountsManually sets the value of AllowAddingNonMicrosoftAccountsManually for the instance
 func (instance *MDM_Policy_Config01_Accounts02) SetPropertyAllowAddingNonMicrosoftAccountsManually(value int32) (err error) {
-	return instance.SetProperty("AllowAddingNonMicrosoftAccountsManually", value)
+	return instance.SetProperty("AllowAddingNonMicrosoftAccountsManually", (value))
 }
 
 // GetAllowAddingNonMicrosoftAccountsManually gets the value of AllowAddingNonMicrosoftAccountsManually for the instance
@@ -77,16 +79,25 @@ func (instance *MDM_Policy_Config01_Accounts02) GetPropertyAllowAddingNonMicroso
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowMicrosoftAccountConnection sets the value of AllowMicrosoftAccountConnection for the instance
 func (instance *MDM_Policy_Config01_Accounts02) SetPropertyAllowMicrosoftAccountConnection(value int32) (err error) {
-	return instance.SetProperty("AllowMicrosoftAccountConnection", value)
+	return instance.SetProperty("AllowMicrosoftAccountConnection", (value))
 }
 
 // GetAllowMicrosoftAccountConnection gets the value of AllowMicrosoftAccountConnection for the instance
@@ -95,16 +106,25 @@ func (instance *MDM_Policy_Config01_Accounts02) GetPropertyAllowMicrosoftAccount
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowMicrosoftAccountSignInAssistant sets the value of AllowMicrosoftAccountSignInAssistant for the instance
 func (instance *MDM_Policy_Config01_Accounts02) SetPropertyAllowMicrosoftAccountSignInAssistant(value int32) (err error) {
-	return instance.SetProperty("AllowMicrosoftAccountSignInAssistant", value)
+	return instance.SetProperty("AllowMicrosoftAccountSignInAssistant", (value))
 }
 
 // GetAllowMicrosoftAccountSignInAssistant gets the value of AllowMicrosoftAccountSignInAssistant for the instance
@@ -113,16 +133,25 @@ func (instance *MDM_Policy_Config01_Accounts02) GetPropertyAllowMicrosoftAccount
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDomainNamesForEmailSync sets the value of DomainNamesForEmailSync for the instance
 func (instance *MDM_Policy_Config01_Accounts02) SetPropertyDomainNamesForEmailSync(value string) (err error) {
-	return instance.SetProperty("DomainNamesForEmailSync", value)
+	return instance.SetProperty("DomainNamesForEmailSync", (value))
 }
 
 // GetDomainNamesForEmailSync gets the value of DomainNamesForEmailSync for the instance
@@ -131,16 +160,25 @@ func (instance *MDM_Policy_Config01_Accounts02) GetPropertyDomainNamesForEmailSy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Config01_Accounts02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -149,16 +187,25 @@ func (instance *MDM_Policy_Config01_Accounts02) GetPropertyInstanceID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Config01_Accounts02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -167,9 +214,18 @@ func (instance *MDM_Policy_Config01_Accounts02) GetPropertyParentID() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

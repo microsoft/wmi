@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MTTaskManager struct
@@ -58,7 +60,7 @@ func NewMSFT_MTTaskManagerEx6(hostName string,
 
 // SetCurrentIndex sets the value of CurrentIndex for the instance
 func (instance *MSFT_MTTaskManager) SetPropertyCurrentIndex(value uint16) (err error) {
-	return instance.SetProperty("CurrentIndex", value)
+	return instance.SetProperty("CurrentIndex", (value))
 }
 
 // GetCurrentIndex gets the value of CurrentIndex for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_MTTaskManager) GetPropertyCurrentIndex() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIntervalSeconds sets the value of IntervalSeconds for the instance
 func (instance *MSFT_MTTaskManager) SetPropertyIntervalSeconds(value uint16) (err error) {
-	return instance.SetProperty("IntervalSeconds", value)
+	return instance.SetProperty("IntervalSeconds", (value))
 }
 
 // GetIntervalSeconds gets the value of IntervalSeconds for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_MTTaskManager) GetPropertyIntervalSeconds() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_MTTaskManager) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -103,10 +123,19 @@ func (instance *MSFT_MTTaskManager) GetPropertyName() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

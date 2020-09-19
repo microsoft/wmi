@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ManagementTools
 //////////////////////////////////////////////
 package managementtools
@@ -11,7 +11,9 @@ package managementtools
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MTEventRecord struct
@@ -71,7 +73,7 @@ func NewMSFT_MTEventRecordEx6(hostName string,
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_MTEventRecord) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -80,16 +82,25 @@ func (instance *MSFT_MTEventRecord) GetPropertyDescription() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_MTEventRecord) SetPropertyId(value uint32) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -98,16 +109,25 @@ func (instance *MSFT_MTEventRecord) GetPropertyId() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLevel sets the value of Level for the instance
 func (instance *MSFT_MTEventRecord) SetPropertyLevel(value uint16) (err error) {
-	return instance.SetProperty("Level", value)
+	return instance.SetProperty("Level", (value))
 }
 
 // GetLevel gets the value of Level for the instance
@@ -116,16 +136,25 @@ func (instance *MSFT_MTEventRecord) GetPropertyLevel() (value uint16, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLog sets the value of Log for the instance
 func (instance *MSFT_MTEventRecord) SetPropertyLog(value string) (err error) {
-	return instance.SetProperty("Log", value)
+	return instance.SetProperty("Log", (value))
 }
 
 // GetLog gets the value of Log for the instance
@@ -134,16 +163,25 @@ func (instance *MSFT_MTEventRecord) GetPropertyLog() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecordId sets the value of RecordId for the instance
 func (instance *MSFT_MTEventRecord) SetPropertyRecordId(value uint32) (err error) {
-	return instance.SetProperty("RecordId", value)
+	return instance.SetProperty("RecordId", (value))
 }
 
 // GetRecordId gets the value of RecordId for the instance
@@ -152,16 +190,25 @@ func (instance *MSFT_MTEventRecord) GetPropertyRecordId() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSource sets the value of Source for the instance
 func (instance *MSFT_MTEventRecord) SetPropertySource(value string) (err error) {
-	return instance.SetProperty("Source", value)
+	return instance.SetProperty("Source", (value))
 }
 
 // GetSource gets the value of Source for the instance
@@ -170,16 +217,25 @@ func (instance *MSFT_MTEventRecord) GetPropertySource() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTimestamp sets the value of Timestamp for the instance
 func (instance *MSFT_MTEventRecord) SetPropertyTimestamp(value string) (err error) {
-	return instance.SetProperty("Timestamp", value)
+	return instance.SetProperty("Timestamp", (value))
 }
 
 // GetTimestamp gets the value of Timestamp for the instance
@@ -188,9 +244,18 @@ func (instance *MSFT_MTEventRecord) GetPropertyTimestamp() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

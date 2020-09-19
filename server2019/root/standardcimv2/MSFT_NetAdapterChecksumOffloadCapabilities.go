@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterChecksumOffloadCapabilities struct
@@ -116,7 +118,7 @@ func NewMSFT_NetAdapterChecksumOffloadCapabilitiesEx6(hostName string,
 
 // SetIPv4ReceiveEncapsulation sets the value of IPv4ReceiveEncapsulation for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4ReceiveEncapsulation(value MSFT_NetAdapterChecksumOffloadEncapsulationTypes) (err error) {
-	return instance.SetProperty("IPv4ReceiveEncapsulation", value)
+	return instance.SetProperty("IPv4ReceiveEncapsulation", (value))
 }
 
 // GetIPv4ReceiveEncapsulation gets the value of IPv4ReceiveEncapsulation for the instance
@@ -125,16 +127,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterChecksumOffloadEncapsulationTypes is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterChecksumOffloadEncapsulationTypes(valuetmp)
+
 	return
 }
 
 // SetIPv4ReceiveIpChecksumSupported sets the value of IPv4ReceiveIpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4ReceiveIpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4ReceiveIpChecksumSupported", value)
+	return instance.SetProperty("IPv4ReceiveIpChecksumSupported", (value))
 }
 
 // GetIPv4ReceiveIpChecksumSupported gets the value of IPv4ReceiveIpChecksumSupported for the instance
@@ -143,16 +154,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4ReceiveIpOptionsSupported sets the value of IPv4ReceiveIpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4ReceiveIpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4ReceiveIpOptionsSupported", value)
+	return instance.SetProperty("IPv4ReceiveIpOptionsSupported", (value))
 }
 
 // GetIPv4ReceiveIpOptionsSupported gets the value of IPv4ReceiveIpOptionsSupported for the instance
@@ -161,16 +181,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4ReceiveTcpChecksumSupported sets the value of IPv4ReceiveTcpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4ReceiveTcpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4ReceiveTcpChecksumSupported", value)
+	return instance.SetProperty("IPv4ReceiveTcpChecksumSupported", (value))
 }
 
 // GetIPv4ReceiveTcpChecksumSupported gets the value of IPv4ReceiveTcpChecksumSupported for the instance
@@ -179,16 +208,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4ReceiveTcpOptionsSupported sets the value of IPv4ReceiveTcpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4ReceiveTcpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4ReceiveTcpOptionsSupported", value)
+	return instance.SetProperty("IPv4ReceiveTcpOptionsSupported", (value))
 }
 
 // GetIPv4ReceiveTcpOptionsSupported gets the value of IPv4ReceiveTcpOptionsSupported for the instance
@@ -197,16 +235,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4ReceiveUdpChecksumSupported sets the value of IPv4ReceiveUdpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4ReceiveUdpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4ReceiveUdpChecksumSupported", value)
+	return instance.SetProperty("IPv4ReceiveUdpChecksumSupported", (value))
 }
 
 // GetIPv4ReceiveUdpChecksumSupported gets the value of IPv4ReceiveUdpChecksumSupported for the instance
@@ -215,16 +262,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4TransmitEncapsulation sets the value of IPv4TransmitEncapsulation for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4TransmitEncapsulation(value MSFT_NetAdapterChecksumOffloadEncapsulationTypes) (err error) {
-	return instance.SetProperty("IPv4TransmitEncapsulation", value)
+	return instance.SetProperty("IPv4TransmitEncapsulation", (value))
 }
 
 // GetIPv4TransmitEncapsulation gets the value of IPv4TransmitEncapsulation for the instance
@@ -233,16 +289,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterChecksumOffloadEncapsulationTypes is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterChecksumOffloadEncapsulationTypes(valuetmp)
+
 	return
 }
 
 // SetIPv4TransmitIpChecksumSupported sets the value of IPv4TransmitIpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4TransmitIpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4TransmitIpChecksumSupported", value)
+	return instance.SetProperty("IPv4TransmitIpChecksumSupported", (value))
 }
 
 // GetIPv4TransmitIpChecksumSupported gets the value of IPv4TransmitIpChecksumSupported for the instance
@@ -251,16 +316,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4TransmitIpOptionsSupported sets the value of IPv4TransmitIpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4TransmitIpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4TransmitIpOptionsSupported", value)
+	return instance.SetProperty("IPv4TransmitIpOptionsSupported", (value))
 }
 
 // GetIPv4TransmitIpOptionsSupported gets the value of IPv4TransmitIpOptionsSupported for the instance
@@ -269,16 +343,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4TransmitTcpChecksumSupported sets the value of IPv4TransmitTcpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4TransmitTcpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4TransmitTcpChecksumSupported", value)
+	return instance.SetProperty("IPv4TransmitTcpChecksumSupported", (value))
 }
 
 // GetIPv4TransmitTcpChecksumSupported gets the value of IPv4TransmitTcpChecksumSupported for the instance
@@ -287,16 +370,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4TransmitTcpOptionsSupported sets the value of IPv4TransmitTcpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4TransmitTcpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4TransmitTcpOptionsSupported", value)
+	return instance.SetProperty("IPv4TransmitTcpOptionsSupported", (value))
 }
 
 // GetIPv4TransmitTcpOptionsSupported gets the value of IPv4TransmitTcpOptionsSupported for the instance
@@ -305,16 +397,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv4TransmitUdpChecksumSupported sets the value of IPv4TransmitUdpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv4TransmitUdpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv4TransmitUdpChecksumSupported", value)
+	return instance.SetProperty("IPv4TransmitUdpChecksumSupported", (value))
 }
 
 // GetIPv4TransmitUdpChecksumSupported gets the value of IPv4TransmitUdpChecksumSupported for the instance
@@ -323,16 +424,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv4Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6ReceiveEncapsulation sets the value of IPv6ReceiveEncapsulation for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6ReceiveEncapsulation(value MSFT_NetAdapterChecksumOffloadEncapsulationTypes) (err error) {
-	return instance.SetProperty("IPv6ReceiveEncapsulation", value)
+	return instance.SetProperty("IPv6ReceiveEncapsulation", (value))
 }
 
 // GetIPv6ReceiveEncapsulation gets the value of IPv6ReceiveEncapsulation for the instance
@@ -341,16 +451,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterChecksumOffloadEncapsulationTypes is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterChecksumOffloadEncapsulationTypes(valuetmp)
+
 	return
 }
 
 // SetIPv6ReceiveIpExtensionHeadersSupported sets the value of IPv6ReceiveIpExtensionHeadersSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6ReceiveIpExtensionHeadersSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6ReceiveIpExtensionHeadersSupported", value)
+	return instance.SetProperty("IPv6ReceiveIpExtensionHeadersSupported", (value))
 }
 
 // GetIPv6ReceiveIpExtensionHeadersSupported gets the value of IPv6ReceiveIpExtensionHeadersSupported for the instance
@@ -359,16 +478,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6ReceiveTcpChecksumSupported sets the value of IPv6ReceiveTcpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6ReceiveTcpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6ReceiveTcpChecksumSupported", value)
+	return instance.SetProperty("IPv6ReceiveTcpChecksumSupported", (value))
 }
 
 // GetIPv6ReceiveTcpChecksumSupported gets the value of IPv6ReceiveTcpChecksumSupported for the instance
@@ -377,16 +505,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6ReceiveTcpOptionsSupported sets the value of IPv6ReceiveTcpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6ReceiveTcpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6ReceiveTcpOptionsSupported", value)
+	return instance.SetProperty("IPv6ReceiveTcpOptionsSupported", (value))
 }
 
 // GetIPv6ReceiveTcpOptionsSupported gets the value of IPv6ReceiveTcpOptionsSupported for the instance
@@ -395,16 +532,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6ReceiveUdpChecksumSupported sets the value of IPv6ReceiveUdpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6ReceiveUdpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6ReceiveUdpChecksumSupported", value)
+	return instance.SetProperty("IPv6ReceiveUdpChecksumSupported", (value))
 }
 
 // GetIPv6ReceiveUdpChecksumSupported gets the value of IPv6ReceiveUdpChecksumSupported for the instance
@@ -413,16 +559,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Recei
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6TransmitEncapsulation sets the value of IPv6TransmitEncapsulation for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6TransmitEncapsulation(value MSFT_NetAdapterChecksumOffloadEncapsulationTypes) (err error) {
-	return instance.SetProperty("IPv6TransmitEncapsulation", value)
+	return instance.SetProperty("IPv6TransmitEncapsulation", (value))
 }
 
 // GetIPv6TransmitEncapsulation gets the value of IPv6TransmitEncapsulation for the instance
@@ -431,16 +586,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterChecksumOffloadEncapsulationTypes)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterChecksumOffloadEncapsulationTypes is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterChecksumOffloadEncapsulationTypes(valuetmp)
+
 	return
 }
 
 // SetIPv6TransmitIpExtensionHeadersSupported sets the value of IPv6TransmitIpExtensionHeadersSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6TransmitIpExtensionHeadersSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6TransmitIpExtensionHeadersSupported", value)
+	return instance.SetProperty("IPv6TransmitIpExtensionHeadersSupported", (value))
 }
 
 // GetIPv6TransmitIpExtensionHeadersSupported gets the value of IPv6TransmitIpExtensionHeadersSupported for the instance
@@ -449,16 +613,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6TransmitTcpChecksumSupported sets the value of IPv6TransmitTcpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6TransmitTcpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6TransmitTcpChecksumSupported", value)
+	return instance.SetProperty("IPv6TransmitTcpChecksumSupported", (value))
 }
 
 // GetIPv6TransmitTcpChecksumSupported gets the value of IPv6TransmitTcpChecksumSupported for the instance
@@ -467,16 +640,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6TransmitTcpOptionsSupported sets the value of IPv6TransmitTcpOptionsSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6TransmitTcpOptionsSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6TransmitTcpOptionsSupported", value)
+	return instance.SetProperty("IPv6TransmitTcpOptionsSupported", (value))
 }
 
 // GetIPv6TransmitTcpOptionsSupported gets the value of IPv6TransmitTcpOptionsSupported for the instance
@@ -485,16 +667,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6TransmitUdpChecksumSupported sets the value of IPv6TransmitUdpChecksumSupported for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) SetPropertyIPv6TransmitUdpChecksumSupported(value bool) (err error) {
-	return instance.SetProperty("IPv6TransmitUdpChecksumSupported", value)
+	return instance.SetProperty("IPv6TransmitUdpChecksumSupported", (value))
 }
 
 // GetIPv6TransmitUdpChecksumSupported gets the value of IPv6TransmitUdpChecksumSupported for the instance
@@ -503,9 +694,18 @@ func (instance *MSFT_NetAdapterChecksumOffloadCapabilities) GetPropertyIPv6Trans
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

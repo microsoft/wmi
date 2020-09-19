@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_LANEndpoint struct
@@ -70,7 +72,7 @@ func NewCIM_LANEndpointEx6(hostName string,
 
 // SetAliasAddresses sets the value of AliasAddresses for the instance
 func (instance *CIM_LANEndpoint) SetPropertyAliasAddresses(value []string) (err error) {
-	return instance.SetProperty("AliasAddresses", value)
+	return instance.SetProperty("AliasAddresses", (value))
 }
 
 // GetAliasAddresses gets the value of AliasAddresses for the instance
@@ -79,16 +81,26 @@ func (instance *CIM_LANEndpoint) GetPropertyAliasAddresses() (value []string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetGroupAddresses sets the value of GroupAddresses for the instance
 func (instance *CIM_LANEndpoint) SetPropertyGroupAddresses(value []string) (err error) {
-	return instance.SetProperty("GroupAddresses", value)
+	return instance.SetProperty("GroupAddresses", (value))
 }
 
 // GetGroupAddresses gets the value of GroupAddresses for the instance
@@ -97,16 +109,26 @@ func (instance *CIM_LANEndpoint) GetPropertyGroupAddresses() (value []string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLANID sets the value of LANID for the instance
 func (instance *CIM_LANEndpoint) SetPropertyLANID(value string) (err error) {
-	return instance.SetProperty("LANID", value)
+	return instance.SetProperty("LANID", (value))
 }
 
 // GetLANID gets the value of LANID for the instance
@@ -115,16 +137,25 @@ func (instance *CIM_LANEndpoint) GetPropertyLANID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLANType sets the value of LANType for the instance
 func (instance *CIM_LANEndpoint) SetPropertyLANType(value LANEndpoint_LANType) (err error) {
-	return instance.SetProperty("LANType", value)
+	return instance.SetProperty("LANType", (value))
 }
 
 // GetLANType gets the value of LANType for the instance
@@ -133,16 +164,25 @@ func (instance *CIM_LANEndpoint) GetPropertyLANType() (value LANEndpoint_LANType
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(LANEndpoint_LANType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = LANEndpoint_LANType(valuetmp)
+
 	return
 }
 
 // SetMACAddress sets the value of MACAddress for the instance
 func (instance *CIM_LANEndpoint) SetPropertyMACAddress(value string) (err error) {
-	return instance.SetProperty("MACAddress", value)
+	return instance.SetProperty("MACAddress", (value))
 }
 
 // GetMACAddress gets the value of MACAddress for the instance
@@ -151,16 +191,25 @@ func (instance *CIM_LANEndpoint) GetPropertyMACAddress() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxDataSize sets the value of MaxDataSize for the instance
 func (instance *CIM_LANEndpoint) SetPropertyMaxDataSize(value uint32) (err error) {
-	return instance.SetProperty("MaxDataSize", value)
+	return instance.SetProperty("MaxDataSize", (value))
 }
 
 // GetMaxDataSize gets the value of MaxDataSize for the instance
@@ -169,16 +218,25 @@ func (instance *CIM_LANEndpoint) GetPropertyMaxDataSize() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherLANType sets the value of OtherLANType for the instance
 func (instance *CIM_LANEndpoint) SetPropertyOtherLANType(value string) (err error) {
-	return instance.SetProperty("OtherLANType", value)
+	return instance.SetProperty("OtherLANType", (value))
 }
 
 // GetOtherLANType gets the value of OtherLANType for the instance
@@ -187,9 +245,18 @@ func (instance *CIM_LANEndpoint) GetPropertyOtherLANType() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

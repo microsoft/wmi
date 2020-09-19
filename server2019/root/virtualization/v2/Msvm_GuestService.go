@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -47,6 +47,6 @@ func NewMsvm_GuestServiceEx6(hostName string,
 	return
 }
 
-func (instance *Msvm_GuestService) GetRelatedGuestServiceInterfaceComponent() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_GuestServiceInterfaceComponent")
+func (instance *Msvm_GuestService) GetRelatedVssComponent() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VssComponent")
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetServiceFilter struct
@@ -52,7 +54,7 @@ func NewMSFT_NetServiceFilterEx6(hostName string,
 
 // SetServiceName sets the value of ServiceName for the instance
 func (instance *MSFT_NetServiceFilter) SetPropertyServiceName(value string) (err error) {
-	return instance.SetProperty("ServiceName", value)
+	return instance.SetProperty("ServiceName", (value))
 }
 
 // GetServiceName gets the value of ServiceName for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_NetServiceFilter) GetPropertyServiceName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

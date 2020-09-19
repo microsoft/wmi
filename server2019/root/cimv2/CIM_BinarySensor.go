@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_BinarySensor struct
@@ -61,7 +63,7 @@ func NewCIM_BinarySensorEx6(hostName string,
 
 // SetCurrentReading sets the value of CurrentReading for the instance
 func (instance *CIM_BinarySensor) SetPropertyCurrentReading(value bool) (err error) {
-	return instance.SetProperty("CurrentReading", value)
+	return instance.SetProperty("CurrentReading", (value))
 }
 
 // GetCurrentReading gets the value of CurrentReading for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_BinarySensor) GetPropertyCurrentReading() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetExpectedReading sets the value of ExpectedReading for the instance
 func (instance *CIM_BinarySensor) SetPropertyExpectedReading(value bool) (err error) {
-	return instance.SetProperty("ExpectedReading", value)
+	return instance.SetProperty("ExpectedReading", (value))
 }
 
 // GetExpectedReading gets the value of ExpectedReading for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_BinarySensor) GetPropertyExpectedReading() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInterpretationOfFalse sets the value of InterpretationOfFalse for the instance
 func (instance *CIM_BinarySensor) SetPropertyInterpretationOfFalse(value string) (err error) {
-	return instance.SetProperty("InterpretationOfFalse", value)
+	return instance.SetProperty("InterpretationOfFalse", (value))
 }
 
 // GetInterpretationOfFalse gets the value of InterpretationOfFalse for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_BinarySensor) GetPropertyInterpretationOfFalse() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterpretationOfTrue sets the value of InterpretationOfTrue for the instance
 func (instance *CIM_BinarySensor) SetPropertyInterpretationOfTrue(value string) (err error) {
-	return instance.SetProperty("InterpretationOfTrue", value)
+	return instance.SetProperty("InterpretationOfTrue", (value))
 }
 
 // GetInterpretationOfTrue gets the value of InterpretationOfTrue for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_BinarySensor) GetPropertyInterpretationOfTrue() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

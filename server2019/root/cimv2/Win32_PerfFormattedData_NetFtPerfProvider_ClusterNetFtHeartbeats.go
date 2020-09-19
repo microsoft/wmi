@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NetFtPerfProvider_ClusterNetFtHeartbeats struct
@@ -55,7 +57,7 @@ func NewWin32_PerfFormattedData_NetFtPerfProvider_ClusterNetFtHeartbeatsEx6(host
 
 // SetMissingheartbeats sets the value of Missingheartbeats for the instance
 func (instance *Win32_PerfFormattedData_NetFtPerfProvider_ClusterNetFtHeartbeats) SetPropertyMissingheartbeats(value uint32) (err error) {
-	return instance.SetProperty("Missingheartbeats", value)
+	return instance.SetProperty("Missingheartbeats", (value))
 }
 
 // GetMissingheartbeats gets the value of Missingheartbeats for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PerfFormattedData_NetFtPerfProvider_ClusterNetFtHeartbeats
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMissingheartbeatslimit sets the value of Missingheartbeatslimit for the instance
 func (instance *Win32_PerfFormattedData_NetFtPerfProvider_ClusterNetFtHeartbeats) SetPropertyMissingheartbeatslimit(value uint32) (err error) {
-	return instance.SetProperty("Missingheartbeatslimit", value)
+	return instance.SetProperty("Missingheartbeatslimit", (value))
 }
 
 // GetMissingheartbeatslimit gets the value of Missingheartbeatslimit for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PerfFormattedData_NetFtPerfProvider_ClusterNetFtHeartbeats
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

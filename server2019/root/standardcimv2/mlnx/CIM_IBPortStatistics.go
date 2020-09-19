@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_IBPortStatistics struct
@@ -85,7 +87,7 @@ func NewCIM_IBPortStatisticsEx6(hostName string,
 
 // SetExcessiveBufferOverrunErrors sets the value of ExcessiveBufferOverrunErrors for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyExcessiveBufferOverrunErrors(value uint16) (err error) {
-	return instance.SetProperty("ExcessiveBufferOverrunErrors", value)
+	return instance.SetProperty("ExcessiveBufferOverrunErrors", (value))
 }
 
 // GetExcessiveBufferOverrunErrors gets the value of ExcessiveBufferOverrunErrors for the instance
@@ -94,16 +96,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyExcessiveBufferOverrunErrors() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLinkDownedCounter sets the value of LinkDownedCounter for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyLinkDownedCounter(value uint16) (err error) {
-	return instance.SetProperty("LinkDownedCounter", value)
+	return instance.SetProperty("LinkDownedCounter", (value))
 }
 
 // GetLinkDownedCounter gets the value of LinkDownedCounter for the instance
@@ -112,16 +123,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyLinkDownedCounter() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLinkErrorRecoveryCounter sets the value of LinkErrorRecoveryCounter for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyLinkErrorRecoveryCounter(value uint16) (err error) {
-	return instance.SetProperty("LinkErrorRecoveryCounter", value)
+	return instance.SetProperty("LinkErrorRecoveryCounter", (value))
 }
 
 // GetLinkErrorRecoveryCounter gets the value of LinkErrorRecoveryCounter for the instance
@@ -130,16 +150,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyLinkErrorRecoveryCounter() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLocalLinkIntegrityErrors sets the value of LocalLinkIntegrityErrors for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyLocalLinkIntegrityErrors(value uint16) (err error) {
-	return instance.SetProperty("LocalLinkIntegrityErrors", value)
+	return instance.SetProperty("LocalLinkIntegrityErrors", (value))
 }
 
 // GetLocalLinkIntegrityErrors gets the value of LocalLinkIntegrityErrors for the instance
@@ -148,16 +177,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyLocalLinkIntegrityErrors() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPortRcvConstraintErrors sets the value of PortRcvConstraintErrors for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyPortRcvConstraintErrors(value uint16) (err error) {
-	return instance.SetProperty("PortRcvConstraintErrors", value)
+	return instance.SetProperty("PortRcvConstraintErrors", (value))
 }
 
 // GetPortRcvConstraintErrors gets the value of PortRcvConstraintErrors for the instance
@@ -166,16 +204,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyPortRcvConstraintErrors() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPortRcvErrors sets the value of PortRcvErrors for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyPortRcvErrors(value uint16) (err error) {
-	return instance.SetProperty("PortRcvErrors", value)
+	return instance.SetProperty("PortRcvErrors", (value))
 }
 
 // GetPortRcvErrors gets the value of PortRcvErrors for the instance
@@ -184,16 +231,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyPortRcvErrors() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPortRcvRemotePhysicalErrors sets the value of PortRcvRemotePhysicalErrors for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyPortRcvRemotePhysicalErrors(value uint16) (err error) {
-	return instance.SetProperty("PortRcvRemotePhysicalErrors", value)
+	return instance.SetProperty("PortRcvRemotePhysicalErrors", (value))
 }
 
 // GetPortRcvRemotePhysicalErrors gets the value of PortRcvRemotePhysicalErrors for the instance
@@ -202,16 +258,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyPortRcvRemotePhysicalErrors() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPortRcvSwitchRelayErrors sets the value of PortRcvSwitchRelayErrors for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyPortRcvSwitchRelayErrors(value uint16) (err error) {
-	return instance.SetProperty("PortRcvSwitchRelayErrors", value)
+	return instance.SetProperty("PortRcvSwitchRelayErrors", (value))
 }
 
 // GetPortRcvSwitchRelayErrors gets the value of PortRcvSwitchRelayErrors for the instance
@@ -220,16 +285,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyPortRcvSwitchRelayErrors() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPortXmitConstraintErrors sets the value of PortXmitConstraintErrors for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyPortXmitConstraintErrors(value uint16) (err error) {
-	return instance.SetProperty("PortXmitConstraintErrors", value)
+	return instance.SetProperty("PortXmitConstraintErrors", (value))
 }
 
 // GetPortXmitConstraintErrors gets the value of PortXmitConstraintErrors for the instance
@@ -238,16 +312,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyPortXmitConstraintErrors() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPortXmitDiscards sets the value of PortXmitDiscards for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyPortXmitDiscards(value uint16) (err error) {
-	return instance.SetProperty("PortXmitDiscards", value)
+	return instance.SetProperty("PortXmitDiscards", (value))
 }
 
 // GetPortXmitDiscards gets the value of PortXmitDiscards for the instance
@@ -256,16 +339,25 @@ func (instance *CIM_IBPortStatistics) GetPropertyPortXmitDiscards() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSymbolErrorCounter sets the value of SymbolErrorCounter for the instance
 func (instance *CIM_IBPortStatistics) SetPropertySymbolErrorCounter(value uint16) (err error) {
-	return instance.SetProperty("SymbolErrorCounter", value)
+	return instance.SetProperty("SymbolErrorCounter", (value))
 }
 
 // GetSymbolErrorCounter gets the value of SymbolErrorCounter for the instance
@@ -274,16 +366,25 @@ func (instance *CIM_IBPortStatistics) GetPropertySymbolErrorCounter() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetVL15Dropped sets the value of VL15Dropped for the instance
 func (instance *CIM_IBPortStatistics) SetPropertyVL15Dropped(value uint16) (err error) {
-	return instance.SetProperty("VL15Dropped", value)
+	return instance.SetProperty("VL15Dropped", (value))
 }
 
 // GetVL15Dropped gets the value of VL15Dropped for the instance
@@ -292,9 +393,18 @@ func (instance *CIM_IBPortStatistics) GetPropertyVL15Dropped() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_RegisteredProfile struct
@@ -70,7 +72,7 @@ func NewCIM_RegisteredProfileEx6(hostName string,
 
 // SetAdvertiseTypeDescriptions sets the value of AdvertiseTypeDescriptions for the instance
 func (instance *CIM_RegisteredProfile) SetPropertyAdvertiseTypeDescriptions(value []string) (err error) {
-	return instance.SetProperty("AdvertiseTypeDescriptions", value)
+	return instance.SetProperty("AdvertiseTypeDescriptions", (value))
 }
 
 // GetAdvertiseTypeDescriptions gets the value of AdvertiseTypeDescriptions for the instance
@@ -79,16 +81,26 @@ func (instance *CIM_RegisteredProfile) GetPropertyAdvertiseTypeDescriptions() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetAdvertiseTypes sets the value of AdvertiseTypes for the instance
 func (instance *CIM_RegisteredProfile) SetPropertyAdvertiseTypes(value []RegisteredProfile_AdvertiseTypes) (err error) {
-	return instance.SetProperty("AdvertiseTypes", value)
+	return instance.SetProperty("AdvertiseTypes", (value))
 }
 
 // GetAdvertiseTypes gets the value of AdvertiseTypes for the instance
@@ -97,16 +109,26 @@ func (instance *CIM_RegisteredProfile) GetPropertyAdvertiseTypes() (value []Regi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]RegisteredProfile_AdvertiseTypes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, RegisteredProfile_AdvertiseTypes(valuetmp))
+	}
+
 	return
 }
 
 // SetImplementedFeatures sets the value of ImplementedFeatures for the instance
 func (instance *CIM_RegisteredProfile) SetPropertyImplementedFeatures(value []string) (err error) {
-	return instance.SetProperty("ImplementedFeatures", value)
+	return instance.SetProperty("ImplementedFeatures", (value))
 }
 
 // GetImplementedFeatures gets the value of ImplementedFeatures for the instance
@@ -115,16 +137,26 @@ func (instance *CIM_RegisteredProfile) GetPropertyImplementedFeatures() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherRegisteredOrganization sets the value of OtherRegisteredOrganization for the instance
 func (instance *CIM_RegisteredProfile) SetPropertyOtherRegisteredOrganization(value string) (err error) {
-	return instance.SetProperty("OtherRegisteredOrganization", value)
+	return instance.SetProperty("OtherRegisteredOrganization", (value))
 }
 
 // GetOtherRegisteredOrganization gets the value of OtherRegisteredOrganization for the instance
@@ -133,16 +165,25 @@ func (instance *CIM_RegisteredProfile) GetPropertyOtherRegisteredOrganization() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRegisteredName sets the value of RegisteredName for the instance
 func (instance *CIM_RegisteredProfile) SetPropertyRegisteredName(value string) (err error) {
-	return instance.SetProperty("RegisteredName", value)
+	return instance.SetProperty("RegisteredName", (value))
 }
 
 // GetRegisteredName gets the value of RegisteredName for the instance
@@ -151,16 +192,25 @@ func (instance *CIM_RegisteredProfile) GetPropertyRegisteredName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRegisteredOrganization sets the value of RegisteredOrganization for the instance
 func (instance *CIM_RegisteredProfile) SetPropertyRegisteredOrganization(value RegisteredProfile_RegisteredOrganization) (err error) {
-	return instance.SetProperty("RegisteredOrganization", value)
+	return instance.SetProperty("RegisteredOrganization", (value))
 }
 
 // GetRegisteredOrganization gets the value of RegisteredOrganization for the instance
@@ -169,16 +219,25 @@ func (instance *CIM_RegisteredProfile) GetPropertyRegisteredOrganization() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RegisteredProfile_RegisteredOrganization)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RegisteredProfile_RegisteredOrganization(valuetmp)
+
 	return
 }
 
 // SetRegisteredVersion sets the value of RegisteredVersion for the instance
 func (instance *CIM_RegisteredProfile) SetPropertyRegisteredVersion(value string) (err error) {
-	return instance.SetProperty("RegisteredVersion", value)
+	return instance.SetProperty("RegisteredVersion", (value))
 }
 
 // GetRegisteredVersion gets the value of RegisteredVersion for the instance
@@ -187,10 +246,19 @@ func (instance *CIM_RegisteredProfile) GetPropertyRegisteredVersion() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

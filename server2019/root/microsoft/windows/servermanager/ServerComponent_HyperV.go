@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // ServerComponent_HyperV struct
@@ -64,7 +66,7 @@ func NewServerComponent_HyperVEx6(hostName string,
 
 // SetDefaultVirtualHardDiskPath sets the value of DefaultVirtualHardDiskPath for the instance
 func (instance *ServerComponent_HyperV) SetPropertyDefaultVirtualHardDiskPath(value string) (err error) {
-	return instance.SetProperty("DefaultVirtualHardDiskPath", value)
+	return instance.SetProperty("DefaultVirtualHardDiskPath", (value))
 }
 
 // GetDefaultVirtualHardDiskPath gets the value of DefaultVirtualHardDiskPath for the instance
@@ -73,16 +75,25 @@ func (instance *ServerComponent_HyperV) GetPropertyDefaultVirtualHardDiskPath() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDefaultVirtualMachinePath sets the value of DefaultVirtualMachinePath for the instance
 func (instance *ServerComponent_HyperV) SetPropertyDefaultVirtualMachinePath(value string) (err error) {
-	return instance.SetProperty("DefaultVirtualMachinePath", value)
+	return instance.SetProperty("DefaultVirtualMachinePath", (value))
 }
 
 // GetDefaultVirtualMachinePath gets the value of DefaultVirtualMachinePath for the instance
@@ -91,16 +102,25 @@ func (instance *ServerComponent_HyperV) GetPropertyDefaultVirtualMachinePath() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnableVirtualMachineMigration sets the value of EnableVirtualMachineMigration for the instance
 func (instance *ServerComponent_HyperV) SetPropertyEnableVirtualMachineMigration(value bool) (err error) {
-	return instance.SetProperty("EnableVirtualMachineMigration", value)
+	return instance.SetProperty("EnableVirtualMachineMigration", (value))
 }
 
 // GetEnableVirtualMachineMigration gets the value of EnableVirtualMachineMigration for the instance
@@ -109,16 +129,25 @@ func (instance *ServerComponent_HyperV) GetPropertyEnableVirtualMachineMigration
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVirtualMachineMigrationAuthenticationType sets the value of VirtualMachineMigrationAuthenticationType for the instance
 func (instance *ServerComponent_HyperV) SetPropertyVirtualMachineMigrationAuthenticationType(value string) (err error) {
-	return instance.SetProperty("VirtualMachineMigrationAuthenticationType", value)
+	return instance.SetProperty("VirtualMachineMigrationAuthenticationType", (value))
 }
 
 // GetVirtualMachineMigrationAuthenticationType gets the value of VirtualMachineMigrationAuthenticationType for the instance
@@ -127,16 +156,25 @@ func (instance *ServerComponent_HyperV) GetPropertyVirtualMachineMigrationAuthen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualSwitchNetworkAdapters sets the value of VirtualSwitchNetworkAdapters for the instance
 func (instance *ServerComponent_HyperV) SetPropertyVirtualSwitchNetworkAdapters(value []string) (err error) {
-	return instance.SetProperty("VirtualSwitchNetworkAdapters", value)
+	return instance.SetProperty("VirtualSwitchNetworkAdapters", (value))
 }
 
 // GetVirtualSwitchNetworkAdapters gets the value of VirtualSwitchNetworkAdapters for the instance
@@ -145,9 +183,19 @@ func (instance *ServerComponent_HyperV) GetPropertyVirtualSwitchNetworkAdapters(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

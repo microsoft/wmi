@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PnPDevicePropertySecurityDescriptor struct
@@ -52,7 +54,7 @@ func NewWin32_PnPDevicePropertySecurityDescriptorEx6(hostName string,
 
 // SetData sets the value of Data for the instance
 func (instance *Win32_PnPDevicePropertySecurityDescriptor) SetPropertyData(value Win32_SecurityDescriptor) (err error) {
-	return instance.SetProperty("Data", value)
+	return instance.SetProperty("Data", (value))
 }
 
 // GetData gets the value of Data for the instance
@@ -61,9 +63,18 @@ func (instance *Win32_PnPDevicePropertySecurityDescriptor) GetPropertyData() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_SecurityDescriptor)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_SecurityDescriptor)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_SecurityDescriptor is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_SecurityDescriptor(valuetmp)
+
 	return
 }

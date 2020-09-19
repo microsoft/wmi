@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_MetricRecordReal64 struct
@@ -52,7 +54,7 @@ func NewMSCluster_MetricRecordReal64Ex6(hostName string,
 
 // SetValue sets the value of Value for the instance
 func (instance *MSCluster_MetricRecordReal64) SetPropertyValue(value float64) (err error) {
-	return instance.SetProperty("Value", value)
+	return instance.SetProperty("Value", (value))
 }
 
 // GetValue gets the value of Value for the instance
@@ -61,9 +63,18 @@ func (instance *MSCluster_MetricRecordReal64) GetPropertyValue() (value float64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float64(valuetmp)
+
 	return
 }

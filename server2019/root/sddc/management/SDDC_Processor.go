@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
@@ -11,7 +11,9 @@ package management
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SDDC_Processor struct
@@ -65,7 +67,7 @@ func NewSDDC_ProcessorEx6(hostName string,
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *SDDC_Processor) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -74,16 +76,25 @@ func (instance *SDDC_Processor) GetPropertyManufacturer() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaxClockSpeedInMHz sets the value of MaxClockSpeedInMHz for the instance
 func (instance *SDDC_Processor) SetPropertyMaxClockSpeedInMHz(value uint32) (err error) {
-	return instance.SetProperty("MaxClockSpeedInMHz", value)
+	return instance.SetProperty("MaxClockSpeedInMHz", (value))
 }
 
 // GetMaxClockSpeedInMHz gets the value of MaxClockSpeedInMHz for the instance
@@ -92,16 +103,25 @@ func (instance *SDDC_Processor) GetPropertyMaxClockSpeedInMHz() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *SDDC_Processor) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -110,16 +130,25 @@ func (instance *SDDC_Processor) GetPropertyModel() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfCores sets the value of NumberOfCores for the instance
 func (instance *SDDC_Processor) SetPropertyNumberOfCores(value uint32) (err error) {
-	return instance.SetProperty("NumberOfCores", value)
+	return instance.SetProperty("NumberOfCores", (value))
 }
 
 // GetNumberOfCores gets the value of NumberOfCores for the instance
@@ -128,16 +157,25 @@ func (instance *SDDC_Processor) GetPropertyNumberOfCores() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfLogicalProcessors sets the value of NumberOfLogicalProcessors for the instance
 func (instance *SDDC_Processor) SetPropertyNumberOfLogicalProcessors(value uint32) (err error) {
-	return instance.SetProperty("NumberOfLogicalProcessors", value)
+	return instance.SetProperty("NumberOfLogicalProcessors", (value))
 }
 
 // GetNumberOfLogicalProcessors gets the value of NumberOfLogicalProcessors for the instance
@@ -146,9 +184,18 @@ func (instance *SDDC_Processor) GetPropertyNumberOfLogicalProcessors() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

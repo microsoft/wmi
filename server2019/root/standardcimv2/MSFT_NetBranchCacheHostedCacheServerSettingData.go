@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetBranchCacheHostedCacheServerSettingData struct
@@ -58,7 +60,7 @@ func NewMSFT_NetBranchCacheHostedCacheServerSettingDataEx6(hostName string,
 
 // SetClientAuthenticationMode sets the value of ClientAuthenticationMode for the instance
 func (instance *MSFT_NetBranchCacheHostedCacheServerSettingData) SetPropertyClientAuthenticationMode(value uint32) (err error) {
-	return instance.SetProperty("ClientAuthenticationMode", value)
+	return instance.SetProperty("ClientAuthenticationMode", (value))
 }
 
 // GetClientAuthenticationMode gets the value of ClientAuthenticationMode for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_NetBranchCacheHostedCacheServerSettingData) GetPropertyClie
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHostedCacheScpRegistrationEnabled sets the value of HostedCacheScpRegistrationEnabled for the instance
 func (instance *MSFT_NetBranchCacheHostedCacheServerSettingData) SetPropertyHostedCacheScpRegistrationEnabled(value bool) (err error) {
-	return instance.SetProperty("HostedCacheScpRegistrationEnabled", value)
+	return instance.SetProperty("HostedCacheScpRegistrationEnabled", (value))
 }
 
 // GetHostedCacheScpRegistrationEnabled gets the value of HostedCacheScpRegistrationEnabled for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_NetBranchCacheHostedCacheServerSettingData) GetPropertyHost
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostedCacheServerIsEnabled sets the value of HostedCacheServerIsEnabled for the instance
 func (instance *MSFT_NetBranchCacheHostedCacheServerSettingData) SetPropertyHostedCacheServerIsEnabled(value bool) (err error) {
-	return instance.SetProperty("HostedCacheServerIsEnabled", value)
+	return instance.SetProperty("HostedCacheServerIsEnabled", (value))
 }
 
 // GetHostedCacheServerIsEnabled gets the value of HostedCacheServerIsEnabled for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_NetBranchCacheHostedCacheServerSettingData) GetPropertyHost
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

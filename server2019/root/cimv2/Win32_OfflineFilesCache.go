@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_OfflineFilesCache struct
@@ -59,7 +61,7 @@ func NewWin32_OfflineFilesCacheEx6(hostName string,
 
 // SetActive sets the value of Active for the instance
 func (instance *Win32_OfflineFilesCache) SetPropertyActive(value bool) (err error) {
-	return instance.SetProperty("Active", value)
+	return instance.SetProperty("Active", (value))
 }
 
 // GetActive gets the value of Active for the instance
@@ -68,16 +70,25 @@ func (instance *Win32_OfflineFilesCache) GetPropertyActive() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *Win32_OfflineFilesCache) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -86,16 +97,25 @@ func (instance *Win32_OfflineFilesCache) GetPropertyEnabled() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLocation sets the value of Location for the instance
 func (instance *Win32_OfflineFilesCache) SetPropertyLocation(value string) (err error) {
-	return instance.SetProperty("Location", value)
+	return instance.SetProperty("Location", (value))
 }
 
 // GetLocation gets the value of Location for the instance
@@ -104,10 +124,19 @@ func (instance *Win32_OfflineFilesCache) GetPropertyLocation() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

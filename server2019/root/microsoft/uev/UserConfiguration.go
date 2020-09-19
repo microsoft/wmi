@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Uev
 //////////////////////////////////////////////
 package uev
@@ -11,7 +11,9 @@ package uev
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // UserConfiguration struct
@@ -98,7 +100,7 @@ func NewUserConfigurationEx6(hostName string,
 
 // SetDontSyncWindows8AppSettings sets the value of DontSyncWindows8AppSettings for the instance
 func (instance *UserConfiguration) SetPropertyDontSyncWindows8AppSettings(value bool) (err error) {
-	return instance.SetProperty("DontSyncWindows8AppSettings", value)
+	return instance.SetProperty("DontSyncWindows8AppSettings", (value))
 }
 
 // GetDontSyncWindows8AppSettings gets the value of DontSyncWindows8AppSettings for the instance
@@ -107,16 +109,25 @@ func (instance *UserConfiguration) GetPropertyDontSyncWindows8AppSettings() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaxPackageSizeInBytes sets the value of MaxPackageSizeInBytes for the instance
 func (instance *UserConfiguration) SetPropertyMaxPackageSizeInBytes(value uint32) (err error) {
-	return instance.SetProperty("MaxPackageSizeInBytes", value)
+	return instance.SetProperty("MaxPackageSizeInBytes", (value))
 }
 
 // GetMaxPackageSizeInBytes gets the value of MaxPackageSizeInBytes for the instance
@@ -125,16 +136,25 @@ func (instance *UserConfiguration) GetPropertyMaxPackageSizeInBytes() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSettingsImportNotifyDelayInSeconds sets the value of SettingsImportNotifyDelayInSeconds for the instance
 func (instance *UserConfiguration) SetPropertySettingsImportNotifyDelayInSeconds(value uint32) (err error) {
-	return instance.SetProperty("SettingsImportNotifyDelayInSeconds", value)
+	return instance.SetProperty("SettingsImportNotifyDelayInSeconds", (value))
 }
 
 // GetSettingsImportNotifyDelayInSeconds gets the value of SettingsImportNotifyDelayInSeconds for the instance
@@ -143,16 +163,25 @@ func (instance *UserConfiguration) GetPropertySettingsImportNotifyDelayInSeconds
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSettingsImportNotifyEnabled sets the value of SettingsImportNotifyEnabled for the instance
 func (instance *UserConfiguration) SetPropertySettingsImportNotifyEnabled(value bool) (err error) {
-	return instance.SetProperty("SettingsImportNotifyEnabled", value)
+	return instance.SetProperty("SettingsImportNotifyEnabled", (value))
 }
 
 // GetSettingsImportNotifyEnabled gets the value of SettingsImportNotifyEnabled for the instance
@@ -161,16 +190,25 @@ func (instance *UserConfiguration) GetPropertySettingsImportNotifyEnabled() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSettingsStoragePath sets the value of SettingsStoragePath for the instance
 func (instance *UserConfiguration) SetPropertySettingsStoragePath(value string) (err error) {
-	return instance.SetProperty("SettingsStoragePath", value)
+	return instance.SetProperty("SettingsStoragePath", (value))
 }
 
 // GetSettingsStoragePath gets the value of SettingsStoragePath for the instance
@@ -179,16 +217,25 @@ func (instance *UserConfiguration) GetPropertySettingsStoragePath() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSyncEnabled sets the value of SyncEnabled for the instance
 func (instance *UserConfiguration) SetPropertySyncEnabled(value bool) (err error) {
-	return instance.SetProperty("SyncEnabled", value)
+	return instance.SetProperty("SyncEnabled", (value))
 }
 
 // GetSyncEnabled gets the value of SyncEnabled for the instance
@@ -197,16 +244,25 @@ func (instance *UserConfiguration) GetPropertySyncEnabled() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSyncMethod sets the value of SyncMethod for the instance
 func (instance *UserConfiguration) SetPropertySyncMethod(value string) (err error) {
-	return instance.SetProperty("SyncMethod", value)
+	return instance.SetProperty("SyncMethod", (value))
 }
 
 // GetSyncMethod gets the value of SyncMethod for the instance
@@ -215,16 +271,25 @@ func (instance *UserConfiguration) GetPropertySyncMethod() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSyncOverMeteredNetwork sets the value of SyncOverMeteredNetwork for the instance
 func (instance *UserConfiguration) SetPropertySyncOverMeteredNetwork(value bool) (err error) {
-	return instance.SetProperty("SyncOverMeteredNetwork", value)
+	return instance.SetProperty("SyncOverMeteredNetwork", (value))
 }
 
 // GetSyncOverMeteredNetwork gets the value of SyncOverMeteredNetwork for the instance
@@ -233,16 +298,25 @@ func (instance *UserConfiguration) GetPropertySyncOverMeteredNetwork() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSyncOverMeteredNetworkWhenRoaming sets the value of SyncOverMeteredNetworkWhenRoaming for the instance
 func (instance *UserConfiguration) SetPropertySyncOverMeteredNetworkWhenRoaming(value bool) (err error) {
-	return instance.SetProperty("SyncOverMeteredNetworkWhenRoaming", value)
+	return instance.SetProperty("SyncOverMeteredNetworkWhenRoaming", (value))
 }
 
 // GetSyncOverMeteredNetworkWhenRoaming gets the value of SyncOverMeteredNetworkWhenRoaming for the instance
@@ -251,16 +325,25 @@ func (instance *UserConfiguration) GetPropertySyncOverMeteredNetworkWhenRoaming(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSyncProviderPingEnabled sets the value of SyncProviderPingEnabled for the instance
 func (instance *UserConfiguration) SetPropertySyncProviderPingEnabled(value bool) (err error) {
-	return instance.SetProperty("SyncProviderPingEnabled", value)
+	return instance.SetProperty("SyncProviderPingEnabled", (value))
 }
 
 // GetSyncProviderPingEnabled gets the value of SyncProviderPingEnabled for the instance
@@ -269,16 +352,25 @@ func (instance *UserConfiguration) GetPropertySyncProviderPingEnabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSyncTimeoutInMilliseconds sets the value of SyncTimeoutInMilliseconds for the instance
 func (instance *UserConfiguration) SetPropertySyncTimeoutInMilliseconds(value uint32) (err error) {
-	return instance.SetProperty("SyncTimeoutInMilliseconds", value)
+	return instance.SetProperty("SyncTimeoutInMilliseconds", (value))
 }
 
 // GetSyncTimeoutInMilliseconds gets the value of SyncTimeoutInMilliseconds for the instance
@@ -287,16 +379,25 @@ func (instance *UserConfiguration) GetPropertySyncTimeoutInMilliseconds() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSyncUnlistedWindows8Apps sets the value of SyncUnlistedWindows8Apps for the instance
 func (instance *UserConfiguration) SetPropertySyncUnlistedWindows8Apps(value bool) (err error) {
-	return instance.SetProperty("SyncUnlistedWindows8Apps", value)
+	return instance.SetProperty("SyncUnlistedWindows8Apps", (value))
 }
 
 // GetSyncUnlistedWindows8Apps gets the value of SyncUnlistedWindows8Apps for the instance
@@ -305,16 +406,25 @@ func (instance *UserConfiguration) GetPropertySyncUnlistedWindows8Apps() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVdiCollectionName sets the value of VdiCollectionName for the instance
 func (instance *UserConfiguration) SetPropertyVdiCollectionName(value string) (err error) {
-	return instance.SetProperty("VdiCollectionName", value)
+	return instance.SetProperty("VdiCollectionName", (value))
 }
 
 // GetVdiCollectionName gets the value of VdiCollectionName for the instance
@@ -323,16 +433,25 @@ func (instance *UserConfiguration) GetPropertyVdiCollectionName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWaitForSyncOnApplicationStart sets the value of WaitForSyncOnApplicationStart for the instance
 func (instance *UserConfiguration) SetPropertyWaitForSyncOnApplicationStart(value bool) (err error) {
-	return instance.SetProperty("WaitForSyncOnApplicationStart", value)
+	return instance.SetProperty("WaitForSyncOnApplicationStart", (value))
 }
 
 // GetWaitForSyncOnApplicationStart gets the value of WaitForSyncOnApplicationStart for the instance
@@ -341,16 +460,25 @@ func (instance *UserConfiguration) GetPropertyWaitForSyncOnApplicationStart() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetWaitForSyncOnLogon sets the value of WaitForSyncOnLogon for the instance
 func (instance *UserConfiguration) SetPropertyWaitForSyncOnLogon(value bool) (err error) {
-	return instance.SetProperty("WaitForSyncOnLogon", value)
+	return instance.SetProperty("WaitForSyncOnLogon", (value))
 }
 
 // GetWaitForSyncOnLogon gets the value of WaitForSyncOnLogon for the instance
@@ -359,16 +487,25 @@ func (instance *UserConfiguration) GetPropertyWaitForSyncOnLogon() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetWaitForSyncTimeoutInMilliseconds sets the value of WaitForSyncTimeoutInMilliseconds for the instance
 func (instance *UserConfiguration) SetPropertyWaitForSyncTimeoutInMilliseconds(value uint32) (err error) {
-	return instance.SetProperty("WaitForSyncTimeoutInMilliseconds", value)
+	return instance.SetProperty("WaitForSyncTimeoutInMilliseconds", (value))
 }
 
 // GetWaitForSyncTimeoutInMilliseconds gets the value of WaitForSyncTimeoutInMilliseconds for the instance
@@ -377,9 +514,18 @@ func (instance *UserConfiguration) GetPropertyWaitForSyncTimeoutInMilliseconds()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

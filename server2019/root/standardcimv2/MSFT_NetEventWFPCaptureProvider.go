@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventWFPCaptureProvider struct
@@ -64,7 +66,7 @@ func NewMSFT_NetEventWFPCaptureProviderEx6(hostName string,
 
 // SetCaptureLayerSet sets the value of CaptureLayerSet for the instance
 func (instance *MSFT_NetEventWFPCaptureProvider) SetPropertyCaptureLayerSet(value uint64) (err error) {
-	return instance.SetProperty("CaptureLayerSet", value)
+	return instance.SetProperty("CaptureLayerSet", (value))
 }
 
 // GetCaptureLayerSet gets the value of CaptureLayerSet for the instance
@@ -73,16 +75,25 @@ func (instance *MSFT_NetEventWFPCaptureProvider) GetPropertyCaptureLayerSet() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiscardedEvents sets the value of DiscardedEvents for the instance
 func (instance *MSFT_NetEventWFPCaptureProvider) SetPropertyDiscardedEvents(value bool) (err error) {
-	return instance.SetProperty("DiscardedEvents", value)
+	return instance.SetProperty("DiscardedEvents", (value))
 }
 
 // GetDiscardedEvents gets the value of DiscardedEvents for the instance
@@ -91,16 +102,25 @@ func (instance *MSFT_NetEventWFPCaptureProvider) GetPropertyDiscardedEvents() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPAddresses sets the value of IPAddresses for the instance
 func (instance *MSFT_NetEventWFPCaptureProvider) SetPropertyIPAddresses(value []string) (err error) {
-	return instance.SetProperty("IPAddresses", value)
+	return instance.SetProperty("IPAddresses", (value))
 }
 
 // GetIPAddresses gets the value of IPAddresses for the instance
@@ -109,16 +129,26 @@ func (instance *MSFT_NetEventWFPCaptureProvider) GetPropertyIPAddresses() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTCPPorts sets the value of TCPPorts for the instance
 func (instance *MSFT_NetEventWFPCaptureProvider) SetPropertyTCPPorts(value []uint16) (err error) {
-	return instance.SetProperty("TCPPorts", value)
+	return instance.SetProperty("TCPPorts", (value))
 }
 
 // GetTCPPorts gets the value of TCPPorts for the instance
@@ -127,16 +157,26 @@ func (instance *MSFT_NetEventWFPCaptureProvider) GetPropertyTCPPorts() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetUDPPorts sets the value of UDPPorts for the instance
 func (instance *MSFT_NetEventWFPCaptureProvider) SetPropertyUDPPorts(value []uint16) (err error) {
-	return instance.SetProperty("UDPPorts", value)
+	return instance.SetProperty("UDPPorts", (value))
 }
 
 // GetUDPPorts gets the value of UDPPorts for the instance
@@ -145,9 +185,19 @@ func (instance *MSFT_NetEventWFPCaptureProvider) GetPropertyUDPPorts() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }

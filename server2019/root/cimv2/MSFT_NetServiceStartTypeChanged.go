@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetServiceStartTypeChanged struct
@@ -61,7 +63,7 @@ func NewMSFT_NetServiceStartTypeChangedEx6(hostName string,
 
 // SetNewStartType sets the value of NewStartType for the instance
 func (instance *MSFT_NetServiceStartTypeChanged) SetPropertyNewStartType(value string) (err error) {
-	return instance.SetProperty("NewStartType", value)
+	return instance.SetProperty("NewStartType", (value))
 }
 
 // GetNewStartType gets the value of NewStartType for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetServiceStartTypeChanged) GetPropertyNewStartType() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOldStartType sets the value of OldStartType for the instance
 func (instance *MSFT_NetServiceStartTypeChanged) SetPropertyOldStartType(value string) (err error) {
-	return instance.SetProperty("OldStartType", value)
+	return instance.SetProperty("OldStartType", (value))
 }
 
 // GetOldStartType gets the value of OldStartType for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetServiceStartTypeChanged) GetPropertyOldStartType() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetService sets the value of Service for the instance
 func (instance *MSFT_NetServiceStartTypeChanged) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetServiceStartTypeChanged) GetPropertyService() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setsid sets the value of sid for the instance
 func (instance *MSFT_NetServiceStartTypeChanged) SetPropertysid(value string) (err error) {
-	return instance.SetProperty("sid", value)
+	return instance.SetProperty("sid", (value))
 }
 
 // Getsid gets the value of sid for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_NetServiceStartTypeChanged) GetPropertysid() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

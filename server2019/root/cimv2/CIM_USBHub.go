@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_USBHub struct
@@ -55,7 +57,7 @@ func NewCIM_USBHubEx6(hostName string,
 
 // SetGangSwitched sets the value of GangSwitched for the instance
 func (instance *CIM_USBHub) SetPropertyGangSwitched(value bool) (err error) {
-	return instance.SetProperty("GangSwitched", value)
+	return instance.SetProperty("GangSwitched", (value))
 }
 
 // GetGangSwitched gets the value of GangSwitched for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_USBHub) GetPropertyGangSwitched() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNumberOfPorts sets the value of NumberOfPorts for the instance
 func (instance *CIM_USBHub) SetPropertyNumberOfPorts(value uint8) (err error) {
-	return instance.SetProperty("NumberOfPorts", value)
+	return instance.SetProperty("NumberOfPorts", (value))
 }
 
 // GetNumberOfPorts gets the value of NumberOfPorts for the instance
@@ -82,9 +93,18 @@ func (instance *CIM_USBHub) GetPropertyNumberOfPorts() (value uint8, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_Volume struct
@@ -85,7 +87,7 @@ func NewMSFT_VolumeEx6(hostName string,
 
 // SetAllocationUnitSize sets the value of AllocationUnitSize for the instance
 func (instance *MSFT_Volume) SetPropertyAllocationUnitSize(value uint32) (err error) {
-	return instance.SetProperty("AllocationUnitSize", value)
+	return instance.SetProperty("AllocationUnitSize", (value))
 }
 
 // GetAllocationUnitSize gets the value of AllocationUnitSize for the instance
@@ -94,16 +96,25 @@ func (instance *MSFT_Volume) GetPropertyAllocationUnitSize() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDedupMode sets the value of DedupMode for the instance
 func (instance *MSFT_Volume) SetPropertyDedupMode(value uint32) (err error) {
-	return instance.SetProperty("DedupMode", value)
+	return instance.SetProperty("DedupMode", (value))
 }
 
 // GetDedupMode gets the value of DedupMode for the instance
@@ -112,16 +123,25 @@ func (instance *MSFT_Volume) GetPropertyDedupMode() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDriveLetter sets the value of DriveLetter for the instance
 func (instance *MSFT_Volume) SetPropertyDriveLetter(value byte) (err error) {
-	return instance.SetProperty("DriveLetter", value)
+	return instance.SetProperty("DriveLetter", (value))
 }
 
 // GetDriveLetter gets the value of DriveLetter for the instance
@@ -130,16 +150,25 @@ func (instance *MSFT_Volume) GetPropertyDriveLetter() (value byte, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(byte)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(byte)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " byte is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = byte(valuetmp)
+
 	return
 }
 
 // SetDriveType sets the value of DriveType for the instance
 func (instance *MSFT_Volume) SetPropertyDriveType(value uint32) (err error) {
-	return instance.SetProperty("DriveType", value)
+	return instance.SetProperty("DriveType", (value))
 }
 
 // GetDriveType gets the value of DriveType for the instance
@@ -148,16 +177,25 @@ func (instance *MSFT_Volume) GetPropertyDriveType() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileSystem sets the value of FileSystem for the instance
 func (instance *MSFT_Volume) SetPropertyFileSystem(value string) (err error) {
-	return instance.SetProperty("FileSystem", value)
+	return instance.SetProperty("FileSystem", (value))
 }
 
 // GetFileSystem gets the value of FileSystem for the instance
@@ -166,16 +204,25 @@ func (instance *MSFT_Volume) GetPropertyFileSystem() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileSystemLabel sets the value of FileSystemLabel for the instance
 func (instance *MSFT_Volume) SetPropertyFileSystemLabel(value string) (err error) {
-	return instance.SetProperty("FileSystemLabel", value)
+	return instance.SetProperty("FileSystemLabel", (value))
 }
 
 // GetFileSystemLabel gets the value of FileSystemLabel for the instance
@@ -184,16 +231,25 @@ func (instance *MSFT_Volume) GetPropertyFileSystemLabel() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileSystemType sets the value of FileSystemType for the instance
 func (instance *MSFT_Volume) SetPropertyFileSystemType(value uint16) (err error) {
-	return instance.SetProperty("FileSystemType", value)
+	return instance.SetProperty("FileSystemType", (value))
 }
 
 // GetFileSystemType gets the value of FileSystemType for the instance
@@ -202,16 +258,25 @@ func (instance *MSFT_Volume) GetPropertyFileSystemType() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_Volume) SetPropertyHealthStatus(value uint16) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -220,16 +285,25 @@ func (instance *MSFT_Volume) GetPropertyHealthStatus() (value uint16, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_Volume) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -238,16 +312,26 @@ func (instance *MSFT_Volume) GetPropertyOperationalStatus() (value []uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetPath sets the value of Path for the instance
 func (instance *MSFT_Volume) SetPropertyPath(value string) (err error) {
-	return instance.SetProperty("Path", value)
+	return instance.SetProperty("Path", (value))
 }
 
 // GetPath gets the value of Path for the instance
@@ -256,16 +340,25 @@ func (instance *MSFT_Volume) GetPropertyPath() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSize sets the value of Size for the instance
 func (instance *MSFT_Volume) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", value)
+	return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
@@ -274,16 +367,25 @@ func (instance *MSFT_Volume) GetPropertySize() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSizeRemaining sets the value of SizeRemaining for the instance
 func (instance *MSFT_Volume) SetPropertySizeRemaining(value uint64) (err error) {
-	return instance.SetProperty("SizeRemaining", value)
+	return instance.SetProperty("SizeRemaining", (value))
 }
 
 // GetSizeRemaining gets the value of SizeRemaining for the instance
@@ -292,10 +394,19 @@ func (instance *MSFT_Volume) GetPropertySizeRemaining() (value uint64, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

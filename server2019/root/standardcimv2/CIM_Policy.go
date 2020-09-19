@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Policy struct
@@ -55,7 +57,7 @@ func NewCIM_PolicyEx6(hostName string,
 
 // SetCommonName sets the value of CommonName for the instance
 func (instance *CIM_Policy) SetPropertyCommonName(value string) (err error) {
-	return instance.SetProperty("CommonName", value)
+	return instance.SetProperty("CommonName", (value))
 }
 
 // GetCommonName gets the value of CommonName for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_Policy) GetPropertyCommonName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPolicyKeywords sets the value of PolicyKeywords for the instance
 func (instance *CIM_Policy) SetPropertyPolicyKeywords(value []string) (err error) {
-	return instance.SetProperty("PolicyKeywords", value)
+	return instance.SetProperty("PolicyKeywords", (value))
 }
 
 // GetPolicyKeywords gets the value of PolicyKeywords for the instance
@@ -82,9 +93,19 @@ func (instance *CIM_Policy) GetPropertyPolicyKeywords() (value []string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

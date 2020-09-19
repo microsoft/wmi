@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemReferencePoint struct
@@ -67,7 +69,7 @@ func NewMsvm_VirtualSystemReferencePointEx6(hostName string,
 
 // SetConsistencyLevel sets the value of ConsistencyLevel for the instance
 func (instance *Msvm_VirtualSystemReferencePoint) SetPropertyConsistencyLevel(value uint16) (err error) {
-	return instance.SetProperty("ConsistencyLevel", value)
+	return instance.SetProperty("ConsistencyLevel", (value))
 }
 
 // GetConsistencyLevel gets the value of ConsistencyLevel for the instance
@@ -76,16 +78,25 @@ func (instance *Msvm_VirtualSystemReferencePoint) GetPropertyConsistencyLevel() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHasAssociatedData sets the value of HasAssociatedData for the instance
 func (instance *Msvm_VirtualSystemReferencePoint) SetPropertyHasAssociatedData(value bool) (err error) {
-	return instance.SetProperty("HasAssociatedData", value)
+	return instance.SetProperty("HasAssociatedData", (value))
 }
 
 // GetHasAssociatedData gets the value of HasAssociatedData for the instance
@@ -94,16 +105,25 @@ func (instance *Msvm_VirtualSystemReferencePoint) GetPropertyHasAssociatedData()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetReferencePointType sets the value of ReferencePointType for the instance
 func (instance *Msvm_VirtualSystemReferencePoint) SetPropertyReferencePointType(value uint16) (err error) {
-	return instance.SetProperty("ReferencePointType", value)
+	return instance.SetProperty("ReferencePointType", (value))
 }
 
 // GetReferencePointType gets the value of ReferencePointType for the instance
@@ -112,16 +132,25 @@ func (instance *Msvm_VirtualSystemReferencePoint) GetPropertyReferencePointType(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetResilientChangeTrackingIdentifiers sets the value of ResilientChangeTrackingIdentifiers for the instance
 func (instance *Msvm_VirtualSystemReferencePoint) SetPropertyResilientChangeTrackingIdentifiers(value []string) (err error) {
-	return instance.SetProperty("ResilientChangeTrackingIdentifiers", value)
+	return instance.SetProperty("ResilientChangeTrackingIdentifiers", (value))
 }
 
 // GetResilientChangeTrackingIdentifiers gets the value of ResilientChangeTrackingIdentifiers for the instance
@@ -130,16 +159,26 @@ func (instance *Msvm_VirtualSystemReferencePoint) GetPropertyResilientChangeTrac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetVirtualDiskIdentifiers sets the value of VirtualDiskIdentifiers for the instance
 func (instance *Msvm_VirtualSystemReferencePoint) SetPropertyVirtualDiskIdentifiers(value []string) (err error) {
-	return instance.SetProperty("VirtualDiskIdentifiers", value)
+	return instance.SetProperty("VirtualDiskIdentifiers", (value))
 }
 
 // GetVirtualDiskIdentifiers gets the value of VirtualDiskIdentifiers for the instance
@@ -148,16 +187,26 @@ func (instance *Msvm_VirtualSystemReferencePoint) GetPropertyVirtualDiskIdentifi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetVirtualSystemIdentifier sets the value of VirtualSystemIdentifier for the instance
 func (instance *Msvm_VirtualSystemReferencePoint) SetPropertyVirtualSystemIdentifier(value string) (err error) {
-	return instance.SetProperty("VirtualSystemIdentifier", value)
+	return instance.SetProperty("VirtualSystemIdentifier", (value))
 }
 
 // GetVirtualSystemIdentifier gets the value of VirtualSystemIdentifier for the instance
@@ -166,9 +215,18 @@ func (instance *Msvm_VirtualSystemReferencePoint) GetPropertyVirtualSystemIdenti
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

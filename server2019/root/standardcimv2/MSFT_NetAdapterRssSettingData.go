@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterRssSettingData struct
@@ -163,7 +165,7 @@ func NewMSFT_NetAdapterRssSettingDataEx6(hostName string,
 
 // SetBaseProcessorGroup sets the value of BaseProcessorGroup for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyBaseProcessorGroup(value uint16) (err error) {
-	return instance.SetProperty("BaseProcessorGroup", value)
+	return instance.SetProperty("BaseProcessorGroup", (value))
 }
 
 // GetBaseProcessorGroup gets the value of BaseProcessorGroup for the instance
@@ -172,16 +174,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyBaseProcessorGroup() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetBaseProcessorNumber sets the value of BaseProcessorNumber for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyBaseProcessorNumber(value uint8) (err error) {
-	return instance.SetProperty("BaseProcessorNumber", value)
+	return instance.SetProperty("BaseProcessorNumber", (value))
 }
 
 // GetBaseProcessorNumber gets the value of BaseProcessorNumber for the instance
@@ -190,16 +201,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyBaseProcessorNumber() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetClassificationAtDpcSupported sets the value of ClassificationAtDpcSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyClassificationAtDpcSupported(value bool) (err error) {
-	return instance.SetProperty("ClassificationAtDpcSupported", value)
+	return instance.SetProperty("ClassificationAtDpcSupported", (value))
 }
 
 // GetClassificationAtDpcSupported gets the value of ClassificationAtDpcSupported for the instance
@@ -208,16 +228,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyClassificationAtDpcSup
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetClassificationAtIsrSupported sets the value of ClassificationAtIsrSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyClassificationAtIsrSupported(value bool) (err error) {
-	return instance.SetProperty("ClassificationAtIsrSupported", value)
+	return instance.SetProperty("ClassificationAtIsrSupported", (value))
 }
 
 // GetClassificationAtIsrSupported gets the value of ClassificationAtIsrSupported for the instance
@@ -226,16 +255,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyClassificationAtIsrSup
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -244,16 +282,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyEnabled() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHashKeySize sets the value of HashKeySize for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyHashKeySize(value uint16) (err error) {
-	return instance.SetProperty("HashKeySize", value)
+	return instance.SetProperty("HashKeySize", (value))
 }
 
 // GetHashKeySize gets the value of HashKeySize for the instance
@@ -262,16 +309,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyHashKeySize() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIndirectionTable sets the value of IndirectionTable for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyIndirectionTable(value []MSFT_NetAdapter_ProcessorNumber) (err error) {
-	return instance.SetProperty("IndirectionTable", value)
+	return instance.SetProperty("IndirectionTable", (value))
 }
 
 // GetIndirectionTable gets the value of IndirectionTable for the instance
@@ -280,16 +336,26 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyIndirectionTable() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetAdapter_ProcessorNumber)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetAdapter_ProcessorNumber)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapter_ProcessorNumber is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetAdapter_ProcessorNumber(valuetmp))
+	}
+
 	return
 }
 
 // SetIndirectionTableEntryCount sets the value of IndirectionTableEntryCount for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyIndirectionTableEntryCount(value uint16) (err error) {
-	return instance.SetProperty("IndirectionTableEntryCount", value)
+	return instance.SetProperty("IndirectionTableEntryCount", (value))
 }
 
 // GetIndirectionTableEntryCount gets the value of IndirectionTableEntryCount for the instance
@@ -298,16 +364,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyIndirectionTableEntryC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIPv4HashEnabled sets the value of IPv4HashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyIPv4HashEnabled(value bool) (err error) {
-	return instance.SetProperty("IPv4HashEnabled", value)
+	return instance.SetProperty("IPv4HashEnabled", (value))
 }
 
 // GetIPv4HashEnabled gets the value of IPv4HashEnabled for the instance
@@ -316,16 +391,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyIPv4HashEnabled() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6ExtensionHashEnabled sets the value of IPv6ExtensionHashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyIPv6ExtensionHashEnabled(value bool) (err error) {
-	return instance.SetProperty("IPv6ExtensionHashEnabled", value)
+	return instance.SetProperty("IPv6ExtensionHashEnabled", (value))
 }
 
 // GetIPv6ExtensionHashEnabled gets the value of IPv6ExtensionHashEnabled for the instance
@@ -334,16 +418,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyIPv6ExtensionHashEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIPv6HashEnabled sets the value of IPv6HashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyIPv6HashEnabled(value bool) (err error) {
-	return instance.SetProperty("IPv6HashEnabled", value)
+	return instance.SetProperty("IPv6HashEnabled", (value))
 }
 
 // GetIPv6HashEnabled gets the value of IPv6HashEnabled for the instance
@@ -352,16 +445,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyIPv6HashEnabled() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaxProcessorGroup sets the value of MaxProcessorGroup for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyMaxProcessorGroup(value uint16) (err error) {
-	return instance.SetProperty("MaxProcessorGroup", value)
+	return instance.SetProperty("MaxProcessorGroup", (value))
 }
 
 // GetMaxProcessorGroup gets the value of MaxProcessorGroup for the instance
@@ -370,16 +472,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyMaxProcessorGroup() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxProcessorNumber sets the value of MaxProcessorNumber for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyMaxProcessorNumber(value uint8) (err error) {
-	return instance.SetProperty("MaxProcessorNumber", value)
+	return instance.SetProperty("MaxProcessorNumber", (value))
 }
 
 // GetMaxProcessorNumber gets the value of MaxProcessorNumber for the instance
@@ -388,16 +499,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyMaxProcessorNumber() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetMaxProcessors sets the value of MaxProcessors for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyMaxProcessors(value uint32) (err error) {
-	return instance.SetProperty("MaxProcessors", value)
+	return instance.SetProperty("MaxProcessors", (value))
 }
 
 // GetMaxProcessors gets the value of MaxProcessors for the instance
@@ -406,16 +526,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyMaxProcessors() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMsiSupported sets the value of MsiSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyMsiSupported(value bool) (err error) {
-	return instance.SetProperty("MsiSupported", value)
+	return instance.SetProperty("MsiSupported", (value))
 }
 
 // GetMsiSupported gets the value of MsiSupported for the instance
@@ -424,16 +553,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyMsiSupported() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMsiXEnabled sets the value of MsiXEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyMsiXEnabled(value bool) (err error) {
-	return instance.SetProperty("MsiXEnabled", value)
+	return instance.SetProperty("MsiXEnabled", (value))
 }
 
 // GetMsiXEnabled gets the value of MsiXEnabled for the instance
@@ -442,16 +580,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyMsiXEnabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMsiXSupported sets the value of MsiXSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyMsiXSupported(value bool) (err error) {
-	return instance.SetProperty("MsiXSupported", value)
+	return instance.SetProperty("MsiXSupported", (value))
 }
 
 // GetMsiXSupported gets the value of MsiXSupported for the instance
@@ -460,16 +607,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyMsiXSupported() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNumaNode sets the value of NumaNode for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyNumaNode(value uint16) (err error) {
-	return instance.SetProperty("NumaNode", value)
+	return instance.SetProperty("NumaNode", (value))
 }
 
 // GetNumaNode gets the value of NumaNode for the instance
@@ -478,16 +634,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyNumaNode() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfInterruptMessages sets the value of NumberOfInterruptMessages for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyNumberOfInterruptMessages(value uint32) (err error) {
-	return instance.SetProperty("NumberOfInterruptMessages", value)
+	return instance.SetProperty("NumberOfInterruptMessages", (value))
 }
 
 // GetNumberOfInterruptMessages gets the value of NumberOfInterruptMessages for the instance
@@ -496,16 +661,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyNumberOfInterruptMessa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfReceiveQueues sets the value of NumberOfReceiveQueues for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyNumberOfReceiveQueues(value uint32) (err error) {
-	return instance.SetProperty("NumberOfReceiveQueues", value)
+	return instance.SetProperty("NumberOfReceiveQueues", (value))
 }
 
 // GetNumberOfReceiveQueues gets the value of NumberOfReceiveQueues for the instance
@@ -514,16 +688,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyNumberOfReceiveQueues(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProfile sets the value of Profile for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyProfile(value uint32) (err error) {
-	return instance.SetProperty("Profile", value)
+	return instance.SetProperty("Profile", (value))
 }
 
 // GetProfile gets the value of Profile for the instance
@@ -532,16 +715,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyProfile() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRssOnPortsSupported sets the value of RssOnPortsSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyRssOnPortsSupported(value bool) (err error) {
-	return instance.SetProperty("RssOnPortsSupported", value)
+	return instance.SetProperty("RssOnPortsSupported", (value))
 }
 
 // GetRssOnPortsSupported gets the value of RssOnPortsSupported for the instance
@@ -550,16 +742,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyRssOnPortsSupported() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRssProcessorArray sets the value of RssProcessorArray for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyRssProcessorArray(value []MSFT_NetAdapter_RssProcessor) (err error) {
-	return instance.SetProperty("RssProcessorArray", value)
+	return instance.SetProperty("RssProcessorArray", (value))
 }
 
 // GetRssProcessorArray gets the value of RssProcessorArray for the instance
@@ -568,16 +769,26 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyRssProcessorArray() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetAdapter_RssProcessor)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetAdapter_RssProcessor)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapter_RssProcessor is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetAdapter_RssProcessor(valuetmp))
+	}
+
 	return
 }
 
 // SetRssProcessorArraySize sets the value of RssProcessorArraySize for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyRssProcessorArraySize(value uint32) (err error) {
-	return instance.SetProperty("RssProcessorArraySize", value)
+	return instance.SetProperty("RssProcessorArraySize", (value))
 }
 
 // GetRssProcessorArraySize gets the value of RssProcessorArraySize for the instance
@@ -586,16 +797,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyRssProcessorArraySize(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpIPv4HashEnabled sets the value of TcpIPv4HashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyTcpIPv4HashEnabled(value bool) (err error) {
-	return instance.SetProperty("TcpIPv4HashEnabled", value)
+	return instance.SetProperty("TcpIPv4HashEnabled", (value))
 }
 
 // GetTcpIPv4HashEnabled gets the value of TcpIPv4HashEnabled for the instance
@@ -604,16 +824,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyTcpIPv4HashEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTcpIPv4HashSupported sets the value of TcpIPv4HashSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyTcpIPv4HashSupported(value bool) (err error) {
-	return instance.SetProperty("TcpIPv4HashSupported", value)
+	return instance.SetProperty("TcpIPv4HashSupported", (value))
 }
 
 // GetTcpIPv4HashSupported gets the value of TcpIPv4HashSupported for the instance
@@ -622,16 +851,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyTcpIPv4HashSupported()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTcpIPv6ExtensionHashEnabled sets the value of TcpIPv6ExtensionHashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyTcpIPv6ExtensionHashEnabled(value bool) (err error) {
-	return instance.SetProperty("TcpIPv6ExtensionHashEnabled", value)
+	return instance.SetProperty("TcpIPv6ExtensionHashEnabled", (value))
 }
 
 // GetTcpIPv6ExtensionHashEnabled gets the value of TcpIPv6ExtensionHashEnabled for the instance
@@ -640,16 +878,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyTcpIPv6ExtensionHashEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTcpIPv6ExtensionHashSupported sets the value of TcpIPv6ExtensionHashSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyTcpIPv6ExtensionHashSupported(value bool) (err error) {
-	return instance.SetProperty("TcpIPv6ExtensionHashSupported", value)
+	return instance.SetProperty("TcpIPv6ExtensionHashSupported", (value))
 }
 
 // GetTcpIPv6ExtensionHashSupported gets the value of TcpIPv6ExtensionHashSupported for the instance
@@ -658,16 +905,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyTcpIPv6ExtensionHashSu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTcpIPv6HashEnabled sets the value of TcpIPv6HashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyTcpIPv6HashEnabled(value bool) (err error) {
-	return instance.SetProperty("TcpIPv6HashEnabled", value)
+	return instance.SetProperty("TcpIPv6HashEnabled", (value))
 }
 
 // GetTcpIPv6HashEnabled gets the value of TcpIPv6HashEnabled for the instance
@@ -676,16 +932,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyTcpIPv6HashEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTcpIPv6HashSupported sets the value of TcpIPv6HashSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyTcpIPv6HashSupported(value bool) (err error) {
-	return instance.SetProperty("TcpIPv6HashSupported", value)
+	return instance.SetProperty("TcpIPv6HashSupported", (value))
 }
 
 // GetTcpIPv6HashSupported gets the value of TcpIPv6HashSupported for the instance
@@ -694,16 +959,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyTcpIPv6HashSupported()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetToeplitzHashFunctionEnabled sets the value of ToeplitzHashFunctionEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyToeplitzHashFunctionEnabled(value bool) (err error) {
-	return instance.SetProperty("ToeplitzHashFunctionEnabled", value)
+	return instance.SetProperty("ToeplitzHashFunctionEnabled", (value))
 }
 
 // GetToeplitzHashFunctionEnabled gets the value of ToeplitzHashFunctionEnabled for the instance
@@ -712,16 +986,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyToeplitzHashFunctionEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetToeplitzHashFunctionSupported sets the value of ToeplitzHashFunctionSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyToeplitzHashFunctionSupported(value bool) (err error) {
-	return instance.SetProperty("ToeplitzHashFunctionSupported", value)
+	return instance.SetProperty("ToeplitzHashFunctionSupported", (value))
 }
 
 // GetToeplitzHashFunctionSupported gets the value of ToeplitzHashFunctionSupported for the instance
@@ -730,16 +1013,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyToeplitzHashFunctionSu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUdpIPv4HashEnabled sets the value of UdpIPv4HashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyUdpIPv4HashEnabled(value bool) (err error) {
-	return instance.SetProperty("UdpIPv4HashEnabled", value)
+	return instance.SetProperty("UdpIPv4HashEnabled", (value))
 }
 
 // GetUdpIPv4HashEnabled gets the value of UdpIPv4HashEnabled for the instance
@@ -748,16 +1040,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyUdpIPv4HashEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUdpIPv4HashSupported sets the value of UdpIPv4HashSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyUdpIPv4HashSupported(value bool) (err error) {
-	return instance.SetProperty("UdpIPv4HashSupported", value)
+	return instance.SetProperty("UdpIPv4HashSupported", (value))
 }
 
 // GetUdpIPv4HashSupported gets the value of UdpIPv4HashSupported for the instance
@@ -766,16 +1067,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyUdpIPv4HashSupported()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUdpIPv6ExtensionHashEnabled sets the value of UdpIPv6ExtensionHashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyUdpIPv6ExtensionHashEnabled(value bool) (err error) {
-	return instance.SetProperty("UdpIPv6ExtensionHashEnabled", value)
+	return instance.SetProperty("UdpIPv6ExtensionHashEnabled", (value))
 }
 
 // GetUdpIPv6ExtensionHashEnabled gets the value of UdpIPv6ExtensionHashEnabled for the instance
@@ -784,16 +1094,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyUdpIPv6ExtensionHashEn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUdpIPv6ExtensionHashSupported sets the value of UdpIPv6ExtensionHashSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyUdpIPv6ExtensionHashSupported(value bool) (err error) {
-	return instance.SetProperty("UdpIPv6ExtensionHashSupported", value)
+	return instance.SetProperty("UdpIPv6ExtensionHashSupported", (value))
 }
 
 // GetUdpIPv6ExtensionHashSupported gets the value of UdpIPv6ExtensionHashSupported for the instance
@@ -802,16 +1121,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyUdpIPv6ExtensionHashSu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUdpIPv6HashEnabled sets the value of UdpIPv6HashEnabled for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyUdpIPv6HashEnabled(value bool) (err error) {
-	return instance.SetProperty("UdpIPv6HashEnabled", value)
+	return instance.SetProperty("UdpIPv6HashEnabled", (value))
 }
 
 // GetUdpIPv6HashEnabled gets the value of UdpIPv6HashEnabled for the instance
@@ -820,16 +1148,25 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyUdpIPv6HashEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUdpIPv6HashSupported sets the value of UdpIPv6HashSupported for the instance
 func (instance *MSFT_NetAdapterRssSettingData) SetPropertyUdpIPv6HashSupported(value bool) (err error) {
-	return instance.SetProperty("UdpIPv6HashSupported", value)
+	return instance.SetProperty("UdpIPv6HashSupported", (value))
 }
 
 // GetUdpIPv6HashSupported gets the value of UdpIPv6HashSupported for the instance
@@ -838,10 +1175,19 @@ func (instance *MSFT_NetAdapterRssSettingData) GetPropertyUdpIPv6HashSupported()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

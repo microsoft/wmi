@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEImportedProgramSettings struct
@@ -56,7 +58,7 @@ func NewRSOP_IEImportedProgramSettingsEx6(hostName string,
 
 // SetpolicySetting sets the value of policySetting for the instance
 func (instance *RSOP_IEImportedProgramSettings) SetPropertypolicySetting(value RSOP_IEAKPolicySetting) (err error) {
-	return instance.SetProperty("policySetting", value)
+	return instance.SetProperty("policySetting", (value))
 }
 
 // GetpolicySetting gets the value of policySetting for the instance
@@ -65,16 +67,25 @@ func (instance *RSOP_IEImportedProgramSettings) GetPropertypolicySetting() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_IEAKPolicySetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_IEAKPolicySetting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_IEAKPolicySetting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_IEAKPolicySetting(valuetmp)
+
 	return
 }
 
 // SetprogramSettings sets the value of programSettings for the instance
 func (instance *RSOP_IEImportedProgramSettings) SetPropertyprogramSettings(value RSOP_IEProgramSettings) (err error) {
-	return instance.SetProperty("programSettings", value)
+	return instance.SetProperty("programSettings", (value))
 }
 
 // GetprogramSettings gets the value of programSettings for the instance
@@ -83,9 +94,18 @@ func (instance *RSOP_IEImportedProgramSettings) GetPropertyprogramSettings() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_IEProgramSettings)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_IEProgramSettings)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_IEProgramSettings is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_IEProgramSettings(valuetmp)
+
 	return
 }

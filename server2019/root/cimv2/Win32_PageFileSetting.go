@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PageFileSetting struct
@@ -58,7 +60,7 @@ func NewWin32_PageFileSettingEx6(hostName string,
 
 // SetInitialSize sets the value of InitialSize for the instance
 func (instance *Win32_PageFileSetting) SetPropertyInitialSize(value uint32) (err error) {
-	return instance.SetProperty("InitialSize", value)
+	return instance.SetProperty("InitialSize", (value))
 }
 
 // GetInitialSize gets the value of InitialSize for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_PageFileSetting) GetPropertyInitialSize() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumSize sets the value of MaximumSize for the instance
 func (instance *Win32_PageFileSetting) SetPropertyMaximumSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumSize", value)
+	return instance.SetProperty("MaximumSize", (value))
 }
 
 // GetMaximumSize gets the value of MaximumSize for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_PageFileSetting) GetPropertyMaximumSize() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_PageFileSetting) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_PageFileSetting) GetPropertyName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

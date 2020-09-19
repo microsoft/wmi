@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SwitchService struct
@@ -61,7 +63,7 @@ func NewCIM_SwitchServiceEx6(hostName string,
 
 // SetBridgeAddress sets the value of BridgeAddress for the instance
 func (instance *CIM_SwitchService) SetPropertyBridgeAddress(value string) (err error) {
-	return instance.SetProperty("BridgeAddress", value)
+	return instance.SetProperty("BridgeAddress", (value))
 }
 
 // GetBridgeAddress gets the value of BridgeAddress for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_SwitchService) GetPropertyBridgeAddress() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBridgeAddressType sets the value of BridgeAddressType for the instance
 func (instance *CIM_SwitchService) SetPropertyBridgeAddressType(value SwitchService_BridgeAddressType) (err error) {
-	return instance.SetProperty("BridgeAddressType", value)
+	return instance.SetProperty("BridgeAddressType", (value))
 }
 
 // GetBridgeAddressType gets the value of BridgeAddressType for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_SwitchService) GetPropertyBridgeAddressType() (value SwitchS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SwitchService_BridgeAddressType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SwitchService_BridgeAddressType(valuetmp)
+
 	return
 }
 
 // SetBridgeType sets the value of BridgeType for the instance
 func (instance *CIM_SwitchService) SetPropertyBridgeType(value SwitchService_BridgeType) (err error) {
-	return instance.SetProperty("BridgeType", value)
+	return instance.SetProperty("BridgeType", (value))
 }
 
 // GetBridgeType gets the value of BridgeType for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_SwitchService) GetPropertyBridgeType() (value SwitchService_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SwitchService_BridgeType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SwitchService_BridgeType(valuetmp)
+
 	return
 }
 
 // SetNumPorts sets the value of NumPorts for the instance
 func (instance *CIM_SwitchService) SetPropertyNumPorts(value uint16) (err error) {
-	return instance.SetProperty("NumPorts", value)
+	return instance.SetProperty("NumPorts", (value))
 }
 
 // GetNumPorts gets the value of NumPorts for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_SwitchService) GetPropertyNumPorts() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

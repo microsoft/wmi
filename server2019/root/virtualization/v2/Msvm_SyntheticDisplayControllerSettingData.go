@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_SyntheticDisplayControllerSettingData struct
@@ -58,7 +60,7 @@ func NewMsvm_SyntheticDisplayControllerSettingDataEx6(hostName string,
 
 // SetHorizontalResolution sets the value of HorizontalResolution for the instance
 func (instance *Msvm_SyntheticDisplayControllerSettingData) SetPropertyHorizontalResolution(value uint16) (err error) {
-	return instance.SetProperty("HorizontalResolution", value)
+	return instance.SetProperty("HorizontalResolution", (value))
 }
 
 // GetHorizontalResolution gets the value of HorizontalResolution for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_SyntheticDisplayControllerSettingData) GetPropertyHorizonta
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetResolutionType sets the value of ResolutionType for the instance
 func (instance *Msvm_SyntheticDisplayControllerSettingData) SetPropertyResolutionType(value uint8) (err error) {
-	return instance.SetProperty("ResolutionType", value)
+	return instance.SetProperty("ResolutionType", (value))
 }
 
 // GetResolutionType gets the value of ResolutionType for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_SyntheticDisplayControllerSettingData) GetPropertyResolutio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetVerticalResolution sets the value of VerticalResolution for the instance
 func (instance *Msvm_SyntheticDisplayControllerSettingData) SetPropertyVerticalResolution(value uint16) (err error) {
-	return instance.SetProperty("VerticalResolution", value)
+	return instance.SetProperty("VerticalResolution", (value))
 }
 
 // GetVerticalResolution gets the value of VerticalResolution for the instance
@@ -103,10 +123,19 @@ func (instance *Msvm_SyntheticDisplayControllerSettingData) GetPropertyVerticalR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 func (instance *Msvm_SyntheticDisplayControllerSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

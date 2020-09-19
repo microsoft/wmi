@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_NETFramework_NETCLRSecurity struct
@@ -67,7 +69,7 @@ func NewWin32_PerfRawData_NETFramework_NETCLRSecurityEx6(hostName string,
 
 // SetNumberLinkTimeChecks sets the value of NumberLinkTimeChecks for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) SetPropertyNumberLinkTimeChecks(value uint32) (err error) {
-	return instance.SetProperty("NumberLinkTimeChecks", value)
+	return instance.SetProperty("NumberLinkTimeChecks", (value))
 }
 
 // GetNumberLinkTimeChecks gets the value of NumberLinkTimeChecks for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) GetPropertyNumber
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentTimeinRTchecks sets the value of PercentTimeinRTchecks for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) SetPropertyPercentTimeinRTchecks(value uint32) (err error) {
-	return instance.SetProperty("PercentTimeinRTchecks", value)
+	return instance.SetProperty("PercentTimeinRTchecks", (value))
 }
 
 // GetPercentTimeinRTchecks gets the value of PercentTimeinRTchecks for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) GetPropertyPercen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentTimeinRTchecks_Base sets the value of PercentTimeinRTchecks_Base for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) SetPropertyPercentTimeinRTchecks_Base(value uint32) (err error) {
-	return instance.SetProperty("PercentTimeinRTchecks_Base", value)
+	return instance.SetProperty("PercentTimeinRTchecks_Base", (value))
 }
 
 // GetPercentTimeinRTchecks_Base gets the value of PercentTimeinRTchecks_Base for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) GetPropertyPercen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentTimeSigAuthenticating sets the value of PercentTimeSigAuthenticating for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) SetPropertyPercentTimeSigAuthenticating(value uint64) (err error) {
-	return instance.SetProperty("PercentTimeSigAuthenticating", value)
+	return instance.SetProperty("PercentTimeSigAuthenticating", (value))
 }
 
 // GetPercentTimeSigAuthenticating gets the value of PercentTimeSigAuthenticating for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) GetPropertyPercen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStackWalkDepth sets the value of StackWalkDepth for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) SetPropertyStackWalkDepth(value uint32) (err error) {
-	return instance.SetProperty("StackWalkDepth", value)
+	return instance.SetProperty("StackWalkDepth", (value))
 }
 
 // GetStackWalkDepth gets the value of StackWalkDepth for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) GetPropertyStackW
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalRuntimeChecks sets the value of TotalRuntimeChecks for the instance
 func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) SetPropertyTotalRuntimeChecks(value uint32) (err error) {
-	return instance.SetProperty("TotalRuntimeChecks", value)
+	return instance.SetProperty("TotalRuntimeChecks", (value))
 }
 
 // GetTotalRuntimeChecks gets the value of TotalRuntimeChecks for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfRawData_NETFramework_NETCLRSecurity) GetPropertyTotalR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

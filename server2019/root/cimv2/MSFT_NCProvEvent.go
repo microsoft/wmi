@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NCProvEvent struct
@@ -58,7 +60,7 @@ func NewMSFT_NCProvEventEx6(hostName string,
 
 // SetNamespace sets the value of Namespace for the instance
 func (instance *MSFT_NCProvEvent) SetPropertyNamespace(value string) (err error) {
-	return instance.SetProperty("Namespace", value)
+	return instance.SetProperty("Namespace", (value))
 }
 
 // GetNamespace gets the value of Namespace for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_NCProvEvent) GetPropertyNamespace() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProviderName sets the value of ProviderName for the instance
 func (instance *MSFT_NCProvEvent) SetPropertyProviderName(value string) (err error) {
-	return instance.SetProperty("ProviderName", value)
+	return instance.SetProperty("ProviderName", (value))
 }
 
 // GetProviderName gets the value of ProviderName for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_NCProvEvent) GetPropertyProviderName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResult sets the value of Result for the instance
 func (instance *MSFT_NCProvEvent) SetPropertyResult(value uint32) (err error) {
-	return instance.SetProperty("Result", value)
+	return instance.SetProperty("Result", (value))
 }
 
 // GetResult gets the value of Result for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_NCProvEvent) GetPropertyResult() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

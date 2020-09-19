@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_DriverCoreSettingData struct
@@ -97,7 +99,7 @@ func NewMLNX_DriverCoreSettingDataEx6(hostName string,
 
 // SetLogMttsPerSeg sets the value of LogMttsPerSeg for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogMttsPerSeg(value uint32) (err error) {
-	return instance.SetProperty("LogMttsPerSeg", value)
+	return instance.SetProperty("LogMttsPerSeg", (value))
 }
 
 // GetLogMttsPerSeg gets the value of LogMttsPerSeg for the instance
@@ -106,16 +108,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogMttsPerSeg() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumCq sets the value of LogNumCq for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumCq(value uint32) (err error) {
-	return instance.SetProperty("LogNumCq", value)
+	return instance.SetProperty("LogNumCq", (value))
 }
 
 // GetLogNumCq gets the value of LogNumCq for the instance
@@ -124,16 +135,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumCq() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMac sets the value of LogNumMac for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumMac(value uint32) (err error) {
-	return instance.SetProperty("LogNumMac", value)
+	return instance.SetProperty("LogNumMac", (value))
 }
 
 // GetLogNumMac gets the value of LogNumMac for the instance
@@ -142,16 +162,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumMac() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMcg sets the value of LogNumMcg for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumMcg(value uint32) (err error) {
-	return instance.SetProperty("LogNumMcg", value)
+	return instance.SetProperty("LogNumMcg", (value))
 }
 
 // GetLogNumMcg gets the value of LogNumMcg for the instance
@@ -160,16 +189,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumMcg() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMpt sets the value of LogNumMpt for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumMpt(value uint32) (err error) {
-	return instance.SetProperty("LogNumMpt", value)
+	return instance.SetProperty("LogNumMpt", (value))
 }
 
 // GetLogNumMpt gets the value of LogNumMpt for the instance
@@ -178,16 +216,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumMpt() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumMtt sets the value of LogNumMtt for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumMtt(value uint32) (err error) {
-	return instance.SetProperty("LogNumMtt", value)
+	return instance.SetProperty("LogNumMtt", (value))
 }
 
 // GetLogNumMtt gets the value of LogNumMtt for the instance
@@ -196,16 +243,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumMtt() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumQp sets the value of LogNumQp for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumQp(value uint32) (err error) {
-	return instance.SetProperty("LogNumQp", value)
+	return instance.SetProperty("LogNumQp", (value))
 }
 
 // GetLogNumQp gets the value of LogNumQp for the instance
@@ -214,16 +270,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumQp() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumRdmaRc sets the value of LogNumRdmaRc for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumRdmaRc(value uint32) (err error) {
-	return instance.SetProperty("LogNumRdmaRc", value)
+	return instance.SetProperty("LogNumRdmaRc", (value))
 }
 
 // GetLogNumRdmaRc gets the value of LogNumRdmaRc for the instance
@@ -232,16 +297,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumRdmaRc() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumSrq sets the value of LogNumSrq for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumSrq(value uint32) (err error) {
-	return instance.SetProperty("LogNumSrq", value)
+	return instance.SetProperty("LogNumSrq", (value))
 }
 
 // GetLogNumSrq gets the value of LogNumSrq for the instance
@@ -250,16 +324,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumSrq() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogNumVlan sets the value of LogNumVlan for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyLogNumVlan(value uint32) (err error) {
-	return instance.SetProperty("LogNumVlan", value)
+	return instance.SetProperty("LogNumVlan", (value))
 }
 
 // GetLogNumVlan gets the value of LogNumVlan for the instance
@@ -268,16 +351,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyLogNumVlan() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumWorkingThreads sets the value of MaximumWorkingThreads for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyMaximumWorkingThreads(value uint32) (err error) {
-	return instance.SetProperty("MaximumWorkingThreads", value)
+	return instance.SetProperty("MaximumWorkingThreads", (value))
 }
 
 // GetMaximumWorkingThreads gets the value of MaximumWorkingThreads for the instance
@@ -286,16 +378,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyMaximumWorkingThreads() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRoceMode sets the value of RoceMode for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertyRoceMode(value string) (err error) {
-	return instance.SetProperty("RoceMode", value)
+	return instance.SetProperty("RoceMode", (value))
 }
 
 // GetRoceMode gets the value of RoceMode for the instance
@@ -304,16 +405,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertyRoceMode() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSet4kMtu sets the value of Set4kMtu for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertySet4kMtu(value bool) (err error) {
-	return instance.SetProperty("Set4kMtu", value)
+	return instance.SetProperty("Set4kMtu", (value))
 }
 
 // GetSet4kMtu gets the value of Set4kMtu for the instance
@@ -322,16 +432,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertySet4kMtu() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSriovPort1NumVFs sets the value of SriovPort1NumVFs for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertySriovPort1NumVFs(value uint32) (err error) {
-	return instance.SetProperty("SriovPort1NumVFs", value)
+	return instance.SetProperty("SriovPort1NumVFs", (value))
 }
 
 // GetSriovPort1NumVFs gets the value of SriovPort1NumVFs for the instance
@@ -340,16 +459,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertySriovPort1NumVFs() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSriovPort2NumVFs sets the value of SriovPort2NumVFs for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertySriovPort2NumVFs(value uint32) (err error) {
-	return instance.SetProperty("SriovPort2NumVFs", value)
+	return instance.SetProperty("SriovPort2NumVFs", (value))
 }
 
 // GetSriovPort2NumVFs gets the value of SriovPort2NumVFs for the instance
@@ -358,16 +486,25 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertySriovPort2NumVFs() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSriovPortMode sets the value of SriovPortMode for the instance
 func (instance *MLNX_DriverCoreSettingData) SetPropertySriovPortMode(value uint32) (err error) {
-	return instance.SetProperty("SriovPortMode", value)
+	return instance.SetProperty("SriovPortMode", (value))
 }
 
 // GetSriovPortMode gets the value of SriovPortMode for the instance
@@ -376,10 +513,19 @@ func (instance *MLNX_DriverCoreSettingData) GetPropertySriovPortMode() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

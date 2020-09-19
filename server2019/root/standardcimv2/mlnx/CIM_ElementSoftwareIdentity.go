@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ElementSoftwareIdentity struct
@@ -58,7 +60,7 @@ func NewCIM_ElementSoftwareIdentityEx6(hostName string,
 
 // SetElementSoftwareStatus sets the value of ElementSoftwareStatus for the instance
 func (instance *CIM_ElementSoftwareIdentity) SetPropertyElementSoftwareStatus(value []ElementSoftwareIdentity_ElementSoftwareStatus) (err error) {
-	return instance.SetProperty("ElementSoftwareStatus", value)
+	return instance.SetProperty("ElementSoftwareStatus", (value))
 }
 
 // GetElementSoftwareStatus gets the value of ElementSoftwareStatus for the instance
@@ -67,16 +69,26 @@ func (instance *CIM_ElementSoftwareIdentity) GetPropertyElementSoftwareStatus() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]ElementSoftwareIdentity_ElementSoftwareStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, ElementSoftwareIdentity_ElementSoftwareStatus(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherUpgradeCondition sets the value of OtherUpgradeCondition for the instance
 func (instance *CIM_ElementSoftwareIdentity) SetPropertyOtherUpgradeCondition(value string) (err error) {
-	return instance.SetProperty("OtherUpgradeCondition", value)
+	return instance.SetProperty("OtherUpgradeCondition", (value))
 }
 
 // GetOtherUpgradeCondition gets the value of OtherUpgradeCondition for the instance
@@ -85,16 +97,25 @@ func (instance *CIM_ElementSoftwareIdentity) GetPropertyOtherUpgradeCondition() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUpgradeCondition sets the value of UpgradeCondition for the instance
 func (instance *CIM_ElementSoftwareIdentity) SetPropertyUpgradeCondition(value ElementSoftwareIdentity_UpgradeCondition) (err error) {
-	return instance.SetProperty("UpgradeCondition", value)
+	return instance.SetProperty("UpgradeCondition", (value))
 }
 
 // GetUpgradeCondition gets the value of UpgradeCondition for the instance
@@ -103,9 +124,18 @@ func (instance *CIM_ElementSoftwareIdentity) GetPropertyUpgradeCondition() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ElementSoftwareIdentity_UpgradeCondition)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ElementSoftwareIdentity_UpgradeCondition(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Policy
 //////////////////////////////////////////////
 package policy
@@ -11,7 +11,9 @@ package policy
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_Rule struct
@@ -59,7 +61,7 @@ func NewMSFT_RuleEx6(hostName string,
 
 // SetQuery sets the value of Query for the instance
 func (instance *MSFT_Rule) SetPropertyQuery(value string) (err error) {
-	return instance.SetProperty("Query", value)
+	return instance.SetProperty("Query", (value))
 }
 
 // GetQuery gets the value of Query for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_Rule) GetPropertyQuery() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQueryLanguage sets the value of QueryLanguage for the instance
 func (instance *MSFT_Rule) SetPropertyQueryLanguage(value string) (err error) {
-	return instance.SetProperty("QueryLanguage", value)
+	return instance.SetProperty("QueryLanguage", (value))
 }
 
 // GetQueryLanguage gets the value of QueryLanguage for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_Rule) GetPropertyQueryLanguage() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetNameSpace sets the value of TargetNameSpace for the instance
 func (instance *MSFT_Rule) SetPropertyTargetNameSpace(value string) (err error) {
-	return instance.SetProperty("TargetNameSpace", value)
+	return instance.SetProperty("TargetNameSpace", (value))
 }
 
 // GetTargetNameSpace gets the value of TargetNameSpace for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_Rule) GetPropertyTargetNameSpace() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

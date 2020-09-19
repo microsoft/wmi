@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration struct
@@ -145,7 +147,7 @@ func NewWin32_PerfRawData_HyperVStorageStats_HyperVConfigurationEx6(hostName str
 
 // SetCacheupdateaveragemilliseconds sets the value of Cacheupdateaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyCacheupdateaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Cacheupdateaveragemilliseconds", value)
+	return instance.SetProperty("Cacheupdateaveragemilliseconds", (value))
 }
 
 // GetCacheupdateaveragemilliseconds gets the value of Cacheupdateaveragemilliseconds for the instance
@@ -154,16 +156,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheupdatecount sets the value of Cacheupdatecount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyCacheupdatecount(value uint32) (err error) {
-	return instance.SetProperty("Cacheupdatecount", value)
+	return instance.SetProperty("Cacheupdatecount", (value))
 }
 
 // GetCacheupdatecount gets the value of Cacheupdatecount for the instance
@@ -172,16 +183,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCommitaveragemilliseconds sets the value of Commitaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyCommitaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Commitaveragemilliseconds", value)
+	return instance.SetProperty("Commitaveragemilliseconds", (value))
 }
 
 // GetCommitaveragemilliseconds gets the value of Commitaveragemilliseconds for the instance
@@ -190,16 +210,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCommitbytespersecondaverage sets the value of Commitbytespersecondaverage for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyCommitbytespersecondaverage(value uint32) (err error) {
-	return instance.SetProperty("Commitbytespersecondaverage", value)
+	return instance.SetProperty("Commitbytespersecondaverage", (value))
 }
 
 // GetCommitbytespersecondaverage gets the value of Commitbytespersecondaverage for the instance
@@ -208,16 +237,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCommitcount sets the value of Commitcount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyCommitcount(value uint32) (err error) {
-	return instance.SetProperty("Commitcount", value)
+	return instance.SetProperty("Commitcount", (value))
 }
 
 // GetCommitcount gets the value of Commitcount for the instance
@@ -226,16 +264,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompactaveragemilliseconds sets the value of Compactaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyCompactaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Compactaveragemilliseconds", value)
+	return instance.SetProperty("Compactaveragemilliseconds", (value))
 }
 
 // GetCompactaveragemilliseconds gets the value of Compactaveragemilliseconds for the instance
@@ -244,16 +291,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCompactcount sets the value of Compactcount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyCompactcount(value uint32) (err error) {
-	return instance.SetProperty("Compactcount", value)
+	return instance.SetProperty("Compactcount", (value))
 }
 
 // GetCompactcount gets the value of Compactcount for the instance
@@ -262,16 +318,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConfiglockacquireaveragemilliseconds sets the value of Configlockacquireaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyConfiglockacquireaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Configlockacquireaveragemilliseconds", value)
+	return instance.SetProperty("Configlockacquireaveragemilliseconds", (value))
 }
 
 // GetConfiglockacquireaveragemilliseconds gets the value of Configlockacquireaveragemilliseconds for the instance
@@ -280,16 +345,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConfiglockcount sets the value of Configlockcount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyConfiglockcount(value uint32) (err error) {
-	return instance.SetProperty("Configlockcount", value)
+	return instance.SetProperty("Configlockcount", (value))
 }
 
 // GetConfiglockcount gets the value of Configlockcount for the instance
@@ -298,16 +372,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFilelockacquireaveragemilliseconds sets the value of Filelockacquireaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyFilelockacquireaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Filelockacquireaveragemilliseconds", value)
+	return instance.SetProperty("Filelockacquireaveragemilliseconds", (value))
 }
 
 // GetFilelockacquireaveragemilliseconds gets the value of Filelockacquireaveragemilliseconds for the instance
@@ -316,16 +399,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFilelockreleaseaveragemilliseconds sets the value of Filelockreleaseaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyFilelockreleaseaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Filelockreleaseaveragemilliseconds", value)
+	return instance.SetProperty("Filelockreleaseaveragemilliseconds", (value))
 }
 
 // GetFilelockreleaseaveragemilliseconds gets the value of Filelockreleaseaveragemilliseconds for the instance
@@ -334,16 +426,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGetaveragemilliseconds sets the value of Getaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyGetaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Getaveragemilliseconds", value)
+	return instance.SetProperty("Getaveragemilliseconds", (value))
 }
 
 // GetGetaveragemilliseconds gets the value of Getaveragemilliseconds for the instance
@@ -352,16 +453,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGetcount sets the value of Getcount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyGetcount(value uint32) (err error) {
-	return instance.SetProperty("Getcount", value)
+	return instance.SetProperty("Getcount", (value))
 }
 
 // GetGetcount gets the value of Getcount for the instance
@@ -370,16 +480,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLoadfileaveragemilliseconds sets the value of Loadfileaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyLoadfileaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Loadfileaveragemilliseconds", value)
+	return instance.SetProperty("Loadfileaveragemilliseconds", (value))
 }
 
 // GetLoadfileaveragemilliseconds gets the value of Loadfileaveragemilliseconds for the instance
@@ -388,16 +507,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLockacquireaveragemilliseconds sets the value of Lockacquireaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyLockacquireaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Lockacquireaveragemilliseconds", value)
+	return instance.SetProperty("Lockacquireaveragemilliseconds", (value))
 }
 
 // GetLockacquireaveragemilliseconds gets the value of Lockacquireaveragemilliseconds for the instance
@@ -406,16 +534,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLockcount sets the value of Lockcount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyLockcount(value uint32) (err error) {
-	return instance.SetProperty("Lockcount", value)
+	return instance.SetProperty("Lockcount", (value))
 }
 
 // GetLockcount gets the value of Lockcount for the instance
@@ -424,16 +561,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLockreleaseaveragemilliseconds sets the value of Lockreleaseaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyLockreleaseaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Lockreleaseaveragemilliseconds", value)
+	return instance.SetProperty("Lockreleaseaveragemilliseconds", (value))
 }
 
 // GetLockreleaseaveragemilliseconds gets the value of Lockreleaseaveragemilliseconds for the instance
@@ -442,16 +588,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuerysizeaveragesizemilliseconds sets the value of Querysizeaveragesizemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyQuerysizeaveragesizemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Querysizeaveragesizemilliseconds", value)
+	return instance.SetProperty("Querysizeaveragesizemilliseconds", (value))
 }
 
 // GetQuerysizeaveragesizemilliseconds gets the value of Querysizeaveragesizemilliseconds for the instance
@@ -460,16 +615,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuerysizecount sets the value of Querysizecount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyQuerysizecount(value uint32) (err error) {
-	return instance.SetProperty("Querysizecount", value)
+	return instance.SetProperty("Querysizecount", (value))
 }
 
 // GetQuerysizecount gets the value of Querysizecount for the instance
@@ -478,16 +642,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadbytes sets the value of Readbytes for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyReadbytes(value uint32) (err error) {
-	return instance.SetProperty("Readbytes", value)
+	return instance.SetProperty("Readbytes", (value))
 }
 
 // GetReadbytes gets the value of Readbytes for the instance
@@ -496,16 +669,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadbytespersecondaverage sets the value of Readbytespersecondaverage for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyReadbytespersecondaverage(value uint32) (err error) {
-	return instance.SetProperty("Readbytespersecondaverage", value)
+	return instance.SetProperty("Readbytespersecondaverage", (value))
 }
 
 // GetReadbytespersecondaverage gets the value of Readbytespersecondaverage for the instance
@@ -514,16 +696,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadfilebytes sets the value of Readfilebytes for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyReadfilebytes(value uint32) (err error) {
-	return instance.SetProperty("Readfilebytes", value)
+	return instance.SetProperty("Readfilebytes", (value))
 }
 
 // GetReadfilebytes gets the value of Readfilebytes for the instance
@@ -532,16 +723,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadfilebytespersecondaverage sets the value of Readfilebytespersecondaverage for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyReadfilebytespersecondaverage(value uint32) (err error) {
-	return instance.SetProperty("Readfilebytespersecondaverage", value)
+	return instance.SetProperty("Readfilebytespersecondaverage", (value))
 }
 
 // GetReadfilebytespersecondaverage gets the value of Readfilebytespersecondaverage for the instance
@@ -550,16 +750,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadfilecount sets the value of Readfilecount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyReadfilecount(value uint32) (err error) {
-	return instance.SetProperty("Readfilecount", value)
+	return instance.SetProperty("Readfilecount", (value))
 }
 
 // GetReadfilecount gets the value of Readfilecount for the instance
@@ -568,16 +777,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemoveaveragemilliseconds sets the value of Removeaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyRemoveaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Removeaveragemilliseconds", value)
+	return instance.SetProperty("Removeaveragemilliseconds", (value))
 }
 
 // GetRemoveaveragemilliseconds gets the value of Removeaveragemilliseconds for the instance
@@ -586,16 +804,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemovecount sets the value of Removecount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyRemovecount(value uint32) (err error) {
-	return instance.SetProperty("Removecount", value)
+	return instance.SetProperty("Removecount", (value))
 }
 
 // GetRemovecount gets the value of Removecount for the instance
@@ -604,16 +831,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSetaveragemilliseconds sets the value of Setaveragemilliseconds for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertySetaveragemilliseconds(value uint32) (err error) {
-	return instance.SetProperty("Setaveragemilliseconds", value)
+	return instance.SetProperty("Setaveragemilliseconds", (value))
 }
 
 // GetSetaveragemilliseconds gets the value of Setaveragemilliseconds for the instance
@@ -622,16 +858,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSetcount sets the value of Setcount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertySetcount(value uint32) (err error) {
-	return instance.SetProperty("Setcount", value)
+	return instance.SetProperty("Setcount", (value))
 }
 
 // GetSetcount gets the value of Setcount for the instance
@@ -640,16 +885,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWritebytes sets the value of Writebytes for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyWritebytes(value uint32) (err error) {
-	return instance.SetProperty("Writebytes", value)
+	return instance.SetProperty("Writebytes", (value))
 }
 
 // GetWritebytes gets the value of Writebytes for the instance
@@ -658,16 +912,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWritebytespersecondaverage sets the value of Writebytespersecondaverage for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyWritebytespersecondaverage(value uint32) (err error) {
-	return instance.SetProperty("Writebytespersecondaverage", value)
+	return instance.SetProperty("Writebytespersecondaverage", (value))
 }
 
 // GetWritebytespersecondaverage gets the value of Writebytespersecondaverage for the instance
@@ -676,16 +939,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWritefilebytes sets the value of Writefilebytes for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyWritefilebytes(value uint32) (err error) {
-	return instance.SetProperty("Writefilebytes", value)
+	return instance.SetProperty("Writefilebytes", (value))
 }
 
 // GetWritefilebytes gets the value of Writefilebytes for the instance
@@ -694,16 +966,25 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWritefilecount sets the value of Writefilecount for the instance
 func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) SetPropertyWritefilecount(value uint32) (err error) {
-	return instance.SetProperty("Writefilecount", value)
+	return instance.SetProperty("Writefilecount", (value))
 }
 
 // GetWritefilecount gets the value of Writefilecount for the instance
@@ -712,9 +993,18 @@ func (instance *Win32_PerfRawData_HyperVStorageStats_HyperVConfiguration) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

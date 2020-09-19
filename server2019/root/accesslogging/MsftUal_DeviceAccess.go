@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
@@ -11,7 +11,9 @@ package accesslogging
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftUal_DeviceAccess struct
@@ -74,7 +76,7 @@ func NewMsftUal_DeviceAccessEx6(hostName string,
 
 // SetActivityCount sets the value of ActivityCount for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyActivityCount(value uint32) (err error) {
-	return instance.SetProperty("ActivityCount", value)
+	return instance.SetProperty("ActivityCount", (value))
 }
 
 // GetActivityCount gets the value of ActivityCount for the instance
@@ -83,16 +85,25 @@ func (instance *MsftUal_DeviceAccess) GetPropertyActivityCount() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFirstSeen sets the value of FirstSeen for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyFirstSeen(value string) (err error) {
-	return instance.SetProperty("FirstSeen", value)
+	return instance.SetProperty("FirstSeen", (value))
 }
 
 // GetFirstSeen gets the value of FirstSeen for the instance
@@ -101,16 +112,25 @@ func (instance *MsftUal_DeviceAccess) GetPropertyFirstSeen() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPAddress sets the value of IPAddress for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyIPAddress(value string) (err error) {
-	return instance.SetProperty("IPAddress", value)
+	return instance.SetProperty("IPAddress", (value))
 }
 
 // GetIPAddress gets the value of IPAddress for the instance
@@ -119,16 +139,25 @@ func (instance *MsftUal_DeviceAccess) GetPropertyIPAddress() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastSeen sets the value of LastSeen for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyLastSeen(value string) (err error) {
-	return instance.SetProperty("LastSeen", value)
+	return instance.SetProperty("LastSeen", (value))
 }
 
 // GetLastSeen gets the value of LastSeen for the instance
@@ -137,16 +166,25 @@ func (instance *MsftUal_DeviceAccess) GetPropertyLastSeen() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductName sets the value of ProductName for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyProductName(value string) (err error) {
-	return instance.SetProperty("ProductName", value)
+	return instance.SetProperty("ProductName", (value))
 }
 
 // GetProductName gets the value of ProductName for the instance
@@ -155,16 +193,25 @@ func (instance *MsftUal_DeviceAccess) GetPropertyProductName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleGuid sets the value of RoleGuid for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyRoleGuid(value string) (err error) {
-	return instance.SetProperty("RoleGuid", value)
+	return instance.SetProperty("RoleGuid", (value))
 }
 
 // GetRoleGuid gets the value of RoleGuid for the instance
@@ -173,16 +220,25 @@ func (instance *MsftUal_DeviceAccess) GetPropertyRoleGuid() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleName sets the value of RoleName for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyRoleName(value string) (err error) {
-	return instance.SetProperty("RoleName", value)
+	return instance.SetProperty("RoleName", (value))
 }
 
 // GetRoleName gets the value of RoleName for the instance
@@ -191,16 +247,25 @@ func (instance *MsftUal_DeviceAccess) GetPropertyRoleName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTenantIdentifier sets the value of TenantIdentifier for the instance
 func (instance *MsftUal_DeviceAccess) SetPropertyTenantIdentifier(value string) (err error) {
-	return instance.SetProperty("TenantIdentifier", value)
+	return instance.SetProperty("TenantIdentifier", (value))
 }
 
 // GetTenantIdentifier gets the value of TenantIdentifier for the instance
@@ -209,9 +274,18 @@ func (instance *MsftUal_DeviceAccess) GetPropertyTenantIdentifier() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

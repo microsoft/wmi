@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Scaleout
 //////////////////////////////////////////////
 package scaleout
@@ -11,7 +11,9 @@ package scaleout
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ClusterSetAvailabilitySet struct
@@ -77,7 +79,7 @@ func NewMSFT_ClusterSetAvailabilitySetEx6(hostName string,
 
 // SetAvailabilitySetName sets the value of AvailabilitySetName for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyAvailabilitySetName(value string) (err error) {
-	return instance.SetProperty("AvailabilitySetName", value)
+	return instance.SetProperty("AvailabilitySetName", (value))
 }
 
 // GetAvailabilitySetName gets the value of AvailabilitySetName for the instance
@@ -86,16 +88,25 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyAvailabilitySetName()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomainAssignments sets the value of DomainAssignments for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyDomainAssignments(value []string) (err error) {
-	return instance.SetProperty("DomainAssignments", value)
+	return instance.SetProperty("DomainAssignments", (value))
 }
 
 // GetDomainAssignments gets the value of DomainAssignments for the instance
@@ -104,16 +115,26 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyDomainAssignments() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetFaultDomains sets the value of FaultDomains for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyFaultDomains(value uint32) (err error) {
-	return instance.SetProperty("FaultDomains", value)
+	return instance.SetProperty("FaultDomains", (value))
 }
 
 // GetFaultDomains gets the value of FaultDomains for the instance
@@ -122,16 +143,25 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyFaultDomains() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFaultDomainType sets the value of FaultDomainType for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyFaultDomainType(value uint32) (err error) {
-	return instance.SetProperty("FaultDomainType", value)
+	return instance.SetProperty("FaultDomainType", (value))
 }
 
 // GetFaultDomainType gets the value of FaultDomainType for the instance
@@ -140,16 +170,25 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyFaultDomainType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyId(value uint64) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -158,16 +197,25 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyId() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetParticipantIds sets the value of ParticipantIds for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyParticipantIds(value []uint64) (err error) {
-	return instance.SetProperty("ParticipantIds", value)
+	return instance.SetProperty("ParticipantIds", (value))
 }
 
 // GetParticipantIds gets the value of ParticipantIds for the instance
@@ -176,16 +224,26 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyParticipantIds() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint64)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint64(valuetmp))
+	}
+
 	return
 }
 
 // SetSoftEnforcement sets the value of SoftEnforcement for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertySoftEnforcement(value bool) (err error) {
-	return instance.SetProperty("SoftEnforcement", value)
+	return instance.SetProperty("SoftEnforcement", (value))
 }
 
 // GetSoftEnforcement gets the value of SoftEnforcement for the instance
@@ -194,16 +252,25 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertySoftEnforcement() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUpdateDomains sets the value of UpdateDomains for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyUpdateDomains(value uint32) (err error) {
-	return instance.SetProperty("UpdateDomains", value)
+	return instance.SetProperty("UpdateDomains", (value))
 }
 
 // GetUpdateDomains gets the value of UpdateDomains for the instance
@@ -212,16 +279,25 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyUpdateDomains() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWorkloads sets the value of Workloads for the instance
 func (instance *MSFT_ClusterSetAvailabilitySet) SetPropertyWorkloads(value []uint64) (err error) {
-	return instance.SetProperty("Workloads", value)
+	return instance.SetProperty("Workloads", (value))
 }
 
 // GetWorkloads gets the value of Workloads for the instance
@@ -230,10 +306,20 @@ func (instance *MSFT_ClusterSetAvailabilitySet) GetPropertyWorkloads() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint64)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint64(valuetmp))
+	}
+
 	return
 }
 

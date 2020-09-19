@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchPortOffloadData struct
@@ -94,7 +96,7 @@ func NewMsvm_EthernetSwitchPortOffloadDataEx6(hostName string,
 
 // SetIovOffloadUsage sets the value of IovOffloadUsage for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyIovOffloadUsage(value uint32) (err error) {
-	return instance.SetProperty("IovOffloadUsage", value)
+	return instance.SetProperty("IovOffloadUsage", (value))
 }
 
 // GetIovOffloadUsage gets the value of IovOffloadUsage for the instance
@@ -103,16 +105,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyIovOffloadUsage()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIovQueuePairUsage sets the value of IovQueuePairUsage for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyIovQueuePairUsage(value uint32) (err error) {
-	return instance.SetProperty("IovQueuePairUsage", value)
+	return instance.SetProperty("IovQueuePairUsage", (value))
 }
 
 // GetIovQueuePairUsage gets the value of IovQueuePairUsage for the instance
@@ -121,16 +132,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyIovQueuePairUsage
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIovVfDataPathActive sets the value of IovVfDataPathActive for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyIovVfDataPathActive(value bool) (err error) {
-	return instance.SetProperty("IovVfDataPathActive", value)
+	return instance.SetProperty("IovVfDataPathActive", (value))
 }
 
 // GetIovVfDataPathActive gets the value of IovVfDataPathActive for the instance
@@ -139,16 +159,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyIovVfDataPathActi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIovVfId sets the value of IovVfId for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyIovVfId(value uint16) (err error) {
-	return instance.SetProperty("IovVfId", value)
+	return instance.SetProperty("IovVfId", (value))
 }
 
 // GetIovVfId gets the value of IovVfId for the instance
@@ -157,16 +186,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyIovVfId() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIpsecCurrentOffloadSaCount sets the value of IpsecCurrentOffloadSaCount for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyIpsecCurrentOffloadSaCount(value uint32) (err error) {
-	return instance.SetProperty("IpsecCurrentOffloadSaCount", value)
+	return instance.SetProperty("IpsecCurrentOffloadSaCount", (value))
 }
 
 // GetIpsecCurrentOffloadSaCount gets the value of IpsecCurrentOffloadSaCount for the instance
@@ -175,16 +213,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyIpsecCurrentOfflo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVmmqEnabled sets the value of VmmqEnabled for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVmmqEnabled(value bool) (err error) {
-	return instance.SetProperty("VmmqEnabled", value)
+	return instance.SetProperty("VmmqEnabled", (value))
 }
 
 // GetVmmqEnabled gets the value of VmmqEnabled for the instance
@@ -193,16 +240,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVmmqEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVmmqQueuePairs sets the value of VmmqQueuePairs for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVmmqQueuePairs(value uint32) (err error) {
-	return instance.SetProperty("VmmqQueuePairs", value)
+	return instance.SetProperty("VmmqQueuePairs", (value))
 }
 
 // GetVmmqQueuePairs gets the value of VmmqQueuePairs for the instance
@@ -211,16 +267,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVmmqQueuePairs() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVMQId sets the value of VMQId for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVMQId(value uint32) (err error) {
-	return instance.SetProperty("VMQId", value)
+	return instance.SetProperty("VMQId", (value))
 }
 
 // GetVMQId gets the value of VMQId for the instance
@@ -229,16 +294,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVMQId() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVMQOffloadUsage sets the value of VMQOffloadUsage for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVMQOffloadUsage(value uint32) (err error) {
-	return instance.SetProperty("VMQOffloadUsage", value)
+	return instance.SetProperty("VMQOffloadUsage", (value))
 }
 
 // GetVMQOffloadUsage gets the value of VMQOffloadUsage for the instance
@@ -247,16 +321,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVMQOffloadUsage()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVrssEnabled sets the value of VrssEnabled for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVrssEnabled(value bool) (err error) {
-	return instance.SetProperty("VrssEnabled", value)
+	return instance.SetProperty("VrssEnabled", (value))
 }
 
 // GetVrssEnabled gets the value of VrssEnabled for the instance
@@ -265,16 +348,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVrssEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVrssExcludePrimaryProcessor sets the value of VrssExcludePrimaryProcessor for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVrssExcludePrimaryProcessor(value bool) (err error) {
-	return instance.SetProperty("VrssExcludePrimaryProcessor", value)
+	return instance.SetProperty("VrssExcludePrimaryProcessor", (value))
 }
 
 // GetVrssExcludePrimaryProcessor gets the value of VrssExcludePrimaryProcessor for the instance
@@ -283,16 +375,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVrssExcludePrimar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVrssIndependentHostSpreading sets the value of VrssIndependentHostSpreading for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVrssIndependentHostSpreading(value bool) (err error) {
-	return instance.SetProperty("VrssIndependentHostSpreading", value)
+	return instance.SetProperty("VrssIndependentHostSpreading", (value))
 }
 
 // GetVrssIndependentHostSpreading gets the value of VrssIndependentHostSpreading for the instance
@@ -301,16 +402,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVrssIndependentHo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVrssMinQueuePairs sets the value of VrssMinQueuePairs for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVrssMinQueuePairs(value uint32) (err error) {
-	return instance.SetProperty("VrssMinQueuePairs", value)
+	return instance.SetProperty("VrssMinQueuePairs", (value))
 }
 
 // GetVrssMinQueuePairs gets the value of VrssMinQueuePairs for the instance
@@ -319,16 +429,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVrssMinQueuePairs
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVrssQueueSchedulingMode sets the value of VrssQueueSchedulingMode for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVrssQueueSchedulingMode(value uint32) (err error) {
-	return instance.SetProperty("VrssQueueSchedulingMode", value)
+	return instance.SetProperty("VrssQueueSchedulingMode", (value))
 }
 
 // GetVrssQueueSchedulingMode gets the value of VrssQueueSchedulingMode for the instance
@@ -337,16 +456,25 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVrssQueueScheduli
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVrssVmbusChannelAffinityPolicy sets the value of VrssVmbusChannelAffinityPolicy for the instance
 func (instance *Msvm_EthernetSwitchPortOffloadData) SetPropertyVrssVmbusChannelAffinityPolicy(value uint32) (err error) {
-	return instance.SetProperty("VrssVmbusChannelAffinityPolicy", value)
+	return instance.SetProperty("VrssVmbusChannelAffinityPolicy", (value))
 }
 
 // GetVrssVmbusChannelAffinityPolicy gets the value of VrssVmbusChannelAffinityPolicy for the instance
@@ -355,10 +483,19 @@ func (instance *Msvm_EthernetSwitchPortOffloadData) GetPropertyVrssVmbusChannelA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 func (instance *Msvm_EthernetSwitchPortOffloadData) GetRelatedEthernetSwitchPort() (value *cim.WmiInstance, err error) {

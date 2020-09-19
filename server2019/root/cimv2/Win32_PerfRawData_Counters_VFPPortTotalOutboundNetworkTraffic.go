@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic struct
@@ -130,7 +132,7 @@ func NewWin32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTrafficEx6(hostNam
 
 // SetTotalOutboundBytes sets the value of TotalOutboundBytes for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundBytes(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundBytes", value)
+	return instance.SetProperty("TotalOutboundBytes", (value))
 }
 
 // GetTotalOutboundBytes gets the value of TotalOutboundBytes for the instance
@@ -139,16 +141,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundForwardedMulticastPackets sets the value of TotalOutboundForwardedMulticastPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundForwardedMulticastPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundForwardedMulticastPackets", value)
+	return instance.SetProperty("TotalOutboundForwardedMulticastPackets", (value))
 }
 
 // GetTotalOutboundForwardedMulticastPackets gets the value of TotalOutboundForwardedMulticastPackets for the instance
@@ -157,16 +168,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundForwardedUnicastPackets sets the value of TotalOutboundForwardedUnicastPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundForwardedUnicastPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundForwardedUnicastPackets", value)
+	return instance.SetProperty("TotalOutboundForwardedUnicastPackets", (value))
 }
 
 // GetTotalOutboundForwardedUnicastPackets gets the value of TotalOutboundForwardedUnicastPackets for the instance
@@ -175,16 +195,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTBytes sets the value of TotalOutboundGFTBytes for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTBytes(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTBytes", value)
+	return instance.SetProperty("TotalOutboundGFTBytes", (value))
 }
 
 // GetTotalOutboundGFTBytes gets the value of TotalOutboundGFTBytes for the instance
@@ -193,16 +222,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTCopyFINPackets sets the value of TotalOutboundGFTCopyFINPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTCopyFINPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTCopyFINPackets", value)
+	return instance.SetProperty("TotalOutboundGFTCopyFINPackets", (value))
 }
 
 // GetTotalOutboundGFTCopyFINPackets gets the value of TotalOutboundGFTCopyFINPackets for the instance
@@ -211,16 +249,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTCopyPackets sets the value of TotalOutboundGFTCopyPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTCopyPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTCopyPackets", value)
+	return instance.SetProperty("TotalOutboundGFTCopyPackets", (value))
 }
 
 // GetTotalOutboundGFTCopyPackets gets the value of TotalOutboundGFTCopyPackets for the instance
@@ -229,16 +276,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTCopyResetPackets sets the value of TotalOutboundGFTCopyResetPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTCopyResetPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTCopyResetPackets", value)
+	return instance.SetProperty("TotalOutboundGFTCopyResetPackets", (value))
 }
 
 // GetTotalOutboundGFTCopyResetPackets gets the value of TotalOutboundGFTCopyResetPackets for the instance
@@ -247,16 +303,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionPackets sets the value of TotalOutboundGFTExceptionPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionPackets gets the value of TotalOutboundGFTExceptionPackets for the instance
@@ -265,16 +330,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionUFOffloadBlockedPackets sets the value of TotalOutboundGFTExceptionUFOffloadBlockedPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionUFOffloadBlockedPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadBlockedPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadBlockedPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionUFOffloadBlockedPackets gets the value of TotalOutboundGFTExceptionUFOffloadBlockedPackets for the instance
@@ -283,16 +357,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionUFOffloadDeferredPackets sets the value of TotalOutboundGFTExceptionUFOffloadDeferredPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionUFOffloadDeferredPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadDeferredPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadDeferredPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionUFOffloadDeferredPackets gets the value of TotalOutboundGFTExceptionUFOffloadDeferredPackets for the instance
@@ -301,16 +384,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionUFOffloadedTCPPackets sets the value of TotalOutboundGFTExceptionUFOffloadedTCPPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionUFOffloadedTCPPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadedTCPPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadedTCPPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionUFOffloadedTCPPackets gets the value of TotalOutboundGFTExceptionUFOffloadedTCPPackets for the instance
@@ -319,16 +411,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionUFOffloadedUDPPackets sets the value of TotalOutboundGFTExceptionUFOffloadedUDPPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionUFOffloadedUDPPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadedUDPPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadedUDPPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionUFOffloadedUDPPackets gets the value of TotalOutboundGFTExceptionUFOffloadedUDPPackets for the instance
@@ -337,16 +438,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionUFOffloadFailedPackets sets the value of TotalOutboundGFTExceptionUFOffloadFailedPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionUFOffloadFailedPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadFailedPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadFailedPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionUFOffloadFailedPackets gets the value of TotalOutboundGFTExceptionUFOffloadFailedPackets for the instance
@@ -355,16 +465,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionUFOffloadPendingPackets sets the value of TotalOutboundGFTExceptionUFOffloadPendingPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionUFOffloadPendingPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadPendingPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionUFOffloadPendingPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionUFOffloadPendingPackets gets the value of TotalOutboundGFTExceptionUFOffloadPendingPackets for the instance
@@ -373,16 +492,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTExceptionUFPackets sets the value of TotalOutboundGFTExceptionUFPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTExceptionUFPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTExceptionUFPackets", value)
+	return instance.SetProperty("TotalOutboundGFTExceptionUFPackets", (value))
 }
 
 // GetTotalOutboundGFTExceptionUFPackets gets the value of TotalOutboundGFTExceptionUFPackets for the instance
@@ -391,16 +519,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGFTRetryAwaitingPackets sets the value of TotalOutboundGFTRetryAwaitingPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGFTRetryAwaitingPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGFTRetryAwaitingPackets", value)
+	return instance.SetProperty("TotalOutboundGFTRetryAwaitingPackets", (value))
 }
 
 // GetTotalOutboundGFTRetryAwaitingPackets gets the value of TotalOutboundGFTRetryAwaitingPackets for the instance
@@ -409,16 +546,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundGftTotalPackets sets the value of TotalOutboundGftTotalPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundGftTotalPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundGftTotalPackets", value)
+	return instance.SetProperty("TotalOutboundGftTotalPackets", (value))
 }
 
 // GetTotalOutboundGftTotalPackets gets the value of TotalOutboundGftTotalPackets for the instance
@@ -427,16 +573,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundHairPinnedPackets sets the value of TotalOutboundHairPinnedPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundHairPinnedPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundHairPinnedPackets", value)
+	return instance.SetProperty("TotalOutboundHairPinnedPackets", (value))
 }
 
 // GetTotalOutboundHairPinnedPackets gets the value of TotalOutboundHairPinnedPackets for the instance
@@ -445,16 +600,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundInterceptedPackets sets the value of TotalOutboundInterceptedPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundInterceptedPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundInterceptedPackets", value)
+	return instance.SetProperty("TotalOutboundInterceptedPackets", (value))
 }
 
 // GetTotalOutboundInterceptedPackets gets the value of TotalOutboundInterceptedPackets for the instance
@@ -463,16 +627,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundMissedInterceptedPackets sets the value of TotalOutboundMissedInterceptedPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundMissedInterceptedPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundMissedInterceptedPackets", value)
+	return instance.SetProperty("TotalOutboundMissedInterceptedPackets", (value))
 }
 
 // GetTotalOutboundMissedInterceptedPackets gets the value of TotalOutboundMissedInterceptedPackets for the instance
@@ -481,16 +654,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundNonIPPackets sets the value of TotalOutboundNonIPPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundNonIPPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundNonIPPackets", value)
+	return instance.SetProperty("TotalOutboundNonIPPackets", (value))
 }
 
 // GetTotalOutboundNonIPPackets gets the value of TotalOutboundNonIPPackets for the instance
@@ -499,16 +681,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundPackets sets the value of TotalOutboundPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundPackets", value)
+	return instance.SetProperty("TotalOutboundPackets", (value))
 }
 
 // GetTotalOutboundPackets gets the value of TotalOutboundPackets for the instance
@@ -517,16 +708,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundPendingPackets sets the value of TotalOutboundPendingPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundPendingPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundPendingPackets", value)
+	return instance.SetProperty("TotalOutboundPendingPackets", (value))
 }
 
 // GetTotalOutboundPendingPackets gets the value of TotalOutboundPendingPackets for the instance
@@ -535,16 +735,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundTCPSYNACKPackets sets the value of TotalOutboundTCPSYNACKPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundTCPSYNACKPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundTCPSYNACKPackets", value)
+	return instance.SetProperty("TotalOutboundTCPSYNACKPackets", (value))
 }
 
 // GetTotalOutboundTCPSYNACKPackets gets the value of TotalOutboundTCPSYNACKPackets for the instance
@@ -553,16 +762,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundTCPSYNPackets sets the value of TotalOutboundTCPSYNPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundTCPSYNPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundTCPSYNPackets", value)
+	return instance.SetProperty("TotalOutboundTCPSYNPackets", (value))
 }
 
 // GetTotalOutboundTCPSYNPackets gets the value of TotalOutboundTCPSYNPackets for the instance
@@ -571,16 +789,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundThrottledPackets sets the value of TotalOutboundThrottledPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundThrottledPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundThrottledPackets", value)
+	return instance.SetProperty("TotalOutboundThrottledPackets", (value))
 }
 
 // GetTotalOutboundThrottledPackets gets the value of TotalOutboundThrottledPackets for the instance
@@ -589,16 +816,25 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalOutboundUnicastForwardedGFTExceptionPackets sets the value of TotalOutboundUnicastForwardedGFTExceptionPackets for the instance
 func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) SetPropertyTotalOutboundUnicastForwardedGFTExceptionPackets(value uint64) (err error) {
-	return instance.SetProperty("TotalOutboundUnicastForwardedGFTExceptionPackets", value)
+	return instance.SetProperty("TotalOutboundUnicastForwardedGFTExceptionPackets", (value))
 }
 
 // GetTotalOutboundUnicastForwardedGFTExceptionPackets gets the value of TotalOutboundUnicastForwardedGFTExceptionPackets for the instance
@@ -607,9 +843,18 @@ func (instance *Win32_PerfRawData_Counters_VFPPortTotalOutboundNetworkTraffic) G
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

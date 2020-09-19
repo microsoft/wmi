@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftSil_ComputerIdentity struct
@@ -64,7 +66,7 @@ func NewMsftSil_ComputerIdentityEx6(hostName string,
 
 // SetHypervisorHostName sets the value of HypervisorHostName for the instance
 func (instance *MsftSil_ComputerIdentity) SetPropertyHypervisorHostName(value string) (err error) {
-	return instance.SetProperty("HypervisorHostName", value)
+	return instance.SetProperty("HypervisorHostName", (value))
 }
 
 // GetHypervisorHostName gets the value of HypervisorHostName for the instance
@@ -73,16 +75,25 @@ func (instance *MsftSil_ComputerIdentity) GetPropertyHypervisorHostName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetID sets the value of ID for the instance
 func (instance *MsftSil_ComputerIdentity) SetPropertyID(value string) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -91,16 +102,25 @@ func (instance *MsftSil_ComputerIdentity) GetPropertyID() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MsftSil_ComputerIdentity) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -109,16 +129,25 @@ func (instance *MsftSil_ComputerIdentity) GetPropertyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUUID sets the value of UUID for the instance
 func (instance *MsftSil_ComputerIdentity) SetPropertyUUID(value string) (err error) {
-	return instance.SetProperty("UUID", value)
+	return instance.SetProperty("UUID", (value))
 }
 
 // GetUUID gets the value of UUID for the instance
@@ -127,16 +156,25 @@ func (instance *MsftSil_ComputerIdentity) GetPropertyUUID() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVMGUID sets the value of VMGUID for the instance
 func (instance *MsftSil_ComputerIdentity) SetPropertyVMGUID(value string) (err error) {
-	return instance.SetProperty("VMGUID", value)
+	return instance.SetProperty("VMGUID", (value))
 }
 
 // GetVMGUID gets the value of VMGUID for the instance
@@ -145,9 +183,18 @@ func (instance *MsftSil_ComputerIdentity) GetPropertyVMGUID() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

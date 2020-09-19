@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator struct
@@ -85,7 +87,7 @@ func NewWin32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinatorEx6
 
 // SetCreateFile sets the value of CreateFile for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyCreateFile(value uint64) (err error) {
-	return instance.SetProperty("CreateFile", value)
+	return instance.SetProperty("CreateFile", (value))
 }
 
 // GetCreateFile gets the value of CreateFile for the instance
@@ -94,16 +96,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCreateFilePersec sets the value of CreateFilePersec for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyCreateFilePersec(value uint64) (err error) {
-	return instance.SetProperty("CreateFilePersec", value)
+	return instance.SetProperty("CreateFilePersec", (value))
 }
 
 // GetCreateFilePersec gets the value of CreateFilePersec for the instance
@@ -112,16 +123,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadBytes sets the value of IOReadBytes for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOReadBytes(value uint64) (err error) {
-	return instance.SetProperty("IOReadBytes", value)
+	return instance.SetProperty("IOReadBytes", (value))
 }
 
 // GetIOReadBytes gets the value of IOReadBytes for the instance
@@ -130,16 +150,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadBytesPersec sets the value of IOReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOReadBytesPersec", value)
+	return instance.SetProperty("IOReadBytesPersec", (value))
 }
 
 // GetIOReadBytesPersec gets the value of IOReadBytesPersec for the instance
@@ -148,16 +177,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReads sets the value of IOReads for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOReads(value uint64) (err error) {
-	return instance.SetProperty("IOReads", value)
+	return instance.SetProperty("IOReads", (value))
 }
 
 // GetIOReads gets the value of IOReads for the instance
@@ -166,16 +204,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOReadsPersec sets the value of IOReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOReadsPersec(value uint64) (err error) {
-	return instance.SetProperty("IOReadsPersec", value)
+	return instance.SetProperty("IOReadsPersec", (value))
 }
 
 // GetIOReadsPersec gets the value of IOReadsPersec for the instance
@@ -184,16 +231,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWriteBytesPersec sets the value of IOWriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOWriteBytesPersec", value)
+	return instance.SetProperty("IOWriteBytesPersec", (value))
 }
 
 // GetIOWriteBytesPersec gets the value of IOWriteBytesPersec for the instance
@@ -202,16 +258,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWrites sets the value of IOWrites for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOWrites(value uint64) (err error) {
-	return instance.SetProperty("IOWrites", value)
+	return instance.SetProperty("IOWrites", (value))
 }
 
 // GetIOWrites gets the value of IOWrites for the instance
@@ -220,16 +285,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWritesBytes sets the value of IOWritesBytes for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOWritesBytes(value uint64) (err error) {
-	return instance.SetProperty("IOWritesBytes", value)
+	return instance.SetProperty("IOWritesBytes", (value))
 }
 
 // GetIOWritesBytes gets the value of IOWritesBytes for the instance
@@ -238,16 +312,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOWritesPersec sets the value of IOWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyIOWritesPersec(value uint64) (err error) {
-	return instance.SetProperty("IOWritesPersec", value)
+	return instance.SetProperty("IOWritesPersec", (value))
 }
 
 // GetIOWritesPersec gets the value of IOWritesPersec for the instance
@@ -256,16 +339,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMetadataIO sets the value of MetadataIO for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyMetadataIO(value uint64) (err error) {
-	return instance.SetProperty("MetadataIO", value)
+	return instance.SetProperty("MetadataIO", (value))
 }
 
 // GetMetadataIO gets the value of MetadataIO for the instance
@@ -274,16 +366,25 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMetadataIOPersec sets the value of MetadataIOPersec for the instance
 func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordinator) SetPropertyMetadataIOPersec(value uint64) (err error) {
-	return instance.SetProperty("MetadataIOPersec", value)
+	return instance.SetProperty("MetadataIOPersec", (value))
 }
 
 // GetMetadataIOPersec gets the value of MetadataIOPersec for the instance
@@ -292,9 +393,18 @@ func (instance *Win32_PerfFormattedData_Csv20FilterPerfProvider_ClusterCSVCoordi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

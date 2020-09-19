@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIPInterface struct
@@ -151,7 +153,7 @@ func NewMSFT_NetIPInterfaceEx6(hostName string,
 
 // SetAddressFamily sets the value of AddressFamily for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyAddressFamily(value uint16) (err error) {
-	return instance.SetProperty("AddressFamily", value)
+	return instance.SetProperty("AddressFamily", (value))
 }
 
 // GetAddressFamily gets the value of AddressFamily for the instance
@@ -160,16 +162,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyAddressFamily() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAdvertiseDefaultRoute sets the value of AdvertiseDefaultRoute for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyAdvertiseDefaultRoute(value uint8) (err error) {
-	return instance.SetProperty("AdvertiseDefaultRoute", value)
+	return instance.SetProperty("AdvertiseDefaultRoute", (value))
 }
 
 // GetAdvertiseDefaultRoute gets the value of AdvertiseDefaultRoute for the instance
@@ -178,16 +189,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyAdvertiseDefaultRoute() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetAdvertisedRouterLifetime sets the value of AdvertisedRouterLifetime for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyAdvertisedRouterLifetime(value string) (err error) {
-	return instance.SetProperty("AdvertisedRouterLifetime", value)
+	return instance.SetProperty("AdvertisedRouterLifetime", (value))
 }
 
 // GetAdvertisedRouterLifetime gets the value of AdvertisedRouterLifetime for the instance
@@ -196,16 +216,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyAdvertisedRouterLifetime() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAdvertising sets the value of Advertising for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyAdvertising(value uint8) (err error) {
-	return instance.SetProperty("Advertising", value)
+	return instance.SetProperty("Advertising", (value))
 }
 
 // GetAdvertising gets the value of Advertising for the instance
@@ -214,16 +243,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyAdvertising() (value uint8, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetAutomaticMetric sets the value of AutomaticMetric for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyAutomaticMetric(value uint8) (err error) {
-	return instance.SetProperty("AutomaticMetric", value)
+	return instance.SetProperty("AutomaticMetric", (value))
 }
 
 // GetAutomaticMetric gets the value of AutomaticMetric for the instance
@@ -232,16 +270,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyAutomaticMetric() (value uint8, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetBaseReachableTime sets the value of BaseReachableTime for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyBaseReachableTime(value uint32) (err error) {
-	return instance.SetProperty("BaseReachableTime", value)
+	return instance.SetProperty("BaseReachableTime", (value))
 }
 
 // GetBaseReachableTime gets the value of BaseReachableTime for the instance
@@ -250,16 +297,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyBaseReachableTime() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClampMss sets the value of ClampMss for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyClampMss(value uint8) (err error) {
-	return instance.SetProperty("ClampMss", value)
+	return instance.SetProperty("ClampMss", (value))
 }
 
 // GetClampMss gets the value of ClampMss for the instance
@@ -268,16 +324,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyClampMss() (value uint8, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCompartmentId sets the value of CompartmentId for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyCompartmentId(value uint32) (err error) {
-	return instance.SetProperty("CompartmentId", value)
+	return instance.SetProperty("CompartmentId", (value))
 }
 
 // GetCompartmentId gets the value of CompartmentId for the instance
@@ -286,16 +351,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyCompartmentId() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConnectionState sets the value of ConnectionState for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyConnectionState(value uint8) (err error) {
-	return instance.SetProperty("ConnectionState", value)
+	return instance.SetProperty("ConnectionState", (value))
 }
 
 // GetConnectionState gets the value of ConnectionState for the instance
@@ -304,16 +378,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyConnectionState() (value uint8, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCurrentHopLimit sets the value of CurrentHopLimit for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyCurrentHopLimit(value uint32) (err error) {
-	return instance.SetProperty("CurrentHopLimit", value)
+	return instance.SetProperty("CurrentHopLimit", (value))
 }
 
 // GetCurrentHopLimit gets the value of CurrentHopLimit for the instance
@@ -322,16 +405,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyCurrentHopLimit() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDadRetransmitTime sets the value of DadRetransmitTime for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyDadRetransmitTime(value uint32) (err error) {
-	return instance.SetProperty("DadRetransmitTime", value)
+	return instance.SetProperty("DadRetransmitTime", (value))
 }
 
 // GetDadRetransmitTime gets the value of DadRetransmitTime for the instance
@@ -340,16 +432,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyDadRetransmitTime() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDadTransmits sets the value of DadTransmits for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyDadTransmits(value uint32) (err error) {
-	return instance.SetProperty("DadTransmits", value)
+	return instance.SetProperty("DadTransmits", (value))
 }
 
 // GetDadTransmits gets the value of DadTransmits for the instance
@@ -358,16 +459,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyDadTransmits() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDhcp sets the value of Dhcp for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyDhcp(value uint8) (err error) {
-	return instance.SetProperty("Dhcp", value)
+	return instance.SetProperty("Dhcp", (value))
 }
 
 // GetDhcp gets the value of Dhcp for the instance
@@ -376,16 +486,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyDhcp() (value uint8, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDirectedMacWolPattern sets the value of DirectedMacWolPattern for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyDirectedMacWolPattern(value uint8) (err error) {
-	return instance.SetProperty("DirectedMacWolPattern", value)
+	return instance.SetProperty("DirectedMacWolPattern", (value))
 }
 
 // GetDirectedMacWolPattern gets the value of DirectedMacWolPattern for the instance
@@ -394,16 +513,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyDirectedMacWolPattern() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetEcnMarking sets the value of EcnMarking for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyEcnMarking(value uint8) (err error) {
-	return instance.SetProperty("EcnMarking", value)
+	return instance.SetProperty("EcnMarking", (value))
 }
 
 // GetEcnMarking gets the value of EcnMarking for the instance
@@ -412,16 +540,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyEcnMarking() (value uint8, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetForceArpNdWolPattern sets the value of ForceArpNdWolPattern for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyForceArpNdWolPattern(value uint8) (err error) {
-	return instance.SetProperty("ForceArpNdWolPattern", value)
+	return instance.SetProperty("ForceArpNdWolPattern", (value))
 }
 
 // GetForceArpNdWolPattern gets the value of ForceArpNdWolPattern for the instance
@@ -430,16 +567,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyForceArpNdWolPattern() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetForwarding sets the value of Forwarding for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyForwarding(value uint8) (err error) {
-	return instance.SetProperty("Forwarding", value)
+	return instance.SetProperty("Forwarding", (value))
 }
 
 // GetForwarding gets the value of Forwarding for the instance
@@ -448,16 +594,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyForwarding() (value uint8, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetIgnoreDefaultRoutes sets the value of IgnoreDefaultRoutes for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyIgnoreDefaultRoutes(value uint8) (err error) {
-	return instance.SetProperty("IgnoreDefaultRoutes", value)
+	return instance.SetProperty("IgnoreDefaultRoutes", (value))
 }
 
 // GetIgnoreDefaultRoutes gets the value of IgnoreDefaultRoutes for the instance
@@ -466,16 +621,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyIgnoreDefaultRoutes() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetInterfaceAlias sets the value of InterfaceAlias for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyInterfaceAlias(value string) (err error) {
-	return instance.SetProperty("InterfaceAlias", value)
+	return instance.SetProperty("InterfaceAlias", (value))
 }
 
 // GetInterfaceAlias gets the value of InterfaceAlias for the instance
@@ -484,16 +648,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyInterfaceAlias() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceIndex sets the value of InterfaceIndex for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("InterfaceIndex", value)
+	return instance.SetProperty("InterfaceIndex", (value))
 }
 
 // GetInterfaceIndex gets the value of InterfaceIndex for the instance
@@ -502,16 +675,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyInterfaceIndex() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInterfaceMetric sets the value of InterfaceMetric for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyInterfaceMetric(value uint32) (err error) {
-	return instance.SetProperty("InterfaceMetric", value)
+	return instance.SetProperty("InterfaceMetric", (value))
 }
 
 // GetInterfaceMetric gets the value of InterfaceMetric for the instance
@@ -520,16 +702,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyInterfaceMetric() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsolationId sets the value of IsolationId for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyIsolationId(value uint32) (err error) {
-	return instance.SetProperty("IsolationId", value)
+	return instance.SetProperty("IsolationId", (value))
 }
 
 // GetIsolationId gets the value of IsolationId for the instance
@@ -538,16 +729,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyIsolationId() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLowestIfNetLuid sets the value of LowestIfNetLuid for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyLowestIfNetLuid(value uint64) (err error) {
-	return instance.SetProperty("LowestIfNetLuid", value)
+	return instance.SetProperty("LowestIfNetLuid", (value))
 }
 
 // GetLowestIfNetLuid gets the value of LowestIfNetLuid for the instance
@@ -556,16 +756,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyLowestIfNetLuid() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetManagedAddressConfiguration sets the value of ManagedAddressConfiguration for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyManagedAddressConfiguration(value uint8) (err error) {
-	return instance.SetProperty("ManagedAddressConfiguration", value)
+	return instance.SetProperty("ManagedAddressConfiguration", (value))
 }
 
 // GetManagedAddressConfiguration gets the value of ManagedAddressConfiguration for the instance
@@ -574,16 +783,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyManagedAddressConfiguration() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNeighborDiscoverySupported sets the value of NeighborDiscoverySupported for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyNeighborDiscoverySupported(value uint8) (err error) {
-	return instance.SetProperty("NeighborDiscoverySupported", value)
+	return instance.SetProperty("NeighborDiscoverySupported", (value))
 }
 
 // GetNeighborDiscoverySupported gets the value of NeighborDiscoverySupported for the instance
@@ -592,16 +810,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyNeighborDiscoverySupported() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNeighborUnreachabilityDetection sets the value of NeighborUnreachabilityDetection for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyNeighborUnreachabilityDetection(value uint8) (err error) {
-	return instance.SetProperty("NeighborUnreachabilityDetection", value)
+	return instance.SetProperty("NeighborUnreachabilityDetection", (value))
 }
 
 // GetNeighborUnreachabilityDetection gets the value of NeighborUnreachabilityDetection for the instance
@@ -610,16 +837,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyNeighborUnreachabilityDetection(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNlMtu sets the value of NlMtu for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyNlMtu(value uint32) (err error) {
-	return instance.SetProperty("NlMtu", value)
+	return instance.SetProperty("NlMtu", (value))
 }
 
 // GetNlMtu gets the value of NlMtu for the instance
@@ -628,16 +864,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyNlMtu() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherStatefulConfiguration sets the value of OtherStatefulConfiguration for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyOtherStatefulConfiguration(value uint8) (err error) {
-	return instance.SetProperty("OtherStatefulConfiguration", value)
+	return instance.SetProperty("OtherStatefulConfiguration", (value))
 }
 
 // GetOtherStatefulConfiguration gets the value of OtherStatefulConfiguration for the instance
@@ -646,16 +891,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyOtherStatefulConfiguration() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetReachableTime sets the value of ReachableTime for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyReachableTime(value uint32) (err error) {
-	return instance.SetProperty("ReachableTime", value)
+	return instance.SetProperty("ReachableTime", (value))
 }
 
 // GetReachableTime gets the value of ReachableTime for the instance
@@ -664,16 +918,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyReachableTime() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRetransmitTime sets the value of RetransmitTime for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyRetransmitTime(value uint32) (err error) {
-	return instance.SetProperty("RetransmitTime", value)
+	return instance.SetProperty("RetransmitTime", (value))
 }
 
 // GetRetransmitTime gets the value of RetransmitTime for the instance
@@ -682,16 +945,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyRetransmitTime() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRouterDiscovery sets the value of RouterDiscovery for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyRouterDiscovery(value uint8) (err error) {
-	return instance.SetProperty("RouterDiscovery", value)
+	return instance.SetProperty("RouterDiscovery", (value))
 }
 
 // GetRouterDiscovery gets the value of RouterDiscovery for the instance
@@ -700,16 +972,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyRouterDiscovery() (value uint8, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetStore sets the value of Store for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyStore(value uint8) (err error) {
-	return instance.SetProperty("Store", value)
+	return instance.SetProperty("Store", (value))
 }
 
 // GetStore gets the value of Store for the instance
@@ -718,16 +999,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyStore() (value uint8, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetWeakHostReceive sets the value of WeakHostReceive for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyWeakHostReceive(value uint8) (err error) {
-	return instance.SetProperty("WeakHostReceive", value)
+	return instance.SetProperty("WeakHostReceive", (value))
 }
 
 // GetWeakHostReceive gets the value of WeakHostReceive for the instance
@@ -736,16 +1026,25 @@ func (instance *MSFT_NetIPInterface) GetPropertyWeakHostReceive() (value uint8, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetWeakHostSend sets the value of WeakHostSend for the instance
 func (instance *MSFT_NetIPInterface) SetPropertyWeakHostSend(value uint8) (err error) {
-	return instance.SetProperty("WeakHostSend", value)
+	return instance.SetProperty("WeakHostSend", (value))
 }
 
 // GetWeakHostSend gets the value of WeakHostSend for the instance
@@ -754,9 +1053,18 @@ func (instance *MSFT_NetIPInterface) GetPropertyWeakHostSend() (value uint8, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }

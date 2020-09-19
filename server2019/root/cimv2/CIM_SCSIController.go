@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SCSIController struct
@@ -61,7 +63,7 @@ func NewCIM_SCSIControllerEx6(hostName string,
 
 // SetControllerTimeouts sets the value of ControllerTimeouts for the instance
 func (instance *CIM_SCSIController) SetPropertyControllerTimeouts(value uint32) (err error) {
-	return instance.SetProperty("ControllerTimeouts", value)
+	return instance.SetProperty("ControllerTimeouts", (value))
 }
 
 // GetControllerTimeouts gets the value of ControllerTimeouts for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_SCSIController) GetPropertyControllerTimeouts() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxDataWidth sets the value of MaxDataWidth for the instance
 func (instance *CIM_SCSIController) SetPropertyMaxDataWidth(value uint32) (err error) {
-	return instance.SetProperty("MaxDataWidth", value)
+	return instance.SetProperty("MaxDataWidth", (value))
 }
 
 // GetMaxDataWidth gets the value of MaxDataWidth for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_SCSIController) GetPropertyMaxDataWidth() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxTransferRate sets the value of MaxTransferRate for the instance
 func (instance *CIM_SCSIController) SetPropertyMaxTransferRate(value uint64) (err error) {
-	return instance.SetProperty("MaxTransferRate", value)
+	return instance.SetProperty("MaxTransferRate", (value))
 }
 
 // GetMaxTransferRate gets the value of MaxTransferRate for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_SCSIController) GetPropertyMaxTransferRate() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProtectionManagement sets the value of ProtectionManagement for the instance
 func (instance *CIM_SCSIController) SetPropertyProtectionManagement(value uint16) (err error) {
-	return instance.SetProperty("ProtectionManagement", value)
+	return instance.SetProperty("ProtectionManagement", (value))
 }
 
 // GetProtectionManagement gets the value of ProtectionManagement for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_SCSIController) GetPropertyProtectionManagement() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

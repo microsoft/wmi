@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
@@ -11,7 +11,9 @@ package management
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SDDC_Datapoint struct
@@ -56,7 +58,7 @@ func NewSDDC_DatapointEx6(hostName string,
 
 // SetTimestamp sets the value of Timestamp for the instance
 func (instance *SDDC_Datapoint) SetPropertyTimestamp(value string) (err error) {
-	return instance.SetProperty("Timestamp", value)
+	return instance.SetProperty("Timestamp", (value))
 }
 
 // GetTimestamp gets the value of Timestamp for the instance
@@ -65,16 +67,25 @@ func (instance *SDDC_Datapoint) GetPropertyTimestamp() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValue sets the value of Value for the instance
 func (instance *SDDC_Datapoint) SetPropertyValue(value float64) (err error) {
-	return instance.SetProperty("Value", value)
+	return instance.SetProperty("Value", (value))
 }
 
 // GetValue gets the value of Value for the instance
@@ -83,9 +94,18 @@ func (instance *SDDC_Datapoint) GetPropertyValue() (value float64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float64(valuetmp)
+
 	return
 }

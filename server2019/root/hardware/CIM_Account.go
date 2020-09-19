@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Account struct
@@ -88,7 +90,7 @@ func NewCIM_AccountEx6(hostName string,
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_Account) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -97,16 +99,25 @@ func (instance *CIM_Account) GetPropertyCreationClassName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescriptions sets the value of Descriptions for the instance
 func (instance *CIM_Account) SetPropertyDescriptions(value []string) (err error) {
-	return instance.SetProperty("Descriptions", value)
+	return instance.SetProperty("Descriptions", (value))
 }
 
 // GetDescriptions gets the value of Descriptions for the instance
@@ -115,16 +126,26 @@ func (instance *CIM_Account) GetPropertyDescriptions() (value []string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetHost sets the value of Host for the instance
 func (instance *CIM_Account) SetPropertyHost(value []string) (err error) {
-	return instance.SetProperty("Host", value)
+	return instance.SetProperty("Host", (value))
 }
 
 // GetHost gets the value of Host for the instance
@@ -133,16 +154,26 @@ func (instance *CIM_Account) GetPropertyHost() (value []string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLocalityName sets the value of LocalityName for the instance
 func (instance *CIM_Account) SetPropertyLocalityName(value []string) (err error) {
-	return instance.SetProperty("LocalityName", value)
+	return instance.SetProperty("LocalityName", (value))
 }
 
 // GetLocalityName gets the value of LocalityName for the instance
@@ -151,16 +182,26 @@ func (instance *CIM_Account) GetPropertyLocalityName() (value []string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetObjectClass sets the value of ObjectClass for the instance
 func (instance *CIM_Account) SetPropertyObjectClass(value []string) (err error) {
-	return instance.SetProperty("ObjectClass", value)
+	return instance.SetProperty("ObjectClass", (value))
 }
 
 // GetObjectClass gets the value of ObjectClass for the instance
@@ -169,16 +210,26 @@ func (instance *CIM_Account) GetPropertyObjectClass() (value []string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOrganizationName sets the value of OrganizationName for the instance
 func (instance *CIM_Account) SetPropertyOrganizationName(value []string) (err error) {
-	return instance.SetProperty("OrganizationName", value)
+	return instance.SetProperty("OrganizationName", (value))
 }
 
 // GetOrganizationName gets the value of OrganizationName for the instance
@@ -187,16 +238,26 @@ func (instance *CIM_Account) GetPropertyOrganizationName() (value []string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOU sets the value of OU for the instance
 func (instance *CIM_Account) SetPropertyOU(value []string) (err error) {
-	return instance.SetProperty("OU", value)
+	return instance.SetProperty("OU", (value))
 }
 
 // GetOU gets the value of OU for the instance
@@ -205,16 +266,26 @@ func (instance *CIM_Account) GetPropertyOU() (value []string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSeeAlso sets the value of SeeAlso for the instance
 func (instance *CIM_Account) SetPropertySeeAlso(value []string) (err error) {
-	return instance.SetProperty("SeeAlso", value)
+	return instance.SetProperty("SeeAlso", (value))
 }
 
 // GetSeeAlso gets the value of SeeAlso for the instance
@@ -223,16 +294,26 @@ func (instance *CIM_Account) GetPropertySeeAlso() (value []string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *CIM_Account) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -241,16 +322,25 @@ func (instance *CIM_Account) GetPropertySystemCreationClassName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *CIM_Account) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -259,16 +349,25 @@ func (instance *CIM_Account) GetPropertySystemName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserCertificate sets the value of UserCertificate for the instance
 func (instance *CIM_Account) SetPropertyUserCertificate(value []string) (err error) {
-	return instance.SetProperty("UserCertificate", value)
+	return instance.SetProperty("UserCertificate", (value))
 }
 
 // GetUserCertificate gets the value of UserCertificate for the instance
@@ -277,16 +376,26 @@ func (instance *CIM_Account) GetPropertyUserCertificate() (value []string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetUserID sets the value of UserID for the instance
 func (instance *CIM_Account) SetPropertyUserID(value string) (err error) {
-	return instance.SetProperty("UserID", value)
+	return instance.SetProperty("UserID", (value))
 }
 
 // GetUserID gets the value of UserID for the instance
@@ -295,16 +404,25 @@ func (instance *CIM_Account) GetPropertyUserID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserPassword sets the value of UserPassword for the instance
 func (instance *CIM_Account) SetPropertyUserPassword(value []string) (err error) {
-	return instance.SetProperty("UserPassword", value)
+	return instance.SetProperty("UserPassword", (value))
 }
 
 // GetUserPassword gets the value of UserPassword for the instance
@@ -313,9 +431,19 @@ func (instance *CIM_Account) GetPropertyUserPassword() (value []string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Powershellv3
 //////////////////////////////////////////////
 package powershellv3
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // PS_Module struct
@@ -58,7 +60,7 @@ func NewPS_ModuleEx6(hostName string,
 
 // SetmoduleManifestFileData sets the value of moduleManifestFileData for the instance
 func (instance *PS_Module) SetPropertymoduleManifestFileData(value []uint8) (err error) {
-	return instance.SetProperty("moduleManifestFileData", value)
+	return instance.SetProperty("moduleManifestFileData", (value))
 }
 
 // GetmoduleManifestFileData gets the value of moduleManifestFileData for the instance
@@ -67,16 +69,26 @@ func (instance *PS_Module) GetPropertymoduleManifestFileData() (value []uint8, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetModuleName sets the value of ModuleName for the instance
 func (instance *PS_Module) SetPropertyModuleName(value string) (err error) {
-	return instance.SetProperty("ModuleName", value)
+	return instance.SetProperty("ModuleName", (value))
 }
 
 // GetModuleName gets the value of ModuleName for the instance
@@ -85,16 +97,25 @@ func (instance *PS_Module) GetPropertyModuleName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetmoduleType sets the value of moduleType for the instance
 func (instance *PS_Module) SetPropertymoduleType(value uint16) (err error) {
-	return instance.SetProperty("moduleType", value)
+	return instance.SetProperty("moduleType", (value))
 }
 
 // GetmoduleType gets the value of moduleType for the instance
@@ -103,9 +124,18 @@ func (instance *PS_Module) GetPropertymoduleType() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.PT
 //////////////////////////////////////////////
 package pt
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __AggregateEvent struct
@@ -55,7 +57,7 @@ func New__AggregateEventEx6(hostName string,
 
 // SetNumberOfEvents sets the value of NumberOfEvents for the instance
 func (instance *__AggregateEvent) SetPropertyNumberOfEvents(value uint32) (err error) {
-	return instance.SetProperty("NumberOfEvents", value)
+	return instance.SetProperty("NumberOfEvents", (value))
 }
 
 // GetNumberOfEvents gets the value of NumberOfEvents for the instance
@@ -64,16 +66,25 @@ func (instance *__AggregateEvent) GetPropertyNumberOfEvents() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRepresentative sets the value of Representative for the instance
 func (instance *__AggregateEvent) SetPropertyRepresentative(value interface{}) (err error) {
-	return instance.SetProperty("Representative", value)
+	return instance.SetProperty("Representative", (value))
 }
 
 // GetRepresentative gets the value of Representative for the instance
@@ -82,9 +93,18 @@ func (instance *__AggregateEvent) GetPropertyRepresentative() (value interface{}
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIKEMMCryptoSet struct
@@ -58,7 +60,7 @@ func NewMSFT_NetIKEMMCryptoSetEx6(hostName string,
 
 // SetForceDiffieHellman sets the value of ForceDiffieHellman for the instance
 func (instance *MSFT_NetIKEMMCryptoSet) SetPropertyForceDiffieHellman(value bool) (err error) {
-	return instance.SetProperty("ForceDiffieHellman", value)
+	return instance.SetProperty("ForceDiffieHellman", (value))
 }
 
 // GetForceDiffieHellman gets the value of ForceDiffieHellman for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_NetIKEMMCryptoSet) GetPropertyForceDiffieHellman() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaxLifetimeMinutes sets the value of MaxLifetimeMinutes for the instance
 func (instance *MSFT_NetIKEMMCryptoSet) SetPropertyMaxLifetimeMinutes(value uint32) (err error) {
-	return instance.SetProperty("MaxLifetimeMinutes", value)
+	return instance.SetProperty("MaxLifetimeMinutes", (value))
 }
 
 // GetMaxLifetimeMinutes gets the value of MaxLifetimeMinutes for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_NetIKEMMCryptoSet) GetPropertyMaxLifetimeMinutes() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxLifetimeSessions sets the value of MaxLifetimeSessions for the instance
 func (instance *MSFT_NetIKEMMCryptoSet) SetPropertyMaxLifetimeSessions(value uint32) (err error) {
-	return instance.SetProperty("MaxLifetimeSessions", value)
+	return instance.SetProperty("MaxLifetimeSessions", (value))
 }
 
 // GetMaxLifetimeSessions gets the value of MaxLifetimeSessions for the instance
@@ -103,10 +123,19 @@ func (instance *MSFT_NetIKEMMCryptoSet) GetPropertyMaxLifetimeSessions() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSNetworkAdapterListSetting struct
@@ -55,7 +57,7 @@ func NewWin32_TSNetworkAdapterListSettingEx6(hostName string,
 
 // SetNetworkAdapterID sets the value of NetworkAdapterID for the instance
 func (instance *Win32_TSNetworkAdapterListSetting) SetPropertyNetworkAdapterID(value string) (err error) {
-	return instance.SetProperty("NetworkAdapterID", value)
+	return instance.SetProperty("NetworkAdapterID", (value))
 }
 
 // GetNetworkAdapterID gets the value of NetworkAdapterID for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_TSNetworkAdapterListSetting) GetPropertyNetworkAdapterID()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNetworkAdapterIP sets the value of NetworkAdapterIP for the instance
 func (instance *Win32_TSNetworkAdapterListSetting) SetPropertyNetworkAdapterIP(value string) (err error) {
-	return instance.SetProperty("NetworkAdapterIP", value)
+	return instance.SetProperty("NetworkAdapterIP", (value))
 }
 
 // GetNetworkAdapterIP gets the value of NetworkAdapterIP for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_TSNetworkAdapterListSetting) GetPropertyNetworkAdapterIP()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

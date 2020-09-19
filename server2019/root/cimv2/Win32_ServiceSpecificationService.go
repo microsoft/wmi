@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ServiceSpecificationService struct
@@ -56,7 +58,7 @@ func NewWin32_ServiceSpecificationServiceEx6(hostName string,
 
 // SetCheck sets the value of Check for the instance
 func (instance *Win32_ServiceSpecificationService) SetPropertyCheck(value Win32_ServiceSpecification) (err error) {
-	return instance.SetProperty("Check", value)
+	return instance.SetProperty("Check", (value))
 }
 
 // GetCheck gets the value of Check for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_ServiceSpecificationService) GetPropertyCheck() (value Win
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_ServiceSpecification)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_ServiceSpecification)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_ServiceSpecification is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_ServiceSpecification(valuetmp)
+
 	return
 }
 
 // SetElement sets the value of Element for the instance
 func (instance *Win32_ServiceSpecificationService) SetPropertyElement(value Win32_Service) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_ServiceSpecificationService) GetPropertyElement() (value W
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_Service)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_Service)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_Service is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_Service(valuetmp)
+
 	return
 }

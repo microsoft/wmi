@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_StorageAllocationSettingData struct
@@ -103,7 +105,7 @@ func NewCIM_StorageAllocationSettingDataEx6(hostName string,
 
 // SetAccess sets the value of Access for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyAccess(value StorageAllocationSettingData_Access) (err error) {
-	return instance.SetProperty("Access", value)
+	return instance.SetProperty("Access", (value))
 }
 
 // GetAccess gets the value of Access for the instance
@@ -112,16 +114,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyAccess() (value Sto
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageAllocationSettingData_Access)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageAllocationSettingData_Access(valuetmp)
+
 	return
 }
 
 // SetHostExtentName sets the value of HostExtentName for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyHostExtentName(value string) (err error) {
-	return instance.SetProperty("HostExtentName", value)
+	return instance.SetProperty("HostExtentName", (value))
 }
 
 // GetHostExtentName gets the value of HostExtentName for the instance
@@ -130,16 +141,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyHostExtentName() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHostExtentNameFormat sets the value of HostExtentNameFormat for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyHostExtentNameFormat(value StorageAllocationSettingData_HostExtentNameFormat) (err error) {
-	return instance.SetProperty("HostExtentNameFormat", value)
+	return instance.SetProperty("HostExtentNameFormat", (value))
 }
 
 // GetHostExtentNameFormat gets the value of HostExtentNameFormat for the instance
@@ -148,16 +168,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyHostExtentNameForma
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageAllocationSettingData_HostExtentNameFormat)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageAllocationSettingData_HostExtentNameFormat(valuetmp)
+
 	return
 }
 
 // SetHostExtentNameNamespace sets the value of HostExtentNameNamespace for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyHostExtentNameNamespace(value StorageAllocationSettingData_HostExtentNameNamespace) (err error) {
-	return instance.SetProperty("HostExtentNameNamespace", value)
+	return instance.SetProperty("HostExtentNameNamespace", (value))
 }
 
 // GetHostExtentNameNamespace gets the value of HostExtentNameNamespace for the instance
@@ -166,16 +195,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyHostExtentNameNames
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageAllocationSettingData_HostExtentNameNamespace)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageAllocationSettingData_HostExtentNameNamespace(valuetmp)
+
 	return
 }
 
 // SetHostExtentStartingAddress sets the value of HostExtentStartingAddress for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyHostExtentStartingAddress(value uint64) (err error) {
-	return instance.SetProperty("HostExtentStartingAddress", value)
+	return instance.SetProperty("HostExtentStartingAddress", (value))
 }
 
 // GetHostExtentStartingAddress gets the value of HostExtentStartingAddress for the instance
@@ -184,16 +222,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyHostExtentStartingA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetHostResourceBlockSize sets the value of HostResourceBlockSize for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyHostResourceBlockSize(value uint64) (err error) {
-	return instance.SetProperty("HostResourceBlockSize", value)
+	return instance.SetProperty("HostResourceBlockSize", (value))
 }
 
 // GetHostResourceBlockSize gets the value of HostResourceBlockSize for the instance
@@ -202,16 +249,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyHostResourceBlockSi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOtherHostExtentNameFormat sets the value of OtherHostExtentNameFormat for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyOtherHostExtentNameFormat(value string) (err error) {
-	return instance.SetProperty("OtherHostExtentNameFormat", value)
+	return instance.SetProperty("OtherHostExtentNameFormat", (value))
 }
 
 // GetOtherHostExtentNameFormat gets the value of OtherHostExtentNameFormat for the instance
@@ -220,16 +276,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyOtherHostExtentName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherHostExtentNameNamespace sets the value of OtherHostExtentNameNamespace for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyOtherHostExtentNameNamespace(value string) (err error) {
-	return instance.SetProperty("OtherHostExtentNameNamespace", value)
+	return instance.SetProperty("OtherHostExtentNameNamespace", (value))
 }
 
 // GetOtherHostExtentNameNamespace gets the value of OtherHostExtentNameNamespace for the instance
@@ -238,16 +303,25 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyOtherHostExtentName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualResourceBlockSize sets the value of VirtualResourceBlockSize for the instance
 func (instance *CIM_StorageAllocationSettingData) SetPropertyVirtualResourceBlockSize(value uint64) (err error) {
-	return instance.SetProperty("VirtualResourceBlockSize", value)
+	return instance.SetProperty("VirtualResourceBlockSize", (value))
 }
 
 // GetVirtualResourceBlockSize gets the value of VirtualResourceBlockSize for the instance
@@ -256,9 +330,18 @@ func (instance *CIM_StorageAllocationSettingData) GetPropertyVirtualResourceBloc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

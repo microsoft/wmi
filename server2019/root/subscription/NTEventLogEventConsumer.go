@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.subscription
 //////////////////////////////////////////////
 package subscription
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // NTEventLogEventConsumer struct
@@ -79,7 +81,7 @@ func NewNTEventLogEventConsumerEx6(hostName string,
 
 // SetCategory sets the value of Category for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyCategory(value uint16) (err error) {
-	return instance.SetProperty("Category", value)
+	return instance.SetProperty("Category", (value))
 }
 
 // GetCategory gets the value of Category for the instance
@@ -88,16 +90,25 @@ func (instance *NTEventLogEventConsumer) GetPropertyCategory() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEventID sets the value of EventID for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyEventID(value uint32) (err error) {
-	return instance.SetProperty("EventID", value)
+	return instance.SetProperty("EventID", (value))
 }
 
 // GetEventID gets the value of EventID for the instance
@@ -106,16 +117,25 @@ func (instance *NTEventLogEventConsumer) GetPropertyEventID() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEventType sets the value of EventType for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyEventType(value NTEventLogEventConsumer_EventType) (err error) {
-	return instance.SetProperty("EventType", value)
+	return instance.SetProperty("EventType", (value))
 }
 
 // GetEventType gets the value of EventType for the instance
@@ -124,16 +144,25 @@ func (instance *NTEventLogEventConsumer) GetPropertyEventType() (value NTEventLo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(NTEventLogEventConsumer_EventType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = NTEventLogEventConsumer_EventType(valuetmp)
+
 	return
 }
 
 // SetInsertionStringTemplates sets the value of InsertionStringTemplates for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyInsertionStringTemplates(value []string) (err error) {
-	return instance.SetProperty("InsertionStringTemplates", value)
+	return instance.SetProperty("InsertionStringTemplates", (value))
 }
 
 // GetInsertionStringTemplates gets the value of InsertionStringTemplates for the instance
@@ -142,16 +171,26 @@ func (instance *NTEventLogEventConsumer) GetPropertyInsertionStringTemplates() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -160,16 +199,25 @@ func (instance *NTEventLogEventConsumer) GetPropertyName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameOfRawDataProperty sets the value of NameOfRawDataProperty for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyNameOfRawDataProperty(value string) (err error) {
-	return instance.SetProperty("NameOfRawDataProperty", value)
+	return instance.SetProperty("NameOfRawDataProperty", (value))
 }
 
 // GetNameOfRawDataProperty gets the value of NameOfRawDataProperty for the instance
@@ -178,16 +226,25 @@ func (instance *NTEventLogEventConsumer) GetPropertyNameOfRawDataProperty() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNameOfUserSIDProperty sets the value of NameOfUserSIDProperty for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyNameOfUserSIDProperty(value string) (err error) {
-	return instance.SetProperty("NameOfUserSIDProperty", value)
+	return instance.SetProperty("NameOfUserSIDProperty", (value))
 }
 
 // GetNameOfUserSIDProperty gets the value of NameOfUserSIDProperty for the instance
@@ -196,16 +253,25 @@ func (instance *NTEventLogEventConsumer) GetPropertyNameOfUserSIDProperty() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfInsertionStrings sets the value of NumberOfInsertionStrings for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyNumberOfInsertionStrings(value uint32) (err error) {
-	return instance.SetProperty("NumberOfInsertionStrings", value)
+	return instance.SetProperty("NumberOfInsertionStrings", (value))
 }
 
 // GetNumberOfInsertionStrings gets the value of NumberOfInsertionStrings for the instance
@@ -214,16 +280,25 @@ func (instance *NTEventLogEventConsumer) GetPropertyNumberOfInsertionStrings() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSourceName sets the value of SourceName for the instance
 func (instance *NTEventLogEventConsumer) SetPropertySourceName(value string) (err error) {
-	return instance.SetProperty("SourceName", value)
+	return instance.SetProperty("SourceName", (value))
 }
 
 // GetSourceName gets the value of SourceName for the instance
@@ -232,16 +307,25 @@ func (instance *NTEventLogEventConsumer) GetPropertySourceName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUNCServerName sets the value of UNCServerName for the instance
 func (instance *NTEventLogEventConsumer) SetPropertyUNCServerName(value string) (err error) {
-	return instance.SetProperty("UNCServerName", value)
+	return instance.SetProperty("UNCServerName", (value))
 }
 
 // GetUNCServerName gets the value of UNCServerName for the instance
@@ -250,9 +334,18 @@ func (instance *NTEventLogEventConsumer) GetPropertyUNCServerName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // ScriptingStandardConsumerSetting struct
@@ -55,7 +57,7 @@ func NewScriptingStandardConsumerSettingEx6(hostName string,
 
 // SetMaximumScripts sets the value of MaximumScripts for the instance
 func (instance *ScriptingStandardConsumerSetting) SetPropertyMaximumScripts(value uint32) (err error) {
-	return instance.SetProperty("MaximumScripts", value)
+	return instance.SetProperty("MaximumScripts", (value))
 }
 
 // GetMaximumScripts gets the value of MaximumScripts for the instance
@@ -64,16 +66,25 @@ func (instance *ScriptingStandardConsumerSetting) GetPropertyMaximumScripts() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeout sets the value of Timeout for the instance
 func (instance *ScriptingStandardConsumerSetting) SetPropertyTimeout(value uint32) (err error) {
-	return instance.SetProperty("Timeout", value)
+	return instance.SetProperty("Timeout", (value))
 }
 
 // GetTimeout gets the value of Timeout for the instance
@@ -82,9 +93,18 @@ func (instance *ScriptingStandardConsumerSetting) GetPropertyTimeout() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

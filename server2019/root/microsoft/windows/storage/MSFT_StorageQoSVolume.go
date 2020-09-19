@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageQoSVolume struct
@@ -83,7 +85,7 @@ func NewMSFT_StorageQoSVolumeEx6(hostName string,
 
 // SetBandwidth sets the value of Bandwidth for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyBandwidth(value uint64) (err error) {
-	return instance.SetProperty("Bandwidth", value)
+	return instance.SetProperty("Bandwidth", (value))
 }
 
 // GetBandwidth gets the value of Bandwidth for the instance
@@ -92,16 +94,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyBandwidth() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBandwidthLimit sets the value of BandwidthLimit for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyBandwidthLimit(value uint64) (err error) {
-	return instance.SetProperty("BandwidthLimit", value)
+	return instance.SetProperty("BandwidthLimit", (value))
 }
 
 // GetBandwidthLimit gets the value of BandwidthLimit for the instance
@@ -110,16 +121,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyBandwidthLimit() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetInterval sets the value of Interval for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyInterval(value uint64) (err error) {
-	return instance.SetProperty("Interval", value)
+	return instance.SetProperty("Interval", (value))
 }
 
 // GetInterval gets the value of Interval for the instance
@@ -128,16 +148,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyInterval() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOPS sets the value of IOPS for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyIOPS(value uint64) (err error) {
-	return instance.SetProperty("IOPS", value)
+	return instance.SetProperty("IOPS", (value))
 }
 
 // GetIOPS gets the value of IOPS for the instance
@@ -146,16 +175,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyIOPS() (value uint64, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLatency sets the value of Latency for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyLatency(value uint64) (err error) {
-	return instance.SetProperty("Latency", value)
+	return instance.SetProperty("Latency", (value))
 }
 
 // GetLatency gets the value of Latency for the instance
@@ -164,16 +202,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyLatency() (value uint64, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLimit sets the value of Limit for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyLimit(value uint64) (err error) {
-	return instance.SetProperty("Limit", value)
+	return instance.SetProperty("Limit", (value))
 }
 
 // GetLimit gets the value of Limit for the instance
@@ -182,16 +229,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyLimit() (value uint64, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMountpoint sets the value of Mountpoint for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyMountpoint(value string) (err error) {
-	return instance.SetProperty("Mountpoint", value)
+	return instance.SetProperty("Mountpoint", (value))
 }
 
 // GetMountpoint gets the value of Mountpoint for the instance
@@ -200,16 +256,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyMountpoint() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReservation sets the value of Reservation for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyReservation(value uint64) (err error) {
-	return instance.SetProperty("Reservation", value)
+	return instance.SetProperty("Reservation", (value))
 }
 
 // GetReservation gets the value of Reservation for the instance
@@ -218,16 +283,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyReservation() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyStatus(value uint16) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -236,16 +310,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyStatus() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTimeStamp sets the value of TimeStamp for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyTimeStamp(value uint64) (err error) {
-	return instance.SetProperty("TimeStamp", value)
+	return instance.SetProperty("TimeStamp", (value))
 }
 
 // GetTimeStamp gets the value of TimeStamp for the instance
@@ -254,16 +337,25 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyTimeStamp() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVolumeId sets the value of VolumeId for the instance
 func (instance *MSFT_StorageQoSVolume) SetPropertyVolumeId(value string) (err error) {
-	return instance.SetProperty("VolumeId", value)
+	return instance.SetProperty("VolumeId", (value))
 }
 
 // GetVolumeId gets the value of VolumeId for the instance
@@ -272,9 +364,18 @@ func (instance *MSFT_StorageQoSVolume) GetPropertyVolumeId() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

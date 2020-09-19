@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_ComputerSystem struct
@@ -91,7 +93,7 @@ func NewMsvm_ComputerSystemEx6(hostName string,
 
 // SetEnhancedSessionModeState sets the value of EnhancedSessionModeState for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyEnhancedSessionModeState(value uint16) (err error) {
-	return instance.SetProperty("EnhancedSessionModeState", value)
+	return instance.SetProperty("EnhancedSessionModeState", (value))
 }
 
 // GetEnhancedSessionModeState gets the value of EnhancedSessionModeState for the instance
@@ -100,16 +102,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyEnhancedSessionModeState() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetFailedOverReplicationType sets the value of FailedOverReplicationType for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyFailedOverReplicationType(value uint16) (err error) {
-	return instance.SetProperty("FailedOverReplicationType", value)
+	return instance.SetProperty("FailedOverReplicationType", (value))
 }
 
 // GetFailedOverReplicationType gets the value of FailedOverReplicationType for the instance
@@ -118,16 +129,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyFailedOverReplicationType() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHwThreadsPerCoreRealized sets the value of HwThreadsPerCoreRealized for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyHwThreadsPerCoreRealized(value uint32) (err error) {
-	return instance.SetProperty("HwThreadsPerCoreRealized", value)
+	return instance.SetProperty("HwThreadsPerCoreRealized", (value))
 }
 
 // GetHwThreadsPerCoreRealized gets the value of HwThreadsPerCoreRealized for the instance
@@ -136,16 +156,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyHwThreadsPerCoreRealized() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLastApplicationConsistentReplicationTime sets the value of LastApplicationConsistentReplicationTime for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyLastApplicationConsistentReplicationTime(value string) (err error) {
-	return instance.SetProperty("LastApplicationConsistentReplicationTime", value)
+	return instance.SetProperty("LastApplicationConsistentReplicationTime", (value))
 }
 
 // GetLastApplicationConsistentReplicationTime gets the value of LastApplicationConsistentReplicationTime for the instance
@@ -154,16 +183,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyLastApplicationConsistentReplica
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastReplicationTime sets the value of LastReplicationTime for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyLastReplicationTime(value string) (err error) {
-	return instance.SetProperty("LastReplicationTime", value)
+	return instance.SetProperty("LastReplicationTime", (value))
 }
 
 // GetLastReplicationTime gets the value of LastReplicationTime for the instance
@@ -172,16 +210,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyLastReplicationTime() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastReplicationType sets the value of LastReplicationType for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyLastReplicationType(value uint16) (err error) {
-	return instance.SetProperty("LastReplicationType", value)
+	return instance.SetProperty("LastReplicationType", (value))
 }
 
 // GetLastReplicationType gets the value of LastReplicationType for the instance
@@ -190,16 +237,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyLastReplicationType() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLastSuccessfulBackupTime sets the value of LastSuccessfulBackupTime for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyLastSuccessfulBackupTime(value string) (err error) {
-	return instance.SetProperty("LastSuccessfulBackupTime", value)
+	return instance.SetProperty("LastSuccessfulBackupTime", (value))
 }
 
 // GetLastSuccessfulBackupTime gets the value of LastSuccessfulBackupTime for the instance
@@ -208,16 +264,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyLastSuccessfulBackupTime() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfNumaNodes sets the value of NumberOfNumaNodes for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyNumberOfNumaNodes(value uint16) (err error) {
-	return instance.SetProperty("NumberOfNumaNodes", value)
+	return instance.SetProperty("NumberOfNumaNodes", (value))
 }
 
 // GetNumberOfNumaNodes gets the value of NumberOfNumaNodes for the instance
@@ -226,16 +291,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyNumberOfNumaNodes() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOnTimeInMilliseconds sets the value of OnTimeInMilliseconds for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyOnTimeInMilliseconds(value uint64) (err error) {
-	return instance.SetProperty("OnTimeInMilliseconds", value)
+	return instance.SetProperty("OnTimeInMilliseconds", (value))
 }
 
 // GetOnTimeInMilliseconds gets the value of OnTimeInMilliseconds for the instance
@@ -244,16 +318,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyOnTimeInMilliseconds() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProcessID sets the value of ProcessID for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyProcessID(value uint32) (err error) {
-	return instance.SetProperty("ProcessID", value)
+	return instance.SetProperty("ProcessID", (value))
 }
 
 // GetProcessID gets the value of ProcessID for the instance
@@ -262,16 +345,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyProcessID() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReplicationHealth sets the value of ReplicationHealth for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyReplicationHealth(value uint16) (err error) {
-	return instance.SetProperty("ReplicationHealth", value)
+	return instance.SetProperty("ReplicationHealth", (value))
 }
 
 // GetReplicationHealth gets the value of ReplicationHealth for the instance
@@ -280,16 +372,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyReplicationHealth() (value uint1
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicationMode sets the value of ReplicationMode for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyReplicationMode(value uint16) (err error) {
-	return instance.SetProperty("ReplicationMode", value)
+	return instance.SetProperty("ReplicationMode", (value))
 }
 
 // GetReplicationMode gets the value of ReplicationMode for the instance
@@ -298,16 +399,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyReplicationMode() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicationState sets the value of ReplicationState for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyReplicationState(value uint16) (err error) {
-	return instance.SetProperty("ReplicationState", value)
+	return instance.SetProperty("ReplicationState", (value))
 }
 
 // GetReplicationState gets the value of ReplicationState for the instance
@@ -316,16 +426,25 @@ func (instance *Msvm_ComputerSystem) GetPropertyReplicationState() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTimeOfLastConfigurationChange sets the value of TimeOfLastConfigurationChange for the instance
 func (instance *Msvm_ComputerSystem) SetPropertyTimeOfLastConfigurationChange(value string) (err error) {
-	return instance.SetProperty("TimeOfLastConfigurationChange", value)
+	return instance.SetProperty("TimeOfLastConfigurationChange", (value))
 }
 
 // GetTimeOfLastConfigurationChange gets the value of TimeOfLastConfigurationChange for the instance
@@ -334,10 +453,19 @@ func (instance *Msvm_ComputerSystem) GetPropertyTimeOfLastConfigurationChange() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
@@ -503,14 +631,14 @@ func (instance *Msvm_ComputerSystem) GetRelatedProcessor() (value []*cim.WmiInst
 	return instance.GetAllRelated("Msvm_Processor")
 }
 
-func (instance *Msvm_ComputerSystem) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_ComputerSystem")
-}
-
-func (instance *Msvm_ComputerSystem) GetRelatedInternalEthernetPort() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_InternalEthernetPort")
+func (instance *Msvm_ComputerSystem) GetRelatedInternalEthernetPort() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_InternalEthernetPort")
 }
 
 func (instance *Msvm_ComputerSystem) GetRelatedExternalEthernetPort() (value []*cim.WmiInstance, err error) {
 	return instance.GetAllRelated("Msvm_ExternalEthernetPort")
+}
+
+func (instance *Msvm_ComputerSystem) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_ComputerSystem")
 }

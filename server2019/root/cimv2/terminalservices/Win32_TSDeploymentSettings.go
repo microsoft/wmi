@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSDeploymentSettings struct
@@ -103,7 +105,7 @@ func NewWin32_TSDeploymentSettingsEx6(hostName string,
 
 // SetAllowFontSmoothing sets the value of AllowFontSmoothing for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyAllowFontSmoothing(value bool) (err error) {
-	return instance.SetProperty("AllowFontSmoothing", value)
+	return instance.SetProperty("AllowFontSmoothing", (value))
 }
 
 // GetAllowFontSmoothing gets the value of AllowFontSmoothing for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyAllowFontSmoothing() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCertificateExpiresOn sets the value of CertificateExpiresOn for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyCertificateExpiresOn(value string) (err error) {
-	return instance.SetProperty("CertificateExpiresOn", value)
+	return instance.SetProperty("CertificateExpiresOn", (value))
 }
 
 // GetCertificateExpiresOn gets the value of CertificateExpiresOn for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyCertificateExpiresOn() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCertificateHash sets the value of CertificateHash for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyCertificateHash(value []uint8) (err error) {
-	return instance.SetProperty("CertificateHash", value)
+	return instance.SetProperty("CertificateHash", (value))
 }
 
 // GetCertificateHash gets the value of CertificateHash for the instance
@@ -148,16 +168,26 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyCertificateHash() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetCertificateIssuedBy sets the value of CertificateIssuedBy for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyCertificateIssuedBy(value string) (err error) {
-	return instance.SetProperty("CertificateIssuedBy", value)
+	return instance.SetProperty("CertificateIssuedBy", (value))
 }
 
 // GetCertificateIssuedBy gets the value of CertificateIssuedBy for the instance
@@ -166,16 +196,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyCertificateIssuedBy() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCertificateIssuedTo sets the value of CertificateIssuedTo for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyCertificateIssuedTo(value string) (err error) {
-	return instance.SetProperty("CertificateIssuedTo", value)
+	return instance.SetProperty("CertificateIssuedTo", (value))
 }
 
 // GetCertificateIssuedTo gets the value of CertificateIssuedTo for the instance
@@ -184,16 +223,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyCertificateIssuedTo() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetColorBitDepth sets the value of ColorBitDepth for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyColorBitDepth(value TSDeploymentSettings_ColorBitDepth) (err error) {
-	return instance.SetProperty("ColorBitDepth", value)
+	return instance.SetProperty("ColorBitDepth", (value))
 }
 
 // GetColorBitDepth gets the value of ColorBitDepth for the instance
@@ -202,16 +250,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyColorBitDepth() (value TS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TSDeploymentSettings_ColorBitDepth)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TSDeploymentSettings_ColorBitDepth(valuetmp)
+
 	return
 }
 
 // SetCustomRDPSettings sets the value of CustomRDPSettings for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyCustomRDPSettings(value string) (err error) {
-	return instance.SetProperty("CustomRDPSettings", value)
+	return instance.SetProperty("CustomRDPSettings", (value))
 }
 
 // GetCustomRDPSettings gets the value of CustomRDPSettings for the instance
@@ -220,16 +277,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyCustomRDPSettings() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDeploymentRDPSettings sets the value of DeploymentRDPSettings for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyDeploymentRDPSettings(value string) (err error) {
-	return instance.SetProperty("DeploymentRDPSettings", value)
+	return instance.SetProperty("DeploymentRDPSettings", (value))
 }
 
 // GetDeploymentRDPSettings gets the value of DeploymentRDPSettings for the instance
@@ -238,16 +304,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyDeploymentRDPSettings() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFarmName sets the value of FarmName for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyFarmName(value string) (err error) {
-	return instance.SetProperty("FarmName", value)
+	return instance.SetProperty("FarmName", (value))
 }
 
 // GetFarmName gets the value of FarmName for the instance
@@ -256,16 +331,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyFarmName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGatewayAuthMode sets the value of GatewayAuthMode for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyGatewayAuthMode(value TSDeploymentSettings_GatewayAuthMode) (err error) {
-	return instance.SetProperty("GatewayAuthMode", value)
+	return instance.SetProperty("GatewayAuthMode", (value))
 }
 
 // GetGatewayAuthMode gets the value of GatewayAuthMode for the instance
@@ -274,16 +358,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyGatewayAuthMode() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TSDeploymentSettings_GatewayAuthMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TSDeploymentSettings_GatewayAuthMode(valuetmp)
+
 	return
 }
 
 // SetGatewayName sets the value of GatewayName for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyGatewayName(value string) (err error) {
-	return instance.SetProperty("GatewayName", value)
+	return instance.SetProperty("GatewayName", (value))
 }
 
 // GetGatewayName gets the value of GatewayName for the instance
@@ -292,16 +385,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyGatewayName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGatewayUsage sets the value of GatewayUsage for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyGatewayUsage(value TSDeploymentSettings_GatewayUsage) (err error) {
-	return instance.SetProperty("GatewayUsage", value)
+	return instance.SetProperty("GatewayUsage", (value))
 }
 
 // GetGatewayUsage gets the value of GatewayUsage for the instance
@@ -310,16 +412,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyGatewayUsage() (value TSD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TSDeploymentSettings_GatewayUsage)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TSDeploymentSettings_GatewayUsage(valuetmp)
+
 	return
 }
 
 // SetGatewayUseCachedCreds sets the value of GatewayUseCachedCreds for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyGatewayUseCachedCreds(value bool) (err error) {
-	return instance.SetProperty("GatewayUseCachedCreds", value)
+	return instance.SetProperty("GatewayUseCachedCreds", (value))
 }
 
 // GetGatewayUseCachedCreds gets the value of GatewayUseCachedCreds for the instance
@@ -328,16 +439,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyGatewayUseCachedCreds() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHasCertificate sets the value of HasCertificate for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyHasCertificate(value bool) (err error) {
-	return instance.SetProperty("HasCertificate", value)
+	return instance.SetProperty("HasCertificate", (value))
 }
 
 // GetHasCertificate gets the value of HasCertificate for the instance
@@ -346,16 +466,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyHasCertificate() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPort sets the value of Port for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyPort(value int32) (err error) {
-	return instance.SetProperty("Port", value)
+	return instance.SetProperty("Port", (value))
 }
 
 // GetPort gets the value of Port for the instance
@@ -364,16 +493,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyPort() (value int32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRedirectionOptions sets the value of RedirectionOptions for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyRedirectionOptions(value int32) (err error) {
-	return instance.SetProperty("RedirectionOptions", value)
+	return instance.SetProperty("RedirectionOptions", (value))
 }
 
 // GetRedirectionOptions gets the value of RedirectionOptions for the instance
@@ -382,16 +520,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyRedirectionOptions() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRequireServerAuth sets the value of RequireServerAuth for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyRequireServerAuth(value bool) (err error) {
-	return instance.SetProperty("RequireServerAuth", value)
+	return instance.SetProperty("RequireServerAuth", (value))
 }
 
 // GetRequireServerAuth gets the value of RequireServerAuth for the instance
@@ -400,16 +547,25 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyRequireServerAuth() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUseMultimon sets the value of UseMultimon for the instance
 func (instance *Win32_TSDeploymentSettings) SetPropertyUseMultimon(value bool) (err error) {
-	return instance.SetProperty("UseMultimon", value)
+	return instance.SetProperty("UseMultimon", (value))
 }
 
 // GetUseMultimon gets the value of UseMultimon for the instance
@@ -418,9 +574,18 @@ func (instance *Win32_TSDeploymentSettings) GetPropertyUseMultimon() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

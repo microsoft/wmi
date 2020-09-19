@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_CollectionSnapshotExportSettingData struct
@@ -58,7 +60,7 @@ func NewMsvm_CollectionSnapshotExportSettingDataEx6(hostName string,
 
 // SetBackupIntent sets the value of BackupIntent for the instance
 func (instance *Msvm_CollectionSnapshotExportSettingData) SetPropertyBackupIntent(value uint16) (err error) {
-	return instance.SetProperty("BackupIntent", value)
+	return instance.SetProperty("BackupIntent", (value))
 }
 
 // GetBackupIntent gets the value of BackupIntent for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_CollectionSnapshotExportSettingData) GetPropertyBackupInten
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCopyVmStorage sets the value of CopyVmStorage for the instance
 func (instance *Msvm_CollectionSnapshotExportSettingData) SetPropertyCopyVmStorage(value bool) (err error) {
-	return instance.SetProperty("CopyVmStorage", value)
+	return instance.SetProperty("CopyVmStorage", (value))
 }
 
 // GetCopyVmStorage gets the value of CopyVmStorage for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_CollectionSnapshotExportSettingData) GetPropertyCopyVmStora
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDifferentialBackupBase sets the value of DifferentialBackupBase for the instance
 func (instance *Msvm_CollectionSnapshotExportSettingData) SetPropertyDifferentialBackupBase(value string) (err error) {
-	return instance.SetProperty("DifferentialBackupBase", value)
+	return instance.SetProperty("DifferentialBackupBase", (value))
 }
 
 // GetDifferentialBackupBase gets the value of DifferentialBackupBase for the instance
@@ -103,9 +123,18 @@ func (instance *Msvm_CollectionSnapshotExportSettingData) GetPropertyDifferentia
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

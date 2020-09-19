@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_WmiProvider_ProvideEvents_Post struct
@@ -55,7 +57,7 @@ func NewMsft_WmiProvider_ProvideEvents_PostEx6(hostName string,
 
 // SetFlags sets the value of Flags for the instance
 func (instance *Msft_WmiProvider_ProvideEvents_Post) SetPropertyFlags(value uint32) (err error) {
-	return instance.SetProperty("Flags", value)
+	return instance.SetProperty("Flags", (value))
 }
 
 // GetFlags gets the value of Flags for the instance
@@ -64,16 +66,25 @@ func (instance *Msft_WmiProvider_ProvideEvents_Post) GetPropertyFlags() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResult sets the value of Result for the instance
 func (instance *Msft_WmiProvider_ProvideEvents_Post) SetPropertyResult(value uint32) (err error) {
-	return instance.SetProperty("Result", value)
+	return instance.SetProperty("Result", (value))
 }
 
 // GetResult gets the value of Result for the instance
@@ -82,9 +93,18 @@ func (instance *Msft_WmiProvider_ProvideEvents_Post) GetPropertyResult() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

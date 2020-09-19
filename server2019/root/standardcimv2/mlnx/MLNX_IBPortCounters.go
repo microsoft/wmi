@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_IBPortCounters struct
@@ -52,7 +54,7 @@ func NewMLNX_IBPortCountersEx6(hostName string,
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *MLNX_IBPortCounters) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -61,9 +63,18 @@ func (instance *MLNX_IBPortCounters) GetPropertySystemName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

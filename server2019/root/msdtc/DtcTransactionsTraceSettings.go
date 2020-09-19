@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
@@ -11,7 +11,9 @@ package msdtc
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DtcTransactionsTraceSettings struct
@@ -59,7 +61,7 @@ func NewDtcTransactionsTraceSettingsEx6(hostName string,
 
 // SetAbortedTransactionsTracingEnabled sets the value of AbortedTransactionsTracingEnabled for the instance
 func (instance *DtcTransactionsTraceSettings) SetPropertyAbortedTransactionsTracingEnabled(value bool) (err error) {
-	return instance.SetProperty("AbortedTransactionsTracingEnabled", value)
+	return instance.SetProperty("AbortedTransactionsTracingEnabled", (value))
 }
 
 // GetAbortedTransactionsTracingEnabled gets the value of AbortedTransactionsTracingEnabled for the instance
@@ -68,16 +70,25 @@ func (instance *DtcTransactionsTraceSettings) GetPropertyAbortedTransactionsTrac
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAllTransactionsTracingEnabled sets the value of AllTransactionsTracingEnabled for the instance
 func (instance *DtcTransactionsTraceSettings) SetPropertyAllTransactionsTracingEnabled(value bool) (err error) {
-	return instance.SetProperty("AllTransactionsTracingEnabled", value)
+	return instance.SetProperty("AllTransactionsTracingEnabled", (value))
 }
 
 // GetAllTransactionsTracingEnabled gets the value of AllTransactionsTracingEnabled for the instance
@@ -86,16 +97,25 @@ func (instance *DtcTransactionsTraceSettings) GetPropertyAllTransactionsTracingE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLongLivedTransactionsTracingEnabled sets the value of LongLivedTransactionsTracingEnabled for the instance
 func (instance *DtcTransactionsTraceSettings) SetPropertyLongLivedTransactionsTracingEnabled(value bool) (err error) {
-	return instance.SetProperty("LongLivedTransactionsTracingEnabled", value)
+	return instance.SetProperty("LongLivedTransactionsTracingEnabled", (value))
 }
 
 // GetLongLivedTransactionsTracingEnabled gets the value of LongLivedTransactionsTracingEnabled for the instance
@@ -104,9 +124,18 @@ func (instance *DtcTransactionsTraceSettings) GetPropertyLongLivedTransactionsTr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

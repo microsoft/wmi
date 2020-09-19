@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_DfsTarget struct
@@ -61,7 +63,7 @@ func NewWin32_DfsTargetEx6(hostName string,
 
 // SetLinkName sets the value of LinkName for the instance
 func (instance *Win32_DfsTarget) SetPropertyLinkName(value string) (err error) {
-	return instance.SetProperty("LinkName", value)
+	return instance.SetProperty("LinkName", (value))
 }
 
 // GetLinkName gets the value of LinkName for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_DfsTarget) GetPropertyLinkName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerName sets the value of ServerName for the instance
 func (instance *Win32_DfsTarget) SetPropertyServerName(value string) (err error) {
-	return instance.SetProperty("ServerName", value)
+	return instance.SetProperty("ServerName", (value))
 }
 
 // GetServerName gets the value of ServerName for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_DfsTarget) GetPropertyServerName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetShareName sets the value of ShareName for the instance
 func (instance *Win32_DfsTarget) SetPropertyShareName(value string) (err error) {
-	return instance.SetProperty("ShareName", value)
+	return instance.SetProperty("ShareName", (value))
 }
 
 // GetShareName gets the value of ShareName for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_DfsTarget) GetPropertyShareName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *Win32_DfsTarget) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_DfsTarget) GetPropertyState() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

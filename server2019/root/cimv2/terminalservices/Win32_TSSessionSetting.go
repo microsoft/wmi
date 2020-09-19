@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSSessionSetting struct
@@ -88,7 +90,7 @@ func NewWin32_TSSessionSettingEx6(hostName string,
 
 // SetActiveSessionLimit sets the value of ActiveSessionLimit for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyActiveSessionLimit(value uint32) (err error) {
-	return instance.SetProperty("ActiveSessionLimit", value)
+	return instance.SetProperty("ActiveSessionLimit", (value))
 }
 
 // GetActiveSessionLimit gets the value of ActiveSessionLimit for the instance
@@ -97,16 +99,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyActiveSessionLimit() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBrokenConnectionAction sets the value of BrokenConnectionAction for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyBrokenConnectionAction(value uint32) (err error) {
-	return instance.SetProperty("BrokenConnectionAction", value)
+	return instance.SetProperty("BrokenConnectionAction", (value))
 }
 
 // GetBrokenConnectionAction gets the value of BrokenConnectionAction for the instance
@@ -115,16 +126,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyBrokenConnectionAction() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBrokenConnectionPolicy sets the value of BrokenConnectionPolicy for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyBrokenConnectionPolicy(value uint32) (err error) {
-	return instance.SetProperty("BrokenConnectionPolicy", value)
+	return instance.SetProperty("BrokenConnectionPolicy", (value))
 }
 
 // GetBrokenConnectionPolicy gets the value of BrokenConnectionPolicy for the instance
@@ -133,16 +153,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyBrokenConnectionPolicy() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDisconnectedSessionLimit sets the value of DisconnectedSessionLimit for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyDisconnectedSessionLimit(value uint32) (err error) {
-	return instance.SetProperty("DisconnectedSessionLimit", value)
+	return instance.SetProperty("DisconnectedSessionLimit", (value))
 }
 
 // GetDisconnectedSessionLimit gets the value of DisconnectedSessionLimit for the instance
@@ -151,16 +180,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyDisconnectedSessionLimit() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnableTimeoutWarning sets the value of EnableTimeoutWarning for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyEnableTimeoutWarning(value uint32) (err error) {
-	return instance.SetProperty("EnableTimeoutWarning", value)
+	return instance.SetProperty("EnableTimeoutWarning", (value))
 }
 
 // GetEnableTimeoutWarning gets the value of EnableTimeoutWarning for the instance
@@ -169,16 +207,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyEnableTimeoutWarning() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIdleSessionLimit sets the value of IdleSessionLimit for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyIdleSessionLimit(value uint32) (err error) {
-	return instance.SetProperty("IdleSessionLimit", value)
+	return instance.SetProperty("IdleSessionLimit", (value))
 }
 
 // GetIdleSessionLimit gets the value of IdleSessionLimit for the instance
@@ -187,16 +234,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyIdleSessionLimit() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceActiveSessionLimit sets the value of PolicySourceActiveSessionLimit for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyPolicySourceActiveSessionLimit(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceActiveSessionLimit", value)
+	return instance.SetProperty("PolicySourceActiveSessionLimit", (value))
 }
 
 // GetPolicySourceActiveSessionLimit gets the value of PolicySourceActiveSessionLimit for the instance
@@ -205,16 +261,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyPolicySourceActiveSessionLimi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceBrokenConnectionAction sets the value of PolicySourceBrokenConnectionAction for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyPolicySourceBrokenConnectionAction(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceBrokenConnectionAction", value)
+	return instance.SetProperty("PolicySourceBrokenConnectionAction", (value))
 }
 
 // GetPolicySourceBrokenConnectionAction gets the value of PolicySourceBrokenConnectionAction for the instance
@@ -223,16 +288,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyPolicySourceBrokenConnectionA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceDisconnectedSessionLimit sets the value of PolicySourceDisconnectedSessionLimit for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyPolicySourceDisconnectedSessionLimit(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceDisconnectedSessionLimit", value)
+	return instance.SetProperty("PolicySourceDisconnectedSessionLimit", (value))
 }
 
 // GetPolicySourceDisconnectedSessionLimit gets the value of PolicySourceDisconnectedSessionLimit for the instance
@@ -241,16 +315,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyPolicySourceDisconnectedSessi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceIdleSessionLimit sets the value of PolicySourceIdleSessionLimit for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyPolicySourceIdleSessionLimit(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceIdleSessionLimit", value)
+	return instance.SetProperty("PolicySourceIdleSessionLimit", (value))
 }
 
 // GetPolicySourceIdleSessionLimit gets the value of PolicySourceIdleSessionLimit for the instance
@@ -259,16 +342,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyPolicySourceIdleSessionLimit(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceReconnectionPolicy sets the value of PolicySourceReconnectionPolicy for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyPolicySourceReconnectionPolicy(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceReconnectionPolicy", value)
+	return instance.SetProperty("PolicySourceReconnectionPolicy", (value))
 }
 
 // GetPolicySourceReconnectionPolicy gets the value of PolicySourceReconnectionPolicy for the instance
@@ -277,16 +369,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyPolicySourceReconnectionPolic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReconnectionPolicy sets the value of ReconnectionPolicy for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyReconnectionPolicy(value uint32) (err error) {
-	return instance.SetProperty("ReconnectionPolicy", value)
+	return instance.SetProperty("ReconnectionPolicy", (value))
 }
 
 // GetReconnectionPolicy gets the value of ReconnectionPolicy for the instance
@@ -295,16 +396,25 @@ func (instance *Win32_TSSessionSetting) GetPropertyReconnectionPolicy() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeLimitPolicy sets the value of TimeLimitPolicy for the instance
 func (instance *Win32_TSSessionSetting) SetPropertyTimeLimitPolicy(value uint32) (err error) {
-	return instance.SetProperty("TimeLimitPolicy", value)
+	return instance.SetProperty("TimeLimitPolicy", (value))
 }
 
 // GetTimeLimitPolicy gets the value of TimeLimitPolicy for the instance
@@ -313,10 +423,19 @@ func (instance *Win32_TSSessionSetting) GetPropertyTimeLimitPolicy() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ProductParentChild struct
@@ -56,7 +58,7 @@ func NewCIM_ProductParentChildEx6(hostName string,
 
 // SetChild sets the value of Child for the instance
 func (instance *CIM_ProductParentChild) SetPropertyChild(value CIM_Product) (err error) {
-	return instance.SetProperty("Child", value)
+	return instance.SetProperty("Child", (value))
 }
 
 // GetChild gets the value of Child for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ProductParentChild) GetPropertyChild() (value CIM_Product, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }
 
 // SetParent sets the value of Parent for the instance
 func (instance *CIM_ProductParentChild) SetPropertyParent(value CIM_Product) (err error) {
-	return instance.SetProperty("Parent", value)
+	return instance.SetProperty("Parent", (value))
 }
 
 // GetParent gets the value of Parent for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ProductParentChild) GetPropertyParent() (value CIM_Product, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Product)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Product)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Product is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Product(valuetmp)
+
 	return
 }

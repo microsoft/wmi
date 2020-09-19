@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_NetAdapterRoceSettingData struct
@@ -58,7 +60,7 @@ func NewMLNX_NetAdapterRoceSettingDataEx6(hostName string,
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *MLNX_NetAdapterRoceSettingData) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -67,16 +69,25 @@ func (instance *MLNX_NetAdapterRoceSettingData) GetPropertyEnabled() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPortNumber sets the value of PortNumber for the instance
 func (instance *MLNX_NetAdapterRoceSettingData) SetPropertyPortNumber(value uint16) (err error) {
-	return instance.SetProperty("PortNumber", value)
+	return instance.SetProperty("PortNumber", (value))
 }
 
 // GetPortNumber gets the value of PortNumber for the instance
@@ -85,16 +96,25 @@ func (instance *MLNX_NetAdapterRoceSettingData) GetPropertyPortNumber() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRoceMode sets the value of RoceMode for the instance
 func (instance *MLNX_NetAdapterRoceSettingData) SetPropertyRoceMode(value string) (err error) {
-	return instance.SetProperty("RoceMode", value)
+	return instance.SetProperty("RoceMode", (value))
 }
 
 // GetRoceMode gets the value of RoceMode for the instance
@@ -103,10 +123,19 @@ func (instance *MLNX_NetAdapterRoceSettingData) GetPropertyRoceMode() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

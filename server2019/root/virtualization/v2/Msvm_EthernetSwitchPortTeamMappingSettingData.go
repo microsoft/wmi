@@ -3,22 +3,21 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchPortTeamMappingSettingData struct
 type Msvm_EthernetSwitchPortTeamMappingSettingData struct {
 	*Msvm_EthernetSwitchPortFeatureSettingData
-
-	//
-	DisableOnFailover uint32
 
 	//
 	NetAdapterDeviceId string
@@ -56,27 +55,9 @@ func NewMsvm_EthernetSwitchPortTeamMappingSettingDataEx6(hostName string,
 	return
 }
 
-// SetDisableOnFailover sets the value of DisableOnFailover for the instance
-func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) SetPropertyDisableOnFailover(value uint32) (err error) {
-	return instance.SetProperty("DisableOnFailover", value)
-}
-
-// GetDisableOnFailover gets the value of DisableOnFailover for the instance
-func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetPropertyDisableOnFailover() (value uint32, err error) {
-	retValue, err := instance.GetProperty("DisableOnFailover")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
 // SetNetAdapterDeviceId sets the value of NetAdapterDeviceId for the instance
 func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) SetPropertyNetAdapterDeviceId(value string) (err error) {
-	return instance.SetProperty("NetAdapterDeviceId", value)
+	return instance.SetProperty("NetAdapterDeviceId", (value))
 }
 
 // GetNetAdapterDeviceId gets the value of NetAdapterDeviceId for the instance
@@ -85,16 +66,25 @@ func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetPropertyNetAda
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNetAdapterName sets the value of NetAdapterName for the instance
 func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) SetPropertyNetAdapterName(value string) (err error) {
-	return instance.SetProperty("NetAdapterName", value)
+	return instance.SetProperty("NetAdapterName", (value))
 }
 
 // GetNetAdapterName gets the value of NetAdapterName for the instance
@@ -103,10 +93,19 @@ func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetPropertyNetAda
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_EthernetSwitchPortTeamMappingSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {

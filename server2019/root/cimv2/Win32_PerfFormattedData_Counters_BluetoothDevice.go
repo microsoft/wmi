@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_BluetoothDevice struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_Counters_BluetoothDeviceEx6(hostName string,
 
 // SetClassicACLbytesreadPersec sets the value of ClassicACLbytesreadPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) SetPropertyClassicACLbytesreadPersec(value uint32) (err error) {
-	return instance.SetProperty("ClassicACLbytesreadPersec", value)
+	return instance.SetProperty("ClassicACLbytesreadPersec", (value))
 }
 
 // GetClassicACLbytesreadPersec gets the value of ClassicACLbytesreadPersec for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) GetPropertyCla
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClassicACLbyteswrittenPersec sets the value of ClassicACLbyteswrittenPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) SetPropertyClassicACLbyteswrittenPersec(value uint32) (err error) {
-	return instance.SetProperty("ClassicACLbyteswrittenPersec", value)
+	return instance.SetProperty("ClassicACLbyteswrittenPersec", (value))
 }
 
 // GetClassicACLbyteswrittenPersec gets the value of ClassicACLbyteswrittenPersec for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) GetPropertyCla
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLEACLbytesreadPersec sets the value of LEACLbytesreadPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) SetPropertyLEACLbytesreadPersec(value uint32) (err error) {
-	return instance.SetProperty("LEACLbytesreadPersec", value)
+	return instance.SetProperty("LEACLbytesreadPersec", (value))
 }
 
 // GetLEACLbytesreadPersec gets the value of LEACLbytesreadPersec for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) GetPropertyLEA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLEACLbyteswrittenPersec sets the value of LEACLbyteswrittenPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) SetPropertyLEACLbyteswrittenPersec(value uint32) (err error) {
-	return instance.SetProperty("LEACLbyteswrittenPersec", value)
+	return instance.SetProperty("LEACLbyteswrittenPersec", (value))
 }
 
 // GetLEACLbyteswrittenPersec gets the value of LEACLbyteswrittenPersec for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) GetPropertyLEA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSCObytesreadPersec sets the value of SCObytesreadPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) SetPropertySCObytesreadPersec(value uint32) (err error) {
-	return instance.SetProperty("SCObytesreadPersec", value)
+	return instance.SetProperty("SCObytesreadPersec", (value))
 }
 
 // GetSCObytesreadPersec gets the value of SCObytesreadPersec for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) GetPropertySCO
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSCObyteswrittenPersec sets the value of SCObyteswrittenPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) SetPropertySCObyteswrittenPersec(value uint32) (err error) {
-	return instance.SetProperty("SCObyteswrittenPersec", value)
+	return instance.SetProperty("SCObyteswrittenPersec", (value))
 }
 
 // GetSCObyteswrittenPersec gets the value of SCObyteswrittenPersec for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_Counters_BluetoothDevice) GetPropertySCO
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

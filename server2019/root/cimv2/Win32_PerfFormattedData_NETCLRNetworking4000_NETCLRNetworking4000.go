@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000 struct
@@ -82,7 +84,7 @@ func NewWin32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000Ex6(hos
 
 // SetBytesReceived sets the value of BytesReceived for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("BytesReceived", value)
+	return instance.SetProperty("BytesReceived", (value))
 }
 
 // GetBytesReceived gets the value of BytesReceived for the instance
@@ -91,16 +93,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesSent sets the value of BytesSent for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyBytesSent(value uint64) (err error) {
-	return instance.SetProperty("BytesSent", value)
+	return instance.SetProperty("BytesSent", (value))
 }
 
 // GetBytesSent gets the value of BytesSent for the instance
@@ -109,16 +120,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetConnectionsEstablished sets the value of ConnectionsEstablished for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyConnectionsEstablished(value uint32) (err error) {
-	return instance.SetProperty("ConnectionsEstablished", value)
+	return instance.SetProperty("ConnectionsEstablished", (value))
 }
 
 // GetConnectionsEstablished gets the value of ConnectionsEstablished for the instance
@@ -127,16 +147,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceived sets the value of DatagramsReceived for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyDatagramsReceived(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceived", value)
+	return instance.SetProperty("DatagramsReceived", (value))
 }
 
 // GetDatagramsReceived gets the value of DatagramsReceived for the instance
@@ -145,16 +174,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsSent sets the value of DatagramsSent for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyDatagramsSent(value uint32) (err error) {
-	return instance.SetProperty("DatagramsSent", value)
+	return instance.SetProperty("DatagramsSent", (value))
 }
 
 // GetDatagramsSent gets the value of DatagramsSent for the instance
@@ -163,16 +201,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHttpWebRequestsAbortedPerSec sets the value of HttpWebRequestsAbortedPerSec for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyHttpWebRequestsAbortedPerSec(value uint32) (err error) {
-	return instance.SetProperty("HttpWebRequestsAbortedPerSec", value)
+	return instance.SetProperty("HttpWebRequestsAbortedPerSec", (value))
 }
 
 // GetHttpWebRequestsAbortedPerSec gets the value of HttpWebRequestsAbortedPerSec for the instance
@@ -181,16 +228,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHttpWebRequestsAverageLifetime sets the value of HttpWebRequestsAverageLifetime for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyHttpWebRequestsAverageLifetime(value uint64) (err error) {
-	return instance.SetProperty("HttpWebRequestsAverageLifetime", value)
+	return instance.SetProperty("HttpWebRequestsAverageLifetime", (value))
 }
 
 // GetHttpWebRequestsAverageLifetime gets the value of HttpWebRequestsAverageLifetime for the instance
@@ -199,16 +255,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetHttpWebRequestsAverageQueueTime sets the value of HttpWebRequestsAverageQueueTime for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyHttpWebRequestsAverageQueueTime(value uint64) (err error) {
-	return instance.SetProperty("HttpWebRequestsAverageQueueTime", value)
+	return instance.SetProperty("HttpWebRequestsAverageQueueTime", (value))
 }
 
 // GetHttpWebRequestsAverageQueueTime gets the value of HttpWebRequestsAverageQueueTime for the instance
@@ -217,16 +282,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetHttpWebRequestsCreatedPerSec sets the value of HttpWebRequestsCreatedPerSec for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyHttpWebRequestsCreatedPerSec(value uint32) (err error) {
-	return instance.SetProperty("HttpWebRequestsCreatedPerSec", value)
+	return instance.SetProperty("HttpWebRequestsCreatedPerSec", (value))
 }
 
 // GetHttpWebRequestsCreatedPerSec gets the value of HttpWebRequestsCreatedPerSec for the instance
@@ -235,16 +309,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHttpWebRequestsFailedPerSec sets the value of HttpWebRequestsFailedPerSec for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyHttpWebRequestsFailedPerSec(value uint32) (err error) {
-	return instance.SetProperty("HttpWebRequestsFailedPerSec", value)
+	return instance.SetProperty("HttpWebRequestsFailedPerSec", (value))
 }
 
 // GetHttpWebRequestsFailedPerSec gets the value of HttpWebRequestsFailedPerSec for the instance
@@ -253,16 +336,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHttpWebRequestsQueuedPerSec sets the value of HttpWebRequestsQueuedPerSec for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking4000) SetPropertyHttpWebRequestsQueuedPerSec(value uint32) (err error) {
-	return instance.SetProperty("HttpWebRequestsQueuedPerSec", value)
+	return instance.SetProperty("HttpWebRequestsQueuedPerSec", (value))
 }
 
 // GetHttpWebRequestsQueuedPerSec gets the value of HttpWebRequestsQueuedPerSec for the instance
@@ -271,9 +363,18 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking4000_NETCLRNetworking400
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

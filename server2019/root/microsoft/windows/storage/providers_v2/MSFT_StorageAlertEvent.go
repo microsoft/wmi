@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageAlertEvent struct
@@ -52,7 +54,7 @@ func NewMSFT_StorageAlertEventEx6(hostName string,
 
 // SetAlertType sets the value of AlertType for the instance
 func (instance *MSFT_StorageAlertEvent) SetPropertyAlertType(value StorageAlertEvent_AlertType) (err error) {
-	return instance.SetProperty("AlertType", value)
+	return instance.SetProperty("AlertType", (value))
 }
 
 // GetAlertType gets the value of AlertType for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_StorageAlertEvent) GetPropertyAlertType() (value StorageAle
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageAlertEvent_AlertType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageAlertEvent_AlertType(valuetmp)
+
 	return
 }

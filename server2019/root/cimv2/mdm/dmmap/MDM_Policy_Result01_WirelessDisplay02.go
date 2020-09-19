@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_WirelessDisplay02 struct
@@ -80,7 +82,7 @@ func NewMDM_Policy_Result01_WirelessDisplay02Ex6(hostName string,
 
 // SetAllowMdnsAdvertisement sets the value of AllowMdnsAdvertisement for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowMdnsAdvertisement(value int32) (err error) {
-	return instance.SetProperty("AllowMdnsAdvertisement", value)
+	return instance.SetProperty("AllowMdnsAdvertisement", (value))
 }
 
 // GetAllowMdnsAdvertisement gets the value of AllowMdnsAdvertisement for the instance
@@ -89,16 +91,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowMdnsAdver
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowMdnsDiscovery sets the value of AllowMdnsDiscovery for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowMdnsDiscovery(value int32) (err error) {
-	return instance.SetProperty("AllowMdnsDiscovery", value)
+	return instance.SetProperty("AllowMdnsDiscovery", (value))
 }
 
 // GetAllowMdnsDiscovery gets the value of AllowMdnsDiscovery for the instance
@@ -107,16 +118,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowMdnsDisco
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowProjectionFromPC sets the value of AllowProjectionFromPC for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowProjectionFromPC(value int32) (err error) {
-	return instance.SetProperty("AllowProjectionFromPC", value)
+	return instance.SetProperty("AllowProjectionFromPC", (value))
 }
 
 // GetAllowProjectionFromPC gets the value of AllowProjectionFromPC for the instance
@@ -125,16 +145,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowProjectio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowProjectionFromPCOverInfrastructure sets the value of AllowProjectionFromPCOverInfrastructure for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowProjectionFromPCOverInfrastructure(value int32) (err error) {
-	return instance.SetProperty("AllowProjectionFromPCOverInfrastructure", value)
+	return instance.SetProperty("AllowProjectionFromPCOverInfrastructure", (value))
 }
 
 // GetAllowProjectionFromPCOverInfrastructure gets the value of AllowProjectionFromPCOverInfrastructure for the instance
@@ -143,16 +172,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowProjectio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowProjectionToPC sets the value of AllowProjectionToPC for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowProjectionToPC(value int32) (err error) {
-	return instance.SetProperty("AllowProjectionToPC", value)
+	return instance.SetProperty("AllowProjectionToPC", (value))
 }
 
 // GetAllowProjectionToPC gets the value of AllowProjectionToPC for the instance
@@ -161,16 +199,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowProjectio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowProjectionToPCOverInfrastructure sets the value of AllowProjectionToPCOverInfrastructure for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowProjectionToPCOverInfrastructure(value int32) (err error) {
-	return instance.SetProperty("AllowProjectionToPCOverInfrastructure", value)
+	return instance.SetProperty("AllowProjectionToPCOverInfrastructure", (value))
 }
 
 // GetAllowProjectionToPCOverInfrastructure gets the value of AllowProjectionToPCOverInfrastructure for the instance
@@ -179,16 +226,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowProjectio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowUserInputFromWirelessDisplayReceiver sets the value of AllowUserInputFromWirelessDisplayReceiver for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyAllowUserInputFromWirelessDisplayReceiver(value int32) (err error) {
-	return instance.SetProperty("AllowUserInputFromWirelessDisplayReceiver", value)
+	return instance.SetProperty("AllowUserInputFromWirelessDisplayReceiver", (value))
 }
 
 // GetAllowUserInputFromWirelessDisplayReceiver gets the value of AllowUserInputFromWirelessDisplayReceiver for the instance
@@ -197,16 +253,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyAllowUserInput
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -215,16 +280,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyInstanceID() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -233,16 +307,25 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyParentID() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequirePinForPairing sets the value of RequirePinForPairing for the instance
 func (instance *MDM_Policy_Result01_WirelessDisplay02) SetPropertyRequirePinForPairing(value int32) (err error) {
-	return instance.SetProperty("RequirePinForPairing", value)
+	return instance.SetProperty("RequirePinForPairing", (value))
 }
 
 // GetRequirePinForPairing gets the value of RequirePinForPairing for the instance
@@ -251,9 +334,18 @@ func (instance *MDM_Policy_Result01_WirelessDisplay02) GetPropertyRequirePinForP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

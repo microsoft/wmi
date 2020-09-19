@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEEE80211PolicySetting struct
@@ -70,7 +72,7 @@ func NewRSOP_IEEE80211PolicySettingEx6(hostName string,
 
 // SetClassName sets the value of ClassName for the instance
 func (instance *RSOP_IEEE80211PolicySetting) SetPropertyClassName(value string) (err error) {
-	return instance.SetProperty("ClassName", value)
+	return instance.SetProperty("ClassName", (value))
 }
 
 // GetClassName gets the value of ClassName for the instance
@@ -79,16 +81,25 @@ func (instance *RSOP_IEEE80211PolicySetting) GetPropertyClassName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setdescription sets the value of description for the instance
 func (instance *RSOP_IEEE80211PolicySetting) SetPropertydescription(value string) (err error) {
-	return instance.SetProperty("description", value)
+	return instance.SetProperty("description", (value))
 }
 
 // Getdescription gets the value of description for the instance
@@ -97,16 +108,25 @@ func (instance *RSOP_IEEE80211PolicySetting) GetPropertydescription() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setmsieee80211Data sets the value of msieee80211Data for the instance
 func (instance *RSOP_IEEE80211PolicySetting) SetPropertymsieee80211Data(value []uint8) (err error) {
-	return instance.SetProperty("msieee80211Data", value)
+	return instance.SetProperty("msieee80211Data", (value))
 }
 
 // Getmsieee80211Data gets the value of msieee80211Data for the instance
@@ -115,16 +135,26 @@ func (instance *RSOP_IEEE80211PolicySetting) GetPropertymsieee80211Data() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // Setmsieee80211DataType sets the value of msieee80211DataType for the instance
 func (instance *RSOP_IEEE80211PolicySetting) SetPropertymsieee80211DataType(value uint32) (err error) {
-	return instance.SetProperty("msieee80211DataType", value)
+	return instance.SetProperty("msieee80211DataType", (value))
 }
 
 // Getmsieee80211DataType gets the value of msieee80211DataType for the instance
@@ -133,16 +163,25 @@ func (instance *RSOP_IEEE80211PolicySetting) GetPropertymsieee80211DataType() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // Setmsieee80211ID sets the value of msieee80211ID for the instance
 func (instance *RSOP_IEEE80211PolicySetting) SetPropertymsieee80211ID(value string) (err error) {
-	return instance.SetProperty("msieee80211ID", value)
+	return instance.SetProperty("msieee80211ID", (value))
 }
 
 // Getmsieee80211ID gets the value of msieee80211ID for the instance
@@ -151,16 +190,25 @@ func (instance *RSOP_IEEE80211PolicySetting) GetPropertymsieee80211ID() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setmsieee80211Name sets the value of msieee80211Name for the instance
 func (instance *RSOP_IEEE80211PolicySetting) SetPropertymsieee80211Name(value string) (err error) {
-	return instance.SetProperty("msieee80211Name", value)
+	return instance.SetProperty("msieee80211Name", (value))
 }
 
 // Getmsieee80211Name gets the value of msieee80211Name for the instance
@@ -169,16 +217,25 @@ func (instance *RSOP_IEEE80211PolicySetting) GetPropertymsieee80211Name() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetwhenChanged sets the value of whenChanged for the instance
 func (instance *RSOP_IEEE80211PolicySetting) SetPropertywhenChanged(value uint32) (err error) {
-	return instance.SetProperty("whenChanged", value)
+	return instance.SetProperty("whenChanged", (value))
 }
 
 // GetwhenChanged gets the value of whenChanged for the instance
@@ -187,9 +244,18 @@ func (instance *RSOP_IEEE80211PolicySetting) GetPropertywhenChanged() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

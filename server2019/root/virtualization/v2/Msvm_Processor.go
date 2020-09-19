@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_Processor struct
@@ -52,7 +54,7 @@ func NewMsvm_ProcessorEx6(hostName string,
 
 // SetLoadPercentageHistory sets the value of LoadPercentageHistory for the instance
 func (instance *Msvm_Processor) SetPropertyLoadPercentageHistory(value []uint16) (err error) {
-	return instance.SetProperty("LoadPercentageHistory", value)
+	return instance.SetProperty("LoadPercentageHistory", (value))
 }
 
 // GetLoadPercentageHistory gets the value of LoadPercentageHistory for the instance
@@ -61,10 +63,20 @@ func (instance *Msvm_Processor) GetPropertyLoadPercentageHistory() (value []uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_Processor) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {

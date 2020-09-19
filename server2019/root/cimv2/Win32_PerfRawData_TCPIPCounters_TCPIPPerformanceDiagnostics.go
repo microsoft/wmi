@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics struct
@@ -96,31 +98,7 @@ type Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics struct {
 	TCPinboundsegmentsPersecnotprocessedviafastpath uint32
 
 	//
-	TCPRSCbytesreceived uint32
-
-	//
-	TCPRSCevents uint32
-
-	//
 	TCPtimeouts uint32
-
-	//
-	UDPdatagramscreatedviasoftwaresegmentation uint32
-
-	//
-	UDPURObytesreceived uint32
-
-	//
-	UDPUROevents uint32
-
-	//
-	UROsegmentforwardingfailuresduringsoftwaresegmentation uint32
-
-	//
-	UROsegmentsforwardedviasoftwaresegmentation uint32
-
-	//
-	UROsegmentsforwardedviasoftwaresegmentationandchecksum uint32
 }
 
 func NewWin32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnosticsEx1(instance *cim.WmiInstance) (newInstance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics, err error) {
@@ -154,7 +132,7 @@ func NewWin32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnosticsEx6(hostName 
 
 // SetDeniedconnectorsendrequestsinlowpowermode sets the value of Deniedconnectorsendrequestsinlowpowermode for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyDeniedconnectorsendrequestsinlowpowermode(value uint32) (err error) {
-	return instance.SetProperty("Deniedconnectorsendrequestsinlowpowermode", value)
+	return instance.SetProperty("Deniedconnectorsendrequestsinlowpowermode", (value))
 }
 
 // GetDeniedconnectorsendrequestsinlowpowermode gets the value of Deniedconnectorsendrequestsinlowpowermode for the instance
@@ -163,16 +141,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4NBLsindicatedwithlowresourceflag sets the value of IPv4NBLsindicatedwithlowresourceflag for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4NBLsindicatedwithlowresourceflag(value uint32) (err error) {
-	return instance.SetProperty("IPv4NBLsindicatedwithlowresourceflag", value)
+	return instance.SetProperty("IPv4NBLsindicatedwithlowresourceflag", (value))
 }
 
 // GetIPv4NBLsindicatedwithlowresourceflag gets the value of IPv4NBLsindicatedwithlowresourceflag for the instance
@@ -181,16 +168,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4NBLsindicatedwithoutprevalidation sets the value of IPv4NBLsindicatedwithoutprevalidation for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4NBLsindicatedwithoutprevalidation(value uint32) (err error) {
-	return instance.SetProperty("IPv4NBLsindicatedwithoutprevalidation", value)
+	return instance.SetProperty("IPv4NBLsindicatedwithoutprevalidation", (value))
 }
 
 // GetIPv4NBLsindicatedwithoutprevalidation gets the value of IPv4NBLsindicatedwithoutprevalidation for the instance
@@ -199,16 +195,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4NBLsPersecindicatedwithlowresourceflag sets the value of IPv4NBLsPersecindicatedwithlowresourceflag for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4NBLsPersecindicatedwithlowresourceflag(value uint32) (err error) {
-	return instance.SetProperty("IPv4NBLsPersecindicatedwithlowresourceflag", value)
+	return instance.SetProperty("IPv4NBLsPersecindicatedwithlowresourceflag", (value))
 }
 
 // GetIPv4NBLsPersecindicatedwithlowresourceflag gets the value of IPv4NBLsPersecindicatedwithlowresourceflag for the instance
@@ -217,16 +222,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4NBLsPersecindicatedwithoutprevalidation sets the value of IPv4NBLsPersecindicatedwithoutprevalidation for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4NBLsPersecindicatedwithoutprevalidation(value uint32) (err error) {
-	return instance.SetProperty("IPv4NBLsPersecindicatedwithoutprevalidation", value)
+	return instance.SetProperty("IPv4NBLsPersecindicatedwithoutprevalidation", (value))
 }
 
 // GetIPv4NBLsPersecindicatedwithoutprevalidation gets the value of IPv4NBLsPersecindicatedwithoutprevalidation for the instance
@@ -235,16 +249,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4NBLsPersectreatedasnonprevalidated sets the value of IPv4NBLsPersectreatedasnonprevalidated for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4NBLsPersectreatedasnonprevalidated(value uint32) (err error) {
-	return instance.SetProperty("IPv4NBLsPersectreatedasnonprevalidated", value)
+	return instance.SetProperty("IPv4NBLsPersectreatedasnonprevalidated", (value))
 }
 
 // GetIPv4NBLsPersectreatedasnonprevalidated gets the value of IPv4NBLsPersectreatedasnonprevalidated for the instance
@@ -253,16 +276,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4NBLstreatedasnonprevalidated sets the value of IPv4NBLstreatedasnonprevalidated for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4NBLstreatedasnonprevalidated(value uint32) (err error) {
-	return instance.SetProperty("IPv4NBLstreatedasnonprevalidated", value)
+	return instance.SetProperty("IPv4NBLstreatedasnonprevalidated", (value))
 }
 
 // GetIPv4NBLstreatedasnonprevalidated gets the value of IPv4NBLstreatedasnonprevalidated for the instance
@@ -271,16 +303,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4outboundNBLsnotprocessedviafastpath sets the value of IPv4outboundNBLsnotprocessedviafastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4outboundNBLsnotprocessedviafastpath(value uint32) (err error) {
-	return instance.SetProperty("IPv4outboundNBLsnotprocessedviafastpath", value)
+	return instance.SetProperty("IPv4outboundNBLsnotprocessedviafastpath", (value))
 }
 
 // GetIPv4outboundNBLsnotprocessedviafastpath gets the value of IPv4outboundNBLsnotprocessedviafastpath for the instance
@@ -289,16 +330,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv4outboundNBLsPersecnotprocessedviafastpath sets the value of IPv4outboundNBLsPersecnotprocessedviafastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv4outboundNBLsPersecnotprocessedviafastpath(value uint32) (err error) {
-	return instance.SetProperty("IPv4outboundNBLsPersecnotprocessedviafastpath", value)
+	return instance.SetProperty("IPv4outboundNBLsPersecnotprocessedviafastpath", (value))
 }
 
 // GetIPv4outboundNBLsPersecnotprocessedviafastpath gets the value of IPv4outboundNBLsPersecnotprocessedviafastpath for the instance
@@ -307,16 +357,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6NBLsindicatedwithlowresourceflag sets the value of IPv6NBLsindicatedwithlowresourceflag for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6NBLsindicatedwithlowresourceflag(value uint32) (err error) {
-	return instance.SetProperty("IPv6NBLsindicatedwithlowresourceflag", value)
+	return instance.SetProperty("IPv6NBLsindicatedwithlowresourceflag", (value))
 }
 
 // GetIPv6NBLsindicatedwithlowresourceflag gets the value of IPv6NBLsindicatedwithlowresourceflag for the instance
@@ -325,16 +384,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6NBLsindicatedwithoutprevalidation sets the value of IPv6NBLsindicatedwithoutprevalidation for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6NBLsindicatedwithoutprevalidation(value uint32) (err error) {
-	return instance.SetProperty("IPv6NBLsindicatedwithoutprevalidation", value)
+	return instance.SetProperty("IPv6NBLsindicatedwithoutprevalidation", (value))
 }
 
 // GetIPv6NBLsindicatedwithoutprevalidation gets the value of IPv6NBLsindicatedwithoutprevalidation for the instance
@@ -343,16 +411,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6NBLsPersecindicatedwithlowresourceflag sets the value of IPv6NBLsPersecindicatedwithlowresourceflag for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6NBLsPersecindicatedwithlowresourceflag(value uint32) (err error) {
-	return instance.SetProperty("IPv6NBLsPersecindicatedwithlowresourceflag", value)
+	return instance.SetProperty("IPv6NBLsPersecindicatedwithlowresourceflag", (value))
 }
 
 // GetIPv6NBLsPersecindicatedwithlowresourceflag gets the value of IPv6NBLsPersecindicatedwithlowresourceflag for the instance
@@ -361,16 +438,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6NBLsPersecindicatedwithoutprevalidation sets the value of IPv6NBLsPersecindicatedwithoutprevalidation for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6NBLsPersecindicatedwithoutprevalidation(value uint32) (err error) {
-	return instance.SetProperty("IPv6NBLsPersecindicatedwithoutprevalidation", value)
+	return instance.SetProperty("IPv6NBLsPersecindicatedwithoutprevalidation", (value))
 }
 
 // GetIPv6NBLsPersecindicatedwithoutprevalidation gets the value of IPv6NBLsPersecindicatedwithoutprevalidation for the instance
@@ -379,16 +465,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6NBLsPersectreatedasnonprevalidated sets the value of IPv6NBLsPersectreatedasnonprevalidated for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6NBLsPersectreatedasnonprevalidated(value uint32) (err error) {
-	return instance.SetProperty("IPv6NBLsPersectreatedasnonprevalidated", value)
+	return instance.SetProperty("IPv6NBLsPersectreatedasnonprevalidated", (value))
 }
 
 // GetIPv6NBLsPersectreatedasnonprevalidated gets the value of IPv6NBLsPersectreatedasnonprevalidated for the instance
@@ -397,16 +492,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6NBLstreatedasnonprevalidated sets the value of IPv6NBLstreatedasnonprevalidated for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6NBLstreatedasnonprevalidated(value uint32) (err error) {
-	return instance.SetProperty("IPv6NBLstreatedasnonprevalidated", value)
+	return instance.SetProperty("IPv6NBLstreatedasnonprevalidated", (value))
 }
 
 // GetIPv6NBLstreatedasnonprevalidated gets the value of IPv6NBLstreatedasnonprevalidated for the instance
@@ -415,16 +519,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6outboundNBLsnotprocessedviafastpath sets the value of IPv6outboundNBLsnotprocessedviafastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6outboundNBLsnotprocessedviafastpath(value uint32) (err error) {
-	return instance.SetProperty("IPv6outboundNBLsnotprocessedviafastpath", value)
+	return instance.SetProperty("IPv6outboundNBLsnotprocessedviafastpath", (value))
 }
 
 // GetIPv6outboundNBLsnotprocessedviafastpath gets the value of IPv6outboundNBLsnotprocessedviafastpath for the instance
@@ -433,16 +546,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIPv6outboundNBLsPersecnotprocessedviafastpath sets the value of IPv6outboundNBLsPersecnotprocessedviafastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyIPv6outboundNBLsPersecnotprocessedviafastpath(value uint32) (err error) {
-	return instance.SetProperty("IPv6outboundNBLsPersecnotprocessedviafastpath", value)
+	return instance.SetProperty("IPv6outboundNBLsPersecnotprocessedviafastpath", (value))
 }
 
 // GetIPv6outboundNBLsPersecnotprocessedviafastpath gets the value of IPv6outboundNBLsPersecnotprocessedviafastpath for the instance
@@ -451,16 +573,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRSCsegmentforwardingfailuresduringsoftwaresegmentation sets the value of RSCsegmentforwardingfailuresduringsoftwaresegmentation for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyRSCsegmentforwardingfailuresduringsoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("RSCsegmentforwardingfailuresduringsoftwaresegmentation", value)
+	return instance.SetProperty("RSCsegmentforwardingfailuresduringsoftwaresegmentation", (value))
 }
 
 // GetRSCsegmentforwardingfailuresduringsoftwaresegmentation gets the value of RSCsegmentforwardingfailuresduringsoftwaresegmentation for the instance
@@ -469,16 +600,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRSCsegmentsforwardedviaLSO sets the value of RSCsegmentsforwardedviaLSO for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyRSCsegmentsforwardedviaLSO(value uint32) (err error) {
-	return instance.SetProperty("RSCsegmentsforwardedviaLSO", value)
+	return instance.SetProperty("RSCsegmentsforwardedviaLSO", (value))
 }
 
 // GetRSCsegmentsforwardedviaLSO gets the value of RSCsegmentsforwardedviaLSO for the instance
@@ -487,16 +627,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRSCsegmentsforwardedviasoftwaresegmentation sets the value of RSCsegmentsforwardedviasoftwaresegmentation for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyRSCsegmentsforwardedviasoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("RSCsegmentsforwardedviasoftwaresegmentation", value)
+	return instance.SetProperty("RSCsegmentsforwardedviasoftwaresegmentation", (value))
 }
 
 // GetRSCsegmentsforwardedviasoftwaresegmentation gets the value of RSCsegmentsforwardedviasoftwaresegmentation for the instance
@@ -505,16 +654,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRSCsegmentsforwardedviasoftwaresegmentationandchecksum sets the value of RSCsegmentsforwardedviasoftwaresegmentationandchecksum for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyRSCsegmentsforwardedviasoftwaresegmentationandchecksum(value uint32) (err error) {
-	return instance.SetProperty("RSCsegmentsforwardedviasoftwaresegmentationandchecksum", value)
+	return instance.SetProperty("RSCsegmentsforwardedviasoftwaresegmentationandchecksum", (value))
 }
 
 // GetRSCsegmentsforwardedviasoftwaresegmentationandchecksum gets the value of RSCsegmentsforwardedviasoftwaresegmentationandchecksum for the instance
@@ -523,16 +681,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTCPchecksumerrors sets the value of TCPchecksumerrors for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPchecksumerrors(value uint32) (err error) {
-	return instance.SetProperty("TCPchecksumerrors", value)
+	return instance.SetProperty("TCPchecksumerrors", (value))
 }
 
 // GetTCPchecksumerrors gets the value of TCPchecksumerrors for the instance
@@ -541,16 +708,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTCPconnectrequestsfallenoffloopbackfastpath sets the value of TCPconnectrequestsfallenoffloopbackfastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPconnectrequestsfallenoffloopbackfastpath(value uint32) (err error) {
-	return instance.SetProperty("TCPconnectrequestsfallenoffloopbackfastpath", value)
+	return instance.SetProperty("TCPconnectrequestsfallenoffloopbackfastpath", (value))
 }
 
 // GetTCPconnectrequestsfallenoffloopbackfastpath gets the value of TCPconnectrequestsfallenoffloopbackfastpath for the instance
@@ -559,16 +735,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTCPconnectrequestsPersecfallenoffloopbackfastpath sets the value of TCPconnectrequestsPersecfallenoffloopbackfastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPconnectrequestsPersecfallenoffloopbackfastpath(value uint32) (err error) {
-	return instance.SetProperty("TCPconnectrequestsPersecfallenoffloopbackfastpath", value)
+	return instance.SetProperty("TCPconnectrequestsPersecfallenoffloopbackfastpath", (value))
 }
 
 // GetTCPconnectrequestsPersecfallenoffloopbackfastpath gets the value of TCPconnectrequestsPersecfallenoffloopbackfastpath for the instance
@@ -577,16 +762,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTCPinboundsegmentsnotprocessedviafastpath sets the value of TCPinboundsegmentsnotprocessedviafastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPinboundsegmentsnotprocessedviafastpath(value uint32) (err error) {
-	return instance.SetProperty("TCPinboundsegmentsnotprocessedviafastpath", value)
+	return instance.SetProperty("TCPinboundsegmentsnotprocessedviafastpath", (value))
 }
 
 // GetTCPinboundsegmentsnotprocessedviafastpath gets the value of TCPinboundsegmentsnotprocessedviafastpath for the instance
@@ -595,16 +789,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTCPinboundsegmentsPersecnotprocessedviafastpath sets the value of TCPinboundsegmentsPersecnotprocessedviafastpath for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPinboundsegmentsPersecnotprocessedviafastpath(value uint32) (err error) {
-	return instance.SetProperty("TCPinboundsegmentsPersecnotprocessedviafastpath", value)
+	return instance.SetProperty("TCPinboundsegmentsPersecnotprocessedviafastpath", (value))
 }
 
 // GetTCPinboundsegmentsPersecnotprocessedviafastpath gets the value of TCPinboundsegmentsPersecnotprocessedviafastpath for the instance
@@ -613,52 +816,25 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetTCPRSCbytesreceived sets the value of TCPRSCbytesreceived for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPRSCbytesreceived(value uint32) (err error) {
-	return instance.SetProperty("TCPRSCbytesreceived", value)
-}
-
-// GetTCPRSCbytesreceived gets the value of TCPRSCbytesreceived for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyTCPRSCbytesreceived() (value uint32, err error) {
-	retValue, err := instance.GetProperty("TCPRSCbytesreceived")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint32)
+
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetTCPRSCevents sets the value of TCPRSCevents for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPRSCevents(value uint32) (err error) {
-	return instance.SetProperty("TCPRSCevents", value)
-}
-
-// GetTCPRSCevents gets the value of TCPRSCevents for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyTCPRSCevents() (value uint32, err error) {
-	retValue, err := instance.GetProperty("TCPRSCevents")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTCPtimeouts sets the value of TCPtimeouts for the instance
 func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyTCPtimeouts(value uint32) (err error) {
-	return instance.SetProperty("TCPtimeouts", value)
+	return instance.SetProperty("TCPtimeouts", (value))
 }
 
 // GetTCPtimeouts gets the value of TCPtimeouts for the instance
@@ -667,117 +843,18 @@ func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetUDPdatagramscreatedviasoftwaresegmentation sets the value of UDPdatagramscreatedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUDPdatagramscreatedviasoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("UDPdatagramscreatedviasoftwaresegmentation", value)
-}
-
-// GetUDPdatagramscreatedviasoftwaresegmentation gets the value of UDPdatagramscreatedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUDPdatagramscreatedviasoftwaresegmentation() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UDPdatagramscreatedviasoftwaresegmentation")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint32)
+
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetUDPURObytesreceived sets the value of UDPURObytesreceived for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUDPURObytesreceived(value uint32) (err error) {
-	return instance.SetProperty("UDPURObytesreceived", value)
-}
-
-// GetUDPURObytesreceived gets the value of UDPURObytesreceived for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUDPURObytesreceived() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UDPURObytesreceived")
-	if err != nil {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
 
-// SetUDPUROevents sets the value of UDPUROevents for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUDPUROevents(value uint32) (err error) {
-	return instance.SetProperty("UDPUROevents", value)
-}
+	value = uint32(valuetmp)
 
-// GetUDPUROevents gets the value of UDPUROevents for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUDPUROevents() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UDPUROevents")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetUROsegmentforwardingfailuresduringsoftwaresegmentation sets the value of UROsegmentforwardingfailuresduringsoftwaresegmentation for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentforwardingfailuresduringsoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentforwardingfailuresduringsoftwaresegmentation", value)
-}
-
-// GetUROsegmentforwardingfailuresduringsoftwaresegmentation gets the value of UROsegmentforwardingfailuresduringsoftwaresegmentation for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentforwardingfailuresduringsoftwaresegmentation() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentforwardingfailuresduringsoftwaresegmentation")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetUROsegmentsforwardedviasoftwaresegmentation sets the value of UROsegmentsforwardedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentsforwardedviasoftwaresegmentation(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentsforwardedviasoftwaresegmentation", value)
-}
-
-// GetUROsegmentsforwardedviasoftwaresegmentation gets the value of UROsegmentsforwardedviasoftwaresegmentation for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentsforwardedviasoftwaresegmentation() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentsforwardedviasoftwaresegmentation")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetUROsegmentsforwardedviasoftwaresegmentationandchecksum sets the value of UROsegmentsforwardedviasoftwaresegmentationandchecksum for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) SetPropertyUROsegmentsforwardedviasoftwaresegmentationandchecksum(value uint32) (err error) {
-	return instance.SetProperty("UROsegmentsforwardedviasoftwaresegmentationandchecksum", value)
-}
-
-// GetUROsegmentsforwardedviasoftwaresegmentationandchecksum gets the value of UROsegmentsforwardedviasoftwaresegmentationandchecksum for the instance
-func (instance *Win32_PerfRawData_TCPIPCounters_TCPIPPerformanceDiagnostics) GetPropertyUROsegmentsforwardedviasoftwaresegmentationandchecksum() (value uint32, err error) {
-	retValue, err := instance.GetProperty("UROsegmentsforwardedviasoftwaresegmentationandchecksum")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSGeneralSetting struct
@@ -91,7 +93,7 @@ func NewWin32_TSGeneralSettingEx6(hostName string,
 
 // SetCertificateName sets the value of CertificateName for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyCertificateName(value string) (err error) {
-	return instance.SetProperty("CertificateName", value)
+	return instance.SetProperty("CertificateName", (value))
 }
 
 // GetCertificateName gets the value of CertificateName for the instance
@@ -100,16 +102,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyCertificateName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCertificates sets the value of Certificates for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyCertificates(value []uint8) (err error) {
-	return instance.SetProperty("Certificates", value)
+	return instance.SetProperty("Certificates", (value))
 }
 
 // GetCertificates gets the value of Certificates for the instance
@@ -118,16 +129,26 @@ func (instance *Win32_TSGeneralSetting) GetPropertyCertificates() (value []uint8
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetComment sets the value of Comment for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyComment(value string) (err error) {
-	return instance.SetProperty("Comment", value)
+	return instance.SetProperty("Comment", (value))
 }
 
 // GetComment gets the value of Comment for the instance
@@ -136,16 +157,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyComment() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMinEncryptionLevel sets the value of MinEncryptionLevel for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyMinEncryptionLevel(value uint32) (err error) {
-	return instance.SetProperty("MinEncryptionLevel", value)
+	return instance.SetProperty("MinEncryptionLevel", (value))
 }
 
 // GetMinEncryptionLevel gets the value of MinEncryptionLevel for the instance
@@ -154,16 +184,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyMinEncryptionLevel() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceMinEncryptionLevel sets the value of PolicySourceMinEncryptionLevel for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyPolicySourceMinEncryptionLevel(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceMinEncryptionLevel", value)
+	return instance.SetProperty("PolicySourceMinEncryptionLevel", (value))
 }
 
 // GetPolicySourceMinEncryptionLevel gets the value of PolicySourceMinEncryptionLevel for the instance
@@ -172,16 +211,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyPolicySourceMinEncryptionLeve
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceSecurityLayer sets the value of PolicySourceSecurityLayer for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyPolicySourceSecurityLayer(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceSecurityLayer", value)
+	return instance.SetProperty("PolicySourceSecurityLayer", (value))
 }
 
 // GetPolicySourceSecurityLayer gets the value of PolicySourceSecurityLayer for the instance
@@ -190,16 +238,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyPolicySourceSecurityLayer() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceUserAuthenticationRequired sets the value of PolicySourceUserAuthenticationRequired for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyPolicySourceUserAuthenticationRequired(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceUserAuthenticationRequired", value)
+	return instance.SetProperty("PolicySourceUserAuthenticationRequired", (value))
 }
 
 // GetPolicySourceUserAuthenticationRequired gets the value of PolicySourceUserAuthenticationRequired for the instance
@@ -208,16 +265,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyPolicySourceUserAuthenticatio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSecurityLayer sets the value of SecurityLayer for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertySecurityLayer(value uint32) (err error) {
-	return instance.SetProperty("SecurityLayer", value)
+	return instance.SetProperty("SecurityLayer", (value))
 }
 
 // GetSecurityLayer gets the value of SecurityLayer for the instance
@@ -226,16 +292,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertySecurityLayer() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSSLCertificateSHA1Hash sets the value of SSLCertificateSHA1Hash for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertySSLCertificateSHA1Hash(value string) (err error) {
-	return instance.SetProperty("SSLCertificateSHA1Hash", value)
+	return instance.SetProperty("SSLCertificateSHA1Hash", (value))
 }
 
 // GetSSLCertificateSHA1Hash gets the value of SSLCertificateSHA1Hash for the instance
@@ -244,16 +319,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertySSLCertificateSHA1Hash() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSSLCertificateSHA1HashType sets the value of SSLCertificateSHA1HashType for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertySSLCertificateSHA1HashType(value uint32) (err error) {
-	return instance.SetProperty("SSLCertificateSHA1HashType", value)
+	return instance.SetProperty("SSLCertificateSHA1HashType", (value))
 }
 
 // GetSSLCertificateSHA1HashType gets the value of SSLCertificateSHA1HashType for the instance
@@ -262,16 +346,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertySSLCertificateSHA1HashType() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTerminalProtocol sets the value of TerminalProtocol for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyTerminalProtocol(value string) (err error) {
-	return instance.SetProperty("TerminalProtocol", value)
+	return instance.SetProperty("TerminalProtocol", (value))
 }
 
 // GetTerminalProtocol gets the value of TerminalProtocol for the instance
@@ -280,16 +373,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyTerminalProtocol() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTransport sets the value of Transport for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyTransport(value string) (err error) {
-	return instance.SetProperty("Transport", value)
+	return instance.SetProperty("Transport", (value))
 }
 
 // GetTransport gets the value of Transport for the instance
@@ -298,16 +400,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyTransport() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserAuthenticationRequired sets the value of UserAuthenticationRequired for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyUserAuthenticationRequired(value uint32) (err error) {
-	return instance.SetProperty("UserAuthenticationRequired", value)
+	return instance.SetProperty("UserAuthenticationRequired", (value))
 }
 
 // GetUserAuthenticationRequired gets the value of UserAuthenticationRequired for the instance
@@ -316,16 +427,25 @@ func (instance *Win32_TSGeneralSetting) GetPropertyUserAuthenticationRequired() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWindowsAuthentication sets the value of WindowsAuthentication for the instance
 func (instance *Win32_TSGeneralSetting) SetPropertyWindowsAuthentication(value uint32) (err error) {
-	return instance.SetProperty("WindowsAuthentication", value)
+	return instance.SetProperty("WindowsAuthentication", (value))
 }
 
 // GetWindowsAuthentication gets the value of WindowsAuthentication for the instance
@@ -334,10 +454,19 @@ func (instance *Win32_TSGeneralSetting) GetPropertyWindowsAuthentication() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

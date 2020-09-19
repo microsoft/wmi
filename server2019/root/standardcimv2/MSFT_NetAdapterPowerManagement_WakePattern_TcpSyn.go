@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn struct
@@ -61,7 +63,7 @@ func NewMSFT_NetAdapterPowerManagement_WakePattern_TcpSynEx6(hostName string,
 
 // SetDestinationAddress sets the value of DestinationAddress for the instance
 func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) SetPropertyDestinationAddress(value string) (err error) {
-	return instance.SetProperty("DestinationAddress", value)
+	return instance.SetProperty("DestinationAddress", (value))
 }
 
 // GetDestinationAddress gets the value of DestinationAddress for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) GetPropertyDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDestinationPort sets the value of DestinationPort for the instance
 func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) SetPropertyDestinationPort(value uint16) (err error) {
-	return instance.SetProperty("DestinationPort", value)
+	return instance.SetProperty("DestinationPort", (value))
 }
 
 // GetDestinationPort gets the value of DestinationPort for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) GetPropertyDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSourceAddress sets the value of SourceAddress for the instance
 func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) SetPropertySourceAddress(value string) (err error) {
-	return instance.SetProperty("SourceAddress", value)
+	return instance.SetProperty("SourceAddress", (value))
 }
 
 // GetSourceAddress gets the value of SourceAddress for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) GetPropertySo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSourcePort sets the value of SourcePort for the instance
 func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) SetPropertySourcePort(value uint16) (err error) {
-	return instance.SetProperty("SourcePort", value)
+	return instance.SetProperty("SourcePort", (value))
 }
 
 // GetSourcePort gets the value of SourcePort for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_NetAdapterPowerManagement_WakePattern_TcpSyn) GetPropertySo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

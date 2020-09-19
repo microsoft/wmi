@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Scaleout
 //////////////////////////////////////////////
 package scaleout
@@ -11,7 +11,9 @@ package scaleout
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ClusterSetKey struct
@@ -56,7 +58,7 @@ func NewMSFT_ClusterSetKeyEx6(hostName string,
 
 // SetCert sets the value of Cert for the instance
 func (instance *MSFT_ClusterSetKey) SetPropertyCert(value []uint8) (err error) {
-	return instance.SetProperty("Cert", value)
+	return instance.SetProperty("Cert", (value))
 }
 
 // GetCert gets the value of Cert for the instance
@@ -65,16 +67,26 @@ func (instance *MSFT_ClusterSetKey) GetPropertyCert() (value []uint8, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *MSFT_ClusterSetKey) SetPropertykey(value []uint8) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -83,9 +95,19 @@ func (instance *MSFT_ClusterSetKey) GetPropertykey() (value []uint8, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }

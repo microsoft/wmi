@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSoP_PolicySettingLink struct
@@ -56,7 +58,7 @@ func NewRSoP_PolicySettingLinkEx6(hostName string,
 
 // Setsetting sets the value of setting for the instance
 func (instance *RSoP_PolicySettingLink) SetPropertysetting(value RSOP_PolicySetting) (err error) {
-	return instance.SetProperty("setting", value)
+	return instance.SetProperty("setting", (value))
 }
 
 // Getsetting gets the value of setting for the instance
@@ -65,16 +67,25 @@ func (instance *RSoP_PolicySettingLink) GetPropertysetting() (value RSOP_PolicyS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSOP_PolicySetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSOP_PolicySetting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSOP_PolicySetting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSOP_PolicySetting(valuetmp)
+
 	return
 }
 
 // Setstatus sets the value of status for the instance
 func (instance *RSoP_PolicySettingLink) SetPropertystatus(value RSoP_PolicySettingStatus) (err error) {
-	return instance.SetProperty("status", value)
+	return instance.SetProperty("status", (value))
 }
 
 // Getstatus gets the value of status for the instance
@@ -83,9 +94,18 @@ func (instance *RSoP_PolicySettingLink) GetPropertystatus() (value RSoP_PolicySe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RSoP_PolicySettingStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(RSoP_PolicySettingStatus)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " RSoP_PolicySettingStatus is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RSoP_PolicySettingStatus(valuetmp)
+
 	return
 }

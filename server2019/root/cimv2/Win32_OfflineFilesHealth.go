@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_OfflineFilesHealth struct
@@ -65,7 +67,7 @@ func NewWin32_OfflineFilesHealthEx6(hostName string,
 
 // SetLastSuccessfulSyncTime sets the value of LastSuccessfulSyncTime for the instance
 func (instance *Win32_OfflineFilesHealth) SetPropertyLastSuccessfulSyncTime(value string) (err error) {
-	return instance.SetProperty("LastSuccessfulSyncTime", value)
+	return instance.SetProperty("LastSuccessfulSyncTime", (value))
 }
 
 // GetLastSuccessfulSyncTime gets the value of LastSuccessfulSyncTime for the instance
@@ -74,16 +76,25 @@ func (instance *Win32_OfflineFilesHealth) GetPropertyLastSuccessfulSyncTime() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastSyncStatus sets the value of LastSyncStatus for the instance
 func (instance *Win32_OfflineFilesHealth) SetPropertyLastSyncStatus(value uint8) (err error) {
-	return instance.SetProperty("LastSyncStatus", value)
+	return instance.SetProperty("LastSyncStatus", (value))
 }
 
 // GetLastSyncStatus gets the value of LastSyncStatus for the instance
@@ -92,16 +103,25 @@ func (instance *Win32_OfflineFilesHealth) GetPropertyLastSyncStatus() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetLastSyncTime sets the value of LastSyncTime for the instance
 func (instance *Win32_OfflineFilesHealth) SetPropertyLastSyncTime(value string) (err error) {
-	return instance.SetProperty("LastSyncTime", value)
+	return instance.SetProperty("LastSyncTime", (value))
 }
 
 // GetLastSyncTime gets the value of LastSyncTime for the instance
@@ -110,16 +130,25 @@ func (instance *Win32_OfflineFilesHealth) GetPropertyLastSyncTime() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOfflineAccessEnabled sets the value of OfflineAccessEnabled for the instance
 func (instance *Win32_OfflineFilesHealth) SetPropertyOfflineAccessEnabled(value bool) (err error) {
-	return instance.SetProperty("OfflineAccessEnabled", value)
+	return instance.SetProperty("OfflineAccessEnabled", (value))
 }
 
 // GetOfflineAccessEnabled gets the value of OfflineAccessEnabled for the instance
@@ -128,16 +157,25 @@ func (instance *Win32_OfflineFilesHealth) GetPropertyOfflineAccessEnabled() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOnlineMode sets the value of OnlineMode for the instance
 func (instance *Win32_OfflineFilesHealth) SetPropertyOnlineMode(value bool) (err error) {
-	return instance.SetProperty("OnlineMode", value)
+	return instance.SetProperty("OnlineMode", (value))
 }
 
 // GetOnlineMode gets the value of OnlineMode for the instance
@@ -146,9 +184,18 @@ func (instance *Win32_OfflineFilesHealth) GetPropertyOnlineMode() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

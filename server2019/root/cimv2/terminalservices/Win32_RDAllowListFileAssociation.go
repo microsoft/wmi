@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
@@ -11,7 +11,9 @@ package terminalservices
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RDAllowListFileAssociation struct
@@ -59,7 +61,7 @@ func NewWin32_RDAllowListFileAssociationEx6(hostName string,
 
 // SetAppAlias sets the value of AppAlias for the instance
 func (instance *Win32_RDAllowListFileAssociation) SetPropertyAppAlias(value string) (err error) {
-	return instance.SetProperty("AppAlias", value)
+	return instance.SetProperty("AppAlias", (value))
 }
 
 // GetAppAlias gets the value of AppAlias for the instance
@@ -68,16 +70,25 @@ func (instance *Win32_RDAllowListFileAssociation) GetPropertyAppAlias() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExtName sets the value of ExtName for the instance
 func (instance *Win32_RDAllowListFileAssociation) SetPropertyExtName(value string) (err error) {
-	return instance.SetProperty("ExtName", value)
+	return instance.SetProperty("ExtName", (value))
 }
 
 // GetExtName gets the value of ExtName for the instance
@@ -86,16 +97,25 @@ func (instance *Win32_RDAllowListFileAssociation) GetPropertyExtName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProgIdHint sets the value of ProgIdHint for the instance
 func (instance *Win32_RDAllowListFileAssociation) SetPropertyProgIdHint(value string) (err error) {
-	return instance.SetProperty("ProgIdHint", value)
+	return instance.SetProperty("ProgIdHint", (value))
 }
 
 // GetProgIdHint gets the value of ProgIdHint for the instance
@@ -104,9 +124,18 @@ func (instance *Win32_RDAllowListFileAssociation) GetPropertyProgIdHint() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

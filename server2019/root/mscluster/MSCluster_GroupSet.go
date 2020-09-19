@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
@@ -11,7 +11,9 @@ package mscluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_GroupSet struct
@@ -92,7 +94,7 @@ func NewMSCluster_GroupSetEx6(hostName string,
 
 // SetClusterNodeObjectReturnedFrom sets the value of ClusterNodeObjectReturnedFrom for the instance
 func (instance *MSCluster_GroupSet) SetPropertyClusterNodeObjectReturnedFrom(value string) (err error) {
-	return instance.SetProperty("ClusterNodeObjectReturnedFrom", value)
+	return instance.SetProperty("ClusterNodeObjectReturnedFrom", (value))
 }
 
 // GetClusterNodeObjectReturnedFrom gets the value of ClusterNodeObjectReturnedFrom for the instance
@@ -101,16 +103,25 @@ func (instance *MSCluster_GroupSet) GetPropertyClusterNodeObjectReturnedFrom() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFaultDomains sets the value of FaultDomains for the instance
 func (instance *MSCluster_GroupSet) SetPropertyFaultDomains(value uint32) (err error) {
-	return instance.SetProperty("FaultDomains", value)
+	return instance.SetProperty("FaultDomains", (value))
 }
 
 // GetFaultDomains gets the value of FaultDomains for the instance
@@ -119,16 +130,25 @@ func (instance *MSCluster_GroupSet) GetPropertyFaultDomains() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGroupNames sets the value of GroupNames for the instance
 func (instance *MSCluster_GroupSet) SetPropertyGroupNames(value []string) (err error) {
-	return instance.SetProperty("GroupNames", value)
+	return instance.SetProperty("GroupNames", (value))
 }
 
 // GetGroupNames gets the value of GroupNames for the instance
@@ -137,16 +157,26 @@ func (instance *MSCluster_GroupSet) GetPropertyGroupNames() (value []string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIsAvailabilitySet sets the value of IsAvailabilitySet for the instance
 func (instance *MSCluster_GroupSet) SetPropertyIsAvailabilitySet(value bool) (err error) {
-	return instance.SetProperty("IsAvailabilitySet", value)
+	return instance.SetProperty("IsAvailabilitySet", (value))
 }
 
 // GetIsAvailabilitySet gets the value of IsAvailabilitySet for the instance
@@ -155,16 +185,25 @@ func (instance *MSCluster_GroupSet) GetPropertyIsAvailabilitySet() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsGlobal sets the value of IsGlobal for the instance
 func (instance *MSCluster_GroupSet) SetPropertyIsGlobal(value bool) (err error) {
-	return instance.SetProperty("IsGlobal", value)
+	return instance.SetProperty("IsGlobal", (value))
 }
 
 // GetIsGlobal gets the value of IsGlobal for the instance
@@ -173,16 +212,25 @@ func (instance *MSCluster_GroupSet) GetPropertyIsGlobal() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSCluster_GroupSet) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -191,16 +239,25 @@ func (instance *MSCluster_GroupSet) GetPropertyName() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNodeDomainInfo sets the value of NodeDomainInfo for the instance
 func (instance *MSCluster_GroupSet) SetPropertyNodeDomainInfo(value []string) (err error) {
-	return instance.SetProperty("NodeDomainInfo", value)
+	return instance.SetProperty("NodeDomainInfo", (value))
 }
 
 // GetNodeDomainInfo gets the value of NodeDomainInfo for the instance
@@ -209,16 +266,26 @@ func (instance *MSCluster_GroupSet) GetPropertyNodeDomainInfo() (value []string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetProviderNames sets the value of ProviderNames for the instance
 func (instance *MSCluster_GroupSet) SetPropertyProviderNames(value []string) (err error) {
-	return instance.SetProperty("ProviderNames", value)
+	return instance.SetProperty("ProviderNames", (value))
 }
 
 // GetProviderNames gets the value of ProviderNames for the instance
@@ -227,16 +294,26 @@ func (instance *MSCluster_GroupSet) GetPropertyProviderNames() (value []string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetReserveSpareNode sets the value of ReserveSpareNode for the instance
 func (instance *MSCluster_GroupSet) SetPropertyReserveSpareNode(value bool) (err error) {
-	return instance.SetProperty("ReserveSpareNode", value)
+	return instance.SetProperty("ReserveSpareNode", (value))
 }
 
 // GetReserveSpareNode gets the value of ReserveSpareNode for the instance
@@ -245,16 +322,25 @@ func (instance *MSCluster_GroupSet) GetPropertyReserveSpareNode() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetStartupCount sets the value of StartupCount for the instance
 func (instance *MSCluster_GroupSet) SetPropertyStartupCount(value uint32) (err error) {
-	return instance.SetProperty("StartupCount", value)
+	return instance.SetProperty("StartupCount", (value))
 }
 
 // GetStartupCount gets the value of StartupCount for the instance
@@ -263,16 +349,25 @@ func (instance *MSCluster_GroupSet) GetPropertyStartupCount() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStartupDelay sets the value of StartupDelay for the instance
 func (instance *MSCluster_GroupSet) SetPropertyStartupDelay(value uint32) (err error) {
-	return instance.SetProperty("StartupDelay", value)
+	return instance.SetProperty("StartupDelay", (value))
 }
 
 // GetStartupDelay gets the value of StartupDelay for the instance
@@ -281,16 +376,25 @@ func (instance *MSCluster_GroupSet) GetPropertyStartupDelay() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStartupDelayTrigger sets the value of StartupDelayTrigger for the instance
 func (instance *MSCluster_GroupSet) SetPropertyStartupDelayTrigger(value uint32) (err error) {
-	return instance.SetProperty("StartupDelayTrigger", value)
+	return instance.SetProperty("StartupDelayTrigger", (value))
 }
 
 // GetStartupDelayTrigger gets the value of StartupDelayTrigger for the instance
@@ -299,16 +403,25 @@ func (instance *MSCluster_GroupSet) GetPropertyStartupDelayTrigger() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStatusInformation sets the value of StatusInformation for the instance
 func (instance *MSCluster_GroupSet) SetPropertyStatusInformation(value uint64) (err error) {
-	return instance.SetProperty("StatusInformation", value)
+	return instance.SetProperty("StatusInformation", (value))
 }
 
 // GetStatusInformation gets the value of StatusInformation for the instance
@@ -317,16 +430,25 @@ func (instance *MSCluster_GroupSet) GetPropertyStatusInformation() (value uint64
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUpdateDomains sets the value of UpdateDomains for the instance
 func (instance *MSCluster_GroupSet) SetPropertyUpdateDomains(value uint32) (err error) {
-	return instance.SetProperty("UpdateDomains", value)
+	return instance.SetProperty("UpdateDomains", (value))
 }
 
 // GetUpdateDomains gets the value of UpdateDomains for the instance
@@ -335,10 +457,19 @@ func (instance *MSCluster_GroupSet) GetPropertyUpdateDomains() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

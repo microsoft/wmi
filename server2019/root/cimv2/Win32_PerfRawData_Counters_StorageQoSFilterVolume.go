@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_StorageQoSFilterVolume struct
@@ -103,7 +105,7 @@ func NewWin32_PerfRawData_Counters_StorageQoSFilterVolumeEx6(hostName string,
 
 // SetAllocationQuantum sets the value of AllocationQuantum for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyAllocationQuantum(value uint64) (err error) {
-	return instance.SetProperty("AllocationQuantum", value)
+	return instance.SetProperty("AllocationQuantum", (value))
 }
 
 // GetAllocationQuantum gets the value of AllocationQuantum for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyAl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgBandwidth sets the value of AvgBandwidth for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyAvgBandwidth(value uint64) (err error) {
-	return instance.SetProperty("AvgBandwidth", value)
+	return instance.SetProperty("AvgBandwidth", (value))
 }
 
 // GetAvgBandwidth gets the value of AvgBandwidth for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDeviceLatency sets the value of AvgDeviceLatency for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyAvgDeviceLatency(value uint64) (err error) {
-	return instance.SetProperty("AvgDeviceLatency", value)
+	return instance.SetProperty("AvgDeviceLatency", (value))
 }
 
 // GetAvgDeviceLatency gets the value of AvgDeviceLatency for the instance
@@ -148,16 +168,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDeviceQueueLength sets the value of AvgDeviceQueueLength for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyAvgDeviceQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgDeviceQueueLength", value)
+	return instance.SetProperty("AvgDeviceQueueLength", (value))
 }
 
 // GetAvgDeviceQueueLength gets the value of AvgDeviceQueueLength for the instance
@@ -166,16 +195,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgIOCost sets the value of AvgIOCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyAvgIOCost(value uint64) (err error) {
-	return instance.SetProperty("AvgIOCost", value)
+	return instance.SetProperty("AvgIOCost", (value))
 }
 
 // GetAvgIOCost gets the value of AvgIOCost for the instance
@@ -184,16 +222,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgNormalizedIOCost sets the value of AvgNormalizedIOCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyAvgNormalizedIOCost(value uint64) (err error) {
-	return instance.SetProperty("AvgNormalizedIOCost", value)
+	return instance.SetProperty("AvgNormalizedIOCost", (value))
 }
 
 // GetAvgNormalizedIOCost gets the value of AvgNormalizedIOCost for the instance
@@ -202,16 +249,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgSchedulerQueueLength sets the value of AvgSchedulerQueueLength for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyAvgSchedulerQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgSchedulerQueueLength", value)
+	return instance.SetProperty("AvgSchedulerQueueLength", (value))
 }
 
 // GetAvgSchedulerQueueLength gets the value of AvgSchedulerQueueLength for the instance
@@ -220,16 +276,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCongestionThreshold sets the value of CongestionThreshold for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyCongestionThreshold(value uint64) (err error) {
-	return instance.SetProperty("CongestionThreshold", value)
+	return instance.SetProperty("CongestionThreshold", (value))
 }
 
 // GetCongestionThreshold gets the value of CongestionThreshold for the instance
@@ -238,16 +303,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyCo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDelayedCost sets the value of DelayedCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyDelayedCost(value uint64) (err error) {
-	return instance.SetProperty("DelayedCost", value)
+	return instance.SetProperty("DelayedCost", (value))
 }
 
 // GetDelayedCost gets the value of DelayedCost for the instance
@@ -256,16 +330,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyDe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEstimatedCapacity sets the value of EstimatedCapacity for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyEstimatedCapacity(value uint64) (err error) {
-	return instance.SetProperty("EstimatedCapacity", value)
+	return instance.SetProperty("EstimatedCapacity", (value))
 }
 
 // GetEstimatedCapacity gets the value of EstimatedCapacity for the instance
@@ -274,16 +357,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyEs
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetFlowSwitchCost sets the value of FlowSwitchCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyFlowSwitchCost(value uint64) (err error) {
-	return instance.SetProperty("FlowSwitchCost", value)
+	return instance.SetProperty("FlowSwitchCost", (value))
 }
 
 // GetFlowSwitchCost gets the value of FlowSwitchCost for the instance
@@ -292,16 +384,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyFl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIssuedCost sets the value of IssuedCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyIssuedCost(value uint64) (err error) {
-	return instance.SetProperty("IssuedCost", value)
+	return instance.SetProperty("IssuedCost", (value))
 }
 
 // GetIssuedCost gets the value of IssuedCost for the instance
@@ -310,16 +411,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyIs
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLatencyTarget sets the value of LatencyTarget for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyLatencyTarget(value uint64) (err error) {
-	return instance.SetProperty("LatencyTarget", value)
+	return instance.SetProperty("LatencyTarget", (value))
 }
 
 // GetLatencyTarget gets the value of LatencyTarget for the instance
@@ -328,16 +438,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyLa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLowerThreshold sets the value of LowerThreshold for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyLowerThreshold(value uint64) (err error) {
-	return instance.SetProperty("LowerThreshold", value)
+	return instance.SetProperty("LowerThreshold", (value))
 }
 
 // GetLowerThreshold gets the value of LowerThreshold for the instance
@@ -346,16 +465,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyLo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNormalizedThroughput sets the value of NormalizedThroughput for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyNormalizedThroughput(value uint64) (err error) {
-	return instance.SetProperty("NormalizedThroughput", value)
+	return instance.SetProperty("NormalizedThroughput", (value))
 }
 
 // GetNormalizedThroughput gets the value of NormalizedThroughput for the instance
@@ -364,16 +492,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyNo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOverheadCost sets the value of OverheadCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertyOverheadCost(value uint64) (err error) {
-	return instance.SetProperty("OverheadCost", value)
+	return instance.SetProperty("OverheadCost", (value))
 }
 
 // GetOverheadCost gets the value of OverheadCost for the instance
@@ -382,16 +519,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertyOv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSectorCost sets the value of SectorCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertySectorCost(value uint64) (err error) {
-	return instance.SetProperty("SectorCost", value)
+	return instance.SetProperty("SectorCost", (value))
 }
 
 // GetSectorCost gets the value of SectorCost for the instance
@@ -400,16 +546,25 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertySe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSeekCost sets the value of SeekCost for the instance
 func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) SetPropertySeekCost(value uint64) (err error) {
-	return instance.SetProperty("SeekCost", value)
+	return instance.SetProperty("SeekCost", (value))
 }
 
 // GetSeekCost gets the value of SeekCost for the instance
@@ -418,9 +573,18 @@ func (instance *Win32_PerfRawData_Counters_StorageQoSFilterVolume) GetPropertySe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

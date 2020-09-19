@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageNodeToPhysicalDisk struct
@@ -80,7 +82,7 @@ func NewMSFT_StorageNodeToPhysicalDiskEx6(hostName string,
 
 // SetDiskNumber sets the value of DiskNumber for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyDiskNumber(value uint32) (err error) {
-	return instance.SetProperty("DiskNumber", value)
+	return instance.SetProperty("DiskNumber", (value))
 }
 
 // GetDiskNumber gets the value of DiskNumber for the instance
@@ -89,16 +91,25 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyDiskNumber() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyHealthStatus(value uint16) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -107,16 +118,25 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyHealthStatus() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIsMpioEnabled sets the value of IsMpioEnabled for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyIsMpioEnabled(value bool) (err error) {
-	return instance.SetProperty("IsMpioEnabled", value)
+	return instance.SetProperty("IsMpioEnabled", (value))
 }
 
 // GetIsMpioEnabled gets the value of IsMpioEnabled for the instance
@@ -125,16 +145,25 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyIsMpioEnabled() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsPhysicallyConnected sets the value of IsPhysicallyConnected for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyIsPhysicallyConnected(value bool) (err error) {
-	return instance.SetProperty("IsPhysicallyConnected", value)
+	return instance.SetProperty("IsPhysicallyConnected", (value))
 }
 
 // GetIsPhysicallyConnected gets the value of IsPhysicallyConnected for the instance
@@ -143,16 +172,25 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyIsPhysicallyConnected
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLoadBalancePolicy sets the value of LoadBalancePolicy for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyLoadBalancePolicy(value uint16) (err error) {
-	return instance.SetProperty("LoadBalancePolicy", value)
+	return instance.SetProperty("LoadBalancePolicy", (value))
 }
 
 // GetLoadBalancePolicy gets the value of LoadBalancePolicy for the instance
@@ -161,16 +199,25 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyLoadBalancePolicy() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -179,16 +226,26 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyOperationalStatus() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetPathId sets the value of PathId for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyPathId(value []string) (err error) {
-	return instance.SetProperty("PathId", value)
+	return instance.SetProperty("PathId", (value))
 }
 
 // GetPathId gets the value of PathId for the instance
@@ -197,16 +254,26 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyPathId() (value []str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPathState sets the value of PathState for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyPathState(value []uint16) (err error) {
-	return instance.SetProperty("PathState", value)
+	return instance.SetProperty("PathState", (value))
 }
 
 // GetPathState gets the value of PathState for the instance
@@ -215,16 +282,26 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyPathState() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetPhysicalDisk sets the value of PhysicalDisk for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyPhysicalDisk(value MSFT_PhysicalDisk) (err error) {
-	return instance.SetProperty("PhysicalDisk", value)
+	return instance.SetProperty("PhysicalDisk", (value))
 }
 
 // GetPhysicalDisk gets the value of PhysicalDisk for the instance
@@ -233,16 +310,25 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyPhysicalDisk() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_PhysicalDisk)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_PhysicalDisk)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_PhysicalDisk is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_PhysicalDisk(valuetmp)
+
 	return
 }
 
 // SetStorageNode sets the value of StorageNode for the instance
 func (instance *MSFT_StorageNodeToPhysicalDisk) SetPropertyStorageNode(value MSFT_StorageNode) (err error) {
-	return instance.SetProperty("StorageNode", value)
+	return instance.SetProperty("StorageNode", (value))
 }
 
 // GetStorageNode gets the value of StorageNode for the instance
@@ -251,9 +337,18 @@ func (instance *MSFT_StorageNodeToPhysicalDisk) GetPropertyStorageNode() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageNode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageNode)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageNode is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageNode(valuetmp)
+
 	return
 }

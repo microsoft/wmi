@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SoftwareIdentity struct
@@ -124,7 +126,7 @@ func NewCIM_SoftwareIdentityEx6(hostName string,
 
 // SetBuildNumber sets the value of BuildNumber for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyBuildNumber(value uint16) (err error) {
-	return instance.SetProperty("BuildNumber", value)
+	return instance.SetProperty("BuildNumber", (value))
 }
 
 // GetBuildNumber gets the value of BuildNumber for the instance
@@ -133,16 +135,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyBuildNumber() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetClassificationDescriptions sets the value of ClassificationDescriptions for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyClassificationDescriptions(value []string) (err error) {
-	return instance.SetProperty("ClassificationDescriptions", value)
+	return instance.SetProperty("ClassificationDescriptions", (value))
 }
 
 // GetClassificationDescriptions gets the value of ClassificationDescriptions for the instance
@@ -151,16 +162,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyClassificationDescriptions() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetClassifications sets the value of Classifications for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyClassifications(value []SoftwareIdentity_Classifications) (err error) {
-	return instance.SetProperty("Classifications", value)
+	return instance.SetProperty("Classifications", (value))
 }
 
 // GetClassifications gets the value of Classifications for the instance
@@ -169,16 +190,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyClassifications() (value []Soft
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]SoftwareIdentity_Classifications)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, SoftwareIdentity_Classifications(valuetmp))
+	}
+
 	return
 }
 
 // SetExtendedResourceType sets the value of ExtendedResourceType for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyExtendedResourceType(value SoftwareIdentity_ExtendedResourceType) (err error) {
-	return instance.SetProperty("ExtendedResourceType", value)
+	return instance.SetProperty("ExtendedResourceType", (value))
 }
 
 // GetExtendedResourceType gets the value of ExtendedResourceType for the instance
@@ -187,16 +218,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyExtendedResourceType() (value S
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SoftwareIdentity_ExtendedResourceType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SoftwareIdentity_ExtendedResourceType(valuetmp)
+
 	return
 }
 
 // SetIdentityInfoType sets the value of IdentityInfoType for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyIdentityInfoType(value []string) (err error) {
-	return instance.SetProperty("IdentityInfoType", value)
+	return instance.SetProperty("IdentityInfoType", (value))
 }
 
 // GetIdentityInfoType gets the value of IdentityInfoType for the instance
@@ -205,16 +245,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyIdentityInfoType() (value []str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIdentityInfoValue sets the value of IdentityInfoValue for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyIdentityInfoValue(value []string) (err error) {
-	return instance.SetProperty("IdentityInfoValue", value)
+	return instance.SetProperty("IdentityInfoValue", (value))
 }
 
 // GetIdentityInfoValue gets the value of IdentityInfoValue for the instance
@@ -223,16 +273,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyIdentityInfoValue() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetIsEntity sets the value of IsEntity for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyIsEntity(value bool) (err error) {
-	return instance.SetProperty("IsEntity", value)
+	return instance.SetProperty("IsEntity", (value))
 }
 
 // GetIsEntity gets the value of IsEntity for the instance
@@ -241,16 +301,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyIsEntity() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsLargeBuildNumber sets the value of IsLargeBuildNumber for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyIsLargeBuildNumber(value bool) (err error) {
-	return instance.SetProperty("IsLargeBuildNumber", value)
+	return instance.SetProperty("IsLargeBuildNumber", (value))
 }
 
 // GetIsLargeBuildNumber gets the value of IsLargeBuildNumber for the instance
@@ -259,16 +328,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyIsLargeBuildNumber() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLanguages sets the value of Languages for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyLanguages(value []string) (err error) {
-	return instance.SetProperty("Languages", value)
+	return instance.SetProperty("Languages", (value))
 }
 
 // GetLanguages gets the value of Languages for the instance
@@ -277,16 +355,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyLanguages() (value []string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLargeBuildNumber sets the value of LargeBuildNumber for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyLargeBuildNumber(value uint64) (err error) {
-	return instance.SetProperty("LargeBuildNumber", value)
+	return instance.SetProperty("LargeBuildNumber", (value))
 }
 
 // GetLargeBuildNumber gets the value of LargeBuildNumber for the instance
@@ -295,16 +383,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyLargeBuildNumber() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMajorVersion sets the value of MajorVersion for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyMajorVersion(value uint16) (err error) {
-	return instance.SetProperty("MajorVersion", value)
+	return instance.SetProperty("MajorVersion", (value))
 }
 
 // GetMajorVersion gets the value of MajorVersion for the instance
@@ -313,16 +410,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyMajorVersion() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -331,16 +437,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyManufacturer() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMinExtendedResourceTypeBuildNumber sets the value of MinExtendedResourceTypeBuildNumber for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyMinExtendedResourceTypeBuildNumber(value uint16) (err error) {
-	return instance.SetProperty("MinExtendedResourceTypeBuildNumber", value)
+	return instance.SetProperty("MinExtendedResourceTypeBuildNumber", (value))
 }
 
 // GetMinExtendedResourceTypeBuildNumber gets the value of MinExtendedResourceTypeBuildNumber for the instance
@@ -349,16 +464,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyMinExtendedResourceTypeBuildNum
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMinExtendedResourceTypeMajorVersion sets the value of MinExtendedResourceTypeMajorVersion for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyMinExtendedResourceTypeMajorVersion(value uint16) (err error) {
-	return instance.SetProperty("MinExtendedResourceTypeMajorVersion", value)
+	return instance.SetProperty("MinExtendedResourceTypeMajorVersion", (value))
 }
 
 // GetMinExtendedResourceTypeMajorVersion gets the value of MinExtendedResourceTypeMajorVersion for the instance
@@ -367,16 +491,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyMinExtendedResourceTypeMajorVer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMinExtendedResourceTypeMinorVersion sets the value of MinExtendedResourceTypeMinorVersion for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyMinExtendedResourceTypeMinorVersion(value uint16) (err error) {
-	return instance.SetProperty("MinExtendedResourceTypeMinorVersion", value)
+	return instance.SetProperty("MinExtendedResourceTypeMinorVersion", (value))
 }
 
 // GetMinExtendedResourceTypeMinorVersion gets the value of MinExtendedResourceTypeMinorVersion for the instance
@@ -385,16 +518,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyMinExtendedResourceTypeMinorVer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMinExtendedResourceTypeRevisionNumber sets the value of MinExtendedResourceTypeRevisionNumber for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyMinExtendedResourceTypeRevisionNumber(value uint16) (err error) {
-	return instance.SetProperty("MinExtendedResourceTypeRevisionNumber", value)
+	return instance.SetProperty("MinExtendedResourceTypeRevisionNumber", (value))
 }
 
 // GetMinExtendedResourceTypeRevisionNumber gets the value of MinExtendedResourceTypeRevisionNumber for the instance
@@ -403,16 +545,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyMinExtendedResourceTypeRevision
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMinorVersion sets the value of MinorVersion for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyMinorVersion(value uint16) (err error) {
-	return instance.SetProperty("MinorVersion", value)
+	return instance.SetProperty("MinorVersion", (value))
 }
 
 // GetMinorVersion gets the value of MinorVersion for the instance
@@ -421,16 +572,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyMinorVersion() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetOtherExtendedResourceTypeDescription sets the value of OtherExtendedResourceTypeDescription for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyOtherExtendedResourceTypeDescription(value string) (err error) {
-	return instance.SetProperty("OtherExtendedResourceTypeDescription", value)
+	return instance.SetProperty("OtherExtendedResourceTypeDescription", (value))
 }
 
 // GetOtherExtendedResourceTypeDescription gets the value of OtherExtendedResourceTypeDescription for the instance
@@ -439,16 +599,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyOtherExtendedResourceTypeDescri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReleaseDate sets the value of ReleaseDate for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyReleaseDate(value string) (err error) {
-	return instance.SetProperty("ReleaseDate", value)
+	return instance.SetProperty("ReleaseDate", (value))
 }
 
 // GetReleaseDate gets the value of ReleaseDate for the instance
@@ -457,16 +626,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyReleaseDate() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRevisionNumber sets the value of RevisionNumber for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyRevisionNumber(value uint16) (err error) {
-	return instance.SetProperty("RevisionNumber", value)
+	return instance.SetProperty("RevisionNumber", (value))
 }
 
 // GetRevisionNumber gets the value of RevisionNumber for the instance
@@ -475,16 +653,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertyRevisionNumber() (value uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -493,16 +680,25 @@ func (instance *CIM_SoftwareIdentity) GetPropertySerialNumber() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetOperatingSystems sets the value of TargetOperatingSystems for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyTargetOperatingSystems(value []string) (err error) {
-	return instance.SetProperty("TargetOperatingSystems", value)
+	return instance.SetProperty("TargetOperatingSystems", (value))
 }
 
 // GetTargetOperatingSystems gets the value of TargetOperatingSystems for the instance
@@ -511,16 +707,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyTargetOperatingSystems() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTargetOSTypes sets the value of TargetOSTypes for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyTargetOSTypes(value []uint16) (err error) {
-	return instance.SetProperty("TargetOSTypes", value)
+	return instance.SetProperty("TargetOSTypes", (value))
 }
 
 // GetTargetOSTypes gets the value of TargetOSTypes for the instance
@@ -529,16 +735,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyTargetOSTypes() (value []uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetTargetTypes sets the value of TargetTypes for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyTargetTypes(value []string) (err error) {
-	return instance.SetProperty("TargetTypes", value)
+	return instance.SetProperty("TargetTypes", (value))
 }
 
 // GetTargetTypes gets the value of TargetTypes for the instance
@@ -547,16 +763,26 @@ func (instance *CIM_SoftwareIdentity) GetPropertyTargetTypes() (value []string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetVersionString sets the value of VersionString for the instance
 func (instance *CIM_SoftwareIdentity) SetPropertyVersionString(value string) (err error) {
-	return instance.SetProperty("VersionString", value)
+	return instance.SetProperty("VersionString", (value))
 }
 
 // GetVersionString gets the value of VersionString for the instance
@@ -565,9 +791,18 @@ func (instance *CIM_SoftwareIdentity) GetPropertyVersionString() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

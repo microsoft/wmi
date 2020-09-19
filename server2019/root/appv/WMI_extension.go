@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // WMI_extension struct
@@ -58,7 +60,7 @@ func NewWMI_extensionEx6(hostName string,
 
 // SetAssemblyName sets the value of AssemblyName for the instance
 func (instance *WMI_extension) SetPropertyAssemblyName(value string) (err error) {
-	return instance.SetProperty("AssemblyName", value)
+	return instance.SetProperty("AssemblyName", (value))
 }
 
 // GetAssemblyName gets the value of AssemblyName for the instance
@@ -67,16 +69,25 @@ func (instance *WMI_extension) GetPropertyAssemblyName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAssemblyPath sets the value of AssemblyPath for the instance
 func (instance *WMI_extension) SetPropertyAssemblyPath(value string) (err error) {
-	return instance.SetProperty("AssemblyPath", value)
+	return instance.SetProperty("AssemblyPath", (value))
 }
 
 // GetAssemblyPath gets the value of AssemblyPath for the instance
@@ -85,16 +96,25 @@ func (instance *WMI_extension) GetPropertyAssemblyPath() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCLRVersion sets the value of CLRVersion for the instance
 func (instance *WMI_extension) SetPropertyCLRVersion(value string) (err error) {
-	return instance.SetProperty("CLRVersion", value)
+	return instance.SetProperty("CLRVersion", (value))
 }
 
 // GetCLRVersion gets the value of CLRVersion for the instance
@@ -103,9 +123,18 @@ func (instance *WMI_extension) GetPropertyCLRVersion() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

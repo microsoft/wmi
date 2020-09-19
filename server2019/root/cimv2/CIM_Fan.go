@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Fan struct
@@ -55,7 +57,7 @@ func NewCIM_FanEx6(hostName string,
 
 // SetDesiredSpeed sets the value of DesiredSpeed for the instance
 func (instance *CIM_Fan) SetPropertyDesiredSpeed(value uint64) (err error) {
-	return instance.SetProperty("DesiredSpeed", value)
+	return instance.SetProperty("DesiredSpeed", (value))
 }
 
 // GetDesiredSpeed gets the value of DesiredSpeed for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_Fan) GetPropertyDesiredSpeed() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVariableSpeed sets the value of VariableSpeed for the instance
 func (instance *CIM_Fan) SetPropertyVariableSpeed(value bool) (err error) {
-	return instance.SetProperty("VariableSpeed", value)
+	return instance.SetProperty("VariableSpeed", (value))
 }
 
 // GetVariableSpeed gets the value of VariableSpeed for the instance
@@ -82,10 +93,19 @@ func (instance *CIM_Fan) GetPropertyVariableSpeed() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

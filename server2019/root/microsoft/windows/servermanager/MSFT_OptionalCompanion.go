@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_OptionalCompanion struct
@@ -59,7 +61,7 @@ func NewMSFT_OptionalCompanionEx6(hostName string,
 
 // SetCompanionComponentName sets the value of CompanionComponentName for the instance
 func (instance *MSFT_OptionalCompanion) SetPropertyCompanionComponentName(value string) (err error) {
-	return instance.SetProperty("CompanionComponentName", value)
+	return instance.SetProperty("CompanionComponentName", (value))
 }
 
 // GetCompanionComponentName gets the value of CompanionComponentName for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_OptionalCompanion) GetPropertyCompanionComponentName() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCompanionType sets the value of CompanionType for the instance
 func (instance *MSFT_OptionalCompanion) SetPropertyCompanionType(value uint8) (err error) {
-	return instance.SetProperty("CompanionType", value)
+	return instance.SetProperty("CompanionType", (value))
 }
 
 // GetCompanionType gets the value of CompanionType for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_OptionalCompanion) GetPropertyCompanionType() (value uint8,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetPrerequisiteEnabled sets the value of PrerequisiteEnabled for the instance
 func (instance *MSFT_OptionalCompanion) SetPropertyPrerequisiteEnabled(value bool) (err error) {
-	return instance.SetProperty("PrerequisiteEnabled", value)
+	return instance.SetProperty("PrerequisiteEnabled", (value))
 }
 
 // GetPrerequisiteEnabled gets the value of PrerequisiteEnabled for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_OptionalCompanion) GetPropertyPrerequisiteEnabled() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

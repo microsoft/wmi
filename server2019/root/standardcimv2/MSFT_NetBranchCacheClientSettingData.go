@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetBranchCacheClientSettingData struct
@@ -73,7 +75,7 @@ func NewMSFT_NetBranchCacheClientSettingDataEx6(hostName string,
 
 // SetCurrentClientMode sets the value of CurrentClientMode for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyCurrentClientMode(value uint32) (err error) {
-	return instance.SetProperty("CurrentClientMode", value)
+	return instance.SetProperty("CurrentClientMode", (value))
 }
 
 // GetCurrentClientMode gets the value of CurrentClientMode for the instance
@@ -82,16 +84,25 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyCurrentClientMo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDistributedCachingIsEnabled sets the value of DistributedCachingIsEnabled for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyDistributedCachingIsEnabled(value bool) (err error) {
-	return instance.SetProperty("DistributedCachingIsEnabled", value)
+	return instance.SetProperty("DistributedCachingIsEnabled", (value))
 }
 
 // GetDistributedCachingIsEnabled gets the value of DistributedCachingIsEnabled for the instance
@@ -100,16 +111,25 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyDistributedCach
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostedCacheDiscoveryEnabled sets the value of HostedCacheDiscoveryEnabled for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyHostedCacheDiscoveryEnabled(value bool) (err error) {
-	return instance.SetProperty("HostedCacheDiscoveryEnabled", value)
+	return instance.SetProperty("HostedCacheDiscoveryEnabled", (value))
 }
 
 // GetHostedCacheDiscoveryEnabled gets the value of HostedCacheDiscoveryEnabled for the instance
@@ -118,16 +138,25 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyHostedCacheDisc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHostedCacheServerList sets the value of HostedCacheServerList for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyHostedCacheServerList(value []string) (err error) {
-	return instance.SetProperty("HostedCacheServerList", value)
+	return instance.SetProperty("HostedCacheServerList", (value))
 }
 
 // GetHostedCacheServerList gets the value of HostedCacheServerList for the instance
@@ -136,16 +165,26 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyHostedCacheServ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetHostedCacheVersion sets the value of HostedCacheVersion for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyHostedCacheVersion(value uint32) (err error) {
-	return instance.SetProperty("HostedCacheVersion", value)
+	return instance.SetProperty("HostedCacheVersion", (value))
 }
 
 // GetHostedCacheVersion gets the value of HostedCacheVersion for the instance
@@ -154,16 +193,25 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyHostedCacheVers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinimumSmbLatencyInMilliseconds sets the value of MinimumSmbLatencyInMilliseconds for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyMinimumSmbLatencyInMilliseconds(value uint32) (err error) {
-	return instance.SetProperty("MinimumSmbLatencyInMilliseconds", value)
+	return instance.SetProperty("MinimumSmbLatencyInMilliseconds", (value))
 }
 
 // GetMinimumSmbLatencyInMilliseconds gets the value of MinimumSmbLatencyInMilliseconds for the instance
@@ -172,16 +220,25 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyMinimumSmbLaten
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPreferredContentInformationVersion sets the value of PreferredContentInformationVersion for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyPreferredContentInformationVersion(value uint32) (err error) {
-	return instance.SetProperty("PreferredContentInformationVersion", value)
+	return instance.SetProperty("PreferredContentInformationVersion", (value))
 }
 
 // GetPreferredContentInformationVersion gets the value of PreferredContentInformationVersion for the instance
@@ -190,16 +247,25 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyPreferredConten
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServeDistributedCachingPeersOnBatteryPower sets the value of ServeDistributedCachingPeersOnBatteryPower for the instance
 func (instance *MSFT_NetBranchCacheClientSettingData) SetPropertyServeDistributedCachingPeersOnBatteryPower(value bool) (err error) {
-	return instance.SetProperty("ServeDistributedCachingPeersOnBatteryPower", value)
+	return instance.SetProperty("ServeDistributedCachingPeersOnBatteryPower", (value))
 }
 
 // GetServeDistributedCachingPeersOnBatteryPower gets the value of ServeDistributedCachingPeersOnBatteryPower for the instance
@@ -208,9 +274,18 @@ func (instance *MSFT_NetBranchCacheClientSettingData) GetPropertyServeDistribute
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000 struct
@@ -76,7 +78,7 @@ func NewWin32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000Ex6(hostName stri
 
 // SetAverageparticipantcommitresponsetime sets the value of Averageparticipantcommitresponsetime for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyAverageparticipantcommitresponsetime(value uint32) (err error) {
-	return instance.SetProperty("Averageparticipantcommitresponsetime", value)
+	return instance.SetProperty("Averageparticipantcommitresponsetime", (value))
 }
 
 // GetAverageparticipantcommitresponsetime gets the value of Averageparticipantcommitresponsetime for the instance
@@ -85,16 +87,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAverageparticipantprepareresponsetime sets the value of Averageparticipantprepareresponsetime for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyAverageparticipantprepareresponsetime(value uint32) (err error) {
-	return instance.SetProperty("Averageparticipantprepareresponsetime", value)
+	return instance.SetProperty("Averageparticipantprepareresponsetime", (value))
 }
 
 // GetAverageparticipantprepareresponsetime gets the value of Averageparticipantprepareresponsetime for the instance
@@ -103,16 +114,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCommitretrycountPersec sets the value of CommitretrycountPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyCommitretrycountPersec(value uint32) (err error) {
-	return instance.SetProperty("CommitretrycountPersec", value)
+	return instance.SetProperty("CommitretrycountPersec", (value))
 }
 
 // GetCommitretrycountPersec gets the value of CommitretrycountPersec for the instance
@@ -121,16 +141,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFaultsreceivedcountPersec sets the value of FaultsreceivedcountPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyFaultsreceivedcountPersec(value uint32) (err error) {
-	return instance.SetProperty("FaultsreceivedcountPersec", value)
+	return instance.SetProperty("FaultsreceivedcountPersec", (value))
 }
 
 // GetFaultsreceivedcountPersec gets the value of FaultsreceivedcountPersec for the instance
@@ -139,16 +168,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFaultssentcountPersec sets the value of FaultssentcountPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyFaultssentcountPersec(value uint32) (err error) {
-	return instance.SetProperty("FaultssentcountPersec", value)
+	return instance.SetProperty("FaultssentcountPersec", (value))
 }
 
 // GetFaultssentcountPersec gets the value of FaultssentcountPersec for the instance
@@ -157,16 +195,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMessagesendfailuresPersec sets the value of MessagesendfailuresPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyMessagesendfailuresPersec(value uint32) (err error) {
-	return instance.SetProperty("MessagesendfailuresPersec", value)
+	return instance.SetProperty("MessagesendfailuresPersec", (value))
 }
 
 // GetMessagesendfailuresPersec gets the value of MessagesendfailuresPersec for the instance
@@ -175,16 +222,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPreparedretrycountPersec sets the value of PreparedretrycountPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyPreparedretrycountPersec(value uint32) (err error) {
-	return instance.SetProperty("PreparedretrycountPersec", value)
+	return instance.SetProperty("PreparedretrycountPersec", (value))
 }
 
 // GetPreparedretrycountPersec gets the value of PreparedretrycountPersec for the instance
@@ -193,16 +249,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrepareretrycountPersec sets the value of PrepareretrycountPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyPrepareretrycountPersec(value uint32) (err error) {
-	return instance.SetProperty("PrepareretrycountPersec", value)
+	return instance.SetProperty("PrepareretrycountPersec", (value))
 }
 
 // GetPrepareretrycountPersec gets the value of PrepareretrycountPersec for the instance
@@ -211,16 +276,25 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReplayretrycountPersec sets the value of ReplayretrycountPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) SetPropertyReplayretrycountPersec(value uint32) (err error) {
-	return instance.SetProperty("ReplayretrycountPersec", value)
+	return instance.SetProperty("ReplayretrycountPersec", (value))
 }
 
 // GetReplayretrycountPersec gets the value of ReplayretrycountPersec for the instance
@@ -229,9 +303,18 @@ func (instance *Win32_PerfFormattedData_MSDTCBridge4000_MSDTCBridge4000) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

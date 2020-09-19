@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_StorageSpacesWriteCache struct
@@ -136,7 +138,7 @@ func NewWin32_PerfFormattedData_Counters_StorageSpacesWriteCacheEx6(hostName str
 
 // SetCacheAdvances sets the value of CacheAdvances for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheAdvances(value uint32) (err error) {
-	return instance.SetProperty("CacheAdvances", value)
+	return instance.SetProperty("CacheAdvances", (value))
 }
 
 // GetCacheAdvances gets the value of CacheAdvances for the instance
@@ -145,16 +147,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheCheckpoints sets the value of CacheCheckpoints for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheCheckpoints(value uint32) (err error) {
-	return instance.SetProperty("CacheCheckpoints", value)
+	return instance.SetProperty("CacheCheckpoints", (value))
 }
 
 // GetCacheCheckpoints gets the value of CacheCheckpoints for the instance
@@ -163,16 +174,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheDataBytes sets the value of CacheDataBytes for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheDataBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheDataBytes", value)
+	return instance.SetProperty("CacheDataBytes", (value))
 }
 
 // GetCacheDataBytes gets the value of CacheDataBytes for the instance
@@ -181,16 +201,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheDataPercent sets the value of CacheDataPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheDataPercent(value uint64) (err error) {
-	return instance.SetProperty("CacheDataPercent", value)
+	return instance.SetProperty("CacheDataPercent", (value))
 }
 
 // GetCacheDataPercent gets the value of CacheDataPercent for the instance
@@ -199,16 +228,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheDestagesCurrent sets the value of CacheDestagesCurrent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheDestagesCurrent(value uint32) (err error) {
-	return instance.SetProperty("CacheDestagesCurrent", value)
+	return instance.SetProperty("CacheDestagesCurrent", (value))
 }
 
 // GetCacheDestagesCurrent gets the value of CacheDestagesCurrent for the instance
@@ -217,16 +255,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheReclaimableBytes sets the value of CacheReclaimableBytes for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheReclaimableBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheReclaimableBytes", value)
+	return instance.SetProperty("CacheReclaimableBytes", (value))
 }
 
 // GetCacheReclaimableBytes gets the value of CacheReclaimableBytes for the instance
@@ -235,16 +282,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheReclaimablePercent sets the value of CacheReclaimablePercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheReclaimablePercent(value uint64) (err error) {
-	return instance.SetProperty("CacheReclaimablePercent", value)
+	return instance.SetProperty("CacheReclaimablePercent", (value))
 }
 
 // GetCacheReclaimablePercent gets the value of CacheReclaimablePercent for the instance
@@ -253,16 +309,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheSize sets the value of CacheSize for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheSize(value uint64) (err error) {
-	return instance.SetProperty("CacheSize", value)
+	return instance.SetProperty("CacheSize", (value))
 }
 
 // GetCacheSize gets the value of CacheSize for the instance
@@ -271,16 +336,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheUsedBytes sets the value of CacheUsedBytes for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheUsedBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheUsedBytes", value)
+	return instance.SetProperty("CacheUsedBytes", (value))
 }
 
 // GetCacheUsedBytes gets the value of CacheUsedBytes for the instance
@@ -289,16 +363,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheUsedPercent sets the value of CacheUsedPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyCacheUsedPercent(value uint64) (err error) {
-	return instance.SetProperty("CacheUsedPercent", value)
+	return instance.SetProperty("CacheUsedPercent", (value))
 }
 
 // GetCacheUsedPercent gets the value of CacheUsedPercent for the instance
@@ -307,16 +390,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEvictCacheBytesPersec sets the value of EvictCacheBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyEvictCacheBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("EvictCacheBytesPersec", value)
+	return instance.SetProperty("EvictCacheBytesPersec", (value))
 }
 
 // GetEvictCacheBytesPersec gets the value of EvictCacheBytesPersec for the instance
@@ -325,16 +417,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEvictCacheDestagedBytesPersec sets the value of EvictCacheDestagedBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyEvictCacheDestagedBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("EvictCacheDestagedBytesPersec", value)
+	return instance.SetProperty("EvictCacheDestagedBytesPersec", (value))
 }
 
 // GetEvictCacheDestagedBytesPersec gets the value of EvictCacheDestagedBytesPersec for the instance
@@ -343,16 +444,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEvictCacheDestagedPercent sets the value of EvictCacheDestagedPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyEvictCacheDestagedPercent(value uint64) (err error) {
-	return instance.SetProperty("EvictCacheDestagedPercent", value)
+	return instance.SetProperty("EvictCacheDestagedPercent", (value))
 }
 
 // GetEvictCacheDestagedPercent gets the value of EvictCacheDestagedPercent for the instance
@@ -361,16 +471,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEvictCacheOverwriteBytesPersec sets the value of EvictCacheOverwriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyEvictCacheOverwriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("EvictCacheOverwriteBytesPersec", value)
+	return instance.SetProperty("EvictCacheOverwriteBytesPersec", (value))
 }
 
 // GetEvictCacheOverwriteBytesPersec gets the value of EvictCacheOverwriteBytesPersec for the instance
@@ -379,16 +498,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEvictCacheOverwritePercent sets the value of EvictCacheOverwritePercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyEvictCacheOverwritePercent(value uint64) (err error) {
-	return instance.SetProperty("EvictCacheOverwritePercent", value)
+	return instance.SetProperty("EvictCacheOverwritePercent", (value))
 }
 
 // GetEvictCacheOverwritePercent gets the value of EvictCacheOverwritePercent for the instance
@@ -397,16 +525,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadBypassBytesPersec sets the value of ReadBypassBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyReadBypassBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBypassBytesPersec", value)
+	return instance.SetProperty("ReadBypassBytesPersec", (value))
 }
 
 // GetReadBypassBytesPersec gets the value of ReadBypassBytesPersec for the instance
@@ -415,16 +552,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadBypassPercent sets the value of ReadBypassPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyReadBypassPercent(value uint64) (err error) {
-	return instance.SetProperty("ReadBypassPercent", value)
+	return instance.SetProperty("ReadBypassPercent", (value))
 }
 
 // GetReadBypassPercent gets the value of ReadBypassPercent for the instance
@@ -433,16 +579,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadCacheBytesPersec sets the value of ReadCacheBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyReadCacheBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadCacheBytesPersec", value)
+	return instance.SetProperty("ReadCacheBytesPersec", (value))
 }
 
 // GetReadCacheBytesPersec gets the value of ReadCacheBytesPersec for the instance
@@ -451,16 +606,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadCachePercent sets the value of ReadCachePercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyReadCachePercent(value uint64) (err error) {
-	return instance.SetProperty("ReadCachePercent", value)
+	return instance.SetProperty("ReadCachePercent", (value))
 }
 
 // GetReadCachePercent gets the value of ReadCachePercent for the instance
@@ -469,16 +633,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBypassBytesPersec sets the value of WriteBypassBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteBypassBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBypassBytesPersec", value)
+	return instance.SetProperty("WriteBypassBytesPersec", (value))
 }
 
 // GetWriteBypassBytesPersec gets the value of WriteBypassBytesPersec for the instance
@@ -487,16 +660,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBypassPercent sets the value of WriteBypassPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteBypassPercent(value uint64) (err error) {
-	return instance.SetProperty("WriteBypassPercent", value)
+	return instance.SetProperty("WriteBypassPercent", (value))
 }
 
 // GetWriteBypassPercent gets the value of WriteBypassPercent for the instance
@@ -505,16 +687,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheBytesPersec sets the value of WriteCacheBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCacheBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheBytesPersec", value)
+	return instance.SetProperty("WriteCacheBytesPersec", (value))
 }
 
 // GetWriteCacheBytesPersec gets the value of WriteCacheBytesPersec for the instance
@@ -523,16 +714,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheOverlapBytesPersec sets the value of WriteCacheOverlapBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCacheOverlapBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheOverlapBytesPersec", value)
+	return instance.SetProperty("WriteCacheOverlapBytesPersec", (value))
 }
 
 // GetWriteCacheOverlapBytesPersec gets the value of WriteCacheOverlapBytesPersec for the instance
@@ -541,16 +741,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheOverlapPercent sets the value of WriteCacheOverlapPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCacheOverlapPercent(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheOverlapPercent", value)
+	return instance.SetProperty("WriteCacheOverlapPercent", (value))
 }
 
 // GetWriteCacheOverlapPercent gets the value of WriteCacheOverlapPercent for the instance
@@ -559,16 +768,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCachePercent sets the value of WriteCachePercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCachePercent(value uint64) (err error) {
-	return instance.SetProperty("WriteCachePercent", value)
+	return instance.SetProperty("WriteCachePercent", (value))
 }
 
 // GetWriteCachePercent gets the value of WriteCachePercent for the instance
@@ -577,16 +795,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheUnalignedBytesPersec sets the value of WriteCacheUnalignedBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCacheUnalignedBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheUnalignedBytesPersec", value)
+	return instance.SetProperty("WriteCacheUnalignedBytesPersec", (value))
 }
 
 // GetWriteCacheUnalignedBytesPersec gets the value of WriteCacheUnalignedBytesPersec for the instance
@@ -595,16 +822,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheUnalignedPercent sets the value of WriteCacheUnalignedPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCacheUnalignedPercent(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheUnalignedPercent", value)
+	return instance.SetProperty("WriteCacheUnalignedPercent", (value))
 }
 
 // GetWriteCacheUnalignedPercent gets the value of WriteCacheUnalignedPercent for the instance
@@ -613,16 +849,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheUntrimmedBytesPersec sets the value of WriteCacheUntrimmedBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCacheUntrimmedBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheUntrimmedBytesPersec", value)
+	return instance.SetProperty("WriteCacheUntrimmedBytesPersec", (value))
 }
 
 // GetWriteCacheUntrimmedBytesPersec gets the value of WriteCacheUntrimmedBytesPersec for the instance
@@ -631,16 +876,25 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteCacheUntrimmedPercent sets the value of WriteCacheUntrimmedPercent for the instance
 func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) SetPropertyWriteCacheUntrimmedPercent(value uint64) (err error) {
-	return instance.SetProperty("WriteCacheUntrimmedPercent", value)
+	return instance.SetProperty("WriteCacheUntrimmedPercent", (value))
 }
 
 // GetWriteCacheUntrimmedPercent gets the value of WriteCacheUntrimmedPercent for the instance
@@ -649,9 +903,18 @@ func (instance *Win32_PerfFormattedData_Counters_StorageSpacesWriteCache) GetPro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

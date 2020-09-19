@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.subscription
 //////////////////////////////////////////////
 package subscription
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // ActiveScriptEventConsumer struct
@@ -64,7 +66,7 @@ func NewActiveScriptEventConsumerEx6(hostName string,
 
 // SetKillTimeout sets the value of KillTimeout for the instance
 func (instance *ActiveScriptEventConsumer) SetPropertyKillTimeout(value uint32) (err error) {
-	return instance.SetProperty("KillTimeout", value)
+	return instance.SetProperty("KillTimeout", (value))
 }
 
 // GetKillTimeout gets the value of KillTimeout for the instance
@@ -73,16 +75,25 @@ func (instance *ActiveScriptEventConsumer) GetPropertyKillTimeout() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *ActiveScriptEventConsumer) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -91,16 +102,25 @@ func (instance *ActiveScriptEventConsumer) GetPropertyName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScriptFilename sets the value of ScriptFilename for the instance
 func (instance *ActiveScriptEventConsumer) SetPropertyScriptFilename(value string) (err error) {
-	return instance.SetProperty("ScriptFilename", value)
+	return instance.SetProperty("ScriptFilename", (value))
 }
 
 // GetScriptFilename gets the value of ScriptFilename for the instance
@@ -109,16 +129,25 @@ func (instance *ActiveScriptEventConsumer) GetPropertyScriptFilename() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScriptingEngine sets the value of ScriptingEngine for the instance
 func (instance *ActiveScriptEventConsumer) SetPropertyScriptingEngine(value string) (err error) {
-	return instance.SetProperty("ScriptingEngine", value)
+	return instance.SetProperty("ScriptingEngine", (value))
 }
 
 // GetScriptingEngine gets the value of ScriptingEngine for the instance
@@ -127,16 +156,25 @@ func (instance *ActiveScriptEventConsumer) GetPropertyScriptingEngine() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScriptText sets the value of ScriptText for the instance
 func (instance *ActiveScriptEventConsumer) SetPropertyScriptText(value string) (err error) {
-	return instance.SetProperty("ScriptText", value)
+	return instance.SetProperty("ScriptText", (value))
 }
 
 // GetScriptText gets the value of ScriptText for the instance
@@ -145,9 +183,18 @@ func (instance *ActiveScriptEventConsumer) GetPropertyScriptText() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

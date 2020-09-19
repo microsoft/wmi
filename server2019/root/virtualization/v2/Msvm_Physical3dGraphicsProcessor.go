@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_Physical3dGraphicsProcessor struct
@@ -100,7 +102,7 @@ func NewMsvm_Physical3dGraphicsProcessorEx6(hostName string,
 
 // SetAdapterIndexID sets the value of AdapterIndexID for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyAdapterIndexID(value uint64) (err error) {
-	return instance.SetProperty("AdapterIndexID", value)
+	return instance.SetProperty("AdapterIndexID", (value))
 }
 
 // GetAdapterIndexID gets the value of AdapterIndexID for the instance
@@ -109,16 +111,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyAdapterIndexID() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvailableVideoMemory sets the value of AvailableVideoMemory for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyAvailableVideoMemory(value uint64) (err error) {
-	return instance.SetProperty("AvailableVideoMemory", value)
+	return instance.SetProperty("AvailableVideoMemory", (value))
 }
 
 // GetAvailableVideoMemory gets the value of AvailableVideoMemory for the instance
@@ -127,16 +138,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyAvailableVideoMemor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCompatibleForVirtualization sets the value of CompatibleForVirtualization for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyCompatibleForVirtualization(value bool) (err error) {
-	return instance.SetProperty("CompatibleForVirtualization", value)
+	return instance.SetProperty("CompatibleForVirtualization", (value))
 }
 
 // GetCompatibleForVirtualization gets the value of CompatibleForVirtualization for the instance
@@ -145,16 +165,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyCompatibleForVirtua
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDedicatedSystemMemory sets the value of DedicatedSystemMemory for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDedicatedSystemMemory(value uint64) (err error) {
-	return instance.SetProperty("DedicatedSystemMemory", value)
+	return instance.SetProperty("DedicatedSystemMemory", (value))
 }
 
 // GetDedicatedSystemMemory gets the value of DedicatedSystemMemory for the instance
@@ -163,16 +192,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDedicatedSystemMemo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDedicatedVideoMemory sets the value of DedicatedVideoMemory for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDedicatedVideoMemory(value uint64) (err error) {
-	return instance.SetProperty("DedicatedVideoMemory", value)
+	return instance.SetProperty("DedicatedVideoMemory", (value))
 }
 
 // GetDedicatedVideoMemory gets the value of DedicatedVideoMemory for the instance
@@ -181,16 +219,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDedicatedVideoMemor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDirectXVersion sets the value of DirectXVersion for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDirectXVersion(value string) (err error) {
-	return instance.SetProperty("DirectXVersion", value)
+	return instance.SetProperty("DirectXVersion", (value))
 }
 
 // GetDirectXVersion gets the value of DirectXVersion for the instance
@@ -199,16 +246,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDirectXVersion() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverDate sets the value of DriverDate for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDriverDate(value string) (err error) {
-	return instance.SetProperty("DriverDate", value)
+	return instance.SetProperty("DriverDate", (value))
 }
 
 // GetDriverDate gets the value of DriverDate for the instance
@@ -217,16 +273,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDriverDate() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverInstalled sets the value of DriverInstalled for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDriverInstalled(value string) (err error) {
-	return instance.SetProperty("DriverInstalled", value)
+	return instance.SetProperty("DriverInstalled", (value))
 }
 
 // GetDriverInstalled gets the value of DriverInstalled for the instance
@@ -235,16 +300,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDriverInstalled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverModelVersion sets the value of DriverModelVersion for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDriverModelVersion(value string) (err error) {
-	return instance.SetProperty("DriverModelVersion", value)
+	return instance.SetProperty("DriverModelVersion", (value))
 }
 
 // GetDriverModelVersion gets the value of DriverModelVersion for the instance
@@ -253,16 +327,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDriverModelVersion(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverProvider sets the value of DriverProvider for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDriverProvider(value string) (err error) {
-	return instance.SetProperty("DriverProvider", value)
+	return instance.SetProperty("DriverProvider", (value))
 }
 
 // GetDriverProvider gets the value of DriverProvider for the instance
@@ -271,16 +354,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDriverProvider() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverVersion sets the value of DriverVersion for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyDriverVersion(value string) (err error) {
-	return instance.SetProperty("DriverVersion", value)
+	return instance.SetProperty("DriverVersion", (value))
 }
 
 // GetDriverVersion gets the value of DriverVersion for the instance
@@ -289,16 +381,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyDriverVersion() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnabledForVirtualization sets the value of EnabledForVirtualization for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyEnabledForVirtualization(value bool) (err error) {
-	return instance.SetProperty("EnabledForVirtualization", value)
+	return instance.SetProperty("EnabledForVirtualization", (value))
 }
 
 // GetEnabledForVirtualization gets the value of EnabledForVirtualization for the instance
@@ -307,16 +408,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyEnabledForVirtualiz
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGPUID sets the value of GPUID for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyGPUID(value string) (err error) {
-	return instance.SetProperty("GPUID", value)
+	return instance.SetProperty("GPUID", (value))
 }
 
 // GetGPUID gets the value of GPUID for the instance
@@ -325,16 +435,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyGPUID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPixelShaderVersion sets the value of PixelShaderVersion for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyPixelShaderVersion(value string) (err error) {
-	return instance.SetProperty("PixelShaderVersion", value)
+	return instance.SetProperty("PixelShaderVersion", (value))
 }
 
 // GetPixelShaderVersion gets the value of PixelShaderVersion for the instance
@@ -343,16 +462,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyPixelShaderVersion(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRating sets the value of Rating for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyRating(value uint64) (err error) {
-	return instance.SetProperty("Rating", value)
+	return instance.SetProperty("Rating", (value))
 }
 
 // GetRating gets the value of Rating for the instance
@@ -361,16 +489,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyRating() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSharedSystemMemory sets the value of SharedSystemMemory for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertySharedSystemMemory(value uint64) (err error) {
-	return instance.SetProperty("SharedSystemMemory", value)
+	return instance.SetProperty("SharedSystemMemory", (value))
 }
 
 // GetSharedSystemMemory gets the value of SharedSystemMemory for the instance
@@ -379,16 +516,25 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertySharedSystemMemory(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalVideoMemory sets the value of TotalVideoMemory for the instance
 func (instance *Msvm_Physical3dGraphicsProcessor) SetPropertyTotalVideoMemory(value uint64) (err error) {
-	return instance.SetProperty("TotalVideoMemory", value)
+	return instance.SetProperty("TotalVideoMemory", (value))
 }
 
 // GetTotalVideoMemory gets the value of TotalVideoMemory for the instance
@@ -397,9 +543,18 @@ func (instance *Msvm_Physical3dGraphicsProcessor) GetPropertyTotalVideoMemory() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

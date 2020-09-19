@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_TPM struct
@@ -78,7 +80,7 @@ func NewCIM_TPMEx6(hostName string,
 
 // SetAvailableRequestedTPMStates sets the value of AvailableRequestedTPMStates for the instance
 func (instance *CIM_TPM) SetPropertyAvailableRequestedTPMStates(value []TPM_AvailableRequestedTPMStates) (err error) {
-	return instance.SetProperty("AvailableRequestedTPMStates", value)
+	return instance.SetProperty("AvailableRequestedTPMStates", (value))
 }
 
 // GetAvailableRequestedTPMStates gets the value of AvailableRequestedTPMStates for the instance
@@ -87,16 +89,26 @@ func (instance *CIM_TPM) GetPropertyAvailableRequestedTPMStates() (value []TPM_A
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]TPM_AvailableRequestedTPMStates)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, TPM_AvailableRequestedTPMStates(valuetmp))
+	}
+
 	return
 }
 
 // SetTPMManafucturerMajorRevision sets the value of TPMManafucturerMajorRevision for the instance
 func (instance *CIM_TPM) SetPropertyTPMManafucturerMajorRevision(value uint32) (err error) {
-	return instance.SetProperty("TPMManafucturerMajorRevision", value)
+	return instance.SetProperty("TPMManafucturerMajorRevision", (value))
 }
 
 // GetTPMManafucturerMajorRevision gets the value of TPMManafucturerMajorRevision for the instance
@@ -105,16 +117,25 @@ func (instance *CIM_TPM) GetPropertyTPMManafucturerMajorRevision() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTPMManufacturerId sets the value of TPMManufacturerId for the instance
 func (instance *CIM_TPM) SetPropertyTPMManufacturerId(value uint32) (err error) {
-	return instance.SetProperty("TPMManufacturerId", value)
+	return instance.SetProperty("TPMManufacturerId", (value))
 }
 
 // GetTPMManufacturerId gets the value of TPMManufacturerId for the instance
@@ -123,16 +144,25 @@ func (instance *CIM_TPM) GetPropertyTPMManufacturerId() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTPMManufacturerInfo sets the value of TPMManufacturerInfo for the instance
 func (instance *CIM_TPM) SetPropertyTPMManufacturerInfo(value string) (err error) {
-	return instance.SetProperty("TPMManufacturerInfo", value)
+	return instance.SetProperty("TPMManufacturerInfo", (value))
 }
 
 // GetTPMManufacturerInfo gets the value of TPMManufacturerInfo for the instance
@@ -141,16 +171,25 @@ func (instance *CIM_TPM) GetPropertyTPMManufacturerInfo() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTPMManufacturerMinorRevision sets the value of TPMManufacturerMinorRevision for the instance
 func (instance *CIM_TPM) SetPropertyTPMManufacturerMinorRevision(value uint32) (err error) {
-	return instance.SetProperty("TPMManufacturerMinorRevision", value)
+	return instance.SetProperty("TPMManufacturerMinorRevision", (value))
 }
 
 // GetTPMManufacturerMinorRevision gets the value of TPMManufacturerMinorRevision for the instance
@@ -159,16 +198,25 @@ func (instance *CIM_TPM) GetPropertyTPMManufacturerMinorRevision() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTPMSpecMajorVersion sets the value of TPMSpecMajorVersion for the instance
 func (instance *CIM_TPM) SetPropertyTPMSpecMajorVersion(value uint32) (err error) {
-	return instance.SetProperty("TPMSpecMajorVersion", value)
+	return instance.SetProperty("TPMSpecMajorVersion", (value))
 }
 
 // GetTPMSpecMajorVersion gets the value of TPMSpecMajorVersion for the instance
@@ -177,16 +225,25 @@ func (instance *CIM_TPM) GetPropertyTPMSpecMajorVersion() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTPMSpecMinorVersion sets the value of TPMSpecMinorVersion for the instance
 func (instance *CIM_TPM) SetPropertyTPMSpecMinorVersion(value uint32) (err error) {
-	return instance.SetProperty("TPMSpecMinorVersion", value)
+	return instance.SetProperty("TPMSpecMinorVersion", (value))
 }
 
 // GetTPMSpecMinorVersion gets the value of TPMSpecMinorVersion for the instance
@@ -195,16 +252,25 @@ func (instance *CIM_TPM) GetPropertyTPMSpecMinorVersion() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTPMState sets the value of TPMState for the instance
 func (instance *CIM_TPM) SetPropertyTPMState(value TPM_TPMState) (err error) {
-	return instance.SetProperty("TPMState", value)
+	return instance.SetProperty("TPMState", (value))
 }
 
 // GetTPMState gets the value of TPMState for the instance
@@ -213,16 +279,25 @@ func (instance *CIM_TPM) GetPropertyTPMState() (value TPM_TPMState, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TPM_TPMState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TPM_TPMState(valuetmp)
+
 	return
 }
 
 // SetTransitioningToTPMState sets the value of TransitioningToTPMState for the instance
 func (instance *CIM_TPM) SetPropertyTransitioningToTPMState(value TPM_TransitioningToTPMState) (err error) {
-	return instance.SetProperty("TransitioningToTPMState", value)
+	return instance.SetProperty("TransitioningToTPMState", (value))
 }
 
 // GetTransitioningToTPMState gets the value of TransitioningToTPMState for the instance
@@ -231,10 +306,19 @@ func (instance *CIM_TPM) GetPropertyTransitioningToTPMState() (value TPM_Transit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TPM_TransitioningToTPMState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TPM_TransitioningToTPMState(valuetmp)
+
 	return
 }
 

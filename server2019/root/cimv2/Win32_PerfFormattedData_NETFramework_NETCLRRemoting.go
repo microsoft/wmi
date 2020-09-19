@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NETFramework_NETCLRRemoting struct
@@ -70,7 +72,7 @@ func NewWin32_PerfFormattedData_NETFramework_NETCLRRemotingEx6(hostName string,
 
 // SetChannels sets the value of Channels for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) SetPropertyChannels(value uint32) (err error) {
-	return instance.SetProperty("Channels", value)
+	return instance.SetProperty("Channels", (value))
 }
 
 // GetChannels gets the value of Channels for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContextBoundClassesLoaded sets the value of ContextBoundClassesLoaded for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) SetPropertyContextBoundClassesLoaded(value uint32) (err error) {
-	return instance.SetProperty("ContextBoundClassesLoaded", value)
+	return instance.SetProperty("ContextBoundClassesLoaded", (value))
 }
 
 // GetContextBoundClassesLoaded gets the value of ContextBoundClassesLoaded for the instance
@@ -97,16 +108,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContextBoundObjectsAllocPersec sets the value of ContextBoundObjectsAllocPersec for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) SetPropertyContextBoundObjectsAllocPersec(value uint32) (err error) {
-	return instance.SetProperty("ContextBoundObjectsAllocPersec", value)
+	return instance.SetProperty("ContextBoundObjectsAllocPersec", (value))
 }
 
 // GetContextBoundObjectsAllocPersec gets the value of ContextBoundObjectsAllocPersec for the instance
@@ -115,16 +135,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContextProxies sets the value of ContextProxies for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) SetPropertyContextProxies(value uint32) (err error) {
-	return instance.SetProperty("ContextProxies", value)
+	return instance.SetProperty("ContextProxies", (value))
 }
 
 // GetContextProxies gets the value of ContextProxies for the instance
@@ -133,16 +162,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetContexts sets the value of Contexts for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) SetPropertyContexts(value uint32) (err error) {
-	return instance.SetProperty("Contexts", value)
+	return instance.SetProperty("Contexts", (value))
 }
 
 // GetContexts gets the value of Contexts for the instance
@@ -151,16 +189,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemoteCallsPersec sets the value of RemoteCallsPersec for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) SetPropertyRemoteCallsPersec(value uint32) (err error) {
-	return instance.SetProperty("RemoteCallsPersec", value)
+	return instance.SetProperty("RemoteCallsPersec", (value))
 }
 
 // GetRemoteCallsPersec gets the value of RemoteCallsPersec for the instance
@@ -169,16 +216,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalRemoteCalls sets the value of TotalRemoteCalls for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) SetPropertyTotalRemoteCalls(value uint32) (err error) {
-	return instance.SetProperty("TotalRemoteCalls", value)
+	return instance.SetProperty("TotalRemoteCalls", (value))
 }
 
 // GetTotalRemoteCalls gets the value of TotalRemoteCalls for the instance
@@ -187,9 +243,18 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRRemoting) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

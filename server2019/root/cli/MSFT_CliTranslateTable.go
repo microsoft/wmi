@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
@@ -11,7 +11,9 @@ package cli
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CliTranslateTable struct
@@ -56,7 +58,7 @@ func NewMSFT_CliTranslateTableEx6(hostName string,
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_CliTranslateTable) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_CliTranslateTable) GetPropertyName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTbl sets the value of Tbl for the instance
 func (instance *MSFT_CliTranslateTable) SetPropertyTbl(value []MSFT_CliTranslateTableEntry) (err error) {
-	return instance.SetProperty("Tbl", value)
+	return instance.SetProperty("Tbl", (value))
 }
 
 // GetTbl gets the value of Tbl for the instance
@@ -83,9 +94,19 @@ func (instance *MSFT_CliTranslateTable) GetPropertyTbl() (value []MSFT_CliTransl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_CliTranslateTableEntry)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_CliTranslateTableEntry)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_CliTranslateTableEntry is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_CliTranslateTableEntry(valuetmp))
+	}
+
 	return
 }

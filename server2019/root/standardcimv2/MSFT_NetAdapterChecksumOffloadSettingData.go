@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterChecksumOffloadSettingData struct
@@ -67,7 +69,7 @@ func NewMSFT_NetAdapterChecksumOffloadSettingDataEx6(hostName string,
 
 // SetChecksumOffloadHardwareCapabilities sets the value of ChecksumOffloadHardwareCapabilities for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadSettingData) SetPropertyChecksumOffloadHardwareCapabilities(value MSFT_NetAdapterChecksumOffloadCapabilities) (err error) {
-	return instance.SetProperty("ChecksumOffloadHardwareCapabilities", value)
+	return instance.SetProperty("ChecksumOffloadHardwareCapabilities", (value))
 }
 
 // GetChecksumOffloadHardwareCapabilities gets the value of ChecksumOffloadHardwareCapabilities for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadSettingData) GetPropertyChecksumOf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterChecksumOffloadCapabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterChecksumOffloadCapabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterChecksumOffloadCapabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterChecksumOffloadCapabilities(valuetmp)
+
 	return
 }
 
 // SetIpIPv4Enabled sets the value of IpIPv4Enabled for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadSettingData) SetPropertyIpIPv4Enabled(value uint32) (err error) {
-	return instance.SetProperty("IpIPv4Enabled", value)
+	return instance.SetProperty("IpIPv4Enabled", (value))
 }
 
 // GetIpIPv4Enabled gets the value of IpIPv4Enabled for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadSettingData) GetPropertyIpIPv4Enab
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpIPv4Enabled sets the value of TcpIPv4Enabled for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadSettingData) SetPropertyTcpIPv4Enabled(value uint32) (err error) {
-	return instance.SetProperty("TcpIPv4Enabled", value)
+	return instance.SetProperty("TcpIPv4Enabled", (value))
 }
 
 // GetTcpIPv4Enabled gets the value of TcpIPv4Enabled for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadSettingData) GetPropertyTcpIPv4Ena
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTcpIPv6Enabled sets the value of TcpIPv6Enabled for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadSettingData) SetPropertyTcpIPv6Enabled(value uint32) (err error) {
-	return instance.SetProperty("TcpIPv6Enabled", value)
+	return instance.SetProperty("TcpIPv6Enabled", (value))
 }
 
 // GetTcpIPv6Enabled gets the value of TcpIPv6Enabled for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadSettingData) GetPropertyTcpIPv6Ena
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUdpIPv4Enabled sets the value of UdpIPv4Enabled for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadSettingData) SetPropertyUdpIPv4Enabled(value uint32) (err error) {
-	return instance.SetProperty("UdpIPv4Enabled", value)
+	return instance.SetProperty("UdpIPv4Enabled", (value))
 }
 
 // GetUdpIPv4Enabled gets the value of UdpIPv4Enabled for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_NetAdapterChecksumOffloadSettingData) GetPropertyUdpIPv4Ena
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUdpIPv6Enabled sets the value of UdpIPv6Enabled for the instance
 func (instance *MSFT_NetAdapterChecksumOffloadSettingData) SetPropertyUdpIPv6Enabled(value uint32) (err error) {
-	return instance.SetProperty("UdpIPv6Enabled", value)
+	return instance.SetProperty("UdpIPv6Enabled", (value))
 }
 
 // GetUdpIPv6Enabled gets the value of UdpIPv6Enabled for the instance
@@ -166,10 +213,19 @@ func (instance *MSFT_NetAdapterChecksumOffloadSettingData) GetPropertyUdpIPv6Ena
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

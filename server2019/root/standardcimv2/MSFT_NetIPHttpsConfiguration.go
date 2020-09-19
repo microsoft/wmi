@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIPHttpsConfiguration struct
@@ -76,7 +78,7 @@ func NewMSFT_NetIPHttpsConfigurationEx6(hostName string,
 
 // SetAuthMode sets the value of AuthMode for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyAuthMode(value uint32) (err error) {
-	return instance.SetProperty("AuthMode", value)
+	return instance.SetProperty("AuthMode", (value))
 }
 
 // GetAuthMode gets the value of AuthMode for the instance
@@ -85,16 +87,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyAuthMode() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConfigurationType sets the value of ConfigurationType for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyConfigurationType(value uint32) (err error) {
-	return instance.SetProperty("ConfigurationType", value)
+	return instance.SetProperty("ConfigurationType", (value))
 }
 
 // GetConfigurationType gets the value of ConfigurationType for the instance
@@ -103,16 +114,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyConfigurationType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicyStore sets the value of PolicyStore for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyPolicyStore(value string) (err error) {
-	return instance.SetProperty("PolicyStore", value)
+	return instance.SetProperty("PolicyStore", (value))
 }
 
 // GetPolicyStore gets the value of PolicyStore for the instance
@@ -121,16 +141,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyPolicyStore() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProfile sets the value of Profile for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyProfile(value string) (err error) {
-	return instance.SetProperty("Profile", value)
+	return instance.SetProperty("Profile", (value))
 }
 
 // GetProfile gets the value of Profile for the instance
@@ -139,16 +168,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyProfile() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProfileActivated sets the value of ProfileActivated for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyProfileActivated(value bool) (err error) {
-	return instance.SetProperty("ProfileActivated", value)
+	return instance.SetProperty("ProfileActivated", (value))
 }
 
 // GetProfileActivated gets the value of ProfileActivated for the instance
@@ -157,16 +195,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyProfileActivated() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetServerURL sets the value of ServerURL for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyServerURL(value string) (err error) {
-	return instance.SetProperty("ServerURL", value)
+	return instance.SetProperty("ServerURL", (value))
 }
 
 // GetServerURL gets the value of ServerURL for the instance
@@ -175,16 +222,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyServerURL() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -193,16 +249,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyState() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStrongCRLRequired sets the value of StrongCRLRequired for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyStrongCRLRequired(value bool) (err error) {
-	return instance.SetProperty("StrongCRLRequired", value)
+	return instance.SetProperty("StrongCRLRequired", (value))
 }
 
 // GetStrongCRLRequired gets the value of StrongCRLRequired for the instance
@@ -211,16 +276,25 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyStrongCRLRequired() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_NetIPHttpsConfiguration) SetPropertyType(value uint32) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -229,10 +303,19 @@ func (instance *MSFT_NetIPHttpsConfiguration) GetPropertyType() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

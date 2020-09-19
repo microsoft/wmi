@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageProvider struct
@@ -70,7 +72,7 @@ func NewMSFT_StorageProviderEx6(hostName string,
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *MSFT_StorageProvider) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_StorageProvider) GetPropertyManufacturer() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_StorageProvider) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_StorageProvider) GetPropertyName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemoteSubsystemCacheMode sets the value of RemoteSubsystemCacheMode for the instance
 func (instance *MSFT_StorageProvider) SetPropertyRemoteSubsystemCacheMode(value StorageProvider_RemoteSubsystemCacheMode) (err error) {
-	return instance.SetProperty("RemoteSubsystemCacheMode", value)
+	return instance.SetProperty("RemoteSubsystemCacheMode", (value))
 }
 
 // GetRemoteSubsystemCacheMode gets the value of RemoteSubsystemCacheMode for the instance
@@ -115,16 +135,25 @@ func (instance *MSFT_StorageProvider) GetPropertyRemoteSubsystemCacheMode() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageProvider_RemoteSubsystemCacheMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageProvider_RemoteSubsystemCacheMode(valuetmp)
+
 	return
 }
 
 // SetSupportedRemoteSubsystemCacheModes sets the value of SupportedRemoteSubsystemCacheModes for the instance
 func (instance *MSFT_StorageProvider) SetPropertySupportedRemoteSubsystemCacheModes(value []StorageProvider_SupportedRemoteSubsystemCacheModes) (err error) {
-	return instance.SetProperty("SupportedRemoteSubsystemCacheModes", value)
+	return instance.SetProperty("SupportedRemoteSubsystemCacheModes", (value))
 }
 
 // GetSupportedRemoteSubsystemCacheModes gets the value of SupportedRemoteSubsystemCacheModes for the instance
@@ -133,16 +162,26 @@ func (instance *MSFT_StorageProvider) GetPropertySupportedRemoteSubsystemCacheMo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]StorageProvider_SupportedRemoteSubsystemCacheModes)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, StorageProvider_SupportedRemoteSubsystemCacheModes(valuetmp))
+	}
+
 	return
 }
 
 // SetSupportsSubsystemRegistration sets the value of SupportsSubsystemRegistration for the instance
 func (instance *MSFT_StorageProvider) SetPropertySupportsSubsystemRegistration(value bool) (err error) {
-	return instance.SetProperty("SupportsSubsystemRegistration", value)
+	return instance.SetProperty("SupportsSubsystemRegistration", (value))
 }
 
 // GetSupportsSubsystemRegistration gets the value of SupportsSubsystemRegistration for the instance
@@ -151,16 +190,25 @@ func (instance *MSFT_StorageProvider) GetPropertySupportsSubsystemRegistration()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_StorageProvider) SetPropertyType(value StorageProvider_Type) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -169,16 +217,25 @@ func (instance *MSFT_StorageProvider) GetPropertyType() (value StorageProvider_T
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(StorageProvider_Type)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = StorageProvider_Type(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *MSFT_StorageProvider) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -187,10 +244,19 @@ func (instance *MSFT_StorageProvider) GetPropertyVersion() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

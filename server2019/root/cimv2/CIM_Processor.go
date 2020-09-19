@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Processor struct
@@ -82,7 +84,7 @@ func NewCIM_ProcessorEx6(hostName string,
 
 // SetAddressWidth sets the value of AddressWidth for the instance
 func (instance *CIM_Processor) SetPropertyAddressWidth(value uint16) (err error) {
-	return instance.SetProperty("AddressWidth", value)
+	return instance.SetProperty("AddressWidth", (value))
 }
 
 // GetAddressWidth gets the value of AddressWidth for the instance
@@ -91,16 +93,25 @@ func (instance *CIM_Processor) GetPropertyAddressWidth() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCurrentClockSpeed sets the value of CurrentClockSpeed for the instance
 func (instance *CIM_Processor) SetPropertyCurrentClockSpeed(value uint32) (err error) {
-	return instance.SetProperty("CurrentClockSpeed", value)
+	return instance.SetProperty("CurrentClockSpeed", (value))
 }
 
 // GetCurrentClockSpeed gets the value of CurrentClockSpeed for the instance
@@ -109,16 +120,25 @@ func (instance *CIM_Processor) GetPropertyCurrentClockSpeed() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDataWidth sets the value of DataWidth for the instance
 func (instance *CIM_Processor) SetPropertyDataWidth(value uint16) (err error) {
-	return instance.SetProperty("DataWidth", value)
+	return instance.SetProperty("DataWidth", (value))
 }
 
 // GetDataWidth gets the value of DataWidth for the instance
@@ -127,16 +147,25 @@ func (instance *CIM_Processor) GetPropertyDataWidth() (value uint16, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetFamily sets the value of Family for the instance
 func (instance *CIM_Processor) SetPropertyFamily(value uint16) (err error) {
-	return instance.SetProperty("Family", value)
+	return instance.SetProperty("Family", (value))
 }
 
 // GetFamily gets the value of Family for the instance
@@ -145,16 +174,25 @@ func (instance *CIM_Processor) GetPropertyFamily() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetLoadPercentage sets the value of LoadPercentage for the instance
 func (instance *CIM_Processor) SetPropertyLoadPercentage(value uint16) (err error) {
-	return instance.SetProperty("LoadPercentage", value)
+	return instance.SetProperty("LoadPercentage", (value))
 }
 
 // GetLoadPercentage gets the value of LoadPercentage for the instance
@@ -163,16 +201,25 @@ func (instance *CIM_Processor) GetPropertyLoadPercentage() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxClockSpeed sets the value of MaxClockSpeed for the instance
 func (instance *CIM_Processor) SetPropertyMaxClockSpeed(value uint32) (err error) {
-	return instance.SetProperty("MaxClockSpeed", value)
+	return instance.SetProperty("MaxClockSpeed", (value))
 }
 
 // GetMaxClockSpeed gets the value of MaxClockSpeed for the instance
@@ -181,16 +228,25 @@ func (instance *CIM_Processor) GetPropertyMaxClockSpeed() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherFamilyDescription sets the value of OtherFamilyDescription for the instance
 func (instance *CIM_Processor) SetPropertyOtherFamilyDescription(value string) (err error) {
-	return instance.SetProperty("OtherFamilyDescription", value)
+	return instance.SetProperty("OtherFamilyDescription", (value))
 }
 
 // GetOtherFamilyDescription gets the value of OtherFamilyDescription for the instance
@@ -199,16 +255,25 @@ func (instance *CIM_Processor) GetPropertyOtherFamilyDescription() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRole sets the value of Role for the instance
 func (instance *CIM_Processor) SetPropertyRole(value string) (err error) {
-	return instance.SetProperty("Role", value)
+	return instance.SetProperty("Role", (value))
 }
 
 // GetRole gets the value of Role for the instance
@@ -217,16 +282,25 @@ func (instance *CIM_Processor) GetPropertyRole() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStepping sets the value of Stepping for the instance
 func (instance *CIM_Processor) SetPropertyStepping(value string) (err error) {
-	return instance.SetProperty("Stepping", value)
+	return instance.SetProperty("Stepping", (value))
 }
 
 // GetStepping gets the value of Stepping for the instance
@@ -235,16 +309,25 @@ func (instance *CIM_Processor) GetPropertyStepping() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUniqueId sets the value of UniqueId for the instance
 func (instance *CIM_Processor) SetPropertyUniqueId(value string) (err error) {
-	return instance.SetProperty("UniqueId", value)
+	return instance.SetProperty("UniqueId", (value))
 }
 
 // GetUniqueId gets the value of UniqueId for the instance
@@ -253,16 +336,25 @@ func (instance *CIM_Processor) GetPropertyUniqueId() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUpgradeMethod sets the value of UpgradeMethod for the instance
 func (instance *CIM_Processor) SetPropertyUpgradeMethod(value uint16) (err error) {
-	return instance.SetProperty("UpgradeMethod", value)
+	return instance.SetProperty("UpgradeMethod", (value))
 }
 
 // GetUpgradeMethod gets the value of UpgradeMethod for the instance
@@ -271,9 +363,18 @@ func (instance *CIM_Processor) GetPropertyUpgradeMethod() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskWeeklyTrigger struct
@@ -58,7 +60,7 @@ func NewMSFT_TaskWeeklyTriggerEx6(hostName string,
 
 // SetDaysOfWeek sets the value of DaysOfWeek for the instance
 func (instance *MSFT_TaskWeeklyTrigger) SetPropertyDaysOfWeek(value uint16) (err error) {
-	return instance.SetProperty("DaysOfWeek", value)
+	return instance.SetProperty("DaysOfWeek", (value))
 }
 
 // GetDaysOfWeek gets the value of DaysOfWeek for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_TaskWeeklyTrigger) GetPropertyDaysOfWeek() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRandomDelay sets the value of RandomDelay for the instance
 func (instance *MSFT_TaskWeeklyTrigger) SetPropertyRandomDelay(value string) (err error) {
-	return instance.SetProperty("RandomDelay", value)
+	return instance.SetProperty("RandomDelay", (value))
 }
 
 // GetRandomDelay gets the value of RandomDelay for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_TaskWeeklyTrigger) GetPropertyRandomDelay() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWeeksInterval sets the value of WeeksInterval for the instance
 func (instance *MSFT_TaskWeeklyTrigger) SetPropertyWeeksInterval(value uint16) (err error) {
-	return instance.SetProperty("WeeksInterval", value)
+	return instance.SetProperty("WeeksInterval", (value))
 }
 
 // GetWeeksInterval gets the value of WeeksInterval for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_TaskWeeklyTrigger) GetPropertyWeeksInterval() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

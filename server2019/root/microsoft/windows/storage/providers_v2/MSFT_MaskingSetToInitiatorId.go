@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_MaskingSetToInitiatorId struct
@@ -56,7 +58,7 @@ func NewMSFT_MaskingSetToInitiatorIdEx6(hostName string,
 
 // SetInitiatorId sets the value of InitiatorId for the instance
 func (instance *MSFT_MaskingSetToInitiatorId) SetPropertyInitiatorId(value MSFT_InitiatorId) (err error) {
-	return instance.SetProperty("InitiatorId", value)
+	return instance.SetProperty("InitiatorId", (value))
 }
 
 // GetInitiatorId gets the value of InitiatorId for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_MaskingSetToInitiatorId) GetPropertyInitiatorId() (value MS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_InitiatorId)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_InitiatorId)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_InitiatorId is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_InitiatorId(valuetmp)
+
 	return
 }
 
 // SetMaskingSet sets the value of MaskingSet for the instance
 func (instance *MSFT_MaskingSetToInitiatorId) SetPropertyMaskingSet(value MSFT_MaskingSet) (err error) {
-	return instance.SetProperty("MaskingSet", value)
+	return instance.SetProperty("MaskingSet", (value))
 }
 
 // GetMaskingSet gets the value of MaskingSet for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_MaskingSetToInitiatorId) GetPropertyMaskingSet() (value MSF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_MaskingSet)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_MaskingSet)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_MaskingSet is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_MaskingSet(valuetmp)
+
 	return
 }

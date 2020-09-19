@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_VirtualSystemManagementCapabilities struct
@@ -65,7 +67,7 @@ func NewCIM_VirtualSystemManagementCapabilitiesEx6(hostName string,
 
 // SetAsynchronousMethodsSupported sets the value of AsynchronousMethodsSupported for the instance
 func (instance *CIM_VirtualSystemManagementCapabilities) SetPropertyAsynchronousMethodsSupported(value []VirtualSystemManagementCapabilities_AsynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("AsynchronousMethodsSupported", value)
+	return instance.SetProperty("AsynchronousMethodsSupported", (value))
 }
 
 // GetAsynchronousMethodsSupported gets the value of AsynchronousMethodsSupported for the instance
@@ -74,16 +76,26 @@ func (instance *CIM_VirtualSystemManagementCapabilities) GetPropertyAsynchronous
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]VirtualSystemManagementCapabilities_AsynchronousMethodsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VirtualSystemManagementCapabilities_AsynchronousMethodsSupported(valuetmp))
+	}
+
 	return
 }
 
 // SetIndicationsSupported sets the value of IndicationsSupported for the instance
 func (instance *CIM_VirtualSystemManagementCapabilities) SetPropertyIndicationsSupported(value []VirtualSystemManagementCapabilities_IndicationsSupported) (err error) {
-	return instance.SetProperty("IndicationsSupported", value)
+	return instance.SetProperty("IndicationsSupported", (value))
 }
 
 // GetIndicationsSupported gets the value of IndicationsSupported for the instance
@@ -92,16 +104,26 @@ func (instance *CIM_VirtualSystemManagementCapabilities) GetPropertyIndicationsS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]VirtualSystemManagementCapabilities_IndicationsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VirtualSystemManagementCapabilities_IndicationsSupported(valuetmp))
+	}
+
 	return
 }
 
 // SetSynchronousMethodsSupported sets the value of SynchronousMethodsSupported for the instance
 func (instance *CIM_VirtualSystemManagementCapabilities) SetPropertySynchronousMethodsSupported(value []VirtualSystemManagementCapabilities_SynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("SynchronousMethodsSupported", value)
+	return instance.SetProperty("SynchronousMethodsSupported", (value))
 }
 
 // GetSynchronousMethodsSupported gets the value of SynchronousMethodsSupported for the instance
@@ -110,16 +132,26 @@ func (instance *CIM_VirtualSystemManagementCapabilities) GetPropertySynchronousM
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]VirtualSystemManagementCapabilities_SynchronousMethodsSupported)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, VirtualSystemManagementCapabilities_SynchronousMethodsSupported(valuetmp))
+	}
+
 	return
 }
 
 // SetVirtualSystemTypesSupported sets the value of VirtualSystemTypesSupported for the instance
 func (instance *CIM_VirtualSystemManagementCapabilities) SetPropertyVirtualSystemTypesSupported(value []string) (err error) {
-	return instance.SetProperty("VirtualSystemTypesSupported", value)
+	return instance.SetProperty("VirtualSystemTypesSupported", (value))
 }
 
 // GetVirtualSystemTypesSupported gets the value of VirtualSystemTypesSupported for the instance
@@ -128,9 +160,19 @@ func (instance *CIM_VirtualSystemManagementCapabilities) GetPropertyVirtualSyste
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

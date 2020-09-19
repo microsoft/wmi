@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_InstalledEthernetSwitchExtension struct
@@ -58,7 +60,7 @@ func NewMsvm_InstalledEthernetSwitchExtensionEx6(hostName string,
 
 // SetExtensionType sets the value of ExtensionType for the instance
 func (instance *Msvm_InstalledEthernetSwitchExtension) SetPropertyExtensionType(value uint8) (err error) {
-	return instance.SetProperty("ExtensionType", value)
+	return instance.SetProperty("ExtensionType", (value))
 }
 
 // GetExtensionType gets the value of ExtensionType for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_InstalledEthernetSwitchExtension) GetPropertyExtensionType(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetVendor sets the value of Vendor for the instance
 func (instance *Msvm_InstalledEthernetSwitchExtension) SetPropertyVendor(value string) (err error) {
-	return instance.SetProperty("Vendor", value)
+	return instance.SetProperty("Vendor", (value))
 }
 
 // GetVendor gets the value of Vendor for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_InstalledEthernetSwitchExtension) GetPropertyVendor() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Msvm_InstalledEthernetSwitchExtension) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -103,16 +123,25 @@ func (instance *Msvm_InstalledEthernetSwitchExtension) GetPropertyVersion() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_InstalledEthernetSwitchExtension) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
-func (instance *Msvm_InstalledEthernetSwitchExtension) GetRelatedEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchExtension")
+func (instance *Msvm_InstalledEthernetSwitchExtension) GetRelatedEthernetSwitchExtension() (value []*cim.WmiInstance, err error) {
+	return instance.GetAllRelated("Msvm_EthernetSwitchExtension")
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_EventPropertyChange struct
@@ -52,7 +54,7 @@ func NewMSCluster_EventPropertyChangeEx6(hostName string,
 
 // SetEventProperty sets the value of EventProperty for the instance
 func (instance *MSCluster_EventPropertyChange) SetPropertyEventProperty(value string) (err error) {
-	return instance.SetProperty("EventProperty", value)
+	return instance.SetProperty("EventProperty", (value))
 }
 
 // GetEventProperty gets the value of EventProperty for the instance
@@ -61,9 +63,18 @@ func (instance *MSCluster_EventPropertyChange) GetPropertyEventProperty() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

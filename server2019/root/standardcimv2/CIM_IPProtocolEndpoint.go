@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_IPProtocolEndpoint struct
@@ -73,7 +75,7 @@ func NewCIM_IPProtocolEndpointEx6(hostName string,
 
 // SetAddress sets the value of Address for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertyAddress(value string) (err error) {
-	return instance.SetProperty("Address", value)
+	return instance.SetProperty("Address", (value))
 }
 
 // GetAddress gets the value of Address for the instance
@@ -82,16 +84,25 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertyAddress() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAddressOrigin sets the value of AddressOrigin for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertyAddressOrigin(value uint16) (err error) {
-	return instance.SetProperty("AddressOrigin", value)
+	return instance.SetProperty("AddressOrigin", (value))
 }
 
 // GetAddressOrigin gets the value of AddressOrigin for the instance
@@ -100,16 +111,25 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertyAddressOrigin() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAddressType sets the value of AddressType for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertyAddressType(value uint16) (err error) {
-	return instance.SetProperty("AddressType", value)
+	return instance.SetProperty("AddressType", (value))
 }
 
 // GetAddressType gets the value of AddressType for the instance
@@ -118,16 +138,25 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertyAddressType() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIPv4Address sets the value of IPv4Address for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertyIPv4Address(value string) (err error) {
-	return instance.SetProperty("IPv4Address", value)
+	return instance.SetProperty("IPv4Address", (value))
 }
 
 // GetIPv4Address gets the value of IPv4Address for the instance
@@ -136,16 +165,25 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertyIPv4Address() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv6Address sets the value of IPv6Address for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertyIPv6Address(value string) (err error) {
-	return instance.SetProperty("IPv6Address", value)
+	return instance.SetProperty("IPv6Address", (value))
 }
 
 // GetIPv6Address gets the value of IPv6Address for the instance
@@ -154,16 +192,25 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertyIPv6Address() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPVersionSupport sets the value of IPVersionSupport for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertyIPVersionSupport(value uint16) (err error) {
-	return instance.SetProperty("IPVersionSupport", value)
+	return instance.SetProperty("IPVersionSupport", (value))
 }
 
 // GetIPVersionSupport gets the value of IPVersionSupport for the instance
@@ -172,16 +219,25 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertyIPVersionSupport() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPrefixLength sets the value of PrefixLength for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertyPrefixLength(value uint8) (err error) {
-	return instance.SetProperty("PrefixLength", value)
+	return instance.SetProperty("PrefixLength", (value))
 }
 
 // GetPrefixLength gets the value of PrefixLength for the instance
@@ -190,16 +246,25 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertyPrefixLength() (value uint8, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSubnetMask sets the value of SubnetMask for the instance
 func (instance *CIM_IPProtocolEndpoint) SetPropertySubnetMask(value string) (err error) {
-	return instance.SetProperty("SubnetMask", value)
+	return instance.SetProperty("SubnetMask", (value))
 }
 
 // GetSubnetMask gets the value of SubnetMask for the instance
@@ -208,9 +273,18 @@ func (instance *CIM_IPProtocolEndpoint) GetPropertySubnetMask() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

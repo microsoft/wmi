@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CAU_DownloadUpdateInfo struct
@@ -58,7 +60,7 @@ func NewMSFT_CAU_DownloadUpdateInfoEx6(hostName string,
 
 // SetUpdateErrorCode sets the value of UpdateErrorCode for the instance
 func (instance *MSFT_CAU_DownloadUpdateInfo) SetPropertyUpdateErrorCode(value int32) (err error) {
-	return instance.SetProperty("UpdateErrorCode", value)
+	return instance.SetProperty("UpdateErrorCode", (value))
 }
 
 // GetUpdateErrorCode gets the value of UpdateErrorCode for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_CAU_DownloadUpdateInfo) GetPropertyUpdateErrorCode() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetUpdateResultCode sets the value of UpdateResultCode for the instance
 func (instance *MSFT_CAU_DownloadUpdateInfo) SetPropertyUpdateResultCode(value uint32) (err error) {
-	return instance.SetProperty("UpdateResultCode", value)
+	return instance.SetProperty("UpdateResultCode", (value))
 }
 
 // GetUpdateResultCode gets the value of UpdateResultCode for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_CAU_DownloadUpdateInfo) GetPropertyUpdateResultCode() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUpdateTimestamp sets the value of UpdateTimestamp for the instance
 func (instance *MSFT_CAU_DownloadUpdateInfo) SetPropertyUpdateTimestamp(value string) (err error) {
-	return instance.SetProperty("UpdateTimestamp", value)
+	return instance.SetProperty("UpdateTimestamp", (value))
 }
 
 // GetUpdateTimestamp gets the value of UpdateTimestamp for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_CAU_DownloadUpdateInfo) GetPropertyUpdateTimestamp() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

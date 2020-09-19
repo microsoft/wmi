@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_ReplicationSettingData struct
@@ -112,7 +114,7 @@ func NewMsvm_ReplicationSettingDataEx6(hostName string,
 
 // SetAdditionalSettings sets the value of AdditionalSettings for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyAdditionalSettings(value string) (err error) {
-	return instance.SetProperty("AdditionalSettings", value)
+	return instance.SetProperty("AdditionalSettings", (value))
 }
 
 // GetAdditionalSettings gets the value of AdditionalSettings for the instance
@@ -121,16 +123,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyAdditionalSettings() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetApplicationConsistentSnapshotInterval sets the value of ApplicationConsistentSnapshotInterval for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyApplicationConsistentSnapshotInterval(value uint16) (err error) {
-	return instance.SetProperty("ApplicationConsistentSnapshotInterval", value)
+	return instance.SetProperty("ApplicationConsistentSnapshotInterval", (value))
 }
 
 // GetApplicationConsistentSnapshotInterval gets the value of ApplicationConsistentSnapshotInterval for the instance
@@ -139,16 +150,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyApplicationConsistentSna
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAuthenticationType sets the value of AuthenticationType for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyAuthenticationType(value uint16) (err error) {
-	return instance.SetProperty("AuthenticationType", value)
+	return instance.SetProperty("AuthenticationType", (value))
 }
 
 // GetAuthenticationType gets the value of AuthenticationType for the instance
@@ -157,16 +177,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyAuthenticationType() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAutoResynchronizeEnabled sets the value of AutoResynchronizeEnabled for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyAutoResynchronizeEnabled(value bool) (err error) {
-	return instance.SetProperty("AutoResynchronizeEnabled", value)
+	return instance.SetProperty("AutoResynchronizeEnabled", (value))
 }
 
 // GetAutoResynchronizeEnabled gets the value of AutoResynchronizeEnabled for the instance
@@ -175,16 +204,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyAutoResynchronizeEnabled
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAutoResynchronizeIntervalEnd sets the value of AutoResynchronizeIntervalEnd for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyAutoResynchronizeIntervalEnd(value string) (err error) {
-	return instance.SetProperty("AutoResynchronizeIntervalEnd", value)
+	return instance.SetProperty("AutoResynchronizeIntervalEnd", (value))
 }
 
 // GetAutoResynchronizeIntervalEnd gets the value of AutoResynchronizeIntervalEnd for the instance
@@ -193,16 +231,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyAutoResynchronizeInterva
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutoResynchronizeIntervalStart sets the value of AutoResynchronizeIntervalStart for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyAutoResynchronizeIntervalStart(value string) (err error) {
-	return instance.SetProperty("AutoResynchronizeIntervalStart", value)
+	return instance.SetProperty("AutoResynchronizeIntervalStart", (value))
 }
 
 // GetAutoResynchronizeIntervalStart gets the value of AutoResynchronizeIntervalStart for the instance
@@ -211,16 +258,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyAutoResynchronizeInterva
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBypassProxyServer sets the value of BypassProxyServer for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyBypassProxyServer(value bool) (err error) {
-	return instance.SetProperty("BypassProxyServer", value)
+	return instance.SetProperty("BypassProxyServer", (value))
 }
 
 // GetBypassProxyServer gets the value of BypassProxyServer for the instance
@@ -229,16 +285,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyBypassProxyServer() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCertificateThumbPrint sets the value of CertificateThumbPrint for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyCertificateThumbPrint(value string) (err error) {
-	return instance.SetProperty("CertificateThumbPrint", value)
+	return instance.SetProperty("CertificateThumbPrint", (value))
 }
 
 // GetCertificateThumbPrint gets the value of CertificateThumbPrint for the instance
@@ -247,16 +312,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyCertificateThumbPrint() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCompressionEnabled sets the value of CompressionEnabled for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyCompressionEnabled(value bool) (err error) {
-	return instance.SetProperty("CompressionEnabled", value)
+	return instance.SetProperty("CompressionEnabled", (value))
 }
 
 // GetCompressionEnabled gets the value of CompressionEnabled for the instance
@@ -265,16 +339,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyCompressionEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableWriteOrderPreservationAcrossDisks sets the value of EnableWriteOrderPreservationAcrossDisks for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyEnableWriteOrderPreservationAcrossDisks(value bool) (err error) {
-	return instance.SetProperty("EnableWriteOrderPreservationAcrossDisks", value)
+	return instance.SetProperty("EnableWriteOrderPreservationAcrossDisks", (value))
 }
 
 // GetEnableWriteOrderPreservationAcrossDisks gets the value of EnableWriteOrderPreservationAcrossDisks for the instance
@@ -283,16 +366,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyEnableWriteOrderPreserva
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIncludedDisks sets the value of IncludedDisks for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyIncludedDisks(value []string) (err error) {
-	return instance.SetProperty("IncludedDisks", value)
+	return instance.SetProperty("IncludedDisks", (value))
 }
 
 // GetIncludedDisks gets the value of IncludedDisks for the instance
@@ -301,16 +393,26 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyIncludedDisks() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPrimaryConnectionPoint sets the value of PrimaryConnectionPoint for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyPrimaryConnectionPoint(value string) (err error) {
-	return instance.SetProperty("PrimaryConnectionPoint", value)
+	return instance.SetProperty("PrimaryConnectionPoint", (value))
 }
 
 // GetPrimaryConnectionPoint gets the value of PrimaryConnectionPoint for the instance
@@ -319,16 +421,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyPrimaryConnectionPoint()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPrimaryHostSystem sets the value of PrimaryHostSystem for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyPrimaryHostSystem(value string) (err error) {
-	return instance.SetProperty("PrimaryHostSystem", value)
+	return instance.SetProperty("PrimaryHostSystem", (value))
 }
 
 // GetPrimaryHostSystem gets the value of PrimaryHostSystem for the instance
@@ -337,16 +448,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyPrimaryHostSystem() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecoveryConnectionPoint sets the value of RecoveryConnectionPoint for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyRecoveryConnectionPoint(value string) (err error) {
-	return instance.SetProperty("RecoveryConnectionPoint", value)
+	return instance.SetProperty("RecoveryConnectionPoint", (value))
 }
 
 // GetRecoveryConnectionPoint gets the value of RecoveryConnectionPoint for the instance
@@ -355,16 +475,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyRecoveryConnectionPoint(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecoveryHistory sets the value of RecoveryHistory for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyRecoveryHistory(value uint16) (err error) {
-	return instance.SetProperty("RecoveryHistory", value)
+	return instance.SetProperty("RecoveryHistory", (value))
 }
 
 // GetRecoveryHistory gets the value of RecoveryHistory for the instance
@@ -373,16 +502,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyRecoveryHistory() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRecoveryHostSystem sets the value of RecoveryHostSystem for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyRecoveryHostSystem(value string) (err error) {
-	return instance.SetProperty("RecoveryHostSystem", value)
+	return instance.SetProperty("RecoveryHostSystem", (value))
 }
 
 // GetRecoveryHostSystem gets the value of RecoveryHostSystem for the instance
@@ -391,16 +529,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyRecoveryHostSystem() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecoveryServerPortNumber sets the value of RecoveryServerPortNumber for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyRecoveryServerPortNumber(value uint16) (err error) {
-	return instance.SetProperty("RecoveryServerPortNumber", value)
+	return instance.SetProperty("RecoveryServerPortNumber", (value))
 }
 
 // GetRecoveryServerPortNumber gets the value of RecoveryServerPortNumber for the instance
@@ -409,16 +556,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyRecoveryServerPortNumber
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicateHostKvpItems sets the value of ReplicateHostKvpItems for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyReplicateHostKvpItems(value bool) (err error) {
-	return instance.SetProperty("ReplicateHostKvpItems", value)
+	return instance.SetProperty("ReplicateHostKvpItems", (value))
 }
 
 // GetReplicateHostKvpItems gets the value of ReplicateHostKvpItems for the instance
@@ -427,16 +583,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyReplicateHostKvpItems() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetReplicationInterval sets the value of ReplicationInterval for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyReplicationInterval(value uint16) (err error) {
-	return instance.SetProperty("ReplicationInterval", value)
+	return instance.SetProperty("ReplicationInterval", (value))
 }
 
 // GetReplicationInterval gets the value of ReplicationInterval for the instance
@@ -445,16 +610,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyReplicationInterval() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReplicationProvider sets the value of ReplicationProvider for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyReplicationProvider(value string) (err error) {
-	return instance.SetProperty("ReplicationProvider", value)
+	return instance.SetProperty("ReplicationProvider", (value))
 }
 
 // GetReplicationProvider gets the value of ReplicationProvider for the instance
@@ -463,16 +637,25 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyReplicationProvider() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRootCertificateThumbPrint sets the value of RootCertificateThumbPrint for the instance
 func (instance *Msvm_ReplicationSettingData) SetPropertyRootCertificateThumbPrint(value string) (err error) {
-	return instance.SetProperty("RootCertificateThumbPrint", value)
+	return instance.SetProperty("RootCertificateThumbPrint", (value))
 }
 
 // GetRootCertificateThumbPrint gets the value of RootCertificateThumbPrint for the instance
@@ -481,10 +664,19 @@ func (instance *Msvm_ReplicationSettingData) GetPropertyRootCertificateThumbPrin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_ReplicationSettingData) GetRelatedReplicationRelationship() (value *cim.WmiInstance, err error) {

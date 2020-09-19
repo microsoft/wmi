@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Property struct
@@ -58,7 +60,7 @@ func NewWin32_PropertyEx6(hostName string,
 
 // SetProductCode sets the value of ProductCode for the instance
 func (instance *Win32_Property) SetPropertyProductCode(value string) (err error) {
-	return instance.SetProperty("ProductCode", value)
+	return instance.SetProperty("ProductCode", (value))
 }
 
 // GetProductCode gets the value of ProductCode for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_Property) GetPropertyProductCode() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProperty sets the value of Property for the instance
 func (instance *Win32_Property) SetPropertyProperty(value string) (err error) {
-	return instance.SetProperty("Property", value)
+	return instance.SetProperty("Property", (value))
 }
 
 // GetProperty gets the value of Property for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_Property) GetPropertyProperty() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValue sets the value of Value for the instance
 func (instance *Win32_Property) SetPropertyValue(value string) (err error) {
-	return instance.SetProperty("Value", value)
+	return instance.SetProperty("Value", (value))
 }
 
 // GetValue gets the value of Value for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_Property) GetPropertyValue() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

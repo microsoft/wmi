@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Cli
 //////////////////////////////////////////////
 package cli
@@ -11,7 +11,9 @@ package cli
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CliQualifier struct
@@ -56,7 +58,7 @@ func NewMSFT_CliQualifierEx6(hostName string,
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_CliQualifier) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_CliQualifier) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQualifierValue sets the value of QualifierValue for the instance
 func (instance *MSFT_CliQualifier) SetPropertyQualifierValue(value []string) (err error) {
-	return instance.SetProperty("QualifierValue", value)
+	return instance.SetProperty("QualifierValue", (value))
 }
 
 // GetQualifierValue gets the value of QualifierValue for the instance
@@ -83,9 +94,19 @@ func (instance *MSFT_CliQualifier) GetPropertyQualifierValue() (value []string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

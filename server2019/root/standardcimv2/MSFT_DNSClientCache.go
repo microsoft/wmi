@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DNSClientCache struct
@@ -73,7 +75,7 @@ func NewMSFT_DNSClientCacheEx6(hostName string,
 
 // SetData sets the value of Data for the instance
 func (instance *MSFT_DNSClientCache) SetPropertyData(value string) (err error) {
-	return instance.SetProperty("Data", value)
+	return instance.SetProperty("Data", (value))
 }
 
 // GetData gets the value of Data for the instance
@@ -82,16 +84,25 @@ func (instance *MSFT_DNSClientCache) GetPropertyData() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDataLength sets the value of DataLength for the instance
 func (instance *MSFT_DNSClientCache) SetPropertyDataLength(value uint16) (err error) {
-	return instance.SetProperty("DataLength", value)
+	return instance.SetProperty("DataLength", (value))
 }
 
 // GetDataLength gets the value of DataLength for the instance
@@ -100,16 +111,25 @@ func (instance *MSFT_DNSClientCache) GetPropertyDataLength() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEntry sets the value of Entry for the instance
 func (instance *MSFT_DNSClientCache) SetPropertyEntry(value string) (err error) {
-	return instance.SetProperty("Entry", value)
+	return instance.SetProperty("Entry", (value))
 }
 
 // GetEntry gets the value of Entry for the instance
@@ -118,16 +138,25 @@ func (instance *MSFT_DNSClientCache) GetPropertyEntry() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_DNSClientCache) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -136,16 +165,25 @@ func (instance *MSFT_DNSClientCache) GetPropertyName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSection sets the value of Section for the instance
 func (instance *MSFT_DNSClientCache) SetPropertySection(value DNSClientCache_Section) (err error) {
-	return instance.SetProperty("Section", value)
+	return instance.SetProperty("Section", (value))
 }
 
 // GetSection gets the value of Section for the instance
@@ -154,16 +192,25 @@ func (instance *MSFT_DNSClientCache) GetPropertySection() (value DNSClientCache_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(DNSClientCache_Section)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = DNSClientCache_Section(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MSFT_DNSClientCache) SetPropertyStatus(value DNSClientCache_Status) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -172,16 +219,25 @@ func (instance *MSFT_DNSClientCache) GetPropertyStatus() (value DNSClientCache_S
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(DNSClientCache_Status)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = DNSClientCache_Status(valuetmp)
+
 	return
 }
 
 // SetTimeToLive sets the value of TimeToLive for the instance
 func (instance *MSFT_DNSClientCache) SetPropertyTimeToLive(value uint32) (err error) {
-	return instance.SetProperty("TimeToLive", value)
+	return instance.SetProperty("TimeToLive", (value))
 }
 
 // GetTimeToLive gets the value of TimeToLive for the instance
@@ -190,16 +246,25 @@ func (instance *MSFT_DNSClientCache) GetPropertyTimeToLive() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_DNSClientCache) SetPropertyType(value DNSClientCache_Type) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -208,10 +273,19 @@ func (instance *MSFT_DNSClientCache) GetPropertyType() (value DNSClientCache_Typ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(DNSClientCache_Type)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = DNSClientCache_Type(valuetmp)
+
 	return
 }
 

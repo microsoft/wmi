@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SettingsDefineCapabilities struct
@@ -66,7 +68,7 @@ func NewCIM_SettingsDefineCapabilitiesEx6(hostName string,
 
 // SetPropertyPolicy sets the value of PropertyPolicy for the instance
 func (instance *CIM_SettingsDefineCapabilities) SetPropertyPropertyPolicy(value SettingsDefineCapabilities_PropertyPolicy) (err error) {
-	return instance.SetProperty("PropertyPolicy", value)
+	return instance.SetProperty("PropertyPolicy", (value))
 }
 
 // GetPropertyPolicy gets the value of PropertyPolicy for the instance
@@ -75,16 +77,25 @@ func (instance *CIM_SettingsDefineCapabilities) GetPropertyPropertyPolicy() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SettingsDefineCapabilities_PropertyPolicy)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SettingsDefineCapabilities_PropertyPolicy(valuetmp)
+
 	return
 }
 
 // SetValueRange sets the value of ValueRange for the instance
 func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRange(value SettingsDefineCapabilities_ValueRange) (err error) {
-	return instance.SetProperty("ValueRange", value)
+	return instance.SetProperty("ValueRange", (value))
 }
 
 // GetValueRange gets the value of ValueRange for the instance
@@ -93,16 +104,25 @@ func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRange() (value S
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SettingsDefineCapabilities_ValueRange)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SettingsDefineCapabilities_ValueRange(valuetmp)
+
 	return
 }
 
 // SetValueRole sets the value of ValueRole for the instance
 func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRole(value SettingsDefineCapabilities_ValueRole) (err error) {
-	return instance.SetProperty("ValueRole", value)
+	return instance.SetProperty("ValueRole", (value))
 }
 
 // GetValueRole gets the value of ValueRole for the instance
@@ -111,9 +131,18 @@ func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRole() (value Se
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SettingsDefineCapabilities_ValueRole)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SettingsDefineCapabilities_ValueRole(valuetmp)
+
 	return
 }

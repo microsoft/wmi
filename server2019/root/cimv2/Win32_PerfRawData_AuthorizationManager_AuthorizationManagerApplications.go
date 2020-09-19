@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_AuthorizationManager_AuthorizationManagerApplications struct
@@ -55,7 +57,7 @@ func NewWin32_PerfRawData_AuthorizationManager_AuthorizationManagerApplicationsE
 
 // SetNumberofScopesloadedinmemory sets the value of NumberofScopesloadedinmemory for the instance
 func (instance *Win32_PerfRawData_AuthorizationManager_AuthorizationManagerApplications) SetPropertyNumberofScopesloadedinmemory(value uint32) (err error) {
-	return instance.SetProperty("NumberofScopesloadedinmemory", value)
+	return instance.SetProperty("NumberofScopesloadedinmemory", (value))
 }
 
 // GetNumberofScopesloadedinmemory gets the value of NumberofScopesloadedinmemory for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PerfRawData_AuthorizationManager_AuthorizationManagerAppli
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalnumberofscopes sets the value of Totalnumberofscopes for the instance
 func (instance *Win32_PerfRawData_AuthorizationManager_AuthorizationManagerApplications) SetPropertyTotalnumberofscopes(value uint32) (err error) {
-	return instance.SetProperty("Totalnumberofscopes", value)
+	return instance.SetProperty("Totalnumberofscopes", (value))
 }
 
 // GetTotalnumberofscopes gets the value of Totalnumberofscopes for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PerfRawData_AuthorizationManager_AuthorizationManagerAppli
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

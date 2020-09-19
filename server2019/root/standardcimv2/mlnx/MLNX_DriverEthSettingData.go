@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_DriverEthSettingData struct
@@ -58,7 +60,7 @@ func NewMLNX_DriverEthSettingDataEx6(hostName string,
 
 // SetModeFlags sets the value of ModeFlags for the instance
 func (instance *MLNX_DriverEthSettingData) SetPropertyModeFlags(value uint32) (err error) {
-	return instance.SetProperty("ModeFlags", value)
+	return instance.SetProperty("ModeFlags", (value))
 }
 
 // GetModeFlags gets the value of ModeFlags for the instance
@@ -67,16 +69,25 @@ func (instance *MLNX_DriverEthSettingData) GetPropertyModeFlags() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNdkDebugFlags sets the value of NdkDebugFlags for the instance
 func (instance *MLNX_DriverEthSettingData) SetPropertyNdkDebugFlags(value uint32) (err error) {
-	return instance.SetProperty("NdkDebugFlags", value)
+	return instance.SetProperty("NdkDebugFlags", (value))
 }
 
 // GetNdkDebugFlags gets the value of NdkDebugFlags for the instance
@@ -85,16 +96,25 @@ func (instance *MLNX_DriverEthSettingData) GetPropertyNdkDebugFlags() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNdkDebugLevel sets the value of NdkDebugLevel for the instance
 func (instance *MLNX_DriverEthSettingData) SetPropertyNdkDebugLevel(value uint32) (err error) {
-	return instance.SetProperty("NdkDebugLevel", value)
+	return instance.SetProperty("NdkDebugLevel", (value))
 }
 
 // GetNdkDebugLevel gets the value of NdkDebugLevel for the instance
@@ -103,10 +123,19 @@ func (instance *MLNX_DriverEthSettingData) GetPropertyNdkDebugLevel() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

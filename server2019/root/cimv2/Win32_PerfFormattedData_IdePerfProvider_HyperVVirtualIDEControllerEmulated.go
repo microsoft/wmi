@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControllerEmulated struct
@@ -61,7 +63,7 @@ func NewWin32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControllerEmulat
 
 // SetReadBytesPersec sets the value of ReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControllerEmulated) SetPropertyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersec", value)
+	return instance.SetProperty("ReadBytesPersec", (value))
 }
 
 // GetReadBytesPersec gets the value of ReadBytesPersec for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControll
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadSectorsPersec sets the value of ReadSectorsPersec for the instance
 func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControllerEmulated) SetPropertyReadSectorsPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadSectorsPersec", value)
+	return instance.SetProperty("ReadSectorsPersec", (value))
 }
 
 // GetReadSectorsPersec gets the value of ReadSectorsPersec for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControll
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBytesPersec sets the value of WriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControllerEmulated) SetPropertyWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBytesPersec", value)
+	return instance.SetProperty("WriteBytesPersec", (value))
 }
 
 // GetWriteBytesPersec gets the value of WriteBytesPersec for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControll
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWrittenSectorsPersec sets the value of WrittenSectorsPersec for the instance
 func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControllerEmulated) SetPropertyWrittenSectorsPersec(value uint64) (err error) {
-	return instance.SetProperty("WrittenSectorsPersec", value)
+	return instance.SetProperty("WrittenSectorsPersec", (value))
 }
 
 // GetWrittenSectorsPersec gets the value of WrittenSectorsPersec for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfFormattedData_IdePerfProvider_HyperVVirtualIDEControll
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

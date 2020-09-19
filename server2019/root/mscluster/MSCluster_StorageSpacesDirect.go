@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
@@ -11,7 +11,9 @@ package mscluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_StorageSpacesDirect struct
@@ -49,13 +51,7 @@ type MSCluster_StorageSpacesDirect struct {
 	ScmUse uint32
 
 	//
-	SedProtectionState uint32
-
-	//
 	State uint32
-
-	//
-	UseSedExclusively bool
 }
 
 func NewMSCluster_StorageSpacesDirectEx1(instance *cim.WmiInstance) (newInstance *MSCluster_StorageSpacesDirect, err error) {
@@ -89,7 +85,7 @@ func NewMSCluster_StorageSpacesDirectEx6(hostName string,
 
 // SetCacheDeviceModel sets the value of CacheDeviceModel for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyCacheDeviceModel(value []string) (err error) {
-	return instance.SetProperty("CacheDeviceModel", value)
+	return instance.SetProperty("CacheDeviceModel", (value))
 }
 
 // GetCacheDeviceModel gets the value of CacheDeviceModel for the instance
@@ -98,16 +94,26 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyCacheDeviceModel() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetCacheMetadataReserveBytes sets the value of CacheMetadataReserveBytes for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyCacheMetadataReserveBytes(value uint64) (err error) {
-	return instance.SetProperty("CacheMetadataReserveBytes", value)
+	return instance.SetProperty("CacheMetadataReserveBytes", (value))
 }
 
 // GetCacheMetadataReserveBytes gets the value of CacheMetadataReserveBytes for the instance
@@ -116,16 +122,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyCacheMetadataReserveBy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCacheModeHDD sets the value of CacheModeHDD for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyCacheModeHDD(value uint32) (err error) {
-	return instance.SetProperty("CacheModeHDD", value)
+	return instance.SetProperty("CacheModeHDD", (value))
 }
 
 // GetCacheModeHDD gets the value of CacheModeHDD for the instance
@@ -134,16 +149,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyCacheModeHDD() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheModeSSD sets the value of CacheModeSSD for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyCacheModeSSD(value uint32) (err error) {
-	return instance.SetProperty("CacheModeSSD", value)
+	return instance.SetProperty("CacheModeSSD", (value))
 }
 
 // GetCacheModeSSD gets the value of CacheModeSSD for the instance
@@ -152,16 +176,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyCacheModeSSD() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCachePageSizeKBytes sets the value of CachePageSizeKBytes for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyCachePageSizeKBytes(value uint32) (err error) {
-	return instance.SetProperty("CachePageSizeKBytes", value)
+	return instance.SetProperty("CachePageSizeKBytes", (value))
 }
 
 // GetCachePageSizeKBytes gets the value of CachePageSizeKBytes for the instance
@@ -170,16 +203,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyCachePageSizeKBytes() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCacheState sets the value of CacheState for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyCacheState(value uint32) (err error) {
-	return instance.SetProperty("CacheState", value)
+	return instance.SetProperty("CacheState", (value))
 }
 
 // GetCacheState gets the value of CacheState for the instance
@@ -188,16 +230,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyCacheState() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnableReportName sets the value of EnableReportName for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyEnableReportName(value string) (err error) {
-	return instance.SetProperty("EnableReportName", value)
+	return instance.SetProperty("EnableReportName", (value))
 }
 
 // GetEnableReportName gets the value of EnableReportName for the instance
@@ -206,16 +257,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyEnableReportName() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -224,16 +284,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNode sets the value of Node for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyNode(value string) (err error) {
-	return instance.SetProperty("Node", value)
+	return instance.SetProperty("Node", (value))
 }
 
 // GetNode gets the value of Node for the instance
@@ -242,16 +311,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyNode() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScmUse sets the value of ScmUse for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyScmUse(value uint32) (err error) {
-	return instance.SetProperty("ScmUse", value)
+	return instance.SetProperty("ScmUse", (value))
 }
 
 // GetScmUse gets the value of ScmUse for the instance
@@ -260,34 +338,25 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyScmUse() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetSedProtectionState sets the value of SedProtectionState for the instance
-func (instance *MSCluster_StorageSpacesDirect) SetPropertySedProtectionState(value uint32) (err error) {
-	return instance.SetProperty("SedProtectionState", value)
-}
-
-// GetSedProtectionState gets the value of SedProtectionState for the instance
-func (instance *MSCluster_StorageSpacesDirect) GetPropertySedProtectionState() (value uint32, err error) {
-	retValue, err := instance.GetProperty("SedProtectionState")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint32)
+
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSCluster_StorageSpacesDirect) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -296,28 +365,19 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyState() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetUseSedExclusively sets the value of UseSedExclusively for the instance
-func (instance *MSCluster_StorageSpacesDirect) SetPropertyUseSedExclusively(value bool) (err error) {
-	return instance.SetProperty("UseSedExclusively", value)
-}
-
-// GetUseSedExclusively gets the value of UseSedExclusively for the instance
-func (instance *MSCluster_StorageSpacesDirect) GetPropertyUseSedExclusively() (value bool, err error) {
-	retValue, err := instance.GetProperty("UseSedExclusively")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
+
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
@@ -331,9 +391,7 @@ func (instance *MSCluster_StorageSpacesDirect) GetPropertyUseSedExclusively() (v
 // <param name="CacheState" type="uint32 "></param>
 // <param name="CollectPerformanceHistory" type="bool "></param>
 // <param name="PoolFriendlyName" type="string "></param>
-// <param name="SedProtectionState" type="uint32 "></param>
 // <param name="SkipEligibilityChecks" type="bool "></param>
-// <param name="UseSedExclusively" type="bool "></param>
 // <param name="XML" type="string "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
@@ -348,10 +406,8 @@ func (instance *MSCluster_StorageSpacesDirect) EnableStorageSpacesDirect( /* IN 
 	/* IN */ SkipEligibilityChecks bool,
 	/* IN */ CollectPerformanceHistory bool,
 	/* IN */ BusTypesToUse []uint16,
-	/* IN */ UseSedExclusively bool,
-	/* IN */ SedProtectionState uint32,
 	/* OUT */ StorageSpacesDirect MSCluster_StorageSpacesDirect) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("EnableStorageSpacesDirect", CacheState, CacheMetadataReserveBytes, XML, CacheDeviceModel, AutoConfig, CachePageSizeKBytes, PoolFriendlyName, SkipEligibilityChecks, CollectPerformanceHistory, BusTypesToUse, UseSedExclusively, SedProtectionState)
+	retVal, err := instance.InvokeMethod("EnableStorageSpacesDirect", CacheState, CacheMetadataReserveBytes, XML, CacheDeviceModel, AutoConfig, CachePageSizeKBytes, PoolFriendlyName, SkipEligibilityChecks, CollectPerformanceHistory, BusTypesToUse)
 	if err != nil {
 		return
 	}
@@ -383,9 +439,7 @@ func (instance *MSCluster_StorageSpacesDirect) DisableStorageSpacesDirect( /* IN
 // <param name="CacheState" type="uint32 "></param>
 // <param name="Nodes" type="string []"></param>
 // <param name="ScmUse" type="uint32 "></param>
-// <param name="SedProtectionState" type="uint32 "></param>
 // <param name="SkipEligibilityChecks" type="bool "></param>
-// <param name="UseSedExclusively" type="bool "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *MSCluster_StorageSpacesDirect) SetStorageSpacesDirect( /* IN */ CacheState uint32,
@@ -393,10 +447,8 @@ func (instance *MSCluster_StorageSpacesDirect) SetStorageSpacesDirect( /* IN */ 
 	/* IN */ CacheModeSsd uint32,
 	/* IN */ SkipEligibilityChecks bool,
 	/* IN */ ScmUse uint32,
-	/* IN */ Nodes []string,
-	/* IN */ UseSedExclusively bool,
-	/* IN */ SedProtectionState uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("SetStorageSpacesDirect", CacheState, CacheModeHdd, CacheModeSsd, SkipEligibilityChecks, ScmUse, Nodes, UseSedExclusively, SedProtectionState)
+	/* IN */ Nodes []string) (result uint32, err error) {
+	retVal, err := instance.InvokeMethodWithReturn("SetStorageSpacesDirect", CacheState, CacheModeHdd, CacheModeSsd, SkipEligibilityChecks, ScmUse, Nodes)
 	if err != nil {
 		return
 	}

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_FolderRedirectionUserConfiguration struct
@@ -95,7 +97,7 @@ func NewWin32_FolderRedirectionUserConfigurationEx6(hostName string,
 
 // SetAppDataRoaming sets the value of AppDataRoaming for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyAppDataRoaming(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("AppDataRoaming", value)
+	return instance.SetProperty("AppDataRoaming", (value))
 }
 
 // GetAppDataRoaming gets the value of AppDataRoaming for the instance
@@ -104,16 +106,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyAppDataRoam
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetContacts sets the value of Contacts for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyContacts(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Contacts", value)
+	return instance.SetProperty("Contacts", (value))
 }
 
 // GetContacts gets the value of Contacts for the instance
@@ -122,16 +133,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyContacts() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetDesktop sets the value of Desktop for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyDesktop(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Desktop", value)
+	return instance.SetProperty("Desktop", (value))
 }
 
 // GetDesktop gets the value of Desktop for the instance
@@ -140,16 +160,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyDesktop() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetDocuments sets the value of Documents for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyDocuments(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Documents", value)
+	return instance.SetProperty("Documents", (value))
 }
 
 // GetDocuments gets the value of Documents for the instance
@@ -158,16 +187,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyDocuments()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetDownloads sets the value of Downloads for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyDownloads(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Downloads", value)
+	return instance.SetProperty("Downloads", (value))
 }
 
 // GetDownloads gets the value of Downloads for the instance
@@ -176,16 +214,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyDownloads()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetFavorites sets the value of Favorites for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyFavorites(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Favorites", value)
+	return instance.SetProperty("Favorites", (value))
 }
 
 // GetFavorites gets the value of Favorites for the instance
@@ -194,16 +241,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyFavorites()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetIsConfiguredByWMI sets the value of IsConfiguredByWMI for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyIsConfiguredByWMI(value bool) (err error) {
-	return instance.SetProperty("IsConfiguredByWMI", value)
+	return instance.SetProperty("IsConfiguredByWMI", (value))
 }
 
 // GetIsConfiguredByWMI gets the value of IsConfiguredByWMI for the instance
@@ -212,16 +268,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyIsConfigure
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLinks sets the value of Links for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyLinks(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Links", value)
+	return instance.SetProperty("Links", (value))
 }
 
 // GetLinks gets the value of Links for the instance
@@ -230,16 +295,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyLinks() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetMusic sets the value of Music for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyMusic(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Music", value)
+	return instance.SetProperty("Music", (value))
 }
 
 // GetMusic gets the value of Music for the instance
@@ -248,16 +322,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyMusic() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetPictures sets the value of Pictures for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyPictures(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Pictures", value)
+	return instance.SetProperty("Pictures", (value))
 }
 
 // GetPictures gets the value of Pictures for the instance
@@ -266,16 +349,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyPictures() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetPrimaryComputerEnabled sets the value of PrimaryComputerEnabled for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyPrimaryComputerEnabled(value bool) (err error) {
-	return instance.SetProperty("PrimaryComputerEnabled", value)
+	return instance.SetProperty("PrimaryComputerEnabled", (value))
 }
 
 // GetPrimaryComputerEnabled gets the value of PrimaryComputerEnabled for the instance
@@ -284,16 +376,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyPrimaryComp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSavedGames sets the value of SavedGames for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertySavedGames(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("SavedGames", value)
+	return instance.SetProperty("SavedGames", (value))
 }
 
 // GetSavedGames gets the value of SavedGames for the instance
@@ -302,16 +403,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertySavedGames(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetSearches sets the value of Searches for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertySearches(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Searches", value)
+	return instance.SetProperty("Searches", (value))
 }
 
 // GetSearches gets the value of Searches for the instance
@@ -320,16 +430,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertySearches() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetStartMenu sets the value of StartMenu for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyStartMenu(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("StartMenu", value)
+	return instance.SetProperty("StartMenu", (value))
 }
 
 // GetStartMenu gets the value of StartMenu for the instance
@@ -338,16 +457,25 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyStartMenu()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }
 
 // SetVideos sets the value of Videos for the instance
 func (instance *Win32_FolderRedirectionUserConfiguration) SetPropertyVideos(value Win32_FolderRedirection) (err error) {
-	return instance.SetProperty("Videos", value)
+	return instance.SetProperty("Videos", (value))
 }
 
 // GetVideos gets the value of Videos for the instance
@@ -356,9 +484,18 @@ func (instance *Win32_FolderRedirectionUserConfiguration) GetPropertyVideos() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_FolderRedirection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_FolderRedirection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_FolderRedirection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_FolderRedirection(valuetmp)
+
 	return
 }

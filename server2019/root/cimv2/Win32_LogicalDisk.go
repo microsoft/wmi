@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_LogicalDisk struct
@@ -91,7 +93,7 @@ func NewWin32_LogicalDiskEx6(hostName string,
 
 // SetCompressed sets the value of Compressed for the instance
 func (instance *Win32_LogicalDisk) SetPropertyCompressed(value bool) (err error) {
-	return instance.SetProperty("Compressed", value)
+	return instance.SetProperty("Compressed", (value))
 }
 
 // GetCompressed gets the value of Compressed for the instance
@@ -100,16 +102,25 @@ func (instance *Win32_LogicalDisk) GetPropertyCompressed() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDriveType sets the value of DriveType for the instance
 func (instance *Win32_LogicalDisk) SetPropertyDriveType(value uint32) (err error) {
-	return instance.SetProperty("DriveType", value)
+	return instance.SetProperty("DriveType", (value))
 }
 
 // GetDriveType gets the value of DriveType for the instance
@@ -118,16 +129,25 @@ func (instance *Win32_LogicalDisk) GetPropertyDriveType() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFileSystem sets the value of FileSystem for the instance
 func (instance *Win32_LogicalDisk) SetPropertyFileSystem(value string) (err error) {
-	return instance.SetProperty("FileSystem", value)
+	return instance.SetProperty("FileSystem", (value))
 }
 
 // GetFileSystem gets the value of FileSystem for the instance
@@ -136,16 +156,25 @@ func (instance *Win32_LogicalDisk) GetPropertyFileSystem() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaximumComponentLength sets the value of MaximumComponentLength for the instance
 func (instance *Win32_LogicalDisk) SetPropertyMaximumComponentLength(value uint32) (err error) {
-	return instance.SetProperty("MaximumComponentLength", value)
+	return instance.SetProperty("MaximumComponentLength", (value))
 }
 
 // GetMaximumComponentLength gets the value of MaximumComponentLength for the instance
@@ -154,16 +183,25 @@ func (instance *Win32_LogicalDisk) GetPropertyMaximumComponentLength() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMediaType sets the value of MediaType for the instance
 func (instance *Win32_LogicalDisk) SetPropertyMediaType(value uint32) (err error) {
-	return instance.SetProperty("MediaType", value)
+	return instance.SetProperty("MediaType", (value))
 }
 
 // GetMediaType gets the value of MediaType for the instance
@@ -172,16 +210,25 @@ func (instance *Win32_LogicalDisk) GetPropertyMediaType() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProviderName sets the value of ProviderName for the instance
 func (instance *Win32_LogicalDisk) SetPropertyProviderName(value string) (err error) {
-	return instance.SetProperty("ProviderName", value)
+	return instance.SetProperty("ProviderName", (value))
 }
 
 // GetProviderName gets the value of ProviderName for the instance
@@ -190,16 +237,25 @@ func (instance *Win32_LogicalDisk) GetPropertyProviderName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQuotasDisabled sets the value of QuotasDisabled for the instance
 func (instance *Win32_LogicalDisk) SetPropertyQuotasDisabled(value bool) (err error) {
-	return instance.SetProperty("QuotasDisabled", value)
+	return instance.SetProperty("QuotasDisabled", (value))
 }
 
 // GetQuotasDisabled gets the value of QuotasDisabled for the instance
@@ -208,16 +264,25 @@ func (instance *Win32_LogicalDisk) GetPropertyQuotasDisabled() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetQuotasIncomplete sets the value of QuotasIncomplete for the instance
 func (instance *Win32_LogicalDisk) SetPropertyQuotasIncomplete(value bool) (err error) {
-	return instance.SetProperty("QuotasIncomplete", value)
+	return instance.SetProperty("QuotasIncomplete", (value))
 }
 
 // GetQuotasIncomplete gets the value of QuotasIncomplete for the instance
@@ -226,16 +291,25 @@ func (instance *Win32_LogicalDisk) GetPropertyQuotasIncomplete() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetQuotasRebuilding sets the value of QuotasRebuilding for the instance
 func (instance *Win32_LogicalDisk) SetPropertyQuotasRebuilding(value bool) (err error) {
-	return instance.SetProperty("QuotasRebuilding", value)
+	return instance.SetProperty("QuotasRebuilding", (value))
 }
 
 // GetQuotasRebuilding gets the value of QuotasRebuilding for the instance
@@ -244,16 +318,25 @@ func (instance *Win32_LogicalDisk) GetPropertyQuotasRebuilding() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsDiskQuotas sets the value of SupportsDiskQuotas for the instance
 func (instance *Win32_LogicalDisk) SetPropertySupportsDiskQuotas(value bool) (err error) {
-	return instance.SetProperty("SupportsDiskQuotas", value)
+	return instance.SetProperty("SupportsDiskQuotas", (value))
 }
 
 // GetSupportsDiskQuotas gets the value of SupportsDiskQuotas for the instance
@@ -262,16 +345,25 @@ func (instance *Win32_LogicalDisk) GetPropertySupportsDiskQuotas() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsFileBasedCompression sets the value of SupportsFileBasedCompression for the instance
 func (instance *Win32_LogicalDisk) SetPropertySupportsFileBasedCompression(value bool) (err error) {
-	return instance.SetProperty("SupportsFileBasedCompression", value)
+	return instance.SetProperty("SupportsFileBasedCompression", (value))
 }
 
 // GetSupportsFileBasedCompression gets the value of SupportsFileBasedCompression for the instance
@@ -280,16 +372,25 @@ func (instance *Win32_LogicalDisk) GetPropertySupportsFileBasedCompression() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVolumeDirty sets the value of VolumeDirty for the instance
 func (instance *Win32_LogicalDisk) SetPropertyVolumeDirty(value bool) (err error) {
-	return instance.SetProperty("VolumeDirty", value)
+	return instance.SetProperty("VolumeDirty", (value))
 }
 
 // GetVolumeDirty gets the value of VolumeDirty for the instance
@@ -298,16 +399,25 @@ func (instance *Win32_LogicalDisk) GetPropertyVolumeDirty() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVolumeName sets the value of VolumeName for the instance
 func (instance *Win32_LogicalDisk) SetPropertyVolumeName(value string) (err error) {
-	return instance.SetProperty("VolumeName", value)
+	return instance.SetProperty("VolumeName", (value))
 }
 
 // GetVolumeName gets the value of VolumeName for the instance
@@ -316,16 +426,25 @@ func (instance *Win32_LogicalDisk) GetPropertyVolumeName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVolumeSerialNumber sets the value of VolumeSerialNumber for the instance
 func (instance *Win32_LogicalDisk) SetPropertyVolumeSerialNumber(value string) (err error) {
-	return instance.SetProperty("VolumeSerialNumber", value)
+	return instance.SetProperty("VolumeSerialNumber", (value))
 }
 
 // GetVolumeSerialNumber gets the value of VolumeSerialNumber for the instance
@@ -334,10 +453,19 @@ func (instance *Win32_LogicalDisk) GetPropertyVolumeSerialNumber() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

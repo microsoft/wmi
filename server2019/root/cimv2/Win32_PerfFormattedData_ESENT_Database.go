@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_ESENT_Database struct
@@ -214,7 +216,7 @@ func NewWin32_PerfFormattedData_ESENT_DatabaseEx6(hostName string,
 
 // SetDatabaseCacheMemoryCommitted sets the value of DatabaseCacheMemoryCommitted for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheMemoryCommitted(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheMemoryCommitted", value)
+	return instance.SetProperty("DatabaseCacheMemoryCommitted", (value))
 }
 
 // GetDatabaseCacheMemoryCommitted gets the value of DatabaseCacheMemoryCommitted for the instance
@@ -223,16 +225,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheMemoryCommittedMB sets the value of DatabaseCacheMemoryCommittedMB for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheMemoryCommittedMB(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheMemoryCommittedMB", value)
+	return instance.SetProperty("DatabaseCacheMemoryCommittedMB", (value))
 }
 
 // GetDatabaseCacheMemoryCommittedMB gets the value of DatabaseCacheMemoryCommittedMB for the instance
@@ -241,16 +252,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheMemoryReserved sets the value of DatabaseCacheMemoryReserved for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheMemoryReserved(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheMemoryReserved", value)
+	return instance.SetProperty("DatabaseCacheMemoryReserved", (value))
 }
 
 // GetDatabaseCacheMemoryReserved gets the value of DatabaseCacheMemoryReserved for the instance
@@ -259,16 +279,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheMemoryReservedMB sets the value of DatabaseCacheMemoryReservedMB for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheMemoryReservedMB(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheMemoryReservedMB", value)
+	return instance.SetProperty("DatabaseCacheMemoryReservedMB", (value))
 }
 
 // GetDatabaseCacheMemoryReservedMB gets the value of DatabaseCacheMemoryReservedMB for the instance
@@ -277,16 +306,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheMissAttachedAverageLatency sets the value of DatabaseCacheMissAttachedAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheMissAttachedAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheMissAttachedAverageLatency", value)
+	return instance.SetProperty("DatabaseCacheMissAttachedAverageLatency", (value))
 }
 
 // GetDatabaseCacheMissAttachedAverageLatency gets the value of DatabaseCacheMissAttachedAverageLatency for the instance
@@ -295,16 +333,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheMissesPersec sets the value of DatabaseCacheMissesPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheMissesPersec(value uint32) (err error) {
-	return instance.SetProperty("DatabaseCacheMissesPersec", value)
+	return instance.SetProperty("DatabaseCacheMissesPersec", (value))
 }
 
 // GetDatabaseCacheMissesPersec gets the value of DatabaseCacheMissesPersec for the instance
@@ -313,16 +360,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabaseCachePercentDehydrated sets the value of DatabaseCachePercentDehydrated for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCachePercentDehydrated(value uint32) (err error) {
-	return instance.SetProperty("DatabaseCachePercentDehydrated", value)
+	return instance.SetProperty("DatabaseCachePercentDehydrated", (value))
 }
 
 // GetDatabaseCachePercentDehydrated gets the value of DatabaseCachePercentDehydrated for the instance
@@ -331,16 +387,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabaseCachePercentHit sets the value of DatabaseCachePercentHit for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCachePercentHit(value uint32) (err error) {
-	return instance.SetProperty("DatabaseCachePercentHit", value)
+	return instance.SetProperty("DatabaseCachePercentHit", (value))
 }
 
 // GetDatabaseCachePercentHit gets the value of DatabaseCachePercentHit for the instance
@@ -349,16 +414,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabaseCachePercentHitUnique sets the value of DatabaseCachePercentHitUnique for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCachePercentHitUnique(value uint32) (err error) {
-	return instance.SetProperty("DatabaseCachePercentHitUnique", value)
+	return instance.SetProperty("DatabaseCachePercentHitUnique", (value))
 }
 
 // GetDatabaseCachePercentHitUnique gets the value of DatabaseCachePercentHitUnique for the instance
@@ -367,16 +441,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheRequestsPersec sets the value of DatabaseCacheRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("DatabaseCacheRequestsPersec", value)
+	return instance.SetProperty("DatabaseCacheRequestsPersec", (value))
 }
 
 // GetDatabaseCacheRequestsPersec gets the value of DatabaseCacheRequestsPersec for the instance
@@ -385,16 +468,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheRequestsPersecUnique sets the value of DatabaseCacheRequestsPersecUnique for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheRequestsPersecUnique(value uint32) (err error) {
-	return instance.SetProperty("DatabaseCacheRequestsPersecUnique", value)
+	return instance.SetProperty("DatabaseCacheRequestsPersecUnique", (value))
 }
 
 // GetDatabaseCacheRequestsPersecUnique gets the value of DatabaseCacheRequestsPersecUnique for the instance
@@ -403,16 +495,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheSize sets the value of DatabaseCacheSize for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheSize(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheSize", value)
+	return instance.SetProperty("DatabaseCacheSize", (value))
 }
 
 // GetDatabaseCacheSize gets the value of DatabaseCacheSize for the instance
@@ -421,16 +522,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheSizeEffective sets the value of DatabaseCacheSizeEffective for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheSizeEffective(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheSizeEffective", value)
+	return instance.SetProperty("DatabaseCacheSizeEffective", (value))
 }
 
 // GetDatabaseCacheSizeEffective gets the value of DatabaseCacheSizeEffective for the instance
@@ -439,16 +549,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheSizeEffectiveMB sets the value of DatabaseCacheSizeEffectiveMB for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheSizeEffectiveMB(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheSizeEffectiveMB", value)
+	return instance.SetProperty("DatabaseCacheSizeEffectiveMB", (value))
 }
 
 // GetDatabaseCacheSizeEffectiveMB gets the value of DatabaseCacheSizeEffectiveMB for the instance
@@ -457,16 +576,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheSizeMB sets the value of DatabaseCacheSizeMB for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheSizeMB(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheSizeMB", value)
+	return instance.SetProperty("DatabaseCacheSizeMB", (value))
 }
 
 // GetDatabaseCacheSizeMB gets the value of DatabaseCacheSizeMB for the instance
@@ -475,16 +603,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheSizeResident sets the value of DatabaseCacheSizeResident for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheSizeResident(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheSizeResident", value)
+	return instance.SetProperty("DatabaseCacheSizeResident", (value))
 }
 
 // GetDatabaseCacheSizeResident gets the value of DatabaseCacheSizeResident for the instance
@@ -493,16 +630,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseCacheSizeResidentMB sets the value of DatabaseCacheSizeResidentMB for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseCacheSizeResidentMB(value uint64) (err error) {
-	return instance.SetProperty("DatabaseCacheSizeResidentMB", value)
+	return instance.SetProperty("DatabaseCacheSizeResidentMB", (value))
 }
 
 // GetDatabaseCacheSizeResidentMB gets the value of DatabaseCacheSizeResidentMB for the instance
@@ -511,16 +657,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseCache
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDatabaseMaintenanceDuration sets the value of DatabaseMaintenanceDuration for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabaseMaintenanceDuration(value uint32) (err error) {
-	return instance.SetProperty("DatabaseMaintenanceDuration", value)
+	return instance.SetProperty("DatabaseMaintenanceDuration", (value))
 }
 
 // GetDatabaseMaintenanceDuration gets the value of DatabaseMaintenanceDuration for the instance
@@ -529,16 +684,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabaseMaint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabasePageEvictionsPersec sets the value of DatabasePageEvictionsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabasePageEvictionsPersec(value uint32) (err error) {
-	return instance.SetProperty("DatabasePageEvictionsPersec", value)
+	return instance.SetProperty("DatabasePageEvictionsPersec", (value))
 }
 
 // GetDatabasePageEvictionsPersec gets the value of DatabasePageEvictionsPersec for the instance
@@ -547,16 +711,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabasePageE
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabasePageFaultsPersec sets the value of DatabasePageFaultsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabasePageFaultsPersec(value uint32) (err error) {
-	return instance.SetProperty("DatabasePageFaultsPersec", value)
+	return instance.SetProperty("DatabasePageFaultsPersec", (value))
 }
 
 // GetDatabasePageFaultsPersec gets the value of DatabasePageFaultsPersec for the instance
@@ -565,16 +738,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabasePageF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatabasePageFaultStallsPersec sets the value of DatabasePageFaultStallsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDatabasePageFaultStallsPersec(value uint32) (err error) {
-	return instance.SetProperty("DatabasePageFaultStallsPersec", value)
+	return instance.SetProperty("DatabasePageFaultStallsPersec", (value))
 }
 
 // GetDatabasePageFaultStallsPersec gets the value of DatabasePageFaultStallsPersec for the instance
@@ -583,16 +765,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDatabasePageF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDefragmentationTasks sets the value of DefragmentationTasks for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDefragmentationTasks(value uint32) (err error) {
-	return instance.SetProperty("DefragmentationTasks", value)
+	return instance.SetProperty("DefragmentationTasks", (value))
 }
 
 // GetDefragmentationTasks gets the value of DefragmentationTasks for the instance
@@ -601,16 +792,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDefragmentati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDefragmentationTasksPending sets the value of DefragmentationTasksPending for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyDefragmentationTasksPending(value uint32) (err error) {
-	return instance.SetProperty("DefragmentationTasksPending", value)
+	return instance.SetProperty("DefragmentationTasksPending", (value))
 }
 
 // GetDefragmentationTasksPending gets the value of DefragmentationTasksPending for the instance
@@ -619,16 +819,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyDefragmentati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIODatabaseReadsAttachedAverageLatency sets the value of IODatabaseReadsAttachedAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseReadsAttachedAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IODatabaseReadsAttachedAverageLatency", value)
+	return instance.SetProperty("IODatabaseReadsAttachedAverageLatency", (value))
 }
 
 // GetIODatabaseReadsAttachedAverageLatency gets the value of IODatabaseReadsAttachedAverageLatency for the instance
@@ -637,16 +846,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIODatabaseReadsAttachedPersec sets the value of IODatabaseReadsAttachedPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseReadsAttachedPersec(value uint32) (err error) {
-	return instance.SetProperty("IODatabaseReadsAttachedPersec", value)
+	return instance.SetProperty("IODatabaseReadsAttachedPersec", (value))
 }
 
 // GetIODatabaseReadsAttachedPersec gets the value of IODatabaseReadsAttachedPersec for the instance
@@ -655,16 +873,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIODatabaseReadsAverageLatency sets the value of IODatabaseReadsAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseReadsAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IODatabaseReadsAverageLatency", value)
+	return instance.SetProperty("IODatabaseReadsAverageLatency", (value))
 }
 
 // GetIODatabaseReadsAverageLatency gets the value of IODatabaseReadsAverageLatency for the instance
@@ -673,16 +900,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIODatabaseReadsPersec sets the value of IODatabaseReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("IODatabaseReadsPersec", value)
+	return instance.SetProperty("IODatabaseReadsPersec", (value))
 }
 
 // GetIODatabaseReadsPersec gets the value of IODatabaseReadsPersec for the instance
@@ -691,16 +927,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIODatabaseReadsRecoveryAverageLatency sets the value of IODatabaseReadsRecoveryAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseReadsRecoveryAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IODatabaseReadsRecoveryAverageLatency", value)
+	return instance.SetProperty("IODatabaseReadsRecoveryAverageLatency", (value))
 }
 
 // GetIODatabaseReadsRecoveryAverageLatency gets the value of IODatabaseReadsRecoveryAverageLatency for the instance
@@ -709,16 +954,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIODatabaseReadsRecoveryPersec sets the value of IODatabaseReadsRecoveryPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseReadsRecoveryPersec(value uint32) (err error) {
-	return instance.SetProperty("IODatabaseReadsRecoveryPersec", value)
+	return instance.SetProperty("IODatabaseReadsRecoveryPersec", (value))
 }
 
 // GetIODatabaseReadsRecoveryPersec gets the value of IODatabaseReadsRecoveryPersec for the instance
@@ -727,16 +981,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseRea
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIODatabaseWritesAttachedAverageLatency sets the value of IODatabaseWritesAttachedAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseWritesAttachedAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IODatabaseWritesAttachedAverageLatency", value)
+	return instance.SetProperty("IODatabaseWritesAttachedAverageLatency", (value))
 }
 
 // GetIODatabaseWritesAttachedAverageLatency gets the value of IODatabaseWritesAttachedAverageLatency for the instance
@@ -745,16 +1008,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIODatabaseWritesAttachedPersec sets the value of IODatabaseWritesAttachedPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseWritesAttachedPersec(value uint32) (err error) {
-	return instance.SetProperty("IODatabaseWritesAttachedPersec", value)
+	return instance.SetProperty("IODatabaseWritesAttachedPersec", (value))
 }
 
 // GetIODatabaseWritesAttachedPersec gets the value of IODatabaseWritesAttachedPersec for the instance
@@ -763,16 +1035,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIODatabaseWritesAverageLatency sets the value of IODatabaseWritesAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseWritesAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IODatabaseWritesAverageLatency", value)
+	return instance.SetProperty("IODatabaseWritesAverageLatency", (value))
 }
 
 // GetIODatabaseWritesAverageLatency gets the value of IODatabaseWritesAverageLatency for the instance
@@ -781,16 +1062,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIODatabaseWritesPersec sets the value of IODatabaseWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseWritesPersec(value uint32) (err error) {
-	return instance.SetProperty("IODatabaseWritesPersec", value)
+	return instance.SetProperty("IODatabaseWritesPersec", (value))
 }
 
 // GetIODatabaseWritesPersec gets the value of IODatabaseWritesPersec for the instance
@@ -799,16 +1089,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIODatabaseWritesRecoveryAverageLatency sets the value of IODatabaseWritesRecoveryAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseWritesRecoveryAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IODatabaseWritesRecoveryAverageLatency", value)
+	return instance.SetProperty("IODatabaseWritesRecoveryAverageLatency", (value))
 }
 
 // GetIODatabaseWritesRecoveryAverageLatency gets the value of IODatabaseWritesRecoveryAverageLatency for the instance
@@ -817,16 +1116,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIODatabaseWritesRecoveryPersec sets the value of IODatabaseWritesRecoveryPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIODatabaseWritesRecoveryPersec(value uint32) (err error) {
-	return instance.SetProperty("IODatabaseWritesRecoveryPersec", value)
+	return instance.SetProperty("IODatabaseWritesRecoveryPersec", (value))
 }
 
 // GetIODatabaseWritesRecoveryPersec gets the value of IODatabaseWritesRecoveryPersec for the instance
@@ -835,16 +1143,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIODatabaseWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIOFlushMapWritesAverageLatency sets the value of IOFlushMapWritesAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIOFlushMapWritesAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IOFlushMapWritesAverageLatency", value)
+	return instance.SetProperty("IOFlushMapWritesAverageLatency", (value))
 }
 
 // GetIOFlushMapWritesAverageLatency gets the value of IOFlushMapWritesAverageLatency for the instance
@@ -853,16 +1170,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIOFlushMapWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOFlushMapWritesPersec sets the value of IOFlushMapWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIOFlushMapWritesPersec(value uint32) (err error) {
-	return instance.SetProperty("IOFlushMapWritesPersec", value)
+	return instance.SetProperty("IOFlushMapWritesPersec", (value))
 }
 
 // GetIOFlushMapWritesPersec gets the value of IOFlushMapWritesPersec for the instance
@@ -871,16 +1197,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIOFlushMapWri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIOLogReadsAverageLatency sets the value of IOLogReadsAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIOLogReadsAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IOLogReadsAverageLatency", value)
+	return instance.SetProperty("IOLogReadsAverageLatency", (value))
 }
 
 // GetIOLogReadsAverageLatency gets the value of IOLogReadsAverageLatency for the instance
@@ -889,16 +1224,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIOLogReadsAve
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOLogReadsPersec sets the value of IOLogReadsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIOLogReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("IOLogReadsPersec", value)
+	return instance.SetProperty("IOLogReadsPersec", (value))
 }
 
 // GetIOLogReadsPersec gets the value of IOLogReadsPersec for the instance
@@ -907,16 +1251,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIOLogReadsPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIOLogWritesAverageLatency sets the value of IOLogWritesAverageLatency for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIOLogWritesAverageLatency(value uint64) (err error) {
-	return instance.SetProperty("IOLogWritesAverageLatency", value)
+	return instance.SetProperty("IOLogWritesAverageLatency", (value))
 }
 
 // GetIOLogWritesAverageLatency gets the value of IOLogWritesAverageLatency for the instance
@@ -925,16 +1278,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIOLogWritesAv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetIOLogWritesPersec sets the value of IOLogWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyIOLogWritesPersec(value uint32) (err error) {
-	return instance.SetProperty("IOLogWritesPersec", value)
+	return instance.SetProperty("IOLogWritesPersec", (value))
 }
 
 // GetIOLogWritesPersec gets the value of IOLogWritesPersec for the instance
@@ -943,16 +1305,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyIOLogWritesPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogBytesGeneratedPersec sets the value of LogBytesGeneratedPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyLogBytesGeneratedPersec(value uint32) (err error) {
-	return instance.SetProperty("LogBytesGeneratedPersec", value)
+	return instance.SetProperty("LogBytesGeneratedPersec", (value))
 }
 
 // GetLogBytesGeneratedPersec gets the value of LogBytesGeneratedPersec for the instance
@@ -961,16 +1332,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyLogBytesGener
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogBytesWritePersec sets the value of LogBytesWritePersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyLogBytesWritePersec(value uint32) (err error) {
-	return instance.SetProperty("LogBytesWritePersec", value)
+	return instance.SetProperty("LogBytesWritePersec", (value))
 }
 
 // GetLogBytesWritePersec gets the value of LogBytesWritePersec for the instance
@@ -979,16 +1359,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyLogBytesWrite
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogRecordStallsPersec sets the value of LogRecordStallsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyLogRecordStallsPersec(value uint32) (err error) {
-	return instance.SetProperty("LogRecordStallsPersec", value)
+	return instance.SetProperty("LogRecordStallsPersec", (value))
 }
 
 // GetLogRecordStallsPersec gets the value of LogRecordStallsPersec for the instance
@@ -997,16 +1386,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyLogRecordStal
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogThreadsWaiting sets the value of LogThreadsWaiting for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyLogThreadsWaiting(value uint32) (err error) {
-	return instance.SetProperty("LogThreadsWaiting", value)
+	return instance.SetProperty("LogThreadsWaiting", (value))
 }
 
 // GetLogThreadsWaiting gets the value of LogThreadsWaiting for the instance
@@ -1015,16 +1413,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyLogThreadsWai
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLogWritesPersec sets the value of LogWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyLogWritesPersec(value uint32) (err error) {
-	return instance.SetProperty("LogWritesPersec", value)
+	return instance.SetProperty("LogWritesPersec", (value))
 }
 
 // GetLogWritesPersec gets the value of LogWritesPersec for the instance
@@ -1033,16 +1440,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyLogWritesPers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionsInUse sets the value of SessionsInUse for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertySessionsInUse(value uint32) (err error) {
-	return instance.SetProperty("SessionsInUse", value)
+	return instance.SetProperty("SessionsInUse", (value))
 }
 
 // GetSessionsInUse gets the value of SessionsInUse for the instance
@@ -1051,16 +1467,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertySessionsInUse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionsPercentUsed sets the value of SessionsPercentUsed for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertySessionsPercentUsed(value uint32) (err error) {
-	return instance.SetProperty("SessionsPercentUsed", value)
+	return instance.SetProperty("SessionsPercentUsed", (value))
 }
 
 // GetSessionsPercentUsed gets the value of SessionsPercentUsed for the instance
@@ -1069,16 +1494,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertySessionsPerce
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTableClosesPersec sets the value of TableClosesPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyTableClosesPersec(value uint32) (err error) {
-	return instance.SetProperty("TableClosesPersec", value)
+	return instance.SetProperty("TableClosesPersec", (value))
 }
 
 // GetTableClosesPersec gets the value of TableClosesPersec for the instance
@@ -1087,16 +1521,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyTableClosesPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTableOpenCacheHitsPersec sets the value of TableOpenCacheHitsPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyTableOpenCacheHitsPersec(value uint32) (err error) {
-	return instance.SetProperty("TableOpenCacheHitsPersec", value)
+	return instance.SetProperty("TableOpenCacheHitsPersec", (value))
 }
 
 // GetTableOpenCacheHitsPersec gets the value of TableOpenCacheHitsPersec for the instance
@@ -1105,16 +1548,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyTableOpenCach
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTableOpenCacheMissesPersec sets the value of TableOpenCacheMissesPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyTableOpenCacheMissesPersec(value uint32) (err error) {
-	return instance.SetProperty("TableOpenCacheMissesPersec", value)
+	return instance.SetProperty("TableOpenCacheMissesPersec", (value))
 }
 
 // GetTableOpenCacheMissesPersec gets the value of TableOpenCacheMissesPersec for the instance
@@ -1123,16 +1575,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyTableOpenCach
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTableOpenCachePercentHit sets the value of TableOpenCachePercentHit for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyTableOpenCachePercentHit(value uint32) (err error) {
-	return instance.SetProperty("TableOpenCachePercentHit", value)
+	return instance.SetProperty("TableOpenCachePercentHit", (value))
 }
 
 // GetTableOpenCachePercentHit gets the value of TableOpenCachePercentHit for the instance
@@ -1141,16 +1602,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyTableOpenCach
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTableOpensPersec sets the value of TableOpensPersec for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyTableOpensPersec(value uint32) (err error) {
-	return instance.SetProperty("TableOpensPersec", value)
+	return instance.SetProperty("TableOpensPersec", (value))
 }
 
 // GetTableOpensPersec gets the value of TableOpensPersec for the instance
@@ -1159,16 +1629,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyTableOpensPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTablesOpen sets the value of TablesOpen for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyTablesOpen(value uint32) (err error) {
-	return instance.SetProperty("TablesOpen", value)
+	return instance.SetProperty("TablesOpen", (value))
 }
 
 // GetTablesOpen gets the value of TablesOpen for the instance
@@ -1177,16 +1656,25 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyTablesOpen() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVersionBucketsAllocated sets the value of VersionBucketsAllocated for the instance
 func (instance *Win32_PerfFormattedData_ESENT_Database) SetPropertyVersionBucketsAllocated(value uint32) (err error) {
-	return instance.SetProperty("VersionBucketsAllocated", value)
+	return instance.SetProperty("VersionBucketsAllocated", (value))
 }
 
 // GetVersionBucketsAllocated gets the value of VersionBucketsAllocated for the instance
@@ -1195,9 +1683,18 @@ func (instance *Win32_PerfFormattedData_ESENT_Database) GetPropertyVersionBucket
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

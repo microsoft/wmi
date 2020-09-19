@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetLbfoTeamNic struct
@@ -58,7 +60,7 @@ func NewMSFT_NetLbfoTeamNicEx6(hostName string,
 
 // SetDefault sets the value of Default for the instance
 func (instance *MSFT_NetLbfoTeamNic) SetPropertyDefault(value bool) (err error) {
-	return instance.SetProperty("Default", value)
+	return instance.SetProperty("Default", (value))
 }
 
 // GetDefault gets the value of Default for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_NetLbfoTeamNic) GetPropertyDefault() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPrimary sets the value of Primary for the instance
 func (instance *MSFT_NetLbfoTeamNic) SetPropertyPrimary(value bool) (err error) {
-	return instance.SetProperty("Primary", value)
+	return instance.SetProperty("Primary", (value))
 }
 
 // GetPrimary gets the value of Primary for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_NetLbfoTeamNic) GetPropertyPrimary() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetVlanID sets the value of VlanID for the instance
 func (instance *MSFT_NetLbfoTeamNic) SetPropertyVlanID(value uint32) (err error) {
-	return instance.SetProperty("VlanID", value)
+	return instance.SetProperty("VlanID", (value))
 }
 
 // GetVlanID gets the value of VlanID for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_NetLbfoTeamNic) GetPropertyVlanID() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

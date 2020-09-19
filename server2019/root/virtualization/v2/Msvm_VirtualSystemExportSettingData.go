@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemExportSettingData struct
@@ -48,9 +50,6 @@ type Msvm_VirtualSystemExportSettingData struct {
 	ExportForLiveMigration bool
 
 	//
-	GuestDebugStateFilePath string
-
-	//
 	SnapshotVirtualSystem string
 }
 
@@ -85,7 +84,7 @@ func NewMsvm_VirtualSystemExportSettingDataEx6(hostName string,
 
 // SetBackupIntent sets the value of BackupIntent for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyBackupIntent(value uint8) (err error) {
-	return instance.SetProperty("BackupIntent", value)
+	return instance.SetProperty("BackupIntent", (value))
 }
 
 // GetBackupIntent gets the value of BackupIntent for the instance
@@ -94,16 +93,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyBackupIntent() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCaptureLiveState sets the value of CaptureLiveState for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyCaptureLiveState(value uint8) (err error) {
-	return instance.SetProperty("CaptureLiveState", value)
+	return instance.SetProperty("CaptureLiveState", (value))
 }
 
 // GetCaptureLiveState gets the value of CaptureLiveState for the instance
@@ -112,16 +120,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyCaptureLiveState
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCopySnapshotConfiguration sets the value of CopySnapshotConfiguration for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyCopySnapshotConfiguration(value uint8) (err error) {
-	return instance.SetProperty("CopySnapshotConfiguration", value)
+	return instance.SetProperty("CopySnapshotConfiguration", (value))
 }
 
 // GetCopySnapshotConfiguration gets the value of CopySnapshotConfiguration for the instance
@@ -130,16 +147,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyCopySnapshotConf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCopyVmRuntimeInformation sets the value of CopyVmRuntimeInformation for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyCopyVmRuntimeInformation(value bool) (err error) {
-	return instance.SetProperty("CopyVmRuntimeInformation", value)
+	return instance.SetProperty("CopyVmRuntimeInformation", (value))
 }
 
 // GetCopyVmRuntimeInformation gets the value of CopyVmRuntimeInformation for the instance
@@ -148,16 +174,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyCopyVmRuntimeInf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCopyVmStorage sets the value of CopyVmStorage for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyCopyVmStorage(value bool) (err error) {
-	return instance.SetProperty("CopyVmStorage", value)
+	return instance.SetProperty("CopyVmStorage", (value))
 }
 
 // GetCopyVmStorage gets the value of CopyVmStorage for the instance
@@ -166,16 +201,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyCopyVmStorage() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCreateVmExportSubdirectory sets the value of CreateVmExportSubdirectory for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyCreateVmExportSubdirectory(value bool) (err error) {
-	return instance.SetProperty("CreateVmExportSubdirectory", value)
+	return instance.SetProperty("CreateVmExportSubdirectory", (value))
 }
 
 // GetCreateVmExportSubdirectory gets the value of CreateVmExportSubdirectory for the instance
@@ -184,16 +228,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyCreateVmExportSu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDifferentialBackupBase sets the value of DifferentialBackupBase for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyDifferentialBackupBase(value string) (err error) {
-	return instance.SetProperty("DifferentialBackupBase", value)
+	return instance.SetProperty("DifferentialBackupBase", (value))
 }
 
 // GetDifferentialBackupBase gets the value of DifferentialBackupBase for the instance
@@ -202,16 +255,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyDifferentialBack
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableDifferentialOfIgnoredStorage sets the value of DisableDifferentialOfIgnoredStorage for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyDisableDifferentialOfIgnoredStorage(value bool) (err error) {
-	return instance.SetProperty("DisableDifferentialOfIgnoredStorage", value)
+	return instance.SetProperty("DisableDifferentialOfIgnoredStorage", (value))
 }
 
 // GetDisableDifferentialOfIgnoredStorage gets the value of DisableDifferentialOfIgnoredStorage for the instance
@@ -220,16 +282,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyDisableDifferent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetExcludedVirtualHardDisks sets the value of ExcludedVirtualHardDisks for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyExcludedVirtualHardDisks(value []string) (err error) {
-	return instance.SetProperty("ExcludedVirtualHardDisks", value)
+	return instance.SetProperty("ExcludedVirtualHardDisks", (value))
 }
 
 // GetExcludedVirtualHardDisks gets the value of ExcludedVirtualHardDisks for the instance
@@ -238,16 +309,26 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyExcludedVirtualH
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetExportForLiveMigration sets the value of ExportForLiveMigration for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyExportForLiveMigration(value bool) (err error) {
-	return instance.SetProperty("ExportForLiveMigration", value)
+	return instance.SetProperty("ExportForLiveMigration", (value))
 }
 
 // GetExportForLiveMigration gets the value of ExportForLiveMigration for the instance
@@ -256,34 +337,25 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyExportForLiveMig
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetGuestDebugStateFilePath sets the value of GuestDebugStateFilePath for the instance
-func (instance *Msvm_VirtualSystemExportSettingData) SetPropertyGuestDebugStateFilePath(value string) (err error) {
-	return instance.SetProperty("GuestDebugStateFilePath", value)
-}
-
-// GetGuestDebugStateFilePath gets the value of GuestDebugStateFilePath for the instance
-func (instance *Msvm_VirtualSystemExportSettingData) GetPropertyGuestDebugStateFilePath() (value string, err error) {
-	retValue, err := instance.GetProperty("GuestDebugStateFilePath")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(bool)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSnapshotVirtualSystem sets the value of SnapshotVirtualSystem for the instance
 func (instance *Msvm_VirtualSystemExportSettingData) SetPropertySnapshotVirtualSystem(value string) (err error) {
-	return instance.SetProperty("SnapshotVirtualSystem", value)
+	return instance.SetProperty("SnapshotVirtualSystem", (value))
 }
 
 // GetSnapshotVirtualSystem gets the value of SnapshotVirtualSystem for the instance
@@ -292,10 +364,19 @@ func (instance *Msvm_VirtualSystemExportSettingData) GetPropertySnapshotVirtualS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_VirtualSystemExportSettingData) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {

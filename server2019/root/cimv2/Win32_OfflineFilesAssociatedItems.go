@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_OfflineFilesAssociatedItems struct
@@ -56,7 +58,7 @@ func NewWin32_OfflineFilesAssociatedItemsEx6(hostName string,
 
 // SetAntecedent sets the value of Antecedent for the instance
 func (instance *Win32_OfflineFilesAssociatedItems) SetPropertyAntecedent(value Win32_OfflineFilesCache) (err error) {
-	return instance.SetProperty("Antecedent", value)
+	return instance.SetProperty("Antecedent", (value))
 }
 
 // GetAntecedent gets the value of Antecedent for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_OfflineFilesAssociatedItems) GetPropertyAntecedent() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_OfflineFilesCache)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_OfflineFilesCache)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_OfflineFilesCache is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_OfflineFilesCache(valuetmp)
+
 	return
 }
 
 // SetDependent sets the value of Dependent for the instance
 func (instance *Win32_OfflineFilesAssociatedItems) SetPropertyDependent(value Win32_OfflineFilesItem) (err error) {
-	return instance.SetProperty("Dependent", value)
+	return instance.SetProperty("Dependent", (value))
 }
 
 // GetDependent gets the value of Dependent for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_OfflineFilesAssociatedItems) GetPropertyDependent() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_OfflineFilesItem)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_OfflineFilesItem)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_OfflineFilesItem is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_OfflineFilesItem(valuetmp)
+
 	return
 }

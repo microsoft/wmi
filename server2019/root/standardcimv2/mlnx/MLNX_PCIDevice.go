@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_PCIDevice struct
@@ -61,7 +63,7 @@ func NewMLNX_PCIDeviceEx6(hostName string,
 
 // SetBusType sets the value of BusType for the instance
 func (instance *MLNX_PCIDevice) SetPropertyBusType(value string) (err error) {
-	return instance.SetProperty("BusType", value)
+	return instance.SetProperty("BusType", (value))
 }
 
 // GetBusType gets the value of BusType for the instance
@@ -70,16 +72,25 @@ func (instance *MLNX_PCIDevice) GetPropertyBusType() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDriverVersion sets the value of DriverVersion for the instance
 func (instance *MLNX_PCIDevice) SetPropertyDriverVersion(value string) (err error) {
-	return instance.SetProperty("DriverVersion", value)
+	return instance.SetProperty("DriverVersion", (value))
 }
 
 // GetDriverVersion gets the value of DriverVersion for the instance
@@ -88,16 +99,25 @@ func (instance *MLNX_PCIDevice) GetPropertyDriverVersion() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFirmwareVersion sets the value of FirmwareVersion for the instance
 func (instance *MLNX_PCIDevice) SetPropertyFirmwareVersion(value string) (err error) {
-	return instance.SetProperty("FirmwareVersion", value)
+	return instance.SetProperty("FirmwareVersion", (value))
 }
 
 // GetFirmwareVersion gets the value of FirmwareVersion for the instance
@@ -106,16 +126,25 @@ func (instance *MLNX_PCIDevice) GetPropertyFirmwareVersion() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPartNumber sets the value of PartNumber for the instance
 func (instance *MLNX_PCIDevice) SetPropertyPartNumber(value string) (err error) {
-	return instance.SetProperty("PartNumber", value)
+	return instance.SetProperty("PartNumber", (value))
 }
 
 // GetPartNumber gets the value of PartNumber for the instance
@@ -124,10 +153,19 @@ func (instance *MLNX_PCIDevice) GetPropertyPartNumber() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DiagnosticSettingData struct
@@ -91,7 +93,7 @@ func NewCIM_DiagnosticSettingDataEx6(hostName string,
 
 // SetHaltOnError sets the value of HaltOnError for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyHaltOnError(value bool) (err error) {
-	return instance.SetProperty("HaltOnError", value)
+	return instance.SetProperty("HaltOnError", (value))
 }
 
 // GetHaltOnError gets the value of HaltOnError for the instance
@@ -100,16 +102,25 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyHaltOnError() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLogOptions sets the value of LogOptions for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyLogOptions(value []DiagnosticSettingData_LogOptions) (err error) {
-	return instance.SetProperty("LogOptions", value)
+	return instance.SetProperty("LogOptions", (value))
 }
 
 // GetLogOptions gets the value of LogOptions for the instance
@@ -118,16 +129,26 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyLogOptions() (value []Diag
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DiagnosticSettingData_LogOptions)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DiagnosticSettingData_LogOptions(valuetmp))
+	}
+
 	return
 }
 
 // SetLogStorage sets the value of LogStorage for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyLogStorage(value []DiagnosticSettingData_LogStorage) (err error) {
-	return instance.SetProperty("LogStorage", value)
+	return instance.SetProperty("LogStorage", (value))
 }
 
 // GetLogStorage gets the value of LogStorage for the instance
@@ -136,16 +157,26 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyLogStorage() (value []Diag
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DiagnosticSettingData_LogStorage)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DiagnosticSettingData_LogStorage(valuetmp))
+	}
+
 	return
 }
 
 // SetLoopControl sets the value of LoopControl for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyLoopControl(value []DiagnosticSettingData_LoopControl) (err error) {
-	return instance.SetProperty("LoopControl", value)
+	return instance.SetProperty("LoopControl", (value))
 }
 
 // GetLoopControl gets the value of LoopControl for the instance
@@ -154,16 +185,26 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyLoopControl() (value []Dia
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DiagnosticSettingData_LoopControl)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DiagnosticSettingData_LoopControl(valuetmp))
+	}
+
 	return
 }
 
 // SetLoopControlParameter sets the value of LoopControlParameter for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyLoopControlParameter(value []string) (err error) {
-	return instance.SetProperty("LoopControlParameter", value)
+	return instance.SetProperty("LoopControlParameter", (value))
 }
 
 // GetLoopControlParameter gets the value of LoopControlParameter for the instance
@@ -172,16 +213,26 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyLoopControlParameter() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNonDestructive sets the value of NonDestructive for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyNonDestructive(value bool) (err error) {
-	return instance.SetProperty("NonDestructive", value)
+	return instance.SetProperty("NonDestructive", (value))
 }
 
 // GetNonDestructive gets the value of NonDestructive for the instance
@@ -190,16 +241,25 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyNonDestructive() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOtherLogOptionsDescriptions sets the value of OtherLogOptionsDescriptions for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyOtherLogOptionsDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherLogOptionsDescriptions", value)
+	return instance.SetProperty("OtherLogOptionsDescriptions", (value))
 }
 
 // GetOtherLogOptionsDescriptions gets the value of OtherLogOptionsDescriptions for the instance
@@ -208,16 +268,26 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyOtherLogOptionsDescription
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherLogStorageDescriptions sets the value of OtherLogStorageDescriptions for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyOtherLogStorageDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherLogStorageDescriptions", value)
+	return instance.SetProperty("OtherLogStorageDescriptions", (value))
 }
 
 // GetOtherLogStorageDescriptions gets the value of OtherLogStorageDescriptions for the instance
@@ -226,16 +296,26 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyOtherLogStorageDescription
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherLoopControlDescriptions sets the value of OtherLoopControlDescriptions for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyOtherLoopControlDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherLoopControlDescriptions", value)
+	return instance.SetProperty("OtherLoopControlDescriptions", (value))
 }
 
 // GetOtherLoopControlDescriptions gets the value of OtherLoopControlDescriptions for the instance
@@ -244,16 +324,26 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyOtherLoopControlDescriptio
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPercentOfTestCoverage sets the value of PercentOfTestCoverage for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyPercentOfTestCoverage(value uint8) (err error) {
-	return instance.SetProperty("PercentOfTestCoverage", value)
+	return instance.SetProperty("PercentOfTestCoverage", (value))
 }
 
 // GetPercentOfTestCoverage gets the value of PercentOfTestCoverage for the instance
@@ -262,16 +352,25 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyPercentOfTestCoverage() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetQueryTimeout sets the value of QueryTimeout for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyQueryTimeout(value uint32) (err error) {
-	return instance.SetProperty("QueryTimeout", value)
+	return instance.SetProperty("QueryTimeout", (value))
 }
 
 // GetQueryTimeout gets the value of QueryTimeout for the instance
@@ -280,16 +379,25 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyQueryTimeout() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuickMode sets the value of QuickMode for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyQuickMode(value bool) (err error) {
-	return instance.SetProperty("QuickMode", value)
+	return instance.SetProperty("QuickMode", (value))
 }
 
 // GetQuickMode gets the value of QuickMode for the instance
@@ -298,16 +406,25 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyQuickMode() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetResultPersistence sets the value of ResultPersistence for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyResultPersistence(value uint32) (err error) {
-	return instance.SetProperty("ResultPersistence", value)
+	return instance.SetProperty("ResultPersistence", (value))
 }
 
 // GetResultPersistence gets the value of ResultPersistence for the instance
@@ -316,16 +433,25 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyResultPersistence() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVerbosityLevel sets the value of VerbosityLevel for the instance
 func (instance *CIM_DiagnosticSettingData) SetPropertyVerbosityLevel(value []DiagnosticSettingData_VerbosityLevel) (err error) {
-	return instance.SetProperty("VerbosityLevel", value)
+	return instance.SetProperty("VerbosityLevel", (value))
 }
 
 // GetVerbosityLevel gets the value of VerbosityLevel for the instance
@@ -334,9 +460,19 @@ func (instance *CIM_DiagnosticSettingData) GetPropertyVerbosityLevel() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DiagnosticSettingData_VerbosityLevel)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DiagnosticSettingData_VerbosityLevel(valuetmp))
+	}
+
 	return
 }

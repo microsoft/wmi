@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_InstalledSoftwareElement struct
@@ -56,7 +58,7 @@ func NewCIM_InstalledSoftwareElementEx6(hostName string,
 
 // SetSoftware sets the value of Software for the instance
 func (instance *CIM_InstalledSoftwareElement) SetPropertySoftware(value CIM_SoftwareElement) (err error) {
-	return instance.SetProperty("Software", value)
+	return instance.SetProperty("Software", (value))
 }
 
 // GetSoftware gets the value of Software for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_InstalledSoftwareElement) GetPropertySoftware() (value CIM_S
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_SoftwareElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_SoftwareElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_SoftwareElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_SoftwareElement(valuetmp)
+
 	return
 }
 
 // SetSystem sets the value of System for the instance
 func (instance *CIM_InstalledSoftwareElement) SetPropertySystem(value CIM_ComputerSystem) (err error) {
-	return instance.SetProperty("System", value)
+	return instance.SetProperty("System", (value))
 }
 
 // GetSystem gets the value of System for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_InstalledSoftwareElement) GetPropertySystem() (value CIM_Com
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ComputerSystem)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ComputerSystem)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ComputerSystem is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ComputerSystem(valuetmp)
+
 	return
 }

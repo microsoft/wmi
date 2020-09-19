@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PnPDeviceProperty struct
@@ -62,7 +64,7 @@ func NewWin32_PnPDevicePropertyEx6(hostName string,
 
 // SetDeviceID sets the value of DeviceID for the instance
 func (instance *Win32_PnPDeviceProperty) SetPropertyDeviceID(value string) (err error) {
-	return instance.SetProperty("DeviceID", value)
+	return instance.SetProperty("DeviceID", (value))
 }
 
 // GetDeviceID gets the value of DeviceID for the instance
@@ -71,16 +73,25 @@ func (instance *Win32_PnPDeviceProperty) GetPropertyDeviceID() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *Win32_PnPDeviceProperty) SetPropertykey(value string) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -89,16 +100,25 @@ func (instance *Win32_PnPDeviceProperty) GetPropertykey() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetKeyName sets the value of KeyName for the instance
 func (instance *Win32_PnPDeviceProperty) SetPropertyKeyName(value string) (err error) {
-	return instance.SetProperty("KeyName", value)
+	return instance.SetProperty("KeyName", (value))
 }
 
 // GetKeyName gets the value of KeyName for the instance
@@ -107,16 +127,25 @@ func (instance *Win32_PnPDeviceProperty) GetPropertyKeyName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *Win32_PnPDeviceProperty) SetPropertyType(value uint32) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -125,9 +154,18 @@ func (instance *Win32_PnPDeviceProperty) GetPropertyType() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

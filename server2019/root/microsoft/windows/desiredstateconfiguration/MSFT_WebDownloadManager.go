@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_WebDownloadManager struct
@@ -70,7 +72,7 @@ func NewMSFT_WebDownloadManagerEx6(hostName string,
 
 // SetAllowUnsecureConnection sets the value of AllowUnsecureConnection for the instance
 func (instance *MSFT_WebDownloadManager) SetPropertyAllowUnsecureConnection(value bool) (err error) {
-	return instance.SetProperty("AllowUnsecureConnection", value)
+	return instance.SetProperty("AllowUnsecureConnection", (value))
 }
 
 // GetAllowUnsecureConnection gets the value of AllowUnsecureConnection for the instance
@@ -79,16 +81,25 @@ func (instance *MSFT_WebDownloadManager) GetPropertyAllowUnsecureConnection() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCertificateID sets the value of CertificateID for the instance
 func (instance *MSFT_WebDownloadManager) SetPropertyCertificateID(value string) (err error) {
-	return instance.SetProperty("CertificateID", value)
+	return instance.SetProperty("CertificateID", (value))
 }
 
 // GetCertificateID gets the value of CertificateID for the instance
@@ -97,16 +108,25 @@ func (instance *MSFT_WebDownloadManager) GetPropertyCertificateID() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetConfigurationNames sets the value of ConfigurationNames for the instance
 func (instance *MSFT_WebDownloadManager) SetPropertyConfigurationNames(value []string) (err error) {
-	return instance.SetProperty("ConfigurationNames", value)
+	return instance.SetProperty("ConfigurationNames", (value))
 }
 
 // GetConfigurationNames gets the value of ConfigurationNames for the instance
@@ -115,16 +135,26 @@ func (instance *MSFT_WebDownloadManager) GetPropertyConfigurationNames() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetProxyCredential sets the value of ProxyCredential for the instance
 func (instance *MSFT_WebDownloadManager) SetPropertyProxyCredential(value MSFT_Credential) (err error) {
-	return instance.SetProperty("ProxyCredential", value)
+	return instance.SetProperty("ProxyCredential", (value))
 }
 
 // GetProxyCredential gets the value of ProxyCredential for the instance
@@ -133,16 +163,25 @@ func (instance *MSFT_WebDownloadManager) GetPropertyProxyCredential() (value MSF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Credential)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Credential)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Credential is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Credential(valuetmp)
+
 	return
 }
 
 // SetProxyURL sets the value of ProxyURL for the instance
 func (instance *MSFT_WebDownloadManager) SetPropertyProxyURL(value string) (err error) {
-	return instance.SetProperty("ProxyURL", value)
+	return instance.SetProperty("ProxyURL", (value))
 }
 
 // GetProxyURL gets the value of ProxyURL for the instance
@@ -151,16 +190,25 @@ func (instance *MSFT_WebDownloadManager) GetPropertyProxyURL() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRegistrationKey sets the value of RegistrationKey for the instance
 func (instance *MSFT_WebDownloadManager) SetPropertyRegistrationKey(value string) (err error) {
-	return instance.SetProperty("RegistrationKey", value)
+	return instance.SetProperty("RegistrationKey", (value))
 }
 
 // GetRegistrationKey gets the value of RegistrationKey for the instance
@@ -169,16 +217,25 @@ func (instance *MSFT_WebDownloadManager) GetPropertyRegistrationKey() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServerURL sets the value of ServerURL for the instance
 func (instance *MSFT_WebDownloadManager) SetPropertyServerURL(value string) (err error) {
-	return instance.SetProperty("ServerURL", value)
+	return instance.SetProperty("ServerURL", (value))
 }
 
 // GetServerURL gets the value of ServerURL for the instance
@@ -187,9 +244,18 @@ func (instance *MSFT_WebDownloadManager) GetPropertyServerURL() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

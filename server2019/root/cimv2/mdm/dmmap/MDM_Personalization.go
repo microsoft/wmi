@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Personalization struct
@@ -68,7 +70,7 @@ func NewMDM_PersonalizationEx6(hostName string,
 
 // SetDesktopImageStatus sets the value of DesktopImageStatus for the instance
 func (instance *MDM_Personalization) SetPropertyDesktopImageStatus(value int32) (err error) {
-	return instance.SetProperty("DesktopImageStatus", value)
+	return instance.SetProperty("DesktopImageStatus", (value))
 }
 
 // GetDesktopImageStatus gets the value of DesktopImageStatus for the instance
@@ -77,16 +79,25 @@ func (instance *MDM_Personalization) GetPropertyDesktopImageStatus() (value int3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDesktopImageUrl sets the value of DesktopImageUrl for the instance
 func (instance *MDM_Personalization) SetPropertyDesktopImageUrl(value string) (err error) {
-	return instance.SetProperty("DesktopImageUrl", value)
+	return instance.SetProperty("DesktopImageUrl", (value))
 }
 
 // GetDesktopImageUrl gets the value of DesktopImageUrl for the instance
@@ -95,16 +106,25 @@ func (instance *MDM_Personalization) GetPropertyDesktopImageUrl() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Personalization) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -113,16 +133,25 @@ func (instance *MDM_Personalization) GetPropertyInstanceID() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLockScreenImageStatus sets the value of LockScreenImageStatus for the instance
 func (instance *MDM_Personalization) SetPropertyLockScreenImageStatus(value int32) (err error) {
-	return instance.SetProperty("LockScreenImageStatus", value)
+	return instance.SetProperty("LockScreenImageStatus", (value))
 }
 
 // GetLockScreenImageStatus gets the value of LockScreenImageStatus for the instance
@@ -131,16 +160,25 @@ func (instance *MDM_Personalization) GetPropertyLockScreenImageStatus() (value i
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLockScreenImageUrl sets the value of LockScreenImageUrl for the instance
 func (instance *MDM_Personalization) SetPropertyLockScreenImageUrl(value string) (err error) {
-	return instance.SetProperty("LockScreenImageUrl", value)
+	return instance.SetProperty("LockScreenImageUrl", (value))
 }
 
 // GetLockScreenImageUrl gets the value of LockScreenImageUrl for the instance
@@ -149,16 +187,25 @@ func (instance *MDM_Personalization) GetPropertyLockScreenImageUrl() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Personalization) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -167,9 +214,18 @@ func (instance *MDM_Personalization) GetPropertyParentID() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

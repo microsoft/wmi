@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ActiveConnection struct
@@ -60,7 +62,7 @@ func NewCIM_ActiveConnectionEx6(hostName string,
 
 // SetIsUnidirectional sets the value of IsUnidirectional for the instance
 func (instance *CIM_ActiveConnection) SetPropertyIsUnidirectional(value bool) (err error) {
-	return instance.SetProperty("IsUnidirectional", value)
+	return instance.SetProperty("IsUnidirectional", (value))
 }
 
 // GetIsUnidirectional gets the value of IsUnidirectional for the instance
@@ -69,16 +71,25 @@ func (instance *CIM_ActiveConnection) GetPropertyIsUnidirectional() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOtherTrafficDescription sets the value of OtherTrafficDescription for the instance
 func (instance *CIM_ActiveConnection) SetPropertyOtherTrafficDescription(value string) (err error) {
-	return instance.SetProperty("OtherTrafficDescription", value)
+	return instance.SetProperty("OtherTrafficDescription", (value))
 }
 
 // GetOtherTrafficDescription gets the value of OtherTrafficDescription for the instance
@@ -87,16 +98,25 @@ func (instance *CIM_ActiveConnection) GetPropertyOtherTrafficDescription() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrafficType sets the value of TrafficType for the instance
 func (instance *CIM_ActiveConnection) SetPropertyTrafficType(value ActiveConnection_TrafficType) (err error) {
-	return instance.SetProperty("TrafficType", value)
+	return instance.SetProperty("TrafficType", (value))
 }
 
 // GetTrafficType gets the value of TrafficType for the instance
@@ -105,9 +125,18 @@ func (instance *CIM_ActiveConnection) GetPropertyTrafficType() (value ActiveConn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ActiveConnection_TrafficType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ActiveConnection_TrafficType(valuetmp)
+
 	return
 }

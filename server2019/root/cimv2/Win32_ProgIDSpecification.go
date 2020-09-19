@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ProgIDSpecification struct
@@ -55,7 +57,7 @@ func NewWin32_ProgIDSpecificationEx6(hostName string,
 
 // SetParent sets the value of Parent for the instance
 func (instance *Win32_ProgIDSpecification) SetPropertyParent(value string) (err error) {
-	return instance.SetProperty("Parent", value)
+	return instance.SetProperty("Parent", (value))
 }
 
 // GetParent gets the value of Parent for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_ProgIDSpecification) GetPropertyParent() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProgID sets the value of ProgID for the instance
 func (instance *Win32_ProgIDSpecification) SetPropertyProgID(value string) (err error) {
-	return instance.SetProperty("ProgID", value)
+	return instance.SetProperty("ProgID", (value))
 }
 
 // GetProgID gets the value of ProgID for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_ProgIDSpecification) GetPropertyProgID() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

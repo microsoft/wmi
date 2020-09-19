@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIKEQMCryptoProposal struct
@@ -61,7 +63,7 @@ func NewMSFT_NetIKEQMCryptoProposalEx6(hostName string,
 
 // SetEncapsulation sets the value of Encapsulation for the instance
 func (instance *MSFT_NetIKEQMCryptoProposal) SetPropertyEncapsulation(value uint16) (err error) {
-	return instance.SetProperty("Encapsulation", value)
+	return instance.SetProperty("Encapsulation", (value))
 }
 
 // GetEncapsulation gets the value of Encapsulation for the instance
@@ -70,16 +72,25 @@ func (instance *MSFT_NetIKEQMCryptoProposal) GetPropertyEncapsulation() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHashAlgorithmAH sets the value of HashAlgorithmAH for the instance
 func (instance *MSFT_NetIKEQMCryptoProposal) SetPropertyHashAlgorithmAH(value uint16) (err error) {
-	return instance.SetProperty("HashAlgorithmAH", value)
+	return instance.SetProperty("HashAlgorithmAH", (value))
 }
 
 // GetHashAlgorithmAH gets the value of HashAlgorithmAH for the instance
@@ -88,16 +99,25 @@ func (instance *MSFT_NetIKEQMCryptoProposal) GetPropertyHashAlgorithmAH() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetHashAlgorithmESP sets the value of HashAlgorithmESP for the instance
 func (instance *MSFT_NetIKEQMCryptoProposal) SetPropertyHashAlgorithmESP(value uint16) (err error) {
-	return instance.SetProperty("HashAlgorithmESP", value)
+	return instance.SetProperty("HashAlgorithmESP", (value))
 }
 
 // GetHashAlgorithmESP gets the value of HashAlgorithmESP for the instance
@@ -106,16 +126,25 @@ func (instance *MSFT_NetIKEQMCryptoProposal) GetPropertyHashAlgorithmESP() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMaxLifetimeMinutes sets the value of MaxLifetimeMinutes for the instance
 func (instance *MSFT_NetIKEQMCryptoProposal) SetPropertyMaxLifetimeMinutes(value uint32) (err error) {
-	return instance.SetProperty("MaxLifetimeMinutes", value)
+	return instance.SetProperty("MaxLifetimeMinutes", (value))
 }
 
 // GetMaxLifetimeMinutes gets the value of MaxLifetimeMinutes for the instance
@@ -124,9 +153,18 @@ func (instance *MSFT_NetIKEQMCryptoProposal) GetPropertyMaxLifetimeMinutes() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PhysicalElement struct
@@ -79,7 +81,7 @@ func NewCIM_PhysicalElementEx6(hostName string,
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_PhysicalElement) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -88,16 +90,25 @@ func (instance *CIM_PhysicalElement) GetPropertyCreationClassName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *CIM_PhysicalElement) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -106,16 +117,25 @@ func (instance *CIM_PhysicalElement) GetPropertyManufacturer() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *CIM_PhysicalElement) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -124,16 +144,25 @@ func (instance *CIM_PhysicalElement) GetPropertyModel() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherIdentifyingInfo sets the value of OtherIdentifyingInfo for the instance
 func (instance *CIM_PhysicalElement) SetPropertyOtherIdentifyingInfo(value string) (err error) {
-	return instance.SetProperty("OtherIdentifyingInfo", value)
+	return instance.SetProperty("OtherIdentifyingInfo", (value))
 }
 
 // GetOtherIdentifyingInfo gets the value of OtherIdentifyingInfo for the instance
@@ -142,16 +171,25 @@ func (instance *CIM_PhysicalElement) GetPropertyOtherIdentifyingInfo() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPartNumber sets the value of PartNumber for the instance
 func (instance *CIM_PhysicalElement) SetPropertyPartNumber(value string) (err error) {
-	return instance.SetProperty("PartNumber", value)
+	return instance.SetProperty("PartNumber", (value))
 }
 
 // GetPartNumber gets the value of PartNumber for the instance
@@ -160,16 +198,25 @@ func (instance *CIM_PhysicalElement) GetPropertyPartNumber() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPoweredOn sets the value of PoweredOn for the instance
 func (instance *CIM_PhysicalElement) SetPropertyPoweredOn(value bool) (err error) {
-	return instance.SetProperty("PoweredOn", value)
+	return instance.SetProperty("PoweredOn", (value))
 }
 
 // GetPoweredOn gets the value of PoweredOn for the instance
@@ -178,16 +225,25 @@ func (instance *CIM_PhysicalElement) GetPropertyPoweredOn() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *CIM_PhysicalElement) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -196,16 +252,25 @@ func (instance *CIM_PhysicalElement) GetPropertySerialNumber() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSKU sets the value of SKU for the instance
 func (instance *CIM_PhysicalElement) SetPropertySKU(value string) (err error) {
-	return instance.SetProperty("SKU", value)
+	return instance.SetProperty("SKU", (value))
 }
 
 // GetSKU gets the value of SKU for the instance
@@ -214,16 +279,25 @@ func (instance *CIM_PhysicalElement) GetPropertySKU() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTag sets the value of Tag for the instance
 func (instance *CIM_PhysicalElement) SetPropertyTag(value string) (err error) {
-	return instance.SetProperty("Tag", value)
+	return instance.SetProperty("Tag", (value))
 }
 
 // GetTag gets the value of Tag for the instance
@@ -232,16 +306,25 @@ func (instance *CIM_PhysicalElement) GetPropertyTag() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *CIM_PhysicalElement) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -250,9 +333,18 @@ func (instance *CIM_PhysicalElement) GetPropertyVersion() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEAKPolicySetting struct
@@ -154,7 +156,7 @@ func NewRSOP_IEAKPolicySettingEx6(hostName string,
 
 // Setcategories sets the value of categories for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertycategories(value int32) (err error) {
-	return instance.SetProperty("categories", value)
+	return instance.SetProperty("categories", (value))
 }
 
 // Getcategories gets the value of categories for the instance
@@ -163,16 +165,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertycategories() (value int32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // Setchannels sets the value of channels for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertychannels(value int32) (err error) {
-	return instance.SetProperty("channels", value)
+	return instance.SetProperty("channels", (value))
 }
 
 // Getchannels gets the value of channels for the instance
@@ -181,16 +192,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertychannels() (value int32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetcustomFavorites sets the value of customFavorites for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertycustomFavorites(value int32) (err error) {
-	return instance.SetProperty("customFavorites", value)
+	return instance.SetProperty("customFavorites", (value))
 }
 
 // GetcustomFavorites gets the value of customFavorites for the instance
@@ -199,16 +219,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertycustomFavorites() (value int3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetcustomizeAnimatedBitmaps sets the value of customizeAnimatedBitmaps for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertycustomizeAnimatedBitmaps(value bool) (err error) {
-	return instance.SetProperty("customizeAnimatedBitmaps", value)
+	return instance.SetProperty("customizeAnimatedBitmaps", (value))
 }
 
 // GetcustomizeAnimatedBitmaps gets the value of customizeAnimatedBitmaps for the instance
@@ -217,16 +246,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertycustomizeAnimatedBitmaps() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetcustomizeLogoBitmaps sets the value of customizeLogoBitmaps for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertycustomizeLogoBitmaps(value bool) (err error) {
-	return instance.SetProperty("customizeLogoBitmaps", value)
+	return instance.SetProperty("customizeLogoBitmaps", (value))
 }
 
 // GetcustomizeLogoBitmaps gets the value of customizeLogoBitmaps for the instance
@@ -235,16 +273,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertycustomizeLogoBitmaps() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetcustomLinks sets the value of customLinks for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertycustomLinks(value int32) (err error) {
-	return instance.SetProperty("customLinks", value)
+	return instance.SetProperty("customLinks", (value))
 }
 
 // GetcustomLinks gets the value of customLinks for the instance
@@ -253,16 +300,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertycustomLinks() (value int32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetdeleteAdminCreatedFavoritesOnly sets the value of deleteAdminCreatedFavoritesOnly for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertydeleteAdminCreatedFavoritesOnly(value bool) (err error) {
-	return instance.SetProperty("deleteAdminCreatedFavoritesOnly", value)
+	return instance.SetProperty("deleteAdminCreatedFavoritesOnly", (value))
 }
 
 // GetdeleteAdminCreatedFavoritesOnly gets the value of deleteAdminCreatedFavoritesOnly for the instance
@@ -271,16 +327,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertydeleteAdminCreatedFavoritesOn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetdeleteExistingChannels sets the value of deleteExistingChannels for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertydeleteExistingChannels(value bool) (err error) {
-	return instance.SetProperty("deleteExistingChannels", value)
+	return instance.SetProperty("deleteExistingChannels", (value))
 }
 
 // GetdeleteExistingChannels gets the value of deleteExistingChannels for the instance
@@ -289,16 +354,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertydeleteExistingChannels() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetdeleteExistingFavorites sets the value of deleteExistingFavorites for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertydeleteExistingFavorites(value bool) (err error) {
-	return instance.SetProperty("deleteExistingFavorites", value)
+	return instance.SetProperty("deleteExistingFavorites", (value))
 }
 
 // GetdeleteExistingFavorites gets the value of deleteExistingFavorites for the instance
@@ -307,16 +381,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertydeleteExistingFavorites() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetdeleteExistingToolbarButtons sets the value of deleteExistingToolbarButtons for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertydeleteExistingToolbarButtons(value bool) (err error) {
-	return instance.SetProperty("deleteExistingToolbarButtons", value)
+	return instance.SetProperty("deleteExistingToolbarButtons", (value))
 }
 
 // GetdeleteExistingToolbarButtons gets the value of deleteExistingToolbarButtons for the instance
@@ -325,16 +408,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertydeleteExistingToolbarButtons(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetenableDesktopChannelBarByDefault sets the value of enableDesktopChannelBarByDefault for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyenableDesktopChannelBarByDefault(value bool) (err error) {
-	return instance.SetProperty("enableDesktopChannelBarByDefault", value)
+	return instance.SetProperty("enableDesktopChannelBarByDefault", (value))
 }
 
 // GetenableDesktopChannelBarByDefault gets the value of enableDesktopChannelBarByDefault for the instance
@@ -343,16 +435,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyenableDesktopChannelBarByDefa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetenableTrustedPublisherLockdown sets the value of enableTrustedPublisherLockdown for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyenableTrustedPublisherLockdown(value bool) (err error) {
-	return instance.SetProperty("enableTrustedPublisherLockdown", value)
+	return instance.SetProperty("enableTrustedPublisherLockdown", (value))
 }
 
 // GetenableTrustedPublisherLockdown gets the value of enableTrustedPublisherLockdown for the instance
@@ -361,16 +462,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyenableTrustedPublisherLockdow
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SethomePageURL sets the value of homePageURL for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyhomePageURL(value string) (err error) {
-	return instance.SetProperty("homePageURL", value)
+	return instance.SetProperty("homePageURL", (value))
 }
 
 // GethomePageURL gets the value of homePageURL for the instance
@@ -379,16 +489,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyhomePageURL() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetimportAuthenticodeSecurityInfo sets the value of importAuthenticodeSecurityInfo for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyimportAuthenticodeSecurityInfo(value bool) (err error) {
-	return instance.SetProperty("importAuthenticodeSecurityInfo", value)
+	return instance.SetProperty("importAuthenticodeSecurityInfo", (value))
 }
 
 // GetimportAuthenticodeSecurityInfo gets the value of importAuthenticodeSecurityInfo for the instance
@@ -397,16 +516,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyimportAuthenticodeSecurityInf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetimportContentRatingsSettings sets the value of importContentRatingsSettings for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyimportContentRatingsSettings(value bool) (err error) {
-	return instance.SetProperty("importContentRatingsSettings", value)
+	return instance.SetProperty("importContentRatingsSettings", (value))
 }
 
 // GetimportContentRatingsSettings gets the value of importContentRatingsSettings for the instance
@@ -415,16 +543,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyimportContentRatingsSettings(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetimportedZoneCount sets the value of importedZoneCount for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyimportedZoneCount(value uint32) (err error) {
-	return instance.SetProperty("importedZoneCount", value)
+	return instance.SetProperty("importedZoneCount", (value))
 }
 
 // GetimportedZoneCount gets the value of importedZoneCount for the instance
@@ -433,16 +570,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyimportedZoneCount() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetimportProgramSettings sets the value of importProgramSettings for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyimportProgramSettings(value bool) (err error) {
-	return instance.SetProperty("importProgramSettings", value)
+	return instance.SetProperty("importProgramSettings", (value))
 }
 
 // GetimportProgramSettings gets the value of importProgramSettings for the instance
@@ -451,16 +597,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyimportProgramSettings() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetimportSecurityZoneSettings sets the value of importSecurityZoneSettings for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyimportSecurityZoneSettings(value bool) (err error) {
-	return instance.SetProperty("importSecurityZoneSettings", value)
+	return instance.SetProperty("importSecurityZoneSettings", (value))
 }
 
 // GetimportSecurityZoneSettings gets the value of importSecurityZoneSettings for the instance
@@ -469,16 +624,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyimportSecurityZoneSettings() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetlargeAnimatedBitmapName sets the value of largeAnimatedBitmapName for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertylargeAnimatedBitmapName(value string) (err error) {
-	return instance.SetProperty("largeAnimatedBitmapName", value)
+	return instance.SetProperty("largeAnimatedBitmapName", (value))
 }
 
 // GetlargeAnimatedBitmapName gets the value of largeAnimatedBitmapName for the instance
@@ -487,16 +651,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertylargeAnimatedBitmapName() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetlargeAnimatedBitmapPath sets the value of largeAnimatedBitmapPath for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertylargeAnimatedBitmapPath(value string) (err error) {
-	return instance.SetProperty("largeAnimatedBitmapPath", value)
+	return instance.SetProperty("largeAnimatedBitmapPath", (value))
 }
 
 // GetlargeAnimatedBitmapPath gets the value of largeAnimatedBitmapPath for the instance
@@ -505,16 +678,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertylargeAnimatedBitmapPath() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetlargeCustomLogoBitmapName sets the value of largeCustomLogoBitmapName for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertylargeCustomLogoBitmapName(value string) (err error) {
-	return instance.SetProperty("largeCustomLogoBitmapName", value)
+	return instance.SetProperty("largeCustomLogoBitmapName", (value))
 }
 
 // GetlargeCustomLogoBitmapName gets the value of largeCustomLogoBitmapName for the instance
@@ -523,16 +705,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertylargeCustomLogoBitmapName() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetlargeCustomLogoBitmapPath sets the value of largeCustomLogoBitmapPath for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertylargeCustomLogoBitmapPath(value string) (err error) {
-	return instance.SetProperty("largeCustomLogoBitmapPath", value)
+	return instance.SetProperty("largeCustomLogoBitmapPath", (value))
 }
 
 // GetlargeCustomLogoBitmapPath gets the value of largeCustomLogoBitmapPath for the instance
@@ -541,16 +732,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertylargeCustomLogoBitmapPath() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetonlineHelpPageURL sets the value of onlineHelpPageURL for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyonlineHelpPageURL(value string) (err error) {
-	return instance.SetProperty("onlineHelpPageURL", value)
+	return instance.SetProperty("onlineHelpPageURL", (value))
 }
 
 // GetonlineHelpPageURL gets the value of onlineHelpPageURL for the instance
@@ -559,16 +759,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyonlineHelpPageURL() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetplaceFavoritesAtTopOfList sets the value of placeFavoritesAtTopOfList for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyplaceFavoritesAtTopOfList(value bool) (err error) {
-	return instance.SetProperty("placeFavoritesAtTopOfList", value)
+	return instance.SetProperty("placeFavoritesAtTopOfList", (value))
 }
 
 // GetplaceFavoritesAtTopOfList gets the value of placeFavoritesAtTopOfList for the instance
@@ -577,16 +786,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyplaceFavoritesAtTopOfList() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetpreferenceMode sets the value of preferenceMode for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertypreferenceMode(value bool) (err error) {
-	return instance.SetProperty("preferenceMode", value)
+	return instance.SetProperty("preferenceMode", (value))
 }
 
 // GetpreferenceMode gets the value of preferenceMode for the instance
@@ -595,16 +813,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertypreferenceMode() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetsearchBarURL sets the value of searchBarURL for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertysearchBarURL(value string) (err error) {
-	return instance.SetProperty("searchBarURL", value)
+	return instance.SetProperty("searchBarURL", (value))
 }
 
 // GetsearchBarURL gets the value of searchBarURL for the instance
@@ -613,16 +840,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertysearchBarURL() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetsmallAnimatedBitmapName sets the value of smallAnimatedBitmapName for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertysmallAnimatedBitmapName(value string) (err error) {
-	return instance.SetProperty("smallAnimatedBitmapName", value)
+	return instance.SetProperty("smallAnimatedBitmapName", (value))
 }
 
 // GetsmallAnimatedBitmapName gets the value of smallAnimatedBitmapName for the instance
@@ -631,16 +867,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertysmallAnimatedBitmapName() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetsmallAnimatedBitmapPath sets the value of smallAnimatedBitmapPath for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertysmallAnimatedBitmapPath(value string) (err error) {
-	return instance.SetProperty("smallAnimatedBitmapPath", value)
+	return instance.SetProperty("smallAnimatedBitmapPath", (value))
 }
 
 // GetsmallAnimatedBitmapPath gets the value of smallAnimatedBitmapPath for the instance
@@ -649,16 +894,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertysmallAnimatedBitmapPath() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetsmallCustomLogoBitmapName sets the value of smallCustomLogoBitmapName for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertysmallCustomLogoBitmapName(value string) (err error) {
-	return instance.SetProperty("smallCustomLogoBitmapName", value)
+	return instance.SetProperty("smallCustomLogoBitmapName", (value))
 }
 
 // GetsmallCustomLogoBitmapName gets the value of smallCustomLogoBitmapName for the instance
@@ -667,16 +921,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertysmallCustomLogoBitmapName() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetsmallCustomLogoBitmapPath sets the value of smallCustomLogoBitmapPath for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertysmallCustomLogoBitmapPath(value string) (err error) {
-	return instance.SetProperty("smallCustomLogoBitmapPath", value)
+	return instance.SetProperty("smallCustomLogoBitmapPath", (value))
 }
 
 // GetsmallCustomLogoBitmapPath gets the value of smallCustomLogoBitmapPath for the instance
@@ -685,16 +948,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertysmallCustomLogoBitmapPath() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SettitleBarCustomText sets the value of titleBarCustomText for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertytitleBarCustomText(value string) (err error) {
-	return instance.SetProperty("titleBarCustomText", value)
+	return instance.SetProperty("titleBarCustomText", (value))
 }
 
 // GettitleBarCustomText gets the value of titleBarCustomText for the instance
@@ -703,16 +975,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertytitleBarCustomText() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SettitleBarText sets the value of titleBarText for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertytitleBarText(value string) (err error) {
-	return instance.SetProperty("titleBarText", value)
+	return instance.SetProperty("titleBarText", (value))
 }
 
 // GettitleBarText gets the value of titleBarText for the instance
@@ -721,16 +1002,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertytitleBarText() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SettoolbarBackgroundBitmapPath sets the value of toolbarBackgroundBitmapPath for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertytoolbarBackgroundBitmapPath(value string) (err error) {
-	return instance.SetProperty("toolbarBackgroundBitmapPath", value)
+	return instance.SetProperty("toolbarBackgroundBitmapPath", (value))
 }
 
 // GettoolbarBackgroundBitmapPath gets the value of toolbarBackgroundBitmapPath for the instance
@@ -739,16 +1029,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertytoolbarBackgroundBitmapPath()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SettoolbarButtons sets the value of toolbarButtons for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertytoolbarButtons(value int32) (err error) {
-	return instance.SetProperty("toolbarButtons", value)
+	return instance.SetProperty("toolbarButtons", (value))
 }
 
 // GettoolbarButtons gets the value of toolbarButtons for the instance
@@ -757,16 +1056,25 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertytoolbarButtons() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetuserAgentText sets the value of userAgentText for the instance
 func (instance *RSOP_IEAKPolicySetting) SetPropertyuserAgentText(value string) (err error) {
-	return instance.SetProperty("userAgentText", value)
+	return instance.SetProperty("userAgentText", (value))
 }
 
 // GetuserAgentText gets the value of userAgentText for the instance
@@ -775,9 +1083,18 @@ func (instance *RSOP_IEAKPolicySetting) GetPropertyuserAgentText() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

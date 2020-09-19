@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_IPsecIKEv1IPv4 struct
@@ -103,7 +105,7 @@ func NewWin32_PerfRawData_Counters_IPsecIKEv1IPv4Ex6(hostName string,
 
 // SetActiveMainModeSAs sets the value of ActiveMainModeSAs for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyActiveMainModeSAs(value uint32) (err error) {
-	return instance.SetProperty("ActiveMainModeSAs", value)
+	return instance.SetProperty("ActiveMainModeSAs", (value))
 }
 
 // GetActiveMainModeSAs gets the value of ActiveMainModeSAs for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyActiveMain
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActiveQuickModeSAs sets the value of ActiveQuickModeSAs for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyActiveQuickModeSAs(value uint32) (err error) {
-	return instance.SetProperty("ActiveQuickModeSAs", value)
+	return instance.SetProperty("ActiveQuickModeSAs", (value))
 }
 
 // GetActiveQuickModeSAs gets the value of ActiveQuickModeSAs for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyActiveQuic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailedMainModeNegotiations sets the value of FailedMainModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyFailedMainModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("FailedMainModeNegotiations", value)
+	return instance.SetProperty("FailedMainModeNegotiations", (value))
 }
 
 // GetFailedMainModeNegotiations gets the value of FailedMainModeNegotiations for the instance
@@ -148,16 +168,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyFailedMain
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailedMainModeNegotiationsPersec sets the value of FailedMainModeNegotiationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyFailedMainModeNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("FailedMainModeNegotiationsPersec", value)
+	return instance.SetProperty("FailedMainModeNegotiationsPersec", (value))
 }
 
 // GetFailedMainModeNegotiationsPersec gets the value of FailedMainModeNegotiationsPersec for the instance
@@ -166,16 +195,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyFailedMain
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailedQuickModeNegotiations sets the value of FailedQuickModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyFailedQuickModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("FailedQuickModeNegotiations", value)
+	return instance.SetProperty("FailedQuickModeNegotiations", (value))
 }
 
 // GetFailedQuickModeNegotiations gets the value of FailedQuickModeNegotiations for the instance
@@ -184,16 +222,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyFailedQuic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailedQuickModeNegotiationsPersec sets the value of FailedQuickModeNegotiationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyFailedQuickModeNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("FailedQuickModeNegotiationsPersec", value)
+	return instance.SetProperty("FailedQuickModeNegotiationsPersec", (value))
 }
 
 // GetFailedQuickModeNegotiationsPersec gets the value of FailedQuickModeNegotiationsPersec for the instance
@@ -202,16 +249,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyFailedQuic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMainModeNegotiationRequestsReceived sets the value of MainModeNegotiationRequestsReceived for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyMainModeNegotiationRequestsReceived(value uint32) (err error) {
-	return instance.SetProperty("MainModeNegotiationRequestsReceived", value)
+	return instance.SetProperty("MainModeNegotiationRequestsReceived", (value))
 }
 
 // GetMainModeNegotiationRequestsReceived gets the value of MainModeNegotiationRequestsReceived for the instance
@@ -220,16 +276,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyMainModeNe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMainModeNegotiationRequestsReceivedPersec sets the value of MainModeNegotiationRequestsReceivedPersec for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyMainModeNegotiationRequestsReceivedPersec(value uint32) (err error) {
-	return instance.SetProperty("MainModeNegotiationRequestsReceivedPersec", value)
+	return instance.SetProperty("MainModeNegotiationRequestsReceivedPersec", (value))
 }
 
 // GetMainModeNegotiationRequestsReceivedPersec gets the value of MainModeNegotiationRequestsReceivedPersec for the instance
@@ -238,16 +303,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyMainModeNe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMainModeNegotiations sets the value of MainModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyMainModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("MainModeNegotiations", value)
+	return instance.SetProperty("MainModeNegotiations", (value))
 }
 
 // GetMainModeNegotiations gets the value of MainModeNegotiations for the instance
@@ -256,16 +330,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyMainModeNe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMainModeNegotiationsPersec sets the value of MainModeNegotiationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyMainModeNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("MainModeNegotiationsPersec", value)
+	return instance.SetProperty("MainModeNegotiationsPersec", (value))
 }
 
 // GetMainModeNegotiationsPersec gets the value of MainModeNegotiationsPersec for the instance
@@ -274,16 +357,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyMainModeNe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPendingMainModeNegotiations sets the value of PendingMainModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyPendingMainModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("PendingMainModeNegotiations", value)
+	return instance.SetProperty("PendingMainModeNegotiations", (value))
 }
 
 // GetPendingMainModeNegotiations gets the value of PendingMainModeNegotiations for the instance
@@ -292,16 +384,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyPendingMai
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPendingQuickModeNegotiations sets the value of PendingQuickModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyPendingQuickModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("PendingQuickModeNegotiations", value)
+	return instance.SetProperty("PendingQuickModeNegotiations", (value))
 }
 
 // GetPendingQuickModeNegotiations gets the value of PendingQuickModeNegotiations for the instance
@@ -310,16 +411,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyPendingQui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuickModeNegotiations sets the value of QuickModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyQuickModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("QuickModeNegotiations", value)
+	return instance.SetProperty("QuickModeNegotiations", (value))
 }
 
 // GetQuickModeNegotiations gets the value of QuickModeNegotiations for the instance
@@ -328,16 +438,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyQuickModeN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuickModeNegotiationsPersec sets the value of QuickModeNegotiationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertyQuickModeNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("QuickModeNegotiationsPersec", value)
+	return instance.SetProperty("QuickModeNegotiationsPersec", (value))
 }
 
 // GetQuickModeNegotiationsPersec gets the value of QuickModeNegotiationsPersec for the instance
@@ -346,16 +465,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertyQuickModeN
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSuccessfulMainModeNegotiations sets the value of SuccessfulMainModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertySuccessfulMainModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("SuccessfulMainModeNegotiations", value)
+	return instance.SetProperty("SuccessfulMainModeNegotiations", (value))
 }
 
 // GetSuccessfulMainModeNegotiations gets the value of SuccessfulMainModeNegotiations for the instance
@@ -364,16 +492,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertySuccessful
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSuccessfulMainModeNegotiationsPersec sets the value of SuccessfulMainModeNegotiationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertySuccessfulMainModeNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("SuccessfulMainModeNegotiationsPersec", value)
+	return instance.SetProperty("SuccessfulMainModeNegotiationsPersec", (value))
 }
 
 // GetSuccessfulMainModeNegotiationsPersec gets the value of SuccessfulMainModeNegotiationsPersec for the instance
@@ -382,16 +519,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertySuccessful
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSuccessfulQuickModeNegotiations sets the value of SuccessfulQuickModeNegotiations for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertySuccessfulQuickModeNegotiations(value uint32) (err error) {
-	return instance.SetProperty("SuccessfulQuickModeNegotiations", value)
+	return instance.SetProperty("SuccessfulQuickModeNegotiations", (value))
 }
 
 // GetSuccessfulQuickModeNegotiations gets the value of SuccessfulQuickModeNegotiations for the instance
@@ -400,16 +546,25 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertySuccessful
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSuccessfulQuickModeNegotiationsPersec sets the value of SuccessfulQuickModeNegotiationsPersec for the instance
 func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) SetPropertySuccessfulQuickModeNegotiationsPersec(value uint32) (err error) {
-	return instance.SetProperty("SuccessfulQuickModeNegotiationsPersec", value)
+	return instance.SetProperty("SuccessfulQuickModeNegotiationsPersec", (value))
 }
 
 // GetSuccessfulQuickModeNegotiationsPersec gets the value of SuccessfulQuickModeNegotiationsPersec for the instance
@@ -418,9 +573,18 @@ func (instance *Win32_PerfRawData_Counters_IPsecIKEv1IPv4) GetPropertySuccessful
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DSCConfigurationOutputResult struct
@@ -55,7 +57,7 @@ func NewMSFT_DSCConfigurationOutputResultEx6(hostName string,
 
 // SetObject sets the value of Object for the instance
 func (instance *MSFT_DSCConfigurationOutputResult) SetPropertyObject(value interface{}) (err error) {
-	return instance.SetProperty("Object", value)
+	return instance.SetProperty("Object", (value))
 }
 
 // GetObject gets the value of Object for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_DSCConfigurationOutputResult) GetPropertyObject() (value in
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }
 
 // SetResult sets the value of Result for the instance
 func (instance *MSFT_DSCConfigurationOutputResult) SetPropertyResult(value uint32) (err error) {
-	return instance.SetProperty("Result", value)
+	return instance.SetProperty("Result", (value))
 }
 
 // GetResult gets the value of Result for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_DSCConfigurationOutputResult) GetPropertyResult() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

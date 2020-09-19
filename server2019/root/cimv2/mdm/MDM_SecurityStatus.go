@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_SecurityStatus struct
@@ -83,7 +85,7 @@ func NewMDM_SecurityStatusEx6(hostName string,
 
 // SetAntiVirusSignatureStatus sets the value of AntiVirusSignatureStatus for the instance
 func (instance *MDM_SecurityStatus) SetPropertyAntiVirusSignatureStatus(value uint32) (err error) {
-	return instance.SetProperty("AntiVirusSignatureStatus", value)
+	return instance.SetProperty("AntiVirusSignatureStatus", (value))
 }
 
 // GetAntiVirusSignatureStatus gets the value of AntiVirusSignatureStatus for the instance
@@ -92,16 +94,25 @@ func (instance *MDM_SecurityStatus) GetPropertyAntiVirusSignatureStatus() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAntiVirusStatus sets the value of AntiVirusStatus for the instance
 func (instance *MDM_SecurityStatus) SetPropertyAntiVirusStatus(value uint32) (err error) {
-	return instance.SetProperty("AntiVirusStatus", value)
+	return instance.SetProperty("AntiVirusStatus", (value))
 }
 
 // GetAntiVirusStatus gets the value of AntiVirusStatus for the instance
@@ -110,16 +121,25 @@ func (instance *MDM_SecurityStatus) GetPropertyAntiVirusStatus() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetApplicationContentUriRules sets the value of ApplicationContentUriRules for the instance
 func (instance *MDM_SecurityStatus) SetPropertyApplicationContentUriRules(value string) (err error) {
-	return instance.SetProperty("ApplicationContentUriRules", value)
+	return instance.SetProperty("ApplicationContentUriRules", (value))
 }
 
 // GetApplicationContentUriRules gets the value of ApplicationContentUriRules for the instance
@@ -128,16 +148,25 @@ func (instance *MDM_SecurityStatus) GetPropertyApplicationContentUriRules() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetAutoUpdateStatus sets the value of AutoUpdateStatus for the instance
 func (instance *MDM_SecurityStatus) SetPropertyAutoUpdateStatus(value uint32) (err error) {
-	return instance.SetProperty("AutoUpdateStatus", value)
+	return instance.SetProperty("AutoUpdateStatus", (value))
 }
 
 // GetAutoUpdateStatus gets the value of AutoUpdateStatus for the instance
@@ -146,16 +175,25 @@ func (instance *MDM_SecurityStatus) GetPropertyAutoUpdateStatus() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFirewallStatus sets the value of FirewallStatus for the instance
 func (instance *MDM_SecurityStatus) SetPropertyFirewallStatus(value uint32) (err error) {
-	return instance.SetProperty("FirewallStatus", value)
+	return instance.SetProperty("FirewallStatus", (value))
 }
 
 // GetFirewallStatus gets the value of FirewallStatus for the instance
@@ -164,16 +202,25 @@ func (instance *MDM_SecurityStatus) GetPropertyFirewallStatus() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsMicrosoftAccountOptional sets the value of IsMicrosoftAccountOptional for the instance
 func (instance *MDM_SecurityStatus) SetPropertyIsMicrosoftAccountOptional(value bool) (err error) {
-	return instance.SetProperty("IsMicrosoftAccountOptional", value)
+	return instance.SetProperty("IsMicrosoftAccountOptional", (value))
 }
 
 // GetIsMicrosoftAccountOptional gets the value of IsMicrosoftAccountOptional for the instance
@@ -182,16 +229,25 @@ func (instance *MDM_SecurityStatus) GetPropertyIsMicrosoftAccountOptional() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *MDM_SecurityStatus) SetPropertykey(value uint32) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -200,16 +256,25 @@ func (instance *MDM_SecurityStatus) GetPropertykey() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaintenanceScheduleAllowWakeup sets the value of MaintenanceScheduleAllowWakeup for the instance
 func (instance *MDM_SecurityStatus) SetPropertyMaintenanceScheduleAllowWakeup(value bool) (err error) {
-	return instance.SetProperty("MaintenanceScheduleAllowWakeup", value)
+	return instance.SetProperty("MaintenanceScheduleAllowWakeup", (value))
 }
 
 // GetMaintenanceScheduleAllowWakeup gets the value of MaintenanceScheduleAllowWakeup for the instance
@@ -218,16 +283,25 @@ func (instance *MDM_SecurityStatus) GetPropertyMaintenanceScheduleAllowWakeup() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaintenanceScheduleDelayPattern sets the value of MaintenanceScheduleDelayPattern for the instance
 func (instance *MDM_SecurityStatus) SetPropertyMaintenanceScheduleDelayPattern(value string) (err error) {
-	return instance.SetProperty("MaintenanceScheduleDelayPattern", value)
+	return instance.SetProperty("MaintenanceScheduleDelayPattern", (value))
 }
 
 // GetMaintenanceScheduleDelayPattern gets the value of MaintenanceScheduleDelayPattern for the instance
@@ -236,16 +310,25 @@ func (instance *MDM_SecurityStatus) GetPropertyMaintenanceScheduleDelayPattern()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMaintenanceScheduleStartHour sets the value of MaintenanceScheduleStartHour for the instance
 func (instance *MDM_SecurityStatus) SetPropertyMaintenanceScheduleStartHour(value uint32) (err error) {
-	return instance.SetProperty("MaintenanceScheduleStartHour", value)
+	return instance.SetProperty("MaintenanceScheduleStartHour", (value))
 }
 
 // GetMaintenanceScheduleStartHour gets the value of MaintenanceScheduleStartHour for the instance
@@ -254,16 +337,25 @@ func (instance *MDM_SecurityStatus) GetPropertyMaintenanceScheduleStartHour() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRequireEncryption sets the value of RequireEncryption for the instance
 func (instance *MDM_SecurityStatus) SetPropertyRequireEncryption(value bool) (err error) {
-	return instance.SetProperty("RequireEncryption", value)
+	return instance.SetProperty("RequireEncryption", (value))
 }
 
 // GetRequireEncryption gets the value of RequireEncryption for the instance
@@ -272,9 +364,18 @@ func (instance *MDM_SecurityStatus) GetPropertyRequireEncryption() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_PciExpressSettingData struct
@@ -55,7 +57,7 @@ func NewMsvm_PciExpressSettingDataEx6(hostName string,
 
 // SetVirtualFunctions sets the value of VirtualFunctions for the instance
 func (instance *Msvm_PciExpressSettingData) SetPropertyVirtualFunctions(value []uint16) (err error) {
-	return instance.SetProperty("VirtualFunctions", value)
+	return instance.SetProperty("VirtualFunctions", (value))
 }
 
 // GetVirtualFunctions gets the value of VirtualFunctions for the instance
@@ -64,16 +66,26 @@ func (instance *Msvm_PciExpressSettingData) GetPropertyVirtualFunctions() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetVirtualSystemIdentifiers sets the value of VirtualSystemIdentifiers for the instance
 func (instance *Msvm_PciExpressSettingData) SetPropertyVirtualSystemIdentifiers(value []string) (err error) {
-	return instance.SetProperty("VirtualSystemIdentifiers", value)
+	return instance.SetProperty("VirtualSystemIdentifiers", (value))
 }
 
 // GetVirtualSystemIdentifiers gets the value of VirtualSystemIdentifiers for the instance
@@ -82,10 +94,20 @@ func (instance *Msvm_PciExpressSettingData) GetPropertyVirtualSystemIdentifiers(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 func (instance *Msvm_PciExpressSettingData) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

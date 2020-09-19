@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PortResource struct
@@ -52,7 +54,7 @@ func NewWin32_PortResourceEx6(hostName string,
 
 // SetAlias sets the value of Alias for the instance
 func (instance *Win32_PortResource) SetPropertyAlias(value bool) (err error) {
-	return instance.SetProperty("Alias", value)
+	return instance.SetProperty("Alias", (value))
 }
 
 // GetAlias gets the value of Alias for the instance
@@ -61,9 +63,18 @@ func (instance *Win32_PortResource) GetPropertyAlias() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
@@ -11,7 +11,9 @@ package management
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SDDC_Memory struct
@@ -65,7 +67,7 @@ func NewSDDC_MemoryEx6(hostName string,
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *SDDC_Memory) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -74,16 +76,25 @@ func (instance *SDDC_Memory) GetPropertyManufacturer() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *SDDC_Memory) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -92,16 +103,25 @@ func (instance *SDDC_Memory) GetPropertyModel() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *SDDC_Memory) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -110,16 +130,25 @@ func (instance *SDDC_Memory) GetPropertySerialNumber() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSizeInBytes sets the value of SizeInBytes for the instance
 func (instance *SDDC_Memory) SetPropertySizeInBytes(value uint64) (err error) {
-	return instance.SetProperty("SizeInBytes", value)
+	return instance.SetProperty("SizeInBytes", (value))
 }
 
 // GetSizeInBytes gets the value of SizeInBytes for the instance
@@ -128,16 +157,25 @@ func (instance *SDDC_Memory) GetPropertySizeInBytes() (value uint64, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSpeedInMHz sets the value of SpeedInMHz for the instance
 func (instance *SDDC_Memory) SetPropertySpeedInMHz(value uint32) (err error) {
-	return instance.SetProperty("SpeedInMHz", value)
+	return instance.SetProperty("SpeedInMHz", (value))
 }
 
 // GetSpeedInMHz gets the value of SpeedInMHz for the instance
@@ -146,9 +184,18 @@ func (instance *SDDC_Memory) GetPropertySpeedInMHz() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

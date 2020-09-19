@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ReliabilityRecords struct
@@ -79,7 +81,7 @@ func NewWin32_ReliabilityRecordsEx6(hostName string,
 
 // SetComputerName sets the value of ComputerName for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyComputerName(value string) (err error) {
-	return instance.SetProperty("ComputerName", value)
+	return instance.SetProperty("ComputerName", (value))
 }
 
 // GetComputerName gets the value of ComputerName for the instance
@@ -88,16 +90,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertyComputerName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEventIdentifier sets the value of EventIdentifier for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyEventIdentifier(value uint32) (err error) {
-	return instance.SetProperty("EventIdentifier", value)
+	return instance.SetProperty("EventIdentifier", (value))
 }
 
 // GetEventIdentifier gets the value of EventIdentifier for the instance
@@ -106,16 +117,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertyEventIdentifier() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInsertionStrings sets the value of InsertionStrings for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyInsertionStrings(value []string) (err error) {
-	return instance.SetProperty("InsertionStrings", value)
+	return instance.SetProperty("InsertionStrings", (value))
 }
 
 // GetInsertionStrings gets the value of InsertionStrings for the instance
@@ -124,16 +144,26 @@ func (instance *Win32_ReliabilityRecords) GetPropertyInsertionStrings() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLogfile sets the value of Logfile for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyLogfile(value string) (err error) {
-	return instance.SetProperty("Logfile", value)
+	return instance.SetProperty("Logfile", (value))
 }
 
 // GetLogfile gets the value of Logfile for the instance
@@ -142,16 +172,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertyLogfile() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMessage sets the value of Message for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyMessage(value string) (err error) {
-	return instance.SetProperty("Message", value)
+	return instance.SetProperty("Message", (value))
 }
 
 // GetMessage gets the value of Message for the instance
@@ -160,16 +199,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertyMessage() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductName sets the value of ProductName for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyProductName(value string) (err error) {
-	return instance.SetProperty("ProductName", value)
+	return instance.SetProperty("ProductName", (value))
 }
 
 // GetProductName gets the value of ProductName for the instance
@@ -178,16 +226,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertyProductName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRecordNumber sets the value of RecordNumber for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyRecordNumber(value uint32) (err error) {
-	return instance.SetProperty("RecordNumber", value)
+	return instance.SetProperty("RecordNumber", (value))
 }
 
 // GetRecordNumber gets the value of RecordNumber for the instance
@@ -196,16 +253,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertyRecordNumber() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSourceName sets the value of SourceName for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertySourceName(value string) (err error) {
-	return instance.SetProperty("SourceName", value)
+	return instance.SetProperty("SourceName", (value))
 }
 
 // GetSourceName gets the value of SourceName for the instance
@@ -214,16 +280,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertySourceName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTimeGenerated sets the value of TimeGenerated for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyTimeGenerated(value string) (err error) {
-	return instance.SetProperty("TimeGenerated", value)
+	return instance.SetProperty("TimeGenerated", (value))
 }
 
 // GetTimeGenerated gets the value of TimeGenerated for the instance
@@ -232,16 +307,25 @@ func (instance *Win32_ReliabilityRecords) GetPropertyTimeGenerated() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUser sets the value of User for the instance
 func (instance *Win32_ReliabilityRecords) SetPropertyUser(value string) (err error) {
-	return instance.SetProperty("User", value)
+	return instance.SetProperty("User", (value))
 }
 
 // GetUser gets the value of User for the instance
@@ -250,10 +334,19 @@ func (instance *Win32_ReliabilityRecords) GetPropertyUser() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

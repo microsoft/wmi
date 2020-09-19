@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_SystemService struct
@@ -58,7 +60,7 @@ func NewRSOP_SystemServiceEx6(hostName string,
 
 // SetSDDLString sets the value of SDDLString for the instance
 func (instance *RSOP_SystemService) SetPropertySDDLString(value string) (err error) {
-	return instance.SetProperty("SDDLString", value)
+	return instance.SetProperty("SDDLString", (value))
 }
 
 // GetSDDLString gets the value of SDDLString for the instance
@@ -67,16 +69,25 @@ func (instance *RSOP_SystemService) GetPropertySDDLString() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetService sets the value of Service for the instance
 func (instance *RSOP_SystemService) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -85,16 +96,25 @@ func (instance *RSOP_SystemService) GetPropertyService() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStartupMode sets the value of StartupMode for the instance
 func (instance *RSOP_SystemService) SetPropertyStartupMode(value SystemService_StartupMode) (err error) {
-	return instance.SetProperty("StartupMode", value)
+	return instance.SetProperty("StartupMode", (value))
 }
 
 // GetStartupMode gets the value of StartupMode for the instance
@@ -103,9 +123,18 @@ func (instance *RSOP_SystemService) GetPropertyStartupMode() (value SystemServic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SystemService_StartupMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SystemService_StartupMode(valuetmp)
+
 	return
 }

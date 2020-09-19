@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.TaskScheduler
 //////////////////////////////////////////////
 package taskscheduler
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_TaskPrincipal2 struct
@@ -55,7 +57,7 @@ func NewMSFT_TaskPrincipal2Ex6(hostName string,
 
 // SetProcessTokenSidType sets the value of ProcessTokenSidType for the instance
 func (instance *MSFT_TaskPrincipal2) SetPropertyProcessTokenSidType(value TaskPrincipal2_ProcessTokenSidType) (err error) {
-	return instance.SetProperty("ProcessTokenSidType", value)
+	return instance.SetProperty("ProcessTokenSidType", (value))
 }
 
 // GetProcessTokenSidType gets the value of ProcessTokenSidType for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_TaskPrincipal2) GetPropertyProcessTokenSidType() (value Tas
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(TaskPrincipal2_ProcessTokenSidType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = TaskPrincipal2_ProcessTokenSidType(valuetmp)
+
 	return
 }
 
 // SetRequiredPrivilege sets the value of RequiredPrivilege for the instance
 func (instance *MSFT_TaskPrincipal2) SetPropertyRequiredPrivilege(value []string) (err error) {
-	return instance.SetProperty("RequiredPrivilege", value)
+	return instance.SetProperty("RequiredPrivilege", (value))
 }
 
 // GetRequiredPrivilege gets the value of RequiredPrivilege for the instance
@@ -82,9 +93,19 @@ func (instance *MSFT_TaskPrincipal2) GetPropertyRequiredPrivilege() (value []str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

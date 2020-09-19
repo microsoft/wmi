@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NamedJobObjectLimitSetting struct
@@ -82,7 +84,7 @@ func NewWin32_NamedJobObjectLimitSettingEx6(hostName string,
 
 // SetActiveProcessLimit sets the value of ActiveProcessLimit for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyActiveProcessLimit(value uint32) (err error) {
-	return instance.SetProperty("ActiveProcessLimit", value)
+	return instance.SetProperty("ActiveProcessLimit", (value))
 }
 
 // GetActiveProcessLimit gets the value of ActiveProcessLimit for the instance
@@ -91,16 +93,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyActiveProcessLimit(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAffinity sets the value of Affinity for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyAffinity(value uint32) (err error) {
-	return instance.SetProperty("Affinity", value)
+	return instance.SetProperty("Affinity", (value))
 }
 
 // GetAffinity gets the value of Affinity for the instance
@@ -109,16 +120,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyAffinity() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetJobMemoryLimit sets the value of JobMemoryLimit for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyJobMemoryLimit(value uint32) (err error) {
-	return instance.SetProperty("JobMemoryLimit", value)
+	return instance.SetProperty("JobMemoryLimit", (value))
 }
 
 // GetJobMemoryLimit gets the value of JobMemoryLimit for the instance
@@ -127,16 +147,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyJobMemoryLimit() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLimitFlags sets the value of LimitFlags for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyLimitFlags(value uint32) (err error) {
-	return instance.SetProperty("LimitFlags", value)
+	return instance.SetProperty("LimitFlags", (value))
 }
 
 // GetLimitFlags gets the value of LimitFlags for the instance
@@ -145,16 +174,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyLimitFlags() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumWorkingSetSize sets the value of MaximumWorkingSetSize for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyMaximumWorkingSetSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumWorkingSetSize", value)
+	return instance.SetProperty("MaximumWorkingSetSize", (value))
 }
 
 // GetMaximumWorkingSetSize gets the value of MaximumWorkingSetSize for the instance
@@ -163,16 +201,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyMaximumWorkingSetSi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinimumWorkingSetSize sets the value of MinimumWorkingSetSize for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyMinimumWorkingSetSize(value uint32) (err error) {
-	return instance.SetProperty("MinimumWorkingSetSize", value)
+	return instance.SetProperty("MinimumWorkingSetSize", (value))
 }
 
 // GetMinimumWorkingSetSize gets the value of MinimumWorkingSetSize for the instance
@@ -181,16 +228,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyMinimumWorkingSetSi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPerJobUserTimeLimit sets the value of PerJobUserTimeLimit for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyPerJobUserTimeLimit(value uint64) (err error) {
-	return instance.SetProperty("PerJobUserTimeLimit", value)
+	return instance.SetProperty("PerJobUserTimeLimit", (value))
 }
 
 // GetPerJobUserTimeLimit gets the value of PerJobUserTimeLimit for the instance
@@ -199,16 +255,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyPerJobUserTimeLimit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPerProcessUserTimeLimit sets the value of PerProcessUserTimeLimit for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyPerProcessUserTimeLimit(value uint64) (err error) {
-	return instance.SetProperty("PerProcessUserTimeLimit", value)
+	return instance.SetProperty("PerProcessUserTimeLimit", (value))
 }
 
 // GetPerProcessUserTimeLimit gets the value of PerProcessUserTimeLimit for the instance
@@ -217,16 +282,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyPerProcessUserTimeL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPriorityClass sets the value of PriorityClass for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyPriorityClass(value uint32) (err error) {
-	return instance.SetProperty("PriorityClass", value)
+	return instance.SetProperty("PriorityClass", (value))
 }
 
 // GetPriorityClass gets the value of PriorityClass for the instance
@@ -235,16 +309,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyPriorityClass() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessMemoryLimit sets the value of ProcessMemoryLimit for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertyProcessMemoryLimit(value uint32) (err error) {
-	return instance.SetProperty("ProcessMemoryLimit", value)
+	return instance.SetProperty("ProcessMemoryLimit", (value))
 }
 
 // GetProcessMemoryLimit gets the value of ProcessMemoryLimit for the instance
@@ -253,16 +336,25 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertyProcessMemoryLimit(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSchedulingClass sets the value of SchedulingClass for the instance
 func (instance *Win32_NamedJobObjectLimitSetting) SetPropertySchedulingClass(value uint32) (err error) {
-	return instance.SetProperty("SchedulingClass", value)
+	return instance.SetProperty("SchedulingClass", (value))
 }
 
 // GetSchedulingClass gets the value of SchedulingClass for the instance
@@ -271,9 +363,18 @@ func (instance *Win32_NamedJobObjectLimitSetting) GetPropertySchedulingClass() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

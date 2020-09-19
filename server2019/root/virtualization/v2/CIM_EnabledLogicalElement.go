@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_EnabledLogicalElement struct
@@ -88,7 +90,7 @@ func NewCIM_EnabledLogicalElementEx6(hostName string,
 
 // SetAvailableRequestedStates sets the value of AvailableRequestedStates for the instance
 func (instance *CIM_EnabledLogicalElement) SetPropertyAvailableRequestedStates(value []EnabledLogicalElement_AvailableRequestedStates) (err error) {
-	return instance.SetProperty("AvailableRequestedStates", value)
+	return instance.SetProperty("AvailableRequestedStates", (value))
 }
 
 // GetAvailableRequestedStates gets the value of AvailableRequestedStates for the instance
@@ -97,16 +99,26 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyAvailableRequestedStates()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]EnabledLogicalElement_AvailableRequestedStates)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, EnabledLogicalElement_AvailableRequestedStates(valuetmp))
+	}
+
 	return
 }
 
 // SetEnabledDefault sets the value of EnabledDefault for the instance
 func (instance *CIM_EnabledLogicalElement) SetPropertyEnabledDefault(value EnabledLogicalElement_EnabledDefault) (err error) {
-	return instance.SetProperty("EnabledDefault", value)
+	return instance.SetProperty("EnabledDefault", (value))
 }
 
 // GetEnabledDefault gets the value of EnabledDefault for the instance
@@ -115,16 +127,25 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledDefault() (value En
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(EnabledLogicalElement_EnabledDefault)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = EnabledLogicalElement_EnabledDefault(valuetmp)
+
 	return
 }
 
 // SetEnabledState sets the value of EnabledState for the instance
 func (instance *CIM_EnabledLogicalElement) SetPropertyEnabledState(value EnabledLogicalElement_EnabledState) (err error) {
-	return instance.SetProperty("EnabledState", value)
+	return instance.SetProperty("EnabledState", (value))
 }
 
 // GetEnabledState gets the value of EnabledState for the instance
@@ -133,16 +154,25 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyEnabledState() (value Enab
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(EnabledLogicalElement_EnabledState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = EnabledLogicalElement_EnabledState(valuetmp)
+
 	return
 }
 
 // SetOtherEnabledState sets the value of OtherEnabledState for the instance
 func (instance *CIM_EnabledLogicalElement) SetPropertyOtherEnabledState(value string) (err error) {
-	return instance.SetProperty("OtherEnabledState", value)
+	return instance.SetProperty("OtherEnabledState", (value))
 }
 
 // GetOtherEnabledState gets the value of OtherEnabledState for the instance
@@ -151,16 +181,25 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyOtherEnabledState() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequestedState sets the value of RequestedState for the instance
 func (instance *CIM_EnabledLogicalElement) SetPropertyRequestedState(value EnabledLogicalElement_RequestedState) (err error) {
-	return instance.SetProperty("RequestedState", value)
+	return instance.SetProperty("RequestedState", (value))
 }
 
 // GetRequestedState gets the value of RequestedState for the instance
@@ -169,16 +208,25 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyRequestedState() (value En
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(EnabledLogicalElement_RequestedState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = EnabledLogicalElement_RequestedState(valuetmp)
+
 	return
 }
 
 // SetTimeOfLastStateChange sets the value of TimeOfLastStateChange for the instance
 func (instance *CIM_EnabledLogicalElement) SetPropertyTimeOfLastStateChange(value string) (err error) {
-	return instance.SetProperty("TimeOfLastStateChange", value)
+	return instance.SetProperty("TimeOfLastStateChange", (value))
 }
 
 // GetTimeOfLastStateChange gets the value of TimeOfLastStateChange for the instance
@@ -187,16 +235,25 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyTimeOfLastStateChange() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTransitioningToState sets the value of TransitioningToState for the instance
 func (instance *CIM_EnabledLogicalElement) SetPropertyTransitioningToState(value EnabledLogicalElement_TransitioningToState) (err error) {
-	return instance.SetProperty("TransitioningToState", value)
+	return instance.SetProperty("TransitioningToState", (value))
 }
 
 // GetTransitioningToState gets the value of TransitioningToState for the instance
@@ -205,10 +262,19 @@ func (instance *CIM_EnabledLogicalElement) GetPropertyTransitioningToState() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(EnabledLogicalElement_TransitioningToState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = EnabledLogicalElement_TransitioningToState(valuetmp)
+
 	return
 }
 

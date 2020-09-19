@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExpressionAssignment struct
@@ -55,7 +57,7 @@ func NewMSFT_ExpressionAssignmentEx6(hostName string,
 
 // Setlvalue sets the value of lvalue for the instance
 func (instance *MSFT_ExpressionAssignment) SetPropertylvalue(value MSFT_ExpressionIdentifier) (err error) {
-	return instance.SetProperty("lvalue", value)
+	return instance.SetProperty("lvalue", (value))
 }
 
 // Getlvalue gets the value of lvalue for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_ExpressionAssignment) GetPropertylvalue() (value MSFT_Expre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_ExpressionIdentifier)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_ExpressionIdentifier)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_ExpressionIdentifier is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_ExpressionIdentifier(valuetmp)
+
 	return
 }
 
 // Setrvalue sets the value of rvalue for the instance
 func (instance *MSFT_ExpressionAssignment) SetPropertyrvalue(value MSFT_Expression) (err error) {
-	return instance.SetProperty("rvalue", value)
+	return instance.SetProperty("rvalue", (value))
 }
 
 // Getrvalue gets the value of rvalue for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_ExpressionAssignment) GetPropertyrvalue() (value MSFT_Expre
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Expression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Expression)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Expression is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Expression(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_MiCommand struct
@@ -64,7 +66,7 @@ func NewMsft_MiCommandEx6(hostName string,
 
 // SetClassName sets the value of ClassName for the instance
 func (instance *Msft_MiCommand) SetPropertyClassName(value string) (err error) {
-	return instance.SetProperty("ClassName", value)
+	return instance.SetProperty("ClassName", (value))
 }
 
 // GetClassName gets the value of ClassName for the instance
@@ -73,16 +75,25 @@ func (instance *Msft_MiCommand) GetPropertyClassName() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInput sets the value of Input for the instance
 func (instance *Msft_MiCommand) SetPropertyInput(value interface{}) (err error) {
-	return instance.SetProperty("Input", value)
+	return instance.SetProperty("Input", (value))
 }
 
 // GetInput gets the value of Input for the instance
@@ -91,16 +102,25 @@ func (instance *Msft_MiCommand) GetPropertyInput() (value interface{}, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }
 
 // SetMethodName sets the value of MethodName for the instance
 func (instance *Msft_MiCommand) SetPropertyMethodName(value string) (err error) {
-	return instance.SetProperty("MethodName", value)
+	return instance.SetProperty("MethodName", (value))
 }
 
 // GetMethodName gets the value of MethodName for the instance
@@ -109,16 +129,25 @@ func (instance *Msft_MiCommand) GetPropertyMethodName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNamespaceName sets the value of NamespaceName for the instance
 func (instance *Msft_MiCommand) SetPropertyNamespaceName(value string) (err error) {
-	return instance.SetProperty("NamespaceName", value)
+	return instance.SetProperty("NamespaceName", (value))
 }
 
 // GetNamespaceName gets the value of NamespaceName for the instance
@@ -127,16 +156,25 @@ func (instance *Msft_MiCommand) GetPropertyNamespaceName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParameters sets the value of Parameters for the instance
 func (instance *Msft_MiCommand) SetPropertyParameters(value interface{}) (err error) {
-	return instance.SetProperty("Parameters", value)
+	return instance.SetProperty("Parameters", (value))
 }
 
 // GetParameters gets the value of Parameters for the instance
@@ -145,9 +183,18 @@ func (instance *Msft_MiCommand) GetPropertyParameters() (value interface{}, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

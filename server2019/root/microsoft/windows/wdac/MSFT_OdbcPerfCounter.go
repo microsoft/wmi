@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Wdac
 //////////////////////////////////////////////
 package wdac
@@ -11,7 +11,9 @@ package wdac
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_OdbcPerfCounter struct
@@ -56,7 +58,7 @@ func NewMSFT_OdbcPerfCounterEx6(hostName string,
 
 // SetIsEnabled sets the value of IsEnabled for the instance
 func (instance *MSFT_OdbcPerfCounter) SetPropertyIsEnabled(value bool) (err error) {
-	return instance.SetProperty("IsEnabled", value)
+	return instance.SetProperty("IsEnabled", (value))
 }
 
 // GetIsEnabled gets the value of IsEnabled for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_OdbcPerfCounter) GetPropertyIsEnabled() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPlatform sets the value of Platform for the instance
 func (instance *MSFT_OdbcPerfCounter) SetPropertyPlatform(value string) (err error) {
-	return instance.SetProperty("Platform", value)
+	return instance.SetProperty("Platform", (value))
 }
 
 // GetPlatform gets the value of Platform for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_OdbcPerfCounter) GetPropertyPlatform() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

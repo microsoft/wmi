@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -11,8 +11,10 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 	interop "github.com/microsoft/wmi/server2019/root/interop"
+	"reflect"
 )
 
 // CIM_ElementConformsToProfile struct
@@ -57,7 +59,7 @@ func NewCIM_ElementConformsToProfileEx6(hostName string,
 
 // SetConformantStandard sets the value of ConformantStandard for the instance
 func (instance *CIM_ElementConformsToProfile) SetPropertyConformantStandard(value interop.CIM_RegisteredProfile) (err error) {
-	return instance.SetProperty("ConformantStandard", value)
+	return instance.SetProperty("ConformantStandard", (value))
 }
 
 // GetConformantStandard gets the value of ConformantStandard for the instance
@@ -66,16 +68,25 @@ func (instance *CIM_ElementConformsToProfile) GetPropertyConformantStandard() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interop.CIM_RegisteredProfile)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interop.CIM_RegisteredProfile)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interop.CIM_RegisteredProfile is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interop.CIM_RegisteredProfile(valuetmp)
+
 	return
 }
 
 // SetManagedElement sets the value of ManagedElement for the instance
 func (instance *CIM_ElementConformsToProfile) SetPropertyManagedElement(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("ManagedElement", value)
+	return instance.SetProperty("ManagedElement", (value))
 }
 
 // GetManagedElement gets the value of ManagedElement for the instance
@@ -84,9 +95,18 @@ func (instance *CIM_ElementConformsToProfile) GetPropertyManagedElement() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }

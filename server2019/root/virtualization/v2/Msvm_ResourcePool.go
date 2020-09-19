@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
@@ -59,12 +59,12 @@ func (instance *Msvm_ResourcePool) GetRelatedSerialPort() (value []*cim.WmiInsta
 	return instance.GetAllRelated("Msvm_SerialPort")
 }
 
-func (instance *Msvm_ResourcePool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ResourcePoolSettingData")
-}
-
 func (instance *Msvm_ResourcePool) GetRelatedResourcePoolConfigurationService() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePoolConfigurationService")
+}
+
+func (instance *Msvm_ResourcePool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePoolSettingData")
 }
 
 func (instance *Msvm_ResourcePool) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

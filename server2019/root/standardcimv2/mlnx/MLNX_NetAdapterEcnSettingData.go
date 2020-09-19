@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_NetAdapterEcnSettingData struct
@@ -184,7 +186,7 @@ func NewMLNX_NetAdapterEcnSettingDataEx6(hostName string,
 
 // SetEcnAlphaToRateCoeff sets the value of EcnAlphaToRateCoeff for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnAlphaToRateCoeff(value uint32) (err error) {
-	return instance.SetProperty("EcnAlphaToRateCoeff", value)
+	return instance.SetProperty("EcnAlphaToRateCoeff", (value))
 }
 
 // GetEcnAlphaToRateCoeff gets the value of EcnAlphaToRateCoeff for the instance
@@ -193,16 +195,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnAlphaToRateCoeff() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnAlphaToRateShift sets the value of EcnAlphaToRateShift for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnAlphaToRateShift(value uint32) (err error) {
-	return instance.SetProperty("EcnAlphaToRateShift", value)
+	return instance.SetProperty("EcnAlphaToRateShift", (value))
 }
 
 // GetEcnAlphaToRateShift gets the value of EcnAlphaToRateShift for the instance
@@ -211,16 +222,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnAlphaToRateShift() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnBurstSize sets the value of EcnBurstSize for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnBurstSize(value uint32) (err error) {
-	return instance.SetProperty("EcnBurstSize", value)
+	return instance.SetProperty("EcnBurstSize", (value))
 }
 
 // GetEcnBurstSize gets the value of EcnBurstSize for the instance
@@ -229,16 +249,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnBurstSize() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnCatchRateLimitEn sets the value of EcnCatchRateLimitEn for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnCatchRateLimitEn(value uint32) (err error) {
-	return instance.SetProperty("EcnCatchRateLimitEn", value)
+	return instance.SetProperty("EcnCatchRateLimitEn", (value))
 }
 
 // GetEcnCatchRateLimitEn gets the value of EcnCatchRateLimitEn for the instance
@@ -247,16 +276,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnCatchRateLimitEn() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnClampTgtRate sets the value of EcnClampTgtRate for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnClampTgtRate(value uint32) (err error) {
-	return instance.SetProperty("EcnClampTgtRate", value)
+	return instance.SetProperty("EcnClampTgtRate", (value))
 }
 
 // GetEcnClampTgtRate gets the value of EcnClampTgtRate for the instance
@@ -265,16 +303,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnClampTgtRate() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnClampTgtRateAfterTimeInc sets the value of EcnClampTgtRateAfterTimeInc for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnClampTgtRateAfterTimeInc(value uint32) (err error) {
-	return instance.SetProperty("EcnClampTgtRateAfterTimeInc", value)
+	return instance.SetProperty("EcnClampTgtRateAfterTimeInc", (value))
 }
 
 // GetEcnClampTgtRateAfterTimeInc gets the value of EcnClampTgtRateAfterTimeInc for the instance
@@ -283,16 +330,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnClampTgtRateAfterTi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnCnp802pPrio sets the value of EcnCnp802pPrio for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnCnp802pPrio(value uint32) (err error) {
-	return instance.SetProperty("EcnCnp802pPrio", value)
+	return instance.SetProperty("EcnCnp802pPrio", (value))
 }
 
 // GetEcnCnp802pPrio gets the value of EcnCnp802pPrio for the instance
@@ -301,16 +357,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnCnp802pPrio() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnCnpDscp sets the value of EcnCnpDscp for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnCnpDscp(value uint32) (err error) {
-	return instance.SetProperty("EcnCnpDscp", value)
+	return instance.SetProperty("EcnCnpDscp", (value))
 }
 
 // GetEcnCnpDscp gets the value of EcnCnpDscp for the instance
@@ -319,16 +384,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnCnpDscp() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnCnpRecEn sets the value of EcnCnpRecEn for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnCnpRecEn(value uint32) (err error) {
-	return instance.SetProperty("EcnCnpRecEn", value)
+	return instance.SetProperty("EcnCnpRecEn", (value))
 }
 
 // GetEcnCnpRecEn gets the value of EcnCnpRecEn for the instance
@@ -337,16 +411,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnCnpRecEn() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnCnpTimer sets the value of EcnCnpTimer for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnCnpTimer(value uint32) (err error) {
-	return instance.SetProperty("EcnCnpTimer", value)
+	return instance.SetProperty("EcnCnpTimer", (value))
 }
 
 // GetEcnCnpTimer gets the value of EcnCnpTimer for the instance
@@ -355,16 +438,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnCnpTimer() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnCoalesceCnpInRp sets the value of EcnCoalesceCnpInRp for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnCoalesceCnpInRp(value uint32) (err error) {
-	return instance.SetProperty("EcnCoalesceCnpInRp", value)
+	return instance.SetProperty("EcnCoalesceCnpInRp", (value))
 }
 
 // GetEcnCoalesceCnpInRp gets the value of EcnCoalesceCnpInRp for the instance
@@ -373,16 +465,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnCoalesceCnpInRp() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnCompnRateLimit sets the value of EcnCompnRateLimit for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnCompnRateLimit(value uint32) (err error) {
-	return instance.SetProperty("EcnCompnRateLimit", value)
+	return instance.SetProperty("EcnCompnRateLimit", (value))
 }
 
 // GetEcnCompnRateLimit gets the value of EcnCompnRateLimit for the instance
@@ -391,16 +492,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnCompnRateLimit() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnDceTcpG sets the value of EcnDceTcpG for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnDceTcpG(value uint32) (err error) {
-	return instance.SetProperty("EcnDceTcpG", value)
+	return instance.SetProperty("EcnDceTcpG", (value))
 }
 
 // GetEcnDceTcpG gets the value of EcnDceTcpG for the instance
@@ -409,16 +519,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnDceTcpG() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnDceTcpRtt sets the value of EcnDceTcpRtt for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnDceTcpRtt(value uint32) (err error) {
-	return instance.SetProperty("EcnDceTcpRtt", value)
+	return instance.SetProperty("EcnDceTcpRtt", (value))
 }
 
 // GetEcnDceTcpRtt gets the value of EcnDceTcpRtt for the instance
@@ -427,16 +546,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnDceTcpRtt() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnDceTcpRttDelay sets the value of EcnDceTcpRttDelay for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnDceTcpRttDelay(value uint32) (err error) {
-	return instance.SetProperty("EcnDceTcpRttDelay", value)
+	return instance.SetProperty("EcnDceTcpRttDelay", (value))
 }
 
 // GetEcnDceTcpRttDelay gets the value of EcnDceTcpRttDelay for the instance
@@ -445,16 +573,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnDceTcpRttDelay() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnEnable sets the value of EcnEnable for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnEnable(value bool) (err error) {
-	return instance.SetProperty("EcnEnable", value)
+	return instance.SetProperty("EcnEnable", (value))
 }
 
 // GetEcnEnable gets the value of EcnEnable for the instance
@@ -463,16 +600,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnEnable() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEcnExpectIpv6 sets the value of EcnExpectIpv6 for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnExpectIpv6(value uint32) (err error) {
-	return instance.SetProperty("EcnExpectIpv6", value)
+	return instance.SetProperty("EcnExpectIpv6", (value))
 }
 
 // GetEcnExpectIpv6 gets the value of EcnExpectIpv6 for the instance
@@ -481,16 +627,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnExpectIpv6() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnExpectVlanTagged sets the value of EcnExpectVlanTagged for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnExpectVlanTagged(value uint32) (err error) {
-	return instance.SetProperty("EcnExpectVlanTagged", value)
+	return instance.SetProperty("EcnExpectVlanTagged", (value))
 }
 
 // GetEcnExpectVlanTagged gets the value of EcnExpectVlanTagged for the instance
@@ -499,16 +654,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnExpectVlanTagged() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnFastRise sets the value of EcnFastRise for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnFastRise(value uint32) (err error) {
-	return instance.SetProperty("EcnFastRise", value)
+	return instance.SetProperty("EcnFastRise", (value))
 }
 
 // GetEcnFastRise gets the value of EcnFastRise for the instance
@@ -517,16 +681,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnFastRise() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnForceRcTos sets the value of EcnForceRcTos for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnForceRcTos(value uint32) (err error) {
-	return instance.SetProperty("EcnForceRcTos", value)
+	return instance.SetProperty("EcnForceRcTos", (value))
 }
 
 // GetEcnForceRcTos gets the value of EcnForceRcTos for the instance
@@ -535,16 +708,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnForceRcTos() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnForceUcTos sets the value of EcnForceUcTos for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnForceUcTos(value uint32) (err error) {
-	return instance.SetProperty("EcnForceUcTos", value)
+	return instance.SetProperty("EcnForceUcTos", (value))
 }
 
 // GetEcnForceUcTos gets the value of EcnForceUcTos for the instance
@@ -553,16 +735,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnForceUcTos() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnInitialAlphaValue sets the value of EcnInitialAlphaValue for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnInitialAlphaValue(value uint32) (err error) {
-	return instance.SetProperty("EcnInitialAlphaValue", value)
+	return instance.SetProperty("EcnInitialAlphaValue", (value))
 }
 
 // GetEcnInitialAlphaValue gets the value of EcnInitialAlphaValue for the instance
@@ -571,16 +762,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnInitialAlphaValue()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnMarkedRatioMultiplier sets the value of EcnMarkedRatioMultiplier for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnMarkedRatioMultiplier(value uint32) (err error) {
-	return instance.SetProperty("EcnMarkedRatioMultiplier", value)
+	return instance.SetProperty("EcnMarkedRatioMultiplier", (value))
 }
 
 // GetEcnMarkedRatioMultiplier gets the value of EcnMarkedRatioMultiplier for the instance
@@ -589,16 +789,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnMarkedRatioMultipli
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnMarkedRatioShift sets the value of EcnMarkedRatioShift for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnMarkedRatioShift(value uint32) (err error) {
-	return instance.SetProperty("EcnMarkedRatioShift", value)
+	return instance.SetProperty("EcnMarkedRatioShift", (value))
 }
 
 // GetEcnMarkedRatioShift gets the value of EcnMarkedRatioShift for the instance
@@ -607,16 +816,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnMarkedRatioShift() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnMaxByteRise sets the value of EcnMaxByteRise for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnMaxByteRise(value uint32) (err error) {
-	return instance.SetProperty("EcnMaxByteRise", value)
+	return instance.SetProperty("EcnMaxByteRise", (value))
 }
 
 // GetEcnMaxByteRise gets the value of EcnMaxByteRise for the instance
@@ -625,16 +843,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnMaxByteRise() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnMaxTimeRise sets the value of EcnMaxTimeRise for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnMaxTimeRise(value uint32) (err error) {
-	return instance.SetProperty("EcnMaxTimeRise", value)
+	return instance.SetProperty("EcnMaxTimeRise", (value))
 }
 
 // GetEcnMaxTimeRise gets the value of EcnMaxTimeRise for the instance
@@ -643,16 +870,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnMaxTimeRise() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnMinLosslessBufferForCatches sets the value of EcnMinLosslessBufferForCatches for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnMinLosslessBufferForCatches(value uint32) (err error) {
-	return instance.SetProperty("EcnMinLosslessBufferForCatches", value)
+	return instance.SetProperty("EcnMinLosslessBufferForCatches", (value))
 }
 
 // GetEcnMinLosslessBufferForCatches gets the value of EcnMinLosslessBufferForCatches for the instance
@@ -661,16 +897,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnMinLosslessBufferFo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnMinLossyBufferForCatches sets the value of EcnMinLossyBufferForCatches for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnMinLossyBufferForCatches(value uint32) (err error) {
-	return instance.SetProperty("EcnMinLossyBufferForCatches", value)
+	return instance.SetProperty("EcnMinLossyBufferForCatches", (value))
 }
 
 // GetEcnMinLossyBufferForCatches gets the value of EcnMinLossyBufferForCatches for the instance
@@ -679,16 +924,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnMinLossyBufferForCa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnNoCongestionCyclesToKeep sets the value of EcnNoCongestionCyclesToKeep for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnNoCongestionCyclesToKeep(value uint32) (err error) {
-	return instance.SetProperty("EcnNoCongestionCyclesToKeep", value)
+	return instance.SetProperty("EcnNoCongestionCyclesToKeep", (value))
 }
 
 // GetEcnNoCongestionCyclesToKeep gets the value of EcnNoCongestionCyclesToKeep for the instance
@@ -697,16 +951,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnNoCongestionCyclesT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnNpRecEn sets the value of EcnNpRecEn for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnNpRecEn(value uint32) (err error) {
-	return instance.SetProperty("EcnNpRecEn", value)
+	return instance.SetProperty("EcnNpRecEn", (value))
 }
 
 // GetEcnNpRecEn gets the value of EcnNpRecEn for the instance
@@ -715,16 +978,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnNpRecEn() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnNumInjector sets the value of EcnNumInjector for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnNumInjector(value uint32) (err error) {
-	return instance.SetProperty("EcnNumInjector", value)
+	return instance.SetProperty("EcnNumInjector", (value))
 }
 
 // GetEcnNumInjector gets the value of EcnNumInjector for the instance
@@ -733,16 +1005,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnNumInjector() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnPriorityEnable sets the value of EcnPriorityEnable for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnPriorityEnable(value uint32) (err error) {
-	return instance.SetProperty("EcnPriorityEnable", value)
+	return instance.SetProperty("EcnPriorityEnable", (value))
 }
 
 // GetEcnPriorityEnable gets the value of EcnPriorityEnable for the instance
@@ -751,16 +1032,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnPriorityEnable() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRateToSetOnFirstCnp sets the value of EcnRateToSetOnFirstCnp for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRateToSetOnFirstCnp(value uint32) (err error) {
-	return instance.SetProperty("EcnRateToSetOnFirstCnp", value)
+	return instance.SetProperty("EcnRateToSetOnFirstCnp", (value))
 }
 
 // GetEcnRateToSetOnFirstCnp gets the value of EcnRateToSetOnFirstCnp for the instance
@@ -769,16 +1059,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRateToSetOnFirstCnp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgAiRate sets the value of EcnRpgAiRate for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgAiRate(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgAiRate", value)
+	return instance.SetProperty("EcnRpgAiRate", (value))
 }
 
 // GetEcnRpgAiRate gets the value of EcnRpgAiRate for the instance
@@ -787,16 +1086,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgAiRate() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgByteReset sets the value of EcnRpgByteReset for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgByteReset(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgByteReset", value)
+	return instance.SetProperty("EcnRpgByteReset", (value))
 }
 
 // GetEcnRpgByteReset gets the value of EcnRpgByteReset for the instance
@@ -805,16 +1113,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgByteReset() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgHaiRate sets the value of EcnRpgHaiRate for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgHaiRate(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgHaiRate", value)
+	return instance.SetProperty("EcnRpgHaiRate", (value))
 }
 
 // GetEcnRpgHaiRate gets the value of EcnRpgHaiRate for the instance
@@ -823,16 +1140,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgHaiRate() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgMaxRate sets the value of EcnRpgMaxRate for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgMaxRate(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgMaxRate", value)
+	return instance.SetProperty("EcnRpgMaxRate", (value))
 }
 
 // GetEcnRpgMaxRate gets the value of EcnRpgMaxRate for the instance
@@ -841,16 +1167,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgMaxRate() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgMinDecFac sets the value of EcnRpgMinDecFac for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgMinDecFac(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgMinDecFac", value)
+	return instance.SetProperty("EcnRpgMinDecFac", (value))
 }
 
 // GetEcnRpgMinDecFac gets the value of EcnRpgMinDecFac for the instance
@@ -859,16 +1194,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgMinDecFac() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgMinRate sets the value of EcnRpgMinRate for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgMinRate(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgMinRate", value)
+	return instance.SetProperty("EcnRpgMinRate", (value))
 }
 
 // GetEcnRpgMinRate gets the value of EcnRpgMinRate for the instance
@@ -877,16 +1221,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgMinRate() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgThreshold sets the value of EcnRpgThreshold for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgThreshold(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgThreshold", value)
+	return instance.SetProperty("EcnRpgThreshold", (value))
 }
 
 // GetEcnRpgThreshold gets the value of EcnRpgThreshold for the instance
@@ -895,16 +1248,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgThreshold() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnRpgTimeReset sets the value of EcnRpgTimeReset for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnRpgTimeReset(value uint32) (err error) {
-	return instance.SetProperty("EcnRpgTimeReset", value)
+	return instance.SetProperty("EcnRpgTimeReset", (value))
 }
 
 // GetEcnRpgTimeReset gets the value of EcnRpgTimeReset for the instance
@@ -913,16 +1275,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnRpgTimeReset() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnSupportIBStandardCnp sets the value of EcnSupportIBStandardCnp for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnSupportIBStandardCnp(value uint32) (err error) {
-	return instance.SetProperty("EcnSupportIBStandardCnp", value)
+	return instance.SetProperty("EcnSupportIBStandardCnp", (value))
 }
 
 // GetEcnSupportIBStandardCnp gets the value of EcnSupportIBStandardCnp for the instance
@@ -931,16 +1302,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnSupportIBStandardCn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnTrapDisablePendingCnpThreshold sets the value of EcnTrapDisablePendingCnpThreshold for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnTrapDisablePendingCnpThreshold(value uint32) (err error) {
-	return instance.SetProperty("EcnTrapDisablePendingCnpThreshold", value)
+	return instance.SetProperty("EcnTrapDisablePendingCnpThreshold", (value))
 }
 
 // GetEcnTrapDisablePendingCnpThreshold gets the value of EcnTrapDisablePendingCnpThreshold for the instance
@@ -949,16 +1329,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnTrapDisablePendingC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnTrapDisablePeriod sets the value of EcnTrapDisablePeriod for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnTrapDisablePeriod(value uint32) (err error) {
-	return instance.SetProperty("EcnTrapDisablePeriod", value)
+	return instance.SetProperty("EcnTrapDisablePeriod", (value))
 }
 
 // GetEcnTrapDisablePeriod gets the value of EcnTrapDisablePeriod for the instance
@@ -967,16 +1356,25 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnTrapDisablePeriod()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEcnUseIBStandardCnp sets the value of EcnUseIBStandardCnp for the instance
 func (instance *MLNX_NetAdapterEcnSettingData) SetPropertyEcnUseIBStandardCnp(value uint32) (err error) {
-	return instance.SetProperty("EcnUseIBStandardCnp", value)
+	return instance.SetProperty("EcnUseIBStandardCnp", (value))
 }
 
 // GetEcnUseIBStandardCnp gets the value of EcnUseIBStandardCnp for the instance
@@ -985,10 +1383,19 @@ func (instance *MLNX_NetAdapterEcnSettingData) GetPropertyEcnUseIBStandardCnp() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

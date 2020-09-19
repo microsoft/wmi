@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExpressionValue struct
@@ -52,7 +54,7 @@ func NewMSFT_ExpressionValueEx6(hostName string,
 
 // SethasValue sets the value of hasValue for the instance
 func (instance *MSFT_ExpressionValue) SetPropertyhasValue(value bool) (err error) {
-	return instance.SetProperty("hasValue", value)
+	return instance.SetProperty("hasValue", (value))
 }
 
 // GethasValue gets the value of hasValue for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_ExpressionValue) GetPropertyhasValue() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

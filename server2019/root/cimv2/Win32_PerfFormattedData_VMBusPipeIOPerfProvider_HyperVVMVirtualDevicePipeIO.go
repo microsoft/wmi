@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO struct
@@ -64,7 +66,7 @@ func NewWin32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePip
 
 // SetReceiveMessageQuotaExceeded sets the value of ReceiveMessageQuotaExceeded for the instance
 func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO) SetPropertyReceiveMessageQuotaExceeded(value uint64) (err error) {
-	return instance.SetProperty("ReceiveMessageQuotaExceeded", value)
+	return instance.SetProperty("ReceiveMessageQuotaExceeded", (value))
 }
 
 // GetReceiveMessageQuotaExceeded gets the value of ReceiveMessageQuotaExceeded for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiveQoSConformantMessagesPersec sets the value of ReceiveQoSConformantMessagesPersec for the instance
 func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO) SetPropertyReceiveQoSConformantMessagesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiveQoSConformantMessagesPersec", value)
+	return instance.SetProperty("ReceiveQoSConformantMessagesPersec", (value))
 }
 
 // GetReceiveQoSConformantMessagesPersec gets the value of ReceiveQoSConformantMessagesPersec for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiveQoSExemptMessagesPersec sets the value of ReceiveQoSExemptMessagesPersec for the instance
 func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO) SetPropertyReceiveQoSExemptMessagesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiveQoSExemptMessagesPersec", value)
+	return instance.SetProperty("ReceiveQoSExemptMessagesPersec", (value))
 }
 
 // GetReceiveQoSExemptMessagesPersec gets the value of ReceiveQoSExemptMessagesPersec for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiveQoSNonConformantMessagesPersec sets the value of ReceiveQoSNonConformantMessagesPersec for the instance
 func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO) SetPropertyReceiveQoSNonConformantMessagesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiveQoSNonConformantMessagesPersec", value)
+	return instance.SetProperty("ReceiveQoSNonConformantMessagesPersec", (value))
 }
 
 // GetReceiveQoSNonConformantMessagesPersec gets the value of ReceiveQoSNonConformantMessagesPersec for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiveQoSTotalMessageDelayTime100ns sets the value of ReceiveQoSTotalMessageDelayTime100ns for the instance
 func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualDevicePipeIO) SetPropertyReceiveQoSTotalMessageDelayTime100ns(value uint64) (err error) {
-	return instance.SetProperty("ReceiveQoSTotalMessageDelayTime100ns", value)
+	return instance.SetProperty("ReceiveQoSTotalMessageDelayTime100ns", (value))
 }
 
 // GetReceiveQoSTotalMessageDelayTime100ns gets the value of ReceiveQoSTotalMessageDelayTime100ns for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_PerfFormattedData_VMBusPipeIOPerfProvider_HyperVVMVirtualD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

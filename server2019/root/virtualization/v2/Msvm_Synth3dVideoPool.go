@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_Synth3dVideoPool struct
@@ -64,7 +66,7 @@ func NewMsvm_Synth3dVideoPoolEx6(hostName string,
 
 // SetDirectXVersion sets the value of DirectXVersion for the instance
 func (instance *Msvm_Synth3dVideoPool) SetPropertyDirectXVersion(value string) (err error) {
-	return instance.SetProperty("DirectXVersion", value)
+	return instance.SetProperty("DirectXVersion", (value))
 }
 
 // GetDirectXVersion gets the value of DirectXVersion for the instance
@@ -73,16 +75,25 @@ func (instance *Msvm_Synth3dVideoPool) GetPropertyDirectXVersion() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIs3dVideoSupported sets the value of Is3dVideoSupported for the instance
 func (instance *Msvm_Synth3dVideoPool) SetPropertyIs3dVideoSupported(value bool) (err error) {
-	return instance.SetProperty("Is3dVideoSupported", value)
+	return instance.SetProperty("Is3dVideoSupported", (value))
 }
 
 // GetIs3dVideoSupported gets the value of Is3dVideoSupported for the instance
@@ -91,16 +102,25 @@ func (instance *Msvm_Synth3dVideoPool) GetPropertyIs3dVideoSupported() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsGPUCapable sets the value of IsGPUCapable for the instance
 func (instance *Msvm_Synth3dVideoPool) SetPropertyIsGPUCapable(value bool) (err error) {
-	return instance.SetProperty("IsGPUCapable", value)
+	return instance.SetProperty("IsGPUCapable", (value))
 }
 
 // GetIsGPUCapable gets the value of IsGPUCapable for the instance
@@ -109,16 +129,25 @@ func (instance *Msvm_Synth3dVideoPool) GetPropertyIsGPUCapable() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsSLATCapable sets the value of IsSLATCapable for the instance
 func (instance *Msvm_Synth3dVideoPool) SetPropertyIsSLATCapable(value bool) (err error) {
-	return instance.SetProperty("IsSLATCapable", value)
+	return instance.SetProperty("IsSLATCapable", (value))
 }
 
 // GetIsSLATCapable gets the value of IsSLATCapable for the instance
@@ -127,16 +156,25 @@ func (instance *Msvm_Synth3dVideoPool) GetPropertyIsSLATCapable() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRequiredMinimumDirectXVersion sets the value of RequiredMinimumDirectXVersion for the instance
 func (instance *Msvm_Synth3dVideoPool) SetPropertyRequiredMinimumDirectXVersion(value string) (err error) {
-	return instance.SetProperty("RequiredMinimumDirectXVersion", value)
+	return instance.SetProperty("RequiredMinimumDirectXVersion", (value))
 }
 
 // GetRequiredMinimumDirectXVersion gets the value of RequiredMinimumDirectXVersion for the instance
@@ -145,10 +183,19 @@ func (instance *Msvm_Synth3dVideoPool) GetPropertyRequiredMinimumDirectXVersion(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
@@ -176,12 +223,12 @@ func (instance *Msvm_Synth3dVideoPool) GetRelatedComputerSystem() (value *cim.Wm
 	return instance.GetRelated("Msvm_ComputerSystem")
 }
 
-func (instance *Msvm_Synth3dVideoPool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ResourcePoolSettingData")
-}
-
 func (instance *Msvm_Synth3dVideoPool) GetRelatedResourcePoolConfigurationService() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_ResourcePoolConfigurationService")
+}
+
+func (instance *Msvm_Synth3dVideoPool) GetRelatedResourcePoolSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_ResourcePoolSettingData")
 }
 
 func (instance *Msvm_Synth3dVideoPool) GetRelatedAllocationCapabilities() (value *cim.WmiInstance, err error) {

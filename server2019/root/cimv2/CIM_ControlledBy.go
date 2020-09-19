@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ControlledBy struct
@@ -58,7 +60,7 @@ func NewCIM_ControlledByEx6(hostName string,
 
 // SetAccessState sets the value of AccessState for the instance
 func (instance *CIM_ControlledBy) SetPropertyAccessState(value uint16) (err error) {
-	return instance.SetProperty("AccessState", value)
+	return instance.SetProperty("AccessState", (value))
 }
 
 // GetAccessState gets the value of AccessState for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_ControlledBy) GetPropertyAccessState() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfHardResets sets the value of NumberOfHardResets for the instance
 func (instance *CIM_ControlledBy) SetPropertyNumberOfHardResets(value uint32) (err error) {
-	return instance.SetProperty("NumberOfHardResets", value)
+	return instance.SetProperty("NumberOfHardResets", (value))
 }
 
 // GetNumberOfHardResets gets the value of NumberOfHardResets for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_ControlledBy) GetPropertyNumberOfHardResets() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfSoftResets sets the value of NumberOfSoftResets for the instance
 func (instance *CIM_ControlledBy) SetPropertyNumberOfSoftResets(value uint32) (err error) {
-	return instance.SetProperty("NumberOfSoftResets", value)
+	return instance.SetProperty("NumberOfSoftResets", (value))
 }
 
 // GetNumberOfSoftResets gets the value of NumberOfSoftResets for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_ControlledBy) GetPropertyNumberOfSoftResets() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ReplicationSettings struct
@@ -68,7 +70,7 @@ func NewMSFT_ReplicationSettingsEx6(hostName string,
 
 // SetLogDevices sets the value of LogDevices for the instance
 func (instance *MSFT_ReplicationSettings) SetPropertyLogDevices(value []MSFT_Volume) (err error) {
-	return instance.SetProperty("LogDevices", value)
+	return instance.SetProperty("LogDevices", (value))
 }
 
 // GetLogDevices gets the value of LogDevices for the instance
@@ -77,16 +79,26 @@ func (instance *MSFT_ReplicationSettings) GetPropertyLogDevices() (value []MSFT_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_Volume)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_Volume)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_Volume is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_Volume(valuetmp))
+	}
+
 	return
 }
 
 // SetLogSizeInBytes sets the value of LogSizeInBytes for the instance
 func (instance *MSFT_ReplicationSettings) SetPropertyLogSizeInBytes(value uint64) (err error) {
-	return instance.SetProperty("LogSizeInBytes", value)
+	return instance.SetProperty("LogSizeInBytes", (value))
 }
 
 // GetLogSizeInBytes gets the value of LogSizeInBytes for the instance
@@ -95,16 +107,25 @@ func (instance *MSFT_ReplicationSettings) GetPropertyLogSizeInBytes() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReplicationQuorum sets the value of ReplicationQuorum for the instance
 func (instance *MSFT_ReplicationSettings) SetPropertyReplicationQuorum(value uint16) (err error) {
-	return instance.SetProperty("ReplicationQuorum", value)
+	return instance.SetProperty("ReplicationQuorum", (value))
 }
 
 // GetReplicationQuorum gets the value of ReplicationQuorum for the instance
@@ -113,16 +134,25 @@ func (instance *MSFT_ReplicationSettings) GetPropertyReplicationQuorum() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSyncMode sets the value of SyncMode for the instance
 func (instance *MSFT_ReplicationSettings) SetPropertySyncMode(value ReplicationSettings_SyncMode) (err error) {
-	return instance.SetProperty("SyncMode", value)
+	return instance.SetProperty("SyncMode", (value))
 }
 
 // GetSyncMode gets the value of SyncMode for the instance
@@ -131,16 +161,25 @@ func (instance *MSFT_ReplicationSettings) GetPropertySyncMode() (value Replicati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(ReplicationSettings_SyncMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = ReplicationSettings_SyncMode(valuetmp)
+
 	return
 }
 
 // SetTargetElementSupplier sets the value of TargetElementSupplier for the instance
 func (instance *MSFT_ReplicationSettings) SetPropertyTargetElementSupplier(value uint16) (err error) {
-	return instance.SetProperty("TargetElementSupplier", value)
+	return instance.SetProperty("TargetElementSupplier", (value))
 }
 
 // GetTargetElementSupplier gets the value of TargetElementSupplier for the instance
@@ -149,16 +188,25 @@ func (instance *MSFT_ReplicationSettings) GetPropertyTargetElementSupplier() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetThinProvisioningPolicy sets the value of ThinProvisioningPolicy for the instance
 func (instance *MSFT_ReplicationSettings) SetPropertyThinProvisioningPolicy(value uint16) (err error) {
-	return instance.SetProperty("ThinProvisioningPolicy", value)
+	return instance.SetProperty("ThinProvisioningPolicy", (value))
 }
 
 // GetThinProvisioningPolicy gets the value of ThinProvisioningPolicy for the instance
@@ -167,9 +215,18 @@ func (instance *MSFT_ReplicationSettings) GetPropertyThinProvisioningPolicy() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

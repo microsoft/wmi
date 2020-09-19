@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RoamingProfileBackgroundUploadParams struct
@@ -59,7 +61,7 @@ func NewWin32_RoamingProfileBackgroundUploadParamsEx6(hostName string,
 
 // SetInterval sets the value of Interval for the instance
 func (instance *Win32_RoamingProfileBackgroundUploadParams) SetPropertyInterval(value uint16) (err error) {
-	return instance.SetProperty("Interval", value)
+	return instance.SetProperty("Interval", (value))
 }
 
 // GetInterval gets the value of Interval for the instance
@@ -68,16 +70,25 @@ func (instance *Win32_RoamingProfileBackgroundUploadParams) GetPropertyInterval(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSchedulingMethod sets the value of SchedulingMethod for the instance
 func (instance *Win32_RoamingProfileBackgroundUploadParams) SetPropertySchedulingMethod(value RoamingProfileBackgroundUploadParams_SchedulingMethod) (err error) {
-	return instance.SetProperty("SchedulingMethod", value)
+	return instance.SetProperty("SchedulingMethod", (value))
 }
 
 // GetSchedulingMethod gets the value of SchedulingMethod for the instance
@@ -86,16 +97,25 @@ func (instance *Win32_RoamingProfileBackgroundUploadParams) GetPropertySchedulin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RoamingProfileBackgroundUploadParams_SchedulingMethod)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RoamingProfileBackgroundUploadParams_SchedulingMethod(valuetmp)
+
 	return
 }
 
 // SetTime sets the value of Time for the instance
 func (instance *Win32_RoamingProfileBackgroundUploadParams) SetPropertyTime(value uint16) (err error) {
-	return instance.SetProperty("Time", value)
+	return instance.SetProperty("Time", (value))
 }
 
 // GetTime gets the value of Time for the instance
@@ -104,9 +124,18 @@ func (instance *Win32_RoamingProfileBackgroundUploadParams) GetPropertyTime() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

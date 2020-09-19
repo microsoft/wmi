@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbBandwidthLimit struct
@@ -56,7 +58,7 @@ func NewMSFT_SmbBandwidthLimitEx6(hostName string,
 
 // SetBytesPerSecond sets the value of BytesPerSecond for the instance
 func (instance *MSFT_SmbBandwidthLimit) SetPropertyBytesPerSecond(value uint64) (err error) {
-	return instance.SetProperty("BytesPerSecond", value)
+	return instance.SetProperty("BytesPerSecond", (value))
 }
 
 // GetBytesPerSecond gets the value of BytesPerSecond for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_SmbBandwidthLimit) GetPropertyBytesPerSecond() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCategory sets the value of Category for the instance
 func (instance *MSFT_SmbBandwidthLimit) SetPropertyCategory(value SmbBandwidthLimit_Category) (err error) {
-	return instance.SetProperty("Category", value)
+	return instance.SetProperty("Category", (value))
 }
 
 // GetCategory gets the value of Category for the instance
@@ -83,10 +94,19 @@ func (instance *MSFT_SmbBandwidthLimit) GetPropertyCategory() (value SmbBandwidt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(SmbBandwidthLimit_Category)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = SmbBandwidthLimit_Category(valuetmp)
+
 	return
 }
 

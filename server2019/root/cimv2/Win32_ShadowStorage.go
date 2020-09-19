@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ShadowStorage struct
@@ -65,7 +67,7 @@ func NewWin32_ShadowStorageEx6(hostName string,
 
 // SetAllocatedSpace sets the value of AllocatedSpace for the instance
 func (instance *Win32_ShadowStorage) SetPropertyAllocatedSpace(value uint64) (err error) {
-	return instance.SetProperty("AllocatedSpace", value)
+	return instance.SetProperty("AllocatedSpace", (value))
 }
 
 // GetAllocatedSpace gets the value of AllocatedSpace for the instance
@@ -74,16 +76,25 @@ func (instance *Win32_ShadowStorage) GetPropertyAllocatedSpace() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiffVolume sets the value of DiffVolume for the instance
 func (instance *Win32_ShadowStorage) SetPropertyDiffVolume(value Win32_Volume) (err error) {
-	return instance.SetProperty("DiffVolume", value)
+	return instance.SetProperty("DiffVolume", (value))
 }
 
 // GetDiffVolume gets the value of DiffVolume for the instance
@@ -92,16 +103,25 @@ func (instance *Win32_ShadowStorage) GetPropertyDiffVolume() (value Win32_Volume
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_Volume)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_Volume)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_Volume is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_Volume(valuetmp)
+
 	return
 }
 
 // SetMaxSpace sets the value of MaxSpace for the instance
 func (instance *Win32_ShadowStorage) SetPropertyMaxSpace(value uint64) (err error) {
-	return instance.SetProperty("MaxSpace", value)
+	return instance.SetProperty("MaxSpace", (value))
 }
 
 // GetMaxSpace gets the value of MaxSpace for the instance
@@ -110,16 +130,25 @@ func (instance *Win32_ShadowStorage) GetPropertyMaxSpace() (value uint64, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetUsedSpace sets the value of UsedSpace for the instance
 func (instance *Win32_ShadowStorage) SetPropertyUsedSpace(value uint64) (err error) {
-	return instance.SetProperty("UsedSpace", value)
+	return instance.SetProperty("UsedSpace", (value))
 }
 
 // GetUsedSpace gets the value of UsedSpace for the instance
@@ -128,16 +157,25 @@ func (instance *Win32_ShadowStorage) GetPropertyUsedSpace() (value uint64, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVolume sets the value of Volume for the instance
 func (instance *Win32_ShadowStorage) SetPropertyVolume(value Win32_Volume) (err error) {
-	return instance.SetProperty("Volume", value)
+	return instance.SetProperty("Volume", (value))
 }
 
 // GetVolume gets the value of Volume for the instance
@@ -146,10 +184,19 @@ func (instance *Win32_ShadowStorage) GetPropertyVolume() (value Win32_Volume, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_Volume)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_Volume)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_Volume is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_Volume(valuetmp)
+
 	return
 }
 

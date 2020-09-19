@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_WindowsDefenderSecurityCenter02 struct
@@ -122,7 +124,7 @@ func NewMDM_Policy_Result01_WindowsDefenderSecurityCenter02Ex6(hostName string,
 
 // SetCompanyName sets the value of CompanyName for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyCompanyName(value string) (err error) {
-	return instance.SetProperty("CompanyName", value)
+	return instance.SetProperty("CompanyName", (value))
 }
 
 // GetCompanyName gets the value of CompanyName for the instance
@@ -131,16 +133,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDisableAccountProtectionUI sets the value of DisableAccountProtectionUI for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableAccountProtectionUI(value int32) (err error) {
-	return instance.SetProperty("DisableAccountProtectionUI", value)
+	return instance.SetProperty("DisableAccountProtectionUI", (value))
 }
 
 // GetDisableAccountProtectionUI gets the value of DisableAccountProtectionUI for the instance
@@ -149,16 +160,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableAppBrowserUI sets the value of DisableAppBrowserUI for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableAppBrowserUI(value int32) (err error) {
-	return instance.SetProperty("DisableAppBrowserUI", value)
+	return instance.SetProperty("DisableAppBrowserUI", (value))
 }
 
 // GetDisableAppBrowserUI gets the value of DisableAppBrowserUI for the instance
@@ -167,16 +187,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableClearTpmButton sets the value of DisableClearTpmButton for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableClearTpmButton(value int32) (err error) {
-	return instance.SetProperty("DisableClearTpmButton", value)
+	return instance.SetProperty("DisableClearTpmButton", (value))
 }
 
 // GetDisableClearTpmButton gets the value of DisableClearTpmButton for the instance
@@ -185,16 +214,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableDeviceSecurityUI sets the value of DisableDeviceSecurityUI for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableDeviceSecurityUI(value int32) (err error) {
-	return instance.SetProperty("DisableDeviceSecurityUI", value)
+	return instance.SetProperty("DisableDeviceSecurityUI", (value))
 }
 
 // GetDisableDeviceSecurityUI gets the value of DisableDeviceSecurityUI for the instance
@@ -203,16 +241,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableEnhancedNotifications sets the value of DisableEnhancedNotifications for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableEnhancedNotifications(value int32) (err error) {
-	return instance.SetProperty("DisableEnhancedNotifications", value)
+	return instance.SetProperty("DisableEnhancedNotifications", (value))
 }
 
 // GetDisableEnhancedNotifications gets the value of DisableEnhancedNotifications for the instance
@@ -221,16 +268,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableFamilyUI sets the value of DisableFamilyUI for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableFamilyUI(value int32) (err error) {
-	return instance.SetProperty("DisableFamilyUI", value)
+	return instance.SetProperty("DisableFamilyUI", (value))
 }
 
 // GetDisableFamilyUI gets the value of DisableFamilyUI for the instance
@@ -239,16 +295,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableHealthUI sets the value of DisableHealthUI for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableHealthUI(value int32) (err error) {
-	return instance.SetProperty("DisableHealthUI", value)
+	return instance.SetProperty("DisableHealthUI", (value))
 }
 
 // GetDisableHealthUI gets the value of DisableHealthUI for the instance
@@ -257,16 +322,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableNetworkUI sets the value of DisableNetworkUI for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableNetworkUI(value int32) (err error) {
-	return instance.SetProperty("DisableNetworkUI", value)
+	return instance.SetProperty("DisableNetworkUI", (value))
 }
 
 // GetDisableNetworkUI gets the value of DisableNetworkUI for the instance
@@ -275,16 +349,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableNotifications sets the value of DisableNotifications for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableNotifications(value int32) (err error) {
-	return instance.SetProperty("DisableNotifications", value)
+	return instance.SetProperty("DisableNotifications", (value))
 }
 
 // GetDisableNotifications gets the value of DisableNotifications for the instance
@@ -293,16 +376,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableTpmFirmwareUpdateWarning sets the value of DisableTpmFirmwareUpdateWarning for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableTpmFirmwareUpdateWarning(value int32) (err error) {
-	return instance.SetProperty("DisableTpmFirmwareUpdateWarning", value)
+	return instance.SetProperty("DisableTpmFirmwareUpdateWarning", (value))
 }
 
 // GetDisableTpmFirmwareUpdateWarning gets the value of DisableTpmFirmwareUpdateWarning for the instance
@@ -311,16 +403,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisableVirusUI sets the value of DisableVirusUI for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisableVirusUI(value int32) (err error) {
-	return instance.SetProperty("DisableVirusUI", value)
+	return instance.SetProperty("DisableVirusUI", (value))
 }
 
 // GetDisableVirusUI gets the value of DisableVirusUI for the instance
@@ -329,16 +430,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetDisallowExploitProtectionOverride sets the value of DisallowExploitProtectionOverride for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyDisallowExploitProtectionOverride(value int32) (err error) {
-	return instance.SetProperty("DisallowExploitProtectionOverride", value)
+	return instance.SetProperty("DisallowExploitProtectionOverride", (value))
 }
 
 // GetDisallowExploitProtectionOverride gets the value of DisallowExploitProtectionOverride for the instance
@@ -347,16 +457,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEmail sets the value of Email for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyEmail(value string) (err error) {
-	return instance.SetProperty("Email", value)
+	return instance.SetProperty("Email", (value))
 }
 
 // GetEmail gets the value of Email for the instance
@@ -365,16 +484,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnableCustomizedToasts sets the value of EnableCustomizedToasts for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyEnableCustomizedToasts(value int32) (err error) {
-	return instance.SetProperty("EnableCustomizedToasts", value)
+	return instance.SetProperty("EnableCustomizedToasts", (value))
 }
 
 // GetEnableCustomizedToasts gets the value of EnableCustomizedToasts for the instance
@@ -383,16 +511,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnableInAppCustomization sets the value of EnableInAppCustomization for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyEnableInAppCustomization(value int32) (err error) {
-	return instance.SetProperty("EnableInAppCustomization", value)
+	return instance.SetProperty("EnableInAppCustomization", (value))
 }
 
 // GetEnableInAppCustomization gets the value of EnableInAppCustomization for the instance
@@ -401,16 +538,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideRansomwareDataRecovery sets the value of HideRansomwareDataRecovery for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyHideRansomwareDataRecovery(value int32) (err error) {
-	return instance.SetProperty("HideRansomwareDataRecovery", value)
+	return instance.SetProperty("HideRansomwareDataRecovery", (value))
 }
 
 // GetHideRansomwareDataRecovery gets the value of HideRansomwareDataRecovery for the instance
@@ -419,16 +565,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideSecureBoot sets the value of HideSecureBoot for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyHideSecureBoot(value int32) (err error) {
-	return instance.SetProperty("HideSecureBoot", value)
+	return instance.SetProperty("HideSecureBoot", (value))
 }
 
 // GetHideSecureBoot gets the value of HideSecureBoot for the instance
@@ -437,16 +592,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideTPMTroubleshooting sets the value of HideTPMTroubleshooting for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyHideTPMTroubleshooting(value int32) (err error) {
-	return instance.SetProperty("HideTPMTroubleshooting", value)
+	return instance.SetProperty("HideTPMTroubleshooting", (value))
 }
 
 // GetHideTPMTroubleshooting gets the value of HideTPMTroubleshooting for the instance
@@ -455,16 +619,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetHideWindowsSecurityNotificationAreaControl sets the value of HideWindowsSecurityNotificationAreaControl for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyHideWindowsSecurityNotificationAreaControl(value int32) (err error) {
-	return instance.SetProperty("HideWindowsSecurityNotificationAreaControl", value)
+	return instance.SetProperty("HideWindowsSecurityNotificationAreaControl", (value))
 }
 
 // GetHideWindowsSecurityNotificationAreaControl gets the value of HideWindowsSecurityNotificationAreaControl for the instance
@@ -473,16 +646,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -491,16 +673,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -509,16 +700,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPhone sets the value of Phone for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyPhone(value string) (err error) {
-	return instance.SetProperty("Phone", value)
+	return instance.SetProperty("Phone", (value))
 }
 
 // GetPhone gets the value of Phone for the instance
@@ -527,16 +727,25 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetURL sets the value of URL for the instance
 func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) SetPropertyURL(value string) (err error) {
-	return instance.SetProperty("URL", value)
+	return instance.SetProperty("URL", (value))
 }
 
 // GetURL gets the value of URL for the instance
@@ -545,9 +754,18 @@ func (instance *MDM_Policy_Result01_WindowsDefenderSecurityCenter02) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

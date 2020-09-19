@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Process struct
@@ -130,7 +132,7 @@ func NewWin32_ProcessEx6(hostName string,
 
 // SetCommandLine sets the value of CommandLine for the instance
 func (instance *Win32_Process) SetPropertyCommandLine(value string) (err error) {
-	return instance.SetProperty("CommandLine", value)
+	return instance.SetProperty("CommandLine", (value))
 }
 
 // GetCommandLine gets the value of CommandLine for the instance
@@ -139,16 +141,25 @@ func (instance *Win32_Process) GetPropertyCommandLine() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExecutablePath sets the value of ExecutablePath for the instance
 func (instance *Win32_Process) SetPropertyExecutablePath(value string) (err error) {
-	return instance.SetProperty("ExecutablePath", value)
+	return instance.SetProperty("ExecutablePath", (value))
 }
 
 // GetExecutablePath gets the value of ExecutablePath for the instance
@@ -157,16 +168,25 @@ func (instance *Win32_Process) GetPropertyExecutablePath() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHandleCount sets the value of HandleCount for the instance
 func (instance *Win32_Process) SetPropertyHandleCount(value uint32) (err error) {
-	return instance.SetProperty("HandleCount", value)
+	return instance.SetProperty("HandleCount", (value))
 }
 
 // GetHandleCount gets the value of HandleCount for the instance
@@ -175,16 +195,25 @@ func (instance *Win32_Process) GetPropertyHandleCount() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumWorkingSetSize sets the value of MaximumWorkingSetSize for the instance
 func (instance *Win32_Process) SetPropertyMaximumWorkingSetSize(value uint32) (err error) {
-	return instance.SetProperty("MaximumWorkingSetSize", value)
+	return instance.SetProperty("MaximumWorkingSetSize", (value))
 }
 
 // GetMaximumWorkingSetSize gets the value of MaximumWorkingSetSize for the instance
@@ -193,16 +222,25 @@ func (instance *Win32_Process) GetPropertyMaximumWorkingSetSize() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinimumWorkingSetSize sets the value of MinimumWorkingSetSize for the instance
 func (instance *Win32_Process) SetPropertyMinimumWorkingSetSize(value uint32) (err error) {
-	return instance.SetProperty("MinimumWorkingSetSize", value)
+	return instance.SetProperty("MinimumWorkingSetSize", (value))
 }
 
 // GetMinimumWorkingSetSize gets the value of MinimumWorkingSetSize for the instance
@@ -211,16 +249,25 @@ func (instance *Win32_Process) GetPropertyMinimumWorkingSetSize() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherOperationCount sets the value of OtherOperationCount for the instance
 func (instance *Win32_Process) SetPropertyOtherOperationCount(value uint64) (err error) {
-	return instance.SetProperty("OtherOperationCount", value)
+	return instance.SetProperty("OtherOperationCount", (value))
 }
 
 // GetOtherOperationCount gets the value of OtherOperationCount for the instance
@@ -229,16 +276,25 @@ func (instance *Win32_Process) GetPropertyOtherOperationCount() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOtherTransferCount sets the value of OtherTransferCount for the instance
 func (instance *Win32_Process) SetPropertyOtherTransferCount(value uint64) (err error) {
-	return instance.SetProperty("OtherTransferCount", value)
+	return instance.SetProperty("OtherTransferCount", (value))
 }
 
 // GetOtherTransferCount gets the value of OtherTransferCount for the instance
@@ -247,16 +303,25 @@ func (instance *Win32_Process) GetPropertyOtherTransferCount() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPageFaults sets the value of PageFaults for the instance
 func (instance *Win32_Process) SetPropertyPageFaults(value uint32) (err error) {
-	return instance.SetProperty("PageFaults", value)
+	return instance.SetProperty("PageFaults", (value))
 }
 
 // GetPageFaults gets the value of PageFaults for the instance
@@ -265,16 +330,25 @@ func (instance *Win32_Process) GetPropertyPageFaults() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPageFileUsage sets the value of PageFileUsage for the instance
 func (instance *Win32_Process) SetPropertyPageFileUsage(value uint32) (err error) {
-	return instance.SetProperty("PageFileUsage", value)
+	return instance.SetProperty("PageFileUsage", (value))
 }
 
 // GetPageFileUsage gets the value of PageFileUsage for the instance
@@ -283,16 +357,25 @@ func (instance *Win32_Process) GetPropertyPageFileUsage() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetParentProcessId sets the value of ParentProcessId for the instance
 func (instance *Win32_Process) SetPropertyParentProcessId(value uint32) (err error) {
-	return instance.SetProperty("ParentProcessId", value)
+	return instance.SetProperty("ParentProcessId", (value))
 }
 
 // GetParentProcessId gets the value of ParentProcessId for the instance
@@ -301,16 +384,25 @@ func (instance *Win32_Process) GetPropertyParentProcessId() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPeakPageFileUsage sets the value of PeakPageFileUsage for the instance
 func (instance *Win32_Process) SetPropertyPeakPageFileUsage(value uint32) (err error) {
-	return instance.SetProperty("PeakPageFileUsage", value)
+	return instance.SetProperty("PeakPageFileUsage", (value))
 }
 
 // GetPeakPageFileUsage gets the value of PeakPageFileUsage for the instance
@@ -319,16 +411,25 @@ func (instance *Win32_Process) GetPropertyPeakPageFileUsage() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPeakVirtualSize sets the value of PeakVirtualSize for the instance
 func (instance *Win32_Process) SetPropertyPeakVirtualSize(value uint64) (err error) {
-	return instance.SetProperty("PeakVirtualSize", value)
+	return instance.SetProperty("PeakVirtualSize", (value))
 }
 
 // GetPeakVirtualSize gets the value of PeakVirtualSize for the instance
@@ -337,16 +438,25 @@ func (instance *Win32_Process) GetPropertyPeakVirtualSize() (value uint64, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPeakWorkingSetSize sets the value of PeakWorkingSetSize for the instance
 func (instance *Win32_Process) SetPropertyPeakWorkingSetSize(value uint32) (err error) {
-	return instance.SetProperty("PeakWorkingSetSize", value)
+	return instance.SetProperty("PeakWorkingSetSize", (value))
 }
 
 // GetPeakWorkingSetSize gets the value of PeakWorkingSetSize for the instance
@@ -355,16 +465,25 @@ func (instance *Win32_Process) GetPropertyPeakWorkingSetSize() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPrivatePageCount sets the value of PrivatePageCount for the instance
 func (instance *Win32_Process) SetPropertyPrivatePageCount(value uint64) (err error) {
-	return instance.SetProperty("PrivatePageCount", value)
+	return instance.SetProperty("PrivatePageCount", (value))
 }
 
 // GetPrivatePageCount gets the value of PrivatePageCount for the instance
@@ -373,16 +492,25 @@ func (instance *Win32_Process) GetPropertyPrivatePageCount() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProcessId sets the value of ProcessId for the instance
 func (instance *Win32_Process) SetPropertyProcessId(value uint32) (err error) {
-	return instance.SetProperty("ProcessId", value)
+	return instance.SetProperty("ProcessId", (value))
 }
 
 // GetProcessId gets the value of ProcessId for the instance
@@ -391,16 +519,25 @@ func (instance *Win32_Process) GetPropertyProcessId() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuotaNonPagedPoolUsage sets the value of QuotaNonPagedPoolUsage for the instance
 func (instance *Win32_Process) SetPropertyQuotaNonPagedPoolUsage(value uint32) (err error) {
-	return instance.SetProperty("QuotaNonPagedPoolUsage", value)
+	return instance.SetProperty("QuotaNonPagedPoolUsage", (value))
 }
 
 // GetQuotaNonPagedPoolUsage gets the value of QuotaNonPagedPoolUsage for the instance
@@ -409,16 +546,25 @@ func (instance *Win32_Process) GetPropertyQuotaNonPagedPoolUsage() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuotaPagedPoolUsage sets the value of QuotaPagedPoolUsage for the instance
 func (instance *Win32_Process) SetPropertyQuotaPagedPoolUsage(value uint32) (err error) {
-	return instance.SetProperty("QuotaPagedPoolUsage", value)
+	return instance.SetProperty("QuotaPagedPoolUsage", (value))
 }
 
 // GetQuotaPagedPoolUsage gets the value of QuotaPagedPoolUsage for the instance
@@ -427,16 +573,25 @@ func (instance *Win32_Process) GetPropertyQuotaPagedPoolUsage() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuotaPeakNonPagedPoolUsage sets the value of QuotaPeakNonPagedPoolUsage for the instance
 func (instance *Win32_Process) SetPropertyQuotaPeakNonPagedPoolUsage(value uint32) (err error) {
-	return instance.SetProperty("QuotaPeakNonPagedPoolUsage", value)
+	return instance.SetProperty("QuotaPeakNonPagedPoolUsage", (value))
 }
 
 // GetQuotaPeakNonPagedPoolUsage gets the value of QuotaPeakNonPagedPoolUsage for the instance
@@ -445,16 +600,25 @@ func (instance *Win32_Process) GetPropertyQuotaPeakNonPagedPoolUsage() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetQuotaPeakPagedPoolUsage sets the value of QuotaPeakPagedPoolUsage for the instance
 func (instance *Win32_Process) SetPropertyQuotaPeakPagedPoolUsage(value uint32) (err error) {
-	return instance.SetProperty("QuotaPeakPagedPoolUsage", value)
+	return instance.SetProperty("QuotaPeakPagedPoolUsage", (value))
 }
 
 // GetQuotaPeakPagedPoolUsage gets the value of QuotaPeakPagedPoolUsage for the instance
@@ -463,16 +627,25 @@ func (instance *Win32_Process) GetPropertyQuotaPeakPagedPoolUsage() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadOperationCount sets the value of ReadOperationCount for the instance
 func (instance *Win32_Process) SetPropertyReadOperationCount(value uint64) (err error) {
-	return instance.SetProperty("ReadOperationCount", value)
+	return instance.SetProperty("ReadOperationCount", (value))
 }
 
 // GetReadOperationCount gets the value of ReadOperationCount for the instance
@@ -481,16 +654,25 @@ func (instance *Win32_Process) GetPropertyReadOperationCount() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadTransferCount sets the value of ReadTransferCount for the instance
 func (instance *Win32_Process) SetPropertyReadTransferCount(value uint64) (err error) {
-	return instance.SetProperty("ReadTransferCount", value)
+	return instance.SetProperty("ReadTransferCount", (value))
 }
 
 // GetReadTransferCount gets the value of ReadTransferCount for the instance
@@ -499,16 +681,25 @@ func (instance *Win32_Process) GetPropertyReadTransferCount() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSessionId sets the value of SessionId for the instance
 func (instance *Win32_Process) SetPropertySessionId(value uint32) (err error) {
-	return instance.SetProperty("SessionId", value)
+	return instance.SetProperty("SessionId", (value))
 }
 
 // GetSessionId gets the value of SessionId for the instance
@@ -517,16 +708,25 @@ func (instance *Win32_Process) GetPropertySessionId() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetThreadCount sets the value of ThreadCount for the instance
 func (instance *Win32_Process) SetPropertyThreadCount(value uint32) (err error) {
-	return instance.SetProperty("ThreadCount", value)
+	return instance.SetProperty("ThreadCount", (value))
 }
 
 // GetThreadCount gets the value of ThreadCount for the instance
@@ -535,16 +735,25 @@ func (instance *Win32_Process) GetPropertyThreadCount() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVirtualSize sets the value of VirtualSize for the instance
 func (instance *Win32_Process) SetPropertyVirtualSize(value uint64) (err error) {
-	return instance.SetProperty("VirtualSize", value)
+	return instance.SetProperty("VirtualSize", (value))
 }
 
 // GetVirtualSize gets the value of VirtualSize for the instance
@@ -553,16 +762,25 @@ func (instance *Win32_Process) GetPropertyVirtualSize() (value uint64, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWindowsVersion sets the value of WindowsVersion for the instance
 func (instance *Win32_Process) SetPropertyWindowsVersion(value string) (err error) {
-	return instance.SetProperty("WindowsVersion", value)
+	return instance.SetProperty("WindowsVersion", (value))
 }
 
 // GetWindowsVersion gets the value of WindowsVersion for the instance
@@ -571,16 +789,25 @@ func (instance *Win32_Process) GetPropertyWindowsVersion() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWriteOperationCount sets the value of WriteOperationCount for the instance
 func (instance *Win32_Process) SetPropertyWriteOperationCount(value uint64) (err error) {
-	return instance.SetProperty("WriteOperationCount", value)
+	return instance.SetProperty("WriteOperationCount", (value))
 }
 
 // GetWriteOperationCount gets the value of WriteOperationCount for the instance
@@ -589,16 +816,25 @@ func (instance *Win32_Process) GetPropertyWriteOperationCount() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteTransferCount sets the value of WriteTransferCount for the instance
 func (instance *Win32_Process) SetPropertyWriteTransferCount(value uint64) (err error) {
-	return instance.SetProperty("WriteTransferCount", value)
+	return instance.SetProperty("WriteTransferCount", (value))
 }
 
 // GetWriteTransferCount gets the value of WriteTransferCount for the instance
@@ -607,10 +843,19 @@ func (instance *Win32_Process) GetPropertyWriteTransferCount() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

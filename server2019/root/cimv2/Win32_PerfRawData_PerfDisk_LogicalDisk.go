@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_PerfDisk_LogicalDisk struct
@@ -151,7 +153,7 @@ func NewWin32_PerfRawData_PerfDisk_LogicalDiskEx6(hostName string,
 
 // SetAvgDiskBytesPerRead sets the value of AvgDiskBytesPerRead for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskBytesPerRead(value uint64) (err error) {
-	return instance.SetProperty("AvgDiskBytesPerRead", value)
+	return instance.SetProperty("AvgDiskBytesPerRead", (value))
 }
 
 // GetAvgDiskBytesPerRead gets the value of AvgDiskBytesPerRead for the instance
@@ -160,16 +162,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskBytesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDiskBytesPerRead_Base sets the value of AvgDiskBytesPerRead_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskBytesPerRead_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgDiskBytesPerRead_Base", value)
+	return instance.SetProperty("AvgDiskBytesPerRead_Base", (value))
 }
 
 // GetAvgDiskBytesPerRead_Base gets the value of AvgDiskBytesPerRead_Base for the instance
@@ -178,16 +189,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskBytesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDiskBytesPerTransfer sets the value of AvgDiskBytesPerTransfer for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskBytesPerTransfer(value uint64) (err error) {
-	return instance.SetProperty("AvgDiskBytesPerTransfer", value)
+	return instance.SetProperty("AvgDiskBytesPerTransfer", (value))
 }
 
 // GetAvgDiskBytesPerTransfer gets the value of AvgDiskBytesPerTransfer for the instance
@@ -196,16 +216,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskBytesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDiskBytesPerTransfer_Base sets the value of AvgDiskBytesPerTransfer_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskBytesPerTransfer_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgDiskBytesPerTransfer_Base", value)
+	return instance.SetProperty("AvgDiskBytesPerTransfer_Base", (value))
 }
 
 // GetAvgDiskBytesPerTransfer_Base gets the value of AvgDiskBytesPerTransfer_Base for the instance
@@ -214,16 +243,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskBytesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDiskBytesPerWrite sets the value of AvgDiskBytesPerWrite for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskBytesPerWrite(value uint64) (err error) {
-	return instance.SetProperty("AvgDiskBytesPerWrite", value)
+	return instance.SetProperty("AvgDiskBytesPerWrite", (value))
 }
 
 // GetAvgDiskBytesPerWrite gets the value of AvgDiskBytesPerWrite for the instance
@@ -232,16 +270,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskBytesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDiskBytesPerWrite_Base sets the value of AvgDiskBytesPerWrite_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskBytesPerWrite_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgDiskBytesPerWrite_Base", value)
+	return instance.SetProperty("AvgDiskBytesPerWrite_Base", (value))
 }
 
 // GetAvgDiskBytesPerWrite_Base gets the value of AvgDiskBytesPerWrite_Base for the instance
@@ -250,16 +297,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskBytesP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDiskQueueLength sets the value of AvgDiskQueueLength for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgDiskQueueLength", value)
+	return instance.SetProperty("AvgDiskQueueLength", (value))
 }
 
 // GetAvgDiskQueueLength gets the value of AvgDiskQueueLength for the instance
@@ -268,16 +324,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskQueueL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDiskReadQueueLength sets the value of AvgDiskReadQueueLength for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskReadQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgDiskReadQueueLength", value)
+	return instance.SetProperty("AvgDiskReadQueueLength", (value))
 }
 
 // GetAvgDiskReadQueueLength gets the value of AvgDiskReadQueueLength for the instance
@@ -286,16 +351,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskReadQu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvgDisksecPerRead sets the value of AvgDisksecPerRead for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDisksecPerRead(value uint32) (err error) {
-	return instance.SetProperty("AvgDisksecPerRead", value)
+	return instance.SetProperty("AvgDisksecPerRead", (value))
 }
 
 // GetAvgDisksecPerRead gets the value of AvgDisksecPerRead for the instance
@@ -304,16 +378,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDisksecPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDisksecPerRead_Base sets the value of AvgDisksecPerRead_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDisksecPerRead_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgDisksecPerRead_Base", value)
+	return instance.SetProperty("AvgDisksecPerRead_Base", (value))
 }
 
 // GetAvgDisksecPerRead_Base gets the value of AvgDisksecPerRead_Base for the instance
@@ -322,16 +405,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDisksecPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDisksecPerTransfer sets the value of AvgDisksecPerTransfer for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDisksecPerTransfer(value uint32) (err error) {
-	return instance.SetProperty("AvgDisksecPerTransfer", value)
+	return instance.SetProperty("AvgDisksecPerTransfer", (value))
 }
 
 // GetAvgDisksecPerTransfer gets the value of AvgDisksecPerTransfer for the instance
@@ -340,16 +432,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDisksecPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDisksecPerTransfer_Base sets the value of AvgDisksecPerTransfer_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDisksecPerTransfer_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgDisksecPerTransfer_Base", value)
+	return instance.SetProperty("AvgDisksecPerTransfer_Base", (value))
 }
 
 // GetAvgDisksecPerTransfer_Base gets the value of AvgDisksecPerTransfer_Base for the instance
@@ -358,16 +459,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDisksecPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDisksecPerWrite sets the value of AvgDisksecPerWrite for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDisksecPerWrite(value uint32) (err error) {
-	return instance.SetProperty("AvgDisksecPerWrite", value)
+	return instance.SetProperty("AvgDisksecPerWrite", (value))
 }
 
 // GetAvgDisksecPerWrite gets the value of AvgDisksecPerWrite for the instance
@@ -376,16 +486,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDisksecPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDisksecPerWrite_Base sets the value of AvgDisksecPerWrite_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDisksecPerWrite_Base(value uint32) (err error) {
-	return instance.SetProperty("AvgDisksecPerWrite_Base", value)
+	return instance.SetProperty("AvgDisksecPerWrite_Base", (value))
 }
 
 // GetAvgDisksecPerWrite_Base gets the value of AvgDisksecPerWrite_Base for the instance
@@ -394,16 +513,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDisksecPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAvgDiskWriteQueueLength sets the value of AvgDiskWriteQueueLength for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyAvgDiskWriteQueueLength(value uint64) (err error) {
-	return instance.SetProperty("AvgDiskWriteQueueLength", value)
+	return instance.SetProperty("AvgDiskWriteQueueLength", (value))
 }
 
 // GetAvgDiskWriteQueueLength gets the value of AvgDiskWriteQueueLength for the instance
@@ -412,16 +540,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyAvgDiskWriteQ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetCurrentDiskQueueLength sets the value of CurrentDiskQueueLength for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyCurrentDiskQueueLength(value uint32) (err error) {
-	return instance.SetProperty("CurrentDiskQueueLength", value)
+	return instance.SetProperty("CurrentDiskQueueLength", (value))
 }
 
 // GetCurrentDiskQueueLength gets the value of CurrentDiskQueueLength for the instance
@@ -430,16 +567,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyCurrentDiskQu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDiskBytesPersec sets the value of DiskBytesPersec for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyDiskBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskBytesPersec", value)
+	return instance.SetProperty("DiskBytesPersec", (value))
 }
 
 // GetDiskBytesPersec gets the value of DiskBytesPersec for the instance
@@ -448,16 +594,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyDiskBytesPers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskReadBytesPersec sets the value of DiskReadBytesPersec for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyDiskReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskReadBytesPersec", value)
+	return instance.SetProperty("DiskReadBytesPersec", (value))
 }
 
 // GetDiskReadBytesPersec gets the value of DiskReadBytesPersec for the instance
@@ -466,16 +621,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyDiskReadBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskReadsPersec sets the value of DiskReadsPersec for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyDiskReadsPersec(value uint32) (err error) {
-	return instance.SetProperty("DiskReadsPersec", value)
+	return instance.SetProperty("DiskReadsPersec", (value))
 }
 
 // GetDiskReadsPersec gets the value of DiskReadsPersec for the instance
@@ -484,16 +648,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyDiskReadsPers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDiskTransfersPersec sets the value of DiskTransfersPersec for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyDiskTransfersPersec(value uint32) (err error) {
-	return instance.SetProperty("DiskTransfersPersec", value)
+	return instance.SetProperty("DiskTransfersPersec", (value))
 }
 
 // GetDiskTransfersPersec gets the value of DiskTransfersPersec for the instance
@@ -502,16 +675,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyDiskTransfers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDiskWriteBytesPersec sets the value of DiskWriteBytesPersec for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyDiskWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("DiskWriteBytesPersec", value)
+	return instance.SetProperty("DiskWriteBytesPersec", (value))
 }
 
 // GetDiskWriteBytesPersec gets the value of DiskWriteBytesPersec for the instance
@@ -520,16 +702,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyDiskWriteByte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDiskWritesPersec sets the value of DiskWritesPersec for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyDiskWritesPersec(value uint32) (err error) {
-	return instance.SetProperty("DiskWritesPersec", value)
+	return instance.SetProperty("DiskWritesPersec", (value))
 }
 
 // GetDiskWritesPersec gets the value of DiskWritesPersec for the instance
@@ -538,16 +729,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyDiskWritesPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFreeMegabytes sets the value of FreeMegabytes for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyFreeMegabytes(value uint32) (err error) {
-	return instance.SetProperty("FreeMegabytes", value)
+	return instance.SetProperty("FreeMegabytes", (value))
 }
 
 // GetFreeMegabytes gets the value of FreeMegabytes for the instance
@@ -556,16 +756,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyFreeMegabytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentDiskReadTime sets the value of PercentDiskReadTime for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentDiskReadTime(value uint64) (err error) {
-	return instance.SetProperty("PercentDiskReadTime", value)
+	return instance.SetProperty("PercentDiskReadTime", (value))
 }
 
 // GetPercentDiskReadTime gets the value of PercentDiskReadTime for the instance
@@ -574,16 +783,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentDiskRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentDiskReadTime_Base sets the value of PercentDiskReadTime_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentDiskReadTime_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentDiskReadTime_Base", value)
+	return instance.SetProperty("PercentDiskReadTime_Base", (value))
 }
 
 // GetPercentDiskReadTime_Base gets the value of PercentDiskReadTime_Base for the instance
@@ -592,16 +810,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentDiskRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentDiskTime sets the value of PercentDiskTime for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentDiskTime(value uint64) (err error) {
-	return instance.SetProperty("PercentDiskTime", value)
+	return instance.SetProperty("PercentDiskTime", (value))
 }
 
 // GetPercentDiskTime gets the value of PercentDiskTime for the instance
@@ -610,16 +837,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentDiskTi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentDiskTime_Base sets the value of PercentDiskTime_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentDiskTime_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentDiskTime_Base", value)
+	return instance.SetProperty("PercentDiskTime_Base", (value))
 }
 
 // GetPercentDiskTime_Base gets the value of PercentDiskTime_Base for the instance
@@ -628,16 +864,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentDiskTi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentDiskWriteTime sets the value of PercentDiskWriteTime for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentDiskWriteTime(value uint64) (err error) {
-	return instance.SetProperty("PercentDiskWriteTime", value)
+	return instance.SetProperty("PercentDiskWriteTime", (value))
 }
 
 // GetPercentDiskWriteTime gets the value of PercentDiskWriteTime for the instance
@@ -646,16 +891,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentDiskWr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentDiskWriteTime_Base sets the value of PercentDiskWriteTime_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentDiskWriteTime_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentDiskWriteTime_Base", value)
+	return instance.SetProperty("PercentDiskWriteTime_Base", (value))
 }
 
 // GetPercentDiskWriteTime_Base gets the value of PercentDiskWriteTime_Base for the instance
@@ -664,16 +918,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentDiskWr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentFreeSpace sets the value of PercentFreeSpace for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentFreeSpace(value uint32) (err error) {
-	return instance.SetProperty("PercentFreeSpace", value)
+	return instance.SetProperty("PercentFreeSpace", (value))
 }
 
 // GetPercentFreeSpace gets the value of PercentFreeSpace for the instance
@@ -682,16 +945,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentFreeSp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentFreeSpace_Base sets the value of PercentFreeSpace_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentFreeSpace_Base(value uint32) (err error) {
-	return instance.SetProperty("PercentFreeSpace_Base", value)
+	return instance.SetProperty("PercentFreeSpace_Base", (value))
 }
 
 // GetPercentFreeSpace_Base gets the value of PercentFreeSpace_Base for the instance
@@ -700,16 +972,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentFreeSp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentIdleTime sets the value of PercentIdleTime for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentIdleTime(value uint64) (err error) {
-	return instance.SetProperty("PercentIdleTime", value)
+	return instance.SetProperty("PercentIdleTime", (value))
 }
 
 // GetPercentIdleTime gets the value of PercentIdleTime for the instance
@@ -718,16 +999,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentIdleTi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPercentIdleTime_Base sets the value of PercentIdleTime_Base for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertyPercentIdleTime_Base(value uint64) (err error) {
-	return instance.SetProperty("PercentIdleTime_Base", value)
+	return instance.SetProperty("PercentIdleTime_Base", (value))
 }
 
 // GetPercentIdleTime_Base gets the value of PercentIdleTime_Base for the instance
@@ -736,16 +1026,25 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertyPercentIdleTi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSplitIOPerSec sets the value of SplitIOPerSec for the instance
 func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) SetPropertySplitIOPerSec(value uint32) (err error) {
-	return instance.SetProperty("SplitIOPerSec", value)
+	return instance.SetProperty("SplitIOPerSec", (value))
 }
 
 // GetSplitIOPerSec gets the value of SplitIOPerSec for the instance
@@ -754,9 +1053,18 @@ func (instance *Win32_PerfRawData_PerfDisk_LogicalDisk) GetPropertySplitIOPerSec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

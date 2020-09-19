@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.PEH
 //////////////////////////////////////////////
 package peh
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ExpressionLambda struct
@@ -58,7 +60,7 @@ func NewMSFT_ExpressionLambdaEx6(hostName string,
 
 // Setbody sets the value of body for the instance
 func (instance *MSFT_ExpressionLambda) SetPropertybody(value MSFT_Expression) (err error) {
-	return instance.SetProperty("body", value)
+	return instance.SetProperty("body", (value))
 }
 
 // Getbody gets the value of body for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_ExpressionLambda) GetPropertybody() (value MSFT_Expression,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Expression)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Expression)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Expression is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Expression(valuetmp)
+
 	return
 }
 
 // Setparameters sets the value of parameters for the instance
 func (instance *MSFT_ExpressionLambda) SetPropertyparameters(value []MSFT_ExpressionIdentifier) (err error) {
-	return instance.SetProperty("parameters", value)
+	return instance.SetProperty("parameters", (value))
 }
 
 // Getparameters gets the value of parameters for the instance
@@ -85,16 +96,26 @@ func (instance *MSFT_ExpressionLambda) GetPropertyparameters() (value []MSFT_Exp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_ExpressionIdentifier)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_ExpressionIdentifier)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_ExpressionIdentifier is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_ExpressionIdentifier(valuetmp))
+	}
+
 	return
 }
 
 // Setpipeline sets the value of pipeline for the instance
 func (instance *MSFT_ExpressionLambda) SetPropertypipeline(value MSFT_ExpressionIdentifier) (err error) {
-	return instance.SetProperty("pipeline", value)
+	return instance.SetProperty("pipeline", (value))
 }
 
 // Getpipeline gets the value of pipeline for the instance
@@ -103,9 +124,18 @@ func (instance *MSFT_ExpressionLambda) GetPropertypipeline() (value MSFT_Express
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_ExpressionIdentifier)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_ExpressionIdentifier)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_ExpressionIdentifier is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_ExpressionIdentifier(valuetmp)
+
 	return
 }

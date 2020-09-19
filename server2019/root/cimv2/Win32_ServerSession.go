@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ServerSession struct
@@ -73,7 +75,7 @@ func NewWin32_ServerSessionEx6(hostName string,
 
 // SetActiveTime sets the value of ActiveTime for the instance
 func (instance *Win32_ServerSession) SetPropertyActiveTime(value uint32) (err error) {
-	return instance.SetProperty("ActiveTime", value)
+	return instance.SetProperty("ActiveTime", (value))
 }
 
 // GetActiveTime gets the value of ActiveTime for the instance
@@ -82,16 +84,25 @@ func (instance *Win32_ServerSession) GetPropertyActiveTime() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetClientType sets the value of ClientType for the instance
 func (instance *Win32_ServerSession) SetPropertyClientType(value string) (err error) {
-	return instance.SetProperty("ClientType", value)
+	return instance.SetProperty("ClientType", (value))
 }
 
 // GetClientType gets the value of ClientType for the instance
@@ -100,16 +111,25 @@ func (instance *Win32_ServerSession) GetPropertyClientType() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetComputerName sets the value of ComputerName for the instance
 func (instance *Win32_ServerSession) SetPropertyComputerName(value string) (err error) {
-	return instance.SetProperty("ComputerName", value)
+	return instance.SetProperty("ComputerName", (value))
 }
 
 // GetComputerName gets the value of ComputerName for the instance
@@ -118,16 +138,25 @@ func (instance *Win32_ServerSession) GetPropertyComputerName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIdleTime sets the value of IdleTime for the instance
 func (instance *Win32_ServerSession) SetPropertyIdleTime(value uint32) (err error) {
-	return instance.SetProperty("IdleTime", value)
+	return instance.SetProperty("IdleTime", (value))
 }
 
 // GetIdleTime gets the value of IdleTime for the instance
@@ -136,16 +165,25 @@ func (instance *Win32_ServerSession) GetPropertyIdleTime() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResourcesOpened sets the value of ResourcesOpened for the instance
 func (instance *Win32_ServerSession) SetPropertyResourcesOpened(value uint32) (err error) {
-	return instance.SetProperty("ResourcesOpened", value)
+	return instance.SetProperty("ResourcesOpened", (value))
 }
 
 // GetResourcesOpened gets the value of ResourcesOpened for the instance
@@ -154,16 +192,25 @@ func (instance *Win32_ServerSession) GetPropertyResourcesOpened() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionType sets the value of SessionType for the instance
 func (instance *Win32_ServerSession) SetPropertySessionType(value uint32) (err error) {
-	return instance.SetProperty("SessionType", value)
+	return instance.SetProperty("SessionType", (value))
 }
 
 // GetSessionType gets the value of SessionType for the instance
@@ -172,16 +219,25 @@ func (instance *Win32_ServerSession) GetPropertySessionType() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransportName sets the value of TransportName for the instance
 func (instance *Win32_ServerSession) SetPropertyTransportName(value string) (err error) {
-	return instance.SetProperty("TransportName", value)
+	return instance.SetProperty("TransportName", (value))
 }
 
 // GetTransportName gets the value of TransportName for the instance
@@ -190,16 +246,25 @@ func (instance *Win32_ServerSession) GetPropertyTransportName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserName sets the value of UserName for the instance
 func (instance *Win32_ServerSession) SetPropertyUserName(value string) (err error) {
-	return instance.SetProperty("UserName", value)
+	return instance.SetProperty("UserName", (value))
 }
 
 // GetUserName gets the value of UserName for the instance
@@ -208,9 +273,18 @@ func (instance *Win32_ServerSession) GetPropertyUserName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

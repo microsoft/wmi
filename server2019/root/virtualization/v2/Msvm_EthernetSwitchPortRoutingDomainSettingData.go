@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchPortRoutingDomainSettingData struct
@@ -61,7 +63,7 @@ func NewMsvm_EthernetSwitchPortRoutingDomainSettingDataEx6(hostName string,
 
 // SetIsolationIdList sets the value of IsolationIdList for the instance
 func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) SetPropertyIsolationIdList(value []uint32) (err error) {
-	return instance.SetProperty("IsolationIdList", value)
+	return instance.SetProperty("IsolationIdList", (value))
 }
 
 // GetIsolationIdList gets the value of IsolationIdList for the instance
@@ -70,16 +72,26 @@ func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) GetPropertyIsol
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetIsolationIdNameList sets the value of IsolationIdNameList for the instance
 func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) SetPropertyIsolationIdNameList(value []string) (err error) {
-	return instance.SetProperty("IsolationIdNameList", value)
+	return instance.SetProperty("IsolationIdNameList", (value))
 }
 
 // GetIsolationIdNameList gets the value of IsolationIdNameList for the instance
@@ -88,16 +100,26 @@ func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) GetPropertyIsol
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRoutingDomainGuid sets the value of RoutingDomainGuid for the instance
 func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) SetPropertyRoutingDomainGuid(value string) (err error) {
-	return instance.SetProperty("RoutingDomainGuid", value)
+	return instance.SetProperty("RoutingDomainGuid", (value))
 }
 
 // GetRoutingDomainGuid gets the value of RoutingDomainGuid for the instance
@@ -106,16 +128,25 @@ func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) GetPropertyRout
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoutingDomainName sets the value of RoutingDomainName for the instance
 func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) SetPropertyRoutingDomainName(value string) (err error) {
-	return instance.SetProperty("RoutingDomainName", value)
+	return instance.SetProperty("RoutingDomainName", (value))
 }
 
 // GetRoutingDomainName gets the value of RoutingDomainName for the instance
@@ -124,10 +155,19 @@ func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) GetPropertyRout
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 func (instance *Msvm_EthernetSwitchPortRoutingDomainSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {

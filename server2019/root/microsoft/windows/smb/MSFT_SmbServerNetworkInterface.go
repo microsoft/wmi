@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.SMB
 //////////////////////////////////////////////
 package smb
@@ -11,7 +11,9 @@ package smb
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SmbServerNetworkInterface struct
@@ -71,7 +73,7 @@ func NewMSFT_SmbServerNetworkInterfaceEx6(hostName string,
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_SmbServerNetworkInterface) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -80,16 +82,25 @@ func (instance *MSFT_SmbServerNetworkInterface) GetPropertyFriendlyName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInterfaceIndex sets the value of InterfaceIndex for the instance
 func (instance *MSFT_SmbServerNetworkInterface) SetPropertyInterfaceIndex(value uint32) (err error) {
-	return instance.SetProperty("InterfaceIndex", value)
+	return instance.SetProperty("InterfaceIndex", (value))
 }
 
 // GetInterfaceIndex gets the value of InterfaceIndex for the instance
@@ -98,16 +109,25 @@ func (instance *MSFT_SmbServerNetworkInterface) GetPropertyInterfaceIndex() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIpAddress sets the value of IpAddress for the instance
 func (instance *MSFT_SmbServerNetworkInterface) SetPropertyIpAddress(value string) (err error) {
-	return instance.SetProperty("IpAddress", value)
+	return instance.SetProperty("IpAddress", (value))
 }
 
 // GetIpAddress gets the value of IpAddress for the instance
@@ -116,16 +136,25 @@ func (instance *MSFT_SmbServerNetworkInterface) GetPropertyIpAddress() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLinkSpeed sets the value of LinkSpeed for the instance
 func (instance *MSFT_SmbServerNetworkInterface) SetPropertyLinkSpeed(value uint64) (err error) {
-	return instance.SetProperty("LinkSpeed", value)
+	return instance.SetProperty("LinkSpeed", (value))
 }
 
 // GetLinkSpeed gets the value of LinkSpeed for the instance
@@ -134,16 +163,25 @@ func (instance *MSFT_SmbServerNetworkInterface) GetPropertyLinkSpeed() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRdmaCapable sets the value of RdmaCapable for the instance
 func (instance *MSFT_SmbServerNetworkInterface) SetPropertyRdmaCapable(value bool) (err error) {
-	return instance.SetProperty("RdmaCapable", value)
+	return instance.SetProperty("RdmaCapable", (value))
 }
 
 // GetRdmaCapable gets the value of RdmaCapable for the instance
@@ -152,16 +190,25 @@ func (instance *MSFT_SmbServerNetworkInterface) GetPropertyRdmaCapable() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRssCapable sets the value of RssCapable for the instance
 func (instance *MSFT_SmbServerNetworkInterface) SetPropertyRssCapable(value bool) (err error) {
-	return instance.SetProperty("RssCapable", value)
+	return instance.SetProperty("RssCapable", (value))
 }
 
 // GetRssCapable gets the value of RssCapable for the instance
@@ -170,16 +217,25 @@ func (instance *MSFT_SmbServerNetworkInterface) GetPropertyRssCapable() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetScopeName sets the value of ScopeName for the instance
 func (instance *MSFT_SmbServerNetworkInterface) SetPropertyScopeName(value string) (err error) {
-	return instance.SetProperty("ScopeName", value)
+	return instance.SetProperty("ScopeName", (value))
 }
 
 // GetScopeName gets the value of ScopeName for the instance
@@ -188,9 +244,18 @@ func (instance *MSFT_SmbServerNetworkInterface) GetPropertyScopeName() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

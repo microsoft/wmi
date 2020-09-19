@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_WsdPrinterPort struct
@@ -58,7 +60,7 @@ func NewMSFT_WsdPrinterPortEx6(hostName string,
 
 // SetDeviceURL sets the value of DeviceURL for the instance
 func (instance *MSFT_WsdPrinterPort) SetPropertyDeviceURL(value string) (err error) {
-	return instance.SetProperty("DeviceURL", value)
+	return instance.SetProperty("DeviceURL", (value))
 }
 
 // GetDeviceURL gets the value of DeviceURL for the instance
@@ -67,16 +69,25 @@ func (instance *MSFT_WsdPrinterPort) GetPropertyDeviceURL() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDeviceUUID sets the value of DeviceUUID for the instance
 func (instance *MSFT_WsdPrinterPort) SetPropertyDeviceUUID(value string) (err error) {
-	return instance.SetProperty("DeviceUUID", value)
+	return instance.SetProperty("DeviceUUID", (value))
 }
 
 // GetDeviceUUID gets the value of DeviceUUID for the instance
@@ -85,16 +96,25 @@ func (instance *MSFT_WsdPrinterPort) GetPropertyDeviceUUID() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDiscoveryMethod sets the value of DiscoveryMethod for the instance
 func (instance *MSFT_WsdPrinterPort) SetPropertyDiscoveryMethod(value uint32) (err error) {
-	return instance.SetProperty("DiscoveryMethod", value)
+	return instance.SetProperty("DiscoveryMethod", (value))
 }
 
 // GetDiscoveryMethod gets the value of DiscoveryMethod for the instance
@@ -103,9 +123,18 @@ func (instance *MSFT_WsdPrinterPort) GetPropertyDiscoveryMethod() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

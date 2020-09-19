@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
@@ -11,7 +11,9 @@ package accesslogging
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftUal_Dns struct
@@ -68,7 +70,7 @@ func NewMsftUal_DnsEx6(hostName string,
 
 // SetHostName sets the value of HostName for the instance
 func (instance *MsftUal_Dns) SetPropertyHostName(value string) (err error) {
-	return instance.SetProperty("HostName", value)
+	return instance.SetProperty("HostName", (value))
 }
 
 // GetHostName gets the value of HostName for the instance
@@ -77,16 +79,25 @@ func (instance *MsftUal_Dns) GetPropertyHostName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPAddress sets the value of IPAddress for the instance
 func (instance *MsftUal_Dns) SetPropertyIPAddress(value string) (err error) {
-	return instance.SetProperty("IPAddress", value)
+	return instance.SetProperty("IPAddress", (value))
 }
 
 // GetIPAddress gets the value of IPAddress for the instance
@@ -95,16 +106,25 @@ func (instance *MsftUal_Dns) GetPropertyIPAddress() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastSeen sets the value of LastSeen for the instance
 func (instance *MsftUal_Dns) SetPropertyLastSeen(value string) (err error) {
-	return instance.SetProperty("LastSeen", value)
+	return instance.SetProperty("LastSeen", (value))
 }
 
 // GetLastSeen gets the value of LastSeen for the instance
@@ -113,16 +133,25 @@ func (instance *MsftUal_Dns) GetPropertyLastSeen() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductName sets the value of ProductName for the instance
 func (instance *MsftUal_Dns) SetPropertyProductName(value string) (err error) {
-	return instance.SetProperty("ProductName", value)
+	return instance.SetProperty("ProductName", (value))
 }
 
 // GetProductName gets the value of ProductName for the instance
@@ -131,16 +160,25 @@ func (instance *MsftUal_Dns) GetPropertyProductName() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleGuid sets the value of RoleGuid for the instance
 func (instance *MsftUal_Dns) SetPropertyRoleGuid(value string) (err error) {
-	return instance.SetProperty("RoleGuid", value)
+	return instance.SetProperty("RoleGuid", (value))
 }
 
 // GetRoleGuid gets the value of RoleGuid for the instance
@@ -149,16 +187,25 @@ func (instance *MsftUal_Dns) GetPropertyRoleGuid() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleName sets the value of RoleName for the instance
 func (instance *MsftUal_Dns) SetPropertyRoleName(value string) (err error) {
-	return instance.SetProperty("RoleName", value)
+	return instance.SetProperty("RoleName", (value))
 }
 
 // GetRoleName gets the value of RoleName for the instance
@@ -167,9 +214,18 @@ func (instance *MsftUal_Dns) GetPropertyRoleName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

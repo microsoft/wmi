@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RemoveIniAction struct
@@ -61,7 +63,7 @@ func NewWin32_RemoveIniActionEx6(hostName string,
 
 // SetAction sets the value of Action for the instance
 func (instance *Win32_RemoveIniAction) SetPropertyAction(value uint16) (err error) {
-	return instance.SetProperty("Action", value)
+	return instance.SetProperty("Action", (value))
 }
 
 // GetAction gets the value of Action for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_RemoveIniAction) GetPropertyAction() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *Win32_RemoveIniAction) SetPropertykey(value string) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_RemoveIniAction) GetPropertykey() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSection sets the value of Section for the instance
 func (instance *Win32_RemoveIniAction) SetPropertySection(value string) (err error) {
-	return instance.SetProperty("Section", value)
+	return instance.SetProperty("Section", (value))
 }
 
 // GetSection gets the value of Section for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_RemoveIniAction) GetPropertySection() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValue sets the value of Value for the instance
 func (instance *Win32_RemoveIniAction) SetPropertyValue(value string) (err error) {
-	return instance.SetProperty("Value", value)
+	return instance.SetProperty("Value", (value))
 }
 
 // GetValue gets the value of Value for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_RemoveIniAction) GetPropertyValue() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

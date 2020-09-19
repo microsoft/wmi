@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_FileServerToFileShare struct
@@ -56,7 +58,7 @@ func NewMSFT_FileServerToFileShareEx6(hostName string,
 
 // SetFileServer sets the value of FileServer for the instance
 func (instance *MSFT_FileServerToFileShare) SetPropertyFileServer(value MSFT_FileServer) (err error) {
-	return instance.SetProperty("FileServer", value)
+	return instance.SetProperty("FileServer", (value))
 }
 
 // GetFileServer gets the value of FileServer for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_FileServerToFileShare) GetPropertyFileServer() (value MSFT_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_FileServer)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_FileServer)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_FileServer is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_FileServer(valuetmp)
+
 	return
 }
 
 // SetFileShare sets the value of FileShare for the instance
 func (instance *MSFT_FileServerToFileShare) SetPropertyFileShare(value MSFT_FileShare) (err error) {
-	return instance.SetProperty("FileShare", value)
+	return instance.SetProperty("FileShare", (value))
 }
 
 // GetFileShare gets the value of FileShare for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_FileServerToFileShare) GetPropertyFileShare() (value MSFT_F
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_FileShare)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_FileShare)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_FileShare is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_FileShare(valuetmp)
+
 	return
 }

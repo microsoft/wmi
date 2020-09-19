@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_DNSProtocolEndpoint struct
@@ -55,7 +57,7 @@ func NewCIM_DNSProtocolEndpointEx6(hostName string,
 
 // SetDHCPOptionsToUse sets the value of DHCPOptionsToUse for the instance
 func (instance *CIM_DNSProtocolEndpoint) SetPropertyDHCPOptionsToUse(value []DNSProtocolEndpoint_DHCPOptionsToUse) (err error) {
-	return instance.SetProperty("DHCPOptionsToUse", value)
+	return instance.SetProperty("DHCPOptionsToUse", (value))
 }
 
 // GetDHCPOptionsToUse gets the value of DHCPOptionsToUse for the instance
@@ -64,16 +66,26 @@ func (instance *CIM_DNSProtocolEndpoint) GetPropertyDHCPOptionsToUse() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]DNSProtocolEndpoint_DHCPOptionsToUse)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, DNSProtocolEndpoint_DHCPOptionsToUse(valuetmp))
+	}
+
 	return
 }
 
 // SetHostname sets the value of Hostname for the instance
 func (instance *CIM_DNSProtocolEndpoint) SetPropertyHostname(value string) (err error) {
-	return instance.SetProperty("Hostname", value)
+	return instance.SetProperty("Hostname", (value))
 }
 
 // GetHostname gets the value of Hostname for the instance
@@ -82,9 +94,18 @@ func (instance *CIM_DNSProtocolEndpoint) GetPropertyHostname() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

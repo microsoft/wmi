@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_ScriptPolicySetting struct
@@ -61,7 +63,7 @@ func NewRSOP_ScriptPolicySettingEx6(hostName string,
 
 // SetpsScriptOrder sets the value of psScriptOrder for the instance
 func (instance *RSOP_ScriptPolicySetting) SetPropertypsScriptOrder(value uint32) (err error) {
-	return instance.SetProperty("psScriptOrder", value)
+	return instance.SetProperty("psScriptOrder", (value))
 }
 
 // GetpsScriptOrder gets the value of psScriptOrder for the instance
@@ -70,16 +72,25 @@ func (instance *RSOP_ScriptPolicySetting) GetPropertypsScriptOrder() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetscriptList sets the value of scriptList for the instance
 func (instance *RSOP_ScriptPolicySetting) SetPropertyscriptList(value []RSOP_ScriptCmd) (err error) {
-	return instance.SetProperty("scriptList", value)
+	return instance.SetProperty("scriptList", (value))
 }
 
 // GetscriptList gets the value of scriptList for the instance
@@ -88,16 +99,26 @@ func (instance *RSOP_ScriptPolicySetting) GetPropertyscriptList() (value []RSOP_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]RSOP_ScriptCmd)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(RSOP_ScriptCmd)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " RSOP_ScriptCmd is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, RSOP_ScriptCmd(valuetmp))
+	}
+
 	return
 }
 
 // SetscriptOrder sets the value of scriptOrder for the instance
 func (instance *RSOP_ScriptPolicySetting) SetPropertyscriptOrder(value uint32) (err error) {
-	return instance.SetProperty("scriptOrder", value)
+	return instance.SetProperty("scriptOrder", (value))
 }
 
 // GetscriptOrder gets the value of scriptOrder for the instance
@@ -106,16 +127,25 @@ func (instance *RSOP_ScriptPolicySetting) GetPropertyscriptOrder() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetscriptType sets the value of scriptType for the instance
 func (instance *RSOP_ScriptPolicySetting) SetPropertyscriptType(value uint32) (err error) {
-	return instance.SetProperty("scriptType", value)
+	return instance.SetProperty("scriptType", (value))
 }
 
 // GetscriptType gets the value of scriptType for the instance
@@ -124,9 +154,18 @@ func (instance *RSOP_ScriptPolicySetting) GetPropertyscriptType() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

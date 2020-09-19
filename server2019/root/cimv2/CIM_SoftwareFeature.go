@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SoftwareFeature struct
@@ -61,7 +63,7 @@ func NewCIM_SoftwareFeatureEx6(hostName string,
 
 // SetIdentifyingNumber sets the value of IdentifyingNumber for the instance
 func (instance *CIM_SoftwareFeature) SetPropertyIdentifyingNumber(value string) (err error) {
-	return instance.SetProperty("IdentifyingNumber", value)
+	return instance.SetProperty("IdentifyingNumber", (value))
 }
 
 // GetIdentifyingNumber gets the value of IdentifyingNumber for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_SoftwareFeature) GetPropertyIdentifyingNumber() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductName sets the value of ProductName for the instance
 func (instance *CIM_SoftwareFeature) SetPropertyProductName(value string) (err error) {
-	return instance.SetProperty("ProductName", value)
+	return instance.SetProperty("ProductName", (value))
 }
 
 // GetProductName gets the value of ProductName for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_SoftwareFeature) GetPropertyProductName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVendor sets the value of Vendor for the instance
 func (instance *CIM_SoftwareFeature) SetPropertyVendor(value string) (err error) {
-	return instance.SetProperty("Vendor", value)
+	return instance.SetProperty("Vendor", (value))
 }
 
 // GetVendor gets the value of Vendor for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_SoftwareFeature) GetPropertyVendor() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *CIM_SoftwareFeature) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_SoftwareFeature) GetPropertyVersion() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

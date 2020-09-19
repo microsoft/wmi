@@ -3,15 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 	cimv2 "github.com/microsoft/wmi/server2019/root/cimv2"
+	"reflect"
 )
 
 // Win32_TerminalServiceToSetting struct
@@ -56,7 +58,7 @@ func NewWin32_TerminalServiceToSettingEx6(hostName string,
 
 // SetElement sets the value of Element for the instance
 func (instance *Win32_TerminalServiceToSetting) SetPropertyElement(value cimv2.Win32_TerminalService) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_TerminalServiceToSetting) GetPropertyElement() (value cimv
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(cimv2.Win32_TerminalService)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(cimv2.Win32_TerminalService)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " cimv2.Win32_TerminalService is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = cimv2.Win32_TerminalService(valuetmp)
+
 	return
 }
 
 // SetSetting sets the value of Setting for the instance
 func (instance *Win32_TerminalServiceToSetting) SetPropertySetting(value Win32_TerminalServiceSetting) (err error) {
-	return instance.SetProperty("Setting", value)
+	return instance.SetProperty("Setting", (value))
 }
 
 // GetSetting gets the value of Setting for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_TerminalServiceToSetting) GetPropertySetting() (value Win3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Win32_TerminalServiceSetting)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(Win32_TerminalServiceSetting)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " Win32_TerminalServiceSetting is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Win32_TerminalServiceSetting(valuetmp)
+
 	return
 }

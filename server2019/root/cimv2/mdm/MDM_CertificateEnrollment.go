@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_CertificateEnrollment struct
@@ -92,7 +94,7 @@ func NewMDM_CertificateEnrollmentEx6(hostName string,
 
 // SetConfigurationParameters sets the value of ConfigurationParameters for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyConfigurationParameters(value string) (err error) {
-	return instance.SetProperty("ConfigurationParameters", value)
+	return instance.SetProperty("ConfigurationParameters", (value))
 }
 
 // GetConfigurationParameters gets the value of ConfigurationParameters for the instance
@@ -101,16 +103,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyConfigurationParameters() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnhancedKeyUsages sets the value of EnhancedKeyUsages for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyEnhancedKeyUsages(value string) (err error) {
-	return instance.SetProperty("EnhancedKeyUsages", value)
+	return instance.SetProperty("EnhancedKeyUsages", (value))
 }
 
 // GetEnhancedKeyUsages gets the value of EnhancedKeyUsages for the instance
@@ -119,16 +130,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyEnhancedKeyUsages() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetError sets the value of Error for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyError(value uint32) (err error) {
-	return instance.SetProperty("Error", value)
+	return instance.SetProperty("Error", (value))
 }
 
 // GetError gets the value of Error for the instance
@@ -137,16 +157,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyError() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExpirationThreshold sets the value of ExpirationThreshold for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyExpirationThreshold(value uint32) (err error) {
-	return instance.SetProperty("ExpirationThreshold", value)
+	return instance.SetProperty("ExpirationThreshold", (value))
 }
 
 // GetExpirationThreshold gets the value of ExpirationThreshold for the instance
@@ -155,16 +184,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyExpirationThreshold() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIssuers sets the value of Issuers for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyIssuers(value string) (err error) {
-	return instance.SetProperty("Issuers", value)
+	return instance.SetProperty("Issuers", (value))
 }
 
 // GetIssuers gets the value of Issuers for the instance
@@ -173,16 +211,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyIssuers() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequestID sets the value of RequestID for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyRequestID(value string) (err error) {
-	return instance.SetProperty("RequestID", value)
+	return instance.SetProperty("RequestID", (value))
 }
 
 // GetRequestID gets the value of RequestID for the instance
@@ -191,16 +238,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyRequestID() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -209,16 +265,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertySerialNumber() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyStatus(value uint32) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -227,16 +292,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyStatus() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStoreLocation sets the value of StoreLocation for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyStoreLocation(value uint8) (err error) {
-	return instance.SetProperty("StoreLocation", value)
+	return instance.SetProperty("StoreLocation", (value))
 }
 
 // GetStoreLocation gets the value of StoreLocation for the instance
@@ -245,16 +319,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyStoreLocation() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSubjectAlternativeNames sets the value of SubjectAlternativeNames for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertySubjectAlternativeNames(value string) (err error) {
-	return instance.SetProperty("SubjectAlternativeNames", value)
+	return instance.SetProperty("SubjectAlternativeNames", (value))
 }
 
 // GetSubjectAlternativeNames gets the value of SubjectAlternativeNames for the instance
@@ -263,16 +346,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertySubjectAlternativeNames() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSubjectName sets the value of SubjectName for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertySubjectName(value string) (err error) {
-	return instance.SetProperty("SubjectName", value)
+	return instance.SetProperty("SubjectName", (value))
 }
 
 // GetSubjectName gets the value of SubjectName for the instance
@@ -281,16 +373,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertySubjectName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetThumbprint sets the value of Thumbprint for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyThumbprint(value string) (err error) {
-	return instance.SetProperty("Thumbprint", value)
+	return instance.SetProperty("Thumbprint", (value))
 }
 
 // GetThumbprint gets the value of Thumbprint for the instance
@@ -299,16 +400,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyThumbprint() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValidFrom sets the value of ValidFrom for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyValidFrom(value string) (err error) {
-	return instance.SetProperty("ValidFrom", value)
+	return instance.SetProperty("ValidFrom", (value))
 }
 
 // GetValidFrom gets the value of ValidFrom for the instance
@@ -317,16 +427,25 @@ func (instance *MDM_CertificateEnrollment) GetPropertyValidFrom() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetValidTo sets the value of ValidTo for the instance
 func (instance *MDM_CertificateEnrollment) SetPropertyValidTo(value string) (err error) {
-	return instance.SetProperty("ValidTo", value)
+	return instance.SetProperty("ValidTo", (value))
 }
 
 // GetValidTo gets the value of ValidTo for the instance
@@ -335,9 +454,18 @@ func (instance *MDM_CertificateEnrollment) GetPropertyValidTo() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

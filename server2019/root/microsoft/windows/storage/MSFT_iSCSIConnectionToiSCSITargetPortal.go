@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_iSCSIConnectionToiSCSITargetPortal struct
@@ -56,7 +58,7 @@ func NewMSFT_iSCSIConnectionToiSCSITargetPortalEx6(hostName string,
 
 // SetiSCSIConnection sets the value of iSCSIConnection for the instance
 func (instance *MSFT_iSCSIConnectionToiSCSITargetPortal) SetPropertyiSCSIConnection(value MSFT_iSCSIConnection) (err error) {
-	return instance.SetProperty("iSCSIConnection", value)
+	return instance.SetProperty("iSCSIConnection", (value))
 }
 
 // GetiSCSIConnection gets the value of iSCSIConnection for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_iSCSIConnectionToiSCSITargetPortal) GetPropertyiSCSIConnect
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_iSCSIConnection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_iSCSIConnection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_iSCSIConnection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_iSCSIConnection(valuetmp)
+
 	return
 }
 
 // SetiSCSITargetPortal sets the value of iSCSITargetPortal for the instance
 func (instance *MSFT_iSCSIConnectionToiSCSITargetPortal) SetPropertyiSCSITargetPortal(value MSFT_iSCSITargetPortal) (err error) {
-	return instance.SetProperty("iSCSITargetPortal", value)
+	return instance.SetProperty("iSCSITargetPortal", (value))
 }
 
 // GetiSCSITargetPortal gets the value of iSCSITargetPortal for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_iSCSIConnectionToiSCSITargetPortal) GetPropertyiSCSITargetP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_iSCSITargetPortal)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_iSCSITargetPortal)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_iSCSITargetPortal is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_iSCSITargetPortal(valuetmp)
+
 	return
 }

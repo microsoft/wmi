@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerError struct
@@ -55,7 +57,7 @@ func NewMSFT_ServerErrorEx6(hostName string,
 
 // SetErrorCode sets the value of ErrorCode for the instance
 func (instance *MSFT_ServerError) SetPropertyErrorCode(value uint32) (err error) {
-	return instance.SetProperty("ErrorCode", value)
+	return instance.SetProperty("ErrorCode", (value))
 }
 
 // GetErrorCode gets the value of ErrorCode for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_ServerError) GetPropertyErrorCode() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetExtendedErrorCode sets the value of ExtendedErrorCode for the instance
 func (instance *MSFT_ServerError) SetPropertyExtendedErrorCode(value uint32) (err error) {
-	return instance.SetProperty("ExtendedErrorCode", value)
+	return instance.SetProperty("ExtendedErrorCode", (value))
 }
 
 // GetExtendedErrorCode gets the value of ExtendedErrorCode for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_ServerError) GetPropertyExtendedErrorCode() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

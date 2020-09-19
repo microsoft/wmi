@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_Group_Affinity struct
@@ -56,7 +58,7 @@ func NewMSFT_NetAdapter_Group_AffinityEx6(hostName string,
 
 // SetProcessorAffinityMask sets the value of ProcessorAffinityMask for the instance
 func (instance *MSFT_NetAdapter_Group_Affinity) SetPropertyProcessorAffinityMask(value uint64) (err error) {
-	return instance.SetProperty("ProcessorAffinityMask", value)
+	return instance.SetProperty("ProcessorAffinityMask", (value))
 }
 
 // GetProcessorAffinityMask gets the value of ProcessorAffinityMask for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_NetAdapter_Group_Affinity) GetPropertyProcessorAffinityMask
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetProcessorGroup sets the value of ProcessorGroup for the instance
 func (instance *MSFT_NetAdapter_Group_Affinity) SetPropertyProcessorGroup(value uint16) (err error) {
-	return instance.SetProperty("ProcessorGroup", value)
+	return instance.SetProperty("ProcessorGroup", (value))
 }
 
 // GetProcessorGroup gets the value of ProcessorGroup for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_NetAdapter_Group_Affinity) GetPropertyProcessorGroup() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

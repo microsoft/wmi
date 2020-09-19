@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_PowerShellWorkflow struct
@@ -136,7 +138,7 @@ func NewWin32_PerfFormattedData_Counters_PowerShellWorkflowEx6(hostName string,
 
 // SetActivityHostManagerhostprocessespoolsize sets the value of ActivityHostManagerhostprocessespoolsize for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerhostprocessespoolsize(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerhostprocessespoolsize", value)
+	return instance.SetProperty("ActivityHostManagerhostprocessespoolsize", (value))
 }
 
 // GetActivityHostManagerhostprocessespoolsize gets the value of ActivityHostManagerhostprocessespoolsize for the instance
@@ -145,16 +147,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActivityHostManagerNumberofbusyhostprocesses sets the value of ActivityHostManagerNumberofbusyhostprocesses for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerNumberofbusyhostprocesses(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerNumberofbusyhostprocesses", value)
+	return instance.SetProperty("ActivityHostManagerNumberofbusyhostprocesses", (value))
 }
 
 // GetActivityHostManagerNumberofbusyhostprocesses gets the value of ActivityHostManagerNumberofbusyhostprocesses for the instance
@@ -163,16 +174,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActivityHostManagerNumberofcreatedhostprocesses sets the value of ActivityHostManagerNumberofcreatedhostprocesses for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerNumberofcreatedhostprocesses(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerNumberofcreatedhostprocesses", value)
+	return instance.SetProperty("ActivityHostManagerNumberofcreatedhostprocesses", (value))
 }
 
 // GetActivityHostManagerNumberofcreatedhostprocesses gets the value of ActivityHostManagerNumberofcreatedhostprocesses for the instance
@@ -181,16 +201,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActivityHostManagerNumberofdisposedhostprocesses sets the value of ActivityHostManagerNumberofdisposedhostprocesses for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerNumberofdisposedhostprocesses(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerNumberofdisposedhostprocesses", value)
+	return instance.SetProperty("ActivityHostManagerNumberofdisposedhostprocesses", (value))
 }
 
 // GetActivityHostManagerNumberofdisposedhostprocesses gets the value of ActivityHostManagerNumberofdisposedhostprocesses for the instance
@@ -199,16 +228,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActivityHostManagerNumberoffailedrequestsinqueue sets the value of ActivityHostManagerNumberoffailedrequestsinqueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerNumberoffailedrequestsinqueue(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerNumberoffailedrequestsinqueue", value)
+	return instance.SetProperty("ActivityHostManagerNumberoffailedrequestsinqueue", (value))
 }
 
 // GetActivityHostManagerNumberoffailedrequestsinqueue gets the value of ActivityHostManagerNumberoffailedrequestsinqueue for the instance
@@ -217,16 +255,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActivityHostManagerNumberoffailedrequestsPersec sets the value of ActivityHostManagerNumberoffailedrequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerNumberoffailedrequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerNumberoffailedrequestsPersec", value)
+	return instance.SetProperty("ActivityHostManagerNumberoffailedrequestsPersec", (value))
 }
 
 // GetActivityHostManagerNumberoffailedrequestsPersec gets the value of ActivityHostManagerNumberoffailedrequestsPersec for the instance
@@ -235,16 +282,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActivityHostManagerNumberofincomingrequestsPersec sets the value of ActivityHostManagerNumberofincomingrequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerNumberofincomingrequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerNumberofincomingrequestsPersec", value)
+	return instance.SetProperty("ActivityHostManagerNumberofincomingrequestsPersec", (value))
 }
 
 // GetActivityHostManagerNumberofincomingrequestsPersec gets the value of ActivityHostManagerNumberofincomingrequestsPersec for the instance
@@ -253,16 +309,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActivityHostManagerNumberofpendingrequestsinqueue sets the value of ActivityHostManagerNumberofpendingrequestsinqueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyActivityHostManagerNumberofpendingrequestsinqueue(value uint32) (err error) {
-	return instance.SetProperty("ActivityHostManagerNumberofpendingrequestsinqueue", value)
+	return instance.SetProperty("ActivityHostManagerNumberofpendingrequestsinqueue", (value))
 }
 
 // GetActivityHostManagerNumberofpendingrequestsinqueue gets the value of ActivityHostManagerNumberofpendingrequestsinqueue for the instance
@@ -271,16 +336,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberoffailedworkflowjobs sets the value of Numberoffailedworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberoffailedworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberoffailedworkflowjobs", value)
+	return instance.SetProperty("Numberoffailedworkflowjobs", (value))
 }
 
 // GetNumberoffailedworkflowjobs gets the value of Numberoffailedworkflowjobs for the instance
@@ -289,16 +363,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberoffailedworkflowjobsPersec sets the value of NumberoffailedworkflowjobsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberoffailedworkflowjobsPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberoffailedworkflowjobsPersec", value)
+	return instance.SetProperty("NumberoffailedworkflowjobsPersec", (value))
 }
 
 // GetNumberoffailedworkflowjobsPersec gets the value of NumberoffailedworkflowjobsPersec for the instance
@@ -307,16 +390,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofresumedworkflowjobs sets the value of Numberofresumedworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofresumedworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberofresumedworkflowjobs", value)
+	return instance.SetProperty("Numberofresumedworkflowjobs", (value))
 }
 
 // GetNumberofresumedworkflowjobs gets the value of Numberofresumedworkflowjobs for the instance
@@ -325,16 +417,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofresumedworkflowjobsPersec sets the value of NumberofresumedworkflowjobsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofresumedworkflowjobsPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofresumedworkflowjobsPersec", value)
+	return instance.SetProperty("NumberofresumedworkflowjobsPersec", (value))
 }
 
 // GetNumberofresumedworkflowjobsPersec gets the value of NumberofresumedworkflowjobsPersec for the instance
@@ -343,16 +444,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofrunningworkflowjobs sets the value of Numberofrunningworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofrunningworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberofrunningworkflowjobs", value)
+	return instance.SetProperty("Numberofrunningworkflowjobs", (value))
 }
 
 // GetNumberofrunningworkflowjobs gets the value of Numberofrunningworkflowjobs for the instance
@@ -361,16 +471,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofrunningworkflowjobsPersec sets the value of NumberofrunningworkflowjobsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofrunningworkflowjobsPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofrunningworkflowjobsPersec", value)
+	return instance.SetProperty("NumberofrunningworkflowjobsPersec", (value))
 }
 
 // GetNumberofrunningworkflowjobsPersec gets the value of NumberofrunningworkflowjobsPersec for the instance
@@ -379,16 +498,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofstoppedworkflowjobs sets the value of Numberofstoppedworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofstoppedworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberofstoppedworkflowjobs", value)
+	return instance.SetProperty("Numberofstoppedworkflowjobs", (value))
 }
 
 // GetNumberofstoppedworkflowjobs gets the value of Numberofstoppedworkflowjobs for the instance
@@ -397,16 +525,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofstoppedworkflowjobsPersec sets the value of NumberofstoppedworkflowjobsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofstoppedworkflowjobsPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofstoppedworkflowjobsPersec", value)
+	return instance.SetProperty("NumberofstoppedworkflowjobsPersec", (value))
 }
 
 // GetNumberofstoppedworkflowjobsPersec gets the value of NumberofstoppedworkflowjobsPersec for the instance
@@ -415,16 +552,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofsucceededworkflowjobs sets the value of Numberofsucceededworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofsucceededworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberofsucceededworkflowjobs", value)
+	return instance.SetProperty("Numberofsucceededworkflowjobs", (value))
 }
 
 // GetNumberofsucceededworkflowjobs gets the value of Numberofsucceededworkflowjobs for the instance
@@ -433,16 +579,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofsucceededworkflowjobsPersec sets the value of NumberofsucceededworkflowjobsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofsucceededworkflowjobsPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofsucceededworkflowjobsPersec", value)
+	return instance.SetProperty("NumberofsucceededworkflowjobsPersec", (value))
 }
 
 // GetNumberofsucceededworkflowjobsPersec gets the value of NumberofsucceededworkflowjobsPersec for the instance
@@ -451,16 +606,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofsuspendedworkflowjobs sets the value of Numberofsuspendedworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofsuspendedworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberofsuspendedworkflowjobs", value)
+	return instance.SetProperty("Numberofsuspendedworkflowjobs", (value))
 }
 
 // GetNumberofsuspendedworkflowjobs gets the value of Numberofsuspendedworkflowjobs for the instance
@@ -469,16 +633,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofsuspendedworkflowjobsPersec sets the value of NumberofsuspendedworkflowjobsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofsuspendedworkflowjobsPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofsuspendedworkflowjobsPersec", value)
+	return instance.SetProperty("NumberofsuspendedworkflowjobsPersec", (value))
 }
 
 // GetNumberofsuspendedworkflowjobsPersec gets the value of NumberofsuspendedworkflowjobsPersec for the instance
@@ -487,16 +660,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofterminatedworkflowjobs sets the value of Numberofterminatedworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofterminatedworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberofterminatedworkflowjobs", value)
+	return instance.SetProperty("Numberofterminatedworkflowjobs", (value))
 }
 
 // GetNumberofterminatedworkflowjobs gets the value of Numberofterminatedworkflowjobs for the instance
@@ -505,16 +687,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofterminatedworkflowjobsPersec sets the value of NumberofterminatedworkflowjobsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofterminatedworkflowjobsPersec(value uint32) (err error) {
-	return instance.SetProperty("NumberofterminatedworkflowjobsPersec", value)
+	return instance.SetProperty("NumberofterminatedworkflowjobsPersec", (value))
 }
 
 // GetNumberofterminatedworkflowjobsPersec gets the value of NumberofterminatedworkflowjobsPersec for the instance
@@ -523,16 +714,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofwaitingworkflowjobs sets the value of Numberofwaitingworkflowjobs for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyNumberofwaitingworkflowjobs(value uint32) (err error) {
-	return instance.SetProperty("Numberofwaitingworkflowjobs", value)
+	return instance.SetProperty("Numberofwaitingworkflowjobs", (value))
 }
 
 // GetNumberofwaitingworkflowjobs gets the value of Numberofwaitingworkflowjobs for the instance
@@ -541,16 +741,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPowerShellRemotingNumberofconnectionsclosedreopened sets the value of PowerShellRemotingNumberofconnectionsclosedreopened for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyPowerShellRemotingNumberofconnectionsclosedreopened(value uint32) (err error) {
-	return instance.SetProperty("PowerShellRemotingNumberofconnectionsclosedreopened", value)
+	return instance.SetProperty("PowerShellRemotingNumberofconnectionsclosedreopened", (value))
 }
 
 // GetPowerShellRemotingNumberofconnectionsclosedreopened gets the value of PowerShellRemotingNumberofconnectionsclosedreopened for the instance
@@ -559,16 +768,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPowerShellRemotingNumberofcreatedconnections sets the value of PowerShellRemotingNumberofcreatedconnections for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyPowerShellRemotingNumberofcreatedconnections(value uint32) (err error) {
-	return instance.SetProperty("PowerShellRemotingNumberofcreatedconnections", value)
+	return instance.SetProperty("PowerShellRemotingNumberofcreatedconnections", (value))
 }
 
 // GetPowerShellRemotingNumberofcreatedconnections gets the value of PowerShellRemotingNumberofcreatedconnections for the instance
@@ -577,16 +795,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPowerShellRemotingNumberofdisposedconnections sets the value of PowerShellRemotingNumberofdisposedconnections for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyPowerShellRemotingNumberofdisposedconnections(value uint32) (err error) {
-	return instance.SetProperty("PowerShellRemotingNumberofdisposedconnections", value)
+	return instance.SetProperty("PowerShellRemotingNumberofdisposedconnections", (value))
 }
 
 // GetPowerShellRemotingNumberofdisposedconnections gets the value of PowerShellRemotingNumberofdisposedconnections for the instance
@@ -595,16 +822,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPowerShellRemotingNumberofforcedtowaitrequestsinqueue sets the value of PowerShellRemotingNumberofforcedtowaitrequestsinqueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyPowerShellRemotingNumberofforcedtowaitrequestsinqueue(value uint32) (err error) {
-	return instance.SetProperty("PowerShellRemotingNumberofforcedtowaitrequestsinqueue", value)
+	return instance.SetProperty("PowerShellRemotingNumberofforcedtowaitrequestsinqueue", (value))
 }
 
 // GetPowerShellRemotingNumberofforcedtowaitrequestsinqueue gets the value of PowerShellRemotingNumberofforcedtowaitrequestsinqueue for the instance
@@ -613,16 +849,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPowerShellRemotingNumberofpendingrequestsinqueue sets the value of PowerShellRemotingNumberofpendingrequestsinqueue for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyPowerShellRemotingNumberofpendingrequestsinqueue(value uint32) (err error) {
-	return instance.SetProperty("PowerShellRemotingNumberofpendingrequestsinqueue", value)
+	return instance.SetProperty("PowerShellRemotingNumberofpendingrequestsinqueue", (value))
 }
 
 // GetPowerShellRemotingNumberofpendingrequestsinqueue gets the value of PowerShellRemotingNumberofpendingrequestsinqueue for the instance
@@ -631,16 +876,25 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPowerShellRemotingNumberofrequestsbeingserviced sets the value of PowerShellRemotingNumberofrequestsbeingserviced for the instance
 func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) SetPropertyPowerShellRemotingNumberofrequestsbeingserviced(value uint32) (err error) {
-	return instance.SetProperty("PowerShellRemotingNumberofrequestsbeingserviced", value)
+	return instance.SetProperty("PowerShellRemotingNumberofrequestsbeingserviced", (value))
 }
 
 // GetPowerShellRemotingNumberofrequestsbeingserviced gets the value of PowerShellRemotingNumberofrequestsbeingserviced for the instance
@@ -649,9 +903,18 @@ func (instance *Win32_PerfFormattedData_Counters_PowerShellWorkflow) GetProperty
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

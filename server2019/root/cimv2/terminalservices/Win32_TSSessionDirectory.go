@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSSessionDirectory struct
@@ -88,7 +90,7 @@ func NewWin32_TSSessionDirectoryEx6(hostName string,
 
 // SetGetLoadBalancingState sets the value of GetLoadBalancingState for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyGetLoadBalancingState(value uint32) (err error) {
-	return instance.SetProperty("GetLoadBalancingState", value)
+	return instance.SetProperty("GetLoadBalancingState", (value))
 }
 
 // GetGetLoadBalancingState gets the value of GetLoadBalancingState for the instance
@@ -97,16 +99,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyGetLoadBalancingState() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGetServerWeight sets the value of GetServerWeight for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyGetServerWeight(value uint32) (err error) {
-	return instance.SetProperty("GetServerWeight", value)
+	return instance.SetProperty("GetServerWeight", (value))
 }
 
 // GetGetServerWeight gets the value of GetServerWeight for the instance
@@ -115,16 +126,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyGetServerWeight() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGetTSRedirectorMode sets the value of GetTSRedirectorMode for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyGetTSRedirectorMode(value uint32) (err error) {
-	return instance.SetProperty("GetTSRedirectorMode", value)
+	return instance.SetProperty("GetTSRedirectorMode", (value))
 }
 
 // GetGetTSRedirectorMode gets the value of GetTSRedirectorMode for the instance
@@ -133,16 +153,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyGetTSRedirectorMode() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceLoadBalancing sets the value of PolicySourceLoadBalancing for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyPolicySourceLoadBalancing(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceLoadBalancing", value)
+	return instance.SetProperty("PolicySourceLoadBalancing", (value))
 }
 
 // GetPolicySourceLoadBalancing gets the value of PolicySourceLoadBalancing for the instance
@@ -151,16 +180,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyPolicySourceLoadBalancing()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceSessionDirectoryActive sets the value of PolicySourceSessionDirectoryActive for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyPolicySourceSessionDirectoryActive(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceSessionDirectoryActive", value)
+	return instance.SetProperty("PolicySourceSessionDirectoryActive", (value))
 }
 
 // GetPolicySourceSessionDirectoryActive gets the value of PolicySourceSessionDirectoryActive for the instance
@@ -169,16 +207,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyPolicySourceSessionDirector
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceSessionDirectoryClusterName sets the value of PolicySourceSessionDirectoryClusterName for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyPolicySourceSessionDirectoryClusterName(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceSessionDirectoryClusterName", value)
+	return instance.SetProperty("PolicySourceSessionDirectoryClusterName", (value))
 }
 
 // GetPolicySourceSessionDirectoryClusterName gets the value of PolicySourceSessionDirectoryClusterName for the instance
@@ -187,16 +234,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyPolicySourceSessionDirector
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceSessionDirectoryExposeServerIP sets the value of PolicySourceSessionDirectoryExposeServerIP for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyPolicySourceSessionDirectoryExposeServerIP(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceSessionDirectoryExposeServerIP", value)
+	return instance.SetProperty("PolicySourceSessionDirectoryExposeServerIP", (value))
 }
 
 // GetPolicySourceSessionDirectoryExposeServerIP gets the value of PolicySourceSessionDirectoryExposeServerIP for the instance
@@ -205,16 +261,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyPolicySourceSessionDirector
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceSessionDirectoryLocation sets the value of PolicySourceSessionDirectoryLocation for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertyPolicySourceSessionDirectoryLocation(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceSessionDirectoryLocation", value)
+	return instance.SetProperty("PolicySourceSessionDirectoryLocation", (value))
 }
 
 // GetPolicySourceSessionDirectoryLocation gets the value of PolicySourceSessionDirectoryLocation for the instance
@@ -223,16 +288,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertyPolicySourceSessionDirector
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionDirectoryActive sets the value of SessionDirectoryActive for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertySessionDirectoryActive(value uint32) (err error) {
-	return instance.SetProperty("SessionDirectoryActive", value)
+	return instance.SetProperty("SessionDirectoryActive", (value))
 }
 
 // GetSessionDirectoryActive gets the value of SessionDirectoryActive for the instance
@@ -241,16 +315,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertySessionDirectoryActive() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionDirectoryClusterName sets the value of SessionDirectoryClusterName for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertySessionDirectoryClusterName(value string) (err error) {
-	return instance.SetProperty("SessionDirectoryClusterName", value)
+	return instance.SetProperty("SessionDirectoryClusterName", (value))
 }
 
 // GetSessionDirectoryClusterName gets the value of SessionDirectoryClusterName for the instance
@@ -259,16 +342,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertySessionDirectoryClusterName
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSessionDirectoryExposeServerIP sets the value of SessionDirectoryExposeServerIP for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertySessionDirectoryExposeServerIP(value uint32) (err error) {
-	return instance.SetProperty("SessionDirectoryExposeServerIP", value)
+	return instance.SetProperty("SessionDirectoryExposeServerIP", (value))
 }
 
 // GetSessionDirectoryExposeServerIP gets the value of SessionDirectoryExposeServerIP for the instance
@@ -277,16 +369,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertySessionDirectoryExposeServe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionDirectoryIPAddress sets the value of SessionDirectoryIPAddress for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertySessionDirectoryIPAddress(value string) (err error) {
-	return instance.SetProperty("SessionDirectoryIPAddress", value)
+	return instance.SetProperty("SessionDirectoryIPAddress", (value))
 }
 
 // GetSessionDirectoryIPAddress gets the value of SessionDirectoryIPAddress for the instance
@@ -295,16 +396,25 @@ func (instance *Win32_TSSessionDirectory) GetPropertySessionDirectoryIPAddress()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSessionDirectoryLocation sets the value of SessionDirectoryLocation for the instance
 func (instance *Win32_TSSessionDirectory) SetPropertySessionDirectoryLocation(value string) (err error) {
-	return instance.SetProperty("SessionDirectoryLocation", value)
+	return instance.SetProperty("SessionDirectoryLocation", (value))
 }
 
 // GetSessionDirectoryLocation gets the value of SessionDirectoryLocation for the instance
@@ -313,10 +423,19 @@ func (instance *Win32_TSSessionDirectory) GetPropertySessionDirectoryLocation() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

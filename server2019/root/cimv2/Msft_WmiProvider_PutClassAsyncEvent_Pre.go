@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_WmiProvider_PutClassAsyncEvent_Pre struct
@@ -55,7 +57,7 @@ func NewMsft_WmiProvider_PutClassAsyncEvent_PreEx6(hostName string,
 
 // SetClassObject sets the value of ClassObject for the instance
 func (instance *Msft_WmiProvider_PutClassAsyncEvent_Pre) SetPropertyClassObject(value interface{}) (err error) {
-	return instance.SetProperty("ClassObject", value)
+	return instance.SetProperty("ClassObject", (value))
 }
 
 // GetClassObject gets the value of ClassObject for the instance
@@ -64,16 +66,25 @@ func (instance *Msft_WmiProvider_PutClassAsyncEvent_Pre) GetPropertyClassObject(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }
 
 // SetFlags sets the value of Flags for the instance
 func (instance *Msft_WmiProvider_PutClassAsyncEvent_Pre) SetPropertyFlags(value uint32) (err error) {
-	return instance.SetProperty("Flags", value)
+	return instance.SetProperty("Flags", (value))
 }
 
 // GetFlags gets the value of Flags for the instance
@@ -82,9 +93,18 @@ func (instance *Msft_WmiProvider_PutClassAsyncEvent_Pre) GetPropertyFlags() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

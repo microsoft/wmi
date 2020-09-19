@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_SMBServer struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_Counters_SMBServerEx6(hostName string,
 
 // SetReadBytesPersec sets the value of ReadBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServer) SetPropertyReadBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadBytesPersec", value)
+	return instance.SetProperty("ReadBytesPersec", (value))
 }
 
 // GetReadBytesPersec gets the value of ReadBytesPersec for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServer) GetPropertyReadBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadRequestsPersec sets the value of ReadRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServer) SetPropertyReadRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("ReadRequestsPersec", value)
+	return instance.SetProperty("ReadRequestsPersec", (value))
 }
 
 // GetReadRequestsPersec gets the value of ReadRequestsPersec for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServer) GetPropertyReadReque
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiveBytesPersec sets the value of ReceiveBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServer) SetPropertyReceiveBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("ReceiveBytesPersec", value)
+	return instance.SetProperty("ReceiveBytesPersec", (value))
 }
 
 // GetReceiveBytesPersec gets the value of ReceiveBytesPersec for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServer) GetPropertyReceiveBy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSendBytesPersec sets the value of SendBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServer) SetPropertySendBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("SendBytesPersec", value)
+	return instance.SetProperty("SendBytesPersec", (value))
 }
 
 // GetSendBytesPersec gets the value of SendBytesPersec for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServer) GetPropertySendBytes
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteBytesPersec sets the value of WriteBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServer) SetPropertyWriteBytesPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteBytesPersec", value)
+	return instance.SetProperty("WriteBytesPersec", (value))
 }
 
 // GetWriteBytesPersec gets the value of WriteBytesPersec for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServer) GetPropertyWriteByte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteRequestsPersec sets the value of WriteRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_Counters_SMBServer) SetPropertyWriteRequestsPersec(value uint64) (err error) {
-	return instance.SetProperty("WriteRequestsPersec", value)
+	return instance.SetProperty("WriteRequestsPersec", (value))
 }
 
 // GetWriteRequestsPersec gets the value of WriteRequestsPersec for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_Counters_SMBServer) GetPropertyWriteRequ
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

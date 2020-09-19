@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.HardwareManagement
 //////////////////////////////////////////////
 package hardwaremanagement
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_PCSVDevice struct
@@ -73,7 +75,7 @@ func NewMSFT_PCSVDeviceEx6(hostName string,
 
 // SetIPv4Address sets the value of IPv4Address for the instance
 func (instance *MSFT_PCSVDevice) SetPropertyIPv4Address(value string) (err error) {
-	return instance.SetProperty("IPv4Address", value)
+	return instance.SetProperty("IPv4Address", (value))
 }
 
 // GetIPv4Address gets the value of IPv4Address for the instance
@@ -82,16 +84,25 @@ func (instance *MSFT_PCSVDevice) GetPropertyIPv4Address() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv4AddressOrigin sets the value of IPv4AddressOrigin for the instance
 func (instance *MSFT_PCSVDevice) SetPropertyIPv4AddressOrigin(value uint16) (err error) {
-	return instance.SetProperty("IPv4AddressOrigin", value)
+	return instance.SetProperty("IPv4AddressOrigin", (value))
 }
 
 // GetIPv4AddressOrigin gets the value of IPv4AddressOrigin for the instance
@@ -100,16 +111,25 @@ func (instance *MSFT_PCSVDevice) GetPropertyIPv4AddressOrigin() (value uint16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIPv4DefaultGateway sets the value of IPv4DefaultGateway for the instance
 func (instance *MSFT_PCSVDevice) SetPropertyIPv4DefaultGateway(value string) (err error) {
-	return instance.SetProperty("IPv4DefaultGateway", value)
+	return instance.SetProperty("IPv4DefaultGateway", (value))
 }
 
 // GetIPv4DefaultGateway gets the value of IPv4DefaultGateway for the instance
@@ -118,16 +138,25 @@ func (instance *MSFT_PCSVDevice) GetPropertyIPv4DefaultGateway() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPv4SubnetMask sets the value of IPv4SubnetMask for the instance
 func (instance *MSFT_PCSVDevice) SetPropertyIPv4SubnetMask(value string) (err error) {
-	return instance.SetProperty("IPv4SubnetMask", value)
+	return instance.SetProperty("IPv4SubnetMask", (value))
 }
 
 // GetIPv4SubnetMask gets the value of IPv4SubnetMask for the instance
@@ -136,16 +165,25 @@ func (instance *MSFT_PCSVDevice) GetPropertyIPv4SubnetMask() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLogFreeSpace sets the value of LogFreeSpace for the instance
 func (instance *MSFT_PCSVDevice) SetPropertyLogFreeSpace(value uint16) (err error) {
-	return instance.SetProperty("LogFreeSpace", value)
+	return instance.SetProperty("LogFreeSpace", (value))
 }
 
 // GetLogFreeSpace gets the value of LogFreeSpace for the instance
@@ -154,16 +192,25 @@ func (instance *MSFT_PCSVDevice) GetPropertyLogFreeSpace() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMacAddress sets the value of MacAddress for the instance
 func (instance *MSFT_PCSVDevice) SetPropertyMacAddress(value string) (err error) {
-	return instance.SetProperty("MacAddress", value)
+	return instance.SetProperty("MacAddress", (value))
 }
 
 // GetMacAddress gets the value of MacAddress for the instance
@@ -172,16 +219,25 @@ func (instance *MSFT_PCSVDevice) GetPropertyMacAddress() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSMBIOSGuid sets the value of SMBIOSGuid for the instance
 func (instance *MSFT_PCSVDevice) SetPropertySMBIOSGuid(value string) (err error) {
-	return instance.SetProperty("SMBIOSGuid", value)
+	return instance.SetProperty("SMBIOSGuid", (value))
 }
 
 // GetSMBIOSGuid gets the value of SMBIOSGuid for the instance
@@ -190,16 +246,25 @@ func (instance *MSFT_PCSVDevice) GetPropertySMBIOSGuid() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetAddress sets the value of TargetAddress for the instance
 func (instance *MSFT_PCSVDevice) SetPropertyTargetAddress(value string) (err error) {
-	return instance.SetProperty("TargetAddress", value)
+	return instance.SetProperty("TargetAddress", (value))
 }
 
 // GetTargetAddress gets the value of TargetAddress for the instance
@@ -208,10 +273,19 @@ func (instance *MSFT_PCSVDevice) GetPropertyTargetAddress() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

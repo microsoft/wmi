@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NETFramework_NETCLRMemory struct
@@ -118,7 +120,7 @@ func NewWin32_PerfFormattedData_NETFramework_NETCLRMemoryEx6(hostName string,
 
 // SetAllocatedBytesPersec sets the value of AllocatedBytesPersec for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyAllocatedBytesPersec(value uint32) (err error) {
-	return instance.SetProperty("AllocatedBytesPersec", value)
+	return instance.SetProperty("AllocatedBytesPersec", (value))
 }
 
 // GetAllocatedBytesPersec gets the value of AllocatedBytesPersec for the instance
@@ -127,16 +129,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyAl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFinalizationSurvivors sets the value of FinalizationSurvivors for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyFinalizationSurvivors(value uint32) (err error) {
-	return instance.SetProperty("FinalizationSurvivors", value)
+	return instance.SetProperty("FinalizationSurvivors", (value))
 }
 
 // GetFinalizationSurvivors gets the value of FinalizationSurvivors for the instance
@@ -145,16 +156,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyFi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGen0heapsize sets the value of Gen0heapsize for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyGen0heapsize(value uint32) (err error) {
-	return instance.SetProperty("Gen0heapsize", value)
+	return instance.SetProperty("Gen0heapsize", (value))
 }
 
 // GetGen0heapsize gets the value of Gen0heapsize for the instance
@@ -163,16 +183,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyGe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGen0PromotedBytesPerSec sets the value of Gen0PromotedBytesPerSec for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyGen0PromotedBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("Gen0PromotedBytesPerSec", value)
+	return instance.SetProperty("Gen0PromotedBytesPerSec", (value))
 }
 
 // GetGen0PromotedBytesPerSec gets the value of Gen0PromotedBytesPerSec for the instance
@@ -181,16 +210,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyGe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGen1heapsize sets the value of Gen1heapsize for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyGen1heapsize(value uint32) (err error) {
-	return instance.SetProperty("Gen1heapsize", value)
+	return instance.SetProperty("Gen1heapsize", (value))
 }
 
 // GetGen1heapsize gets the value of Gen1heapsize for the instance
@@ -199,16 +237,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyGe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGen1PromotedBytesPerSec sets the value of Gen1PromotedBytesPerSec for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyGen1PromotedBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("Gen1PromotedBytesPerSec", value)
+	return instance.SetProperty("Gen1PromotedBytesPerSec", (value))
 }
 
 // GetGen1PromotedBytesPerSec gets the value of Gen1PromotedBytesPerSec for the instance
@@ -217,16 +264,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyGe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGen2heapsize sets the value of Gen2heapsize for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyGen2heapsize(value uint32) (err error) {
-	return instance.SetProperty("Gen2heapsize", value)
+	return instance.SetProperty("Gen2heapsize", (value))
 }
 
 // GetGen2heapsize gets the value of Gen2heapsize for the instance
@@ -235,16 +291,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyGe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLargeObjectHeapsize sets the value of LargeObjectHeapsize for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyLargeObjectHeapsize(value uint32) (err error) {
-	return instance.SetProperty("LargeObjectHeapsize", value)
+	return instance.SetProperty("LargeObjectHeapsize", (value))
 }
 
 // GetLargeObjectHeapsize gets the value of LargeObjectHeapsize for the instance
@@ -253,16 +318,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyLa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberBytesinallHeaps sets the value of NumberBytesinallHeaps for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberBytesinallHeaps(value uint32) (err error) {
-	return instance.SetProperty("NumberBytesinallHeaps", value)
+	return instance.SetProperty("NumberBytesinallHeaps", (value))
 }
 
 // GetNumberBytesinallHeaps gets the value of NumberBytesinallHeaps for the instance
@@ -271,16 +345,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberGCHandles sets the value of NumberGCHandles for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberGCHandles(value uint32) (err error) {
-	return instance.SetProperty("NumberGCHandles", value)
+	return instance.SetProperty("NumberGCHandles", (value))
 }
 
 // GetNumberGCHandles gets the value of NumberGCHandles for the instance
@@ -289,16 +372,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberGen0Collections sets the value of NumberGen0Collections for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberGen0Collections(value uint32) (err error) {
-	return instance.SetProperty("NumberGen0Collections", value)
+	return instance.SetProperty("NumberGen0Collections", (value))
 }
 
 // GetNumberGen0Collections gets the value of NumberGen0Collections for the instance
@@ -307,16 +399,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberGen1Collections sets the value of NumberGen1Collections for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberGen1Collections(value uint32) (err error) {
-	return instance.SetProperty("NumberGen1Collections", value)
+	return instance.SetProperty("NumberGen1Collections", (value))
 }
 
 // GetNumberGen1Collections gets the value of NumberGen1Collections for the instance
@@ -325,16 +426,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberGen2Collections sets the value of NumberGen2Collections for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberGen2Collections(value uint32) (err error) {
-	return instance.SetProperty("NumberGen2Collections", value)
+	return instance.SetProperty("NumberGen2Collections", (value))
 }
 
 // GetNumberGen2Collections gets the value of NumberGen2Collections for the instance
@@ -343,16 +453,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberInducedGC sets the value of NumberInducedGC for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberInducedGC(value uint32) (err error) {
-	return instance.SetProperty("NumberInducedGC", value)
+	return instance.SetProperty("NumberInducedGC", (value))
 }
 
 // GetNumberInducedGC gets the value of NumberInducedGC for the instance
@@ -361,16 +480,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofPinnedObjects sets the value of NumberofPinnedObjects for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberofPinnedObjects(value uint32) (err error) {
-	return instance.SetProperty("NumberofPinnedObjects", value)
+	return instance.SetProperty("NumberofPinnedObjects", (value))
 }
 
 // GetNumberofPinnedObjects gets the value of NumberofPinnedObjects for the instance
@@ -379,16 +507,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberofSinkBlocksinuse sets the value of NumberofSinkBlocksinuse for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberofSinkBlocksinuse(value uint32) (err error) {
-	return instance.SetProperty("NumberofSinkBlocksinuse", value)
+	return instance.SetProperty("NumberofSinkBlocksinuse", (value))
 }
 
 // GetNumberofSinkBlocksinuse gets the value of NumberofSinkBlocksinuse for the instance
@@ -397,16 +534,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberTotalcommittedBytes sets the value of NumberTotalcommittedBytes for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberTotalcommittedBytes(value uint32) (err error) {
-	return instance.SetProperty("NumberTotalcommittedBytes", value)
+	return instance.SetProperty("NumberTotalcommittedBytes", (value))
 }
 
 // GetNumberTotalcommittedBytes gets the value of NumberTotalcommittedBytes for the instance
@@ -415,16 +561,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberTotalreservedBytes sets the value of NumberTotalreservedBytes for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyNumberTotalreservedBytes(value uint32) (err error) {
-	return instance.SetProperty("NumberTotalreservedBytes", value)
+	return instance.SetProperty("NumberTotalreservedBytes", (value))
 }
 
 // GetNumberTotalreservedBytes gets the value of NumberTotalreservedBytes for the instance
@@ -433,16 +588,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyNu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentTimeinGC sets the value of PercentTimeinGC for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyPercentTimeinGC(value uint32) (err error) {
-	return instance.SetProperty("PercentTimeinGC", value)
+	return instance.SetProperty("PercentTimeinGC", (value))
 }
 
 // GetPercentTimeinGC gets the value of PercentTimeinGC for the instance
@@ -451,16 +615,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyPe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessID sets the value of ProcessID for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyProcessID(value uint32) (err error) {
-	return instance.SetProperty("ProcessID", value)
+	return instance.SetProperty("ProcessID", (value))
 }
 
 // GetProcessID gets the value of ProcessID for the instance
@@ -469,16 +642,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPromotedFinalizationMemoryfromGen0 sets the value of PromotedFinalizationMemoryfromGen0 for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyPromotedFinalizationMemoryfromGen0(value uint32) (err error) {
-	return instance.SetProperty("PromotedFinalizationMemoryfromGen0", value)
+	return instance.SetProperty("PromotedFinalizationMemoryfromGen0", (value))
 }
 
 // GetPromotedFinalizationMemoryfromGen0 gets the value of PromotedFinalizationMemoryfromGen0 for the instance
@@ -487,16 +669,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPromotedMemoryfromGen0 sets the value of PromotedMemoryfromGen0 for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyPromotedMemoryfromGen0(value uint32) (err error) {
-	return instance.SetProperty("PromotedMemoryfromGen0", value)
+	return instance.SetProperty("PromotedMemoryfromGen0", (value))
 }
 
 // GetPromotedMemoryfromGen0 gets the value of PromotedMemoryfromGen0 for the instance
@@ -505,16 +696,25 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPromotedMemoryfromGen1 sets the value of PromotedMemoryfromGen1 for the instance
 func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) SetPropertyPromotedMemoryfromGen1(value uint32) (err error) {
-	return instance.SetProperty("PromotedMemoryfromGen1", value)
+	return instance.SetProperty("PromotedMemoryfromGen1", (value))
 }
 
 // GetPromotedMemoryfromGen1 gets the value of PromotedMemoryfromGen1 for the instance
@@ -523,9 +723,18 @@ func (instance *Win32_PerfFormattedData_NETFramework_NETCLRMemory) GetPropertyPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

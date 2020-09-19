@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
@@ -11,7 +11,9 @@ package providers_v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_Synchronized struct
@@ -162,7 +164,7 @@ func NewMSFT_SynchronizedEx6(hostName string,
 
 // SetCopyMethodology sets the value of CopyMethodology for the instance
 func (instance *MSFT_Synchronized) SetPropertyCopyMethodology(value Synchronized_CopyMethodology) (err error) {
-	return instance.SetProperty("CopyMethodology", value)
+	return instance.SetProperty("CopyMethodology", (value))
 }
 
 // GetCopyMethodology gets the value of CopyMethodology for the instance
@@ -171,16 +173,25 @@ func (instance *MSFT_Synchronized) GetPropertyCopyMethodology() (value Synchroni
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_CopyMethodology)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_CopyMethodology(valuetmp)
+
 	return
 }
 
 // SetCopyPriority sets the value of CopyPriority for the instance
 func (instance *MSFT_Synchronized) SetPropertyCopyPriority(value Synchronized_CopyPriority) (err error) {
-	return instance.SetProperty("CopyPriority", value)
+	return instance.SetProperty("CopyPriority", (value))
 }
 
 // GetCopyPriority gets the value of CopyPriority for the instance
@@ -189,16 +200,25 @@ func (instance *MSFT_Synchronized) GetPropertyCopyPriority() (value Synchronized
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_CopyPriority)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_CopyPriority(valuetmp)
+
 	return
 }
 
 // SetCopyState sets the value of CopyState for the instance
 func (instance *MSFT_Synchronized) SetPropertyCopyState(value Synchronized_CopyState) (err error) {
-	return instance.SetProperty("CopyState", value)
+	return instance.SetProperty("CopyState", (value))
 }
 
 // GetCopyState gets the value of CopyState for the instance
@@ -207,16 +227,25 @@ func (instance *MSFT_Synchronized) GetPropertyCopyState() (value Synchronized_Co
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_CopyState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_CopyState(valuetmp)
+
 	return
 }
 
 // SetCopyType sets the value of CopyType for the instance
 func (instance *MSFT_Synchronized) SetPropertyCopyType(value Synchronized_CopyType) (err error) {
-	return instance.SetProperty("CopyType", value)
+	return instance.SetProperty("CopyType", (value))
 }
 
 // GetCopyType gets the value of CopyType for the instance
@@ -225,16 +254,25 @@ func (instance *MSFT_Synchronized) GetPropertyCopyType() (value Synchronized_Cop
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_CopyType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_CopyType(valuetmp)
+
 	return
 }
 
 // SetPercentSynced sets the value of PercentSynced for the instance
 func (instance *MSFT_Synchronized) SetPropertyPercentSynced(value uint16) (err error) {
-	return instance.SetProperty("PercentSynced", value)
+	return instance.SetProperty("PercentSynced", (value))
 }
 
 // GetPercentSynced gets the value of PercentSynced for the instance
@@ -243,16 +281,25 @@ func (instance *MSFT_Synchronized) GetPropertyPercentSynced() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetProgressStatus sets the value of ProgressStatus for the instance
 func (instance *MSFT_Synchronized) SetPropertyProgressStatus(value Synchronized_ProgressStatus) (err error) {
-	return instance.SetProperty("ProgressStatus", value)
+	return instance.SetProperty("ProgressStatus", (value))
 }
 
 // GetProgressStatus gets the value of ProgressStatus for the instance
@@ -261,16 +308,25 @@ func (instance *MSFT_Synchronized) GetPropertyProgressStatus() (value Synchroniz
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_ProgressStatus)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_ProgressStatus(valuetmp)
+
 	return
 }
 
 // SetRecoveryPointObjective sets the value of RecoveryPointObjective for the instance
 func (instance *MSFT_Synchronized) SetPropertyRecoveryPointObjective(value []uint16) (err error) {
-	return instance.SetProperty("RecoveryPointObjective", value)
+	return instance.SetProperty("RecoveryPointObjective", (value))
 }
 
 // GetRecoveryPointObjective gets the value of RecoveryPointObjective for the instance
@@ -279,16 +335,26 @@ func (instance *MSFT_Synchronized) GetPropertyRecoveryPointObjective() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetReplicaType sets the value of ReplicaType for the instance
 func (instance *MSFT_Synchronized) SetPropertyReplicaType(value Synchronized_ReplicaType) (err error) {
-	return instance.SetProperty("ReplicaType", value)
+	return instance.SetProperty("ReplicaType", (value))
 }
 
 // GetReplicaType gets the value of ReplicaType for the instance
@@ -297,16 +363,25 @@ func (instance *MSFT_Synchronized) GetPropertyReplicaType() (value Synchronized_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_ReplicaType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_ReplicaType(valuetmp)
+
 	return
 }
 
 // SetRequestedCopyState sets the value of RequestedCopyState for the instance
 func (instance *MSFT_Synchronized) SetPropertyRequestedCopyState(value uint16) (err error) {
-	return instance.SetProperty("RequestedCopyState", value)
+	return instance.SetProperty("RequestedCopyState", (value))
 }
 
 // GetRequestedCopyState gets the value of RequestedCopyState for the instance
@@ -315,16 +390,25 @@ func (instance *MSFT_Synchronized) GetPropertyRequestedCopyState() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSyncMaintained sets the value of SyncMaintained for the instance
 func (instance *MSFT_Synchronized) SetPropertySyncMaintained(value bool) (err error) {
-	return instance.SetProperty("SyncMaintained", value)
+	return instance.SetProperty("SyncMaintained", (value))
 }
 
 // GetSyncMaintained gets the value of SyncMaintained for the instance
@@ -333,16 +417,25 @@ func (instance *MSFT_Synchronized) GetPropertySyncMaintained() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSyncMode sets the value of SyncMode for the instance
 func (instance *MSFT_Synchronized) SetPropertySyncMode(value Synchronized_SyncMode) (err error) {
-	return instance.SetProperty("SyncMode", value)
+	return instance.SetProperty("SyncMode", (value))
 }
 
 // GetSyncMode gets the value of SyncMode for the instance
@@ -351,16 +444,25 @@ func (instance *MSFT_Synchronized) GetPropertySyncMode() (value Synchronized_Syn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_SyncMode)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_SyncMode(valuetmp)
+
 	return
 }
 
 // SetSyncState sets the value of SyncState for the instance
 func (instance *MSFT_Synchronized) SetPropertySyncState(value Synchronized_SyncState) (err error) {
-	return instance.SetProperty("SyncState", value)
+	return instance.SetProperty("SyncState", (value))
 }
 
 // GetSyncState gets the value of SyncState for the instance
@@ -369,16 +471,25 @@ func (instance *MSFT_Synchronized) GetPropertySyncState() (value Synchronized_Sy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_SyncState)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_SyncState(valuetmp)
+
 	return
 }
 
 // SetSyncTime sets the value of SyncTime for the instance
 func (instance *MSFT_Synchronized) SetPropertySyncTime(value string) (err error) {
-	return instance.SetProperty("SyncTime", value)
+	return instance.SetProperty("SyncTime", (value))
 }
 
 // GetSyncTime gets the value of SyncTime for the instance
@@ -387,16 +498,25 @@ func (instance *MSFT_Synchronized) GetPropertySyncTime() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSyncType sets the value of SyncType for the instance
 func (instance *MSFT_Synchronized) SetPropertySyncType(value Synchronized_SyncType) (err error) {
-	return instance.SetProperty("SyncType", value)
+	return instance.SetProperty("SyncType", (value))
 }
 
 // GetSyncType gets the value of SyncType for the instance
@@ -405,9 +525,18 @@ func (instance *MSFT_Synchronized) GetPropertySyncType() (value Synchronized_Syn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(Synchronized_SyncType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = Synchronized_SyncType(valuetmp)
+
 	return
 }

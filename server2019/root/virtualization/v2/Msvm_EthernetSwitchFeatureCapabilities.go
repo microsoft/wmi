@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchFeatureCapabilities struct
@@ -58,7 +60,7 @@ func NewMsvm_EthernetSwitchFeatureCapabilitiesEx6(hostName string,
 
 // SetApplicability sets the value of Applicability for the instance
 func (instance *Msvm_EthernetSwitchFeatureCapabilities) SetPropertyApplicability(value EthernetSwitchFeatureCapabilities_Applicability) (err error) {
-	return instance.SetProperty("Applicability", value)
+	return instance.SetProperty("Applicability", (value))
 }
 
 // GetApplicability gets the value of Applicability for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetPropertyApplicability
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(EthernetSwitchFeatureCapabilities_Applicability)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = EthernetSwitchFeatureCapabilities_Applicability(valuetmp)
+
 	return
 }
 
 // SetFeatureId sets the value of FeatureId for the instance
 func (instance *Msvm_EthernetSwitchFeatureCapabilities) SetPropertyFeatureId(value string) (err error) {
-	return instance.SetProperty("FeatureId", value)
+	return instance.SetProperty("FeatureId", (value))
 }
 
 // GetFeatureId gets the value of FeatureId for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetPropertyFeatureId() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *Msvm_EthernetSwitchFeatureCapabilities) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -103,16 +123,25 @@ func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetPropertyVersion() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
-func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedEthernetSwitchPortVfpSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchPortVfpSettingData")
-}
-
 func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedInstalledEthernetSwitchExtension() (value *cim.WmiInstance, err error) {
 	return instance.GetRelated("Msvm_InstalledEthernetSwitchExtension")
+}
+
+func (instance *Msvm_EthernetSwitchFeatureCapabilities) GetRelatedEthernetSwitchPortVfpSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_EthernetSwitchPortVfpSettingData")
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetIKECertAuthProposal struct
@@ -85,7 +87,7 @@ func NewMSFT_NetIKECertAuthProposalEx6(hostName string,
 
 // SetCertName sets the value of CertName for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyCertName(value string) (err error) {
-	return instance.SetProperty("CertName", value)
+	return instance.SetProperty("CertName", (value))
 }
 
 // GetCertName gets the value of CertName for the instance
@@ -94,16 +96,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyCertName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCertNameType sets the value of CertNameType for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyCertNameType(value uint16) (err error) {
-	return instance.SetProperty("CertNameType", value)
+	return instance.SetProperty("CertNameType", (value))
 }
 
 // GetCertNameType gets the value of CertNameType for the instance
@@ -112,16 +123,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyCertNameType() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetEKUs sets the value of EKUs for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyEKUs(value []string) (err error) {
-	return instance.SetProperty("EKUs", value)
+	return instance.SetProperty("EKUs", (value))
 }
 
 // GetEKUs gets the value of EKUs for the instance
@@ -130,16 +150,26 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyEKUs() (value []string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetExcludeCAName sets the value of ExcludeCAName for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyExcludeCAName(value bool) (err error) {
-	return instance.SetProperty("ExcludeCAName", value)
+	return instance.SetProperty("ExcludeCAName", (value))
 }
 
 // GetExcludeCAName gets the value of ExcludeCAName for the instance
@@ -148,16 +178,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyExcludeCAName() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFollowRenewal sets the value of FollowRenewal for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyFollowRenewal(value bool) (err error) {
-	return instance.SetProperty("FollowRenewal", value)
+	return instance.SetProperty("FollowRenewal", (value))
 }
 
 // GetFollowRenewal gets the value of FollowRenewal for the instance
@@ -166,16 +205,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyFollowRenewal() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMapToAccount sets the value of MapToAccount for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyMapToAccount(value bool) (err error) {
-	return instance.SetProperty("MapToAccount", value)
+	return instance.SetProperty("MapToAccount", (value))
 }
 
 // GetMapToAccount gets the value of MapToAccount for the instance
@@ -184,16 +232,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyMapToAccount() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSelectionCriteria sets the value of SelectionCriteria for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertySelectionCriteria(value bool) (err error) {
-	return instance.SetProperty("SelectionCriteria", value)
+	return instance.SetProperty("SelectionCriteria", (value))
 }
 
 // GetSelectionCriteria gets the value of SelectionCriteria for the instance
@@ -202,16 +259,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertySelectionCriteria() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSigningAlgorithm sets the value of SigningAlgorithm for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertySigningAlgorithm(value uint16) (err error) {
-	return instance.SetProperty("SigningAlgorithm", value)
+	return instance.SetProperty("SigningAlgorithm", (value))
 }
 
 // GetSigningAlgorithm gets the value of SigningAlgorithm for the instance
@@ -220,16 +286,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertySigningAlgorithm() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetThumbprint sets the value of Thumbprint for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyThumbprint(value string) (err error) {
-	return instance.SetProperty("Thumbprint", value)
+	return instance.SetProperty("Thumbprint", (value))
 }
 
 // GetThumbprint gets the value of Thumbprint for the instance
@@ -238,16 +313,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyThumbprint() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedCA sets the value of TrustedCA for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyTrustedCA(value string) (err error) {
-	return instance.SetProperty("TrustedCA", value)
+	return instance.SetProperty("TrustedCA", (value))
 }
 
 // GetTrustedCA gets the value of TrustedCA for the instance
@@ -256,16 +340,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyTrustedCA() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTrustedCAType sets the value of TrustedCAType for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyTrustedCAType(value uint16) (err error) {
-	return instance.SetProperty("TrustedCAType", value)
+	return instance.SetProperty("TrustedCAType", (value))
 }
 
 // GetTrustedCAType gets the value of TrustedCAType for the instance
@@ -274,16 +367,25 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyTrustedCAType() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetValidationCriteria sets the value of ValidationCriteria for the instance
 func (instance *MSFT_NetIKECertAuthProposal) SetPropertyValidationCriteria(value bool) (err error) {
-	return instance.SetProperty("ValidationCriteria", value)
+	return instance.SetProperty("ValidationCriteria", (value))
 }
 
 // GetValidationCriteria gets the value of ValidationCriteria for the instance
@@ -292,9 +394,18 @@ func (instance *MSFT_NetIKECertAuthProposal) GetPropertyValidationCriteria() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ClusterUpdate
 //////////////////////////////////////////////
 package clusterupdate
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_CAURun_Report_Chunk struct
@@ -55,7 +57,7 @@ func NewMSFT_CAURun_Report_ChunkEx6(hostName string,
 
 // SetData sets the value of Data for the instance
 func (instance *MSFT_CAURun_Report_Chunk) SetPropertyData(value string) (err error) {
-	return instance.SetProperty("Data", value)
+	return instance.SetProperty("Data", (value))
 }
 
 // GetData gets the value of Data for the instance
@@ -64,16 +66,25 @@ func (instance *MSFT_CAURun_Report_Chunk) GetPropertyData() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSequenceNumber sets the value of SequenceNumber for the instance
 func (instance *MSFT_CAURun_Report_Chunk) SetPropertySequenceNumber(value uint32) (err error) {
-	return instance.SetProperty("SequenceNumber", value)
+	return instance.SetProperty("SequenceNumber", (value))
 }
 
 // GetSequenceNumber gets the value of SequenceNumber for the instance
@@ -82,9 +93,18 @@ func (instance *MSFT_CAURun_Report_Chunk) GetPropertySequenceNumber() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

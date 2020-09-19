@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterPowerManagement_WakePattern_Bitmap struct
@@ -55,7 +57,7 @@ func NewMSFT_NetAdapterPowerManagement_WakePattern_BitmapEx6(hostName string,
 
 // SetMask sets the value of Mask for the instance
 func (instance *MSFT_NetAdapterPowerManagement_WakePattern_Bitmap) SetPropertyMask(value []uint8) (err error) {
-	return instance.SetProperty("Mask", value)
+	return instance.SetProperty("Mask", (value))
 }
 
 // GetMask gets the value of Mask for the instance
@@ -64,16 +66,26 @@ func (instance *MSFT_NetAdapterPowerManagement_WakePattern_Bitmap) GetPropertyMa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetPattern sets the value of Pattern for the instance
 func (instance *MSFT_NetAdapterPowerManagement_WakePattern_Bitmap) SetPropertyPattern(value []uint8) (err error) {
-	return instance.SetProperty("Pattern", value)
+	return instance.SetProperty("Pattern", (value))
 }
 
 // GetPattern gets the value of Pattern for the instance
@@ -82,9 +94,19 @@ func (instance *MSFT_NetAdapterPowerManagement_WakePattern_Bitmap) GetPropertyPa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }

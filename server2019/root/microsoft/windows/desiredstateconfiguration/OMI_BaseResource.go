@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
@@ -11,7 +11,9 @@ package desiredstateconfiguration
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // OMI_BaseResource struct
@@ -71,7 +73,7 @@ func NewOMI_BaseResourceEx6(hostName string,
 
 // SetConfigurationName sets the value of ConfigurationName for the instance
 func (instance *OMI_BaseResource) SetPropertyConfigurationName(value string) (err error) {
-	return instance.SetProperty("ConfigurationName", value)
+	return instance.SetProperty("ConfigurationName", (value))
 }
 
 // GetConfigurationName gets the value of ConfigurationName for the instance
@@ -80,16 +82,25 @@ func (instance *OMI_BaseResource) GetPropertyConfigurationName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDependsOn sets the value of DependsOn for the instance
 func (instance *OMI_BaseResource) SetPropertyDependsOn(value []string) (err error) {
-	return instance.SetProperty("DependsOn", value)
+	return instance.SetProperty("DependsOn", (value))
 }
 
 // GetDependsOn gets the value of DependsOn for the instance
@@ -98,16 +109,26 @@ func (instance *OMI_BaseResource) GetPropertyDependsOn() (value []string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetModuleName sets the value of ModuleName for the instance
 func (instance *OMI_BaseResource) SetPropertyModuleName(value string) (err error) {
-	return instance.SetProperty("ModuleName", value)
+	return instance.SetProperty("ModuleName", (value))
 }
 
 // GetModuleName gets the value of ModuleName for the instance
@@ -116,16 +137,25 @@ func (instance *OMI_BaseResource) GetPropertyModuleName() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetModuleVersion sets the value of ModuleVersion for the instance
 func (instance *OMI_BaseResource) SetPropertyModuleVersion(value string) (err error) {
-	return instance.SetProperty("ModuleVersion", value)
+	return instance.SetProperty("ModuleVersion", (value))
 }
 
 // GetModuleVersion gets the value of ModuleVersion for the instance
@@ -134,16 +164,25 @@ func (instance *OMI_BaseResource) GetPropertyModuleVersion() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPsDscRunAsCredential sets the value of PsDscRunAsCredential for the instance
 func (instance *OMI_BaseResource) SetPropertyPsDscRunAsCredential(value MSFT_Credential) (err error) {
-	return instance.SetProperty("PsDscRunAsCredential", value)
+	return instance.SetProperty("PsDscRunAsCredential", (value))
 }
 
 // GetPsDscRunAsCredential gets the value of PsDscRunAsCredential for the instance
@@ -152,16 +191,25 @@ func (instance *OMI_BaseResource) GetPropertyPsDscRunAsCredential() (value MSFT_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Credential)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Credential)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Credential is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Credential(valuetmp)
+
 	return
 }
 
 // SetResourceId sets the value of ResourceId for the instance
 func (instance *OMI_BaseResource) SetPropertyResourceId(value string) (err error) {
-	return instance.SetProperty("ResourceId", value)
+	return instance.SetProperty("ResourceId", (value))
 }
 
 // GetResourceId gets the value of ResourceId for the instance
@@ -170,16 +218,25 @@ func (instance *OMI_BaseResource) GetPropertyResourceId() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSourceInfo sets the value of SourceInfo for the instance
 func (instance *OMI_BaseResource) SetPropertySourceInfo(value string) (err error) {
-	return instance.SetProperty("SourceInfo", value)
+	return instance.SetProperty("SourceInfo", (value))
 }
 
 // GetSourceInfo gets the value of SourceInfo for the instance
@@ -188,9 +245,18 @@ func (instance *OMI_BaseResource) GetPropertySourceInfo() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

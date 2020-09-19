@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_MultiSIM_Slots02_01 struct
@@ -68,7 +70,7 @@ func NewMDM_MultiSIM_Slots02_01Ex6(hostName string,
 
 // SetIdentifier sets the value of Identifier for the instance
 func (instance *MDM_MultiSIM_Slots02_01) SetPropertyIdentifier(value int32) (err error) {
-	return instance.SetProperty("Identifier", value)
+	return instance.SetProperty("Identifier", (value))
 }
 
 // GetIdentifier gets the value of Identifier for the instance
@@ -77,16 +79,25 @@ func (instance *MDM_MultiSIM_Slots02_01) GetPropertyIdentifier() (value int32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_MultiSIM_Slots02_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -95,16 +106,25 @@ func (instance *MDM_MultiSIM_Slots02_01) GetPropertyInstanceID() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsEmbedded sets the value of IsEmbedded for the instance
 func (instance *MDM_MultiSIM_Slots02_01) SetPropertyIsEmbedded(value bool) (err error) {
-	return instance.SetProperty("IsEmbedded", value)
+	return instance.SetProperty("IsEmbedded", (value))
 }
 
 // GetIsEmbedded gets the value of IsEmbedded for the instance
@@ -113,16 +133,25 @@ func (instance *MDM_MultiSIM_Slots02_01) GetPropertyIsEmbedded() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsSelected sets the value of IsSelected for the instance
 func (instance *MDM_MultiSIM_Slots02_01) SetPropertyIsSelected(value bool) (err error) {
-	return instance.SetProperty("IsSelected", value)
+	return instance.SetProperty("IsSelected", (value))
 }
 
 // GetIsSelected gets the value of IsSelected for the instance
@@ -131,16 +160,25 @@ func (instance *MDM_MultiSIM_Slots02_01) GetPropertyIsSelected() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_MultiSIM_Slots02_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -149,16 +187,25 @@ func (instance *MDM_MultiSIM_Slots02_01) GetPropertyParentID() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MDM_MultiSIM_Slots02_01) SetPropertyState(value int32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -167,9 +214,18 @@ func (instance *MDM_MultiSIM_Slots02_01) GetPropertyState() (value int32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

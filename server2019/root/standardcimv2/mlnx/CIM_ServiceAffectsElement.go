@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
@@ -11,7 +11,9 @@ package mlnx
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ServiceAffectsElement struct
@@ -62,7 +64,7 @@ func NewCIM_ServiceAffectsElementEx6(hostName string,
 
 // SetAffectedElement sets the value of AffectedElement for the instance
 func (instance *CIM_ServiceAffectsElement) SetPropertyAffectedElement(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("AffectedElement", value)
+	return instance.SetProperty("AffectedElement", (value))
 }
 
 // GetAffectedElement gets the value of AffectedElement for the instance
@@ -71,16 +73,25 @@ func (instance *CIM_ServiceAffectsElement) GetPropertyAffectedElement() (value C
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_ManagedElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_ManagedElement(valuetmp)
+
 	return
 }
 
 // SetAffectingElement sets the value of AffectingElement for the instance
 func (instance *CIM_ServiceAffectsElement) SetPropertyAffectingElement(value CIM_Service) (err error) {
-	return instance.SetProperty("AffectingElement", value)
+	return instance.SetProperty("AffectingElement", (value))
 }
 
 // GetAffectingElement gets the value of AffectingElement for the instance
@@ -89,16 +100,25 @@ func (instance *CIM_ServiceAffectsElement) GetPropertyAffectingElement() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Service)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Service)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Service is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Service(valuetmp)
+
 	return
 }
 
 // SetElementEffects sets the value of ElementEffects for the instance
 func (instance *CIM_ServiceAffectsElement) SetPropertyElementEffects(value []ServiceAffectsElement_ElementEffects) (err error) {
-	return instance.SetProperty("ElementEffects", value)
+	return instance.SetProperty("ElementEffects", (value))
 }
 
 // GetElementEffects gets the value of ElementEffects for the instance
@@ -107,16 +127,26 @@ func (instance *CIM_ServiceAffectsElement) GetPropertyElementEffects() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]ServiceAffectsElement_ElementEffects)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, ServiceAffectsElement_ElementEffects(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherElementEffectsDescriptions sets the value of OtherElementEffectsDescriptions for the instance
 func (instance *CIM_ServiceAffectsElement) SetPropertyOtherElementEffectsDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherElementEffectsDescriptions", value)
+	return instance.SetProperty("OtherElementEffectsDescriptions", (value))
 }
 
 // GetOtherElementEffectsDescriptions gets the value of OtherElementEffectsDescriptions for the instance
@@ -125,9 +155,19 @@ func (instance *CIM_ServiceAffectsElement) GetPropertyOtherElementEffectsDescrip
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

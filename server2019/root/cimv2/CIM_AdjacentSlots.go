@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_AdjacentSlots struct
@@ -62,7 +64,7 @@ func NewCIM_AdjacentSlotsEx6(hostName string,
 
 // SetDistanceBetweenSlots sets the value of DistanceBetweenSlots for the instance
 func (instance *CIM_AdjacentSlots) SetPropertyDistanceBetweenSlots(value float32) (err error) {
-	return instance.SetProperty("DistanceBetweenSlots", value)
+	return instance.SetProperty("DistanceBetweenSlots", (value))
 }
 
 // GetDistanceBetweenSlots gets the value of DistanceBetweenSlots for the instance
@@ -71,16 +73,25 @@ func (instance *CIM_AdjacentSlots) GetPropertyDistanceBetweenSlots() (value floa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(float32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(float32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " float32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = float32(valuetmp)
+
 	return
 }
 
 // SetSharedSlots sets the value of SharedSlots for the instance
 func (instance *CIM_AdjacentSlots) SetPropertySharedSlots(value bool) (err error) {
-	return instance.SetProperty("SharedSlots", value)
+	return instance.SetProperty("SharedSlots", (value))
 }
 
 // GetSharedSlots gets the value of SharedSlots for the instance
@@ -89,16 +100,25 @@ func (instance *CIM_AdjacentSlots) GetPropertySharedSlots() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSlotA sets the value of SlotA for the instance
 func (instance *CIM_AdjacentSlots) SetPropertySlotA(value CIM_Slot) (err error) {
-	return instance.SetProperty("SlotA", value)
+	return instance.SetProperty("SlotA", (value))
 }
 
 // GetSlotA gets the value of SlotA for the instance
@@ -107,16 +127,25 @@ func (instance *CIM_AdjacentSlots) GetPropertySlotA() (value CIM_Slot, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Slot)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Slot)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Slot is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Slot(valuetmp)
+
 	return
 }
 
 // SetSlotB sets the value of SlotB for the instance
 func (instance *CIM_AdjacentSlots) SetPropertySlotB(value CIM_Slot) (err error) {
-	return instance.SetProperty("SlotB", value)
+	return instance.SetProperty("SlotB", (value))
 }
 
 // GetSlotB gets the value of SlotB for the instance
@@ -125,9 +154,18 @@ func (instance *CIM_AdjacentSlots) GetPropertySlotB() (value CIM_Slot, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Slot)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Slot)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Slot is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Slot(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_Authentication02 struct
@@ -26,9 +28,6 @@ type MDM_Policy_Result01_Authentication02 struct {
 
 	//
 	AllowSecondaryAuthenticationDevice int32
-
-	//
-	ConfigureWebcamAccessDomainNames string
 
 	//
 	EnableFastFirstSignIn int32
@@ -77,7 +76,7 @@ func NewMDM_Policy_Result01_Authentication02Ex6(hostName string,
 
 // SetAllowAadPasswordReset sets the value of AllowAadPasswordReset for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyAllowAadPasswordReset(value int32) (err error) {
-	return instance.SetProperty("AllowAadPasswordReset", value)
+	return instance.SetProperty("AllowAadPasswordReset", (value))
 }
 
 // GetAllowAadPasswordReset gets the value of AllowAadPasswordReset for the instance
@@ -86,16 +85,25 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyAllowAadPasswor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowFastReconnect sets the value of AllowFastReconnect for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyAllowFastReconnect(value int32) (err error) {
-	return instance.SetProperty("AllowFastReconnect", value)
+	return instance.SetProperty("AllowFastReconnect", (value))
 }
 
 // GetAllowFastReconnect gets the value of AllowFastReconnect for the instance
@@ -104,16 +112,25 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyAllowFastReconn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowSecondaryAuthenticationDevice sets the value of AllowSecondaryAuthenticationDevice for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyAllowSecondaryAuthenticationDevice(value int32) (err error) {
-	return instance.SetProperty("AllowSecondaryAuthenticationDevice", value)
+	return instance.SetProperty("AllowSecondaryAuthenticationDevice", (value))
 }
 
 // GetAllowSecondaryAuthenticationDevice gets the value of AllowSecondaryAuthenticationDevice for the instance
@@ -122,34 +139,25 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyAllowSecondaryA
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureWebcamAccessDomainNames sets the value of ConfigureWebcamAccessDomainNames for the instance
-func (instance *MDM_Policy_Result01_Authentication02) SetPropertyConfigureWebcamAccessDomainNames(value string) (err error) {
-	return instance.SetProperty("ConfigureWebcamAccessDomainNames", value)
-}
-
-// GetConfigureWebcamAccessDomainNames gets the value of ConfigureWebcamAccessDomainNames for the instance
-func (instance *MDM_Policy_Result01_Authentication02) GetPropertyConfigureWebcamAccessDomainNames() (value string, err error) {
-	retValue, err := instance.GetProperty("ConfigureWebcamAccessDomainNames")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(string)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnableFastFirstSignIn sets the value of EnableFastFirstSignIn for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyEnableFastFirstSignIn(value int32) (err error) {
-	return instance.SetProperty("EnableFastFirstSignIn", value)
+	return instance.SetProperty("EnableFastFirstSignIn", (value))
 }
 
 // GetEnableFastFirstSignIn gets the value of EnableFastFirstSignIn for the instance
@@ -158,16 +166,25 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyEnableFastFirst
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnableWebSignIn sets the value of EnableWebSignIn for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyEnableWebSignIn(value int32) (err error) {
-	return instance.SetProperty("EnableWebSignIn", value)
+	return instance.SetProperty("EnableWebSignIn", (value))
 }
 
 // GetEnableWebSignIn gets the value of EnableWebSignIn for the instance
@@ -176,16 +193,25 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyEnableWebSignIn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -194,16 +220,25 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyInstanceID() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -212,16 +247,25 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyParentID() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPreferredAadTenantDomainName sets the value of PreferredAadTenantDomainName for the instance
 func (instance *MDM_Policy_Result01_Authentication02) SetPropertyPreferredAadTenantDomainName(value string) (err error) {
-	return instance.SetProperty("PreferredAadTenantDomainName", value)
+	return instance.SetProperty("PreferredAadTenantDomainName", (value))
 }
 
 // GetPreferredAadTenantDomainName gets the value of PreferredAadTenantDomainName for the instance
@@ -230,9 +274,18 @@ func (instance *MDM_Policy_Result01_Authentication02) GetPropertyPreferredAadTen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

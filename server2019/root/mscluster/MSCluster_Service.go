@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_Service struct
@@ -58,7 +60,7 @@ func NewMSCluster_ServiceEx6(hostName string,
 
 // SetNodeHighestVersion sets the value of NodeHighestVersion for the instance
 func (instance *MSCluster_Service) SetPropertyNodeHighestVersion(value uint32) (err error) {
-	return instance.SetProperty("NodeHighestVersion", value)
+	return instance.SetProperty("NodeHighestVersion", (value))
 }
 
 // GetNodeHighestVersion gets the value of NodeHighestVersion for the instance
@@ -67,16 +69,25 @@ func (instance *MSCluster_Service) GetPropertyNodeHighestVersion() (value uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNodeLowestVersion sets the value of NodeLowestVersion for the instance
 func (instance *MSCluster_Service) SetPropertyNodeLowestVersion(value uint32) (err error) {
-	return instance.SetProperty("NodeLowestVersion", value)
+	return instance.SetProperty("NodeLowestVersion", (value))
 }
 
 // GetNodeLowestVersion gets the value of NodeLowestVersion for the instance
@@ -85,16 +96,25 @@ func (instance *MSCluster_Service) GetPropertyNodeLowestVersion() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSCluster_Service) SetPropertyState(value string) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -103,10 +123,19 @@ func (instance *MSCluster_Service) GetPropertyState() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

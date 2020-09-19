@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_NetworkPortStatistics struct
@@ -61,7 +63,7 @@ func NewCIM_NetworkPortStatisticsEx6(hostName string,
 
 // SetBytesReceived sets the value of BytesReceived for the instance
 func (instance *CIM_NetworkPortStatistics) SetPropertyBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("BytesReceived", value)
+	return instance.SetProperty("BytesReceived", (value))
 }
 
 // GetBytesReceived gets the value of BytesReceived for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_NetworkPortStatistics) GetPropertyBytesReceived() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTransmitted sets the value of BytesTransmitted for the instance
 func (instance *CIM_NetworkPortStatistics) SetPropertyBytesTransmitted(value uint64) (err error) {
-	return instance.SetProperty("BytesTransmitted", value)
+	return instance.SetProperty("BytesTransmitted", (value))
 }
 
 // GetBytesTransmitted gets the value of BytesTransmitted for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_NetworkPortStatistics) GetPropertyBytesTransmitted() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsReceived sets the value of PacketsReceived for the instance
 func (instance *CIM_NetworkPortStatistics) SetPropertyPacketsReceived(value uint64) (err error) {
-	return instance.SetProperty("PacketsReceived", value)
+	return instance.SetProperty("PacketsReceived", (value))
 }
 
 // GetPacketsReceived gets the value of PacketsReceived for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_NetworkPortStatistics) GetPropertyPacketsReceived() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPacketsTransmitted sets the value of PacketsTransmitted for the instance
 func (instance *CIM_NetworkPortStatistics) SetPropertyPacketsTransmitted(value uint64) (err error) {
-	return instance.SetProperty("PacketsTransmitted", value)
+	return instance.SetProperty("PacketsTransmitted", (value))
 }
 
 // GetPacketsTransmitted gets the value of PacketsTransmitted for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_NetworkPortStatistics) GetPropertyPacketsTransmitted() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

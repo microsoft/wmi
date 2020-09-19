@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualSystemSnapshotSettingData struct
@@ -58,7 +60,7 @@ func NewMsvm_VirtualSystemSnapshotSettingDataEx6(hostName string,
 
 // SetConsistencyLevel sets the value of ConsistencyLevel for the instance
 func (instance *Msvm_VirtualSystemSnapshotSettingData) SetPropertyConsistencyLevel(value VirtualSystemSnapshotSettingData_ConsistencyLevel) (err error) {
-	return instance.SetProperty("ConsistencyLevel", value)
+	return instance.SetProperty("ConsistencyLevel", (value))
 }
 
 // GetConsistencyLevel gets the value of ConsistencyLevel for the instance
@@ -67,16 +69,25 @@ func (instance *Msvm_VirtualSystemSnapshotSettingData) GetPropertyConsistencyLev
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSnapshotSettingData_ConsistencyLevel)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemSnapshotSettingData_ConsistencyLevel(valuetmp)
+
 	return
 }
 
 // SetGuestBackupType sets the value of GuestBackupType for the instance
 func (instance *Msvm_VirtualSystemSnapshotSettingData) SetPropertyGuestBackupType(value VirtualSystemSnapshotSettingData_GuestBackupType) (err error) {
-	return instance.SetProperty("GuestBackupType", value)
+	return instance.SetProperty("GuestBackupType", (value))
 }
 
 // GetGuestBackupType gets the value of GuestBackupType for the instance
@@ -85,16 +96,25 @@ func (instance *Msvm_VirtualSystemSnapshotSettingData) GetPropertyGuestBackupTyp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(VirtualSystemSnapshotSettingData_GuestBackupType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = VirtualSystemSnapshotSettingData_GuestBackupType(valuetmp)
+
 	return
 }
 
 // SetIgnoreNonSnapshottableDisks sets the value of IgnoreNonSnapshottableDisks for the instance
 func (instance *Msvm_VirtualSystemSnapshotSettingData) SetPropertyIgnoreNonSnapshottableDisks(value bool) (err error) {
-	return instance.SetProperty("IgnoreNonSnapshottableDisks", value)
+	return instance.SetProperty("IgnoreNonSnapshottableDisks", (value))
 }
 
 // GetIgnoreNonSnapshottableDisks gets the value of IgnoreNonSnapshottableDisks for the instance
@@ -103,9 +123,18 @@ func (instance *Msvm_VirtualSystemSnapshotSettingData) GetPropertyIgnoreNonSnaps
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
@@ -11,7 +11,9 @@ package accesslogging
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftUal_DailyDeviceAccess struct
@@ -68,7 +70,7 @@ func NewMsftUal_DailyDeviceAccessEx6(hostName string,
 
 // SetAccessCount sets the value of AccessCount for the instance
 func (instance *MsftUal_DailyDeviceAccess) SetPropertyAccessCount(value uint32) (err error) {
-	return instance.SetProperty("AccessCount", value)
+	return instance.SetProperty("AccessCount", (value))
 }
 
 // GetAccessCount gets the value of AccessCount for the instance
@@ -77,16 +79,25 @@ func (instance *MsftUal_DailyDeviceAccess) GetPropertyAccessCount() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAccessDate sets the value of AccessDate for the instance
 func (instance *MsftUal_DailyDeviceAccess) SetPropertyAccessDate(value string) (err error) {
-	return instance.SetProperty("AccessDate", value)
+	return instance.SetProperty("AccessDate", (value))
 }
 
 // GetAccessDate gets the value of AccessDate for the instance
@@ -95,16 +106,25 @@ func (instance *MsftUal_DailyDeviceAccess) GetPropertyAccessDate() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIPAddress sets the value of IPAddress for the instance
 func (instance *MsftUal_DailyDeviceAccess) SetPropertyIPAddress(value string) (err error) {
-	return instance.SetProperty("IPAddress", value)
+	return instance.SetProperty("IPAddress", (value))
 }
 
 // GetIPAddress gets the value of IPAddress for the instance
@@ -113,16 +133,25 @@ func (instance *MsftUal_DailyDeviceAccess) GetPropertyIPAddress() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductName sets the value of ProductName for the instance
 func (instance *MsftUal_DailyDeviceAccess) SetPropertyProductName(value string) (err error) {
-	return instance.SetProperty("ProductName", value)
+	return instance.SetProperty("ProductName", (value))
 }
 
 // GetProductName gets the value of ProductName for the instance
@@ -131,16 +160,25 @@ func (instance *MsftUal_DailyDeviceAccess) GetPropertyProductName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleGuid sets the value of RoleGuid for the instance
 func (instance *MsftUal_DailyDeviceAccess) SetPropertyRoleGuid(value string) (err error) {
-	return instance.SetProperty("RoleGuid", value)
+	return instance.SetProperty("RoleGuid", (value))
 }
 
 // GetRoleGuid gets the value of RoleGuid for the instance
@@ -149,16 +187,25 @@ func (instance *MsftUal_DailyDeviceAccess) GetPropertyRoleGuid() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoleName sets the value of RoleName for the instance
 func (instance *MsftUal_DailyDeviceAccess) SetPropertyRoleName(value string) (err error) {
-	return instance.SetProperty("RoleName", value)
+	return instance.SetProperty("RoleName", (value))
 }
 
 // GetRoleName gets the value of RoleName for the instance
@@ -167,9 +214,18 @@ func (instance *MsftUal_DailyDeviceAccess) GetPropertyRoleName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorPerformanceCounterProvider_RemoteDesktopConnectionBrokerRedirectorCounterset struct
@@ -61,7 +63,7 @@ func NewWin32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorPerforman
 
 // SetConnectiontime sets the value of Connectiontime for the instance
 func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorPerformanceCounterProvider_RemoteDesktopConnectionBrokerRedirectorCounterset) SetPropertyConnectiontime(value uint64) (err error) {
-	return instance.SetProperty("Connectiontime", value)
+	return instance.SetProperty("Connectiontime", (value))
 }
 
 // GetConnectiontime gets the value of Connectiontime for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetContextacquisitionwaittime sets the value of Contextacquisitionwaittime for the instance
 func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorPerformanceCounterProvider_RemoteDesktopConnectionBrokerRedirectorCounterset) SetPropertyContextacquisitionwaittime(value uint64) (err error) {
-	return instance.SetProperty("Contextacquisitionwaittime", value)
+	return instance.SetProperty("Contextacquisitionwaittime", (value))
 }
 
 // GetContextacquisitionwaittime gets the value of Contextacquisitionwaittime for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRPCContext sets the value of RPCContext for the instance
 func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorPerformanceCounterProvider_RemoteDesktopConnectionBrokerRedirectorCounterset) SetPropertyRPCContext(value uint64) (err error) {
-	return instance.SetProperty("RPCContext", value)
+	return instance.SetProperty("RPCContext", (value))
 }
 
 // GetRPCContext gets the value of RPCContext for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetThreadswaitingforRPCContext sets the value of ThreadswaitingforRPCContext for the instance
 func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorPerformanceCounterProvider_RemoteDesktopConnectionBrokerRedirectorCounterset) SetPropertyThreadswaitingforRPCContext(value uint64) (err error) {
-	return instance.SetProperty("ThreadswaitingforRPCContext", value)
+	return instance.SetProperty("ThreadswaitingforRPCContext", (value))
 }
 
 // GetThreadswaitingforRPCContext gets the value of ThreadswaitingforRPCContext for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfFormattedData_RemoteDesktopConnectionBrokerRedirectorP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

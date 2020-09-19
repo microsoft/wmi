@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_HvStats_HyperVHypervisor struct
@@ -73,7 +75,7 @@ func NewWin32_PerfFormattedData_HvStats_HyperVHypervisorEx6(hostName string,
 
 // SetHypervisorStartupCost sets the value of HypervisorStartupCost for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyHypervisorStartupCost(value uint64) (err error) {
-	return instance.SetProperty("HypervisorStartupCost", value)
+	return instance.SetProperty("HypervisorStartupCost", (value))
 }
 
 // GetHypervisorStartupCost gets the value of HypervisorStartupCost for the instance
@@ -82,16 +84,25 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyHyp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetLogicalProcessors sets the value of LogicalProcessors for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyLogicalProcessors(value uint64) (err error) {
-	return instance.SetProperty("LogicalProcessors", value)
+	return instance.SetProperty("LogicalProcessors", (value))
 }
 
 // GetLogicalProcessors gets the value of LogicalProcessors for the instance
@@ -100,16 +111,25 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyLog
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetModernStandbyEntries sets the value of ModernStandbyEntries for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyModernStandbyEntries(value uint64) (err error) {
-	return instance.SetProperty("ModernStandbyEntries", value)
+	return instance.SetProperty("ModernStandbyEntries", (value))
 }
 
 // GetModernStandbyEntries gets the value of ModernStandbyEntries for the instance
@@ -118,16 +138,25 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyMod
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMonitoredNotifications sets the value of MonitoredNotifications for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyMonitoredNotifications(value uint64) (err error) {
-	return instance.SetProperty("MonitoredNotifications", value)
+	return instance.SetProperty("MonitoredNotifications", (value))
 }
 
 // GetMonitoredNotifications gets the value of MonitoredNotifications for the instance
@@ -136,16 +165,25 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyMon
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPartitions sets the value of Partitions for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyPartitions(value uint64) (err error) {
-	return instance.SetProperty("Partitions", value)
+	return instance.SetProperty("Partitions", (value))
 }
 
 // GetPartitions gets the value of Partitions for the instance
@@ -154,16 +192,25 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyPar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPlatformIdleTransitions sets the value of PlatformIdleTransitions for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyPlatformIdleTransitions(value uint64) (err error) {
-	return instance.SetProperty("PlatformIdleTransitions", value)
+	return instance.SetProperty("PlatformIdleTransitions", (value))
 }
 
 // GetPlatformIdleTransitions gets the value of PlatformIdleTransitions for the instance
@@ -172,16 +219,25 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyPla
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalPages sets the value of TotalPages for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyTotalPages(value uint64) (err error) {
-	return instance.SetProperty("TotalPages", value)
+	return instance.SetProperty("TotalPages", (value))
 }
 
 // GetTotalPages gets the value of TotalPages for the instance
@@ -190,16 +246,25 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyTot
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetVirtualProcessors sets the value of VirtualProcessors for the instance
 func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) SetPropertyVirtualProcessors(value uint64) (err error) {
-	return instance.SetProperty("VirtualProcessors", value)
+	return instance.SetProperty("VirtualProcessors", (value))
 }
 
 // GetVirtualProcessors gets the value of VirtualProcessors for the instance
@@ -208,9 +273,18 @@ func (instance *Win32_PerfFormattedData_HvStats_HyperVHypervisor) GetPropertyVir
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

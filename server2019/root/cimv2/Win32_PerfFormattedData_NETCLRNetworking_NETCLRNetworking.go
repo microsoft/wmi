@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking struct
@@ -64,7 +66,7 @@ func NewWin32_PerfFormattedData_NETCLRNetworking_NETCLRNetworkingEx6(hostName st
 
 // SetBytesReceived sets the value of BytesReceived for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) SetPropertyBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("BytesReceived", value)
+	return instance.SetProperty("BytesReceived", (value))
 }
 
 // GetBytesReceived gets the value of BytesReceived for the instance
@@ -73,16 +75,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesSent sets the value of BytesSent for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) SetPropertyBytesSent(value uint64) (err error) {
-	return instance.SetProperty("BytesSent", value)
+	return instance.SetProperty("BytesSent", (value))
 }
 
 // GetBytesSent gets the value of BytesSent for the instance
@@ -91,16 +102,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetConnectionsEstablished sets the value of ConnectionsEstablished for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) SetPropertyConnectionsEstablished(value uint32) (err error) {
-	return instance.SetProperty("ConnectionsEstablished", value)
+	return instance.SetProperty("ConnectionsEstablished", (value))
 }
 
 // GetConnectionsEstablished gets the value of ConnectionsEstablished for the instance
@@ -109,16 +129,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceived sets the value of DatagramsReceived for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) SetPropertyDatagramsReceived(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceived", value)
+	return instance.SetProperty("DatagramsReceived", (value))
 }
 
 // GetDatagramsReceived gets the value of DatagramsReceived for the instance
@@ -127,16 +156,25 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsSent sets the value of DatagramsSent for the instance
 func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) SetPropertyDatagramsSent(value uint32) (err error) {
-	return instance.SetProperty("DatagramsSent", value)
+	return instance.SetProperty("DatagramsSent", (value))
 }
 
 // GetDatagramsSent gets the value of DatagramsSent for the instance
@@ -145,9 +183,18 @@ func (instance *Win32_PerfFormattedData_NETCLRNetworking_NETCLRNetworking) GetPr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

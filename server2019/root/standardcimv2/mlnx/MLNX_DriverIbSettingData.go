@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_DriverIbSettingData struct
@@ -58,7 +60,7 @@ func NewMLNX_DriverIbSettingDataEx6(hostName string,
 
 // SetDebugFlags sets the value of DebugFlags for the instance
 func (instance *MLNX_DriverIbSettingData) SetPropertyDebugFlags(value uint32) (err error) {
-	return instance.SetProperty("DebugFlags", value)
+	return instance.SetProperty("DebugFlags", (value))
 }
 
 // GetDebugFlags gets the value of DebugFlags for the instance
@@ -67,16 +69,25 @@ func (instance *MLNX_DriverIbSettingData) GetPropertyDebugFlags() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIbalDebugFlags sets the value of IbalDebugFlags for the instance
 func (instance *MLNX_DriverIbSettingData) SetPropertyIbalDebugFlags(value uint32) (err error) {
-	return instance.SetProperty("IbalDebugFlags", value)
+	return instance.SetProperty("IbalDebugFlags", (value))
 }
 
 // GetIbalDebugFlags gets the value of IbalDebugFlags for the instance
@@ -85,16 +96,25 @@ func (instance *MLNX_DriverIbSettingData) GetPropertyIbalDebugFlags() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIbalDebugLevel sets the value of IbalDebugLevel for the instance
 func (instance *MLNX_DriverIbSettingData) SetPropertyIbalDebugLevel(value uint32) (err error) {
-	return instance.SetProperty("IbalDebugLevel", value)
+	return instance.SetProperty("IbalDebugLevel", (value))
 }
 
 // GetIbalDebugLevel gets the value of IbalDebugLevel for the instance
@@ -103,10 +123,19 @@ func (instance *MLNX_DriverIbSettingData) GetPropertyIbalDebugLevel() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Hardware
 //////////////////////////////////////////////
 package hardware
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Log struct
@@ -55,7 +57,7 @@ func NewCIM_LogEx6(hostName string,
 
 // SetCurrentNumberOfRecords sets the value of CurrentNumberOfRecords for the instance
 func (instance *CIM_Log) SetPropertyCurrentNumberOfRecords(value uint64) (err error) {
-	return instance.SetProperty("CurrentNumberOfRecords", value)
+	return instance.SetProperty("CurrentNumberOfRecords", (value))
 }
 
 // GetCurrentNumberOfRecords gets the value of CurrentNumberOfRecords for the instance
@@ -64,16 +66,25 @@ func (instance *CIM_Log) GetPropertyCurrentNumberOfRecords() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxNumberOfRecords sets the value of MaxNumberOfRecords for the instance
 func (instance *CIM_Log) SetPropertyMaxNumberOfRecords(value uint64) (err error) {
-	return instance.SetProperty("MaxNumberOfRecords", value)
+	return instance.SetProperty("MaxNumberOfRecords", (value))
 }
 
 // GetMaxNumberOfRecords gets the value of MaxNumberOfRecords for the instance
@@ -82,10 +93,19 @@ func (instance *CIM_Log) GetPropertyMaxNumberOfRecords() (value uint64, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

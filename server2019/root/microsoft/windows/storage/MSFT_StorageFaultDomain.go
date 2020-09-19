@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageFaultDomain struct
@@ -76,7 +78,7 @@ func NewMSFT_StorageFaultDomainEx6(hostName string,
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -85,16 +87,25 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyDescription() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFriendlyName sets the value of FriendlyName for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyFriendlyName(value string) (err error) {
-	return instance.SetProperty("FriendlyName", value)
+	return instance.SetProperty("FriendlyName", (value))
 }
 
 // GetFriendlyName gets the value of FriendlyName for the instance
@@ -103,16 +114,25 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyFriendlyName() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHealthStatus sets the value of HealthStatus for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyHealthStatus(value uint16) (err error) {
-	return instance.SetProperty("HealthStatus", value)
+	return instance.SetProperty("HealthStatus", (value))
 }
 
 // GetHealthStatus gets the value of HealthStatus for the instance
@@ -121,16 +141,25 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyHealthStatus() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", value)
+	return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
@@ -139,16 +168,25 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyManufacturer() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -157,16 +195,25 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyModel() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOperationalDetails sets the value of OperationalDetails for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyOperationalDetails(value []string) (err error) {
-	return instance.SetProperty("OperationalDetails", value)
+	return instance.SetProperty("OperationalDetails", (value))
 }
 
 // GetOperationalDetails gets the value of OperationalDetails for the instance
@@ -175,16 +222,26 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyOperationalDetails() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOperationalStatus sets the value of OperationalStatus for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyOperationalStatus(value []uint16) (err error) {
-	return instance.SetProperty("OperationalStatus", value)
+	return instance.SetProperty("OperationalStatus", (value))
 }
 
 // GetOperationalStatus gets the value of OperationalStatus for the instance
@@ -193,16 +250,26 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyOperationalStatus() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetPhysicalLocation sets the value of PhysicalLocation for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertyPhysicalLocation(value string) (err error) {
-	return instance.SetProperty("PhysicalLocation", value)
+	return instance.SetProperty("PhysicalLocation", (value))
 }
 
 // GetPhysicalLocation gets the value of PhysicalLocation for the instance
@@ -211,16 +278,25 @@ func (instance *MSFT_StorageFaultDomain) GetPropertyPhysicalLocation() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
 func (instance *MSFT_StorageFaultDomain) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", value)
+	return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
@@ -229,9 +305,18 @@ func (instance *MSFT_StorageFaultDomain) GetPropertySerialNumber() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

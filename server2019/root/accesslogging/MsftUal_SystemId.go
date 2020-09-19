@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.AccessLogging
 //////////////////////////////////////////////
 package accesslogging
@@ -11,7 +11,9 @@ package accesslogging
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftUal_SystemId struct
@@ -122,7 +124,7 @@ func NewMsftUal_SystemIdEx6(hostName string,
 
 // SetCoresPerPhysicalProcessor sets the value of CoresPerPhysicalProcessor for the instance
 func (instance *MsftUal_SystemId) SetPropertyCoresPerPhysicalProcessor(value uint32) (err error) {
-	return instance.SetProperty("CoresPerPhysicalProcessor", value)
+	return instance.SetProperty("CoresPerPhysicalProcessor", (value))
 }
 
 // GetCoresPerPhysicalProcessor gets the value of CoresPerPhysicalProcessor for the instance
@@ -131,16 +133,25 @@ func (instance *MsftUal_SystemId) GetPropertyCoresPerPhysicalProcessor() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCreationTime sets the value of CreationTime for the instance
 func (instance *MsftUal_SystemId) SetPropertyCreationTime(value string) (err error) {
-	return instance.SetProperty("CreationTime", value)
+	return instance.SetProperty("CreationTime", (value))
 }
 
 // GetCreationTime gets the value of CreationTime for the instance
@@ -149,16 +160,25 @@ func (instance *MsftUal_SystemId) GetPropertyCreationTime() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLogicalProcessorsPerPhysicalProcessor sets the value of LogicalProcessorsPerPhysicalProcessor for the instance
 func (instance *MsftUal_SystemId) SetPropertyLogicalProcessorsPerPhysicalProcessor(value uint32) (err error) {
-	return instance.SetProperty("LogicalProcessorsPerPhysicalProcessor", value)
+	return instance.SetProperty("LogicalProcessorsPerPhysicalProcessor", (value))
 }
 
 // GetLogicalProcessorsPerPhysicalProcessor gets the value of LogicalProcessorsPerPhysicalProcessor for the instance
@@ -167,16 +187,25 @@ func (instance *MsftUal_SystemId) GetPropertyLogicalProcessorsPerPhysicalProcess
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumMemory sets the value of MaximumMemory for the instance
 func (instance *MsftUal_SystemId) SetPropertyMaximumMemory(value uint64) (err error) {
-	return instance.SetProperty("MaximumMemory", value)
+	return instance.SetProperty("MaximumMemory", (value))
 }
 
 // GetMaximumMemory gets the value of MaximumMemory for the instance
@@ -185,16 +214,25 @@ func (instance *MsftUal_SystemId) GetPropertyMaximumMemory() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOSBuildNumber sets the value of OSBuildNumber for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSBuildNumber(value uint32) (err error) {
-	return instance.SetProperty("OSBuildNumber", value)
+	return instance.SetProperty("OSBuildNumber", (value))
 }
 
 // GetOSBuildNumber gets the value of OSBuildNumber for the instance
@@ -203,16 +241,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSBuildNumber() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSCountryCode sets the value of OSCountryCode for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSCountryCode(value string) (err error) {
-	return instance.SetProperty("OSCountryCode", value)
+	return instance.SetProperty("OSCountryCode", (value))
 }
 
 // GetOSCountryCode gets the value of OSCountryCode for the instance
@@ -221,16 +268,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSCountryCode() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOSCurrentTimeZone sets the value of OSCurrentTimeZone for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSCurrentTimeZone(value int16) (err error) {
-	return instance.SetProperty("OSCurrentTimeZone", value)
+	return instance.SetProperty("OSCurrentTimeZone", (value))
 }
 
 // GetOSCurrentTimeZone gets the value of OSCurrentTimeZone for the instance
@@ -239,16 +295,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSCurrentTimeZone() (value int16, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int16(valuetmp)
+
 	return
 }
 
 // SetOSDaylightInEffect sets the value of OSDaylightInEffect for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSDaylightInEffect(value bool) (err error) {
-	return instance.SetProperty("OSDaylightInEffect", value)
+	return instance.SetProperty("OSDaylightInEffect", (value))
 }
 
 // GetOSDaylightInEffect gets the value of OSDaylightInEffect for the instance
@@ -257,16 +322,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSDaylightInEffect() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetOSLastBootUpTime sets the value of OSLastBootUpTime for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSLastBootUpTime(value string) (err error) {
-	return instance.SetProperty("OSLastBootUpTime", value)
+	return instance.SetProperty("OSLastBootUpTime", (value))
 }
 
 // GetOSLastBootUpTime gets the value of OSLastBootUpTime for the instance
@@ -275,16 +349,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSLastBootUpTime() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOSMajor sets the value of OSMajor for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSMajor(value uint32) (err error) {
-	return instance.SetProperty("OSMajor", value)
+	return instance.SetProperty("OSMajor", (value))
 }
 
 // GetOSMajor gets the value of OSMajor for the instance
@@ -293,16 +376,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSMajor() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSMinor sets the value of OSMinor for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSMinor(value uint32) (err error) {
-	return instance.SetProperty("OSMinor", value)
+	return instance.SetProperty("OSMinor", (value))
 }
 
 // GetOSMinor gets the value of OSMinor for the instance
@@ -311,16 +403,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSMinor() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSPlatformId sets the value of OSPlatformId for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSPlatformId(value uint32) (err error) {
-	return instance.SetProperty("OSPlatformId", value)
+	return instance.SetProperty("OSPlatformId", (value))
 }
 
 // GetOSPlatformId gets the value of OSPlatformId for the instance
@@ -329,16 +430,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSPlatformId() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSProductType sets the value of OSProductType for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSProductType(value uint32) (err error) {
-	return instance.SetProperty("OSProductType", value)
+	return instance.SetProperty("OSProductType", (value))
 }
 
 // GetOSProductType gets the value of OSProductType for the instance
@@ -347,16 +457,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSProductType() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSSerialNumber sets the value of OSSerialNumber for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSSerialNumber(value string) (err error) {
-	return instance.SetProperty("OSSerialNumber", value)
+	return instance.SetProperty("OSSerialNumber", (value))
 }
 
 // GetOSSerialNumber gets the value of OSSerialNumber for the instance
@@ -365,16 +484,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSSerialNumber() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOSSuiteMask sets the value of OSSuiteMask for the instance
 func (instance *MsftUal_SystemId) SetPropertyOSSuiteMask(value uint32) (err error) {
-	return instance.SetProperty("OSSuiteMask", value)
+	return instance.SetProperty("OSSuiteMask", (value))
 }
 
 // GetOSSuiteMask gets the value of OSSuiteMask for the instance
@@ -383,16 +511,25 @@ func (instance *MsftUal_SystemId) GetPropertyOSSuiteMask() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPhysicalProcessorCount sets the value of PhysicalProcessorCount for the instance
 func (instance *MsftUal_SystemId) SetPropertyPhysicalProcessorCount(value uint32) (err error) {
-	return instance.SetProperty("PhysicalProcessorCount", value)
+	return instance.SetProperty("PhysicalProcessorCount", (value))
 }
 
 // GetPhysicalProcessorCount gets the value of PhysicalProcessorCount for the instance
@@ -401,16 +538,25 @@ func (instance *MsftUal_SystemId) GetPropertyPhysicalProcessorCount() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServicePackMajor sets the value of ServicePackMajor for the instance
 func (instance *MsftUal_SystemId) SetPropertyServicePackMajor(value uint32) (err error) {
-	return instance.SetProperty("ServicePackMajor", value)
+	return instance.SetProperty("ServicePackMajor", (value))
 }
 
 // GetServicePackMajor gets the value of ServicePackMajor for the instance
@@ -419,16 +565,25 @@ func (instance *MsftUal_SystemId) GetPropertyServicePackMajor() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServicePackMinor sets the value of ServicePackMinor for the instance
 func (instance *MsftUal_SystemId) SetPropertyServicePackMinor(value uint32) (err error) {
-	return instance.SetProperty("ServicePackMinor", value)
+	return instance.SetProperty("ServicePackMinor", (value))
 }
 
 // GetServicePackMinor gets the value of ServicePackMinor for the instance
@@ -437,16 +592,25 @@ func (instance *MsftUal_SystemId) GetPropertyServicePackMinor() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSystemDNSHostName sets the value of SystemDNSHostName for the instance
 func (instance *MsftUal_SystemId) SetPropertySystemDNSHostName(value string) (err error) {
-	return instance.SetProperty("SystemDNSHostName", value)
+	return instance.SetProperty("SystemDNSHostName", (value))
 }
 
 // GetSystemDNSHostName gets the value of SystemDNSHostName for the instance
@@ -455,16 +619,25 @@ func (instance *MsftUal_SystemId) GetPropertySystemDNSHostName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemDomainName sets the value of SystemDomainName for the instance
 func (instance *MsftUal_SystemId) SetPropertySystemDomainName(value string) (err error) {
-	return instance.SetProperty("SystemDomainName", value)
+	return instance.SetProperty("SystemDomainName", (value))
 }
 
 // GetSystemDomainName gets the value of SystemDomainName for the instance
@@ -473,16 +646,25 @@ func (instance *MsftUal_SystemId) GetPropertySystemDomainName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemManufacturer sets the value of SystemManufacturer for the instance
 func (instance *MsftUal_SystemId) SetPropertySystemManufacturer(value string) (err error) {
-	return instance.SetProperty("SystemManufacturer", value)
+	return instance.SetProperty("SystemManufacturer", (value))
 }
 
 // GetSystemManufacturer gets the value of SystemManufacturer for the instance
@@ -491,16 +673,25 @@ func (instance *MsftUal_SystemId) GetPropertySystemManufacturer() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemProductName sets the value of SystemProductName for the instance
 func (instance *MsftUal_SystemId) SetPropertySystemProductName(value string) (err error) {
-	return instance.SetProperty("SystemProductName", value)
+	return instance.SetProperty("SystemProductName", (value))
 }
 
 // GetSystemProductName gets the value of SystemProductName for the instance
@@ -509,16 +700,25 @@ func (instance *MsftUal_SystemId) GetPropertySystemProductName() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemSerialNumber sets the value of SystemSerialNumber for the instance
 func (instance *MsftUal_SystemId) SetPropertySystemSerialNumber(value string) (err error) {
-	return instance.SetProperty("SystemSerialNumber", value)
+	return instance.SetProperty("SystemSerialNumber", (value))
 }
 
 // GetSystemSerialNumber gets the value of SystemSerialNumber for the instance
@@ -527,16 +727,25 @@ func (instance *MsftUal_SystemId) GetPropertySystemSerialNumber() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemSMBIOSUUID sets the value of SystemSMBIOSUUID for the instance
 func (instance *MsftUal_SystemId) SetPropertySystemSMBIOSUUID(value string) (err error) {
-	return instance.SetProperty("SystemSMBIOSUUID", value)
+	return instance.SetProperty("SystemSMBIOSUUID", (value))
 }
 
 // GetSystemSMBIOSUUID gets the value of SystemSMBIOSUUID for the instance
@@ -545,9 +754,18 @@ func (instance *MsftUal_SystemId) GetPropertySystemSMBIOSUUID() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

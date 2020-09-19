@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msft_WmiProvider_ExecQueryAsyncEvent_Post struct
@@ -67,7 +69,7 @@ func NewMsft_WmiProvider_ExecQueryAsyncEvent_PostEx6(hostName string,
 
 // SetFlags sets the value of Flags for the instance
 func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) SetPropertyFlags(value uint32) (err error) {
-	return instance.SetProperty("Flags", value)
+	return instance.SetProperty("Flags", (value))
 }
 
 // GetFlags gets the value of Flags for the instance
@@ -76,16 +78,25 @@ func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) GetPropertyFlags() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetObjectParameter sets the value of ObjectParameter for the instance
 func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) SetPropertyObjectParameter(value interface{}) (err error) {
-	return instance.SetProperty("ObjectParameter", value)
+	return instance.SetProperty("ObjectParameter", (value))
 }
 
 // GetObjectParameter gets the value of ObjectParameter for the instance
@@ -94,16 +105,25 @@ func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) GetPropertyObjectPara
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }
 
 // SetQuery sets the value of Query for the instance
 func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) SetPropertyQuery(value string) (err error) {
-	return instance.SetProperty("Query", value)
+	return instance.SetProperty("Query", (value))
 }
 
 // GetQuery gets the value of Query for the instance
@@ -112,16 +132,25 @@ func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) GetPropertyQuery() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQueryLanguage sets the value of QueryLanguage for the instance
 func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) SetPropertyQueryLanguage(value string) (err error) {
-	return instance.SetProperty("QueryLanguage", value)
+	return instance.SetProperty("QueryLanguage", (value))
 }
 
 // GetQueryLanguage gets the value of QueryLanguage for the instance
@@ -130,16 +159,25 @@ func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) GetPropertyQueryLangu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResultCode sets the value of ResultCode for the instance
 func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) SetPropertyResultCode(value uint32) (err error) {
-	return instance.SetProperty("ResultCode", value)
+	return instance.SetProperty("ResultCode", (value))
 }
 
 // GetResultCode gets the value of ResultCode for the instance
@@ -148,16 +186,25 @@ func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) GetPropertyResultCode
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetStringParameter sets the value of StringParameter for the instance
 func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) SetPropertyStringParameter(value string) (err error) {
-	return instance.SetProperty("StringParameter", value)
+	return instance.SetProperty("StringParameter", (value))
 }
 
 // GetStringParameter gets the value of StringParameter for the instance
@@ -166,9 +213,18 @@ func (instance *Msft_WmiProvider_ExecQueryAsyncEvent_Post) GetPropertyStringPara
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

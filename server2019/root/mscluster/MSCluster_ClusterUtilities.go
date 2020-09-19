@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.MSCluster
 //////////////////////////////////////////////
 package mscluster
@@ -11,7 +11,9 @@ package mscluster
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSCluster_ClusterUtilities struct
@@ -56,7 +58,7 @@ func NewMSCluster_ClusterUtilitiesEx6(hostName string,
 
 // SetFqdn sets the value of Fqdn for the instance
 func (instance *MSCluster_ClusterUtilities) SetPropertyFqdn(value string) (err error) {
-	return instance.SetProperty("Fqdn", value)
+	return instance.SetProperty("Fqdn", (value))
 }
 
 // GetFqdn gets the value of Fqdn for the instance
@@ -65,16 +67,25 @@ func (instance *MSCluster_ClusterUtilities) GetPropertyFqdn() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetHasSystemAccess sets the value of HasSystemAccess for the instance
 func (instance *MSCluster_ClusterUtilities) SetPropertyHasSystemAccess(value bool) (err error) {
-	return instance.SetProperty("HasSystemAccess", value)
+	return instance.SetProperty("HasSystemAccess", (value))
 }
 
 // GetHasSystemAccess gets the value of HasSystemAccess for the instance
@@ -83,10 +94,19 @@ func (instance *MSCluster_ClusterUtilities) GetPropertyHasSystemAccess() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

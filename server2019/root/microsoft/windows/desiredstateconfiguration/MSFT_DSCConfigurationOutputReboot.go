@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_DSCConfigurationOutputReboot struct
@@ -52,7 +54,7 @@ func NewMSFT_DSCConfigurationOutputRebootEx6(hostName string,
 
 // SetAutomatic sets the value of Automatic for the instance
 func (instance *MSFT_DSCConfigurationOutputReboot) SetPropertyAutomatic(value bool) (err error) {
-	return instance.SetProperty("Automatic", value)
+	return instance.SetProperty("Automatic", (value))
 }
 
 // GetAutomatic gets the value of Automatic for the instance
@@ -61,9 +63,18 @@ func (instance *MSFT_DSCConfigurationOutputReboot) GetPropertyAutomatic() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

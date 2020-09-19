@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterPowerManagementSettingData struct
@@ -82,7 +84,7 @@ func NewMSFT_NetAdapterPowerManagementSettingDataEx6(hostName string,
 
 // SetAllowComputerToTurnOffDevice sets the value of AllowComputerToTurnOffDevice for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyAllowComputerToTurnOffDevice(value uint32) (err error) {
-	return instance.SetProperty("AllowComputerToTurnOffDevice", value)
+	return instance.SetProperty("AllowComputerToTurnOffDevice", (value))
 }
 
 // GetAllowComputerToTurnOffDevice gets the value of AllowComputerToTurnOffDevice for the instance
@@ -91,16 +93,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyAllowCompu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetArpOffload sets the value of ArpOffload for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyArpOffload(value uint32) (err error) {
-	return instance.SetProperty("ArpOffload", value)
+	return instance.SetProperty("ArpOffload", (value))
 }
 
 // GetArpOffload gets the value of ArpOffload for the instance
@@ -109,16 +120,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyArpOffload
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetD0PacketCoalescing sets the value of D0PacketCoalescing for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyD0PacketCoalescing(value uint32) (err error) {
-	return instance.SetProperty("D0PacketCoalescing", value)
+	return instance.SetProperty("D0PacketCoalescing", (value))
 }
 
 // GetD0PacketCoalescing gets the value of D0PacketCoalescing for the instance
@@ -127,16 +147,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyD0PacketCo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDeviceSleepOnDisconnect sets the value of DeviceSleepOnDisconnect for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyDeviceSleepOnDisconnect(value uint32) (err error) {
-	return instance.SetProperty("DeviceSleepOnDisconnect", value)
+	return instance.SetProperty("DeviceSleepOnDisconnect", (value))
 }
 
 // GetDeviceSleepOnDisconnect gets the value of DeviceSleepOnDisconnect for the instance
@@ -145,16 +174,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyDeviceSlee
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNSOffload sets the value of NSOffload for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyNSOffload(value uint32) (err error) {
-	return instance.SetProperty("NSOffload", value)
+	return instance.SetProperty("NSOffload", (value))
 }
 
 // GetNSOffload gets the value of NSOffload for the instance
@@ -163,16 +201,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyNSOffload(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOffloadParameters sets the value of OffloadParameters for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyOffloadParameters(value []MSFT_NetAdapterPowerManagement_Offload) (err error) {
-	return instance.SetProperty("OffloadParameters", value)
+	return instance.SetProperty("OffloadParameters", (value))
 }
 
 // GetOffloadParameters gets the value of OffloadParameters for the instance
@@ -181,16 +228,26 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyOffloadPar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetAdapterPowerManagement_Offload)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetAdapterPowerManagement_Offload)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterPowerManagement_Offload is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetAdapterPowerManagement_Offload(valuetmp))
+	}
+
 	return
 }
 
 // SetRsnRekeyOffload sets the value of RsnRekeyOffload for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyRsnRekeyOffload(value uint32) (err error) {
-	return instance.SetProperty("RsnRekeyOffload", value)
+	return instance.SetProperty("RsnRekeyOffload", (value))
 }
 
 // GetRsnRekeyOffload gets the value of RsnRekeyOffload for the instance
@@ -199,16 +256,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyRsnRekeyOf
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSelectiveSuspend sets the value of SelectiveSuspend for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertySelectiveSuspend(value uint32) (err error) {
-	return instance.SetProperty("SelectiveSuspend", value)
+	return instance.SetProperty("SelectiveSuspend", (value))
 }
 
 // GetSelectiveSuspend gets the value of SelectiveSuspend for the instance
@@ -217,16 +283,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertySelectiveS
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWakeOnMagicPacket sets the value of WakeOnMagicPacket for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyWakeOnMagicPacket(value uint32) (err error) {
-	return instance.SetProperty("WakeOnMagicPacket", value)
+	return instance.SetProperty("WakeOnMagicPacket", (value))
 }
 
 // GetWakeOnMagicPacket gets the value of WakeOnMagicPacket for the instance
@@ -235,16 +310,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyWakeOnMagi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWakeOnPattern sets the value of WakeOnPattern for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyWakeOnPattern(value uint32) (err error) {
-	return instance.SetProperty("WakeOnPattern", value)
+	return instance.SetProperty("WakeOnPattern", (value))
 }
 
 // GetWakeOnPattern gets the value of WakeOnPattern for the instance
@@ -253,16 +337,25 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyWakeOnPatt
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWakePatterns sets the value of WakePatterns for the instance
 func (instance *MSFT_NetAdapterPowerManagementSettingData) SetPropertyWakePatterns(value []MSFT_NetAdapterPowerManagement_WakePattern) (err error) {
-	return instance.SetProperty("WakePatterns", value)
+	return instance.SetProperty("WakePatterns", (value))
 }
 
 // GetWakePatterns gets the value of WakePatterns for the instance
@@ -271,10 +364,20 @@ func (instance *MSFT_NetAdapterPowerManagementSettingData) GetPropertyWakePatter
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetAdapterPowerManagement_WakePattern)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetAdapterPowerManagement_WakePattern)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterPowerManagement_WakePattern is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetAdapterPowerManagement_WakePattern(valuetmp))
+	}
+
 	return
 }
 

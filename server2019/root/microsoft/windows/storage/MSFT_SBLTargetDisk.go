@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SBLTargetDisk struct
@@ -92,7 +94,7 @@ func NewMSFT_SBLTargetDiskEx6(hostName string,
 
 // SetCacheMode sets the value of CacheMode for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyCacheMode(value uint32) (err error) {
-	return instance.SetProperty("CacheMode", value)
+	return instance.SetProperty("CacheMode", (value))
 }
 
 // GetCacheMode gets the value of CacheMode for the instance
@@ -101,16 +103,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyCacheMode() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentUsage sets the value of CurrentUsage for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyCurrentUsage(value uint32) (err error) {
-	return instance.SetProperty("CurrentUsage", value)
+	return instance.SetProperty("CurrentUsage", (value))
 }
 
 // GetCurrentUsage gets the value of CurrentUsage for the instance
@@ -119,16 +130,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyCurrentUsage() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDesiredUsage sets the value of DesiredUsage for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyDesiredUsage(value uint32) (err error) {
-	return instance.SetProperty("DesiredUsage", value)
+	return instance.SetProperty("DesiredUsage", (value))
 }
 
 // GetDesiredUsage gets the value of DesiredUsage for the instance
@@ -137,16 +157,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyDesiredUsage() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDeviceNumber sets the value of DeviceNumber for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyDeviceNumber(value uint32) (err error) {
-	return instance.SetProperty("DeviceNumber", value)
+	return instance.SetProperty("DeviceNumber", (value))
 }
 
 // GetDeviceNumber gets the value of DeviceNumber for the instance
@@ -155,16 +184,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyDeviceNumber() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIdentifier sets the value of Identifier for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyIdentifier(value string) (err error) {
-	return instance.SetProperty("Identifier", value)
+	return instance.SetProperty("Identifier", (value))
 }
 
 // GetIdentifier gets the value of Identifier for the instance
@@ -173,16 +211,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyIdentifier() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsFlash sets the value of IsFlash for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyIsFlash(value bool) (err error) {
-	return instance.SetProperty("IsFlash", value)
+	return instance.SetProperty("IsFlash", (value))
 }
 
 // GetIsFlash gets the value of IsFlash for the instance
@@ -191,16 +238,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyIsFlash() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsSblCacheDevice sets the value of IsSblCacheDevice for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyIsSblCacheDevice(value bool) (err error) {
-	return instance.SetProperty("IsSblCacheDevice", value)
+	return instance.SetProperty("IsSblCacheDevice", (value))
 }
 
 // GetIsSblCacheDevice gets the value of IsSblCacheDevice for the instance
@@ -209,16 +265,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyIsSblCacheDevice() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLastStateChangeTime sets the value of LastStateChangeTime for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyLastStateChangeTime(value string) (err error) {
-	return instance.SetProperty("LastStateChangeTime", value)
+	return instance.SetProperty("LastStateChangeTime", (value))
 }
 
 // GetLastStateChangeTime gets the value of LastStateChangeTime for the instance
@@ -227,16 +292,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyLastStateChangeTime() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetReadMediaErrorCount sets the value of ReadMediaErrorCount for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyReadMediaErrorCount(value uint64) (err error) {
-	return instance.SetProperty("ReadMediaErrorCount", value)
+	return instance.SetProperty("ReadMediaErrorCount", (value))
 }
 
 // GetReadMediaErrorCount gets the value of ReadMediaErrorCount for the instance
@@ -245,16 +319,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyReadMediaErrorCount() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadTotalErrorCount sets the value of ReadTotalErrorCount for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyReadTotalErrorCount(value uint64) (err error) {
-	return instance.SetProperty("ReadTotalErrorCount", value)
+	return instance.SetProperty("ReadTotalErrorCount", (value))
 }
 
 // GetReadTotalErrorCount gets the value of ReadTotalErrorCount for the instance
@@ -263,16 +346,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyReadTotalErrorCount() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSblAttributes sets the value of SblAttributes for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertySblAttributes(value uint32) (err error) {
-	return instance.SetProperty("SblAttributes", value)
+	return instance.SetProperty("SblAttributes", (value))
 }
 
 // GetSblAttributes gets the value of SblAttributes for the instance
@@ -281,16 +373,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertySblAttributes() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -299,16 +400,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyState() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteMediaErrorCount sets the value of WriteMediaErrorCount for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyWriteMediaErrorCount(value uint64) (err error) {
-	return instance.SetProperty("WriteMediaErrorCount", value)
+	return instance.SetProperty("WriteMediaErrorCount", (value))
 }
 
 // GetWriteMediaErrorCount gets the value of WriteMediaErrorCount for the instance
@@ -317,16 +427,25 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyWriteMediaErrorCount() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteTotalErrorCount sets the value of WriteTotalErrorCount for the instance
 func (instance *MSFT_SBLTargetDisk) SetPropertyWriteTotalErrorCount(value uint64) (err error) {
-	return instance.SetProperty("WriteTotalErrorCount", value)
+	return instance.SetProperty("WriteTotalErrorCount", (value))
 }
 
 // GetWriteTotalErrorCount gets the value of WriteTotalErrorCount for the instance
@@ -335,9 +454,18 @@ func (instance *MSFT_SBLTargetDisk) GetPropertyWriteTotalErrorCount() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

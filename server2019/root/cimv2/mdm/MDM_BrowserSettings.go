@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_BrowserSettings struct
@@ -92,7 +94,7 @@ func NewMDM_BrowserSettingsEx6(hostName string,
 
 // SetAlwaysSendDoNotTrackHeader sets the value of AlwaysSendDoNotTrackHeader for the instance
 func (instance *MDM_BrowserSettings) SetPropertyAlwaysSendDoNotTrackHeader(value bool) (err error) {
-	return instance.SetProperty("AlwaysSendDoNotTrackHeader", value)
+	return instance.SetProperty("AlwaysSendDoNotTrackHeader", (value))
 }
 
 // GetAlwaysSendDoNotTrackHeader gets the value of AlwaysSendDoNotTrackHeader for the instance
@@ -101,16 +103,25 @@ func (instance *MDM_BrowserSettings) GetPropertyAlwaysSendDoNotTrackHeader() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAutofillEnabled sets the value of AutofillEnabled for the instance
 func (instance *MDM_BrowserSettings) SetPropertyAutofillEnabled(value bool) (err error) {
-	return instance.SetProperty("AutofillEnabled", value)
+	return instance.SetProperty("AutofillEnabled", (value))
 }
 
 // GetAutofillEnabled gets the value of AutofillEnabled for the instance
@@ -119,16 +130,25 @@ func (instance *MDM_BrowserSettings) GetPropertyAutofillEnabled() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetForceFraudWarning sets the value of ForceFraudWarning for the instance
 func (instance *MDM_BrowserSettings) SetPropertyForceFraudWarning(value bool) (err error) {
-	return instance.SetProperty("ForceFraudWarning", value)
+	return instance.SetProperty("ForceFraudWarning", (value))
 }
 
 // GetForceFraudWarning gets the value of ForceFraudWarning for the instance
@@ -137,16 +157,25 @@ func (instance *MDM_BrowserSettings) GetPropertyForceFraudWarning() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGoToIntranetForSingleWord sets the value of GoToIntranetForSingleWord for the instance
 func (instance *MDM_BrowserSettings) SetPropertyGoToIntranetForSingleWord(value bool) (err error) {
-	return instance.SetProperty("GoToIntranetForSingleWord", value)
+	return instance.SetProperty("GoToIntranetForSingleWord", (value))
 }
 
 // GetGoToIntranetForSingleWord gets the value of GoToIntranetForSingleWord for the instance
@@ -155,16 +184,25 @@ func (instance *MDM_BrowserSettings) GetPropertyGoToIntranetForSingleWord() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInternetBlockPopups sets the value of InternetBlockPopups for the instance
 func (instance *MDM_BrowserSettings) SetPropertyInternetBlockPopups(value bool) (err error) {
-	return instance.SetProperty("InternetBlockPopups", value)
+	return instance.SetProperty("InternetBlockPopups", (value))
 }
 
 // GetInternetBlockPopups gets the value of InternetBlockPopups for the instance
@@ -173,16 +211,25 @@ func (instance *MDM_BrowserSettings) GetPropertyInternetBlockPopups() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInternetPluginsEnabled sets the value of InternetPluginsEnabled for the instance
 func (instance *MDM_BrowserSettings) SetPropertyInternetPluginsEnabled(value bool) (err error) {
-	return instance.SetProperty("InternetPluginsEnabled", value)
+	return instance.SetProperty("InternetPluginsEnabled", (value))
 }
 
 // GetInternetPluginsEnabled gets the value of InternetPluginsEnabled for the instance
@@ -191,16 +238,25 @@ func (instance *MDM_BrowserSettings) GetPropertyInternetPluginsEnabled() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInternetProtectedModeEnabled sets the value of InternetProtectedModeEnabled for the instance
 func (instance *MDM_BrowserSettings) SetPropertyInternetProtectedModeEnabled(value bool) (err error) {
-	return instance.SetProperty("InternetProtectedModeEnabled", value)
+	return instance.SetProperty("InternetProtectedModeEnabled", (value))
 }
 
 // GetInternetProtectedModeEnabled gets the value of InternetProtectedModeEnabled for the instance
@@ -209,16 +265,25 @@ func (instance *MDM_BrowserSettings) GetPropertyInternetProtectedModeEnabled() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInternetScriptingEnabled sets the value of InternetScriptingEnabled for the instance
 func (instance *MDM_BrowserSettings) SetPropertyInternetScriptingEnabled(value bool) (err error) {
-	return instance.SetProperty("InternetScriptingEnabled", value)
+	return instance.SetProperty("InternetScriptingEnabled", (value))
 }
 
 // GetInternetScriptingEnabled gets the value of InternetScriptingEnabled for the instance
@@ -227,16 +292,25 @@ func (instance *MDM_BrowserSettings) GetPropertyInternetScriptingEnabled() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInternetZoneSecurityLevel sets the value of InternetZoneSecurityLevel for the instance
 func (instance *MDM_BrowserSettings) SetPropertyInternetZoneSecurityLevel(value uint32) (err error) {
-	return instance.SetProperty("InternetZoneSecurityLevel", value)
+	return instance.SetProperty("InternetZoneSecurityLevel", (value))
 }
 
 // GetInternetZoneSecurityLevel gets the value of InternetZoneSecurityLevel for the instance
@@ -245,16 +319,25 @@ func (instance *MDM_BrowserSettings) GetPropertyInternetZoneSecurityLevel() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIntranetSecurityZoneEnabled sets the value of IntranetSecurityZoneEnabled for the instance
 func (instance *MDM_BrowserSettings) SetPropertyIntranetSecurityZoneEnabled(value bool) (err error) {
-	return instance.SetProperty("IntranetSecurityZoneEnabled", value)
+	return instance.SetProperty("IntranetSecurityZoneEnabled", (value))
 }
 
 // GetIntranetSecurityZoneEnabled gets the value of IntranetSecurityZoneEnabled for the instance
@@ -263,16 +346,25 @@ func (instance *MDM_BrowserSettings) GetPropertyIntranetSecurityZoneEnabled() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIntranetZoneSecurityLevel sets the value of IntranetZoneSecurityLevel for the instance
 func (instance *MDM_BrowserSettings) SetPropertyIntranetZoneSecurityLevel(value uint32) (err error) {
-	return instance.SetProperty("IntranetZoneSecurityLevel", value)
+	return instance.SetProperty("IntranetZoneSecurityLevel", (value))
 }
 
 // GetIntranetZoneSecurityLevel gets the value of IntranetZoneSecurityLevel for the instance
@@ -281,16 +373,25 @@ func (instance *MDM_BrowserSettings) GetPropertyIntranetZoneSecurityLevel() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *MDM_BrowserSettings) SetPropertykey(value uint32) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -299,16 +400,25 @@ func (instance *MDM_BrowserSettings) GetPropertykey() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRestrictedSitesZoneSecurityLevel sets the value of RestrictedSitesZoneSecurityLevel for the instance
 func (instance *MDM_BrowserSettings) SetPropertyRestrictedSitesZoneSecurityLevel(value uint32) (err error) {
-	return instance.SetProperty("RestrictedSitesZoneSecurityLevel", value)
+	return instance.SetProperty("RestrictedSitesZoneSecurityLevel", (value))
 }
 
 // GetRestrictedSitesZoneSecurityLevel gets the value of RestrictedSitesZoneSecurityLevel for the instance
@@ -317,16 +427,25 @@ func (instance *MDM_BrowserSettings) GetPropertyRestrictedSitesZoneSecurityLevel
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTrustedSitesZoneSecurityLevel sets the value of TrustedSitesZoneSecurityLevel for the instance
 func (instance *MDM_BrowserSettings) SetPropertyTrustedSitesZoneSecurityLevel(value uint32) (err error) {
-	return instance.SetProperty("TrustedSitesZoneSecurityLevel", value)
+	return instance.SetProperty("TrustedSitesZoneSecurityLevel", (value))
 }
 
 // GetTrustedSitesZoneSecurityLevel gets the value of TrustedSitesZoneSecurityLevel for the instance
@@ -335,9 +454,18 @@ func (instance *MDM_BrowserSettings) GetPropertyTrustedSitesZoneSecurityLevel() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

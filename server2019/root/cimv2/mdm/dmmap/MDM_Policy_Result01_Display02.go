@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Policy_Result01_Display02 struct
@@ -71,7 +73,7 @@ func NewMDM_Policy_Result01_Display02Ex6(hostName string,
 
 // SetDisablePerProcessDpiForApps sets the value of DisablePerProcessDpiForApps for the instance
 func (instance *MDM_Policy_Result01_Display02) SetPropertyDisablePerProcessDpiForApps(value string) (err error) {
-	return instance.SetProperty("DisablePerProcessDpiForApps", value)
+	return instance.SetProperty("DisablePerProcessDpiForApps", (value))
 }
 
 // GetDisablePerProcessDpiForApps gets the value of DisablePerProcessDpiForApps for the instance
@@ -80,16 +82,25 @@ func (instance *MDM_Policy_Result01_Display02) GetPropertyDisablePerProcessDpiFo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnablePerProcessDpi sets the value of EnablePerProcessDpi for the instance
 func (instance *MDM_Policy_Result01_Display02) SetPropertyEnablePerProcessDpi(value int32) (err error) {
-	return instance.SetProperty("EnablePerProcessDpi", value)
+	return instance.SetProperty("EnablePerProcessDpi", (value))
 }
 
 // GetEnablePerProcessDpi gets the value of EnablePerProcessDpi for the instance
@@ -98,16 +109,25 @@ func (instance *MDM_Policy_Result01_Display02) GetPropertyEnablePerProcessDpi() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEnablePerProcessDpiForApps sets the value of EnablePerProcessDpiForApps for the instance
 func (instance *MDM_Policy_Result01_Display02) SetPropertyEnablePerProcessDpiForApps(value string) (err error) {
-	return instance.SetProperty("EnablePerProcessDpiForApps", value)
+	return instance.SetProperty("EnablePerProcessDpiForApps", (value))
 }
 
 // GetEnablePerProcessDpiForApps gets the value of EnablePerProcessDpiForApps for the instance
@@ -116,16 +136,25 @@ func (instance *MDM_Policy_Result01_Display02) GetPropertyEnablePerProcessDpiFor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_Policy_Result01_Display02) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -134,16 +163,25 @@ func (instance *MDM_Policy_Result01_Display02) GetPropertyInstanceID() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_Policy_Result01_Display02) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -152,16 +190,25 @@ func (instance *MDM_Policy_Result01_Display02) GetPropertyParentID() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTurnOffGdiDPIScalingForApps sets the value of TurnOffGdiDPIScalingForApps for the instance
 func (instance *MDM_Policy_Result01_Display02) SetPropertyTurnOffGdiDPIScalingForApps(value string) (err error) {
-	return instance.SetProperty("TurnOffGdiDPIScalingForApps", value)
+	return instance.SetProperty("TurnOffGdiDPIScalingForApps", (value))
 }
 
 // GetTurnOffGdiDPIScalingForApps gets the value of TurnOffGdiDPIScalingForApps for the instance
@@ -170,16 +217,25 @@ func (instance *MDM_Policy_Result01_Display02) GetPropertyTurnOffGdiDPIScalingFo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTurnOnGdiDPIScalingForApps sets the value of TurnOnGdiDPIScalingForApps for the instance
 func (instance *MDM_Policy_Result01_Display02) SetPropertyTurnOnGdiDPIScalingForApps(value string) (err error) {
-	return instance.SetProperty("TurnOnGdiDPIScalingForApps", value)
+	return instance.SetProperty("TurnOnGdiDPIScalingForApps", (value))
 }
 
 // GetTurnOnGdiDPIScalingForApps gets the value of TurnOnGdiDPIScalingForApps for the instance
@@ -188,9 +244,18 @@ func (instance *MDM_Policy_Result01_Display02) GetPropertyTurnOnGdiDPIScalingFor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

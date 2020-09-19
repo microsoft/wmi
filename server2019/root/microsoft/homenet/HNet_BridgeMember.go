@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_BridgeMember struct
@@ -56,7 +58,7 @@ func NewHNet_BridgeMemberEx6(hostName string,
 
 // SetBridge sets the value of Bridge for the instance
 func (instance *HNet_BridgeMember) SetPropertyBridge(value HNet_Connection) (err error) {
-	return instance.SetProperty("Bridge", value)
+	return instance.SetProperty("Bridge", (value))
 }
 
 // GetBridge gets the value of Bridge for the instance
@@ -65,16 +67,25 @@ func (instance *HNet_BridgeMember) GetPropertyBridge() (value HNet_Connection, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(HNet_Connection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(HNet_Connection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " HNet_Connection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = HNet_Connection(valuetmp)
+
 	return
 }
 
 // SetMember sets the value of Member for the instance
 func (instance *HNet_BridgeMember) SetPropertyMember(value HNet_Connection) (err error) {
-	return instance.SetProperty("Member", value)
+	return instance.SetProperty("Member", (value))
 }
 
 // GetMember gets the value of Member for the instance
@@ -83,9 +94,18 @@ func (instance *HNet_BridgeMember) GetPropertyMember() (value HNet_Connection, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(HNet_Connection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(HNet_Connection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " HNet_Connection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = HNet_Connection(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_KPSSVC struct
@@ -61,7 +63,7 @@ func NewWin32_PerfRawData_Counters_KPSSVCEx6(hostName string,
 
 // SetFailedRequests sets the value of FailedRequests for the instance
 func (instance *Win32_PerfRawData_Counters_KPSSVC) SetPropertyFailedRequests(value uint32) (err error) {
-	return instance.SetProperty("FailedRequests", value)
+	return instance.SetProperty("FailedRequests", (value))
 }
 
 // GetFailedRequests gets the value of FailedRequests for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfRawData_Counters_KPSSVC) GetPropertyFailedRequests() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIncomingArmoredRequests sets the value of IncomingArmoredRequests for the instance
 func (instance *Win32_PerfRawData_Counters_KPSSVC) SetPropertyIncomingArmoredRequests(value uint32) (err error) {
-	return instance.SetProperty("IncomingArmoredRequests", value)
+	return instance.SetProperty("IncomingArmoredRequests", (value))
 }
 
 // GetIncomingArmoredRequests gets the value of IncomingArmoredRequests for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfRawData_Counters_KPSSVC) GetPropertyIncomingArmoredReq
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIncomingPasswordChangeRequests sets the value of IncomingPasswordChangeRequests for the instance
 func (instance *Win32_PerfRawData_Counters_KPSSVC) SetPropertyIncomingPasswordChangeRequests(value uint32) (err error) {
-	return instance.SetProperty("IncomingPasswordChangeRequests", value)
+	return instance.SetProperty("IncomingPasswordChangeRequests", (value))
 }
 
 // GetIncomingPasswordChangeRequests gets the value of IncomingPasswordChangeRequests for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfRawData_Counters_KPSSVC) GetPropertyIncomingPasswordCh
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIncomingRequests sets the value of IncomingRequests for the instance
 func (instance *Win32_PerfRawData_Counters_KPSSVC) SetPropertyIncomingRequests(value uint32) (err error) {
-	return instance.SetProperty("IncomingRequests", value)
+	return instance.SetProperty("IncomingRequests", (value))
 }
 
 // GetIncomingRequests gets the value of IncomingRequests for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfRawData_Counters_KPSSVC) GetPropertyIncomingRequests()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

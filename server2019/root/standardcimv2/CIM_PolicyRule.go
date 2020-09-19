@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PolicyRule struct
@@ -79,7 +81,7 @@ func NewCIM_PolicyRuleEx6(hostName string,
 
 // SetConditionListType sets the value of ConditionListType for the instance
 func (instance *CIM_PolicyRule) SetPropertyConditionListType(value uint16) (err error) {
-	return instance.SetProperty("ConditionListType", value)
+	return instance.SetProperty("ConditionListType", (value))
 }
 
 // GetConditionListType gets the value of ConditionListType for the instance
@@ -88,16 +90,25 @@ func (instance *CIM_PolicyRule) GetPropertyConditionListType() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_PolicyRule) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -106,16 +117,25 @@ func (instance *CIM_PolicyRule) GetPropertyCreationClassName() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExecutionStrategy sets the value of ExecutionStrategy for the instance
 func (instance *CIM_PolicyRule) SetPropertyExecutionStrategy(value uint16) (err error) {
-	return instance.SetProperty("ExecutionStrategy", value)
+	return instance.SetProperty("ExecutionStrategy", (value))
 }
 
 // GetExecutionStrategy gets the value of ExecutionStrategy for the instance
@@ -124,16 +144,25 @@ func (instance *CIM_PolicyRule) GetPropertyExecutionStrategy() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMandatory sets the value of Mandatory for the instance
 func (instance *CIM_PolicyRule) SetPropertyMandatory(value bool) (err error) {
-	return instance.SetProperty("Mandatory", value)
+	return instance.SetProperty("Mandatory", (value))
 }
 
 // GetMandatory gets the value of Mandatory for the instance
@@ -142,16 +171,25 @@ func (instance *CIM_PolicyRule) GetPropertyMandatory() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPolicyRuleName sets the value of PolicyRuleName for the instance
 func (instance *CIM_PolicyRule) SetPropertyPolicyRuleName(value string) (err error) {
-	return instance.SetProperty("PolicyRuleName", value)
+	return instance.SetProperty("PolicyRuleName", (value))
 }
 
 // GetPolicyRuleName gets the value of PolicyRuleName for the instance
@@ -160,16 +198,25 @@ func (instance *CIM_PolicyRule) GetPropertyPolicyRuleName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPriority sets the value of Priority for the instance
 func (instance *CIM_PolicyRule) SetPropertyPriority(value uint16) (err error) {
-	return instance.SetProperty("Priority", value)
+	return instance.SetProperty("Priority", (value))
 }
 
 // GetPriority gets the value of Priority for the instance
@@ -178,16 +225,25 @@ func (instance *CIM_PolicyRule) GetPropertyPriority() (value uint16, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRuleUsage sets the value of RuleUsage for the instance
 func (instance *CIM_PolicyRule) SetPropertyRuleUsage(value string) (err error) {
-	return instance.SetProperty("RuleUsage", value)
+	return instance.SetProperty("RuleUsage", (value))
 }
 
 // GetRuleUsage gets the value of RuleUsage for the instance
@@ -196,16 +252,25 @@ func (instance *CIM_PolicyRule) GetPropertyRuleUsage() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSequencedActions sets the value of SequencedActions for the instance
 func (instance *CIM_PolicyRule) SetPropertySequencedActions(value uint16) (err error) {
-	return instance.SetProperty("SequencedActions", value)
+	return instance.SetProperty("SequencedActions", (value))
 }
 
 // GetSequencedActions gets the value of SequencedActions for the instance
@@ -214,16 +279,25 @@ func (instance *CIM_PolicyRule) GetPropertySequencedActions() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *CIM_PolicyRule) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -232,16 +306,25 @@ func (instance *CIM_PolicyRule) GetPropertySystemCreationClassName() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *CIM_PolicyRule) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -250,9 +333,18 @@ func (instance *CIM_PolicyRule) GetPropertySystemName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

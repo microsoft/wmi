@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_USBDevice struct
@@ -70,7 +72,7 @@ func NewCIM_USBDeviceEx6(hostName string,
 
 // SetClassCode sets the value of ClassCode for the instance
 func (instance *CIM_USBDevice) SetPropertyClassCode(value uint8) (err error) {
-	return instance.SetProperty("ClassCode", value)
+	return instance.SetProperty("ClassCode", (value))
 }
 
 // GetClassCode gets the value of ClassCode for the instance
@@ -79,16 +81,25 @@ func (instance *CIM_USBDevice) GetPropertyClassCode() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetCurrentAlternateSettings sets the value of CurrentAlternateSettings for the instance
 func (instance *CIM_USBDevice) SetPropertyCurrentAlternateSettings(value []uint8) (err error) {
-	return instance.SetProperty("CurrentAlternateSettings", value)
+	return instance.SetProperty("CurrentAlternateSettings", (value))
 }
 
 // GetCurrentAlternateSettings gets the value of CurrentAlternateSettings for the instance
@@ -97,16 +108,26 @@ func (instance *CIM_USBDevice) GetPropertyCurrentAlternateSettings() (value []ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetCurrentConfigValue sets the value of CurrentConfigValue for the instance
 func (instance *CIM_USBDevice) SetPropertyCurrentConfigValue(value uint8) (err error) {
-	return instance.SetProperty("CurrentConfigValue", value)
+	return instance.SetProperty("CurrentConfigValue", (value))
 }
 
 // GetCurrentConfigValue gets the value of CurrentConfigValue for the instance
@@ -115,16 +136,25 @@ func (instance *CIM_USBDevice) GetPropertyCurrentConfigValue() (value uint8, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetNumberOfConfigs sets the value of NumberOfConfigs for the instance
 func (instance *CIM_USBDevice) SetPropertyNumberOfConfigs(value uint8) (err error) {
-	return instance.SetProperty("NumberOfConfigs", value)
+	return instance.SetProperty("NumberOfConfigs", (value))
 }
 
 // GetNumberOfConfigs gets the value of NumberOfConfigs for the instance
@@ -133,16 +163,25 @@ func (instance *CIM_USBDevice) GetPropertyNumberOfConfigs() (value uint8, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetProtocolCode sets the value of ProtocolCode for the instance
 func (instance *CIM_USBDevice) SetPropertyProtocolCode(value uint8) (err error) {
-	return instance.SetProperty("ProtocolCode", value)
+	return instance.SetProperty("ProtocolCode", (value))
 }
 
 // GetProtocolCode gets the value of ProtocolCode for the instance
@@ -151,16 +190,25 @@ func (instance *CIM_USBDevice) GetPropertyProtocolCode() (value uint8, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSubclassCode sets the value of SubclassCode for the instance
 func (instance *CIM_USBDevice) SetPropertySubclassCode(value uint8) (err error) {
-	return instance.SetProperty("SubclassCode", value)
+	return instance.SetProperty("SubclassCode", (value))
 }
 
 // GetSubclassCode gets the value of SubclassCode for the instance
@@ -169,16 +217,25 @@ func (instance *CIM_USBDevice) GetPropertySubclassCode() (value uint8, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetUSBVersion sets the value of USBVersion for the instance
 func (instance *CIM_USBDevice) SetPropertyUSBVersion(value uint16) (err error) {
-	return instance.SetProperty("USBVersion", value)
+	return instance.SetProperty("USBVersion", (value))
 }
 
 // GetUSBVersion gets the value of USBVersion for the instance
@@ -187,10 +244,19 @@ func (instance *CIM_USBDevice) GetPropertyUSBVersion() (value uint16, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_PhysicalElementLocation struct
@@ -56,7 +58,7 @@ func NewCIM_PhysicalElementLocationEx6(hostName string,
 
 // SetElement sets the value of Element for the instance
 func (instance *CIM_PhysicalElementLocation) SetPropertyElement(value CIM_PhysicalElement) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_PhysicalElementLocation) GetPropertyElement() (value CIM_Phy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_PhysicalElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_PhysicalElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_PhysicalElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_PhysicalElement(valuetmp)
+
 	return
 }
 
 // SetPhysicalLocation sets the value of PhysicalLocation for the instance
 func (instance *CIM_PhysicalElementLocation) SetPropertyPhysicalLocation(value CIM_Location) (err error) {
-	return instance.SetProperty("PhysicalLocation", value)
+	return instance.SetProperty("PhysicalLocation", (value))
 }
 
 // GetPhysicalLocation gets the value of PhysicalLocation for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_PhysicalElementLocation) GetPropertyPhysicalLocation() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Location)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Location)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Location is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Location(valuetmp)
+
 	return
 }

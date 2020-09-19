@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Cluster.Scaleout
 //////////////////////////////////////////////
 package scaleout
@@ -11,7 +11,9 @@ package scaleout
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ClusterSetMember struct
@@ -71,7 +73,7 @@ func NewMSFT_ClusterSetMemberEx6(hostName string,
 
 // SetClusterName sets the value of ClusterName for the instance
 func (instance *MSFT_ClusterSetMember) SetPropertyClusterName(value string) (err error) {
-	return instance.SetProperty("ClusterName", value)
+	return instance.SetProperty("ClusterName", (value))
 }
 
 // GetClusterName gets the value of ClusterName for the instance
@@ -80,16 +82,25 @@ func (instance *MSFT_ClusterSetMember) GetPropertyClusterName() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_ClusterSetMember) SetPropertyId(value uint64) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -98,16 +109,25 @@ func (instance *MSFT_ClusterSetMember) GetPropertyId() (value uint64, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkPrefixes sets the value of NetworkPrefixes for the instance
 func (instance *MSFT_ClusterSetMember) SetPropertyNetworkPrefixes(value string) (err error) {
-	return instance.SetProperty("NetworkPrefixes", value)
+	return instance.SetProperty("NetworkPrefixes", (value))
 }
 
 // GetNetworkPrefixes gets the value of NetworkPrefixes for the instance
@@ -116,16 +136,25 @@ func (instance *MSFT_ClusterSetMember) GetPropertyNetworkPrefixes() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_ClusterSetMember) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -134,16 +163,25 @@ func (instance *MSFT_ClusterSetMember) GetPropertyState() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTags sets the value of Tags for the instance
 func (instance *MSFT_ClusterSetMember) SetPropertyTags(value []string) (err error) {
-	return instance.SetProperty("Tags", value)
+	return instance.SetProperty("Tags", (value))
 }
 
 // GetTags gets the value of Tags for the instance
@@ -152,16 +190,26 @@ func (instance *MSFT_ClusterSetMember) GetPropertyTags() (value []string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTopologyLabel sets the value of TopologyLabel for the instance
 func (instance *MSFT_ClusterSetMember) SetPropertyTopologyLabel(value string) (err error) {
-	return instance.SetProperty("TopologyLabel", value)
+	return instance.SetProperty("TopologyLabel", (value))
 }
 
 // GetTopologyLabel gets the value of TopologyLabel for the instance
@@ -170,16 +218,25 @@ func (instance *MSFT_ClusterSetMember) GetPropertyTopologyLabel() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWorkloadCount sets the value of WorkloadCount for the instance
 func (instance *MSFT_ClusterSetMember) SetPropertyWorkloadCount(value uint32) (err error) {
-	return instance.SetProperty("WorkloadCount", value)
+	return instance.SetProperty("WorkloadCount", (value))
 }
 
 // GetWorkloadCount gets the value of WorkloadCount for the instance
@@ -188,10 +245,19 @@ func (instance *MSFT_ClusterSetMember) GetPropertyWorkloadCount() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

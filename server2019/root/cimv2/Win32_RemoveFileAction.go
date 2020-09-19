@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RemoveFileAction struct
@@ -61,7 +63,7 @@ func NewWin32_RemoveFileActionEx6(hostName string,
 
 // SetDirProperty sets the value of DirProperty for the instance
 func (instance *Win32_RemoveFileAction) SetPropertyDirProperty(value string) (err error) {
-	return instance.SetProperty("DirProperty", value)
+	return instance.SetProperty("DirProperty", (value))
 }
 
 // GetDirProperty gets the value of DirProperty for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_RemoveFileAction) GetPropertyDirProperty() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileKey sets the value of FileKey for the instance
 func (instance *Win32_RemoveFileAction) SetPropertyFileKey(value string) (err error) {
-	return instance.SetProperty("FileKey", value)
+	return instance.SetProperty("FileKey", (value))
 }
 
 // GetFileKey gets the value of FileKey for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_RemoveFileAction) GetPropertyFileKey() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFileName sets the value of FileName for the instance
 func (instance *Win32_RemoveFileAction) SetPropertyFileName(value string) (err error) {
-	return instance.SetProperty("FileName", value)
+	return instance.SetProperty("FileName", (value))
 }
 
 // GetFileName gets the value of FileName for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_RemoveFileAction) GetPropertyFileName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstallMode sets the value of InstallMode for the instance
 func (instance *Win32_RemoveFileAction) SetPropertyInstallMode(value uint16) (err error) {
-	return instance.SetProperty("InstallMode", value)
+	return instance.SetProperty("InstallMode", (value))
 }
 
 // GetInstallMode gets the value of InstallMode for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_RemoveFileAction) GetPropertyInstallMode() (value uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

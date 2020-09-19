@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_Counters_EventTracingforWindows struct
@@ -67,7 +69,7 @@ func NewWin32_PerfFormattedData_Counters_EventTracingforWindowsEx6(hostName stri
 
 // SetTotalMemoryUsageNonPagedPool sets the value of TotalMemoryUsageNonPagedPool for the instance
 func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) SetPropertyTotalMemoryUsageNonPagedPool(value uint32) (err error) {
-	return instance.SetProperty("TotalMemoryUsageNonPagedPool", value)
+	return instance.SetProperty("TotalMemoryUsageNonPagedPool", (value))
 }
 
 // GetTotalMemoryUsageNonPagedPool gets the value of TotalMemoryUsageNonPagedPool for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalMemoryUsagePagedPool sets the value of TotalMemoryUsagePagedPool for the instance
 func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) SetPropertyTotalMemoryUsagePagedPool(value uint32) (err error) {
-	return instance.SetProperty("TotalMemoryUsagePagedPool", value)
+	return instance.SetProperty("TotalMemoryUsagePagedPool", (value))
 }
 
 // GetTotalMemoryUsagePagedPool gets the value of TotalMemoryUsagePagedPool for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalNumberofActiveSessions sets the value of TotalNumberofActiveSessions for the instance
 func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) SetPropertyTotalNumberofActiveSessions(value uint32) (err error) {
-	return instance.SetProperty("TotalNumberofActiveSessions", value)
+	return instance.SetProperty("TotalNumberofActiveSessions", (value))
 }
 
 // GetTotalNumberofActiveSessions gets the value of TotalNumberofActiveSessions for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalNumberofDistinctDisabledProviders sets the value of TotalNumberofDistinctDisabledProviders for the instance
 func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) SetPropertyTotalNumberofDistinctDisabledProviders(value uint32) (err error) {
-	return instance.SetProperty("TotalNumberofDistinctDisabledProviders", value)
+	return instance.SetProperty("TotalNumberofDistinctDisabledProviders", (value))
 }
 
 // GetTotalNumberofDistinctDisabledProviders gets the value of TotalNumberofDistinctDisabledProviders for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalNumberofDistinctEnabledProviders sets the value of TotalNumberofDistinctEnabledProviders for the instance
 func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) SetPropertyTotalNumberofDistinctEnabledProviders(value uint32) (err error) {
-	return instance.SetProperty("TotalNumberofDistinctEnabledProviders", value)
+	return instance.SetProperty("TotalNumberofDistinctEnabledProviders", (value))
 }
 
 // GetTotalNumberofDistinctEnabledProviders gets the value of TotalNumberofDistinctEnabledProviders for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalNumberofDistinctPreEnabledProviders sets the value of TotalNumberofDistinctPreEnabledProviders for the instance
 func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) SetPropertyTotalNumberofDistinctPreEnabledProviders(value uint32) (err error) {
-	return instance.SetProperty("TotalNumberofDistinctPreEnabledProviders", value)
+	return instance.SetProperty("TotalNumberofDistinctPreEnabledProviders", (value))
 }
 
 // GetTotalNumberofDistinctPreEnabledProviders gets the value of TotalNumberofDistinctPreEnabledProviders for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_PerfFormattedData_Counters_EventTracingforWindows) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

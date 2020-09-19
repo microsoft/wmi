@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.SecurityClient
 //////////////////////////////////////////////
 package securityclient
@@ -11,7 +11,9 @@ package securityclient
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SerializableToXml struct
@@ -56,7 +58,7 @@ func NewSerializableToXmlEx6(hostName string,
 
 // SetPackedXml sets the value of PackedXml for the instance
 func (instance *SerializableToXml) SetPropertyPackedXml(value string) (err error) {
-	return instance.SetProperty("PackedXml", value)
+	return instance.SetProperty("PackedXml", (value))
 }
 
 // GetPackedXml gets the value of PackedXml for the instance
@@ -65,16 +67,25 @@ func (instance *SerializableToXml) GetPropertyPackedXml() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSchemaVersion sets the value of SchemaVersion for the instance
 func (instance *SerializableToXml) SetPropertySchemaVersion(value string) (err error) {
-	return instance.SetProperty("SchemaVersion", value)
+	return instance.SetProperty("SchemaVersion", (value))
 }
 
 // GetSchemaVersion gets the value of SchemaVersion for the instance
@@ -83,9 +94,18 @@ func (instance *SerializableToXml) GetPropertySchemaVersion() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_RemoteApplication struct
@@ -56,7 +58,7 @@ func NewMDM_RemoteApplicationEx6(hostName string,
 
 // SetAppId sets the value of AppId for the instance
 func (instance *MDM_RemoteApplication) SetPropertyAppId(value string) (err error) {
-	return instance.SetProperty("AppId", value)
+	return instance.SetProperty("AppId", (value))
 }
 
 // GetAppId gets the value of AppId for the instance
@@ -65,16 +67,25 @@ func (instance *MDM_RemoteApplication) GetPropertyAppId() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFeedUrl sets the value of FeedUrl for the instance
 func (instance *MDM_RemoteApplication) SetPropertyFeedUrl(value string) (err error) {
-	return instance.SetProperty("FeedUrl", value)
+	return instance.SetProperty("FeedUrl", (value))
 }
 
 // GetFeedUrl gets the value of FeedUrl for the instance
@@ -83,9 +94,18 @@ func (instance *MDM_RemoteApplication) GetPropertyFeedUrl() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_EnterpriseModernAppManagement_AppInstallation01_01 struct
@@ -74,7 +76,7 @@ func NewMDM_EnterpriseModernAppManagement_AppInstallation01_01Ex6(hostName strin
 
 // SetHostedInstall sets the value of HostedInstall for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyHostedInstall(value string) (err error) {
-	return instance.SetProperty("HostedInstall", value)
+	return instance.SetProperty("HostedInstall", (value))
 }
 
 // GetHostedInstall gets the value of HostedInstall for the instance
@@ -83,16 +85,25 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -101,16 +112,25 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetLastError sets the value of LastError for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyLastError(value int32) (err error) {
-	return instance.SetProperty("LastError", value)
+	return instance.SetProperty("LastError", (value))
 }
 
 // GetLastError gets the value of LastError for the instance
@@ -119,16 +139,25 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetLastErrorDesc sets the value of LastErrorDesc for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyLastErrorDesc(value string) (err error) {
-	return instance.SetProperty("LastErrorDesc", value)
+	return instance.SetProperty("LastErrorDesc", (value))
 }
 
 // GetLastErrorDesc gets the value of LastErrorDesc for the instance
@@ -137,16 +166,25 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -155,16 +193,25 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProgressStatus sets the value of ProgressStatus for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyProgressStatus(value int32) (err error) {
-	return instance.SetProperty("ProgressStatus", value)
+	return instance.SetProperty("ProgressStatus", (value))
 }
 
 // GetProgressStatus gets the value of ProgressStatus for the instance
@@ -173,16 +220,25 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetStatus sets the value of Status for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyStatus(value int32) (err error) {
-	return instance.SetProperty("Status", value)
+	return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
@@ -191,16 +247,25 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetStoreInstall sets the value of StoreInstall for the instance
 func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) SetPropertyStoreInstall(value string) (err error) {
-	return instance.SetProperty("StoreInstall", value)
+	return instance.SetProperty("StoreInstall", (value))
 }
 
 // GetStoreInstall gets the value of StoreInstall for the instance
@@ -209,10 +274,19 @@ func (instance *MDM_EnterpriseModernAppManagement_AppInstallation01_01) GetPrope
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

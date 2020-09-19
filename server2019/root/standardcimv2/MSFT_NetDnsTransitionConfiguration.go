@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetDnsTransitionConfiguration struct
@@ -73,7 +75,7 @@ func NewMSFT_NetDnsTransitionConfigurationEx6(hostName string,
 
 // SetAcceptInterface sets the value of AcceptInterface for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertyAcceptInterface(value []string) (err error) {
-	return instance.SetProperty("AcceptInterface", value)
+	return instance.SetProperty("AcceptInterface", (value))
 }
 
 // GetAcceptInterface gets the value of AcceptInterface for the instance
@@ -82,16 +84,26 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertyAcceptInterface()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetAlwaysSynthesize sets the value of AlwaysSynthesize for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertyAlwaysSynthesize(value bool) (err error) {
-	return instance.SetProperty("AlwaysSynthesize", value)
+	return instance.SetProperty("AlwaysSynthesize", (value))
 }
 
 // GetAlwaysSynthesize gets the value of AlwaysSynthesize for the instance
@@ -100,16 +112,25 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertyAlwaysSynthesize(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetExclusionList sets the value of ExclusionList for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertyExclusionList(value []string) (err error) {
-	return instance.SetProperty("ExclusionList", value)
+	return instance.SetProperty("ExclusionList", (value))
 }
 
 // GetExclusionList gets the value of ExclusionList for the instance
@@ -118,16 +139,26 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertyExclusionList() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLatency sets the value of Latency for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertyLatency(value uint32) (err error) {
-	return instance.SetProperty("Latency", value)
+	return instance.SetProperty("Latency", (value))
 }
 
 // GetLatency gets the value of Latency for the instance
@@ -136,16 +167,25 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertyLatency() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOnlySendAQuery sets the value of OnlySendAQuery for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertyOnlySendAQuery(value bool) (err error) {
-	return instance.SetProperty("OnlySendAQuery", value)
+	return instance.SetProperty("OnlySendAQuery", (value))
 }
 
 // GetOnlySendAQuery gets the value of OnlySendAQuery for the instance
@@ -154,16 +194,25 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertyOnlySendAQuery() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPrefixMapping sets the value of PrefixMapping for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertyPrefixMapping(value []string) (err error) {
-	return instance.SetProperty("PrefixMapping", value)
+	return instance.SetProperty("PrefixMapping", (value))
 }
 
 // GetPrefixMapping gets the value of PrefixMapping for the instance
@@ -172,16 +221,26 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertyPrefixMapping() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSendInterface sets the value of SendInterface for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertySendInterface(value []string) (err error) {
-	return instance.SetProperty("SendInterface", value)
+	return instance.SetProperty("SendInterface", (value))
 }
 
 // GetSendInterface gets the value of SendInterface for the instance
@@ -190,16 +249,26 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertySendInterface() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_NetDnsTransitionConfiguration) SetPropertyState(value uint32) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -208,10 +277,19 @@ func (instance *MSFT_NetDnsTransitionConfiguration) GetPropertyState() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

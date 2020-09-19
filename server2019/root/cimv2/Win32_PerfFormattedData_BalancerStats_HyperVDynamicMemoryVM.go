@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM struct
@@ -25,9 +27,6 @@ type Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM struct {
 
 	//
 	CurrentPressure uint32
-
-	//
-	GuestAvailableMemory uint32
 
 	//
 	GuestVisiblePhysicalMemory uint32
@@ -85,7 +84,7 @@ func NewWin32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVMEx6(hostName 
 
 // SetAddedMemory sets the value of AddedMemory for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyAddedMemory(value uint64) (err error) {
-	return instance.SetProperty("AddedMemory", value)
+	return instance.SetProperty("AddedMemory", (value))
 }
 
 // GetAddedMemory gets the value of AddedMemory for the instance
@@ -94,16 +93,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAveragePressure sets the value of AveragePressure for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyAveragePressure(value uint32) (err error) {
-	return instance.SetProperty("AveragePressure", value)
+	return instance.SetProperty("AveragePressure", (value))
 }
 
 // GetAveragePressure gets the value of AveragePressure for the instance
@@ -112,16 +120,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentPressure sets the value of CurrentPressure for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyCurrentPressure(value uint32) (err error) {
-	return instance.SetProperty("CurrentPressure", value)
+	return instance.SetProperty("CurrentPressure", (value))
 }
 
 // GetCurrentPressure gets the value of CurrentPressure for the instance
@@ -130,34 +147,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetGuestAvailableMemory sets the value of GuestAvailableMemory for the instance
-func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyGuestAvailableMemory(value uint32) (err error) {
-	return instance.SetProperty("GuestAvailableMemory", value)
-}
-
-// GetGuestAvailableMemory gets the value of GuestAvailableMemory for the instance
-func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) GetPropertyGuestAvailableMemory() (value uint32, err error) {
-	retValue, err := instance.GetProperty("GuestAvailableMemory")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(uint32)
+
+	valuetmp, ok := retValue.(uint32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGuestVisiblePhysicalMemory sets the value of GuestVisiblePhysicalMemory for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyGuestVisiblePhysicalMemory(value uint32) (err error) {
-	return instance.SetProperty("GuestVisiblePhysicalMemory", value)
+	return instance.SetProperty("GuestVisiblePhysicalMemory", (value))
 }
 
 // GetGuestVisiblePhysicalMemory gets the value of GuestVisiblePhysicalMemory for the instance
@@ -166,16 +174,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaximumPressure sets the value of MaximumPressure for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyMaximumPressure(value uint32) (err error) {
-	return instance.SetProperty("MaximumPressure", value)
+	return instance.SetProperty("MaximumPressure", (value))
 }
 
 // GetMaximumPressure gets the value of MaximumPressure for the instance
@@ -184,16 +201,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMemoryAddOperations sets the value of MemoryAddOperations for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyMemoryAddOperations(value uint64) (err error) {
-	return instance.SetProperty("MemoryAddOperations", value)
+	return instance.SetProperty("MemoryAddOperations", (value))
 }
 
 // GetMemoryAddOperations gets the value of MemoryAddOperations for the instance
@@ -202,16 +228,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryRemoveOperations sets the value of MemoryRemoveOperations for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyMemoryRemoveOperations(value uint64) (err error) {
-	return instance.SetProperty("MemoryRemoveOperations", value)
+	return instance.SetProperty("MemoryRemoveOperations", (value))
 }
 
 // GetMemoryRemoveOperations gets the value of MemoryRemoveOperations for the instance
@@ -220,16 +255,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinimumPressure sets the value of MinimumPressure for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyMinimumPressure(value uint32) (err error) {
-	return instance.SetProperty("MinimumPressure", value)
+	return instance.SetProperty("MinimumPressure", (value))
 }
 
 // GetMinimumPressure gets the value of MinimumPressure for the instance
@@ -238,16 +282,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPhysicalMemory sets the value of PhysicalMemory for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyPhysicalMemory(value uint32) (err error) {
-	return instance.SetProperty("PhysicalMemory", value)
+	return instance.SetProperty("PhysicalMemory", (value))
 }
 
 // GetPhysicalMemory gets the value of PhysicalMemory for the instance
@@ -256,16 +309,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemovedMemory sets the value of RemovedMemory for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertyRemovedMemory(value uint64) (err error) {
-	return instance.SetProperty("RemovedMemory", value)
+	return instance.SetProperty("RemovedMemory", (value))
 }
 
 // GetRemovedMemory gets the value of RemovedMemory for the instance
@@ -274,16 +336,25 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSmartPagingWorkingSetSize sets the value of SmartPagingWorkingSetSize for the instance
 func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) SetPropertySmartPagingWorkingSetSize(value uint32) (err error) {
-	return instance.SetProperty("SmartPagingWorkingSetSize", value)
+	return instance.SetProperty("SmartPagingWorkingSetSize", (value))
 }
 
 // GetSmartPagingWorkingSetSize gets the value of SmartPagingWorkingSetSize for the instance
@@ -292,9 +363,18 @@ func (instance *Win32_PerfFormattedData_BalancerStats_HyperVDynamicMemoryVM) Get
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ServiceServiceDependency struct
@@ -52,7 +54,7 @@ func NewCIM_ServiceServiceDependencyEx6(hostName string,
 
 // SetTypeOfDependency sets the value of TypeOfDependency for the instance
 func (instance *CIM_ServiceServiceDependency) SetPropertyTypeOfDependency(value uint16) (err error) {
-	return instance.SetProperty("TypeOfDependency", value)
+	return instance.SetProperty("TypeOfDependency", (value))
 }
 
 // GetTypeOfDependency gets the value of TypeOfDependency for the instance
@@ -61,9 +63,18 @@ func (instance *CIM_ServiceServiceDependency) GetPropertyTypeOfDependency() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

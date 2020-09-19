@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_MotherboardDevice struct
@@ -58,7 +60,7 @@ func NewWin32_MotherboardDeviceEx6(hostName string,
 
 // SetPrimaryBusType sets the value of PrimaryBusType for the instance
 func (instance *Win32_MotherboardDevice) SetPropertyPrimaryBusType(value string) (err error) {
-	return instance.SetProperty("PrimaryBusType", value)
+	return instance.SetProperty("PrimaryBusType", (value))
 }
 
 // GetPrimaryBusType gets the value of PrimaryBusType for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_MotherboardDevice) GetPropertyPrimaryBusType() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRevisionNumber sets the value of RevisionNumber for the instance
 func (instance *Win32_MotherboardDevice) SetPropertyRevisionNumber(value string) (err error) {
-	return instance.SetProperty("RevisionNumber", value)
+	return instance.SetProperty("RevisionNumber", (value))
 }
 
 // GetRevisionNumber gets the value of RevisionNumber for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_MotherboardDevice) GetPropertyRevisionNumber() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSecondaryBusType sets the value of SecondaryBusType for the instance
 func (instance *Win32_MotherboardDevice) SetPropertySecondaryBusType(value string) (err error) {
-	return instance.SetProperty("SecondaryBusType", value)
+	return instance.SetProperty("SecondaryBusType", (value))
 }
 
 // GetSecondaryBusType gets the value of SecondaryBusType for the instance
@@ -103,9 +123,18 @@ func (instance *Win32_MotherboardDevice) GetPropertySecondaryBusType() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

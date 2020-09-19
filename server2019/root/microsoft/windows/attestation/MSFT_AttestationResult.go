@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Attestation
 //////////////////////////////////////////////
 package attestation
@@ -11,7 +11,9 @@ package attestation
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_AttestationResult struct
@@ -65,7 +67,7 @@ func NewMSFT_AttestationResultEx6(hostName string,
 
 // SetAttestationStatus sets the value of AttestationStatus for the instance
 func (instance *MSFT_AttestationResult) SetPropertyAttestationStatus(value uint16) (err error) {
-	return instance.SetProperty("AttestationStatus", value)
+	return instance.SetProperty("AttestationStatus", (value))
 }
 
 // GetAttestationStatus gets the value of AttestationStatus for the instance
@@ -74,16 +76,25 @@ func (instance *MSFT_AttestationResult) GetPropertyAttestationStatus() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAttestationSubstatus sets the value of AttestationSubstatus for the instance
 func (instance *MSFT_AttestationResult) SetPropertyAttestationSubstatus(value uint64) (err error) {
-	return instance.SetProperty("AttestationSubstatus", value)
+	return instance.SetProperty("AttestationSubstatus", (value))
 }
 
 // GetAttestationSubstatus gets the value of AttestationSubstatus for the instance
@@ -92,16 +103,25 @@ func (instance *MSFT_AttestationResult) GetPropertyAttestationSubstatus() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetData sets the value of Data for the instance
 func (instance *MSFT_AttestationResult) SetPropertyData(value []uint8) (err error) {
-	return instance.SetProperty("Data", value)
+	return instance.SetProperty("Data", (value))
 }
 
 // GetData gets the value of Data for the instance
@@ -110,16 +130,26 @@ func (instance *MSFT_AttestationResult) GetPropertyData() (value []uint8, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_AttestationResult) SetPropertyType(value uint16) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -128,16 +158,25 @@ func (instance *MSFT_AttestationResult) GetPropertyType() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetUrl sets the value of Url for the instance
 func (instance *MSFT_AttestationResult) SetPropertyUrl(value string) (err error) {
-	return instance.SetProperty("Url", value)
+	return instance.SetProperty("Url", (value))
 }
 
 // GetUrl gets the value of Url for the instance
@@ -146,9 +185,18 @@ func (instance *MSFT_AttestationResult) GetPropertyUrl() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

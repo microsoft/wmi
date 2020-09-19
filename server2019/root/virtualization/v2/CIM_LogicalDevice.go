@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_LogicalDevice struct
@@ -102,7 +104,7 @@ func NewCIM_LogicalDeviceEx6(hostName string,
 
 // SetAdditionalAvailability sets the value of AdditionalAvailability for the instance
 func (instance *CIM_LogicalDevice) SetPropertyAdditionalAvailability(value []LogicalDevice_AdditionalAvailability) (err error) {
-	return instance.SetProperty("AdditionalAvailability", value)
+	return instance.SetProperty("AdditionalAvailability", (value))
 }
 
 // GetAdditionalAvailability gets the value of AdditionalAvailability for the instance
@@ -111,16 +113,26 @@ func (instance *CIM_LogicalDevice) GetPropertyAdditionalAvailability() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]LogicalDevice_AdditionalAvailability)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, LogicalDevice_AdditionalAvailability(valuetmp))
+	}
+
 	return
 }
 
 // SetAvailability sets the value of Availability for the instance
 func (instance *CIM_LogicalDevice) SetPropertyAvailability(value LogicalDevice_Availability) (err error) {
-	return instance.SetProperty("Availability", value)
+	return instance.SetProperty("Availability", (value))
 }
 
 // GetAvailability gets the value of Availability for the instance
@@ -129,16 +141,25 @@ func (instance *CIM_LogicalDevice) GetPropertyAvailability() (value LogicalDevic
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(LogicalDevice_Availability)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = LogicalDevice_Availability(valuetmp)
+
 	return
 }
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_LogicalDevice) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -147,16 +168,25 @@ func (instance *CIM_LogicalDevice) GetPropertyCreationClassName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDeviceID sets the value of DeviceID for the instance
 func (instance *CIM_LogicalDevice) SetPropertyDeviceID(value string) (err error) {
-	return instance.SetProperty("DeviceID", value)
+	return instance.SetProperty("DeviceID", (value))
 }
 
 // GetDeviceID gets the value of DeviceID for the instance
@@ -165,16 +195,25 @@ func (instance *CIM_LogicalDevice) GetPropertyDeviceID() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorCleared sets the value of ErrorCleared for the instance
 func (instance *CIM_LogicalDevice) SetPropertyErrorCleared(value bool) (err error) {
-	return instance.SetProperty("ErrorCleared", value)
+	return instance.SetProperty("ErrorCleared", (value))
 }
 
 // GetErrorCleared gets the value of ErrorCleared for the instance
@@ -183,16 +222,25 @@ func (instance *CIM_LogicalDevice) GetPropertyErrorCleared() (value bool, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetErrorDescription sets the value of ErrorDescription for the instance
 func (instance *CIM_LogicalDevice) SetPropertyErrorDescription(value string) (err error) {
-	return instance.SetProperty("ErrorDescription", value)
+	return instance.SetProperty("ErrorDescription", (value))
 }
 
 // GetErrorDescription gets the value of ErrorDescription for the instance
@@ -201,16 +249,25 @@ func (instance *CIM_LogicalDevice) GetPropertyErrorDescription() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIdentifyingDescriptions sets the value of IdentifyingDescriptions for the instance
 func (instance *CIM_LogicalDevice) SetPropertyIdentifyingDescriptions(value []string) (err error) {
-	return instance.SetProperty("IdentifyingDescriptions", value)
+	return instance.SetProperty("IdentifyingDescriptions", (value))
 }
 
 // GetIdentifyingDescriptions gets the value of IdentifyingDescriptions for the instance
@@ -219,16 +276,26 @@ func (instance *CIM_LogicalDevice) GetPropertyIdentifyingDescriptions() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetLastErrorCode sets the value of LastErrorCode for the instance
 func (instance *CIM_LogicalDevice) SetPropertyLastErrorCode(value uint32) (err error) {
-	return instance.SetProperty("LastErrorCode", value)
+	return instance.SetProperty("LastErrorCode", (value))
 }
 
 // GetLastErrorCode gets the value of LastErrorCode for the instance
@@ -237,16 +304,25 @@ func (instance *CIM_LogicalDevice) GetPropertyLastErrorCode() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxQuiesceTime sets the value of MaxQuiesceTime for the instance
 func (instance *CIM_LogicalDevice) SetPropertyMaxQuiesceTime(value uint64) (err error) {
-	return instance.SetProperty("MaxQuiesceTime", value)
+	return instance.SetProperty("MaxQuiesceTime", (value))
 }
 
 // GetMaxQuiesceTime gets the value of MaxQuiesceTime for the instance
@@ -255,16 +331,25 @@ func (instance *CIM_LogicalDevice) GetPropertyMaxQuiesceTime() (value uint64, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOtherIdentifyingInfo sets the value of OtherIdentifyingInfo for the instance
 func (instance *CIM_LogicalDevice) SetPropertyOtherIdentifyingInfo(value []string) (err error) {
-	return instance.SetProperty("OtherIdentifyingInfo", value)
+	return instance.SetProperty("OtherIdentifyingInfo", (value))
 }
 
 // GetOtherIdentifyingInfo gets the value of OtherIdentifyingInfo for the instance
@@ -273,16 +358,26 @@ func (instance *CIM_LogicalDevice) GetPropertyOtherIdentifyingInfo() (value []st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetPowerManagementCapabilities sets the value of PowerManagementCapabilities for the instance
 func (instance *CIM_LogicalDevice) SetPropertyPowerManagementCapabilities(value []LogicalDevice_PowerManagementCapabilities) (err error) {
-	return instance.SetProperty("PowerManagementCapabilities", value)
+	return instance.SetProperty("PowerManagementCapabilities", (value))
 }
 
 // GetPowerManagementCapabilities gets the value of PowerManagementCapabilities for the instance
@@ -291,16 +386,26 @@ func (instance *CIM_LogicalDevice) GetPropertyPowerManagementCapabilities() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]LogicalDevice_PowerManagementCapabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(int32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, LogicalDevice_PowerManagementCapabilities(valuetmp))
+	}
+
 	return
 }
 
 // SetPowerManagementSupported sets the value of PowerManagementSupported for the instance
 func (instance *CIM_LogicalDevice) SetPropertyPowerManagementSupported(value bool) (err error) {
-	return instance.SetProperty("PowerManagementSupported", value)
+	return instance.SetProperty("PowerManagementSupported", (value))
 }
 
 // GetPowerManagementSupported gets the value of PowerManagementSupported for the instance
@@ -309,16 +414,25 @@ func (instance *CIM_LogicalDevice) GetPropertyPowerManagementSupported() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPowerOnHours sets the value of PowerOnHours for the instance
 func (instance *CIM_LogicalDevice) SetPropertyPowerOnHours(value uint64) (err error) {
-	return instance.SetProperty("PowerOnHours", value)
+	return instance.SetProperty("PowerOnHours", (value))
 }
 
 // GetPowerOnHours gets the value of PowerOnHours for the instance
@@ -327,16 +441,25 @@ func (instance *CIM_LogicalDevice) GetPropertyPowerOnHours() (value uint64, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetStatusInfo sets the value of StatusInfo for the instance
 func (instance *CIM_LogicalDevice) SetPropertyStatusInfo(value LogicalDevice_StatusInfo) (err error) {
-	return instance.SetProperty("StatusInfo", value)
+	return instance.SetProperty("StatusInfo", (value))
 }
 
 // GetStatusInfo gets the value of StatusInfo for the instance
@@ -345,16 +468,25 @@ func (instance *CIM_LogicalDevice) GetPropertyStatusInfo() (value LogicalDevice_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(LogicalDevice_StatusInfo)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = LogicalDevice_StatusInfo(valuetmp)
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *CIM_LogicalDevice) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -363,16 +495,25 @@ func (instance *CIM_LogicalDevice) GetPropertySystemCreationClassName() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *CIM_LogicalDevice) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -381,16 +522,25 @@ func (instance *CIM_LogicalDevice) GetPropertySystemName() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTotalPowerOnHours sets the value of TotalPowerOnHours for the instance
 func (instance *CIM_LogicalDevice) SetPropertyTotalPowerOnHours(value uint64) (err error) {
-	return instance.SetProperty("TotalPowerOnHours", value)
+	return instance.SetProperty("TotalPowerOnHours", (value))
 }
 
 // GetTotalPowerOnHours gets the value of TotalPowerOnHours for the instance
@@ -399,10 +549,19 @@ func (instance *CIM_LogicalDevice) GetPropertyTotalPowerOnHours() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 

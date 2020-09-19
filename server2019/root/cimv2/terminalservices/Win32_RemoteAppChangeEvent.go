@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_RemoteAppChangeEvent struct
@@ -55,7 +57,7 @@ func NewWin32_RemoteAppChangeEventEx6(hostName string,
 
 // SetOperationType sets the value of OperationType for the instance
 func (instance *Win32_RemoteAppChangeEvent) SetPropertyOperationType(value RemoteAppChangeEvent_OperationType) (err error) {
-	return instance.SetProperty("OperationType", value)
+	return instance.SetProperty("OperationType", (value))
 }
 
 // GetOperationType gets the value of OperationType for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_RemoteAppChangeEvent) GetPropertyOperationType() (value Re
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(RemoteAppChangeEvent_OperationType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = RemoteAppChangeEvent_OperationType(valuetmp)
+
 	return
 }
 
 // SetTargetInstance sets the value of TargetInstance for the instance
 func (instance *Win32_RemoteAppChangeEvent) SetPropertyTargetInstance(value interface{}) (err error) {
-	return instance.SetProperty("TargetInstance", value)
+	return instance.SetProperty("TargetInstance", (value))
 }
 
 // GetTargetInstance gets the value of TargetInstance for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_RemoteAppChangeEvent) GetPropertyTargetInstance() (value i
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(interface{})
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(interface{})
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " interface{} is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = interface{}(valuetmp)
+
 	return
 }

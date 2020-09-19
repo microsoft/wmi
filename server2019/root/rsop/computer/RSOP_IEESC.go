@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEESC struct
@@ -59,7 +61,7 @@ func NewRSOP_IEESCEx6(hostName string,
 
 // SetEscEnabled sets the value of EscEnabled for the instance
 func (instance *RSOP_IEESC) SetPropertyEscEnabled(value bool) (err error) {
-	return instance.SetProperty("EscEnabled", value)
+	return instance.SetProperty("EscEnabled", (value))
 }
 
 // GetEscEnabled gets the value of EscEnabled for the instance
@@ -68,16 +70,25 @@ func (instance *RSOP_IEESC) GetPropertyEscEnabled() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IEESC) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -86,16 +97,25 @@ func (instance *RSOP_IEESC) GetPropertyrsopID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IEESC) SetPropertyrsopPrecedence(value int32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -104,9 +124,18 @@ func (instance *RSOP_IEESC) GetPropertyrsopPrecedence() (value int32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }

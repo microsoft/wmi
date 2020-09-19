@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.InventoryLogging
 //////////////////////////////////////////////
 package inventorylogging
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MsftSil_Computer struct
@@ -97,7 +99,7 @@ func NewMsftSil_ComputerEx6(hostName string,
 
 // SetChassisSerialNumber sets the value of ChassisSerialNumber for the instance
 func (instance *MsftSil_Computer) SetPropertyChassisSerialNumber(value string) (err error) {
-	return instance.SetProperty("ChassisSerialNumber", value)
+	return instance.SetProperty("ChassisSerialNumber", (value))
 }
 
 // GetChassisSerialNumber gets the value of ChassisSerialNumber for the instance
@@ -106,16 +108,25 @@ func (instance *MsftSil_Computer) GetPropertyChassisSerialNumber() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCollectedDateTime sets the value of CollectedDateTime for the instance
 func (instance *MsftSil_Computer) SetPropertyCollectedDateTime(value string) (err error) {
-	return instance.SetProperty("CollectedDateTime", value)
+	return instance.SetProperty("CollectedDateTime", (value))
 }
 
 // GetCollectedDateTime gets the value of CollectedDateTime for the instance
@@ -124,16 +135,25 @@ func (instance *MsftSil_Computer) GetPropertyCollectedDateTime() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetModel sets the value of Model for the instance
 func (instance *MsftSil_Computer) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", value)
+	return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
@@ -142,16 +162,25 @@ func (instance *MsftSil_Computer) GetPropertyModel() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MsftSil_Computer) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -160,16 +189,25 @@ func (instance *MsftSil_Computer) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetNumberOfCores sets the value of NumberOfCores for the instance
 func (instance *MsftSil_Computer) SetPropertyNumberOfCores(value uint32) (err error) {
-	return instance.SetProperty("NumberOfCores", value)
+	return instance.SetProperty("NumberOfCores", (value))
 }
 
 // GetNumberOfCores gets the value of NumberOfCores for the instance
@@ -178,16 +216,25 @@ func (instance *MsftSil_Computer) GetPropertyNumberOfCores() (value uint32, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfLogicalProcessors sets the value of NumberOfLogicalProcessors for the instance
 func (instance *MsftSil_Computer) SetPropertyNumberOfLogicalProcessors(value uint32) (err error) {
-	return instance.SetProperty("NumberOfLogicalProcessors", value)
+	return instance.SetProperty("NumberOfLogicalProcessors", (value))
 }
 
 // GetNumberOfLogicalProcessors gets the value of NumberOfLogicalProcessors for the instance
@@ -196,16 +243,25 @@ func (instance *MsftSil_Computer) GetPropertyNumberOfLogicalProcessors() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumberOfProcessors sets the value of NumberOfProcessors for the instance
 func (instance *MsftSil_Computer) SetPropertyNumberOfProcessors(value uint32) (err error) {
-	return instance.SetProperty("NumberOfProcessors", value)
+	return instance.SetProperty("NumberOfProcessors", (value))
 }
 
 // GetNumberOfProcessors gets the value of NumberOfProcessors for the instance
@@ -214,16 +270,25 @@ func (instance *MsftSil_Computer) GetPropertyNumberOfProcessors() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSName sets the value of OSName for the instance
 func (instance *MsftSil_Computer) SetPropertyOSName(value string) (err error) {
-	return instance.SetProperty("OSName", value)
+	return instance.SetProperty("OSName", (value))
 }
 
 // GetOSName gets the value of OSName for the instance
@@ -232,16 +297,25 @@ func (instance *MsftSil_Computer) GetPropertyOSName() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOSSku sets the value of OSSku for the instance
 func (instance *MsftSil_Computer) SetPropertyOSSku(value uint32) (err error) {
-	return instance.SetProperty("OSSku", value)
+	return instance.SetProperty("OSSku", (value))
 }
 
 // GetOSSku gets the value of OSSku for the instance
@@ -250,16 +324,25 @@ func (instance *MsftSil_Computer) GetPropertyOSSku() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSSuite sets the value of OSSuite for the instance
 func (instance *MsftSil_Computer) SetPropertyOSSuite(value uint32) (err error) {
-	return instance.SetProperty("OSSuite", value)
+	return instance.SetProperty("OSSuite", (value))
 }
 
 // GetOSSuite gets the value of OSSuite for the instance
@@ -268,16 +351,25 @@ func (instance *MsftSil_Computer) GetPropertyOSSuite() (value uint32, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSSuiteMask sets the value of OSSuiteMask for the instance
 func (instance *MsftSil_Computer) SetPropertyOSSuiteMask(value uint32) (err error) {
-	return instance.SetProperty("OSSuiteMask", value)
+	return instance.SetProperty("OSSuiteMask", (value))
 }
 
 // GetOSSuiteMask gets the value of OSSuiteMask for the instance
@@ -286,16 +378,25 @@ func (instance *MsftSil_Computer) GetPropertyOSSuiteMask() (value uint32, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOSVersion sets the value of OSVersion for the instance
 func (instance *MsftSil_Computer) SetPropertyOSVersion(value string) (err error) {
-	return instance.SetProperty("OSVersion", value)
+	return instance.SetProperty("OSVersion", (value))
 }
 
 // GetOSVersion gets the value of OSVersion for the instance
@@ -304,16 +405,25 @@ func (instance *MsftSil_Computer) GetPropertyOSVersion() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProcessorFamily sets the value of ProcessorFamily for the instance
 func (instance *MsftSil_Computer) SetPropertyProcessorFamily(value uint32) (err error) {
-	return instance.SetProperty("ProcessorFamily", value)
+	return instance.SetProperty("ProcessorFamily", (value))
 }
 
 // GetProcessorFamily gets the value of ProcessorFamily for the instance
@@ -322,16 +432,25 @@ func (instance *MsftSil_Computer) GetPropertyProcessorFamily() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProcessorManufacturer sets the value of ProcessorManufacturer for the instance
 func (instance *MsftSil_Computer) SetPropertyProcessorManufacturer(value string) (err error) {
-	return instance.SetProperty("ProcessorManufacturer", value)
+	return instance.SetProperty("ProcessorManufacturer", (value))
 }
 
 // GetProcessorManufacturer gets the value of ProcessorManufacturer for the instance
@@ -340,16 +459,25 @@ func (instance *MsftSil_Computer) GetPropertyProcessorManufacturer() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProcessorName sets the value of ProcessorName for the instance
 func (instance *MsftSil_Computer) SetPropertyProcessorName(value string) (err error) {
-	return instance.SetProperty("ProcessorName", value)
+	return instance.SetProperty("ProcessorName", (value))
 }
 
 // GetProcessorName gets the value of ProcessorName for the instance
@@ -358,16 +486,25 @@ func (instance *MsftSil_Computer) GetPropertyProcessorName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemManufacturer sets the value of SystemManufacturer for the instance
 func (instance *MsftSil_Computer) SetPropertySystemManufacturer(value string) (err error) {
-	return instance.SetProperty("SystemManufacturer", value)
+	return instance.SetProperty("SystemManufacturer", (value))
 }
 
 // GetSystemManufacturer gets the value of SystemManufacturer for the instance
@@ -376,9 +513,18 @@ func (instance *MsftSil_Computer) GetPropertySystemManufacturer() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

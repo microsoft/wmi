@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_SoftwareElementChecks struct
@@ -59,7 +61,7 @@ func NewCIM_SoftwareElementChecksEx6(hostName string,
 
 // SetCheck sets the value of Check for the instance
 func (instance *CIM_SoftwareElementChecks) SetPropertyCheck(value CIM_Check) (err error) {
-	return instance.SetProperty("Check", value)
+	return instance.SetProperty("Check", (value))
 }
 
 // GetCheck gets the value of Check for the instance
@@ -68,16 +70,25 @@ func (instance *CIM_SoftwareElementChecks) GetPropertyCheck() (value CIM_Check, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_Check)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_Check)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_Check is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_Check(valuetmp)
+
 	return
 }
 
 // SetElement sets the value of Element for the instance
 func (instance *CIM_SoftwareElementChecks) SetPropertyElement(value CIM_SoftwareElement) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -86,16 +97,25 @@ func (instance *CIM_SoftwareElementChecks) GetPropertyElement() (value CIM_Softw
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_SoftwareElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_SoftwareElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_SoftwareElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_SoftwareElement(valuetmp)
+
 	return
 }
 
 // SetPhase sets the value of Phase for the instance
 func (instance *CIM_SoftwareElementChecks) SetPropertyPhase(value uint16) (err error) {
-	return instance.SetProperty("Phase", value)
+	return instance.SetProperty("Phase", (value))
 }
 
 // GetPhase gets the value of Phase for the instance
@@ -104,9 +124,18 @@ func (instance *CIM_SoftwareElementChecks) GetPropertyPhase() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

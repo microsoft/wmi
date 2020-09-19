@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_DriverIbCapabilities struct
@@ -67,7 +69,7 @@ func NewMLNX_DriverIbCapabilitiesEx6(hostName string,
 
 // SetDebugFlags_Max sets the value of DebugFlags_Max for the instance
 func (instance *MLNX_DriverIbCapabilities) SetPropertyDebugFlags_Max(value uint32) (err error) {
-	return instance.SetProperty("DebugFlags_Max", value)
+	return instance.SetProperty("DebugFlags_Max", (value))
 }
 
 // GetDebugFlags_Max gets the value of DebugFlags_Max for the instance
@@ -76,16 +78,25 @@ func (instance *MLNX_DriverIbCapabilities) GetPropertyDebugFlags_Max() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDebugFlags_Min sets the value of DebugFlags_Min for the instance
 func (instance *MLNX_DriverIbCapabilities) SetPropertyDebugFlags_Min(value uint32) (err error) {
-	return instance.SetProperty("DebugFlags_Min", value)
+	return instance.SetProperty("DebugFlags_Min", (value))
 }
 
 // GetDebugFlags_Min gets the value of DebugFlags_Min for the instance
@@ -94,16 +105,25 @@ func (instance *MLNX_DriverIbCapabilities) GetPropertyDebugFlags_Min() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIbalDebugFlags_Max sets the value of IbalDebugFlags_Max for the instance
 func (instance *MLNX_DriverIbCapabilities) SetPropertyIbalDebugFlags_Max(value uint32) (err error) {
-	return instance.SetProperty("IbalDebugFlags_Max", value)
+	return instance.SetProperty("IbalDebugFlags_Max", (value))
 }
 
 // GetIbalDebugFlags_Max gets the value of IbalDebugFlags_Max for the instance
@@ -112,16 +132,25 @@ func (instance *MLNX_DriverIbCapabilities) GetPropertyIbalDebugFlags_Max() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIbalDebugFlags_Min sets the value of IbalDebugFlags_Min for the instance
 func (instance *MLNX_DriverIbCapabilities) SetPropertyIbalDebugFlags_Min(value uint32) (err error) {
-	return instance.SetProperty("IbalDebugFlags_Min", value)
+	return instance.SetProperty("IbalDebugFlags_Min", (value))
 }
 
 // GetIbalDebugFlags_Min gets the value of IbalDebugFlags_Min for the instance
@@ -130,16 +159,25 @@ func (instance *MLNX_DriverIbCapabilities) GetPropertyIbalDebugFlags_Min() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIbalDebugLevel_Max sets the value of IbalDebugLevel_Max for the instance
 func (instance *MLNX_DriverIbCapabilities) SetPropertyIbalDebugLevel_Max(value uint32) (err error) {
-	return instance.SetProperty("IbalDebugLevel_Max", value)
+	return instance.SetProperty("IbalDebugLevel_Max", (value))
 }
 
 // GetIbalDebugLevel_Max gets the value of IbalDebugLevel_Max for the instance
@@ -148,16 +186,25 @@ func (instance *MLNX_DriverIbCapabilities) GetPropertyIbalDebugLevel_Max() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIbalDebugLevel_Min sets the value of IbalDebugLevel_Min for the instance
 func (instance *MLNX_DriverIbCapabilities) SetPropertyIbalDebugLevel_Min(value uint32) (err error) {
-	return instance.SetProperty("IbalDebugLevel_Min", value)
+	return instance.SetProperty("IbalDebugLevel_Min", (value))
 }
 
 // GetIbalDebugLevel_Min gets the value of IbalDebugLevel_Min for the instance
@@ -166,9 +213,18 @@ func (instance *MLNX_DriverIbCapabilities) GetPropertyIbalDebugLevel_Min() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

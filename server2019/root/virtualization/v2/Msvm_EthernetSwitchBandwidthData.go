@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_EthernetSwitchBandwidthData struct
@@ -64,7 +66,7 @@ func NewMsvm_EthernetSwitchBandwidthDataEx6(hostName string,
 
 // SetCapacity sets the value of Capacity for the instance
 func (instance *Msvm_EthernetSwitchBandwidthData) SetPropertyCapacity(value uint64) (err error) {
-	return instance.SetProperty("Capacity", value)
+	return instance.SetProperty("Capacity", (value))
 }
 
 // GetCapacity gets the value of Capacity for the instance
@@ -73,16 +75,25 @@ func (instance *Msvm_EthernetSwitchBandwidthData) GetPropertyCapacity() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDefaultFlowReservation sets the value of DefaultFlowReservation for the instance
 func (instance *Msvm_EthernetSwitchBandwidthData) SetPropertyDefaultFlowReservation(value uint64) (err error) {
-	return instance.SetProperty("DefaultFlowReservation", value)
+	return instance.SetProperty("DefaultFlowReservation", (value))
 }
 
 // GetDefaultFlowReservation gets the value of DefaultFlowReservation for the instance
@@ -91,16 +102,25 @@ func (instance *Msvm_EthernetSwitchBandwidthData) GetPropertyDefaultFlowReservat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDefaultFlowReservationPercentage sets the value of DefaultFlowReservationPercentage for the instance
 func (instance *Msvm_EthernetSwitchBandwidthData) SetPropertyDefaultFlowReservationPercentage(value uint32) (err error) {
-	return instance.SetProperty("DefaultFlowReservationPercentage", value)
+	return instance.SetProperty("DefaultFlowReservationPercentage", (value))
 }
 
 // GetDefaultFlowReservationPercentage gets the value of DefaultFlowReservationPercentage for the instance
@@ -109,16 +129,25 @@ func (instance *Msvm_EthernetSwitchBandwidthData) GetPropertyDefaultFlowReservat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDefaultFlowWeight sets the value of DefaultFlowWeight for the instance
 func (instance *Msvm_EthernetSwitchBandwidthData) SetPropertyDefaultFlowWeight(value uint64) (err error) {
-	return instance.SetProperty("DefaultFlowWeight", value)
+	return instance.SetProperty("DefaultFlowWeight", (value))
 }
 
 // GetDefaultFlowWeight gets the value of DefaultFlowWeight for the instance
@@ -127,16 +156,25 @@ func (instance *Msvm_EthernetSwitchBandwidthData) GetPropertyDefaultFlowWeight()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReservation sets the value of Reservation for the instance
 func (instance *Msvm_EthernetSwitchBandwidthData) SetPropertyReservation(value uint64) (err error) {
-	return instance.SetProperty("Reservation", value)
+	return instance.SetProperty("Reservation", (value))
 }
 
 // GetReservation gets the value of Reservation for the instance
@@ -145,10 +183,19 @@ func (instance *Msvm_EthernetSwitchBandwidthData) GetPropertyReservation() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 func (instance *Msvm_EthernetSwitchBandwidthData) GetRelatedVirtualEthernetSwitch() (value *cim.WmiInstance, err error) {

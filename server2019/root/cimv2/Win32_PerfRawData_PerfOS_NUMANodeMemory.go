@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_PerfOS_NUMANodeMemory struct
@@ -55,7 +57,7 @@ func NewWin32_PerfRawData_PerfOS_NUMANodeMemoryEx6(hostName string,
 
 // SetFreeAndZeroPageListMBytes sets the value of FreeAndZeroPageListMBytes for the instance
 func (instance *Win32_PerfRawData_PerfOS_NUMANodeMemory) SetPropertyFreeAndZeroPageListMBytes(value uint32) (err error) {
-	return instance.SetProperty("FreeAndZeroPageListMBytes", value)
+	return instance.SetProperty("FreeAndZeroPageListMBytes", (value))
 }
 
 // GetFreeAndZeroPageListMBytes gets the value of FreeAndZeroPageListMBytes for the instance
@@ -64,16 +66,25 @@ func (instance *Win32_PerfRawData_PerfOS_NUMANodeMemory) GetPropertyFreeAndZeroP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalMBytes sets the value of TotalMBytes for the instance
 func (instance *Win32_PerfRawData_PerfOS_NUMANodeMemory) SetPropertyTotalMBytes(value uint32) (err error) {
-	return instance.SetProperty("TotalMBytes", value)
+	return instance.SetProperty("TotalMBytes", (value))
 }
 
 // GetTotalMBytes gets the value of TotalMBytes for the instance
@@ -82,9 +93,18 @@ func (instance *Win32_PerfRawData_PerfOS_NUMANodeMemory) GetPropertyTotalMBytes(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

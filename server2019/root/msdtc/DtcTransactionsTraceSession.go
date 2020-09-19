@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.msdtc
 //////////////////////////////////////////////
 package msdtc
@@ -11,7 +11,9 @@ package msdtc
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // DtcTransactionsTraceSession struct
@@ -56,7 +58,7 @@ func NewDtcTransactionsTraceSessionEx6(hostName string,
 
 // SetBufferCount sets the value of BufferCount for the instance
 func (instance *DtcTransactionsTraceSession) SetPropertyBufferCount(value uint32) (err error) {
-	return instance.SetProperty("BufferCount", value)
+	return instance.SetProperty("BufferCount", (value))
 }
 
 // GetBufferCount gets the value of BufferCount for the instance
@@ -65,16 +67,25 @@ func (instance *DtcTransactionsTraceSession) GetPropertyBufferCount() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSessionStatus sets the value of SessionStatus for the instance
 func (instance *DtcTransactionsTraceSession) SetPropertySessionStatus(value string) (err error) {
-	return instance.SetProperty("SessionStatus", value)
+	return instance.SetProperty("SessionStatus", (value))
 }
 
 // GetSessionStatus gets the value of SessionStatus for the instance
@@ -83,9 +94,18 @@ func (instance *DtcTransactionsTraceSession) GetPropertySessionStatus() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

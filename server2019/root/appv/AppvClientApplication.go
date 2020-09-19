@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
@@ -11,7 +11,9 @@ package appv
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // AppvClientApplication struct
@@ -74,7 +76,7 @@ func NewAppvClientApplicationEx6(hostName string,
 
 // SetApplicationId sets the value of ApplicationId for the instance
 func (instance *AppvClientApplication) SetPropertyApplicationId(value string) (err error) {
-	return instance.SetProperty("ApplicationId", value)
+	return instance.SetProperty("ApplicationId", (value))
 }
 
 // GetApplicationId gets the value of ApplicationId for the instance
@@ -83,16 +85,25 @@ func (instance *AppvClientApplication) GetPropertyApplicationId() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnabledForUser sets the value of EnabledForUser for the instance
 func (instance *AppvClientApplication) SetPropertyEnabledForUser(value bool) (err error) {
-	return instance.SetProperty("EnabledForUser", value)
+	return instance.SetProperty("EnabledForUser", (value))
 }
 
 // GetEnabledForUser gets the value of EnabledForUser for the instance
@@ -101,16 +112,25 @@ func (instance *AppvClientApplication) GetPropertyEnabledForUser() (value bool, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnabledGlobally sets the value of EnabledGlobally for the instance
 func (instance *AppvClientApplication) SetPropertyEnabledGlobally(value bool) (err error) {
-	return instance.SetProperty("EnabledGlobally", value)
+	return instance.SetProperty("EnabledGlobally", (value))
 }
 
 // GetEnabledGlobally gets the value of EnabledGlobally for the instance
@@ -119,16 +139,25 @@ func (instance *AppvClientApplication) GetPropertyEnabledGlobally() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *AppvClientApplication) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -137,16 +166,25 @@ func (instance *AppvClientApplication) GetPropertyName() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageId sets the value of PackageId for the instance
 func (instance *AppvClientApplication) SetPropertyPackageId(value string) (err error) {
-	return instance.SetProperty("PackageId", value)
+	return instance.SetProperty("PackageId", (value))
 }
 
 // GetPackageId gets the value of PackageId for the instance
@@ -155,16 +193,25 @@ func (instance *AppvClientApplication) GetPropertyPackageId() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPackageVersionId sets the value of PackageVersionId for the instance
 func (instance *AppvClientApplication) SetPropertyPackageVersionId(value string) (err error) {
-	return instance.SetProperty("PackageVersionId", value)
+	return instance.SetProperty("PackageVersionId", (value))
 }
 
 // GetPackageVersionId gets the value of PackageVersionId for the instance
@@ -173,16 +220,25 @@ func (instance *AppvClientApplication) GetPropertyPackageVersionId() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTargetPath sets the value of TargetPath for the instance
 func (instance *AppvClientApplication) SetPropertyTargetPath(value string) (err error) {
-	return instance.SetProperty("TargetPath", value)
+	return instance.SetProperty("TargetPath", (value))
 }
 
 // GetTargetPath gets the value of TargetPath for the instance
@@ -191,16 +247,25 @@ func (instance *AppvClientApplication) GetPropertyTargetPath() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVersion sets the value of Version for the instance
 func (instance *AppvClientApplication) SetPropertyVersion(value string) (err error) {
-	return instance.SetProperty("Version", value)
+	return instance.SetProperty("Version", (value))
 }
 
 // GetVersion gets the value of Version for the instance
@@ -209,9 +274,18 @@ func (instance *AppvClientApplication) GetPropertyVersion() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

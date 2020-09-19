@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_PerfNet_Browser struct
@@ -109,7 +111,7 @@ func NewWin32_PerfFormattedData_PerfNet_BrowserEx6(hostName string,
 
 // SetAnnouncementsDomainPersec sets the value of AnnouncementsDomainPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyAnnouncementsDomainPersec(value uint64) (err error) {
-	return instance.SetProperty("AnnouncementsDomainPersec", value)
+	return instance.SetProperty("AnnouncementsDomainPersec", (value))
 }
 
 // GetAnnouncementsDomainPersec gets the value of AnnouncementsDomainPersec for the instance
@@ -118,16 +120,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyAnnouncement
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAnnouncementsServerPersec sets the value of AnnouncementsServerPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyAnnouncementsServerPersec(value uint64) (err error) {
-	return instance.SetProperty("AnnouncementsServerPersec", value)
+	return instance.SetProperty("AnnouncementsServerPersec", (value))
 }
 
 // GetAnnouncementsServerPersec gets the value of AnnouncementsServerPersec for the instance
@@ -136,16 +147,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyAnnouncement
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAnnouncementsTotalPersec sets the value of AnnouncementsTotalPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyAnnouncementsTotalPersec(value uint64) (err error) {
-	return instance.SetProperty("AnnouncementsTotalPersec", value)
+	return instance.SetProperty("AnnouncementsTotalPersec", (value))
 }
 
 // GetAnnouncementsTotalPersec gets the value of AnnouncementsTotalPersec for the instance
@@ -154,16 +174,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyAnnouncement
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetDuplicateMasterAnnouncements sets the value of DuplicateMasterAnnouncements for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyDuplicateMasterAnnouncements(value uint32) (err error) {
-	return instance.SetProperty("DuplicateMasterAnnouncements", value)
+	return instance.SetProperty("DuplicateMasterAnnouncements", (value))
 }
 
 // GetDuplicateMasterAnnouncements gets the value of DuplicateMasterAnnouncements for the instance
@@ -172,16 +201,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyDuplicateMas
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetElectionPacketsPersec sets the value of ElectionPacketsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyElectionPacketsPersec(value uint32) (err error) {
-	return instance.SetProperty("ElectionPacketsPersec", value)
+	return instance.SetProperty("ElectionPacketsPersec", (value))
 }
 
 // GetElectionPacketsPersec gets the value of ElectionPacketsPersec for the instance
@@ -190,16 +228,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyElectionPack
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnumerationsDomainPersec sets the value of EnumerationsDomainPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyEnumerationsDomainPersec(value uint32) (err error) {
-	return instance.SetProperty("EnumerationsDomainPersec", value)
+	return instance.SetProperty("EnumerationsDomainPersec", (value))
 }
 
 // GetEnumerationsDomainPersec gets the value of EnumerationsDomainPersec for the instance
@@ -208,16 +255,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyEnumerations
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnumerationsOtherPersec sets the value of EnumerationsOtherPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyEnumerationsOtherPersec(value uint32) (err error) {
-	return instance.SetProperty("EnumerationsOtherPersec", value)
+	return instance.SetProperty("EnumerationsOtherPersec", (value))
 }
 
 // GetEnumerationsOtherPersec gets the value of EnumerationsOtherPersec for the instance
@@ -226,16 +282,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyEnumerations
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnumerationsServerPersec sets the value of EnumerationsServerPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyEnumerationsServerPersec(value uint32) (err error) {
-	return instance.SetProperty("EnumerationsServerPersec", value)
+	return instance.SetProperty("EnumerationsServerPersec", (value))
 }
 
 // GetEnumerationsServerPersec gets the value of EnumerationsServerPersec for the instance
@@ -244,16 +309,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyEnumerations
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnumerationsTotalPersec sets the value of EnumerationsTotalPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyEnumerationsTotalPersec(value uint32) (err error) {
-	return instance.SetProperty("EnumerationsTotalPersec", value)
+	return instance.SetProperty("EnumerationsTotalPersec", (value))
 }
 
 // GetEnumerationsTotalPersec gets the value of EnumerationsTotalPersec for the instance
@@ -262,16 +336,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyEnumerations
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIllegalDatagramsPersec sets the value of IllegalDatagramsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyIllegalDatagramsPersec(value uint64) (err error) {
-	return instance.SetProperty("IllegalDatagramsPersec", value)
+	return instance.SetProperty("IllegalDatagramsPersec", (value))
 }
 
 // GetIllegalDatagramsPersec gets the value of IllegalDatagramsPersec for the instance
@@ -280,16 +363,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyIllegalDatag
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMailslotAllocationsFailed sets the value of MailslotAllocationsFailed for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMailslotAllocationsFailed(value uint32) (err error) {
-	return instance.SetProperty("MailslotAllocationsFailed", value)
+	return instance.SetProperty("MailslotAllocationsFailed", (value))
 }
 
 // GetMailslotAllocationsFailed gets the value of MailslotAllocationsFailed for the instance
@@ -298,16 +390,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMailslotAllo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMailslotOpensFailedPersec sets the value of MailslotOpensFailedPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMailslotOpensFailedPersec(value uint32) (err error) {
-	return instance.SetProperty("MailslotOpensFailedPersec", value)
+	return instance.SetProperty("MailslotOpensFailedPersec", (value))
 }
 
 // GetMailslotOpensFailedPersec gets the value of MailslotOpensFailedPersec for the instance
@@ -316,16 +417,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMailslotOpen
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMailslotReceivesFailed sets the value of MailslotReceivesFailed for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMailslotReceivesFailed(value uint32) (err error) {
-	return instance.SetProperty("MailslotReceivesFailed", value)
+	return instance.SetProperty("MailslotReceivesFailed", (value))
 }
 
 // GetMailslotReceivesFailed gets the value of MailslotReceivesFailed for the instance
@@ -334,16 +444,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMailslotRece
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMailslotWritesFailed sets the value of MailslotWritesFailed for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMailslotWritesFailed(value uint32) (err error) {
-	return instance.SetProperty("MailslotWritesFailed", value)
+	return instance.SetProperty("MailslotWritesFailed", (value))
 }
 
 // GetMailslotWritesFailed gets the value of MailslotWritesFailed for the instance
@@ -352,16 +471,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMailslotWrit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMailslotWritesPersec sets the value of MailslotWritesPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMailslotWritesPersec(value uint32) (err error) {
-	return instance.SetProperty("MailslotWritesPersec", value)
+	return instance.SetProperty("MailslotWritesPersec", (value))
 }
 
 // GetMailslotWritesPersec gets the value of MailslotWritesPersec for the instance
@@ -370,16 +498,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMailslotWrit
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMissedMailslotDatagrams sets the value of MissedMailslotDatagrams for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMissedMailslotDatagrams(value uint32) (err error) {
-	return instance.SetProperty("MissedMailslotDatagrams", value)
+	return instance.SetProperty("MissedMailslotDatagrams", (value))
 }
 
 // GetMissedMailslotDatagrams gets the value of MissedMailslotDatagrams for the instance
@@ -388,16 +525,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMissedMailsl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMissedServerAnnouncements sets the value of MissedServerAnnouncements for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMissedServerAnnouncements(value uint32) (err error) {
-	return instance.SetProperty("MissedServerAnnouncements", value)
+	return instance.SetProperty("MissedServerAnnouncements", (value))
 }
 
 // GetMissedServerAnnouncements gets the value of MissedServerAnnouncements for the instance
@@ -406,16 +552,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMissedServer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMissedServerListRequests sets the value of MissedServerListRequests for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyMissedServerListRequests(value uint32) (err error) {
-	return instance.SetProperty("MissedServerListRequests", value)
+	return instance.SetProperty("MissedServerListRequests", (value))
 }
 
 // GetMissedServerListRequests gets the value of MissedServerListRequests for the instance
@@ -424,16 +579,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyMissedServer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServerAnnounceAllocationsFailedPersec sets the value of ServerAnnounceAllocationsFailedPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyServerAnnounceAllocationsFailedPersec(value uint32) (err error) {
-	return instance.SetProperty("ServerAnnounceAllocationsFailedPersec", value)
+	return instance.SetProperty("ServerAnnounceAllocationsFailedPersec", (value))
 }
 
 // GetServerAnnounceAllocationsFailedPersec gets the value of ServerAnnounceAllocationsFailedPersec for the instance
@@ -442,16 +606,25 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyServerAnnoun
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServerListRequestsPersec sets the value of ServerListRequestsPersec for the instance
 func (instance *Win32_PerfFormattedData_PerfNet_Browser) SetPropertyServerListRequestsPersec(value uint32) (err error) {
-	return instance.SetProperty("ServerListRequestsPersec", value)
+	return instance.SetProperty("ServerListRequestsPersec", (value))
 }
 
 // GetServerListRequestsPersec gets the value of ServerListRequestsPersec for the instance
@@ -460,9 +633,18 @@ func (instance *Win32_PerfFormattedData_PerfNet_Browser) GetPropertyServerListRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

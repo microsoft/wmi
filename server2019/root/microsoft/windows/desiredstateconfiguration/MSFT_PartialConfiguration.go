@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_PartialConfiguration struct
@@ -67,7 +69,7 @@ func NewMSFT_PartialConfigurationEx6(hostName string,
 
 // SetConfigurationSource sets the value of ConfigurationSource for the instance
 func (instance *MSFT_PartialConfiguration) SetPropertyConfigurationSource(value []string) (err error) {
-	return instance.SetProperty("ConfigurationSource", value)
+	return instance.SetProperty("ConfigurationSource", (value))
 }
 
 // GetConfigurationSource gets the value of ConfigurationSource for the instance
@@ -76,16 +78,26 @@ func (instance *MSFT_PartialConfiguration) GetPropertyConfigurationSource() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDependsOn sets the value of DependsOn for the instance
 func (instance *MSFT_PartialConfiguration) SetPropertyDependsOn(value []string) (err error) {
-	return instance.SetProperty("DependsOn", value)
+	return instance.SetProperty("DependsOn", (value))
 }
 
 // GetDependsOn gets the value of DependsOn for the instance
@@ -94,16 +106,26 @@ func (instance *MSFT_PartialConfiguration) GetPropertyDependsOn() (value []strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_PartialConfiguration) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -112,16 +134,25 @@ func (instance *MSFT_PartialConfiguration) GetPropertyDescription() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetExclusiveResources sets the value of ExclusiveResources for the instance
 func (instance *MSFT_PartialConfiguration) SetPropertyExclusiveResources(value []string) (err error) {
-	return instance.SetProperty("ExclusiveResources", value)
+	return instance.SetProperty("ExclusiveResources", (value))
 }
 
 // GetExclusiveResources gets the value of ExclusiveResources for the instance
@@ -130,16 +161,26 @@ func (instance *MSFT_PartialConfiguration) GetPropertyExclusiveResources() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetRefreshMode sets the value of RefreshMode for the instance
 func (instance *MSFT_PartialConfiguration) SetPropertyRefreshMode(value string) (err error) {
-	return instance.SetProperty("RefreshMode", value)
+	return instance.SetProperty("RefreshMode", (value))
 }
 
 // GetRefreshMode gets the value of RefreshMode for the instance
@@ -148,16 +189,25 @@ func (instance *MSFT_PartialConfiguration) GetPropertyRefreshMode() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResourceModuleSource sets the value of ResourceModuleSource for the instance
 func (instance *MSFT_PartialConfiguration) SetPropertyResourceModuleSource(value []string) (err error) {
-	return instance.SetProperty("ResourceModuleSource", value)
+	return instance.SetProperty("ResourceModuleSource", (value))
 }
 
 // GetResourceModuleSource gets the value of ResourceModuleSource for the instance
@@ -166,9 +216,19 @@ func (instance *MSFT_PartialConfiguration) GetPropertyResourceModuleSource() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

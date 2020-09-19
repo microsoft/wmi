@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_NamedJobObjectActgInfo struct
@@ -97,7 +99,7 @@ func NewWin32_NamedJobObjectActgInfoEx6(hostName string,
 
 // SetActiveProcesses sets the value of ActiveProcesses for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyActiveProcesses(value uint32) (err error) {
-	return instance.SetProperty("ActiveProcesses", value)
+	return instance.SetProperty("ActiveProcesses", (value))
 }
 
 // GetActiveProcesses gets the value of ActiveProcesses for the instance
@@ -106,16 +108,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyActiveProcesses() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOtherOperationCount sets the value of OtherOperationCount for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyOtherOperationCount(value uint64) (err error) {
-	return instance.SetProperty("OtherOperationCount", value)
+	return instance.SetProperty("OtherOperationCount", (value))
 }
 
 // GetOtherOperationCount gets the value of OtherOperationCount for the instance
@@ -124,16 +135,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyOtherOperationCount() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOtherTransferCount sets the value of OtherTransferCount for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyOtherTransferCount(value uint64) (err error) {
-	return instance.SetProperty("OtherTransferCount", value)
+	return instance.SetProperty("OtherTransferCount", (value))
 }
 
 // GetOtherTransferCount gets the value of OtherTransferCount for the instance
@@ -142,16 +162,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyOtherTransferCount() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPeakJobMemoryUsed sets the value of PeakJobMemoryUsed for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyPeakJobMemoryUsed(value uint32) (err error) {
-	return instance.SetProperty("PeakJobMemoryUsed", value)
+	return instance.SetProperty("PeakJobMemoryUsed", (value))
 }
 
 // GetPeakJobMemoryUsed gets the value of PeakJobMemoryUsed for the instance
@@ -160,16 +189,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyPeakJobMemoryUsed() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPeakProcessMemoryUsed sets the value of PeakProcessMemoryUsed for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyPeakProcessMemoryUsed(value uint32) (err error) {
-	return instance.SetProperty("PeakProcessMemoryUsed", value)
+	return instance.SetProperty("PeakProcessMemoryUsed", (value))
 }
 
 // GetPeakProcessMemoryUsed gets the value of PeakProcessMemoryUsed for the instance
@@ -178,16 +216,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyPeakProcessMemoryUsed()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReadOperationCount sets the value of ReadOperationCount for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyReadOperationCount(value uint64) (err error) {
-	return instance.SetProperty("ReadOperationCount", value)
+	return instance.SetProperty("ReadOperationCount", (value))
 }
 
 // GetReadOperationCount gets the value of ReadOperationCount for the instance
@@ -196,16 +243,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyReadOperationCount() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReadTransferCount sets the value of ReadTransferCount for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyReadTransferCount(value uint64) (err error) {
-	return instance.SetProperty("ReadTransferCount", value)
+	return instance.SetProperty("ReadTransferCount", (value))
 }
 
 // GetReadTransferCount gets the value of ReadTransferCount for the instance
@@ -214,16 +270,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyReadTransferCount() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetThisPeriodTotalKernelTime sets the value of ThisPeriodTotalKernelTime for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyThisPeriodTotalKernelTime(value uint64) (err error) {
-	return instance.SetProperty("ThisPeriodTotalKernelTime", value)
+	return instance.SetProperty("ThisPeriodTotalKernelTime", (value))
 }
 
 // GetThisPeriodTotalKernelTime gets the value of ThisPeriodTotalKernelTime for the instance
@@ -232,16 +297,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyThisPeriodTotalKernelTi
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetThisPeriodTotalUserTime sets the value of ThisPeriodTotalUserTime for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyThisPeriodTotalUserTime(value uint64) (err error) {
-	return instance.SetProperty("ThisPeriodTotalUserTime", value)
+	return instance.SetProperty("ThisPeriodTotalUserTime", (value))
 }
 
 // GetThisPeriodTotalUserTime gets the value of ThisPeriodTotalUserTime for the instance
@@ -250,16 +324,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyThisPeriodTotalUserTime
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalKernelTime sets the value of TotalKernelTime for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyTotalKernelTime(value uint64) (err error) {
-	return instance.SetProperty("TotalKernelTime", value)
+	return instance.SetProperty("TotalKernelTime", (value))
 }
 
 // GetTotalKernelTime gets the value of TotalKernelTime for the instance
@@ -268,16 +351,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyTotalKernelTime() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalPageFaultCount sets the value of TotalPageFaultCount for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyTotalPageFaultCount(value uint32) (err error) {
-	return instance.SetProperty("TotalPageFaultCount", value)
+	return instance.SetProperty("TotalPageFaultCount", (value))
 }
 
 // GetTotalPageFaultCount gets the value of TotalPageFaultCount for the instance
@@ -286,16 +378,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyTotalPageFaultCount() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalProcesses sets the value of TotalProcesses for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyTotalProcesses(value uint32) (err error) {
-	return instance.SetProperty("TotalProcesses", value)
+	return instance.SetProperty("TotalProcesses", (value))
 }
 
 // GetTotalProcesses gets the value of TotalProcesses for the instance
@@ -304,16 +405,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyTotalProcesses() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalTerminatedProcesses sets the value of TotalTerminatedProcesses for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyTotalTerminatedProcesses(value uint32) (err error) {
-	return instance.SetProperty("TotalTerminatedProcesses", value)
+	return instance.SetProperty("TotalTerminatedProcesses", (value))
 }
 
 // GetTotalTerminatedProcesses gets the value of TotalTerminatedProcesses for the instance
@@ -322,16 +432,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyTotalTerminatedProcesse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalUserTime sets the value of TotalUserTime for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyTotalUserTime(value uint64) (err error) {
-	return instance.SetProperty("TotalUserTime", value)
+	return instance.SetProperty("TotalUserTime", (value))
 }
 
 // GetTotalUserTime gets the value of TotalUserTime for the instance
@@ -340,16 +459,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyTotalUserTime() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteOperationCount sets the value of WriteOperationCount for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyWriteOperationCount(value uint64) (err error) {
-	return instance.SetProperty("WriteOperationCount", value)
+	return instance.SetProperty("WriteOperationCount", (value))
 }
 
 // GetWriteOperationCount gets the value of WriteOperationCount for the instance
@@ -358,16 +486,25 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyWriteOperationCount() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetWriteTransferCount sets the value of WriteTransferCount for the instance
 func (instance *Win32_NamedJobObjectActgInfo) SetPropertyWriteTransferCount(value uint64) (err error) {
-	return instance.SetProperty("WriteTransferCount", value)
+	return instance.SetProperty("WriteTransferCount", (value))
 }
 
 // GetWriteTransferCount gets the value of WriteTransferCount for the instance
@@ -376,9 +513,18 @@ func (instance *Win32_NamedJobObjectActgInfo) GetPropertyWriteTransferCount() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

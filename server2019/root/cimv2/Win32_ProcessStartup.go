@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ProcessStartup struct
@@ -91,7 +93,7 @@ func NewWin32_ProcessStartupEx6(hostName string,
 
 // SetCreateFlags sets the value of CreateFlags for the instance
 func (instance *Win32_ProcessStartup) SetPropertyCreateFlags(value uint32) (err error) {
-	return instance.SetProperty("CreateFlags", value)
+	return instance.SetProperty("CreateFlags", (value))
 }
 
 // GetCreateFlags gets the value of CreateFlags for the instance
@@ -100,16 +102,25 @@ func (instance *Win32_ProcessStartup) GetPropertyCreateFlags() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetEnvironmentVariables sets the value of EnvironmentVariables for the instance
 func (instance *Win32_ProcessStartup) SetPropertyEnvironmentVariables(value []string) (err error) {
-	return instance.SetProperty("EnvironmentVariables", value)
+	return instance.SetProperty("EnvironmentVariables", (value))
 }
 
 // GetEnvironmentVariables gets the value of EnvironmentVariables for the instance
@@ -118,16 +129,26 @@ func (instance *Win32_ProcessStartup) GetPropertyEnvironmentVariables() (value [
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetErrorMode sets the value of ErrorMode for the instance
 func (instance *Win32_ProcessStartup) SetPropertyErrorMode(value uint16) (err error) {
-	return instance.SetProperty("ErrorMode", value)
+	return instance.SetProperty("ErrorMode", (value))
 }
 
 // GetErrorMode gets the value of ErrorMode for the instance
@@ -136,16 +157,25 @@ func (instance *Win32_ProcessStartup) GetPropertyErrorMode() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetFillAttribute sets the value of FillAttribute for the instance
 func (instance *Win32_ProcessStartup) SetPropertyFillAttribute(value uint32) (err error) {
-	return instance.SetProperty("FillAttribute", value)
+	return instance.SetProperty("FillAttribute", (value))
 }
 
 // GetFillAttribute gets the value of FillAttribute for the instance
@@ -154,16 +184,25 @@ func (instance *Win32_ProcessStartup) GetPropertyFillAttribute() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPriorityClass sets the value of PriorityClass for the instance
 func (instance *Win32_ProcessStartup) SetPropertyPriorityClass(value uint32) (err error) {
-	return instance.SetProperty("PriorityClass", value)
+	return instance.SetProperty("PriorityClass", (value))
 }
 
 // GetPriorityClass gets the value of PriorityClass for the instance
@@ -172,16 +211,25 @@ func (instance *Win32_ProcessStartup) GetPropertyPriorityClass() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetShowWindow sets the value of ShowWindow for the instance
 func (instance *Win32_ProcessStartup) SetPropertyShowWindow(value uint16) (err error) {
-	return instance.SetProperty("ShowWindow", value)
+	return instance.SetProperty("ShowWindow", (value))
 }
 
 // GetShowWindow gets the value of ShowWindow for the instance
@@ -190,16 +238,25 @@ func (instance *Win32_ProcessStartup) GetPropertyShowWindow() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTitle sets the value of Title for the instance
 func (instance *Win32_ProcessStartup) SetPropertyTitle(value string) (err error) {
-	return instance.SetProperty("Title", value)
+	return instance.SetProperty("Title", (value))
 }
 
 // GetTitle gets the value of Title for the instance
@@ -208,16 +265,25 @@ func (instance *Win32_ProcessStartup) GetPropertyTitle() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWinstationDesktop sets the value of WinstationDesktop for the instance
 func (instance *Win32_ProcessStartup) SetPropertyWinstationDesktop(value string) (err error) {
-	return instance.SetProperty("WinstationDesktop", value)
+	return instance.SetProperty("WinstationDesktop", (value))
 }
 
 // GetWinstationDesktop gets the value of WinstationDesktop for the instance
@@ -226,16 +292,25 @@ func (instance *Win32_ProcessStartup) GetPropertyWinstationDesktop() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetX sets the value of X for the instance
 func (instance *Win32_ProcessStartup) SetPropertyX(value uint32) (err error) {
-	return instance.SetProperty("X", value)
+	return instance.SetProperty("X", (value))
 }
 
 // GetX gets the value of X for the instance
@@ -244,16 +319,25 @@ func (instance *Win32_ProcessStartup) GetPropertyX() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetXCountChars sets the value of XCountChars for the instance
 func (instance *Win32_ProcessStartup) SetPropertyXCountChars(value uint32) (err error) {
-	return instance.SetProperty("XCountChars", value)
+	return instance.SetProperty("XCountChars", (value))
 }
 
 // GetXCountChars gets the value of XCountChars for the instance
@@ -262,16 +346,25 @@ func (instance *Win32_ProcessStartup) GetPropertyXCountChars() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetXSize sets the value of XSize for the instance
 func (instance *Win32_ProcessStartup) SetPropertyXSize(value uint32) (err error) {
-	return instance.SetProperty("XSize", value)
+	return instance.SetProperty("XSize", (value))
 }
 
 // GetXSize gets the value of XSize for the instance
@@ -280,16 +373,25 @@ func (instance *Win32_ProcessStartup) GetPropertyXSize() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetY sets the value of Y for the instance
 func (instance *Win32_ProcessStartup) SetPropertyY(value uint32) (err error) {
-	return instance.SetProperty("Y", value)
+	return instance.SetProperty("Y", (value))
 }
 
 // GetY gets the value of Y for the instance
@@ -298,16 +400,25 @@ func (instance *Win32_ProcessStartup) GetPropertyY() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetYCountChars sets the value of YCountChars for the instance
 func (instance *Win32_ProcessStartup) SetPropertyYCountChars(value uint32) (err error) {
-	return instance.SetProperty("YCountChars", value)
+	return instance.SetProperty("YCountChars", (value))
 }
 
 // GetYCountChars gets the value of YCountChars for the instance
@@ -316,16 +427,25 @@ func (instance *Win32_ProcessStartup) GetPropertyYCountChars() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetYSize sets the value of YSize for the instance
 func (instance *Win32_ProcessStartup) SetPropertyYSize(value uint32) (err error) {
-	return instance.SetProperty("YSize", value)
+	return instance.SetProperty("YSize", (value))
 }
 
 // GetYSize gets the value of YSize for the instance
@@ -334,9 +454,18 @@ func (instance *Win32_ProcessStartup) GetPropertyYSize() (value uint32, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

@@ -3,15 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	"reflect"
 )
 
 // Msvm_VirtualSystemMigrationService struct
@@ -59,7 +61,7 @@ func NewMsvm_VirtualSystemMigrationServiceEx6(hostName string,
 
 // SetActiveStorageMigrationCount sets the value of ActiveStorageMigrationCount for the instance
 func (instance *Msvm_VirtualSystemMigrationService) SetPropertyActiveStorageMigrationCount(value uint32) (err error) {
-	return instance.SetProperty("ActiveStorageMigrationCount", value)
+	return instance.SetProperty("ActiveStorageMigrationCount", (value))
 }
 
 // GetActiveStorageMigrationCount gets the value of ActiveStorageMigrationCount for the instance
@@ -68,16 +70,25 @@ func (instance *Msvm_VirtualSystemMigrationService) GetPropertyActiveStorageMigr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActiveVirtualSystemMigrationCount sets the value of ActiveVirtualSystemMigrationCount for the instance
 func (instance *Msvm_VirtualSystemMigrationService) SetPropertyActiveVirtualSystemMigrationCount(value uint32) (err error) {
-	return instance.SetProperty("ActiveVirtualSystemMigrationCount", value)
+	return instance.SetProperty("ActiveVirtualSystemMigrationCount", (value))
 }
 
 // GetActiveVirtualSystemMigrationCount gets the value of ActiveVirtualSystemMigrationCount for the instance
@@ -86,16 +97,25 @@ func (instance *Msvm_VirtualSystemMigrationService) GetPropertyActiveVirtualSyst
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMigrationServiceListenerIPAddressList sets the value of MigrationServiceListenerIPAddressList for the instance
 func (instance *Msvm_VirtualSystemMigrationService) SetPropertyMigrationServiceListenerIPAddressList(value []string) (err error) {
-	return instance.SetProperty("MigrationServiceListenerIPAddressList", value)
+	return instance.SetProperty("MigrationServiceListenerIPAddressList", (value))
 }
 
 // GetMigrationServiceListenerIPAddressList gets the value of MigrationServiceListenerIPAddressList for the instance
@@ -104,10 +124,20 @@ func (instance *Msvm_VirtualSystemMigrationService) GetPropertyMigrationServiceL
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 

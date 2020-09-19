@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles struct
@@ -103,7 +105,7 @@ func NewWin32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandlesEx6(hostName stri
 
 // SetBatchHandles sets the value of BatchHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyBatchHandles(value uint64) (err error) {
-	return instance.SetProperty("BatchHandles", value)
+	return instance.SetProperty("BatchHandles", (value))
 }
 
 // GetBatchHandles gets the value of BatchHandles for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBatchHandlesPersec sets the value of BatchHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyBatchHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("BatchHandlesPersec", value)
+	return instance.SetProperty("BatchHandlesPersec", (value))
 }
 
 // GetBatchHandlesPersec gets the value of BatchHandlesPersec for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetClusterHandles sets the value of ClusterHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyClusterHandles(value uint64) (err error) {
-	return instance.SetProperty("ClusterHandles", value)
+	return instance.SetProperty("ClusterHandles", (value))
 }
 
 // GetClusterHandles gets the value of ClusterHandles for the instance
@@ -148,16 +168,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetClusterHandlesPersec sets the value of ClusterHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyClusterHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("ClusterHandlesPersec", value)
+	return instance.SetProperty("ClusterHandlesPersec", (value))
 }
 
 // GetClusterHandlesPersec gets the value of ClusterHandlesPersec for the instance
@@ -166,16 +195,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetGroupHandles sets the value of GroupHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyGroupHandles(value uint64) (err error) {
-	return instance.SetProperty("GroupHandles", value)
+	return instance.SetProperty("GroupHandles", (value))
 }
 
 // GetGroupHandles gets the value of GroupHandles for the instance
@@ -184,16 +222,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetGroupHandlesPersec sets the value of GroupHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyGroupHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("GroupHandlesPersec", value)
+	return instance.SetProperty("GroupHandlesPersec", (value))
 }
 
 // GetGroupHandlesPersec gets the value of GroupHandlesPersec for the instance
@@ -202,16 +249,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetKeyHandles sets the value of KeyHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyKeyHandles(value uint64) (err error) {
-	return instance.SetProperty("KeyHandles", value)
+	return instance.SetProperty("KeyHandles", (value))
 }
 
 // GetKeyHandles gets the value of KeyHandles for the instance
@@ -220,16 +276,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetKeyHandlesPersec sets the value of KeyHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyKeyHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("KeyHandlesPersec", value)
+	return instance.SetProperty("KeyHandlesPersec", (value))
 }
 
 // GetKeyHandlesPersec gets the value of KeyHandlesPersec for the instance
@@ -238,16 +303,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkHandles sets the value of NetworkHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNetworkHandles(value uint64) (err error) {
-	return instance.SetProperty("NetworkHandles", value)
+	return instance.SetProperty("NetworkHandles", (value))
 }
 
 // GetNetworkHandles gets the value of NetworkHandles for the instance
@@ -256,16 +330,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkHandlesPersec sets the value of NetworkHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNetworkHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("NetworkHandlesPersec", value)
+	return instance.SetProperty("NetworkHandlesPersec", (value))
 }
 
 // GetNetworkHandlesPersec gets the value of NetworkHandlesPersec for the instance
@@ -274,16 +357,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkInterfaceHandles sets the value of NetworkInterfaceHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNetworkInterfaceHandles(value uint64) (err error) {
-	return instance.SetProperty("NetworkInterfaceHandles", value)
+	return instance.SetProperty("NetworkInterfaceHandles", (value))
 }
 
 // GetNetworkInterfaceHandles gets the value of NetworkInterfaceHandles for the instance
@@ -292,16 +384,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNetworkInterfaceHandlesPersec sets the value of NetworkInterfaceHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNetworkInterfaceHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("NetworkInterfaceHandlesPersec", value)
+	return instance.SetProperty("NetworkInterfaceHandlesPersec", (value))
 }
 
 // GetNetworkInterfaceHandlesPersec gets the value of NetworkInterfaceHandlesPersec for the instance
@@ -310,16 +411,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNodeHandles sets the value of NodeHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNodeHandles(value uint64) (err error) {
-	return instance.SetProperty("NodeHandles", value)
+	return instance.SetProperty("NodeHandles", (value))
 }
 
 // GetNodeHandles gets the value of NodeHandles for the instance
@@ -328,16 +438,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNodeHandlesPersec sets the value of NodeHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNodeHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("NodeHandlesPersec", value)
+	return instance.SetProperty("NodeHandlesPersec", (value))
 }
 
 // GetNodeHandlesPersec gets the value of NodeHandlesPersec for the instance
@@ -346,16 +465,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNotificationHandles sets the value of NotificationHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNotificationHandles(value uint64) (err error) {
-	return instance.SetProperty("NotificationHandles", value)
+	return instance.SetProperty("NotificationHandles", (value))
 }
 
 // GetNotificationHandles gets the value of NotificationHandles for the instance
@@ -364,16 +492,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetNotificationHandlesPersec sets the value of NotificationHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyNotificationHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("NotificationHandlesPersec", value)
+	return instance.SetProperty("NotificationHandlesPersec", (value))
 }
 
 // GetNotificationHandlesPersec gets the value of NotificationHandlesPersec for the instance
@@ -382,16 +519,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceHandles sets the value of ResourceHandles for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyResourceHandles(value uint64) (err error) {
-	return instance.SetProperty("ResourceHandles", value)
+	return instance.SetProperty("ResourceHandles", (value))
 }
 
 // GetResourceHandles gets the value of ResourceHandles for the instance
@@ -400,16 +546,25 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetResourceHandlesPersec sets the value of ResourceHandlesPersec for the instance
 func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) SetPropertyResourceHandlesPersec(value uint64) (err error) {
-	return instance.SetProperty("ResourceHandlesPersec", value)
+	return instance.SetProperty("ResourceHandlesPersec", (value))
 }
 
 // GetResourceHandlesPersec gets the value of ResourceHandlesPersec for the instance
@@ -418,9 +573,18 @@ func (instance *Win32_PerfRawData_ClussvcPerfProvider_ClusterAPIHandles) GetProp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_IBPort struct
@@ -58,7 +60,7 @@ func NewCIM_IBPortEx6(hostName string,
 
 // SetLIDMask sets the value of LIDMask for the instance
 func (instance *CIM_IBPort) SetPropertyLIDMask(value uint8) (err error) {
-	return instance.SetProperty("LIDMask", value)
+	return instance.SetProperty("LIDMask", (value))
 }
 
 // GetLIDMask gets the value of LIDMask for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_IBPort) GetPropertyLIDMask() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetLinkSpeedActive sets the value of LinkSpeedActive for the instance
 func (instance *CIM_IBPort) SetPropertyLinkSpeedActive(value uint8) (err error) {
-	return instance.SetProperty("LinkSpeedActive", value)
+	return instance.SetProperty("LinkSpeedActive", (value))
 }
 
 // GetLinkSpeedActive gets the value of LinkSpeedActive for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_IBPort) GetPropertyLinkSpeedActive() (value uint8, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetLinkWidthActive sets the value of LinkWidthActive for the instance
 func (instance *CIM_IBPort) SetPropertyLinkWidthActive(value uint16) (err error) {
-	return instance.SetProperty("LinkWidthActive", value)
+	return instance.SetProperty("LinkWidthActive", (value))
 }
 
 // GetLinkWidthActive gets the value of LinkWidthActive for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_IBPort) GetPropertyLinkWidthActive() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

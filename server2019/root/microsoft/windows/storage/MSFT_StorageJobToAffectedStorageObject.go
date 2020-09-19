@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_StorageJobToAffectedStorageObject struct
@@ -56,7 +58,7 @@ func NewMSFT_StorageJobToAffectedStorageObjectEx6(hostName string,
 
 // SetAffectedStorageObject sets the value of AffectedStorageObject for the instance
 func (instance *MSFT_StorageJobToAffectedStorageObject) SetPropertyAffectedStorageObject(value MSFT_StorageObject) (err error) {
-	return instance.SetProperty("AffectedStorageObject", value)
+	return instance.SetProperty("AffectedStorageObject", (value))
 }
 
 // GetAffectedStorageObject gets the value of AffectedStorageObject for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_StorageJobToAffectedStorageObject) GetPropertyAffectedStora
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageObject)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageObject)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageObject is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageObject(valuetmp)
+
 	return
 }
 
 // SetStorageJob sets the value of StorageJob for the instance
 func (instance *MSFT_StorageJobToAffectedStorageObject) SetPropertyStorageJob(value MSFT_StorageJob) (err error) {
-	return instance.SetProperty("StorageJob", value)
+	return instance.SetProperty("StorageJob", (value))
 }
 
 // GetStorageJob gets the value of StorageJob for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_StorageJobToAffectedStorageObject) GetPropertyStorageJob() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_StorageJob)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_StorageJob)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_StorageJob is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_StorageJob(valuetmp)
+
 	return
 }

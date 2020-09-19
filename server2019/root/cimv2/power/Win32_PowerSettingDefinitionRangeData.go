@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.power
 //////////////////////////////////////////////
 package power
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PowerSettingDefinitionRangeData struct
@@ -52,7 +54,7 @@ func NewWin32_PowerSettingDefinitionRangeDataEx6(hostName string,
 
 // SetSettingValue sets the value of SettingValue for the instance
 func (instance *Win32_PowerSettingDefinitionRangeData) SetPropertySettingValue(value uint32) (err error) {
-	return instance.SetProperty("SettingValue", value)
+	return instance.SetProperty("SettingValue", (value))
 }
 
 // GetSettingValue gets the value of SettingValue for the instance
@@ -61,9 +63,18 @@ func (instance *Win32_PowerSettingDefinitionRangeData) GetPropertySettingValue()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

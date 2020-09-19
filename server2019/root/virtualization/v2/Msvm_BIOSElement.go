@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_BIOSElement struct
@@ -31,12 +33,6 @@ type Msvm_BIOSElement struct {
 
 	//
 	BootOrder []uint16
-
-	//
-	BootPciExpress bool
-
-	//
-	BootPciExpressInstanceFilter string
 
 	//
 	ChassisAssetTag string
@@ -79,7 +75,7 @@ func NewMsvm_BIOSElementEx6(hostName string,
 
 // SetBaseBoardSerialNumber sets the value of BaseBoardSerialNumber for the instance
 func (instance *Msvm_BIOSElement) SetPropertyBaseBoardSerialNumber(value string) (err error) {
-	return instance.SetProperty("BaseBoardSerialNumber", value)
+	return instance.SetProperty("BaseBoardSerialNumber", (value))
 }
 
 // GetBaseBoardSerialNumber gets the value of BaseBoardSerialNumber for the instance
@@ -88,16 +84,25 @@ func (instance *Msvm_BIOSElement) GetPropertyBaseBoardSerialNumber() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBIOSGUID sets the value of BIOSGUID for the instance
 func (instance *Msvm_BIOSElement) SetPropertyBIOSGUID(value string) (err error) {
-	return instance.SetProperty("BIOSGUID", value)
+	return instance.SetProperty("BIOSGUID", (value))
 }
 
 // GetBIOSGUID gets the value of BIOSGUID for the instance
@@ -106,16 +111,25 @@ func (instance *Msvm_BIOSElement) GetPropertyBIOSGUID() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBIOSNumLock sets the value of BIOSNumLock for the instance
 func (instance *Msvm_BIOSElement) SetPropertyBIOSNumLock(value bool) (err error) {
-	return instance.SetProperty("BIOSNumLock", value)
+	return instance.SetProperty("BIOSNumLock", (value))
 }
 
 // GetBIOSNumLock gets the value of BIOSNumLock for the instance
@@ -124,16 +138,25 @@ func (instance *Msvm_BIOSElement) GetPropertyBIOSNumLock() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBIOSSerialNumber sets the value of BIOSSerialNumber for the instance
 func (instance *Msvm_BIOSElement) SetPropertyBIOSSerialNumber(value string) (err error) {
-	return instance.SetProperty("BIOSSerialNumber", value)
+	return instance.SetProperty("BIOSSerialNumber", (value))
 }
 
 // GetBIOSSerialNumber gets the value of BIOSSerialNumber for the instance
@@ -142,16 +165,25 @@ func (instance *Msvm_BIOSElement) GetPropertyBIOSSerialNumber() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetBootOrder sets the value of BootOrder for the instance
 func (instance *Msvm_BIOSElement) SetPropertyBootOrder(value []uint16) (err error) {
-	return instance.SetProperty("BootOrder", value)
+	return instance.SetProperty("BootOrder", (value))
 }
 
 // GetBootOrder gets the value of BootOrder for the instance
@@ -160,52 +192,26 @@ func (instance *Msvm_BIOSElement) GetPropertyBootOrder() (value []uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetBootPciExpress sets the value of BootPciExpress for the instance
-func (instance *Msvm_BIOSElement) SetPropertyBootPciExpress(value bool) (err error) {
-	return instance.SetProperty("BootPciExpress", value)
-}
-
-// GetBootPciExpress gets the value of BootPciExpress for the instance
-func (instance *Msvm_BIOSElement) GetPropertyBootPciExpress() (value bool, err error) {
-	retValue, err := instance.GetProperty("BootPciExpress")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
 
-// SetBootPciExpressInstanceFilter sets the value of BootPciExpressInstanceFilter for the instance
-func (instance *Msvm_BIOSElement) SetPropertyBootPciExpressInstanceFilter(value string) (err error) {
-	return instance.SetProperty("BootPciExpressInstanceFilter", value)
-}
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
 
-// GetBootPciExpressInstanceFilter gets the value of BootPciExpressInstanceFilter for the instance
-func (instance *Msvm_BIOSElement) GetPropertyBootPciExpressInstanceFilter() (value string, err error) {
-	retValue, err := instance.GetProperty("BootPciExpressInstanceFilter")
-	if err != nil {
-		return
-	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
 	return
 }
 
 // SetChassisAssetTag sets the value of ChassisAssetTag for the instance
 func (instance *Msvm_BIOSElement) SetPropertyChassisAssetTag(value string) (err error) {
-	return instance.SetProperty("ChassisAssetTag", value)
+	return instance.SetProperty("ChassisAssetTag", (value))
 }
 
 // GetChassisAssetTag gets the value of ChassisAssetTag for the instance
@@ -214,16 +220,25 @@ func (instance *Msvm_BIOSElement) GetPropertyChassisAssetTag() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetChassisSerialNumber sets the value of ChassisSerialNumber for the instance
 func (instance *Msvm_BIOSElement) SetPropertyChassisSerialNumber(value string) (err error) {
-	return instance.SetProperty("ChassisSerialNumber", value)
+	return instance.SetProperty("ChassisSerialNumber", (value))
 }
 
 // GetChassisSerialNumber gets the value of ChassisSerialNumber for the instance
@@ -232,16 +247,25 @@ func (instance *Msvm_BIOSElement) GetPropertyChassisSerialNumber() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEnableHibernation sets the value of EnableHibernation for the instance
 func (instance *Msvm_BIOSElement) SetPropertyEnableHibernation(value bool) (err error) {
-	return instance.SetProperty("EnableHibernation", value)
+	return instance.SetProperty("EnableHibernation", (value))
 }
 
 // GetEnableHibernation gets the value of EnableHibernation for the instance
@@ -250,10 +274,19 @@ func (instance *Msvm_BIOSElement) GetPropertyEnableHibernation() (value bool, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 func (instance *Msvm_BIOSElement) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {

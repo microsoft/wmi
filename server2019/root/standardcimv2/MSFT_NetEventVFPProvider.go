@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetEventVFPProvider struct
@@ -88,7 +90,7 @@ func NewMSFT_NetEventVFPProviderEx6(hostName string,
 
 // SetDestinationIPAddresses sets the value of DestinationIPAddresses for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyDestinationIPAddresses(value []string) (err error) {
-	return instance.SetProperty("DestinationIPAddresses", value)
+	return instance.SetProperty("DestinationIPAddresses", (value))
 }
 
 // GetDestinationIPAddresses gets the value of DestinationIPAddresses for the instance
@@ -97,16 +99,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyDestinationIPAddresses() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetDestinationMACAddresses sets the value of DestinationMACAddresses for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyDestinationMACAddresses(value []string) (err error) {
-	return instance.SetProperty("DestinationMACAddresses", value)
+	return instance.SetProperty("DestinationMACAddresses", (value))
 }
 
 // GetDestinationMACAddresses gets the value of DestinationMACAddresses for the instance
@@ -115,16 +127,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyDestinationMACAddresses() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetGREKeys sets the value of GREKeys for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyGREKeys(value []uint32) (err error) {
-	return instance.SetProperty("GREKeys", value)
+	return instance.SetProperty("GREKeys", (value))
 }
 
 // GetGREKeys gets the value of GREKeys for the instance
@@ -133,16 +155,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyGREKeys() (value []uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetIPProtocols sets the value of IPProtocols for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyIPProtocols(value []uint8) (err error) {
-	return instance.SetProperty("IPProtocols", value)
+	return instance.SetProperty("IPProtocols", (value))
 }
 
 // GetIPProtocols gets the value of IPProtocols for the instance
@@ -151,16 +183,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyIPProtocols() (value []uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetPortIds sets the value of PortIds for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyPortIds(value []uint32) (err error) {
-	return instance.SetProperty("PortIds", value)
+	return instance.SetProperty("PortIds", (value))
 }
 
 // GetPortIds gets the value of PortIds for the instance
@@ -169,16 +211,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyPortIds() (value []uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetSourceIPAddresses sets the value of SourceIPAddresses for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertySourceIPAddresses(value []string) (err error) {
-	return instance.SetProperty("SourceIPAddresses", value)
+	return instance.SetProperty("SourceIPAddresses", (value))
 }
 
 // GetSourceIPAddresses gets the value of SourceIPAddresses for the instance
@@ -187,16 +239,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertySourceIPAddresses() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSourceMACAddresses sets the value of SourceMACAddresses for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertySourceMACAddresses(value []string) (err error) {
-	return instance.SetProperty("SourceMACAddresses", value)
+	return instance.SetProperty("SourceMACAddresses", (value))
 }
 
 // GetSourceMACAddresses gets the value of SourceMACAddresses for the instance
@@ -205,16 +267,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertySourceMACAddresses() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetSwitchName sets the value of SwitchName for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertySwitchName(value string) (err error) {
-	return instance.SetProperty("SwitchName", value)
+	return instance.SetProperty("SwitchName", (value))
 }
 
 // GetSwitchName gets the value of SwitchName for the instance
@@ -223,16 +295,25 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertySwitchName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTCPPorts sets the value of TCPPorts for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyTCPPorts(value []uint16) (err error) {
-	return instance.SetProperty("TCPPorts", value)
+	return instance.SetProperty("TCPPorts", (value))
 }
 
 // GetTCPPorts gets the value of TCPPorts for the instance
@@ -241,16 +322,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyTCPPorts() (value []uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetTenantIds sets the value of TenantIds for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyTenantIds(value []uint32) (err error) {
-	return instance.SetProperty("TenantIds", value)
+	return instance.SetProperty("TenantIds", (value))
 }
 
 // GetTenantIds gets the value of TenantIds for the instance
@@ -259,16 +350,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyTenantIds() (value []uint32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint32)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint32(valuetmp))
+	}
+
 	return
 }
 
 // SetUDPPorts sets the value of UDPPorts for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyUDPPorts(value []uint16) (err error) {
-	return instance.SetProperty("UDPPorts", value)
+	return instance.SetProperty("UDPPorts", (value))
 }
 
 // GetUDPPorts gets the value of UDPPorts for the instance
@@ -277,16 +378,26 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyUDPPorts() (value []uint16,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }
 
 // SetVFPFlowDirection sets the value of VFPFlowDirection for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyVFPFlowDirection(value uint32) (err error) {
-	return instance.SetProperty("VFPFlowDirection", value)
+	return instance.SetProperty("VFPFlowDirection", (value))
 }
 
 // GetVFPFlowDirection gets the value of VFPFlowDirection for the instance
@@ -295,16 +406,25 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyVFPFlowDirection() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVLANIds sets the value of VLANIds for the instance
 func (instance *MSFT_NetEventVFPProvider) SetPropertyVLANIds(value []uint16) (err error) {
-	return instance.SetProperty("VLANIds", value)
+	return instance.SetProperty("VLANIds", (value))
 }
 
 // GetVLANIds gets the value of VLANIds for the instance
@@ -313,9 +433,19 @@ func (instance *MSFT_NetEventVFPProvider) GetPropertyVLANIds() (value []uint16, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }

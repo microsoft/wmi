@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_BaseMetricDefinition struct
@@ -98,7 +100,7 @@ func NewCIM_BaseMetricDefinitionEx6(hostName string,
 
 // SetBreakdownDimensions sets the value of BreakdownDimensions for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyBreakdownDimensions(value []string) (err error) {
-	return instance.SetProperty("BreakdownDimensions", value)
+	return instance.SetProperty("BreakdownDimensions", (value))
 }
 
 // GetBreakdownDimensions gets the value of BreakdownDimensions for the instance
@@ -107,16 +109,26 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyBreakdownDimensions() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetCalculable sets the value of Calculable for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyCalculable(value BaseMetricDefinition_Calculable) (err error) {
-	return instance.SetProperty("Calculable", value)
+	return instance.SetProperty("Calculable", (value))
 }
 
 // GetCalculable gets the value of Calculable for the instance
@@ -125,16 +137,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyCalculable() (value BaseMet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(BaseMetricDefinition_Calculable)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = BaseMetricDefinition_Calculable(valuetmp)
+
 	return
 }
 
 // SetChangeType sets the value of ChangeType for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyChangeType(value BaseMetricDefinition_ChangeType) (err error) {
-	return instance.SetProperty("ChangeType", value)
+	return instance.SetProperty("ChangeType", (value))
 }
 
 // GetChangeType gets the value of ChangeType for the instance
@@ -143,16 +164,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyChangeType() (value BaseMet
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(BaseMetricDefinition_ChangeType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = BaseMetricDefinition_ChangeType(valuetmp)
+
 	return
 }
 
 // SetDataType sets the value of DataType for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyDataType(value BaseMetricDefinition_DataType) (err error) {
-	return instance.SetProperty("DataType", value)
+	return instance.SetProperty("DataType", (value))
 }
 
 // GetDataType gets the value of DataType for the instance
@@ -161,16 +191,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyDataType() (value BaseMetri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(BaseMetricDefinition_DataType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = BaseMetricDefinition_DataType(valuetmp)
+
 	return
 }
 
 // SetGatheringType sets the value of GatheringType for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyGatheringType(value BaseMetricDefinition_GatheringType) (err error) {
-	return instance.SetProperty("GatheringType", value)
+	return instance.SetProperty("GatheringType", (value))
 }
 
 // GetGatheringType gets the value of GatheringType for the instance
@@ -179,16 +218,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyGatheringType() (value Base
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(BaseMetricDefinition_GatheringType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = BaseMetricDefinition_GatheringType(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -197,16 +245,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyId() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsContinuous sets the value of IsContinuous for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyIsContinuous(value bool) (err error) {
-	return instance.SetProperty("IsContinuous", value)
+	return instance.SetProperty("IsContinuous", (value))
 }
 
 // GetIsContinuous gets the value of IsContinuous for the instance
@@ -215,16 +272,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyIsContinuous() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -233,16 +299,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProgrammaticUnits sets the value of ProgrammaticUnits for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyProgrammaticUnits(value string) (err error) {
-	return instance.SetProperty("ProgrammaticUnits", value)
+	return instance.SetProperty("ProgrammaticUnits", (value))
 }
 
 // GetProgrammaticUnits gets the value of ProgrammaticUnits for the instance
@@ -251,16 +326,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyProgrammaticUnits() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTimeScope sets the value of TimeScope for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyTimeScope(value BaseMetricDefinition_TimeScope) (err error) {
-	return instance.SetProperty("TimeScope", value)
+	return instance.SetProperty("TimeScope", (value))
 }
 
 // GetTimeScope gets the value of TimeScope for the instance
@@ -269,16 +353,25 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyTimeScope() (value BaseMetr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(BaseMetricDefinition_TimeScope)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = BaseMetricDefinition_TimeScope(valuetmp)
+
 	return
 }
 
 // SetUnits sets the value of Units for the instance
 func (instance *CIM_BaseMetricDefinition) SetPropertyUnits(value string) (err error) {
-	return instance.SetProperty("Units", value)
+	return instance.SetProperty("Units", (value))
 }
 
 // GetUnits gets the value of Units for the instance
@@ -287,9 +380,18 @@ func (instance *CIM_BaseMetricDefinition) GetPropertyUnits() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

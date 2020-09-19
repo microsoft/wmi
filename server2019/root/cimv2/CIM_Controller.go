@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_Controller struct
@@ -58,7 +60,7 @@ func NewCIM_ControllerEx6(hostName string,
 
 // SetMaxNumberControlled sets the value of MaxNumberControlled for the instance
 func (instance *CIM_Controller) SetPropertyMaxNumberControlled(value uint32) (err error) {
-	return instance.SetProperty("MaxNumberControlled", value)
+	return instance.SetProperty("MaxNumberControlled", (value))
 }
 
 // GetMaxNumberControlled gets the value of MaxNumberControlled for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_Controller) GetPropertyMaxNumberControlled() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProtocolSupported sets the value of ProtocolSupported for the instance
 func (instance *CIM_Controller) SetPropertyProtocolSupported(value uint16) (err error) {
-	return instance.SetProperty("ProtocolSupported", value)
+	return instance.SetProperty("ProtocolSupported", (value))
 }
 
 // GetProtocolSupported gets the value of ProtocolSupported for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_Controller) GetPropertyProtocolSupported() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTimeOfLastReset sets the value of TimeOfLastReset for the instance
 func (instance *CIM_Controller) SetPropertyTimeOfLastReset(value string) (err error) {
-	return instance.SetProperty("TimeOfLastReset", value)
+	return instance.SetProperty("TimeOfLastReset", (value))
 }
 
 // GetTimeOfLastReset gets the value of TimeOfLastReset for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_Controller) GetPropertyTimeOfLastReset() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

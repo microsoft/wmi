@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Tcpip_IPv6 struct
@@ -100,7 +102,7 @@ func NewWin32_PerfRawData_Tcpip_IPv6Ex6(hostName string,
 
 // SetDatagramsForwardedPersec sets the value of DatagramsForwardedPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsForwardedPersec(value uint32) (err error) {
-	return instance.SetProperty("DatagramsForwardedPersec", value)
+	return instance.SetProperty("DatagramsForwardedPersec", (value))
 }
 
 // GetDatagramsForwardedPersec gets the value of DatagramsForwardedPersec for the instance
@@ -109,16 +111,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsForwardedPerse
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsOutboundDiscarded sets the value of DatagramsOutboundDiscarded for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsOutboundDiscarded(value uint32) (err error) {
-	return instance.SetProperty("DatagramsOutboundDiscarded", value)
+	return instance.SetProperty("DatagramsOutboundDiscarded", (value))
 }
 
 // GetDatagramsOutboundDiscarded gets the value of DatagramsOutboundDiscarded for the instance
@@ -127,16 +138,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsOutboundDiscar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsOutboundNoRoute sets the value of DatagramsOutboundNoRoute for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsOutboundNoRoute(value uint32) (err error) {
-	return instance.SetProperty("DatagramsOutboundNoRoute", value)
+	return instance.SetProperty("DatagramsOutboundNoRoute", (value))
 }
 
 // GetDatagramsOutboundNoRoute gets the value of DatagramsOutboundNoRoute for the instance
@@ -145,16 +165,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsOutboundNoRout
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsPersec sets the value of DatagramsPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsPersec(value uint32) (err error) {
-	return instance.SetProperty("DatagramsPersec", value)
+	return instance.SetProperty("DatagramsPersec", (value))
 }
 
 // GetDatagramsPersec gets the value of DatagramsPersec for the instance
@@ -163,16 +192,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsPersec() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceivedAddressErrors sets the value of DatagramsReceivedAddressErrors for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsReceivedAddressErrors(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceivedAddressErrors", value)
+	return instance.SetProperty("DatagramsReceivedAddressErrors", (value))
 }
 
 // GetDatagramsReceivedAddressErrors gets the value of DatagramsReceivedAddressErrors for the instance
@@ -181,16 +219,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsReceivedAddres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceivedDeliveredPersec sets the value of DatagramsReceivedDeliveredPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsReceivedDeliveredPersec(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceivedDeliveredPersec", value)
+	return instance.SetProperty("DatagramsReceivedDeliveredPersec", (value))
 }
 
 // GetDatagramsReceivedDeliveredPersec gets the value of DatagramsReceivedDeliveredPersec for the instance
@@ -199,16 +246,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsReceivedDelive
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceivedDiscarded sets the value of DatagramsReceivedDiscarded for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsReceivedDiscarded(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceivedDiscarded", value)
+	return instance.SetProperty("DatagramsReceivedDiscarded", (value))
 }
 
 // GetDatagramsReceivedDiscarded gets the value of DatagramsReceivedDiscarded for the instance
@@ -217,16 +273,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsReceivedDiscar
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceivedHeaderErrors sets the value of DatagramsReceivedHeaderErrors for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsReceivedHeaderErrors(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceivedHeaderErrors", value)
+	return instance.SetProperty("DatagramsReceivedHeaderErrors", (value))
 }
 
 // GetDatagramsReceivedHeaderErrors gets the value of DatagramsReceivedHeaderErrors for the instance
@@ -235,16 +300,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsReceivedHeader
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceivedPersec sets the value of DatagramsReceivedPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsReceivedPersec(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceivedPersec", value)
+	return instance.SetProperty("DatagramsReceivedPersec", (value))
 }
 
 // GetDatagramsReceivedPersec gets the value of DatagramsReceivedPersec for the instance
@@ -253,16 +327,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsReceivedPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsReceivedUnknownProtocol sets the value of DatagramsReceivedUnknownProtocol for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsReceivedUnknownProtocol(value uint32) (err error) {
-	return instance.SetProperty("DatagramsReceivedUnknownProtocol", value)
+	return instance.SetProperty("DatagramsReceivedUnknownProtocol", (value))
 }
 
 // GetDatagramsReceivedUnknownProtocol gets the value of DatagramsReceivedUnknownProtocol for the instance
@@ -271,16 +354,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsReceivedUnknow
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDatagramsSentPersec sets the value of DatagramsSentPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyDatagramsSentPersec(value uint32) (err error) {
-	return instance.SetProperty("DatagramsSentPersec", value)
+	return instance.SetProperty("DatagramsSentPersec", (value))
 }
 
 // GetDatagramsSentPersec gets the value of DatagramsSentPersec for the instance
@@ -289,16 +381,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyDatagramsSentPersec() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFragmentationFailures sets the value of FragmentationFailures for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyFragmentationFailures(value uint32) (err error) {
-	return instance.SetProperty("FragmentationFailures", value)
+	return instance.SetProperty("FragmentationFailures", (value))
 }
 
 // GetFragmentationFailures gets the value of FragmentationFailures for the instance
@@ -307,16 +408,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyFragmentationFailures()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFragmentedDatagramsPersec sets the value of FragmentedDatagramsPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyFragmentedDatagramsPersec(value uint32) (err error) {
-	return instance.SetProperty("FragmentedDatagramsPersec", value)
+	return instance.SetProperty("FragmentedDatagramsPersec", (value))
 }
 
 // GetFragmentedDatagramsPersec gets the value of FragmentedDatagramsPersec for the instance
@@ -325,16 +435,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyFragmentedDatagramsPers
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFragmentReassemblyFailures sets the value of FragmentReassemblyFailures for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyFragmentReassemblyFailures(value uint32) (err error) {
-	return instance.SetProperty("FragmentReassemblyFailures", value)
+	return instance.SetProperty("FragmentReassemblyFailures", (value))
 }
 
 // GetFragmentReassemblyFailures gets the value of FragmentReassemblyFailures for the instance
@@ -343,16 +462,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyFragmentReassemblyFailu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFragmentsCreatedPersec sets the value of FragmentsCreatedPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyFragmentsCreatedPersec(value uint32) (err error) {
-	return instance.SetProperty("FragmentsCreatedPersec", value)
+	return instance.SetProperty("FragmentsCreatedPersec", (value))
 }
 
 // GetFragmentsCreatedPersec gets the value of FragmentsCreatedPersec for the instance
@@ -361,16 +489,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyFragmentsCreatedPersec(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFragmentsReassembledPersec sets the value of FragmentsReassembledPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyFragmentsReassembledPersec(value uint32) (err error) {
-	return instance.SetProperty("FragmentsReassembledPersec", value)
+	return instance.SetProperty("FragmentsReassembledPersec", (value))
 }
 
 // GetFragmentsReassembledPersec gets the value of FragmentsReassembledPersec for the instance
@@ -379,16 +516,25 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyFragmentsReassembledPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFragmentsReceivedPersec sets the value of FragmentsReceivedPersec for the instance
 func (instance *Win32_PerfRawData_Tcpip_IPv6) SetPropertyFragmentsReceivedPersec(value uint32) (err error) {
-	return instance.SetProperty("FragmentsReceivedPersec", value)
+	return instance.SetProperty("FragmentsReceivedPersec", (value))
 }
 
 // GetFragmentsReceivedPersec gets the value of FragmentsReceivedPersec for the instance
@@ -397,9 +543,18 @@ func (instance *Win32_PerfRawData_Tcpip_IPv6) GetPropertyFragmentsReceivedPersec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

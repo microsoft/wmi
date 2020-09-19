@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetServiceCrash struct
@@ -64,7 +66,7 @@ func NewMSFT_NetServiceCrashEx6(hostName string,
 
 // SetAction sets the value of Action for the instance
 func (instance *MSFT_NetServiceCrash) SetPropertyAction(value string) (err error) {
-	return instance.SetProperty("Action", value)
+	return instance.SetProperty("Action", (value))
 }
 
 // GetAction gets the value of Action for the instance
@@ -73,16 +75,25 @@ func (instance *MSFT_NetServiceCrash) GetPropertyAction() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetActionDelay sets the value of ActionDelay for the instance
 func (instance *MSFT_NetServiceCrash) SetPropertyActionDelay(value uint32) (err error) {
-	return instance.SetProperty("ActionDelay", value)
+	return instance.SetProperty("ActionDelay", (value))
 }
 
 // GetActionDelay gets the value of ActionDelay for the instance
@@ -91,16 +102,25 @@ func (instance *MSFT_NetServiceCrash) GetPropertyActionDelay() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActionType sets the value of ActionType for the instance
 func (instance *MSFT_NetServiceCrash) SetPropertyActionType(value uint32) (err error) {
-	return instance.SetProperty("ActionType", value)
+	return instance.SetProperty("ActionType", (value))
 }
 
 // GetActionType gets the value of ActionType for the instance
@@ -109,16 +129,25 @@ func (instance *MSFT_NetServiceCrash) GetPropertyActionType() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetService sets the value of Service for the instance
 func (instance *MSFT_NetServiceCrash) SetPropertyService(value string) (err error) {
-	return instance.SetProperty("Service", value)
+	return instance.SetProperty("Service", (value))
 }
 
 // GetService gets the value of Service for the instance
@@ -127,16 +156,25 @@ func (instance *MSFT_NetServiceCrash) GetPropertyService() (value string, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTimesFailed sets the value of TimesFailed for the instance
 func (instance *MSFT_NetServiceCrash) SetPropertyTimesFailed(value uint32) (err error) {
-	return instance.SetProperty("TimesFailed", value)
+	return instance.SetProperty("TimesFailed", (value))
 }
 
 // GetTimesFailed gets the value of TimesFailed for the instance
@@ -145,9 +183,18 @@ func (instance *MSFT_NetServiceCrash) GetPropertyTimesFailed() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

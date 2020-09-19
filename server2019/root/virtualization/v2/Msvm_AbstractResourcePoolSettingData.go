@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_AbstractResourcePoolSettingData struct
@@ -73,7 +75,7 @@ func NewMsvm_AbstractResourcePoolSettingDataEx6(hostName string,
 
 // SetLoadBalancingBehavior sets the value of LoadBalancingBehavior for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyLoadBalancingBehavior(value uint16) (err error) {
-	return instance.SetProperty("LoadBalancingBehavior", value)
+	return instance.SetProperty("LoadBalancingBehavior", (value))
 }
 
 // GetLoadBalancingBehavior gets the value of LoadBalancingBehavior for the instance
@@ -82,16 +84,25 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyLoadBalancingBe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMappingBehavior sets the value of MappingBehavior for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyMappingBehavior(value uint16) (err error) {
-	return instance.SetProperty("MappingBehavior", value)
+	return instance.SetProperty("MappingBehavior", (value))
 }
 
 // GetMappingBehavior gets the value of MappingBehavior for the instance
@@ -100,16 +111,25 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyMappingBehavior
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMappingOrder sets the value of MappingOrder for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyMappingOrder(value []string) (err error) {
-	return instance.SetProperty("MappingOrder", value)
+	return instance.SetProperty("MappingOrder", (value))
 }
 
 // GetMappingOrder gets the value of MappingOrder for the instance
@@ -118,16 +138,26 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyMappingOrder() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNotes sets the value of Notes for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyNotes(value string) (err error) {
-	return instance.SetProperty("Notes", value)
+	return instance.SetProperty("Notes", (value))
 }
 
 // GetNotes gets the value of Notes for the instance
@@ -136,16 +166,25 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyNotes() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherResourceType sets the value of OtherResourceType for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyOtherResourceType(value string) (err error) {
-	return instance.SetProperty("OtherResourceType", value)
+	return instance.SetProperty("OtherResourceType", (value))
 }
 
 // GetOtherResourceType gets the value of OtherResourceType for the instance
@@ -154,16 +193,25 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyOtherResourceTy
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPoolID sets the value of PoolID for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyPoolID(value string) (err error) {
-	return instance.SetProperty("PoolID", value)
+	return instance.SetProperty("PoolID", (value))
 }
 
 // GetPoolID gets the value of PoolID for the instance
@@ -172,16 +220,25 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyPoolID() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResourceSubType sets the value of ResourceSubType for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyResourceSubType(value string) (err error) {
-	return instance.SetProperty("ResourceSubType", value)
+	return instance.SetProperty("ResourceSubType", (value))
 }
 
 // GetResourceSubType gets the value of ResourceSubType for the instance
@@ -190,16 +247,25 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyResourceSubType
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetResourceType sets the value of ResourceType for the instance
 func (instance *Msvm_AbstractResourcePoolSettingData) SetPropertyResourceType(value uint16) (err error) {
-	return instance.SetProperty("ResourceType", value)
+	return instance.SetProperty("ResourceType", (value))
 }
 
 // GetResourceType gets the value of ResourceType for the instance
@@ -208,10 +274,19 @@ func (instance *Msvm_AbstractResourcePoolSettingData) GetPropertyResourceType() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 func (instance *Msvm_AbstractResourcePoolSettingData) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {

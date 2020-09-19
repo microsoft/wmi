@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Uev
 //////////////////////////////////////////////
 package uev
@@ -11,7 +11,9 @@ package uev
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // SettingsLocationTemplate struct
@@ -86,7 +88,7 @@ func NewSettingsLocationTemplateEx6(hostName string,
 
 // SetDeferToMSAccount sets the value of DeferToMSAccount for the instance
 func (instance *SettingsLocationTemplate) SetPropertyDeferToMSAccount(value bool) (err error) {
-	return instance.SetProperty("DeferToMSAccount", value)
+	return instance.SetProperty("DeferToMSAccount", (value))
 }
 
 // GetDeferToMSAccount gets the value of DeferToMSAccount for the instance
@@ -95,16 +97,25 @@ func (instance *SettingsLocationTemplate) GetPropertyDeferToMSAccount() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *SettingsLocationTemplate) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -113,16 +124,25 @@ func (instance *SettingsLocationTemplate) GetPropertyEnabled() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnableStateLocation sets the value of EnableStateLocation for the instance
 func (instance *SettingsLocationTemplate) SetPropertyEnableStateLocation(value string) (err error) {
-	return instance.SetProperty("EnableStateLocation", value)
+	return instance.SetProperty("EnableStateLocation", (value))
 }
 
 // GetEnableStateLocation gets the value of EnableStateLocation for the instance
@@ -131,16 +151,25 @@ func (instance *SettingsLocationTemplate) GetPropertyEnableStateLocation() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsSuiteParent sets the value of IsSuiteParent for the instance
 func (instance *SettingsLocationTemplate) SetPropertyIsSuiteParent(value bool) (err error) {
-	return instance.SetProperty("IsSuiteParent", value)
+	return instance.SetProperty("IsSuiteParent", (value))
 }
 
 // GetIsSuiteParent gets the value of IsSuiteParent for the instance
@@ -149,16 +178,25 @@ func (instance *SettingsLocationTemplate) GetPropertyIsSuiteParent() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIsTemplateFile sets the value of IsTemplateFile for the instance
 func (instance *SettingsLocationTemplate) SetPropertyIsTemplateFile(value bool) (err error) {
-	return instance.SetProperty("IsTemplateFile", value)
+	return instance.SetProperty("IsTemplateFile", (value))
 }
 
 // GetIsTemplateFile gets the value of IsTemplateFile for the instance
@@ -167,16 +205,25 @@ func (instance *SettingsLocationTemplate) GetPropertyIsTemplateFile() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSuiteParentId sets the value of SuiteParentId for the instance
 func (instance *SettingsLocationTemplate) SetPropertySuiteParentId(value string) (err error) {
-	return instance.SetProperty("SuiteParentId", value)
+	return instance.SetProperty("SuiteParentId", (value))
 }
 
 // GetSuiteParentId gets the value of SuiteParentId for the instance
@@ -185,16 +232,25 @@ func (instance *SettingsLocationTemplate) GetPropertySuiteParentId() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTemplateDescription sets the value of TemplateDescription for the instance
 func (instance *SettingsLocationTemplate) SetPropertyTemplateDescription(value string) (err error) {
-	return instance.SetProperty("TemplateDescription", value)
+	return instance.SetProperty("TemplateDescription", (value))
 }
 
 // GetTemplateDescription gets the value of TemplateDescription for the instance
@@ -203,16 +259,25 @@ func (instance *SettingsLocationTemplate) GetPropertyTemplateDescription() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTemplateId sets the value of TemplateId for the instance
 func (instance *SettingsLocationTemplate) SetPropertyTemplateId(value string) (err error) {
-	return instance.SetProperty("TemplateId", value)
+	return instance.SetProperty("TemplateId", (value))
 }
 
 // GetTemplateId gets the value of TemplateId for the instance
@@ -221,16 +286,25 @@ func (instance *SettingsLocationTemplate) GetPropertyTemplateId() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTemplateName sets the value of TemplateName for the instance
 func (instance *SettingsLocationTemplate) SetPropertyTemplateName(value string) (err error) {
-	return instance.SetProperty("TemplateName", value)
+	return instance.SetProperty("TemplateName", (value))
 }
 
 // GetTemplateName gets the value of TemplateName for the instance
@@ -239,16 +313,25 @@ func (instance *SettingsLocationTemplate) GetPropertyTemplateName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTemplateProfile sets the value of TemplateProfile for the instance
 func (instance *SettingsLocationTemplate) SetPropertyTemplateProfile(value string) (err error) {
-	return instance.SetProperty("TemplateProfile", value)
+	return instance.SetProperty("TemplateProfile", (value))
 }
 
 // GetTemplateProfile gets the value of TemplateProfile for the instance
@@ -257,16 +340,25 @@ func (instance *SettingsLocationTemplate) GetPropertyTemplateProfile() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTemplateType sets the value of TemplateType for the instance
 func (instance *SettingsLocationTemplate) SetPropertyTemplateType(value string) (err error) {
-	return instance.SetProperty("TemplateType", value)
+	return instance.SetProperty("TemplateType", (value))
 }
 
 // GetTemplateType gets the value of TemplateType for the instance
@@ -275,16 +367,25 @@ func (instance *SettingsLocationTemplate) GetPropertyTemplateType() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetTemplateVersion sets the value of TemplateVersion for the instance
 func (instance *SettingsLocationTemplate) SetPropertyTemplateVersion(value uint32) (err error) {
-	return instance.SetProperty("TemplateVersion", value)
+	return instance.SetProperty("TemplateVersion", (value))
 }
 
 // GetTemplateVersion gets the value of TemplateVersion for the instance
@@ -293,10 +394,19 @@ func (instance *SettingsLocationTemplate) GetPropertyTemplateVersion() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_Desktop struct
@@ -103,7 +105,7 @@ func NewWin32_DesktopEx6(hostName string,
 
 // SetBorderWidth sets the value of BorderWidth for the instance
 func (instance *Win32_Desktop) SetPropertyBorderWidth(value uint32) (err error) {
-	return instance.SetProperty("BorderWidth", value)
+	return instance.SetProperty("BorderWidth", (value))
 }
 
 // GetBorderWidth gets the value of BorderWidth for the instance
@@ -112,16 +114,25 @@ func (instance *Win32_Desktop) GetPropertyBorderWidth() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCoolSwitch sets the value of CoolSwitch for the instance
 func (instance *Win32_Desktop) SetPropertyCoolSwitch(value bool) (err error) {
-	return instance.SetProperty("CoolSwitch", value)
+	return instance.SetProperty("CoolSwitch", (value))
 }
 
 // GetCoolSwitch gets the value of CoolSwitch for the instance
@@ -130,16 +141,25 @@ func (instance *Win32_Desktop) GetPropertyCoolSwitch() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetCursorBlinkRate sets the value of CursorBlinkRate for the instance
 func (instance *Win32_Desktop) SetPropertyCursorBlinkRate(value uint32) (err error) {
-	return instance.SetProperty("CursorBlinkRate", value)
+	return instance.SetProperty("CursorBlinkRate", (value))
 }
 
 // GetCursorBlinkRate gets the value of CursorBlinkRate for the instance
@@ -148,16 +168,25 @@ func (instance *Win32_Desktop) GetPropertyCursorBlinkRate() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDragFullWindows sets the value of DragFullWindows for the instance
 func (instance *Win32_Desktop) SetPropertyDragFullWindows(value bool) (err error) {
-	return instance.SetProperty("DragFullWindows", value)
+	return instance.SetProperty("DragFullWindows", (value))
 }
 
 // GetDragFullWindows gets the value of DragFullWindows for the instance
@@ -166,16 +195,25 @@ func (instance *Win32_Desktop) GetPropertyDragFullWindows() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGridGranularity sets the value of GridGranularity for the instance
 func (instance *Win32_Desktop) SetPropertyGridGranularity(value uint32) (err error) {
-	return instance.SetProperty("GridGranularity", value)
+	return instance.SetProperty("GridGranularity", (value))
 }
 
 // GetGridGranularity gets the value of GridGranularity for the instance
@@ -184,16 +222,25 @@ func (instance *Win32_Desktop) GetPropertyGridGranularity() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIconSpacing sets the value of IconSpacing for the instance
 func (instance *Win32_Desktop) SetPropertyIconSpacing(value uint32) (err error) {
-	return instance.SetProperty("IconSpacing", value)
+	return instance.SetProperty("IconSpacing", (value))
 }
 
 // GetIconSpacing gets the value of IconSpacing for the instance
@@ -202,16 +249,25 @@ func (instance *Win32_Desktop) GetPropertyIconSpacing() (value uint32, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIconTitleFaceName sets the value of IconTitleFaceName for the instance
 func (instance *Win32_Desktop) SetPropertyIconTitleFaceName(value string) (err error) {
-	return instance.SetProperty("IconTitleFaceName", value)
+	return instance.SetProperty("IconTitleFaceName", (value))
 }
 
 // GetIconTitleFaceName gets the value of IconTitleFaceName for the instance
@@ -220,16 +276,25 @@ func (instance *Win32_Desktop) GetPropertyIconTitleFaceName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIconTitleSize sets the value of IconTitleSize for the instance
 func (instance *Win32_Desktop) SetPropertyIconTitleSize(value uint32) (err error) {
-	return instance.SetProperty("IconTitleSize", value)
+	return instance.SetProperty("IconTitleSize", (value))
 }
 
 // GetIconTitleSize gets the value of IconTitleSize for the instance
@@ -238,16 +303,25 @@ func (instance *Win32_Desktop) GetPropertyIconTitleSize() (value uint32, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIconTitleWrap sets the value of IconTitleWrap for the instance
 func (instance *Win32_Desktop) SetPropertyIconTitleWrap(value bool) (err error) {
-	return instance.SetProperty("IconTitleWrap", value)
+	return instance.SetProperty("IconTitleWrap", (value))
 }
 
 // GetIconTitleWrap gets the value of IconTitleWrap for the instance
@@ -256,16 +330,25 @@ func (instance *Win32_Desktop) GetPropertyIconTitleWrap() (value bool, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_Desktop) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -274,16 +357,25 @@ func (instance *Win32_Desktop) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPattern sets the value of Pattern for the instance
 func (instance *Win32_Desktop) SetPropertyPattern(value string) (err error) {
-	return instance.SetProperty("Pattern", value)
+	return instance.SetProperty("Pattern", (value))
 }
 
 // GetPattern gets the value of Pattern for the instance
@@ -292,16 +384,25 @@ func (instance *Win32_Desktop) GetPropertyPattern() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScreenSaverActive sets the value of ScreenSaverActive for the instance
 func (instance *Win32_Desktop) SetPropertyScreenSaverActive(value bool) (err error) {
-	return instance.SetProperty("ScreenSaverActive", value)
+	return instance.SetProperty("ScreenSaverActive", (value))
 }
 
 // GetScreenSaverActive gets the value of ScreenSaverActive for the instance
@@ -310,16 +411,25 @@ func (instance *Win32_Desktop) GetPropertyScreenSaverActive() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetScreenSaverExecutable sets the value of ScreenSaverExecutable for the instance
 func (instance *Win32_Desktop) SetPropertyScreenSaverExecutable(value string) (err error) {
-	return instance.SetProperty("ScreenSaverExecutable", value)
+	return instance.SetProperty("ScreenSaverExecutable", (value))
 }
 
 // GetScreenSaverExecutable gets the value of ScreenSaverExecutable for the instance
@@ -328,16 +438,25 @@ func (instance *Win32_Desktop) GetPropertyScreenSaverExecutable() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetScreenSaverSecure sets the value of ScreenSaverSecure for the instance
 func (instance *Win32_Desktop) SetPropertyScreenSaverSecure(value bool) (err error) {
-	return instance.SetProperty("ScreenSaverSecure", value)
+	return instance.SetProperty("ScreenSaverSecure", (value))
 }
 
 // GetScreenSaverSecure gets the value of ScreenSaverSecure for the instance
@@ -346,16 +465,25 @@ func (instance *Win32_Desktop) GetPropertyScreenSaverSecure() (value bool, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetScreenSaverTimeout sets the value of ScreenSaverTimeout for the instance
 func (instance *Win32_Desktop) SetPropertyScreenSaverTimeout(value uint32) (err error) {
-	return instance.SetProperty("ScreenSaverTimeout", value)
+	return instance.SetProperty("ScreenSaverTimeout", (value))
 }
 
 // GetScreenSaverTimeout gets the value of ScreenSaverTimeout for the instance
@@ -364,16 +492,25 @@ func (instance *Win32_Desktop) GetPropertyScreenSaverTimeout() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWallpaper sets the value of Wallpaper for the instance
 func (instance *Win32_Desktop) SetPropertyWallpaper(value string) (err error) {
-	return instance.SetProperty("Wallpaper", value)
+	return instance.SetProperty("Wallpaper", (value))
 }
 
 // GetWallpaper gets the value of Wallpaper for the instance
@@ -382,16 +519,25 @@ func (instance *Win32_Desktop) GetPropertyWallpaper() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWallpaperStretched sets the value of WallpaperStretched for the instance
 func (instance *Win32_Desktop) SetPropertyWallpaperStretched(value bool) (err error) {
-	return instance.SetProperty("WallpaperStretched", value)
+	return instance.SetProperty("WallpaperStretched", (value))
 }
 
 // GetWallpaperStretched gets the value of WallpaperStretched for the instance
@@ -400,16 +546,25 @@ func (instance *Win32_Desktop) GetPropertyWallpaperStretched() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetWallpaperTiled sets the value of WallpaperTiled for the instance
 func (instance *Win32_Desktop) SetPropertyWallpaperTiled(value bool) (err error) {
-	return instance.SetProperty("WallpaperTiled", value)
+	return instance.SetProperty("WallpaperTiled", (value))
 }
 
 // GetWallpaperTiled gets the value of WallpaperTiled for the instance
@@ -418,9 +573,18 @@ func (instance *Win32_Desktop) GetPropertyWallpaperTiled() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.Storage
 //////////////////////////////////////////////
 package storage
@@ -11,7 +11,9 @@ package storage
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_FileServerToVolume struct
@@ -56,7 +58,7 @@ func NewMSFT_FileServerToVolumeEx6(hostName string,
 
 // SetFileServer sets the value of FileServer for the instance
 func (instance *MSFT_FileServerToVolume) SetPropertyFileServer(value MSFT_FileServer) (err error) {
-	return instance.SetProperty("FileServer", value)
+	return instance.SetProperty("FileServer", (value))
 }
 
 // GetFileServer gets the value of FileServer for the instance
@@ -65,16 +67,25 @@ func (instance *MSFT_FileServerToVolume) GetPropertyFileServer() (value MSFT_Fil
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_FileServer)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_FileServer)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_FileServer is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_FileServer(valuetmp)
+
 	return
 }
 
 // SetVolume sets the value of Volume for the instance
 func (instance *MSFT_FileServerToVolume) SetPropertyVolume(value MSFT_Volume) (err error) {
-	return instance.SetProperty("Volume", value)
+	return instance.SetProperty("Volume", (value))
 }
 
 // GetVolume gets the value of Volume for the instance
@@ -83,9 +94,18 @@ func (instance *MSFT_FileServerToVolume) GetPropertyVolume() (value MSFT_Volume,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_Volume)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_Volume)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_Volume is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_Volume(valuetmp)
+
 	return
 }

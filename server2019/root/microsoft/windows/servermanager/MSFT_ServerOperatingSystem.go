@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerOperatingSystem struct
@@ -80,7 +82,7 @@ func NewMSFT_ServerOperatingSystemEx6(hostName string,
 
 // SetArchitecture sets the value of Architecture for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertyArchitecture(value uint8) (err error) {
-	return instance.SetProperty("Architecture", value)
+	return instance.SetProperty("Architecture", (value))
 }
 
 // GetArchitecture gets the value of Architecture for the instance
@@ -89,16 +91,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertyArchitecture() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetBuildNumber sets the value of BuildNumber for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertyBuildNumber(value uint32) (err error) {
-	return instance.SetProperty("BuildNumber", value)
+	return instance.SetProperty("BuildNumber", (value))
 }
 
 // GetBuildNumber gets the value of BuildNumber for the instance
@@ -107,16 +118,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertyBuildNumber() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetLanguage sets the value of Language for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertyLanguage(value string) (err error) {
-	return instance.SetProperty("Language", value)
+	return instance.SetProperty("Language", (value))
 }
 
 // GetLanguage gets the value of Language for the instance
@@ -125,16 +145,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertyLanguage() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMajorVersion sets the value of MajorVersion for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertyMajorVersion(value uint32) (err error) {
-	return instance.SetProperty("MajorVersion", value)
+	return instance.SetProperty("MajorVersion", (value))
 }
 
 // GetMajorVersion gets the value of MajorVersion for the instance
@@ -143,16 +172,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertyMajorVersion() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinorVersion sets the value of MinorVersion for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertyMinorVersion(value uint32) (err error) {
-	return instance.SetProperty("MinorVersion", value)
+	return instance.SetProperty("MinorVersion", (value))
 }
 
 // GetMinorVersion gets the value of MinorVersion for the instance
@@ -161,16 +199,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertyMinorVersion() (value uin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -179,16 +226,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertyName() (value string, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSKU sets the value of SKU for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertySKU(value string) (err error) {
-	return instance.SetProperty("SKU", value)
+	return instance.SetProperty("SKU", (value))
 }
 
 // GetSKU gets the value of SKU for the instance
@@ -197,16 +253,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertySKU() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSKUId sets the value of SKUId for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertySKUId(value uint32) (err error) {
-	return instance.SetProperty("SKUId", value)
+	return instance.SetProperty("SKUId", (value))
 }
 
 // GetSKUId gets the value of SKUId for the instance
@@ -215,16 +280,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertySKUId() (value uint32, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSPMajorVersion sets the value of SPMajorVersion for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertySPMajorVersion(value uint16) (err error) {
-	return instance.SetProperty("SPMajorVersion", value)
+	return instance.SetProperty("SPMajorVersion", (value))
 }
 
 // GetSPMajorVersion gets the value of SPMajorVersion for the instance
@@ -233,16 +307,25 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertySPMajorVersion() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSPMinorVersion sets the value of SPMinorVersion for the instance
 func (instance *MSFT_ServerOperatingSystem) SetPropertySPMinorVersion(value uint16) (err error) {
-	return instance.SetProperty("SPMinorVersion", value)
+	return instance.SetProperty("SPMinorVersion", (value))
 }
 
 // GetSPMinorVersion gets the value of SPMinorVersion for the instance
@@ -251,9 +334,18 @@ func (instance *MSFT_ServerOperatingSystem) GetPropertySPMinorVersion() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

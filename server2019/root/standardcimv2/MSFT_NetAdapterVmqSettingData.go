@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterVmqSettingData struct
@@ -100,7 +102,7 @@ func NewMSFT_NetAdapterVmqSettingDataEx6(hostName string,
 
 // SetAnyVlanSupported sets the value of AnyVlanSupported for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyAnyVlanSupported(value bool) (err error) {
-	return instance.SetProperty("AnyVlanSupported", value)
+	return instance.SetProperty("AnyVlanSupported", (value))
 }
 
 // GetAnyVlanSupported gets the value of AnyVlanSupported for the instance
@@ -109,16 +111,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyAnyVlanSupported() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetBaseProcessorGroup sets the value of BaseProcessorGroup for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyBaseProcessorGroup(value uint16) (err error) {
-	return instance.SetProperty("BaseProcessorGroup", value)
+	return instance.SetProperty("BaseProcessorGroup", (value))
 }
 
 // GetBaseProcessorGroup gets the value of BaseProcessorGroup for the instance
@@ -127,16 +138,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyBaseProcessorGroup() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetBaseProcessorNumber sets the value of BaseProcessorNumber for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyBaseProcessorNumber(value uint8) (err error) {
-	return instance.SetProperty("BaseProcessorNumber", value)
+	return instance.SetProperty("BaseProcessorNumber", (value))
 }
 
 // GetBaseProcessorNumber gets the value of BaseProcessorNumber for the instance
@@ -145,16 +165,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyBaseProcessorNumber() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDynamicProcessorAffinityChangeSupported sets the value of DynamicProcessorAffinityChangeSupported for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyDynamicProcessorAffinityChangeSupported(value bool) (err error) {
-	return instance.SetProperty("DynamicProcessorAffinityChangeSupported", value)
+	return instance.SetProperty("DynamicProcessorAffinityChangeSupported", (value))
 }
 
 // GetDynamicProcessorAffinityChangeSupported gets the value of DynamicProcessorAffinityChangeSupported for the instance
@@ -163,16 +192,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyDynamicProcessorAffini
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -181,16 +219,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyEnabled() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInterruptVectorCoalescingSupported sets the value of InterruptVectorCoalescingSupported for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyInterruptVectorCoalescingSupported(value bool) (err error) {
-	return instance.SetProperty("InterruptVectorCoalescingSupported", value)
+	return instance.SetProperty("InterruptVectorCoalescingSupported", (value))
 }
 
 // GetInterruptVectorCoalescingSupported gets the value of InterruptVectorCoalescingSupported for the instance
@@ -199,16 +246,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyInterruptVectorCoalesc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLookaheadSplitSupported sets the value of LookaheadSplitSupported for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyLookaheadSplitSupported(value bool) (err error) {
-	return instance.SetProperty("LookaheadSplitSupported", value)
+	return instance.SetProperty("LookaheadSplitSupported", (value))
 }
 
 // GetLookaheadSplitSupported gets the value of LookaheadSplitSupported for the instance
@@ -217,16 +273,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyLookaheadSplitSupporte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMaxLookaheadSplitSize sets the value of MaxLookaheadSplitSize for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyMaxLookaheadSplitSize(value uint32) (err error) {
-	return instance.SetProperty("MaxLookaheadSplitSize", value)
+	return instance.SetProperty("MaxLookaheadSplitSize", (value))
 }
 
 // GetMaxLookaheadSplitSize gets the value of MaxLookaheadSplitSize for the instance
@@ -235,16 +300,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyMaxLookaheadSplitSize(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxProcessorNumber sets the value of MaxProcessorNumber for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyMaxProcessorNumber(value uint8) (err error) {
-	return instance.SetProperty("MaxProcessorNumber", value)
+	return instance.SetProperty("MaxProcessorNumber", (value))
 }
 
 // GetMaxProcessorNumber gets the value of MaxProcessorNumber for the instance
@@ -253,16 +327,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyMaxProcessorNumber() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetMaxProcessors sets the value of MaxProcessors for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyMaxProcessors(value uint32) (err error) {
-	return instance.SetProperty("MaxProcessors", value)
+	return instance.SetProperty("MaxProcessors", (value))
 }
 
 // GetMaxProcessors gets the value of MaxProcessors for the instance
@@ -271,16 +354,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyMaxProcessors() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMinLookaheadSplitSize sets the value of MinLookaheadSplitSize for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyMinLookaheadSplitSize(value uint32) (err error) {
-	return instance.SetProperty("MinLookaheadSplitSize", value)
+	return instance.SetProperty("MinLookaheadSplitSize", (value))
 }
 
 // GetMinLookaheadSplitSize gets the value of MinLookaheadSplitSize for the instance
@@ -289,16 +381,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyMinLookaheadSplitSize(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumaNode sets the value of NumaNode for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyNumaNode(value uint16) (err error) {
-	return instance.SetProperty("NumaNode", value)
+	return instance.SetProperty("NumaNode", (value))
 }
 
 // GetNumaNode gets the value of NumaNode for the instance
@@ -307,16 +408,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyNumaNode() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumberOfReceiveQueues sets the value of NumberOfReceiveQueues for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyNumberOfReceiveQueues(value uint32) (err error) {
-	return instance.SetProperty("NumberOfReceiveQueues", value)
+	return instance.SetProperty("NumberOfReceiveQueues", (value))
 }
 
 // GetNumberOfReceiveQueues gets the value of NumberOfReceiveQueues for the instance
@@ -325,16 +435,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyNumberOfReceiveQueues(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumMacAddressesPerPort sets the value of NumMacAddressesPerPort for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyNumMacAddressesPerPort(value uint32) (err error) {
-	return instance.SetProperty("NumMacAddressesPerPort", value)
+	return instance.SetProperty("NumMacAddressesPerPort", (value))
 }
 
 // GetNumMacAddressesPerPort gets the value of NumMacAddressesPerPort for the instance
@@ -343,16 +462,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyNumMacAddressesPerPort
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumVlansPerPort sets the value of NumVlansPerPort for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyNumVlansPerPort(value uint32) (err error) {
-	return instance.SetProperty("NumVlansPerPort", value)
+	return instance.SetProperty("NumVlansPerPort", (value))
 }
 
 // GetNumVlansPerPort gets the value of NumVlansPerPort for the instance
@@ -361,16 +489,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyNumVlansPerPort() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalNumberOfMacAddresses sets the value of TotalNumberOfMacAddresses for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyTotalNumberOfMacAddresses(value uint32) (err error) {
-	return instance.SetProperty("TotalNumberOfMacAddresses", value)
+	return instance.SetProperty("TotalNumberOfMacAddresses", (value))
 }
 
 // GetTotalNumberOfMacAddresses gets the value of TotalNumberOfMacAddresses for the instance
@@ -379,16 +516,25 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyTotalNumberOfMacAddres
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetVlanFilteringSupported sets the value of VlanFilteringSupported for the instance
 func (instance *MSFT_NetAdapterVmqSettingData) SetPropertyVlanFilteringSupported(value bool) (err error) {
-	return instance.SetProperty("VlanFilteringSupported", value)
+	return instance.SetProperty("VlanFilteringSupported", (value))
 }
 
 // GetVlanFilteringSupported gets the value of VlanFilteringSupported for the instance
@@ -397,10 +543,19 @@ func (instance *MSFT_NetAdapterVmqSettingData) GetPropertyVlanFilteringSupported
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_XHCITransferRing struct
@@ -70,7 +72,7 @@ func NewWin32_PerfRawData_Counters_XHCITransferRingEx6(hostName string,
 
 // SetBytesPerSec sets the value of BytesPerSec for the instance
 func (instance *Win32_PerfRawData_Counters_XHCITransferRing) SetPropertyBytesPerSec(value uint32) (err error) {
-	return instance.SetProperty("BytesPerSec", value)
+	return instance.SetProperty("BytesPerSec", (value))
 }
 
 // GetBytesPerSec gets the value of BytesPerSec for the instance
@@ -79,16 +81,25 @@ func (instance *Win32_PerfRawData_Counters_XHCITransferRing) GetPropertyBytesPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFailedTransferCount sets the value of FailedTransferCount for the instance
 func (instance *Win32_PerfRawData_Counters_XHCITransferRing) SetPropertyFailedTransferCount(value uint32) (err error) {
-	return instance.SetProperty("FailedTransferCount", value)
+	return instance.SetProperty("FailedTransferCount", (value))
 }
 
 // GetFailedTransferCount gets the value of FailedTransferCount for the instance
@@ -97,16 +108,25 @@ func (instance *Win32_PerfRawData_Counters_XHCITransferRing) GetPropertyFailedTr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsochTDFailuresPersec sets the value of IsochTDFailuresPersec for the instance
 func (instance *Win32_PerfRawData_Counters_XHCITransferRing) SetPropertyIsochTDFailuresPersec(value uint32) (err error) {
-	return instance.SetProperty("IsochTDFailuresPersec", value)
+	return instance.SetProperty("IsochTDFailuresPersec", (value))
 }
 
 // GetIsochTDFailuresPersec gets the value of IsochTDFailuresPersec for the instance
@@ -115,16 +135,25 @@ func (instance *Win32_PerfRawData_Counters_XHCITransferRing) GetPropertyIsochTDF
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetIsochTDPersec sets the value of IsochTDPersec for the instance
 func (instance *Win32_PerfRawData_Counters_XHCITransferRing) SetPropertyIsochTDPersec(value uint32) (err error) {
-	return instance.SetProperty("IsochTDPersec", value)
+	return instance.SetProperty("IsochTDPersec", (value))
 }
 
 // GetIsochTDPersec gets the value of IsochTDPersec for the instance
@@ -133,16 +162,25 @@ func (instance *Win32_PerfRawData_Counters_XHCITransferRing) GetPropertyIsochTDP
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMissedServiceErrorCount sets the value of MissedServiceErrorCount for the instance
 func (instance *Win32_PerfRawData_Counters_XHCITransferRing) SetPropertyMissedServiceErrorCount(value uint32) (err error) {
-	return instance.SetProperty("MissedServiceErrorCount", value)
+	return instance.SetProperty("MissedServiceErrorCount", (value))
 }
 
 // GetMissedServiceErrorCount gets the value of MissedServiceErrorCount for the instance
@@ -151,16 +189,25 @@ func (instance *Win32_PerfRawData_Counters_XHCITransferRing) GetPropertyMissedSe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransfersPersec sets the value of TransfersPersec for the instance
 func (instance *Win32_PerfRawData_Counters_XHCITransferRing) SetPropertyTransfersPersec(value uint32) (err error) {
-	return instance.SetProperty("TransfersPersec", value)
+	return instance.SetProperty("TransfersPersec", (value))
 }
 
 // GetTransfersPersec gets the value of TransfersPersec for the instance
@@ -169,16 +216,25 @@ func (instance *Win32_PerfRawData_Counters_XHCITransferRing) GetPropertyTransfer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUnderrunOverruncount sets the value of UnderrunOverruncount for the instance
 func (instance *Win32_PerfRawData_Counters_XHCITransferRing) SetPropertyUnderrunOverruncount(value uint32) (err error) {
-	return instance.SetProperty("UnderrunOverruncount", value)
+	return instance.SetProperty("UnderrunOverruncount", (value))
 }
 
 // GetUnderrunOverruncount gets the value of UnderrunOverruncount for the instance
@@ -187,9 +243,18 @@ func (instance *Win32_PerfRawData_Counters_XHCITransferRing) GetPropertyUnderrun
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

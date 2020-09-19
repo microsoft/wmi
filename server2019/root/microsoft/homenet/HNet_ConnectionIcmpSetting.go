@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_ConnectionIcmpSetting struct
@@ -56,7 +58,7 @@ func NewHNet_ConnectionIcmpSettingEx6(hostName string,
 
 // SetConnection sets the value of Connection for the instance
 func (instance *HNet_ConnectionIcmpSetting) SetPropertyConnection(value HNet_Connection) (err error) {
-	return instance.SetProperty("Connection", value)
+	return instance.SetProperty("Connection", (value))
 }
 
 // GetConnection gets the value of Connection for the instance
@@ -65,16 +67,25 @@ func (instance *HNet_ConnectionIcmpSetting) GetPropertyConnection() (value HNet_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(HNet_Connection)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(HNet_Connection)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " HNet_Connection is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = HNet_Connection(valuetmp)
+
 	return
 }
 
 // SetIcmpSettings sets the value of IcmpSettings for the instance
 func (instance *HNet_ConnectionIcmpSetting) SetPropertyIcmpSettings(value HNet_FwIcmpSettings) (err error) {
-	return instance.SetProperty("IcmpSettings", value)
+	return instance.SetProperty("IcmpSettings", (value))
 }
 
 // GetIcmpSettings gets the value of IcmpSettings for the instance
@@ -83,9 +94,18 @@ func (instance *HNet_ConnectionIcmpSetting) GetPropertyIcmpSettings() (value HNe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(HNet_FwIcmpSettings)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(HNet_FwIcmpSettings)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " HNet_FwIcmpSettings is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = HNet_FwIcmpSettings(valuetmp)
+
 	return
 }

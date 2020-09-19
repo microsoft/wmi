@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.DesiredStateConfiguration
 //////////////////////////////////////////////
 package desiredstateconfiguration
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SignatureValidation struct
@@ -55,7 +57,7 @@ func NewMSFT_SignatureValidationEx6(hostName string,
 
 // SetSignedItemType sets the value of SignedItemType for the instance
 func (instance *MSFT_SignatureValidation) SetPropertySignedItemType(value []string) (err error) {
-	return instance.SetProperty("SignedItemType", value)
+	return instance.SetProperty("SignedItemType", (value))
 }
 
 // GetSignedItemType gets the value of SignedItemType for the instance
@@ -64,16 +66,26 @@ func (instance *MSFT_SignatureValidation) GetPropertySignedItemType() (value []s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTrustedStorePath sets the value of TrustedStorePath for the instance
 func (instance *MSFT_SignatureValidation) SetPropertyTrustedStorePath(value string) (err error) {
-	return instance.SetProperty("TrustedStorePath", value)
+	return instance.SetProperty("TrustedStorePath", (value))
 }
 
 // GetTrustedStorePath gets the value of TrustedStorePath for the instance
@@ -82,9 +94,18 @@ func (instance *MSFT_SignatureValidation) GetPropertyTrustedStorePath() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

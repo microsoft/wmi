@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MLNX_IBPort struct
@@ -76,7 +78,7 @@ func NewMLNX_IBPortEx6(hostName string,
 
 // SetMaxMsgSize sets the value of MaxMsgSize for the instance
 func (instance *MLNX_IBPort) SetPropertyMaxMsgSize(value uint64) (err error) {
-	return instance.SetProperty("MaxMsgSize", value)
+	return instance.SetProperty("MaxMsgSize", (value))
 }
 
 // GetMaxMsgSize gets the value of MaxMsgSize for the instance
@@ -85,16 +87,25 @@ func (instance *MLNX_IBPort) GetPropertyMaxMsgSize() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxVls sets the value of MaxVls for the instance
 func (instance *MLNX_IBPort) SetPropertyMaxVls(value uint16) (err error) {
-	return instance.SetProperty("MaxVls", value)
+	return instance.SetProperty("MaxVls", (value))
 }
 
 // GetMaxVls gets the value of MaxVls for the instance
@@ -103,16 +114,25 @@ func (instance *MLNX_IBPort) GetPropertyMaxVls() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumGids sets the value of NumGids for the instance
 func (instance *MLNX_IBPort) SetPropertyNumGids(value uint16) (err error) {
-	return instance.SetProperty("NumGids", value)
+	return instance.SetProperty("NumGids", (value))
 }
 
 // GetNumGids gets the value of NumGids for the instance
@@ -121,16 +141,25 @@ func (instance *MLNX_IBPort) GetPropertyNumGids() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNumPkeys sets the value of NumPkeys for the instance
 func (instance *MLNX_IBPort) SetPropertyNumPkeys(value uint16) (err error) {
-	return instance.SetProperty("NumPkeys", value)
+	return instance.SetProperty("NumPkeys", (value))
 }
 
 // GetNumPkeys gets the value of NumPkeys for the instance
@@ -139,16 +168,25 @@ func (instance *MLNX_IBPort) GetPropertyNumPkeys() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetPciLocation sets the value of PciLocation for the instance
 func (instance *MLNX_IBPort) SetPropertyPciLocation(value string) (err error) {
-	return instance.SetProperty("PciLocation", value)
+	return instance.SetProperty("PciLocation", (value))
 }
 
 // GetPciLocation gets the value of PciLocation for the instance
@@ -157,16 +195,25 @@ func (instance *MLNX_IBPort) GetPropertyPciLocation() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetQkeyCtr sets the value of QkeyCtr for the instance
 func (instance *MLNX_IBPort) SetPropertyQkeyCtr(value uint16) (err error) {
-	return instance.SetProperty("QkeyCtr", value)
+	return instance.SetProperty("QkeyCtr", (value))
 }
 
 // GetQkeyCtr gets the value of QkeyCtr for the instance
@@ -175,16 +222,25 @@ func (instance *MLNX_IBPort) GetPropertyQkeyCtr() (value uint16, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSmSl sets the value of SmSl for the instance
 func (instance *MLNX_IBPort) SetPropertySmSl(value uint8) (err error) {
-	return instance.SetProperty("SmSl", value)
+	return instance.SetProperty("SmSl", (value))
 }
 
 // GetSmSl gets the value of SmSl for the instance
@@ -193,16 +249,25 @@ func (instance *MLNX_IBPort) GetPropertySmSl() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetSubnetTimeout sets the value of SubnetTimeout for the instance
 func (instance *MLNX_IBPort) SetPropertySubnetTimeout(value uint8) (err error) {
-	return instance.SetProperty("SubnetTimeout", value)
+	return instance.SetProperty("SubnetTimeout", (value))
 }
 
 // GetSubnetTimeout gets the value of SubnetTimeout for the instance
@@ -211,16 +276,25 @@ func (instance *MLNX_IBPort) GetPropertySubnetTimeout() (value uint8, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetTransport sets the value of Transport for the instance
 func (instance *MLNX_IBPort) SetPropertyTransport(value string) (err error) {
-	return instance.SetProperty("Transport", value)
+	return instance.SetProperty("Transport", (value))
 }
 
 // GetTransport gets the value of Transport for the instance
@@ -229,9 +303,18 @@ func (instance *MLNX_IBPort) GetPropertyTransport() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetDnsTransitionMonitoring struct
@@ -67,7 +69,7 @@ func NewMSFT_NetDnsTransitionMonitoringEx6(hostName string,
 
 // SetNumAAAAQueriesFailed sets the value of NumAAAAQueriesFailed for the instance
 func (instance *MSFT_NetDnsTransitionMonitoring) SetPropertyNumAAAAQueriesFailed(value uint32) (err error) {
-	return instance.SetProperty("NumAAAAQueriesFailed", value)
+	return instance.SetProperty("NumAAAAQueriesFailed", (value))
 }
 
 // GetNumAAAAQueriesFailed gets the value of NumAAAAQueriesFailed for the instance
@@ -76,16 +78,25 @@ func (instance *MSFT_NetDnsTransitionMonitoring) GetPropertyNumAAAAQueriesFailed
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumAAAAQueriesIn6ArpaPtr sets the value of NumAAAAQueriesIn6ArpaPtr for the instance
 func (instance *MSFT_NetDnsTransitionMonitoring) SetPropertyNumAAAAQueriesIn6ArpaPtr(value uint32) (err error) {
-	return instance.SetProperty("NumAAAAQueriesIn6ArpaPtr", value)
+	return instance.SetProperty("NumAAAAQueriesIn6ArpaPtr", (value))
 }
 
 // GetNumAAAAQueriesIn6ArpaPtr gets the value of NumAAAAQueriesIn6ArpaPtr for the instance
@@ -94,16 +105,25 @@ func (instance *MSFT_NetDnsTransitionMonitoring) GetPropertyNumAAAAQueriesIn6Arp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumAAAAQueriesSucceeded sets the value of NumAAAAQueriesSucceeded for the instance
 func (instance *MSFT_NetDnsTransitionMonitoring) SetPropertyNumAAAAQueriesSucceeded(value uint32) (err error) {
-	return instance.SetProperty("NumAAAAQueriesSucceeded", value)
+	return instance.SetProperty("NumAAAAQueriesSucceeded", (value))
 }
 
 // GetNumAAAAQueriesSucceeded gets the value of NumAAAAQueriesSucceeded for the instance
@@ -112,16 +132,25 @@ func (instance *MSFT_NetDnsTransitionMonitoring) GetPropertyNumAAAAQueriesSuccee
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumAAAAQueriesSynthesized sets the value of NumAAAAQueriesSynthesized for the instance
 func (instance *MSFT_NetDnsTransitionMonitoring) SetPropertyNumAAAAQueriesSynthesized(value uint32) (err error) {
-	return instance.SetProperty("NumAAAAQueriesSynthesized", value)
+	return instance.SetProperty("NumAAAAQueriesSynthesized", (value))
 }
 
 // GetNumAAAAQueriesSynthesized gets the value of NumAAAAQueriesSynthesized for the instance
@@ -130,16 +159,25 @@ func (instance *MSFT_NetDnsTransitionMonitoring) GetPropertyNumAAAAQueriesSynthe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumOtherQueriesFailed sets the value of NumOtherQueriesFailed for the instance
 func (instance *MSFT_NetDnsTransitionMonitoring) SetPropertyNumOtherQueriesFailed(value uint32) (err error) {
-	return instance.SetProperty("NumOtherQueriesFailed", value)
+	return instance.SetProperty("NumOtherQueriesFailed", (value))
 }
 
 // GetNumOtherQueriesFailed gets the value of NumOtherQueriesFailed for the instance
@@ -148,16 +186,25 @@ func (instance *MSFT_NetDnsTransitionMonitoring) GetPropertyNumOtherQueriesFaile
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumOtherQueriesSucceeded sets the value of NumOtherQueriesSucceeded for the instance
 func (instance *MSFT_NetDnsTransitionMonitoring) SetPropertyNumOtherQueriesSucceeded(value uint32) (err error) {
-	return instance.SetProperty("NumOtherQueriesSucceeded", value)
+	return instance.SetProperty("NumOtherQueriesSucceeded", (value))
 }
 
 // GetNumOtherQueriesSucceeded gets the value of NumOtherQueriesSucceeded for the instance
@@ -166,9 +213,18 @@ func (instance *MSFT_NetDnsTransitionMonitoring) GetPropertyNumOtherQueriesSucce
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

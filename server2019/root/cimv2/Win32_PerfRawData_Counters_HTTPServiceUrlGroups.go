@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_HTTPServiceUrlGroups struct
@@ -76,7 +78,7 @@ func NewWin32_PerfRawData_Counters_HTTPServiceUrlGroupsEx6(hostName string,
 
 // SetAllRequests sets the value of AllRequests for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyAllRequests(value uint32) (err error) {
-	return instance.SetProperty("AllRequests", value)
+	return instance.SetProperty("AllRequests", (value))
 }
 
 // GetAllRequests gets the value of AllRequests for the instance
@@ -85,16 +87,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyAllR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBytesReceivedRate sets the value of BytesReceivedRate for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyBytesReceivedRate(value uint64) (err error) {
-	return instance.SetProperty("BytesReceivedRate", value)
+	return instance.SetProperty("BytesReceivedRate", (value))
 }
 
 // GetBytesReceivedRate gets the value of BytesReceivedRate for the instance
@@ -103,16 +114,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyByte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesSentRate sets the value of BytesSentRate for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyBytesSentRate(value uint64) (err error) {
-	return instance.SetProperty("BytesSentRate", value)
+	return instance.SetProperty("BytesSentRate", (value))
 }
 
 // GetBytesSentRate gets the value of BytesSentRate for the instance
@@ -121,16 +141,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyByte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTransferredRate sets the value of BytesTransferredRate for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyBytesTransferredRate(value uint64) (err error) {
-	return instance.SetProperty("BytesTransferredRate", value)
+	return instance.SetProperty("BytesTransferredRate", (value))
 }
 
 // GetBytesTransferredRate gets the value of BytesTransferredRate for the instance
@@ -139,16 +168,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyByte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetConnectionAttempts sets the value of ConnectionAttempts for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyConnectionAttempts(value uint32) (err error) {
-	return instance.SetProperty("ConnectionAttempts", value)
+	return instance.SetProperty("ConnectionAttempts", (value))
 }
 
 // GetConnectionAttempts gets the value of ConnectionAttempts for the instance
@@ -157,16 +195,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyConn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCurrentConnections sets the value of CurrentConnections for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyCurrentConnections(value uint32) (err error) {
-	return instance.SetProperty("CurrentConnections", value)
+	return instance.SetProperty("CurrentConnections", (value))
 }
 
 // GetCurrentConnections gets the value of CurrentConnections for the instance
@@ -175,16 +222,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyCurr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGetRequests sets the value of GetRequests for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyGetRequests(value uint32) (err error) {
-	return instance.SetProperty("GetRequests", value)
+	return instance.SetProperty("GetRequests", (value))
 }
 
 // GetGetRequests gets the value of GetRequests for the instance
@@ -193,16 +249,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyGetR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetHeadRequests sets the value of HeadRequests for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyHeadRequests(value uint32) (err error) {
-	return instance.SetProperty("HeadRequests", value)
+	return instance.SetProperty("HeadRequests", (value))
 }
 
 // GetHeadRequests gets the value of HeadRequests for the instance
@@ -211,16 +276,25 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyHead
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxConnections sets the value of MaxConnections for the instance
 func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) SetPropertyMaxConnections(value uint32) (err error) {
-	return instance.SetProperty("MaxConnections", value)
+	return instance.SetProperty("MaxConnections", (value))
 }
 
 // GetMaxConnections gets the value of MaxConnections for the instance
@@ -229,9 +303,18 @@ func (instance *Win32_PerfRawData_Counters_HTTPServiceUrlGroups) GetPropertyMaxC
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

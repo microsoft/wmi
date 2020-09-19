@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapterSriovSettingData struct
@@ -97,7 +99,7 @@ func NewMSFT_NetAdapterSriovSettingDataEx6(hostName string,
 
 // SetCurrentCapabilities sets the value of CurrentCapabilities for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyCurrentCapabilities(value MSFT_NetAdapterSriovCapabilities) (err error) {
-	return instance.SetProperty("CurrentCapabilities", value)
+	return instance.SetProperty("CurrentCapabilities", (value))
 }
 
 // GetCurrentCapabilities gets the value of CurrentCapabilities for the instance
@@ -106,16 +108,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyCurrentCapabilities(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterSriovCapabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterSriovCapabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterSriovCapabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterSriovCapabilities(valuetmp)
+
 	return
 }
 
 // SetEnabled sets the value of Enabled for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyEnabled(value bool) (err error) {
-	return instance.SetProperty("Enabled", value)
+	return instance.SetProperty("Enabled", (value))
 }
 
 // GetEnabled gets the value of Enabled for the instance
@@ -124,16 +135,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyEnabled() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHardwareCapabilities sets the value of HardwareCapabilities for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyHardwareCapabilities(value MSFT_NetAdapterSriovCapabilities) (err error) {
-	return instance.SetProperty("HardwareCapabilities", value)
+	return instance.SetProperty("HardwareCapabilities", (value))
 }
 
 // GetHardwareCapabilities gets the value of HardwareCapabilities for the instance
@@ -142,16 +162,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyHardwareCapabilities
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MSFT_NetAdapterSriovCapabilities)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(MSFT_NetAdapterSriovCapabilities)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapterSriovCapabilities is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MSFT_NetAdapterSriovCapabilities(valuetmp)
+
 	return
 }
 
 // SetNumActiveDefaultVPortMacAddresses sets the value of NumActiveDefaultVPortMacAddresses for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumActiveDefaultVPortMacAddresses(value uint32) (err error) {
-	return instance.SetProperty("NumActiveDefaultVPortMacAddresses", value)
+	return instance.SetProperty("NumActiveDefaultVPortMacAddresses", (value))
 }
 
 // GetNumActiveDefaultVPortMacAddresses gets the value of NumActiveDefaultVPortMacAddresses for the instance
@@ -160,16 +189,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumActiveDefaultVPor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumActiveDefaultVPortVlanIds sets the value of NumActiveDefaultVPortVlanIds for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumActiveDefaultVPortVlanIds(value uint32) (err error) {
-	return instance.SetProperty("NumActiveDefaultVPortVlanIds", value)
+	return instance.SetProperty("NumActiveDefaultVPortVlanIds", (value))
 }
 
 // GetNumActiveDefaultVPortVlanIds gets the value of NumActiveDefaultVPortVlanIds for the instance
@@ -178,16 +216,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumActiveDefaultVPor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumActiveNonDefaultVPortMacAddresses sets the value of NumActiveNonDefaultVPortMacAddresses for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumActiveNonDefaultVPortMacAddresses(value uint32) (err error) {
-	return instance.SetProperty("NumActiveNonDefaultVPortMacAddresses", value)
+	return instance.SetProperty("NumActiveNonDefaultVPortMacAddresses", (value))
 }
 
 // GetNumActiveNonDefaultVPortMacAddresses gets the value of NumActiveNonDefaultVPortMacAddresses for the instance
@@ -196,16 +243,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumActiveNonDefaultV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumActiveNonDefaultVPortVlanIds sets the value of NumActiveNonDefaultVPortVlanIds for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumActiveNonDefaultVPortVlanIds(value uint32) (err error) {
-	return instance.SetProperty("NumActiveNonDefaultVPortVlanIds", value)
+	return instance.SetProperty("NumActiveNonDefaultVPortVlanIds", (value))
 }
 
 // GetNumActiveNonDefaultVPortVlanIds gets the value of NumActiveNonDefaultVPortVlanIds for the instance
@@ -214,16 +270,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumActiveNonDefaultV
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumActiveVPorts sets the value of NumActiveVPorts for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumActiveVPorts(value uint32) (err error) {
-	return instance.SetProperty("NumActiveVPorts", value)
+	return instance.SetProperty("NumActiveVPorts", (value))
 }
 
 // GetNumActiveVPorts gets the value of NumActiveVPorts for the instance
@@ -232,16 +297,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumActiveVPorts() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumAllocatedVFs sets the value of NumAllocatedVFs for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumAllocatedVFs(value uint32) (err error) {
-	return instance.SetProperty("NumAllocatedVFs", value)
+	return instance.SetProperty("NumAllocatedVFs", (value))
 }
 
 // GetNumAllocatedVFs gets the value of NumAllocatedVFs for the instance
@@ -250,16 +324,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumAllocatedVFs() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumQueuePairsForDefaultVPort sets the value of NumQueuePairsForDefaultVPort for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumQueuePairsForDefaultVPort(value uint32) (err error) {
-	return instance.SetProperty("NumQueuePairsForDefaultVPort", value)
+	return instance.SetProperty("NumQueuePairsForDefaultVPort", (value))
 }
 
 // GetNumQueuePairsForDefaultVPort gets the value of NumQueuePairsForDefaultVPort for the instance
@@ -268,16 +351,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumQueuePairsForDefa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumQueuePairsForNonDefaultVPorts sets the value of NumQueuePairsForNonDefaultVPorts for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumQueuePairsForNonDefaultVPorts(value uint32) (err error) {
-	return instance.SetProperty("NumQueuePairsForNonDefaultVPorts", value)
+	return instance.SetProperty("NumQueuePairsForNonDefaultVPorts", (value))
 }
 
 // GetNumQueuePairsForNonDefaultVPorts gets the value of NumQueuePairsForNonDefaultVPorts for the instance
@@ -286,16 +378,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumQueuePairsForNonD
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumVFs sets the value of NumVFs for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumVFs(value uint32) (err error) {
-	return instance.SetProperty("NumVFs", value)
+	return instance.SetProperty("NumVFs", (value))
 }
 
 // GetNumVFs gets the value of NumVFs for the instance
@@ -304,16 +405,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumVFs() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNumVPorts sets the value of NumVPorts for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertyNumVPorts(value uint32) (err error) {
-	return instance.SetProperty("NumVPorts", value)
+	return instance.SetProperty("NumVPorts", (value))
 }
 
 // GetNumVPorts gets the value of NumVPorts for the instance
@@ -322,16 +432,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertyNumVPorts() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSriovSupport sets the value of SriovSupport for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertySriovSupport(value uint32) (err error) {
-	return instance.SetProperty("SriovSupport", value)
+	return instance.SetProperty("SriovSupport", (value))
 }
 
 // GetSriovSupport gets the value of SriovSupport for the instance
@@ -340,16 +459,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertySriovSupport() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSwitchName sets the value of SwitchName for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertySwitchName(value string) (err error) {
-	return instance.SetProperty("SwitchName", value)
+	return instance.SetProperty("SwitchName", (value))
 }
 
 // GetSwitchName gets the value of SwitchName for the instance
@@ -358,16 +486,25 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertySwitchName() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSwitchType sets the value of SwitchType for the instance
 func (instance *MSFT_NetAdapterSriovSettingData) SetPropertySwitchType(value uint16) (err error) {
-	return instance.SetProperty("SwitchType", value)
+	return instance.SetProperty("SwitchType", (value))
 }
 
 // GetSwitchType gets the value of SwitchType for the instance
@@ -376,10 +513,19 @@ func (instance *MSFT_NetAdapterSriovSettingData) GetPropertySwitchType() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 

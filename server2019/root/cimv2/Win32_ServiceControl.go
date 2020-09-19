@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_ServiceControl struct
@@ -67,7 +69,7 @@ func NewWin32_ServiceControlEx6(hostName string,
 
 // SetArguments sets the value of Arguments for the instance
 func (instance *Win32_ServiceControl) SetPropertyArguments(value string) (err error) {
-	return instance.SetProperty("Arguments", value)
+	return instance.SetProperty("Arguments", (value))
 }
 
 // GetArguments gets the value of Arguments for the instance
@@ -76,16 +78,25 @@ func (instance *Win32_ServiceControl) GetPropertyArguments() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEvent sets the value of Event for the instance
 func (instance *Win32_ServiceControl) SetPropertyEvent(value string) (err error) {
-	return instance.SetProperty("Event", value)
+	return instance.SetProperty("Event", (value))
 }
 
 // GetEvent gets the value of Event for the instance
@@ -94,16 +105,25 @@ func (instance *Win32_ServiceControl) GetPropertyEvent() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetID sets the value of ID for the instance
 func (instance *Win32_ServiceControl) SetPropertyID(value string) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -112,16 +132,25 @@ func (instance *Win32_ServiceControl) GetPropertyID() (value string, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *Win32_ServiceControl) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -130,16 +159,25 @@ func (instance *Win32_ServiceControl) GetPropertyName() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetProductCode sets the value of ProductCode for the instance
 func (instance *Win32_ServiceControl) SetPropertyProductCode(value string) (err error) {
-	return instance.SetProperty("ProductCode", value)
+	return instance.SetProperty("ProductCode", (value))
 }
 
 // GetProductCode gets the value of ProductCode for the instance
@@ -148,16 +186,25 @@ func (instance *Win32_ServiceControl) GetPropertyProductCode() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetWait sets the value of Wait for the instance
 func (instance *Win32_ServiceControl) SetPropertyWait(value uint16) (err error) {
-	return instance.SetProperty("Wait", value)
+	return instance.SetProperty("Wait", (value))
 }
 
 // GetWait gets the value of Wait for the instance
@@ -166,9 +213,18 @@ func (instance *Win32_ServiceControl) GetPropertyWait() (value uint16, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

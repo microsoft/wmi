@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.Security
 //////////////////////////////////////////////
 package security
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // __PropertyProviderRegistration struct
@@ -55,7 +57,7 @@ func New__PropertyProviderRegistrationEx6(hostName string,
 
 // SetSupportsGet sets the value of SupportsGet for the instance
 func (instance *__PropertyProviderRegistration) SetPropertySupportsGet(value bool) (err error) {
-	return instance.SetProperty("SupportsGet", value)
+	return instance.SetProperty("SupportsGet", (value))
 }
 
 // GetSupportsGet gets the value of SupportsGet for the instance
@@ -64,16 +66,25 @@ func (instance *__PropertyProviderRegistration) GetPropertySupportsGet() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSupportsPut sets the value of SupportsPut for the instance
 func (instance *__PropertyProviderRegistration) SetPropertySupportsPut(value bool) (err error) {
-	return instance.SetProperty("SupportsPut", value)
+	return instance.SetProperty("SupportsPut", (value))
 }
 
 // GetSupportsPut gets the value of SupportsPut for the instance
@@ -82,9 +93,18 @@ func (instance *__PropertyProviderRegistration) GetPropertySupportsPut() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_MigrationJob struct
@@ -73,7 +75,7 @@ func NewMsvm_MigrationJobEx6(hostName string,
 
 // SetCancellable sets the value of Cancellable for the instance
 func (instance *Msvm_MigrationJob) SetPropertyCancellable(value bool) (err error) {
-	return instance.SetProperty("Cancellable", value)
+	return instance.SetProperty("Cancellable", (value))
 }
 
 // GetCancellable gets the value of Cancellable for the instance
@@ -82,16 +84,25 @@ func (instance *Msvm_MigrationJob) GetPropertyCancellable() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDestinationHost sets the value of DestinationHost for the instance
 func (instance *Msvm_MigrationJob) SetPropertyDestinationHost(value string) (err error) {
-	return instance.SetProperty("DestinationHost", value)
+	return instance.SetProperty("DestinationHost", (value))
 }
 
 // GetDestinationHost gets the value of DestinationHost for the instance
@@ -100,16 +111,25 @@ func (instance *Msvm_MigrationJob) GetPropertyDestinationHost() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetErrorSummaryDescription sets the value of ErrorSummaryDescription for the instance
 func (instance *Msvm_MigrationJob) SetPropertyErrorSummaryDescription(value string) (err error) {
-	return instance.SetProperty("ErrorSummaryDescription", value)
+	return instance.SetProperty("ErrorSummaryDescription", (value))
 }
 
 // GetErrorSummaryDescription gets the value of ErrorSummaryDescription for the instance
@@ -118,16 +138,25 @@ func (instance *Msvm_MigrationJob) GetPropertyErrorSummaryDescription() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetJobType sets the value of JobType for the instance
 func (instance *Msvm_MigrationJob) SetPropertyJobType(value MigrationJob_JobType) (err error) {
-	return instance.SetProperty("JobType", value)
+	return instance.SetProperty("JobType", (value))
 }
 
 // GetJobType gets the value of JobType for the instance
@@ -136,16 +165,25 @@ func (instance *Msvm_MigrationJob) GetPropertyJobType() (value MigrationJob_JobT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(MigrationJob_JobType)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = MigrationJob_JobType(valuetmp)
+
 	return
 }
 
 // SetMigrationType sets the value of MigrationType for the instance
 func (instance *Msvm_MigrationJob) SetPropertyMigrationType(value uint16) (err error) {
-	return instance.SetProperty("MigrationType", value)
+	return instance.SetProperty("MigrationType", (value))
 }
 
 // GetMigrationType gets the value of MigrationType for the instance
@@ -154,16 +192,25 @@ func (instance *Msvm_MigrationJob) GetPropertyMigrationType() (value uint16, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetNewResourceSettingData sets the value of NewResourceSettingData for the instance
 func (instance *Msvm_MigrationJob) SetPropertyNewResourceSettingData(value []string) (err error) {
-	return instance.SetProperty("NewResourceSettingData", value)
+	return instance.SetProperty("NewResourceSettingData", (value))
 }
 
 // GetNewResourceSettingData gets the value of NewResourceSettingData for the instance
@@ -172,16 +219,26 @@ func (instance *Msvm_MigrationJob) GetPropertyNewResourceSettingData() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetNewSystemSettingData sets the value of NewSystemSettingData for the instance
 func (instance *Msvm_MigrationJob) SetPropertyNewSystemSettingData(value string) (err error) {
-	return instance.SetProperty("NewSystemSettingData", value)
+	return instance.SetProperty("NewSystemSettingData", (value))
 }
 
 // GetNewSystemSettingData gets the value of NewSystemSettingData for the instance
@@ -190,16 +247,25 @@ func (instance *Msvm_MigrationJob) GetPropertyNewSystemSettingData() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVirtualSystemName sets the value of VirtualSystemName for the instance
 func (instance *Msvm_MigrationJob) SetPropertyVirtualSystemName(value string) (err error) {
-	return instance.SetProperty("VirtualSystemName", value)
+	return instance.SetProperty("VirtualSystemName", (value))
 }
 
 // GetVirtualSystemName gets the value of VirtualSystemName for the instance
@@ -208,10 +274,19 @@ func (instance *Msvm_MigrationJob) GetPropertyVirtualSystemName() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

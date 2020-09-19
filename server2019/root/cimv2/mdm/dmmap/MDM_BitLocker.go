@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_BitLocker struct
@@ -23,9 +25,6 @@ type MDM_BitLocker struct {
 
 	//
 	AllowWarningForOtherDiskEncryption int32
-
-	//
-	ConfigureRecoveryPasswordRotation int32
 
 	//
 	EncryptionMethodByDriveType string
@@ -95,7 +94,7 @@ func NewMDM_BitLockerEx6(hostName string,
 
 // SetAllowStandardUserEncryption sets the value of AllowStandardUserEncryption for the instance
 func (instance *MDM_BitLocker) SetPropertyAllowStandardUserEncryption(value int32) (err error) {
-	return instance.SetProperty("AllowStandardUserEncryption", value)
+	return instance.SetProperty("AllowStandardUserEncryption", (value))
 }
 
 // GetAllowStandardUserEncryption gets the value of AllowStandardUserEncryption for the instance
@@ -104,16 +103,25 @@ func (instance *MDM_BitLocker) GetPropertyAllowStandardUserEncryption() (value i
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetAllowWarningForOtherDiskEncryption sets the value of AllowWarningForOtherDiskEncryption for the instance
 func (instance *MDM_BitLocker) SetPropertyAllowWarningForOtherDiskEncryption(value int32) (err error) {
-	return instance.SetProperty("AllowWarningForOtherDiskEncryption", value)
+	return instance.SetProperty("AllowWarningForOtherDiskEncryption", (value))
 }
 
 // GetAllowWarningForOtherDiskEncryption gets the value of AllowWarningForOtherDiskEncryption for the instance
@@ -122,34 +130,25 @@ func (instance *MDM_BitLocker) GetPropertyAllowWarningForOtherDiskEncryption() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-// SetConfigureRecoveryPasswordRotation sets the value of ConfigureRecoveryPasswordRotation for the instance
-func (instance *MDM_BitLocker) SetPropertyConfigureRecoveryPasswordRotation(value int32) (err error) {
-	return instance.SetProperty("ConfigureRecoveryPasswordRotation", value)
-}
-
-// GetConfigureRecoveryPasswordRotation gets the value of ConfigureRecoveryPasswordRotation for the instance
-func (instance *MDM_BitLocker) GetPropertyConfigureRecoveryPasswordRotation() (value int32, err error) {
-	retValue, err := instance.GetProperty("ConfigureRecoveryPasswordRotation")
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	value, ok := retValue.(int32)
+
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		// TODO: Set an error
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
 	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetEncryptionMethodByDriveType sets the value of EncryptionMethodByDriveType for the instance
 func (instance *MDM_BitLocker) SetPropertyEncryptionMethodByDriveType(value string) (err error) {
-	return instance.SetProperty("EncryptionMethodByDriveType", value)
+	return instance.SetProperty("EncryptionMethodByDriveType", (value))
 }
 
 // GetEncryptionMethodByDriveType gets the value of EncryptionMethodByDriveType for the instance
@@ -158,16 +157,25 @@ func (instance *MDM_BitLocker) GetPropertyEncryptionMethodByDriveType() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFixedDrivesRecoveryOptions sets the value of FixedDrivesRecoveryOptions for the instance
 func (instance *MDM_BitLocker) SetPropertyFixedDrivesRecoveryOptions(value string) (err error) {
-	return instance.SetProperty("FixedDrivesRecoveryOptions", value)
+	return instance.SetProperty("FixedDrivesRecoveryOptions", (value))
 }
 
 // GetFixedDrivesRecoveryOptions gets the value of FixedDrivesRecoveryOptions for the instance
@@ -176,16 +184,25 @@ func (instance *MDM_BitLocker) GetPropertyFixedDrivesRecoveryOptions() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetFixedDrivesRequireEncryption sets the value of FixedDrivesRequireEncryption for the instance
 func (instance *MDM_BitLocker) SetPropertyFixedDrivesRequireEncryption(value string) (err error) {
-	return instance.SetProperty("FixedDrivesRequireEncryption", value)
+	return instance.SetProperty("FixedDrivesRequireEncryption", (value))
 }
 
 // GetFixedDrivesRequireEncryption gets the value of FixedDrivesRequireEncryption for the instance
@@ -194,16 +211,25 @@ func (instance *MDM_BitLocker) GetPropertyFixedDrivesRequireEncryption() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_BitLocker) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -212,16 +238,25 @@ func (instance *MDM_BitLocker) GetPropertyInstanceID() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_BitLocker) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -230,16 +265,25 @@ func (instance *MDM_BitLocker) GetPropertyParentID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRemovableDrivesRequireEncryption sets the value of RemovableDrivesRequireEncryption for the instance
 func (instance *MDM_BitLocker) SetPropertyRemovableDrivesRequireEncryption(value string) (err error) {
-	return instance.SetProperty("RemovableDrivesRequireEncryption", value)
+	return instance.SetProperty("RemovableDrivesRequireEncryption", (value))
 }
 
 // GetRemovableDrivesRequireEncryption gets the value of RemovableDrivesRequireEncryption for the instance
@@ -248,16 +292,25 @@ func (instance *MDM_BitLocker) GetPropertyRemovableDrivesRequireEncryption() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRequireDeviceEncryption sets the value of RequireDeviceEncryption for the instance
 func (instance *MDM_BitLocker) SetPropertyRequireDeviceEncryption(value int32) (err error) {
-	return instance.SetProperty("RequireDeviceEncryption", value)
+	return instance.SetProperty("RequireDeviceEncryption", (value))
 }
 
 // GetRequireDeviceEncryption gets the value of RequireDeviceEncryption for the instance
@@ -266,16 +319,25 @@ func (instance *MDM_BitLocker) GetPropertyRequireDeviceEncryption() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetRequireStorageCardEncryption sets the value of RequireStorageCardEncryption for the instance
 func (instance *MDM_BitLocker) SetPropertyRequireStorageCardEncryption(value int32) (err error) {
-	return instance.SetProperty("RequireStorageCardEncryption", value)
+	return instance.SetProperty("RequireStorageCardEncryption", (value))
 }
 
 // GetRequireStorageCardEncryption gets the value of RequireStorageCardEncryption for the instance
@@ -284,16 +346,25 @@ func (instance *MDM_BitLocker) GetPropertyRequireStorageCardEncryption() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetSystemDrivesMinimumPINLength sets the value of SystemDrivesMinimumPINLength for the instance
 func (instance *MDM_BitLocker) SetPropertySystemDrivesMinimumPINLength(value string) (err error) {
-	return instance.SetProperty("SystemDrivesMinimumPINLength", value)
+	return instance.SetProperty("SystemDrivesMinimumPINLength", (value))
 }
 
 // GetSystemDrivesMinimumPINLength gets the value of SystemDrivesMinimumPINLength for the instance
@@ -302,16 +373,25 @@ func (instance *MDM_BitLocker) GetPropertySystemDrivesMinimumPINLength() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemDrivesRecoveryMessage sets the value of SystemDrivesRecoveryMessage for the instance
 func (instance *MDM_BitLocker) SetPropertySystemDrivesRecoveryMessage(value string) (err error) {
-	return instance.SetProperty("SystemDrivesRecoveryMessage", value)
+	return instance.SetProperty("SystemDrivesRecoveryMessage", (value))
 }
 
 // GetSystemDrivesRecoveryMessage gets the value of SystemDrivesRecoveryMessage for the instance
@@ -320,16 +400,25 @@ func (instance *MDM_BitLocker) GetPropertySystemDrivesRecoveryMessage() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemDrivesRecoveryOptions sets the value of SystemDrivesRecoveryOptions for the instance
 func (instance *MDM_BitLocker) SetPropertySystemDrivesRecoveryOptions(value string) (err error) {
-	return instance.SetProperty("SystemDrivesRecoveryOptions", value)
+	return instance.SetProperty("SystemDrivesRecoveryOptions", (value))
 }
 
 // GetSystemDrivesRecoveryOptions gets the value of SystemDrivesRecoveryOptions for the instance
@@ -338,16 +427,25 @@ func (instance *MDM_BitLocker) GetPropertySystemDrivesRecoveryOptions() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemDrivesRequireStartupAuthentication sets the value of SystemDrivesRequireStartupAuthentication for the instance
 func (instance *MDM_BitLocker) SetPropertySystemDrivesRequireStartupAuthentication(value string) (err error) {
-	return instance.SetProperty("SystemDrivesRequireStartupAuthentication", value)
+	return instance.SetProperty("SystemDrivesRequireStartupAuthentication", (value))
 }
 
 // GetSystemDrivesRequireStartupAuthentication gets the value of SystemDrivesRequireStartupAuthentication for the instance
@@ -356,24 +454,18 @@ func (instance *MDM_BitLocker) GetPropertySystemDrivesRequireStartupAuthenticati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
-	}
-	return
-}
-
-//
-
-// <param name="param" type="string "></param>
-
-// <param name="ReturnValue" type="uint32 "></param>
-func (instance *MDM_BitLocker) RotateRecoveryPasswordsMethod( /* IN */ param string) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("RotateRecoveryPasswordsMethod", param)
-	if err != nil {
+	if retValue == nil {
+		// Doesn't have any value. Return empty
 		return
 	}
-	result = uint32(retVal)
-	return
 
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
+	return
 }

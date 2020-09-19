@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_PartitionableGpu struct
@@ -115,7 +117,7 @@ func NewMsvm_PartitionableGpuEx6(hostName string,
 
 // SetAvailableCompute sets the value of AvailableCompute for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyAvailableCompute(value uint64) (err error) {
-	return instance.SetProperty("AvailableCompute", value)
+	return instance.SetProperty("AvailableCompute", (value))
 }
 
 // GetAvailableCompute gets the value of AvailableCompute for the instance
@@ -124,16 +126,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyAvailableCompute() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvailableDecode sets the value of AvailableDecode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyAvailableDecode(value uint64) (err error) {
-	return instance.SetProperty("AvailableDecode", value)
+	return instance.SetProperty("AvailableDecode", (value))
 }
 
 // GetAvailableDecode gets the value of AvailableDecode for the instance
@@ -142,16 +153,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyAvailableDecode() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvailableEncode sets the value of AvailableEncode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyAvailableEncode(value uint64) (err error) {
-	return instance.SetProperty("AvailableEncode", value)
+	return instance.SetProperty("AvailableEncode", (value))
 }
 
 // GetAvailableEncode gets the value of AvailableEncode for the instance
@@ -160,16 +180,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyAvailableEncode() (value uint6
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAvailableVRAM sets the value of AvailableVRAM for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyAvailableVRAM(value uint64) (err error) {
-	return instance.SetProperty("AvailableVRAM", value)
+	return instance.SetProperty("AvailableVRAM", (value))
 }
 
 // GetAvailableVRAM gets the value of AvailableVRAM for the instance
@@ -178,16 +207,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyAvailableVRAM() (value uint64,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxPartitionCompute sets the value of MaxPartitionCompute for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMaxPartitionCompute(value uint64) (err error) {
-	return instance.SetProperty("MaxPartitionCompute", value)
+	return instance.SetProperty("MaxPartitionCompute", (value))
 }
 
 // GetMaxPartitionCompute gets the value of MaxPartitionCompute for the instance
@@ -196,16 +234,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMaxPartitionCompute() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxPartitionDecode sets the value of MaxPartitionDecode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMaxPartitionDecode(value uint64) (err error) {
-	return instance.SetProperty("MaxPartitionDecode", value)
+	return instance.SetProperty("MaxPartitionDecode", (value))
 }
 
 // GetMaxPartitionDecode gets the value of MaxPartitionDecode for the instance
@@ -214,16 +261,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMaxPartitionDecode() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxPartitionEncode sets the value of MaxPartitionEncode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMaxPartitionEncode(value uint64) (err error) {
-	return instance.SetProperty("MaxPartitionEncode", value)
+	return instance.SetProperty("MaxPartitionEncode", (value))
 }
 
 // GetMaxPartitionEncode gets the value of MaxPartitionEncode for the instance
@@ -232,16 +288,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMaxPartitionEncode() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMaxPartitionVRAM sets the value of MaxPartitionVRAM for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMaxPartitionVRAM(value uint64) (err error) {
-	return instance.SetProperty("MaxPartitionVRAM", value)
+	return instance.SetProperty("MaxPartitionVRAM", (value))
 }
 
 // GetMaxPartitionVRAM gets the value of MaxPartitionVRAM for the instance
@@ -250,16 +315,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMaxPartitionVRAM() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinPartitionCompute sets the value of MinPartitionCompute for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMinPartitionCompute(value uint64) (err error) {
-	return instance.SetProperty("MinPartitionCompute", value)
+	return instance.SetProperty("MinPartitionCompute", (value))
 }
 
 // GetMinPartitionCompute gets the value of MinPartitionCompute for the instance
@@ -268,16 +342,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMinPartitionCompute() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinPartitionDecode sets the value of MinPartitionDecode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMinPartitionDecode(value uint64) (err error) {
-	return instance.SetProperty("MinPartitionDecode", value)
+	return instance.SetProperty("MinPartitionDecode", (value))
 }
 
 // GetMinPartitionDecode gets the value of MinPartitionDecode for the instance
@@ -286,16 +369,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMinPartitionDecode() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinPartitionEncode sets the value of MinPartitionEncode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMinPartitionEncode(value uint64) (err error) {
-	return instance.SetProperty("MinPartitionEncode", value)
+	return instance.SetProperty("MinPartitionEncode", (value))
 }
 
 // GetMinPartitionEncode gets the value of MinPartitionEncode for the instance
@@ -304,16 +396,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMinPartitionEncode() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMinPartitionVRAM sets the value of MinPartitionVRAM for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyMinPartitionVRAM(value uint64) (err error) {
-	return instance.SetProperty("MinPartitionVRAM", value)
+	return instance.SetProperty("MinPartitionVRAM", (value))
 }
 
 // GetMinPartitionVRAM gets the value of MinPartitionVRAM for the instance
@@ -322,16 +423,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyMinPartitionVRAM() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOptimalPartitionCompute sets the value of OptimalPartitionCompute for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyOptimalPartitionCompute(value uint64) (err error) {
-	return instance.SetProperty("OptimalPartitionCompute", value)
+	return instance.SetProperty("OptimalPartitionCompute", (value))
 }
 
 // GetOptimalPartitionCompute gets the value of OptimalPartitionCompute for the instance
@@ -340,16 +450,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyOptimalPartitionCompute() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOptimalPartitionDecode sets the value of OptimalPartitionDecode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyOptimalPartitionDecode(value uint64) (err error) {
-	return instance.SetProperty("OptimalPartitionDecode", value)
+	return instance.SetProperty("OptimalPartitionDecode", (value))
 }
 
 // GetOptimalPartitionDecode gets the value of OptimalPartitionDecode for the instance
@@ -358,16 +477,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyOptimalPartitionDecode() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOptimalPartitionEncode sets the value of OptimalPartitionEncode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyOptimalPartitionEncode(value uint64) (err error) {
-	return instance.SetProperty("OptimalPartitionEncode", value)
+	return instance.SetProperty("OptimalPartitionEncode", (value))
 }
 
 // GetOptimalPartitionEncode gets the value of OptimalPartitionEncode for the instance
@@ -376,16 +504,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyOptimalPartitionEncode() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetOptimalPartitionVRAM sets the value of OptimalPartitionVRAM for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyOptimalPartitionVRAM(value uint64) (err error) {
-	return instance.SetProperty("OptimalPartitionVRAM", value)
+	return instance.SetProperty("OptimalPartitionVRAM", (value))
 }
 
 // GetOptimalPartitionVRAM gets the value of OptimalPartitionVRAM for the instance
@@ -394,16 +531,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyOptimalPartitionVRAM() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPartitionCount sets the value of PartitionCount for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyPartitionCount(value uint16) (err error) {
-	return instance.SetProperty("PartitionCount", value)
+	return instance.SetProperty("PartitionCount", (value))
 }
 
 // GetPartitionCount gets the value of PartitionCount for the instance
@@ -412,16 +558,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyPartitionCount() (value uint16
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetTotalCompute sets the value of TotalCompute for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyTotalCompute(value uint64) (err error) {
-	return instance.SetProperty("TotalCompute", value)
+	return instance.SetProperty("TotalCompute", (value))
 }
 
 // GetTotalCompute gets the value of TotalCompute for the instance
@@ -430,16 +585,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyTotalCompute() (value uint64, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalDecode sets the value of TotalDecode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyTotalDecode(value uint64) (err error) {
-	return instance.SetProperty("TotalDecode", value)
+	return instance.SetProperty("TotalDecode", (value))
 }
 
 // GetTotalDecode gets the value of TotalDecode for the instance
@@ -448,16 +612,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyTotalDecode() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalEncode sets the value of TotalEncode for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyTotalEncode(value uint64) (err error) {
-	return instance.SetProperty("TotalEncode", value)
+	return instance.SetProperty("TotalEncode", (value))
 }
 
 // GetTotalEncode gets the value of TotalEncode for the instance
@@ -466,16 +639,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyTotalEncode() (value uint64, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetTotalVRAM sets the value of TotalVRAM for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyTotalVRAM(value uint64) (err error) {
-	return instance.SetProperty("TotalVRAM", value)
+	return instance.SetProperty("TotalVRAM", (value))
 }
 
 // GetTotalVRAM gets the value of TotalVRAM for the instance
@@ -484,16 +666,25 @@ func (instance *Msvm_PartitionableGpu) GetPropertyTotalVRAM() (value uint64, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetValidPartitionCounts sets the value of ValidPartitionCounts for the instance
 func (instance *Msvm_PartitionableGpu) SetPropertyValidPartitionCounts(value []uint16) (err error) {
-	return instance.SetProperty("ValidPartitionCounts", value)
+	return instance.SetProperty("ValidPartitionCounts", (value))
 }
 
 // GetValidPartitionCounts gets the value of ValidPartitionCounts for the instance
@@ -502,9 +693,19 @@ func (instance *Msvm_PartitionableGpu) GetPropertyValidPartitionCounts() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint16)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint16(valuetmp))
+	}
+
 	return
 }

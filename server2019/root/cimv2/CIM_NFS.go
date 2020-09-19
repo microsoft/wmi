@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_NFS struct
@@ -91,7 +93,7 @@ func NewCIM_NFSEx6(hostName string,
 
 // SetAttributeCaching sets the value of AttributeCaching for the instance
 func (instance *CIM_NFS) SetPropertyAttributeCaching(value bool) (err error) {
-	return instance.SetProperty("AttributeCaching", value)
+	return instance.SetProperty("AttributeCaching", (value))
 }
 
 // GetAttributeCaching gets the value of AttributeCaching for the instance
@@ -100,16 +102,25 @@ func (instance *CIM_NFS) GetPropertyAttributeCaching() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetAttributeCachingForDirectoriesMax sets the value of AttributeCachingForDirectoriesMax for the instance
 func (instance *CIM_NFS) SetPropertyAttributeCachingForDirectoriesMax(value uint16) (err error) {
-	return instance.SetProperty("AttributeCachingForDirectoriesMax", value)
+	return instance.SetProperty("AttributeCachingForDirectoriesMax", (value))
 }
 
 // GetAttributeCachingForDirectoriesMax gets the value of AttributeCachingForDirectoriesMax for the instance
@@ -118,16 +129,25 @@ func (instance *CIM_NFS) GetPropertyAttributeCachingForDirectoriesMax() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAttributeCachingForDirectoriesMin sets the value of AttributeCachingForDirectoriesMin for the instance
 func (instance *CIM_NFS) SetPropertyAttributeCachingForDirectoriesMin(value uint16) (err error) {
-	return instance.SetProperty("AttributeCachingForDirectoriesMin", value)
+	return instance.SetProperty("AttributeCachingForDirectoriesMin", (value))
 }
 
 // GetAttributeCachingForDirectoriesMin gets the value of AttributeCachingForDirectoriesMin for the instance
@@ -136,16 +156,25 @@ func (instance *CIM_NFS) GetPropertyAttributeCachingForDirectoriesMin() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAttributeCachingForRegularFilesMax sets the value of AttributeCachingForRegularFilesMax for the instance
 func (instance *CIM_NFS) SetPropertyAttributeCachingForRegularFilesMax(value uint16) (err error) {
-	return instance.SetProperty("AttributeCachingForRegularFilesMax", value)
+	return instance.SetProperty("AttributeCachingForRegularFilesMax", (value))
 }
 
 // GetAttributeCachingForRegularFilesMax gets the value of AttributeCachingForRegularFilesMax for the instance
@@ -154,16 +183,25 @@ func (instance *CIM_NFS) GetPropertyAttributeCachingForRegularFilesMax() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetAttributeCachingForRegularFilesMin sets the value of AttributeCachingForRegularFilesMin for the instance
 func (instance *CIM_NFS) SetPropertyAttributeCachingForRegularFilesMin(value uint16) (err error) {
-	return instance.SetProperty("AttributeCachingForRegularFilesMin", value)
+	return instance.SetProperty("AttributeCachingForRegularFilesMin", (value))
 }
 
 // GetAttributeCachingForRegularFilesMin gets the value of AttributeCachingForRegularFilesMin for the instance
@@ -172,16 +210,25 @@ func (instance *CIM_NFS) GetPropertyAttributeCachingForRegularFilesMin() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetForegroundMount sets the value of ForegroundMount for the instance
 func (instance *CIM_NFS) SetPropertyForegroundMount(value bool) (err error) {
-	return instance.SetProperty("ForegroundMount", value)
+	return instance.SetProperty("ForegroundMount", (value))
 }
 
 // GetForegroundMount gets the value of ForegroundMount for the instance
@@ -190,16 +237,25 @@ func (instance *CIM_NFS) GetPropertyForegroundMount() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetHardMount sets the value of HardMount for the instance
 func (instance *CIM_NFS) SetPropertyHardMount(value bool) (err error) {
-	return instance.SetProperty("HardMount", value)
+	return instance.SetProperty("HardMount", (value))
 }
 
 // GetHardMount gets the value of HardMount for the instance
@@ -208,16 +264,25 @@ func (instance *CIM_NFS) GetPropertyHardMount() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetInterrupt sets the value of Interrupt for the instance
 func (instance *CIM_NFS) SetPropertyInterrupt(value bool) (err error) {
-	return instance.SetProperty("Interrupt", value)
+	return instance.SetProperty("Interrupt", (value))
 }
 
 // GetInterrupt gets the value of Interrupt for the instance
@@ -226,16 +291,25 @@ func (instance *CIM_NFS) GetPropertyInterrupt() (value bool, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetMountFailureRetries sets the value of MountFailureRetries for the instance
 func (instance *CIM_NFS) SetPropertyMountFailureRetries(value uint16) (err error) {
-	return instance.SetProperty("MountFailureRetries", value)
+	return instance.SetProperty("MountFailureRetries", (value))
 }
 
 // GetMountFailureRetries gets the value of MountFailureRetries for the instance
@@ -244,16 +318,25 @@ func (instance *CIM_NFS) GetPropertyMountFailureRetries() (value uint16, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetReadBufferSize sets the value of ReadBufferSize for the instance
 func (instance *CIM_NFS) SetPropertyReadBufferSize(value uint64) (err error) {
-	return instance.SetProperty("ReadBufferSize", value)
+	return instance.SetProperty("ReadBufferSize", (value))
 }
 
 // GetReadBufferSize gets the value of ReadBufferSize for the instance
@@ -262,16 +345,25 @@ func (instance *CIM_NFS) GetPropertyReadBufferSize() (value uint64, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetRetransmissionAttempts sets the value of RetransmissionAttempts for the instance
 func (instance *CIM_NFS) SetPropertyRetransmissionAttempts(value uint16) (err error) {
-	return instance.SetProperty("RetransmissionAttempts", value)
+	return instance.SetProperty("RetransmissionAttempts", (value))
 }
 
 // GetRetransmissionAttempts gets the value of RetransmissionAttempts for the instance
@@ -280,16 +372,25 @@ func (instance *CIM_NFS) GetPropertyRetransmissionAttempts() (value uint16, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetRetransmissionTimeout sets the value of RetransmissionTimeout for the instance
 func (instance *CIM_NFS) SetPropertyRetransmissionTimeout(value uint32) (err error) {
-	return instance.SetProperty("RetransmissionTimeout", value)
+	return instance.SetProperty("RetransmissionTimeout", (value))
 }
 
 // GetRetransmissionTimeout gets the value of RetransmissionTimeout for the instance
@@ -298,16 +399,25 @@ func (instance *CIM_NFS) GetPropertyRetransmissionTimeout() (value uint32, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetServerCommunicationPort sets the value of ServerCommunicationPort for the instance
 func (instance *CIM_NFS) SetPropertyServerCommunicationPort(value uint32) (err error) {
-	return instance.SetProperty("ServerCommunicationPort", value)
+	return instance.SetProperty("ServerCommunicationPort", (value))
 }
 
 // GetServerCommunicationPort gets the value of ServerCommunicationPort for the instance
@@ -316,16 +426,25 @@ func (instance *CIM_NFS) GetPropertyServerCommunicationPort() (value uint32, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWriteBufferSize sets the value of WriteBufferSize for the instance
 func (instance *CIM_NFS) SetPropertyWriteBufferSize(value uint64) (err error) {
-	return instance.SetProperty("WriteBufferSize", value)
+	return instance.SetProperty("WriteBufferSize", (value))
 }
 
 // GetWriteBufferSize gets the value of WriteBufferSize for the instance
@@ -334,9 +453,18 @@ func (instance *CIM_NFS) GetPropertyWriteBufferSize() (value uint64, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

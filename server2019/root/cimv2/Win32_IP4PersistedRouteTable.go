@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_IP4PersistedRouteTable struct
@@ -61,7 +63,7 @@ func NewWin32_IP4PersistedRouteTableEx6(hostName string,
 
 // SetDestination sets the value of Destination for the instance
 func (instance *Win32_IP4PersistedRouteTable) SetPropertyDestination(value string) (err error) {
-	return instance.SetProperty("Destination", value)
+	return instance.SetProperty("Destination", (value))
 }
 
 // GetDestination gets the value of Destination for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_IP4PersistedRouteTable) GetPropertyDestination() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMask sets the value of Mask for the instance
 func (instance *Win32_IP4PersistedRouteTable) SetPropertyMask(value string) (err error) {
-	return instance.SetProperty("Mask", value)
+	return instance.SetProperty("Mask", (value))
 }
 
 // GetMask gets the value of Mask for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_IP4PersistedRouteTable) GetPropertyMask() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetMetric1 sets the value of Metric1 for the instance
 func (instance *Win32_IP4PersistedRouteTable) SetPropertyMetric1(value int32) (err error) {
-	return instance.SetProperty("Metric1", value)
+	return instance.SetProperty("Metric1", (value))
 }
 
 // GetMetric1 gets the value of Metric1 for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_IP4PersistedRouteTable) GetPropertyMetric1() (value int32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetNextHop sets the value of NextHop for the instance
 func (instance *Win32_IP4PersistedRouteTable) SetPropertyNextHop(value string) (err error) {
-	return instance.SetProperty("NextHop", value)
+	return instance.SetProperty("NextHop", (value))
 }
 
 // GetNextHop gets the value of NextHop for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_IP4PersistedRouteTable) GetPropertyNextHop() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

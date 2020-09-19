@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm
 //////////////////////////////////////////////
 package mdm
@@ -11,7 +11,9 @@ package mdm
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_Restrictions struct
@@ -95,7 +97,7 @@ func NewMDM_RestrictionsEx6(hostName string,
 
 // SetBluetoothEnabled sets the value of BluetoothEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyBluetoothEnabled(value bool) (err error) {
-	return instance.SetProperty("BluetoothEnabled", value)
+	return instance.SetProperty("BluetoothEnabled", (value))
 }
 
 // GetBluetoothEnabled gets the value of BluetoothEnabled for the instance
@@ -104,16 +106,25 @@ func (instance *MDM_Restrictions) GetPropertyBluetoothEnabled() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDataRoamingEnabled sets the value of DataRoamingEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyDataRoamingEnabled(value bool) (err error) {
-	return instance.SetProperty("DataRoamingEnabled", value)
+	return instance.SetProperty("DataRoamingEnabled", (value))
 }
 
 // GetDataRoamingEnabled gets the value of DataRoamingEnabled for the instance
@@ -122,16 +133,25 @@ func (instance *MDM_Restrictions) GetPropertyDataRoamingEnabled() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetDiagnosticsSubmissionEnabled sets the value of DiagnosticsSubmissionEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyDiagnosticsSubmissionEnabled(value bool) (err error) {
-	return instance.SetProperty("DiagnosticsSubmissionEnabled", value)
+	return instance.SetProperty("DiagnosticsSubmissionEnabled", (value))
 }
 
 // GetDiagnosticsSubmissionEnabled gets the value of DiagnosticsSubmissionEnabled for the instance
@@ -140,16 +160,25 @@ func (instance *MDM_Restrictions) GetPropertyDiagnosticsSubmissionEnabled() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEcsAutoProvisionEnabled sets the value of EcsAutoProvisionEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyEcsAutoProvisionEnabled(value bool) (err error) {
-	return instance.SetProperty("EcsAutoProvisionEnabled", value)
+	return instance.SetProperty("EcsAutoProvisionEnabled", (value))
 }
 
 // GetEcsAutoProvisionEnabled gets the value of EcsAutoProvisionEnabled for the instance
@@ -158,16 +187,25 @@ func (instance *MDM_Restrictions) GetPropertyEcsAutoProvisionEnabled() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetEcsSyncUrl sets the value of EcsSyncUrl for the instance
 func (instance *MDM_Restrictions) SetPropertyEcsSyncUrl(value string) (err error) {
-	return instance.SetProperty("EcsSyncUrl", value)
+	return instance.SetProperty("EcsSyncUrl", (value))
 }
 
 // GetEcsSyncUrl gets the value of EcsSyncUrl for the instance
@@ -176,16 +214,25 @@ func (instance *MDM_Restrictions) GetPropertyEcsSyncUrl() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIEEnterpriseModeEnabled sets the value of IEEnterpriseModeEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyIEEnterpriseModeEnabled(value bool) (err error) {
-	return instance.SetProperty("IEEnterpriseModeEnabled", value)
+	return instance.SetProperty("IEEnterpriseModeEnabled", (value))
 }
 
 // GetIEEnterpriseModeEnabled gets the value of IEEnterpriseModeEnabled for the instance
@@ -194,16 +241,25 @@ func (instance *MDM_Restrictions) GetPropertyIEEnterpriseModeEnabled() (value bo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetIEEnterpriseModeEnabledURL sets the value of IEEnterpriseModeEnabledURL for the instance
 func (instance *MDM_Restrictions) SetPropertyIEEnterpriseModeEnabledURL(value string) (err error) {
-	return instance.SetProperty("IEEnterpriseModeEnabledURL", value)
+	return instance.SetProperty("IEEnterpriseModeEnabledURL", (value))
 }
 
 // GetIEEnterpriseModeEnabledURL gets the value of IEEnterpriseModeEnabledURL for the instance
@@ -212,16 +268,25 @@ func (instance *MDM_Restrictions) GetPropertyIEEnterpriseModeEnabledURL() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIEEnterpriseModeSitelist sets the value of IEEnterpriseModeSitelist for the instance
 func (instance *MDM_Restrictions) SetPropertyIEEnterpriseModeSitelist(value string) (err error) {
-	return instance.SetProperty("IEEnterpriseModeSitelist", value)
+	return instance.SetProperty("IEEnterpriseModeSitelist", (value))
 }
 
 // GetIEEnterpriseModeSitelist gets the value of IEEnterpriseModeSitelist for the instance
@@ -230,16 +295,25 @@ func (instance *MDM_Restrictions) GetPropertyIEEnterpriseModeSitelist() (value s
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setkey sets the value of key for the instance
 func (instance *MDM_Restrictions) SetPropertykey(value uint32) (err error) {
-	return instance.SetProperty("key", value)
+	return instance.SetProperty("key", (value))
 }
 
 // Getkey gets the value of key for the instance
@@ -248,16 +322,25 @@ func (instance *MDM_Restrictions) GetPropertykey() (value uint32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPCSettingsMeteredNetworkSyncEnabled sets the value of PCSettingsMeteredNetworkSyncEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyPCSettingsMeteredNetworkSyncEnabled(value bool) (err error) {
-	return instance.SetProperty("PCSettingsMeteredNetworkSyncEnabled", value)
+	return instance.SetProperty("PCSettingsMeteredNetworkSyncEnabled", (value))
 }
 
 // GetPCSettingsMeteredNetworkSyncEnabled gets the value of PCSettingsMeteredNetworkSyncEnabled for the instance
@@ -266,16 +349,25 @@ func (instance *MDM_Restrictions) GetPropertyPCSettingsMeteredNetworkSyncEnabled
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPCSettingsPasswordSyncEnabled sets the value of PCSettingsPasswordSyncEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyPCSettingsPasswordSyncEnabled(value bool) (err error) {
-	return instance.SetProperty("PCSettingsPasswordSyncEnabled", value)
+	return instance.SetProperty("PCSettingsPasswordSyncEnabled", (value))
 }
 
 // GetPCSettingsPasswordSyncEnabled gets the value of PCSettingsPasswordSyncEnabled for the instance
@@ -284,16 +376,25 @@ func (instance *MDM_Restrictions) GetPropertyPCSettingsPasswordSyncEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetPCSettingsSyncEnabled sets the value of PCSettingsSyncEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyPCSettingsSyncEnabled(value bool) (err error) {
-	return instance.SetProperty("PCSettingsSyncEnabled", value)
+	return instance.SetProperty("PCSettingsSyncEnabled", (value))
 }
 
 // GetPCSettingsSyncEnabled gets the value of PCSettingsSyncEnabled for the instance
@@ -302,16 +403,25 @@ func (instance *MDM_Restrictions) GetPropertyPCSettingsSyncEnabled() (value bool
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSmartScreenEnabled sets the value of SmartScreenEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertySmartScreenEnabled(value bool) (err error) {
-	return instance.SetProperty("SmartScreenEnabled", value)
+	return instance.SetProperty("SmartScreenEnabled", (value))
 }
 
 // GetSmartScreenEnabled gets the value of SmartScreenEnabled for the instance
@@ -320,16 +430,25 @@ func (instance *MDM_Restrictions) GetPropertySmartScreenEnabled() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUserAccountControlStatus sets the value of UserAccountControlStatus for the instance
 func (instance *MDM_Restrictions) SetPropertyUserAccountControlStatus(value uint32) (err error) {
-	return instance.SetProperty("UserAccountControlStatus", value)
+	return instance.SetProperty("UserAccountControlStatus", (value))
 }
 
 // GetUserAccountControlStatus gets the value of UserAccountControlStatus for the instance
@@ -338,16 +457,25 @@ func (instance *MDM_Restrictions) GetPropertyUserAccountControlStatus() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetWifiEnabled sets the value of WifiEnabled for the instance
 func (instance *MDM_Restrictions) SetPropertyWifiEnabled(value bool) (err error) {
-	return instance.SetProperty("WifiEnabled", value)
+	return instance.SetProperty("WifiEnabled", (value))
 }
 
 // GetWifiEnabled gets the value of WifiEnabled for the instance
@@ -356,9 +484,18 @@ func (instance *MDM_Restrictions) GetPropertyWifiEnabled() (value bool, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Spooler_PrintQueue struct
@@ -88,7 +90,7 @@ func NewWin32_PerfRawData_Spooler_PrintQueueEx6(hostName string,
 
 // SetAddNetworkPrinterCalls sets the value of AddNetworkPrinterCalls for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyAddNetworkPrinterCalls(value uint32) (err error) {
-	return instance.SetProperty("AddNetworkPrinterCalls", value)
+	return instance.SetProperty("AddNetworkPrinterCalls", (value))
 }
 
 // GetAddNetworkPrinterCalls gets the value of AddNetworkPrinterCalls for the instance
@@ -97,16 +99,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyAddNetworkPrint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBytesPrintedPersec sets the value of BytesPrintedPersec for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyBytesPrintedPersec(value uint64) (err error) {
-	return instance.SetProperty("BytesPrintedPersec", value)
+	return instance.SetProperty("BytesPrintedPersec", (value))
 }
 
 // GetBytesPrintedPersec gets the value of BytesPrintedPersec for the instance
@@ -115,16 +126,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyBytesPrintedPer
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetEnumerateNetworkPrinterCalls sets the value of EnumerateNetworkPrinterCalls for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyEnumerateNetworkPrinterCalls(value uint32) (err error) {
-	return instance.SetProperty("EnumerateNetworkPrinterCalls", value)
+	return instance.SetProperty("EnumerateNetworkPrinterCalls", (value))
 }
 
 // GetEnumerateNetworkPrinterCalls gets the value of EnumerateNetworkPrinterCalls for the instance
@@ -133,16 +153,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyEnumerateNetwor
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetJobErrors sets the value of JobErrors for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyJobErrors(value uint32) (err error) {
-	return instance.SetProperty("JobErrors", value)
+	return instance.SetProperty("JobErrors", (value))
 }
 
 // GetJobErrors gets the value of JobErrors for the instance
@@ -151,16 +180,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyJobErrors() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetJobs sets the value of Jobs for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyJobs(value uint32) (err error) {
-	return instance.SetProperty("Jobs", value)
+	return instance.SetProperty("Jobs", (value))
 }
 
 // GetJobs gets the value of Jobs for the instance
@@ -169,16 +207,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyJobs() (value u
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetJobsSpooling sets the value of JobsSpooling for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyJobsSpooling(value uint32) (err error) {
-	return instance.SetProperty("JobsSpooling", value)
+	return instance.SetProperty("JobsSpooling", (value))
 }
 
 // GetJobsSpooling gets the value of JobsSpooling for the instance
@@ -187,16 +234,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyJobsSpooling() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxJobsSpooling sets the value of MaxJobsSpooling for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyMaxJobsSpooling(value uint32) (err error) {
-	return instance.SetProperty("MaxJobsSpooling", value)
+	return instance.SetProperty("MaxJobsSpooling", (value))
 }
 
 // GetMaxJobsSpooling gets the value of MaxJobsSpooling for the instance
@@ -205,16 +261,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyMaxJobsSpooling
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMaxReferences sets the value of MaxReferences for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyMaxReferences(value uint32) (err error) {
-	return instance.SetProperty("MaxReferences", value)
+	return instance.SetProperty("MaxReferences", (value))
 }
 
 // GetMaxReferences gets the value of MaxReferences for the instance
@@ -223,16 +288,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyMaxReferences()
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetNotReadyErrors sets the value of NotReadyErrors for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyNotReadyErrors(value uint32) (err error) {
-	return instance.SetProperty("NotReadyErrors", value)
+	return instance.SetProperty("NotReadyErrors", (value))
 }
 
 // GetNotReadyErrors gets the value of NotReadyErrors for the instance
@@ -241,16 +315,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyNotReadyErrors(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetOutofPaperErrors sets the value of OutofPaperErrors for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyOutofPaperErrors(value uint32) (err error) {
-	return instance.SetProperty("OutofPaperErrors", value)
+	return instance.SetProperty("OutofPaperErrors", (value))
 }
 
 // GetOutofPaperErrors gets the value of OutofPaperErrors for the instance
@@ -259,16 +342,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyOutofPaperError
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReferences sets the value of References for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyReferences(value uint32) (err error) {
-	return instance.SetProperty("References", value)
+	return instance.SetProperty("References", (value))
 }
 
 // GetReferences gets the value of References for the instance
@@ -277,16 +369,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyReferences() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalJobsPrinted sets the value of TotalJobsPrinted for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyTotalJobsPrinted(value uint32) (err error) {
-	return instance.SetProperty("TotalJobsPrinted", value)
+	return instance.SetProperty("TotalJobsPrinted", (value))
 }
 
 // GetTotalJobsPrinted gets the value of TotalJobsPrinted for the instance
@@ -295,16 +396,25 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyTotalJobsPrinte
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalPagesPrinted sets the value of TotalPagesPrinted for the instance
 func (instance *Win32_PerfRawData_Spooler_PrintQueue) SetPropertyTotalPagesPrinted(value uint32) (err error) {
-	return instance.SetProperty("TotalPagesPrinted", value)
+	return instance.SetProperty("TotalPagesPrinted", (value))
 }
 
 // GetTotalPagesPrinted gets the value of TotalPagesPrinted for the instance
@@ -313,9 +423,18 @@ func (instance *Win32_PerfRawData_Spooler_PrintQueue) GetPropertyTotalPagesPrint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

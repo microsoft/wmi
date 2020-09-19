@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.mdm.dmmap
 //////////////////////////////////////////////
 package dmmap
@@ -11,7 +11,9 @@ package dmmap
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MDM_DeviceStatus_CellularIdentities01_01 struct
@@ -74,7 +76,7 @@ func NewMDM_DeviceStatus_CellularIdentities01_01Ex6(hostName string,
 
 // SetCommercializationOperator sets the value of CommercializationOperator for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyCommercializationOperator(value string) (err error) {
-	return instance.SetProperty("CommercializationOperator", value)
+	return instance.SetProperty("CommercializationOperator", (value))
 }
 
 // GetCommercializationOperator gets the value of CommercializationOperator for the instance
@@ -83,16 +85,25 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyCommerciali
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetICCID sets the value of ICCID for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyICCID(value string) (err error) {
-	return instance.SetProperty("ICCID", value)
+	return instance.SetProperty("ICCID", (value))
 }
 
 // GetICCID gets the value of ICCID for the instance
@@ -101,16 +112,25 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyICCID() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIMSI sets the value of IMSI for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyIMSI(value string) (err error) {
-	return instance.SetProperty("IMSI", value)
+	return instance.SetProperty("IMSI", (value))
 }
 
 // GetIMSI gets the value of IMSI for the instance
@@ -119,16 +139,25 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyIMSI() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetInstanceID sets the value of InstanceID for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyInstanceID(value string) (err error) {
-	return instance.SetProperty("InstanceID", value)
+	return instance.SetProperty("InstanceID", (value))
 }
 
 // GetInstanceID gets the value of InstanceID for the instance
@@ -137,16 +166,25 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyInstanceID(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetParentID sets the value of ParentID for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyParentID(value string) (err error) {
-	return instance.SetProperty("ParentID", value)
+	return instance.SetProperty("ParentID", (value))
 }
 
 // GetParentID gets the value of ParentID for the instance
@@ -155,16 +193,25 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyParentID() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPhoneNumber sets the value of PhoneNumber for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyPhoneNumber(value string) (err error) {
-	return instance.SetProperty("PhoneNumber", value)
+	return instance.SetProperty("PhoneNumber", (value))
 }
 
 // GetPhoneNumber gets the value of PhoneNumber for the instance
@@ -173,16 +220,25 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyPhoneNumber
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRoamingCompliance sets the value of RoamingCompliance for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyRoamingCompliance(value bool) (err error) {
-	return instance.SetProperty("RoamingCompliance", value)
+	return instance.SetProperty("RoamingCompliance", (value))
 }
 
 // GetRoamingCompliance gets the value of RoamingCompliance for the instance
@@ -191,16 +247,25 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyRoamingComp
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetRoamingStatus sets the value of RoamingStatus for the instance
 func (instance *MDM_DeviceStatus_CellularIdentities01_01) SetPropertyRoamingStatus(value bool) (err error) {
-	return instance.SetProperty("RoamingStatus", value)
+	return instance.SetProperty("RoamingStatus", (value))
 }
 
 // GetRoamingStatus gets the value of RoamingStatus for the instance
@@ -209,9 +274,18 @@ func (instance *MDM_DeviceStatus_CellularIdentities01_01) GetPropertyRoamingStat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

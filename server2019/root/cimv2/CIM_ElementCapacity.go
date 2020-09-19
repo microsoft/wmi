@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_ElementCapacity struct
@@ -56,7 +58,7 @@ func NewCIM_ElementCapacityEx6(hostName string,
 
 // SetCapacity sets the value of Capacity for the instance
 func (instance *CIM_ElementCapacity) SetPropertyCapacity(value CIM_PhysicalCapacity) (err error) {
-	return instance.SetProperty("Capacity", value)
+	return instance.SetProperty("Capacity", (value))
 }
 
 // GetCapacity gets the value of Capacity for the instance
@@ -65,16 +67,25 @@ func (instance *CIM_ElementCapacity) GetPropertyCapacity() (value CIM_PhysicalCa
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_PhysicalCapacity)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_PhysicalCapacity)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_PhysicalCapacity is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_PhysicalCapacity(valuetmp)
+
 	return
 }
 
 // SetElement sets the value of Element for the instance
 func (instance *CIM_ElementCapacity) SetPropertyElement(value CIM_PhysicalElement) (err error) {
-	return instance.SetProperty("Element", value)
+	return instance.SetProperty("Element", (value))
 }
 
 // GetElement gets the value of Element for the instance
@@ -83,9 +94,18 @@ func (instance *CIM_ElementCapacity) GetPropertyElement() (value CIM_PhysicalEle
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(CIM_PhysicalElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(CIM_PhysicalElement)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " CIM_PhysicalElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = CIM_PhysicalElement(valuetmp)
+
 	return
 }

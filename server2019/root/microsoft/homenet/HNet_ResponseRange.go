@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.HomeNet
 //////////////////////////////////////////////
 package homenet
@@ -11,7 +11,9 @@ package homenet
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // HNet_ResponseRange struct
@@ -59,7 +61,7 @@ func NewHNet_ResponseRangeEx6(hostName string,
 
 // SetEndPort sets the value of EndPort for the instance
 func (instance *HNet_ResponseRange) SetPropertyEndPort(value uint16) (err error) {
-	return instance.SetProperty("EndPort", value)
+	return instance.SetProperty("EndPort", (value))
 }
 
 // GetEndPort gets the value of EndPort for the instance
@@ -68,16 +70,25 @@ func (instance *HNet_ResponseRange) GetPropertyEndPort() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetIPProtocol sets the value of IPProtocol for the instance
 func (instance *HNet_ResponseRange) SetPropertyIPProtocol(value uint8) (err error) {
-	return instance.SetProperty("IPProtocol", value)
+	return instance.SetProperty("IPProtocol", (value))
 }
 
 // GetIPProtocol gets the value of IPProtocol for the instance
@@ -86,16 +97,25 @@ func (instance *HNet_ResponseRange) GetPropertyIPProtocol() (value uint8, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetStartPort sets the value of StartPort for the instance
 func (instance *HNet_ResponseRange) SetPropertyStartPort(value uint16) (err error) {
-	return instance.SetProperty("StartPort", value)
+	return instance.SetProperty("StartPort", (value))
 }
 
 // GetStartPort gets the value of StartPort for the instance
@@ -104,9 +124,18 @@ func (instance *HNet_ResponseRange) GetPropertyStartPort() (value uint16, err er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

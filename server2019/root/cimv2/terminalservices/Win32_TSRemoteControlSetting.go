@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_TSRemoteControlSetting struct
@@ -58,7 +60,7 @@ func NewWin32_TSRemoteControlSettingEx6(hostName string,
 
 // SetLevelOfControl sets the value of LevelOfControl for the instance
 func (instance *Win32_TSRemoteControlSetting) SetPropertyLevelOfControl(value uint32) (err error) {
-	return instance.SetProperty("LevelOfControl", value)
+	return instance.SetProperty("LevelOfControl", (value))
 }
 
 // GetLevelOfControl gets the value of LevelOfControl for the instance
@@ -67,16 +69,25 @@ func (instance *Win32_TSRemoteControlSetting) GetPropertyLevelOfControl() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPolicySourceLevelOfControl sets the value of PolicySourceLevelOfControl for the instance
 func (instance *Win32_TSRemoteControlSetting) SetPropertyPolicySourceLevelOfControl(value uint32) (err error) {
-	return instance.SetProperty("PolicySourceLevelOfControl", value)
+	return instance.SetProperty("PolicySourceLevelOfControl", (value))
 }
 
 // GetPolicySourceLevelOfControl gets the value of PolicySourceLevelOfControl for the instance
@@ -85,16 +96,25 @@ func (instance *Win32_TSRemoteControlSetting) GetPropertyPolicySourceLevelOfCont
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRemoteControlPolicy sets the value of RemoteControlPolicy for the instance
 func (instance *Win32_TSRemoteControlSetting) SetPropertyRemoteControlPolicy(value uint32) (err error) {
-	return instance.SetProperty("RemoteControlPolicy", value)
+	return instance.SetProperty("RemoteControlPolicy", (value))
 }
 
 // GetRemoteControlPolicy gets the value of RemoteControlPolicy for the instance
@@ -103,10 +123,19 @@ func (instance *Win32_TSRemoteControlSetting) GetPropertyRemoteControlPolicy() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 

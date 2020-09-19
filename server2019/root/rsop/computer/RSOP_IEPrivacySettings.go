@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEPrivacySettings struct
@@ -71,7 +73,7 @@ func NewRSOP_IEPrivacySettingsEx6(hostName string,
 
 // SetfirstPartyPrivacyType sets the value of firstPartyPrivacyType for the instance
 func (instance *RSOP_IEPrivacySettings) SetPropertyfirstPartyPrivacyType(value uint32) (err error) {
-	return instance.SetProperty("firstPartyPrivacyType", value)
+	return instance.SetProperty("firstPartyPrivacyType", (value))
 }
 
 // GetfirstPartyPrivacyType gets the value of firstPartyPrivacyType for the instance
@@ -80,16 +82,25 @@ func (instance *RSOP_IEPrivacySettings) GetPropertyfirstPartyPrivacyType() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetfirstPartyPrivacyTypeText sets the value of firstPartyPrivacyTypeText for the instance
 func (instance *RSOP_IEPrivacySettings) SetPropertyfirstPartyPrivacyTypeText(value string) (err error) {
-	return instance.SetProperty("firstPartyPrivacyTypeText", value)
+	return instance.SetProperty("firstPartyPrivacyTypeText", (value))
 }
 
 // GetfirstPartyPrivacyTypeText gets the value of firstPartyPrivacyTypeText for the instance
@@ -98,16 +109,25 @@ func (instance *RSOP_IEPrivacySettings) GetPropertyfirstPartyPrivacyTypeText() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IEPrivacySettings) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -116,16 +136,25 @@ func (instance *RSOP_IEPrivacySettings) GetPropertyrsopID() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IEPrivacySettings) SetPropertyrsopPrecedence(value int32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -134,16 +163,25 @@ func (instance *RSOP_IEPrivacySettings) GetPropertyrsopPrecedence() (value int32
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetthirdPartyPrivacyType sets the value of thirdPartyPrivacyType for the instance
 func (instance *RSOP_IEPrivacySettings) SetPropertythirdPartyPrivacyType(value uint32) (err error) {
-	return instance.SetProperty("thirdPartyPrivacyType", value)
+	return instance.SetProperty("thirdPartyPrivacyType", (value))
 }
 
 // GetthirdPartyPrivacyType gets the value of thirdPartyPrivacyType for the instance
@@ -152,16 +190,25 @@ func (instance *RSOP_IEPrivacySettings) GetPropertythirdPartyPrivacyType() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetthirdPartyPrivacyTypeText sets the value of thirdPartyPrivacyTypeText for the instance
 func (instance *RSOP_IEPrivacySettings) SetPropertythirdPartyPrivacyTypeText(value string) (err error) {
-	return instance.SetProperty("thirdPartyPrivacyTypeText", value)
+	return instance.SetProperty("thirdPartyPrivacyTypeText", (value))
 }
 
 // GetthirdPartyPrivacyTypeText gets the value of thirdPartyPrivacyTypeText for the instance
@@ -170,16 +217,25 @@ func (instance *RSOP_IEPrivacySettings) GetPropertythirdPartyPrivacyTypeText() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetuseAdvancedSettings sets the value of useAdvancedSettings for the instance
 func (instance *RSOP_IEPrivacySettings) SetPropertyuseAdvancedSettings(value bool) (err error) {
-	return instance.SetProperty("useAdvancedSettings", value)
+	return instance.SetProperty("useAdvancedSettings", (value))
 }
 
 // GetuseAdvancedSettings gets the value of useAdvancedSettings for the instance
@@ -188,9 +244,18 @@ func (instance *RSOP_IEPrivacySettings) GetPropertyuseAdvancedSettings() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

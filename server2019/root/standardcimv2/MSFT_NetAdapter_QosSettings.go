@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_QosSettings struct
@@ -77,7 +79,7 @@ func NewMSFT_NetAdapter_QosSettingsEx6(hostName string,
 
 // SetBandwidthAssignmentTable sets the value of BandwidthAssignmentTable for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyBandwidthAssignmentTable(value []uint8) (err error) {
-	return instance.SetProperty("BandwidthAssignmentTable", value)
+	return instance.SetProperty("BandwidthAssignmentTable", (value))
 }
 
 // GetBandwidthAssignmentTable gets the value of BandwidthAssignmentTable for the instance
@@ -86,16 +88,26 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyBandwidthAssignmentTable
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetClassificationEnabled sets the value of ClassificationEnabled for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyClassificationEnabled(value bool) (err error) {
-	return instance.SetProperty("ClassificationEnabled", value)
+	return instance.SetProperty("ClassificationEnabled", (value))
 }
 
 // GetClassificationEnabled gets the value of ClassificationEnabled for the instance
@@ -104,16 +116,25 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyClassificationEnabled() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetClassificationTable sets the value of ClassificationTable for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyClassificationTable(value []MSFT_NetAdapter_QosClassificationElement) (err error) {
-	return instance.SetProperty("ClassificationTable", value)
+	return instance.SetProperty("ClassificationTable", (value))
 }
 
 // GetClassificationTable gets the value of ClassificationTable for the instance
@@ -122,16 +143,26 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyClassificationTable() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_NetAdapter_QosClassificationElement)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_NetAdapter_QosClassificationElement)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_NetAdapter_QosClassificationElement is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_NetAdapter_QosClassificationElement(valuetmp))
+	}
+
 	return
 }
 
 // SetFlowControlEnabled sets the value of FlowControlEnabled for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyFlowControlEnabled(value bool) (err error) {
-	return instance.SetProperty("FlowControlEnabled", value)
+	return instance.SetProperty("FlowControlEnabled", (value))
 }
 
 // GetFlowControlEnabled gets the value of FlowControlEnabled for the instance
@@ -140,16 +171,25 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyFlowControlEnabled() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetNumberOfClassificationElements sets the value of NumberOfClassificationElements for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyNumberOfClassificationElements(value uint32) (err error) {
-	return instance.SetProperty("NumberOfClassificationElements", value)
+	return instance.SetProperty("NumberOfClassificationElements", (value))
 }
 
 // GetNumberOfClassificationElements gets the value of NumberOfClassificationElements for the instance
@@ -158,16 +198,25 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyNumberOfClassificationEl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPriorityAssignmentTable sets the value of PriorityAssignmentTable for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyPriorityAssignmentTable(value []uint8) (err error) {
-	return instance.SetProperty("PriorityAssignmentTable", value)
+	return instance.SetProperty("PriorityAssignmentTable", (value))
 }
 
 // GetPriorityAssignmentTable gets the value of PriorityAssignmentTable for the instance
@@ -176,16 +225,26 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyPriorityAssignmentTable(
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }
 
 // SetPriorityFlowControlEnableArray sets the value of PriorityFlowControlEnableArray for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyPriorityFlowControlEnableArray(value []bool) (err error) {
-	return instance.SetProperty("PriorityFlowControlEnableArray", value)
+	return instance.SetProperty("PriorityFlowControlEnableArray", (value))
 }
 
 // GetPriorityFlowControlEnableArray gets the value of PriorityFlowControlEnableArray for the instance
@@ -194,16 +253,26 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyPriorityFlowControlEnabl
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(bool)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, bool(valuetmp))
+	}
+
 	return
 }
 
 // SetTransmissionSelectionEnabled sets the value of TransmissionSelectionEnabled for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyTransmissionSelectionEnabled(value bool) (err error) {
-	return instance.SetProperty("TransmissionSelectionEnabled", value)
+	return instance.SetProperty("TransmissionSelectionEnabled", (value))
 }
 
 // GetTransmissionSelectionEnabled gets the value of TransmissionSelectionEnabled for the instance
@@ -212,16 +281,25 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyTransmissionSelectionEna
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetTsaAssignmentTable sets the value of TsaAssignmentTable for the instance
 func (instance *MSFT_NetAdapter_QosSettings) SetPropertyTsaAssignmentTable(value []uint8) (err error) {
-	return instance.SetProperty("TsaAssignmentTable", value)
+	return instance.SetProperty("TsaAssignmentTable", (value))
 }
 
 // GetTsaAssignmentTable gets the value of TsaAssignmentTable for the instance
@@ -230,9 +308,19 @@ func (instance *MSFT_NetAdapter_QosSettings) GetPropertyTsaAssignmentTable() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(uint8)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, uint8(valuetmp))
+	}
+
 	return
 }

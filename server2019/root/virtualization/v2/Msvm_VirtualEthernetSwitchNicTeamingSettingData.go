@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualEthernetSwitchNicTeamingSettingData struct
@@ -55,7 +57,7 @@ func NewMsvm_VirtualEthernetSwitchNicTeamingSettingDataEx6(hostName string,
 
 // SetLoadBalancingAlgorithm sets the value of LoadBalancingAlgorithm for the instance
 func (instance *Msvm_VirtualEthernetSwitchNicTeamingSettingData) SetPropertyLoadBalancingAlgorithm(value uint32) (err error) {
-	return instance.SetProperty("LoadBalancingAlgorithm", value)
+	return instance.SetProperty("LoadBalancingAlgorithm", (value))
 }
 
 // GetLoadBalancingAlgorithm gets the value of LoadBalancingAlgorithm for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_VirtualEthernetSwitchNicTeamingSettingData) GetPropertyLoad
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTeamingMode sets the value of TeamingMode for the instance
 func (instance *Msvm_VirtualEthernetSwitchNicTeamingSettingData) SetPropertyTeamingMode(value uint32) (err error) {
-	return instance.SetProperty("TeamingMode", value)
+	return instance.SetProperty("TeamingMode", (value))
 }
 
 // GetTeamingMode gets the value of TeamingMode for the instance
@@ -82,12 +93,21 @@ func (instance *Msvm_VirtualEthernetSwitchNicTeamingSettingData) GetPropertyTeam
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
-func (instance *Msvm_VirtualEthernetSwitchNicTeamingSettingData) GetRelatedEthernetSwitchFeatureCapabilities() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_EthernetSwitchFeatureCapabilities")
+func (instance *Msvm_VirtualEthernetSwitchNicTeamingSettingData) GetRelatedVirtualEthernetSwitchSettingData() (value *cim.WmiInstance, err error) {
+	return instance.GetRelated("Msvm_VirtualEthernetSwitchSettingData")
 }

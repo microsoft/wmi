@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_FilterEntryBase struct
@@ -61,7 +63,7 @@ func NewCIM_FilterEntryBaseEx6(hostName string,
 
 // SetCreationClassName sets the value of CreationClassName for the instance
 func (instance *CIM_FilterEntryBase) SetPropertyCreationClassName(value string) (err error) {
-	return instance.SetProperty("CreationClassName", value)
+	return instance.SetProperty("CreationClassName", (value))
 }
 
 // GetCreationClassName gets the value of CreationClassName for the instance
@@ -70,16 +72,25 @@ func (instance *CIM_FilterEntryBase) GetPropertyCreationClassName() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetIsNegated sets the value of IsNegated for the instance
 func (instance *CIM_FilterEntryBase) SetPropertyIsNegated(value bool) (err error) {
-	return instance.SetProperty("IsNegated", value)
+	return instance.SetProperty("IsNegated", (value))
 }
 
 // GetIsNegated gets the value of IsNegated for the instance
@@ -88,16 +99,25 @@ func (instance *CIM_FilterEntryBase) GetPropertyIsNegated() (value bool, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSystemCreationClassName sets the value of SystemCreationClassName for the instance
 func (instance *CIM_FilterEntryBase) SetPropertySystemCreationClassName(value string) (err error) {
-	return instance.SetProperty("SystemCreationClassName", value)
+	return instance.SetProperty("SystemCreationClassName", (value))
 }
 
 // GetSystemCreationClassName gets the value of SystemCreationClassName for the instance
@@ -106,16 +126,25 @@ func (instance *CIM_FilterEntryBase) GetPropertySystemCreationClassName() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetSystemName sets the value of SystemName for the instance
 func (instance *CIM_FilterEntryBase) SetPropertySystemName(value string) (err error) {
-	return instance.SetProperty("SystemName", value)
+	return instance.SetProperty("SystemName", (value))
 }
 
 // GetSystemName gets the value of SystemName for the instance
@@ -124,9 +153,18 @@ func (instance *CIM_FilterEntryBase) GetPropertySystemName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

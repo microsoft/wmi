@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator struct
@@ -88,7 +90,7 @@ func NewWin32_PerfFormattedData_MSDTC_DistributedTransactionCoordinatorEx6(hostN
 
 // SetAbortedTransactions sets the value of AbortedTransactions for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyAbortedTransactions(value uint32) (err error) {
-	return instance.SetProperty("AbortedTransactions", value)
+	return instance.SetProperty("AbortedTransactions", (value))
 }
 
 // GetAbortedTransactions gets the value of AbortedTransactions for the instance
@@ -97,16 +99,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetAbortedTransactionsPersec sets the value of AbortedTransactionsPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyAbortedTransactionsPersec(value uint32) (err error) {
-	return instance.SetProperty("AbortedTransactionsPersec", value)
+	return instance.SetProperty("AbortedTransactionsPersec", (value))
 }
 
 // GetAbortedTransactionsPersec gets the value of AbortedTransactionsPersec for the instance
@@ -115,16 +126,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActiveTransactions sets the value of ActiveTransactions for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyActiveTransactions(value uint32) (err error) {
-	return instance.SetProperty("ActiveTransactions", value)
+	return instance.SetProperty("ActiveTransactions", (value))
 }
 
 // GetActiveTransactions gets the value of ActiveTransactions for the instance
@@ -133,16 +153,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetActiveTransactionsMaximum sets the value of ActiveTransactionsMaximum for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyActiveTransactionsMaximum(value uint32) (err error) {
-	return instance.SetProperty("ActiveTransactionsMaximum", value)
+	return instance.SetProperty("ActiveTransactionsMaximum", (value))
 }
 
 // GetActiveTransactionsMaximum gets the value of ActiveTransactionsMaximum for the instance
@@ -151,16 +180,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCommittedTransactions sets the value of CommittedTransactions for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyCommittedTransactions(value uint32) (err error) {
-	return instance.SetProperty("CommittedTransactions", value)
+	return instance.SetProperty("CommittedTransactions", (value))
 }
 
 // GetCommittedTransactions gets the value of CommittedTransactions for the instance
@@ -169,16 +207,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCommittedTransactionsPersec sets the value of CommittedTransactionsPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyCommittedTransactionsPersec(value uint32) (err error) {
-	return instance.SetProperty("CommittedTransactionsPersec", value)
+	return instance.SetProperty("CommittedTransactionsPersec", (value))
 }
 
 // GetCommittedTransactionsPersec gets the value of CommittedTransactionsPersec for the instance
@@ -187,16 +234,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetForceAbortedTransactions sets the value of ForceAbortedTransactions for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyForceAbortedTransactions(value uint32) (err error) {
-	return instance.SetProperty("ForceAbortedTransactions", value)
+	return instance.SetProperty("ForceAbortedTransactions", (value))
 }
 
 // GetForceAbortedTransactions gets the value of ForceAbortedTransactions for the instance
@@ -205,16 +261,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetForceCommittedTransactions sets the value of ForceCommittedTransactions for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyForceCommittedTransactions(value uint32) (err error) {
-	return instance.SetProperty("ForceCommittedTransactions", value)
+	return instance.SetProperty("ForceCommittedTransactions", (value))
 }
 
 // GetForceCommittedTransactions gets the value of ForceCommittedTransactions for the instance
@@ -223,16 +288,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetInDoubtTransactions sets the value of InDoubtTransactions for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyInDoubtTransactions(value uint32) (err error) {
-	return instance.SetProperty("InDoubtTransactions", value)
+	return instance.SetProperty("InDoubtTransactions", (value))
 }
 
 // GetInDoubtTransactions gets the value of InDoubtTransactions for the instance
@@ -241,16 +315,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResponseTimeAverage sets the value of ResponseTimeAverage for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyResponseTimeAverage(value uint32) (err error) {
-	return instance.SetProperty("ResponseTimeAverage", value)
+	return instance.SetProperty("ResponseTimeAverage", (value))
 }
 
 // GetResponseTimeAverage gets the value of ResponseTimeAverage for the instance
@@ -259,16 +342,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResponseTimeMaximum sets the value of ResponseTimeMaximum for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyResponseTimeMaximum(value uint32) (err error) {
-	return instance.SetProperty("ResponseTimeMaximum", value)
+	return instance.SetProperty("ResponseTimeMaximum", (value))
 }
 
 // GetResponseTimeMaximum gets the value of ResponseTimeMaximum for the instance
@@ -277,16 +369,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetResponseTimeMinimum sets the value of ResponseTimeMinimum for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyResponseTimeMinimum(value uint32) (err error) {
-	return instance.SetProperty("ResponseTimeMinimum", value)
+	return instance.SetProperty("ResponseTimeMinimum", (value))
 }
 
 // GetResponseTimeMinimum gets the value of ResponseTimeMinimum for the instance
@@ -295,16 +396,25 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTransactionsPersec sets the value of TransactionsPersec for the instance
 func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator) SetPropertyTransactionsPersec(value uint32) (err error) {
-	return instance.SetProperty("TransactionsPersec", value)
+	return instance.SetProperty("TransactionsPersec", (value))
 }
 
 // GetTransactionsPersec gets the value of TransactionsPersec for the instance
@@ -313,9 +423,18 @@ func (instance *Win32_PerfFormattedData_MSDTC_DistributedTransactionCoordinator)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

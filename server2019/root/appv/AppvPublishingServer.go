@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Appv
 //////////////////////////////////////////////
 package appv
@@ -11,7 +11,9 @@ package appv
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // AppvPublishingServer struct
@@ -83,7 +85,7 @@ func NewAppvPublishingServerEx6(hostName string,
 
 // SetGlobalRefreshEnabled sets the value of GlobalRefreshEnabled for the instance
 func (instance *AppvPublishingServer) SetPropertyGlobalRefreshEnabled(value bool) (err error) {
-	return instance.SetProperty("GlobalRefreshEnabled", value)
+	return instance.SetProperty("GlobalRefreshEnabled", (value))
 }
 
 // GetGlobalRefreshEnabled gets the value of GlobalRefreshEnabled for the instance
@@ -92,16 +94,25 @@ func (instance *AppvPublishingServer) GetPropertyGlobalRefreshEnabled() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetGlobalRefreshInterval sets the value of GlobalRefreshInterval for the instance
 func (instance *AppvPublishingServer) SetPropertyGlobalRefreshInterval(value uint32) (err error) {
-	return instance.SetProperty("GlobalRefreshInterval", value)
+	return instance.SetProperty("GlobalRefreshInterval", (value))
 }
 
 // GetGlobalRefreshInterval gets the value of GlobalRefreshInterval for the instance
@@ -110,16 +121,25 @@ func (instance *AppvPublishingServer) GetPropertyGlobalRefreshInterval() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetGlobalRefreshIntervalUnit sets the value of GlobalRefreshIntervalUnit for the instance
 func (instance *AppvPublishingServer) SetPropertyGlobalRefreshIntervalUnit(value string) (err error) {
-	return instance.SetProperty("GlobalRefreshIntervalUnit", value)
+	return instance.SetProperty("GlobalRefreshIntervalUnit", (value))
 }
 
 // GetGlobalRefreshIntervalUnit gets the value of GlobalRefreshIntervalUnit for the instance
@@ -128,16 +148,25 @@ func (instance *AppvPublishingServer) GetPropertyGlobalRefreshIntervalUnit() (va
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetGlobalRefreshOnLogon sets the value of GlobalRefreshOnLogon for the instance
 func (instance *AppvPublishingServer) SetPropertyGlobalRefreshOnLogon(value bool) (err error) {
-	return instance.SetProperty("GlobalRefreshOnLogon", value)
+	return instance.SetProperty("GlobalRefreshOnLogon", (value))
 }
 
 // GetGlobalRefreshOnLogon gets the value of GlobalRefreshOnLogon for the instance
@@ -146,16 +175,25 @@ func (instance *AppvPublishingServer) GetPropertyGlobalRefreshOnLogon() (value b
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetID sets the value of ID for the instance
 func (instance *AppvPublishingServer) SetPropertyID(value uint32) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -164,16 +202,25 @@ func (instance *AppvPublishingServer) GetPropertyID() (value uint32, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSetByGroupPolicy sets the value of SetByGroupPolicy for the instance
 func (instance *AppvPublishingServer) SetPropertySetByGroupPolicy(value bool) (err error) {
-	return instance.SetProperty("SetByGroupPolicy", value)
+	return instance.SetProperty("SetByGroupPolicy", (value))
 }
 
 // GetSetByGroupPolicy gets the value of SetByGroupPolicy for the instance
@@ -182,16 +229,25 @@ func (instance *AppvPublishingServer) GetPropertySetByGroupPolicy() (value bool,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUrl sets the value of Url for the instance
 func (instance *AppvPublishingServer) SetPropertyUrl(value string) (err error) {
-	return instance.SetProperty("Url", value)
+	return instance.SetProperty("Url", (value))
 }
 
 // GetUrl gets the value of Url for the instance
@@ -200,16 +256,25 @@ func (instance *AppvPublishingServer) GetPropertyUrl() (value string, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserRefreshEnabled sets the value of UserRefreshEnabled for the instance
 func (instance *AppvPublishingServer) SetPropertyUserRefreshEnabled(value bool) (err error) {
-	return instance.SetProperty("UserRefreshEnabled", value)
+	return instance.SetProperty("UserRefreshEnabled", (value))
 }
 
 // GetUserRefreshEnabled gets the value of UserRefreshEnabled for the instance
@@ -218,16 +283,25 @@ func (instance *AppvPublishingServer) GetPropertyUserRefreshEnabled() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetUserRefreshInterval sets the value of UserRefreshInterval for the instance
 func (instance *AppvPublishingServer) SetPropertyUserRefreshInterval(value uint32) (err error) {
-	return instance.SetProperty("UserRefreshInterval", value)
+	return instance.SetProperty("UserRefreshInterval", (value))
 }
 
 // GetUserRefreshInterval gets the value of UserRefreshInterval for the instance
@@ -236,16 +310,25 @@ func (instance *AppvPublishingServer) GetPropertyUserRefreshInterval() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUserRefreshIntervalUnit sets the value of UserRefreshIntervalUnit for the instance
 func (instance *AppvPublishingServer) SetPropertyUserRefreshIntervalUnit(value string) (err error) {
-	return instance.SetProperty("UserRefreshIntervalUnit", value)
+	return instance.SetProperty("UserRefreshIntervalUnit", (value))
 }
 
 // GetUserRefreshIntervalUnit gets the value of UserRefreshIntervalUnit for the instance
@@ -254,16 +337,25 @@ func (instance *AppvPublishingServer) GetPropertyUserRefreshIntervalUnit() (valu
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetUserRefreshOnLogon sets the value of UserRefreshOnLogon for the instance
 func (instance *AppvPublishingServer) SetPropertyUserRefreshOnLogon(value bool) (err error) {
-	return instance.SetProperty("UserRefreshOnLogon", value)
+	return instance.SetProperty("UserRefreshOnLogon", (value))
 }
 
 // GetUserRefreshOnLogon gets the value of UserRefreshOnLogon for the instance
@@ -272,9 +364,18 @@ func (instance *AppvPublishingServer) GetPropertyUserRefreshOnLogon() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

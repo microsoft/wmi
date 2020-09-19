@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerFeature struct
@@ -80,7 +82,7 @@ func NewMSFT_ServerFeatureEx6(hostName string,
 
 // SetBpaModels sets the value of BpaModels for the instance
 func (instance *MSFT_ServerFeature) SetPropertyBpaModels(value []string) (err error) {
-	return instance.SetProperty("BpaModels", value)
+	return instance.SetProperty("BpaModels", (value))
 }
 
 // GetBpaModels gets the value of BpaModels for the instance
@@ -89,16 +91,26 @@ func (instance *MSFT_ServerFeature) GetPropertyBpaModels() (value []string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetConfigurationStatus sets the value of ConfigurationStatus for the instance
 func (instance *MSFT_ServerFeature) SetPropertyConfigurationStatus(value uint8) (err error) {
-	return instance.SetProperty("ConfigurationStatus", value)
+	return instance.SetProperty("ConfigurationStatus", (value))
 }
 
 // GetConfigurationStatus gets the value of ConfigurationStatus for the instance
@@ -107,16 +119,25 @@ func (instance *MSFT_ServerFeature) GetPropertyConfigurationStatus() (value uint
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetDisplayName sets the value of DisplayName for the instance
 func (instance *MSFT_ServerFeature) SetPropertyDisplayName(value string) (err error) {
-	return instance.SetProperty("DisplayName", value)
+	return instance.SetProperty("DisplayName", (value))
 }
 
 // GetDisplayName gets the value of DisplayName for the instance
@@ -125,16 +146,25 @@ func (instance *MSFT_ServerFeature) GetPropertyDisplayName() (value string, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetEventQuery sets the value of EventQuery for the instance
 func (instance *MSFT_ServerFeature) SetPropertyEventQuery(value string) (err error) {
-	return instance.SetProperty("EventQuery", value)
+	return instance.SetProperty("EventQuery", (value))
 }
 
 // GetEventQuery gets the value of EventQuery for the instance
@@ -143,16 +173,25 @@ func (instance *MSFT_ServerFeature) GetPropertyEventQuery() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetId sets the value of Id for the instance
 func (instance *MSFT_ServerFeature) SetPropertyId(value int32) (err error) {
-	return instance.SetProperty("Id", value)
+	return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
@@ -161,16 +200,25 @@ func (instance *MSFT_ServerFeature) GetPropertyId() (value int32, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetParentName sets the value of ParentName for the instance
 func (instance *MSFT_ServerFeature) SetPropertyParentName(value string) (err error) {
-	return instance.SetProperty("ParentName", value)
+	return instance.SetProperty("ParentName", (value))
 }
 
 // GetParentName gets the value of ParentName for the instance
@@ -179,16 +227,25 @@ func (instance *MSFT_ServerFeature) GetPropertyParentName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetServices sets the value of Services for the instance
 func (instance *MSFT_ServerFeature) SetPropertyServices(value []string) (err error) {
-	return instance.SetProperty("Services", value)
+	return instance.SetProperty("Services", (value))
 }
 
 // GetServices gets the value of Services for the instance
@@ -197,16 +254,26 @@ func (instance *MSFT_ServerFeature) GetPropertyServices() (value []string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetState sets the value of State for the instance
 func (instance *MSFT_ServerFeature) SetPropertyState(value uint8) (err error) {
-	return instance.SetProperty("State", value)
+	return instance.SetProperty("State", (value))
 }
 
 // GetState gets the value of State for the instance
@@ -215,16 +282,25 @@ func (instance *MSFT_ServerFeature) GetPropertyState() (value uint8, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetType sets the value of Type for the instance
 func (instance *MSFT_ServerFeature) SetPropertyType(value uint8) (err error) {
-	return instance.SetProperty("Type", value)
+	return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
@@ -233,16 +309,25 @@ func (instance *MSFT_ServerFeature) GetPropertyType() (value uint8, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint8)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint8)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint8(valuetmp)
+
 	return
 }
 
 // SetUniqueName sets the value of UniqueName for the instance
 func (instance *MSFT_ServerFeature) SetPropertyUniqueName(value string) (err error) {
-	return instance.SetProperty("UniqueName", value)
+	return instance.SetProperty("UniqueName", (value))
 }
 
 // GetUniqueName gets the value of UniqueName for the instance
@@ -251,9 +336,18 @@ func (instance *MSFT_ServerFeature) GetPropertyUniqueName() (value string, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

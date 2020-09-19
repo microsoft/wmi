@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000 struct
@@ -91,7 +93,7 @@ func NewWin32_PerfRawData_SMSvcHost4000_SMSvcHost4000Ex6(hostName string,
 
 // SetConnectionsAcceptedovernetpipe sets the value of ConnectionsAcceptedovernetpipe for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyConnectionsAcceptedovernetpipe(value uint32) (err error) {
-	return instance.SetProperty("ConnectionsAcceptedovernetpipe", value)
+	return instance.SetProperty("ConnectionsAcceptedovernetpipe", (value))
 }
 
 // GetConnectionsAcceptedovernetpipe gets the value of ConnectionsAcceptedovernetpipe for the instance
@@ -100,16 +102,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyConnec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConnectionsAcceptedovernettcp sets the value of ConnectionsAcceptedovernettcp for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyConnectionsAcceptedovernettcp(value uint32) (err error) {
-	return instance.SetProperty("ConnectionsAcceptedovernettcp", value)
+	return instance.SetProperty("ConnectionsAcceptedovernettcp", (value))
 }
 
 // GetConnectionsAcceptedovernettcp gets the value of ConnectionsAcceptedovernettcp for the instance
@@ -118,16 +129,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyConnec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConnectionsDispatchedovernetpipe sets the value of ConnectionsDispatchedovernetpipe for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyConnectionsDispatchedovernetpipe(value uint32) (err error) {
-	return instance.SetProperty("ConnectionsDispatchedovernetpipe", value)
+	return instance.SetProperty("ConnectionsDispatchedovernetpipe", (value))
 }
 
 // GetConnectionsDispatchedovernetpipe gets the value of ConnectionsDispatchedovernetpipe for the instance
@@ -136,16 +156,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyConnec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetConnectionsDispatchedovernettcp sets the value of ConnectionsDispatchedovernettcp for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyConnectionsDispatchedovernettcp(value uint32) (err error) {
-	return instance.SetProperty("ConnectionsDispatchedovernettcp", value)
+	return instance.SetProperty("ConnectionsDispatchedovernettcp", (value))
 }
 
 // GetConnectionsDispatchedovernettcp gets the value of ConnectionsDispatchedovernettcp for the instance
@@ -154,16 +183,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyConnec
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDispatchFailuresovernetpipe sets the value of DispatchFailuresovernetpipe for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyDispatchFailuresovernetpipe(value uint32) (err error) {
-	return instance.SetProperty("DispatchFailuresovernetpipe", value)
+	return instance.SetProperty("DispatchFailuresovernetpipe", (value))
 }
 
 // GetDispatchFailuresovernetpipe gets the value of DispatchFailuresovernetpipe for the instance
@@ -172,16 +210,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyDispat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetDispatchFailuresovernettcp sets the value of DispatchFailuresovernettcp for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyDispatchFailuresovernettcp(value uint32) (err error) {
-	return instance.SetProperty("DispatchFailuresovernettcp", value)
+	return instance.SetProperty("DispatchFailuresovernettcp", (value))
 }
 
 // GetDispatchFailuresovernettcp gets the value of DispatchFailuresovernettcp for the instance
@@ -190,16 +237,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyDispat
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProtocolFailuresovernetpipe sets the value of ProtocolFailuresovernetpipe for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyProtocolFailuresovernetpipe(value uint32) (err error) {
-	return instance.SetProperty("ProtocolFailuresovernetpipe", value)
+	return instance.SetProperty("ProtocolFailuresovernetpipe", (value))
 }
 
 // GetProtocolFailuresovernetpipe gets the value of ProtocolFailuresovernetpipe for the instance
@@ -208,16 +264,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetProtocolFailuresovernettcp sets the value of ProtocolFailuresovernettcp for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyProtocolFailuresovernettcp(value uint32) (err error) {
-	return instance.SetProperty("ProtocolFailuresovernettcp", value)
+	return instance.SetProperty("ProtocolFailuresovernettcp", (value))
 }
 
 // GetProtocolFailuresovernettcp gets the value of ProtocolFailuresovernettcp for the instance
@@ -226,16 +291,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyProtoc
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRegistrationsActivefornetpipe sets the value of RegistrationsActivefornetpipe for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyRegistrationsActivefornetpipe(value uint32) (err error) {
-	return instance.SetProperty("RegistrationsActivefornetpipe", value)
+	return instance.SetProperty("RegistrationsActivefornetpipe", (value))
 }
 
 // GetRegistrationsActivefornetpipe gets the value of RegistrationsActivefornetpipe for the instance
@@ -244,16 +318,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyRegist
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetRegistrationsActivefornettcp sets the value of RegistrationsActivefornettcp for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyRegistrationsActivefornettcp(value uint32) (err error) {
-	return instance.SetProperty("RegistrationsActivefornettcp", value)
+	return instance.SetProperty("RegistrationsActivefornettcp", (value))
 }
 
 // GetRegistrationsActivefornettcp gets the value of RegistrationsActivefornettcp for the instance
@@ -262,16 +345,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyRegist
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUrisRegisteredfornetpipe sets the value of UrisRegisteredfornetpipe for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyUrisRegisteredfornetpipe(value uint32) (err error) {
-	return instance.SetProperty("UrisRegisteredfornetpipe", value)
+	return instance.SetProperty("UrisRegisteredfornetpipe", (value))
 }
 
 // GetUrisRegisteredfornetpipe gets the value of UrisRegisteredfornetpipe for the instance
@@ -280,16 +372,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyUrisRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUrisRegisteredfornettcp sets the value of UrisRegisteredfornettcp for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyUrisRegisteredfornettcp(value uint32) (err error) {
-	return instance.SetProperty("UrisRegisteredfornettcp", value)
+	return instance.SetProperty("UrisRegisteredfornettcp", (value))
 }
 
 // GetUrisRegisteredfornettcp gets the value of UrisRegisteredfornettcp for the instance
@@ -298,16 +399,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyUrisRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUrisUnregisteredfornetpipe sets the value of UrisUnregisteredfornetpipe for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyUrisUnregisteredfornetpipe(value uint32) (err error) {
-	return instance.SetProperty("UrisUnregisteredfornetpipe", value)
+	return instance.SetProperty("UrisUnregisteredfornetpipe", (value))
 }
 
 // GetUrisUnregisteredfornetpipe gets the value of UrisUnregisteredfornetpipe for the instance
@@ -316,16 +426,25 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyUrisUn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetUrisUnregisteredfornettcp sets the value of UrisUnregisteredfornettcp for the instance
 func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) SetPropertyUrisUnregisteredfornettcp(value uint32) (err error) {
-	return instance.SetProperty("UrisUnregisteredfornettcp", value)
+	return instance.SetProperty("UrisUnregisteredfornettcp", (value))
 }
 
 // GetUrisUnregisteredfornettcp gets the value of UrisUnregisteredfornettcp for the instance
@@ -334,9 +453,18 @@ func (instance *Win32_PerfRawData_SMSvcHost4000_SMSvcHost4000) GetPropertyUrisUn
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

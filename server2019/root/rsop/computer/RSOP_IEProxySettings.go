@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IEProxySettings struct
@@ -80,7 +82,7 @@ func NewRSOP_IEProxySettingsEx6(hostName string,
 
 // SetenableProxy sets the value of enableProxy for the instance
 func (instance *RSOP_IEProxySettings) SetPropertyenableProxy(value bool) (err error) {
-	return instance.SetProperty("enableProxy", value)
+	return instance.SetProperty("enableProxy", (value))
 }
 
 // GetenableProxy gets the value of enableProxy for the instance
@@ -89,16 +91,25 @@ func (instance *RSOP_IEProxySettings) GetPropertyenableProxy() (value bool, err 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetftpProxyServer sets the value of ftpProxyServer for the instance
 func (instance *RSOP_IEProxySettings) SetPropertyftpProxyServer(value string) (err error) {
-	return instance.SetProperty("ftpProxyServer", value)
+	return instance.SetProperty("ftpProxyServer", (value))
 }
 
 // GetftpProxyServer gets the value of ftpProxyServer for the instance
@@ -107,16 +118,25 @@ func (instance *RSOP_IEProxySettings) GetPropertyftpProxyServer() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetgopherProxyServer sets the value of gopherProxyServer for the instance
 func (instance *RSOP_IEProxySettings) SetPropertygopherProxyServer(value string) (err error) {
-	return instance.SetProperty("gopherProxyServer", value)
+	return instance.SetProperty("gopherProxyServer", (value))
 }
 
 // GetgopherProxyServer gets the value of gopherProxyServer for the instance
@@ -125,16 +145,25 @@ func (instance *RSOP_IEProxySettings) GetPropertygopherProxyServer() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SethttpProxyServer sets the value of httpProxyServer for the instance
 func (instance *RSOP_IEProxySettings) SetPropertyhttpProxyServer(value string) (err error) {
-	return instance.SetProperty("httpProxyServer", value)
+	return instance.SetProperty("httpProxyServer", (value))
 }
 
 // GethttpProxyServer gets the value of httpProxyServer for the instance
@@ -143,16 +172,25 @@ func (instance *RSOP_IEProxySettings) GetPropertyhttpProxyServer() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetproxyOverride sets the value of proxyOverride for the instance
 func (instance *RSOP_IEProxySettings) SetPropertyproxyOverride(value string) (err error) {
-	return instance.SetProperty("proxyOverride", value)
+	return instance.SetProperty("proxyOverride", (value))
 }
 
 // GetproxyOverride gets the value of proxyOverride for the instance
@@ -161,16 +199,25 @@ func (instance *RSOP_IEProxySettings) GetPropertyproxyOverride() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IEProxySettings) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -179,16 +226,25 @@ func (instance *RSOP_IEProxySettings) GetPropertyrsopID() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IEProxySettings) SetPropertyrsopPrecedence(value uint32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -197,16 +253,25 @@ func (instance *RSOP_IEProxySettings) GetPropertyrsopPrecedence() (value uint32,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetsecureProxyServer sets the value of secureProxyServer for the instance
 func (instance *RSOP_IEProxySettings) SetPropertysecureProxyServer(value string) (err error) {
-	return instance.SetProperty("secureProxyServer", value)
+	return instance.SetProperty("secureProxyServer", (value))
 }
 
 // GetsecureProxyServer gets the value of secureProxyServer for the instance
@@ -215,16 +280,25 @@ func (instance *RSOP_IEProxySettings) GetPropertysecureProxyServer() (value stri
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetsocksProxyServer sets the value of socksProxyServer for the instance
 func (instance *RSOP_IEProxySettings) SetPropertysocksProxyServer(value string) (err error) {
-	return instance.SetProperty("socksProxyServer", value)
+	return instance.SetProperty("socksProxyServer", (value))
 }
 
 // GetsocksProxyServer gets the value of socksProxyServer for the instance
@@ -233,16 +307,25 @@ func (instance *RSOP_IEProxySettings) GetPropertysocksProxyServer() (value strin
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetuseSameProxy sets the value of useSameProxy for the instance
 func (instance *RSOP_IEProxySettings) SetPropertyuseSameProxy(value bool) (err error) {
-	return instance.SetProperty("useSameProxy", value)
+	return instance.SetProperty("useSameProxy", (value))
 }
 
 // GetuseSameProxy gets the value of useSameProxy for the instance
@@ -251,9 +334,18 @@ func (instance *RSOP_IEProxySettings) GetPropertyuseSameProxy() (value bool, err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_Counters_XHCICommonBuffer struct
@@ -61,7 +63,7 @@ func NewWin32_PerfRawData_Counters_XHCICommonBufferEx6(hostName string,
 
 // SetAllocationCount sets the value of AllocationCount for the instance
 func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) SetPropertyAllocationCount(value uint32) (err error) {
-	return instance.SetProperty("AllocationCount", value)
+	return instance.SetProperty("AllocationCount", (value))
 }
 
 // GetAllocationCount gets the value of AllocationCount for the instance
@@ -70,16 +72,25 @@ func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) GetPropertyAllocati
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFreeCount sets the value of FreeCount for the instance
 func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) SetPropertyFreeCount(value uint32) (err error) {
-	return instance.SetProperty("FreeCount", value)
+	return instance.SetProperty("FreeCount", (value))
 }
 
 // GetFreeCount gets the value of FreeCount for the instance
@@ -88,16 +99,25 @@ func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) GetPropertyFreeCoun
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPagesInUse sets the value of PagesInUse for the instance
 func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) SetPropertyPagesInUse(value uint32) (err error) {
-	return instance.SetProperty("PagesInUse", value)
+	return instance.SetProperty("PagesInUse", (value))
 }
 
 // GetPagesInUse gets the value of PagesInUse for the instance
@@ -106,16 +126,25 @@ func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) GetPropertyPagesInU
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPagesTotal sets the value of PagesTotal for the instance
 func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) SetPropertyPagesTotal(value uint32) (err error) {
-	return instance.SetProperty("PagesTotal", value)
+	return instance.SetProperty("PagesTotal", (value))
 }
 
 // GetPagesTotal gets the value of PagesTotal for the instance
@@ -124,9 +153,18 @@ func (instance *Win32_PerfRawData_Counters_XHCICommonBuffer) GetPropertyPagesTot
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

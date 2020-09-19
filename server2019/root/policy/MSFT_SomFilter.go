@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Policy
 //////////////////////////////////////////////
 package policy
@@ -11,7 +11,9 @@ package policy
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_SomFilter struct
@@ -77,7 +79,7 @@ func NewMSFT_SomFilterEx6(hostName string,
 
 // SetAuthor sets the value of Author for the instance
 func (instance *MSFT_SomFilter) SetPropertyAuthor(value string) (err error) {
-	return instance.SetProperty("Author", value)
+	return instance.SetProperty("Author", (value))
 }
 
 // GetAuthor gets the value of Author for the instance
@@ -86,16 +88,25 @@ func (instance *MSFT_SomFilter) GetPropertyAuthor() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetChangeDate sets the value of ChangeDate for the instance
 func (instance *MSFT_SomFilter) SetPropertyChangeDate(value string) (err error) {
-	return instance.SetProperty("ChangeDate", value)
+	return instance.SetProperty("ChangeDate", (value))
 }
 
 // GetChangeDate gets the value of ChangeDate for the instance
@@ -104,16 +115,25 @@ func (instance *MSFT_SomFilter) GetPropertyChangeDate() (value string, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetCreationDate sets the value of CreationDate for the instance
 func (instance *MSFT_SomFilter) SetPropertyCreationDate(value string) (err error) {
-	return instance.SetProperty("CreationDate", value)
+	return instance.SetProperty("CreationDate", (value))
 }
 
 // GetCreationDate gets the value of CreationDate for the instance
@@ -122,16 +142,25 @@ func (instance *MSFT_SomFilter) GetPropertyCreationDate() (value string, err err
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDescription sets the value of Description for the instance
 func (instance *MSFT_SomFilter) SetPropertyDescription(value string) (err error) {
-	return instance.SetProperty("Description", value)
+	return instance.SetProperty("Description", (value))
 }
 
 // GetDescription gets the value of Description for the instance
@@ -140,16 +169,25 @@ func (instance *MSFT_SomFilter) GetPropertyDescription() (value string, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetDomain sets the value of Domain for the instance
 func (instance *MSFT_SomFilter) SetPropertyDomain(value string) (err error) {
-	return instance.SetProperty("Domain", value)
+	return instance.SetProperty("Domain", (value))
 }
 
 // GetDomain gets the value of Domain for the instance
@@ -158,16 +196,25 @@ func (instance *MSFT_SomFilter) GetPropertyDomain() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetID sets the value of ID for the instance
 func (instance *MSFT_SomFilter) SetPropertyID(value string) (err error) {
-	return instance.SetProperty("ID", value)
+	return instance.SetProperty("ID", (value))
 }
 
 // GetID gets the value of ID for the instance
@@ -176,16 +223,25 @@ func (instance *MSFT_SomFilter) GetPropertyID() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetName sets the value of Name for the instance
 func (instance *MSFT_SomFilter) SetPropertyName(value string) (err error) {
-	return instance.SetProperty("Name", value)
+	return instance.SetProperty("Name", (value))
 }
 
 // GetName gets the value of Name for the instance
@@ -194,16 +250,25 @@ func (instance *MSFT_SomFilter) GetPropertyName() (value string, err error) {
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetRules sets the value of Rules for the instance
 func (instance *MSFT_SomFilter) SetPropertyRules(value []MSFT_Rule) (err error) {
-	return instance.SetProperty("Rules", value)
+	return instance.SetProperty("Rules", (value))
 }
 
 // GetRules gets the value of Rules for the instance
@@ -212,16 +277,26 @@ func (instance *MSFT_SomFilter) GetPropertyRules() (value []MSFT_Rule, err error
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]MSFT_Rule)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(MSFT_Rule)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " MSFT_Rule is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, MSFT_Rule(valuetmp))
+	}
+
 	return
 }
 
 // SetSourceOrganization sets the value of SourceOrganization for the instance
 func (instance *MSFT_SomFilter) SetPropertySourceOrganization(value string) (err error) {
-	return instance.SetProperty("SourceOrganization", value)
+	return instance.SetProperty("SourceOrganization", (value))
 }
 
 // GetSourceOrganization gets the value of SourceOrganization for the instance
@@ -230,10 +305,19 @@ func (instance *MSFT_SomFilter) GetPropertySourceOrganization() (value string, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 

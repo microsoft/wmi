@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_MemoryCapacity struct
@@ -58,7 +60,7 @@ func NewCIM_MemoryCapacityEx6(hostName string,
 
 // SetMaximumMemoryCapacity sets the value of MaximumMemoryCapacity for the instance
 func (instance *CIM_MemoryCapacity) SetPropertyMaximumMemoryCapacity(value uint64) (err error) {
-	return instance.SetProperty("MaximumMemoryCapacity", value)
+	return instance.SetProperty("MaximumMemoryCapacity", (value))
 }
 
 // GetMaximumMemoryCapacity gets the value of MaximumMemoryCapacity for the instance
@@ -67,16 +69,25 @@ func (instance *CIM_MemoryCapacity) GetPropertyMaximumMemoryCapacity() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetMemoryType sets the value of MemoryType for the instance
 func (instance *CIM_MemoryCapacity) SetPropertyMemoryType(value uint16) (err error) {
-	return instance.SetProperty("MemoryType", value)
+	return instance.SetProperty("MemoryType", (value))
 }
 
 // GetMemoryType gets the value of MemoryType for the instance
@@ -85,16 +96,25 @@ func (instance *CIM_MemoryCapacity) GetPropertyMemoryType() (value uint16, err e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetMinimumMemoryCapacity sets the value of MinimumMemoryCapacity for the instance
 func (instance *CIM_MemoryCapacity) SetPropertyMinimumMemoryCapacity(value uint64) (err error) {
-	return instance.SetProperty("MinimumMemoryCapacity", value)
+	return instance.SetProperty("MinimumMemoryCapacity", (value))
 }
 
 // GetMinimumMemoryCapacity gets the value of MinimumMemoryCapacity for the instance
@@ -103,9 +123,18 @@ func (instance *CIM_MemoryCapacity) GetPropertyMinimumMemoryCapacity() (value ui
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

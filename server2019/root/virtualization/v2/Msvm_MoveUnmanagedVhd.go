@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_MoveUnmanagedVhd struct
@@ -55,7 +57,7 @@ func NewMsvm_MoveUnmanagedVhdEx6(hostName string,
 
 // SetVhdDestinationPath sets the value of VhdDestinationPath for the instance
 func (instance *Msvm_MoveUnmanagedVhd) SetPropertyVhdDestinationPath(value string) (err error) {
-	return instance.SetProperty("VhdDestinationPath", value)
+	return instance.SetProperty("VhdDestinationPath", (value))
 }
 
 // GetVhdDestinationPath gets the value of VhdDestinationPath for the instance
@@ -64,16 +66,25 @@ func (instance *Msvm_MoveUnmanagedVhd) GetPropertyVhdDestinationPath() (value st
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVhdSourcePath sets the value of VhdSourcePath for the instance
 func (instance *Msvm_MoveUnmanagedVhd) SetPropertyVhdSourcePath(value string) (err error) {
-	return instance.SetProperty("VhdSourcePath", value)
+	return instance.SetProperty("VhdSourcePath", (value))
 }
 
 // GetVhdSourcePath gets the value of VhdSourcePath for the instance
@@ -82,9 +93,18 @@ func (instance *Msvm_MoveUnmanagedVhd) GetPropertyVhdSourcePath() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

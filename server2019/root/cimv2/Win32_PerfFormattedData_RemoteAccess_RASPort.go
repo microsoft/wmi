@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfFormattedData_RemoteAccess_RASPort struct
@@ -100,7 +102,7 @@ func NewWin32_PerfFormattedData_RemoteAccess_RASPortEx6(hostName string,
 
 // SetAlignmentErrors sets the value of AlignmentErrors for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyAlignmentErrors(value uint32) (err error) {
-	return instance.SetProperty("AlignmentErrors", value)
+	return instance.SetProperty("AlignmentErrors", (value))
 }
 
 // GetAlignmentErrors gets the value of AlignmentErrors for the instance
@@ -109,16 +111,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyAlignme
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBufferOverrunErrors sets the value of BufferOverrunErrors for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyBufferOverrunErrors(value uint32) (err error) {
-	return instance.SetProperty("BufferOverrunErrors", value)
+	return instance.SetProperty("BufferOverrunErrors", (value))
 }
 
 // GetBufferOverrunErrors gets the value of BufferOverrunErrors for the instance
@@ -127,16 +138,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyBufferO
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBytesReceived sets the value of BytesReceived for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyBytesReceived(value uint64) (err error) {
-	return instance.SetProperty("BytesReceived", value)
+	return instance.SetProperty("BytesReceived", (value))
 }
 
 // GetBytesReceived gets the value of BytesReceived for the instance
@@ -145,16 +165,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyBytesRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesReceivedPerSec sets the value of BytesReceivedPerSec for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyBytesReceivedPerSec(value uint32) (err error) {
-	return instance.SetProperty("BytesReceivedPerSec", value)
+	return instance.SetProperty("BytesReceivedPerSec", (value))
 }
 
 // GetBytesReceivedPerSec gets the value of BytesReceivedPerSec for the instance
@@ -163,16 +192,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyBytesRe
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetBytesTransmitted sets the value of BytesTransmitted for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyBytesTransmitted(value uint64) (err error) {
-	return instance.SetProperty("BytesTransmitted", value)
+	return instance.SetProperty("BytesTransmitted", (value))
 }
 
 // GetBytesTransmitted gets the value of BytesTransmitted for the instance
@@ -181,16 +219,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyBytesTr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetBytesTransmittedPerSec sets the value of BytesTransmittedPerSec for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyBytesTransmittedPerSec(value uint32) (err error) {
-	return instance.SetProperty("BytesTransmittedPerSec", value)
+	return instance.SetProperty("BytesTransmittedPerSec", (value))
 }
 
 // GetBytesTransmittedPerSec gets the value of BytesTransmittedPerSec for the instance
@@ -199,16 +246,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyBytesTr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetCRCErrors sets the value of CRCErrors for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyCRCErrors(value uint32) (err error) {
-	return instance.SetProperty("CRCErrors", value)
+	return instance.SetProperty("CRCErrors", (value))
 }
 
 // GetCRCErrors gets the value of CRCErrors for the instance
@@ -217,16 +273,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyCRCErro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesReceived sets the value of FramesReceived for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyFramesReceived(value uint32) (err error) {
-	return instance.SetProperty("FramesReceived", value)
+	return instance.SetProperty("FramesReceived", (value))
 }
 
 // GetFramesReceived gets the value of FramesReceived for the instance
@@ -235,16 +300,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyFramesR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesReceivedPerSec sets the value of FramesReceivedPerSec for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyFramesReceivedPerSec(value uint32) (err error) {
-	return instance.SetProperty("FramesReceivedPerSec", value)
+	return instance.SetProperty("FramesReceivedPerSec", (value))
 }
 
 // GetFramesReceivedPerSec gets the value of FramesReceivedPerSec for the instance
@@ -253,16 +327,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyFramesR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesTransmitted sets the value of FramesTransmitted for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyFramesTransmitted(value uint32) (err error) {
-	return instance.SetProperty("FramesTransmitted", value)
+	return instance.SetProperty("FramesTransmitted", (value))
 }
 
 // GetFramesTransmitted gets the value of FramesTransmitted for the instance
@@ -271,16 +354,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyFramesT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetFramesTransmittedPerSec sets the value of FramesTransmittedPerSec for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyFramesTransmittedPerSec(value uint32) (err error) {
-	return instance.SetProperty("FramesTransmittedPerSec", value)
+	return instance.SetProperty("FramesTransmittedPerSec", (value))
 }
 
 // GetFramesTransmittedPerSec gets the value of FramesTransmittedPerSec for the instance
@@ -289,16 +381,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyFramesT
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentCompressionIn sets the value of PercentCompressionIn for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyPercentCompressionIn(value uint32) (err error) {
-	return instance.SetProperty("PercentCompressionIn", value)
+	return instance.SetProperty("PercentCompressionIn", (value))
 }
 
 // GetPercentCompressionIn gets the value of PercentCompressionIn for the instance
@@ -307,16 +408,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyPercent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetPercentCompressionOut sets the value of PercentCompressionOut for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyPercentCompressionOut(value uint32) (err error) {
-	return instance.SetProperty("PercentCompressionOut", value)
+	return instance.SetProperty("PercentCompressionOut", (value))
 }
 
 // GetPercentCompressionOut gets the value of PercentCompressionOut for the instance
@@ -325,16 +435,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyPercent
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSerialOverrunErrors sets the value of SerialOverrunErrors for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertySerialOverrunErrors(value uint32) (err error) {
-	return instance.SetProperty("SerialOverrunErrors", value)
+	return instance.SetProperty("SerialOverrunErrors", (value))
 }
 
 // GetSerialOverrunErrors gets the value of SerialOverrunErrors for the instance
@@ -343,16 +462,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertySerialO
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTimeoutErrors sets the value of TimeoutErrors for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyTimeoutErrors(value uint32) (err error) {
-	return instance.SetProperty("TimeoutErrors", value)
+	return instance.SetProperty("TimeoutErrors", (value))
 }
 
 // GetTimeoutErrors gets the value of TimeoutErrors for the instance
@@ -361,16 +489,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyTimeout
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalErrors sets the value of TotalErrors for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyTotalErrors(value uint32) (err error) {
-	return instance.SetProperty("TotalErrors", value)
+	return instance.SetProperty("TotalErrors", (value))
 }
 
 // GetTotalErrors gets the value of TotalErrors for the instance
@@ -379,16 +516,25 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyTotalEr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetTotalErrorsPerSec sets the value of TotalErrorsPerSec for the instance
 func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) SetPropertyTotalErrorsPerSec(value uint32) (err error) {
-	return instance.SetProperty("TotalErrorsPerSec", value)
+	return instance.SetProperty("TotalErrorsPerSec", (value))
 }
 
 // GetTotalErrorsPerSec gets the value of TotalErrorsPerSec for the instance
@@ -397,9 +543,18 @@ func (instance *Win32_PerfFormattedData_RemoteAccess_RASPort) GetPropertyTotalEr
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

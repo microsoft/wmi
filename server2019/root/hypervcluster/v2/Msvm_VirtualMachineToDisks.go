@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
@@ -11,7 +11,9 @@ package v2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Msvm_VirtualMachineToDisks struct
@@ -56,7 +58,7 @@ func NewMsvm_VirtualMachineToDisksEx6(hostName string,
 
 // SetDisksToExport sets the value of DisksToExport for the instance
 func (instance *Msvm_VirtualMachineToDisks) SetPropertyDisksToExport(value []string) (err error) {
-	return instance.SetProperty("DisksToExport", value)
+	return instance.SetProperty("DisksToExport", (value))
 }
 
 // GetDisksToExport gets the value of DisksToExport for the instance
@@ -65,16 +67,26 @@ func (instance *Msvm_VirtualMachineToDisks) GetPropertyDisksToExport() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetVirtualMachineId sets the value of VirtualMachineId for the instance
 func (instance *Msvm_VirtualMachineToDisks) SetPropertyVirtualMachineId(value string) (err error) {
-	return instance.SetProperty("VirtualMachineId", value)
+	return instance.SetProperty("VirtualMachineId", (value))
 }
 
 // GetVirtualMachineId gets the value of VirtualMachineId for the instance
@@ -83,9 +95,18 @@ func (instance *Msvm_VirtualMachineToDisks) GetPropertyVirtualMachineId() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }

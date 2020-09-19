@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
@@ -11,7 +11,9 @@ package standardcimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_NetAdapter_VmqFilter struct
@@ -59,7 +61,7 @@ func NewMSFT_NetAdapter_VmqFilterEx6(hostName string,
 
 // SetFilterID sets the value of FilterID for the instance
 func (instance *MSFT_NetAdapter_VmqFilter) SetPropertyFilterID(value uint32) (err error) {
-	return instance.SetProperty("FilterID", value)
+	return instance.SetProperty("FilterID", (value))
 }
 
 // GetFilterID gets the value of FilterID for the instance
@@ -68,16 +70,25 @@ func (instance *MSFT_NetAdapter_VmqFilter) GetPropertyFilterID() (value uint32, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetMacAddress sets the value of MacAddress for the instance
 func (instance *MSFT_NetAdapter_VmqFilter) SetPropertyMacAddress(value string) (err error) {
-	return instance.SetProperty("MacAddress", value)
+	return instance.SetProperty("MacAddress", (value))
 }
 
 // GetMacAddress gets the value of MacAddress for the instance
@@ -86,16 +97,25 @@ func (instance *MSFT_NetAdapter_VmqFilter) GetPropertyMacAddress() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetVlanID sets the value of VlanID for the instance
 func (instance *MSFT_NetAdapter_VmqFilter) SetPropertyVlanID(value uint16) (err error) {
-	return instance.SetProperty("VlanID", value)
+	return instance.SetProperty("VlanID", (value))
 }
 
 // GetVlanID gets the value of VlanID for the instance
@@ -104,9 +124,18 @@ func (instance *MSFT_NetAdapter_VmqFilter) GetPropertyVlanID() (value uint16, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }

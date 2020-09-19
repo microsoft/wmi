@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.StandardCimv2.mlnx
 //////////////////////////////////////////////
 package mlnx
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // CIM_NetworkPort struct
@@ -79,7 +81,7 @@ func NewCIM_NetworkPortEx6(hostName string,
 
 // SetActiveMaximumTransmissionUnit sets the value of ActiveMaximumTransmissionUnit for the instance
 func (instance *CIM_NetworkPort) SetPropertyActiveMaximumTransmissionUnit(value uint64) (err error) {
-	return instance.SetProperty("ActiveMaximumTransmissionUnit", value)
+	return instance.SetProperty("ActiveMaximumTransmissionUnit", (value))
 }
 
 // GetActiveMaximumTransmissionUnit gets the value of ActiveMaximumTransmissionUnit for the instance
@@ -88,16 +90,25 @@ func (instance *CIM_NetworkPort) GetPropertyActiveMaximumTransmissionUnit() (val
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetAutoSense sets the value of AutoSense for the instance
 func (instance *CIM_NetworkPort) SetPropertyAutoSense(value bool) (err error) {
-	return instance.SetProperty("AutoSense", value)
+	return instance.SetProperty("AutoSense", (value))
 }
 
 // GetAutoSense gets the value of AutoSense for the instance
@@ -106,16 +117,25 @@ func (instance *CIM_NetworkPort) GetPropertyAutoSense() (value bool, err error) 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetFullDuplex sets the value of FullDuplex for the instance
 func (instance *CIM_NetworkPort) SetPropertyFullDuplex(value bool) (err error) {
-	return instance.SetProperty("FullDuplex", value)
+	return instance.SetProperty("FullDuplex", (value))
 }
 
 // GetFullDuplex gets the value of FullDuplex for the instance
@@ -124,16 +144,25 @@ func (instance *CIM_NetworkPort) GetPropertyFullDuplex() (value bool, err error)
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetLinkTechnology sets the value of LinkTechnology for the instance
 func (instance *CIM_NetworkPort) SetPropertyLinkTechnology(value NetworkPort_LinkTechnology) (err error) {
-	return instance.SetProperty("LinkTechnology", value)
+	return instance.SetProperty("LinkTechnology", (value))
 }
 
 // GetLinkTechnology gets the value of LinkTechnology for the instance
@@ -142,16 +171,25 @@ func (instance *CIM_NetworkPort) GetPropertyLinkTechnology() (value NetworkPort_
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(NetworkPort_LinkTechnology)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = NetworkPort_LinkTechnology(valuetmp)
+
 	return
 }
 
 // SetNetworkAddresses sets the value of NetworkAddresses for the instance
 func (instance *CIM_NetworkPort) SetPropertyNetworkAddresses(value []string) (err error) {
-	return instance.SetProperty("NetworkAddresses", value)
+	return instance.SetProperty("NetworkAddresses", (value))
 }
 
 // GetNetworkAddresses gets the value of NetworkAddresses for the instance
@@ -160,16 +198,26 @@ func (instance *CIM_NetworkPort) GetPropertyNetworkAddresses() (value []string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetOtherLinkTechnology sets the value of OtherLinkTechnology for the instance
 func (instance *CIM_NetworkPort) SetPropertyOtherLinkTechnology(value string) (err error) {
-	return instance.SetProperty("OtherLinkTechnology", value)
+	return instance.SetProperty("OtherLinkTechnology", (value))
 }
 
 // GetOtherLinkTechnology gets the value of OtherLinkTechnology for the instance
@@ -178,16 +226,25 @@ func (instance *CIM_NetworkPort) GetPropertyOtherLinkTechnology() (value string,
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetOtherNetworkPortType sets the value of OtherNetworkPortType for the instance
 func (instance *CIM_NetworkPort) SetPropertyOtherNetworkPortType(value string) (err error) {
-	return instance.SetProperty("OtherNetworkPortType", value)
+	return instance.SetProperty("OtherNetworkPortType", (value))
 }
 
 // GetOtherNetworkPortType gets the value of OtherNetworkPortType for the instance
@@ -196,16 +253,25 @@ func (instance *CIM_NetworkPort) GetPropertyOtherNetworkPortType() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPermanentAddress sets the value of PermanentAddress for the instance
 func (instance *CIM_NetworkPort) SetPropertyPermanentAddress(value string) (err error) {
-	return instance.SetProperty("PermanentAddress", value)
+	return instance.SetProperty("PermanentAddress", (value))
 }
 
 // GetPermanentAddress gets the value of PermanentAddress for the instance
@@ -214,16 +280,25 @@ func (instance *CIM_NetworkPort) GetPropertyPermanentAddress() (value string, er
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetPortNumber sets the value of PortNumber for the instance
 func (instance *CIM_NetworkPort) SetPropertyPortNumber(value uint16) (err error) {
-	return instance.SetProperty("PortNumber", value)
+	return instance.SetProperty("PortNumber", (value))
 }
 
 // GetPortNumber gets the value of PortNumber for the instance
@@ -232,16 +307,25 @@ func (instance *CIM_NetworkPort) GetPropertyPortNumber() (value uint16, err erro
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint16)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint16)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint16(valuetmp)
+
 	return
 }
 
 // SetSupportedMaximumTransmissionUnit sets the value of SupportedMaximumTransmissionUnit for the instance
 func (instance *CIM_NetworkPort) SetPropertySupportedMaximumTransmissionUnit(value uint64) (err error) {
-	return instance.SetProperty("SupportedMaximumTransmissionUnit", value)
+	return instance.SetProperty("SupportedMaximumTransmissionUnit", (value))
 }
 
 // GetSupportedMaximumTransmissionUnit gets the value of SupportedMaximumTransmissionUnit for the instance
@@ -250,9 +334,18 @@ func (instance *CIM_NetworkPort) GetPropertySupportedMaximumTransmissionUnit() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }

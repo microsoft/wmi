@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
@@ -11,7 +11,9 @@ package cimv2
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_OfflineFilesSuspendInfo struct
@@ -56,7 +58,7 @@ func NewWin32_OfflineFilesSuspendInfoEx6(hostName string,
 
 // SetSuspended sets the value of Suspended for the instance
 func (instance *Win32_OfflineFilesSuspendInfo) SetPropertySuspended(value bool) (err error) {
-	return instance.SetProperty("Suspended", value)
+	return instance.SetProperty("Suspended", (value))
 }
 
 // GetSuspended gets the value of Suspended for the instance
@@ -65,16 +67,25 @@ func (instance *Win32_OfflineFilesSuspendInfo) GetPropertySuspended() (value boo
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetSuspendedRoot sets the value of SuspendedRoot for the instance
 func (instance *Win32_OfflineFilesSuspendInfo) SetPropertySuspendedRoot(value bool) (err error) {
-	return instance.SetProperty("SuspendedRoot", value)
+	return instance.SetProperty("SuspendedRoot", (value))
 }
 
 // GetSuspendedRoot gets the value of SuspendedRoot for the instance
@@ -83,9 +94,18 @@ func (instance *Win32_OfflineFilesSuspendInfo) GetPropertySuspendedRoot() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }

@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.Microsoft.Windows.ServerManager
 //////////////////////////////////////////////
 package servermanager
@@ -11,7 +11,9 @@ package servermanager
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // MSFT_ServerPerformanceCounterSamples struct
@@ -59,7 +61,7 @@ func NewMSFT_ServerPerformanceCounterSamplesEx6(hostName string,
 
 // SetCounterPaths sets the value of CounterPaths for the instance
 func (instance *MSFT_ServerPerformanceCounterSamples) SetPropertyCounterPaths(value []string) (err error) {
-	return instance.SetProperty("CounterPaths", value)
+	return instance.SetProperty("CounterPaths", (value))
 }
 
 // GetCounterPaths gets the value of CounterPaths for the instance
@@ -68,16 +70,26 @@ func (instance *MSFT_ServerPerformanceCounterSamples) GetPropertyCounterPaths() 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetTimestamps sets the value of Timestamps for the instance
 func (instance *MSFT_ServerPerformanceCounterSamples) SetPropertyTimestamps(value []string) (err error) {
-	return instance.SetProperty("Timestamps", value)
+	return instance.SetProperty("Timestamps", (value))
 }
 
 // GetTimestamps gets the value of Timestamps for the instance
@@ -86,16 +98,26 @@ func (instance *MSFT_ServerPerformanceCounterSamples) GetPropertyTimestamps() (v
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetValues sets the value of Values for the instance
 func (instance *MSFT_ServerPerformanceCounterSamples) SetPropertyValues(value []string) (err error) {
-	return instance.SetProperty("Values", value)
+	return instance.SetProperty("Values", (value))
 }
 
 // GetValues gets the value of Values for the instance
@@ -104,9 +126,19 @@ func (instance *MSFT_ServerPerformanceCounterSamples) GetPropertyValues() (value
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }

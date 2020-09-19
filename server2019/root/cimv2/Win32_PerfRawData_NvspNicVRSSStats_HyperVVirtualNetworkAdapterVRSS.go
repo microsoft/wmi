@@ -3,14 +3,16 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
 
 import (
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS struct
@@ -97,7 +99,7 @@ func NewWin32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSSEx6(ho
 
 // SetPostmoveReceivePacketsPerSecond sets the value of PostmoveReceivePacketsPerSecond for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyPostmoveReceivePacketsPerSecond(value uint64) (err error) {
-	return instance.SetProperty("PostmoveReceivePacketsPerSecond", value)
+	return instance.SetProperty("PostmoveReceivePacketsPerSecond", (value))
 }
 
 // GetPostmoveReceivePacketsPerSecond gets the value of PostmoveReceivePacketsPerSecond for the instance
@@ -106,16 +108,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPostmoveReceivePacketsTotal sets the value of PostmoveReceivePacketsTotal for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyPostmoveReceivePacketsTotal(value uint64) (err error) {
-	return instance.SetProperty("PostmoveReceivePacketsTotal", value)
+	return instance.SetProperty("PostmoveReceivePacketsTotal", (value))
 }
 
 // GetPostmoveReceivePacketsTotal gets the value of PostmoveReceivePacketsTotal for the instance
@@ -124,16 +135,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPostmoveSendPacketCompletionsPerSecond sets the value of PostmoveSendPacketCompletionsPerSecond for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyPostmoveSendPacketCompletionsPerSecond(value uint64) (err error) {
-	return instance.SetProperty("PostmoveSendPacketCompletionsPerSecond", value)
+	return instance.SetProperty("PostmoveSendPacketCompletionsPerSecond", (value))
 }
 
 // GetPostmoveSendPacketCompletionsPerSecond gets the value of PostmoveSendPacketCompletionsPerSecond for the instance
@@ -142,16 +162,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPostmoveSendPacketCompletionsTotal sets the value of PostmoveSendPacketCompletionsTotal for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyPostmoveSendPacketCompletionsTotal(value uint64) (err error) {
-	return instance.SetProperty("PostmoveSendPacketCompletionsTotal", value)
+	return instance.SetProperty("PostmoveSendPacketCompletionsTotal", (value))
 }
 
 // GetPostmoveSendPacketCompletionsTotal gets the value of PostmoveSendPacketCompletionsTotal for the instance
@@ -160,16 +189,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPostmoveSendPacketsPerSecond sets the value of PostmoveSendPacketsPerSecond for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyPostmoveSendPacketsPerSecond(value uint64) (err error) {
-	return instance.SetProperty("PostmoveSendPacketsPerSecond", value)
+	return instance.SetProperty("PostmoveSendPacketsPerSecond", (value))
 }
 
 // GetPostmoveSendPacketsPerSecond gets the value of PostmoveSendPacketsPerSecond for the instance
@@ -178,16 +216,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetPostmoveSendPacketsTotal sets the value of PostmoveSendPacketsTotal for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyPostmoveSendPacketsTotal(value uint64) (err error) {
-	return instance.SetProperty("PostmoveSendPacketsTotal", value)
+	return instance.SetProperty("PostmoveSendPacketsTotal", (value))
 }
 
 // GetPostmoveSendPacketsTotal gets the value of PostmoveSendPacketsTotal for the instance
@@ -196,16 +243,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceivePacketPerSecond sets the value of ReceivePacketPerSecond for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyReceivePacketPerSecond(value uint64) (err error) {
-	return instance.SetProperty("ReceivePacketPerSecond", value)
+	return instance.SetProperty("ReceivePacketPerSecond", (value))
 }
 
 // GetReceivePacketPerSecond gets the value of ReceivePacketPerSecond for the instance
@@ -214,16 +270,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceivePacketTotal sets the value of ReceivePacketTotal for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyReceivePacketTotal(value uint64) (err error) {
-	return instance.SetProperty("ReceivePacketTotal", value)
+	return instance.SetProperty("ReceivePacketTotal", (value))
 }
 
 // GetReceivePacketTotal gets the value of ReceivePacketTotal for the instance
@@ -232,16 +297,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetReceiveProcessor sets the value of ReceiveProcessor for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyReceiveProcessor(value uint32) (err error) {
-	return instance.SetProperty("ReceiveProcessor", value)
+	return instance.SetProperty("ReceiveProcessor", (value))
 }
 
 // GetReceiveProcessor gets the value of ReceiveProcessor for the instance
@@ -250,16 +324,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetReceiveProcessorGroup sets the value of ReceiveProcessorGroup for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertyReceiveProcessorGroup(value uint32) (err error) {
-	return instance.SetProperty("ReceiveProcessorGroup", value)
+	return instance.SetProperty("ReceiveProcessorGroup", (value))
 }
 
 // GetReceiveProcessorGroup gets the value of ReceiveProcessorGroup for the instance
@@ -268,16 +351,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSendPacketCompletionsPerSecond sets the value of SendPacketCompletionsPerSecond for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertySendPacketCompletionsPerSecond(value uint64) (err error) {
-	return instance.SetProperty("SendPacketCompletionsPerSecond", value)
+	return instance.SetProperty("SendPacketCompletionsPerSecond", (value))
 }
 
 // GetSendPacketCompletionsPerSecond gets the value of SendPacketCompletionsPerSecond for the instance
@@ -286,16 +378,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSendPacketCompletionsTotal sets the value of SendPacketCompletionsTotal for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertySendPacketCompletionsTotal(value uint64) (err error) {
-	return instance.SetProperty("SendPacketCompletionsTotal", value)
+	return instance.SetProperty("SendPacketCompletionsTotal", (value))
 }
 
 // GetSendPacketCompletionsTotal gets the value of SendPacketCompletionsTotal for the instance
@@ -304,16 +405,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSendPacketPerSecond sets the value of SendPacketPerSecond for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertySendPacketPerSecond(value uint64) (err error) {
-	return instance.SetProperty("SendPacketPerSecond", value)
+	return instance.SetProperty("SendPacketPerSecond", (value))
 }
 
 // GetSendPacketPerSecond gets the value of SendPacketPerSecond for the instance
@@ -322,16 +432,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSendPacketTotal sets the value of SendPacketTotal for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertySendPacketTotal(value uint64) (err error) {
-	return instance.SetProperty("SendPacketTotal", value)
+	return instance.SetProperty("SendPacketTotal", (value))
 }
 
 // GetSendPacketTotal gets the value of SendPacketTotal for the instance
@@ -340,16 +459,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint64)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint64)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint64(valuetmp)
+
 	return
 }
 
 // SetSendProcessor sets the value of SendProcessor for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertySendProcessor(value uint32) (err error) {
-	return instance.SetProperty("SendProcessor", value)
+	return instance.SetProperty("SendProcessor", (value))
 }
 
 // GetSendProcessor gets the value of SendProcessor for the instance
@@ -358,16 +486,25 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetSendProcessorGroup sets the value of SendProcessorGroup for the instance
 func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVRSS) SetPropertySendProcessorGroup(value uint32) (err error) {
-	return instance.SetProperty("SendProcessorGroup", value)
+	return instance.SetProperty("SendProcessorGroup", (value))
 }
 
 // GetSendProcessorGroup gets the value of SendProcessorGroup for the instance
@@ -376,9 +513,18 @@ func (instance *Win32_PerfRawData_NvspNicVRSSStats_HyperVVirtualNetworkAdapterVR
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }

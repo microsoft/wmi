@@ -3,7 +3,7 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 9/18/2020 using wmigen
 //      Source root.RSOP.Computer
 //////////////////////////////////////////////
 package computer
@@ -11,7 +11,9 @@ package computer
 import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
+	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+	"reflect"
 )
 
 // RSOP_IESecurityZoneSettings struct
@@ -89,7 +91,7 @@ func NewRSOP_IESecurityZoneSettingsEx6(hostName string,
 
 // SetactionValues sets the value of actionValues for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyactionValues(value []string) (err error) {
-	return instance.SetProperty("actionValues", value)
+	return instance.SetProperty("actionValues", (value))
 }
 
 // GetactionValues gets the value of actionValues for the instance
@@ -98,16 +100,26 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyactionValues() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
 
 // SetcurrentTemplateLevel sets the value of currentTemplateLevel for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertycurrentTemplateLevel(value uint32) (err error) {
-	return instance.SetProperty("currentTemplateLevel", value)
+	return instance.SetProperty("currentTemplateLevel", (value))
 }
 
 // GetcurrentTemplateLevel gets the value of currentTemplateLevel for the instance
@@ -116,16 +128,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertycurrentTemplateLevel() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // Setdescription sets the value of description for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertydescription(value string) (err error) {
-	return instance.SetProperty("description", value)
+	return instance.SetProperty("description", (value))
 }
 
 // Getdescription gets the value of description for the instance
@@ -134,16 +155,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertydescription() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetdisplayName sets the value of displayName for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertydisplayName(value string) (err error) {
-	return instance.SetProperty("displayName", value)
+	return instance.SetProperty("displayName", (value))
 }
 
 // GetdisplayName gets the value of displayName for the instance
@@ -152,16 +182,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertydisplayName() (value str
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // Setflags sets the value of flags for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyflags(value uint32) (err error) {
-	return instance.SetProperty("flags", value)
+	return instance.SetProperty("flags", (value))
 }
 
 // Getflags gets the value of flags for the instance
@@ -170,16 +209,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyflags() (value uint32, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SeticonPath sets the value of iconPath for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyiconPath(value string) (err error) {
-	return instance.SetProperty("iconPath", value)
+	return instance.SetProperty("iconPath", (value))
 }
 
 // GeticonPath gets the value of iconPath for the instance
@@ -188,16 +236,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyiconPath() (value string
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetminimumTemplateLevel sets the value of minimumTemplateLevel for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyminimumTemplateLevel(value uint32) (err error) {
-	return instance.SetProperty("minimumTemplateLevel", value)
+	return instance.SetProperty("minimumTemplateLevel", (value))
 }
 
 // GetminimumTemplateLevel gets the value of minimumTemplateLevel for the instance
@@ -206,16 +263,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyminimumTemplateLevel() (
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetrecommendedTemplateLevel sets the value of recommendedTemplateLevel for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyrecommendedTemplateLevel(value uint32) (err error) {
-	return instance.SetProperty("recommendedTemplateLevel", value)
+	return instance.SetProperty("recommendedTemplateLevel", (value))
 }
 
 // GetrecommendedTemplateLevel gets the value of recommendedTemplateLevel for the instance
@@ -224,16 +290,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyrecommendedTemplateLevel
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetrsopID sets the value of rsopID for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyrsopID(value string) (err error) {
-	return instance.SetProperty("rsopID", value)
+	return instance.SetProperty("rsopID", (value))
 }
 
 // GetrsopID gets the value of rsopID for the instance
@@ -242,16 +317,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyrsopID() (value string, 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = string(valuetmp)
+
 	return
 }
 
 // SetrsopPrecedence sets the value of rsopPrecedence for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyrsopPrecedence(value int32) (err error) {
-	return instance.SetProperty("rsopPrecedence", value)
+	return instance.SetProperty("rsopPrecedence", (value))
 }
 
 // GetrsopPrecedence gets the value of rsopPrecedence for the instance
@@ -260,16 +344,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyrsopPrecedence() (value 
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(int32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(int32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = int32(valuetmp)
+
 	return
 }
 
 // SetuseHKLM sets the value of useHKLM for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyuseHKLM(value bool) (err error) {
-	return instance.SetProperty("useHKLM", value)
+	return instance.SetProperty("useHKLM", (value))
 }
 
 // GetuseHKLM gets the value of useHKLM for the instance
@@ -278,16 +371,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyuseHKLM() (value bool, e
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(bool)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(bool)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = bool(valuetmp)
+
 	return
 }
 
 // SetzoneIndex sets the value of zoneIndex for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyzoneIndex(value uint32) (err error) {
-	return instance.SetProperty("zoneIndex", value)
+	return instance.SetProperty("zoneIndex", (value))
 }
 
 // GetzoneIndex gets the value of zoneIndex for the instance
@@ -296,16 +398,25 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyzoneIndex() (value uint3
 	if err != nil {
 		return
 	}
-	value, ok := retValue.(uint32)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	valuetmp, ok := retValue.(uint32)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return
+	}
+
+	value = uint32(valuetmp)
+
 	return
 }
 
 // SetzoneMappings sets the value of zoneMappings for the instance
 func (instance *RSOP_IESecurityZoneSettings) SetPropertyzoneMappings(value []string) (err error) {
-	return instance.SetProperty("zoneMappings", value)
+	return instance.SetProperty("zoneMappings", (value))
 }
 
 // GetzoneMappings gets the value of zoneMappings for the instance
@@ -314,9 +425,19 @@ func (instance *RSOP_IESecurityZoneSettings) GetPropertyzoneMappings() (value []
 	if err != nil {
 		return
 	}
-	value, ok := retValue.([]string)
-	if !ok {
-		// TODO: Set an error
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return
 	}
+
+	for _, interfaceValue := range retValue.([]interface{}) {
+		valuetmp, ok := interfaceValue.(string)
+		if !ok {
+			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+			return
+		}
+		value = append(value, string(valuetmp))
+	}
+
 	return
 }
