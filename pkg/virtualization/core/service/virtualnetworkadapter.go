@@ -279,7 +279,7 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortProfile(
 	}
 	defer pasd.Close()
 
-	return vmms.AddEthernetFeatureEx1(vna.Msvm_EthernetPortAllocationSettingData, profileSettings.WmiInstance)
+	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, profileSettings.WmiInstance)
 }
 
 func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortIsolation(

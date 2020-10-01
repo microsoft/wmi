@@ -98,7 +98,7 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 		return
 	}
 	val, ok := result.OutMethodParams["ResultingSystem"]
-	if ok {
+	if ok && val.Value != nil {
 		vminstance, err := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
 		if err == nil {
 			vm, err = virtualsystem.NewVirtualMachine(vminstance)
