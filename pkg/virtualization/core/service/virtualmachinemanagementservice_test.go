@@ -155,20 +155,18 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Connect VM[%s] to VirtualSwitch[%s]", "test", "test")
-
 		err = vmms.SetVirtualNetworkAdapterAccessVLAN(testna, uint16(i))
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Set Adapter VLAN [%d]", i)
 		err = vmms.SetVirtualNetworkAdapterPortProfile(testna, "test",
-			"1fa41b39-b444-b35a-e1f7985fd548",
-			"00000000-0000-0000-000000000000", 1)
+			"1FA41B39-B444-4E43-B35A-E1F7985FD548",
+			"08cf6a3b-f4ea-48d9-a29c-60370363fb19", 1)
 		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
+			t.Fatalf("Set PortProfile Failed [%+v]", err)
 		}
-		t.Logf("Set Adapter VLAN [%d]", i)
-
+		t.Logf("Set Adapter Port Profile [%d]", i)
 	}
 	for i := 1; i <= 4; i++ {
 		adapterName := fmt.Sprintf("testadapter-%d", i)
