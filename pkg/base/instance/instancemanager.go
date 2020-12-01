@@ -97,6 +97,7 @@ func (im *WmiInstanceManager) QueryInstanceEx(queryString string) (*wmi.WmiInsta
 
 	log.Printf("[WMI] QueryInstanceEx [%s]=>[%d]instances\n", queryString, len(instances))
 
+	// LEAK - return a clone and close the collection
 	return instances[0], nil
 }
 

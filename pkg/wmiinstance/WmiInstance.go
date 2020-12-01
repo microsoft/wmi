@@ -83,9 +83,6 @@ func (c *WmiInstance) GetIDispatch() *ole.IDispatch {
 func (c *WmiInstance) GetRawInstance() *ole.VARIANT {
 	return c.instanceVar
 }
-func (c *WmiInstance) addRef() {
-	c.instance.AddRef()
-}
 
 func (c *WmiInstance) GetSystemProperty(name string) (*WmiProperty, error) {
 	// Documentation: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemobjectex-systemproperties-
@@ -214,7 +211,6 @@ func (c *WmiInstance) Equals(instance *WmiInstance) bool {
 func (c *WmiInstance) Clone() (*WmiInstance, error) {
 	rawResult, err := oleutil.CallMethod(c.instance, "Clone_")
 	winstance, err := CreateWmiInstance(rawResult, c.session)
-	winstance.addRef()
 	return winstance, err
 }
 
@@ -514,15 +510,6 @@ func CloseAllInstances(instances []*WmiInstance) {
 
 // Close
 func (c *WmiInstance) Close() (err error) {
-	if c.instance != nil {
-		// Releasing the instance and then Clearing the Variant, causes memory corruption
-		// Commenting this
-		// refCount := c.instance.Release()
-		// if refCount > 1 {
-		// 	return
-		// }
-		c.instance = nil
-	}
 	if c.instanceVar != nil {
 		// https://docs.microsoft.com/en-us/windows/win32/api/oleauto/nf-oleauto-variantclear
 		// VariantClear would release the reference if its VT_DISPATCH.
@@ -530,5 +517,6 @@ func (c *WmiInstance) Close() (err error) {
 		c.instanceVar.Clear()
 		c.instanceVar = nil
 	}
+
 	return
 }
