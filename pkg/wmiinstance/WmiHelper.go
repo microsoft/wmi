@@ -133,7 +133,6 @@ func GetVariantArrayAsWmiInstances(rawValues []ole.VARIANT, session *WmiSession)
 	for _, rawValue := range rawValues {
 		// skip wrong types and empty objects
 		if rawValue.VT != ole.VT_DISPATCH || rawValue.Val == 0 {
-			rawValue.Clear()
 			continue
 		}
 
