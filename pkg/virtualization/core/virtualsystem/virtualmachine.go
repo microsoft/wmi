@@ -25,7 +25,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/network/switchport"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type VirtualMachine struct {
@@ -81,6 +81,21 @@ func NewVirtualMachine(instance *wmi.WmiInstance) (*VirtualMachine, error) {
 func GetVirtualMachine(whost *host.WmiHost, vmName string) (vm *VirtualMachine, err error) {
 	creds := whost.GetCredential()
 	query := query.NewWmiQuery("Msvm_ComputerSystem", "ElementName", vmName)
+	wmivm, err := v2.NewMsvm_ComputerSystemEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
+	if err != nil {
+		return
+	}
+	vm = &VirtualMachine{wmivm}
+	return
+}
+
+// GetVirtualMachineByVMId gets an existing virtual machine
+func GetVirtualMachineByVMId(whost *host.WmiHost, vmName, vmID string) (vm *VirtualMachine, err error) {
+	if vmID == "" {
+		return GetVirtualMachine(whost, vmName)
+	}
+	creds := whost.GetCredential()
+	query := query.NewWmiQuery("Msvm_ComputerSystem", "ElementName", vmName, "Name", vmID)
 	wmivm, err := v2.NewMsvm_ComputerSystemEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
 	if err != nil {
 		return
