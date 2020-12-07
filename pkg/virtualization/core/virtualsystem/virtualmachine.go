@@ -77,8 +77,8 @@ func NewVirtualMachine(instance *wmi.WmiInstance) (*VirtualMachine, error) {
 	return &VirtualMachine{wmivm}, nil
 }
 
-// GetVirtualMachine gets an existing virtual machine
-func GetVirtualMachine(whost *host.WmiHost, vmName string) (vm *VirtualMachine, err error) {
+// GetVirtualMachineByVMName gets an existing virtual machine
+func GetVirtualMachineByVMName(whost *host.WmiHost, vmName string) (vm *VirtualMachine, err error) {
 	creds := whost.GetCredential()
 	query := query.NewWmiQuery("Msvm_ComputerSystem", "ElementName", vmName)
 	wmivm, err := v2.NewMsvm_ComputerSystemEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
@@ -90,12 +90,9 @@ func GetVirtualMachine(whost *host.WmiHost, vmName string) (vm *VirtualMachine, 
 }
 
 // GetVirtualMachineByVMId gets an existing virtual machine
-func GetVirtualMachineByVMId(whost *host.WmiHost, vmName, vmID string) (vm *VirtualMachine, err error) {
-	if vmID == "" {
-		return GetVirtualMachine(whost, vmName)
-	}
+func GetVirtualMachineByVMId(whost *host.WmiHost, vmID string) (vm *VirtualMachine, err error) {
 	creds := whost.GetCredential()
-	query := query.NewWmiQuery("Msvm_ComputerSystem", "ElementName", vmName, "Name", vmID)
+	query := query.NewWmiQuery("Msvm_ComputerSystem", "Name", vmID)
 	wmivm, err := v2.NewMsvm_ComputerSystemEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
 	if err != nil {
 		return
@@ -106,6 +103,11 @@ func GetVirtualMachineByVMId(whost *host.WmiHost, vmName, vmID string) (vm *Virt
 
 func (vm *VirtualMachine) Name() (name string) {
 	name, _ = vm.GetPropertyElementName()
+	return
+}
+
+func (vm *VirtualMachine) ID() (name string) {
+	name, _ = vm.GetPropertyName()
 	return
 }
 
