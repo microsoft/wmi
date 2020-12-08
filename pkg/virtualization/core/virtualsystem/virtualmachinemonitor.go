@@ -34,8 +34,8 @@ func CreateVirtualMachineMonitor(callbackContext interface{},
 	return &VirtualMachineMonitor{monitorBase}
 }
 
-func (m *VirtualMachineMonitor) AddEntity(entityName string) error {
+func (m *VirtualMachineMonitor) AddEntity(vmID string) error {
 	filters := query.WmiQueryFilterCollection{}
-	filters = append(filters, query.NewWmiQueryFilter("TargetInstance.ElementName", entityName, query.Equals))
-	return m.AddEntityWithFilter(entityName, queryString, filters)
+	filters = append(filters, query.NewWmiQueryFilter("TargetInstance.Name", vmID, query.Equals))
+	return m.AddEntityWithFilter(vmID, queryString, filters)
 }
