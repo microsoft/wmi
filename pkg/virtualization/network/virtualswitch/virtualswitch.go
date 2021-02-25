@@ -43,6 +43,19 @@ func GetVirtualSwitch(whost *host.WmiHost, vswitchName string) (vswitch *Virtual
 	return
 }
 
+// GetVirtualSwitch gets an existing virtual machine
+// Make sure to call Close once done using this instance
+func GetVirtualSwitchByID(whost *host.WmiHost, vswitchID string) (vswitch *VirtualSwitch, err error) {
+	creds := whost.GetCredential()
+	query := query.NewWmiQuery("Msvm_VirtualEthernetSwitch", "Name", vswitchID)
+	wmivm, err := v2.NewMsvm_VirtualEthernetSwitchEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
+	if err != nil {
+		return
+	}
+	vswitch = &VirtualSwitch{wmivm}
+	return
+}
+
 func (vs *VirtualSwitch) GetVirtualMachineAdapterByName(name string) (vadapter *na.VirtualNetworkAdapter, err error) {
 	adapters, err := vs.GetVirtualMachineAdapters()
 	if err != nil {
