@@ -5,7 +5,7 @@ package drive
 
 import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type DvdDrive struct {

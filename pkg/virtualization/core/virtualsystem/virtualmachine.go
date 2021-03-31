@@ -448,10 +448,6 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	}
 
 	dvd, err = drive.NewDvdDrive(rasd.WmiInstance)
-	if err != nil {
-		return
-	}
-
 	return
 }
 
@@ -467,13 +463,8 @@ func (vm *VirtualMachine) NewLogicalDisk() (ld *disk.LogicalDisk, err error) {
 	}
 
 	ld, err = disk.NewLogicalDisk(rasd.WmiInstance)
-	if err != nil {
-		return
-	}
-
 	return
 }
-
 
 func (vm *VirtualMachine) GetSCSIControllers() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Parallel_SCSI_HBA)

@@ -47,13 +47,13 @@ func TestCreateVirtualMachines(t *testing.T) {
 
 	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
 	if err != nil {
-		return
+		t.Fatalf("Failed [%+v]", err)
 	}
 	memorySettings.SetSizeMB(2048)
 
 	processorSettings, err := processor.GetDefaultProcessorSettingData(whost)
 	if err != nil {
-		return
+		t.Fatalf("Failed [%+v]", err)
 	}
 	processorSettings.SetCPUCount(2)
 

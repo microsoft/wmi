@@ -4,11 +4,11 @@
 package processor
 
 import (
-	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/constant"
+	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type ProcessorSettingData struct {
