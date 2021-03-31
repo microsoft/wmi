@@ -13,6 +13,8 @@ import (
 	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourceallocation"
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
+	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
+	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
@@ -62,7 +64,7 @@ func (vmms *VirtualSystemManagementService) GetVirtualMachineByName(vmName strin
 	return nil, errors.Wrapf(errors.NotFound, "Unable to find a virtual system with name [%s]", vmName)
 }
 
-func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtualsystem.VirtualSystemSettingData) (
+func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtualsystem.VirtualSystemSettingData, memorySettings *memory.MemorySettingData, processorSettings *processor.ProcessorSettingData) (
 	vm *virtualsystem.VirtualMachine,
 	err error) {
 
@@ -77,9 +79,20 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 		return
 	}
 
+	embeddedMemorySettingsInstance, err := memorySettings.EmbeddedXMLInstance()
+	if err != nil {
+		return
+	}
+	embeddedProcessorSettingsInstance, err := processorSettings.EmbeddedXMLInstance()
+	if err != nil {
+		return
+	}
+
+	resourceSettings := []string{embeddedMemorySettingsInstance, embeddedProcessorSettingsInstance}
+
 	inparams := wmi.WmiMethodParamCollection{}
 	inparams = append(inparams, wmi.NewWmiMethodParam("SystemSettings", embeddedInstance))
-	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", nil))
+	inparams = append(inparams, wmi.NewWmiMethodParam("ResourceSettings", resourceSettings))
 	inparams = append(inparams, wmi.NewWmiMethodParam("ReferenceConfiguration", nil))
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 	outparams = append(outparams, wmi.NewWmiMethodParam("ResultingSystem", nil))
@@ -89,11 +102,7 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 		return
 	}
 
-	if result.ReturnValue == 0 {
-		return
-	}
-
-	if result.ReturnValue != 4096 {
+	if !(result.ReturnValue == 4096 || result.ReturnValue == 0) {
 		err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
 		return
 	}
@@ -102,8 +111,11 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 		vminstance, err := instance.GetWmiInstanceFromPath(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
 		if err == nil {
 			vm, err = virtualsystem.NewVirtualMachine(vminstance)
-			//
 		}
+	}
+
+	if result.ReturnValue == 0 {
+		return
 	}
 
 	val, ok = result.OutMethodParams["Job"]

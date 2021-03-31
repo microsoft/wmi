@@ -10,6 +10,8 @@ import (
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
+	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
+	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/service"
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
@@ -43,7 +45,19 @@ func TestCreateVirtualMachines(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	vm, err := vmms.CreateVirtualMachine(setting)
+	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
+	if err != nil {
+		return
+	}
+	memorySettings.SetSizeMB(2048)
+
+	processorSettings, err := processor.GetDefaultProcessorSettingData(whost)
+	if err != nil {
+		return
+	}
+	processorSettings.SetCPUCount(2)
+
+	vm, err := vmms.CreateVirtualMachine(setting, memorySettings, processorSettings)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
