@@ -5,15 +5,14 @@ package drive
 
 import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type DvdDrive struct {
-	*v2.Msvm_StorageAllocationSettingData
+	*VirtualDrive
 }
 
 func NewDvdDrive(instance *wmi.WmiInstance) (*DvdDrive, error) {
-	wmivm, err := v2.NewMsvm_StorageAllocationSettingDataEx1(instance)
+	wmivm, err := NewVirtualDrive(instance)
 	if err != nil {
 		return nil, err
 	}

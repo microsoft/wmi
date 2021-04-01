@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 	"testing"
+	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
@@ -16,6 +17,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/service"
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
+	"github.com/nwoodmsft/iso9660"
 )
 
 var (
@@ -45,6 +47,11 @@ func TestCreateVirtualMachines(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
+	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
 	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
@@ -68,6 +75,85 @@ func TestCreateVirtualMachines(t *testing.T) {
 		}
 	}()
 	return
+}
+
+func TestAddRemoveIsoDisk(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "test")
+
+	// make sure there is a controller
+	err = vmms.AddSCSIController(vm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	path := "c:\\test\\tmp.iso"
+
+	// create an iso file
+	err = generateIso(path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	isodisk, dvddrive, err := vmms.AddISODisk(vm, path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer isodisk.Close()
+	defer dvddrive.Close()
+
+	t.Logf("Attached vhd [%s] to [%s]", path, "test")
+	controllerlocation, err := dvddrive.GetPropertyAddressOnParent()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	controllerNumber, err := dvddrive.GetControllerNumber()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
+
+	time.Sleep(2 * time.Minute)
+
+	// remove the iso disk
+	err = vmms.RemoveISODisk(isodisk)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Removed ISO disk [%s] from [%s]", path, "test")
+
+	err = os.Remove(path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+}
+
+func generateIso(path string) error {
+	writer, err := iso9660.NewWriter()
+	if err != nil {
+		return err
+	}
+	defer writer.Cleanup()
+
+	isofile, err := os.OpenFile(path, os.O_WRONLY|os.O_TRUNC|os.O_CREATE, 0644)
+	if err != nil {
+		return err
+	}
+	defer isofile.Close()
+
+	err = writer.WriteTo(isofile)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func TestModifyVirtualMachine(t *testing.T) {
