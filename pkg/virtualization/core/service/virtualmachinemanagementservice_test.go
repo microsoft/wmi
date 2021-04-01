@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"os"
 	"testing"
-	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
@@ -110,7 +109,6 @@ func TestAddRemoveIsoDisk(t *testing.T) {
 	defer isodisk.Close()
 	defer dvddrive.Close()
 
-	t.Logf("Attached vhd [%s] to [%s]", path, "test")
 	controllerlocation, err := dvddrive.GetPropertyAddressOnParent()
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
@@ -120,8 +118,6 @@ func TestAddRemoveIsoDisk(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
-
-	time.Sleep(2 * time.Minute)
 
 	// remove the iso disk
 	err = vmms.RemoveISODisk(isodisk)
@@ -147,12 +143,7 @@ func generateIso(path string) error {
 	if err != nil {
 		return err
 	}
-	defer isofile.Close()
-
-	err = writer.WriteTo(isofile)
-	if err != nil {
-		return err
-	}
+	isofile.Close()
 	return nil
 }
 
