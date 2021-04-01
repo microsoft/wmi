@@ -436,6 +436,36 @@ func (vm *VirtualMachine) NewVirtualHardDisk(path string) (vhd *disk.VirtualHard
 	return
 }
 
+func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
+	dvdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_DVD_drive)
+	if err != nil {
+		return
+	}
+	defer dvdrp.Close()
+	rasd, err := dvdrp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	dvd, err = drive.NewDvdDrive(rasd.WmiInstance)
+	return
+}
+
+func (vm *VirtualMachine) NewLogicalDisk() (ld *disk.LogicalDisk, err error) {
+	ldrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Logical_Disk)
+	if err != nil {
+		return
+	}
+	defer ldrp.Close()
+	rasd, err := ldrp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	ld, err = disk.NewLogicalDisk(rasd.WmiInstance)
+	return
+}
+
 func (vm *VirtualMachine) GetSCSIControllers() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Parallel_SCSI_HBA)
 	return
