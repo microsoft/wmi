@@ -5,6 +5,9 @@ package virtualsystem
 
 import (
 	"fmt"
+	"os"
+	"strconv"
+
 	//"log"
 	"time"
 
@@ -177,7 +180,11 @@ func (vm *VirtualMachine) Start() error {
 	if err != nil {
 		return err
 	}
-	return vm.WaitForState(Running, 30)
+	timeout, err := strconv.ParseUint(os.Getenv("WMI_VIRTUALMACHINE_TIMEOUT"), 10, 16)
+	if err != nil {
+		timeout = 30
+	}
+	return vm.WaitForState(Running, int32(timeout))
 }
 
 // ChangeState changes the state of the Virtual Machine

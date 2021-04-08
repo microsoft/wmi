@@ -8,6 +8,8 @@ package cim
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/errors"
@@ -198,7 +200,11 @@ func (job *WmiJob) WaitForJobCompletion(result int32) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
-		return job.WaitForAction(Wait, 100, 10)
+		timeout, err := strconv.ParseUint(os.Getenv("WMI_VIRTUALMACHINE_TIMEOUT"), 10, 16)
+		if err != nil {
+			timeout = 30
+		}
+		return job.WaitForAction(Wait, 100, uint16(timeout))
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Result[%d] ", result)
 	}

@@ -1,10 +1,11 @@
-// Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
 package job
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -186,7 +187,11 @@ func WaitForJobCompletionEx(result int32, currentJob *VirtualSystemJob) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
-		return currentJob.WaitForAction(wmi.Wait, 100, 30)
+		timeout, err := strconv.ParseUint(os.Getenv("WMI_VIRTUALMACHINE_TIMEOUT"), 10, 16)
+		if err != nil {
+			timeout = 30
+		}
+		return currentJob.WaitForAction(wmi.Wait, 100, uint16(timeout))
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Result[%d] ", result)
 	}
@@ -207,7 +212,11 @@ func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.Co
 			return err
 		}
 		defer vmjob.Close()
-		return vmjob.WaitForAction(wmi.Wait, 100, 30)
+		timeout, err := strconv.ParseUint(os.Getenv("WMI_VIRTUALMACHINE_TIMEOUT"), 10, 16)
+		if err != nil {
+			timeout = 30
+		}
+		return vmjob.WaitForAction(wmi.Wait, 100, uint16(timeout))
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Resource Pool Result[%d] JobType[%d]", result, jobType)
 	}
