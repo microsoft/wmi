@@ -66,7 +66,7 @@ func getService(whost *host.WmiHost) (mgmt *SecurityService, err error) {
 }
 
 // SetKey
-func (ss *SecurityService) SetKey(settings *wmi.WmiInstance) (err error) {
+func (ss *SecurityService) SetKey(settings *wmi.WmiInstance, timeoutSeconds uint16) (err error) {
 	method, err := ss.GetWmiMethod("SetKeyProtector")
 	if err != nil {
 		return
@@ -104,5 +104,5 @@ func (ss *SecurityService) SetKey(settings *wmi.WmiInstance) (err error) {
 		return
 	}
 	defer job.Close()
-	return job.WaitForJobCompletion(result.ReturnValue)
+	return job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 }

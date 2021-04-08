@@ -76,7 +76,8 @@ func (vmms *VirtualSystemManagementService) GetHostComputerSystem() (*wmihost.Ho
 //
 func (vmms *VirtualSystemManagementService) AddVirtualSystemResource(
 	vmsettings *virtualsystem.VirtualSystemSettingData,
-	data *v2.CIM_ResourceAllocationSettingData) (resultingResources wmi.WmiInstanceCollection, err error) {
+	data *v2.CIM_ResourceAllocationSettingData,
+	timeoutSeconds uint16) (resultingResources wmi.WmiInstanceCollection, err error) {
 
 	embeddedInstance, err := data.EmbeddedXMLInstance()
 	if err != nil {
@@ -139,22 +140,22 @@ func (vmms *VirtualSystemManagementService) AddVirtualSystemResource(
 			return
 		}
 		defer job.Close()
-		err = job.WaitForJobCompletion(result.ReturnValue)
+		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 		return
 	}
 	return
 }
 
-func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResourceEx(data *wmi.WmiInstance) (err error) {
-	result, err := vmms.ModifyVirtualSystemResource(wmi.WmiInstanceCollection{data})
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResourceEx(data *wmi.WmiInstance, timeoutSeconds uint16) (err error) {
+	result, err := vmms.ModifyVirtualSystemResource(wmi.WmiInstanceCollection{data}, timeoutSeconds)
 	if err != nil {
 		return
 	}
 	result.Close()
 	return
 }
-func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResourceEx2(data *wmi.WmiInstance) (instance *wmi.WmiInstance, err error) {
-	result, err := vmms.ModifyVirtualSystemResource(wmi.WmiInstanceCollection{data})
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResourceEx2(data *wmi.WmiInstance, timeoutSeconds uint16) (instance *wmi.WmiInstance, err error) {
+	result, err := vmms.ModifyVirtualSystemResource(wmi.WmiInstanceCollection{data}, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -168,7 +169,7 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResourceEx2(data 
 }
 
 // ModifyVirtualSystemResource
-func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi.WmiInstanceCollection) (
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi.WmiInstanceCollection, timeoutSeconds uint16) (
 	resultingResources wmi.WmiInstanceCollection, err error) {
 
 	embeddedInstance, err := data.EmbeddedXMLInstances()
@@ -229,7 +230,7 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi
 			return
 		}
 		defer job.Close()
-		err = job.WaitForJobCompletion(result.ReturnValue)
+		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 		return
 	}
 	return
@@ -237,7 +238,7 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemResource(data wmi
 
 // RemoveVirtualSystemResource - Will be removed, when auto gen code is regenerated
 func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
-	data *v2.CIM_ResourceAllocationSettingData) (err error) {
+	data *v2.CIM_ResourceAllocationSettingData, timeoutSeconds uint16) (err error) {
 	method, err := vmms.GetWmiMethod("RemoveResourceSettings")
 	if err != nil {
 		return
@@ -281,14 +282,14 @@ func (vmms *VirtualSystemManagementService) RemoveVirtualSystemResource(
 		}
 		defer job.Close()
 
-		err = job.WaitForJobCompletion(result.ReturnValue)
+		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 		return
 	}
 	return
 }
 
-func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeatureEx(data *wmi.WmiInstance) (err error) {
-	result, err := vmms.ModifyVirtualSystemFeature(wmi.WmiInstanceCollection{data})
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeatureEx(data *wmi.WmiInstance, timeoutSeconds uint16) (err error) {
+	result, err := vmms.ModifyVirtualSystemFeature(wmi.WmiInstanceCollection{data}, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -297,7 +298,7 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeatureEx(data *w
 }
 
 // ModifyVirtualSystemFeature
-func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeature(data wmi.WmiInstanceCollection) (
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeature(data wmi.WmiInstanceCollection, timeoutSeconds uint16) (
 	resultingFeatures wmi.WmiInstanceCollection, err error) {
 
 	embeddedInstance, err := data.EmbeddedXMLInstances()
@@ -358,7 +359,7 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeature(data wmi.
 			return
 		}
 		defer job.Close()
-		err = job.WaitForJobCompletion(result.ReturnValue)
+		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 		return
 	}
 	return

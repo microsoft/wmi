@@ -118,15 +118,15 @@ func (vsms *VirtualEthernetSwitchManagementService) FindVirtualSwitchByName(vmNa
 	return nil, errors.Wrapf(errors.NotFound, "Unable to find a virtual system with name [%s]", vmName)
 }
 
-func (vsms *VirtualEthernetSwitchManagementService) DeleteVirtualSwitch(vswitch *virtualswitch.VirtualSwitch) error {
+func (vsms *VirtualEthernetSwitchManagementService) DeleteVirtualSwitch(vswitch *virtualswitch.VirtualSwitch, timeoutSeconds uint16) error {
 	result, err := vsms.InvokeMethodWithReturn("DestroySystem", vswitch.InstancePath(), nil)
 	if err != nil {
 		return err
 	}
-	return vsms.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Destroy_Ethernet_Switch)
+	return vsms.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Destroy_Ethernet_Switch, timeoutSeconds)
 }
 
-func (vsms *VirtualEthernetSwitchManagementService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType) error {
+func (vsms *VirtualEthernetSwitchManagementService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds uint16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
@@ -137,7 +137,7 @@ func (vsms *VirtualEthernetSwitchManagementService) WaitForJobCompletion(result 
 		}
 		defer vswitchjob.Close()
 
-		return vswitchjob.WaitForAction(wmi.Wait, 100, 10)
+		return vswitchjob.WaitForAction(wmi.Wait, 100, timeoutSeconds)
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Virtual Switch [%d][%d]", result, jobType)
 	}

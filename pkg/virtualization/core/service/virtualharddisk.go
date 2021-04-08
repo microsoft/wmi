@@ -13,7 +13,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 )
 
-func (vmms *VirtualSystemManagementService) AddSCSIController(vm *virtualsystem.VirtualMachine) (err error) {
+func (vmms *VirtualSystemManagementService) AddSCSIController(vm *virtualsystem.VirtualMachine, timeoutSeconds uint16) (err error) {
 	tmp, err := vm.NewSCSIController()
 	if err != nil {
 		return err
@@ -27,7 +27,7 @@ func (vmms *VirtualSystemManagementService) AddSCSIController(vm *virtualsystem.
 	defer vmsetting.Close()
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -47,13 +47,13 @@ func (vmms *VirtualSystemManagementService) AddSCSIController(vm *virtualsystem.
 // *    Add a drive to available first controller at available location
 // * Connects the Disk to the Drive
 // Returns Disk and Drive
-func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsystem.VirtualMachine, path string) (
+func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsystem.VirtualMachine, path string, timeoutSeconds uint16) (
 	vhd *disk.VirtualHardDisk,
 	vhddrive *drive.SyntheticDiskDrive,
 	err error) {
 
 	// Add a drive
-	vhddrive, err = vmms.AddSyntheticDiskDrive(vm, -1, -1)
+	vhddrive, err = vmms.AddSyntheticDiskDrive(vm, -1, -1, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -62,7 +62,7 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 		if err != nil {
 			log.Printf("[%+v]\n", err)
 			// Remove the drive
-			err1 := vmms.RemoveSyntheticDiskDrive(vhddrive)
+			err1 := vmms.RemoveSyntheticDiskDrive(vhddrive, timeoutSeconds)
 			log.Printf("RemoveSyntheticDiskDrive [%+v]\n", err1)
 			vhddrive.Close()
 			vhddrive = nil
@@ -83,7 +83,7 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 	}
 
 	if !strings.Contains(vhdtmp.InstancePath(), "Definition") {
-		err = vmms.ModifyVirtualSystemResourceEx(vhdtmp.WmiInstance)
+		err = vmms.ModifyVirtualSystemResourceEx(vhdtmp.WmiInstance, timeoutSeconds)
 		if err != nil {
 			return
 		}
@@ -96,7 +96,7 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 	defer vmsetting.Close()
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhdtmp.CIM_ResourceAllocationSettingData)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhdtmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -120,7 +120,7 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 	return
 }
 
-func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.VirtualHardDisk) (err error) {
+func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.VirtualHardDisk, timeoutSeconds uint16) (err error) {
 	drive, err := vhd.GetDrive()
 	if err != nil {
 		return
@@ -128,9 +128,9 @@ func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.Virt
 	defer drive.Close()
 
 	// Remove Disk
-	err1 := vmms.RemoveVirtualSystemResource(vhd.CIM_ResourceAllocationSettingData)
+	err1 := vmms.RemoveVirtualSystemResource(vhd.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	// Remove Drive
-	err = vmms.RemoveVirtualSystemResource(drive.CIM_ResourceAllocationSettingData)
+	err = vmms.RemoveVirtualSystemResource(drive.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -143,7 +143,8 @@ func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.Virt
 
 func (vmms *VirtualSystemManagementService) AddSyntheticDiskDrive(vm *virtualsystem.VirtualMachine,
 	controllernumber,
-	controllerlocation int32) (vhddrive *drive.SyntheticDiskDrive, err error) {
+	controllerlocation int32,
+	timeoutSeconds uint16) (vhddrive *drive.SyntheticDiskDrive, err error) {
 	vmsetting, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
@@ -155,7 +156,7 @@ func (vmms *VirtualSystemManagementService) AddSyntheticDiskDrive(vm *virtualsys
 		return
 	}
 	defer vhddrivetmp.Close()
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhddrivetmp.CIM_ResourceAllocationSettingData)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhddrivetmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -175,7 +176,7 @@ func (vmms *VirtualSystemManagementService) AddSyntheticDiskDrive(vm *virtualsys
 }
 
 func (vmms *VirtualSystemManagementService) RemoveSyntheticDiskDrive(
-	vhddrive *drive.SyntheticDiskDrive) (err error) {
-	err = vmms.RemoveVirtualSystemResource(vhddrive.CIM_ResourceAllocationSettingData)
+	vhddrive *drive.SyntheticDiskDrive, timeoutSeconds uint16) (err error) {
+	err = vmms.RemoveVirtualSystemResource(vhddrive.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	return
 }
