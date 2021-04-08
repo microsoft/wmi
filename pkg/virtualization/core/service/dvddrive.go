@@ -12,12 +12,12 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 )
 
-func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.VirtualMachine, isoPath string) (
+func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.VirtualMachine, isoPath string, timeoutSeconds uint16) (
 	ld *disk.LogicalDisk,
 	dvddrive *drive.DvdDrive,
 	err error) {
 
-	dvddrive, err = vmms.AddDvdDrive(vm)
+	dvddrive, err = vmms.AddDvdDrive(vm, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -25,7 +25,7 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 	defer func() {
 		if err != nil {
 			log.Printf("[%+v]\n", err)
-			err1 := vmms.RemoveDvdDrive(dvddrive)
+			err1 := vmms.RemoveDvdDrive(dvddrive, timeoutSeconds)
 			log.Printf("RemoveDvdDrive [%+v]\n", err1)
 			dvddrive.Close()
 			dvddrive = nil
@@ -60,7 +60,7 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 	defer vmsetting.Close()
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmpld.CIM_ResourceAllocationSettingData)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmpld.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -84,7 +84,7 @@ func (vmms *VirtualSystemManagementService) AddISODisk(vm *virtualsystem.Virtual
 
 }
 
-func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) (err error) {
+func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk, timeoutSeconds uint16) (err error) {
 	dvddrive, err := ld.GetDrive()
 	if err != nil {
 		return
@@ -92,9 +92,9 @@ func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) 
 	defer dvddrive.Close()
 
 	// Remove Disk
-	err1 := vmms.RemoveVirtualSystemResource(ld.CIM_ResourceAllocationSettingData)
+	err1 := vmms.RemoveVirtualSystemResource(ld.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	// Remove Drive
-	err = vmms.RemoveVirtualSystemResource(dvddrive.CIM_ResourceAllocationSettingData)
+	err = vmms.RemoveVirtualSystemResource(dvddrive.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -105,7 +105,7 @@ func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) 
 	return
 }
 
-func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.VirtualMachine) (dvd *drive.DvdDrive, err error) {
+func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.VirtualMachine, timeoutSeconds uint16) (dvd *drive.DvdDrive, err error) {
 	// Add the dvd drive
 	tmp, err := vm.NewDvdDrive()
 	if err != nil {
@@ -120,7 +120,7 @@ func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.Virtua
 	defer vmsetting.Close()
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	if err != nil {
 		return
 	}
@@ -140,7 +140,7 @@ func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.Virtua
 	return
 }
 
-func (vmms *VirtualSystemManagementService) RemoveDvdDrive(dvd *drive.DvdDrive) (err error) {
-	err = vmms.RemoveVirtualSystemResource(dvd.CIM_ResourceAllocationSettingData)
+func (vmms *VirtualSystemManagementService) RemoveDvdDrive(dvd *drive.DvdDrive, timeoutSeconds uint16) (err error) {
+	err = vmms.RemoveVirtualSystemResource(dvd.CIM_ResourceAllocationSettingData, timeoutSeconds)
 	return
 }

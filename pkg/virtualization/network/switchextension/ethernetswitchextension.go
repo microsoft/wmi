@@ -57,16 +57,16 @@ func (ese *EthernetSwitchExtension) IsEnabled() (state bool, err error) {
 	return (value == int32(v2.EnabledLogicalElement_RequestedState_Enabled)), nil
 }
 
-func (ese *EthernetSwitchExtension) Enable() (err error) {
-	return ese.changeState(v2.EnabledLogicalElement_RequestedState_Enabled)
+func (ese *EthernetSwitchExtension) Enable(timeoutSeconds uint16) (err error) {
+	return ese.changeState(v2.EnabledLogicalElement_RequestedState_Enabled, timeoutSeconds)
 }
 
-func (ese *EthernetSwitchExtension) Disable() (err error) {
-	return ese.changeState(v2.EnabledLogicalElement_RequestedState_Disabled)
+func (ese *EthernetSwitchExtension) Disable(timeoutSeconds uint16) (err error) {
+	return ese.changeState(v2.EnabledLogicalElement_RequestedState_Disabled, timeoutSeconds)
 }
 
 //
-func (ese *EthernetSwitchExtension) changeState(state v2.EnabledLogicalElement_RequestedState) (err error) {
+func (ese *EthernetSwitchExtension) changeState(state v2.EnabledLogicalElement_RequestedState, timeoutSeconds uint16) (err error) {
 	method, err := ese.GetWmiMethod("RequestStateChange")
 	if err != nil {
 		return
@@ -99,6 +99,6 @@ func (ese *EthernetSwitchExtension) changeState(state v2.EnabledLogicalElement_R
 		return
 	}
 	defer job.Close()
-	err = job.WaitForJobCompletion(result.ReturnValue)
+	err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 	return
 }

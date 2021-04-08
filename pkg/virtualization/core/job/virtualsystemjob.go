@@ -182,11 +182,11 @@ func (vmjob *VirtualSystemJob) GetException() error {
 	return nil
 }
 
-func WaitForJobCompletionEx(result int32, currentJob *VirtualSystemJob) error {
+func WaitForJobCompletionEx(result int32, currentJob *VirtualSystemJob, timeoutSeconds uint16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
-		return currentJob.WaitForAction(wmi.Wait, 100, 30)
+		return currentJob.WaitForAction(wmi.Wait, 100, timeoutSeconds)
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Result[%d] ", result)
 	}
@@ -197,7 +197,7 @@ func WaitForJobCompletionEx2(instance *wmi.WmiInstance, result int32, jobName st
 	return nil
 }
 
-func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.ConcreteJob_JobType) error {
+func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds uint16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
@@ -207,7 +207,7 @@ func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.Co
 			return err
 		}
 		defer vmjob.Close()
-		return vmjob.WaitForAction(wmi.Wait, 100, 30)
+		return vmjob.WaitForAction(wmi.Wait, 100, timeoutSeconds)
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Resource Pool Result[%d] JobType[%d]", result, jobType)
 	}

@@ -194,11 +194,11 @@ func (job *WmiJob) GetException() error {
 	return nil
 }
 
-func (job *WmiJob) WaitForJobCompletion(result int32) error {
+func (job *WmiJob) WaitForJobCompletion(result int32, timeoutSeconds uint16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
-		return job.WaitForAction(Wait, 100, 10)
+		return job.WaitForAction(Wait, 100, timeoutSeconds)
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Result[%d] ", result)
 	}

@@ -70,7 +70,8 @@ func getService(whost *host.WmiHost) (mgmt *ResourcePoolConfigurationService, er
 // ModifyPoolResources
 func (rpcs *ResourcePoolConfigurationService) ModifyPoolResourcesEx(child resourcepool.ResourcePool,
 	parentPools resourcepool.ResourcePoolCollection,
-	rasds resourceallocation.ResourceAllocationSettingDataCollection) error {
+	rasds resourceallocation.ResourceAllocationSettingDataCollection,
+	timeoutSeconds uint16) error {
 	embeddedInstance, err := rasds.EmbeddedXMLInstances()
 	if err != nil {
 		return err
@@ -79,10 +80,10 @@ func (rpcs *ResourcePoolConfigurationService) ModifyPoolResourcesEx(child resour
 	if err != nil {
 		return err
 	}
-	return rpcs.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Modify_Virtual_Machine_Resources)
+	return rpcs.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Modify_Virtual_Machine_Resources, timeoutSeconds)
 }
 
-func (rpcs *ResourcePoolConfigurationService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType) error {
+func (rpcs *ResourcePoolConfigurationService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds uint16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
@@ -93,7 +94,7 @@ func (rpcs *ResourcePoolConfigurationService) WaitForJobCompletion(result int32,
 		}
 		defer vmjob.Close()
 
-		return vmjob.WaitForAction(wmi.Wait, 100, 10)
+		return vmjob.WaitForAction(wmi.Wait, 100, timeoutSeconds)
 	} else {
 		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Resource Pool Result[%d] JobType[%d]", result, jobType)
 	}

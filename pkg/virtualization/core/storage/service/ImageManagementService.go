@@ -67,7 +67,7 @@ func getService(whost *host.WmiHost) (mgmt *ImageManagementService, err error) {
 }
 
 // ResizeDisk
-func (ims *ImageManagementService) ResizeDisk(path string, size uint64) (err error) {
+func (ims *ImageManagementService) ResizeDisk(path string, size uint64, timeoutSeconds uint16) (err error) {
 	method, err := ims.GetWmiMethod("ResizeVirtualHardDisk")
 	if err != nil {
 		return
@@ -104,13 +104,13 @@ func (ims *ImageManagementService) ResizeDisk(path string, size uint64) (err err
 		return
 	}
 	defer job.Close()
-	return job.WaitForJobCompletion(result.ReturnValue)
+	return job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 }
 
 // CreateDiskEx
 func (ims *ImageManagementService) CreateDiskEx(path string,
 	logicalSectorSize, physicalSectorSize, blockSize uint32,
-	diskSize uint64, dynamic bool) (err error) {
+	diskSize uint64, dynamic bool, timeoutSeconds uint16) (err error) {
 
 	setting, err := disk.GetVirtualHardDiskSettingData(ims.GetWmiHost(), path, logicalSectorSize,
 		physicalSectorSize, blockSize, diskSize, dynamic)
@@ -119,12 +119,12 @@ func (ims *ImageManagementService) CreateDiskEx(path string,
 	}
 	defer setting.Close()
 
-	err = ims.CreateDisk(setting)
+	err = ims.CreateDisk(setting, timeoutSeconds)
 	return
 }
 
 // CreateDisk
-func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSettingData) (err error) {
+func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSettingData, timeoutSeconds uint16) (err error) {
 	method, err := ims.GetWmiMethod("CreateVirtualHardDisk")
 	if err != nil {
 		return
@@ -161,5 +161,5 @@ func (ims *ImageManagementService) CreateDisk(settings *disk.VirtualHardDiskSett
 		return
 	}
 	defer job.Close()
-	return job.WaitForJobCompletion(result.ReturnValue)
+	return job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
 }

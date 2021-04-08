@@ -167,13 +167,13 @@ func (vm *VirtualMachine) Status() (string, error) {
 }
 
 // Stop Virtual Machine
-func (vm *VirtualMachine) Stop(force bool) error {
-	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine)
+func (vm *VirtualMachine) Stop(force bool, timeoutSeconds uint16) error {
+	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, timeoutSeconds)
 }
 
 // Start Virtual Machine
-func (vm *VirtualMachine) Start() error {
-	err := vm.ChangeState(Running, v2.ConcreteJob_JobType_Start_Virtual_Machine)
+func (vm *VirtualMachine) Start(timeoutSeconds uint16) error {
+	err := vm.ChangeState(Running, v2.ConcreteJob_JobType_Start_Virtual_Machine, timeoutSeconds)
 	if err != nil {
 		return err
 	}
@@ -181,7 +181,7 @@ func (vm *VirtualMachine) Start() error {
 }
 
 // ChangeState changes the state of the Virtual Machine
-func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType) (err error) {
+func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType, timeoutSeconds uint16) (err error) {
 	cstate, err := vm.State()
 	if err != nil {
 		return err
@@ -194,7 +194,7 @@ func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.Conc
 	if err != nil {
 		return err
 	}
-	return job.WaitForJobCompletion(vm.WmiInstance, result, jobType)
+	return job.WaitForJobCompletion(vm.WmiInstance, result, jobType, timeoutSeconds)
 }
 
 // WaitForState
