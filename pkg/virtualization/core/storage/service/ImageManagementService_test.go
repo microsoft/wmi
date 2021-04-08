@@ -14,7 +14,8 @@ import (
 )
 
 var (
-	whost *host.WmiHost
+	whost   *host.WmiHost
+	timeout uint16 = 30
 )
 
 func init() {
@@ -39,13 +40,13 @@ func TestCreateVirtualHardDisk(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 	}
 	defer setting.Close()
-	err = ims.CreateDisk(setting)
+	err = ims.CreateDisk(setting, timeout)
 	if err != nil {
 		t.Fatal("Create Failed " + err.Error())
 	}
 	defer os.RemoveAll(path)
 
-	err = ims.ResizeDisk(path, 1024*1024*1024*100)
+	err = ims.ResizeDisk(path, 1024*1024*1024*100, timeout)
 	if err != nil {
 		t.Fatal("Resize Failed " + err.Error())
 	}

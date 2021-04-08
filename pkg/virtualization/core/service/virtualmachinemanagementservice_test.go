@@ -20,7 +20,8 @@ import (
 )
 
 var (
-	whost *host.WmiHost
+	whost   *host.WmiHost
+	timeout uint16 = 30
 )
 
 func init() {
@@ -63,7 +64,7 @@ func TestCreateVirtualMachines(t *testing.T) {
 	}
 	processorSettings.SetCPUCount(2)
 
-	vm, err := vmms.CreateVirtualMachine(setting, memorySettings, processorSettings)
+	vm, err := vmms.CreateVirtualMachine(setting, memorySettings, processorSettings, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -89,7 +90,7 @@ func TestAddRemoveIsoDisk(t *testing.T) {
 	t.Logf("Found [%s] VMs", "test")
 
 	// make sure there is a controller
-	err = vmms.AddSCSIController(vm)
+	err = vmms.AddSCSIController(vm, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -102,7 +103,7 @@ func TestAddRemoveIsoDisk(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 
-	isodisk, dvddrive, err := vmms.AddISODisk(vm, path)
+	isodisk, dvddrive, err := vmms.AddISODisk(vm, path, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -120,7 +121,7 @@ func TestAddRemoveIsoDisk(t *testing.T) {
 	t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
 
 	// remove the iso disk
-	err = vmms.RemoveISODisk(isodisk)
+	err = vmms.RemoveISODisk(isodisk, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -161,12 +162,12 @@ func TestModifyVirtualMachine(t *testing.T) {
 	defer vm.Close()
 
 	t.Logf("Setting Memory [%d] [%s] VMs", 2048, "test")
-	err = vmms.SetMemoryMB(vm, 2048)
+	err = vmms.SetMemoryMB(vm, 2048, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Setting Processor [%d] [%s] VMs", 4, "test")
-	err = vmms.SetProcessorCount(vm, 4)
+	err = vmms.SetProcessorCount(vm, 4, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -215,13 +216,13 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 	for i := 1; i <= 4; i++ {
 		adapterName := fmt.Sprintf("testadapter-%d", i)
 		t.Logf("Adding VmNic to [%s]", "test")
-		na, err := vmms.AddVirtualNetworkAdapter(vm, "Network Adapter")
+		na, err := vmms.AddVirtualNetworkAdapter(vm, "Network Adapter", timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		defer na.Close()
 
-		err = vmms.RenameVirtualNetworkAdapter(vm, "Network Adapter", adapterName)
+		err = vmms.RenameVirtualNetworkAdapter(vm, "Network Adapter", adapterName, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -235,25 +236,25 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 		t.Logf("Found Renamed Adapter [%s]", adapterName)
 
 		macAddress := fmt.Sprintf("00112233445%d", i)
-		err = vmms.SetVirtualNetworkAdapterMACAddress(vm, adapterName, macAddress)
+		err = vmms.SetVirtualNetworkAdapterMACAddress(vm, adapterName, macAddress, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Set Adapter Mac [%s]", macAddress)
 
-		err = vmms.ConnectAdapterToVirtualSwitch(vm, adapterName, vs)
+		err = vmms.ConnectAdapterToVirtualSwitch(vm, adapterName, vs, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Connect VM[%s] to VirtualSwitch[%s]", "test", "test")
-		err = vmms.SetVirtualNetworkAdapterAccessVLAN(testna, uint16(i))
+		err = vmms.SetVirtualNetworkAdapterAccessVLAN(testna, uint16(i), timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		t.Logf("Set Adapter VLAN [%d]", i)
 		err = vmms.SetVirtualNetworkAdapterPortProfile(testna, "test",
 			"1FA41B39-B444-4E43-B35A-E1F7985FD548",
-			"08cf6a3b-f4ea-48d9-a29c-60370363fb19", 1)
+			"08cf6a3b-f4ea-48d9-a29c-60370363fb19", 1, timeout)
 		if err != nil {
 			t.Fatalf("Set PortProfile Failed [%+v]", err)
 		}
@@ -261,7 +262,7 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 	}
 	for i := 1; i <= 4; i++ {
 		adapterName := fmt.Sprintf("testadapter-%d", i)
-		err = vmms.DisconnectAdapterFromVirtualSwitch(vm, adapterName)
+		err = vmms.DisconnectAdapterFromVirtualSwitch(vm, adapterName, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -272,7 +273,7 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 		}
 		defer testna.Close()
 		t.Logf("Removing VmNic [%s] from VM[%s] ", adapterName, "test")
-		err = vmms.RemoveVirtualNetworkAdapter(testna)
+		err = vmms.RemoveVirtualNetworkAdapter(testna, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 
@@ -303,7 +304,7 @@ func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
 	adapterName := "testadapter"
 	macAddress := "001122334450"
 	t.Logf("Adding VmNic with MAC to [%s]", "test")
-	na, err := vmms.AddVirtualNetworkAdapterWithMac(vm, adapterName, macAddress)
+	na, err := vmms.AddVirtualNetworkAdapterWithMac(vm, adapterName, macAddress, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -317,7 +318,7 @@ func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
 	t.Logf("Found Adapter [%s]", adapterName)
 
 	t.Logf("Removing VmNic [%s] from VM[%s] ", adapterName, "test")
-	err = vmms.RemoveVirtualNetworkAdapter(testna)
+	err = vmms.RemoveVirtualNetworkAdapter(testna, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -335,7 +336,7 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 	defer vm.Close()
 	t.Logf("Found [%s] VMs", "test")
 
-	err = vmms.AddSCSIController(vm)
+	err = vmms.AddSCSIController(vm, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -353,14 +354,14 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		defer setting.Close()
-		err = ims.CreateDisk(setting)
+		err = ims.CreateDisk(setting, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		defer os.RemoveAll(path)
 		t.Logf("Created vhd [%s]", path)
 
-		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
+		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -385,7 +386,7 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 			t.Fatalf("Failed [%+v]", err)
 		}
 		defer vhd.Close()
-		err = vmms.DetachVirtualHardDisk(vhd)
+		err = vmms.DetachVirtualHardDisk(vhd, timeout)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -405,14 +406,14 @@ func TestAddRemoveTPM(t *testing.T) {
 	defer vm.Close()
 	t.Logf("Found [%s] VMs", "test")
 
-	tpm, err := vmms.AddTPM(vm)
+	tpm, err := vmms.AddTPM(vm, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	fmt.Scanln()
 	t.Logf("Added TPM to [%s] VMs", "test")
 
-	err = vmms.RemoveTPM(tpm)
+	err = vmms.RemoveTPM(tpm, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -431,16 +432,16 @@ func TestVirtualMachineDelete(t *testing.T) {
 	}
 
 	defer vm.Close()
-	err = vm.Start()
+	err = vm.Start(timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 
-	err = vm.Stop(true)
+	err = vm.Stop(true, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-	err = vmms.DeleteVirtualMachine(vm)
+	err = vmms.DeleteVirtualMachine(vm, timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
