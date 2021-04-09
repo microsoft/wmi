@@ -4,6 +4,7 @@
 package service
 
 import (
+	"os"
 	"sync"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -118,6 +119,15 @@ func (ims *ImageManagementService) CreateDiskEx(path string,
 		return
 	}
 	defer setting.Close()
+
+	defer func() {
+		if err == nil {
+			return
+		}
+		// Try to Cleanup.
+		// FIXME : This might fail if the VHD is still getting generated and leak
+		os.Remove(path)
+	}()
 
 	err = ims.CreateDisk(setting, timeoutSeconds)
 	return
