@@ -77,7 +77,7 @@ func (job *WmiJob) JobType() (value int32, err error) {
 }
 
 // WaitForPercentComplete waits for the percentComplete or timeout
-func (job *WmiJob) WaitForPercentComplete(percentComplete, timeoutSeconds uint16) error {
+func (job *WmiJob) WaitForPercentComplete(percentComplete uint16, timeoutSeconds int16) error {
 	start := time.Now()
 
 	// Run the loop, only if the job is actually running
@@ -91,6 +91,12 @@ func (job *WmiJob) WaitForPercentComplete(percentComplete, timeoutSeconds uint16
 			break
 		}
 		time.Sleep(100 * time.Millisecond)
+
+		// Infinite Loop
+		if timeoutSeconds < 0 {
+			continue
+		}
+
 		// If we have waited enough time, return with a timeout error
 		if time.Since(start) > (time.Duration(timeoutSeconds) * time.Second) {
 			state := job.GetJobState()
@@ -103,14 +109,12 @@ func (job *WmiJob) WaitForPercentComplete(percentComplete, timeoutSeconds uint16
 }
 
 // WaitForAction waits for the task based on the action type, percent complete and timeoutSeconds
-func (job *WmiJob) WaitForAction(action UserAction, percentComplete, timeoutSeconds uint16) error {
+func (job *WmiJob) WaitForAction(action UserAction, percentComplete uint16, timeoutSeconds int16) error {
 	switch action {
 	case Wait:
 		return job.WaitForPercentComplete(percentComplete, timeoutSeconds)
 	case Cancel:
 		return job.WaitForPercentComplete(percentComplete, timeoutSeconds)
-		// Fixme
-		// vm.Cancel()
 	case None:
 		fallthrough
 	case Default:
@@ -194,7 +198,7 @@ func (job *WmiJob) GetException() error {
 	return nil
 }
 
-func (job *WmiJob) WaitForJobCompletion(result int32, timeoutSeconds uint16) error {
+func (job *WmiJob) WaitForJobCompletion(result int32, timeoutSeconds int16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {

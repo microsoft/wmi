@@ -64,7 +64,8 @@ func (vmms *VirtualSystemManagementService) GetVirtualMachineByName(vmName strin
 	return nil, errors.Wrapf(errors.NotFound, "Unable to find a virtual system with name [%s]", vmName)
 }
 
-func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtualsystem.VirtualSystemSettingData, memorySettings *memory.MemorySettingData, processorSettings *processor.ProcessorSettingData, timeoutSeconds uint16) (
+func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtualsystem.VirtualSystemSettingData,
+	memorySettings *memory.MemorySettingData, processorSettings *processor.ProcessorSettingData) (
 	vm *virtualsystem.VirtualMachine,
 	err error) {
 
@@ -128,10 +129,11 @@ func (vmms *VirtualSystemManagementService) CreateVirtualMachine(settings *virtu
 		return
 	}
 	defer job.Close()
-	err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+	err = job.WaitForJobCompletion(result.ReturnValue, -1)
 	return
 }
-func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsystem.VirtualMachine, timeoutSeconds uint16) (err error) {
+
+func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsystem.VirtualMachine) (err error) {
 	method, err := vmms.GetWmiMethod("DestroySystem")
 	if err != nil {
 		return
@@ -176,12 +178,12 @@ func (vmms *VirtualSystemManagementService) DeleteVirtualMachine(vm *virtualsyst
 			return
 		}
 		defer job.Close()
-		return job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+		return job.WaitForJobCompletion(result.ReturnValue, -1)
 	}
 	return
 }
 
-func (vmms *VirtualSystemManagementService) AddTPM(vm *virtualsystem.VirtualMachine, timeoutSeconds uint16) (resource *resourceallocation.ResourceAllocationSettingData, err error) {
+func (vmms *VirtualSystemManagementService) AddTPM(vm *virtualsystem.VirtualMachine) (resource *resourceallocation.ResourceAllocationSettingData, err error) {
 	tmp, err := vm.NewTPM()
 	if err != nil {
 		return
@@ -195,7 +197,7 @@ func (vmms *VirtualSystemManagementService) AddTPM(vm *virtualsystem.VirtualMach
 	defer vmsetting.Close()
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
 		return
 	}
@@ -219,12 +221,12 @@ func (vmms *VirtualSystemManagementService) AddTPM(vm *virtualsystem.VirtualMach
 	return
 }
 
-func (vmms *VirtualSystemManagementService) RemoveTPM(resource *resourceallocation.ResourceAllocationSettingData, timeoutSeconds uint16) (err error) {
-	err = vmms.RemoveVirtualSystemResource(resource.CIM_ResourceAllocationSettingData, timeoutSeconds)
+func (vmms *VirtualSystemManagementService) RemoveTPM(resource *resourceallocation.ResourceAllocationSettingData) (err error) {
+	err = vmms.RemoveVirtualSystemResource(resource.CIM_ResourceAllocationSettingData, -1)
 	return
 }
 
-func (vmms *VirtualSystemManagementService) SetProcessorCount(vm *virtualsystem.VirtualMachine, count uint64, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) SetProcessorCount(vm *virtualsystem.VirtualMachine, count uint64) (err error) {
 	proc, err := vm.GetProcessor()
 	if err != nil {
 		return
@@ -236,11 +238,11 @@ func (vmms *VirtualSystemManagementService) SetProcessorCount(vm *virtualsystem.
 		return
 	}
 
-	err = vmms.ModifyVirtualSystemResourceEx(proc.WmiInstance, timeoutSeconds)
+	err = vmms.ModifyVirtualSystemResourceEx(proc.WmiInstance, -1)
 	return
 }
 
-func (vmms *VirtualSystemManagementService) SetMemoryMB(vm *virtualsystem.VirtualMachine, sizeMB uint64, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) SetMemoryMB(vm *virtualsystem.VirtualMachine, sizeMB uint64) (err error) {
 	mem, err := vm.GetMemory()
 	if err != nil {
 		return
@@ -252,6 +254,6 @@ func (vmms *VirtualSystemManagementService) SetMemoryMB(vm *virtualsystem.Virtua
 		return
 	}
 
-	err = vmms.ModifyVirtualSystemResourceEx(mem.WmiInstance, timeoutSeconds)
+	err = vmms.ModifyVirtualSystemResourceEx(mem.WmiInstance, -1)
 	return
 }

@@ -20,7 +20,8 @@ import (
 )
 
 var (
-	whost *host.WmiHost
+	whost   *host.WmiHost
+	timeout uint16 = 30
 )
 
 func init() {
@@ -431,7 +432,7 @@ func TestVirtualMachineDelete(t *testing.T) {
 	}
 
 	defer vm.Close()
-	err = vm.Start()
+	err = vm.Start(timeout)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}

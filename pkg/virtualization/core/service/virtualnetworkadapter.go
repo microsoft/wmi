@@ -18,7 +18,9 @@ import (
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
-func (vmms *VirtualSystemManagementService) AddVirtualEthernetConnection(vm *virtualsystem.VirtualMachine, vna *na.VirtualNetworkAdapter, timeoutSeconds uint16) (epas *switchport.EthernetPortAllocationSettingData, err error) {
+func (vmms *VirtualSystemManagementService) AddVirtualEthernetConnection(vm *virtualsystem.VirtualMachine, vna *na.VirtualNetworkAdapter) (
+	epas *switchport.EthernetPortAllocationSettingData, err error) {
+
 	tmp, err := vm.NewEthernetPortAllocationSettingData(vna)
 	if err != nil {
 		return
@@ -32,7 +34,7 @@ func (vmms *VirtualSystemManagementService) AddVirtualEthernetConnection(vm *vir
 	defer vmsetting.Close()
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
 		return
 	}
@@ -50,7 +52,7 @@ func (vmms *VirtualSystemManagementService) AddVirtualEthernetConnection(vm *vir
 	return switchport.NewEthernetPortAllocationSettingData(resultInstance)
 }
 
-func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapter(vm *virtualsystem.VirtualMachine, name string, timeoutSeconds uint16) (vna *na.VirtualNetworkAdapter, err error) {
+func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapter(vm *virtualsystem.VirtualMachine, name string) (vna *na.VirtualNetworkAdapter, err error) {
 	// Add a adapter
 	tmp, err := vm.NewSyntheticNetworkAdapter(name)
 	if err != nil {
@@ -65,7 +67,7 @@ func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapter(vm *virtual
 	defer vmsetting.Close()
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
 		return
 	}
@@ -89,7 +91,7 @@ func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapter(vm *virtual
 
 }
 
-func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapterWithMac(vm *virtualsystem.VirtualMachine, name, macAddress string, timeoutSeconds uint16) (vna *na.VirtualNetworkAdapter, err error) {
+func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapterWithMac(vm *virtualsystem.VirtualMachine, name, macAddress string) (vna *na.VirtualNetworkAdapter, err error) {
 	// Add a adapter
 	tmp, err := vm.NewSyntheticNetworkAdapter(name)
 	if err != nil {
@@ -113,7 +115,7 @@ func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapterWithMac(vm *
 	}
 
 	// apply the settings
-	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, timeoutSeconds)
+	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, tmp.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
 		return
 	}
@@ -137,13 +139,13 @@ func (vmms *VirtualSystemManagementService) AddVirtualNetworkAdapterWithMac(vm *
 
 }
 
-func (vmms *VirtualSystemManagementService) RemoveVirtualNetworkAdapter(vna *na.VirtualNetworkAdapter, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) RemoveVirtualNetworkAdapter(vna *na.VirtualNetworkAdapter) (err error) {
 	// Remove adapter
-	err = vmms.RemoveVirtualSystemResource(vna.CIM_ResourceAllocationSettingData, timeoutSeconds)
+	err = vmms.RemoveVirtualSystemResource(vna.CIM_ResourceAllocationSettingData, -1)
 	return
 }
 
-func (vmms *VirtualSystemManagementService) RenameVirtualNetworkAdapter(vm *virtualsystem.VirtualMachine, adapterName, newName string, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) RenameVirtualNetworkAdapter(vm *virtualsystem.VirtualMachine, adapterName, newName string) (err error) {
 	adapter, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 	if err != nil {
 		return
@@ -154,10 +156,10 @@ func (vmms *VirtualSystemManagementService) RenameVirtualNetworkAdapter(vm *virt
 		return
 	}
 
-	return vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance, timeoutSeconds)
+	return vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance, -1)
 }
 
-func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(vm *virtualsystem.VirtualMachine, adapterName, macAddress string, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(vm *virtualsystem.VirtualMachine, adapterName, macAddress string) (err error) {
 	adapter, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 	if err != nil {
 		return
@@ -172,11 +174,11 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterMACAddress(v
 	if err != nil {
 		return
 	}
-	err = vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance, timeoutSeconds)
+	err = vmms.ModifyVirtualSystemResourceEx(adapter.WmiInstance, -1)
 	return err
 }
 
-func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterIOVOffloadWeight(vm *virtualsystem.VirtualMachine, adapterName string, iovOffloadWeight uint32, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterIOVOffloadWeight(vm *virtualsystem.VirtualMachine, adapterName string, iovOffloadWeight uint32) (err error) {
 	adapter, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 	if err != nil {
 		return
@@ -200,11 +202,11 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterIOVOffloadWe
 		return
 	}
 
-	err = vmms.ModifyVirtualSystemFeatureEx(portOffloadSettingData.WmiInstance, timeoutSeconds)
+	err = vmms.ModifyVirtualSystemFeatureEx(portOffloadSettingData.WmiInstance, -1)
 	return err
 }
 
-func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string, virtSwitch *vswitch.VirtualSwitch, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string, virtSwitch *vswitch.VirtualSwitch) (err error) {
 	adapter, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 	if err != nil {
 		return
@@ -217,7 +219,7 @@ func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *vi
 		if !errors.IsNotFound(err) {
 			return
 		}
-		pasd, err = vmms.AddVirtualEthernetConnection(vm, adapter, timeoutSeconds)
+		pasd, err = vmms.AddVirtualEthernetConnection(vm, adapter)
 		if err != nil {
 			return
 		}
@@ -234,10 +236,10 @@ func (vmms *VirtualSystemManagementService) ConnectAdapterToVirtualSwitch(vm *vi
 	if err != nil {
 		return
 	}
-	return vmms.ModifyVirtualSystemResourceEx(pasd.WmiInstance, timeoutSeconds)
+	return vmms.ModifyVirtualSystemResourceEx(pasd.WmiInstance, -1)
 }
 
-func (vmms *VirtualSystemManagementService) DisconnectAdapterFromVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) DisconnectAdapterFromVirtualSwitch(vm *virtualsystem.VirtualMachine, adapterName string) (err error) {
 	adapter, err := vm.GetVirtualNetworkAdapterByName(adapterName)
 	if err != nil {
 		return
@@ -256,11 +258,11 @@ func (vmms *VirtualSystemManagementService) DisconnectAdapterFromVirtualSwitch(v
 	if err != nil {
 		return
 	}
-	return vmms.ModifyVirtualSystemResourceEx(pasd.WmiInstance, timeoutSeconds)
+	return vmms.ModifyVirtualSystemResourceEx(pasd.WmiInstance, -1)
 }
 
 func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortProfile(
-	vna *na.VirtualNetworkAdapter, profileName, vendorGuid, profileGuid string, profileData uint32, timeoutSeconds uint16) (err error) {
+	vna *na.VirtualNetworkAdapter, profileName, vendorGuid, profileGuid string, profileData uint32) (err error) {
 
 	hc, err := vmms.GetHostComputerSystem()
 	if err != nil {
@@ -279,7 +281,7 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortProfile(
 	}
 	defer pasd.Close()
 
-	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, profileSettings.WmiInstance, timeoutSeconds)
+	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, profileSettings.WmiInstance, -1)
 }
 
 func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortIsolation(
@@ -287,7 +289,7 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortIsolatio
 	return errors.NotImplemented
 }
 
-func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterAccessVLAN(vna *na.VirtualNetworkAdapter, vlanId uint16, timeoutSeconds uint16) (err error) {
+func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterAccessVLAN(vna *na.VirtualNetworkAdapter, vlanId uint16) (err error) {
 	hc, err := vmms.GetHostComputerSystem()
 	if err != nil {
 		return
@@ -306,11 +308,13 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterAccessVLAN(v
 	}
 	defer pasd.Close()
 
-	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, vlanSettings.WmiInstance, timeoutSeconds)
+	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, vlanSettings.WmiInstance, -1)
 }
 
 func (vmms *VirtualSystemManagementService) AddEthernetFeatureEx1(
-	settings *v2.Msvm_EthernetPortAllocationSettingData, featureSetting *wmi.WmiInstance, timeoutSeconds uint16) (err error) {
+	settings *v2.Msvm_EthernetPortAllocationSettingData,
+	featureSetting *wmi.WmiInstance,
+	timeoutSeconds int16) (err error) {
 
 	result, err := vmms.AddEthernetFeature(settings, wmi.WmiInstanceCollection{featureSetting}, timeoutSeconds)
 	if err != nil {
@@ -325,7 +329,7 @@ func (vmms *VirtualSystemManagementService) AddEthernetFeatureEx1(
 func (vmms *VirtualSystemManagementService) AddEthernetFeature(
 	settings *v2.Msvm_EthernetPortAllocationSettingData,
 	col wmi.WmiInstanceCollection,
-	timeoutSeconds uint16) (resultingResources wmi.WmiInstanceCollection, err error) {
+	timeoutSeconds int16) (resultingResources wmi.WmiInstanceCollection, err error) {
 
 	embeddedInstances, err := col.EmbeddedXMLInstances()
 	if err != nil {
@@ -387,7 +391,7 @@ func (vmms *VirtualSystemManagementService) AddEthernetFeature(
 			return
 		}
 		defer job.Close()
-		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+		err = job.WaitForJobCompletion(result.ReturnValue, -1)
 		break
 	}
 	return
@@ -396,7 +400,7 @@ func (vmms *VirtualSystemManagementService) AddEthernetFeature(
 //
 func (vmms *VirtualSystemManagementService) ModifyEthernetFeature(
 	col wmi.WmiInstanceCollection,
-	timeoutSeconds uint16) (resultingResources wmi.WmiInstanceCollection, err error) {
+	timeoutSeconds int16) (resultingResources wmi.WmiInstanceCollection, err error) {
 
 	embeddedInstances, err := col.EmbeddedXMLInstances()
 	if err != nil {
@@ -457,7 +461,7 @@ func (vmms *VirtualSystemManagementService) ModifyEthernetFeature(
 			return
 		}
 		defer job.Close()
-		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+		err = job.WaitForJobCompletion(result.ReturnValue, -1)
 		break
 	}
 	return
@@ -466,7 +470,7 @@ func (vmms *VirtualSystemManagementService) ModifyEthernetFeature(
 //
 func (vmms *VirtualSystemManagementService) RemoveEthernetFeature(
 	col wmi.WmiInstanceCollection,
-	timeoutSeconds uint16) (err error) {
+	timeoutSeconds int16) (err error) {
 
 	embeddedInstances, err := col.EmbeddedXMLInstances()
 	if err != nil {
@@ -513,7 +517,7 @@ func (vmms *VirtualSystemManagementService) RemoveEthernetFeature(
 			return
 		}
 		defer job.Close()
-		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+		err = job.WaitForJobCompletion(result.ReturnValue, -1)
 		break
 	}
 	return

@@ -68,6 +68,10 @@ const (
 	FastSavingCritical VirtualMachineState = 32796
 )
 
+const (
+	StateChangeTimeoutSeconds = 300
+)
+
 // NewVirtualMachine
 func NewVirtualMachine(instance *wmi.WmiInstance) (*VirtualMachine, error) {
 	wmivm, err := v2.NewMsvm_ComputerSystemEx1(instance)
@@ -167,21 +171,21 @@ func (vm *VirtualMachine) Status() (string, error) {
 }
 
 // Stop Virtual Machine
-func (vm *VirtualMachine) Stop(force bool, timeoutSeconds uint16) error {
-	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, timeoutSeconds)
+func (vm *VirtualMachine) Stop(force bool) error {
+	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, -1)
 }
 
 // Start Virtual Machine
-func (vm *VirtualMachine) Start(timeoutSeconds uint16) error {
-	err := vm.ChangeState(Running, v2.ConcreteJob_JobType_Start_Virtual_Machine, timeoutSeconds)
+func (vm *VirtualMachine) Start() error {
+	err := vm.ChangeState(Running, v2.ConcreteJob_JobType_Start_Virtual_Machine, -1)
 	if err != nil {
 		return err
 	}
-	return vm.WaitForState(Running, 30)
+	return vm.WaitForState(Running, StateChangeTimeoutSeconds)
 }
 
 // ChangeState changes the state of the Virtual Machine
-func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType, timeoutSeconds uint16) (err error) {
+func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType, timeoutSeconds int16) (err error) {
 	cstate, err := vm.State()
 	if err != nil {
 		return err
