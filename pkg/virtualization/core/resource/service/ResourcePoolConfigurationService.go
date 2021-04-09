@@ -71,7 +71,7 @@ func getService(whost *host.WmiHost) (mgmt *ResourcePoolConfigurationService, er
 func (rpcs *ResourcePoolConfigurationService) ModifyPoolResourcesEx(child resourcepool.ResourcePool,
 	parentPools resourcepool.ResourcePoolCollection,
 	rasds resourceallocation.ResourceAllocationSettingDataCollection,
-	timeoutSeconds uint16) error {
+	timeoutSeconds int16) error {
 	embeddedInstance, err := rasds.EmbeddedXMLInstances()
 	if err != nil {
 		return err
@@ -83,7 +83,7 @@ func (rpcs *ResourcePoolConfigurationService) ModifyPoolResourcesEx(child resour
 	return rpcs.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Modify_Virtual_Machine_Resources, timeoutSeconds)
 }
 
-func (rpcs *ResourcePoolConfigurationService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds uint16) error {
+func (rpcs *ResourcePoolConfigurationService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds int16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {

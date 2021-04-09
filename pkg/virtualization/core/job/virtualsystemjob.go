@@ -49,7 +49,7 @@ func (vmjob *VirtualSystemJob) JobType() (value v2.ConcreteJob_JobType, err erro
 }
 
 // WaitForPercentComplete waits for the percentComplete or timeout
-func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete, timeoutSeconds uint16) error {
+func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete uint16, timeoutSeconds int16) error {
 	start := time.Now()
 	// Run the loop, only if the job is actually running
 	for !vmjob.IsComplete() {
@@ -62,7 +62,11 @@ func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete, timeoutSe
 		if pComplete >= percentComplete {
 			break
 		}
+
 		time.Sleep(100 * time.Millisecond)
+		if timeoutSeconds < 0 {
+			continue
+		}
 		// If we have waited enough time, break
 		if time.Since(start) > (time.Duration(timeoutSeconds) * time.Second) {
 			state, err2 := vmjob.getPropertyJobStateFixed()
@@ -78,7 +82,7 @@ func (vmjob *VirtualSystemJob) WaitForPercentComplete(percentComplete, timeoutSe
 }
 
 // WaitForAction waits for the task based on the action type, percent complete and timeoutSeconds
-func (vmjob *VirtualSystemJob) WaitForAction(action wmi.UserAction, percentComplete, timeoutSeconds uint16) error {
+func (vmjob *VirtualSystemJob) WaitForAction(action wmi.UserAction, percentComplete uint16, timeoutSeconds int16) error {
 	switch action {
 	case wmi.Wait:
 		return vmjob.WaitForPercentComplete(percentComplete, timeoutSeconds)
@@ -182,7 +186,7 @@ func (vmjob *VirtualSystemJob) GetException() error {
 	return nil
 }
 
-func WaitForJobCompletionEx(result int32, currentJob *VirtualSystemJob, timeoutSeconds uint16) error {
+func WaitForJobCompletionEx(result int32, currentJob *VirtualSystemJob, timeoutSeconds int16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {
@@ -197,7 +201,7 @@ func WaitForJobCompletionEx2(instance *wmi.WmiInstance, result int32, jobName st
 	return nil
 }
 
-func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds uint16) error {
+func WaitForJobCompletion(instance *wmi.WmiInstance, result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds int16) error {
 	if result == 0 {
 		return nil
 	} else if result == 4096 {

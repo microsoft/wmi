@@ -14,8 +14,7 @@ import (
 )
 
 var (
-	whost   *host.WmiHost
-	timeout uint16 = 30
+	whost *host.WmiHost
 )
 
 func init() {
@@ -29,7 +28,7 @@ func TestGetImageManagementService(t *testing.T) {
 	}
 }
 
-func TestCreateVirtualHardDisk(t *testing.T) {
+func TestCreateDynamicVirtualHardDisk(t *testing.T) {
 	ims, err := GetImageManagementService(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
@@ -40,13 +39,36 @@ func TestCreateVirtualHardDisk(t *testing.T) {
 		t.Fatal("Failed " + err.Error())
 	}
 	defer setting.Close()
-	err = ims.CreateDisk(setting, timeout)
+	err = ims.CreateDisk(setting)
 	if err != nil {
 		t.Fatal("Create Failed " + err.Error())
 	}
 	defer os.RemoveAll(path)
 
-	err = ims.ResizeDisk(path, 1024*1024*1024*100, timeout)
+	err = ims.ResizeDisk(path, 1024*1024*1024*100)
+	if err != nil {
+		t.Fatal("Resize Failed " + err.Error())
+	}
+}
+
+func TestCreateStaticVirtualHardDisk(t *testing.T) {
+	ims, err := GetImageManagementService(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	path := "c:\\test\\tmp.vhdx"
+	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, false)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer setting.Close()
+	err = ims.CreateDisk(setting)
+	if err != nil {
+		t.Fatal("Create Failed " + err.Error())
+	}
+	defer os.RemoveAll(path)
+
+	err = ims.ResizeDisk(path, 1024*1024*100)
 	if err != nil {
 		t.Fatal("Resize Failed " + err.Error())
 	}
