@@ -14,7 +14,6 @@ import (
 	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
-	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
@@ -92,55 +91,30 @@ func (vsms *VirtualEthernetSwitchManagementService) GetVirtualSwitches() (*virtu
 }
 
 // FindVirtualSwitchByName
-func (vsms *VirtualEthernetSwitchManagementService) FindVirtualSwitchByName(vmName string) (*virtualswitch.VirtualSwitch, error) {
+func (vsms *VirtualEthernetSwitchManagementService) FindVirtualSwitchByName(vswitchName string) (*virtualswitch.VirtualSwitch, error) {
 	vswitchs, err := vsms.GetVirtualSwitches()
 	if err != nil {
 		return nil, err
 	}
 	defer vswitchs.Close()
 
-	for _, vm := range *vswitchs {
-		curVmName, err := vm.GetPropertyElementName()
+	for _, entity := range *vswitchs {
+		entityName, err := entity.GetPropertyElementName()
 		if err != nil {
 			return nil, err
 		}
-		if curVmName != vmName {
+		if entityName != vswitchName {
 			continue
 		}
 
-		vminst, err := vm.Clone()
+		clonedEntity, err := entity.Clone()
 		if err != nil {
 			return nil, err
 		}
-		return virtualswitch.NewVirtualSwitch(vminst)
+		return virtualswitch.NewVirtualSwitch(clonedEntity)
 	}
 
-	return nil, errors.Wrapf(errors.NotFound, "Unable to find a virtual system with name [%s]", vmName)
-}
-
-func (vsms *VirtualEthernetSwitchManagementService) DeleteVirtualSwitch(vswitch *virtualswitch.VirtualSwitch) error {
-	result, err := vsms.InvokeMethodWithReturn("DestroySystem", vswitch.InstancePath(), nil)
-	if err != nil {
-		return err
-	}
-	return vsms.WaitForJobCompletion(result, v2.ConcreteJob_JobType_Destroy_Ethernet_Switch, -1)
-}
-
-func (vsms *VirtualEthernetSwitchManagementService) WaitForJobCompletion(result int32, jobType v2.ConcreteJob_JobType, timeoutSeconds int16) error {
-	if result == 0 {
-		return nil
-	} else if result == 4096 {
-		vswitchjob, err := vsms.getJob(jobType)
-		if err != nil {
-			// Job is scheduled, but we were not able to find the job
-			return err
-		}
-		defer vswitchjob.Close()
-
-		return vswitchjob.WaitForAction(wmi.Wait, 100, timeoutSeconds)
-	} else {
-		return errors.Wrapf(errors.Failed, "Unable to Wait for Job on Virtual Switch [%d][%d]", result, jobType)
-	}
+	return nil, errors.Wrapf(errors.NotFound, "Unable to find a virtual system with name [%s]", vswitchName)
 }
 
 func (vsms *VirtualEthernetSwitchManagementService) getJob(jobType v2.ConcreteJob_JobType) (*job.VirtualSystemJob, error) {

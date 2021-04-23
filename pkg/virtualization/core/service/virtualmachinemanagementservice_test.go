@@ -15,13 +15,13 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/service"
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
+	vswitchservice "github.com/microsoft/wmi/pkg/virtualization/network/service"
 	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
 	"github.com/nwoodmsft/iso9660"
 )
 
 var (
-	whost   *host.WmiHost
-	timeout uint16 = 30
+	whost *host.WmiHost
 )
 
 func init() {
@@ -199,6 +199,21 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 
+	vsms, err := vswitchservice.GetVirtualEthernetSwitchManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	setting, err := virtualswitch.GetVirtualEthernetSwitchSettingData(whost, "test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer setting.Close()
+	vswitch, err := vsms.CreatePrivateVirtualSwitch(setting)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vswitch.Close()
+
 	vs, err := virtualswitch.GetVirtualSwitch(whost, "test")
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
@@ -279,6 +294,12 @@ func TestVirtualMachineAdapterScenario(t *testing.T) {
 
 		}
 	}
+
+	err = vsms.DeleteVirtualSwitch(vswitch)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
 }
 
 func TestVirtualMachineAdapterCreationWithMac(t *testing.T) {
@@ -432,7 +453,7 @@ func TestVirtualMachineDelete(t *testing.T) {
 	}
 
 	defer vm.Close()
-	err = vm.Start(timeout)
+	err = vm.Start()
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
