@@ -8,11 +8,13 @@ import (
 	//"log"
 
 	"github.com/microsoft/wmi/pkg/base/host"
+	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 
+	"github.com/microsoft/wmi/pkg/virtualization/network/ethernetport"
 	"github.com/microsoft/wmi/pkg/virtualization/network/switchextension"
 	"github.com/microsoft/wmi/pkg/virtualization/network/switchport"
 	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
@@ -41,6 +43,72 @@ func GetHostComputerSystem(whost *host.WmiHost) (vm *HostComputerSystem, err err
 		return
 	}
 	vm = &HostComputerSystem{wmivm}
+	return
+}
+
+func GetDefaultEthernetPortAllocationSettingData(whost *host.WmiHost) (*switchport.EthernetPortAllocationSettingData, error) {
+	inst, err := instance.CreateWmiInstance(whost, string(constant.Virtualization), "Msvm_EthernetPortAllocationSettingData")
+	if err != nil {
+		return nil, err
+	}
+	return switchport.NewEthernetPortAllocationSettingData(inst)
+}
+
+func GetInternalPortAllocationSettingData(whost *host.WmiHost, switchPortName string) (epas *switchport.EthernetPortAllocationSettingData, err error) {
+	epas, err = GetDefaultEthernetPortAllocationSettingData(whost)
+	if err != nil {
+		return nil, err
+	}
+
+	hostcm, err := GetHostComputerSystem(whost)
+	if err != nil {
+		return nil, err
+	}
+	defer hostcm.Close()
+
+	err = epas.SetPropertyElementName(switchPortName)
+	if err != nil {
+		return
+	}
+	err = epas.SetPropertyHostResource([]string{hostcm.InstancePath()})
+	if err != nil {
+		return
+	}
+
+	return
+}
+
+// GetExternalPortAllocationSettingData
+func GetExternalPortAllocationSettingData(whost *host.WmiHost, switchPortName string, physicalNicNames []string) (epas *switchport.EthernetPortAllocationSettingData, err error) {
+	epas, err = GetDefaultEthernetPortAllocationSettingData(whost)
+	if err != nil {
+		return nil, err
+	}
+
+	if len(physicalNicNames) == 0 {
+		err = errors.Wrapf(errors.InvalidInput, "Physical Nic Name is missing")
+		return
+	}
+	err = epas.SetPropertyElementName(switchPortName)
+	if err != nil {
+		return
+	}
+
+	hresource := []string{}
+	for _, nicName := range physicalNicNames {
+		extPort, err1 := ethernetport.GetExternalEthernetPort(whost, nicName)
+		if err1 != nil {
+			err = err1
+			return
+		}
+		defer extPort.Close()
+		hresource = append(hresource, extPort.InstancePath())
+	}
+
+	err = epas.SetPropertyHostResource(hresource)
+	if err != nil {
+		return
+	}
 	return
 }
 

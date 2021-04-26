@@ -56,6 +56,11 @@ func GetVirtualSwitchByID(whost *host.WmiHost, vswitchID string) (vswitch *Virtu
 	return
 }
 
+func (vs *VirtualSwitch) ID() (name string) {
+	name, _ = vs.GetPropertyName()
+	return
+}
+
 func (vs *VirtualSwitch) GetVirtualMachineAdapterByName(name string) (vadapter *na.VirtualNetworkAdapter, err error) {
 	adapters, err := vs.GetVirtualMachineAdapters()
 	if err != nil {
