@@ -467,3 +467,109 @@ func TestVirtualMachineDelete(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 }
+
+func TestCreateDynamicMemoryVirtualMachine(t *testing.T) {
+	// create
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "dynamic-memory-test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer setting.Close()
+
+	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	err = setting.SetPropertyVirtualNumaEnabled(false)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	memorySettings.SetSizeMB(2048)
+
+	config := memory.DynamicMemoryConfiguration{
+		DynamicMemoryEnabled: true,
+		MaximumMemoryMB:      4096,
+		MinimumMemoryMB:      1024,
+		TargetMemoryBuffer:   20,
+	}
+	err = memorySettings.ConfigureDynamicMemory(&config)
+	if err != nil {
+		t.Fatalf("Failed to configure dynamic memory [%v]", err)
+	}
+
+	processorSettings, err := processor.GetDefaultProcessorSettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	processorSettings.SetCPUCount(2)
+
+	vm, err := vmms.CreateVirtualMachine(setting, memorySettings, processorSettings)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer func() {
+		if vm != nil {
+			err = vmms.DeleteVirtualMachine(vm)
+			if err != nil {
+				t.Logf("VM deletion failed [%+v]", err)
+			}
+			vm.Close()
+		}
+	}()
+
+	// validate
+	vm, err = vmms.GetVirtualMachineByName("dynamic-memory-test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	mem, err := vm.GetMemory()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	min, err := mem.GetMinimumMemoryMB()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	max, err := mem.GetMaximumMemoryMB()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	buf, err := mem.GetTargetMemoryBuffer()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	enabled, err := mem.GetPropertyDynamicMemoryEnabled()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	if config.DynamicMemoryEnabled != enabled {
+		t.Fatal("Failed DynamicMemoryEnabled doesn't match config")
+	} else if config.MaximumMemoryMB != max {
+		t.Fatal("Failed MaximumMemoryMB doesn't match config")
+	} else if config.MinimumMemoryMB != min {
+		t.Fatal("Failed MinimumMemoryMB doesn't match config")
+	} else if config.TargetMemoryBuffer != buf {
+		t.Fatal("Failed TargetMemoryBuffer doesn't match config")
+	}
+
+	err = vm.Start()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	err = vm.Stop(true)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+}
