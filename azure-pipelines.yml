@@ -10,8 +10,9 @@ pool:
   vmImage: 'windows-2019'
 
 steps:
-- script: go version
-  displayName: 'Dependencies'
+- task: GoTool@0
+  inputs:
+    version: '1.15.x'
 
 - script: |
     make
