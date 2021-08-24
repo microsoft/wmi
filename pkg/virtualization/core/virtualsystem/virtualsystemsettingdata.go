@@ -201,3 +201,17 @@ func (vm *VirtualSystemSettingData) GetProcessorSetting() (out *processor.Proces
 
 	return processor.NewProcessorSettingData(psd)
 }
+
+func (vm *VirtualSystemSettingData) GetMsVMProcessorSetting() (out *v2.Msvm_ProcessorSettingData, err error) {
+	psd, err := vm.GetRelated("Msvm_ProcessorSettingData")
+	if err != nil {
+		return nil, err
+	}
+
+	wmivm, err := v2.NewMsvm_ProcessorSettingDataEx1(psd)
+	if err != nil {
+		return nil, err
+	}
+
+	return wmivm, err
+}
