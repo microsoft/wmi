@@ -248,9 +248,7 @@ func (vmms *VirtualSystemManagementService) SetCPUGroupID(vm *virtualsystem.Virt
 		return
 	}
 	defer proc.Close()
-
-	msproc := proc.Msvm_ProcessorSettingData
-	err = msproc.SetPropertyCpuGroupId(cpugid)
+	err = proc.SetPropertyCpuGroupId(cpugid)
 	if err != nil {
 		return
 	}
