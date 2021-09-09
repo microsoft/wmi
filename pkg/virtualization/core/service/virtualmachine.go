@@ -243,13 +243,14 @@ func (vmms *VirtualSystemManagementService) SetProcessorCount(vm *virtualsystem.
 }
 
 func (vmms *VirtualSystemManagementService) SetCPUGroupID(vm *virtualsystem.VirtualMachine, cpugid string) (err error) {
-	proc, err := vm.GetMsVMProcessor()
+	proc, err := vm.GetProcessor()
 	if err != nil {
 		return
 	}
 	defer proc.Close()
 
-	err = proc.SetPropertyCpuGroupId(cpugid)
+	msproc := proc.Msvm_ProcessorSettingData
+	err = msproc.SetPropertyCpuGroupId(cpugid)
 	if err != nil {
 		return
 	}

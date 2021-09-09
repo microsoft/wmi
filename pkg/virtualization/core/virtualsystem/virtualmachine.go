@@ -633,15 +633,4 @@ func (vm *VirtualMachine) GetProcessor() (vmprocessor *processor.ProcessorSettin
 	defer settings.Close()
 	vmprocessor, err = settings.GetProcessorSetting()
 	return
-
 }
-func (vm *VirtualMachine) GetMsVMProcessor() (vmprocessor *v2.Msvm_ProcessorSettingData, err error) {
-	settings, err := vm.GetVirtualSystemSettingData()
-	if err != nil {
-		return
-	}
-	defer settings.Close()
-	vmprocessor, err = settings.GetMsVMProcessorSetting()
-	return
-}
-
