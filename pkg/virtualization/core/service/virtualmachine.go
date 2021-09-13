@@ -242,6 +242,21 @@ func (vmms *VirtualSystemManagementService) SetProcessorCount(vm *virtualsystem.
 	return
 }
 
+func (vmms *VirtualSystemManagementService) SetCPUGroupID(vm *virtualsystem.VirtualMachine, cpugid string) (err error) {
+	proc, err := vm.GetProcessor()
+	if err != nil {
+		return
+	}
+	defer proc.Close()
+	err = proc.SetPropertyCpuGroupId(cpugid)
+	if err != nil {
+		return
+	}
+
+	err = vmms.ModifyVirtualSystemResourceEx(proc.WmiInstance, -1)
+	return
+}
+
 func (vmms *VirtualSystemManagementService) SetMemoryMB(vm *virtualsystem.VirtualMachine, sizeMB uint64) (err error) {
 	mem, err := vm.GetMemory()
 	if err != nil {
