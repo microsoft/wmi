@@ -201,3 +201,4 @@ func (vm *VirtualSystemSettingData) GetProcessorSetting() (out *processor.Proces
 
 	return processor.NewProcessorSettingData(psd)
 }
+
