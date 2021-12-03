@@ -18,6 +18,7 @@ import (
 	vswitchservice "github.com/microsoft/wmi/pkg/virtualization/network/service"
 	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
 	"github.com/nwoodmsft/iso9660"
+	"github.com/google/uuid"
 )
 
 var (
@@ -572,4 +573,55 @@ func TestCreateDynamicMemoryVirtualMachine(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
+}
+
+func TestBindCpuGroupVirtualMachine(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer setting.Close()
+	t.Logf("Create VMSettings")
+
+	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	memorySettings.SetSizeMB(2048)
+
+	processorSettings, err := processor.GetDefaultProcessorSettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	processorSettings.SetCPUCount(2)
+
+	vm, err := vmms.CreateVirtualMachine(setting, memorySettings, processorSettings)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Created VM [%s]", "test")
+	defer func() {
+		if vm != nil {
+			vm.Close()
+		}
+	}()
+	g, err := uuid.NewUUID()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	cpuGroupId := g.String()
+	err = vmms.SetCPUGroupID(vm, cpuGroupId)
+	if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Binded VM [%s] to Cpugroup [%s]", "test", cpuGroupId)
 }
