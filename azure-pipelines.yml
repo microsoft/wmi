@@ -1,19 +1,6 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
-pool:
-  vmImage: 'windows-2019'
-
-steps:
-- task: GoTool@0
-  inputs:
-    version: '1.15.x'
-
-- script: |
-    make
-  displayName: 'Build'
+jobs:
+- template: .pipelines/build.yaml
+- template: .pipelines/static.yaml
