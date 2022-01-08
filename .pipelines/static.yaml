@@ -1,0 +1,108 @@
+jobs:
+- job: StaticAnalysis
+
+  pool:
+    vmImage: 'windows-latest'
+
+  variables:
+  - group: wssdagent-build
+  - name: GO111MODULE
+    value: 'on'
+  - name: LGTM.UploadSnapshot
+    value: true
+
+  steps:
+  - task: InstallSSHKey@0
+    inputs:
+      knownHostsEntry: '$(KNOWN_HOST)' 
+      sshPublicKey: '$(SSH_PUBLIC_KEY)'
+      sshKeySecureFile: 'azure-pipelines-ssh-key-new'
+  - script: |
+      git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+      git config --global url."msazure@vs-ssh.visualstudio.com:v3".insteadOf https://msazure.visualstudio.com
+    displayName: 'Set up the Go workspace'
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '14.x'
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-codeinspector.CodeInspector@2
+    displayName: 'Run Code Inspector'
+    inputs:
+      ProductId: 0
+    continueOnError: true
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@3
+    displayName: Credential Scan
+    inputs:
+      outputFormat: pre
+      batchSize: 20
+      debugMode: false
+    continueOnError: true
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-policheck.PoliCheck@2
+    displayName: 'Run PoliCheck'
+    inputs:
+      targetType: F
+      result: PoliCheck.xml
+      optionsFC: 0
+      optionsXS: 0
+      optionsHMENABLE: 0
+    continueOnError: true
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-gosec.GoSec@1
+    displayName: 'Run GoSec'
+    inputs:
+      targetPattern: guardianGlob
+    continueOnError: true
+
+    #- task: securedevelopmentteam.vss-secure-development-tools.build-task-semmle.Semmle@1
+    # displayName: 'Run CodeQL (Semmle)'
+    #inputs:
+    #  language: 'go'
+    #  buildCommandsString: 'make all'
+    #continueOnError: true
+    #condition: succeededOrFailed()
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-report.SdtReport@2
+    displayName: 'Create Security Analysis Report'
+    inputs:
+      GdnExportTsvFile: true
+      GdnExportHtmlFile: true
+      GdnExportOutputBaselineFile: myBaseline
+      GdnExportOutputBaseline: myBaselinedResults
+      GdnExportOutputSuppressionFile: mySuppressions
+      GdnExportOutputSuppressionSet: mySuppressionSet
+      GdnExportPolicyMinSev: Warning
+      GdnExportGdnToolApiScanSeverity: Warning
+      GdnExportGdnToolArmorySeverity: Warning
+      GdnExportGdnToolBanditSeverity: Warning
+      GdnExportGdnToolBinSkimSeverity: Warning
+      GdnExportGdnToolCodesignValidationSeverity: Warning
+      GdnExportGdnToolCredScanSeverity: Warning
+      GdnExportGdnToolESLintSeverity: Warning
+      GdnExportGdnToolFlawfinderSeverity: Warning
+      GdnExportGdnToolFortifyScaSeverity: Warning
+      GdnExportGdnToolFxCopSeverity: Warning
+      GdnExportGdnToolGosecSeverity: Warning
+      GdnExportGdnToolModernCopSeverity: Warning
+      GdnExportGdnToolPoliCheckSeverity: Warning
+      GdnExportGdnToolRoslynAnalyzersSeverity: Warning
+      GdnExportGdnToolSDLNativeRulesSeverity: Warning
+      GdnExportGdnToolSemmleSeverity: Warning
+      GdnExportGdnToolSpotBugsSeverity: Warning
+      GdnExportGdnToolTSLintSeverity: Warning
+    continueOnError: true
+    condition: succeededOrFailed()
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-publishsecurityanalysislogs.PublishSecurityAnalysisLogs@3
+    displayName: 'Publish Security Analysis Logs'
+    continueOnError: true
+    condition: succeededOrFailed()
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-postanalysis.PostAnalysis@2
+    displayName: 'Post Analysis'
+    inputs:
+      GdnBreakPolicyMinSev: Warning
+    continueOnError: false
+    condition: succeededOrFailed()
