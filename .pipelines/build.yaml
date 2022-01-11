@@ -5,7 +5,7 @@ jobs:
     vmImage: 'windows-latest'
 
   variables:
-  - group: wssdagent-build
+  - group: moc-build
   - name: GO111MODULE
     value: 'on'
 
@@ -24,6 +24,7 @@ jobs:
     displayName: 'Set up the Go workspace'
 
   - script: |
+      mkdir manifest
       make 
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     displayName: 'Build'
@@ -31,4 +32,7 @@ jobs:
   - task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
     displayName: 'SBOM Generation'
     inputs:
-      BuildDropPath: $(System.DefaultWorkingDirectory)/bin
+      BuildDropPath: $(System.DefaultWorkingDirectory)/manifest
+
+  - publish: $(System.DefaultWorkingDirectory)/manifest
+    artifact: manifest

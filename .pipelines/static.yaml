@@ -5,7 +5,7 @@ jobs:
     vmImage: 'windows-latest'
 
   variables:
-  - group: wssdagent-build
+  - group: moc-build
   - name: GO111MODULE
     value: 'on'
   - name: LGTM.UploadSnapshot
@@ -99,6 +99,13 @@ jobs:
     displayName: 'Publish Security Analysis Logs'
     continueOnError: true
     condition: succeededOrFailed()
+
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-uploadtotsa.TSAUpload@2
+    displayName: 'TSA upload to Codebase: TSATest_1ES Stamp: TSA'
+    inputs:
+      GdnPublishTsaOnboard: true
+      GdnPublishTsaConfigFile: '$(Build.sourcesDirectory)\.gdn\.gdntsa'
+    continueOnError: true
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-postanalysis.PostAnalysis@2
     displayName: 'Post Analysis'
