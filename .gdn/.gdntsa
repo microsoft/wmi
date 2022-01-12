@@ -1,0 +1,15 @@
+{
+    "codebaseName": "wmi_master",
+    "notificationAliases": [
+        "akshcidev@microsoft.com"
+    ],
+    "codebaseAdmins": [
+        "REDMOND\\madhanm",
+        "REDMOND\\dingov"
+    ],
+    "instanceUrl": "https://microsoft.visualstudio.com/",
+    "projectName": "OS",
+    "areaPath": "OS\\Core\\STACK\\CoreNet\\MSK8S",
+    "iterationPath": "OS\\Future",
+    "allTools": true
+}

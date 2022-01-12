@@ -1,0 +1,38 @@
+jobs:
+- job: Build
+
+  pool:
+    vmImage: 'windows-latest'
+
+  variables:
+  - group: moc-build
+  - name: GO111MODULE
+    value: 'on'
+
+  steps:
+  - task: GoTool@0
+    inputs:
+      version: '1.15.x'
+  - task: InstallSSHKey@0
+    inputs:
+      knownHostsEntry: '$(KNOWN_HOST)' 
+      sshPublicKey: '$(SSH_PUBLIC_KEY)'
+      sshKeySecureFile: 'azure-pipelines-ssh-key-new'
+  - script: |
+      git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+      git config --global url."msazure@vs-ssh.visualstudio.com:v3".insteadOf https://msazure.visualstudio.com
+    displayName: 'Set up the Go workspace'
+
+  - script: |
+      mkdir manifest
+      make 
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+    displayName: 'Build'
+
+  - task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
+    displayName: 'SBOM Generation'
+    inputs:
+      BuildDropPath: $(System.DefaultWorkingDirectory)/manifest
+
+  - publish: $(System.DefaultWorkingDirectory)/manifest
+    artifact: manifest
