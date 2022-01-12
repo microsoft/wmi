@@ -50,19 +50,19 @@ jobs:
       optionsHMENABLE: 0
     continueOnError: true
 
-  - task: securedevelopmentteam.vss-secure-development-tools.build-task-gosec.GoSec@1
-    displayName: 'Run GoSec'
-    inputs:
-      targetPattern: guardianGlob
-    continueOnError: true
+    #- task: securedevelopmentteam.vss-secure-development-tools.build-task-gosec.GoSec@1
+    #displayName: 'Run GoSec'
+    #inputs:
+    #  targetPattern: guardianGlob
+    #continueOnError: true
 
     #- task: securedevelopmentteam.vss-secure-development-tools.build-task-semmle.Semmle@1
-    # displayName: 'Run CodeQL (Semmle)'
-    # inputs:
-    #   language: 'go'
-    #   buildCommandsString: 'make'
-    # continueOnError: true
-    # condition: succeededOrFailed()
+    #displayName: 'Run CodeQL (Semmle)'
+    #inputs:
+    #  language: 'go'
+    #  buildCommandsString: 'make'
+    #continueOnError: true
+    #condition: succeededOrFailed()
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-report.SdtReport@2
     displayName: 'Create Security Analysis Report'
