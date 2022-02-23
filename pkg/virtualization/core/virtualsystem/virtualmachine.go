@@ -343,6 +343,68 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	return
 }
 
+func (vm *VirtualMachine) NewEmulatedDiskDrive(controllernumber, controllerlocation int32) (emulatedDrive *drive.EmulatedDiskDrive, err error) {
+	driverp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Disk_Drive)
+	if err != nil {
+		return
+	}
+	defer driverp.Close()
+
+	rasd, err := driverp.GetDefaultResourceAllocationSettingData()
+	if err != nil {
+		return
+	}
+
+	emulatedDrive, err = drive.NewEmulatedDiskDrive(rasd.WmiInstance)
+	if err != nil {
+		return
+	}
+	defer func() {
+		if err != nil {
+			emulatedDrive.Close()
+			emulatedDrive = nil
+		}
+	}()
+
+	//only IDE
+	controllers, err := vm.GetIDEControllers()
+	if err != nil {
+		return
+	}
+	defer controllers.Close()
+	// 1. Find the correct controller to use vased on the controllernumber
+	if len(controllers) == 0 {
+		err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have IDE Controller", vm.Name())
+		return
+	}
+	if int(controllernumber) > len(controllers) {
+		err = errors.Wrapf(errors.NotFound,
+			"VirtualMachine [%s] doesnt have IDEController with bus location [%d]", vm.Name(), controllernumber)
+		return
+	}
+
+	if controllernumber == -1 {
+		controllernumber = 0
+	}
+	idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
+	if err != nil {
+		return
+	}
+
+	emulatedDrive.SetPropertyParent(idecontroller.InstancePath())
+	if controllerlocation == -1 {
+		controllerlocation, err = idecontroller.GetFreeLocation()
+		if err != nil {
+			err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
+			return
+		}
+		// Find a free location
+	}
+	emulatedDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
+
+	return
+}
+
 func (vm *VirtualMachine) NewEthernetPortAllocationSettingData(vna *na.VirtualNetworkAdapter) (epas *switchport.EthernetPortAllocationSettingData, err error) {
 	vhdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Ethernet_Connection)
 	if err != nil {
