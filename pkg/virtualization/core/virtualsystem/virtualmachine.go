@@ -488,6 +488,11 @@ func (vm *VirtualMachine) GetSCSIControllers() (col resourceallocation.ResourceA
 	return
 }
 
+func (vm *VirtualMachine) GetIDEControllers() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
+	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_IDE_Controller)
+	return
+}
+
 func (vm *VirtualMachine) GetVirtualHardDisks() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Logical_Disk)
 	return
