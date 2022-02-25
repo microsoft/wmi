@@ -57,24 +57,6 @@ func (settings *IDEControllerSettings) GetFreeLocation() (int32, error) {
 	return int32(freeLocation), nil
 }
 
-/*func checkIfLocationExists(col wmi.WmiInstanceCollection, locationNumber int) (bool, error) {
-	for _, inst := range col {
-		vmdrive, err := drive.NewEmulatedDiskDrive(inst)
-		if err != nil {
-			return false, err
-		}
-		loc, err := vmdrive.GetControllerLocation()
-		if err != nil {
-			return false, err
-		}
-
-		if loc == fmt.Sprintf("%d", locationNumber) {
-			return true, nil
-		}
-
-	}
-	return false, nil
-}*/
 
 func (settings *IDEControllerSettings) getResourceAllocationSettingData(rtype v2.ResourceAllocationSettingData_ResourceType) (col wmi.WmiInstanceCollection, err error) {
 	resourceType := fmt.Sprintf("%d", int32(rtype))
