@@ -8,7 +8,7 @@ import (
 	"log"
 
 	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
+	//"github.com/microsoft/wmi/pkg/virtualization/core/storage/drive"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
@@ -57,7 +57,7 @@ func (settings *IDEControllerSettings) GetFreeLocation() (int32, error) {
 	return int32(freeLocation), nil
 }
 
-func checkIfLocationExists(col wmi.WmiInstanceCollection, locationNumber int) (bool, error) {
+/*func checkIfLocationExists(col wmi.WmiInstanceCollection, locationNumber int) (bool, error) {
 	for _, inst := range col {
 		vmdrive, err := drive.NewEmulatedDiskDrive(inst)
 		if err != nil {
@@ -74,7 +74,7 @@ func checkIfLocationExists(col wmi.WmiInstanceCollection, locationNumber int) (b
 
 	}
 	return false, nil
-}
+}*/
 
 func (settings *IDEControllerSettings) getResourceAllocationSettingData(rtype v2.ResourceAllocationSettingData_ResourceType) (col wmi.WmiInstanceCollection, err error) {
 	resourceType := fmt.Sprintf("%d", int32(rtype))

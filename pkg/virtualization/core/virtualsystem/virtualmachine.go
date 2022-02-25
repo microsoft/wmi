@@ -5,7 +5,7 @@ package virtualsystem
 
 import (
 	"fmt"
-	//"log"
+	"log"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -248,18 +248,19 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
-func (vm *VirtualMachine) GetVirtualMachineGeneration() (int32 , error){
+func (vm *VirtualMachine) GetVirtualMachineGeneration() (int,error){
 	
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err!= nil{
-		return nil, err
+		return -1, err
 	}
 	generationtype, err := settings.GetPropertyVirtualSystemSubType()
 	if err != nil {
-		return nil, err
+		return -1, err
 	}
 	
-	return generationtype
+	return int(generationtype) , nil
+}
 
 func (vm *VirtualMachine) GetVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
@@ -365,7 +366,7 @@ func (vm *VirtualMachine) NewEmulatedDiskDrive(controllernumber, controllerlocat
 			emulatedDrive = nil
 		}
 	}()
-
+	log.Printf("before get ide controllers")
 	//only IDE
 	controllers, err := vm.GetIDEControllers()
 	if err != nil {
@@ -386,11 +387,13 @@ func (vm *VirtualMachine) NewEmulatedDiskDrive(controllernumber, controllerlocat
 	if controllernumber == -1 {
 		controllernumber = 0
 	}
+	
+	log.Printf("before newIDEControllerSettings")
 	idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
 	if err != nil {
 		return
 	}
-
+	log.Printf("before setting properties")
 	emulatedDrive.SetPropertyParent(idecontroller.InstancePath())
 	if controllerlocation == -1 {
 		controllerlocation, err = idecontroller.GetFreeLocation()
@@ -527,6 +530,43 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	}
 
 	dvd, err = drive.NewDvdDrive(rasd.WmiInstance)
+	
+	defer func() {
+		if err != nil {
+			dvd.Close()
+			dvd = nil
+		}
+	}()
+	log.Printf("before get ide controllers")
+	//only IDE
+	controllers, err := vm.GetIDEControllers()
+	if err != nil {
+		return
+	}
+	defer controllers.Close()
+	// 1. Find the correct controller to use vased on the controllernumber
+	if len(controllers) == 0 {
+		err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have IDE Controller", vm.Name())
+		return
+	}
+	
+	
+	
+	idecontroller, err := controller.NewIDEControllerSettings(controllers[1].WmiInstance)
+	if err != nil {
+		return
+	}
+	log.Printf("before setting properties")
+	dvd.SetPropertyParent(idecontroller.InstancePath())
+	
+	controllerlocation, err := idecontroller.GetFreeLocation()
+	if err != nil {
+		err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
+		return
+	}
+		// Find a free location
+	
+	dvd.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
 	return
 }
 
@@ -650,18 +690,22 @@ func (vm *VirtualMachine) GetVirtualHardDiskByPath(path string) (vhd *disk.Virtu
 
 func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool_ResourceType) (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
+	log.Printf("after get virtualsystem setting data")
 	if err != nil {
 		return
 	}
 	defer settings.Close()
 
 	rasdcol, err := settings.GetAllRelated("CIM_ResourceAllocationSettingData")
+	log.Printf("after get related resource allocation setting data")
 	if err != nil {
 		return
 	}
 	defer rasdcol.Close()
 
 	resType := resource.GetResourceTypeValue(rtype)
+	log.Printf(resType.String())
+	log.Printf("after get resource type value")
 	for _, ins := range rasdcol {
 		rasd, err1 := resourceallocation.NewResourceAllocationSettingData(ins)
 		if err1 != nil {
@@ -669,6 +713,7 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 			return
 		}
 		curresType, err1 := rasd.GetResourceType()
+		log.Printf(curresType.String())
 		if err1 != nil {
 			err = err1
 			return
@@ -682,6 +727,7 @@ func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool
 			err = err1
 			return
 		}
+		log.Printf("after clone and before rsadfound")
 		rasdfound, err1 := resourceallocation.NewResourceAllocationSettingData(instance)
 		if err1 != nil {
 			err = err1

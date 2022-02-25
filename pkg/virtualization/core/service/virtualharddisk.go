@@ -126,7 +126,7 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDiskIDE(vm *virtual
 	vhddrive *drive.EmulatedDiskDrive,
 	err error) {
 
-	
+	log.Printf("entered attachvirtualharddiskide")
 	vhddrive, err = vmms.AddEmulatedDiskDrive(vm, -1, -1)
 	if err != nil {
 		return
@@ -142,6 +142,7 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDiskIDE(vm *virtual
 		}
 	}()
 	
+	log.Printf("after add emulateddisk drive")
 
 	// Add a disk
 	vhdtmp, err := vm.NewVirtualHardDisk(path)
@@ -263,12 +264,13 @@ func (vmms *VirtualSystemManagementService) AddEmulatedDiskDrive(vm *virtualsyst
 		return
 	}
 	defer vmsetting.Close()
-
+	log.Printf("before newEmulatedDIskDrive")
 	vhddrivetmp, err := vm.NewEmulatedDiskDrive(controllernumber, controllerlocation)
 	if err != nil {
 		return
 	}
 	defer vhddrivetmp.Close()
+	log.Printf("before addvirtualsystemresource")
 	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, vhddrivetmp.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
 		return
