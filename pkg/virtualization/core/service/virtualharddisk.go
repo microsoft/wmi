@@ -52,7 +52,6 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 	vhddrive *drive.SyntheticDiskDrive,
 	err error) {
 
-	
 	vhddrive, err = vmms.AddSyntheticDiskDrive(vm, -1, -1)
 	if err != nil {
 		return
@@ -68,7 +67,6 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 		}
 	}()
 	
-
 	// Add a disk
 	vhdtmp, err := vm.NewVirtualHardDisk(path)
 	if err != nil {
@@ -119,9 +117,6 @@ func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsys
 	}
 	return
 }
-
-
-
 
 func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.VirtualHardDisk) (err error) {
 	drive, err := vhd.GetDrive()
@@ -182,7 +177,3 @@ func (vmms *VirtualSystemManagementService) RemoveSyntheticDiskDrive(
 	err = vmms.RemoveVirtualSystemResource(vhddrive.CIM_ResourceAllocationSettingData, -1)
 	return
 }
-
-
-
-
