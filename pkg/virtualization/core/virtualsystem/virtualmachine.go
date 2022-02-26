@@ -341,22 +341,6 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	}
 
 	if (generation == 0){
-		scsicontroller, err := controller.NewSCSIControllerSettings(controllers[controllernumber].WmiInstance)
-		if err != nil {
-			return
-		}
-
-		synDrive.SetPropertyParent(scsicontroller.InstancePath())
-		if controllerlocation == -1 {
-			controllerlocation, err = scsicontroller.GetFreeLocation()
-			if err != nil {
-				err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
-				return
-			}
-			// Find a free location
-		}
-		synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
-	} else{
 		idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
 		if err != nil {
 			return
@@ -365,6 +349,22 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 		synDrive.SetPropertyParent(idecontroller.InstancePath())
 		if controllerlocation == -1 {
 			controllerlocation, err = idecontroller.GetFreeLocation()
+			if err != nil {
+				err = errors.Wrapf(errors.NotFound, "Unable to find free location in IDE Controller")
+				return
+			}
+			// Find a free location
+		}
+		synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
+	} else{
+		scsicontroller, err := controller.NewSCSIControllerSettings(controllers[controllernumber].WmiInstance)
+		if err != nil {
+			return
+		}
+
+		synDrive.SetPropertyParent(scsicontroller.InstancePath())
+		if controllerlocation == -1 {
+			controllerlocation, err = scsicontroller.GetFreeLocation()
 			if err != nil {
 				err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
 				return
