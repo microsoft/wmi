@@ -5,7 +5,7 @@ package virtualsystem
 
 import (
 	"fmt"
-	"log"
+	//"log"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -285,7 +285,7 @@ func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.V
 func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerlocation int32) (synDrive *drive.SyntheticDiskDrive, err error) {
 	driverp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Disk_Drive)
 
-	generation := vm.GetVirtualMachineGeneration()
+	generation,err := vm.GetVirtualMachineGeneration()
 	if err != nil {
 		return
 	}
@@ -307,7 +307,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 		}
 	}()
 
-	var contollers resourceallocation.ResourceAllocationSettingDataCollection
+	var controllers resourceallocation.ResourceAllocationSettingDataCollection
 	var controllerType string 
 	if (generation  == 0){
 		controllers, err = vm.GetIDEControllers()
@@ -332,7 +332,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	}
 	if int(controllernumber) > len(controllers) {
 		err = errors.Wrapf(errors.NotFound,
-			"VirtualMachine [%s] doesnt have" + controllerType "with bus location [%d]", vm.Name(), controllernumber)
+			"VirtualMachine [%s] doesnt have" + controllerType + "with bus location [%d]", vm.Name(), controllernumber)
 		return
 	}
 
@@ -343,7 +343,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	if (generation == 0){
 		idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
 		if err != nil {
-			return
+			return nil, err
 		}
 
 		synDrive.SetPropertyParent(idecontroller.InstancePath())
@@ -351,7 +351,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 			controllerlocation, err = idecontroller.GetFreeLocation()
 			if err != nil {
 				err = errors.Wrapf(errors.NotFound, "Unable to find free location in IDE Controller")
-				return
+				return nil, err
 			}
 			// Find a free location
 		}
@@ -359,7 +359,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	} else{
 		scsicontroller, err := controller.NewSCSIControllerSettings(controllers[controllernumber].WmiInstance)
 		if err != nil {
-			return
+			return nil, err
 		}
 
 		synDrive.SetPropertyParent(scsicontroller.InstancePath())
@@ -367,7 +367,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 			controllerlocation, err = scsicontroller.GetFreeLocation()
 			if err != nil {
 				err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
-				return
+				return nil, err
 			}
 			// Find a free location
 		}
@@ -492,7 +492,7 @@ func (vm *VirtualMachine) NewVirtualHardDisk(path string) (vhd *disk.VirtualHard
 func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	dvdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_DVD_drive)
 
-	generation := vm.GetVirtualMachineGeneration()
+	generation, err := vm.GetVirtualMachineGeneration()
 	if err != nil {
 		return
 	}
@@ -514,18 +514,18 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	if (generation ==0){
 		controllers, err := vm.GetIDEControllers()
 		if err != nil {
-			return
+			return nil, err
 		}
 		defer controllers.Close()
 		// 1. Find the correct controller to use vased on the controllernumber
 		if len(controllers) == 0 {
 			err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have IDE Controller", vm.Name())
-			return
+			return nil, err
 		}
 				
 		idecontroller, err := controller.NewIDEControllerSettings(controllers[1].WmiInstance)
 		if err != nil {
-			return
+			return nil, err
 		}
 		
 		dvd.SetPropertyParent(idecontroller.InstancePath())
@@ -533,7 +533,7 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 		controllerlocation, err := idecontroller.GetFreeLocation()
 		if err != nil {
 			err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
-			return
+			return nil, err
 		}
 		
 		dvd.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
