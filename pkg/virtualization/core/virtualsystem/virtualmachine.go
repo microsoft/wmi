@@ -259,7 +259,7 @@ func (vm *VirtualMachine) GetVirtualMachineGeneration() (int, error) {
 	if err != nil {
 		return -1, err
 	}
-	defer settings.close()
+	defer settings.Close()
 	generationtype, err := settings.GetPropertyVirtualSystemSubType()
 	if err != nil {
 		return -1, err
