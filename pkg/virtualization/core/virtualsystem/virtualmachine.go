@@ -5,7 +5,7 @@ package virtualsystem
 
 import (
 	"fmt"
-	//"log"
+	"log"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
@@ -253,19 +253,19 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
-func (vm *VirtualMachine) GetVirtualMachineGeneration() (int, error) {
+func (vm *VirtualMachine) GetVirtualMachineGeneration() (string, error) {
 
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
-		return -1, err
+		return "", err
 	}
 	defer settings.Close()
 	generationtype, err := settings.GetPropertyVirtualSystemSubType()
 	if err != nil {
-		return -1, err
+		return "", err
 	}
 
-	return int(generationtype), nil
+	return generationtype, nil
 }
 
 func (vm *VirtualMachine) GetVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
@@ -315,7 +315,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 
 	var controllers resourceallocation.ResourceAllocationSettingDataCollection
 	var controllerType string
-	if generation == 0 {
+	if generation == v2.VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1 {
 		controllers, err = vm.GetIDEControllers()
 		controllerType = IDEController
 		if err != nil {
@@ -346,7 +346,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 		controllernumber = 0
 	}
 
-	if generation == 0 {
+	if generation == v2.VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1 {
 		idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
 		if err != nil {
 			return nil, err
@@ -515,7 +515,7 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 		}
 	}()
 
-	if generation == 0 {
+	if generation == v2.VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1{
 		controllers, err := vm.GetIDEControllers()
 		if err != nil {
 			return nil, err

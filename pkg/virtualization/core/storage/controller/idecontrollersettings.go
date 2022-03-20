@@ -27,7 +27,7 @@ func NewIDEControllerSettings(instance *wmi.WmiInstance) (*IDEControllerSettings
 }
 
 func (settings *IDEControllerSettings) GetFreeLocation() (int32, error) {
-	// Get all drives - Is this
+	// Get all drives
 	col, err := settings.getResourceAllocationSettingData(v2.ResourceAllocationSettingData_ResourceType_Disk_Drive)
 	if err != nil {
 		return -1, err
@@ -56,7 +56,6 @@ func (settings *IDEControllerSettings) GetFreeLocation() (int32, error) {
 	}
 	return int32(freeLocation), nil
 }
-
 
 func (settings *IDEControllerSettings) getResourceAllocationSettingData(rtype v2.ResourceAllocationSettingData_ResourceType) (col wmi.WmiInstanceCollection, err error) {
 	resourceType := fmt.Sprintf("%d", int32(rtype))

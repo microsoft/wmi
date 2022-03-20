@@ -9,11 +9,11 @@
 package v2
 
 // VirtualSystemSettingData_VirtualSystemSubType
-type VirtualSystemSettingData_VirtualSystemSubType int
+//type VirtualSystemSettingData_VirtualSystemSubType string
 
 const (
 	// Microsoft_Hyper_V_SubType_1 enum
-	VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1 VirtualSystemSettingData_VirtualSystemSubType = 0
+	VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1 = "Microsoft:Hyper-V:SubType:1"
 	// Microsoft_Hyper_V_SubType_2 enum
-	VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_2 VirtualSystemSettingData_VirtualSystemSubType = 1
+	VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_2  = "Microsoft:Hyper-V:SubType:2"
 )
