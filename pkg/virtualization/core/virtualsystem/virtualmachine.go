@@ -5,7 +5,7 @@ package virtualsystem
 
 import (
 	"fmt"
-	"log"
+	//"log"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/host"
