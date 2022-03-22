@@ -19,6 +19,10 @@ func init() {
 	whost = host.NewWmiLocalHost()
 }
 
+func TestVirtualMachineCreate(t *testing.T) {
+	//TODO
+}
+
 func TestGetVirtualMachine(t *testing.T) {
 	vm, err := GetVirtualMachine(whost, "test")
 	if err != nil {
