@@ -515,7 +515,7 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 		}
 	}()
 
-	if generation == v2.VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1{
+	if generation == v2.VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1 {
 		controllers, err := vm.GetIDEControllers()
 		if err != nil {
 			return nil, err
