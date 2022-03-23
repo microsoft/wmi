@@ -202,3 +202,9 @@ func (vm *VirtualSystemSettingData) GetProcessorSetting() (out *processor.Proces
 	return processor.NewProcessorSettingData(psd)
 }
 
+func (vm *VirtualSystemSettingData) SetHyperVGeneration(generation HyperVGeneration) (err error) {
+
+	return vm.SetProperty("VirtualSystemSubType", string(generation))
+
+	
+}

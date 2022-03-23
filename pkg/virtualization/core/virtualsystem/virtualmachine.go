@@ -26,6 +26,7 @@ import (
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	"reflect"
 )
 
 type VirtualMachine struct {
@@ -70,6 +71,19 @@ const (
 
 const (
 	StateChangeTimeoutSeconds = 300
+)
+
+const (
+	IDEController  = "IDE Controller"
+	SCSIController = "SCSI Controller"
+)
+
+type HyperVGeneration string
+
+const (
+	HyperVGeneration_V1   = "Microsoft:Hyper-V:SubType:1"
+	HyperVGeneration_V2   = "Microsoft:Hyper-V:SubType:2"
+	
 )
 
 // NewVirtualMachine
@@ -248,6 +262,33 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
+func (vm *VirtualMachine) GetVirtualMachineGeneration() (HyperVGeneration, error) {
+
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return "", err
+	}
+	defer settings.Close()
+	retValue, err := settings.GetProperty("VirtualSystemSubType")
+	if err != nil {
+		return "", err
+	}
+	if retValue == nil {
+		// Doesn't have any value. Return empty
+		return "", err
+	}
+
+	valuetmp, ok := retValue.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		return "", err
+	}
+
+	value := HyperVGeneration(valuetmp)
+
+	return value, nil
+}
+
 func (vm *VirtualMachine) GetVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
@@ -270,6 +311,8 @@ func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.V
 
 func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerlocation int32) (synDrive *drive.SyntheticDiskDrive, err error) {
 	driverp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Disk_Drive)
+
+	generation, err := vm.GetVirtualMachineGeneration()
 	if err != nil {
 		return
 	}
@@ -291,42 +334,73 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 		}
 	}()
 
-	// Only support SCSI
-	controllers, err := vm.GetSCSIControllers()
-	if err != nil {
-		return
+	var controllers resourceallocation.ResourceAllocationSettingDataCollection
+	var controllerType string
+	if generation == HyperVGeneration_V1 {
+		controllers, err = vm.GetIDEControllers()
+		controllerType = IDEController
+		if err != nil {
+			return
+		}
+
+	} else {
+		controllers, err = vm.GetSCSIControllers()
+		controllerType = SCSIController
+		if err != nil {
+			return
+		}
 	}
+
 	defer controllers.Close()
 	// 1. Find the correct controller to use vased on the controllernumber
 	if len(controllers) == 0 {
-		err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have SCSI Controller", vm.Name())
+		err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have [%s]", vm.Name(), controllerType)
 		return
 	}
 	if int(controllernumber) > len(controllers) {
 		err = errors.Wrapf(errors.NotFound,
-			"VirtualMachine [%s] doesnt have SCSI Controller with bus location [%d]", vm.Name(), controllernumber)
+			"VirtualMachine [%s] doesnt have [%s] with bus location [%d]", vm.Name(), controllerType, controllernumber)
 		return
 	}
 
 	if controllernumber == -1 {
 		controllernumber = 0
 	}
-	scsicontroller, err := controller.NewSCSIControllerSettings(controllers[controllernumber].WmiInstance)
-	if err != nil {
-		return
-	}
 
-	synDrive.SetPropertyParent(scsicontroller.InstancePath())
-	if controllerlocation == -1 {
-		controllerlocation, err = scsicontroller.GetFreeLocation()
+	if generation == HyperVGeneration_V1 {
+		idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
 		if err != nil {
-			err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
-			return
+			return nil, err
 		}
-		// Find a free location
-	}
-	synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
 
+		synDrive.SetPropertyParent(idecontroller.InstancePath())
+		if controllerlocation == -1 {
+			controllerlocation, err = idecontroller.GetFreeLocation()
+			if err != nil {
+				err = errors.Wrapf(errors.NotFound, "Unable to find free location in IDE Controller")
+				return nil, err
+			}
+			// Find a free location
+		}
+		synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
+	} else {
+		scsicontroller, err := controller.NewSCSIControllerSettings(controllers[controllernumber].WmiInstance)
+		if err != nil {
+			return nil, err
+		}
+
+		synDrive.SetPropertyParent(scsicontroller.InstancePath())
+		if controllerlocation == -1 {
+			controllerlocation, err = scsicontroller.GetFreeLocation()
+			if err != nil {
+				err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
+				return nil, err
+			}
+			// Find a free location
+		}
+		synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
+
+	}
 	return
 }
 
@@ -442,6 +516,8 @@ func (vm *VirtualMachine) NewVirtualHardDisk(path string) (vhd *disk.VirtualHard
 
 func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	dvdrp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_DVD_drive)
+
+	generation, err := vm.GetVirtualMachineGeneration()
 	if err != nil {
 		return
 	}
@@ -452,6 +528,46 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 	}
 
 	dvd, err = drive.NewDvdDrive(rasd.WmiInstance)
+
+	defer func() {
+		if err != nil {
+			dvd.Close()
+			dvd = nil
+		}
+	}()
+
+	if generation == HyperVGeneration_V1 {
+		controllers, err := vm.GetIDEControllers()
+		if err != nil {
+			return nil, err
+		}
+		defer controllers.Close()
+		// 1. Find the correct controller to use vased on the controllernumber
+		if len(controllers) == 0 {
+			err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have IDE Controller", vm.Name())
+			return nil, err
+		}
+		// for generation 1 VM's there are 2 IDE controllers and the dvd drive is always attached to the second IDE Controller
+		if len(controllers) == 2 {
+			idecontroller, err := controller.NewIDEControllerSettings(controllers[1].WmiInstance)
+			if err != nil {
+				return nil, err
+			}
+
+			dvd.SetPropertyParent(idecontroller.InstancePath())
+
+			controllerlocation, err := idecontroller.GetFreeLocation()
+			if err != nil {
+				err = errors.Wrapf(errors.NotFound, "Unable to find free location in IDE Controller")
+				return nil, err
+			}
+
+			dvd.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
+		} else{
+			err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have 2 IDE Controllers", vm.Name())
+			return nil, err
+		}
+	}
 	return
 }
 
@@ -472,6 +588,11 @@ func (vm *VirtualMachine) NewLogicalDisk() (ld *disk.LogicalDisk, err error) {
 
 func (vm *VirtualMachine) GetSCSIControllers() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Parallel_SCSI_HBA)
+	return
+}
+
+func (vm *VirtualMachine) GetIDEControllers() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
+	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_IDE_Controller)
 	return
 }
 

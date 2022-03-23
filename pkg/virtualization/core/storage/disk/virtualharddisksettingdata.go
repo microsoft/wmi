@@ -52,7 +52,7 @@ func GetDefaultVirtualHardDiskSettingData(whost *host.WmiHost) (*VirtualHardDisk
 
 func GetVirtualHardDiskSettingData(whost *host.WmiHost, path string,
 	logicalSectorSize, physicalSectorSize, blockSize uint32,
-	diskSize uint64, dynamic bool) (vhdsetting *VirtualHardDiskSettingData, err error) {
+	diskSize uint64, dynamic bool, diskFileFormat VirtualHardDiskFormat) (vhdsetting *VirtualHardDiskSettingData, err error) {
 
 	vhdsetting, err = GetDefaultVirtualHardDiskSettingData(whost)
 	if err != nil {
@@ -60,7 +60,7 @@ func GetVirtualHardDiskSettingData(whost *host.WmiHost, path string,
 	}
 
 	vhdsetting.SetPropertyPath(path)
-	vhdsetting.SetPropertyFormat(uint16(VirtualHardDiskFormat_2))
+	vhdsetting.SetPropertyFormat(uint16(diskFileFormat))
 	vhdsetting.SetPropertyBlockSize(blockSize)
 	vhdsetting.SetPropertyLogicalSectorSize(logicalSectorSize)
 	vhdsetting.SetPropertyPhysicalSectorSize(physicalSectorSize)

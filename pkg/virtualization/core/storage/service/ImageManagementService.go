@@ -111,10 +111,10 @@ func (ims *ImageManagementService) ResizeDisk(path string, size uint64) (err err
 // CreateDiskEx
 func (ims *ImageManagementService) CreateDiskEx(path string,
 	logicalSectorSize, physicalSectorSize, blockSize uint32,
-	diskSize uint64, dynamic bool) (err error) {
+	diskSize uint64, dynamic bool, diskFileFormat disk.VirtualHardDiskFormat) (err error) {
 
 	setting, err := disk.GetVirtualHardDiskSettingData(ims.GetWmiHost(), path, logicalSectorSize,
-		physicalSectorSize, blockSize, diskSize, dynamic)
+		physicalSectorSize, blockSize, diskSize, dynamic, diskFileFormat)
 	if err != nil {
 		return
 	}

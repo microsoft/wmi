@@ -18,6 +18,7 @@ type ResourceTypeValue struct {
 var ResourceSubTypeName = map[int32]string{
 	0:     "Unknown",
 	1:     "",
+	5:     "Microsoft:Hyper-V:Emulated IDE Controller",
 	6:     "Microsoft:Hyper-V:Synthetic SCSI Controller",
 	10:    "Microsoft:Hyper-V:Synthetic Ethernet Port",
 	17:    "Microsoft:Hyper-V:Synthetic Disk Drive",
@@ -29,6 +30,7 @@ var ResourceSubTypeName = map[int32]string{
 var OtherResourceTypeName = map[int32]string{
 	0:     "",
 	1:     "Microsoft:Hyper-V:TPM",
+	5:     "",
 	6:     "",
 	10:    "",
 	17:    "",
