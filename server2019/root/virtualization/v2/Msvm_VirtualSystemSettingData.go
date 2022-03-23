@@ -1255,7 +1255,7 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyVirtualNumaEnabled() (
 }
 
 // SetVirtualSystemSubType sets the value of VirtualSystemSubType for the instance
-func (instance *Msvm_VirtualSystemSettingData) SetPropertyVirtualSystemSubType(value string) (err error) {
+func (instance *Msvm_VirtualSystemSettingData) SetPropertyVirtualSystemSubType(value VirtualSystemSettingData_VirtualSystemSubType) (err error) {
 	return instance.SetProperty("VirtualSystemSubType", (value))
 }
 
