@@ -49,7 +49,7 @@ func TestCreateVirtualMachines(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
+	err = setting.SetHyperVGeneration(virtualsystem.HyperVGeneration_V2)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -91,7 +91,7 @@ func TestCreateVirtualMachinesGen1(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:1")
+	err = setting.SetHyperVGeneration(virtualsystem.HyperVGeneration_V1)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -903,7 +903,7 @@ func TestCreateDynamicMemoryVirtualMachine(t *testing.T) {
 	}
 	defer setting.Close()
 
-	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
+	err = setting.SetHyperVGeneration(virtualsystem.HyperVGeneration_V2)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -1009,7 +1009,7 @@ func TestCreateDynamicMemoryVirtualMachineGen1(t *testing.T) {
 	}
 	defer setting.Close()
 
-	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:1")
+	err = setting.SetHyperVGeneration(virtualsystem.HyperVGeneration_V1)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -1121,7 +1121,7 @@ func TestBindCpuGroupVirtualMachine(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
+	err = setting.SetHyperVGeneration(virtualsystem.HyperVGeneration_V2)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -1172,7 +1172,7 @@ func TestBindCpuGroupVirtualMachineGen1(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:1")
+	err = setting.SetHyperVGeneration(virtualsystem.HyperVGeneration_V1)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
