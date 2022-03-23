@@ -49,7 +49,7 @@ func TestCreateVirtualMachines(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	err = setting.SetPropertyVirtualSystemSubType(v2.VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_2)
+	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -91,7 +91,7 @@ func TestCreateVirtualMachinesGen1(t *testing.T) {
 	defer setting.Close()
 	t.Logf("Create VMSettings")
 
-	err = setting.SetPropertyVirtualSystemSubType(v2.VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1)
+	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:1")
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -739,52 +739,49 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Got ImageManagementService ")
-
-	for i := 1; i <= 1; i++ {
-		path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", i)
-		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_1)
-		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
-		}
-		defer setting.Close()
-		err = ims.CreateDisk(setting)
-		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
-		}
-		defer os.RemoveAll(path)
-		t.Logf("Created vhd [%s]", path)
-
-		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
-		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
-		}
-		defer vhd.Close()
-		defer vhddrive.Close()
-		t.Logf("Attached vhd [%s] to [%s]", path, "testGen1")
-		controllerlocation, err := vhddrive.GetControllerLocation()
-		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
-		}
-		controllerNumber, err := vhddrive.GetControllerNumber()
-		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
-		}
-		t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
+	
+	path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
+	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_1)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
 	}
-
-	for i := 1; i <= 1; i++ {
-		path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", i)
-		vhd, err := vm.GetVirtualHardDiskByLocation(0, i-1)
-		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
-		}
-		defer vhd.Close()
-		err = vmms.DetachVirtualHardDisk(vhd)
-		if err != nil {
-			t.Fatalf("Failed [%+v]", err)
-		}
-		t.Logf("Detached vhd [%s] from [%s]", path, "testGen1")
+	defer setting.Close()
+	err = ims.CreateDisk(setting)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
 	}
+	defer os.RemoveAll(path)
+	t.Logf("Created vhd [%s]", path)
+
+	vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vhd.Close()
+	defer vhddrive.Close()
+	t.Logf("Attached vhd [%s] to [%s]", path, "testGen1")
+	controllerlocation, err := vhddrive.GetControllerLocation()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	controllerNumber, err := vhddrive.GetControllerNumber()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
+	
+	path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
+	vhd, err := vm.GetVirtualHardDiskByLocation(0, i-1)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vhd.Close()
+	err = vmms.DetachVirtualHardDisk(vhd)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Detached vhd [%s] from [%s]", path, "testGen1")
+
 }
 
 func TestAddRemoveTPM(t *testing.T) {
@@ -1016,6 +1013,12 @@ func TestCreateDynamicMemoryVirtualMachineGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
+
+	err = setting.SetPropertySecureBootEnabled(false)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
 	err = setting.SetPropertyVirtualNumaEnabled(false)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
@@ -1173,6 +1176,12 @@ func TestBindCpuGroupVirtualMachineGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
+
+	err = setting.SetPropertySecureBootEnabled(false)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
 
 	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
 	if err != nil {
