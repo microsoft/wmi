@@ -140,7 +140,7 @@ type Msvm_VirtualSystemSettingData struct {
 	VirtualNumaEnabled bool
 
 	//
-	VirtualSystemSubType string
+	VirtualSystemSubType VirtualSystemSettingData_VirtualSystemSubType
 }
 
 func NewMsvm_VirtualSystemSettingDataEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemSettingData, err error) {
@@ -1260,7 +1260,7 @@ func (instance *Msvm_VirtualSystemSettingData) SetPropertyVirtualSystemSubType(v
 }
 
 // GetVirtualSystemSubType gets the value of VirtualSystemSubType for the instance
-func (instance *Msvm_VirtualSystemSettingData) GetPropertyVirtualSystemSubType() (value string, err error) {
+func (instance *Msvm_VirtualSystemSettingData) GetPropertyVirtualSystemSubType() (value VirtualSystemSettingData_VirtualSystemSubType, err error) {
 	retValue, err := instance.GetProperty("VirtualSystemSubType")
 	if err != nil {
 		return
@@ -1270,13 +1270,13 @@ func (instance *Msvm_VirtualSystemSettingData) GetPropertyVirtualSystemSubType()
 		return
 	}
 
-	valuetmp, ok := retValue.(string)
+	valuetmp, ok := retValue.(int32)
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
-	value = string(valuetmp)
+	value = VirtualSystemSettingData_VirtualSystemSubType(valuetmp)
 
 	return
 }

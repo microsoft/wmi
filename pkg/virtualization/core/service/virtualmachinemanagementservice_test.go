@@ -672,7 +672,7 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 
 	for i := 1; i <= 4; i++ {
 		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
-		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true)
+		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_2)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -733,16 +733,16 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-
+    
 	ims, err := service.GetImageManagementService(whost)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Got ImageManagementService ")
 
-	for i := 1; i <= 4; i++ {
-		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
-		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true)
+	for i := 1; i <= 1; i++ {
+		path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", i)
+		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_1)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -772,7 +772,7 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 		t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
 	}
 
-	for i := 1; i <= 4; i++ {
+	for i := 1; i <= 1; i++ {
 		path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", i)
 		vhd, err := vm.GetVirtualHardDiskByLocation(0, i-1)
 		if err != nil {
@@ -814,12 +814,65 @@ func TestAddRemoveTPM(t *testing.T) {
 	fmt.Scanln()
 }
 
+func TestAddRemoveTPMGen1(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("testGen1")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "testGen1")
+
+	tpm, err := vmms.AddTPM(vm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	fmt.Scanln()
+	t.Logf("Added TPM to [%s] VMs", "testGen1")
+
+	err = vmms.RemoveTPM(tpm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Removed TPM from [%s] VMs", "testGen1")
+	fmt.Scanln()
+}
+
 func TestVirtualMachineDelete(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	defer vm.Close()
+	err = vm.Start()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	err = vm.Stop(true)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	err = vmms.DeleteVirtualMachine(vm)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+}
+
+func TestVirtualMachineDeleteGen1(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("testGen1")
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -946,6 +999,113 @@ func TestCreateDynamicMemoryVirtualMachine(t *testing.T) {
 	}
 }
 
+func TestCreateDynamicMemoryVirtualMachineGen1(t *testing.T) {
+	// create
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "dynamic-memory-test-gen1")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer setting.Close()
+
+	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:1")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	err = setting.SetPropertyVirtualNumaEnabled(false)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	memorySettings.SetSizeMB(2048)
+
+	config := memory.DynamicMemoryConfiguration{
+		DynamicMemoryEnabled: true,
+		MaximumMemoryMB:      4096,
+		MinimumMemoryMB:      1024,
+		TargetMemoryBuffer:   20,
+	}
+	err = memorySettings.ConfigureDynamicMemory(&config)
+	if err != nil {
+		t.Fatalf("Failed to configure dynamic memory [%v]", err)
+	}
+
+	processorSettings, err := processor.GetDefaultProcessorSettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	processorSettings.SetCPUCount(2)
+
+	vm, err := vmms.CreateVirtualMachine(setting, memorySettings, processorSettings)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer func() {
+		if vm != nil {
+			err = vmms.DeleteVirtualMachine(vm)
+			if err != nil {
+				t.Logf("VM deletion failed [%+v]", err)
+			}
+			vm.Close()
+		}
+	}()
+
+	// validate
+	vm, err = vmms.GetVirtualMachineByName("dynamic-memory-test-gen1")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	mem, err := vm.GetMemory()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	min, err := mem.GetMinimumMemoryMB()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	max, err := mem.GetMaximumMemoryMB()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	buf, err := mem.GetTargetMemoryBuffer()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	enabled, err := mem.GetPropertyDynamicMemoryEnabled()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	if config.DynamicMemoryEnabled != enabled {
+		t.Fatal("Failed DynamicMemoryEnabled doesn't match config")
+	} else if config.MaximumMemoryMB != max {
+		t.Fatal("Failed MaximumMemoryMB doesn't match config")
+	} else if config.MinimumMemoryMB != min {
+		t.Fatal("Failed MinimumMemoryMB doesn't match config")
+	} else if config.TargetMemoryBuffer != buf {
+		t.Fatal("Failed TargetMemoryBuffer doesn't match config")
+	}
+
+	err = vm.Start()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	err = vm.Stop(true)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+}
+
+
 func TestBindCpuGroupVirtualMachine(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
@@ -959,6 +1119,57 @@ func TestBindCpuGroupVirtualMachine(t *testing.T) {
 	t.Logf("Create VMSettings")
 
 	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:2")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	memorySettings.SetSizeMB(2048)
+
+	processorSettings, err := processor.GetDefaultProcessorSettingData(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	processorSettings.SetCPUCount(2)
+
+	vm, err := vmms.CreateVirtualMachine(setting, memorySettings, processorSettings)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Created VM [%s]", "test")
+	defer func() {
+		if vm != nil {
+			vm.Close()
+		}
+	}()
+	g, err := uuid.NewUUID()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	cpuGroupId := g.String()
+	err = vmms.SetCPUGroupID(vm, cpuGroupId)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Binded VM [%s] to Cpugroup [%s]", "test", cpuGroupId)
+}
+
+func TestBindCpuGroupVirtualMachineGen1(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	setting, err := virtualsystem.GetVirtualSystemSettingData(whost, "testGen1")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer setting.Close()
+	t.Logf("Create VMSettings")
+
+	err = setting.SetProperty("VirtualSystemSubType", "Microsoft:Hyper-V:SubType:1")
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
