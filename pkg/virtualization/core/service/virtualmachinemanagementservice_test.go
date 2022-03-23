@@ -18,7 +18,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	vswitchservice "github.com/microsoft/wmi/pkg/virtualization/network/service"
 	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
-	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	//v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 	"github.com/nwoodmsft/iso9660"
 )
 
@@ -770,8 +770,8 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 	}
 	t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
 	
-	path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
-	vhd, err := vm.GetVirtualHardDiskByLocation(0, i-1)
+	path = fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
+	vhd, err = vm.GetVirtualHardDiskByLocation(0, 0)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
