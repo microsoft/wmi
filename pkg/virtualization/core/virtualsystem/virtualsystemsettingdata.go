@@ -13,6 +13,7 @@ import (
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
+	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
@@ -51,6 +52,40 @@ func GetVirtualSystemSettingData(whost *host.WmiHost, name string) (*VirtualSyst
 	// vmsettings.SetProperty("VirtualSystemSubType", 1) // 2nd Generation
 
 	return vmsettings, err
+}
+
+func (vm *VirtualSystemSettingData) GetPcieDevices() (col pcie.PcieDeviceCollection, err error) {
+	rasdcollection, err := vm.GetAllRelated("Msvm_PciExpressSettingData")
+	if err != nil {
+		return nil, err
+	}
+
+	col, err = pcie.NewPcieDeviceCollection(rasdcollection)
+	if err != nil {
+		rasdcollection.Close()
+	}
+	return
+}
+
+func (vm *VirtualSystemSettingData) GetPcieDeviceByHostResource(hostResource string) (*pcie.PcieDeviceSetting, error) {
+	pciDevices, err := vm.GetPcieDevices()
+	if err != nil {
+		return nil, err
+	}
+	defer pciDevices.Close()
+
+	for _, pciDevice := range pciDevices {
+		resource, err := pciDevice.GetPropertyHostResource()
+		if err != nil {
+			return nil, err
+		}
+		if resource[0] == hostResource {
+			// Found the match
+			return pciDevice.CloneEx1()
+		}
+	}
+	err = errors.Wrapf(errors.NotFound, "PCI device with host resource [%s]", hostResource)
+	return nil, err
 }
 
 func (vm *VirtualSystemSettingData) GetSyntheticVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
