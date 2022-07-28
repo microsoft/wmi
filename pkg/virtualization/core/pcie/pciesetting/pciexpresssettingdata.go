@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package pcie
+package pciesetting
 
 import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"

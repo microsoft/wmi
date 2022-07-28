@@ -16,6 +16,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
+	"github.com/microsoft/wmi/pkg/virtualization/core/pcie/pciesetting"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourceallocation"
@@ -606,7 +607,7 @@ func (vm *VirtualMachine) GetPcieSettingByLocationPath(locationPath string) (pci
 	return
 }
 
-func (vm *VirtualMachine) GetPcieDeviceByLocationPath(locationPath string) (pcieDevice *pcie.PcieDeviceSetting, err error) {
+func (vm *VirtualMachine) GetPcieDeviceByLocationPath(locationPath string) (pcieDevice *pciesetting.PcieDeviceSetting, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
@@ -618,7 +619,7 @@ func (vm *VirtualMachine) GetPcieDeviceByLocationPath(locationPath string) (pcie
 		return
 	}
 
-	pcieDevice, err = settings.GetPcieDeviceByHostResource(hostResource)
+	pcieDevice, err = settings.GetPcieDeviceSetting(hostResource)
 	return
 }
 

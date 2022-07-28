@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package pcie
+package pciesetting
 
 import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -27,17 +27,17 @@ func (pci *PcieDeviceSetting) GetPciExpressSettingData() (*PciExpressSettingData
 	return NewPciExpressSettingData(tmp)
 }
 
-func (pci *PcieDeviceSetting) CloneEx1() (*PcieDeviceSetting, error) {
-	tmp, err := pci.Clone()
+func (pcie *PcieDeviceSetting) CloneEx1() (*PcieDeviceSetting, error) {
+	tmp, err := pcie.Clone()
 	if err != nil {
 		return nil, err
 	}
 	return NewPcieDeviceSetting(tmp)
 }
 
-// GetVirtualMachine gets the VM that the pci express is attached to
-func (pci *PcieDeviceSetting) GetVirtualMachine() (instance *wmi.WmiInstance, err error) {
-	vmsetting, err := pci.GetRelated("Msvm_VirtualSystemSettingData")
+// GetVirtualMachine gets the VM that the pci express setting data is attached to
+func (pcie *PcieDeviceSetting) GetVirtualMachine() (instance *wmi.WmiInstance, err error) {
+	vmsetting, err := pcie.GetRelated("Msvm_VirtualSystemSettingData")
 	if err != nil {
 		return
 	}
