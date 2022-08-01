@@ -4,11 +4,10 @@
 package virtualsystem
 
 import (
-	"github.com/microsoft/wmi/pkg/base/host"
-	_ "github.com/microsoft/wmi/pkg/base/session"
 	"testing"
 
-	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
+	"github.com/microsoft/wmi/pkg/base/host"
+	_ "github.com/microsoft/wmi/pkg/base/session"
 )
 
 var (
@@ -71,6 +70,19 @@ func TestVirtualMachineStop(t *testing.T) {
 	defer vm.Close()
 
 	err = vm.Stop(true)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+}
+
+func TestVirtualMachineShutdown(t *testing.T) {
+	vm, err := GetVirtualMachine(whost, "test")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer vm.Close()
+
+	err = vm.Shutdown(true)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
