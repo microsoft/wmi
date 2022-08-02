@@ -1216,3 +1216,59 @@ func TestBindCpuGroupVirtualMachineGen1(t *testing.T) {
 	}
 	t.Logf("Binded VM [%s] to Cpugroup [%s]", "test", cpuGroupId)
 }
+
+func TestAddRemoveGpuDda(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "test")
+
+	testLocationPath := "customGpuLocationPath"
+	err = vmms.AttachGPU(vm, testLocationPath)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	fmt.Scanln()
+	t.Logf("Attached GPU-DDA to [%s] VMs", "test")
+
+	err = vmms.DetachGPU(vm, testLocationPath)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Detached GPU-DDA from [%s] VMs", "test")
+	fmt.Scanln()
+}
+
+func TestAddRemoveGpuDdaGen1(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("testGen1")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "testGen1")
+
+	testLocationPath := "customGpuLocationPath"
+	err = vmms.AttachGPU(vm, testLocationPath)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	fmt.Scanln()
+	t.Logf("Attached GPU-DDA to [%s] VMs", "testGen1")
+
+	err = vmms.DetachGPU(vm, testLocationPath)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Detached GPU-DDA from [%s] VMs", "testGen1")
+	fmt.Scanln()
+}

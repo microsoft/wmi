@@ -34,7 +34,7 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 	defer resultcol.Close()
 
 	if len(resultcol) == 0 {
-		err = errors.Wrapf(errors.NotFound, "AddVirtualSystemResource")
+		err = errors.Wrapf(errors.NotFound, "Unable to attach GPU at location [%s] to VM [%s]", locationPath, vm.Name())
 		log.Printf("[WMI] Virtual system resource not found")
 		return
 	}
