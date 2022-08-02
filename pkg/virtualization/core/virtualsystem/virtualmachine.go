@@ -187,12 +187,11 @@ func (vm *VirtualMachine) Status() (string, error) {
 
 // Stop Virtual Machine
 func (vm *VirtualMachine) Stop(force bool) error {
-	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, -1)
-}
-
-// Shutdown Virtual Machine
-func (vm *VirtualMachine) Shutdown(force bool) error {
-	return vm.ChangeState(Stopping, v2.ConcreteJob_JobType_Shut_Down_Virtual_Machine, -1)
+	if force {
+		return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, -1)
+	} else {
+		return vm.ChangeState(Stopping, v2.ConcreteJob_JobType_Shut_Down_Virtual_Machine, -1)
+	}
 }
 
 // Start Virtual Machine

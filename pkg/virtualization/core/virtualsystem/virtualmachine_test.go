@@ -82,7 +82,7 @@ func TestVirtualMachineShutdown(t *testing.T) {
 	}
 	defer vm.Close()
 
-	err = vm.Shutdown(true)
+	err = vm.Stop(false)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
