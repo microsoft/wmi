@@ -11,7 +11,7 @@ type PcieDeviceSettingCollection []*PcieDeviceSetting
 
 func NewPcieDeviceSettingCollection(instances []*wmi.WmiInstance) (col PcieDeviceSettingCollection, err error) {
 	for _, inst := range instances {
-		na, err1 := NewPcieDeviceSetting(inst)
+		na, err1 := NewPcieDeviceSettingEx1(inst)
 		if err1 != nil {
 			err = err1
 			return

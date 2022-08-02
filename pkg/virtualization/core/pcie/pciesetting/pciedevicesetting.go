@@ -4,6 +4,7 @@
 package pciesetting
 
 import (
+	"github.com/microsoft/wmi/pkg/base/host"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
@@ -11,8 +12,16 @@ type PcieDeviceSetting struct {
 	*PciExpressSettingData
 }
 
-func NewPcieDeviceSetting(instance *wmi.WmiInstance) (*PcieDeviceSetting, error) {
-	wmivm, err := NewPciExpressSettingData(instance)
+func NewPcieDeviceSettingEx1(instance *wmi.WmiInstance) (*PcieDeviceSetting, error) {
+	wmivm, err := NewPciExpressSettingDataEx1(instance)
+	if err != nil {
+		return nil, err
+	}
+	return &PcieDeviceSetting{wmivm}, nil
+}
+
+func NewPcieDeviceSettingEx6(whost *host.WmiHost) (*PcieDeviceSetting, error) {
+	wmivm, err := NewPciExpressSettingDataEx6(whost)
 	if err != nil {
 		return nil, err
 	}
@@ -24,7 +33,7 @@ func (pci *PcieDeviceSetting) GetPciExpressSettingData() (*PciExpressSettingData
 	if err != nil {
 		return nil, err
 	}
-	return NewPciExpressSettingData(tmp)
+	return NewPciExpressSettingDataEx1(tmp)
 }
 
 func (pcie *PcieDeviceSetting) CloneEx1() (*PcieDeviceSetting, error) {
@@ -32,7 +41,7 @@ func (pcie *PcieDeviceSetting) CloneEx1() (*PcieDeviceSetting, error) {
 	if err != nil {
 		return nil, err
 	}
-	return NewPcieDeviceSetting(tmp)
+	return NewPcieDeviceSettingEx1(tmp)
 }
 
 // GetVirtualMachine gets the VM that the pci express setting data is attached to

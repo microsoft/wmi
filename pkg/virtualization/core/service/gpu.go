@@ -13,14 +13,14 @@ import (
 func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualMachine, locationPath string) (err error) {
 	vmsetting, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
-		log.Printf("[WMI] Error getting VirtualSystemSettingData for virtual machine [%s]", vm)
+		log.Printf("[WMI] Error getting VirtualSystemSettingData for virtual machine [%s] - Error details [%+v]\n", vm, err)
 		return
 	}
 	defer vmsetting.Close()
 
 	gpu, err := vm.GetPcieSettingByLocationPath(locationPath)
 	if err != nil {
-		log.Printf("[WMI] Error getting new GPU for location path [%s]", locationPath)
+		log.Printf("[WMI] Error getting new GPU for location path [%s] - Error details [%+v]\n", locationPath, err)
 		return err
 	}
 	defer gpu.Close()
@@ -28,14 +28,14 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 	// Attach the GPU
 	resultcol, err := vmms.AddVirtualSystemResource(vmsetting, gpu.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
-		log.Printf("[WMI] Error attaching GPU with resource allocation setting data [%s]", gpu.CIM_ResourceAllocationSettingData)
+		log.Printf("[WMI] Error attaching GPU with resource allocation setting data [%s] - Error details [%+v]\n", gpu.CIM_ResourceAllocationSettingData, err)
 		return
 	}
 	defer resultcol.Close()
 
 	if len(resultcol) == 0 {
 		err = errors.Wrapf(errors.NotFound, "Unable to attach GPU at location [%s] to VM [%s]", locationPath, vm.Name())
-		log.Printf("[WMI] Virtual system resource not found")
+		log.Printf("[WMI] Virtual system resource not found - Error details [%+v]\n", err)
 		return
 	}
 
@@ -43,10 +43,10 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 	return
 }
 
-func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualMachine, locationPath string) (err error) {
-	gpu, err := vm.GetPcieDeviceByLocationPath(locationPath)
+func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualMachine, hostResource string) (err error) {
+	gpu, err := vm.GetPcieSettingByHostResource(hostResource)
 	if err != nil {
-		log.Printf("[WMI] Error getting GPU device for location path [%s]", locationPath)
+		log.Printf("[WMI] Error getting GPU device for host resource [%s]", hostResource)
 		if errors.IsNotFound(err) {
 			err = errors.NotFound
 		}
@@ -61,6 +61,6 @@ func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualM
 		return
 	}
 
-	log.Printf("[WMI] Successfully detached GPU with location path [%s] from the virtual machine", locationPath)
+	log.Printf("[WMI] Successfully detached GPU with host resource [%s] from the virtual machine", hostResource)
 	return
 }

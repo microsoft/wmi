@@ -13,7 +13,6 @@ import (
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
-	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie/pciesetting"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
@@ -53,19 +52,6 @@ func GetVirtualSystemSettingData(whost *host.WmiHost, name string) (*VirtualSyst
 	// vmsettings.SetProperty("VirtualSystemSubType", 1) // 2nd Generation
 
 	return vmsettings, err
-}
-
-func (vm *VirtualSystemSettingData) GetPcieDevices() (col pcie.PcieDeviceCollection, err error) {
-	rasdcollection, err := vm.GetAllRelated("Msvm_PciExpress")
-	if err != nil {
-		return nil, err
-	}
-
-	col, err = pcie.NewPcieDeviceCollection(rasdcollection)
-	if err != nil {
-		rasdcollection.Close()
-	}
-	return
 }
 
 func (vm *VirtualSystemSettingData) GetPcieDeviceSettingCollection() (col pciesetting.PcieDeviceSettingCollection, err error) {

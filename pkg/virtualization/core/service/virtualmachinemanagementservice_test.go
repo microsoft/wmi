@@ -1234,7 +1234,6 @@ func TestAddRemoveGpuDda(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-	fmt.Scanln()
 	t.Logf("Attached GPU-DDA to [%s] VMs", "test")
 
 	err = vmms.DetachGPU(vm, testLocationPath)
@@ -1242,7 +1241,6 @@ func TestAddRemoveGpuDda(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Detached GPU-DDA from [%s] VMs", "test")
-	fmt.Scanln()
 }
 
 func TestAddRemoveGpuDdaGen1(t *testing.T) {
@@ -1262,7 +1260,6 @@ func TestAddRemoveGpuDdaGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-	fmt.Scanln()
 	t.Logf("Attached GPU-DDA to [%s] VMs", "testGen1")
 
 	err = vmms.DetachGPU(vm, testLocationPath)
@@ -1270,5 +1267,4 @@ func TestAddRemoveGpuDdaGen1(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Detached GPU-DDA from [%s] VMs", "testGen1")
-	fmt.Scanln()
 }

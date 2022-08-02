@@ -588,12 +588,13 @@ func (vm *VirtualMachine) NewLogicalDisk() (ld *disk.LogicalDisk, err error) {
 	return
 }
 
-func (vm *VirtualMachine) GetPcieSettingByLocationPath(locationPath string) (pcieSetting *v2.Msvm_PciExpressSettingData, err error) {
+func (vm *VirtualMachine) GetPcieSettingByLocationPath(locationPath string) (pcieSettingData *pciesetting.PcieDeviceSetting, err error) {
 	whost := vm.GetWmiHost()
 
-	creds := whost.GetCredential()
-	settingDataQuery := query.NewWmiQuery("Msvm_PciExpressSettingData")
-	pcieSetting, err = v2.NewMsvm_PciExpressSettingDataEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, settingDataQuery)
+	pcieSettingData, err = pciesetting.NewPcieDeviceSettingEx6(whost)
+	if err != nil {
+		return
+	}
 	if err != nil {
 		return
 	}
@@ -603,21 +604,16 @@ func (vm *VirtualMachine) GetPcieSettingByLocationPath(locationPath string) (pci
 		return
 	}
 
-	err = pcieSetting.SetPropertyHostResource([]string{hostPcieDeviceWmiPath})
+	err = pcieSettingData.SetPropertyHostResource([]string{hostPcieDeviceWmiPath})
 	return
 }
 
-func (vm *VirtualMachine) GetPcieDeviceByLocationPath(locationPath string) (pcieDevice *pciesetting.PcieDeviceSetting, err error) {
+func (vm *VirtualMachine) GetPcieSettingByHostResource(hostResource string) (pcieDevice *pciesetting.PcieDeviceSetting, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
 	}
 	defer settings.Close()
-
-	hostResource, err := pcie.GetHostResource(vm.GetWmiHost(), locationPath)
-	if err != nil {
-		return
-	}
 
 	pcieDevice, err = settings.GetPcieDeviceSetting(hostResource)
 	return
