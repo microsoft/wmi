@@ -5,8 +5,9 @@ package virtualsystem
 
 import (
 	"fmt"
-	_ "github.com/microsoft/wmi/pkg/base/session"
 	"testing"
+
+	_ "github.com/microsoft/wmi/pkg/base/session"
 )
 
 type testContext struct {

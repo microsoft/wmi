@@ -23,7 +23,7 @@ func TestVirtualMachineCreate(t *testing.T) {
 }
 
 func TestGetVirtualMachine(t *testing.T) {
-	vm, err := GetVirtualMachine(whost, "test")
+	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 		return
@@ -34,7 +34,7 @@ func TestGetVirtualMachine(t *testing.T) {
 }
 
 func TestVirtualMachineState(t *testing.T) {
-	vm, err := GetVirtualMachine(whost, "test")
+	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -50,7 +50,7 @@ func TestVirtualMachineState(t *testing.T) {
 }
 
 func TestVirtualMachineStart(t *testing.T) {
-	vm, err := GetVirtualMachine(whost, "test")
+	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -63,7 +63,7 @@ func TestVirtualMachineStart(t *testing.T) {
 }
 
 func TestVirtualMachineStop(t *testing.T) {
-	vm, err := GetVirtualMachine(whost, "test")
+	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -76,7 +76,7 @@ func TestVirtualMachineStop(t *testing.T) {
 }
 
 func TestVirtualMachineShutdown(t *testing.T) {
-	vm, err := GetVirtualMachine(whost, "test")
+	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -89,13 +89,13 @@ func TestVirtualMachineShutdown(t *testing.T) {
 }
 
 func TestGetVirtualMachineSetting(t *testing.T) {
-	vm, err := GetVirtualMachine(whost, "test")
+	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
 	defer vm.Close()
 
-	setting, err := vm.GetVirtualMachineSetting()
+	setting, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
