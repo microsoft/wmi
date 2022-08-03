@@ -19,7 +19,7 @@ func onCallback(ctx interface{}, data string) {
 
 func TestCreateVirtualMachineMonitor(t *testing.T) {
 	ctx := &testContext{}
-	vmMonior := CreateVirtualMachineMonitor(ctx, onCallback, "ID")
+	vmMonior := CreateVirtualMachineMonitor(ctx, onCallback)
 	defer vmMonior.Close()
 	vmMonior.AddEntity("test")
 	vmMonior.AddEntity("test2")
