@@ -11,7 +11,7 @@ type PnpEntity struct {
 	*PnpEntityData
 }
 
-func NewPnpEntityEx1(instance *wmi.WmiInstance) (*PnpEntity, error) {
+func NewPnpEntity(instance *wmi.WmiInstance) (*PnpEntity, error) {
 	wmivm, err := NewPnpEntityData(instance)
 	if err != nil {
 		return nil, err
@@ -24,7 +24,7 @@ func (pnpEntity *PnpEntity) CloneEx1() (*PnpEntity, error) {
 	if err != nil {
 		return nil, err
 	}
-	return NewPnpEntityEx1(tmp)
+	return NewPnpEntity(tmp)
 }
 
 // GetVirtualMachine gets the VM that the pnp entity is attached to
