@@ -5,6 +5,7 @@ package pciesetting
 
 import (
 	"github.com/microsoft/wmi/pkg/base/host"
+	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -15,7 +16,7 @@ type PciExpressSettingData struct {
 	*v2.Msvm_PciExpressSettingData
 }
 
-func NewPciExpressSettingDataEx1(instance *wmi.WmiInstance) (*PciExpressSettingData, error) {
+func NewPciExpressSettingData(instance *wmi.WmiInstance) (*PciExpressSettingData, error) {
 	wmivm, err := v2.NewMsvm_PciExpressSettingDataEx1(instance)
 	if err != nil {
 		return nil, err
@@ -31,4 +32,12 @@ func NewPciExpressSettingDataEx6(whost *host.WmiHost) (*PciExpressSettingData, e
 		return nil, err
 	}
 	return &PciExpressSettingData{wmivm}, nil
+}
+
+func GetDefaultPciExpressSettingData(whost *host.WmiHost) (*PciExpressSettingData, error) {
+	inst, err := instance.CreateWmiInstance(whost, string(constant.Virtualization), "Msvm_PciExpressSettingData")
+	if err != nil {
+		return nil, err
+	}
+	return NewPciExpressSettingData(inst)
 }

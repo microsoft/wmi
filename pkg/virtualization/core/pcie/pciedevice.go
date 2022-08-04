@@ -10,7 +10,7 @@ import (
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
-func NewPcieDeviceEx6(wmihost *host.WmiHost) (device *v2.Msvm_PciExpress, err error) {
+func NewPcieDevice(wmihost *host.WmiHost) (device *v2.Msvm_PciExpress, err error) {
 	creds := wmihost.GetCredential()
 	pciExpressQuery := query.NewWmiQuery("Msvm_PciExpress")
 
@@ -19,10 +19,12 @@ func NewPcieDeviceEx6(wmihost *host.WmiHost) (device *v2.Msvm_PciExpress, err er
 }
 
 func GetHostResource(whost *host.WmiHost, locationPath string) (hostResource string, err error) {
-	device, err := NewPcieDeviceEx6(whost)
+	device, err := NewPcieDevice(whost)
 	if err != nil {
 		return
 	}
+	defer device.Close()
+
 	device.SetPropertyLocationPath(locationPath)
 	hostResource = device.InstancePath()
 	return

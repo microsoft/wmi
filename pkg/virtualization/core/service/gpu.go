@@ -46,7 +46,7 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualMachine, hostResource string) (err error) {
 	gpu, err := vm.GetPcieSettingByHostResource(hostResource)
 	if err != nil {
-		log.Printf("[WMI] Error getting GPU device for host resource [%s]", hostResource)
+		log.Printf("[WMI] Error getting GPU device for host resource [%s] - Error details [%+v]\n", hostResource, err)
 		if errors.IsNotFound(err) {
 			err = errors.NotFound
 		}
@@ -57,7 +57,7 @@ func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualM
 	// Detach the GPU
 	err = vmms.RemoveVirtualSystemResource(gpu.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
-		log.Printf("[WMI] Error detaching GPU with resource allocation setting data [%s]", gpu.CIM_ResourceAllocationSettingData)
+		log.Printf("[WMI] Error detaching GPU with resource allocation setting data [%s] - Error details [%+v]\n", gpu.CIM_ResourceAllocationSettingData, err)
 		return
 	}
 
