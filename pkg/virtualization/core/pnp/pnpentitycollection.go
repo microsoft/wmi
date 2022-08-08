@@ -27,3 +27,7 @@ func (vms *PnpEntityCollection) Close() (err error) {
 	}
 	return nil
 }
+
+func (vms *PnpEntityCollection) String() string {
+	return ""
+}

@@ -27,3 +27,7 @@ func (vms *PcieDeviceCollection) Close() (err error) {
 	}
 	return nil
 }
+
+func (vms *PcieDeviceCollection) String() string {
+	return ""
+}

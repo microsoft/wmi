@@ -10,61 +10,32 @@ import (
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
+	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pnp"
-	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-
-	"github.com/microsoft/wmi/server2019/root/cimv2"
 )
 
-type PnpEntity struct {
-	*cimv2.Win32_PnPEntity
-}
-
-// NewPnpEntity
-func NewPnpEntity(instance *wmi.WmiInstance) (*PnpEntity, error) {
-	wmivm, err := cimv2.NewWin32_PnPEntityEx1(instance)
-	if err != nil {
-		return nil, err
-	}
-	return &PnpEntity{wmivm}, nil
-}
-
-// GetPnpEntityCollectionByName
-func GetPnpEntityCollection(whost *host.WmiHost) (entities pnp.PnpEntityCollection, err error) {
-	query := query.NewWmiQuery("Win32_PnPEntity")
+// GetPnpEntityByName
+func GetPnpEntityByName(whost *host.WmiHost, pnpEntityName string) (entities pnp.PnpEntityCollection, err error) {
+	query := query.NewWmiQuery("Win32_PnPEntity", "Name", pnpEntityName)
 	rasdcollection, err := instance.GetWmiInstancesFromHost(whost, string(constant.CimV2), query)
 	if err != nil {
+		log.Printf("[WMI] Error getting Win32_PnPEntity instances for name [%s] - Error details [%+v]\n", pnpEntityName, err)
 		return
 	}
 	defer rasdcollection.Close()
 
 	entities, err = pnp.NewPnpEntityCollection(rasdcollection)
-	return
-}
-
-func GetPnpEntityCollectionByName(whost *host.WmiHost, pnpEntityName string) (entities pnp.PnpEntityCollection, err error) {
-	pnpEntityCollection, err := GetPnpEntityCollection(whost)
 	if err != nil {
+		log.Printf("[WMI] Error getting new PnpEntityCollection for rasdcollection [%s] - Error details [%+v]\n", rasdcollection, err)
 		return
 	}
-	defer pnpEntityCollection.Close()
 
-	for _, pnpEntity := range pnpEntityCollection {
-		entityName, err := pnpEntity.GetPropertyName()
-		if err != nil {
-			log.Printf("[WMI] Error getting property name for pnp entity [%s] - Error details [%+v]\n", pnpEntity, err)
-			continue
-		}
-		if entityName == pnpEntityName {
-			// Found the match
-			log.Printf("[WMI] Found pnp entity [%s] for name [%s]", pnpEntity, pnpEntityName)
-			clonedEntity, err := pnpEntity.CloneEx1()
-			if err != nil {
-				log.Printf("[WMI] Error cloning the pnp entity [%s] - Error details [%+v]\n", pnpEntity, err)
-				continue
-			}
-			entities = append(entities, clonedEntity)
-		}
+	if len(entities) == 0 {
+		err = errors.Wrapf(errors.NotFound, "Unable to find PnP entity for name [%s]", pnpEntityName)
+		log.Printf("[WMI] Error finding PnP entity for name [%s] - Error details [%+v]\n", pnpEntityName, err)
+		return
 	}
+
+	log.Printf("[WMI] Found PnP entities [%s] for name [%s]", entities, pnpEntityName)
 	return
 }
