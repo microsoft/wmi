@@ -13,7 +13,7 @@ import (
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
-	"github.com/microsoft/wmi/pkg/virtualization/core/pcie/pciesetting"
+	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
@@ -54,37 +54,35 @@ func GetVirtualSystemSettingData(whost *host.WmiHost, name string) (*VirtualSyst
 	return vmsettings, err
 }
 
-func (vm *VirtualSystemSettingData) GetPcieDeviceSettingCollection() (col pciesetting.PcieDeviceSettingCollection, err error) {
+func (vm *VirtualSystemSettingData) GetPcieDeviceCollection() (col pcie.PcieDeviceCollection, err error) {
 	rasdcollection, err := vm.GetAllRelated("Msvm_PciExpressSettingData")
 	if err != nil {
 		return nil, err
 	}
+	defer rasdcollection.Close()
 
-	col, err = pciesetting.NewPcieDeviceSettingCollection(rasdcollection)
-	if err != nil {
-		rasdcollection.Close()
-	}
+	col, err = pcie.NewPcieDeviceCollection(rasdcollection)
 	return
 }
 
-func (vm *VirtualSystemSettingData) GetPcieDeviceSetting(hostResource string) (*pciesetting.PcieDeviceSetting, error) {
-	pcieDeviceSettingCollection, err := vm.GetPcieDeviceSettingCollection()
+func (vm *VirtualSystemSettingData) GetPcieDevice(hostResource string) (*pcie.PcieDevice, error) {
+	pcieDeviceCollection, err := vm.GetPcieDeviceCollection()
 	if err != nil {
 		return nil, err
 	}
-	defer pcieDeviceSettingCollection.Close()
+	defer pcieDeviceCollection.Close()
 
-	for _, pcieDeviceSetting := range pcieDeviceSettingCollection {
-		resource, err := pcieDeviceSetting.GetPropertyHostResource()
+	for _, pcieDevice := range pcieDeviceCollection {
+		path, err := pcieDevice.GetPath()
 		if err != nil {
 			return nil, err
 		}
-		if resource[0] == hostResource {
+		if path == hostResource {
 			// Found the match
-			return pcieDeviceSetting.CloneEx1()
+			return pcieDevice.CloneEx1()
 		}
 	}
-	err = errors.Wrapf(errors.NotFound, "PCIE device setting with host resource [%s]", hostResource)
+	err = errors.Wrapf(errors.NotFound, "Unable to find PCIe device with host resource [%s]", hostResource)
 	return nil, err
 }
 

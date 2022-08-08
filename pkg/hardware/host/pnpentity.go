@@ -36,11 +36,9 @@ func GetPnpEntityCollection(whost *host.WmiHost) (entities pnp.PnpEntityCollecti
 	if err != nil {
 		return
 	}
+	defer rasdcollection.Close()
 
 	entities, err = pnp.NewPnpEntityCollection(rasdcollection)
-	if err != nil {
-		rasdcollection.Close()
-	}
 	return
 }
 
@@ -49,6 +47,7 @@ func GetPnpEntityCollectionByName(whost *host.WmiHost, pnpEntityName string) (en
 	if err != nil {
 		return
 	}
+	defer pnpEntityCollection.Close()
 
 	for _, pnpEntity := range pnpEntityCollection {
 		entityName, err := pnpEntity.GetPropertyName()

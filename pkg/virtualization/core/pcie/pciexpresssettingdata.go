@@ -1,11 +1,10 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package pciesetting
+package pcie
 
 import (
 	"github.com/microsoft/wmi/pkg/base/host"
-	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -16,6 +15,7 @@ type PciExpressSettingData struct {
 	*v2.Msvm_PciExpressSettingData
 }
 
+// NewPciExpressSettingData
 func NewPciExpressSettingData(instance *wmi.WmiInstance) (*PciExpressSettingData, error) {
 	wmivm, err := v2.NewMsvm_PciExpressSettingDataEx1(instance)
 	if err != nil {
@@ -24,20 +24,11 @@ func NewPciExpressSettingData(instance *wmi.WmiInstance) (*PciExpressSettingData
 	return &PciExpressSettingData{wmivm}, nil
 }
 
-func NewPciExpressSettingDataEx6(whost *host.WmiHost) (*PciExpressSettingData, error) {
+func GetDefaultPciExpressSettingData(whost *host.WmiHost) (*PciExpressSettingData, error) {
 	creds := whost.GetCredential()
-	settingDataQuery := query.NewWmiQuery("Msvm_PciExpressSettingData")
-	wmivm, err := v2.NewMsvm_PciExpressSettingDataEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, settingDataQuery)
+	wmivm, err := v2.NewMsvm_PciExpressSettingDataEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query.NewWmiQuery("Msvm_PciExpressSettingData"))
 	if err != nil {
 		return nil, err
 	}
 	return &PciExpressSettingData{wmivm}, nil
-}
-
-func GetDefaultPciExpressSettingData(whost *host.WmiHost) (*PciExpressSettingData, error) {
-	inst, err := instance.CreateWmiInstance(whost, string(constant.Virtualization), "Msvm_PciExpressSettingData")
-	if err != nil {
-		return nil, err
-	}
-	return NewPciExpressSettingData(inst)
 }

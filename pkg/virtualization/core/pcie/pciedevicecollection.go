@@ -1,17 +1,17 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package pciesetting
+package pcie
 
 import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
-type PcieDeviceSettingCollection []*PcieDeviceSetting
+type PcieDeviceCollection []*PcieDevice
 
-func NewPcieDeviceSettingCollection(instances []*wmi.WmiInstance) (col PcieDeviceSettingCollection, err error) {
+func NewPcieDeviceCollection(instances []*wmi.WmiInstance) (col PcieDeviceCollection, err error) {
 	for _, inst := range instances {
-		na, err1 := NewPcieDeviceSetting(inst)
+		na, err1 := NewPcieDevice(inst)
 		if err1 != nil {
 			err = err1
 			return
@@ -21,7 +21,7 @@ func NewPcieDeviceSettingCollection(instances []*wmi.WmiInstance) (col PcieDevic
 	return
 }
 
-func (vms *PcieDeviceSettingCollection) Close() (err error) {
+func (vms *PcieDeviceCollection) Close() (err error) {
 	for _, value := range *vms {
 		value.Close()
 	}

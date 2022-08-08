@@ -14,6 +14,7 @@ func TestGetPnpEntityCollection(t *testing.T) {
 	if err != nil {
 		t.Fatalf("[%+v]", err)
 	}
+	defer pnpEntity.Close()
 
 	t.Logf("PnP Entity Collection [%+v]\n", pnpEntity)
 }
@@ -24,6 +25,7 @@ func TestGetPnpEntityCollectionByName(t *testing.T) {
 	if err != nil {
 		t.Fatalf("[%+v]", err)
 	}
+	defer pnpEntity.Close()
 
 	t.Logf("PnP Entity Collection [%+v]\n", pnpEntity)
 }

@@ -4,28 +4,37 @@
 package pcie
 
 import (
-	"github.com/microsoft/wmi/pkg/base/host"
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/constant"
-	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	"github.com/microsoft/wmi/pkg/errors"
+	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
-func NewPcieDevice(wmihost *host.WmiHost) (device *v2.Msvm_PciExpress, err error) {
-	creds := wmihost.GetCredential()
-	pciExpressQuery := query.NewWmiQuery("Msvm_PciExpress")
-
-	device, err = v2.NewMsvm_PciExpressEx6(wmihost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, pciExpressQuery)
-	return
+type PcieDevice struct {
+	*PciExpressSettingData
 }
 
-func GetHostResource(whost *host.WmiHost, locationPath string) (hostResource string, err error) {
-	device, err := NewPcieDevice(whost)
+func NewPcieDevice(instance *wmi.WmiInstance) (*PcieDevice, error) {
+	wmivm, err := NewPciExpressSettingData(instance)
 	if err != nil {
-		return
+		return nil, err
 	}
-	defer device.Close()
+	return &PcieDevice{wmivm}, nil
+}
 
-	device.SetPropertyLocationPath(locationPath)
-	hostResource = device.InstancePath()
-	return
+func (pcie *PcieDevice) CloneEx1() (*PcieDevice, error) {
+	tmp, err := pcie.Clone()
+	if err != nil {
+		return nil, err
+	}
+	return NewPcieDevice(tmp)
+}
+
+func (device *PcieDevice) GetPath() (string, error) {
+	value, err := device.GetProperty("HostResource")
+	if err != nil {
+		return "", err
+	}
+	for _, hr := range value.([]interface{}) {
+		return hr.(string), nil
+	}
+	return "", errors.Wrapf(errors.NotFound, "Unable to get host resource for given PCIe device [%s]", device)
 }

@@ -18,7 +18,7 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 	}
 	defer vmsetting.Close()
 
-	gpu, err := vm.GetPcieSettingByLocationPath(locationPath)
+	gpu, err := vm.NewPcieDevice(locationPath)
 	if err != nil {
 		log.Printf("[WMI] Error getting new GPU for location path [%s] - Error details [%+v]\n", locationPath, err)
 		return err
@@ -44,7 +44,7 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 }
 
 func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualMachine, hostResource string) (err error) {
-	gpu, err := vm.GetPcieSettingByHostResource(hostResource)
+	gpu, err := vm.GetPcieDeviceByHostResource(hostResource)
 	if err != nil {
 		log.Printf("[WMI] Error getting GPU device for host resource [%s] - Error details [%+v]\n", hostResource, err)
 		if errors.IsNotFound(err) {
