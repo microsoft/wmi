@@ -39,7 +39,7 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 		return
 	}
 
-	log.Printf("[WMI] Successfully attached GPU with location path [%s] to the virtual machine", locationPath)
+	log.Printf("[WMI] Successfully attached GPU with location path [%s] to the virtual machine [%s]", locationPath, vm.Name())
 	return
 }
 
@@ -61,6 +61,6 @@ func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualM
 		return
 	}
 
-	log.Printf("[WMI] Successfully detached GPU with host resource [%s] from the virtual machine", hostResource)
+	log.Printf("[WMI] Successfully detached GPU with host resource [%s] from the virtual machine [%s]", hostResource, vm.Name())
 	return
 }

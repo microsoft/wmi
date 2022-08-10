@@ -54,7 +54,7 @@ func GetVirtualSystemSettingData(whost *host.WmiHost, name string) (*VirtualSyst
 	return vmsettings, err
 }
 
-func (vm *VirtualSystemSettingData) GetPcieDeviceCollection() (col pcie.PcieDeviceCollection, err error) {
+func (vm *VirtualSystemSettingData) GetPcieDevices() (col pcie.PcieDeviceCollection, err error) {
 	rasdcollection, err := vm.GetAllRelated("Msvm_PciExpressSettingData")
 	if err != nil {
 		return nil, err
@@ -66,7 +66,7 @@ func (vm *VirtualSystemSettingData) GetPcieDeviceCollection() (col pcie.PcieDevi
 }
 
 func (vm *VirtualSystemSettingData) GetPcieDevice(hostResource string) (*pcie.PcieDevice, error) {
-	pcieDeviceCollection, err := vm.GetPcieDeviceCollection()
+	pcieDeviceCollection, err := vm.GetPcieDevices()
 	if err != nil {
 		return nil, err
 	}
