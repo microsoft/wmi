@@ -18,6 +18,7 @@ import (
 
 	"github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
+	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource"
 	"github.com/microsoft/wmi/pkg/virtualization/core/resource/resourceallocation"
@@ -595,6 +596,43 @@ func (vm *VirtualMachine) NewLogicalDisk() (ld *disk.LogicalDisk, err error) {
 	}
 
 	ld, err = disk.NewLogicalDisk(rasd.WmiInstance)
+	return
+}
+
+func (vm *VirtualMachine) NewPcieDevice(locationPath string) (newPcieDevice *pcie.PciExpressSettingData, err error) {
+	whost := vm.GetWmiHost()
+
+	newPcieDevice, err = pcie.GetDefaultPciExpressSettingData(whost)
+	if err != nil {
+		return
+	}
+
+	hostPcieDeviceWmiPath, err := pcie.GetInstancePath(whost, locationPath)
+	if err != nil {
+		return
+	}
+
+	err = newPcieDevice.SetPropertyHostResource([]string{hostPcieDeviceWmiPath})
+	return
+}
+
+func (vm *VirtualMachine) GetPcieDeviceByHostResource(hostResource string) (pcieDevice *pcie.PcieDevice, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	pcieDevice, err = settings.GetPcieDevice(hostResource)
+	return
+}
+
+func (vm *VirtualMachine) GetPcieDeviceByLocationPath(locationPath string) (pcieDevice *pcie.PcieDevice, err error) {
+	hostPcieDeviceWmiPath, err := pcie.GetInstancePath(vm.GetWmiHost(), locationPath)
+	if err != nil {
+		return
+	}
+	pcieDevice, err = vm.GetPcieDeviceByHostResource(hostPcieDeviceWmiPath)
 	return
 }
 
