@@ -10,7 +10,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 )
 
-func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualMachine, locationPath string) (err error) {
+func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualMachine, hostResource string) (err error) {
 	vmsetting, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		log.Printf("[WMI] Error getting VirtualSystemSettingData for virtual machine [%s] - Error details [%+v]\n", vm, err)
@@ -18,9 +18,9 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 	}
 	defer vmsetting.Close()
 
-	gpu, err := vm.NewPcieDevice(locationPath)
+	gpu, err := vm.NewPcieDevice(hostResource)
 	if err != nil {
-		log.Printf("[WMI] Error getting new GPU for location path [%s] - Error details [%+v]\n", locationPath, err)
+		log.Printf("[WMI] Error getting new GPU for host resource [%s] - Error details [%+v]\n", hostResource, err)
 		return err
 	}
 	defer gpu.Close()
@@ -34,17 +34,17 @@ func (vmms *VirtualSystemManagementService) AttachGPU(vm *virtualsystem.VirtualM
 	defer resultcol.Close()
 
 	if len(resultcol) == 0 {
-		err = errors.Wrapf(errors.NotFound, "Unable to attach GPU at location [%s] to VM [%s]", locationPath, vm.Name())
+		err = errors.Wrapf(errors.NotFound, "Unable to attach GPU with host resource [%s] to VM [%s]", hostResource, vm.Name())
 		log.Printf("[WMI] Virtual system resource not found - Error details [%+v]\n", err)
 		return
 	}
 
-	log.Printf("[WMI] Successfully attached GPU with location path [%s] to the virtual machine [%s]", locationPath, vm.Name())
+	log.Printf("[WMI] Successfully attached GPU with host resource [%s] to the virtual machine [%s]", hostResource, vm.Name())
 	return
 }
 
 func (vmms *VirtualSystemManagementService) DetachGPU(vm *virtualsystem.VirtualMachine, hostResource string) (err error) {
-	gpu, err := vm.GetPcieDeviceByHostResource(hostResource)
+	gpu, err := vm.GetPcieDevice(hostResource)
 	if err != nil {
 		log.Printf("[WMI] Error getting GPU device for host resource [%s] - Error details [%+v]\n", hostResource, err)
 		if errors.IsNotFound(err) {

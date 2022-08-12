@@ -599,15 +599,10 @@ func (vm *VirtualMachine) NewLogicalDisk() (ld *disk.LogicalDisk, err error) {
 	return
 }
 
-func (vm *VirtualMachine) NewPcieDevice(locationPath string) (newPcieDevice *pcie.PciExpressSettingData, err error) {
+func (vm *VirtualMachine) NewPcieDevice(hostPcieDeviceWmiPath string) (newPcieDevice *pcie.PciExpressSettingData, err error) {
 	whost := vm.GetWmiHost()
 
 	newPcieDevice, err = pcie.GetDefaultPciExpressSettingData(whost)
-	if err != nil {
-		return
-	}
-
-	hostPcieDeviceWmiPath, err := pcie.GetInstancePath(whost, locationPath)
 	if err != nil {
 		return
 	}
@@ -616,7 +611,7 @@ func (vm *VirtualMachine) NewPcieDevice(locationPath string) (newPcieDevice *pci
 	return
 }
 
-func (vm *VirtualMachine) GetPcieDeviceByHostResource(hostResource string) (pcieDevice *pcie.PcieDevice, err error) {
+func (vm *VirtualMachine) GetPcieDevice(hostResource string) (pcieDevice *pcie.PcieDevice, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
@@ -624,15 +619,6 @@ func (vm *VirtualMachine) GetPcieDeviceByHostResource(hostResource string) (pcie
 	defer settings.Close()
 
 	pcieDevice, err = settings.GetPcieDevice(hostResource)
-	return
-}
-
-func (vm *VirtualMachine) GetPcieDeviceByLocationPath(locationPath string) (pcieDevice *pcie.PcieDevice, err error) {
-	hostPcieDeviceWmiPath, err := pcie.GetInstancePath(vm.GetWmiHost(), locationPath)
-	if err != nil {
-		return
-	}
-	pcieDevice, err = vm.GetPcieDeviceByHostResource(hostPcieDeviceWmiPath)
 	return
 }
 
