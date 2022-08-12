@@ -1229,14 +1229,14 @@ func TestAddRemoveGpuDda(t *testing.T) {
 	defer vm.Close()
 	t.Logf("Found [%s] VMs", "test")
 
-	testLocationPath := "customGpuLocationPath"
-	err = vmms.AttachGPU(vm, testLocationPath)
+	testHostResource := "customGpuHostResource"
+	err = vmms.AttachGPU(vm, testHostResource)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Attached GPU-DDA to [%s] VMs", "test")
 
-	err = vmms.DetachGPU(vm, testLocationPath)
+	err = vmms.DetachGPU(vm, testHostResource)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -1255,14 +1255,14 @@ func TestAddRemoveGpuDdaGen1(t *testing.T) {
 	defer vm.Close()
 	t.Logf("Found [%s] VMs", "testGen1")
 
-	testLocationPath := "customGpuLocationPath"
-	err = vmms.AttachGPU(vm, testLocationPath)
+	testHostResource := "customGpuHostResource"
+	err = vmms.AttachGPU(vm, testHostResource)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Attached GPU-DDA to [%s] VMs", "testGen1")
 
-	err = vmms.DetachGPU(vm, testLocationPath)
+	err = vmms.DetachGPU(vm, testHostResource)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}

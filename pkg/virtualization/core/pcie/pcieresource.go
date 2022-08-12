@@ -18,14 +18,14 @@ func NewPciExpress(whost *host.WmiHost) (pcie *v2.Msvm_PciExpress, err error) {
 	return
 }
 
-func GetInstancePath(whost *host.WmiHost, locationPath string) (instancePath string, err error) {
+func GetInstancePath(whost *host.WmiHost, deviceId string) (instancePath string, err error) {
 	pcie, err := NewPciExpress(whost)
 	if err != nil {
 		return
 	}
 	defer pcie.Close()
 
-	pcie.SetPropertyLocationPath(locationPath)
+	pcie.SetPropertyDeviceInstancePath(deviceId)
 	instancePath = pcie.InstancePath()
 	return
 }
