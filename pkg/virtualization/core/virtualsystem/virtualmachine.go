@@ -5,7 +5,6 @@ package virtualsystem
 
 import (
 	"fmt"
-
 	//"log"
 	"time"
 
@@ -13,8 +12,6 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
-
-	"reflect"
 
 	"github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
@@ -30,6 +27,7 @@ import (
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	"reflect"
 )
 
 type VirtualMachine struct {
@@ -84,8 +82,9 @@ const (
 type HyperVGeneration string
 
 const (
-	HyperVGeneration_V1 = "Microsoft:Hyper-V:SubType:1"
-	HyperVGeneration_V2 = "Microsoft:Hyper-V:SubType:2"
+	HyperVGeneration_V1   = "Microsoft:Hyper-V:SubType:1"
+	HyperVGeneration_V2   = "Microsoft:Hyper-V:SubType:2"
+	
 )
 
 // NewVirtualMachine
@@ -188,18 +187,7 @@ func (vm *VirtualMachine) Status() (string, error) {
 
 // Stop Virtual Machine
 func (vm *VirtualMachine) Stop(force bool) error {
-	if force {
-		err := vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, -1)
-		if err != nil {
-			return err
-		}
-	} else {
-		err := vm.ChangeState(Stopping, v2.ConcreteJob_JobType_Shut_Down_Virtual_Machine, -1)
-		if err != nil {
-			return err
-		}
-	}
-	return vm.WaitForState(Off, StateChangeTimeoutSeconds)
+	return vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, -1)
 }
 
 // Start Virtual Machine
@@ -576,7 +564,7 @@ func (vm *VirtualMachine) NewDvdDrive() (dvd *drive.DvdDrive, err error) {
 			}
 
 			dvd.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
-		} else {
+		} else{
 			err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have 2 IDE Controllers", vm.Name())
 			return nil, err
 		}

@@ -4,19 +4,18 @@
 package virtualsystem
 
 import (
-	"testing"
-
 	_ "github.com/microsoft/wmi/pkg/base/session"
+	"testing"
 )
 
 func TestGetVirtualNetworkAdapters(t *testing.T) {
-	vm, err := GetVirtualMachineByVMName(whost, "test")
+	vm, err := GetVirtualMachine(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
 	defer vm.Close()
 
-	setting, err := vm.GetVirtualSystemSettingData()
+	setting, err := vm.GetVirtualMachineSetting()
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
@@ -31,13 +30,13 @@ func TestGetVirtualNetworkAdapters(t *testing.T) {
 }
 
 func TestGetVirtualHardDisks(t *testing.T) {
-	vm, err := GetVirtualMachineByVMName(whost, "test")
+	vm, err := GetVirtualMachine(whost, "test")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
 	defer vm.Close()
 
-	setting, err := vm.GetVirtualSystemSettingData()
+	setting, err := vm.GetVirtualMachineSetting()
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
