@@ -48,7 +48,7 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 
 	totalCores := uint32(0)
 	totalLogicalProcessors := uint32(0)
-	var manufac string
+	//var manufac string
 
 	for _, tmp := range processors {
 		procInstance, err1 := cimv2.NewWin32_ProcessorEx1(tmp)
