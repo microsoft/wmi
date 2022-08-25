@@ -100,7 +100,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return
 	}
 
-	manuf, err1 := procInstance.GetPropertyManufacturer()
+	manuf, err1 := procInstance.GetProperty("Manufacturer")
 	if err1 != nil {
 		err = err1
 		return
@@ -113,7 +113,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	  }*/
 
 	return &ProcessorInfo{
-		Manufacturer: manuf,
+		Manufacturer: manuf.(string),
 		//CPUType:      procType.(int32),
 	}, nil
 }
