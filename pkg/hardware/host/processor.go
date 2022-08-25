@@ -48,7 +48,7 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 
 	totalCores := uint32(0)
 	totalLogicalProcessors := uint32(0)
-	//var manufac string
+	var manufac string
 
 	for _, tmp := range processors {
 		procInstance, err1 := cimv2.NewWin32_ProcessorEx1(tmp)
@@ -69,20 +69,21 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 			return
 		}
 		totalLogicalProcessors = totalLogicalProcessors + uint32(lp.(int32))
-		/*manuf, err1 := procInstance.GetProperty("Manufacturer")
+
+		manuf, err1 := procInstance.GetProperty("Manufacturer")
 		if err1 != nil {
 			err = err1
 			return
 		}
-		manufac = manuf.(string)*/
+		manufac = manuf.(string)
 
 	}
-	procInfo, err := GetProcessorInfo(whost)
+	//procInfo, err := GetProcessorInfo(whost)
 
 	return &TotalProcessor{
 		Cores:             totalCores,
 		LogicalProcessors: totalLogicalProcessors,
-		Manufacturer:      procInfo.Manufacturer,
+		Manufacturer:      manufac,
 	}, nil
 }
 
