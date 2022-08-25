@@ -18,14 +18,12 @@ type TotalProcessor struct {
 	LogicalProcessors uint32
 }
 
+type ProcessorInfo struct {
+	Manufacturer string
+	CPUType      int32
+}
 type Processor struct {
 	*cimv2.Win32_Processor
-}
-
-//struct defined to capture additional Processor Information
-type ProcessorInfo struct {
-	Manufacturer  string
-	ProcessorType uint16
 }
 
 // NewPhysicalMemory
@@ -91,7 +89,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return
 	}
 
-	manufacturer, err1 := procInstance.GetProperty("Manufacturer")
+	manuf, err1 := procInstance.GetProperty("Manufacturer")
 	if err1 != nil {
 		err = err1
 		return
@@ -104,7 +102,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	}
 
 	return &ProcessorInfo{
-		Manufacturer:  manufacturer.(string),
-		ProcessorType: procType.(uint16),
+		Manufacturer: manuf.(string),
+		CPUType:      procType.(int32),
 	}, nil
 }
