@@ -16,6 +16,7 @@ import (
 type TotalProcessor struct {
 	Cores             uint32
 	LogicalProcessors uint32
+	Manufacturer      string
 }
 
 type ProcessorInfo struct {
@@ -47,6 +48,7 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 
 	totalCores := uint32(0)
 	totalLogicalProcessors := uint32(0)
+	var manufac string
 
 	for _, tmp := range processors {
 		procInstance, err1 := cimv2.NewWin32_ProcessorEx1(tmp)
@@ -67,43 +69,51 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 			return
 		}
 		totalLogicalProcessors = totalLogicalProcessors + uint32(lp.(int32))
+		manuf, err1 := procInstance.GetProperty("Manufacturer")
+		if err1 != nil {
+			err = err1
+			return
+		}
+		manufac = manuf.(string)
+
 	}
 
 	return &TotalProcessor{
 		Cores:             totalCores,
 		LogicalProcessors: totalLogicalProcessors,
+		Manufacturer:      manufac,
 	}, nil
 }
 
 // GetProcessorInfo
-func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
-	query := query.NewWmiQuery("Win32_Processor")
-	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), query)
-	if err != nil {
-		return
-	}
-	defer procInfo.Close()
+/*func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
+query := query.NewWmiQuery("Win32_Processor")
+procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), query)
+if err != nil {
+	return
+}
+defer procInfo.Close()
 
-	procInstance, err1 := cimv2.NewWin32_ProcessorEx1(procInfo)
-	if err1 != nil {
-		err = err1
-		return
-	}
+procInstance, err1 := cimv2.NewWin32_ProcessorEx1(procInfo)
+if err1 != nil {
+	err = err1
+	return
+}
 
-	manuf, err1 := procInstance.GetProperty("Manufacturer")
-	if err1 != nil {
-		err = err1
-		return
-	}
+manuf, err1 := procInstance.GetProperty("Manufacturer")
+if err1 != nil {
+	err = err1
+	return
+}
 
-	/*procType, err1 := procInstance.GetProperty("ProcessorType")
-	if err1 != nil {
-		err = err1
-		return
-	}*/
-
+/*procType, err1 := procInstance.GetProperty("ProcessorType")
+if err1 != nil {
+	err = err1
+	return
+}*/
+/*
 	return &ProcessorInfo{
 		Manufacturer: manuf.(string),
 		//CPUType:      procType.(int32),
 	}, nil
-}
+}*/
