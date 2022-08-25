@@ -16,7 +16,7 @@ import (
 type TotalProcessor struct {
 	Cores             uint32
 	LogicalProcessors uint32
-	Manufacturer      string
+	//Manufacturer      string
 }
 
 type ProcessorInfo struct {
