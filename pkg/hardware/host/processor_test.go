@@ -18,10 +18,10 @@ func TestGetProcessor(t *testing.T) {
 
 	t.Logf("Total Processor [%+v]\n", proc)
 
-	process, err := GetProcessorInfo(whost)
+	/*process, err := GetProcessorInfo(whost)
 	if err != nil {
 		t.Fatalf("[%+v]", err)
 	}
 
-	t.Logf("ProcessorInfo [%+v]\n", process)
+	t.Logf("ProcessorInfo [%+v]\n", process)*/
 }
