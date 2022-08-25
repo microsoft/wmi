@@ -20,8 +20,9 @@ type TotalProcessor struct {
 
 type ProcessorInfo struct {
 	Manufacturer string
-	CPUType      int32
+	//CPUType      *cimv2.Win32_Processor
 }
+
 type Processor struct {
 	*cimv2.Win32_Processor
 }
@@ -95,14 +96,14 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return
 	}
 
-	procType, err1 := procInstance.GetProperty("ProcessorType")
+	/*procType, err1 := procInstance.GetProperty("ProcessorType")
 	if err1 != nil {
 		err = err1
 		return
-	}
+	}*/
 
 	return &ProcessorInfo{
 		Manufacturer: manuf.(string),
-		CPUType:      procType.(int32),
+		//CPUType:      procType.(int32),
 	}, nil
 }
