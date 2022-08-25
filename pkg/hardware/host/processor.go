@@ -16,7 +16,7 @@ import (
 type TotalProcessor struct {
 	Cores             uint32
 	LogicalProcessors uint32
-	//Manufacturer      string
+	Manufacturer      string
 }
 
 type ProcessorInfo struct {
@@ -77,11 +77,12 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 		manufac = manuf.(string)*/
 
 	}
+	procInfo, err := GetProcessorInfo(whost)
 
 	return &TotalProcessor{
 		Cores:             totalCores,
 		LogicalProcessors: totalLogicalProcessors,
-		//Manufacturer:      manufac,
+		Manufacturer:      procInfo.Manufacturer,
 	}, nil
 }
 
