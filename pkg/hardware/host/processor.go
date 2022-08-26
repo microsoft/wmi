@@ -99,11 +99,16 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 // GetProcessorInfo
 func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	query := query.NewWmiQuery("Win32_Processor")
-	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), query)
+	procInfo1, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), query)
 	if err != nil {
 		return
 	}
-	defer procInfo.Close()
+	defer procInfo1.Close()
+
+	procInfo, err := procInfo1.Clone()
+	if err != nil {
+		return proc, err
+	}
 
 	procInstance, err1 := cimv2.NewWin32_ProcessorEx1(procInfo)
 	if err1 != nil {
