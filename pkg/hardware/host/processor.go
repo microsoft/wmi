@@ -4,6 +4,8 @@
 package host
 
 import (
+	"fmt"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -121,6 +123,8 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		err = err1
 		return
 	}
+
+	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v] ", manuf)
 
 	/*procType, err1 := procInstance.GetProperty("ProcessorType")
 	  if err1 != nil {
