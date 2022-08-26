@@ -17,6 +17,7 @@ type TotalProcessor struct {
 	Cores             uint32
 	LogicalProcessors uint32
 	Manufacturer      string
+	Virtualization    bool
 }
 
 type ProcessorInfo struct {
@@ -49,6 +50,7 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 	totalCores := uint32(0)
 	totalLogicalProcessors := uint32(0)
 	var manufac string
+	var virtualizationFlag bool
 
 	for _, tmp := range processors {
 		procInstance, err1 := cimv2.NewWin32_ProcessorEx1(tmp)
@@ -77,6 +79,12 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 		}
 		manufac = manuf.(string)
 
+		virtualizationFlag, err1 := procInstance.GetProperty("VirtualizationFirmwareEnabled")
+		if err1 != nil {
+			err = err1
+			return
+		}
+		virtualizationFlag = virtualizationFlag.(bool)
 	}
 	//procInfo, err := GetProcessorInfo(whost)
 
@@ -84,6 +92,7 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 		Cores:             totalCores,
 		LogicalProcessors: totalLogicalProcessors,
 		Manufacturer:      manufac,
+		Virtualization:    virtualizationFlag,
 	}, nil
 }
 
