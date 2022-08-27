@@ -4,8 +4,6 @@
 package host
 
 import (
-	"strconv"
-
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -38,13 +36,7 @@ func GetOperatingSystemInfo(whost *host.WmiHost) (osInfo *OperatingSystemInfo, e
 		return
 	}
 
-	osSkuSize, err1 := strconv.ParseUint(osSku.(string), 10, 64)
-	if err1 != nil {
-		err = err1
-		return
-	}
-
 	return &OperatingSystemInfo{
-		OperatingSystemSKU: osSkuSize,
+		OperatingSystemSKU: osSku.(uint64),
 	}, nil
 }

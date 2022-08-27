@@ -5,7 +5,6 @@ package host
 
 import (
 	"fmt"
-	"strconv"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
@@ -26,7 +25,7 @@ type TotalProcessor struct {
 type ProcessorInfo struct {
 	Manufacturer   string
 	Virtualization bool
-	ProcessorSpeed uint64
+	ProcessorSpeed uint32
 	CPUType        uint16
 }
 
@@ -134,10 +133,6 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	if err != nil {
 		return
 	}
-	maxClockSpeedsize, err := strconv.ParseUint(maxClockSpeed.(string), 10, 64)
-	if err != nil {
-		return
-	}
 
 	cpuType, err := procInstance.GetProperty("ProcessorType")
 	if err != nil {
@@ -146,13 +141,13 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 
 	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v] ", manuf)
 	fmt.Printf("Virtualization value in GetProcessorInfo is: [%v] ", virtualizationFlag)
-	fmt.Printf("MaxClockSpeed value in GetProcessorInfo is: [%v] ", maxClockSpeedsize)
+	fmt.Printf("MaxClockSpeed value in GetProcessorInfo is: [%v] ", maxClockSpeed)
 	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v] ", cpuType)
 
 	return &ProcessorInfo{
 		Manufacturer:   manuf.(string),
 		Virtualization: virtualizationFlag.(bool),
-		ProcessorSpeed: maxClockSpeedsize,
+		ProcessorSpeed: maxClockSpeed.(uint32),
 		CPUType:        cpuType.(uint16),
 	}, nil
 }
