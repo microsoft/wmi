@@ -12,7 +12,7 @@ import (
 )
 
 type OperatingSystemInfo struct {
-	OperatingSystemSKU uint64
+	OperatingSystemSKU int32
 }
 
 // GetFreePhysicalMemory
@@ -37,6 +37,6 @@ func GetOperatingSystemInfo(whost *host.WmiHost) (osInfo *OperatingSystemInfo, e
 	}
 
 	return &OperatingSystemInfo{
-		OperatingSystemSKU: osSku.(uint64),
+		OperatingSystemSKU: osSku.(int32),
 	}, nil
 }

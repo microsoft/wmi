@@ -25,7 +25,7 @@ type TotalProcessor struct {
 type ProcessorInfo struct {
 	Manufacturer   string
 	Virtualization bool
-	ProcessorSpeed uint32
+	ProcessorSpeed int32
 	CPUType        uint16
 }
 
@@ -129,7 +129,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return
 	}
 
-	maxClockSpeed, err := procInstance.GetProperty("MaxClockSpeed")
+	currClockSpeed, err := procInstance.GetProperty("CurrentClockSpeed")
 	if err != nil {
 		return
 	}
@@ -141,13 +141,13 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 
 	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v] ", manuf)
 	fmt.Printf("Virtualization value in GetProcessorInfo is: [%v] ", virtualizationFlag)
-	fmt.Printf("MaxClockSpeed value in GetProcessorInfo is: [%v] ", maxClockSpeed)
+	fmt.Printf("MaxClockSpeed value in GetProcessorInfo is: [%v] ", currClockSpeed)
 	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v] ", cpuType)
 
 	return &ProcessorInfo{
 		Manufacturer:   manuf.(string),
 		Virtualization: virtualizationFlag.(bool),
-		ProcessorSpeed: maxClockSpeed.(uint32),
+		ProcessorSpeed: currClockSpeed.(int32),
 		CPUType:        cpuType.(uint16),
 	}, nil
 }
