@@ -141,7 +141,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 
 	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v] ", manuf)
 	fmt.Printf("Virtualization value in GetProcessorInfo is: [%v] ", virtualizationFlag)
-	fmt.Printf("MaxClockSpeed value in GetProcessorInfo is: [%v] ", currClockSpeed)
+	fmt.Printf("CurrentClock value in GetProcessorInfo is: [%v] ", currClockSpeed)
 	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v] ", cpuType)
 
 	return &ProcessorInfo{
