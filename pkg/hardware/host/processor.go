@@ -26,7 +26,7 @@ type ProcessorInfo struct {
 	Manufacturer   string
 	Virtualization bool
 	ProcessorSpeed int32
-	CPUType        uint16
+	CPUType        int32
 }
 
 type Processor struct {
@@ -148,6 +148,6 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		Manufacturer:   manuf.(string),
 		Virtualization: virtualizationFlag.(bool),
 		ProcessorSpeed: currClockSpeed.(int32),
-		CPUType:        cpuType.(uint16),
+		CPUType:        cpuType.(int32),
 	}, nil
 }
