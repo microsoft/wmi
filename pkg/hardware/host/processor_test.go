@@ -17,7 +17,10 @@ func TestGetProcessor(t *testing.T) {
 	}
 
 	t.Logf("Total Processor [%+v]\n", proc)
+}
 
+func TestGetProcessorInfo(t *testing.T) {
+	whost := wmihost.NewWmiLocalHost()
 	process, err := GetProcessorInfo(whost)
 	if err != nil {
 		t.Fatalf("[%+v]", err)

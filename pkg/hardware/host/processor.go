@@ -5,6 +5,7 @@ package host
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
@@ -18,13 +19,15 @@ import (
 type TotalProcessor struct {
 	Cores             uint32
 	LogicalProcessors uint32
-	Manufacturer      string
-	Virtualization    bool
+	//Manufacturer      string
+	//Virtualization    bool
 }
 
 type ProcessorInfo struct {
-	Manufacturer string
-	//CPUType      *cimv2.Win32_Processor
+	Manufacturer   string
+	Virtualization bool
+	ProcessorSpeed uint64
+	CPUType        uint16
 }
 
 type Processor struct {
@@ -51,8 +54,8 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 
 	totalCores := uint32(0)
 	totalLogicalProcessors := uint32(0)
-	var manufac string
-	var virtualizationFlag bool
+	/*var manufac string
+	var virtualizationFlag bool*/
 
 	for _, tmp := range processors {
 		procInstance, err1 := cimv2.NewWin32_ProcessorEx1(tmp)
@@ -74,7 +77,7 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 		}
 		totalLogicalProcessors = totalLogicalProcessors + uint32(lp.(int32))
 
-		manuf, err1 := procInstance.GetProperty("Manufacturer")
+		/*manuf, err1 := procInstance.GetProperty("Manufacturer")
 		if err1 != nil {
 			err = err1
 			return
@@ -86,15 +89,15 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 			err = err1
 			return
 		}
-		virtualizationFlag = virtualizationFlag.(bool)
+		virtualizationFlag = virtualizationFlag.(bool)*/
 	}
 	//procInfo, err := GetProcessorInfo(whost)
 
 	return &TotalProcessor{
 		Cores:             totalCores,
 		LogicalProcessors: totalLogicalProcessors,
-		Manufacturer:      manufac,
-		Virtualization:    virtualizationFlag,
+		//Manufacturer:      manufac,
+		//Virtualization:    virtualizationFlag,
 	}, nil
 }
 
@@ -112,28 +115,44 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return proc, err
 	}
 
-	procInstance, err1 := cimv2.NewWin32_ProcessorEx1(procInfo)
-	if err1 != nil {
-		err = err1
+	procInstance, err := cimv2.NewWin32_ProcessorEx1(procInfo)
+	if err != nil {
 		return
 	}
 
-	manuf, err1 := procInstance.GetProperty("Manufacturer")
-	if err1 != nil {
-		err = err1
+	manuf, err := procInstance.GetProperty("Manufacturer")
+	if err != nil {
+		return
+	}
+
+	virtualizationFlag, err := procInstance.GetProperty("VirtualizationFirmwareEnabled")
+	if err != nil {
+		return
+	}
+
+	maxClockSpeed, err := procInstance.GetProperty("MaxClockSpeed")
+	if err != nil {
+		return
+	}
+	maxClockSpeedsize, err := strconv.ParseUint(maxClockSpeed.(string), 10, 64)
+	if err != nil {
+		return
+	}
+
+	cpuType, err := procInstance.GetProperty("ProcessorType")
+	if err != nil {
 		return
 	}
 
 	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v] ", manuf)
-
-	/*procType, err1 := procInstance.GetProperty("ProcessorType")
-	  if err1 != nil {
-	  	err = err1
-	  	return
-	  }*/
+	fmt.Printf("Virtualization value in GetProcessorInfo is: [%v] ", virtualizationFlag)
+	fmt.Printf("MaxClockSpeed value in GetProcessorInfo is: [%v] ", maxClockSpeedsize)
+	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v] ", cpuType)
 
 	return &ProcessorInfo{
-		Manufacturer: manuf.(string),
-		//CPUType:      procType.(int32),
+		Manufacturer:   manuf.(string),
+		Virtualization: virtualizationFlag.(bool),
+		ProcessorSpeed: maxClockSpeedsize,
+		CPUType:        cpuType.(uint16),
 	}, nil
 }
