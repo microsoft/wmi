@@ -18,15 +18,14 @@ import (
 type TotalProcessor struct {
 	Cores             uint32
 	LogicalProcessors uint32
-	//Manufacturer      string
-	//Virtualization    bool
 }
 
 type ProcessorInfo struct {
-	Manufacturer   string
-	Virtualization bool
-	ProcessorSpeed int32
-	CPUType        int32
+	Manufacturer      string
+	Virtualization    bool
+	ProcessorSpeed    int32
+	CPUType           int32
+	Hypervisorpresent bool
 }
 
 type Processor struct {
@@ -53,8 +52,6 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 
 	totalCores := uint32(0)
 	totalLogicalProcessors := uint32(0)
-	/*var manufac string
-	var virtualizationFlag bool*/
 
 	for _, tmp := range processors {
 		procInstance, err1 := cimv2.NewWin32_ProcessorEx1(tmp)
@@ -75,44 +72,35 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 			return
 		}
 		totalLogicalProcessors = totalLogicalProcessors + uint32(lp.(int32))
-
-		/*manuf, err1 := procInstance.GetProperty("Manufacturer")
-		if err1 != nil {
-			err = err1
-			return
-		}
-		manufac = manuf.(string)
-
-		virtualizationFlag, err1 := procInstance.GetProperty("VirtualizationFirmwareEnabled")
-		if err1 != nil {
-			err = err1
-			return
-		}
-		virtualizationFlag = virtualizationFlag.(bool)*/
 	}
-	//procInfo, err := GetProcessorInfo(whost)
 
 	return &TotalProcessor{
 		Cores:             totalCores,
 		LogicalProcessors: totalLogicalProcessors,
-		//Manufacturer:      manufac,
-		//Virtualization:    virtualizationFlag,
 	}, nil
 }
 
 // GetProcessorInfo
 func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
-	query := query.NewWmiQuery("Win32_Processor")
-	procInfo1, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), query)
+	queryProcessor := query.NewWmiQuery("Win32_Processor")
+	queryComputerSystem := query.NewWmiQuery("Win32_ComputerSystem")
+
+	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryProcessor)
 	if err != nil {
 		return
 	}
-	defer procInfo1.Close()
+	defer procInfo.Close()
 
-	procInfo, err := procInfo1.Clone()
+	winComputerSystemInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryComputerSystem)
+	if err != nil {
+		return
+	}
+	defer winComputerSystemInfo.Close()
+
+	/*procInfo, err := procInfo1.Clone()
 	if err != nil {
 		return proc, err
-	}
+	}*/
 
 	procInstance, err := cimv2.NewWin32_ProcessorEx1(procInfo)
 	if err != nil {
@@ -124,7 +112,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return
 	}
 
-	virtualizationFlag, err := procInstance.GetProperty("VirtualizationFirmwareEnabled")
+	isVirtualizationEnabled, err := procInstance.GetProperty("VirtualizationFirmwareEnabled")
 	if err != nil {
 		return
 	}
@@ -139,15 +127,27 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return
 	}
 
-	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v] ", manuf)
-	fmt.Printf("Virtualization value in GetProcessorInfo is: [%v] ", virtualizationFlag)
-	fmt.Printf("CurrentClock value in GetProcessorInfo is: [%v] ", currClockSpeed)
-	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v] ", cpuType)
+	winCompSystemInstance, err := cimv2.NewWin32_ComputerSystemEx1(winComputerSystemInfo)
+	if err != nil {
+		return
+	}
+
+	hypervisorPresent, err := winCompSystemInstance.GetProperty("HypervisorPresent")
+	if err != nil {
+		return
+	}
+
+	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v]\n ", manuf)
+	fmt.Printf("Virtualization value in GetProcessorInfo is: [%v]\n ", isVirtualizationEnabled)
+	fmt.Printf("HyperVisorPresent value in GetProcessorInfo is: [%v]\n ", hypervisorPresent)
+	fmt.Printf("CurrentClock value in GetProcessorInfo is: [%v]\n ", currClockSpeed)
+	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v]\n ", cpuType)
 
 	return &ProcessorInfo{
-		Manufacturer:   manuf.(string),
-		Virtualization: virtualizationFlag.(bool),
-		ProcessorSpeed: currClockSpeed.(int32),
-		CPUType:        cpuType.(int32),
+		Manufacturer:      manuf.(string),
+		Virtualization:    isVirtualizationEnabled.(bool),
+		Hypervisorpresent: hypervisorPresent.(bool),
+		ProcessorSpeed:    currClockSpeed.(int32),
+		CPUType:           cpuType.(int32),
 	}, nil
 }
