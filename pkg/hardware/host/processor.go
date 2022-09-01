@@ -150,7 +150,7 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		Virtualization:    isVirtualizationEnabled.(bool),
 		Hypervisorpresent: hypervisorPresent.(bool),
 		ProcessorSpeed:    currClockSpeed.(int32),
-		CPUType:           cpuType.(uint32),
-		Architecture:      architecture.(uint32),
+		CPUType:           uint32(cpuType.(int32)),
+		Architecture:      uint32(architecture.(int32)),
 	}, nil
 }
