@@ -15,7 +15,7 @@ type OperatingSystemInfo struct {
 	OperatingSystemSKU int32
 }
 
-// GetFreePhysicalMemory
+// GetOperatingSystemInfo
 func GetOperatingSystemInfo(whost *host.WmiHost) (osInfo *OperatingSystemInfo, err error) {
 	query := query.NewWmiQuery("Win32_OperatingSystem")
 	osinstance, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), query)

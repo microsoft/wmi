@@ -4,8 +4,6 @@
 package host
 
 import (
-	"fmt"
-
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -83,8 +81,8 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 
 // GetProcessorInfo
 func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
-	queryProcessor := query.NewWmiQuery("Win32_Processor")
-	queryComputerSystem := query.NewWmiQuery("Win32_ComputerSystem")
+	queryProcessor := query.NewWmiQuery("Win32_Processor")           //query for fields from Win32_processor class
+	queryComputerSystem := query.NewWmiQuery("Win32_ComputerSystem") //query for fields from Win32_ComputerSystem class
 
 	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryProcessor)
 	if err != nil {
@@ -137,13 +135,6 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	if err != nil {
 		return
 	}
-
-	fmt.Printf("Manufacturer value in GetProcessorInfo is: [%v]\n ", manuf)
-	fmt.Printf("Virtualization value in GetProcessorInfo is: [%v]\n ", isVirtualizationEnabled)
-	fmt.Printf("HyperVisorPresent value in GetProcessorInfo is: [%v]\n ", hypervisorPresent)
-	fmt.Printf("CurrentClock value in GetProcessorInfo is: [%v]\n ", currClockSpeed)
-	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v]\n ", cpuType)
-	fmt.Printf("Architecture value in GetProcessorInfo is: [%v]\n ", architecture)
 
 	return &ProcessorInfo{
 		Manufacturer:      manuf.(string),
