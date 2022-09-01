@@ -24,7 +24,8 @@ type ProcessorInfo struct {
 	Manufacturer      string
 	Virtualization    bool
 	ProcessorSpeed    int32
-	CPUType           int32
+	CPUType           uint32
+	Architecture      uint32
 	Hypervisorpresent bool
 }
 
@@ -97,11 +98,6 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	}
 	defer winComputerSystemInfo.Close()
 
-	/*procInfo, err := procInfo1.Clone()
-	if err != nil {
-		return proc, err
-	}*/
-
 	procInstance, err := cimv2.NewWin32_ProcessorEx1(procInfo)
 	if err != nil {
 		return
@@ -127,6 +123,11 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		return
 	}
 
+	architecture, err := procInstance.GetProperty("Architecture")
+	if err != nil {
+		return
+	}
+
 	winCompSystemInstance, err := cimv2.NewWin32_ComputerSystemEx1(winComputerSystemInfo)
 	if err != nil {
 		return
@@ -142,12 +143,14 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	fmt.Printf("HyperVisorPresent value in GetProcessorInfo is: [%v]\n ", hypervisorPresent)
 	fmt.Printf("CurrentClock value in GetProcessorInfo is: [%v]\n ", currClockSpeed)
 	fmt.Printf("ProcessorType value in GetProcessorInfo is: [%v]\n ", cpuType)
+	fmt.Printf("Architecture value in GetProcessorInfo is: [%v]\n ", architecture)
 
 	return &ProcessorInfo{
 		Manufacturer:      manuf.(string),
 		Virtualization:    isVirtualizationEnabled.(bool),
 		Hypervisorpresent: hypervisorPresent.(bool),
 		ProcessorSpeed:    currClockSpeed.(int32),
-		CPUType:           cpuType.(int32),
+		CPUType:           cpuType.(uint32),
+		Architecture:      architecture.(uint32),
 	}, nil
 }
