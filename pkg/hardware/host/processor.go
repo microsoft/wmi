@@ -18,15 +18,6 @@ type TotalProcessor struct {
 	LogicalProcessors uint32
 }
 
-type ProcessorInfo struct {
-	Manufacturer      string
-	Virtualization    bool
-	ProcessorSpeed    int32
-	CPUType           uint32
-	Architecture      uint32
-	Hypervisorpresent bool
-}
-
 type Processor struct {
 	*cimv2.Win32_Processor
 }
@@ -110,70 +101,3 @@ func GetComputerSystem(whost *host.WmiHost) (cs *ComputerSystem, err error) {
 	}
 	return &ComputerSystem{winCompSystemInstance}, nil
 }
-
-// GetProcessorInfo
-/*func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
-	queryProcessor := query.NewWmiQuery("Win32_Processor")           //query for fields from Win32_processor class
-	queryComputerSystem := query.NewWmiQuery("Win32_ComputerSystem") //query for fields from Win32_ComputerSystem class
-
-	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryProcessor)
-	if err != nil {
-		return
-	}
-	defer procInfo.Close()
-
-	winComputerSystemInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryComputerSystem)
-	if err != nil {
-		return
-	}
-	defer winComputerSystemInfo.Close()
-
-	procInstance, err := cimv2.NewWin32_ProcessorEx1(procInfo)
-	if err != nil {
-		return
-	}
-
-	manuf, err := procInstance.GetProperty("Manufacturer")
-	if err != nil {
-		return
-	}
-
-	isVirtualizationEnabled, err := procInstance.GetProperty("VirtualizationFirmwareEnabled")
-	if err != nil {
-		return
-	}
-
-	currClockSpeed, err := procInstance.GetProperty("CurrentClockSpeed")
-	if err != nil {
-		return
-	}
-
-	cpuType, err := procInstance.GetProperty("ProcessorType")
-	if err != nil {
-		return
-	}
-
-	architecture, err := procInstance.GetProperty("Architecture")
-	if err != nil {
-		return
-	}
-
-	winCompSystemInstance, err := cimv2.NewWin32_ComputerSystemEx1(winComputerSystemInfo)
-	if err != nil {
-		return
-	}
-
-	hypervisorPresent, err := winCompSystemInstance.GetProperty("HypervisorPresent")
-	if err != nil {
-		return
-	}
-
-	return &ProcessorInfo{
-		Manufacturer:      manuf.(string),
-		Virtualization:    isVirtualizationEnabled.(bool),
-		Hypervisorpresent: hypervisorPresent.(bool),
-		ProcessorSpeed:    currClockSpeed.(int32),
-		CPUType:           uint32(cpuType.(int32)),
-		Architecture:      uint32(architecture.(int32)),
-	}, nil
-}*/
