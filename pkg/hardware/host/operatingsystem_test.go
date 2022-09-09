@@ -11,7 +11,7 @@ import (
 
 func TestGetOperatingSystemInfo(t *testing.T) {
 	whost := wmihost.NewWmiLocalHost()
-	osInfo, err := GetOperatingSystemInfo(whost)
+	osInfo, err := GetOperatingSystem(whost)
 	if err != nil {
 		t.Fatalf("[%+v]", err)
 	}

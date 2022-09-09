@@ -11,32 +11,21 @@ import (
 	"github.com/microsoft/wmi/server2019/root/cimv2"
 )
 
-type OperatingSystemInfo struct {
-	OperatingSystemSKU int32
+type OperatingSystem struct {
+	*cimv2.Win32_OperatingSystem
 }
 
-// GetOperatingSystemInfo
-func GetOperatingSystemInfo(whost *host.WmiHost) (osInfo *OperatingSystemInfo, err error) {
+// GetOperatingSystem
+func GetOperatingSystem(whost *host.WmiHost) (*OperatingSystem, error) {
 	query := query.NewWmiQuery("Win32_OperatingSystem")
 	osinstance, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), query)
 	if err != nil {
-		return
-	}
-	defer osinstance.Close()
-
-	tmpInstance, err1 := cimv2.NewWin32_OperatingSystemEx1(osinstance)
-	if err1 != nil {
-		err = err1
-		return
+		return nil, err
 	}
 
-	osSku, err1 := tmpInstance.GetProperty("OperatingSystemSKU")
-	if err1 != nil {
-		err = err1
-		return
+	tmpinstance, err := cimv2.NewWin32_OperatingSystemEx1(osinstance)
+	if err != nil {
+		return nil, err
 	}
-
-	return &OperatingSystemInfo{
-		OperatingSystemSKU: osSku.(int32),
-	}, nil
+	return &OperatingSystem{tmpinstance}, nil
 }

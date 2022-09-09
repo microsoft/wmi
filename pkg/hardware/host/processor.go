@@ -31,6 +31,10 @@ type Processor struct {
 	*cimv2.Win32_Processor
 }
 
+type ComputerSystem struct {
+	*cimv2.Win32_ComputerSystem
+}
+
 // NewPhysicalMemory
 func NewProcessor(instance *wmi.WmiInstance) (*Processor, error) {
 	wmivm, err := cimv2.NewWin32_ProcessorEx1(instance)
@@ -79,8 +83,36 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 	}, nil
 }
 
+func GetProcessor(whost *host.WmiHost) (proc *Processor, err error) {
+	queryProcessor := query.NewWmiQuery("Win32_Processor") //query for fields from Win32_processor class
+
+	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryProcessor)
+	if err != nil {
+		return nil, err
+	}
+	procInstance, err := cimv2.NewWin32_ProcessorEx1(procInfo)
+	if err != nil {
+		return nil, err
+	}
+	return &Processor{procInstance}, nil
+}
+
+func GetComputerSystem(whost *host.WmiHost) (cs *ComputerSystem, err error) {
+	queryComputerSystem := query.NewWmiQuery("Win32_ComputerSystem") //query for fields from Win32_ComputerSystem class
+
+	winComputerSystemInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryComputerSystem)
+	if err != nil {
+		return nil, err
+	}
+	winCompSystemInstance, err := cimv2.NewWin32_ComputerSystemEx1(winComputerSystemInfo)
+	if err != nil {
+		return nil, err
+	}
+	return &ComputerSystem{winCompSystemInstance}, nil
+}
+
 // GetProcessorInfo
-func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
+/*func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 	queryProcessor := query.NewWmiQuery("Win32_Processor")           //query for fields from Win32_processor class
 	queryComputerSystem := query.NewWmiQuery("Win32_ComputerSystem") //query for fields from Win32_ComputerSystem class
 
@@ -144,4 +176,4 @@ func GetProcessorInfo(whost *host.WmiHost) (proc *ProcessorInfo, err error) {
 		CPUType:           uint32(cpuType.(int32)),
 		Architecture:      uint32(architecture.(int32)),
 	}, nil
-}
+}*/
