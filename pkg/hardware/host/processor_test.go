@@ -28,13 +28,3 @@ func TestGetProcessorInfo(t *testing.T) {
 
 	t.Logf("ProcessorInfo [%+v]\n", process)
 }
-
-func TestGetComputerSystem(t *testing.T) {
-	whost := wmihost.NewWmiLocalHost()
-	process, err := GetComputerSystem(whost)
-	if err != nil {
-		t.Fatalf("[%+v]", err)
-	}
-
-	t.Logf("ProcessorInfo [%+v]\n", process)
-}
