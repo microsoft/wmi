@@ -239,4 +239,5 @@ func (vm *VirtualSystemSettingData) SetHyperVGeneration(generation HyperVGenerat
 
 	return vm.SetProperty("VirtualSystemSubType", string(generation))
 
+	
 }
