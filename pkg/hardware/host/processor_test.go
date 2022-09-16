@@ -3,9 +3,10 @@
 package host
 
 import (
+	"testing"
+
 	wmihost "github.com/microsoft/wmi/pkg/base/host"
 	_ "github.com/microsoft/wmi/pkg/base/session"
-	"testing"
 )
 
 func TestGetProcessor(t *testing.T) {
@@ -16,4 +17,14 @@ func TestGetProcessor(t *testing.T) {
 	}
 
 	t.Logf("Total Processor [%+v]\n", proc)
+}
+
+func TestGetProcessorInfo(t *testing.T) {
+	whost := wmihost.NewWmiLocalHost()
+	process, err := GetProcessor(whost)
+	if err != nil {
+		t.Fatalf("[%+v]", err)
+	}
+
+	t.Logf("ProcessorInfo [%+v]\n", process)
 }
