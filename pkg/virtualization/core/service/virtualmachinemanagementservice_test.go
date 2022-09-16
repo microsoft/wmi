@@ -684,7 +684,7 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 		defer os.RemoveAll(path)
 		t.Logf("Created vhd [%s]", path)
 
-		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
+		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path, virtualsystem.VirtualHardDiskType_DATADISK_VIRTUALHARDDISK)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -733,55 +733,57 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-    
+
 	ims, err := service.GetImageManagementService(whost)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Got ImageManagementService ")
-	
-	path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
-	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_1)
-	if err != nil {
-		t.Fatalf("Failed [%+v]", err)
-	}
-	defer setting.Close()
-	err = ims.CreateDisk(setting)
-	if err != nil {
-		t.Fatalf("Failed [%+v]", err)
-	}
-	defer os.RemoveAll(path)
-	t.Logf("Created vhd [%s]", path)
+	for i := 1; i <= 4; i++ {
+		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
+		setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_2)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		defer setting.Close()
+		err = ims.CreateDisk(setting)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		defer os.RemoveAll(path)
+		t.Logf("Created vhd [%s]", path)
 
-	vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
-	if err != nil {
-		t.Fatalf("Failed [%+v]", err)
+		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path, virtualsystem.VirtualHardDiskType_DATADISK_VIRTUALHARDDISK)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		defer vhd.Close()
+		defer vhddrive.Close()
+		t.Logf("Attached vhd [%s] to [%s]", path, "testGen1")
+		controllerlocation, err := vhddrive.GetControllerLocation()
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		controllerNumber, err := vhddrive.GetControllerNumber()
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
 	}
-	defer vhd.Close()
-	defer vhddrive.Close()
-	t.Logf("Attached vhd [%s] to [%s]", path, "testGen1")
-	controllerlocation, err := vhddrive.GetControllerLocation()
-	if err != nil {
-		t.Fatalf("Failed [%+v]", err)
-	}
-	controllerNumber, err := vhddrive.GetControllerNumber()
-	if err != nil {
-		t.Fatalf("Failed [%+v]", err)
-	}
-	t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
-	
-	path = fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
-	vhd, err = vm.GetVirtualHardDiskByLocation(0, 0)
-	if err != nil {
-		t.Fatalf("Failed [%+v]", err)
-	}
-	defer vhd.Close()
-	err = vmms.DetachVirtualHardDisk(vhd)
-	if err != nil {
-		t.Fatalf("Failed [%+v]", err)
-	}
-	t.Logf("Detached vhd [%s] from [%s]", path, "testGen1")
 
+	for i := 1; i <= 4; i++ {
+		path := fmt.Sprintf("c:\\test\\tmp-%d.vhdx", i)
+		vhd, err := vm.GetVirtualHardDiskByLocation(0, i-1)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		defer vhd.Close()
+		err = vmms.DetachVirtualHardDisk(vhd)
+		if err != nil {
+			t.Fatalf("Failed [%+v]", err)
+		}
+		t.Logf("Detached vhd [%s] from [%s]", path, "testGen1")
+	}
 }
 
 func TestAddRemoveTPM(t *testing.T) {
@@ -1108,7 +1110,6 @@ func TestCreateDynamicMemoryVirtualMachineGen1(t *testing.T) {
 	}
 }
 
-
 func TestBindCpuGroupVirtualMachine(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
@@ -1181,7 +1182,6 @@ func TestBindCpuGroupVirtualMachineGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-
 
 	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
 	if err != nil {
