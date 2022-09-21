@@ -32,13 +32,6 @@ import (
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
-type VirtualHardDiskType int32
-
-const (
-	VirtualHardDiskType_OS_VIRTUALHARDDISK VirtualHardDiskType = 0
-	VirtualHardDiskType_DATADISK_VIRTUALHARDDISK VirtualHardDiskType = 1
-)
-
 type VirtualMachine struct {
 	*v2.Msvm_ComputerSystem
 }
@@ -329,7 +322,7 @@ func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.V
 	return
 }
 
-func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerlocation int32, diskType VirtualHardDiskType) (synDrive *drive.SyntheticDiskDrive, err error) {
+func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerlocation int32) (synDrive *drive.SyntheticDiskDrive, err error) {
 	driverp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Disk_Drive)
 
 	generation, err := vm.GetVirtualMachineGeneration()
@@ -356,7 +349,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 
 	var controllers resourceallocation.ResourceAllocationSettingDataCollection
 	var controllerType string
-	if generation == HyperVGeneration_V1 && diskType == VirtualHardDiskType_OS_VIRTUALHARDDISK {
+	if generation == HyperVGeneration_V1 {
 		controllers, err = vm.GetIDEControllers()
 		controllerType = IDEController
 		if err != nil {
@@ -387,7 +380,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 		controllernumber = 0
 	}
 
-	if generation == HyperVGeneration_V1 && diskType == VirtualHardDiskType_OS_VIRTUALHARDDISK {
+	if generation == HyperVGeneration_V1 {
 		idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
 		if err != nil {
 			return nil, err
