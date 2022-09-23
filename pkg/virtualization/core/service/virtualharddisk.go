@@ -47,13 +47,13 @@ func (vmms *VirtualSystemManagementService) AddSCSIController(vm *virtualsystem.
 // *    Add a drive to available first controller at available location
 // * Connects the Disk to the Drive
 // Returns Disk and Drive
-func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsystem.VirtualMachine, path string) (
+func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsystem.VirtualMachine, path string, diskType virtualsystem.VirtualHardDiskType) (
 	vhd *disk.VirtualHardDisk,
 	vhddrive *drive.SyntheticDiskDrive,
 	err error) {
 
 	// Add a drive
-	vhddrive, err = vmms.AddSyntheticDiskDrive(vm, -1, -1)
+	vhddrive, err = vmms.AddSyntheticDiskDrive(vm, -1, -1, diskType)
 	if err != nil {
 		return
 	}
@@ -143,14 +143,14 @@ func (vmms *VirtualSystemManagementService) DetachVirtualHardDisk(vhd *disk.Virt
 
 func (vmms *VirtualSystemManagementService) AddSyntheticDiskDrive(vm *virtualsystem.VirtualMachine,
 	controllernumber,
-	controllerlocation int32) (vhddrive *drive.SyntheticDiskDrive, err error) {
+	controllerlocation int32, diskType virtualsystem.VirtualHardDiskType) (vhddrive *drive.SyntheticDiskDrive, err error) {
 	vmsetting, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
 	}
 	defer vmsetting.Close()
 
-	vhddrivetmp, err := vm.NewSyntheticDiskDrive(controllernumber, controllerlocation)
+	vhddrivetmp, err := vm.NewSyntheticDiskDrive(controllernumber, controllerlocation, diskType)
 	if err != nil {
 		return
 	}
