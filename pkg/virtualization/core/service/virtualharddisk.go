@@ -13,8 +13,6 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 )
 
-
-
 func (vmms *VirtualSystemManagementService) AddSCSIController(vm *virtualsystem.VirtualMachine) (err error) {
 	tmp, err := vm.NewSCSIController()
 	if err != nil {
@@ -49,7 +47,7 @@ func (vmms *VirtualSystemManagementService) AddSCSIController(vm *virtualsystem.
 // *    Add a drive to available first controller at available location
 // * Connects the Disk to the Drive
 // Returns Disk and Drive
-func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsystem.VirtualMachine, path string, diskType virtualsystem.VirtualHardDiskType)  (
+func (vmms *VirtualSystemManagementService) AttachVirtualHardDisk(vm *virtualsystem.VirtualMachine, path string, diskType virtualsystem.VirtualHardDiskType) (
 	vhd *disk.VirtualHardDisk,
 	vhddrive *drive.SyntheticDiskDrive,
 	err error) {

@@ -69,3 +69,14 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 		LogicalProcessors: totalLogicalProcessors,
 	}, nil
 }
+
+func GetProcessor(whost *host.WmiHost) (proc *Processor, err error) {
+	queryProcessor := query.NewWmiQuery("Win32_Processor") //query for fields from Win32_processor class
+
+	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryProcessor)
+	if err != nil {
+		return nil, err
+	}
+
+	return NewProcessor(procInfo)
+}
