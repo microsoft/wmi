@@ -55,6 +55,10 @@ func NewWmiJob(instance *WmiInstance) (*WmiJob, error) {
 	return &WmiJob{instance}, nil
 }
 
+func WMIError(errorCode int32) error {
+	return errors.New(fmt.Sprintf("WMI Error ErrorCode[%d]", errorCode))
+}
+
 func (job *WmiJob) String() string {
 	jtype, err := job.JobType()
 	if err != nil {
@@ -191,9 +195,9 @@ func (job *WmiJob) GetException() error {
 		errorDescription, _ := errorDescriptionVal.(string)
 		errorSummaryDescriptionVal, _ := job.GetProperty("ErrorSummaryDescription")
 		errorSummaryDescription, _ := errorSummaryDescriptionVal.(string)
-		return errors.Wrapf(errors.Failed,
-			"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
-			errorCode, errorDescription, errorSummaryDescription)
+		return errors.Wrapf(WMIError(errorCode),
+			"ErrorDescription[%s] ErrorSummaryDescription [%s]",
+			errorDescription, errorSummaryDescription)
 	}
 	return nil
 }
