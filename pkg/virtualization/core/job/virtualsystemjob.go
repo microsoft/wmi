@@ -10,7 +10,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type VirtualSystemJob struct {
@@ -160,7 +160,7 @@ func (vmjob *VirtualSystemJob) GetException() error {
 		errorCode, _ := vmjob.GetPropertyErrorCode()
 		errorDescription, _ := vmjob.GetPropertyErrorDescription()
 		errorSummaryDescription, _ := vmjob.GetPropertyErrorSummaryDescription()
-		return errors.Wrapf(errors.Failed,
+		return errors.Wrapf(errors.NewWMIError(errorCode),
 			"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
 			errorCode, errorDescription, errorSummaryDescription)
 	}

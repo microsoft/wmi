@@ -4,6 +4,7 @@ package errors
 
 import (
 	"errors"
+	"fmt"
 
 	perrors "github.com/pkg/errors"
 )
@@ -52,4 +53,8 @@ func checkError(wrappedError, err error) bool {
 
 func New(errString string) error {
 	return errors.New(errString)
+}
+
+func NewWMIError(errorCode int32) error {
+	return fmt.Errorf("WMI Error %d", errorCode)
 }
