@@ -55,10 +55,6 @@ func NewWmiJob(instance *WmiInstance) (*WmiJob, error) {
 	return &WmiJob{instance}, nil
 }
 
-func WMIError(errorCode int32) error {
-	return errors.New(fmt.Sprintf("WMI Error %d", errorCode))
-}
-
 func (job *WmiJob) String() string {
 	jtype, err := job.JobType()
 	if err != nil {
