@@ -20,6 +20,7 @@ var (
 	Failed         error = errors.New("Failed")
 	NotImplemented error = errors.New("Not Implemented")
 	Unknown        error = errors.New("Unknown Reason")
+	WMIError       error = errors.New("WMI Error")
 )
 
 func Wrap(cause error, message string) error {
@@ -36,6 +37,7 @@ func IsNotFound(err error) bool {
 func IsAlreadyExists(err error) bool {
 	return checkError(err, AlreadyExists)
 }
+
 func checkError(wrappedError, err error) bool {
 	if wrappedError == nil {
 		return false
