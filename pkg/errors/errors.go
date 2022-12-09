@@ -57,5 +57,5 @@ func New(errString string) error {
 }
 
 func NewWMIError(errorCode int32) error {
-	return fmt.Errorf("WMI Error %d", errorCode)
+	return fmt.Errorf("WMI Error %v", errorCode)
 }
