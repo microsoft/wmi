@@ -21,7 +21,7 @@ var (
 	Failed         error = errors.New("Failed")
 	NotImplemented error = errors.New("Not Implemented")
 	Unknown        error = errors.New("Unknown Reason")
-	WMIError       error = errors.New("WMI Error")
+	WMIError       error = errors.New("WMI Error 0x")
 )
 
 func Wrap(cause error, message string) error {
