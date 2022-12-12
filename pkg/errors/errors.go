@@ -5,6 +5,7 @@ package errors
 import (
 	"errors"
 	"fmt"
+	"strings"
 
 	perrors "github.com/pkg/errors"
 )
@@ -20,6 +21,7 @@ var (
 	Failed         error = errors.New("Failed")
 	NotImplemented error = errors.New("Not Implemented")
 	Unknown        error = errors.New("Unknown Reason")
+	WMIError       error = errors.New("WMI Error")
 )
 
 func Wrap(cause error, message string) error {
@@ -36,6 +38,33 @@ func IsNotFound(err error) bool {
 func IsAlreadyExists(err error) bool {
 	return checkError(err, AlreadyExists)
 }
+func IsTimedout(err error) bool {
+	return checkError(err, Timedout)
+}
+func IsInvalidInput(err error) bool {
+	return checkError(err, InvalidInput)
+}
+func IsInvalidType(err error) bool {
+	return checkError(err, InvalidType)
+}
+func IsNotSupported(err error) bool {
+	return checkError(err, NotSupported)
+}
+func IsInvalidFilter(err error) bool {
+	return checkError(err, InvalidFilter)
+}
+func IsFailed(err error) bool {
+	return checkError(err, Failed)
+}
+func IsNotImplemented(err error) bool {
+	return checkError(err, NotImplemented)
+}
+func IsUnknown(err error) bool {
+	return checkError(err, Unknown)
+}
+func IsWMIError(err error) bool {
+	return strings.HasPrefix(err.Error(), WMIError.Error())
+}
 
 func checkError(wrappedError, err error) bool {
 	if wrappedError == nil {
@@ -48,6 +77,10 @@ func checkError(wrappedError, err error) bool {
 	if cerr != nil && cerr == err {
 		return true
 	}
+	if strings.Contains(wrappedError.Error(), err.Error()) {
+		return true
+	}
+
 	return false
 
 }
@@ -57,5 +90,5 @@ func New(errString string) error {
 }
 
 func NewWMIError(errorCode int32) error {
-	return fmt.Errorf("WMI Error %v", errorCode)
+	return fmt.Errorf("WMI Error 0x%08x", errorCode)
 }
