@@ -160,7 +160,7 @@ func (vmjob *VirtualSystemJob) GetException() error {
 		errorCode, _ := vmjob.GetPropertyErrorCode()
 		errorDescription, _ := vmjob.GetPropertyErrorDescription()
 		errorSummaryDescription, _ := vmjob.GetPropertyErrorSummaryDescription()
-		return errors.Wrapf(errors.NewWMIError(errorCode),
+		return errors.Wrapf(errors.NewWMIError(int32(errorCode)),
 			"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
 			errorCode, errorDescription, errorSummaryDescription)
 	}
