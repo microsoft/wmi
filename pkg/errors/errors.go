@@ -93,5 +93,5 @@ func New(errString string) error {
 }
 
 func NewWMIError(errorCode int32) error {
-	return fmt.Errorf("WMI Error 0x%08x", errorCode)
+	return fmt.Errorf(wmiError+"%08x", errorCode)
 }
