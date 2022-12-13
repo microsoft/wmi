@@ -10,6 +10,10 @@ import (
 	perrors "github.com/pkg/errors"
 )
 
+const (
+	wmiError = "WMI Error 0x"
+)
+
 var (
 	NotFound       error = errors.New("Not Found")
 	Timedout       error = errors.New("Timedout")
@@ -21,7 +25,6 @@ var (
 	Failed         error = errors.New("Failed")
 	NotImplemented error = errors.New("Not Implemented")
 	Unknown        error = errors.New("Unknown Reason")
-	WMIError       error = errors.New("WMI Error 0x")
 )
 
 func Wrap(cause error, message string) error {
@@ -63,7 +66,7 @@ func IsUnknown(err error) bool {
 	return checkError(err, Unknown)
 }
 func IsWMIError(err error) bool {
-	return strings.HasPrefix(err.Error(), WMIError.Error())
+	return strings.HasPrefix(err.Error(), wmiError)
 }
 
 func checkError(wrappedError, err error) bool {
