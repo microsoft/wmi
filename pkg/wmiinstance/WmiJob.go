@@ -191,7 +191,7 @@ func (job *WmiJob) GetException() error {
 		errorDescription, _ := errorDescriptionVal.(string)
 		errorSummaryDescriptionVal, _ := job.GetProperty("ErrorSummaryDescription")
 		errorSummaryDescription, _ := errorSummaryDescriptionVal.(string)
-		return errors.Wrapf(errors.Failed,
+		return errors.Wrapf(errors.NewWMIError(errorCode),
 			"ErrorCode[%d] ErrorDescription[%s] ErrorSummaryDescription [%s]",
 			errorCode, errorDescription, errorSummaryDescription)
 	}
