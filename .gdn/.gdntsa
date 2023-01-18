@@ -9,7 +9,7 @@
     ],
     "instanceUrl": "https://microsoft.visualstudio.com/",
     "projectName": "OS",
-    "areaPath": "OS\\Core\\STACK\\CoreNet\\MSK8S",
+    "areaPath": "OS\\Core\\LIOF\\Kubernetes\\MSK8S",
     "iterationPath": "OS\\Future",
     "allTools": true
 }
