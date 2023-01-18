@@ -2,7 +2,7 @@ jobs:
   - job: Build
 
     pool:
-      vmImage: "ubuntu-latest"
+      vmImage: "windows-latest"
 
     variables:
       - group: moc-build
