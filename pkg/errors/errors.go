@@ -66,7 +66,18 @@ func IsUnknown(err error) bool {
 	return checkError(err, Unknown)
 }
 func IsWMIError(err error) bool {
-	return strings.HasPrefix(err.Error(), wmiError)
+	if err == nil {
+		return false
+	}
+	if strings.HasPrefix(err.Error(), wmiError) {
+		return true
+	}
+	cerr := perrors.Cause(err)
+	if strings.HasPrefix(cerr.Error(), wmiError) {
+		return true
+	}
+
+	return false
 }
 
 func checkError(wrappedError, err error) bool {
@@ -80,9 +91,6 @@ func checkError(wrappedError, err error) bool {
 	if cerr != nil && cerr == err {
 		return true
 	}
-	if strings.Contains(wrappedError.Error(), err.Error()) {
-		return true
-	}
 
 	return false
 
@@ -92,6 +100,6 @@ func New(errString string) error {
 	return errors.New(errString)
 }
 
-func NewWMIError(errorCode int32) error {
+func NewWMIError(errorCode uint16) error {
 	return fmt.Errorf(wmiError+"%08x", errorCode)
 }
