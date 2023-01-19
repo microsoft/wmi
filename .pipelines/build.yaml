@@ -1,5 +1,6 @@
 jobs:
   - job: Build
+    timeoutInMinutes: 120
 
     pool:
       vmImage: "windows-latest"
@@ -27,6 +28,7 @@ jobs:
           mkdir manifest
           make
         workingDirectory: "$(System.DefaultWorkingDirectory)"
+        timeoutInMinutes: 120
         displayName: "Build"
 
       - task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0
