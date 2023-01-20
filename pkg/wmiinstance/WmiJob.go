@@ -186,7 +186,7 @@ func (job *WmiJob) GetException() error {
 		fallthrough
 	case JobState_Exception:
 		errorCodeVal, _ := job.GetProperty("ErrorCode")
-		errorCode := errorCodeVal.(int32)
+		errorCode := errorCodeVal.(uint16)
 		errorDescriptionVal, _ := job.GetProperty("ErrorDescription")
 		errorDescription, _ := errorDescriptionVal.(string)
 		errorSummaryDescriptionVal, _ := job.GetProperty("ErrorSummaryDescription")

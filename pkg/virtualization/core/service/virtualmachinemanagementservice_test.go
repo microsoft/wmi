@@ -733,13 +733,13 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-    
+
 	ims, err := service.GetImageManagementService(whost)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Got ImageManagementService ")
-	
+
 	path := fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
 	setting, err := disk.GetVirtualHardDiskSettingData(whost, path, 512, 512, 0, 1024*1024*10, true, disk.VirtualHardDiskFormat_1)
 	if err != nil {
@@ -769,7 +769,7 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("ControllerNumber [%s], ControllerLocation [%s]", controllerNumber, controllerlocation)
-	
+
 	path = fmt.Sprintf("c:\\test\\tmp-%d.vhd", 1)
 	vhd, err = vm.GetVirtualHardDiskByLocation(0, 0)
 	if err != nil {
@@ -1108,7 +1108,6 @@ func TestCreateDynamicMemoryVirtualMachineGen1(t *testing.T) {
 	}
 }
 
-
 func TestBindCpuGroupVirtualMachine(t *testing.T) {
 	vmms, err := GetVirtualSystemManagementService(whost)
 	if err != nil {
@@ -1181,7 +1180,6 @@ func TestBindCpuGroupVirtualMachineGen1(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
-
 
 	memorySettings, err := memory.GetDefaultMemorySettingData(whost)
 	if err != nil {

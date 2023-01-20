@@ -1,5 +1,6 @@
 jobs:
   - job: Build
+    timeoutInMinutes: 120
 
     pool:
       vmImage: "windows-latest"
@@ -12,7 +13,7 @@ jobs:
     steps:
       - task: GoTool@0
         inputs:
-          version: "1.17.x"
+          version: "1.19.x"
       - task: InstallSSHKey@0
         inputs:
           knownHostsEntry: "$(KNOWN_HOST)"
@@ -27,6 +28,7 @@ jobs:
           mkdir manifest
           make
         workingDirectory: "$(System.DefaultWorkingDirectory)"
+        timeoutInMinutes: 120
         displayName: "Build"
 
       - task: AzureArtifacts.manifest-generator-task.manifest-generator-task.ManifestGeneratorTask@0

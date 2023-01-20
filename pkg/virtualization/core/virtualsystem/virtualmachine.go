@@ -35,7 +35,7 @@ import (
 type VirtualHardDiskType int32
 
 const (
-	VirtualHardDiskType_OS_VIRTUALHARDDISK VirtualHardDiskType = 0
+	VirtualHardDiskType_OS_VIRTUALHARDDISK       VirtualHardDiskType = 0
 	VirtualHardDiskType_DATADISK_VIRTUALHARDDISK VirtualHardDiskType = 1
 )
 
