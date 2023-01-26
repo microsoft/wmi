@@ -32,7 +32,7 @@ func GetPnpEntityByName(whost *host.WmiHost, pnpEntityName string) (entities pnp
 
 	if len(entities) == 0 {
 		err = errors.Wrapf(errors.NotFound, "Unable to find PnP entity for name [%s]", pnpEntityName)
-		log.Printf("[WMI] Error finding PnP entity for name [%s] - Error details [%+v]\n", pnpEntityName, err)
+		log.Printf("[WMI] Found zero PnP entities for name [%s]", pnpEntityName)
 		return
 	}
 
