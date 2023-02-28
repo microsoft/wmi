@@ -73,7 +73,6 @@ func (ese *EthernetSwitchExtension) DisableAsync(timeoutSeconds int16) (err erro
 	return ese.changeState(v2.EnabledLogicalElement_RequestedState_Disabled, timeoutSeconds)
 }
 
-//
 func (ese *EthernetSwitchExtension) changeState(state v2.EnabledLogicalElement_RequestedState, timeoutSeconds int16) (err error) {
 	method, err := ese.GetWmiMethod("RequestStateChange")
 	if err != nil {
