@@ -1,4 +1,6 @@
+//go:build windows
 // +build windows
+
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
@@ -65,7 +67,7 @@ func GetSession(namespaceName string, serverName string, domain string, userName
 	return sessionsMap[sessionsMapId], nil
 }
 
-////////////// Private functions ////////////////////////////
+// //////////// Private functions ////////////////////////////
 func createSession(sessionName string, serverName string, domain string, username string, password string) (*wmi.WmiSession, error) {
 	// TODO: ideally, we should also compare the domain here.
 	// that said, this is low priority as cross-domain WMI calls are rare

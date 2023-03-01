@@ -73,7 +73,6 @@ func (vmms *VirtualSystemManagementService) GetHostComputerSystem() (*wmihost.Ho
 	return wmihost.GetHostComputerSystem(vmms.GetWmiHost())
 }
 
-//
 func (vmms *VirtualSystemManagementService) AddVirtualSystemResource(
 	vmsettings *virtualsystem.VirtualSystemSettingData,
 	data *v2.CIM_ResourceAllocationSettingData,

@@ -325,7 +325,6 @@ func (vmms *VirtualSystemManagementService) AddEthernetFeatureEx1(
 	return
 }
 
-//
 func (vmms *VirtualSystemManagementService) AddEthernetFeature(
 	settings *v2.Msvm_EthernetPortAllocationSettingData,
 	col wmi.WmiInstanceCollection,
@@ -397,7 +396,6 @@ func (vmms *VirtualSystemManagementService) AddEthernetFeature(
 	return
 }
 
-//
 func (vmms *VirtualSystemManagementService) ModifyEthernetFeature(
 	col wmi.WmiInstanceCollection,
 	timeoutSeconds int16) (resultingResources wmi.WmiInstanceCollection, err error) {
@@ -467,7 +465,6 @@ func (vmms *VirtualSystemManagementService) ModifyEthernetFeature(
 	return
 }
 
-//
 func (vmms *VirtualSystemManagementService) RemoveEthernetFeature(
 	col wmi.WmiInstanceCollection,
 	timeoutSeconds int16) (err error) {

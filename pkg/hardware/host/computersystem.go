@@ -16,7 +16,7 @@ type ComputerSystem struct {
 	*cimv2.Win32_ComputerSystem
 }
 
-//GetComputerSystem
+// GetComputerSystem
 func GetComputerSystem(whost *host.WmiHost) (cs *ComputerSystem, err error) {
 	queryComputerSystem := query.NewWmiQuery("Win32_ComputerSystem") //query for fields from Win32_ComputerSystem class
 

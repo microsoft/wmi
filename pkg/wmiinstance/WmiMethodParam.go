@@ -7,7 +7,7 @@
 package cim
 
 import (
-//"github.com/go-ole/go-ole"
+// "github.com/go-ole/go-ole"
 )
 
 type WmiMethodParam struct {
@@ -18,7 +18,7 @@ type WmiMethodParam struct {
 	//propertyVar *ole.VARIANT
 }
 
-//func NewWmiMethodParam(name string, val interface{}, propertyVariant *ole.VARIANT, session *WmiSession) (*WmiMethodParam, error) {
+// func NewWmiMethodParam(name string, val interface{}, propertyVariant *ole.VARIANT, session *WmiSession) (*WmiMethodParam, error) {
 func NewWmiMethodParam(name string, val interface{}) *WmiMethodParam {
 	return &WmiMethodParam{
 		Name: name,
