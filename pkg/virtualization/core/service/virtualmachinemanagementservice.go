@@ -363,3 +363,57 @@ func (vmms *VirtualSystemManagementService) ModifyVirtualSystemFeature(data wmi.
 	}
 	return
 }
+
+func (vmms *VirtualSystemManagementService) ModifyVirtualSystemSettings(data *virtualsystem.VirtualSystemSettingData, timeoutSeconds int16) (err error) {
+
+	embeddedInstance, err := data.EmbeddedXMLInstance()
+	if err != nil {
+		return
+	}
+
+	method, err := vmms.GetWmiMethod("ModifySystemSettings")
+	if err != nil {
+		return
+	}
+	defer method.Close()
+
+	inparams := wmi.WmiMethodParamCollection{}
+	inparams = append(inparams, wmi.NewWmiMethodParam("SystemSettings", embeddedInstance))
+
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+
+	for {
+		result, err1 := method.Execute(inparams, outparams)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		returnVal := result.ReturnValue
+		if returnVal != 0 && returnVal != 4096 {
+			// Virtual System is in Invalid State, try to retry
+			if returnVal == 32775 {
+				log.Printf("[WMI] Method [%s] failed with [%d]. Retrying ...", method.Name, returnVal)
+				time.Sleep(100 * time.Millisecond)
+				continue
+			}
+			err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+			return
+		}
+
+		if result.ReturnValue == 0 {
+			return
+		}
+
+		val := result.OutMethodParams["Job"]
+		job, err1 := instance.GetWmiJob(vmms.GetWmiHost(), string(constant.Virtualization), val.Value.(string))
+		if err1 != nil {
+			err = err1
+			return
+		}
+		defer job.Close()
+		err = job.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+		return
+	}
+	return
+}

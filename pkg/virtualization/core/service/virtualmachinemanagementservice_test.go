@@ -1296,7 +1296,7 @@ func TestModifyVirtualMachineSystemSettings(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	// Modify the VM settings
-	err = vmms.ModifyVirtualMachineSystemSettings(setting)
+	err = vmms.ModifyVirtualSystemSettings(setting, -1)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -1347,7 +1347,7 @@ func TestModifyVirtualMachineSystemSettingsGen1(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	// Modify the VM settings
-	err = vmms.ModifyVirtualMachineSystemSettings(setting)
+	err = vmms.ModifyVirtualSystemSettings(setting, -1)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
