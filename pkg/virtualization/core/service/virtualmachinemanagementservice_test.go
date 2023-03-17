@@ -18,8 +18,8 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/virtualsystem"
 	vswitchservice "github.com/microsoft/wmi/pkg/virtualization/network/service"
 	"github.com/microsoft/wmi/pkg/virtualization/network/virtualswitch"
-	//v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 	"github.com/nwoodmsft/iso9660"
+	//v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 var (
@@ -684,7 +684,7 @@ func TestAddRemoveVirtualHardDisk(t *testing.T) {
 		defer os.RemoveAll(path)
 		t.Logf("Created vhd [%s]", path)
 
-		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
+		vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path, virtualsystem.VirtualHardDiskType_DATADISK_VIRTUALHARDDISK)
 		if err != nil {
 			t.Fatalf("Failed [%+v]", err)
 		}
@@ -753,7 +753,7 @@ func TestAddRemoveVirtualHardDiskGen1(t *testing.T) {
 	defer os.RemoveAll(path)
 	t.Logf("Created vhd [%s]", path)
 
-	vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path)
+	vhd, vhddrive, err := vmms.AttachVirtualHardDisk(vm, path, virtualsystem.VirtualHardDiskType_DATADISK_VIRTUALHARDDISK)
 	if err != nil {
 		t.Fatalf("Failed [%+v]", err)
 	}
@@ -1265,4 +1265,106 @@ func TestAddRemoveGpuDdaGen1(t *testing.T) {
 		t.Fatalf("Failed [%+v]", err)
 	}
 	t.Logf("Detached GPU-DDA from [%s] VMs", "testGen1")
+}
+
+func TestModifyVirtualMachineSystemSettings(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("test")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "test")
+
+	// Get the original value
+	setting, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	valBefore, err := setting.GetPropertyGuestControlledCacheTypes()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Settings before change: %v", valBefore)
+
+	// Invert the setting
+	err = setting.SetPropertyGuestControlledCacheTypes(!valBefore)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	// Modify the VM settings
+	err = vmms.ModifyVirtualSystemSettings(setting, -1)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	// Get the new value
+	setting, err = vm.GetVirtualSystemSettingData()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	valAfter, err := setting.GetPropertyGuestControlledCacheTypes()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Settings after change: %v", valAfter)
+
+	if valBefore == valAfter {
+		t.Fatalf("Settings did not change after ModifyVirtualMachineSystemSettings(): before:%v after: %v", valBefore, valAfter)
+	}
+	t.Logf("Successfully changes vm setting from %v to %v", valBefore, valAfter)
+}
+
+func TestModifyVirtualMachineSystemSettingsGen1(t *testing.T) {
+	vmms, err := GetVirtualSystemManagementService(whost)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	vm, err := vmms.GetVirtualMachineByName("testGen1")
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	defer vm.Close()
+	t.Logf("Found [%s] VMs", "testGen1")
+
+	// Get the original value
+	setting, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	valBefore, err := setting.GetPropertyGuestControlledCacheTypes()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Settings before change: %v", valBefore)
+
+	// Invert the setting
+	err = setting.SetPropertyGuestControlledCacheTypes(!valBefore)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	// Modify the VM settings
+	err = vmms.ModifyVirtualSystemSettings(setting, -1)
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+
+	// Get the new value
+	setting, err = vm.GetVirtualSystemSettingData()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	valAfter, err := setting.GetPropertyGuestControlledCacheTypes()
+	if err != nil {
+		t.Fatalf("Failed [%+v]", err)
+	}
+	t.Logf("Settings after change: %v", valAfter)
+
+	if valBefore == valAfter {
+		t.Fatalf("Settings did not change after ModifyVirtualMachineSystemSettings(): before:%v after: %v", valBefore, valAfter)
+	}
+	t.Logf("Successfully changes vm setting from %v to %v", valBefore, valAfter)
 }
