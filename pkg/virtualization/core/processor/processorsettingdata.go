@@ -4,6 +4,8 @@
 package processor
 
 import (
+	"strconv"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/constant"
@@ -26,6 +28,19 @@ func NewProcessorSettingData(instance *wmi.WmiInstance) (*ProcessorSettingData, 
 
 func (msd *ProcessorSettingData) SetCPUCount(count uint64) (err error) {
 	return msd.SetPropertyVirtualQuantity(count)
+}
+
+func (psd *ProcessorSettingData) GetCPUCount() (uint64, error) {
+	virtualQuantity, err := psd.GetProperty("VirtualQuantity")
+	if err != nil {
+		return 0, err
+	}
+	// psd.GetPropertyVirtualQuantity was failing to cast the interface{} to uint64 directly
+	virtualQuantityString, ok := virtualQuantity.(string)
+	if !ok {
+		return 0, err
+	}
+	return strconv.ParseUint(virtualQuantityString, 10, 64)
 }
 
 func GetDefaultProcessorSettingData(whost *host.WmiHost) (*ProcessorSettingData, error) {
