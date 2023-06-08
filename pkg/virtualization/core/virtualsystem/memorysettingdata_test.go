@@ -29,28 +29,32 @@ func init() {
 }
 
 func TestGetMemorySettingData(t *testing.T) {
+	defer memsettings.Close()
 
 	msd, err := memsettings.GetRelated("Msvm_MemorySettingData")
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
 
-	_, err = memory.NewMemorySettingData(msd)
+	memorySettingData, err := memory.NewMemorySettingData(msd)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
+	memorySettingData.Close()
 }
 
 func TestGetDefaultMemorySettingData(t *testing.T) {
+	defer memsettings.Close()
 
-	_, err := memory.GetDefaultMemorySettingData(whost)
-
+	memorySettingData, err := memory.GetDefaultMemorySettingData(whost)
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
+	memorySettingData.Close()
 }
 
 func TestGetSizeMb(t *testing.T) {
+	defer memsettings.Close()
 
 	msd, err := memsettings.GetRelated("Msvm_MemorySettingData")
 	if err != nil {
@@ -68,9 +72,12 @@ func TestGetSizeMb(t *testing.T) {
 	} else if size == 0 {
 		t.Fatal("Failed, retrieved size 0.")
 	}
+
+	memorySettingData.Close()
 }
 
 func TestGetMaximumMemoryMB(t *testing.T) {
+	defer memsettings.Close()
 
 	msd, err := memsettings.GetRelated("Msvm_MemorySettingData")
 	if err != nil {
@@ -88,9 +95,12 @@ func TestGetMaximumMemoryMB(t *testing.T) {
 	} else if size == 0 {
 		t.Fatal("Failed, retrieved size 0.")
 	}
+
+	memorySettingData.Close()
 }
 
 func TestGetMinimumMemoryMB(t *testing.T) {
+	defer memsettings.Close()
 
 	msd, err := memsettings.GetRelated("Msvm_MemorySettingData")
 	if err != nil {
@@ -108,9 +118,12 @@ func TestGetMinimumMemoryMB(t *testing.T) {
 	} else if size == 0 {
 		t.Fatal("Failed, retrieved size 0.")
 	}
+
+	memorySettingData.Close()
 }
 
 func TestGetTargetMemoryBuffer(t *testing.T) {
+	defer memsettings.Close()
 
 	msd, err := memsettings.GetRelated("Msvm_MemorySettingData")
 	if err != nil {
@@ -128,4 +141,6 @@ func TestGetTargetMemoryBuffer(t *testing.T) {
 	} else if size == 0 {
 		t.Fatal("Failed, retrieved size 0.")
 	}
+
+	memorySettingData.Close()
 }

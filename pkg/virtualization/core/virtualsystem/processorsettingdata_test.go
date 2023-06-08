@@ -29,27 +29,7 @@ func init() {
 }
 
 func TestGetProcessorSettingData(t *testing.T) {
-
-	psd, err := procsettings.GetRelated("Msvm_ProcessorSettingData")
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-
-	_, err = processor.NewProcessorSettingData(psd)
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-}
-
-func TestGetDefaultProcessorSettingData(t *testing.T) {
-
-	_, err := processor.GetDefaultProcessorSettingData(whost)
-	if err != nil {
-		t.Fatal("Failed " + err.Error())
-	}
-}
-
-func TestGetCpuCount(t *testing.T) {
+	defer procsettings.Close()
 
 	psd, err := procsettings.GetRelated("Msvm_ProcessorSettingData")
 	if err != nil {
@@ -60,6 +40,32 @@ func TestGetCpuCount(t *testing.T) {
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
+	processorSettingData.Close()
+}
+
+func TestGetDefaultProcessorSettingData(t *testing.T) {
+	defer procsettings.Close()
+
+	processorSettingData, err := processor.GetDefaultProcessorSettingData(whost)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	processorSettingData.Close()
+}
+
+func TestGetCpuCount(t *testing.T) {
+	defer procsettings.Close()
+
+	psd, err := procsettings.GetRelated("Msvm_ProcessorSettingData")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+
+	processorSettingData, err := processor.NewProcessorSettingData(psd)
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer processorSettingData.Close()
 
 	count, err := processorSettingData.GetCPUCount()
 	if err != nil {
@@ -67,4 +73,5 @@ func TestGetCpuCount(t *testing.T) {
 	} else if count == 0 {
 		t.Fatal("Failed, retrieved cpu count 0.")
 	}
+	processorSettingData.Close()
 }
