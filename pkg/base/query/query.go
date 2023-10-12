@@ -4,6 +4,8 @@ package query
 
 import (
 	"fmt"
+	"log"
+	"strings"
 )
 
 // https://docs.microsoft.com/en-us/windows/win32/wmisdk/wql-sql-for-wmi
@@ -28,8 +30,9 @@ type WmiQueryFilter struct {
 }
 
 type WmiQuery struct {
-	ClassName string
-	Filters   []*WmiQueryFilter
+	ClassName  string
+	Filters    []*WmiQueryFilter
+	Parameters []string
 }
 
 func NewWmiQuery(className string, filters ...string) (wquery *WmiQuery) {
@@ -38,9 +41,28 @@ func NewWmiQuery(className string, filters ...string) (wquery *WmiQuery) {
 		return
 	}
 
+	wquery.BuildQueryFilter(filters)
+	return
+}
+
+func NewWmiQueryWithParameters(className string, parameters []string, filters ...string) (wquery *WmiQuery) {
+	wquery = &WmiQuery{ClassName: className, Parameters: parameters, Filters: []*WmiQueryFilter{}}
+	if len(filters) == 0 {
+		return
+	}
+
+	wquery.BuildQueryFilter(filters)
+	return
+}
+
+func (q *WmiQuery) BuildQueryFilter(filters []string) {
+	if len(filters)%2 == 1 {
+		log.Fatalf("Even number of strings is required to build key=value set of filters: [%+v]\n", filters)
+	}
+
 	for i := 0; i < len(filters); i = i + 2 {
 		qfilter := NewWmiQueryFilter(filters[i], filters[i+1], Equals)
-		wquery.Filters = append(wquery.Filters, qfilter)
+		q.Filters = append(q.Filters, qfilter)
 	}
 
 	return
@@ -74,7 +96,11 @@ func (q *WmiQuery) HasFilter() bool {
 
 // String
 func (q *WmiQuery) String() (queryString string) {
-	queryString = fmt.Sprintf("SELECT * FROM %s", q.ClassName)
+	paramStr := "*"
+	if len(q.Parameters) > 0 {
+		paramStr = strings.Join(q.Parameters, ",")
+	}
+	queryString = fmt.Sprintf("SELECT %s FROM %s", paramStr, q.ClassName)
 
 	if len(q.Filters) == 0 {
 		return
