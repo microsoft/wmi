@@ -32,7 +32,7 @@ type WmiQueryFilter struct {
 type WmiQuery struct {
 	ClassName  string
 	Filters    []*WmiQueryFilter
-	Parameters []string
+	SelectList []string
 }
 
 func NewWmiQuery(className string, filters ...string) (wquery *WmiQuery) {
@@ -45,8 +45,8 @@ func NewWmiQuery(className string, filters ...string) (wquery *WmiQuery) {
 	return
 }
 
-func NewWmiQueryWithParameters(className string, parameters []string, filters ...string) (wquery *WmiQuery) {
-	wquery = &WmiQuery{ClassName: className, Parameters: parameters, Filters: []*WmiQueryFilter{}}
+func NewWmiQueryWithSelectList(className string, selectList []string, filters ...string) (wquery *WmiQuery) {
+	wquery = &WmiQuery{ClassName: className, SelectList: selectList, Filters: []*WmiQueryFilter{}}
 	if len(filters) == 0 {
 		return
 	}
@@ -97,8 +97,8 @@ func (q *WmiQuery) HasFilter() bool {
 // String
 func (q *WmiQuery) String() (queryString string) {
 	paramStr := "*"
-	if len(q.Parameters) > 0 {
-		paramStr = strings.Join(q.Parameters, ",")
+	if len(q.SelectList) > 0 {
+		paramStr = strings.Join(q.SelectList, ",")
 	}
 	queryString = fmt.Sprintf("SELECT %s FROM %s", paramStr, q.ClassName)
 

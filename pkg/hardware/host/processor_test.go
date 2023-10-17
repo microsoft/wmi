@@ -33,8 +33,8 @@ func TestGetProcessorInfo(t *testing.T) {
 func TestGetSpecificProcessorInfo(t *testing.T) {
 	assert := assert.New(t)
 	whost := wmihost.NewWmiLocalHost()
-	parameters := []string{"Manufacturer", "CurrentClockSpeed", "Architecture"}
-	process, err := GetSpecificProcessorInfo(whost, parameters)
+	selectList := []string{"Manufacturer", "CurrentClockSpeed", "Architecture"}
+	process, err := GetSpecificProcessorInfo(whost, selectList)
 	if err != nil {
 		t.Fatalf("[%+v]", err)
 	}
@@ -55,14 +55,14 @@ func TestGetSpecificProcessorInfo(t *testing.T) {
 	assert.NoErrorf(err, "Failed to get property Architecture: %v", err)
 	assert.NotEqual(archi, nil, "Architecture should not be empty")
 
-	t.Logf("ProcessorInfo With Specific Query Parameters [%+v]\n", process)
+	t.Logf("ProcessorInfo With Specific Query Select List [%+v]\n", process)
 }
 
-func TestGetSpecificProcessorInfoWithEmptyParameters(t *testing.T) {
+func TestGetSpecificProcessorInfoWithEmptySelectList(t *testing.T) {
 	assert := assert.New(t)
 	whost := wmihost.NewWmiLocalHost()
-	parameters := []string{}
-	process, err := GetSpecificProcessorInfo(whost, parameters)
+	selectList := []string{}
+	process, err := GetSpecificProcessorInfo(whost, selectList)
 	if err != nil {
 		t.Fatalf("[%+v]", err)
 	}
@@ -83,5 +83,5 @@ func TestGetSpecificProcessorInfoWithEmptyParameters(t *testing.T) {
 	assert.NoErrorf(err, "Failed to get property Architecture: %v", err)
 	assert.NotEqual(archi, nil, "Architecture should not be empty")
 
-	t.Logf("ProcessorInfo With Specific Query Parameters [%+v]\n", process)
+	t.Logf("ProcessorInfo With Specific Query Select List [%+v]\n", process)
 }

@@ -37,7 +37,7 @@ func GetTotalProcessor(whost *host.WmiHost) (proc *TotalProcessor, err error) {
 		numCoresStr = "NumberOfCores"
 		numLPsStr   = "NumberOfLogicalProcessors"
 	)
-	query := query.NewWmiQueryWithParameters("Win32_Processor", []string{numCoresStr, numLPsStr})
+	query := query.NewWmiQueryWithSelectList("Win32_Processor", []string{numCoresStr, numLPsStr})
 
 	processors, err := instance.GetWmiInstancesFromHost(whost, string(constant.CimV2), query)
 	if err != nil {
@@ -86,8 +86,8 @@ func GetProcessor(whost *host.WmiHost) (proc *Processor, err error) {
 	return NewProcessor(procInfo)
 }
 
-func GetSpecificProcessorInfo(whost *host.WmiHost, parameters []string) (proc *Processor, err error) {
-	queryProcessor := query.NewWmiQueryWithParameters("Win32_Processor", parameters) //query for fields from Win32_processor class with specific parameters
+func GetSpecificProcessorInfo(whost *host.WmiHost, selectList []string) (proc *Processor, err error) {
+	queryProcessor := query.NewWmiQueryWithSelectList("Win32_Processor", selectList) //query for fields from Win32_processor class with specific parameters
 
 	procInfo, err := instance.GetWmiInstanceEx(whost, string(constant.CimV2), queryProcessor)
 	if err != nil {
