@@ -9,7 +9,7 @@
     ],
     "instanceUrl": "https://microsoft.visualstudio.com/",
     "projectName": "OS",
-    "areaPath": "OS\\Core\\LIOF\\Kubernetes\\MSK8S",
+    "areaPath": "OS\\Core\\Edge2Cloud\\Kubernetes",
     "iterationPath": "OS\\Future",
     "allTools": true
 }
