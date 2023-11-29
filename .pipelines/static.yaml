@@ -56,7 +56,7 @@ jobs:
     #  targetPattern: guardianGlob
     #continueOnError: true
 
-    - task: securedevelopmentteam.vss-secure-development-tools.build-task-semmle.Semmle@1
+  - task: securedevelopmentteam.vss-secure-development-tools.build-task-semmle.Semmle@1
     displayName: 'Run CodeQL (Semmle)'
     env:
       SYSTEM_ACCESSTOKEN: $(System.AccessToken)
