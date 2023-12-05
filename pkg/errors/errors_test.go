@@ -1,6 +1,7 @@
 package errors
 
 import (
+	"errors"
 	"math"
 	"math/rand"
 	"testing"
@@ -25,12 +26,15 @@ func TestWmiError(t *testing.T) {
 	err = NewWMIError(randUint16()) // Use a random number as an error. - should return true
 	validateWmiError(t, err)
 
+	err = NewWMIError(ERROR_OUTOFMEMORY) // Use a moc convertable error. - should return true
+	validateWmiError(t, err)
+
 	result := IsWMIError(nil) // Test with a nil error - should return false
 	if result != false {
 		t.Fatal("Failed IsWMIError(nil) returned true")
 	}
 
-	result = IsWMIError(Failed) // Test with another error type - should return false
+	result = IsWMIError(errors.New("Unconvertable Error")) // Test with another error type - should return false
 	if result != false {
 		t.Fatal("Failed IsWMIError(Failed) returned true")
 	}

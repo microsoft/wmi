@@ -15,6 +15,10 @@ const (
 )
 
 var (
+	ERROR_OUTOFMEMORY uint16 = 0xe
+)
+
+var (
 	NotFound       error = errors.New("Not Found")
 	Timedout       error = errors.New("Timedout")
 	InvalidInput   error = errors.New("Invalid Input")
@@ -24,7 +28,9 @@ var (
 	InvalidFilter  error = errors.New("Invalid Filter")
 	Failed         error = errors.New("Failed")
 	NotImplemented error = errors.New("Not Implemented")
+	OutOfMemory    error = errors.New("OutOfMemory")
 	Unknown        error = errors.New("Unknown Reason")
+	MocErrorList         = []error{NotFound, Timedout, InvalidInput, InvalidType, NotSupported, AlreadyExists, InvalidFilter, Failed, NotImplemented, OutOfMemory, Unknown}
 )
 
 func Wrap(cause error, message string) error {
@@ -69,6 +75,9 @@ func IsWMIError(err error) bool {
 	if err == nil {
 		return false
 	}
+	if IsMocConvertibleError(err) {
+		return true
+	}
 	if strings.HasPrefix(err.Error(), wmiError) {
 		return true
 	}
@@ -76,7 +85,22 @@ func IsWMIError(err error) bool {
 	if strings.HasPrefix(cerr.Error(), wmiError) {
 		return true
 	}
+	if IsMocConvertibleError(cerr) {
+		return true
+	}
 
+	return false
+}
+
+func IsMocConvertibleError(err error) bool {
+	if err == nil {
+		return false
+	}
+	for _, e := range MocErrorList {
+		if err.Error() == e.Error() {
+			return true
+		}
+	}
 	return false
 }
 
@@ -101,5 +125,10 @@ func New(errString string) error {
 }
 
 func NewWMIError(errorCode uint16) error {
-	return fmt.Errorf(wmiError+"%08x", errorCode)
+	switch errorCode {
+	case ERROR_OUTOFMEMORY:
+		return OutOfMemory
+	default:
+		return fmt.Errorf(wmiError+"%08x", errorCode)
+	}
 }
