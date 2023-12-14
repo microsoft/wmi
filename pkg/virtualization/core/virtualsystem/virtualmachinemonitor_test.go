@@ -24,6 +24,4 @@ func TestCreateVirtualMachineMonitor(t *testing.T) {
 	defer vmMonior.Close()
 	vmMonior.AddEntity("test")
 	vmMonior.AddEntity("test2")
-	for {
-	}
 }

@@ -218,6 +218,24 @@ func (vm *VirtualMachine) Start() error {
 	return vm.WaitForState(Running, StateChangeTimeoutSeconds)
 }
 
+// Pause Virtual Machine
+func (vm *VirtualMachine) Pause() error {
+	err := vm.ChangeState(Pausing, v2.ConcreteJob_JobType_Start_Virtual_Machine, -1)
+	if err != nil {
+		return err
+	}
+	return vm.WaitForState(Pausing, StateChangeTimeoutSeconds)
+}
+
+// Save Virtual Machine
+func (vm *VirtualMachine) Save() error {
+	err := vm.ChangeState(Saving, v2.ConcreteJob_JobType_Start_Virtual_Machine, -1)
+	if err != nil {
+		return err
+	}
+	return vm.WaitForState(Saving, StateChangeTimeoutSeconds)
+}
+
 // ChangeState changes the state of the Virtual Machine
 func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType, timeoutSeconds int16) (err error) {
 	cstate, err := vm.State()
