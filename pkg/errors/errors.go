@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"strings"
 
+	mocerror "github.com/microsoft/moc/pkg/errors"
 	perrors "github.com/pkg/errors"
 )
 
@@ -32,6 +33,7 @@ var (
 	OutOfMemory    error = errors.New("OutOfMemory")
 	Unknown        error = errors.New("Unknown Reason")
 	MocErrorList         = []error{NotFound, Timedout, InvalidInput, InvalidType, NotSupported, AlreadyExists, InvalidFilter, Failed, NotImplemented, OutOfMemory, Unknown}
+
 )
 
 func Wrap(cause error, message string) error {
@@ -128,7 +130,7 @@ func New(errString string) error {
 func NewWMIError(errorCode uint16) error {
 	switch errorCode {
 	case ERROR_OUTOFMEMORY:
-		return OutOfMemory
+		return mocerror.OutOfMemory
 	default:
 		return fmt.Errorf(wmiError+"%08x", errorCode)
 	}
