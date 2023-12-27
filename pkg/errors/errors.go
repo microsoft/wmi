@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	wmiError = "WMI Error 0x"
+	wmiError                = "WMI Error 0x"
 	OutOfMemoryErrorSummary = "Could not initialize memory: Not enough memory resources are available to complete this operation. (0x8007000E)"
 )
 
