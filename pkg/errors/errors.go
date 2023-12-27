@@ -5,7 +5,6 @@ package errors
 import (
 	"errors"
 	"fmt"
-	"strings"
 
 	mocerror "github.com/microsoft/moc/pkg/errors"
 	perrors "github.com/pkg/errors"
@@ -30,10 +29,7 @@ var (
 	InvalidFilter  error = errors.New("Invalid Filter")
 	Failed         error = errors.New("Failed")
 	NotImplemented error = errors.New("Not Implemented")
-	OutOfMemory    error = errors.New("OutOfMemory")
 	Unknown        error = errors.New("Unknown Reason")
-	MocErrorList         = []error{NotFound, Timedout, InvalidInput, InvalidType, NotSupported, AlreadyExists, InvalidFilter, Failed, NotImplemented, OutOfMemory, Unknown}
-
 )
 
 func Wrap(cause error, message string) error {
@@ -73,38 +69,6 @@ func IsNotImplemented(err error) bool {
 }
 func IsUnknown(err error) bool {
 	return checkError(err, Unknown)
-}
-func IsWMIError(err error) bool {
-	if err == nil {
-		return false
-	}
-	if IsMocConvertibleError(err) {
-		return true
-	}
-	if strings.HasPrefix(err.Error(), wmiError) {
-		return true
-	}
-	cerr := perrors.Cause(err)
-	if strings.HasPrefix(cerr.Error(), wmiError) {
-		return true
-	}
-	if IsMocConvertibleError(cerr) {
-		return true
-	}
-
-	return false
-}
-
-func IsMocConvertibleError(err error) bool {
-	if err == nil {
-		return false
-	}
-	for _, e := range MocErrorList {
-		if err.Error() == e.Error() {
-			return true
-		}
-	}
-	return false
 }
 
 func checkError(wrappedError, err error) bool {
