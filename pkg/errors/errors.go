@@ -5,13 +5,18 @@ package errors
 import (
 	"errors"
 	"fmt"
-	"strings"
 
+	mocerror "github.com/microsoft/moc/pkg/errors"
 	perrors "github.com/pkg/errors"
 )
 
 const (
-	wmiError = "WMI Error 0x"
+	wmiError                = "WMI Error 0x"
+	OutOfMemoryErrorSummary = "Could not initialize memory: Not enough memory resources are available to complete this operation. (0x8007000E)"
+)
+
+var (
+	ERROR_OUTOFMEMORY uint16 = 0xe
 )
 
 var (
@@ -65,20 +70,6 @@ func IsNotImplemented(err error) bool {
 func IsUnknown(err error) bool {
 	return checkError(err, Unknown)
 }
-func IsWMIError(err error) bool {
-	if err == nil {
-		return false
-	}
-	if strings.HasPrefix(err.Error(), wmiError) {
-		return true
-	}
-	cerr := perrors.Cause(err)
-	if strings.HasPrefix(cerr.Error(), wmiError) {
-		return true
-	}
-
-	return false
-}
 
 func checkError(wrappedError, err error) bool {
 	if wrappedError == nil {
@@ -101,5 +92,10 @@ func New(errString string) error {
 }
 
 func NewWMIError(errorCode uint16) error {
-	return fmt.Errorf(wmiError+"%08x", errorCode)
+	switch errorCode {
+	case ERROR_OUTOFMEMORY:
+		return mocerror.OutOfMemory
+	default:
+		return fmt.Errorf(wmiError+"%08x", errorCode)
+	}
 }
