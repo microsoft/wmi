@@ -224,7 +224,7 @@ func (vm *VirtualMachine) Pause() error {
 	if err != nil {
 		return err
 	}
-	return vm.WaitForState(Pausing, StateChangeTimeoutSeconds)
+	return vm.WaitForState(Paused, StateChangeTimeoutSeconds)
 }
 
 // Save Virtual Machine
@@ -233,7 +233,7 @@ func (vm *VirtualMachine) Save() error {
 	if err != nil {
 		return err
 	}
-	return vm.WaitForState(Saving, StateChangeTimeoutSeconds)
+	return vm.WaitForState(Saved, StateChangeTimeoutSeconds)
 }
 
 // ChangeState changes the state of the Virtual Machine
