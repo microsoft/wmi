@@ -220,7 +220,7 @@ func (vm *VirtualMachine) Start() error {
 
 // Pause Virtual Machine
 func (vm *VirtualMachine) Pause() error {
-	err := vm.ChangeState(Pausing, v2.ConcreteJob_JobType_Pause_Virtual_Machine, -1)
+	err := vm.ChangeState(Paused, v2.ConcreteJob_JobType_Pause_Virtual_Machine, -1)
 	if err != nil {
 		return err
 	}
@@ -229,7 +229,7 @@ func (vm *VirtualMachine) Pause() error {
 
 // Save Virtual Machine
 func (vm *VirtualMachine) Save() error {
-	err := vm.ChangeState(Saving, v2.ConcreteJob_JobType_Save_Virtual_Machine, -1)
+	err := vm.ChangeState(Saved, v2.ConcreteJob_JobType_Save_Virtual_Machine, -1)
 	if err != nil {
 		return err
 	}
