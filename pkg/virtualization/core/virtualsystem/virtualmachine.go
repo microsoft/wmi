@@ -256,7 +256,6 @@ func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.Conc
 		return nil
 	}
 	result, err := vm.InvokeMethodWithReturn("RequestStateChange", int32(state))
-	fmt.Printf("Result from changing state: %v\n", result)
 	if err != nil {
 		return err
 	}

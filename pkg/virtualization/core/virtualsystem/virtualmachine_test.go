@@ -125,7 +125,7 @@ func TestVirtualMachineResume(t *testing.T) {
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
-	err = vm.Start()
+	err = vm.Resume()
 	if err != nil {
 		t.Fatal("Failed " + err.Error())
 	}
