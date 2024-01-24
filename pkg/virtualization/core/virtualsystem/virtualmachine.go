@@ -218,6 +218,15 @@ func (vm *VirtualMachine) Start() error {
 	return vm.WaitForState(Running, StateChangeTimeoutSeconds)
 }
 
+// Resume Virtual Machine
+func (vm *VirtualMachine) Resume() error {
+	err := vm.ChangeState(Running, v2.ConcreteJob_JobType_Resume_Virtual_Machine, -1)
+	if err != nil {
+		return err
+	}
+	return vm.WaitForState(Running, StateChangeTimeoutSeconds)
+}
+
 // Pause Virtual Machine
 func (vm *VirtualMachine) Pause() error {
 	err := vm.ChangeState(Paused, v2.ConcreteJob_JobType_Pause_Virtual_Machine, -1)
