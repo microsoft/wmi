@@ -285,6 +285,16 @@ func (c *WmiClass) InvokeMethod(methodName string, methodParams []string, inputO
 	// both are SWbemObjects: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemobject
 }
 
+func (c *WmiClass) InvokeMethodWithLiteralParams(methodName string, params ...interface{}) ([]interface{}, error) {
+	rawResult, err := oleutil.CallMethod(c.class, methodName, params...)
+	if err != nil {
+		return nil, err
+	}
+	defer rawResult.Clear()
+	values, err := GetVariantValues(rawResult)
+	return values, err
+}
+
 // CloseAllClasses
 func CloseAllClasses(classes []*WmiClass) {
 	for _, class := range classes {
