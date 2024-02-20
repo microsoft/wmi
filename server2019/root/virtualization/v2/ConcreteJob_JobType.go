@@ -38,9 +38,9 @@ const (
 	// Shut_Down_Virtual_Machine enum
 	ConcreteJob_JobType_Shut_Down_Virtual_Machine ConcreteJob_JobType = 16
 	// Pause_Virtual_Machine enum
-	ConcreteJob_JobType_Pause_Virtual_Machine ConcreteJob_JobType = 20
+	ConcreteJob_JobType_Pause_Virtual_Machine ConcreteJob_JobType = 26 //These are out of date. Newest hyper-v code shows 20 for Pause and 21 for Resume.
 	// Resume_Virtual_Machine enum
-	ConcreteJob_JobType_Resume_Virtual_Machine ConcreteJob_JobType = 21
+	ConcreteJob_JobType_Resume_Virtual_Machine ConcreteJob_JobType = 27 //These are out of date. Newest hyper-v code shows 20 for Pause and 21 for Resume.
 	// Reset_Virtual_Machine enum
 	ConcreteJob_JobType_Reset_Virtual_Machine ConcreteJob_JobType = 28
 	// Reboot_Virtual_Machine enum
