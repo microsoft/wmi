@@ -16,7 +16,7 @@ import (
 
 	"reflect"
 
-	"github.com/microsoft/wmi/pkg/virtualization/core/job"
+	job "github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
@@ -196,12 +196,12 @@ func (vm *VirtualMachine) Status() (string, error) {
 // Stop Virtual Machine
 func (vm *VirtualMachine) Stop(force bool) error {
 	if force {
-		err := vm.ChangeState(Off, v2.ConcreteJob_JobType_Power_Off_Virtual_Machine, -1)
+		err := vm.ChangeState(Off, job.ConcreteJob_JobType_Power_Off_Virtual_Machine, -1)
 		if err != nil {
 			return err
 		}
 	} else {
-		err := vm.ChangeState(Stopping, v2.ConcreteJob_JobType_Shut_Down_Virtual_Machine, -1)
+		err := vm.ChangeState(Stopping, job.ConcreteJob_JobType_Shut_Down_Virtual_Machine, -1)
 		if err != nil {
 			return err
 		}
@@ -211,15 +211,42 @@ func (vm *VirtualMachine) Stop(force bool) error {
 
 // Start Virtual Machine
 func (vm *VirtualMachine) Start() error {
-	err := vm.ChangeState(Running, v2.ConcreteJob_JobType_Start_Virtual_Machine, -1)
+	err := vm.ChangeState(Running, job.ConcreteJob_JobType_Start_Virtual_Machine, -1)
 	if err != nil {
 		return err
 	}
 	return vm.WaitForState(Running, StateChangeTimeoutSeconds)
 }
 
+// Resume Virtual Machine
+func (vm *VirtualMachine) Resume() error {
+	err := vm.ChangeState(Running, job.ConcreteJob_JobType_Resume_Virtual_Machine, -1)
+	if err != nil {
+		return err
+	}
+	return vm.WaitForState(Running, StateChangeTimeoutSeconds)
+}
+
+// Pause Virtual Machine
+func (vm *VirtualMachine) Pause() error {
+	err := vm.ChangeState(Paused, job.ConcreteJob_JobType_Pause_Virtual_Machine, -1)
+	if err != nil {
+		return err
+	}
+	return vm.WaitForState(Paused, StateChangeTimeoutSeconds)
+}
+
+// Save Virtual Machine
+func (vm *VirtualMachine) Save() error {
+	err := vm.ChangeState(Saved, job.ConcreteJob_JobType_Save_Virtual_Machine, -1)
+	if err != nil {
+		return err
+	}
+	return vm.WaitForState(Saved, StateChangeTimeoutSeconds)
+}
+
 // ChangeState changes the state of the Virtual Machine
-func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType v2.ConcreteJob_JobType, timeoutSeconds int16) (err error) {
+func (vm *VirtualMachine) ChangeState(state VirtualMachineState, jobType job.ConcreteJob_JobType, timeoutSeconds int16) (err error) {
 	cstate, err := vm.State()
 	if err != nil {
 		return err
