@@ -17,7 +17,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/network/ethernetport"
 	"github.com/microsoft/wmi/pkg/virtualization/network/switchextension"
 	"github.com/microsoft/wmi/pkg/virtualization/network/switchport"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type HostComputerSystem struct {
@@ -253,6 +253,47 @@ func (hc *HostComputerSystem) GetDefaultEthernetSwitchPortVLANSettingData(vlanId
 		return nil, err
 	}
 	err = spps.SetPropertyOperationMode(1)
+	if err != nil {
+		return nil, err
+	}
+
+	return spps, nil
+}
+
+func (hc *HostComputerSystem) GetDefaultEthernetSwitchPortIsolationSettingData(vlanId uint32) (*switchport.EthernetSwitchPortIsolationSettingData, error) {
+	tmp, err := hc.GetDefaultPortSettingData("Ethernet Switch Port Isolation Settings", "Msvm_EthernetSwitchPortIsolationSettingData")
+	if err != nil {
+		return nil, err
+	}
+
+	spps, err := switchport.NewEthernetSwitchPortIsolationSettingData(tmp)
+	if err != nil {
+		return nil, err
+	}
+
+	defer func() {
+		if err != nil {
+			spps.Close()
+			spps = nil
+		}
+	}()
+
+	err = spps.SetPropertyDefaultIsolationId(vlanId)
+	if err != nil {
+		return nil, err
+	}
+	// VLAN 3
+	err = spps.SetPropertyIsolationMode(3)
+	if err != nil {
+		return nil, err
+	}
+
+	err = spps.SetPropertyAllowUntaggedTraffic(false)
+	if err != nil {
+		return nil, err
+	}
+
+	err = spps.SetPropertyEnableMultiTenantStack(false)
 	if err != nil {
 		return nil, err
 	}

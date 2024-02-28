@@ -4,7 +4,9 @@
 package service
 
 import (
+	"fmt"
 	"log"
+	"strings"
 	"time"
 
 	"github.com/microsoft/wmi/pkg/base/instance"
@@ -247,6 +249,7 @@ func (vmms *VirtualSystemManagementService) DisconnectAdapterFromVirtualSwitch(v
 	defer adapter.Close()
 
 	pasd, err := adapter.GetEthernetPortAllocationSettingData()
+
 	if err != nil {
 		if errors.IsNotFound(err) {
 			return nil
@@ -281,12 +284,84 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortProfile(
 	}
 	defer pasd.Close()
 
+	data, err := pasd.GetEthernetSwitchPortProfileSettingDataForVendor(vendorGuid)
+
+	if err == nil && data != nil {
+		defer data.Close()
+		cProfileData, err1 := data.GetPropertyProfileData()
+		cProfileGuild, err2 := data.GetPropertyProfileId()
+		wmiProfileGuid := fmt.Sprintf("{%s}", profileGuid)
+		if err1 == nil && err2 == nil && cProfileData == profileData &&
+			strings.EqualFold(cProfileGuild, wmiProfileGuid) {
+			return
+		} else {
+			instance, err1 := data.GetInstance()
+			if err1 == nil {
+				instancePath := instance.InstancePath()
+				vmms.RemoveEthernetFeature([]string{instancePath}, -1)
+			}
+		}
+	}
+
 	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, profileSettings.WmiInstance, -1)
 }
 
 func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterPortIsolation(
-	vna *na.VirtualNetworkAdapter, vlanId uint16) (err error) {
-	return errors.NotImplemented
+	vna *na.VirtualNetworkAdapter, vlanId uint32) (err error) {
+	hc, err := vmms.GetHostComputerSystem()
+	if err != nil {
+		return
+	}
+	defer hc.Close()
+
+	portIsolatonSettings, err := hc.GetDefaultEthernetSwitchPortIsolationSettingData(vlanId)
+	if err != nil {
+		return
+	}
+	defer portIsolatonSettings.Close()
+
+	pasd, err := vna.GetEthernetPortAllocationSettingData()
+	if err != nil {
+		return
+	}
+	defer pasd.Close()
+
+	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, portIsolatonSettings.WmiInstance, -1)
+}
+
+func (vmms *VirtualSystemManagementService) RemoveVirtualNetworkAdapterPortIsolation(
+	vna *na.VirtualNetworkAdapter) (err error) {
+	hc, err := vmms.GetHostComputerSystem()
+	if err != nil {
+		return
+	}
+	defer hc.Close()
+
+	pasd, err := vna.GetEthernetPortAllocationSettingData()
+	if err != nil {
+		return
+	}
+	defer pasd.Close()
+
+	data, err := pasd.GetEthernetSwitchPortIsolationSettingData()
+
+	if errors.IsNotFound(err) {
+		err = nil
+		return
+	}
+
+	if err != nil {
+		return
+	}
+	defer data.Close()
+
+	instance, err := data.GetInstance()
+	if err != nil {
+		return
+	}
+
+	instancePath := instance.InstancePath()
+	return vmms.RemoveEthernetFeature([]string{instancePath}, -1)
 }
 
 func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterAccessVLAN(vna *na.VirtualNetworkAdapter, vlanId uint16) (err error) {
@@ -303,12 +378,47 @@ func (vmms *VirtualSystemManagementService) SetVirtualNetworkAdapterAccessVLAN(v
 	defer vlanSettings.Close()
 
 	pasd, err := vna.GetEthernetPortAllocationSettingData()
+
 	if err != nil {
 		return
 	}
 	defer pasd.Close()
 
 	return vmms.AddEthernetFeatureEx1(pasd.Msvm_EthernetPortAllocationSettingData, vlanSettings.WmiInstance, -1)
+}
+
+func (vmms *VirtualSystemManagementService) RemoveVirtualNetworkAdapterVLAN(vna *na.VirtualNetworkAdapter) (err error) {
+	hc, err := vmms.GetHostComputerSystem()
+	if err != nil {
+		return
+	}
+	defer hc.Close()
+
+	pasd, err := vna.GetEthernetPortAllocationSettingData()
+	if err != nil {
+		return
+	}
+	defer pasd.Close()
+
+	data, err := pasd.GetEthernetSwitchPortVLANSettingData()
+
+	if errors.IsNotFound(err) {
+		err = nil
+		return
+	}
+
+	if err != nil {
+		return
+	}
+	defer data.Close()
+
+	instance, err := data.GetInstance()
+	if err != nil {
+		return
+	}
+
+	instancePath := instance.InstancePath()
+	return vmms.RemoveEthernetFeature([]string{instancePath}, -1)
 }
 
 func (vmms *VirtualSystemManagementService) AddEthernetFeatureEx1(
@@ -466,13 +576,8 @@ func (vmms *VirtualSystemManagementService) ModifyEthernetFeature(
 }
 
 func (vmms *VirtualSystemManagementService) RemoveEthernetFeature(
-	col wmi.WmiInstanceCollection,
+	featureInstances []string,
 	timeoutSeconds int16) (err error) {
-
-	embeddedInstances, err := col.EmbeddedXMLInstances()
-	if err != nil {
-		return
-	}
 
 	method, err := vmms.GetWmiMethod("RemoveFeatureSettings")
 	if err != nil {
@@ -481,7 +586,7 @@ func (vmms *VirtualSystemManagementService) RemoveEthernetFeature(
 	defer method.Close()
 
 	inparams := wmi.WmiMethodParamCollection{}
-	inparams = append(inparams, wmi.NewWmiMethodParam("FeatureSettings", embeddedInstances))
+	inparams = append(inparams, wmi.NewWmiMethodParam("FeatureSettings", featureInstances))
 
 	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
 	for {

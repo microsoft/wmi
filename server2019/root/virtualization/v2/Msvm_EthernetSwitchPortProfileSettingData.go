@@ -9,10 +9,11 @@
 package v2
 
 import (
+	"reflect"
+
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/errors"
 	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
 )
 
 // Msvm_EthernetSwitchPortProfileSettingData struct
@@ -291,8 +292,15 @@ func (instance *Msvm_EthernetSwitchPortProfileSettingData) GetPropertyProfileDat
 	}
 
 	valuetmp, ok := retValue.(uint32)
+	var i32Valuetmp int32
 	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+		// for some reason value is returned as int32, handling it.
+		i32Valuetmp, ok = retValue.(int32)
+		valuetmp = uint32(i32Valuetmp)
+	}
+
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
 		return
 	}
 
