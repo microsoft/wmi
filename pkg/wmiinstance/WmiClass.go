@@ -279,10 +279,16 @@ func (c *WmiClass) MethodParameters(methodName string) []string {
 	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemmethodset
 	// https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemmethod
 }
-func (c *WmiClass) InvokeMethod(methodName string, methodParams []string, inputOptions string) (error, string) {
-	panic("not implemented")
-	// TODO. Should theoretically be the same as WmiInstance InvokeMethod?
-	// both are SWbemObjects: https://docs.microsoft.com/en-us/windows/win32/wmisdk/swbemobject
+
+// Invoke static method on a wmi class
+func (c *WmiClass) InvokeMethod(methodName string, params ...interface{}) ([]interface{}, error) {
+	rawResult, err := oleutil.CallMethod(c.class, methodName, params...)
+	if err != nil {
+		return nil, err
+	}
+	defer rawResult.Clear()
+	values, err := GetVariantValues(rawResult)
+	return values, err
 }
 
 // CloseAllClasses
