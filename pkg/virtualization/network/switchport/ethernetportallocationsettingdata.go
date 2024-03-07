@@ -4,7 +4,6 @@
 package switchport
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/microsoft/wmi/pkg/errors"
@@ -53,7 +52,7 @@ func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortProfileSetti
 		return nil, err
 	}
 	defer col.Close()
-	wmiVendorId := fmt.Sprintf("{%s}", vendorGuid)
+	wmiVendorId := "{" + vendorGuid + "}"
 	for _, item := range col {
 		v, err := item.GetProperty("VendorId")
 		if err != nil {

@@ -1,11 +1,12 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
-//      Source root.virtualization.v2
-//////////////////////////////////////////////
+//
+//	Auto Generated on 9/18/2020 using wmigen
+//	Source root.virtualization.v2
+//
+// ////////////////////////////////////////////
 package v2
 
 import (
@@ -296,6 +297,11 @@ func (instance *Msvm_EthernetSwitchPortProfileSettingData) GetPropertyProfileDat
 	if !ok {
 		// for some reason value is returned as int32, handling it.
 		i32Valuetmp, ok = retValue.(int32)
+		if i32Valuetmp < 0 {
+			// should never happen
+			err = errors.Wrapf(errors.InvalidType, " invalid value for profile data")
+			return
+		}
 		valuetmp = uint32(i32Valuetmp)
 	}
 

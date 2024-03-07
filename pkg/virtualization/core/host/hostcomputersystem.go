@@ -20,6 +20,13 @@ import (
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
+const (
+	IsolationNone                  uint32 = 0
+	IsolationNativeVirtualSubnet   uint32 = 1
+	IsolationExternalVirtualSubnet uint32 = 2
+	IsolationVLAN                  uint32 = 3
+)
+
 type HostComputerSystem struct {
 	*v2.Msvm_ComputerSystem
 }
@@ -282,8 +289,9 @@ func (hc *HostComputerSystem) GetDefaultEthernetSwitchPortIsolationSettingData(v
 	if err != nil {
 		return nil, err
 	}
+
 	// VLAN 3
-	err = spps.SetPropertyIsolationMode(3)
+	err = spps.SetPropertyIsolationMode(IsolationVLAN)
 	if err != nil {
 		return nil, err
 	}
