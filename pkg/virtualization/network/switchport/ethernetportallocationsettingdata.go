@@ -4,6 +4,9 @@
 package switchport
 
 import (
+	"strings"
+
+	"github.com/microsoft/wmi/pkg/errors"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
 	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
@@ -41,6 +44,32 @@ func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortProfileSetti
 	return NewEthernetSwitchPortProfileSettingData(tmp)
 }
 
+func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortProfileSettingDataForVendor(vendorGuid string) (*EthernetSwitchPortProfileSettingData, error) {
+
+	col, err := epas.GetAssociated("Msvm_EthernetPortSettingDataComponent", "Msvm_EthernetSwitchPortProfileSettingData", "", "")
+
+	if err != nil {
+		return nil, err
+	}
+	defer col.Close()
+	wmiVendorId := "{" + vendorGuid + "}"
+	for _, item := range col {
+		v, err := item.GetProperty("VendorId")
+		if err != nil {
+			continue
+		}
+		currentVendor := v.(string)
+		if strings.EqualFold(currentVendor, wmiVendorId) {
+			profileSettings, err := item.Clone()
+			if err != nil {
+				continue
+			}
+			return NewEthernetSwitchPortProfileSettingData(profileSettings)
+		}
+	}
+	return nil, errors.Wrapf(errors.NotFound, "No item found for vendor id")
+}
+
 func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortOffloadSettingData() (*EthernetSwitchPortOffloadSettingData, error) {
 	tmp, err := epas.GetFirstRelatedEx("",
 		"Msvm_EthernetSwitchPortOffloadSettingData",
@@ -51,4 +80,30 @@ func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortOffloadSetti
 	}
 
 	return NewEthernetSwitchPortOffloadSettingData(tmp)
+}
+
+func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortVLANSettingData() (*EthernetSwitchPortVLANSettingData, error) {
+
+	tmp, err := epas.GetFirstRelatedEx("",
+		"Msvm_EthernetSwitchPortVLANSettingData",
+		"",
+		"")
+	if err != nil {
+		return nil, err
+	}
+
+	return NewEthernetSwitchPortVLANSettingData(tmp)
+}
+
+func (epas *EthernetPortAllocationSettingData) GetEthernetSwitchPortIsolationSettingData() (*EthernetSwitchPortIsolationSettingData, error) {
+
+	tmp, err := epas.GetFirstRelatedEx("",
+		"Msvm_EthernetSwitchPortIsolationSettingData",
+		"",
+		"")
+	if err != nil {
+		return nil, err
+	}
+
+	return NewEthernetSwitchPortIsolationSettingData(tmp)
 }
