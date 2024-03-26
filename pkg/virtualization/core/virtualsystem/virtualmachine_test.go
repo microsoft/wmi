@@ -131,6 +131,23 @@ func TestVirtualMachineResume(t *testing.T) {
 	}
 }
 
+func TestVirtualMachineRestore(t *testing.T) {
+	vm, err := GetVirtualMachineByVMName(whost, "test")
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	defer vm.Close()
+
+	err = vm.Save()
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+	err = vm.Restore()
+	if err != nil {
+		t.Fatal("Failed " + err.Error())
+	}
+}
+
 func TestGetVirtualMachineSetting(t *testing.T) {
 	vm, err := GetVirtualMachineByVMName(whost, "test")
 	if err != nil {
