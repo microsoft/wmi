@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-package gpupartition
+package gpu
 
 import (
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
@@ -21,13 +21,13 @@ func NewGpuPartitionCollection(instances []*wmi.WmiInstance) (col GpuPartitionCo
 	return
 }
 
-func (vms *GpuPartitionCollection) Close() (err error) {
-	for _, value := range *vms {
+func (partitions *GpuPartitionCollection) Close() (err error) {
+	for _, value := range *partitions {
 		value.Close()
 	}
 	return nil
 }
 
-func (vms *GpuPartitionCollection) String() string {
+func (partitions *GpuPartitionCollection) String() string {
 	return ""
 }

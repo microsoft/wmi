@@ -99,7 +99,7 @@ func (vmms *VirtualSystemManagementService) AttachGpuP(vm *virtualsystem.Virtual
 }
 
 func (vmms *VirtualSystemManagementService) DetachGpuP(vm *virtualsystem.VirtualMachine, partitionSizeBytes uint64) (err error) {
-	partition, err := vm.GetGpuPartition(partitionSizeBytes)
+	partitionSettingData, err := vm.GetGpuPartitionSettingData(partitionSizeBytes)
 	if err != nil {
 		log.Printf("[WMI] Error getting GPU partition of size [%d bytes] - Error details [%+v]\n", partitionSizeBytes, err)
 		if errors.IsNotFound(err) {
@@ -107,12 +107,12 @@ func (vmms *VirtualSystemManagementService) DetachGpuP(vm *virtualsystem.Virtual
 		}
 		return err
 	}
-	defer partition.Close()
+	defer partitionSettingData.Close()
 
 	// Detach the GPU Partition
-	err = vmms.RemoveVirtualSystemResource(partition.CIM_ResourceAllocationSettingData, -1)
+	err = vmms.RemoveVirtualSystemResource(partitionSettingData.CIM_ResourceAllocationSettingData, -1)
 	if err != nil {
-		log.Printf("[WMI] Error detaching GPU partition with resource allocation setting data [%s] - Error details [%+v]\n", partition.CIM_ResourceAllocationSettingData, err)
+		log.Printf("[WMI] Error detaching GPU partition with resource allocation setting data [%s] - Error details [%+v]\n", partitionSettingData.CIM_ResourceAllocationSettingData, err)
 		return
 	}
 

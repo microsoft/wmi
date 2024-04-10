@@ -18,7 +18,7 @@ import (
 
 	"reflect"
 
-	"github.com/microsoft/wmi/pkg/virtualization/core/gpupartition"
+	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 	job "github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
@@ -783,26 +783,48 @@ func (vm *VirtualMachine) GetPcieDevice(hostResource string) (pcieDevice *pcie.P
 	return
 }
 
-func (vm *VirtualMachine) NewGpuPartition(partitionSizeBytes uint64) (newGpuPartition *gpupartition.GpuPartitionSettingData, err error) {
+func (vm *VirtualMachine) NewGpuPartition(partitionSizeBytes uint64) (newGpuPartitionSettingData *gpu.GpuPartitionSettingData, err error) {
 	whost := vm.GetWmiHost()
 
-	newGpuPartition, err = gpupartition.GetDefaultGpuPartitionSettingData(whost)
+	newGpuPartitionSettingData, err = gpu.GetDefaultGpuPartitionSettingData(whost)
 	if err != nil {
 		return
 	}
 
-	err = newGpuPartition.SetPropertyMinPartitionVRAM(partitionSizeBytes)
+	err = newGpuPartitionSettingData.SetPropertyMinPartitionVRAM(partitionSizeBytes)
 	return
 }
 
-func (vm *VirtualMachine) GetGpuPartition(partitionSizeBytes uint64) (partition *gpupartition.GpuPartition, err error) {
+func (vm *VirtualMachine) GetGpuPartitionSettingData(partitionSizeBytes uint64) (partitionSettingData *gpu.GpuPartitionSettingData, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
 		return
 	}
 	defer settings.Close()
 
-	partition, err = settings.GetGpuPartition(partitionSizeBytes)
+	partitionSettingData, err = settings.GetGpuPartitionSettingData(partitionSizeBytes)
+	return
+}
+
+func (vm *VirtualMachine) GetGpuPartitionSettingCollection() (partitionSettingCollection gpu.GpuPartitionSettingCollection, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	partitionSettingCollection, err = settings.GetGpuPartitionSettingCollection()
+	return
+}
+
+func (vm *VirtualMachine) GetGpuPartitions() (partitions gpu.GpuPartitionCollection, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	partitions, err = settings.GetGpuPartitions()
 	return
 }
 
