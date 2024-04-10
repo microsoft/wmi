@@ -12,7 +12,7 @@ import (
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
 	"github.com/microsoft/wmi/pkg/errors"
-	"github.com/microsoft/wmi/pkg/virtualization/core/gpupartition"
+	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
 	"github.com/microsoft/wmi/pkg/virtualization/core/processor"
@@ -87,36 +87,47 @@ func (vm *VirtualSystemSettingData) GetPcieDevice(hostResource string) (*pcie.Pc
 	return nil, err
 }
 
-func (vm *VirtualSystemSettingData) GetGpuPartitions() (col gpupartition.GpuPartitionCollection, err error) {
+func (vm *VirtualSystemSettingData) GetGpuPartitionSettingCollection() (col gpu.GpuPartitionSettingCollection, err error) {
 	rasdcollection, err := vm.GetAllRelated("Msvm_GpuPartitionSettingData")
 	if err != nil {
 		return nil, err
 	}
 	defer rasdcollection.Close()
 
-	col, err = gpupartition.NewGpuPartitionCollection(rasdcollection)
+	col, err = gpu.NewGpuPartitionSettingCollection(rasdcollection)
 	return
 }
 
-func (vm *VirtualSystemSettingData) GetGpuPartition(partitionSizeBytes uint64) (*gpupartition.GpuPartition, error) {
-	gpuPartitionCollection, err := vm.GetGpuPartitions()
+func (vm *VirtualSystemSettingData) GetGpuPartitionSettingData(partitionSizeBytes uint64) (*gpu.GpuPartitionSettingData, error) {
+	gpuPartitionSettingCollection, err := vm.GetGpuPartitionSettingCollection()
 	if err != nil {
 		return nil, err
 	}
-	defer gpuPartitionCollection.Close()
+	defer gpuPartitionSettingCollection.Close()
 
-	for _, gpuPartition := range gpuPartitionCollection {
-		minVRAM, err := gpuPartition.GetMinPartitionVRAM()
+	for _, gpuPartitionSetting := range gpuPartitionSettingCollection {
+		minVRAM, err := gpuPartitionSetting.GetMinPartitionVRAM()
 		if err != nil {
 			return nil, err
 		}
 		if minVRAM == partitionSizeBytes {
 			// Found the match
-			return gpuPartition.CloneEx1()
+			return gpuPartitionSetting.CloneEx1()
 		}
 	}
 	err = errors.Wrapf(errors.NotFound, "Unable to find GPU partition with minimum partition VRAM of [%d bytes]", partitionSizeBytes)
 	return nil, err
+}
+
+func (vm *VirtualSystemSettingData) GetGpuPartitions() (col gpu.GpuPartitionCollection, err error) {
+	rasdcollection, err := vm.GetAllRelated("Msvm_GpuPartitionData")
+	if err != nil {
+		return nil, err
+	}
+	defer rasdcollection.Close()
+
+	col, err = gpu.NewGpuPartitionCollection(rasdcollection)
+	return
 }
 
 func (vm *VirtualSystemSettingData) GetSyntheticVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
