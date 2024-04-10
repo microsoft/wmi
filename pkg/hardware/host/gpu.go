@@ -13,8 +13,8 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 )
 
-// GetPartitionableGpuCollection gets setting data for all host GPU-P partitions
-func GetPartitionableGpuCollection(whost *host.WmiHost) (gpupartitionsettingcollection gpu.GpuPartitionSettingCollection, err error) {
+// GetPartitionableGpuCollection gets all host partitionable GPUs
+func GetPartitionableGpuCollection(whost *host.WmiHost) (partitionablegpucollection gpu.PartitionableGpuCollection, err error) {
 	query := query.NewWmiQuery("Msvm_PartitionableGpu")
 	rasdcollection, err := instance.GetWmiInstancesFromHost(whost, string(constant.Virtualization), query)
 	if err != nil {
@@ -23,12 +23,12 @@ func GetPartitionableGpuCollection(whost *host.WmiHost) (gpupartitionsettingcoll
 	}
 	defer rasdcollection.Close()
 
-	gpupartitionsettingcollection, err = gpu.NewGpuPartitionSettingCollection(rasdcollection)
+	partitionablegpucollection, err = gpu.NewPartitionableGpuCollection(rasdcollection)
 	if err != nil {
-		log.Printf("[WMI] Error getting new GpuPartitionSettingCollection for rasdcollection [%s] - Error details [%+v]\n", rasdcollection, err)
+		log.Printf("[WMI] Error getting new PartitionableGpuCollection for rasdcollection [%s] - Error details [%+v]\n", rasdcollection, err)
 		return
 	}
 
-	log.Printf("[WMI] Got GPU-P partition setting collection [%s]", gpupartitionsettingcollection)
+	log.Printf("[WMI] Got partitionable GPU collection [%s]", partitionablegpucollection)
 	return
 }
