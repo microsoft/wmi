@@ -700,17 +700,6 @@ func (vm *VirtualMachine) GetGpuPartitionSettingCollection() (partitionSettingCo
 	return
 }
 
-func (vm *VirtualMachine) GetGpuPartitions() (partitions gpu.GpuPartitionCollection, err error) {
-	settings, err := vm.GetVirtualSystemSettingData()
-	if err != nil {
-		return
-	}
-	defer settings.Close()
-
-	partitions, err = settings.GetGpuPartitions()
-	return
-}
-
 func (vm *VirtualMachine) GetSCSIControllers() (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	col, err = vm.GetResourceAllocationSettingData(v2.ResourcePool_ResourceType_Parallel_SCSI_HBA)
 	return

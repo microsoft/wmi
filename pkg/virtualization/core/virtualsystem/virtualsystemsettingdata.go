@@ -119,17 +119,6 @@ func (vm *VirtualSystemSettingData) GetGpuPartitionSettingData(partitionSizeByte
 	return nil, err
 }
 
-func (vm *VirtualSystemSettingData) GetGpuPartitions() (col gpu.GpuPartitionCollection, err error) {
-	rasdcollection, err := vm.GetAllRelated("Msvm_GpuPartitionData")
-	if err != nil {
-		return nil, err
-	}
-	defer rasdcollection.Close()
-
-	col, err = gpu.NewGpuPartitionCollection(rasdcollection)
-	return
-}
-
 func (vm *VirtualSystemSettingData) GetSyntheticVirtualNetworkAdapters() (col na.VirtualNetworkAdapterCollection, err error) {
 	psds, err := vm.GetAllRelated("Msvm_SyntheticEthernetPortSettingData")
 	if err != nil {

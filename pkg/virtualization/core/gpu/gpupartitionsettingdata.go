@@ -4,6 +4,9 @@
 package gpu
 
 import (
+	"reflect"
+	"strconv"
+
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
@@ -44,11 +47,21 @@ func (partitionSettingData *GpuPartitionSettingData) CloneEx1() (*GpuPartitionSe
 
 func (partitionSettingData *GpuPartitionSettingData) GetMinPartitionVRAM() (uint64, error) {
 	value, err := partitionSettingData.GetProperty("MinPartitionVRAM")
+	if err != nil || value == nil {
+		return 0, err
+	}
+
+	valuetmp, ok := value.(string)
+	if !ok {
+		err = errors.Wrapf(errors.InvalidType, "%s is invalid. Expected type is string", reflect.TypeOf(value))
+		return 0, err
+	}
+
+	// base 10, 64 bit
+	valueint, err := strconv.ParseUint(valuetmp, 10, 64)
 	if err != nil {
 		return 0, err
 	}
-	for _, hr := range value.([]interface{}) {
-		return hr.(uint64), nil
-	}
-	return 0, errors.Wrapf(errors.NotFound, "Unable to get minimum partition VRAM for given GPU partition [%s]", partitionSettingData)
+
+	return valueint, nil
 }
