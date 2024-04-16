@@ -134,6 +134,10 @@ func (snapshotSvc *VirtualSystemSnapshotService) CreateSnapshot(vm *virtualsyste
 
 	if name != "" {
 		// Rename snapshot
+
+		// Delay of 1s to make sure Msvm_VirtualSystemSettingData is populated as somtimes its not and we get NotFound error.
+		time.Sleep(1 * time.Second)
+
 		inst, err1 := wmijob.GetRelated("Msvm_VirtualSystemSettingData")
 		if err1 != nil {
 			err = err1
