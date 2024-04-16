@@ -768,6 +768,43 @@ func (vm *VirtualMachine) GetVirtualHardDiskByPath(path string) (vhd *disk.Virtu
 	return
 }
 
+func (vm *VirtualMachine) GetAttachedVirtualHardDisks() (vhdPaths []string, err error) {
+	col, err := vm.GetVirtualHardDisks()
+	if err != nil {
+		return
+	}
+	defer col.Close()
+
+	for _, inst := range col {
+		tmpvhd, err1 := disk.NewVirtualHardDisk(inst.WmiInstance)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		vhdclone, err1 := tmpvhd.Clone()
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		retVhd, err1 := disk.NewVirtualHardDisk(vhdclone)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		vhdpath, err1 := retVhd.GetPropertyHostResource()
+		if err1 != nil || len(vhdpath) == 0 {
+			err = fmt.Errorf("Unable to read HostResource field from disk WMI %s", err1)
+			return
+		}
+		vhdPaths = append(vhdPaths, vhdpath[0])
+	}
+
+	return
+}
+
 func (vm *VirtualMachine) GetResourceAllocationSettingData(rtype v2.ResourcePool_ResourceType) (col resourceallocation.ResourceAllocationSettingDataCollection, err error) {
 	settings, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
