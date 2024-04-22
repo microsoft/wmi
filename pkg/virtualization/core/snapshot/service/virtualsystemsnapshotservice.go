@@ -166,3 +166,96 @@ func (snapshotSvc *VirtualSystemSnapshotService) CreateSnapshot(vm *virtualsyste
 
 	return
 }
+
+func (snapshotSvc *VirtualSystemSnapshotService) DeleteSnapshot(vmId string, checkpointName string, timeoutSeconds int16) (err error) {
+
+	snapshotObj, err := virtualsystem.RetrieveVirtualSystemSettingDataForSnapshot(snapshotSvc.GetWmiHost(), checkpointName, vmId)
+
+	method, err := snapshotSvc.GetWmiMethod("DestroySnapshot")
+	if err != nil {
+		return
+	}
+	defer method.Close()
+
+	inparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("AffectedSnapshot", snapshotObj.InstancePath())}
+	outparams := wmi.WmiMethodParamCollection{wmi.NewWmiMethodParam("Job", nil)}
+	var wmijob *wmi.WmiJob
+
+	for {
+		result, err1 := method.Execute(inparams, outparams)
+		if err1 != nil {
+			err = err1
+			return
+		}
+
+		returnVal := result.ReturnValue
+		if returnVal != 0 && returnVal != 4096 {
+			// Virtual System is in Invalid State, try to retry
+			if returnVal == 32775 {
+				log.Printf("[WMI] Method [%s] failed with [%d]. Retrying ...", method.Name, returnVal)
+				time.Sleep(100 * time.Millisecond)
+				continue
+			}
+			err = errors.Wrapf(errors.Failed, "Method failed with [%d]", result.ReturnValue)
+			return
+		}
+
+		if result.ReturnValue == 0 {
+			return
+		}
+
+		job, ok := result.OutMethodParams["Job"]
+		if !ok || job.Value == nil {
+			err = errors.Wrapf(errors.NotFound, "Job")
+			return
+		}
+
+		wmijob, err = instance.GetWmiJob(snapshotSvc.GetWmiHost(), string(constant.Virtualization), job.Value.(string))
+		if err != nil {
+			return
+		}
+
+		defer job.Close()
+
+		err = wmijob.WaitForJobCompletion(result.ReturnValue, timeoutSeconds)
+		if err != nil {
+			return
+		}
+
+		break
+
+	}
+
+	// Fail if snapshot still exists
+	snapshotObj, err = virtualsystem.RetrieveVirtualSystemSettingDataForSnapshot(snapshotSvc.GetWmiHost(), checkpointName, vmId)
+	if errors.IsNotFound(err) {
+		log.Printf("Snapshot %s for vmId %s deleted successfully", checkpointName, vmId)
+		err = nil
+		return
+	}
+
+	if err == nil {
+		err = errors.Wrapf(errors.Failed, "Failed to delete the snapshot %s for vmId %s", checkpointName, vmId)
+	}
+	return
+}
+
+func (snapshotSvc *VirtualSystemSnapshotService) ListSnapshots(vm *virtualsystem.VirtualMachine) (err error) {
+	err = errors.NotImplemented
+	return
+}
+
+func (snapshotSvc *VirtualSystemSnapshotService) RenameSnapshot(vm *virtualsystem.VirtualMachine, snapshotName string, newSnapshotName string) (err error) {
+	err = errors.NotImplemented
+	return
+}
+
+func (snapshotSvc *VirtualSystemSnapshotService) RestoreVmToSnapshot(vm *virtualsystem.VirtualMachine, snapshotName string) (err error) {
+	err = errors.NotImplemented
+	return
+}
+
+func (snapshotSvc *VirtualSystemSnapshotService) UpdateSnapshotType(vm *virtualsystem.VirtualMachine, snapshotType string) (err error) {
+	err = errors.NotImplemented
+	return
+}

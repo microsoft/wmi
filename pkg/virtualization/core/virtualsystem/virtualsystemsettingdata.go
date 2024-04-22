@@ -18,7 +18,7 @@ import (
 	"github.com/microsoft/wmi/pkg/virtualization/core/storage/disk"
 	na "github.com/microsoft/wmi/pkg/virtualization/network/virtualnetworkadapter"
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type VirtualSystemSettingData struct {
@@ -52,6 +52,19 @@ func GetVirtualSystemSettingData(whost *host.WmiHost, name string) (*VirtualSyst
 	// vmsettings.SetProperty("VirtualSystemSubType", 1) // 2nd Generation
 
 	return vmsettings, err
+}
+
+// A VirtualSystemSettingData object often reflects the properties of a vm or a snapshot of a vm.
+// ElementName property is the name of vm/snapshot. We are fetching VirtualSystemSettingData object based on name of vm/snapshot.
+func RetrieveVirtualSystemSettingDataForSnapshot(whost *host.WmiHost, snapshotName string, vmInstanceId string) (*VirtualSystemSettingData, error) {
+	creds := whost.GetCredential()
+	query := query.NewWmiQuery("Msvm_VirtualSystemSettingData", "ElementName", snapshotName, "VirtualSystemIdentifier", vmInstanceId)
+	settings, err := v2.NewMsvm_VirtualSystemSettingDataEx6(whost.HostName, string(constant.Virtualization), creds.UserName, creds.Password, creds.Domain, query)
+	if err != nil {
+		return nil, err
+	}
+	vssettings := &VirtualSystemSettingData{settings}
+	return vssettings, nil
 }
 
 func (vm *VirtualSystemSettingData) GetPcieDevices() (col pcie.PcieDeviceCollection, err error) {
