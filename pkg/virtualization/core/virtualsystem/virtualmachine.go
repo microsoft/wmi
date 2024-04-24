@@ -43,6 +43,15 @@ type VirtualMachine struct {
 	*v2.Msvm_ComputerSystem
 }
 
+type SnapshotType int32
+
+const (
+	Disable                  SnapshotType = 2
+	ProductionFallbackToTest SnapshotType = 3
+	ProductionNoFallback     SnapshotType = 4
+	Test                     SnapshotType = 5
+)
+
 type VirtualMachineState int32
 
 // https://docs.microsoft.com/en-us/previous-versions/windows/desktop/virtual/msvm-computersystem?redirectedfrom=MSDN
@@ -833,4 +842,19 @@ func (vm *VirtualMachine) GetProcessor() (vmprocessor *processor.ProcessorSettin
 	defer settings.Close()
 	vmprocessor, err = settings.GetProcessorSetting()
 	return
+}
+
+func (vm *VirtualMachine) GetCheckpointType() (snapshotType SnapshotType, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	retValue, err := settings.GetProperty("UserSnapshotType")
+	if err != nil {
+		return
+	}
+	intstate := retValue.(int32)
+	return SnapshotType(intstate), nil
 }

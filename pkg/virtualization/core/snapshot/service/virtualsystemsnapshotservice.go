@@ -170,6 +170,13 @@ func (snapshotSvc *VirtualSystemSnapshotService) CreateSnapshot(vm *virtualsyste
 func (snapshotSvc *VirtualSystemSnapshotService) DeleteSnapshot(vmId string, checkpointName string, timeoutSeconds int16) (err error) {
 
 	snapshotObj, err := virtualsystem.RetrieveVirtualSystemSettingDataForSnapshot(snapshotSvc.GetWmiHost(), checkpointName, vmId)
+	if errors.IsNotFound(err) {
+		err = nil
+		return
+	}
+	if err != nil {
+		return
+	}
 
 	method, err := snapshotSvc.GetWmiMethod("DestroySnapshot")
 	if err != nil {
