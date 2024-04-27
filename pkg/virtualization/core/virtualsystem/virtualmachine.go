@@ -5,6 +5,8 @@ package virtualsystem
 
 import (
 	"fmt"
+	"log"
+	"strings"
 
 	//"log"
 	"time"
@@ -857,4 +859,49 @@ func (vm *VirtualMachine) GetCheckpointType() (snapshotType SnapshotType, err er
 	}
 	intstate := retValue.(int32)
 	return SnapshotType(intstate), nil
+}
+
+func (vm *VirtualMachine) GetCheckpoints() (vssds []*VirtualSystemSettingData, err error) {
+	vmName := vm.ID()
+	query := query.NewWmiQuery("Msvm_VirtualSystemSettingData", "VirtualSystemIdentifier", vmName)
+	vssdInstances, err := vm.GetAllRelatedWithQuery(query)
+	if err != nil {
+		return nil, err
+	}
+
+	// Aboe query contains duplicate snapshots. Creating a map to prevent the duplicates
+	vssds_processed := map[string]bool{}
+
+	for _, ins := range vssdInstances {
+		vssd, err := NewVirtualSystemSettingData(ins)
+		if err != nil {
+			return nil, err
+		}
+
+		retValue, err := vssd.GetProperty("ConfigurationId")
+		if err != nil {
+			continue
+		}
+		id := retValue.(string)
+
+		idExists := vssds_processed[id]
+		if idExists {
+			continue
+		}
+		vssds_processed[id] = true
+
+		retValue, err = vssd.GetProperty("VirtualSystemType")
+		if err != nil {
+			continue
+		}
+		vsType := retValue.(string)
+
+		log.Printf("Found vssd with id %s and type %s", id, vsType)
+
+		// Only get the snapshots. Exclude the vssd object for the vm itself
+		if strings.Contains(vsType, "Snapshot") {
+			vssds = append(vssds, vssd)
+		}
+	}
+	return vssds, nil
 }
