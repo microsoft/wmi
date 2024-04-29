@@ -89,12 +89,10 @@ func (vmms *VirtualSystemManagementService) AttachGpuP(vm *virtualsystem.Virtual
 	defer resultcol.Close()
 
 	if len(resultcol) == 0 {
-		err = errors.Wrapf(errors.NotFound, "Unable to attach GPU partition of size [%d bytes] to VM [%s]", partitionSizeBytes, vm.Name())
-		log.Printf("[WMI] Virtual system resource not found - Error details [%+v]\n", err)
+		err = errors.Wrapf(errors.NotFound, "Unable to find virtual system resource after GPU-P attach operation on VM [%s]", vm.Name())
 		return
 	}
 
-	log.Printf("[WMI] Successfully attached GPU partition of minimum VRAM [%d bytes] to the virtual machine [%s]", partitionSizeBytes, vm.Name())
 	return
 }
 
@@ -116,6 +114,5 @@ func (vmms *VirtualSystemManagementService) DetachGpuP(vm *virtualsystem.Virtual
 		return
 	}
 
-	log.Printf("[WMI] Successfully detached GPU partition of minimum VRAM [%d bytes] from the virtual machine [%s]", partitionSizeBytes, vm.Name())
 	return
 }

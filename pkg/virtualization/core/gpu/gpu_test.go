@@ -1,6 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
-package host
+
+package gpu
 
 import (
 	wmihost "github.com/microsoft/wmi/pkg/base/host"
