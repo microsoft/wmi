@@ -4,12 +4,11 @@
 package gpu
 
 import (
-	"log"
-
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
 	"github.com/microsoft/wmi/pkg/constant"
+	"github.com/microsoft/wmi/pkg/errors"
 )
 
 // GetPartitionableGpuCollection gets all host partitionable GPUs
@@ -17,15 +16,13 @@ func GetPartitionableGpuCollection(whost *host.WmiHost) (partitionablegpucollect
 	query := query.NewWmiQuery("Msvm_PartitionableGpu")
 	rasdcollection, err := instance.GetWmiInstancesFromHost(whost, string(constant.Virtualization), query)
 	if err != nil {
-		log.Printf("[WMI] Error getting Msvm_PartitionableGpu instances - Error details [%+v]\n", err)
-		return
+		return nil, errors.Wrapf(err, "Failed to get Msvm_PartitionableGpu instances")
 	}
 	defer rasdcollection.Close()
 
 	partitionablegpucollection, err = NewPartitionableGpuCollection(rasdcollection)
 	if err != nil {
-		log.Printf("[WMI] Error getting new PartitionableGpuCollection for rasdcollection [%s] - Error details [%+v]\n", rasdcollection, err)
-		return
+		return nil, errors.Wrapf(err, "Failed to get new PartitionableGpuCollection for rasdcollection [%+v]", rasdcollection)
 	}
 
 	return
