@@ -60,11 +60,13 @@ func (vm *VirtualSystemSettingData) GetPcieDevices() (col pcie.PcieDeviceCollect
 	if err != nil {
 		return nil, err
 	}
+	defer func() {
+		if err != nil {
+			rasdcollection.Close()
+		}
+	}()
 
 	col, err = pcie.NewPcieDeviceCollection(rasdcollection)
-	if err != nil {
-		rasdcollection.Close()
-	}
 	return
 }
 
@@ -94,11 +96,13 @@ func (vm *VirtualSystemSettingData) GetGpuPartitionSettingCollection() (col gpu.
 	if err != nil {
 		return nil, err
 	}
+	defer func() {
+		if err != nil {
+			rasdcollection.Close()
+		}
+	}()
 
 	col, err = gpu.NewGpuPartitionSettingCollection(rasdcollection)
-	if err != nil {
-		rasdcollection.Close()
-	}
 	return
 }
 
