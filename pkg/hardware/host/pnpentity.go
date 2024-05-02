@@ -4,8 +4,6 @@
 package host
 
 import (
-	"log"
-
 	"github.com/microsoft/wmi/pkg/base/host"
 	"github.com/microsoft/wmi/pkg/base/instance"
 	"github.com/microsoft/wmi/pkg/base/query"
@@ -19,23 +17,23 @@ func GetPnpEntityByName(whost *host.WmiHost, pnpEntityName string) (entities pnp
 	query := query.NewWmiQuery("Win32_PnPEntity", "Name", pnpEntityName)
 	rasdcollection, err := instance.GetWmiInstancesFromHost(whost, string(constant.CimV2), query)
 	if err != nil {
-		log.Printf("[WMI] Error getting Win32_PnPEntity instances for name [%s] - Error details [%+v]\n", pnpEntityName, err)
-		return
+		return nil, errors.Wrapf(err, "Failed to get Win32_PnPEntity instances for name [%s]", pnpEntityName)
 	}
-	defer rasdcollection.Close()
+	defer func() {
+		if err != nil {
+			rasdcollection.Close()
+		}
+	}()
 
 	entities, err = pnp.NewPnpEntityCollection(rasdcollection)
 	if err != nil {
-		log.Printf("[WMI] Error getting new PnpEntityCollection for rasdcollection [%s] - Error details [%+v]\n", rasdcollection, err)
-		return
+		return nil, errors.Wrapf(err, "Failed to get new PnpEntityCollection for rasdcollection [%+v]", rasdcollection)
 	}
 
 	if len(entities) == 0 {
 		err = errors.Wrapf(errors.NotFound, "Unable to find PnP entity for name [%s]", pnpEntityName)
-		log.Printf("[WMI] Found zero PnP entities for name [%s]", pnpEntityName)
 		return
 	}
 
-	log.Printf("[WMI] Found PnP entities [%s] for name [%s]", entities, pnpEntityName)
 	return
 }

@@ -18,7 +18,11 @@ func GetPartitionableGpuCollection(whost *host.WmiHost) (partitionablegpucollect
 	if err != nil {
 		return nil, errors.Wrapf(err, "Failed to get Msvm_PartitionableGpu instances")
 	}
-	defer rasdcollection.Close()
+	defer func() {
+		if err != nil {
+			rasdcollection.Close()
+		}
+	}()
 
 	partitionablegpucollection, err = NewPartitionableGpuCollection(rasdcollection)
 	if err != nil {
