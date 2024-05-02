@@ -15,6 +15,7 @@ func TestGetPartitionableGpuCollection(t *testing.T) {
 	if err != nil {
 		t.Fatalf("[%+v]", err)
 	}
+	defer gpuCollection.Close()
 
 	t.Logf("Partitionable GPUs [%+v]\n", gpuCollection)
 }
