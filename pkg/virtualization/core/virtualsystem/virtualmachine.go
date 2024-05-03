@@ -6,7 +6,6 @@ package virtualsystem
 import (
 	"encoding/xml"
 	"fmt"
-	"strings"
 
 	//"log"
 	"time"
@@ -337,103 +336,18 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
-func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration() (*na.GuestNetworkAdapterConfiguration, error) {
-	settings, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
-	if err != nil {
-		return nil, err
-	}
-	// defer settings.Close()
-
-	sna, err := settings.GetRelated("Msvm_SyntheticEthernetPortSettingData")
-	if err != nil {
-		return nil, err
-	}
-	// defer sna.Close()
-
-	wmiGuestConfig, err := sna.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
-	if err != nil {
-		return nil, err
-	}
-	return na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
-}
-
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
-	inst, err := vm.GetRelated("Msvm_Tpm")
-
-	// If the TPM is not found, then it is not configured or enabled
-	if inst == nil {
-		return nil, nil
-	}
-
+	inst, err := vm.GetRelated("Msvm_SecuritySettingData")
 	if err != nil {
 		return nil, err
 	}
 
-	tpmwmi, err := v2.NewMsvm_TPMEx1(inst)
+	tpmwmi, err := v2.NewMsvm_SecuritySettingDataEx1(inst)
 	if err != nil {
 		return nil, err
 	}
 
-	cimSettings, err := tpmwmi.GetRelatedSecuritySettingData()
-	if err != nil {
-		return nil, err
-	}
-
-	securitySettings, err := v2.NewMsvm_SecuritySettingDataEx1(cimSettings)
-	if err != nil {
-		return nil, err
-	}
-
-	return &MsvmSecuritySettingData{securitySettings}, nil
-}
-
-func (vm *VirtualMachine) GetOSConfiguration() (computerName string, isWindows bool) {
-	inst, err := vm.GetRelated("Msvm_KvpExchangeComponent")
-	if err != nil {
-		return
-	}
-
-	kvp, err := v2.NewMsvm_KvpExchangeComponentEx1(inst)
-	if err != nil {
-		return
-	}
-
-	guestIntrinsicItems, err := kvp.GetPropertyGuestIntrinsicExchangeItems()
-	if err != nil {
-		return
-	}
-
-	guestKvPairs := make(map[string]string)
-	for _, item := range guestIntrinsicItems {
-		var guestProperty INSTANCE
-		err = xml.Unmarshal([]byte(item), &guestProperty)
-		if err != nil {
-			return
-		}
-
-		var key, value string
-		for _, property := range guestProperty.PROPERTY {
-			if property.NAME == "Name" {
-				key = property.VALUE
-			}
-
-			if property.NAME == "Data" {
-				value = property.VALUE
-			}
-		}
-
-		if key != "" {
-			guestKvPairs[key] = value
-		}
-	}
-
-	computerName = guestKvPairs["FullyQualifiedDomainName"]
-	osName := guestKvPairs["OSName"]
-	if strings.Contains(strings.ToLower(osName), "window") {
-		isWindows = true
-	}
-
-	return
+	return &MsvmSecuritySettingData{tpmwmi}, nil
 }
 
 func (vm *VirtualMachine) GetVirtualMachineGeneration() (HyperVGeneration, error) {
