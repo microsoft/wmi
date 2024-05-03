@@ -16,6 +16,7 @@ import (
 
 	"reflect"
 
+	"github.com/microsoft/wmi/pkg/virtualization/core/gpu"
 	job "github.com/microsoft/wmi/pkg/virtualization/core/job"
 	"github.com/microsoft/wmi/pkg/virtualization/core/memory"
 	"github.com/microsoft/wmi/pkg/virtualization/core/pcie"
@@ -662,6 +663,40 @@ func (vm *VirtualMachine) GetPcieDevice(hostResource string) (pcieDevice *pcie.P
 	defer settings.Close()
 
 	pcieDevice, err = settings.GetPcieDevice(hostResource)
+	return
+}
+
+func (vm *VirtualMachine) NewGpuPartition(partitionSizeBytes uint64) (newGpuPartitionSettingData *gpu.GpuPartitionSettingData, err error) {
+	whost := vm.GetWmiHost()
+
+	newGpuPartitionSettingData, err = gpu.GetDefaultGpuPartitionSettingData(whost)
+	if err != nil {
+		return
+	}
+
+	err = newGpuPartitionSettingData.SetPropertyMinPartitionVRAM(partitionSizeBytes)
+	return
+}
+
+func (vm *VirtualMachine) GetGpuPartitionSettingData(partitionSizeBytes uint64) (partitionSettingData *gpu.GpuPartitionSettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	partitionSettingData, err = settings.GetGpuPartitionSettingData(partitionSizeBytes)
+	return
+}
+
+func (vm *VirtualMachine) GetGpuPartitionSettingCollection() (partitionSettingCollection gpu.GpuPartitionSettingCollection, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	partitionSettingCollection, err = settings.GetGpuPartitionSettingCollection()
 	return
 }
 
