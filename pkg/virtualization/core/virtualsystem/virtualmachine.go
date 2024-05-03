@@ -44,6 +44,10 @@ type VirtualMachine struct {
 	*v2.Msvm_ComputerSystem
 }
 
+type MsvmSecuritySettingData struct {
+	*v2.Msvm_SecuritySettingData
+}
+
 type VirtualMachineState int32
 
 // https://docs.microsoft.com/en-us/previous-versions/windows/desktop/virtual/msvm-computersystem?redirectedfrom=MSDN
@@ -317,6 +321,20 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 		return nil, err
 	}
 	return NewVirtualSystemSettingData(inst)
+}
+
+func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
+	inst, err := vm.GetRelated("Msvm_SecuritySettingData")
+	if err != nil {
+		return nil, err
+	}
+
+	tpmwmi, err := v2.NewMsvm_SecuritySettingDataEx1(inst)
+	if err != nil {
+		return nil, err
+	}
+
+	return &MsvmSecuritySettingData{tpmwmi}, nil
 }
 
 func (vm *VirtualMachine) GetVirtualMachineGeneration() (HyperVGeneration, error) {
