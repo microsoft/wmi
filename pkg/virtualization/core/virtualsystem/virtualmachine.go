@@ -324,17 +324,27 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 }
 
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
-	inst, err := vm.GetRelated("Msvm_SecuritySettingData")
+	inst, err := vm.GetRelated("Msvm_Tpm")
 	if err != nil {
 		return nil, err
 	}
 
-	tpmwmi, err := v2.NewMsvm_SecuritySettingDataEx1(inst)
+	tpmwmi, err := v2.NewMsvm_TPMEx1(inst)
 	if err != nil {
 		return nil, err
 	}
 
-	return &MsvmSecuritySettingData{tpmwmi}, nil
+	cimSettings, err := tpmwmi.GetRelatedSecuritySettingData()
+	if err != nil {
+		return nil, err
+	}
+
+	securitySettings, err := v2.NewMsvm_SecuritySettingDataEx1(cimSettings)
+	if err != nil {
+		return nil, err
+	}
+
+	return &MsvmSecuritySettingData{securitySettings}, nil
 }
 
 func (vm *VirtualMachine) GetVirtualMachineGeneration() (HyperVGeneration, error) {
