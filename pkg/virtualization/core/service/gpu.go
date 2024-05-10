@@ -51,6 +51,7 @@ func (vmms *VirtualSystemManagementService) DetachGpuDda(vm *virtualsystem.Virtu
 	return
 }
 
+// For attach gpup method in  aks hybrid, please leave the partitionSizeBytes as 0 to keep the gpu partition settings as default
 func (vmms *VirtualSystemManagementService) AttachGpuP(vm *virtualsystem.VirtualMachine, partitionSizeBytes uint64) (err error) {
 	vmsetting, err := vm.GetVirtualSystemSettingData()
 	if err != nil {
