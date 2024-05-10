@@ -791,7 +791,9 @@ func (vm *VirtualMachine) NewGpuPartition(partitionSizeBytes uint64) (newGpuPart
 		return
 	}
 
-	err = newGpuPartitionSettingData.SetPropertyMinPartitionVRAM(partitionSizeBytes)
+	if partitionSizeBytes > 0 {
+		err = newGpuPartitionSettingData.SetPropertyMinPartitionVRAM(partitionSizeBytes)
+	}
 	return
 }
 
