@@ -338,6 +338,12 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
 	inst, err := vm.GetRelated("Msvm_Tpm")
+
+	// If the TPM is not found, then it is not configured or enabled
+	if inst == nil {
+		return nil, nil
+	}
+
 	if err != nil {
 		return nil, err
 	}
