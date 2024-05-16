@@ -791,9 +791,19 @@ func (vm *VirtualMachine) NewGpuPartition(partitionSizeBytes uint64) (newGpuPart
 		return
 	}
 
-	if partitionSizeBytes > 0 {
-		err = newGpuPartitionSettingData.SetPropertyMinPartitionVRAM(partitionSizeBytes)
+	if partitionSizeBytes == 0 {
+		err = errors.Wrapf(errors.InvalidInput, "PartitionSizeBytes should be a positive value")
+		return
 	}
+
+	err = newGpuPartitionSettingData.SetPropertyMinPartitionVRAM(partitionSizeBytes)
+	return
+}
+
+func (vm *VirtualMachine) NewDefaultGpuPartition() (newGpuPartitionSettingData *gpu.GpuPartitionSettingData, err error) {
+	whost := vm.GetWmiHost()
+
+	newGpuPartitionSettingData, err = gpu.GetDefaultGpuPartitionSettingData(whost)
 	return
 }
 
@@ -806,6 +816,26 @@ func (vm *VirtualMachine) GetGpuPartitionSettingData(partitionSizeBytes uint64) 
 
 	partitionSettingData, err = settings.GetGpuPartitionSettingData(partitionSizeBytes)
 	return
+}
+
+func (vm *VirtualMachine) GetDefaultGpuPartitionSettingData() (partitionSettingData *gpu.GpuPartitionSettingData, err error) {
+	settings, err := vm.GetVirtualSystemSettingData()
+	if err != nil {
+		return
+	}
+	defer settings.Close()
+
+	gpuPartitionSettingCollection, err := vm.GetGpuPartitionSettingCollection()
+	if err != nil {
+		return nil, err
+	}
+	defer gpuPartitionSettingCollection.Close()
+
+	if len(gpuPartitionSettingCollection) == 0 {
+		err = errors.Wrapf(errors.NotFound, "Unable to find GPU partition assigned to vm [%+v]", vm)
+	}
+
+	return gpuPartitionSettingCollection[0], nil
 }
 
 func (vm *VirtualMachine) GetGpuPartitionSettingCollection() (partitionSettingCollection gpu.GpuPartitionSettingCollection, err error) {
