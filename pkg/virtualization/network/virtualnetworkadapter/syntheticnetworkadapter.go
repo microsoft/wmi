@@ -5,10 +5,11 @@ package virtualnetworkadapter
 
 import (
 	"fmt"
+
 	"github.com/google/uuid"
 
 	wmi "github.com/microsoft/wmi/pkg/wmiinstance"
-	"github.com/microsoft/wmi/server2019/root/virtualization/v2"
+	v2 "github.com/microsoft/wmi/server2019/root/virtualization/v2"
 )
 
 type SyntheticNetworkAdapter struct {
@@ -45,4 +46,13 @@ func (sna *SyntheticNetworkAdapter) SetMACAddress(mac string) (err error) {
 
 func (sna *SyntheticNetworkAdapter) Rename(newName string) (err error) {
 	return sna.SetPropertyElementName(newName)
+}
+
+func (sna *SyntheticNetworkAdapter) GetGuestNetworkAdapterConfiguration() (guestConfiguration *GuestNetworkAdapterConfiguration, err error) {
+	wmiGuestConfig, err := sna.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
+	if err != nil {
+		return
+	}
+	guestConfiguration, err = NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
+	return guestConfiguration, err
 }

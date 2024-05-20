@@ -337,6 +337,26 @@ func (vm *VirtualMachine) GetVirtualSystemSettingData() (*VirtualSystemSettingDa
 	return NewVirtualSystemSettingData(inst)
 }
 
+func (vm *VirtualMachine) GetVirtualGuestNetworkAdapterConfiguration() (*na.GuestNetworkAdapterConfiguration, error) {
+	settings, err := vm.GetRelated("Msvm_VirtualSystemSettingData")
+	if err != nil {
+		return nil, err
+	}
+	// defer settings.Close()
+
+	sna, err := settings.GetRelated("Msvm_SyntheticEthernetPortSettingData")
+	if err != nil {
+		return nil, err
+	}
+	// defer sna.Close()
+
+	wmiGuestConfig, err := sna.GetRelated("Msvm_GuestNetworkAdapterConfiguration")
+	if err != nil {
+		return nil, err
+	}
+	return na.NewGuestNetworkAdapterConfiguration(wmiGuestConfig)
+}
+
 func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingData, err error) {
 	inst, err := vm.GetRelated("Msvm_Tpm")
 
