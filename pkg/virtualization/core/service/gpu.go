@@ -112,7 +112,7 @@ func (vmms *VirtualSystemManagementService) DetachDefaultGpuP(vm *virtualsystem.
 	if err != nil {
 		return errors.Wrapf(err, "Failed to get GPU partition for VM [%+v]", vm)
 	}
-	defer partitionSettingData.Clone()
+	defer partitionSettingData.Close()
 
 	err = vmms.DetachGpuPartitionFromVM(vm, partitionSettingData)
 	return
