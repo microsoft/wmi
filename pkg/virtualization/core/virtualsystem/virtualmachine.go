@@ -716,6 +716,7 @@ func (vm *VirtualMachine) GetDefaultGpuPartitionSettingData() (partitionSettingD
 
 	if len(gpuPartitionSettingCollection) == 0 {
 		err = errors.Wrapf(errors.NotFound, "Unable to find GPU partition assigned to vm [%+v]", vm)
+		return nil, err
 	}
 
 	return gpuPartitionSettingCollection[0].CloneEx1()
