@@ -368,8 +368,6 @@ func (vm *VirtualMachine) GetVirtualNetworkAdapterByName(name string) (vna *na.V
 
 func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerlocation int32, diskType VirtualHardDiskType) (synDrive *drive.SyntheticDiskDrive, err error) {
 	driverp, err := resourcepool.GetPrimordialResourcePool(vm.GetWmiHost(), v2.ResourcePool_ResourceType_Disk_Drive)
-
-	generation, err := vm.GetVirtualMachineGeneration()
 	if err != nil {
 		return
 	}
@@ -384,6 +382,7 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 	if err != nil {
 		return
 	}
+
 	defer func() {
 		if err != nil {
 			synDrive.Close()
@@ -391,73 +390,21 @@ func (vm *VirtualMachine) NewSyntheticDiskDrive(controllernumber, controllerloca
 		}
 	}()
 
-	var controllers resourceallocation.ResourceAllocationSettingDataCollection
-	var controllerType string
-	if generation == HyperVGeneration_V1 && diskType == VirtualHardDiskType_OS_VIRTUALHARDDISK {
-		controllers, err = vm.GetIDEControllers()
-		controllerType = IDEController
-		if err != nil {
-			return
-		}
-
-	} else {
-		controllers, err = vm.GetSCSIControllers()
-		controllerType = SCSIController
-		if err != nil {
-			return
-		}
+	controllers, err := vm.GetSCSIControllers()
+	controllerType := SCSIController
+	if err != nil {
+		return
 	}
 
 	defer controllers.Close()
 	// 1. Find the correct controller to use vased on the controllernumber
 	if len(controllers) == 0 {
 		err = errors.Wrapf(errors.NotFound, "VirtualMachine [%s] doesnt have [%s]", vm.Name(), controllerType)
-		return
-	}
-	if int(controllernumber) > len(controllers) {
+	} else if int(controllernumber) > len(controllers) {
 		err = errors.Wrapf(errors.NotFound,
 			"VirtualMachine [%s] doesnt have [%s] with bus location [%d]", vm.Name(), controllerType, controllernumber)
-		return
 	}
 
-	if controllernumber == -1 {
-		controllernumber = 0
-	}
-
-	if generation == HyperVGeneration_V1 && diskType == VirtualHardDiskType_OS_VIRTUALHARDDISK {
-		idecontroller, err := controller.NewIDEControllerSettings(controllers[controllernumber].WmiInstance)
-		if err != nil {
-			return nil, err
-		}
-
-		synDrive.SetPropertyParent(idecontroller.InstancePath())
-		if controllerlocation == -1 {
-			controllerlocation, err = idecontroller.GetFreeLocation()
-			if err != nil {
-				err = errors.Wrapf(errors.NotFound, "Unable to find free location in IDE Controller")
-				return nil, err
-			}
-			// Find a free location
-		}
-		synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
-	} else {
-		scsicontroller, err := controller.NewSCSIControllerSettings(controllers[controllernumber].WmiInstance)
-		if err != nil {
-			return nil, err
-		}
-
-		synDrive.SetPropertyParent(scsicontroller.InstancePath())
-		if controllerlocation == -1 {
-			controllerlocation, err = scsicontroller.GetFreeLocation()
-			if err != nil {
-				err = errors.Wrapf(errors.NotFound, "Unable to find free location in SCSI Controller")
-				return nil, err
-			}
-			// Find a free location
-		}
-		synDrive.SetPropertyAddressOnParent(fmt.Sprintf("%d", controllerlocation))
-
-	}
 	return
 }
 
