@@ -6,6 +6,7 @@ package virtualsystem
 import (
 	"encoding/xml"
 	"fmt"
+	"strings"
 
 	//"log"
 	"time"
@@ -364,6 +365,55 @@ func (vm *VirtualMachine) GetSecuritySettingData() (value *MsvmSecuritySettingDa
 	}
 
 	return &MsvmSecuritySettingData{securitySettings}, nil
+}
+
+func (vm *VirtualMachine) GetOSConfiguration() (computerName string, isWindows bool) {
+	inst, err := vm.GetRelated("Msvm_KvpExchangeComponent")
+	if err != nil {
+		return
+	}
+
+	kvp, err := v2.NewMsvm_KvpExchangeComponentEx1(inst)
+	if err != nil {
+		return
+	}
+
+	guestIntrinsicItems, err := kvp.GetPropertyGuestIntrinsicExchangeItems()
+	if err != nil {
+		return
+	}
+
+	guestKvPairs := make(map[string]string)
+	for _, item := range guestIntrinsicItems {
+		var guestProperty INSTANCE
+		err = xml.Unmarshal([]byte(item), &guestProperty)
+		if err != nil {
+			return
+		}
+
+		var key, value string
+		for _, property := range guestProperty.PROPERTY {
+			if property.NAME == "Name" {
+				key = property.VALUE
+			}
+
+			if property.NAME == "Data" {
+				value = property.VALUE
+			}
+		}
+
+		if key != "" {
+			guestKvPairs[key] = value
+		}
+	}
+
+	computerName = guestKvPairs["FullyQualifiedDomainName"]
+	osName := guestKvPairs["OSName"]
+	if strings.Contains(strings.ToLower(osName), "window") {
+		isWindows = true
+	}
+
+	return
 }
 
 func (vm *VirtualMachine) GetVirtualMachineGeneration() (HyperVGeneration, error) {
