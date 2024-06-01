@@ -106,6 +106,22 @@ func (vmms *VirtualSystemManagementService) RemoveISODisk(ld *disk.LogicalDisk) 
 }
 
 func (vmms *VirtualSystemManagementService) AddDvdDrive(vm *virtualsystem.VirtualMachine) (dvd *drive.DvdDrive, err error) {
+	vmGeneration, err := vm.GetVirtualMachineGeneration()
+	if err != nil {
+		return
+	}
+
+	vmState, err := vm.State()
+	if err != nil {
+		return
+	}
+
+	// DVD drives which we add to gen 1 VMs via the IDE controller cannot be hot added.  The machine must be stopped first.
+	if vmGeneration == virtualsystem.HyperVGeneration_V1 && vmState == virtualsystem.Running {
+		vm.Stop(false)
+		defer vm.Start()
+	}
+
 	// Add the dvd drive
 	tmp, err := vm.NewDvdDrive()
 	if err != nil {
