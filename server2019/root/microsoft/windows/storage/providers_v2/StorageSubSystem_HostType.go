@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_HostType
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_HostType
+// StorageSubSystem_HostType 
 type StorageSubSystem_HostType int
-
-const (
+const(
 	// Unknown enum
 	StorageSubSystem_HostType_Unknown StorageSubSystem_HostType = 0
 	// Other enum
@@ -61,3 +60,4 @@ const (
 	// Vendor_Specific enum
 	StorageSubSystem_HostType_Vendor_Specific StorageSubSystem_HostType = 23
 )
+

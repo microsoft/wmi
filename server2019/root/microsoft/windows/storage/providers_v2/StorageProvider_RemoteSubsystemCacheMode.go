@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageProvider_RemoteSubsystemCacheMode
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageProvider_RemoteSubsystemCacheMode
+// StorageProvider_RemoteSubsystemCacheMode 
 type StorageProvider_RemoteSubsystemCacheMode int
-
-const (
+const(
 	// Disabled enum
 	StorageProvider_RemoteSubsystemCacheMode_Disabled StorageProvider_RemoteSubsystemCacheMode = 2
 	// Manual_Discovery enum
 	StorageProvider_RemoteSubsystemCacheMode_Manual_Discovery StorageProvider_RemoteSubsystemCacheMode = 3
 )
+

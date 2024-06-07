@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNodeToDisk_OperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToDisk_OperationalStatus
+// StorageNodeToDisk_OperationalStatus 
 type StorageNodeToDisk_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageNodeToDisk_OperationalStatus_Unknown StorageNodeToDisk_OperationalStatus = 0
 	// Other enum
@@ -61,3 +60,4 @@ const (
 	// Failed enum
 	StorageNodeToDisk_OperationalStatus_Failed StorageNodeToDisk_OperationalStatus = 23
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_SupportedDeduplicationFileSystemTypes
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_SupportedDeduplicationFileSystemTypes
+// StorageSubSystem_SupportedDeduplicationFileSystemTypes 
 type StorageSubSystem_SupportedDeduplicationFileSystemTypes int
-
-const (
+const(
 	// Unknown enum
 	StorageSubSystem_SupportedDeduplicationFileSystemTypes_Unknown StorageSubSystem_SupportedDeduplicationFileSystemTypes = 0
 	// Threshold enum
@@ -49,3 +48,4 @@ const (
 	// CSVFS_ReFS enum
 	StorageSubSystem_SupportedDeduplicationFileSystemTypes_CSVFS_ReFS StorageSubSystem_SupportedDeduplicationFileSystemTypes = 17
 )
+

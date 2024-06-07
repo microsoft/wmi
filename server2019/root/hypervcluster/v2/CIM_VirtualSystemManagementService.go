@@ -1,51 +1,46 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_VirtualSystemManagementService struct
-type CIM_VirtualSystemManagementService struct {
+type CIM_VirtualSystemManagementService struct { 
 	*CIM_Service
 }
 
-func NewCIM_VirtualSystemManagementServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemManagementService, err error) {
-	tmp, err := NewCIM_ServiceEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemManagementService{
-		CIM_Service: tmp,
+	func NewCIM_VirtualSystemManagementServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemManagementService, err error) {tmp, err := NewCIM_ServiceEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemManagementService {
+	CIM_Service: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_VirtualSystemManagementServiceEx6(hostName string,
+	func NewCIM_VirtualSystemManagementServiceEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_VirtualSystemManagementService, err error) {
-	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemManagementService{
-		CIM_Service: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_VirtualSystemManagementService, err error) {tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemManagementService {
+	CIM_Service: tmp,
 	}
 	return
-}
+	}
+	
 
 // Adds resources to a virtual system configuration
 ///.When applied to a "state" virtual system configuration, as a side effect resources are added to the active virtual system.
@@ -57,21 +52,19 @@ func NewCIM_VirtualSystemManagementServiceEx6(hostName string,
 // <param name="ResultingResourceSettings" type="CIM_ResourceAllocationSettingData []">Array of references to instances of class CIM_ResourceAllocationSettingData representing virtual aspects of the added virtual resources.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemManagementService) AddResourceSettings( /* IN */ AffectedConfiguration CIM_VirtualSystemSettingData,
-	/* IN */ ResourceSettings []string,
-	/* OUT */ ResultingResourceSettings []CIM_ResourceAllocationSettingData,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("AddResourceSettings", Action, PercentComplete, Timeout, AffectedConfiguration, ResourceSettings)
-	if err != nil {
-		return
-	}
+ /* IN */ ResourceSettings []string,
+ /* OUT */ ResultingResourceSettings []CIM_ResourceAllocationSettingData,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("AddResourceSettings", Action, PercentComplete, Timeout , AffectedConfiguration, ResourceSettings)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Defines a virtual system.
 ///Input that is not completely specified may be filled out with default values.
@@ -84,22 +77,20 @@ func (instance *CIM_VirtualSystemManagementService) AddResourceSettings( /* IN *
 // <param name="ResultingSystem" type="CIM_ComputerSystem ">If a virtual computer system is successfully defined, a reference to an instance of class CIM_ComputerSystem that represents the newly defined virtual computer system is returned.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemManagementService) DefineSystem( /* IN */ SystemSettings string,
-	/* IN */ ResourceSettings []string,
-	/* IN */ ReferenceConfiguration CIM_VirtualSystemSettingData,
-	/* OUT */ ResultingSystem CIM_ComputerSystem,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("DefineSystem", Action, PercentComplete, Timeout, SystemSettings, ResourceSettings, ReferenceConfiguration)
-	if err != nil {
-		return
-	}
+ /* IN */ ResourceSettings []string,
+ /* IN */ ReferenceConfiguration CIM_VirtualSystemSettingData,
+ /* OUT */ ResultingSystem CIM_ComputerSystem,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("DefineSystem", Action, PercentComplete, Timeout , SystemSettings, ResourceSettings, ReferenceConfiguration)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Destroys a virtual system.
 ///The referenced virtual system is destroyed, including any elements scoped by it. Virtual resources are returned to their resource pools, which may imply the destruction of those resources (implementation dependent). If the virtual system is active when the operation is invoked, it is first deactivated and then destroyed. If snapshots were created from the virtual system, these are destroyed as well.
@@ -109,19 +100,17 @@ func (instance *CIM_VirtualSystemManagementService) DefineSystem( /* IN */ Syste
 // <param name="Job" type="CIM_ConcreteJob ">If the operation is long running, then optionally a job may be returned.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemManagementService) DestroySystem( /* IN */ AffectedSystem CIM_ComputerSystem,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("DestroySystem", Action, PercentComplete, Timeout, AffectedSystem)
-	if err != nil {
-		return
-	}
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("DestroySystem", Action, PercentComplete, Timeout , AffectedSystem)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Modifies virtual resource settings.
 ///When applied to parts of a "current" virtual system configuration, as a side effect resources of the active virtual system may be modified.
@@ -132,20 +121,18 @@ func (instance *CIM_VirtualSystemManagementService) DestroySystem( /* IN */ Affe
 // <param name="ResultingResourceSettings" type="CIM_ResourceAllocationSettingData []">Array of references to instances of class Cim_ResourceAllocationSettingData representing virtual aspects of the modified virtual resources.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemManagementService) ModifyResourceSettings( /* IN */ ResourceSettings []string,
-	/* OUT */ ResultingResourceSettings []CIM_ResourceAllocationSettingData,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("ModifyResourceSettings", Action, PercentComplete, Timeout, ResourceSettings)
-	if err != nil {
-		return
-	}
+ /* OUT */ ResultingResourceSettings []CIM_ResourceAllocationSettingData,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ModifyResourceSettings", Action, PercentComplete, Timeout , ResourceSettings)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Modifies virtual system settings.
 ///When applied to the system settings of a "current" virtual system configuration, as a side effect the virtual system instance may be modified.
@@ -155,19 +142,17 @@ func (instance *CIM_VirtualSystemManagementService) ModifyResourceSettings( /* I
 // <param name="Job" type="CIM_ConcreteJob ">If the operation is long running, then optionally a job may be returned.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemManagementService) ModifySystemSettings( /* IN */ SystemSettings string,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("ModifySystemSettings", Action, PercentComplete, Timeout, SystemSettings)
-	if err != nil {
-		return
-	}
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ModifySystemSettings", Action, PercentComplete, Timeout , SystemSettings)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Removes virtual resource settings from a virtual system configuration.
 ///When applied to parts of a "current" virtual system configuration, as a side effect resources of the active virtual system may be removed.
@@ -177,16 +162,15 @@ func (instance *CIM_VirtualSystemManagementService) ModifySystemSettings( /* IN 
 // <param name="Job" type="CIM_ConcreteJob ">If the operation is long running, then optionally a job my be returned.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemManagementService) RemoveResourceSettings( /* IN */ ResourceSettings []CIM_ResourceAllocationSettingData,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("RemoveResourceSettings", Action, PercentComplete, Timeout, ResourceSettings)
-	if err != nil {
-		return
-	}
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("RemoveResourceSettings", Action, PercentComplete, Timeout , ResourceSettings)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
+

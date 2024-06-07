@@ -1,51 +1,46 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // CIM_VirtualSystemMigrationService struct
-type CIM_VirtualSystemMigrationService struct {
+type CIM_VirtualSystemMigrationService struct { 
 	*CIM_Service
 }
 
-func NewCIM_VirtualSystemMigrationServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationService, err error) {
-	tmp, err := NewCIM_ServiceEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemMigrationService{
-		CIM_Service: tmp,
+	func NewCIM_VirtualSystemMigrationServiceEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationService, err error) {tmp, err := NewCIM_ServiceEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemMigrationService {
+	CIM_Service: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_VirtualSystemMigrationServiceEx6(hostName string,
+	func NewCIM_VirtualSystemMigrationServiceEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_VirtualSystemMigrationService, err error) {
-	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemMigrationService{
-		CIM_Service: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_VirtualSystemMigrationService, err error) {tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemMigrationService {
+	CIM_Service: tmp,
 	}
 	return
-}
+	}
+	
 
 // Method to move, migrate or relocate a virtual system to a target host specified by a network name or IP address.
 ///Return code description:
@@ -67,23 +62,21 @@ func NewCIM_VirtualSystemMigrationServiceEx6(hostName string,
 // <param name="Job" type="CIM_ConcreteJob ">If operation is long running then optionally a job may be returned.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemMigrationService) MigrateVirtualSystemToHost( /* IN */ ComputerSystem CIM_ComputerSystem,
-	/* IN */ DestinationHost string,
-	/* IN */ MigrationSettingData string,
-	/* IN */ NewSystemSettingData string,
-	/* IN */ NewResourceSettingData []string,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("MigrateVirtualSystemToHost", Action, PercentComplete, Timeout, ComputerSystem, DestinationHost, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
-	if err != nil {
-		return
-	}
+ /* IN */ DestinationHost string,
+ /* IN */ MigrationSettingData string,
+ /* IN */ NewSystemSettingData string,
+ /* IN */ NewResourceSettingData []string,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("MigrateVirtualSystemToHost", Action, PercentComplete, Timeout , ComputerSystem, DestinationHost, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Method to move, migrate or relocate a virtual system to a target system.
 ///Return code description:
@@ -105,24 +98,22 @@ func (instance *CIM_VirtualSystemMigrationService) MigrateVirtualSystemToHost( /
 // <param name="NewComputerSystem" type="CIM_ComputerSystem ">Reference to an instance of the CIM_ComputerSystem class representing the virtual computer system after it has been migrated.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemMigrationService) MigrateVirtualSystemToSystem( /* IN */ ComputerSystem CIM_ComputerSystem,
-	/* IN */ DestinationSystem CIM_System,
-	/* IN */ MigrationSettingData string,
-	/* IN */ NewSystemSettingData string,
-	/* IN */ NewResourceSettingData []string,
-	/* OUT */ NewComputerSystem CIM_ComputerSystem,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("MigrateVirtualSystemToSystem", Action, PercentComplete, Timeout, ComputerSystem, DestinationSystem, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
-	if err != nil {
-		return
-	}
+ /* IN */ DestinationSystem CIM_System,
+ /* IN */ MigrationSettingData string,
+ /* IN */ NewSystemSettingData string,
+ /* IN */ NewResourceSettingData []string,
+ /* OUT */ NewComputerSystem CIM_ComputerSystem,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("MigrateVirtualSystemToSystem", Action, PercentComplete, Timeout , ComputerSystem, DestinationSystem, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Method to perform a pre-check to determine whether a virtual system is likely to be successfully migrated to a target host specified by a network name or IP address. This method does not guarantee that a subsequent migration will always succeed, due to dynamic resource availability.
 ///Return code description:
@@ -146,20 +137,18 @@ func (instance *CIM_VirtualSystemMigrationService) MigrateVirtualSystemToSystem(
 // <param name="IsMigratable" type="bool ">The migration check result indicating whether or not the virtual system can be successfully migrated.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemMigrationService) CheckVirtualSystemIsMigratableToHost( /* IN */ ComputerSystem CIM_ComputerSystem,
-	/* IN */ DestinationHost string,
-	/* IN */ MigrationSettingData string,
-	/* IN */ NewSystemSettingData string,
-	/* IN */ NewResourceSettingData []string,
-	/* OUT */ IsMigratable bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CheckVirtualSystemIsMigratableToHost", ComputerSystem, DestinationHost, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
-	if err != nil {
-		return
-	}
+ /* IN */ DestinationHost string,
+ /* IN */ MigrationSettingData string,
+ /* IN */ NewSystemSettingData string,
+ /* IN */ NewResourceSettingData []string,
+ /* OUT */ IsMigratable bool) (result uint32, err error) {retVal, err := instance.InvokeMethod("CheckVirtualSystemIsMigratableToHost" , ComputerSystem, DestinationHost, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
 
 // Method to perform a pre-check to determine whether a virtual system is likely to be successfully migrated to a target system. This method does not guarantee that a subsequent migration will always succeed, due to dynamic resource availability. Return code description:
 ///0: Success: Check performed; result reported through the value of the [Out] IsMigratable parameter.
@@ -179,17 +168,16 @@ func (instance *CIM_VirtualSystemMigrationService) CheckVirtualSystemIsMigratabl
 // <param name="IsMigratable" type="bool ">The migration check result indicating whether or not the virtual system can be successfully migrated.</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *CIM_VirtualSystemMigrationService) CheckVirtualSystemIsMigratableToSystem( /* IN */ ComputerSystem CIM_ComputerSystem,
-	/* IN */ DestinationSystem CIM_System,
-	/* IN */ MigrationSettingData string,
-	/* IN */ NewSystemSettingData string,
-	/* IN */ NewResourceSettingData []string,
-	/* OUT */ IsMigratable bool) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("CheckVirtualSystemIsMigratableToSystem", ComputerSystem, DestinationSystem, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
-	if err != nil {
-		return
-	}
+ /* IN */ DestinationSystem CIM_System,
+ /* IN */ MigrationSettingData string,
+ /* IN */ NewSystemSettingData string,
+ /* IN */ NewResourceSettingData []string,
+ /* OUT */ IsMigratable bool) (result uint32, err error) {retVal, err := instance.InvokeMethod("CheckVirtualSystemIsMigratableToSystem" , ComputerSystem, DestinationSystem, MigrationSettingData, NewSystemSettingData, NewResourceSettingData)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
+

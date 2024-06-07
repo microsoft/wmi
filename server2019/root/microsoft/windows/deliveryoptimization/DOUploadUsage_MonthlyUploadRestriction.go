@@ -3,19 +3,19 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DOUploadUsage_MonthlyUploadRestriction
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DOUploadUsage_MonthlyUploadRestriction
+// DOUploadUsage_MonthlyUploadRestriction 
 type DOUploadUsage_MonthlyUploadRestriction int
-
-const (
-	// _22 enum
-	DOUploadUsage_MonthlyUploadRestriction__22 DOUploadUsage_MonthlyUploadRestriction = 0
-	// _23 enum
-	DOUploadUsage_MonthlyUploadRestriction__23 DOUploadUsage_MonthlyUploadRestriction = 1
-	// _24 enum
-	DOUploadUsage_MonthlyUploadRestriction__24 DOUploadUsage_MonthlyUploadRestriction = 2
+const(
+	// _29 enum
+	DOUploadUsage_MonthlyUploadRestriction__29 DOUploadUsage_MonthlyUploadRestriction = 0
+	// _30 enum
+	DOUploadUsage_MonthlyUploadRestriction__30 DOUploadUsage_MonthlyUploadRestriction = 1
+	// _31 enum
+	DOUploadUsage_MonthlyUploadRestriction__31 DOUploadUsage_MonthlyUploadRestriction = 2
 )
+

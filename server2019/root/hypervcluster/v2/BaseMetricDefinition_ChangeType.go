@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source BaseMetricDefinition_ChangeType
 //////////////////////////////////////////////
 package v2
 
-// BaseMetricDefinition_ChangeType
+// BaseMetricDefinition_ChangeType 
 type BaseMetricDefinition_ChangeType int
-
-const (
+const(
 	// Unknown enum
 	BaseMetricDefinition_ChangeType_Unknown BaseMetricDefinition_ChangeType = 0
 	// N_A enum
@@ -25,3 +24,4 @@ const (
 	// Vendor_Reserved enum
 	BaseMetricDefinition_ChangeType_Vendor_Reserved BaseMetricDefinition_ChangeType = 6
 )
+

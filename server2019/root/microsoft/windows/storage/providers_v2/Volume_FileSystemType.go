@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Volume_FileSystemType
 //////////////////////////////////////////////
 package providers_v2
 
-// Volume_FileSystemType
+// Volume_FileSystemType 
 type Volume_FileSystemType int
-
-const (
+const(
 	// Unknown enum
 	Volume_FileSystemType_Unknown Volume_FileSystemType = 0
 	// Threshold enum
@@ -44,8 +43,9 @@ const (
 	Volume_FileSystemType_NTFS Volume_FileSystemType = 14
 	// ReFS enum
 	Volume_FileSystemType_ReFS Volume_FileSystemType = 15
-	// CSVFS_NTFS enum
-	Volume_FileSystemType_CSVFS_NTFS Volume_FileSystemType = 16
+	// exFATCSVFS_NTFS enum
+	Volume_FileSystemType_exFATCSVFS_NTFS Volume_FileSystemType = 16
 	// CSVFS_ReFS enum
 	Volume_FileSystemType_CSVFS_ReFS Volume_FileSystemType = 17
 )
+

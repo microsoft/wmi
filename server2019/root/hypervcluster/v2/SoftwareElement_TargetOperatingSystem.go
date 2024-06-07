@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SoftwareElement_TargetOperatingSystem
 //////////////////////////////////////////////
 package v2
 
-// SoftwareElement_TargetOperatingSystem
+// SoftwareElement_TargetOperatingSystem 
 type SoftwareElement_TargetOperatingSystem int
-
-const (
+const(
 	// Unknown enum
 	SoftwareElement_TargetOperatingSystem_Unknown SoftwareElement_TargetOperatingSystem = 0
 	// Other enum
@@ -235,3 +234,4 @@ const (
 	// eComStation_32_bitx enum
 	SoftwareElement_TargetOperatingSystem_eComStation_32_bitx SoftwareElement_TargetOperatingSystem = 110
 )
+

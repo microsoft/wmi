@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source LANEndpoint_LANType
 //////////////////////////////////////////////
 package v2
 
-// LANEndpoint_LANType
+// LANEndpoint_LANType 
 type LANEndpoint_LANType int
-
-const (
+const(
 	// Unknown enum
 	LANEndpoint_LANType_Unknown LANEndpoint_LANType = 0
 	// Other enum
@@ -23,3 +22,4 @@ const (
 	// FDDI enum
 	LANEndpoint_LANType_FDDI LANEndpoint_LANType = 4
 )
+

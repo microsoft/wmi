@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source AggregationMetricDefinition_SimpleFunction
 //////////////////////////////////////////////
 package v2
 
-// AggregationMetricDefinition_SimpleFunction
+// AggregationMetricDefinition_SimpleFunction 
 type AggregationMetricDefinition_SimpleFunction int
-
-const (
+const(
 	// DMTF_Reserved enum
 	AggregationMetricDefinition_SimpleFunction_DMTF_Reserved AggregationMetricDefinition_SimpleFunction = 1
 	// Minimum enum
@@ -27,3 +26,4 @@ const (
 	// Vendor_Reserved enum
 	AggregationMetricDefinition_SimpleFunction_Vendor_Reserved AggregationMetricDefinition_SimpleFunction = 7
 )
+

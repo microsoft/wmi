@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FileShare_ShareState
 //////////////////////////////////////////////
 package providers_v2
 
-// FileShare_ShareState
+// FileShare_ShareState 
 type FileShare_ShareState int
-
-const (
+const(
 	// Pending enum
 	FileShare_ShareState_Pending FileShare_ShareState = 0
 	// Online enum
@@ -19,3 +18,4 @@ const (
 	// Offline enum
 	FileShare_ShareState_Offline FileShare_ShareState = 2
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageJob_RequestedState
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageJob_RequestedState
+// StorageJob_RequestedState 
 type StorageJob_RequestedState int
-
-const (
+const(
 	// Start enum
 	StorageJob_RequestedState_Start StorageJob_RequestedState = 2
 	// Suspend enum
@@ -27,3 +26,4 @@ const (
 	// Vendor_Reserved enum
 	StorageJob_RequestedState_Vendor_Reserved StorageJob_RequestedState = 8
 )
+

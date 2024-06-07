@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StoragePool_ReadOnlyReason
 //////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_ReadOnlyReason
+// StoragePool_ReadOnlyReason 
 type StoragePool_ReadOnlyReason int
-
-const (
+const(
 	// Unknown enum
 	StoragePool_ReadOnlyReason_Unknown StoragePool_ReadOnlyReason = 0
 	// None enum
@@ -23,3 +22,4 @@ const (
 	// Starting enum
 	StoragePool_ReadOnlyReason_Starting StoragePool_ReadOnlyReason = 4
 )
+

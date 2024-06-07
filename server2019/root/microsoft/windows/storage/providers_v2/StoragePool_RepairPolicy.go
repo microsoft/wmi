@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StoragePool_RepairPolicy
 //////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_RepairPolicy
+// StoragePool_RepairPolicy 
 type StoragePool_RepairPolicy int
-
-const (
+const(
 	// Sequential enum
 	StoragePool_RepairPolicy_Sequential StoragePool_RepairPolicy = 2
 	// Parallel enum
 	StoragePool_RepairPolicy_Parallel StoragePool_RepairPolicy = 3
 )
+

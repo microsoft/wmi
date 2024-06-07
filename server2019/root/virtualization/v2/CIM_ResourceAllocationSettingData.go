@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_ResourceAllocationSettingData struct
-type CIM_ResourceAllocationSettingData struct {
+type CIM_ResourceAllocationSettingData struct { 
 	*CIM_SettingData
 
 	// The address of the resource. For example, the MAC address of a Ethernet port.
@@ -25,7 +24,7 @@ type CIM_ResourceAllocationSettingData struct {
 	// Describes the address of this resource in the context of the Parent. The Parent/AddressOnParent properties are used to describe the controller relationship as well the ordering of devices on a controller.For example, if the parent is a PCI Controller, this property would specify the PCI slot of this child device.
 	AddressOnParent string
 
-	// This property specifies the units of allocation used by the Reservation and Limit properties. For example, when ResourceType=Processor, AllocationUnits may be set to hertz*10^6 or percent. When ResourceType=Memory, AllocationUnits may be set to bytes*10^3.
+	// This property specifies the units of allocation used by the Reservation and Limit properties. For example, when ResourceType=Processor, AllocationUnits may be set to hertz*10^6 or percent. When ResourceType=Memory, AllocationUnits may be set to bytes*10^3. 
 	///It is expected that profiles constrain the units that apply in context of particular resource types.
 	///The value of this property shall be a legal value of the Programmatic Units qualifier as defined in Annex C.1 of DSP0004 V2.5 or later.
 	AllocationUnits string
@@ -40,16 +39,16 @@ type CIM_ResourceAllocationSettingData struct {
 	Connection []string
 
 	// Describes the consumers visibility to the allocated resource.
-	///A value of "Passed-Through" indicates the underlying or host resource is utilized and passed through to the consumer, possibly using partitioning. At least one item shall be present in the HostResource property.
-	///A value of "Virtualized" indicates the resource is virtualized and may not map directly to an underlying/host resource. Some implementations may support specific assignment for virtualized resources, in which case the host resource(s) are exposed using the HostResource property.
+	///A value of "Passed-Through" indicates the underlying or host resource is utilized and passed through to the consumer, possibly using partitioning. At least one item shall be present in the HostResource property. 
+	///A value of "Virtualized" indicates the resource is virtualized and may not map directly to an underlying/host resource. Some implementations may support specific assignment for virtualized resources, in which case the host resource(s) are exposed using the HostResource property. 
 	///A value of "Not represented" indicates a representation of the resource does not exist within the context of the resource consumer.
 	ConsumerVisibility ResourceAllocationSettingData_ConsumerVisibility
 
 	// This property exposes specific assignment of resources. Each non-null value of the HostResource property shall be formated as a URI per RFC3986.
-	///If this resource is modeled then a value should be a WBEM URI (DSP0207). If the resource is not modeled then see the appropriate profile.
+	///If this resource is modeled then a value should be a WBEM URI (DSP0207). If the resource is not modeled then see the appropriate profile. 
 	///Profiles may further constrain the type of URI. A NULL value or empty array requests the implementation decide the kind of host resource.
 	///If the virtual resource is mapped to more than oneunderlying resource, this property may be left NULL.
-	///If NULL, the DeviceAllocatedFromPool or ResourceAllocationFromPool associations may be used to determine the pool of host resources this virtual resource may use. If specific assignment is utilized, all underlying resources used by this virtual resource should be listed.The kind of dependency is specified by the ConsumerVisibility and the MappingBehavior properties. Typically the array contains one item, however multiple host resources may be specified.
+	///If NULL, the DeviceAllocatedFromPool or ResourceAllocationFromPool associations may be used to determine the pool of host resources this virtual resource may use. If specific assignment is utilized, all underlying resources used by this virtual resource should be listed.The kind of dependency is specified by the ConsumerVisibility and the MappingBehavior properties. Typically the array contains one item, however multiple host resources may be specified. 
 	///A client may set the value(s) to indicate that the requested virtual resource allocation be based on host resources that are identified by element values.
 	HostResource []string
 
@@ -101,546 +100,543 @@ type CIM_ResourceAllocationSettingData struct {
 	Weight uint32
 }
 
-func NewCIM_ResourceAllocationSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_ResourceAllocationSettingData, err error) {
-	tmp, err := NewCIM_SettingDataEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_ResourceAllocationSettingData{
-		CIM_SettingData: tmp,
+	func NewCIM_ResourceAllocationSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_ResourceAllocationSettingData, err error) {tmp, err := NewCIM_SettingDataEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_ResourceAllocationSettingData {
+	CIM_SettingData: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_ResourceAllocationSettingDataEx6(hostName string,
+	func NewCIM_ResourceAllocationSettingDataEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_ResourceAllocationSettingData, err error) {
-	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_ResourceAllocationSettingData{
-		CIM_SettingData: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_ResourceAllocationSettingData, err error) {tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_ResourceAllocationSettingData {
+	CIM_SettingData: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetAddress sets the value of Address for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyAddress(value string) (err error) {
-	return instance.SetProperty("Address", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyAddress(value string) (err error) { 
+    return instance.SetProperty("Address", (value))
 }
 
 // GetAddress gets the value of Address for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyAddress() (value string, err error) {
-	retValue, err := instance.GetProperty("Address")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyAddress()(value string, err error) { 
+    retValue, err := instance.GetProperty("Address")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetAddressOnParent sets the value of AddressOnParent for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyAddressOnParent(value string) (err error) {
-	return instance.SetProperty("AddressOnParent", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyAddressOnParent(value string) (err error) { 
+    return instance.SetProperty("AddressOnParent", (value))
 }
 
 // GetAddressOnParent gets the value of AddressOnParent for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyAddressOnParent() (value string, err error) {
-	retValue, err := instance.GetProperty("AddressOnParent")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyAddressOnParent()(value string, err error) { 
+    retValue, err := instance.GetProperty("AddressOnParent")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetAllocationUnits sets the value of AllocationUnits for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyAllocationUnits(value string) (err error) {
-	return instance.SetProperty("AllocationUnits", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyAllocationUnits(value string) (err error) { 
+    return instance.SetProperty("AllocationUnits", (value))
 }
 
 // GetAllocationUnits gets the value of AllocationUnits for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyAllocationUnits() (value string, err error) {
-	retValue, err := instance.GetProperty("AllocationUnits")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyAllocationUnits()(value string, err error) { 
+    retValue, err := instance.GetProperty("AllocationUnits")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetAutomaticAllocation sets the value of AutomaticAllocation for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyAutomaticAllocation(value bool) (err error) {
-	return instance.SetProperty("AutomaticAllocation", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyAutomaticAllocation(value bool) (err error) { 
+    return instance.SetProperty("AutomaticAllocation", (value))
 }
 
 // GetAutomaticAllocation gets the value of AutomaticAllocation for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyAutomaticAllocation() (value bool, err error) {
-	retValue, err := instance.GetProperty("AutomaticAllocation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyAutomaticAllocation()(value bool, err error) { 
+    retValue, err := instance.GetProperty("AutomaticAllocation")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
 
 // SetAutomaticDeallocation sets the value of AutomaticDeallocation for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyAutomaticDeallocation(value bool) (err error) {
-	return instance.SetProperty("AutomaticDeallocation", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyAutomaticDeallocation(value bool) (err error) { 
+    return instance.SetProperty("AutomaticDeallocation", (value))
 }
 
 // GetAutomaticDeallocation gets the value of AutomaticDeallocation for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyAutomaticDeallocation() (value bool, err error) {
-	retValue, err := instance.GetProperty("AutomaticDeallocation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyAutomaticDeallocation()(value bool, err error) { 
+    retValue, err := instance.GetProperty("AutomaticDeallocation")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
 
 // SetConnection sets the value of Connection for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyConnection(value []string) (err error) {
-	return instance.SetProperty("Connection", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyConnection(value []string) (err error) { 
+    return instance.SetProperty("Connection", (value))
 }
 
 // GetConnection gets the value of Connection for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyConnection() (value []string, err error) {
-	retValue, err := instance.GetProperty("Connection")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyConnection()(value []string, err error) { 
+    retValue, err := instance.GetProperty("Connection")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetConsumerVisibility sets the value of ConsumerVisibility for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyConsumerVisibility(value ResourceAllocationSettingData_ConsumerVisibility) (err error) {
-	return instance.SetProperty("ConsumerVisibility", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyConsumerVisibility(value ResourceAllocationSettingData_ConsumerVisibility) (err error) { 
+    return instance.SetProperty("ConsumerVisibility", (value))
 }
 
 // GetConsumerVisibility gets the value of ConsumerVisibility for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyConsumerVisibility() (value ResourceAllocationSettingData_ConsumerVisibility, err error) {
-	retValue, err := instance.GetProperty("ConsumerVisibility")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyConsumerVisibility()(value ResourceAllocationSettingData_ConsumerVisibility, err error) { 
+    retValue, err := instance.GetProperty("ConsumerVisibility")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = ResourceAllocationSettingData_ConsumerVisibility(valuetmp)
 
-	value = ResourceAllocationSettingData_ConsumerVisibility(valuetmp)
-
-	return
+    return
 }
 
 // SetHostResource sets the value of HostResource for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyHostResource(value []string) (err error) {
-	return instance.SetProperty("HostResource", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyHostResource(value []string) (err error) { 
+    return instance.SetProperty("HostResource", (value))
 }
 
 // GetHostResource gets the value of HostResource for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyHostResource() (value []string, err error) {
-	retValue, err := instance.GetProperty("HostResource")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyHostResource()(value []string, err error) { 
+    retValue, err := instance.GetProperty("HostResource")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetLimit sets the value of Limit for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyLimit(value uint64) (err error) {
-	return instance.SetProperty("Limit", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyLimit(value uint64) (err error) { 
+    return instance.SetProperty("Limit", (value))
 }
 
 // GetLimit gets the value of Limit for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyLimit() (value uint64, err error) {
-	retValue, err := instance.GetProperty("Limit")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyLimit()(value uint64, err error) { 
+    retValue, err := instance.GetProperty("Limit")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint64(valuetmp)
 
-	value = uint64(valuetmp)
-
-	return
+    return
 }
 
 // SetMappingBehavior sets the value of MappingBehavior for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyMappingBehavior(value ResourceAllocationSettingData_MappingBehavior) (err error) {
-	return instance.SetProperty("MappingBehavior", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyMappingBehavior(value ResourceAllocationSettingData_MappingBehavior) (err error) { 
+    return instance.SetProperty("MappingBehavior", (value))
 }
 
 // GetMappingBehavior gets the value of MappingBehavior for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyMappingBehavior() (value ResourceAllocationSettingData_MappingBehavior, err error) {
-	retValue, err := instance.GetProperty("MappingBehavior")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyMappingBehavior()(value ResourceAllocationSettingData_MappingBehavior, err error) { 
+    retValue, err := instance.GetProperty("MappingBehavior")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = ResourceAllocationSettingData_MappingBehavior(valuetmp)
 
-	value = ResourceAllocationSettingData_MappingBehavior(valuetmp)
-
-	return
+    return
 }
 
 // SetOtherResourceType sets the value of OtherResourceType for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyOtherResourceType(value string) (err error) {
-	return instance.SetProperty("OtherResourceType", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyOtherResourceType(value string) (err error) { 
+    return instance.SetProperty("OtherResourceType", (value))
 }
 
 // GetOtherResourceType gets the value of OtherResourceType for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyOtherResourceType() (value string, err error) {
-	retValue, err := instance.GetProperty("OtherResourceType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyOtherResourceType()(value string, err error) { 
+    retValue, err := instance.GetProperty("OtherResourceType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetParent sets the value of Parent for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyParent(value string) (err error) {
-	return instance.SetProperty("Parent", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyParent(value string) (err error) { 
+    return instance.SetProperty("Parent", (value))
 }
 
 // GetParent gets the value of Parent for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyParent() (value string, err error) {
-	retValue, err := instance.GetProperty("Parent")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyParent()(value string, err error) { 
+    retValue, err := instance.GetProperty("Parent")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetPoolID sets the value of PoolID for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyPoolID(value string) (err error) {
-	return instance.SetProperty("PoolID", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyPoolID(value string) (err error) { 
+    return instance.SetProperty("PoolID", (value))
 }
 
 // GetPoolID gets the value of PoolID for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyPoolID() (value string, err error) {
-	retValue, err := instance.GetProperty("PoolID")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyPoolID()(value string, err error) { 
+    retValue, err := instance.GetProperty("PoolID")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetReservation sets the value of Reservation for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyReservation(value uint64) (err error) {
-	return instance.SetProperty("Reservation", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyReservation(value uint64) (err error) { 
+    return instance.SetProperty("Reservation", (value))
 }
 
 // GetReservation gets the value of Reservation for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyReservation() (value uint64, err error) {
-	retValue, err := instance.GetProperty("Reservation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyReservation()(value uint64, err error) { 
+    retValue, err := instance.GetProperty("Reservation")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint64(valuetmp)
 
-	value = uint64(valuetmp)
-
-	return
+    return
 }
 
 // SetResourceSubType sets the value of ResourceSubType for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyResourceSubType(value string) (err error) {
-	return instance.SetProperty("ResourceSubType", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyResourceSubType(value string) (err error) { 
+    return instance.SetProperty("ResourceSubType", (value))
 }
 
 // GetResourceSubType gets the value of ResourceSubType for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyResourceSubType() (value string, err error) {
-	retValue, err := instance.GetProperty("ResourceSubType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyResourceSubType()(value string, err error) { 
+    retValue, err := instance.GetProperty("ResourceSubType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetResourceType sets the value of ResourceType for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyResourceType(value ResourceAllocationSettingData_ResourceType) (err error) {
-	return instance.SetProperty("ResourceType", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyResourceType(value ResourceAllocationSettingData_ResourceType) (err error) { 
+    return instance.SetProperty("ResourceType", (value))
 }
 
 // GetResourceType gets the value of ResourceType for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyResourceType() (value ResourceAllocationSettingData_ResourceType, err error) {
-	retValue, err := instance.GetProperty("ResourceType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyResourceType()(value ResourceAllocationSettingData_ResourceType, err error) { 
+    retValue, err := instance.GetProperty("ResourceType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = ResourceAllocationSettingData_ResourceType(valuetmp)
 
-	value = ResourceAllocationSettingData_ResourceType(valuetmp)
-
-	return
+    return
 }
 
 // SetVirtualQuantity sets the value of VirtualQuantity for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyVirtualQuantity(value uint64) (err error) {
-	return instance.SetProperty("VirtualQuantity", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyVirtualQuantity(value uint64) (err error) { 
+    return instance.SetProperty("VirtualQuantity", (value))
 }
 
 // GetVirtualQuantity gets the value of VirtualQuantity for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyVirtualQuantity() (value uint64, err error) {
-	retValue, err := instance.GetProperty("VirtualQuantity")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyVirtualQuantity()(value uint64, err error) { 
+    retValue, err := instance.GetProperty("VirtualQuantity")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint64(valuetmp)
 
-	value = uint64(valuetmp)
-
-	return
+    return
 }
 
 // SetVirtualQuantityUnits sets the value of VirtualQuantityUnits for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyVirtualQuantityUnits(value string) (err error) {
-	return instance.SetProperty("VirtualQuantityUnits", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyVirtualQuantityUnits(value string) (err error) { 
+    return instance.SetProperty("VirtualQuantityUnits", (value))
 }
 
 // GetVirtualQuantityUnits gets the value of VirtualQuantityUnits for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyVirtualQuantityUnits() (value string, err error) {
-	retValue, err := instance.GetProperty("VirtualQuantityUnits")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyVirtualQuantityUnits()(value string, err error) { 
+    retValue, err := instance.GetProperty("VirtualQuantityUnits")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetWeight sets the value of Weight for the instance
-func (instance *CIM_ResourceAllocationSettingData) SetPropertyWeight(value uint32) (err error) {
-	return instance.SetProperty("Weight", (value))
+func (instance *CIM_ResourceAllocationSettingData) SetPropertyWeight(value uint32) (err error) { 
+    return instance.SetProperty("Weight", (value))
 }
 
 // GetWeight gets the value of Weight for the instance
-func (instance *CIM_ResourceAllocationSettingData) GetPropertyWeight() (value uint32, err error) {
-	retValue, err := instance.GetProperty("Weight")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ResourceAllocationSettingData) GetPropertyWeight()(value uint32, err error) { 
+    retValue, err := instance.GetProperty("Weight")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint32(valuetmp)
 
-	value = uint32(valuetmp)
-
-	return
+    return
 }
+

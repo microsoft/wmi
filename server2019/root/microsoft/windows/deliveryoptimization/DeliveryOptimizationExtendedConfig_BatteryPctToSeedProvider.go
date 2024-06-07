@@ -3,23 +3,23 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider
+// DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider 
 type DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider int
-
-const (
-	// _14 enum
-	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__14 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 5
-	// _15 enum
-	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__15 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 7
-	// _16 enum
-	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__16 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 8
+const(
 	// _17 enum
-	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__17 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 9
+	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__17 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 5
 	// _18 enum
-	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__18 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 99
+	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__18 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 7
+	// _19 enum
+	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__19 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 8
+	// _20 enum
+	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__20 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 9
+	// _21 enum
+	DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider__21 DeliveryOptimizationExtendedConfig_BatteryPctToSeedProvider = 99
 )
+

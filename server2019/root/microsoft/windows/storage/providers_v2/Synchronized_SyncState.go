@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Synchronized_SyncState
 //////////////////////////////////////////////
 package providers_v2
 
-// Synchronized_SyncState
+// Synchronized_SyncState 
 type Synchronized_SyncState int
-
-const (
+const(
 	// Initialized enum
 	Synchronized_SyncState_Initialized Synchronized_SyncState = 2
 	// PrepareInProgress enum
@@ -45,3 +44,4 @@ const (
 	// Vendor_Specific enum
 	Synchronized_SyncState_Vendor_Specific Synchronized_SyncState = 17
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Volume_DedupMode
 //////////////////////////////////////////////
 package providers_v2
 
-// Volume_DedupMode
+// Volume_DedupMode 
 type Volume_DedupMode int
-
-const (
+const(
 	// Disabled enum
 	Volume_DedupMode_Disabled Volume_DedupMode = 0
 	// GeneralPurpose enum
@@ -23,3 +22,4 @@ const (
 	// NotAvailable enum
 	Volume_DedupMode_NotAvailable Volume_DedupMode = 4
 )
+

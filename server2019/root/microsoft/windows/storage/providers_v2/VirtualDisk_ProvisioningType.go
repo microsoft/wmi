@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDisk_ProvisioningType
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_ProvisioningType
+// VirtualDisk_ProvisioningType 
 type VirtualDisk_ProvisioningType int
-
-const (
+const(
 	// Unknown enum
 	VirtualDisk_ProvisioningType_Unknown VirtualDisk_ProvisioningType = 0
 	// Thin enum
@@ -19,3 +18,4 @@ const (
 	// Fixed enum
 	VirtualDisk_ProvisioningType_Fixed VirtualDisk_ProvisioningType = 2
 )
+

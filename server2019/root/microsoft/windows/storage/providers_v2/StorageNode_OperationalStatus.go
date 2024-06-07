@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNode_OperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNode_OperationalStatus
+// StorageNode_OperationalStatus 
 type StorageNode_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageNode_OperationalStatus_Unknown StorageNode_OperationalStatus = 0
 	// Up enum
@@ -23,3 +22,4 @@ const (
 	// Paused enum
 	StorageNode_OperationalStatus_Paused StorageNode_OperationalStatus = 10
 )
+

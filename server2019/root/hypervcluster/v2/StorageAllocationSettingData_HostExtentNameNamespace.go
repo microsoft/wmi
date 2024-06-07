@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageAllocationSettingData_HostExtentNameNamespace
 //////////////////////////////////////////////
 package v2
 
-// StorageAllocationSettingData_HostExtentNameNamespace
+// StorageAllocationSettingData_HostExtentNameNamespace 
 type StorageAllocationSettingData_HostExtentNameNamespace int
-
-const (
+const(
 	// Unknown enum
 	StorageAllocationSettingData_HostExtentNameNamespace_Unknown StorageAllocationSettingData_HostExtentNameNamespace = 0
 	// Other enum
@@ -33,3 +32,4 @@ const (
 	// DMTF_Reserved enum
 	StorageAllocationSettingData_HostExtentNameNamespace_DMTF_Reserved StorageAllocationSettingData_HostExtentNameNamespace = 9
 )
+

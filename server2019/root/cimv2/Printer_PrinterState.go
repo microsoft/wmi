@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Printer_PrinterState
 //////////////////////////////////////////////
 package cimv2
 
-// Printer_PrinterState
+// Printer_PrinterState 
 type Printer_PrinterState int
-
-const (
+const(
 	// Paused enum
 	Printer_PrinterState_Paused Printer_PrinterState = 0
 	// Error enum
@@ -63,3 +62,4 @@ const (
 	// Power_Save enum
 	Printer_PrinterState_Power_Save Printer_PrinterState = 24
 )
+

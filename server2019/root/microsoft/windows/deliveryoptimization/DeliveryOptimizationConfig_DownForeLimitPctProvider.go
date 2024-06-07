@@ -3,23 +3,23 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationConfig_DownForeLimitPctProvider
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationConfig_DownForeLimitPctProvider
+// DeliveryOptimizationConfig_DownForeLimitPctProvider 
 type DeliveryOptimizationConfig_DownForeLimitPctProvider int
-
-const (
-	// _14 enum
-	DeliveryOptimizationConfig_DownForeLimitPctProvider__14 DeliveryOptimizationConfig_DownForeLimitPctProvider = 5
-	// _15 enum
-	DeliveryOptimizationConfig_DownForeLimitPctProvider__15 DeliveryOptimizationConfig_DownForeLimitPctProvider = 7
-	// _16 enum
-	DeliveryOptimizationConfig_DownForeLimitPctProvider__16 DeliveryOptimizationConfig_DownForeLimitPctProvider = 8
+const(
 	// _17 enum
-	DeliveryOptimizationConfig_DownForeLimitPctProvider__17 DeliveryOptimizationConfig_DownForeLimitPctProvider = 9
+	DeliveryOptimizationConfig_DownForeLimitPctProvider__17 DeliveryOptimizationConfig_DownForeLimitPctProvider = 5
 	// _18 enum
-	DeliveryOptimizationConfig_DownForeLimitPctProvider__18 DeliveryOptimizationConfig_DownForeLimitPctProvider = 99
+	DeliveryOptimizationConfig_DownForeLimitPctProvider__18 DeliveryOptimizationConfig_DownForeLimitPctProvider = 7
+	// _19 enum
+	DeliveryOptimizationConfig_DownForeLimitPctProvider__19 DeliveryOptimizationConfig_DownForeLimitPctProvider = 8
+	// _20 enum
+	DeliveryOptimizationConfig_DownForeLimitPctProvider__20 DeliveryOptimizationConfig_DownForeLimitPctProvider = 9
+	// _21 enum
+	DeliveryOptimizationConfig_DownForeLimitPctProvider__21 DeliveryOptimizationConfig_DownForeLimitPctProvider = 99
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TPM_TransitioningToTPMState
 //////////////////////////////////////////////
 package v2
 
-// TPM_TransitioningToTPMState
+// TPM_TransitioningToTPMState 
 type TPM_TransitioningToTPMState int
-
-const (
+const(
 	// Unknown enum
 	TPM_TransitioningToTPMState_Unknown TPM_TransitioningToTPMState = 0
 	// S1_Enabled_Active_Owned enum
@@ -39,3 +38,4 @@ const (
 	// Vendor_Reserved enum
 	TPM_TransitioningToTPMState_Vendor_Reserved TPM_TransitioningToTPMState = 13
 )
+

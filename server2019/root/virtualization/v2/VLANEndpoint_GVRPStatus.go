@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VLANEndpoint_GVRPStatus
 //////////////////////////////////////////////
 package v2
 
-// VLANEndpoint_GVRPStatus
+// VLANEndpoint_GVRPStatus 
 type VLANEndpoint_GVRPStatus int
-
-const (
+const(
 	// Unknown enum
 	VLANEndpoint_GVRPStatus_Unknown VLANEndpoint_GVRPStatus = 0
 	// Not_Applicable enum
@@ -21,3 +20,4 @@ const (
 	// Disabled enum
 	VLANEndpoint_GVRPStatus_Disabled VLANEndpoint_GVRPStatus = 4
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PhysicalDisk_Usage
 //////////////////////////////////////////////
 package providers_v2
 
-// PhysicalDisk_Usage
+// PhysicalDisk_Usage 
 type PhysicalDisk_Usage int
-
-const (
+const(
 	// Auto_Select enum
 	PhysicalDisk_Usage_Auto_Select PhysicalDisk_Usage = 1
 	// Manual_Select enum
@@ -23,3 +22,4 @@ const (
 	// Journal enum
 	PhysicalDisk_Usage_Journal PhysicalDisk_Usage = 5
 )
+

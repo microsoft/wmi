@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PointingDevice_PointingType
 //////////////////////////////////////////////
 package v2
 
-// PointingDevice_PointingType
+// PointingDevice_PointingType 
 type PointingDevice_PointingType int
-
-const (
+const(
 	// Other enum
 	PointingDevice_PointingType_Other PointingDevice_PointingType = 1
 	// Unknown enum
@@ -31,3 +30,4 @@ const (
 	// Mouse___Optical_Sensor enum
 	PointingDevice_PointingType_Mouse___Optical_Sensor PointingDevice_PointingType = 9
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationFile_Status
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationFile_Status
+// DeliveryOptimizationFile_Status 
 type DeliveryOptimizationFile_Status int
-
-const (
+const(
 	// _7 enum
 	DeliveryOptimizationFile_Status__7 DeliveryOptimizationFile_Status = 0
 	// _8 enum
@@ -21,3 +20,4 @@ const (
 	// _10 enum
 	DeliveryOptimizationFile_Status__10 DeliveryOptimizationFile_Status = 3
 )
+

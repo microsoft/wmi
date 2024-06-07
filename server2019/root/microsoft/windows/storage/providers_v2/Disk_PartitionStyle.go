@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Disk_PartitionStyle
 //////////////////////////////////////////////
 package providers_v2
 
-// Disk_PartitionStyle
+// Disk_PartitionStyle 
 type Disk_PartitionStyle int
-
-const (
+const(
 	// Unknown enum
 	Disk_PartitionStyle_Unknown Disk_PartitionStyle = 0
 	// MBR enum
@@ -19,3 +18,4 @@ const (
 	// GPT enum
 	Disk_PartitionStyle_GPT Disk_PartitionStyle = 2
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbShare_CachingMode
 //////////////////////////////////////////////
 package smb
 
-// SmbShare_CachingMode
+// SmbShare_CachingMode 
 type SmbShare_CachingMode int
-
-const (
+const(
 	// _18 enum
 	SmbShare_CachingMode__18 SmbShare_CachingMode = 0
 	// _19 enum
@@ -25,3 +24,4 @@ const (
 	// _15 enum
 	SmbShare_CachingMode__15 SmbShare_CachingMode = 5
 )
+

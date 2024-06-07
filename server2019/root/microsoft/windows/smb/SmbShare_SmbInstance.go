@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbShare_SmbInstance
 //////////////////////////////////////////////
 package smb
 
-// SmbShare_SmbInstance
+// SmbShare_SmbInstance 
 type SmbShare_SmbInstance int
-
-const (
+const(
 	// _9 enum
 	SmbShare_SmbInstance__9 SmbShare_SmbInstance = 0
 	// _10 enum
@@ -21,3 +20,4 @@ const (
 	// _57 enum
 	SmbShare_SmbInstance__57 SmbShare_SmbInstance = 3
 )
+

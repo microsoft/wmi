@@ -3,23 +3,23 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationConfig_DownForeLimitBpsProvider
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationConfig_DownForeLimitBpsProvider
+// DeliveryOptimizationConfig_DownForeLimitBpsProvider 
 type DeliveryOptimizationConfig_DownForeLimitBpsProvider int
-
-const (
-	// _14 enum
-	DeliveryOptimizationConfig_DownForeLimitBpsProvider__14 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 5
-	// _15 enum
-	DeliveryOptimizationConfig_DownForeLimitBpsProvider__15 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 7
-	// _16 enum
-	DeliveryOptimizationConfig_DownForeLimitBpsProvider__16 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 8
+const(
 	// _17 enum
-	DeliveryOptimizationConfig_DownForeLimitBpsProvider__17 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 9
+	DeliveryOptimizationConfig_DownForeLimitBpsProvider__17 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 5
 	// _18 enum
-	DeliveryOptimizationConfig_DownForeLimitBpsProvider__18 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 99
+	DeliveryOptimizationConfig_DownForeLimitBpsProvider__18 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 7
+	// _19 enum
+	DeliveryOptimizationConfig_DownForeLimitBpsProvider__19 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 8
+	// _20 enum
+	DeliveryOptimizationConfig_DownForeLimitBpsProvider__20 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 9
+	// _21 enum
+	DeliveryOptimizationConfig_DownForeLimitBpsProvider__21 DeliveryOptimizationConfig_DownForeLimitBpsProvider = 99
 )
+

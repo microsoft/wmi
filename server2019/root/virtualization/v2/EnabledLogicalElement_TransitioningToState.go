@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source EnabledLogicalElement_TransitioningToState
 //////////////////////////////////////////////
 package v2
 
-// EnabledLogicalElement_TransitioningToState
+// EnabledLogicalElement_TransitioningToState 
 type EnabledLogicalElement_TransitioningToState int
-
-const (
+const(
 	// Unknown enum
 	EnabledLogicalElement_TransitioningToState_Unknown EnabledLogicalElement_TransitioningToState = 0
 	// Enabled enum
@@ -39,3 +38,4 @@ const (
 	// DMTF_Reserved enum
 	EnabledLogicalElement_TransitioningToState_DMTF_Reserved EnabledLogicalElement_TransitioningToState = 13
 )
+

@@ -1,51 +1,46 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_VirtualSystemReferencePointService struct
-type Msvm_VirtualSystemReferencePointService struct {
+type Msvm_VirtualSystemReferencePointService struct { 
 	*CIM_Service
 }
 
-func NewMsvm_VirtualSystemReferencePointServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemReferencePointService, err error) {
-	tmp, err := NewCIM_ServiceEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &Msvm_VirtualSystemReferencePointService{
-		CIM_Service: tmp,
+	func NewMsvm_VirtualSystemReferencePointServiceEx1(instance *cim.WmiInstance) (newInstance *Msvm_VirtualSystemReferencePointService, err error) {tmp, err := NewCIM_ServiceEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &Msvm_VirtualSystemReferencePointService {
+	CIM_Service: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewMsvm_VirtualSystemReferencePointServiceEx6(hostName string,
+	func NewMsvm_VirtualSystemReferencePointServiceEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *Msvm_VirtualSystemReferencePointService, err error) {
-	tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &Msvm_VirtualSystemReferencePointService{
-		CIM_Service: tmp,
+	query *query.WmiQuery ) (newInstance *Msvm_VirtualSystemReferencePointService, err error) {tmp, err := NewCIM_ServiceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &Msvm_VirtualSystemReferencePointService {
+	CIM_Service: tmp,
 	}
 	return
-}
+	}
+	
 
 // Creates a reference point of a virtual system.
 
@@ -60,24 +55,22 @@ func NewMsvm_VirtualSystemReferencePointServiceEx6(hostName string,
 // <param name="ResultingReferencePoint" type="Msvm_VirtualSystemReferencePoint ">Resulting virtual system reference point</param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_VirtualSystemReferencePointService) CreateReferencePoint( /* IN */ AffectedSystem Msvm_ComputerSystem,
-	/* IN */ ReferencePointSettings string,
-	/* IN */ ReferencePointType VirtualSystemReferencePointService_ReferencePointType,
-	/* IN/OUT */ ResultingReferencePoint Msvm_VirtualSystemReferencePoint,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("CreateReferencePoint", Action, PercentComplete, Timeout, AffectedSystem, ReferencePointSettings, ReferencePointType)
-	if err != nil {
-		return
-	}
+ /* IN */ ReferencePointSettings string,
+ /* IN */ ReferencePointType VirtualSystemReferencePointService_ReferencePointType,
+ /* IN/OUT */ ResultingReferencePoint Msvm_VirtualSystemReferencePoint,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("CreateReferencePoint", Action, PercentComplete, Timeout , AffectedSystem, ReferencePointSettings, ReferencePointType)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="ExportDirectory" type="string "></param>
 // <param name="ExportSettingData" type="string "></param>
@@ -86,65 +79,59 @@ func (instance *Msvm_VirtualSystemReferencePointService) CreateReferencePoint( /
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_VirtualSystemReferencePointService) ExportReferencePoint( /* IN */ ReferencePoint Msvm_VirtualSystemReferencePoint,
-	/* IN */ ExportDirectory string,
-	/* IN */ ExportSettingData string,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("ExportReferencePoint", Action, PercentComplete, Timeout, ReferencePoint, ExportDirectory, ExportSettingData)
-	if err != nil {
-		return
-	}
+ /* IN */ ExportDirectory string,
+ /* IN */ ExportSettingData string,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ExportReferencePoint", Action, PercentComplete, Timeout , ReferencePoint, ExportDirectory, ExportSettingData)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="AffectedReferencePoint" type="Msvm_VirtualSystemReferencePoint "></param>
 
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_VirtualSystemReferencePointService) DestroyReferencePoint( /* IN */ AffectedReferencePoint Msvm_VirtualSystemReferencePoint,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("DestroyReferencePoint", Action, PercentComplete, Timeout, AffectedReferencePoint)
-	if err != nil {
-		return
-	}
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("DestroyReferencePoint", Action, PercentComplete, Timeout , AffectedReferencePoint)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="AffectedReferencePoint" type="Msvm_VirtualSystemReferencePoint "></param>
 
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_VirtualSystemReferencePointService) RemoveAssociatedData( /* IN */ AffectedReferencePoint Msvm_VirtualSystemReferencePoint,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("RemoveAssociatedData", Action, PercentComplete, Timeout, AffectedReferencePoint)
-	if err != nil {
-		return
-	}
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("RemoveAssociatedData", Action, PercentComplete, Timeout , AffectedReferencePoint)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="AffectedSystem" type="Msvm_ComputerSystem ">Reference to the affected virtual system.</param>
 // <param name="ConfigFilePath" type="string "></param>
@@ -153,22 +140,21 @@ func (instance *Msvm_VirtualSystemReferencePointService) RemoveAssociatedData( /
 // <param name="Job" type="CIM_ConcreteJob "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *Msvm_VirtualSystemReferencePointService) ImportReferencePointMetadata( /* IN */ AffectedSystem Msvm_ComputerSystem,
-	/* IN */ ConfigFilePath string,
-	/* IN */ RuntimeStateFilePath string,
-	/* OUT */ Job CIM_ConcreteJob,
-	/*Custom IN*/ Action cim.UserAction,
-	/*Custon IN*/ PercentComplete uint32,
-	/*Custon IN*/ Timeout uint32) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodAsync("ImportReferencePointMetadata", Action, PercentComplete, Timeout, AffectedSystem, ConfigFilePath, RuntimeStateFilePath)
-	if err != nil {
-		return
-	}
+ /* IN */ ConfigFilePath string,
+ /* IN */ RuntimeStateFilePath string,
+ /* OUT */ Job CIM_ConcreteJob,
+/*Custom IN*/  Action cim.UserAction,
+/*Custon IN*/  PercentComplete uint32,
+/*Custon IN*/  Timeout uint32) (result uint32, err error) {retVal, err := instance.InvokeMethodAsync("ImportReferencePointMetadata", Action, PercentComplete, Timeout , AffectedSystem, ConfigFilePath, RuntimeStateFilePath)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
 
-func (instance *Msvm_VirtualSystemReferencePointService) GetRelatedComputerSystem() (value []*cim.WmiInstance, err error) {
-	return instance.GetAllRelated("Msvm_ComputerSystem")
-}
+func  (instance* Msvm_VirtualSystemReferencePointService) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
+		 return instance.GetRelated("Msvm_ComputerSystem"); 
+	}
+	
+

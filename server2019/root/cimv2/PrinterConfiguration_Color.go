@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PrinterConfiguration_Color
 //////////////////////////////////////////////
 package cimv2
 
-// PrinterConfiguration_Color
+// PrinterConfiguration_Color 
 type PrinterConfiguration_Color int
-
-const (
+const(
 	// Monochrome enum
 	PrinterConfiguration_Color_Monochrome PrinterConfiguration_Color = 1
 	// Color enum
 	PrinterConfiguration_Color_Color PrinterConfiguration_Color = 2
 )
+

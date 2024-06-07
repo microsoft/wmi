@@ -1,23 +1,22 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.CIMV2
 //////////////////////////////////////////////
 package cimv2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/instance"
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/instance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // Win32_RoamingProfileUserConfiguration struct
-type Win32_RoamingProfileUserConfiguration struct {
+type Win32_RoamingProfileUserConfiguration struct { 
 	*cim.WmiInstance
 
 	// An array of strings containing network directories to synchronize at when the user logs on to or off of a local computer.
@@ -30,114 +29,111 @@ type Win32_RoamingProfileUserConfiguration struct {
 	IsConfiguredByWMI bool
 }
 
-func NewWin32_RoamingProfileUserConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_RoamingProfileUserConfiguration, err error) {
-	tmp, err := instance, nil
-
-	if err != nil {
-		return
-	}
-	newInstance = &Win32_RoamingProfileUserConfiguration{
-		WmiInstance: tmp,
+	func NewWin32_RoamingProfileUserConfigurationEx1(instance *cim.WmiInstance) (newInstance *Win32_RoamingProfileUserConfiguration, err error) {tmp, err := instance, nil
+		
+	if err != nil { return }
+	newInstance = &Win32_RoamingProfileUserConfiguration {
+	WmiInstance: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewWin32_RoamingProfileUserConfigurationEx6(hostName string,
+	func NewWin32_RoamingProfileUserConfigurationEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *Win32_RoamingProfileUserConfiguration, err error) {
-	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &Win32_RoamingProfileUserConfiguration{
-		WmiInstance: tmp,
+	query *query.WmiQuery ) (newInstance *Win32_RoamingProfileUserConfiguration, err error) {tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &Win32_RoamingProfileUserConfiguration {
+	WmiInstance: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetDirectoriesToSyncAtLogonLogoff sets the value of DirectoriesToSyncAtLogonLogoff for the instance
-func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyDirectoriesToSyncAtLogonLogoff(value []string) (err error) {
-	return instance.SetProperty("DirectoriesToSyncAtLogonLogoff", (value))
+func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyDirectoriesToSyncAtLogonLogoff(value []string) (err error) { 
+    return instance.SetProperty("DirectoriesToSyncAtLogonLogoff", (value))
 }
 
 // GetDirectoriesToSyncAtLogonLogoff gets the value of DirectoriesToSyncAtLogonLogoff for the instance
-func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyDirectoriesToSyncAtLogonLogoff() (value []string, err error) {
-	retValue, err := instance.GetProperty("DirectoriesToSyncAtLogonLogoff")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyDirectoriesToSyncAtLogonLogoff()(value []string, err error) { 
+    retValue, err := instance.GetProperty("DirectoriesToSyncAtLogonLogoff")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetExcludedProfileDirs sets the value of ExcludedProfileDirs for the instance
-func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyExcludedProfileDirs(value []string) (err error) {
-	return instance.SetProperty("ExcludedProfileDirs", (value))
+func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyExcludedProfileDirs(value []string) (err error) { 
+    return instance.SetProperty("ExcludedProfileDirs", (value))
 }
 
 // GetExcludedProfileDirs gets the value of ExcludedProfileDirs for the instance
-func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyExcludedProfileDirs() (value []string, err error) {
-	retValue, err := instance.GetProperty("ExcludedProfileDirs")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyExcludedProfileDirs()(value []string, err error) { 
+    retValue, err := instance.GetProperty("ExcludedProfileDirs")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetIsConfiguredByWMI sets the value of IsConfiguredByWMI for the instance
-func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyIsConfiguredByWMI(value bool) (err error) {
-	return instance.SetProperty("IsConfiguredByWMI", (value))
+func (instance *Win32_RoamingProfileUserConfiguration) SetPropertyIsConfiguredByWMI(value bool) (err error) { 
+    return instance.SetProperty("IsConfiguredByWMI", (value))
 }
 
 // GetIsConfiguredByWMI gets the value of IsConfiguredByWMI for the instance
-func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyIsConfiguredByWMI() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsConfiguredByWMI")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_RoamingProfileUserConfiguration) GetPropertyIsConfiguredByWMI()(value bool, err error) { 
+    retValue, err := instance.GetProperty("IsConfiguredByWMI")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source MetricServiceCapabilities_MetricsControlTypes
 //////////////////////////////////////////////
 package v2
 
-// MetricServiceCapabilities_MetricsControlTypes
+// MetricServiceCapabilities_MetricsControlTypes 
 type MetricServiceCapabilities_MetricsControlTypes int
-
-const (
+const(
 	// Unknown enum
 	MetricServiceCapabilities_MetricsControlTypes_Unknown MetricServiceCapabilities_MetricsControlTypes = 0
 	// Discrete enum
@@ -25,3 +24,4 @@ const (
 	// Vendor_Specific enum
 	MetricServiceCapabilities_MetricsControlTypes_Vendor_Specific MetricServiceCapabilities_MetricsControlTypes = 6
 )
+

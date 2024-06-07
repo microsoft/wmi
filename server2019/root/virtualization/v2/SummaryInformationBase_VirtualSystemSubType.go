@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SummaryInformationBase_VirtualSystemSubType
 //////////////////////////////////////////////
 package v2
 
-// SummaryInformationBase_VirtualSystemSubType
+// SummaryInformationBase_VirtualSystemSubType 
 type SummaryInformationBase_VirtualSystemSubType int
-
-const (
+const(
 	// Microsoft_Hyper_V_SubType_1 enum
 	SummaryInformationBase_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1 SummaryInformationBase_VirtualSystemSubType = 0
 	// Microsoft_Hyper_V_SubType_2 enum
 	SummaryInformationBase_VirtualSystemSubType_Microsoft_Hyper_V_SubType_2 SummaryInformationBase_VirtualSystemSubType = 1
 )
+

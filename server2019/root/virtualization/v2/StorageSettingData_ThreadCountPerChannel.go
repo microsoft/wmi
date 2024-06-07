@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSettingData_ThreadCountPerChannel
 //////////////////////////////////////////////
 package v2
 
-// StorageSettingData_ThreadCountPerChannel
+// StorageSettingData_ThreadCountPerChannel 
 type StorageSettingData_ThreadCountPerChannel int
-
-const (
+const(
 	// Default enum
 	StorageSettingData_ThreadCountPerChannel_Default StorageSettingData_ThreadCountPerChannel = 0
 	// Low enum
@@ -21,3 +20,4 @@ const (
 	// High enum
 	StorageSettingData_ThreadCountPerChannel_High StorageSettingData_ThreadCountPerChannel = 3
 )
+

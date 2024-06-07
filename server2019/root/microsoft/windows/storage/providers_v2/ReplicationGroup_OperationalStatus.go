@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ReplicationGroup_OperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// ReplicationGroup_OperationalStatus
+// ReplicationGroup_OperationalStatus 
 type ReplicationGroup_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	ReplicationGroup_OperationalStatus_Unknown ReplicationGroup_OperationalStatus = 0
 	// Other enum
@@ -55,3 +54,4 @@ const (
 	// Microsoft_Reserved enum
 	ReplicationGroup_OperationalStatus_Microsoft_Reserved ReplicationGroup_OperationalStatus = 20
 )
+

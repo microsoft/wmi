@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ProtocolEndpoint_ProtocolType
 //////////////////////////////////////////////
 package v2
 
-// ProtocolEndpoint_ProtocolType
+// ProtocolEndpoint_ProtocolType 
 type ProtocolEndpoint_ProtocolType int
-
-const (
+const(
 	// Unknown enum
 	ProtocolEndpoint_ProtocolType_Unknown ProtocolEndpoint_ProtocolType = 0
 	// Other enum
@@ -69,3 +68,4 @@ const (
 	// TCP enum
 	ProtocolEndpoint_ProtocolType_TCP ProtocolEndpoint_ProtocolType = 27
 )
+

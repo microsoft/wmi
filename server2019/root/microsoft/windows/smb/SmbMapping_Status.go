@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbMapping_Status
 //////////////////////////////////////////////
 package smb
 
-// SmbMapping_Status
+// SmbMapping_Status 
 type SmbMapping_Status int
-
-const (
+const(
 	// _36 enum
 	SmbMapping_Status__36 SmbMapping_Status = 0
 	// _37 enum
@@ -27,3 +26,4 @@ const (
 	// _42 enum
 	SmbMapping_Status__42 SmbMapping_Status = 6
 )
+

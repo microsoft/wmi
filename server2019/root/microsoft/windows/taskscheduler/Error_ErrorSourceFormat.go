@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Error_ErrorSourceFormat
 //////////////////////////////////////////////
 package taskscheduler
 
-// Error_ErrorSourceFormat
+// Error_ErrorSourceFormat 
 type Error_ErrorSourceFormat int
-
-const (
+const(
 	// Unknown enum
 	Error_ErrorSourceFormat_Unknown Error_ErrorSourceFormat = 0
 	// Other enum
@@ -21,3 +20,4 @@ const (
 	// DMTF_Reserved enum
 	Error_ErrorSourceFormat_DMTF_Reserved Error_ErrorSourceFormat = 3
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_MaskingPortsPerView
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_MaskingPortsPerView
+// StorageSubSystem_MaskingPortsPerView 
 type StorageSubSystem_MaskingPortsPerView int
-
-const (
+const(
 	// One_TargetPort_per_view enum
 	StorageSubSystem_MaskingPortsPerView_One_TargetPort_per_view StorageSubSystem_MaskingPortsPerView = 2
 	// Multiple_target_ports_per_view enum
@@ -19,3 +18,4 @@ const (
 	// All_target_ports_share_the_same_view enum
 	StorageSubSystem_MaskingPortsPerView_All_target_ports_share_the_same_view StorageSubSystem_MaskingPortsPerView = 4
 )
+

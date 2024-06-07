@@ -3,23 +3,23 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationExtendedConfig_MinTotalRAMProvider
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_MinTotalRAMProvider
+// DeliveryOptimizationExtendedConfig_MinTotalRAMProvider 
 type DeliveryOptimizationExtendedConfig_MinTotalRAMProvider int
-
-const (
-	// _14 enum
-	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__14 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 5
-	// _15 enum
-	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__15 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 7
-	// _16 enum
-	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__16 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 8
+const(
 	// _17 enum
-	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__17 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 9
+	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__17 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 5
 	// _18 enum
-	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__18 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 99
+	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__18 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 7
+	// _19 enum
+	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__19 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 8
+	// _20 enum
+	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__20 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 9
+	// _21 enum
+	DeliveryOptimizationExtendedConfig_MinTotalRAMProvider__21 DeliveryOptimizationExtendedConfig_MinTotalRAMProvider = 99
 )
+

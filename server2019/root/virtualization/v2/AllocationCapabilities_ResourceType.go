@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source AllocationCapabilities_ResourceType
 //////////////////////////////////////////////
 package v2
 
-// AllocationCapabilities_ResourceType
+// AllocationCapabilities_ResourceType 
 type AllocationCapabilities_ResourceType int
-
-const (
+const(
 	// Other enum
 	AllocationCapabilities_ResourceType_Other AllocationCapabilities_ResourceType = 1
 	// Computer_System enum
@@ -83,3 +82,4 @@ const (
 	// Vendor_Reserved enum
 	AllocationCapabilities_ResourceType_Vendor_Reserved AllocationCapabilities_ResourceType = 35
 )
+

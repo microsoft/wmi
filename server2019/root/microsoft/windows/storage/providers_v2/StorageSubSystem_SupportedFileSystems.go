@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_SupportedFileSystems
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_SupportedFileSystems
+// StorageSubSystem_SupportedFileSystems 
 type StorageSubSystem_SupportedFileSystems int
-
-const (
+const(
 	// Unknown enum
 	StorageSubSystem_SupportedFileSystems_Unknown StorageSubSystem_SupportedFileSystems = 0
 	// Threshold enum
@@ -49,3 +48,4 @@ const (
 	// CSVFS_ReFS enum
 	StorageSubSystem_SupportedFileSystems_CSVFS_ReFS StorageSubSystem_SupportedFileSystems = 17
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDisk_Usage
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_Usage
+// VirtualDisk_Usage 
 type VirtualDisk_Usage int
-
-const (
+const(
 	// Unknown enum
 	VirtualDisk_Usage_Unknown VirtualDisk_Usage = 0
 	// Other enum
@@ -49,3 +48,4 @@ const (
 	// Reserved_for_Sparing enum
 	VirtualDisk_Usage_Reserved_for_Sparing VirtualDisk_Usage = 17
 )
+

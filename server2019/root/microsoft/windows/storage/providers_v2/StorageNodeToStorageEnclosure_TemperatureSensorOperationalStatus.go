@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus
+// StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus 
 type StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus_Unknown StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus = 0
 	// OK enum
@@ -31,3 +30,4 @@ const (
 	// Not_Reported enum
 	StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus_Not_Reported StorageNodeToStorageEnclosure_TemperatureSensorOperationalStatus = 11
 )
+

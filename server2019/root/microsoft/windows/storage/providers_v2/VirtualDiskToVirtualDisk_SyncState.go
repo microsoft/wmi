@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDiskToVirtualDisk_SyncState
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_SyncState
+// VirtualDiskToVirtualDisk_SyncState 
 type VirtualDiskToVirtualDisk_SyncState int
-
-const (
+const(
 	// Initialized enum
 	VirtualDiskToVirtualDisk_SyncState_Initialized VirtualDiskToVirtualDisk_SyncState = 2
 	// PrepareInProgress enum
@@ -45,3 +44,4 @@ const (
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_SyncState_Vendor_Specific VirtualDiskToVirtualDisk_SyncState = 17
 )
+

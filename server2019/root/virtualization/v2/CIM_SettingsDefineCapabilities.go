@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_SettingsDefineCapabilities struct
-type CIM_SettingsDefineCapabilities struct {
+type CIM_SettingsDefineCapabilities struct { 
 	*CIM_Component
 
 	// PropertyPolicy defines whether or not the non-null, non-key properties of the associated SettingData instance are treated independently or as a correlated set. For instance, an independent set of maximum properties might be defined, when there is no relationship between each property. On the other hand, several correlated sets of maximum properties might need to be defined when the maximum values of each are dependent on some of the others.
@@ -25,7 +24,7 @@ type CIM_SettingsDefineCapabilities struct {
 	// The ValueRange property indicates further semantics on the interpretation of all non-null, non-key properties of the Component SettingData.
 	///"Point" indicates that this SettingData instance provides a single set of values.
 	///"Minimums", "Maximums", and "Increments", are only evaluated against non-null, non-key, non-enumerated, non-boolean, numeric properties of the SettingData instance. Each property of that set shall be mathematically comparable to other instances of that property.
-	///"Minimums" indicates that this SettingData instance provides minimum values for evaluated properties. When used with PropertyPolicy = "Independent", only one such setting per particular SettingData instance shall be specified for any Capabilities. Unless restricted by a Maximums on the same set of properties, all values that compare higher than the specified values are also considered to be supported by the associated capabilities instance.
+	///"Minimums" indicates that this SettingData instance provides minimum values for evaluated properties. When used with PropertyPolicy = "Independent", only one such setting per particular SettingData instance shall be specified for any Capabilities. Unless restricted by a Maximums on the same set of properties, all values that compare higher than the specified values are also considered to be supported by the associated capabilities instance. 
 	///"Maximums" indicates that this SettingData instance provides maximum values for evaluated properties. When used with PropertyPolicy = "Independent", only one such setting per particular SettingData instance shall be specified for any Capabilities. Unless restricted by a Minimums on the same set of properties, all values that compare lower than the specified values are also considered to be supported by the associated capabilities instance.
 	///"Increments" indicates that this SettingData instance provides increment values for evaluated properties. For the associated Capabilities, if an evaluated property currently has no corresponding minimums or maximums, then the property has no affect. Otherwise, for each evaluated property: its value x shall be between the minimum and maximum, inclusively, and shall have the property that both the result of maximum minus x and the result of x minus minimum are each an integer multiple of the increment. If either minimum or maximum is not specified and the other is, then the missing value shall be respectively assumed to be the lowest or highest supported value for the property's data-type. Additionally, if both a minimum and a maximum are specified for an evaluated property, then the result of maximum minus minimum shall be an integer multiple of the increment.
 	ValueRange SettingsDefineCapabilities_ValueRange
@@ -37,112 +36,109 @@ type CIM_SettingsDefineCapabilities struct {
 	ValueRole SettingsDefineCapabilities_ValueRole
 }
 
-func NewCIM_SettingsDefineCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_SettingsDefineCapabilities, err error) {
-	tmp, err := NewCIM_ComponentEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_SettingsDefineCapabilities{
-		CIM_Component: tmp,
+	func NewCIM_SettingsDefineCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_SettingsDefineCapabilities, err error) {tmp, err := NewCIM_ComponentEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_SettingsDefineCapabilities {
+	CIM_Component: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_SettingsDefineCapabilitiesEx6(hostName string,
+	func NewCIM_SettingsDefineCapabilitiesEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_SettingsDefineCapabilities, err error) {
-	tmp, err := NewCIM_ComponentEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_SettingsDefineCapabilities{
-		CIM_Component: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_SettingsDefineCapabilities, err error) {tmp, err := NewCIM_ComponentEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_SettingsDefineCapabilities {
+	CIM_Component: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetPropertyPolicy sets the value of PropertyPolicy for the instance
-func (instance *CIM_SettingsDefineCapabilities) SetPropertyPropertyPolicy(value SettingsDefineCapabilities_PropertyPolicy) (err error) {
-	return instance.SetProperty("PropertyPolicy", (value))
+func (instance *CIM_SettingsDefineCapabilities) SetPropertyPropertyPolicy(value SettingsDefineCapabilities_PropertyPolicy) (err error) { 
+    return instance.SetProperty("PropertyPolicy", (value))
 }
 
 // GetPropertyPolicy gets the value of PropertyPolicy for the instance
-func (instance *CIM_SettingsDefineCapabilities) GetPropertyPropertyPolicy() (value SettingsDefineCapabilities_PropertyPolicy, err error) {
-	retValue, err := instance.GetProperty("PropertyPolicy")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_SettingsDefineCapabilities) GetPropertyPropertyPolicy()(value SettingsDefineCapabilities_PropertyPolicy, err error) { 
+    retValue, err := instance.GetProperty("PropertyPolicy")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = SettingsDefineCapabilities_PropertyPolicy(valuetmp)
 
-	value = SettingsDefineCapabilities_PropertyPolicy(valuetmp)
-
-	return
+    return
 }
 
 // SetValueRange sets the value of ValueRange for the instance
-func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRange(value SettingsDefineCapabilities_ValueRange) (err error) {
-	return instance.SetProperty("ValueRange", (value))
+func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRange(value SettingsDefineCapabilities_ValueRange) (err error) { 
+    return instance.SetProperty("ValueRange", (value))
 }
 
 // GetValueRange gets the value of ValueRange for the instance
-func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRange() (value SettingsDefineCapabilities_ValueRange, err error) {
-	retValue, err := instance.GetProperty("ValueRange")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRange()(value SettingsDefineCapabilities_ValueRange, err error) { 
+    retValue, err := instance.GetProperty("ValueRange")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = SettingsDefineCapabilities_ValueRange(valuetmp)
 
-	value = SettingsDefineCapabilities_ValueRange(valuetmp)
-
-	return
+    return
 }
 
 // SetValueRole sets the value of ValueRole for the instance
-func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRole(value SettingsDefineCapabilities_ValueRole) (err error) {
-	return instance.SetProperty("ValueRole", (value))
+func (instance *CIM_SettingsDefineCapabilities) SetPropertyValueRole(value SettingsDefineCapabilities_ValueRole) (err error) { 
+    return instance.SetProperty("ValueRole", (value))
 }
 
 // GetValueRole gets the value of ValueRole for the instance
-func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRole() (value SettingsDefineCapabilities_ValueRole, err error) {
-	retValue, err := instance.GetProperty("ValueRole")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_SettingsDefineCapabilities) GetPropertyValueRole()(value SettingsDefineCapabilities_ValueRole, err error) { 
+    retValue, err := instance.GetProperty("ValueRole")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = SettingsDefineCapabilities_ValueRole(valuetmp)
 
-	value = SettingsDefineCapabilities_ValueRole(valuetmp)
-
-	return
+    return
 }
+

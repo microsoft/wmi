@@ -1,68 +1,44 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // Msvm_SCSIProtocolController struct
-type Msvm_SCSIProtocolController struct {
+type Msvm_SCSIProtocolController struct { 
 	*CIM_SCSIProtocolController
 }
 
-func NewMsvm_SCSIProtocolControllerEx1(instance *cim.WmiInstance) (newInstance *Msvm_SCSIProtocolController, err error) {
-	tmp, err := NewCIM_SCSIProtocolControllerEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &Msvm_SCSIProtocolController{
-		CIM_SCSIProtocolController: tmp,
+	func NewMsvm_SCSIProtocolControllerEx1(instance *cim.WmiInstance) (newInstance *Msvm_SCSIProtocolController, err error) {tmp, err := NewCIM_SCSIProtocolControllerEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &Msvm_SCSIProtocolController {
+	CIM_SCSIProtocolController: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewMsvm_SCSIProtocolControllerEx6(hostName string,
+	func NewMsvm_SCSIProtocolControllerEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *Msvm_SCSIProtocolController, err error) {
-	tmp, err := NewCIM_SCSIProtocolControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &Msvm_SCSIProtocolController{
-		CIM_SCSIProtocolController: tmp,
+	query *query.WmiQuery ) (newInstance *Msvm_SCSIProtocolController, err error) {tmp, err := NewCIM_SCSIProtocolControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &Msvm_SCSIProtocolController {
+	CIM_SCSIProtocolController: tmp,
 	}
 	return
-}
+	}
+	
 
-func (instance *Msvm_SCSIProtocolController) GetRelatedComputerSystem() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ComputerSystem")
-}
-
-func (instance *Msvm_SCSIProtocolController) GetRelatedResourceAllocationSettingData() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ResourceAllocationSettingData")
-}
-
-func (instance *Msvm_SCSIProtocolController) GetRelatedResourcePool() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_ResourcePool")
-}
-
-func (instance *Msvm_SCSIProtocolController) GetRelatedDiskDrive() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_DiskDrive")
-}
-
-func (instance *Msvm_SCSIProtocolController) GetRelatedDVDDrive() (value *cim.WmiInstance, err error) {
-	return instance.GetRelated("Msvm_DVDDrive")
-}

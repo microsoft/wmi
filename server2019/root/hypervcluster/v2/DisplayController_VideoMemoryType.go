@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DisplayController_VideoMemoryType
 //////////////////////////////////////////////
 package v2
 
-// DisplayController_VideoMemoryType
+// DisplayController_VideoMemoryType 
 type DisplayController_VideoMemoryType int
-
-const (
+const(
 	// Unknown enum
 	DisplayController_VideoMemoryType_Unknown DisplayController_VideoMemoryType = 0
 	// Other enum
@@ -39,3 +38,4 @@ const (
 	// SGRAM enum
 	DisplayController_VideoMemoryType_SGRAM DisplayController_VideoMemoryType = 12
 )
+

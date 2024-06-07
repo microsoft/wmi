@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PrinterConfiguration_ICMIntent
 //////////////////////////////////////////////
 package cimv2
 
-// PrinterConfiguration_ICMIntent
+// PrinterConfiguration_ICMIntent 
 type PrinterConfiguration_ICMIntent int
-
-const (
+const(
 	// Saturation enum
 	PrinterConfiguration_ICMIntent_Saturation PrinterConfiguration_ICMIntent = 1
 	// Contrast enum
@@ -19,3 +18,4 @@ const (
 	// Exact_Color enum
 	PrinterConfiguration_ICMIntent_Exact_Color PrinterConfiguration_ICMIntent = 3
 )
+

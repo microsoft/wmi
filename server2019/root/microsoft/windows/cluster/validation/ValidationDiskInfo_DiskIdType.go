@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ValidationDiskInfo_DiskIdType
 //////////////////////////////////////////////
 package validation
 
-// ValidationDiskInfo_DiskIdType
+// ValidationDiskInfo_DiskIdType 
 type ValidationDiskInfo_DiskIdType int
-
-const (
+const(
 	// _3 enum
 	ValidationDiskInfo_DiskIdType__3 ValidationDiskInfo_DiskIdType = 0
 	// _4 enum
 	ValidationDiskInfo_DiskIdType__4 ValidationDiskInfo_DiskIdType = 1
 )
+

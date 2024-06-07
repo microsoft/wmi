@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDisk_DetachedReason
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_DetachedReason
+// VirtualDisk_DetachedReason 
 type VirtualDisk_DetachedReason int
-
-const (
+const(
 	// Unknown enum
 	VirtualDisk_DetachedReason_Unknown VirtualDisk_DetachedReason = 0
 	// None enum
@@ -25,3 +24,4 @@ const (
 	// Timeout enum
 	VirtualDisk_DetachedReason_Timeout VirtualDisk_DetachedReason = 5
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Indication_PerceivedSeverity
 //////////////////////////////////////////////
 package wdac
 
-// Indication_PerceivedSeverity
+// Indication_PerceivedSeverity 
 type Indication_PerceivedSeverity int
-
-const (
+const(
 	// Unknown enum
 	Indication_PerceivedSeverity_Unknown Indication_PerceivedSeverity = 0
 	// Other enum
@@ -31,3 +30,4 @@ const (
 	// DMTF_Reserved enum
 	Indication_PerceivedSeverity_DMTF_Reserved Indication_PerceivedSeverity = 8
 )
+

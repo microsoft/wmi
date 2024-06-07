@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_Usage
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_Usage
+// StorageSubSystem_Usage 
 type StorageSubSystem_Usage int
-
-const (
+const(
 	// Other enum
 	StorageSubSystem_Usage_Other StorageSubSystem_Usage = 1
 	// Unrestricted enum
@@ -29,3 +28,4 @@ const (
 	// Reserved_for_Sparing enum
 	StorageSubSystem_Usage_Reserved_for_Sparing StorageSubSystem_Usage = 8
 )
+

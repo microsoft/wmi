@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDiskToVirtualDisk_CopyMethodology
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_CopyMethodology
+// VirtualDiskToVirtualDisk_CopyMethodology 
 type VirtualDiskToVirtualDisk_CopyMethodology int
-
-const (
+const(
 	// Not_Specified enum
 	VirtualDiskToVirtualDisk_CopyMethodology_Not_Specified VirtualDiskToVirtualDisk_CopyMethodology = 0
 	// Other enum
@@ -37,3 +36,4 @@ const (
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_CopyMethodology_Vendor_Specific VirtualDiskToVirtualDisk_CopyMethodology = 11
 )
+

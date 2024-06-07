@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PrinterConfiguration_PrintQuality
 //////////////////////////////////////////////
 package cimv2
 
-// PrinterConfiguration_PrintQuality
+// PrinterConfiguration_PrintQuality 
 type PrinterConfiguration_PrintQuality int
-
-const (
+const(
 	// Draft enum
 	PrinterConfiguration_PrintQuality_Draft PrinterConfiguration_PrintQuality = -1
 	// Low enum
@@ -21,3 +20,4 @@ const (
 	// High enum
 	PrinterConfiguration_PrintQuality_High PrinterConfiguration_PrintQuality = -4
 )
+

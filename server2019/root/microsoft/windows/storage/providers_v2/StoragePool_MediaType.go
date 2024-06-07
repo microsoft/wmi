@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StoragePool_MediaType
 //////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_MediaType
+// StoragePool_MediaType 
 type StoragePool_MediaType int
-
-const (
+const(
 	// HDD enum
 	StoragePool_MediaType_HDD StoragePool_MediaType = 3
 	// SSD enum
 	StoragePool_MediaType_SSD StoragePool_MediaType = 4
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNodeToStorageEnclosure_FanOperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToStorageEnclosure_FanOperationalStatus
+// StorageNodeToStorageEnclosure_FanOperationalStatus 
 type StorageNodeToStorageEnclosure_FanOperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageNodeToStorageEnclosure_FanOperationalStatus_Unknown StorageNodeToStorageEnclosure_FanOperationalStatus = 0
 	// OK enum
@@ -31,3 +30,4 @@ const (
 	// Not_Reported enum
 	StorageNodeToStorageEnclosure_FanOperationalStatus_Not_Reported StorageNodeToStorageEnclosure_FanOperationalStatus = 11
 )
+

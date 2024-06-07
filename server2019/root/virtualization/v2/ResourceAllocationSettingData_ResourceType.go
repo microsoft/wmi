@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ResourceAllocationSettingData_ResourceType
 //////////////////////////////////////////////
 package v2
 
-// ResourceAllocationSettingData_ResourceType
+// ResourceAllocationSettingData_ResourceType 
 type ResourceAllocationSettingData_ResourceType int
-
-const (
+const(
 	// Other enum
 	ResourceAllocationSettingData_ResourceType_Other ResourceAllocationSettingData_ResourceType = 1
 	// Computer_System enum
@@ -83,3 +82,4 @@ const (
 	// Vendor_Reserved enum
 	ResourceAllocationSettingData_ResourceType_Vendor_Reserved ResourceAllocationSettingData_ResourceType = 35
 )
+

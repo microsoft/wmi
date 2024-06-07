@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageHealthStatusChangeEvent_PreviousHealthStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageHealthStatusChangeEvent_PreviousHealthStatus
+// StorageHealthStatusChangeEvent_PreviousHealthStatus 
 type StorageHealthStatusChangeEvent_PreviousHealthStatus int
-
-const (
+const(
 	// Healthy enum
 	StorageHealthStatusChangeEvent_PreviousHealthStatus_Healthy StorageHealthStatusChangeEvent_PreviousHealthStatus = 0
 	// Warning enum
@@ -21,3 +20,4 @@ const (
 	// Unknown enum
 	StorageHealthStatusChangeEvent_PreviousHealthStatus_Unknown StorageHealthStatusChangeEvent_PreviousHealthStatus = 5
 )
+

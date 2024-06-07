@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source InitiatorId_HostType
 //////////////////////////////////////////////
 package providers_v2
 
-// InitiatorId_HostType
+// InitiatorId_HostType 
 type InitiatorId_HostType int
-
-const (
+const(
 	// Unknown enum
 	InitiatorId_HostType_Unknown InitiatorId_HostType = 0
 	// Other enum
@@ -61,3 +60,4 @@ const (
 	// Vendor_Specific enum
 	InitiatorId_HostType_Vendor_Specific InitiatorId_HostType = 23
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ObjectProviderRegistration_InteractionType
 //////////////////////////////////////////////
 package protectionmanagement
 
-// ObjectProviderRegistration_InteractionType
+// ObjectProviderRegistration_InteractionType 
 type ObjectProviderRegistration_InteractionType int
-
-const (
+const(
 	// Pull enum
 	ObjectProviderRegistration_InteractionType_Pull ObjectProviderRegistration_InteractionType = 0
 	// Push enum
@@ -19,3 +18,4 @@ const (
 	// PushVerify enum
 	ObjectProviderRegistration_InteractionType_PushVerify ObjectProviderRegistration_InteractionType = 2
 )
+

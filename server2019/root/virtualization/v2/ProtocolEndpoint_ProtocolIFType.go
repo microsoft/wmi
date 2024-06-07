@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ProtocolEndpoint_ProtocolIFType
 //////////////////////////////////////////////
 package v2
 
-// ProtocolEndpoint_ProtocolIFType
+// ProtocolEndpoint_ProtocolIFType 
 type ProtocolEndpoint_ProtocolIFType int
-
-const (
+const(
 	// Unknown enum
 	ProtocolEndpoint_ProtocolIFType_Unknown ProtocolEndpoint_ProtocolIFType = 0
 	// Other enum
@@ -537,3 +536,4 @@ const (
 	// Vendor_Reserved enum
 	ProtocolEndpoint_ProtocolIFType_Vendor_Reserved ProtocolEndpoint_ProtocolIFType = 4408
 )
+

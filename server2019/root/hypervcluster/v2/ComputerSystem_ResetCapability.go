@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ComputerSystem_ResetCapability
 //////////////////////////////////////////////
 package v2
 
-// ComputerSystem_ResetCapability
+// ComputerSystem_ResetCapability 
 type ComputerSystem_ResetCapability int
-
-const (
+const(
 	// Other enum
 	ComputerSystem_ResetCapability_Other ComputerSystem_ResetCapability = 1
 	// Unknown enum
@@ -23,3 +22,4 @@ const (
 	// Not_Implemented enum
 	ComputerSystem_ResetCapability_Not_Implemented ComputerSystem_ResetCapability = 5
 )
+

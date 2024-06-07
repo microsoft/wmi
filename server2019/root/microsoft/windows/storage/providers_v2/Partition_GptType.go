@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Partition_GptType
 //////////////////////////////////////////////
 package providers_v2
 
-// Partition_GptType
+// Partition_GptType 
 type Partition_GptType int
-
-const (
+const(
 	// System_Partition enum
 	Partition_GptType_System_Partition Partition_GptType = 1
 	// Microsoft_Reserved enum
@@ -25,3 +24,4 @@ const (
 	// Microsoft_Recovery enum
 	Partition_GptType_Microsoft_Recovery Partition_GptType = 6
 )
+

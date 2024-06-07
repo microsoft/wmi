@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ResiliencySetting_ParityLayout
 //////////////////////////////////////////////
 package providers_v2
 
-// ResiliencySetting_ParityLayout
+// ResiliencySetting_ParityLayout 
 type ResiliencySetting_ParityLayout int
-
-const (
+const(
 	// Non_rotated_Parity enum
 	ResiliencySetting_ParityLayout_Non_rotated_Parity ResiliencySetting_ParityLayout = 1
 	// Rotated_Parity enum
 	ResiliencySetting_ParityLayout_Rotated_Parity ResiliencySetting_ParityLayout = 2
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source LogicalPort_UsageRestriction
 //////////////////////////////////////////////
 package v2
 
-// LogicalPort_UsageRestriction
+// LogicalPort_UsageRestriction 
 type LogicalPort_UsageRestriction int
-
-const (
+const(
 	// Unknown enum
 	LogicalPort_UsageRestriction_Unknown LogicalPort_UsageRestriction = 0
 	// Front_end_only enum
@@ -21,3 +20,4 @@ const (
 	// Not_restricted enum
 	LogicalPort_UsageRestriction_Not_restricted LogicalPort_UsageRestriction = 4
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source BaseMetricDefinition_GatheringType
 //////////////////////////////////////////////
 package v2
 
-// BaseMetricDefinition_GatheringType
+// BaseMetricDefinition_GatheringType 
 type BaseMetricDefinition_GatheringType int
-
-const (
+const(
 	// Unknown enum
 	BaseMetricDefinition_GatheringType_Unknown BaseMetricDefinition_GatheringType = 0
 	// OnChange enum
@@ -25,3 +24,4 @@ const (
 	// Vendor_Reserved enum
 	BaseMetricDefinition_GatheringType_Vendor_Reserved BaseMetricDefinition_GatheringType = 6
 )
+

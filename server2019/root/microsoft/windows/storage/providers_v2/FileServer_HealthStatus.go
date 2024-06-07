@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FileServer_HealthStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// FileServer_HealthStatus
+// FileServer_HealthStatus 
 type FileServer_HealthStatus int
-
-const (
+const(
 	// Healthy enum
 	FileServer_HealthStatus_Healthy FileServer_HealthStatus = 0
 	// Warning enum
@@ -21,3 +20,4 @@ const (
 	// Unknown enum
 	FileServer_HealthStatus_Unknown FileServer_HealthStatus = 5
 )
+

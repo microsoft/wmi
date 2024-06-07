@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Job_RunDayOfWeek
 //////////////////////////////////////////////
 package v2
 
-// Job_RunDayOfWeek
+// Job_RunDayOfWeek 
 type Job_RunDayOfWeek int
-
-const (
+const(
 	// _Saturday enum
 	Job_RunDayOfWeek__Saturday Job_RunDayOfWeek = -7
 	// _Friday enum
@@ -43,3 +42,4 @@ const (
 	// Saturday enum
 	Job_RunDayOfWeek_Saturday Job_RunDayOfWeek = 7
 )
+

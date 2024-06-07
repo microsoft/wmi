@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StoragePool_ProvisioningType
 //////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_ProvisioningType
+// StoragePool_ProvisioningType 
 type StoragePool_ProvisioningType int
-
-const (
+const(
 	// Thin enum
 	StoragePool_ProvisioningType_Thin StoragePool_ProvisioningType = 1
 	// Fixed enum
 	StoragePool_ProvisioningType_Fixed StoragePool_ProvisioningType = 2
 )
+

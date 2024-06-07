@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FileShareAccessControlEntry_AccessControlType
 //////////////////////////////////////////////
 package providers_v2
 
-// FileShareAccessControlEntry_AccessControlType
+// FileShareAccessControlEntry_AccessControlType 
 type FileShareAccessControlEntry_AccessControlType int
-
-const (
+const(
 	// Allow enum
 	FileShareAccessControlEntry_AccessControlType_Allow FileShareAccessControlEntry_AccessControlType = 0
 	// Deny enum
 	FileShareAccessControlEntry_AccessControlType_Deny FileShareAccessControlEntry_AccessControlType = 1
 )
+

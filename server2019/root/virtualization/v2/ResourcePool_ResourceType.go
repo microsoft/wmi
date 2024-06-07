@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ResourcePool_ResourceType
 //////////////////////////////////////////////
 package v2
 
-// ResourcePool_ResourceType
+// ResourcePool_ResourceType 
 type ResourcePool_ResourceType int
-
-const (
+const(
 	// Other enum
 	ResourcePool_ResourceType_Other ResourcePool_ResourceType = 1
 	// Computer_System enum
@@ -83,3 +82,4 @@ const (
 	// Vendor_Reserved enum
 	ResourcePool_ResourceType_Vendor_Reserved ResourcePool_ResourceType = 35
 )
+

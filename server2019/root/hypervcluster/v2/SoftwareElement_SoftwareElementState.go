@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SoftwareElement_SoftwareElementState
 //////////////////////////////////////////////
 package v2
 
-// SoftwareElement_SoftwareElementState
+// SoftwareElement_SoftwareElementState 
 type SoftwareElement_SoftwareElementState int
-
-const (
+const(
 	// Deployable enum
 	SoftwareElement_SoftwareElementState_Deployable SoftwareElement_SoftwareElementState = 0
 	// Installable enum
@@ -21,3 +20,4 @@ const (
 	// Running enum
 	SoftwareElement_SoftwareElementState_Running SoftwareElement_SoftwareElementState = 3
 )
+

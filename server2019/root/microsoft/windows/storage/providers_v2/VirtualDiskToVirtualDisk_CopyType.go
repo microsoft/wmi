@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDiskToVirtualDisk_CopyType
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_CopyType
+// VirtualDiskToVirtualDisk_CopyType 
 type VirtualDiskToVirtualDisk_CopyType int
-
-const (
+const(
 	// Async enum
 	VirtualDiskToVirtualDisk_CopyType_Async VirtualDiskToVirtualDisk_CopyType = 2
 	// Sync enum
@@ -25,3 +24,4 @@ const (
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_CopyType_Vendor_Specific VirtualDiskToVirtualDisk_CopyType = 7
 )
+

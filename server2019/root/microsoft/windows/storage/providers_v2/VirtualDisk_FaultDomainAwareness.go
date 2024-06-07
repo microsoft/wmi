@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDisk_FaultDomainAwareness
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_FaultDomainAwareness
+// VirtualDisk_FaultDomainAwareness 
 type VirtualDisk_FaultDomainAwareness int
-
-const (
+const(
 	// PhysicalDisk enum
 	VirtualDisk_FaultDomainAwareness_PhysicalDisk VirtualDisk_FaultDomainAwareness = 1
 	// StorageEnclosure enum
@@ -23,3 +22,4 @@ const (
 	// StorageRack enum
 	VirtualDisk_FaultDomainAwareness_StorageRack VirtualDisk_FaultDomainAwareness = 5
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ComputerSystem_Dedicated
 //////////////////////////////////////////////
 package v2
 
-// ComputerSystem_Dedicated
+// ComputerSystem_Dedicated 
 type ComputerSystem_Dedicated int
-
-const (
+const(
 	// Not_Dedicated enum
 	ComputerSystem_Dedicated_Not_Dedicated ComputerSystem_Dedicated = 0
 	// Unknown enum
@@ -95,3 +94,4 @@ const (
 	// Vendor_Reserved enum
 	ComputerSystem_Dedicated_Vendor_Reserved ComputerSystem_Dedicated = 40
 )
+

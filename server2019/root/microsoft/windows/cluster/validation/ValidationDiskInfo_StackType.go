@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ValidationDiskInfo_StackType
 //////////////////////////////////////////////
 package validation
 
-// ValidationDiskInfo_StackType
+// ValidationDiskInfo_StackType 
 type ValidationDiskInfo_StackType int
-
-const (
+const(
 	// _5 enum
 	ValidationDiskInfo_StackType__5 ValidationDiskInfo_StackType = 0
 	// _6 enum
@@ -21,3 +20,4 @@ const (
 	// _8 enum
 	ValidationDiskInfo_StackType__8 ValidationDiskInfo_StackType = 3
 )
+

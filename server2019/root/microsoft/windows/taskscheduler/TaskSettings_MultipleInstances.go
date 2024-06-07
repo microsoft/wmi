@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TaskSettings_MultipleInstances
 //////////////////////////////////////////////
 package taskscheduler
 
-// TaskSettings_MultipleInstances
+// TaskSettings_MultipleInstances 
 type TaskSettings_MultipleInstances int
-
-const (
+const(
 	// _13 enum
 	TaskSettings_MultipleInstances__13 TaskSettings_MultipleInstances = 0
 	// _14 enum
@@ -21,3 +20,4 @@ const (
 	// _16 enum
 	TaskSettings_MultipleInstances__16 TaskSettings_MultipleInstances = 3
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SerialController_Capabilities
 //////////////////////////////////////////////
 package v2
 
-// SerialController_Capabilities
+// SerialController_Capabilities 
 type SerialController_Capabilities int
-
-const (
+const(
 	// Other enum
 	SerialController_Capabilities_Other SerialController_Capabilities = 1
 	// Unknown enum
@@ -29,3 +28,4 @@ const (
 	// _8251FIFO_Compatible enum
 	SerialController_Capabilities__8251FIFO_Compatible SerialController_Capabilities = 161
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Win32Provider_InitializationReentrancy
 //////////////////////////////////////////////
 package dmmap
 
-// Win32Provider_InitializationReentrancy
+// Win32Provider_InitializationReentrancy 
 type Win32Provider_InitializationReentrancy int
-
-const (
+const(
 	// CLSID enum
 	Win32Provider_InitializationReentrancy_CLSID Win32Provider_InitializationReentrancy = 0
 	// Namespace enum
@@ -19,3 +18,4 @@ const (
 	// COM_Object enum
 	Win32Provider_InitializationReentrancy_COM_Object Win32Provider_InitializationReentrancy = 2
 )
+

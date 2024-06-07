@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNode_NameFormat
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNode_NameFormat
+// StorageNode_NameFormat 
 type StorageNode_NameFormat int
-
-const (
+const(
 	// Other enum
 	StorageNode_NameFormat_Other StorageNode_NameFormat = 1
 	// IP enum
@@ -45,3 +44,4 @@ const (
 	// NAA enum
 	StorageNode_NameFormat_NAA StorageNode_NameFormat = 16
 )
+

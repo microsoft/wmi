@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbShare_AvailabilityType
 //////////////////////////////////////////////
 package smb
 
-// SmbShare_AvailabilityType
+// SmbShare_AvailabilityType 
 type SmbShare_AvailabilityType int
-
-const (
+const(
 	// _26 enum
 	SmbShare_AvailabilityType__26 SmbShare_AvailabilityType = 0
 	// _27 enum
@@ -23,3 +22,4 @@ const (
 	// _29 enum
 	SmbShare_AvailabilityType__29 SmbShare_AvailabilityType = 4
 )
+

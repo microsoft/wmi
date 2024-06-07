@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy
 //////////////////////////////////////////////
 package v2
 
-// GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy
+// GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy 
 type GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy int
-
-const (
+const(
 	// Enabled enum
 	GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy_Enabled GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy = 2
 	// Disabled enum
 	GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy_Disabled GuestServiceInterfaceComponentSettingData_DefaultEnabledStatePolicy = 3
 )
+

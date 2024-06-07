@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FCPort_ActiveFC4Types
 //////////////////////////////////////////////
 package v2
 
-// FCPort_ActiveFC4Types
+// FCPort_ActiveFC4Types 
 type FCPort_ActiveFC4Types int
-
-const (
+const(
 	// Unknown enum
 	FCPort_ActiveFC4Types_Unknown FCPort_ActiveFC4Types = 0
 	// Other enum
@@ -65,3 +64,4 @@ const (
 	// Vendor_Unique enum
 	FCPort_ActiveFC4Types_Vendor_Unique FCPort_ActiveFC4Types = 255
 )
+

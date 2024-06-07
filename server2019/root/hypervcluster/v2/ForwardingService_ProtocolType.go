@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ForwardingService_ProtocolType
 //////////////////////////////////////////////
 package v2
 
-// ForwardingService_ProtocolType
+// ForwardingService_ProtocolType 
 type ForwardingService_ProtocolType int
-
-const (
+const(
 	// Unknown enum
 	ForwardingService_ProtocolType_Unknown ForwardingService_ProtocolType = 0
 	// Other enum
@@ -53,3 +52,4 @@ const (
 	// Fibre_Channel enum
 	ForwardingService_ProtocolType_Fibre_Channel ForwardingService_ProtocolType = 19
 )
+

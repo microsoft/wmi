@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageFaultDomain_OperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageFaultDomain_OperationalStatus
+// StorageFaultDomain_OperationalStatus 
 type StorageFaultDomain_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageFaultDomain_OperationalStatus_Unknown StorageFaultDomain_OperationalStatus = 0
 	// Other enum
@@ -73,3 +72,4 @@ const (
 	// Microsoft_Reserved1 enum
 	StorageFaultDomain_OperationalStatus_Microsoft_Reserved1 StorageFaultDomain_OperationalStatus = 29
 )
+

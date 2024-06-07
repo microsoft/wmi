@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source GuestNetworkAdapterConfiguration_IPAddressOrigins
 //////////////////////////////////////////////
 package v2
 
-// GuestNetworkAdapterConfiguration_IPAddressOrigins
+// GuestNetworkAdapterConfiguration_IPAddressOrigins 
 type GuestNetworkAdapterConfiguration_IPAddressOrigins int
-
-const (
+const(
 	// Unknown enum
 	GuestNetworkAdapterConfiguration_IPAddressOrigins_Unknown GuestNetworkAdapterConfiguration_IPAddressOrigins = 0
 	// Other enum
@@ -19,3 +18,4 @@ const (
 	// Static enum
 	GuestNetworkAdapterConfiguration_IPAddressOrigins_Static GuestNetworkAdapterConfiguration_IPAddressOrigins = 2
 )
+

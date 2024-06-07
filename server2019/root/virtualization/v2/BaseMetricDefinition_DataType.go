@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source BaseMetricDefinition_DataType
 //////////////////////////////////////////////
 package v2
 
-// BaseMetricDefinition_DataType
+// BaseMetricDefinition_DataType 
 type BaseMetricDefinition_DataType int
-
-const (
+const(
 	// boolean enum
 	BaseMetricDefinition_DataType_boolean BaseMetricDefinition_DataType = 1
 	// char16 enum
@@ -41,3 +40,4 @@ const (
 	// uint8 enum
 	BaseMetricDefinition_DataType_uint8 BaseMetricDefinition_DataType = 14
 )
+

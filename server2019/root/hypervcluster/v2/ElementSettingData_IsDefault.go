@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ElementSettingData_IsDefault
 //////////////////////////////////////////////
 package v2
 
-// ElementSettingData_IsDefault
+// ElementSettingData_IsDefault 
 type ElementSettingData_IsDefault int
-
-const (
+const(
 	// Unknown enum
 	ElementSettingData_IsDefault_Unknown ElementSettingData_IsDefault = 0
 	// Is_Default enum
@@ -19,3 +18,4 @@ const (
 	// Is_Not_Default enum
 	ElementSettingData_IsDefault_Is_Not_Default ElementSettingData_IsDefault = 2
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_iSCSITargetCreationScheme
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_iSCSITargetCreationScheme
+// StorageSubSystem_iSCSITargetCreationScheme 
 type StorageSubSystem_iSCSITargetCreationScheme int
-
-const (
+const(
 	// Not_Applicable enum
 	StorageSubSystem_iSCSITargetCreationScheme_Not_Applicable StorageSubSystem_iSCSITargetCreationScheme = 0
 	// Not_Supported enum
@@ -21,3 +20,4 @@ const (
 	// Auto enum
 	StorageSubSystem_iSCSITargetCreationScheme_Auto StorageSubSystem_iSCSITargetCreationScheme = 3
 )
+

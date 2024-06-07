@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TaskSettings_Compatibility
 //////////////////////////////////////////////
 package taskscheduler
 
-// TaskSettings_Compatibility
+// TaskSettings_Compatibility 
 type TaskSettings_Compatibility int
-
-const (
+const(
 	// _8 enum
 	TaskSettings_Compatibility__8 TaskSettings_Compatibility = 0
 	// _9 enum
@@ -23,3 +22,4 @@ const (
 	// _12 enum
 	TaskSettings_Compatibility__12 TaskSettings_Compatibility = 4
 )
+

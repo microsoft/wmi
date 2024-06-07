@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TCPIPPrinterPort_Protocol
 //////////////////////////////////////////////
 package cimv2
 
-// TCPIPPrinterPort_Protocol
+// TCPIPPrinterPort_Protocol 
 type TCPIPPrinterPort_Protocol int
-
-const (
+const(
 	// Raw enum
 	TCPIPPrinterPort_Protocol_Raw TCPIPPrinterPort_Protocol = 0
 	// Lpr enum
 	TCPIPPrinterPort_Protocol_Lpr TCPIPPrinterPort_Protocol = 1
 )
+

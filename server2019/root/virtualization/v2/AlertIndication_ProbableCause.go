@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source AlertIndication_ProbableCause
 //////////////////////////////////////////////
 package v2
 
-// AlertIndication_ProbableCause
+// AlertIndication_ProbableCause 
 type AlertIndication_ProbableCause int
-
-const (
+const(
 	// Unknown enum
 	AlertIndication_ProbableCause_Unknown AlertIndication_ProbableCause = 0
 	// Other enum
@@ -275,3 +274,4 @@ const (
 	// Unexpected_Information enum
 	AlertIndication_ProbableCause_Unexpected_Information AlertIndication_ProbableCause = 130
 )
+

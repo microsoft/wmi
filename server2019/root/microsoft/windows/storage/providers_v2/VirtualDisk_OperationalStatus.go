@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDisk_OperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_OperationalStatus
+// VirtualDisk_OperationalStatus 
 type VirtualDisk_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	VirtualDisk_OperationalStatus_Unknown VirtualDisk_OperationalStatus = 0
 	// Other enum
@@ -59,3 +58,4 @@ const (
 	// Incomplete enum
 	VirtualDisk_OperationalStatus_Incomplete VirtualDisk_OperationalStatus = 22
 )
+

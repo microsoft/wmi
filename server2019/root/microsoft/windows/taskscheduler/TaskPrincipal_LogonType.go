@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TaskPrincipal_LogonType
 //////////////////////////////////////////////
 package taskscheduler
 
-// TaskPrincipal_LogonType
+// TaskPrincipal_LogonType 
 type TaskPrincipal_LogonType int
-
-const (
+const(
 	// _1 enum
 	TaskPrincipal_LogonType__1 TaskPrincipal_LogonType = 0
 	// _2 enum
@@ -27,3 +26,4 @@ const (
 	// _7 enum
 	TaskPrincipal_LogonType__7 TaskPrincipal_LogonType = 6
 )
+

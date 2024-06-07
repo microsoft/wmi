@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageExtent_NameFormat
 //////////////////////////////////////////////
 package v2
 
-// StorageExtent_NameFormat
+// StorageExtent_NameFormat 
 type StorageExtent_NameFormat int
-
-const (
+const(
 	// Unknown enum
 	StorageExtent_NameFormat_Unknown StorageExtent_NameFormat = 0
 	// Other enum
@@ -39,3 +38,4 @@ const (
 	// OS_Device_Name enum
 	StorageExtent_NameFormat_OS_Device_Name StorageExtent_NameFormat = 12
 )
+

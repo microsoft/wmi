@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDiskToVirtualDisk_ProgressStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_ProgressStatus
+// VirtualDiskToVirtualDisk_ProgressStatus 
 type VirtualDiskToVirtualDisk_ProgressStatus int
-
-const (
+const(
 	// Unknown enum
 	VirtualDiskToVirtualDisk_ProgressStatus_Unknown VirtualDiskToVirtualDisk_ProgressStatus = 0
 	// Completed enum
@@ -59,3 +58,4 @@ const (
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_ProgressStatus_Vendor_Specific VirtualDiskToVirtualDisk_ProgressStatus = 23
 )
+

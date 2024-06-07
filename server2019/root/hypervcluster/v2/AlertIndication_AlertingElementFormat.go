@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source AlertIndication_AlertingElementFormat
 //////////////////////////////////////////////
 package v2
 
-// AlertIndication_AlertingElementFormat
+// AlertIndication_AlertingElementFormat 
 type AlertIndication_AlertingElementFormat int
-
-const (
+const(
 	// Unknown enum
 	AlertIndication_AlertingElementFormat_Unknown AlertIndication_AlertingElementFormat = 0
 	// Other enum
@@ -19,3 +18,4 @@ const (
 	// CIMObjectPath enum
 	AlertIndication_AlertingElementFormat_CIMObjectPath AlertIndication_AlertingElementFormat = 2
 )
+

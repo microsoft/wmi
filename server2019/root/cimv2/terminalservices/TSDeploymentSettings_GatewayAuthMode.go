@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TSDeploymentSettings_GatewayAuthMode
 //////////////////////////////////////////////
 package terminalservices
 
-// TSDeploymentSettings_GatewayAuthMode
+// TSDeploymentSettings_GatewayAuthMode 
 type TSDeploymentSettings_GatewayAuthMode int
-
-const (
+const(
 	// Password_0_ enum
 	TSDeploymentSettings_GatewayAuthMode_Password_0_ TSDeploymentSettings_GatewayAuthMode = 0
 	// Smartcard_1_ enum
@@ -19,3 +18,4 @@ const (
 	// Allow_User_to_Choose_4_ enum
 	TSDeploymentSettings_GatewayAuthMode_Allow_User_to_Choose_4_ TSDeploymentSettings_GatewayAuthMode = 2
 )
+

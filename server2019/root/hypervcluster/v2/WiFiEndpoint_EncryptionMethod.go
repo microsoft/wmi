@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source WiFiEndpoint_EncryptionMethod
 //////////////////////////////////////////////
 package v2
 
-// WiFiEndpoint_EncryptionMethod
+// WiFiEndpoint_EncryptionMethod 
 type WiFiEndpoint_EncryptionMethod int
-
-const (
+const(
 	// Unknown enum
 	WiFiEndpoint_EncryptionMethod_Unknown WiFiEndpoint_EncryptionMethod = 0
 	// Other enum
@@ -27,3 +26,4 @@ const (
 	// DMTF_Reserved enum
 	WiFiEndpoint_EncryptionMethod_DMTF_Reserved WiFiEndpoint_EncryptionMethod = 6
 )
+

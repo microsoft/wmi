@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemSettingData_VirtualSystemSubType
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_VirtualSystemSubType
+// VirtualSystemSettingData_VirtualSystemSubType 
 type VirtualSystemSettingData_VirtualSystemSubType int
-
-const (
+const(
 	// Microsoft_Hyper_V_SubType_1 enum
 	VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_1 VirtualSystemSettingData_VirtualSystemSubType = 0
 	// Microsoft_Hyper_V_SubType_2 enum
 	VirtualSystemSettingData_VirtualSystemSubType_Microsoft_Hyper_V_SubType_2 VirtualSystemSettingData_VirtualSystemSubType = 1
 )
+

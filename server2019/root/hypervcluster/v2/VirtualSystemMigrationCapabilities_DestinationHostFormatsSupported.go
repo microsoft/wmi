@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported
+// VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported 
 type VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported int
-
-const (
+const(
 	// DomainNameFormatSupported enum
 	VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported_DomainNameFormatSupported VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported = 2
 	// IPv4DottedDecimalFormatSupported enum
@@ -21,3 +20,4 @@ const (
 	// DMTF_Reserved enum
 	VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported_DMTF_Reserved VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported = 5
 )
+

@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.CIMV2.TerminalServices
 //////////////////////////////////////////////
 package terminalservices
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // Win32_TSRemoteDesktop struct
-type Win32_TSRemoteDesktop struct {
+type Win32_TSRemoteDesktop struct { 
 	*CIM_LogicalElement
 
 	// Alias of the Desktop
@@ -47,275 +46,272 @@ type Win32_TSRemoteDesktop struct {
 	VmFarmSettings string
 }
 
-func NewWin32_TSRemoteDesktopEx1(instance *cim.WmiInstance) (newInstance *Win32_TSRemoteDesktop, err error) {
-	tmp, err := NewCIM_LogicalElementEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &Win32_TSRemoteDesktop{
-		CIM_LogicalElement: tmp,
+	func NewWin32_TSRemoteDesktopEx1(instance *cim.WmiInstance) (newInstance *Win32_TSRemoteDesktop, err error) {tmp, err := NewCIM_LogicalElementEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &Win32_TSRemoteDesktop {
+	CIM_LogicalElement: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewWin32_TSRemoteDesktopEx6(hostName string,
+	func NewWin32_TSRemoteDesktopEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *Win32_TSRemoteDesktop, err error) {
-	tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &Win32_TSRemoteDesktop{
-		CIM_LogicalElement: tmp,
+	query *query.WmiQuery ) (newInstance *Win32_TSRemoteDesktop, err error) {tmp, err := NewCIM_LogicalElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &Win32_TSRemoteDesktop {
+	CIM_LogicalElement: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetAlias sets the value of Alias for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyAlias(value string) (err error) {
-	return instance.SetProperty("Alias", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyAlias(value string) (err error) { 
+    return instance.SetProperty("Alias", (value))
 }
 
 // GetAlias gets the value of Alias for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyAlias() (value string, err error) {
-	retValue, err := instance.GetProperty("Alias")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyAlias()(value string, err error) { 
+    retValue, err := instance.GetProperty("Alias")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetIconContents sets the value of IconContents for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyIconContents(value []uint8) (err error) {
-	return instance.SetProperty("IconContents", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyIconContents(value []uint8) (err error) { 
+    return instance.SetProperty("IconContents", (value))
 }
 
 // GetIconContents gets the value of IconContents for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyIconContents() (value []uint8, err error) {
-	retValue, err := instance.GetProperty("IconContents")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyIconContents()(value []uint8, err error) { 
+    retValue, err := instance.GetProperty("IconContents")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(uint8); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, uint8(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint8)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint8(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetIconIndex sets the value of IconIndex for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyIconIndex(value int32) (err error) {
-	return instance.SetProperty("IconIndex", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyIconIndex(value int32) (err error) { 
+    return instance.SetProperty("IconIndex", (value))
 }
 
 // GetIconIndex gets the value of IconIndex for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyIconIndex() (value int32, err error) {
-	retValue, err := instance.GetProperty("IconIndex")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyIconIndex()(value int32, err error) { 
+    retValue, err := instance.GetProperty("IconIndex")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = int32(valuetmp)
 
-	value = int32(valuetmp)
-
-	return
+    return
 }
 
 // SetIconPath sets the value of IconPath for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyIconPath(value string) (err error) {
-	return instance.SetProperty("IconPath", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyIconPath(value string) (err error) { 
+    return instance.SetProperty("IconPath", (value))
 }
 
 // GetIconPath gets the value of IconPath for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyIconPath() (value string, err error) {
-	retValue, err := instance.GetProperty("IconPath")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyIconPath()(value string, err error) { 
+    retValue, err := instance.GetProperty("IconPath")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetIsVmFarm sets the value of IsVmFarm for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyIsVmFarm(value bool) (err error) {
-	return instance.SetProperty("IsVmFarm", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyIsVmFarm(value bool) (err error) { 
+    return instance.SetProperty("IsVmFarm", (value))
 }
 
 // GetIsVmFarm gets the value of IsVmFarm for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyIsVmFarm() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsVmFarm")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyIsVmFarm()(value bool, err error) { 
+    retValue, err := instance.GetProperty("IsVmFarm")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
 
 // SetRDPFileContents sets the value of RDPFileContents for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyRDPFileContents(value string) (err error) {
-	return instance.SetProperty("RDPFileContents", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyRDPFileContents(value string) (err error) { 
+    return instance.SetProperty("RDPFileContents", (value))
 }
 
 // GetRDPFileContents gets the value of RDPFileContents for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyRDPFileContents() (value string, err error) {
-	retValue, err := instance.GetProperty("RDPFileContents")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyRDPFileContents()(value string, err error) { 
+    retValue, err := instance.GetProperty("RDPFileContents")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetSecurityDescriptor sets the value of SecurityDescriptor for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertySecurityDescriptor(value string) (err error) {
-	return instance.SetProperty("SecurityDescriptor", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertySecurityDescriptor(value string) (err error) { 
+    return instance.SetProperty("SecurityDescriptor", (value))
 }
 
 // GetSecurityDescriptor gets the value of SecurityDescriptor for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertySecurityDescriptor() (value string, err error) {
-	retValue, err := instance.GetProperty("SecurityDescriptor")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertySecurityDescriptor()(value string, err error) { 
+    retValue, err := instance.GetProperty("SecurityDescriptor")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetShowInPortal sets the value of ShowInPortal for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyShowInPortal(value bool) (err error) {
-	return instance.SetProperty("ShowInPortal", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyShowInPortal(value bool) (err error) { 
+    return instance.SetProperty("ShowInPortal", (value))
 }
 
 // GetShowInPortal gets the value of ShowInPortal for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyShowInPortal() (value bool, err error) {
-	retValue, err := instance.GetProperty("ShowInPortal")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyShowInPortal()(value bool, err error) { 
+    retValue, err := instance.GetProperty("ShowInPortal")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
 
 // SetVmFarmSettings sets the value of VmFarmSettings for the instance
-func (instance *Win32_TSRemoteDesktop) SetPropertyVmFarmSettings(value string) (err error) {
-	return instance.SetProperty("VmFarmSettings", (value))
+func (instance *Win32_TSRemoteDesktop) SetPropertyVmFarmSettings(value string) (err error) { 
+    return instance.SetProperty("VmFarmSettings", (value))
 }
 
 // GetVmFarmSettings gets the value of VmFarmSettings for the instance
-func (instance *Win32_TSRemoteDesktop) GetPropertyVmFarmSettings() (value string, err error) {
-	retValue, err := instance.GetProperty("VmFarmSettings")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *Win32_TSRemoteDesktop) GetPropertyVmFarmSettings()(value string, err error) { 
+    retValue, err := instance.GetProperty("VmFarmSettings")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
+

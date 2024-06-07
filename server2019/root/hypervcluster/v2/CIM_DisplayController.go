@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_DisplayController struct
-type CIM_DisplayController struct {
+type CIM_DisplayController struct { 
 	*CIM_Controller
 
 	// An array of integers indicating the graphics and 3D capabilities of the DisplayController.
@@ -47,276 +46,273 @@ type CIM_DisplayController struct {
 	VideoProcessor string
 }
 
-func NewCIM_DisplayControllerEx1(instance *cim.WmiInstance) (newInstance *CIM_DisplayController, err error) {
-	tmp, err := NewCIM_ControllerEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_DisplayController{
-		CIM_Controller: tmp,
+	func NewCIM_DisplayControllerEx1(instance *cim.WmiInstance) (newInstance *CIM_DisplayController, err error) {tmp, err := NewCIM_ControllerEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_DisplayController {
+	CIM_Controller: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_DisplayControllerEx6(hostName string,
+	func NewCIM_DisplayControllerEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_DisplayController, err error) {
-	tmp, err := NewCIM_ControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_DisplayController{
-		CIM_Controller: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_DisplayController, err error) {tmp, err := NewCIM_ControllerEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_DisplayController {
+	CIM_Controller: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetAcceleratorCapabilities sets the value of AcceleratorCapabilities for the instance
-func (instance *CIM_DisplayController) SetPropertyAcceleratorCapabilities(value []DisplayController_AcceleratorCapabilities) (err error) {
-	return instance.SetProperty("AcceleratorCapabilities", (value))
+func (instance *CIM_DisplayController) SetPropertyAcceleratorCapabilities(value []DisplayController_AcceleratorCapabilities) (err error) { 
+    return instance.SetProperty("AcceleratorCapabilities", (value))
 }
 
 // GetAcceleratorCapabilities gets the value of AcceleratorCapabilities for the instance
-func (instance *CIM_DisplayController) GetPropertyAcceleratorCapabilities() (value []DisplayController_AcceleratorCapabilities, err error) {
-	retValue, err := instance.GetProperty("AcceleratorCapabilities")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyAcceleratorCapabilities()(value []DisplayController_AcceleratorCapabilities, err error) { 
+    retValue, err := instance.GetProperty("AcceleratorCapabilities")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(int32); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, DisplayController_AcceleratorCapabilities(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(int32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, DisplayController_AcceleratorCapabilities(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetCapabilityDescriptions sets the value of CapabilityDescriptions for the instance
-func (instance *CIM_DisplayController) SetPropertyCapabilityDescriptions(value []string) (err error) {
-	return instance.SetProperty("CapabilityDescriptions", (value))
+func (instance *CIM_DisplayController) SetPropertyCapabilityDescriptions(value []string) (err error) { 
+    return instance.SetProperty("CapabilityDescriptions", (value))
 }
 
 // GetCapabilityDescriptions gets the value of CapabilityDescriptions for the instance
-func (instance *CIM_DisplayController) GetPropertyCapabilityDescriptions() (value []string, err error) {
-	retValue, err := instance.GetProperty("CapabilityDescriptions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyCapabilityDescriptions()(value []string, err error) { 
+    retValue, err := instance.GetProperty("CapabilityDescriptions")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetMaxMemorySupported sets the value of MaxMemorySupported for the instance
-func (instance *CIM_DisplayController) SetPropertyMaxMemorySupported(value uint32) (err error) {
-	return instance.SetProperty("MaxMemorySupported", (value))
+func (instance *CIM_DisplayController) SetPropertyMaxMemorySupported(value uint32) (err error) { 
+    return instance.SetProperty("MaxMemorySupported", (value))
 }
 
 // GetMaxMemorySupported gets the value of MaxMemorySupported for the instance
-func (instance *CIM_DisplayController) GetPropertyMaxMemorySupported() (value uint32, err error) {
-	retValue, err := instance.GetProperty("MaxMemorySupported")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyMaxMemorySupported()(value uint32, err error) { 
+    retValue, err := instance.GetProperty("MaxMemorySupported")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint32(valuetmp)
 
-	value = uint32(valuetmp)
-
-	return
+    return
 }
 
 // SetNumberOfVideoPages sets the value of NumberOfVideoPages for the instance
-func (instance *CIM_DisplayController) SetPropertyNumberOfVideoPages(value uint32) (err error) {
-	return instance.SetProperty("NumberOfVideoPages", (value))
+func (instance *CIM_DisplayController) SetPropertyNumberOfVideoPages(value uint32) (err error) { 
+    return instance.SetProperty("NumberOfVideoPages", (value))
 }
 
 // GetNumberOfVideoPages gets the value of NumberOfVideoPages for the instance
-func (instance *CIM_DisplayController) GetPropertyNumberOfVideoPages() (value uint32, err error) {
-	retValue, err := instance.GetProperty("NumberOfVideoPages")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyNumberOfVideoPages()(value uint32, err error) { 
+    retValue, err := instance.GetProperty("NumberOfVideoPages")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint32(valuetmp)
 
-	value = uint32(valuetmp)
-
-	return
+    return
 }
 
 // SetOtherVideoArchitecture sets the value of OtherVideoArchitecture for the instance
-func (instance *CIM_DisplayController) SetPropertyOtherVideoArchitecture(value string) (err error) {
-	return instance.SetProperty("OtherVideoArchitecture", (value))
+func (instance *CIM_DisplayController) SetPropertyOtherVideoArchitecture(value string) (err error) { 
+    return instance.SetProperty("OtherVideoArchitecture", (value))
 }
 
 // GetOtherVideoArchitecture gets the value of OtherVideoArchitecture for the instance
-func (instance *CIM_DisplayController) GetPropertyOtherVideoArchitecture() (value string, err error) {
-	retValue, err := instance.GetProperty("OtherVideoArchitecture")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyOtherVideoArchitecture()(value string, err error) { 
+    retValue, err := instance.GetProperty("OtherVideoArchitecture")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetOtherVideoMemoryType sets the value of OtherVideoMemoryType for the instance
-func (instance *CIM_DisplayController) SetPropertyOtherVideoMemoryType(value string) (err error) {
-	return instance.SetProperty("OtherVideoMemoryType", (value))
+func (instance *CIM_DisplayController) SetPropertyOtherVideoMemoryType(value string) (err error) { 
+    return instance.SetProperty("OtherVideoMemoryType", (value))
 }
 
 // GetOtherVideoMemoryType gets the value of OtherVideoMemoryType for the instance
-func (instance *CIM_DisplayController) GetPropertyOtherVideoMemoryType() (value string, err error) {
-	retValue, err := instance.GetProperty("OtherVideoMemoryType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyOtherVideoMemoryType()(value string, err error) { 
+    retValue, err := instance.GetProperty("OtherVideoMemoryType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetVideoArchitecture sets the value of VideoArchitecture for the instance
-func (instance *CIM_DisplayController) SetPropertyVideoArchitecture(value DisplayController_VideoArchitecture) (err error) {
-	return instance.SetProperty("VideoArchitecture", (value))
+func (instance *CIM_DisplayController) SetPropertyVideoArchitecture(value DisplayController_VideoArchitecture) (err error) { 
+    return instance.SetProperty("VideoArchitecture", (value))
 }
 
 // GetVideoArchitecture gets the value of VideoArchitecture for the instance
-func (instance *CIM_DisplayController) GetPropertyVideoArchitecture() (value DisplayController_VideoArchitecture, err error) {
-	retValue, err := instance.GetProperty("VideoArchitecture")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyVideoArchitecture()(value DisplayController_VideoArchitecture, err error) { 
+    retValue, err := instance.GetProperty("VideoArchitecture")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = DisplayController_VideoArchitecture(valuetmp)
 
-	value = DisplayController_VideoArchitecture(valuetmp)
-
-	return
+    return
 }
 
 // SetVideoMemoryType sets the value of VideoMemoryType for the instance
-func (instance *CIM_DisplayController) SetPropertyVideoMemoryType(value DisplayController_VideoMemoryType) (err error) {
-	return instance.SetProperty("VideoMemoryType", (value))
+func (instance *CIM_DisplayController) SetPropertyVideoMemoryType(value DisplayController_VideoMemoryType) (err error) { 
+    return instance.SetProperty("VideoMemoryType", (value))
 }
 
 // GetVideoMemoryType gets the value of VideoMemoryType for the instance
-func (instance *CIM_DisplayController) GetPropertyVideoMemoryType() (value DisplayController_VideoMemoryType, err error) {
-	retValue, err := instance.GetProperty("VideoMemoryType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyVideoMemoryType()(value DisplayController_VideoMemoryType, err error) { 
+    retValue, err := instance.GetProperty("VideoMemoryType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = DisplayController_VideoMemoryType(valuetmp)
 
-	value = DisplayController_VideoMemoryType(valuetmp)
-
-	return
+    return
 }
 
 // SetVideoProcessor sets the value of VideoProcessor for the instance
-func (instance *CIM_DisplayController) SetPropertyVideoProcessor(value string) (err error) {
-	return instance.SetProperty("VideoProcessor", (value))
+func (instance *CIM_DisplayController) SetPropertyVideoProcessor(value string) (err error) { 
+    return instance.SetProperty("VideoProcessor", (value))
 }
 
 // GetVideoProcessor gets the value of VideoProcessor for the instance
-func (instance *CIM_DisplayController) GetPropertyVideoProcessor() (value string, err error) {
-	retValue, err := instance.GetProperty("VideoProcessor")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_DisplayController) GetPropertyVideoProcessor()(value string, err error) { 
+    retValue, err := instance.GetProperty("VideoProcessor")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
+

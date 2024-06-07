@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PrinterConfiguration_MediaType
 //////////////////////////////////////////////
 package cimv2
 
-// PrinterConfiguration_MediaType
+// PrinterConfiguration_MediaType 
 type PrinterConfiguration_MediaType int
-
-const (
+const(
 	// Standard enum
 	PrinterConfiguration_MediaType_Standard PrinterConfiguration_MediaType = 1
 	// Transparency enum
@@ -19,3 +18,4 @@ const (
 	// Glossy enum
 	PrinterConfiguration_MediaType_Glossy PrinterConfiguration_MediaType = 3
 )
+

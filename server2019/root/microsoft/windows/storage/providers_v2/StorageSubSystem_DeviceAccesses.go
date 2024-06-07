@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_DeviceAccesses
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_DeviceAccesses
+// StorageSubSystem_DeviceAccesses 
 type StorageSubSystem_DeviceAccesses int
-
-const (
+const(
 	// Unknown enum
 	StorageSubSystem_DeviceAccesses_Unknown StorageSubSystem_DeviceAccesses = 0
 	// Read_Write enum
@@ -21,3 +20,4 @@ const (
 	// No_Access enum
 	StorageSubSystem_DeviceAccesses_No_Access StorageSubSystem_DeviceAccesses = 4
 )
+

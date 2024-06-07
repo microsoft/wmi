@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FailoverNetworkAdapterSettingData_ProtocolIFType
 //////////////////////////////////////////////
 package v2
 
-// FailoverNetworkAdapterSettingData_ProtocolIFType
+// FailoverNetworkAdapterSettingData_ProtocolIFType 
 type FailoverNetworkAdapterSettingData_ProtocolIFType int
-
-const (
+const(
 	// Unknown enum
 	FailoverNetworkAdapterSettingData_ProtocolIFType_Unknown FailoverNetworkAdapterSettingData_ProtocolIFType = 0
 	// Other enum
@@ -23,3 +22,4 @@ const (
 	// IPv4_v6 enum
 	FailoverNetworkAdapterSettingData_ProtocolIFType_IPv4_v6 FailoverNetworkAdapterSettingData_ProtocolIFType = 4098
 )
+

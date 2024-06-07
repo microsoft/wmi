@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DNSClientCache_Section
 //////////////////////////////////////////////
 package standardcimv2
 
-// DNSClientCache_Section
+// DNSClientCache_Section 
 type DNSClientCache_Section int
-
-const (
+const(
 	// _677 enum
 	DNSClientCache_Section__677 DNSClientCache_Section = 1
 	// _678 enum
@@ -19,3 +18,4 @@ const (
 	// _679 enum
 	DNSClientCache_Section__679 DNSClientCache_Section = 3
 )
+

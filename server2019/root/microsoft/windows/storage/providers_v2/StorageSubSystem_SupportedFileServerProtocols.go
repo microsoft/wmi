@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_SupportedFileServerProtocols
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_SupportedFileServerProtocols
+// StorageSubSystem_SupportedFileServerProtocols 
 type StorageSubSystem_SupportedFileServerProtocols int
-
-const (
+const(
 	// NFS enum
 	StorageSubSystem_SupportedFileServerProtocols_NFS StorageSubSystem_SupportedFileServerProtocols = 2
 	// CIFS_SMB_ enum
 	StorageSubSystem_SupportedFileServerProtocols_CIFS_SMB_ StorageSubSystem_SupportedFileServerProtocols = 3
 )
+

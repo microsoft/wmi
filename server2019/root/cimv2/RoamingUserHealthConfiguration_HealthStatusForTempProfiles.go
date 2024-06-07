@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source RoamingUserHealthConfiguration_HealthStatusForTempProfiles
 //////////////////////////////////////////////
 package cimv2
 
-// RoamingUserHealthConfiguration_HealthStatusForTempProfiles
+// RoamingUserHealthConfiguration_HealthStatusForTempProfiles 
 type RoamingUserHealthConfiguration_HealthStatusForTempProfiles int
-
-const (
+const(
 	// Healthy enum
 	RoamingUserHealthConfiguration_HealthStatusForTempProfiles_Healthy RoamingUserHealthConfiguration_HealthStatusForTempProfiles = 0
 	// Unhealthy enum
@@ -19,3 +18,4 @@ const (
 	// Caution enum
 	RoamingUserHealthConfiguration_HealthStatusForTempProfiles_Caution RoamingUserHealthConfiguration_HealthStatusForTempProfiles = 2
 )
+

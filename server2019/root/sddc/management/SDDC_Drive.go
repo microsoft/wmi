@@ -1,787 +1,772 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.SDDC.Management
 //////////////////////////////////////////////
 package management
-
 import (
-	"github.com/microsoft/wmi/pkg/base/instance"
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/instance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // SDDC_Drive struct
-type SDDC_Drive struct {
+type SDDC_Drive struct { 
 	*cim.WmiInstance
 
-	//
+	// 
 	Alerts []SDDC_Alert
 
-	//
+	// 
 	AverageLatency float64
 
-	//
+	// 
 	FirmwareVersion string
 
-	//
+	// 
 	Id string
 
-	//
+	// 
 	IsIndicationEnabled bool
 
-	//
+	// 
 	Location string
 
-	//
+	// 
 	Manufacturer string
 
-	//
+	// 
 	Model string
 
-	//
+	// 
 	PowerOnHours uint32
 
-	//
+	// 
 	SerialNumber string
 
-	//
+	// 
 	Server string
 
-	//
+	// 
 	Size uint64
 
-	//
+	// 
 	SizeUsed uint64
 
-	//
+	// 
 	Status []uint16
 
-	//
+	// 
 	StatusCategory uint16
 
-	//
+	// 
 	StoragePool string
 
-	//
+	// 
 	TemperatureInCelsius uint8
 
-	//
+	// 
 	TotalIops float64
 
-	//
+	// 
 	TotalThroughput float64
 
-	//
+	// 
 	Type uint16
 
-	//
+	// 
 	UsedFor uint16
 
-	//
+	// 
 	WearPercentage uint8
 }
 
-func NewSDDC_DriveEx1(instance *cim.WmiInstance) (newInstance *SDDC_Drive, err error) {
-	tmp, err := instance, nil
-
-	if err != nil {
-		return
-	}
-	newInstance = &SDDC_Drive{
-		WmiInstance: tmp,
+	func NewSDDC_DriveEx1(instance *cim.WmiInstance) (newInstance *SDDC_Drive, err error) {tmp, err := instance, nil
+		
+	if err != nil { return }
+	newInstance = &SDDC_Drive {
+	WmiInstance: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewSDDC_DriveEx6(hostName string,
+	func NewSDDC_DriveEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *SDDC_Drive, err error) {
-	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &SDDC_Drive{
-		WmiInstance: tmp,
+	query *query.WmiQuery ) (newInstance *SDDC_Drive, err error) {tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &SDDC_Drive {
+	WmiInstance: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetAlerts sets the value of Alerts for the instance
-func (instance *SDDC_Drive) SetPropertyAlerts(value []SDDC_Alert) (err error) {
-	return instance.SetProperty("Alerts", (value))
+func (instance *SDDC_Drive) SetPropertyAlerts(value []SDDC_Alert) (err error) { 
+    return instance.SetProperty("Alerts", (value))
 }
 
 // GetAlerts gets the value of Alerts for the instance
-func (instance *SDDC_Drive) GetPropertyAlerts() (value []SDDC_Alert, err error) {
-	retValue, err := instance.GetProperty("Alerts")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyAlerts()(value []SDDC_Alert, err error) { 
+    retValue, err := instance.GetProperty("Alerts")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(SDDC_Alert); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " SDDC_Alert is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, SDDC_Alert(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(SDDC_Alert)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " SDDC_Alert is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, SDDC_Alert(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetAverageLatency sets the value of AverageLatency for the instance
-func (instance *SDDC_Drive) SetPropertyAverageLatency(value float64) (err error) {
-	return instance.SetProperty("AverageLatency", (value))
+func (instance *SDDC_Drive) SetPropertyAverageLatency(value float64) (err error) { 
+    return instance.SetProperty("AverageLatency", (value))
 }
 
 // GetAverageLatency gets the value of AverageLatency for the instance
-func (instance *SDDC_Drive) GetPropertyAverageLatency() (value float64, err error) {
-	retValue, err := instance.GetProperty("AverageLatency")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyAverageLatency()(value float64, err error) { 
+    retValue, err := instance.GetProperty("AverageLatency")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(float64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(float64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = float64(valuetmp)
 
-	value = float64(valuetmp)
-
-	return
+    return
 }
 
 // SetFirmwareVersion sets the value of FirmwareVersion for the instance
-func (instance *SDDC_Drive) SetPropertyFirmwareVersion(value string) (err error) {
-	return instance.SetProperty("FirmwareVersion", (value))
+func (instance *SDDC_Drive) SetPropertyFirmwareVersion(value string) (err error) { 
+    return instance.SetProperty("FirmwareVersion", (value))
 }
 
 // GetFirmwareVersion gets the value of FirmwareVersion for the instance
-func (instance *SDDC_Drive) GetPropertyFirmwareVersion() (value string, err error) {
-	retValue, err := instance.GetProperty("FirmwareVersion")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyFirmwareVersion()(value string, err error) { 
+    retValue, err := instance.GetProperty("FirmwareVersion")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetId sets the value of Id for the instance
-func (instance *SDDC_Drive) SetPropertyId(value string) (err error) {
-	return instance.SetProperty("Id", (value))
+func (instance *SDDC_Drive) SetPropertyId(value string) (err error) { 
+    return instance.SetProperty("Id", (value))
 }
 
 // GetId gets the value of Id for the instance
-func (instance *SDDC_Drive) GetPropertyId() (value string, err error) {
-	retValue, err := instance.GetProperty("Id")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyId()(value string, err error) { 
+    retValue, err := instance.GetProperty("Id")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetIsIndicationEnabled sets the value of IsIndicationEnabled for the instance
-func (instance *SDDC_Drive) SetPropertyIsIndicationEnabled(value bool) (err error) {
-	return instance.SetProperty("IsIndicationEnabled", (value))
+func (instance *SDDC_Drive) SetPropertyIsIndicationEnabled(value bool) (err error) { 
+    return instance.SetProperty("IsIndicationEnabled", (value))
 }
 
 // GetIsIndicationEnabled gets the value of IsIndicationEnabled for the instance
-func (instance *SDDC_Drive) GetPropertyIsIndicationEnabled() (value bool, err error) {
-	retValue, err := instance.GetProperty("IsIndicationEnabled")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyIsIndicationEnabled()(value bool, err error) { 
+    retValue, err := instance.GetProperty("IsIndicationEnabled")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
 
 // SetLocation sets the value of Location for the instance
-func (instance *SDDC_Drive) SetPropertyLocation(value string) (err error) {
-	return instance.SetProperty("Location", (value))
+func (instance *SDDC_Drive) SetPropertyLocation(value string) (err error) { 
+    return instance.SetProperty("Location", (value))
 }
 
 // GetLocation gets the value of Location for the instance
-func (instance *SDDC_Drive) GetPropertyLocation() (value string, err error) {
-	retValue, err := instance.GetProperty("Location")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyLocation()(value string, err error) { 
+    retValue, err := instance.GetProperty("Location")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetManufacturer sets the value of Manufacturer for the instance
-func (instance *SDDC_Drive) SetPropertyManufacturer(value string) (err error) {
-	return instance.SetProperty("Manufacturer", (value))
+func (instance *SDDC_Drive) SetPropertyManufacturer(value string) (err error) { 
+    return instance.SetProperty("Manufacturer", (value))
 }
 
 // GetManufacturer gets the value of Manufacturer for the instance
-func (instance *SDDC_Drive) GetPropertyManufacturer() (value string, err error) {
-	retValue, err := instance.GetProperty("Manufacturer")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyManufacturer()(value string, err error) { 
+    retValue, err := instance.GetProperty("Manufacturer")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetModel sets the value of Model for the instance
-func (instance *SDDC_Drive) SetPropertyModel(value string) (err error) {
-	return instance.SetProperty("Model", (value))
+func (instance *SDDC_Drive) SetPropertyModel(value string) (err error) { 
+    return instance.SetProperty("Model", (value))
 }
 
 // GetModel gets the value of Model for the instance
-func (instance *SDDC_Drive) GetPropertyModel() (value string, err error) {
-	retValue, err := instance.GetProperty("Model")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyModel()(value string, err error) { 
+    retValue, err := instance.GetProperty("Model")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetPowerOnHours sets the value of PowerOnHours for the instance
-func (instance *SDDC_Drive) SetPropertyPowerOnHours(value uint32) (err error) {
-	return instance.SetProperty("PowerOnHours", (value))
+func (instance *SDDC_Drive) SetPropertyPowerOnHours(value uint32) (err error) { 
+    return instance.SetProperty("PowerOnHours", (value))
 }
 
 // GetPowerOnHours gets the value of PowerOnHours for the instance
-func (instance *SDDC_Drive) GetPropertyPowerOnHours() (value uint32, err error) {
-	retValue, err := instance.GetProperty("PowerOnHours")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyPowerOnHours()(value uint32, err error) { 
+    retValue, err := instance.GetProperty("PowerOnHours")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint32(valuetmp)
 
-	value = uint32(valuetmp)
-
-	return
+    return
 }
 
 // SetSerialNumber sets the value of SerialNumber for the instance
-func (instance *SDDC_Drive) SetPropertySerialNumber(value string) (err error) {
-	return instance.SetProperty("SerialNumber", (value))
+func (instance *SDDC_Drive) SetPropertySerialNumber(value string) (err error) { 
+    return instance.SetProperty("SerialNumber", (value))
 }
 
 // GetSerialNumber gets the value of SerialNumber for the instance
-func (instance *SDDC_Drive) GetPropertySerialNumber() (value string, err error) {
-	retValue, err := instance.GetProperty("SerialNumber")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertySerialNumber()(value string, err error) { 
+    retValue, err := instance.GetProperty("SerialNumber")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetServer sets the value of Server for the instance
-func (instance *SDDC_Drive) SetPropertyServer(value string) (err error) {
-	return instance.SetProperty("Server", (value))
+func (instance *SDDC_Drive) SetPropertyServer(value string) (err error) { 
+    return instance.SetProperty("Server", (value))
 }
 
 // GetServer gets the value of Server for the instance
-func (instance *SDDC_Drive) GetPropertyServer() (value string, err error) {
-	retValue, err := instance.GetProperty("Server")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyServer()(value string, err error) { 
+    retValue, err := instance.GetProperty("Server")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetSize sets the value of Size for the instance
-func (instance *SDDC_Drive) SetPropertySize(value uint64) (err error) {
-	return instance.SetProperty("Size", (value))
+func (instance *SDDC_Drive) SetPropertySize(value uint64) (err error) { 
+    return instance.SetProperty("Size", (value))
 }
 
 // GetSize gets the value of Size for the instance
-func (instance *SDDC_Drive) GetPropertySize() (value uint64, err error) {
-	retValue, err := instance.GetProperty("Size")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertySize()(value uint64, err error) { 
+    retValue, err := instance.GetProperty("Size")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint64(valuetmp)
 
-	value = uint64(valuetmp)
-
-	return
+    return
 }
 
 // SetSizeUsed sets the value of SizeUsed for the instance
-func (instance *SDDC_Drive) SetPropertySizeUsed(value uint64) (err error) {
-	return instance.SetProperty("SizeUsed", (value))
+func (instance *SDDC_Drive) SetPropertySizeUsed(value uint64) (err error) { 
+    return instance.SetProperty("SizeUsed", (value))
 }
 
 // GetSizeUsed gets the value of SizeUsed for the instance
-func (instance *SDDC_Drive) GetPropertySizeUsed() (value uint64, err error) {
-	retValue, err := instance.GetProperty("SizeUsed")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertySizeUsed()(value uint64, err error) { 
+    retValue, err := instance.GetProperty("SizeUsed")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint64(valuetmp)
 
-	value = uint64(valuetmp)
-
-	return
+    return
 }
 
 // SetStatus sets the value of Status for the instance
-func (instance *SDDC_Drive) SetPropertyStatus(value []uint16) (err error) {
-	return instance.SetProperty("Status", (value))
+func (instance *SDDC_Drive) SetPropertyStatus(value []uint16) (err error) { 
+    return instance.SetProperty("Status", (value))
 }
 
 // GetStatus gets the value of Status for the instance
-func (instance *SDDC_Drive) GetPropertyStatus() (value []uint16, err error) {
-	retValue, err := instance.GetProperty("Status")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyStatus()(value []uint16, err error) { 
+    retValue, err := instance.GetProperty("Status")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(uint16); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, uint16(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(uint16)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, uint16(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetStatusCategory sets the value of StatusCategory for the instance
-func (instance *SDDC_Drive) SetPropertyStatusCategory(value uint16) (err error) {
-	return instance.SetProperty("StatusCategory", (value))
+func (instance *SDDC_Drive) SetPropertyStatusCategory(value uint16) (err error) { 
+    return instance.SetProperty("StatusCategory", (value))
 }
 
 // GetStatusCategory gets the value of StatusCategory for the instance
-func (instance *SDDC_Drive) GetPropertyStatusCategory() (value uint16, err error) {
-	retValue, err := instance.GetProperty("StatusCategory")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyStatusCategory()(value uint16, err error) { 
+    retValue, err := instance.GetProperty("StatusCategory")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint16); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint16(valuetmp)
 
-	value = uint16(valuetmp)
-
-	return
+    return
 }
 
 // SetStoragePool sets the value of StoragePool for the instance
-func (instance *SDDC_Drive) SetPropertyStoragePool(value string) (err error) {
-	return instance.SetProperty("StoragePool", (value))
+func (instance *SDDC_Drive) SetPropertyStoragePool(value string) (err error) { 
+    return instance.SetProperty("StoragePool", (value))
 }
 
 // GetStoragePool gets the value of StoragePool for the instance
-func (instance *SDDC_Drive) GetPropertyStoragePool() (value string, err error) {
-	retValue, err := instance.GetProperty("StoragePool")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyStoragePool()(value string, err error) { 
+    retValue, err := instance.GetProperty("StoragePool")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetTemperatureInCelsius sets the value of TemperatureInCelsius for the instance
-func (instance *SDDC_Drive) SetPropertyTemperatureInCelsius(value uint8) (err error) {
-	return instance.SetProperty("TemperatureInCelsius", (value))
+func (instance *SDDC_Drive) SetPropertyTemperatureInCelsius(value uint8) (err error) { 
+    return instance.SetProperty("TemperatureInCelsius", (value))
 }
 
 // GetTemperatureInCelsius gets the value of TemperatureInCelsius for the instance
-func (instance *SDDC_Drive) GetPropertyTemperatureInCelsius() (value uint8, err error) {
-	retValue, err := instance.GetProperty("TemperatureInCelsius")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyTemperatureInCelsius()(value uint8, err error) { 
+    retValue, err := instance.GetProperty("TemperatureInCelsius")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint8); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint8(valuetmp)
 
-	value = uint8(valuetmp)
-
-	return
+    return
 }
 
 // SetTotalIops sets the value of TotalIops for the instance
-func (instance *SDDC_Drive) SetPropertyTotalIops(value float64) (err error) {
-	return instance.SetProperty("TotalIops", (value))
+func (instance *SDDC_Drive) SetPropertyTotalIops(value float64) (err error) { 
+    return instance.SetProperty("TotalIops", (value))
 }
 
 // GetTotalIops gets the value of TotalIops for the instance
-func (instance *SDDC_Drive) GetPropertyTotalIops() (value float64, err error) {
-	retValue, err := instance.GetProperty("TotalIops")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyTotalIops()(value float64, err error) { 
+    retValue, err := instance.GetProperty("TotalIops")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(float64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(float64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = float64(valuetmp)
 
-	value = float64(valuetmp)
-
-	return
+    return
 }
 
 // SetTotalThroughput sets the value of TotalThroughput for the instance
-func (instance *SDDC_Drive) SetPropertyTotalThroughput(value float64) (err error) {
-	return instance.SetProperty("TotalThroughput", (value))
+func (instance *SDDC_Drive) SetPropertyTotalThroughput(value float64) (err error) { 
+    return instance.SetProperty("TotalThroughput", (value))
 }
 
 // GetTotalThroughput gets the value of TotalThroughput for the instance
-func (instance *SDDC_Drive) GetPropertyTotalThroughput() (value float64, err error) {
-	retValue, err := instance.GetProperty("TotalThroughput")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyTotalThroughput()(value float64, err error) { 
+    retValue, err := instance.GetProperty("TotalThroughput")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(float64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(float64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " float64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = float64(valuetmp)
 
-	value = float64(valuetmp)
-
-	return
+    return
 }
 
 // SetType sets the value of Type for the instance
-func (instance *SDDC_Drive) SetPropertyType(value uint16) (err error) {
-	return instance.SetProperty("Type", (value))
+func (instance *SDDC_Drive) SetPropertyType(value uint16) (err error) { 
+    return instance.SetProperty("Type", (value))
 }
 
 // GetType gets the value of Type for the instance
-func (instance *SDDC_Drive) GetPropertyType() (value uint16, err error) {
-	retValue, err := instance.GetProperty("Type")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyType()(value uint16, err error) { 
+    retValue, err := instance.GetProperty("Type")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint16); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint16(valuetmp)
 
-	value = uint16(valuetmp)
-
-	return
+    return
 }
 
 // SetUsedFor sets the value of UsedFor for the instance
-func (instance *SDDC_Drive) SetPropertyUsedFor(value uint16) (err error) {
-	return instance.SetProperty("UsedFor", (value))
+func (instance *SDDC_Drive) SetPropertyUsedFor(value uint16) (err error) { 
+    return instance.SetProperty("UsedFor", (value))
 }
 
 // GetUsedFor gets the value of UsedFor for the instance
-func (instance *SDDC_Drive) GetPropertyUsedFor() (value uint16, err error) {
-	retValue, err := instance.GetProperty("UsedFor")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyUsedFor()(value uint16, err error) { 
+    retValue, err := instance.GetProperty("UsedFor")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint16); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint16(valuetmp)
 
-	value = uint16(valuetmp)
-
-	return
+    return
 }
 
 // SetWearPercentage sets the value of WearPercentage for the instance
-func (instance *SDDC_Drive) SetPropertyWearPercentage(value uint8) (err error) {
-	return instance.SetProperty("WearPercentage", (value))
+func (instance *SDDC_Drive) SetPropertyWearPercentage(value uint8) (err error) { 
+    return instance.SetProperty("WearPercentage", (value))
 }
 
 // GetWearPercentage gets the value of WearPercentage for the instance
-func (instance *SDDC_Drive) GetPropertyWearPercentage() (value uint8, err error) {
-	retValue, err := instance.GetProperty("WearPercentage")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *SDDC_Drive) GetPropertyWearPercentage()(value uint8, err error) { 
+    retValue, err := instance.GetProperty("WearPercentage")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint8); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint8(valuetmp)
 
-	value = uint8(valuetmp)
-
-	return
+    return
 }
 
-//
+// 
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *SDDC_Drive) Retire() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("Retire")
-	if err != nil {
-		return
-	}
+func (instance *SDDC_Drive) Retire() (result uint32, err error) {retVal, err := instance.InvokeMethodWithReturn("Retire" );
+	if err != nil { return }
 	result = uint32(retVal)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *SDDC_Drive) Unretire() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("Unretire")
-	if err != nil {
-		return
-	}
+func (instance *SDDC_Drive) Unretire() (result uint32, err error) {retVal, err := instance.InvokeMethodWithReturn("Unretire" );
+	if err != nil { return }
 	result = uint32(retVal)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="ImagePath" type="string "></param>
 // <param name="SlotNumber" type="uint16 "></param>
 
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *SDDC_Drive) UpdateFirmware( /* IN */ ImagePath string,
-	/* IN */ SlotNumber uint16) (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("UpdateFirmware", ImagePath, SlotNumber)
-	if err != nil {
-		return
-	}
+ /* IN */ SlotNumber uint16) (result uint32, err error) {retVal, err := instance.InvokeMethodWithReturn("UpdateFirmware" , ImagePath, SlotNumber);
+	if err != nil { return }
 	result = uint32(retVal)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *SDDC_Drive) TurnOnLight() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("TurnOnLight")
-	if err != nil {
-		return
-	}
+func (instance *SDDC_Drive) TurnOnLight() (result uint32, err error) {retVal, err := instance.InvokeMethodWithReturn("TurnOnLight" );
+	if err != nil { return }
 	result = uint32(retVal)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="ReturnValue" type="uint32 "></param>
-func (instance *SDDC_Drive) TurnOffLight() (result uint32, err error) {
-	retVal, err := instance.InvokeMethodWithReturn("TurnOffLight")
-	if err != nil {
-		return
-	}
+func (instance *SDDC_Drive) TurnOffLight() (result uint32, err error) {retVal, err := instance.InvokeMethodWithReturn("TurnOffLight" );
+	if err != nil { return }
 	result = uint32(retVal)
 	return
-
+	
 }
 
-//
+
+// 
 
 // <param name="SeriesName" type="string "></param>
 // <param name="TimeFrame" type="uint16 "></param>
@@ -789,14 +774,13 @@ func (instance *SDDC_Drive) TurnOffLight() (result uint32, err error) {
 // <param name="Metric" type="SDDC_Metric "></param>
 // <param name="ReturnValue" type="uint32 "></param>
 func (instance *SDDC_Drive) GetMetrics( /* IN */ SeriesName string,
-	/* IN */ TimeFrame uint16,
-	/* OUT */ Metric SDDC_Metric) (result uint32, err error) {
-	retVal, err := instance.InvokeMethod("GetMetrics", SeriesName, TimeFrame)
-	if err != nil {
-		return
-	}
+ /* IN */ TimeFrame uint16,
+ /* OUT */ Metric SDDC_Metric) (result uint32, err error) {retVal, err := instance.InvokeMethod("GetMetrics" , SeriesName, TimeFrame)
+	if err != nil { return }
 	retValue := retVal[0].(int32)
 	result = uint32(retValue)
 	return
-
+	
 }
+
+

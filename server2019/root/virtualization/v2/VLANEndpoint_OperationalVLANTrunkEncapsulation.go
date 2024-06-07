@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VLANEndpoint_OperationalVLANTrunkEncapsulation
 //////////////////////////////////////////////
 package v2
 
-// VLANEndpoint_OperationalVLANTrunkEncapsulation
+// VLANEndpoint_OperationalVLANTrunkEncapsulation 
 type VLANEndpoint_OperationalVLANTrunkEncapsulation int
-
-const (
+const(
 	// Unknown enum
 	VLANEndpoint_OperationalVLANTrunkEncapsulation_Unknown VLANEndpoint_OperationalVLANTrunkEncapsulation = 0
 	// Other enum
@@ -29,3 +28,4 @@ const (
 	// Vendor_Reserved enum
 	VLANEndpoint_OperationalVLANTrunkEncapsulation_Vendor_Reserved VLANEndpoint_OperationalVLANTrunkEncapsulation = 7
 )
+

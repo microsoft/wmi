@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ConcreteJob_JobType
 //////////////////////////////////////////////
 package v2
 
-// ConcreteJob_JobType
+// ConcreteJob_JobType 
 type ConcreteJob_JobType int
-
-const (
+const(
 	// Unknown enum
 	ConcreteJob_JobType_Unknown ConcreteJob_JobType = 0
 	// Define_Virtual_Machine enum
@@ -231,3 +230,4 @@ const (
 	// Mount_or_Dismount_Assignable_Device enum
 	ConcreteJob_JobType_Mount_or_Dismount_Assignable_Device ConcreteJob_JobType = 260
 )
+

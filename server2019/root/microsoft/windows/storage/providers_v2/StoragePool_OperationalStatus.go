@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StoragePool_OperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_OperationalStatus
+// StoragePool_OperationalStatus 
 type StoragePool_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StoragePool_OperationalStatus_Unknown StoragePool_OperationalStatus = 0
 	// Other enum
@@ -61,3 +60,4 @@ const (
 	// Microsoft_Reserved1 enum
 	StoragePool_OperationalStatus_Microsoft_Reserved1 StoragePool_OperationalStatus = 23
 )
+

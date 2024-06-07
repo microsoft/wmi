@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemSettingData_DebugPortEnabled
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_DebugPortEnabled
+// VirtualSystemSettingData_DebugPortEnabled 
 type VirtualSystemSettingData_DebugPortEnabled int
-
-const (
+const(
 	// _Off enum
 	VirtualSystemSettingData_DebugPortEnabled__Off VirtualSystemSettingData_DebugPortEnabled = 0
 	// On enum
@@ -19,3 +18,4 @@ const (
 	// OnAutoAssigned enum
 	VirtualSystemSettingData_DebugPortEnabled_OnAutoAssigned VirtualSystemSettingData_DebugPortEnabled = 2
 )
+

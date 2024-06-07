@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbBandwidthLimit_Category
 //////////////////////////////////////////////
 package smb
 
-// SmbBandwidthLimit_Category
+// SmbBandwidthLimit_Category 
 type SmbBandwidthLimit_Category int
-
-const (
+const(
 	// _9 enum
 	SmbBandwidthLimit_Category__9 SmbBandwidthLimit_Category = 0
 	// _53 enum
@@ -19,3 +18,4 @@ const (
 	// _54 enum
 	SmbBandwidthLimit_Category__54 SmbBandwidthLimit_Category = 2
 )
+

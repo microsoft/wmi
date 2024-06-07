@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_PointingDevice struct
-type CIM_PointingDevice struct {
+type CIM_PointingDevice struct { 
 	*CIM_UserDevice
 
 	// Integer indicating whether the PointingDevice is configured for right (value=2) or left handed operation (value=3). Also, the values, "Unknown" (0) and "Not Applicable" (1), can be defined.
@@ -32,139 +31,136 @@ type CIM_PointingDevice struct {
 	Resolution uint32
 }
 
-func NewCIM_PointingDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_PointingDevice, err error) {
-	tmp, err := NewCIM_UserDeviceEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_PointingDevice{
-		CIM_UserDevice: tmp,
+	func NewCIM_PointingDeviceEx1(instance *cim.WmiInstance) (newInstance *CIM_PointingDevice, err error) {tmp, err := NewCIM_UserDeviceEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_PointingDevice {
+	CIM_UserDevice: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_PointingDeviceEx6(hostName string,
+	func NewCIM_PointingDeviceEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_PointingDevice, err error) {
-	tmp, err := NewCIM_UserDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_PointingDevice{
-		CIM_UserDevice: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_PointingDevice, err error) {tmp, err := NewCIM_UserDeviceEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_PointingDevice {
+	CIM_UserDevice: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetHandedness sets the value of Handedness for the instance
-func (instance *CIM_PointingDevice) SetPropertyHandedness(value PointingDevice_Handedness) (err error) {
-	return instance.SetProperty("Handedness", (value))
+func (instance *CIM_PointingDevice) SetPropertyHandedness(value PointingDevice_Handedness) (err error) { 
+    return instance.SetProperty("Handedness", (value))
 }
 
 // GetHandedness gets the value of Handedness for the instance
-func (instance *CIM_PointingDevice) GetPropertyHandedness() (value PointingDevice_Handedness, err error) {
-	retValue, err := instance.GetProperty("Handedness")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_PointingDevice) GetPropertyHandedness()(value PointingDevice_Handedness, err error) { 
+    retValue, err := instance.GetProperty("Handedness")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = PointingDevice_Handedness(valuetmp)
 
-	value = PointingDevice_Handedness(valuetmp)
-
-	return
+    return
 }
 
 // SetNumberOfButtons sets the value of NumberOfButtons for the instance
-func (instance *CIM_PointingDevice) SetPropertyNumberOfButtons(value uint8) (err error) {
-	return instance.SetProperty("NumberOfButtons", (value))
+func (instance *CIM_PointingDevice) SetPropertyNumberOfButtons(value uint8) (err error) { 
+    return instance.SetProperty("NumberOfButtons", (value))
 }
 
 // GetNumberOfButtons gets the value of NumberOfButtons for the instance
-func (instance *CIM_PointingDevice) GetPropertyNumberOfButtons() (value uint8, err error) {
-	retValue, err := instance.GetProperty("NumberOfButtons")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_PointingDevice) GetPropertyNumberOfButtons()(value uint8, err error) { 
+    retValue, err := instance.GetProperty("NumberOfButtons")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint8); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint8)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint8 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint8(valuetmp)
 
-	value = uint8(valuetmp)
-
-	return
+    return
 }
 
 // SetPointingType sets the value of PointingType for the instance
-func (instance *CIM_PointingDevice) SetPropertyPointingType(value PointingDevice_PointingType) (err error) {
-	return instance.SetProperty("PointingType", (value))
+func (instance *CIM_PointingDevice) SetPropertyPointingType(value PointingDevice_PointingType) (err error) { 
+    return instance.SetProperty("PointingType", (value))
 }
 
 // GetPointingType gets the value of PointingType for the instance
-func (instance *CIM_PointingDevice) GetPropertyPointingType() (value PointingDevice_PointingType, err error) {
-	retValue, err := instance.GetProperty("PointingType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_PointingDevice) GetPropertyPointingType()(value PointingDevice_PointingType, err error) { 
+    retValue, err := instance.GetProperty("PointingType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = PointingDevice_PointingType(valuetmp)
 
-	value = PointingDevice_PointingType(valuetmp)
-
-	return
+    return
 }
 
 // SetResolution sets the value of Resolution for the instance
-func (instance *CIM_PointingDevice) SetPropertyResolution(value uint32) (err error) {
-	return instance.SetProperty("Resolution", (value))
+func (instance *CIM_PointingDevice) SetPropertyResolution(value uint32) (err error) { 
+    return instance.SetProperty("Resolution", (value))
 }
 
 // GetResolution gets the value of Resolution for the instance
-func (instance *CIM_PointingDevice) GetPropertyResolution() (value uint32, err error) {
-	retValue, err := instance.GetProperty("Resolution")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_PointingDevice) GetPropertyResolution()(value uint32, err error) { 
+    retValue, err := instance.GetProperty("Resolution")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint32(valuetmp)
 
-	value = uint32(valuetmp)
-
-	return
+    return
 }
+

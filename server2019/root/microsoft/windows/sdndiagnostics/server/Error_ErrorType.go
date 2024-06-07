@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Error_ErrorType
 //////////////////////////////////////////////
 package server
 
-// Error_ErrorType
+// Error_ErrorType 
 type Error_ErrorType int
-
-const (
+const(
 	// Unknown enum
 	Error_ErrorType_Unknown Error_ErrorType = 0
 	// Other enum
@@ -37,3 +36,4 @@ const (
 	// DMTF_Reserved enum
 	Error_ErrorType_DMTF_Reserved Error_ErrorType = 11
 )
+

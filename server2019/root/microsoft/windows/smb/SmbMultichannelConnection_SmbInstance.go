@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbMultichannelConnection_SmbInstance
 //////////////////////////////////////////////
 package smb
 
-// SmbMultichannelConnection_SmbInstance
+// SmbMultichannelConnection_SmbInstance 
 type SmbMultichannelConnection_SmbInstance int
-
-const (
+const(
 	// _9 enum
 	SmbMultichannelConnection_SmbInstance__9 SmbMultichannelConnection_SmbInstance = 0
 	// _10 enum
@@ -21,3 +20,4 @@ const (
 	// _57 enum
 	SmbMultichannelConnection_SmbInstance__57 SmbMultichannelConnection_SmbInstance = 3
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source MediaAccessDevice_Security
 //////////////////////////////////////////////
 package v2
 
-// MediaAccessDevice_Security
+// MediaAccessDevice_Security 
 type MediaAccessDevice_Security int
-
-const (
+const(
 	// Other enum
 	MediaAccessDevice_Security_Other MediaAccessDevice_Security = 1
 	// Unknown enum
@@ -27,3 +26,4 @@ const (
 	// Boot_Bypass_and_Read_Only enum
 	MediaAccessDevice_Security_Boot_Bypass_and_Read_Only MediaAccessDevice_Security = 7
 )
+

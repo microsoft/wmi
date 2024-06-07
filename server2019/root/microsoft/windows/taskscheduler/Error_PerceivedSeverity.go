@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Error_PerceivedSeverity
 //////////////////////////////////////////////
 package taskscheduler
 
-// Error_PerceivedSeverity
+// Error_PerceivedSeverity 
 type Error_PerceivedSeverity int
-
-const (
+const(
 	// Unknown enum
 	Error_PerceivedSeverity_Unknown Error_PerceivedSeverity = 0
 	// Other enum
@@ -31,3 +30,4 @@ const (
 	// DMTF_Reserved enum
 	Error_PerceivedSeverity_DMTF_Reserved Error_PerceivedSeverity = 8
 )
+

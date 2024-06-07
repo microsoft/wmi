@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemManagementCapabilities_IndicationsSupported
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemManagementCapabilities_IndicationsSupported
+// VirtualSystemManagementCapabilities_IndicationsSupported 
 type VirtualSystemManagementCapabilities_IndicationsSupported int
-
-const (
+const(
 	// VirtualResourceStateChangeIndicationsSupported enum
 	VirtualSystemManagementCapabilities_IndicationsSupported_VirtualResourceStateChangeIndicationsSupported VirtualSystemManagementCapabilities_IndicationsSupported = 2
 	// ConcreteJobStateChangeIndicationsSupported enum
@@ -23,3 +22,4 @@ const (
 	// Vendor_Reserved enum
 	VirtualSystemManagementCapabilities_IndicationsSupported_Vendor_Reserved VirtualSystemManagementCapabilities_IndicationsSupported = 6
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source AffectedJobElement_ElementEffects
 //////////////////////////////////////////////
 package v2
 
-// AffectedJobElement_ElementEffects
+// AffectedJobElement_ElementEffects 
 type AffectedJobElement_ElementEffects int
-
-const (
+const(
 	// Unknown enum
 	AffectedJobElement_ElementEffects_Unknown AffectedJobElement_ElementEffects = 0
 	// Other enum
@@ -25,3 +24,4 @@ const (
 	// Create enum
 	AffectedJobElement_ElementEffects_Create AffectedJobElement_ElementEffects = 5
 )
+

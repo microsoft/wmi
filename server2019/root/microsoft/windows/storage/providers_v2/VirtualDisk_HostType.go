@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDisk_HostType
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_HostType
+// VirtualDisk_HostType 
 type VirtualDisk_HostType int
-
-const (
+const(
 	// Unknown enum
 	VirtualDisk_HostType_Unknown VirtualDisk_HostType = 0
 	// Other enum
@@ -61,3 +60,4 @@ const (
 	// Vendor_Specific enum
 	VirtualDisk_HostType_Vendor_Specific VirtualDisk_HostType = 23
 )
+

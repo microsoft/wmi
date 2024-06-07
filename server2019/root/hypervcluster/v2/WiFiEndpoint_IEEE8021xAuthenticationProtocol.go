@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source WiFiEndpoint_IEEE8021xAuthenticationProtocol
 //////////////////////////////////////////////
 package v2
 
-// WiFiEndpoint_IEEE8021xAuthenticationProtocol
+// WiFiEndpoint_IEEE8021xAuthenticationProtocol 
 type WiFiEndpoint_IEEE8021xAuthenticationProtocol int
-
-const (
+const(
 	// EAP_TLS enum
 	WiFiEndpoint_IEEE8021xAuthenticationProtocol_EAP_TLS WiFiEndpoint_IEEE8021xAuthenticationProtocol = 0
 	// EAP_TTLS_MSCHAPv2 enum
@@ -37,3 +36,4 @@ const (
 	// DMTF_Reserved enum
 	WiFiEndpoint_IEEE8021xAuthenticationProtocol_DMTF_Reserved WiFiEndpoint_IEEE8021xAuthenticationProtocol = 11
 )
+

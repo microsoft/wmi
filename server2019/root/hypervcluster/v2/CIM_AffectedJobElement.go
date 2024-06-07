@@ -1,23 +1,22 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/instance"
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/instance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_AffectedJobElement struct
-type CIM_AffectedJobElement struct {
+type CIM_AffectedJobElement struct { 
 	*cim.WmiInstance
 
 	// The ManagedElement affected by the execution of the Job.
@@ -33,141 +32,138 @@ type CIM_AffectedJobElement struct {
 	OtherElementEffectsDescriptions []string
 }
 
-func NewCIM_AffectedJobElementEx1(instance *cim.WmiInstance) (newInstance *CIM_AffectedJobElement, err error) {
-	tmp, err := instance, nil
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_AffectedJobElement{
-		WmiInstance: tmp,
+	func NewCIM_AffectedJobElementEx1(instance *cim.WmiInstance) (newInstance *CIM_AffectedJobElement, err error) {tmp, err := instance, nil
+		
+	if err != nil { return }
+	newInstance = &CIM_AffectedJobElement {
+	WmiInstance: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_AffectedJobElementEx6(hostName string,
+	func NewCIM_AffectedJobElementEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_AffectedJobElement, err error) {
-	tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_AffectedJobElement{
-		WmiInstance: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_AffectedJobElement, err error) {tmp, err := instance.GetWmiInstance(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_AffectedJobElement {
+	WmiInstance: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetAffectedElement sets the value of AffectedElement for the instance
-func (instance *CIM_AffectedJobElement) SetPropertyAffectedElement(value CIM_ManagedElement) (err error) {
-	return instance.SetProperty("AffectedElement", (value))
+func (instance *CIM_AffectedJobElement) SetPropertyAffectedElement(value CIM_ManagedElement) (err error) { 
+    return instance.SetProperty("AffectedElement", (value))
 }
 
 // GetAffectedElement gets the value of AffectedElement for the instance
-func (instance *CIM_AffectedJobElement) GetPropertyAffectedElement() (value CIM_ManagedElement, err error) {
-	retValue, err := instance.GetProperty("AffectedElement")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_AffectedJobElement) GetPropertyAffectedElement()(value CIM_ManagedElement, err error) { 
+    retValue, err := instance.GetProperty("AffectedElement")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(CIM_ManagedElement); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(CIM_ManagedElement)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " CIM_ManagedElement is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = CIM_ManagedElement(valuetmp)
 
-	value = CIM_ManagedElement(valuetmp)
-
-	return
+    return
 }
 
 // SetAffectingElement sets the value of AffectingElement for the instance
-func (instance *CIM_AffectedJobElement) SetPropertyAffectingElement(value CIM_Job) (err error) {
-	return instance.SetProperty("AffectingElement", (value))
+func (instance *CIM_AffectedJobElement) SetPropertyAffectingElement(value CIM_Job) (err error) { 
+    return instance.SetProperty("AffectingElement", (value))
 }
 
 // GetAffectingElement gets the value of AffectingElement for the instance
-func (instance *CIM_AffectedJobElement) GetPropertyAffectingElement() (value CIM_Job, err error) {
-	retValue, err := instance.GetProperty("AffectingElement")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_AffectedJobElement) GetPropertyAffectingElement()(value CIM_Job, err error) { 
+    retValue, err := instance.GetProperty("AffectingElement")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(CIM_Job); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " CIM_Job is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(CIM_Job)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " CIM_Job is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = CIM_Job(valuetmp)
 
-	value = CIM_Job(valuetmp)
-
-	return
+    return
 }
 
 // SetElementEffects sets the value of ElementEffects for the instance
-func (instance *CIM_AffectedJobElement) SetPropertyElementEffects(value []AffectedJobElement_ElementEffects) (err error) {
-	return instance.SetProperty("ElementEffects", (value))
+func (instance *CIM_AffectedJobElement) SetPropertyElementEffects(value []AffectedJobElement_ElementEffects) (err error) { 
+    return instance.SetProperty("ElementEffects", (value))
 }
 
 // GetElementEffects gets the value of ElementEffects for the instance
-func (instance *CIM_AffectedJobElement) GetPropertyElementEffects() (value []AffectedJobElement_ElementEffects, err error) {
-	retValue, err := instance.GetProperty("ElementEffects")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_AffectedJobElement) GetPropertyElementEffects()(value []AffectedJobElement_ElementEffects, err error) { 
+    retValue, err := instance.GetProperty("ElementEffects")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(int32); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, AffectedJobElement_ElementEffects(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(int32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, AffectedJobElement_ElementEffects(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetOtherElementEffectsDescriptions sets the value of OtherElementEffectsDescriptions for the instance
-func (instance *CIM_AffectedJobElement) SetPropertyOtherElementEffectsDescriptions(value []string) (err error) {
-	return instance.SetProperty("OtherElementEffectsDescriptions", (value))
+func (instance *CIM_AffectedJobElement) SetPropertyOtherElementEffectsDescriptions(value []string) (err error) { 
+    return instance.SetProperty("OtherElementEffectsDescriptions", (value))
 }
 
 // GetOtherElementEffectsDescriptions gets the value of OtherElementEffectsDescriptions for the instance
-func (instance *CIM_AffectedJobElement) GetPropertyOtherElementEffectsDescriptions() (value []string, err error) {
-	retValue, err := instance.GetProperty("OtherElementEffectsDescriptions")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_AffectedJobElement) GetPropertyOtherElementEffectsDescriptions()(value []string, err error) { 
+    retValue, err := instance.GetProperty("OtherElementEffectsDescriptions")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
+

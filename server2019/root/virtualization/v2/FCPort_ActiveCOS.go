@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FCPort_ActiveCOS
 //////////////////////////////////////////////
 package v2
 
-// FCPort_ActiveCOS
+// FCPort_ActiveCOS 
 type FCPort_ActiveCOS int
-
-const (
+const(
 	// Unknown enum
 	FCPort_ActiveCOS_Unknown FCPort_ActiveCOS = 0
 	// _1 enum
@@ -29,3 +28,4 @@ const (
 	// F enum
 	FCPort_ActiveCOS_F FCPort_ActiveCOS = 7
 )
+

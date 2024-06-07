@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_VirtualSystemMigrationCapabilities struct
-type CIM_VirtualSystemMigrationCapabilities struct {
+type CIM_VirtualSystemMigrationCapabilities struct { 
 	*CIM_Capabilities
 
 	// Enumeration of method identifiers whose implementation may be asynchronous; that is, the operation may not complete immediately and instead the method may return a job.
@@ -33,115 +32,112 @@ type CIM_VirtualSystemMigrationCapabilities struct {
 	SynchronousMethodsSupported []VirtualSystemMigrationCapabilities_SynchronousMethodsSupported
 }
 
-func NewCIM_VirtualSystemMigrationCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationCapabilities, err error) {
-	tmp, err := NewCIM_CapabilitiesEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemMigrationCapabilities{
-		CIM_Capabilities: tmp,
+	func NewCIM_VirtualSystemMigrationCapabilitiesEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationCapabilities, err error) {tmp, err := NewCIM_CapabilitiesEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemMigrationCapabilities {
+	CIM_Capabilities: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_VirtualSystemMigrationCapabilitiesEx6(hostName string,
+	func NewCIM_VirtualSystemMigrationCapabilitiesEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_VirtualSystemMigrationCapabilities, err error) {
-	tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemMigrationCapabilities{
-		CIM_Capabilities: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_VirtualSystemMigrationCapabilities, err error) {tmp, err := NewCIM_CapabilitiesEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemMigrationCapabilities {
+	CIM_Capabilities: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetAsynchronousMethodsSupported sets the value of AsynchronousMethodsSupported for the instance
-func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertyAsynchronousMethodsSupported(value []VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("AsynchronousMethodsSupported", (value))
+func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertyAsynchronousMethodsSupported(value []VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported) (err error) { 
+    return instance.SetProperty("AsynchronousMethodsSupported", (value))
 }
 
 // GetAsynchronousMethodsSupported gets the value of AsynchronousMethodsSupported for the instance
-func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertyAsynchronousMethodsSupported() (value []VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported, err error) {
-	retValue, err := instance.GetProperty("AsynchronousMethodsSupported")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertyAsynchronousMethodsSupported()(value []VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported, err error) { 
+    retValue, err := instance.GetProperty("AsynchronousMethodsSupported")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(int32); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(int32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, VirtualSystemMigrationCapabilities_AsynchronousMethodsSupported(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetDestinationHostFormatsSupported sets the value of DestinationHostFormatsSupported for the instance
-func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertyDestinationHostFormatsSupported(value []VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported) (err error) {
-	return instance.SetProperty("DestinationHostFormatsSupported", (value))
+func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertyDestinationHostFormatsSupported(value []VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported) (err error) { 
+    return instance.SetProperty("DestinationHostFormatsSupported", (value))
 }
 
 // GetDestinationHostFormatsSupported gets the value of DestinationHostFormatsSupported for the instance
-func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertyDestinationHostFormatsSupported() (value []VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported, err error) {
-	retValue, err := instance.GetProperty("DestinationHostFormatsSupported")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertyDestinationHostFormatsSupported()(value []VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported, err error) { 
+    retValue, err := instance.GetProperty("DestinationHostFormatsSupported")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(int32); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(int32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, VirtualSystemMigrationCapabilities_DestinationHostFormatsSupported(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetSynchronousMethodsSupported sets the value of SynchronousMethodsSupported for the instance
-func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertySynchronousMethodsSupported(value []VirtualSystemMigrationCapabilities_SynchronousMethodsSupported) (err error) {
-	return instance.SetProperty("SynchronousMethodsSupported", (value))
+func (instance *CIM_VirtualSystemMigrationCapabilities) SetPropertySynchronousMethodsSupported(value []VirtualSystemMigrationCapabilities_SynchronousMethodsSupported) (err error) { 
+    return instance.SetProperty("SynchronousMethodsSupported", (value))
 }
 
 // GetSynchronousMethodsSupported gets the value of SynchronousMethodsSupported for the instance
-func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertySynchronousMethodsSupported() (value []VirtualSystemMigrationCapabilities_SynchronousMethodsSupported, err error) {
-	retValue, err := instance.GetProperty("SynchronousMethodsSupported")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationCapabilities) GetPropertySynchronousMethodsSupported()(value []VirtualSystemMigrationCapabilities_SynchronousMethodsSupported, err error) { 
+    retValue, err := instance.GetProperty("SynchronousMethodsSupported")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(int32); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, VirtualSystemMigrationCapabilities_SynchronousMethodsSupported(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(int32)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, VirtualSystemMigrationCapabilities_SynchronousMethodsSupported(valuetmp))
-	}
-
-	return
+    return
 }
+

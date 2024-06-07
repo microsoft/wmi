@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.virtualization.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_BIOSElement struct
-type CIM_BIOSElement struct {
+type CIM_BIOSElement struct { 
 	*CIM_SoftwareElement
 
 	// The currently selected language for the BIOS. This information can be obtained from SMBIOS, using the Current Language attribute of the Type 13 structure, to index into the string list following the structure. The property is formatted using the ISO 639 Language Name, and may be followed by the ISO 3166 Territory Name and the encoding method.
@@ -44,249 +43,246 @@ type CIM_BIOSElement struct {
 	ReleaseDate string
 }
 
-func NewCIM_BIOSElementEx1(instance *cim.WmiInstance) (newInstance *CIM_BIOSElement, err error) {
-	tmp, err := NewCIM_SoftwareElementEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_BIOSElement{
-		CIM_SoftwareElement: tmp,
+	func NewCIM_BIOSElementEx1(instance *cim.WmiInstance) (newInstance *CIM_BIOSElement, err error) {tmp, err := NewCIM_SoftwareElementEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_BIOSElement {
+	CIM_SoftwareElement: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_BIOSElementEx6(hostName string,
+	func NewCIM_BIOSElementEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_BIOSElement, err error) {
-	tmp, err := NewCIM_SoftwareElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_BIOSElement{
-		CIM_SoftwareElement: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_BIOSElement, err error) {tmp, err := NewCIM_SoftwareElementEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_BIOSElement {
+	CIM_SoftwareElement: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetCurrentLanguage sets the value of CurrentLanguage for the instance
-func (instance *CIM_BIOSElement) SetPropertyCurrentLanguage(value string) (err error) {
-	return instance.SetProperty("CurrentLanguage", (value))
+func (instance *CIM_BIOSElement) SetPropertyCurrentLanguage(value string) (err error) { 
+    return instance.SetProperty("CurrentLanguage", (value))
 }
 
 // GetCurrentLanguage gets the value of CurrentLanguage for the instance
-func (instance *CIM_BIOSElement) GetPropertyCurrentLanguage() (value string, err error) {
-	retValue, err := instance.GetProperty("CurrentLanguage")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyCurrentLanguage()(value string, err error) { 
+    retValue, err := instance.GetProperty("CurrentLanguage")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetListOfLanguages sets the value of ListOfLanguages for the instance
-func (instance *CIM_BIOSElement) SetPropertyListOfLanguages(value []string) (err error) {
-	return instance.SetProperty("ListOfLanguages", (value))
+func (instance *CIM_BIOSElement) SetPropertyListOfLanguages(value []string) (err error) { 
+    return instance.SetProperty("ListOfLanguages", (value))
 }
 
 // GetListOfLanguages gets the value of ListOfLanguages for the instance
-func (instance *CIM_BIOSElement) GetPropertyListOfLanguages() (value []string, err error) {
-	retValue, err := instance.GetProperty("ListOfLanguages")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyListOfLanguages()(value []string, err error) { 
+    retValue, err := instance.GetProperty("ListOfLanguages")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetLoadedEndingAddress sets the value of LoadedEndingAddress for the instance
-func (instance *CIM_BIOSElement) SetPropertyLoadedEndingAddress(value uint64) (err error) {
-	return instance.SetProperty("LoadedEndingAddress", (value))
+func (instance *CIM_BIOSElement) SetPropertyLoadedEndingAddress(value uint64) (err error) { 
+    return instance.SetProperty("LoadedEndingAddress", (value))
 }
 
 // GetLoadedEndingAddress gets the value of LoadedEndingAddress for the instance
-func (instance *CIM_BIOSElement) GetPropertyLoadedEndingAddress() (value uint64, err error) {
-	retValue, err := instance.GetProperty("LoadedEndingAddress")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyLoadedEndingAddress()(value uint64, err error) { 
+    retValue, err := instance.GetProperty("LoadedEndingAddress")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint64(valuetmp)
 
-	value = uint64(valuetmp)
-
-	return
+    return
 }
 
 // SetLoadedStartingAddress sets the value of LoadedStartingAddress for the instance
-func (instance *CIM_BIOSElement) SetPropertyLoadedStartingAddress(value uint64) (err error) {
-	return instance.SetProperty("LoadedStartingAddress", (value))
+func (instance *CIM_BIOSElement) SetPropertyLoadedStartingAddress(value uint64) (err error) { 
+    return instance.SetProperty("LoadedStartingAddress", (value))
 }
 
 // GetLoadedStartingAddress gets the value of LoadedStartingAddress for the instance
-func (instance *CIM_BIOSElement) GetPropertyLoadedStartingAddress() (value uint64, err error) {
-	retValue, err := instance.GetProperty("LoadedStartingAddress")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyLoadedStartingAddress()(value uint64, err error) { 
+    retValue, err := instance.GetProperty("LoadedStartingAddress")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint64); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint64)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint64 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint64(valuetmp)
 
-	value = uint64(valuetmp)
-
-	return
+    return
 }
 
 // SetLoadUtilityInformation sets the value of LoadUtilityInformation for the instance
-func (instance *CIM_BIOSElement) SetPropertyLoadUtilityInformation(value string) (err error) {
-	return instance.SetProperty("LoadUtilityInformation", (value))
+func (instance *CIM_BIOSElement) SetPropertyLoadUtilityInformation(value string) (err error) { 
+    return instance.SetProperty("LoadUtilityInformation", (value))
 }
 
 // GetLoadUtilityInformation gets the value of LoadUtilityInformation for the instance
-func (instance *CIM_BIOSElement) GetPropertyLoadUtilityInformation() (value string, err error) {
-	retValue, err := instance.GetProperty("LoadUtilityInformation")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyLoadUtilityInformation()(value string, err error) { 
+    retValue, err := instance.GetProperty("LoadUtilityInformation")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetPrimaryBIOS sets the value of PrimaryBIOS for the instance
-func (instance *CIM_BIOSElement) SetPropertyPrimaryBIOS(value bool) (err error) {
-	return instance.SetProperty("PrimaryBIOS", (value))
+func (instance *CIM_BIOSElement) SetPropertyPrimaryBIOS(value bool) (err error) { 
+    return instance.SetProperty("PrimaryBIOS", (value))
 }
 
 // GetPrimaryBIOS gets the value of PrimaryBIOS for the instance
-func (instance *CIM_BIOSElement) GetPropertyPrimaryBIOS() (value bool, err error) {
-	retValue, err := instance.GetProperty("PrimaryBIOS")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyPrimaryBIOS()(value bool, err error) { 
+    retValue, err := instance.GetProperty("PrimaryBIOS")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
 
 // SetRegistryURIs sets the value of RegistryURIs for the instance
-func (instance *CIM_BIOSElement) SetPropertyRegistryURIs(value []string) (err error) {
-	return instance.SetProperty("RegistryURIs", (value))
+func (instance *CIM_BIOSElement) SetPropertyRegistryURIs(value []string) (err error) { 
+    return instance.SetProperty("RegistryURIs", (value))
 }
 
 // GetRegistryURIs gets the value of RegistryURIs for the instance
-func (instance *CIM_BIOSElement) GetPropertyRegistryURIs() (value []string, err error) {
-	retValue, err := instance.GetProperty("RegistryURIs")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyRegistryURIs()(value []string, err error) { 
+    retValue, err := instance.GetProperty("RegistryURIs")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    for _, interfaceValue := range retValue.([]interface{}) {
+        valuetmp, ok := interfaceValue.(string); 
+        if !ok {
+            err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
+            return  
+        }
+        value = append(value, string(valuetmp))
+    }
 
-	for _, interfaceValue := range retValue.([]interface{}) {
-		valuetmp, ok := interfaceValue.(string)
-		if !ok {
-			err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(interfaceValue))
-			return
-		}
-		value = append(value, string(valuetmp))
-	}
-
-	return
+    return
 }
 
 // SetReleaseDate sets the value of ReleaseDate for the instance
-func (instance *CIM_BIOSElement) SetPropertyReleaseDate(value string) (err error) {
-	return instance.SetProperty("ReleaseDate", (value))
+func (instance *CIM_BIOSElement) SetPropertyReleaseDate(value string) (err error) { 
+    return instance.SetProperty("ReleaseDate", (value))
 }
 
 // GetReleaseDate gets the value of ReleaseDate for the instance
-func (instance *CIM_BIOSElement) GetPropertyReleaseDate() (value string, err error) {
-	retValue, err := instance.GetProperty("ReleaseDate")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_BIOSElement) GetPropertyReleaseDate()(value string, err error) { 
+    retValue, err := instance.GetProperty("ReleaseDate")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
+

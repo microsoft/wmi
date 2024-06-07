@@ -3,15 +3,15 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageProvider_Type
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageProvider_Type
+// StorageProvider_Type 
 type StorageProvider_Type int
-
-const (
+const(
 	// SMP enum
 	StorageProvider_Type_SMP StorageProvider_Type = 1
 )
+

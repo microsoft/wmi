@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageExtent_NameNamespace
 //////////////////////////////////////////////
 package v2
 
-// StorageExtent_NameNamespace
+// StorageExtent_NameNamespace 
 type StorageExtent_NameNamespace int
-
-const (
+const(
 	// Unknown enum
 	StorageExtent_NameNamespace_Unknown StorageExtent_NameNamespace = 0
 	// Other enum
@@ -31,3 +30,4 @@ const (
 	// OS_Device_Namespace enum
 	StorageExtent_NameNamespace_OS_Device_Namespace StorageExtent_NameNamespace = 8
 )
+

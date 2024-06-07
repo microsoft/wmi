@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source NetworkPort_LinkTechnology
 //////////////////////////////////////////////
 package v2
 
-// NetworkPort_LinkTechnology
+// NetworkPort_LinkTechnology 
 type NetworkPort_LinkTechnology int
-
-const (
+const(
 	// Unknown enum
 	NetworkPort_LinkTechnology_Unknown NetworkPort_LinkTechnology = 0
 	// Other enum
@@ -37,3 +36,4 @@ const (
 	// Wireless_LAN enum
 	NetworkPort_LinkTechnology_Wireless_LAN NetworkPort_LinkTechnology = 11
 )
+

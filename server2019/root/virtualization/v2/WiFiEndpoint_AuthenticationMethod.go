@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source WiFiEndpoint_AuthenticationMethod
 //////////////////////////////////////////////
 package v2
 
-// WiFiEndpoint_AuthenticationMethod
+// WiFiEndpoint_AuthenticationMethod 
 type WiFiEndpoint_AuthenticationMethod int
-
-const (
+const(
 	// Unknown enum
 	WiFiEndpoint_AuthenticationMethod_Unknown WiFiEndpoint_AuthenticationMethod = 0
 	// Other enum
@@ -33,3 +32,4 @@ const (
 	// DMTF_Reserved enum
 	WiFiEndpoint_AuthenticationMethod_DMTF_Reserved WiFiEndpoint_AuthenticationMethod = 9
 )
+

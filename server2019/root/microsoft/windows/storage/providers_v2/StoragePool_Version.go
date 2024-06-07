@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StoragePool_Version
 //////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_Version
+// StoragePool_Version 
 type StoragePool_Version int
-
-const (
+const(
 	// Windows_Server_2012 enum
 	StoragePool_Version_Windows_Server_2012 StoragePool_Version = 1
 	// Windows_Server_2012_R2_Preview enum
@@ -21,3 +20,4 @@ const (
 	// Pool_Metadata_Version enum
 	StoragePool_Version_Pool_Metadata_Version StoragePool_Version = 4
 )
+

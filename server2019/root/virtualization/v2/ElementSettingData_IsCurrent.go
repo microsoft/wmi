@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ElementSettingData_IsCurrent
 //////////////////////////////////////////////
 package v2
 
-// ElementSettingData_IsCurrent
+// ElementSettingData_IsCurrent 
 type ElementSettingData_IsCurrent int
-
-const (
+const(
 	// Unknown enum
 	ElementSettingData_IsCurrent_Unknown ElementSettingData_IsCurrent = 0
 	// Is_Current enum
@@ -19,3 +18,4 @@ const (
 	// Is_Not_Current enum
 	ElementSettingData_IsCurrent_Is_Not_Current ElementSettingData_IsCurrent = 2
 )
+

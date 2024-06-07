@@ -1,22 +1,21 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_WiFiEndpoint struct
-type CIM_WiFiEndpoint struct {
+type CIM_WiFiEndpoint struct { 
 	*CIM_LANEndpoint
 
 	// AccessPointAddress shall contain the MAC address of the access point with which the WiFiEndpoint is currently associated. If the WiFiEndpoint is not currently associated, then AccessPointAddress shall be NULL.The MAC address shall be formatted as twelve hexadecimal digits (for example, "010203040506"), with each pair representing one of the six octets of the MAC address in "canonical" bit order. (Therefore, the Group address bit is found in the low order bit of the first character of the string.)
@@ -71,247 +70,244 @@ type CIM_WiFiEndpoint struct {
 	OtherEncryptionMethod string
 }
 
-func NewCIM_WiFiEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_WiFiEndpoint, err error) {
-	tmp, err := NewCIM_LANEndpointEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_WiFiEndpoint{
-		CIM_LANEndpoint: tmp,
+	func NewCIM_WiFiEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_WiFiEndpoint, err error) {tmp, err := NewCIM_LANEndpointEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_WiFiEndpoint {
+	CIM_LANEndpoint: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_WiFiEndpointEx6(hostName string,
+	func NewCIM_WiFiEndpointEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_WiFiEndpoint, err error) {
-	tmp, err := NewCIM_LANEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_WiFiEndpoint{
-		CIM_LANEndpoint: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_WiFiEndpoint, err error) {tmp, err := NewCIM_LANEndpointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_WiFiEndpoint {
+	CIM_LANEndpoint: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetAccessPointAddress sets the value of AccessPointAddress for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyAccessPointAddress(value string) (err error) {
-	return instance.SetProperty("AccessPointAddress", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyAccessPointAddress(value string) (err error) { 
+    return instance.SetProperty("AccessPointAddress", (value))
 }
 
 // GetAccessPointAddress gets the value of AccessPointAddress for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyAccessPointAddress() (value string, err error) {
-	retValue, err := instance.GetProperty("AccessPointAddress")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyAccessPointAddress()(value string, err error) { 
+    retValue, err := instance.GetProperty("AccessPointAddress")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetAssociated sets the value of Associated for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyAssociated(value bool) (err error) {
-	return instance.SetProperty("Associated", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyAssociated(value bool) (err error) { 
+    return instance.SetProperty("Associated", (value))
 }
 
 // GetAssociated gets the value of Associated for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyAssociated() (value bool, err error) {
-	retValue, err := instance.GetProperty("Associated")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyAssociated()(value bool, err error) { 
+    retValue, err := instance.GetProperty("Associated")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(bool); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(bool)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " bool is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = bool(valuetmp)
 
-	value = bool(valuetmp)
-
-	return
+    return
 }
 
 // SetAuthenticationMethod sets the value of AuthenticationMethod for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyAuthenticationMethod(value WiFiEndpoint_AuthenticationMethod) (err error) {
-	return instance.SetProperty("AuthenticationMethod", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyAuthenticationMethod(value WiFiEndpoint_AuthenticationMethod) (err error) { 
+    return instance.SetProperty("AuthenticationMethod", (value))
 }
 
 // GetAuthenticationMethod gets the value of AuthenticationMethod for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyAuthenticationMethod() (value WiFiEndpoint_AuthenticationMethod, err error) {
-	retValue, err := instance.GetProperty("AuthenticationMethod")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyAuthenticationMethod()(value WiFiEndpoint_AuthenticationMethod, err error) { 
+    retValue, err := instance.GetProperty("AuthenticationMethod")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = WiFiEndpoint_AuthenticationMethod(valuetmp)
 
-	value = WiFiEndpoint_AuthenticationMethod(valuetmp)
-
-	return
+    return
 }
 
 // SetBSSType sets the value of BSSType for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyBSSType(value WiFiEndpoint_BSSType) (err error) {
-	return instance.SetProperty("BSSType", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyBSSType(value WiFiEndpoint_BSSType) (err error) { 
+    return instance.SetProperty("BSSType", (value))
 }
 
 // GetBSSType gets the value of BSSType for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyBSSType() (value WiFiEndpoint_BSSType, err error) {
-	retValue, err := instance.GetProperty("BSSType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyBSSType()(value WiFiEndpoint_BSSType, err error) { 
+    retValue, err := instance.GetProperty("BSSType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = WiFiEndpoint_BSSType(valuetmp)
 
-	value = WiFiEndpoint_BSSType(valuetmp)
-
-	return
+    return
 }
 
 // SetEncryptionMethod sets the value of EncryptionMethod for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyEncryptionMethod(value WiFiEndpoint_EncryptionMethod) (err error) {
-	return instance.SetProperty("EncryptionMethod", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyEncryptionMethod(value WiFiEndpoint_EncryptionMethod) (err error) { 
+    return instance.SetProperty("EncryptionMethod", (value))
 }
 
 // GetEncryptionMethod gets the value of EncryptionMethod for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyEncryptionMethod() (value WiFiEndpoint_EncryptionMethod, err error) {
-	retValue, err := instance.GetProperty("EncryptionMethod")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyEncryptionMethod()(value WiFiEndpoint_EncryptionMethod, err error) { 
+    retValue, err := instance.GetProperty("EncryptionMethod")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = WiFiEndpoint_EncryptionMethod(valuetmp)
 
-	value = WiFiEndpoint_EncryptionMethod(valuetmp)
-
-	return
+    return
 }
 
 // SetIEEE8021xAuthenticationProtocol sets the value of IEEE8021xAuthenticationProtocol for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyIEEE8021xAuthenticationProtocol(value WiFiEndpoint_IEEE8021xAuthenticationProtocol) (err error) {
-	return instance.SetProperty("IEEE8021xAuthenticationProtocol", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyIEEE8021xAuthenticationProtocol(value WiFiEndpoint_IEEE8021xAuthenticationProtocol) (err error) { 
+    return instance.SetProperty("IEEE8021xAuthenticationProtocol", (value))
 }
 
 // GetIEEE8021xAuthenticationProtocol gets the value of IEEE8021xAuthenticationProtocol for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyIEEE8021xAuthenticationProtocol() (value WiFiEndpoint_IEEE8021xAuthenticationProtocol, err error) {
-	retValue, err := instance.GetProperty("IEEE8021xAuthenticationProtocol")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyIEEE8021xAuthenticationProtocol()(value WiFiEndpoint_IEEE8021xAuthenticationProtocol, err error) { 
+    retValue, err := instance.GetProperty("IEEE8021xAuthenticationProtocol")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = WiFiEndpoint_IEEE8021xAuthenticationProtocol(valuetmp)
 
-	value = WiFiEndpoint_IEEE8021xAuthenticationProtocol(valuetmp)
-
-	return
+    return
 }
 
 // SetOtherAuthenticationMethod sets the value of OtherAuthenticationMethod for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyOtherAuthenticationMethod(value string) (err error) {
-	return instance.SetProperty("OtherAuthenticationMethod", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyOtherAuthenticationMethod(value string) (err error) { 
+    return instance.SetProperty("OtherAuthenticationMethod", (value))
 }
 
 // GetOtherAuthenticationMethod gets the value of OtherAuthenticationMethod for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyOtherAuthenticationMethod() (value string, err error) {
-	retValue, err := instance.GetProperty("OtherAuthenticationMethod")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyOtherAuthenticationMethod()(value string, err error) { 
+    retValue, err := instance.GetProperty("OtherAuthenticationMethod")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetOtherEncryptionMethod sets the value of OtherEncryptionMethod for the instance
-func (instance *CIM_WiFiEndpoint) SetPropertyOtherEncryptionMethod(value string) (err error) {
-	return instance.SetProperty("OtherEncryptionMethod", (value))
+func (instance *CIM_WiFiEndpoint) SetPropertyOtherEncryptionMethod(value string) (err error) { 
+    return instance.SetProperty("OtherEncryptionMethod", (value))
 }
 
 // GetOtherEncryptionMethod gets the value of OtherEncryptionMethod for the instance
-func (instance *CIM_WiFiEndpoint) GetPropertyOtherEncryptionMethod() (value string, err error) {
-	retValue, err := instance.GetProperty("OtherEncryptionMethod")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_WiFiEndpoint) GetPropertyOtherEncryptionMethod()(value string, err error) { 
+    retValue, err := instance.GetProperty("OtherEncryptionMethod")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
+

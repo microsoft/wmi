@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageEnclosure_PowerSupplyOperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageEnclosure_PowerSupplyOperationalStatus
+// StorageEnclosure_PowerSupplyOperationalStatus 
 type StorageEnclosure_PowerSupplyOperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageEnclosure_PowerSupplyOperationalStatus_Unknown StorageEnclosure_PowerSupplyOperationalStatus = 0
 	// OK enum
@@ -31,3 +30,4 @@ const (
 	// Not_Reported enum
 	StorageEnclosure_PowerSupplyOperationalStatus_Not_Reported StorageEnclosure_PowerSupplyOperationalStatus = 11
 )
+

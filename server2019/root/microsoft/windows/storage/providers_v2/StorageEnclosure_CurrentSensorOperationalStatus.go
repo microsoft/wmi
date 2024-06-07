@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageEnclosure_CurrentSensorOperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageEnclosure_CurrentSensorOperationalStatus
+// StorageEnclosure_CurrentSensorOperationalStatus 
 type StorageEnclosure_CurrentSensorOperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageEnclosure_CurrentSensorOperationalStatus_Unknown StorageEnclosure_CurrentSensorOperationalStatus = 0
 	// OK enum
@@ -31,3 +30,4 @@ const (
 	// Not_Reported enum
 	StorageEnclosure_CurrentSensorOperationalStatus_Not_Reported StorageEnclosure_CurrentSensorOperationalStatus = 11
 )
+

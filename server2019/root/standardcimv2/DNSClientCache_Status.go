@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DNSClientCache_Status
 //////////////////////////////////////////////
 package standardcimv2
 
-// DNSClientCache_Status
+// DNSClientCache_Status 
 type DNSClientCache_Status int
-
-const (
+const(
 	// _114 enum
 	DNSClientCache_Status__114 DNSClientCache_Status = 0
 	// _682 enum
@@ -19,3 +18,4 @@ const (
 	// _683 enum
 	DNSClientCache_Status__683 DNSClientCache_Status = 9701
 )
+

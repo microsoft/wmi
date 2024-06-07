@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Synchronized_SyncMode
 //////////////////////////////////////////////
 package providers_v2
 
-// Synchronized_SyncMode
+// Synchronized_SyncMode 
 type Synchronized_SyncMode int
-
-const (
+const(
 	// Unknown enum
 	Synchronized_SyncMode_Unknown Synchronized_SyncMode = 0
 	// Synchronous enum
@@ -23,3 +22,4 @@ const (
 	// Vendor_Specific enum
 	Synchronized_SyncMode_Vendor_Specific Synchronized_SyncMode = 5
 )
+

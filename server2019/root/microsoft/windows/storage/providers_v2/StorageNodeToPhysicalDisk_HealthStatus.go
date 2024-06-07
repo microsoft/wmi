@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNodeToPhysicalDisk_HealthStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToPhysicalDisk_HealthStatus
+// StorageNodeToPhysicalDisk_HealthStatus 
 type StorageNodeToPhysicalDisk_HealthStatus int
-
-const (
+const(
 	// Healthy enum
 	StorageNodeToPhysicalDisk_HealthStatus_Healthy StorageNodeToPhysicalDisk_HealthStatus = 0
 	// Warning enum
@@ -21,3 +20,4 @@ const (
 	// Unknown enum
 	StorageNodeToPhysicalDisk_HealthStatus_Unknown StorageNodeToPhysicalDisk_HealthStatus = 5
 )
+

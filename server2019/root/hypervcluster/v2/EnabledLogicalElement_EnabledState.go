@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source EnabledLogicalElement_EnabledState
 //////////////////////////////////////////////
 package v2
 
-// EnabledLogicalElement_EnabledState
+// EnabledLogicalElement_EnabledState 
 type EnabledLogicalElement_EnabledState int
-
-const (
+const(
 	// Unknown enum
 	EnabledLogicalElement_EnabledState_Unknown EnabledLogicalElement_EnabledState = 0
 	// Other enum
@@ -39,3 +38,4 @@ const (
 	// Vendor_Reserved enum
 	EnabledLogicalElement_EnabledState_Vendor_Reserved EnabledLogicalElement_EnabledState = 12
 )
+

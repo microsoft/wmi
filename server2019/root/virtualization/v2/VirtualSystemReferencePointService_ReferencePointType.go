@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemReferencePointService_ReferencePointType
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemReferencePointService_ReferencePointType
+// VirtualSystemReferencePointService_ReferencePointType 
 type VirtualSystemReferencePointService_ReferencePointType int
-
-const (
+const(
 	// Log_based enum
 	VirtualSystemReferencePointService_ReferencePointType_Log_based VirtualSystemReferencePointService_ReferencePointType = 0
 	// RCT_based enum
 	VirtualSystemReferencePointService_ReferencePointType_RCT_based VirtualSystemReferencePointService_ReferencePointType = 1
 )
+

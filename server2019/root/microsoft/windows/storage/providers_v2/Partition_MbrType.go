@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Partition_MbrType
 //////////////////////////////////////////////
 package providers_v2
 
-// Partition_MbrType
+// Partition_MbrType 
 type Partition_MbrType int
-
-const (
+const(
 	// FAT12 enum
 	Partition_MbrType_FAT12 Partition_MbrType = 1
 	// FAT16 enum
@@ -25,3 +24,4 @@ const (
 	// FAT32 enum
 	Partition_MbrType_FAT32 Partition_MbrType = 12
 )
+

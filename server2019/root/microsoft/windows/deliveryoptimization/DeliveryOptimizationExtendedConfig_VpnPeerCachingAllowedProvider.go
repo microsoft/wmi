@@ -3,23 +3,23 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider
+// DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider 
 type DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider int
-
-const (
-	// _14 enum
-	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__14 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 5
-	// _15 enum
-	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__15 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 7
-	// _16 enum
-	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__16 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 8
+const(
 	// _17 enum
-	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__17 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 9
+	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__17 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 5
 	// _18 enum
-	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__18 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 99
+	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__18 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 7
+	// _19 enum
+	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__19 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 8
+	// _20 enum
+	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__20 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 9
+	// _21 enum
+	DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider__21 DeliveryOptimizationExtendedConfig_VpnPeerCachingAllowedProvider = 99
 )
+

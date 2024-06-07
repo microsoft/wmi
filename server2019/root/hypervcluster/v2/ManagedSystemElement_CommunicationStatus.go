@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ManagedSystemElement_CommunicationStatus
 //////////////////////////////////////////////
 package v2
 
-// ManagedSystemElement_CommunicationStatus
+// ManagedSystemElement_CommunicationStatus 
 type ManagedSystemElement_CommunicationStatus int
-
-const (
+const(
 	// Unknown enum
 	ManagedSystemElement_CommunicationStatus_Unknown ManagedSystemElement_CommunicationStatus = 0
 	// Not_Available enum
@@ -27,3 +26,4 @@ const (
 	// Vendor_Reserved enum
 	ManagedSystemElement_CommunicationStatus_Vendor_Reserved ManagedSystemElement_CommunicationStatus = 6
 )
+

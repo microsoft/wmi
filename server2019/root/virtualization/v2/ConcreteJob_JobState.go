@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ConcreteJob_JobState
 //////////////////////////////////////////////
 package v2
 
-// ConcreteJob_JobState
+// ConcreteJob_JobState 
 type ConcreteJob_JobState int
-
-const (
+const(
 	// New enum
 	ConcreteJob_JobState_New ConcreteJob_JobState = 2
 	// Starting enum
@@ -39,3 +38,4 @@ const (
 	// Vendor_Reserved enum
 	ConcreteJob_JobState_Vendor_Reserved ConcreteJob_JobState = 14
 )
+

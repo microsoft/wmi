@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemMigrationSettingData_MigrationType
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemMigrationSettingData_MigrationType
+// VirtualSystemMigrationSettingData_MigrationType 
 type VirtualSystemMigrationSettingData_MigrationType int
-
-const (
+const(
 	// Unknown enum
 	VirtualSystemMigrationSettingData_MigrationType_Unknown VirtualSystemMigrationSettingData_MigrationType = 0
 	// Other enum
@@ -23,3 +22,4 @@ const (
 	// Restart enum
 	VirtualSystemMigrationSettingData_MigrationType_Restart VirtualSystemMigrationSettingData_MigrationType = 4
 )
+

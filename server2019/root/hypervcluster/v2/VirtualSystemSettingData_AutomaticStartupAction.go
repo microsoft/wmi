@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemSettingData_AutomaticStartupAction
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemSettingData_AutomaticStartupAction
+// VirtualSystemSettingData_AutomaticStartupAction 
 type VirtualSystemSettingData_AutomaticStartupAction int
-
-const (
+const(
 	// None enum
 	VirtualSystemSettingData_AutomaticStartupAction_None VirtualSystemSettingData_AutomaticStartupAction = 2
 	// Restart_if_previously_active enum
@@ -21,3 +20,4 @@ const (
 	// DMTF_Reserved enum
 	VirtualSystemSettingData_AutomaticStartupAction_DMTF_Reserved VirtualSystemSettingData_AutomaticStartupAction = 5
 )
+

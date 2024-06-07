@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ScheduledTask_State
 //////////////////////////////////////////////
 package taskscheduler
 
-// ScheduledTask_State
+// ScheduledTask_State 
 type ScheduledTask_State int
-
-const (
+const(
 	// _17 enum
 	ScheduledTask_State__17 ScheduledTask_State = 0
 	// _18 enum
@@ -23,3 +22,4 @@ const (
 	// _21 enum
 	ScheduledTask_State__21 ScheduledTask_State = 4
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ActiveConnection_TrafficType
 //////////////////////////////////////////////
 package v2
 
-// ActiveConnection_TrafficType
+// ActiveConnection_TrafficType 
 type ActiveConnection_TrafficType int
-
-const (
+const(
 	// Unknown enum
 	ActiveConnection_TrafficType_Unknown ActiveConnection_TrafficType = 0
 	// Other enum
@@ -25,3 +24,4 @@ const (
 	// Anycast enum
 	ActiveConnection_TrafficType_Anycast ActiveConnection_TrafficType = 5
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus
+// StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus 
 type StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus_Unknown StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus = 0
 	// OK enum
@@ -31,3 +30,4 @@ const (
 	// Not_Reported enum
 	StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus_Not_Reported StorageNodeToStorageEnclosure_VoltageSensorOperationalStatus = 11
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source RedundancySet_RedundancyStatus
 //////////////////////////////////////////////
 package v2
 
-// RedundancySet_RedundancyStatus
+// RedundancySet_RedundancyStatus 
 type RedundancySet_RedundancyStatus int
-
-const (
+const(
 	// Unknown enum
 	RedundancySet_RedundancyStatus_Unknown RedundancySet_RedundancyStatus = 0
 	// DMTF_Reserved enum
@@ -25,3 +24,4 @@ const (
 	// Overall_Failure enum
 	RedundancySet_RedundancyStatus_Overall_Failure RedundancySet_RedundancyStatus = 5
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TPM_RequestedTPMState
 //////////////////////////////////////////////
 package v2
 
-// TPM_RequestedTPMState
+// TPM_RequestedTPMState 
 type TPM_RequestedTPMState int
-
-const (
+const(
 	// S1_Enabled_Active_Owned enum
 	TPM_RequestedTPMState_S1_Enabled_Active_Owned TPM_RequestedTPMState = 2
 	// S2_Disabled_Active_Owned enum
@@ -33,3 +32,4 @@ const (
 	// Vendor_Reserved enum
 	TPM_RequestedTPMState_Vendor_Reserved TPM_RequestedTPMState = 11
 )
+

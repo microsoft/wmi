@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source UserProfile_HealthStatus
 //////////////////////////////////////////////
 package cimv2
 
-// UserProfile_HealthStatus
+// UserProfile_HealthStatus 
 type UserProfile_HealthStatus int
-
-const (
+const(
 	// Healthy enum
 	UserProfile_HealthStatus_Healthy UserProfile_HealthStatus = 0
 	// Unhealthy enum
@@ -21,3 +20,4 @@ const (
 	// Not_Applicable enum
 	UserProfile_HealthStatus_Not_Applicable UserProfile_HealthStatus = 3
 )
+

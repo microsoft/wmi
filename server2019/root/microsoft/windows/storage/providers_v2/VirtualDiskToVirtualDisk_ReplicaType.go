@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDiskToVirtualDisk_ReplicaType
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_ReplicaType
+// VirtualDiskToVirtualDisk_ReplicaType 
 type VirtualDiskToVirtualDisk_ReplicaType int
-
-const (
+const(
 	// Not_Specified enum
 	VirtualDiskToVirtualDisk_ReplicaType_Not_Specified VirtualDiskToVirtualDisk_ReplicaType = 0
 	// Full_Copy enum
@@ -27,3 +26,4 @@ const (
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_ReplicaType_Vendor_Specific VirtualDiskToVirtualDisk_ReplicaType = 7
 )
+

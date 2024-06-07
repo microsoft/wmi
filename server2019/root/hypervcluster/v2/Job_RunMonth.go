@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Job_RunMonth
 //////////////////////////////////////////////
 package v2
 
-// Job_RunMonth
+// Job_RunMonth 
 type Job_RunMonth int
-
-const (
+const(
 	// January enum
 	Job_RunMonth_January Job_RunMonth = 0
 	// February enum
@@ -37,3 +36,4 @@ const (
 	// December enum
 	Job_RunMonth_December Job_RunMonth = 11
 )
+

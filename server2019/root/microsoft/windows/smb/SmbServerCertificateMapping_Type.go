@@ -3,15 +3,15 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbServerCertificateMapping_Type
 //////////////////////////////////////////////
 package smb
 
-// SmbServerCertificateMapping_Type
+// SmbServerCertificateMapping_Type 
 type SmbServerCertificateMapping_Type int
-
-const (
+const(
 	// _61 enum
 	SmbServerCertificateMapping_Type__61 SmbServerCertificateMapping_Type = 0
 )
+

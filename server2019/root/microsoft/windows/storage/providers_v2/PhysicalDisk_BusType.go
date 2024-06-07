@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PhysicalDisk_BusType
 //////////////////////////////////////////////
 package providers_v2
 
-// PhysicalDisk_BusType
+// PhysicalDisk_BusType 
 type PhysicalDisk_BusType int
-
-const (
+const(
 	// Unknown enum
 	PhysicalDisk_BusType_Unknown PhysicalDisk_BusType = 0
 	// SCSI enum
@@ -51,3 +50,4 @@ const (
 	// Microsoft_Reserved enum
 	PhysicalDisk_BusType_Microsoft_Reserved PhysicalDisk_BusType = 18
 )
+

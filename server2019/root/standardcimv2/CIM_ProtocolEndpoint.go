@@ -1,170 +1,166 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.StandardCimv2
 //////////////////////////////////////////////
 package standardcimv2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_ProtocolEndpoint struct
-type CIM_ProtocolEndpoint struct {
+type CIM_ProtocolEndpoint struct { 
 	*CIM_ServiceAccessPoint
 
-	// 381
+	// 
 	NameFormat string
 
-	// 646
+	// 
 	OtherTypeDescription string
 
-	// 409
-	ProtocolIFType ProtocolEndpoint_ProtocolIFType
+	// 
+	ProtocolIFType uint16
 
-	// 382
-	ProtocolType ProtocolEndpoint_ProtocolType
+	// 
+	ProtocolType uint16
 }
 
-func NewCIM_ProtocolEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_ProtocolEndpoint, err error) {
-	tmp, err := NewCIM_ServiceAccessPointEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_ProtocolEndpoint{
-		CIM_ServiceAccessPoint: tmp,
+	func NewCIM_ProtocolEndpointEx1(instance *cim.WmiInstance) (newInstance *CIM_ProtocolEndpoint, err error) {tmp, err := NewCIM_ServiceAccessPointEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_ProtocolEndpoint {
+	CIM_ServiceAccessPoint: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_ProtocolEndpointEx6(hostName string,
+	func NewCIM_ProtocolEndpointEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_ProtocolEndpoint, err error) {
-	tmp, err := NewCIM_ServiceAccessPointEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_ProtocolEndpoint{
-		CIM_ServiceAccessPoint: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_ProtocolEndpoint, err error) {tmp, err := NewCIM_ServiceAccessPointEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_ProtocolEndpoint {
+	CIM_ServiceAccessPoint: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetNameFormat sets the value of NameFormat for the instance
-func (instance *CIM_ProtocolEndpoint) SetPropertyNameFormat(value string) (err error) {
-	return instance.SetProperty("NameFormat", (value))
+func (instance *CIM_ProtocolEndpoint) SetPropertyNameFormat(value string) (err error) { 
+    return instance.SetProperty("NameFormat", (value))
 }
 
 // GetNameFormat gets the value of NameFormat for the instance
-func (instance *CIM_ProtocolEndpoint) GetPropertyNameFormat() (value string, err error) {
-	retValue, err := instance.GetProperty("NameFormat")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ProtocolEndpoint) GetPropertyNameFormat()(value string, err error) { 
+    retValue, err := instance.GetProperty("NameFormat")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetOtherTypeDescription sets the value of OtherTypeDescription for the instance
-func (instance *CIM_ProtocolEndpoint) SetPropertyOtherTypeDescription(value string) (err error) {
-	return instance.SetProperty("OtherTypeDescription", (value))
+func (instance *CIM_ProtocolEndpoint) SetPropertyOtherTypeDescription(value string) (err error) { 
+    return instance.SetProperty("OtherTypeDescription", (value))
 }
 
 // GetOtherTypeDescription gets the value of OtherTypeDescription for the instance
-func (instance *CIM_ProtocolEndpoint) GetPropertyOtherTypeDescription() (value string, err error) {
-	retValue, err := instance.GetProperty("OtherTypeDescription")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ProtocolEndpoint) GetPropertyOtherTypeDescription()(value string, err error) { 
+    retValue, err := instance.GetProperty("OtherTypeDescription")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetProtocolIFType sets the value of ProtocolIFType for the instance
-func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolIFType(value ProtocolEndpoint_ProtocolIFType) (err error) {
-	return instance.SetProperty("ProtocolIFType", (value))
+func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolIFType(value uint16) (err error) { 
+    return instance.SetProperty("ProtocolIFType", (value))
 }
 
 // GetProtocolIFType gets the value of ProtocolIFType for the instance
-func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolIFType() (value ProtocolEndpoint_ProtocolIFType, err error) {
-	retValue, err := instance.GetProperty("ProtocolIFType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolIFType()(value uint16, err error) { 
+    retValue, err := instance.GetProperty("ProtocolIFType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint16); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint16(valuetmp)
 
-	value = ProtocolEndpoint_ProtocolIFType(valuetmp)
-
-	return
+    return
 }
 
 // SetProtocolType sets the value of ProtocolType for the instance
-func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolType(value ProtocolEndpoint_ProtocolType) (err error) {
-	return instance.SetProperty("ProtocolType", (value))
+func (instance *CIM_ProtocolEndpoint) SetPropertyProtocolType(value uint16) (err error) { 
+    return instance.SetProperty("ProtocolType", (value))
 }
 
 // GetProtocolType gets the value of ProtocolType for the instance
-func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolType() (value ProtocolEndpoint_ProtocolType, err error) {
-	retValue, err := instance.GetProperty("ProtocolType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_ProtocolEndpoint) GetPropertyProtocolType()(value uint16, err error) { 
+    retValue, err := instance.GetProperty("ProtocolType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint16); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint16(valuetmp)
 
-	value = ProtocolEndpoint_ProtocolType(valuetmp)
-
-	return
+    return
 }
+

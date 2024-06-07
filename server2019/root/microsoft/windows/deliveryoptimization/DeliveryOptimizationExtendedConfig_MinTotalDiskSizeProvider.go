@@ -3,23 +3,23 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider
+// DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider 
 type DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider int
-
-const (
-	// _14 enum
-	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__14 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 5
-	// _15 enum
-	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__15 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 7
-	// _16 enum
-	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__16 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 8
+const(
 	// _17 enum
-	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__17 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 9
+	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__17 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 5
 	// _18 enum
-	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__18 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 99
+	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__18 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 7
+	// _19 enum
+	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__19 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 8
+	// _20 enum
+	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__20 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 9
+	// _21 enum
+	DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider__21 DeliveryOptimizationExtendedConfig_MinTotalDiskSizeProvider = 99
 )
+

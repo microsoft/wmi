@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Memory_ErrorAccess
 //////////////////////////////////////////////
 package v2
 
-// Memory_ErrorAccess
+// Memory_ErrorAccess 
 type Memory_ErrorAccess int
-
-const (
+const(
 	// Other enum
 	Memory_ErrorAccess_Other Memory_ErrorAccess = 1
 	// Unknown enum
@@ -23,3 +22,4 @@ const (
 	// Partial_Write enum
 	Memory_ErrorAccess_Partial_Write Memory_ErrorAccess = 5
 )
+

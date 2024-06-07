@@ -1,18 +1,16 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
+//
 // Author:
-//
-//	Auto Generated on 9/18/2020 using wmigen
-//	Source ConcreteJob_JobType
-//
-// ////////////////////////////////////////////
+//      Auto Generated on 6/6/2024 using wmigen
+//      Source ConcreteJob_JobType
+//////////////////////////////////////////////
 package v2
 
-// ConcreteJob_JobType
+// ConcreteJob_JobType 
 type ConcreteJob_JobType int
-
-const (
+const(
 	// Unknown enum
 	ConcreteJob_JobType_Unknown ConcreteJob_JobType = 0
 	// Define_Virtual_Machine enum
@@ -38,9 +36,9 @@ const (
 	// Shut_Down_Virtual_Machine enum
 	ConcreteJob_JobType_Shut_Down_Virtual_Machine ConcreteJob_JobType = 16
 	// Pause_Virtual_Machine enum
-	ConcreteJob_JobType_Pause_Virtual_Machine ConcreteJob_JobType = 26 //These are out of date. Newest hyper-v code shows 20 for Pause and 21 for Resume.
+	ConcreteJob_JobType_Pause_Virtual_Machine ConcreteJob_JobType = 26
 	// Resume_Virtual_Machine enum
-	ConcreteJob_JobType_Resume_Virtual_Machine ConcreteJob_JobType = 27 //These are out of date. Newest hyper-v code shows 20 for Pause and 21 for Resume.
+	ConcreteJob_JobType_Resume_Virtual_Machine ConcreteJob_JobType = 27
 	// Reset_Virtual_Machine enum
 	ConcreteJob_JobType_Reset_Virtual_Machine ConcreteJob_JobType = 28
 	// Reboot_Virtual_Machine enum
@@ -232,3 +230,4 @@ const (
 	// Mount_or_Dismount_Assignable_Device enum
 	ConcreteJob_JobType_Mount_or_Dismount_Assignable_Device ConcreteJob_JobType = 260
 )
+

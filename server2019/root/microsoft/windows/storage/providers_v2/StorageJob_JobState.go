@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageJob_JobState
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageJob_JobState
+// StorageJob_JobState 
 type StorageJob_JobState int
-
-const (
+const(
 	// New enum
 	StorageJob_JobState_New StorageJob_JobState = 2
 	// Starting enum
@@ -39,3 +38,4 @@ const (
 	// Vendor_Reserved enum
 	StorageJob_JobState_Vendor_Reserved StorageJob_JobState = 14
 )
+

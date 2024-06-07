@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ComputerSystem_PowerManagementCapabilities
 //////////////////////////////////////////////
 package v2
 
-// ComputerSystem_PowerManagementCapabilities
+// ComputerSystem_PowerManagementCapabilities 
 type ComputerSystem_PowerManagementCapabilities int
-
-const (
+const(
 	// Unknown enum
 	ComputerSystem_PowerManagementCapabilities_Unknown ComputerSystem_PowerManagementCapabilities = 0
 	// Not_Supported enum
@@ -29,3 +28,4 @@ const (
 	// Timed_Power_On_Supported enum
 	ComputerSystem_PowerManagementCapabilities_Timed_Power_On_Supported ComputerSystem_PowerManagementCapabilities = 7
 )
+

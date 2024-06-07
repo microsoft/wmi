@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source AllocationCapabilities_SupportedRemoveStates
 //////////////////////////////////////////////
 package v2
 
-// AllocationCapabilities_SupportedRemoveStates
+// AllocationCapabilities_SupportedRemoveStates 
 type AllocationCapabilities_SupportedRemoveStates int
-
-const (
+const(
 	// Unknown enum
 	AllocationCapabilities_SupportedRemoveStates_Unknown AllocationCapabilities_SupportedRemoveStates = 0
 	// Enabled enum
@@ -41,3 +40,4 @@ const (
 	// Vendor_Reserved enum
 	AllocationCapabilities_SupportedRemoveStates_Vendor_Reserved AllocationCapabilities_SupportedRemoveStates = 14
 )
+

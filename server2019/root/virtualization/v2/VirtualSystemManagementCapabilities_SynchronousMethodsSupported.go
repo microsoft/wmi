@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemManagementCapabilities_SynchronousMethodsSupported
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemManagementCapabilities_SynchronousMethodsSupported
+// VirtualSystemManagementCapabilities_SynchronousMethodsSupported 
 type VirtualSystemManagementCapabilities_SynchronousMethodsSupported int
-
-const (
+const(
 	// DefineSystemSupported enum
 	VirtualSystemManagementCapabilities_SynchronousMethodsSupported_DefineSystemSupported VirtualSystemManagementCapabilities_SynchronousMethodsSupported = 2
 	// DestroySystemSupported enum
@@ -35,3 +34,4 @@ const (
 	// Vendor_Reserved enum
 	VirtualSystemManagementCapabilities_SynchronousMethodsSupported_Vendor_Reserved VirtualSystemManagementCapabilities_SynchronousMethodsSupported = 12
 )
+

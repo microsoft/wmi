@@ -1,29 +1,28 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.HyperVCluster.v2
 //////////////////////////////////////////////
 package v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	"github.com/microsoft/wmi/pkg/errors"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
-	"reflect"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/errors"
+ "reflect"
 )
 
 // CIM_VirtualSystemMigrationSettingData struct
-type CIM_VirtualSystemMigrationSettingData struct {
+type CIM_VirtualSystemMigrationSettingData struct { 
 	*CIM_SettingData
 
 	// Bandwidth indicates the bandwidth assigned to or requested for a virtual system migration operation. The special value 0 indicates:
 	///- in migration requests the default bandwidth
 	///- otherwise that bandwidths are not supported.
 	///Bandwidth and Priority may be used in conjunction. Migration processes that have the highest equal priority value share the available bandwidth based on their requested bandwidth. If not all bandwidth is consumed by this set of processes, migration processes with the next lower equal priority share the remaining bandwidth. If still more bandwidth remains, migration processes with the next lower equal priority are considered, and so forth.
-	///The unit applicable for the Bandwidth property is conveyed by the value of the BandwidthUnit property. If the value of the BandwidthUnit property matches "percent", the following restrictions apply:
+	///The unit applicable for the Bandwidth property is conveyed by the value of the BandwidthUnit property. If the value of the BandwidthUnit property matches "percent", the following restrictions apply: 
 	///The value of the Bandwidth property shall be between 0 and 100, with higher values indicating a higher bandwidth. A value of 100 indicates the total available bandwidth for performing virtual system migration operations. Values between 1 and 100 should linearly correlate with the available bandwidth range. For exampe, a value of 50 should request half of the available bandwidth, a value of 33 should request one third of the bandwidth, etc. .
 	Bandwidth uint16
 
@@ -55,193 +54,190 @@ type CIM_VirtualSystemMigrationSettingData struct {
 	TransportType VirtualSystemMigrationSettingData_TransportType
 }
 
-func NewCIM_VirtualSystemMigrationSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationSettingData, err error) {
-	tmp, err := NewCIM_SettingDataEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemMigrationSettingData{
-		CIM_SettingData: tmp,
+	func NewCIM_VirtualSystemMigrationSettingDataEx1(instance *cim.WmiInstance) (newInstance *CIM_VirtualSystemMigrationSettingData, err error) {tmp, err := NewCIM_SettingDataEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemMigrationSettingData {
+	CIM_SettingData: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewCIM_VirtualSystemMigrationSettingDataEx6(hostName string,
+	func NewCIM_VirtualSystemMigrationSettingDataEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *CIM_VirtualSystemMigrationSettingData, err error) {
-	tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &CIM_VirtualSystemMigrationSettingData{
-		CIM_SettingData: tmp,
+	query *query.WmiQuery ) (newInstance *CIM_VirtualSystemMigrationSettingData, err error) {tmp, err := NewCIM_SettingDataEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &CIM_VirtualSystemMigrationSettingData {
+	CIM_SettingData: tmp,
 	}
 	return
-}
+	}
+	
 
 // SetBandwidth sets the value of Bandwidth for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyBandwidth(value uint16) (err error) {
-	return instance.SetProperty("Bandwidth", (value))
+func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyBandwidth(value uint16) (err error) { 
+    return instance.SetProperty("Bandwidth", (value))
 }
 
 // GetBandwidth gets the value of Bandwidth for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyBandwidth() (value uint16, err error) {
-	retValue, err := instance.GetProperty("Bandwidth")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyBandwidth()(value uint16, err error) { 
+    retValue, err := instance.GetProperty("Bandwidth")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint16); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint16(valuetmp)
 
-	value = uint16(valuetmp)
-
-	return
+    return
 }
 
 // SetBandwidthUnit sets the value of BandwidthUnit for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyBandwidthUnit(value string) (err error) {
-	return instance.SetProperty("BandwidthUnit", (value))
+func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyBandwidthUnit(value string) (err error) { 
+    return instance.SetProperty("BandwidthUnit", (value))
 }
 
 // GetBandwidthUnit gets the value of BandwidthUnit for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyBandwidthUnit() (value string, err error) {
-	retValue, err := instance.GetProperty("BandwidthUnit")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyBandwidthUnit()(value string, err error) { 
+    retValue, err := instance.GetProperty("BandwidthUnit")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetMigrationType sets the value of MigrationType for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyMigrationType(value VirtualSystemMigrationSettingData_MigrationType) (err error) {
-	return instance.SetProperty("MigrationType", (value))
+func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyMigrationType(value VirtualSystemMigrationSettingData_MigrationType) (err error) { 
+    return instance.SetProperty("MigrationType", (value))
 }
 
 // GetMigrationType gets the value of MigrationType for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyMigrationType() (value VirtualSystemMigrationSettingData_MigrationType, err error) {
-	retValue, err := instance.GetProperty("MigrationType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyMigrationType()(value VirtualSystemMigrationSettingData_MigrationType, err error) { 
+    retValue, err := instance.GetProperty("MigrationType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = VirtualSystemMigrationSettingData_MigrationType(valuetmp)
 
-	value = VirtualSystemMigrationSettingData_MigrationType(valuetmp)
-
-	return
+    return
 }
 
 // SetOtherTransportType sets the value of OtherTransportType for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyOtherTransportType(value string) (err error) {
-	return instance.SetProperty("OtherTransportType", (value))
+func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyOtherTransportType(value string) (err error) { 
+    return instance.SetProperty("OtherTransportType", (value))
 }
 
 // GetOtherTransportType gets the value of OtherTransportType for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyOtherTransportType() (value string, err error) {
-	retValue, err := instance.GetProperty("OtherTransportType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyOtherTransportType()(value string, err error) { 
+    retValue, err := instance.GetProperty("OtherTransportType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(string); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(string)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " string is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = string(valuetmp)
 
-	value = string(valuetmp)
-
-	return
+    return
 }
 
 // SetPriority sets the value of Priority for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyPriority(value uint16) (err error) {
-	return instance.SetProperty("Priority", (value))
+func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyPriority(value uint16) (err error) { 
+    return instance.SetProperty("Priority", (value))
 }
 
 // GetPriority gets the value of Priority for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyPriority() (value uint16, err error) {
-	retValue, err := instance.GetProperty("Priority")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyPriority()(value uint16, err error) { 
+    retValue, err := instance.GetProperty("Priority")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(uint16); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(uint16)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " uint16 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = uint16(valuetmp)
 
-	value = uint16(valuetmp)
-
-	return
+    return
 }
 
 // SetTransportType sets the value of TransportType for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyTransportType(value VirtualSystemMigrationSettingData_TransportType) (err error) {
-	return instance.SetProperty("TransportType", (value))
+func (instance *CIM_VirtualSystemMigrationSettingData) SetPropertyTransportType(value VirtualSystemMigrationSettingData_TransportType) (err error) { 
+    return instance.SetProperty("TransportType", (value))
 }
 
 // GetTransportType gets the value of TransportType for the instance
-func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyTransportType() (value VirtualSystemMigrationSettingData_TransportType, err error) {
-	retValue, err := instance.GetProperty("TransportType")
-	if err != nil {
-		return
-	}
-	if retValue == nil {
-		// Doesn't have any value. Return empty
-		return
-	}
+func (instance *CIM_VirtualSystemMigrationSettingData) GetPropertyTransportType()(value VirtualSystemMigrationSettingData_TransportType, err error) { 
+    retValue, err := instance.GetProperty("TransportType")
+    if err != nil {
+        return
+    }
+    if retValue == nil {
+        // Doesn't have any value. Return empty
+        return
+    }
+    
+    valuetmp, ok := retValue.(int32); 
+    if !ok {
+        err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
+        return  
+    }
 
-	valuetmp, ok := retValue.(int32)
-	if !ok {
-		err = errors.Wrapf(errors.InvalidType, " int32 is Invalid. Expected %s", reflect.TypeOf(retValue))
-		return
-	}
+    value = VirtualSystemMigrationSettingData_TransportType(valuetmp)
 
-	value = VirtualSystemMigrationSettingData_TransportType(valuetmp)
-
-	return
+    return
 }
+

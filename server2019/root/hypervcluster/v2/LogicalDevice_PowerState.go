@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source LogicalDevice_PowerState
 //////////////////////////////////////////////
 package v2
 
-// LogicalDevice_PowerState
+// LogicalDevice_PowerState 
 type LogicalDevice_PowerState int
-
-const (
+const(
 	// Full_Power enum
 	LogicalDevice_PowerState_Full_Power LogicalDevice_PowerState = 1
 	// Power_Save___Low_Power_Mode enum
@@ -25,3 +24,4 @@ const (
 	// Power_Off enum
 	LogicalDevice_PowerState_Power_Off LogicalDevice_PowerState = 6
 )
+

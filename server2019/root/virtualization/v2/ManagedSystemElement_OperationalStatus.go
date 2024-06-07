@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ManagedSystemElement_OperationalStatus
 //////////////////////////////////////////////
 package v2
 
-// ManagedSystemElement_OperationalStatus
+// ManagedSystemElement_OperationalStatus 
 type ManagedSystemElement_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	ManagedSystemElement_OperationalStatus_Unknown ManagedSystemElement_OperationalStatus = 0
 	// Other enum
@@ -55,3 +54,4 @@ const (
 	// Vendor_Reserved enum
 	ManagedSystemElement_OperationalStatus_Vendor_Reserved ManagedSystemElement_OperationalStatus = 20
 )
+

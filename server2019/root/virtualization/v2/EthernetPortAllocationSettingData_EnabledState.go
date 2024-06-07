@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source EthernetPortAllocationSettingData_EnabledState
 //////////////////////////////////////////////
 package v2
 
-// EthernetPortAllocationSettingData_EnabledState
+// EthernetPortAllocationSettingData_EnabledState 
 type EthernetPortAllocationSettingData_EnabledState int
-
-const (
+const(
 	// Enabled enum
 	EthernetPortAllocationSettingData_EnabledState_Enabled EthernetPortAllocationSettingData_EnabledState = 2
 	// Disabled enum
 	EthernetPortAllocationSettingData_EnabledState_Disabled EthernetPortAllocationSettingData_EnabledState = 3
 )
+

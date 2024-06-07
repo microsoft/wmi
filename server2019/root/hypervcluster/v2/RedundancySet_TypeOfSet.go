@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source RedundancySet_TypeOfSet
 //////////////////////////////////////////////
 package v2
 
-// RedundancySet_TypeOfSet
+// RedundancySet_TypeOfSet 
 type RedundancySet_TypeOfSet int
-
-const (
+const(
 	// Unknown enum
 	RedundancySet_TypeOfSet_Unknown RedundancySet_TypeOfSet = 0
 	// Other enum
@@ -29,3 +28,4 @@ const (
 	// Vendor_Reserved enum
 	RedundancySet_TypeOfSet_Vendor_Reserved RedundancySet_TypeOfSet = 7
 )
+

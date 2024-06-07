@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageFaultEvent_ChangeType
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageFaultEvent_ChangeType
+// StorageFaultEvent_ChangeType 
 type StorageFaultEvent_ChangeType int
-
-const (
+const(
 	// Creation enum
 	StorageFaultEvent_ChangeType_Creation StorageFaultEvent_ChangeType = 0
 	// Deletion enum
@@ -19,3 +18,4 @@ const (
 	// Modification enum
 	StorageFaultEvent_ChangeType_Modification StorageFaultEvent_ChangeType = 2
 )
+

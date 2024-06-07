@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source MetricServiceCapabilities_ManagedElementControlTypes
 //////////////////////////////////////////////
 package v2
 
-// MetricServiceCapabilities_ManagedElementControlTypes
+// MetricServiceCapabilities_ManagedElementControlTypes 
 type MetricServiceCapabilities_ManagedElementControlTypes int
-
-const (
+const(
 	// Unknown enum
 	MetricServiceCapabilities_ManagedElementControlTypes_Unknown MetricServiceCapabilities_ManagedElementControlTypes = 0
 	// Discrete enum
@@ -25,3 +24,4 @@ const (
 	// Vendor_Specific enum
 	MetricServiceCapabilities_ManagedElementControlTypes_Vendor_Specific MetricServiceCapabilities_ManagedElementControlTypes = 6
 )
+

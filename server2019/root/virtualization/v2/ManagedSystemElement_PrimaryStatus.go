@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ManagedSystemElement_PrimaryStatus
 //////////////////////////////////////////////
 package v2
 
-// ManagedSystemElement_PrimaryStatus
+// ManagedSystemElement_PrimaryStatus 
 type ManagedSystemElement_PrimaryStatus int
-
-const (
+const(
 	// Unknown enum
 	ManagedSystemElement_PrimaryStatus_Unknown ManagedSystemElement_PrimaryStatus = 0
 	// OK enum
@@ -25,3 +24,4 @@ const (
 	// Vendor_Reserved enum
 	ManagedSystemElement_PrimaryStatus_Vendor_Reserved ManagedSystemElement_PrimaryStatus = 5
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source MetricService_MetricCollectionEnabled
 //////////////////////////////////////////////
 package v2
 
-// MetricService_MetricCollectionEnabled
+// MetricService_MetricCollectionEnabled 
 type MetricService_MetricCollectionEnabled int
-
-const (
+const(
 	// Enable enum
 	MetricService_MetricCollectionEnabled_Enable MetricService_MetricCollectionEnabled = 2
 	// Disable enum
@@ -23,3 +22,4 @@ const (
 	// Vendor_Reserved enum
 	MetricService_MetricCollectionEnabled_Vendor_Reserved MetricService_MetricCollectionEnabled = 6
 )
+

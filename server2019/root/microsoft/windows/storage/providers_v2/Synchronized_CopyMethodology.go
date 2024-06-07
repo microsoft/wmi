@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Synchronized_CopyMethodology
 //////////////////////////////////////////////
 package providers_v2
 
-// Synchronized_CopyMethodology
+// Synchronized_CopyMethodology 
 type Synchronized_CopyMethodology int
-
-const (
+const(
 	// Not_Specified enum
 	Synchronized_CopyMethodology_Not_Specified Synchronized_CopyMethodology = 0
 	// Other enum
@@ -37,3 +36,4 @@ const (
 	// Vendor_Specific enum
 	Synchronized_CopyMethodology_Vendor_Specific Synchronized_CopyMethodology = 11
 )
+

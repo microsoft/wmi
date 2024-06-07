@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source CollectionReplicationService_InitialReplicationType
 //////////////////////////////////////////////
 package v2
 
-// CollectionReplicationService_InitialReplicationType
+// CollectionReplicationService_InitialReplicationType 
 type CollectionReplicationService_InitialReplicationType int
-
-const (
+const(
 	// Network_Transfer enum
 	CollectionReplicationService_InitialReplicationType_Network_Transfer CollectionReplicationService_InitialReplicationType = 1
 	// Export enum
@@ -19,3 +18,4 @@ const (
 	// Seeded_Network_Transfer enum
 	CollectionReplicationService_InitialReplicationType_Seeded_Network_Transfer CollectionReplicationService_InitialReplicationType = 3
 )
+

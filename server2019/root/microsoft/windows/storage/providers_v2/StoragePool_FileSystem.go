@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StoragePool_FileSystem
 //////////////////////////////////////////////
 package providers_v2
 
-// StoragePool_FileSystem
+// StoragePool_FileSystem 
 type StoragePool_FileSystem int
-
-const (
+const(
 	// NTFS enum
 	StoragePool_FileSystem_NTFS StoragePool_FileSystem = 14
 	// ReFS enum
@@ -21,3 +20,4 @@ const (
 	// CSVFS_ReFS enum
 	StoragePool_FileSystem_CSVFS_ReFS StoragePool_FileSystem = 17
 )
+

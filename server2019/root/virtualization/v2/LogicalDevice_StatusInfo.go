@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source LogicalDevice_StatusInfo
 //////////////////////////////////////////////
 package v2
 
-// LogicalDevice_StatusInfo
+// LogicalDevice_StatusInfo 
 type LogicalDevice_StatusInfo int
-
-const (
+const(
 	// Other enum
 	LogicalDevice_StatusInfo_Other LogicalDevice_StatusInfo = 1
 	// Unknown enum
@@ -23,3 +22,4 @@ const (
 	// Not_Applicable enum
 	LogicalDevice_StatusInfo_Not_Applicable LogicalDevice_StatusInfo = 5
 )
+

@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source PhysicalDisk_MediaType
 //////////////////////////////////////////////
 package providers_v2
 
-// PhysicalDisk_MediaType
+// PhysicalDisk_MediaType 
 type PhysicalDisk_MediaType int
-
-const (
+const(
 	// HDD enum
 	PhysicalDisk_MediaType_HDD PhysicalDisk_MediaType = 3
 	// SSD enum
 	PhysicalDisk_MediaType_SSD PhysicalDisk_MediaType = 4
 )
+

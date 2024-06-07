@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Synchronized_CopyPriority
 //////////////////////////////////////////////
 package providers_v2
 
-// Synchronized_CopyPriority
+// Synchronized_CopyPriority 
 type Synchronized_CopyPriority int
-
-const (
+const(
 	// Not_Managed enum
 	Synchronized_CopyPriority_Not_Managed Synchronized_CopyPriority = 0
 	// Low enum
@@ -25,3 +24,4 @@ const (
 	// Vendor_Specific enum
 	Synchronized_CopyPriority_Vendor_Specific Synchronized_CopyPriority = 5
 )
+

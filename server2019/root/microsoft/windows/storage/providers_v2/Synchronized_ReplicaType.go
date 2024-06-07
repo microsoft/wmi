@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Synchronized_ReplicaType
 //////////////////////////////////////////////
 package providers_v2
 
-// Synchronized_ReplicaType
+// Synchronized_ReplicaType 
 type Synchronized_ReplicaType int
-
-const (
+const(
 	// Not_Specified enum
 	Synchronized_ReplicaType_Not_Specified Synchronized_ReplicaType = 0
 	// Full_Copy enum
@@ -27,3 +26,4 @@ const (
 	// Vendor_Specific enum
 	Synchronized_ReplicaType_Vendor_Specific Synchronized_ReplicaType = 7
 )
+

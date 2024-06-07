@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageEnclosure_BusType
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageEnclosure_BusType
+// StorageEnclosure_BusType 
 type StorageEnclosure_BusType int
-
-const (
+const(
 	// Unknown enum
 	StorageEnclosure_BusType_Unknown StorageEnclosure_BusType = 0
 	// SCSI enum
@@ -53,3 +52,4 @@ const (
 	// Microsoft_Reserved enum
 	StorageEnclosure_BusType_Microsoft_Reserved StorageEnclosure_BusType = 19
 )
+

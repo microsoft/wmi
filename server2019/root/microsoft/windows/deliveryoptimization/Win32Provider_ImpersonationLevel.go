@@ -3,15 +3,15 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source Win32Provider_ImpersonationLevel
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// Win32Provider_ImpersonationLevel
+// Win32Provider_ImpersonationLevel 
 type Win32Provider_ImpersonationLevel int
-
-const (
+const(
 	// None enum
 	Win32Provider_ImpersonationLevel_None Win32Provider_ImpersonationLevel = 0
 )
+

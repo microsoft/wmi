@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FileShareAccessControlEntry_AccessRight
 //////////////////////////////////////////////
 package providers_v2
 
-// FileShareAccessControlEntry_AccessRight
+// FileShareAccessControlEntry_AccessRight 
 type FileShareAccessControlEntry_AccessRight int
-
-const (
+const(
 	// Full enum
 	FileShareAccessControlEntry_AccessRight_Full FileShareAccessControlEntry_AccessRight = 0
 	// Modify enum
@@ -21,3 +20,4 @@ const (
 	// Custom enum
 	FileShareAccessControlEntry_AccessRight_Custom FileShareAccessControlEntry_AccessRight = 3
 )
+

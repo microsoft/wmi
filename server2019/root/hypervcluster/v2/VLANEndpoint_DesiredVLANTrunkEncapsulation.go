@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VLANEndpoint_DesiredVLANTrunkEncapsulation
 //////////////////////////////////////////////
 package v2
 
-// VLANEndpoint_DesiredVLANTrunkEncapsulation
+// VLANEndpoint_DesiredVLANTrunkEncapsulation 
 type VLANEndpoint_DesiredVLANTrunkEncapsulation int
-
-const (
+const(
 	// DMTF_Reserved enum
 	VLANEndpoint_DesiredVLANTrunkEncapsulation_DMTF_Reserved VLANEndpoint_DesiredVLANTrunkEncapsulation = 0
 	// Other enum
@@ -29,3 +28,4 @@ const (
 	// Vendor_Reserved enum
 	VLANEndpoint_DesiredVLANTrunkEncapsulation_Vendor_Reserved VLANEndpoint_DesiredVLANTrunkEncapsulation = 7
 )
+

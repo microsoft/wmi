@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported
 //////////////////////////////////////////////
 package v2
 
-// ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported
+// ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported 
 type ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported int
-
-const (
+const(
 	// CreateResourcePool_is_supported enum
 	ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported_CreateResourcePool_is_supported ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported = 2
 	// CreateChild_ResourcePool_is_supported enum
@@ -29,3 +28,4 @@ const (
 	// Vendor_Reserved enum
 	ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported_Vendor_Reserved ResourcePoolConfigurationCapabilities_AsynchronousMethodsSupported = 9
 )
+

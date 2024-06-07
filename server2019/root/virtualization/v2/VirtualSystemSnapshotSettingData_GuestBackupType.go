@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemSnapshotSettingData_GuestBackupType
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemSnapshotSettingData_GuestBackupType
+// VirtualSystemSnapshotSettingData_GuestBackupType 
 type VirtualSystemSnapshotSettingData_GuestBackupType int
-
-const (
+const(
 	// Undefined enum
 	VirtualSystemSnapshotSettingData_GuestBackupType_Undefined VirtualSystemSnapshotSettingData_GuestBackupType = 0
 	// Full enum
@@ -19,3 +18,4 @@ const (
 	// Copy enum
 	VirtualSystemSnapshotSettingData_GuestBackupType_Copy VirtualSystemSnapshotSettingData_GuestBackupType = 2
 )
+

@@ -3,23 +3,23 @@
 
 //
 // Author:
-//      Auto Generated on 3/19/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider
 //////////////////////////////////////////////
 package deliveryoptimization
 
-// DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider
+// DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider 
 type DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider int
-
-const (
-	// _14 enum
-	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__14 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 5
-	// _15 enum
-	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__15 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 7
-	// _16 enum
-	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__16 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 8
+const(
 	// _17 enum
-	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__17 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 9
+	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__17 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 5
 	// _18 enum
-	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__18 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 99
+	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__18 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 7
+	// _19 enum
+	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__19 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 8
+	// _20 enum
+	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__20 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 9
+	// _21 enum
+	DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider__21 DeliveryOptimizationExtendedConfig_WorkingDirectoryProvider = 99
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source DVDDrive_FormatsSupported
 //////////////////////////////////////////////
 package v2
 
-// DVDDrive_FormatsSupported
+// DVDDrive_FormatsSupported 
 type DVDDrive_FormatsSupported int
-
-const (
+const(
 	// Unknown enum
 	DVDDrive_FormatsSupported_Unknown DVDDrive_FormatsSupported = 0
 	// Other enum
@@ -57,3 +56,4 @@ const (
 	// DVD_18 enum
 	DVDDrive_FormatsSupported_DVD_18 DVDDrive_FormatsSupported = 42
 )
+

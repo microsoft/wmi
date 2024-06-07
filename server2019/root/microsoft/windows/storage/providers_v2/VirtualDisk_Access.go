@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDisk_Access
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDisk_Access
+// VirtualDisk_Access 
 type VirtualDisk_Access int
-
-const (
+const(
 	// Readable enum
 	VirtualDisk_Access_Readable VirtualDisk_Access = 1
 	// Writeable enum
@@ -21,3 +20,4 @@ const (
 	// Write_Once enum
 	VirtualDisk_Access_Write_Once VirtualDisk_Access = 4
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbOpenFile_SmbInstance
 //////////////////////////////////////////////
 package smb
 
-// SmbOpenFile_SmbInstance
+// SmbOpenFile_SmbInstance 
 type SmbOpenFile_SmbInstance int
-
-const (
+const(
 	// _9 enum
 	SmbOpenFile_SmbInstance__9 SmbOpenFile_SmbInstance = 0
 	// _10 enum
@@ -21,3 +20,4 @@ const (
 	// _57 enum
 	SmbOpenFile_SmbInstance__57 SmbOpenFile_SmbInstance = 3
 )
+

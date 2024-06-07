@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageEnclosure_IOControllerOperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageEnclosure_IOControllerOperationalStatus
+// StorageEnclosure_IOControllerOperationalStatus 
 type StorageEnclosure_IOControllerOperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	StorageEnclosure_IOControllerOperationalStatus_Unknown StorageEnclosure_IOControllerOperationalStatus = 0
 	// OK enum
@@ -31,3 +30,4 @@ const (
 	// Not_Reported enum
 	StorageEnclosure_IOControllerOperationalStatus_Not_Reported StorageEnclosure_IOControllerOperationalStatus = 11
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualSystemMigrationSettingData_CPUCappingMagnitude
 //////////////////////////////////////////////
 package v2
 
-// VirtualSystemMigrationSettingData_CPUCappingMagnitude
+// VirtualSystemMigrationSettingData_CPUCappingMagnitude 
 type VirtualSystemMigrationSettingData_CPUCappingMagnitude int
-
-const (
+const(
 	// Normal enum
 	VirtualSystemMigrationSettingData_CPUCappingMagnitude_Normal VirtualSystemMigrationSettingData_CPUCappingMagnitude = 0
 	// Low enum
@@ -19,3 +18,4 @@ const (
 	// High enum
 	VirtualSystemMigrationSettingData_CPUCappingMagnitude_High VirtualSystemMigrationSettingData_CPUCappingMagnitude = 2
 )
+

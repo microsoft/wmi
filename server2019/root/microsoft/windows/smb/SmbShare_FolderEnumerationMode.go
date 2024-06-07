@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbShare_FolderEnumerationMode
 //////////////////////////////////////////////
 package smb
 
-// SmbShare_FolderEnumerationMode
+// SmbShare_FolderEnumerationMode 
 type SmbShare_FolderEnumerationMode int
-
-const (
+const(
 	// _16 enum
 	SmbShare_FolderEnumerationMode__16 SmbShare_FolderEnumerationMode = 0
 	// _17 enum
 	SmbShare_FolderEnumerationMode__17 SmbShare_FolderEnumerationMode = 1
 )
+

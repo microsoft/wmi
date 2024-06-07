@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageDiagnoseResult_PerceivedSeverity
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageDiagnoseResult_PerceivedSeverity
+// StorageDiagnoseResult_PerceivedSeverity 
 type StorageDiagnoseResult_PerceivedSeverity int
-
-const (
+const(
 	// Unknown enum
 	StorageDiagnoseResult_PerceivedSeverity_Unknown StorageDiagnoseResult_PerceivedSeverity = 0
 	// Information enum
@@ -27,3 +26,4 @@ const (
 	// Fatal_NonRecoverable enum
 	StorageDiagnoseResult_PerceivedSeverity_Fatal_NonRecoverable StorageDiagnoseResult_PerceivedSeverity = 7
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source TSDeploymentLicensing_LicensingType
 //////////////////////////////////////////////
 package terminalservices
 
-// TSDeploymentLicensing_LicensingType
+// TSDeploymentLicensing_LicensingType 
 type TSDeploymentLicensing_LicensingType int
-
-const (
+const(
 	// Per_Device enum
 	TSDeploymentLicensing_LicensingType_Per_Device TSDeploymentLicensing_LicensingType = 2
 	// Per_User enum
@@ -19,3 +18,4 @@ const (
 	// Not_Yet_Configured enum
 	TSDeploymentLicensing_LicensingType_Not_Yet_Configured TSDeploymentLicensing_LicensingType = 5
 )
+

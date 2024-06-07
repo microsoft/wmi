@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source ElementSettingData_IsNext
 //////////////////////////////////////////////
 package v2
 
-// ElementSettingData_IsNext
+// ElementSettingData_IsNext 
 type ElementSettingData_IsNext int
-
-const (
+const(
 	// Unknown enum
 	ElementSettingData_IsNext_Unknown ElementSettingData_IsNext = 0
 	// Is_Next enum
@@ -21,3 +20,4 @@ const (
 	// Is_Next_For_Single_Use enum
 	ElementSettingData_IsNext_Is_Next_For_Single_Use ElementSettingData_IsNext = 3
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source GuestNetworkAdapterConfiguration_ProtocolIFType
 //////////////////////////////////////////////
 package v2
 
-// GuestNetworkAdapterConfiguration_ProtocolIFType
+// GuestNetworkAdapterConfiguration_ProtocolIFType 
 type GuestNetworkAdapterConfiguration_ProtocolIFType int
-
-const (
+const(
 	// Unknown enum
 	GuestNetworkAdapterConfiguration_ProtocolIFType_Unknown GuestNetworkAdapterConfiguration_ProtocolIFType = 0
 	// Other enum
@@ -23,3 +22,4 @@ const (
 	// IPv4_v6 enum
 	GuestNetworkAdapterConfiguration_ProtocolIFType_IPv4_v6 GuestNetworkAdapterConfiguration_ProtocolIFType = 4098
 )
+

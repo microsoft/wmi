@@ -1,48 +1,44 @@
 // Copyright 2019 (c) Microsoft Corporation.
 // Licensed under the MIT license.
 
-//
+// 
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source root.Microsoft.Windows.Storage.Providers_v2
 //////////////////////////////////////////////
 package providers_v2
-
 import (
-	"github.com/microsoft/wmi/pkg/base/query"
-	cim "github.com/microsoft/wmi/pkg/wmiinstance"
+ "github.com/microsoft/wmi/pkg/base/query"
+cim "github.com/microsoft/wmi/pkg/wmiinstance"
 )
 
 // SPACES_VirtualDiskToStorageFaultDomain struct
-type SPACES_VirtualDiskToStorageFaultDomain struct {
+type SPACES_VirtualDiskToStorageFaultDomain struct { 
 	*MSFT_VirtualDiskToStorageFaultDomain
 }
 
-func NewSPACES_VirtualDiskToStorageFaultDomainEx1(instance *cim.WmiInstance) (newInstance *SPACES_VirtualDiskToStorageFaultDomain, err error) {
-	tmp, err := NewMSFT_VirtualDiskToStorageFaultDomainEx1(instance)
-
-	if err != nil {
-		return
-	}
-	newInstance = &SPACES_VirtualDiskToStorageFaultDomain{
-		MSFT_VirtualDiskToStorageFaultDomain: tmp,
+	func NewSPACES_VirtualDiskToStorageFaultDomainEx1(instance *cim.WmiInstance) (newInstance *SPACES_VirtualDiskToStorageFaultDomain, err error) {tmp, err := NewMSFT_VirtualDiskToStorageFaultDomainEx1(instance)
+		
+	if err != nil { return }
+	newInstance = &SPACES_VirtualDiskToStorageFaultDomain {
+	MSFT_VirtualDiskToStorageFaultDomain: tmp,
 	}
 	return
-}
+	}
+	
 
-func NewSPACES_VirtualDiskToStorageFaultDomainEx6(hostName string,
+	func NewSPACES_VirtualDiskToStorageFaultDomainEx6(hostName string,
 	wmiNamespace string,
 	userName string,
 	password string,
 	domainName string,
-	query *query.WmiQuery) (newInstance *SPACES_VirtualDiskToStorageFaultDomain, err error) {
-	tmp, err := NewMSFT_VirtualDiskToStorageFaultDomainEx6(hostName, wmiNamespace, userName, password, domainName, query)
-
-	if err != nil {
-		return
-	}
-	newInstance = &SPACES_VirtualDiskToStorageFaultDomain{
-		MSFT_VirtualDiskToStorageFaultDomain: tmp,
+	query *query.WmiQuery ) (newInstance *SPACES_VirtualDiskToStorageFaultDomain, err error) {tmp, err := NewMSFT_VirtualDiskToStorageFaultDomainEx6(hostName, wmiNamespace, userName, password, domainName, query)
+		
+	if err != nil { return }
+	newInstance = &SPACES_VirtualDiskToStorageFaultDomain {
+	MSFT_VirtualDiskToStorageFaultDomain: tmp,
 	}
 	return
-}
+	}
+	
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source SmbShare_ShareType
 //////////////////////////////////////////////
 package smb
 
-// SmbShare_ShareType
+// SmbShare_ShareType 
 type SmbShare_ShareType int
-
-const (
+const(
 	// _11 enum
 	SmbShare_ShareType__11 SmbShare_ShareType = 0
 	// _12 enum
@@ -23,3 +22,4 @@ const (
 	// _15 enum
 	SmbShare_ShareType__15 SmbShare_ShareType = 4
 )
+

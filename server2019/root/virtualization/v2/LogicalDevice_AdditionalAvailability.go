@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source LogicalDevice_AdditionalAvailability
 //////////////////////////////////////////////
 package v2
 
-// LogicalDevice_AdditionalAvailability
+// LogicalDevice_AdditionalAvailability 
 type LogicalDevice_AdditionalAvailability int
-
-const (
+const(
 	// Other enum
 	LogicalDevice_AdditionalAvailability_Other LogicalDevice_AdditionalAvailability = 1
 	// Unknown enum
@@ -55,3 +54,4 @@ const (
 	// Quiesced enum
 	LogicalDevice_AdditionalAvailability_Quiesced LogicalDevice_AdditionalAvailability = 21
 )
+

@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FileShare_OperationalStatus
 //////////////////////////////////////////////
 package providers_v2
 
-// FileShare_OperationalStatus
+// FileShare_OperationalStatus 
 type FileShare_OperationalStatus int
-
-const (
+const(
 	// Unknown enum
 	FileShare_OperationalStatus_Unknown FileShare_OperationalStatus = 0
 	// Other enum
@@ -61,3 +60,4 @@ const (
 	// Failed enum
 	FileShare_OperationalStatus_Failed FileShare_OperationalStatus = 23
 )
+

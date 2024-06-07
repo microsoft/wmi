@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageNodeToPhysicalDisk_LoadBalancePolicy
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageNodeToPhysicalDisk_LoadBalancePolicy
+// StorageNodeToPhysicalDisk_LoadBalancePolicy 
 type StorageNodeToPhysicalDisk_LoadBalancePolicy int
-
-const (
+const(
 	// Unknown enum
 	StorageNodeToPhysicalDisk_LoadBalancePolicy_Unknown StorageNodeToPhysicalDisk_LoadBalancePolicy = 0
 	// Fail_Over enum
@@ -29,3 +28,4 @@ const (
 	// Vendor_Specific enum
 	StorageNodeToPhysicalDisk_LoadBalancePolicy_Vendor_Specific StorageNodeToPhysicalDisk_LoadBalancePolicy = 7
 )
+

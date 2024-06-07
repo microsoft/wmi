@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source MediaAccessDevice_Capabilities
 //////////////////////////////////////////////
 package v2
 
-// MediaAccessDevice_Capabilities
+// MediaAccessDevice_Capabilities 
 type MediaAccessDevice_Capabilities int
-
-const (
+const(
 	// Unknown enum
 	MediaAccessDevice_Capabilities_Unknown MediaAccessDevice_Capabilities = 0
 	// Other enum
@@ -39,3 +38,4 @@ const (
 	// Predismount_Eject_Not_Required enum
 	MediaAccessDevice_Capabilities_Predismount_Eject_Not_Required MediaAccessDevice_Capabilities = 12
 )
+

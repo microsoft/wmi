@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source LogicalPort_PortType
 //////////////////////////////////////////////
 package v2
 
-// LogicalPort_PortType
+// LogicalPort_PortType 
 type LogicalPort_PortType int
-
-const (
+const(
 	// Unknown enum
 	LogicalPort_PortType_Unknown LogicalPort_PortType = 0
 	// Other enum
@@ -23,3 +22,4 @@ const (
 	// Vendor_Reserved enum
 	LogicalPort_PortType_Vendor_Reserved LogicalPort_PortType = 4
 )
+

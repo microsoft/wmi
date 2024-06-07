@@ -3,17 +3,17 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source StorageSubSystem_ProvisioningTypeDefault
 //////////////////////////////////////////////
 package providers_v2
 
-// StorageSubSystem_ProvisioningTypeDefault
+// StorageSubSystem_ProvisioningTypeDefault 
 type StorageSubSystem_ProvisioningTypeDefault int
-
-const (
+const(
 	// Thin enum
 	StorageSubSystem_ProvisioningTypeDefault_Thin StorageSubSystem_ProvisioningTypeDefault = 1
 	// Fixed enum
 	StorageSubSystem_ProvisioningTypeDefault_Fixed StorageSubSystem_ProvisioningTypeDefault = 2
 )
+

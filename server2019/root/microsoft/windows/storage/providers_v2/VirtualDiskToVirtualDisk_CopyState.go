@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source VirtualDiskToVirtualDisk_CopyState
 //////////////////////////////////////////////
 package providers_v2
 
-// VirtualDiskToVirtualDisk_CopyState
+// VirtualDiskToVirtualDisk_CopyState 
 type VirtualDiskToVirtualDisk_CopyState int
-
-const (
+const(
 	// Initialized enum
 	VirtualDiskToVirtualDisk_CopyState_Initialized VirtualDiskToVirtualDisk_CopyState = 2
 	// Unsynchronized enum
@@ -45,3 +44,4 @@ const (
 	// Vendor_Specific enum
 	VirtualDiskToVirtualDisk_CopyState_Vendor_Specific VirtualDiskToVirtualDisk_CopyState = 17
 )
+

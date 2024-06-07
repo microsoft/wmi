@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source RemoteAppChangeEvent_OperationType
 //////////////////////////////////////////////
 package terminalservices
 
-// RemoteAppChangeEvent_OperationType
+// RemoteAppChangeEvent_OperationType 
 type RemoteAppChangeEvent_OperationType int
-
-const (
+const(
 	// Create enum
 	RemoteAppChangeEvent_OperationType_Create RemoteAppChangeEvent_OperationType = 0
 	// Delete enum
@@ -19,3 +18,4 @@ const (
 	// Modify enum
 	RemoteAppChangeEvent_OperationType_Modify RemoteAppChangeEvent_OperationType = 2
 )
+

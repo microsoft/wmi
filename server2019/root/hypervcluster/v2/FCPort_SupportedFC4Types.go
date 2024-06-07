@@ -3,15 +3,14 @@
 
 //
 // Author:
-//      Auto Generated on 9/18/2020 using wmigen
+//      Auto Generated on 6/6/2024 using wmigen
 //      Source FCPort_SupportedFC4Types
 //////////////////////////////////////////////
 package v2
 
-// FCPort_SupportedFC4Types
+// FCPort_SupportedFC4Types 
 type FCPort_SupportedFC4Types int
-
-const (
+const(
 	// Unknown enum
 	FCPort_SupportedFC4Types_Unknown FCPort_SupportedFC4Types = 0
 	// Other enum
@@ -65,3 +64,4 @@ const (
 	// Vendor_Unique enum
 	FCPort_SupportedFC4Types_Vendor_Unique FCPort_SupportedFC4Types = 255
 )
+
